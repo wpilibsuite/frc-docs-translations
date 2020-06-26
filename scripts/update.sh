@@ -11,7 +11,7 @@ MAINPROJECT=frc-docs
 cd `dirname $0`/..
 
 # Update submodule
-git submodule update --remote --merge
+git submodule update --recursive
 
 # Create POT Files
 sphinx-build -T -b gettext $MAINPROJECT/source locale/pot

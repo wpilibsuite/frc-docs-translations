@@ -65,7 +65,7 @@ def get_unused_resources(remote_resources, local_resources):
             
             json_response = response.json()
             
-            if json_response["accept_translations"] is False:
+            if not json_response["accept_translations"]:
                 continue
 
             unused_resources.append(resource)

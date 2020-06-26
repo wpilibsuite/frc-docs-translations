@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:2
+msgid "Introduction to Filters"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:4
+msgid "Filters are some of the most common tools used in modern technology, and find numerous applications in robotics in both signal processing and controls.  Understanding the notion of a filter is crucial to understanding the utility of the various types of filters provided by WPILib."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:7
+msgid "What Is a Filter?"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:9
+msgid "For the sake of this article, we will assume all data are single-dimensional time-series data.  Obviously, the concepts involved are more general than this - but a full/rigorous discussion of signals and filtering is out of the scope of this documentation."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:11
+msgid "So, what exactly *is* a filter, then?  Simply put, a filter is a mapping from a stream of inputs to a stream of outputs.  That is to say, the value output by a filter (in principle) can depend not only on the *current* value of the input, but on *the entire set of past and future values* (of course, in practice, the filters provided by WPILib are implementable in real-time on streaming data; accordingly, they can only depend on the *past* values of the input, and not on future values).  This is an important concept, because generally we use filters to remove/mitigate unwanted *dynamics* from a signal.  When we filter a signal, we're interested in modifying *how the signal changes over time*."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:14
+msgid "Effects of Using a Filter"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:17
+msgid "Noise Reduction"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:19
+msgid "One of the most typical uses of a filter is for noise reduction.  A filter that reduces noise is called a *low-pass* filter (because it allows low frequencies to \"pass through,\" while blocking high-frequencies).  Most of the filters currently included in WPILib are effectively low-pass filters."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:22
+msgid "Rate Limiting"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:24
+msgid "Filters are also commonly used to reduce the rate at which a signal can change.  This is closely related to noise reduction, and filters that reduce noise also tend to limit the rate of change of their output."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:27
+msgid "Edge Detection"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:29
+msgid "The counterpart to the low-pass filter is the high-pass filter, which only permits high frequencies to pass through to the output.  High-pass filters can be somewhat tricky to build intuition for, but a common usage for a high-pass filter is edge-detection - since high-pass filters will reflect sudden changes in the input while ignoring slower changes, they are useful for determining the location of sharp discontinuities in the signal."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:32
+msgid "Phase Lag"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:34
+msgid "An unavoidable negative effect of a real-time low-pass filter is the introduction of \"phase lag.\"  Since, as mentioned earlier, a real-time filter can only depend on past values of the signal (we cannot time-travel to obtain the future values), the filtered value takes some time to \"catch up\" when the input starts changing.  The greater the noise-reduction, the greater the introduced delay.  This is, in many ways, *the* fundamental trade-off of real-time filtering, and should be the primary driving factor of your filter design."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:36
+msgid "Interestingly, high-pass filters introduce a phase *lead*, as opposed to a phase lag, as they exacerbate local changes to the value of the input."
+msgstr ""

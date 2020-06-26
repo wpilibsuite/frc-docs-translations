@@ -1,0 +1,437 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:2
+msgid "New for 2020"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:4
+msgid "A number of improvements have been made to FRC Control System software for 2020. This article will describe and provide a brief overview of the new changes and features as well as a more complete changelog for C++/Java WPILib changes."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:6
+msgid "Due to internal GradleRIO changes, it is necessary to update previous years projects. After :doc:`Installing WPILib for 2020 </docs/getting-started/getting-started-frc-control-system/wpilib-setup>`, any 2019 projects must be :doc:`imported </docs/software/wpilib-overview/importing-gradle-project>` to be compatible."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:9
+msgid "Major Features - All Languages"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:11
+msgid "**Addressable LEDs** - The roboRIO FPGA has been enhanced to be able to control individually addressable LEDs (WS2812 or compatible protocol) from the roboRIO PWM ports (non-MXP). Teams can connect the signal line of these LEDs directly to the roboRIO PWM signal line and control them from APIs in all three languages. Depending on the length of the LED string and whether any servos are also being powered from the PWM ports, teams may be able to power the string directly from the PWM port or may need to use an external supply."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:12
+msgid "**Duty Cycle Encoder** - The roboRIO FPGA has been enhanced to be able to decode the signals from Duty Cycle encoders (this includes devices like the US Digital MA3, CTRE Mag Encoder, and REV Robotics Through Bore Encoder). Teams can connect these devices to the DIO ports on the roboRIO and access the encoder data via APIs in all three languages."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:13
+msgid "**CAN Bus Internal Restructure** - The internal implementation of the CAN bus has changed to reduce the latency incurred by CAN bus calls from robot programs. Team programs, particularly those with many CAN calls, should see reduced and more consistent loop timing with the new implementation. No team action is needed to take advantage of this change, the changes are limited to internal implementation. Users may notice changes in how some tools like the CTRE Phoenix Tuner work as a consequence of the restructure."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:14
+msgid "**Control Packet Caching** - A change has been made to the internals of how control packet data (such as Joystick data, current mode, etc.) is retrieved, resulting in reduced latency in these calls. The user-facing API has not changed, users will see this benefit without making any changes to their programs."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:15
+msgid "**Documentation** - If you're on this page, you're likely aware that the software documentation has moved from Screensteps to this new FRC-Docs page. This open source documentation, hosted on Read the Docs, allows for a greater number of contributors (including community contribution) as well as new features such as testable example code (to ensure example code remains correct as library changes are made), better support for localization, and more. For the 2020 season, KOP part documentation can still be found on `Screensteps <https://wpilib.screenstepslive.com/s/4485>`__"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:18
+msgid "Major Features - C++/Java"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:19
+msgid "More complete details on all of these changes can be found in the changelog below (under **WPILib**)."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:21
+msgid "**Command Based Framework Rewrite** - A new version of the Command Based framework has been written from the ground up based on the years of experience with the previous framework. Both frameworks will be available as options in 2020 and have been split out as \"vendor libraries\" (though they are still included in the WPILib installer) in order to reduce the chances of mixing the two which will not work correctly."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:22
+msgid "**PID Controller Rewrite** - A new synchronous PID controller class has been written that is structured in a way that makes it simpler to compose with other higher level classes such as filters, motion profiles, kinematics and more. The new PID Controller is located in a new package to maintain separation from the existing implementation."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:23
+msgid "**High level controls & Trajectory generation** - A number of new classes have been added to assist teams with higher level controls including kinematics, odometry, and trajectory generation. In addition to the characterization GUI mentioned below this should allow teams a much easier entry to high level control of mechanisms included drivetrains (with smooth trajectories), arms, and elevators."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:24
+msgid "**Robot Characterization Tool** - This new tool helps teams characterize their mechanical systems (currently supports drivetrains, elevators, and arms) to help tune control loops. Combined with the new controls classes this should enable teams to follow an end-to-end solution for autonomous trajectory following."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:25
+msgid "**Simulation GUI** - A basic simulation GUI has been implemented allowing teams to visualize outputs and control basic inputs when simulating code on their desktop. While vendor support at Kickoff is expected to be limited, we hope this will expand in the future."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:29
+msgid "WPILib"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:31
+msgid "There are many changes and additions to the main WPILib library for 2020. Most notably, there is a new version of the command-based framework with several major enhancements, a new (synchronous) PIDController, a GUI simulator, and kinematics classes have been added for closed loop driving. The full change log can be read below."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:33
+msgid "The command-based framework has been rewritten. The design rationale behind the rewrite can be found `here <https://github.com/wpilibsuite/design-docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the framework is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java)."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:34
+msgid "The command-based frameworks are now separate vendor libraries, rather then built into WPILib itself."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:36
+msgid "LinearDigitalFilter has been renamed to LinearFilter, and now has a ``Calculate()`` method which returns the filtered value."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:38
+msgid "Takes a double in the ``Calculate()`` method instead of a ``PIDSource`` in the constructor"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:39
+msgid "``PIDGet()`` was replaced with ``Calculate()``"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:40
+msgid "Both of these changes make it easy to compose the LinearFilter class with the new PIDController class"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:41
+msgid "More details about the new LinearFilter can be found in :ref:`this article <docs/software/advanced-controls/filters/linear-filter:Linear Filters>`"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:43
+msgid "PIDController has been rewritten; the old PIDController along with PIDSource and PIDOutput have been deprecated. The new version of PIDController is located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` package (Java) while the deprecated version remains in the old namespace and package."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:45
+msgid "The new PIDController no longer runs asynchronously in a separate thread. This eliminates a major source of bugs for teams. Instead, teams should run the controller as part of their main periodic TimedRobot loop by calling ``Calculate()`` and passing the result to the motor’s ``Set()`` function. Note this means that the controller will run at the TimedRobot periodic rate."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:46
+msgid "Input range was replaced with ``EnableContinuousInput()`` and output range was replaced with integrator range.  If it’s necessary to clamp inputs or outputs to a range, use ``std::clamp()`` or ``wpiutil.MathUtils.clamp()`` on either the input or output of ``Calculate()`` as appropriate. To deal with steady-state error, use ProfiledPIDController instead of reducing the output range or having an integral term."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:47
+msgid "``PIDSource`` is no longer used.  Instead, pass the sensor value directly to ``Calculate()``."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:48
+msgid "``PIDOutput`` is no longer used.  Instead, call ``Set()`` with the output of ``Calculate()``."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:49
+msgid "Percent tolerance has been removed. Absolute tolerance is provided via ``SetTolerance()``."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:50
+msgid "More details about the new PIDController can be found in :ref:`this article <docs/software/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:52
+msgid "Added kinematics classes for Swerve, Mecanum, and DifferentialDrive. These classes can be used to implement closed loop driving of these drive types."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:53
+msgid "Added odometry classes for Swerve, Mecanum, and DifferentialDrive. These are needed for closed loop feedback control on global pose (as opposed to just PID on the two drivetrain sides, which can accrue error since there are multiple ending positions a robot can be in for a given set of encoder measurements)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:54
+msgid "Add RamseteController for closed loop feedback control on global pose for unicycles (the DifferentialDriveKinematics class can convert the chassis speeds to that of a differential drive)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:55
+msgid "(C++) Add frc2::Timer which is unit safe"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:56
+msgid "Real-time trajectory generation for 2 DOF trajectories (e.g., x and y position for a drivetrain)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:57
+msgid "Added a PortForwarding class to allow forwarding ports from a remote, to a client. This can be used when connecting to the roboRIO from USB and needing to access Ethernet content."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:58
+msgid "Added an interactive GUI for desktop simulation of robot code.  The GUI provides DS-like controls for operating mode and joystick input and provides live display/control of virtual hardware inputs and outputs."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:59
+msgid "Removed SampleRobot"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:60
+msgid "Made null checks on Java parameters more descriptive"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:61
+msgid "Removed deprecated LiveWindow functions"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:62
+msgid "Deprecated frc/WPILib.h. Instead, include only what you use."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:63
+msgid "Removed deprecated shim header files for wpilibc and llvm."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:64
+msgid "Added low-level geometry classes: Pose2d, Rotation2d, Transform2d, Translation2d"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:65
+msgid "Added C++ units library. This library provides type safety, which makes it impossible to mix up units (e.g. pass seconds as meters) and also provides automatic unit conversion. The units can be specified in literals using a suffix, e.g. ``1.0_s`` for 1 second."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:66
+msgid "Added Java units utility functions for unit conversions. This provides a set of common unit conversions (e.g. feet to meters). Unlike C++, the Java library does not provide type safety; this was done for performance reasons."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:67
+msgid "Added TrapezoidProfile class for 1 degree-of-freedom (DOF) trajectories"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:68
+msgid "Added ProfiledPIDController class. Given a goal, this class constrains the setpoint movement over time to a max velocity and acceleration."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:69
+msgid "Moved the CircularBuffer/circular_buffer classes from wpilib to wpiutil"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:70
+msgid "Deprecated the GearTooth class. Based on usage reporting, no teams have used this class in the last several years. The Counter class can be used directly instead."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:71
+msgid "Deprecated the Filter class. Since PIDSource is deprecated, it no longer serves a purpose. Teams should use the derived classes of Filter directly rather than using polymorphism."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:72
+msgid "Added the PWMSparkMax class for PWM control of the REV Robotics SPARK MAX Motor Controller"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:73
+msgid "Simplified the Sendable interface and deprecated SendableBase. The name and subsystem have been removed from individual objects, and instead this data is stored in a new singleton class, SendableRegistry. Much of LiveWindow has been refactored into SendableRegistry."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:75
+msgid "In C++, a new CRTP helper class, SendableHelper, has been added to provide move and destruction functionality."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:76
+msgid "Shims for GetName, SetName, GetSubsystem, and SetSubsystem have been added to Command and Subsystem (both old and new), and also to SendableHelper to prevent code breakage."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:78
+msgid "Update to GCC 7, and use C++17"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:79
+msgid "Use OS for serial port instead of the NI driver"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:80
+msgid "IterativeRobot template has been removed"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:81
+msgid "Add support for Addressable LEDs, such as WS2812's and NeoPixels"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:82
+msgid "Add support for DutyCycle inputs, such as the absolute output on many FRC encoders"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:83
+msgid "Eigen has been added to C++, and EJML has been added to Java to support linear algebra and matrix calculations. These are included by default, with no need to add anything to your robot project to use them."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:84
+msgid "Jackson has been added to Java for JSON support. C++ support already existed with json library in the wpi header root. These can be used with no need to add anything to your robot project."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:85
+msgid "The location that maven artifacts are published has changed to: https://frcmaven.wpi.edu/artifactory/release/"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:88
+msgid "Shuffleboard"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:90
+msgid "Ignore whitespace and capitalization for remotely defined settings"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:91
+msgid "Components in grids can now have location specified remotely"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:92
+msgid "Upper and lower bounds on graph X and Y axis can now be manually specified"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:93
+msgid "Small numbers will properly be shown in number fields using scientific notation."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:94
+msgid "Allow widget titles to be hidden"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:95
+msgid "Added a documentation link in the about dropdown"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:98
+msgid "FRC Raspberry Pi Image"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:100
+msgid "Updated to work on Raspberry Pi 4"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:101
+msgid "Updated to use Raspbian Buster"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:102
+msgid "Added CPU temperature to system status screen"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:105
+msgid "SmartDashboard"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:107
+msgid "Properly parses special characters in MJPEG urls"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:110
+msgid "PathWeaver"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:112
+msgid "Updated to output WPILib splines"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:113
+msgid "Now shows an error alert when configuration screen is invalid"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:116
+msgid "OutlineViewer"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:118
+msgid "Fixed the initial settings dialog (it was too small on some platforms)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:119
+msgid "Fixed array editor"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:122
+msgid "GradleRIO"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:124
+msgid "Fixed JRE slowdown when using ``concat()`` on Strings."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:125
+msgid "Fixed JRE slowdown on garbage collection."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:128
+msgid "CScore"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:130
+msgid "Fixed cscore compatibility with OpenCV 4 (mainly useful for coprocessors)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:131
+msgid "Fixed setting exposure on PS3eye cameras"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:134
+msgid "WPILib All in One Installer"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:136
+msgid "Use ``wpilib\\2020\\`` instead of ``frc2020\\``. This prevents cluttering the user’s home directory when installing alongside previous years’ installation."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:137
+msgid "Fixed an issue where shortcuts would get created for installed tools, even if it was unchecked."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:138
+msgid "Installing for **All Users** will now create shortcuts for all users, instead of only the current one."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:139
+msgid "Update to latest Visual Studio Code and C++/Java extensions"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:142
+msgid "Visual Studio Code Extension"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:144
+msgid "Added a 2019 to 2020 project importer"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:145
+msgid "Add a window for a simple way to grab all project information"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:146
+msgid "Add built in way to open and display API docs"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:149
+msgid "RobotBuilder"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:151
+msgid "Use individual includes instead of wpilib.h for C++"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:152
+msgid "Add export of PWMSparkMax, PWMTalonFX, PWMVenom"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:153
+msgid "Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:154
+msgid "GUI for defining Command Groups was removed for maintainability reasons. Commands can be added in VS Code."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:157
+msgid "Robot Characterization"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:159
+msgid "Introduced the robot characterization toolsuite."
+msgstr ""

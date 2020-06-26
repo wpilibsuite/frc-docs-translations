@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:2
+msgid "Feedforward Control in WPILib"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:4
+msgid "So far, we've used feedback control for reference tracking (making a system's output follow a desired reference signal). While this is effective, it's a reactionary measure; the system won't start applying control effort until the system is already behind. If we could tell the controller about the desired movement and required input beforehand, the system could react quicker and the feedback controller could do less work. A controller that feeds information forward into the plant like this is called a feedforward controller."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:6
+msgid "A feedforward controller injects information about the system’s dynamics (like a mathematical model does) or the intended movement. Feedforward handles parts of the control actions we already know must be applied to make a system track a reference, then feedback compensates for what we do not or cannot know about the system’s behavior at runtime."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:8
+msgid "There are two types of feedforwards: model-based feedforward and feedforward for unmodeled dynamics. The first solves a mathematical model of the system for the inputs required to meet desired velocities and accelerations. The second compensates for unmodeled forces or behaviors directly so the feedback controller doesn't have to. Both types can facilitate simpler feedback controllers. We'll cover several examples below."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:10
+msgid "The WPILib feedforward classes closely match the available mechanism characterization tools available in the :ref:`frc-characterization toolsuite <docs/software/wpilib-tools/robot-characterization/introduction:Introduction to Robot Characterization>` - the characterization toolsuite can be used to quickly and effectively determine the correct gains for each type of feedforward.  The toolsuite will indicate the appropriate units for each of the gains."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:12
+msgid "WPILib provides a number of classes to help users implement accurate feedforward control for their mechanisms.  In many ways, an accurate feedforward is more important than feedback to effective control of a mechanism.  Since most FRC mechanisms closely obey well-understood system equations, starting with an accurate feedforward is both easy and hugely beneficial to accurate and robust mechanism control."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:14
+msgid "WPILib currently provides the following three helper classes for feedforward control:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:16
+msgid "`SimpleMotorFeedforward`_ (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/SimpleMotorFeedforward.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SimpleMotorFeedforward.html>`__)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:17
+msgid "`ArmFeedforward`_ (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/ArmFeedforward.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ArmFeedforward.html>`__)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:18
+msgid "`ElevatorFeedforward`_ (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/ElevatorFeedforward.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1ElevatorFeedforward.html>`__)"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:21
+msgid "SimpleMotorFeedforward"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:23
+msgid "In C++, the ``SimpleMotorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:25
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:69
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:114
+msgid "The Java feedforward components will calculate outputs in units determined by the units of the user-provided feedforward gains.  Users *must* take care to keep units consistent, as WPILibJ does not have a type-safe unit system."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:27
+msgid "The ``SimpleMotorFeedforward`` class calculates feedforwards for mechanisms that consist of permanent-magnet DC motors with no external loading other than friction and inertia, such as flywheels and robot drives."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:29
+msgid "To create a ``SimpleMotorFeedforward``, simply construct it with the required gains:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:31
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:75
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:120
+msgid "The ``kA`` gain can be omitted, and if it is, will default to a value of zero.  For many mechanisms, especially those with little inertia, it is not necessary."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:46
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:135
+msgid "To calculate the feedforward, simply call the ``calculate()`` method with the desired motor velocity and acceleration:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:48
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:91
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:137
+msgid "The acceleration argument may be omitted from the ``calculate()`` call, and if it is, will default to a value of zero.  This should be done whenever there is not a clearly-defined acceleration setpoint."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:65
+msgid "ArmFeedforward"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:67
+msgid "In C++, the ``ArmFeedforward`` class assumes distances are angular, not linear.  The passed-in gains *must* have units consistent with the angular unit, or a compile-time error will be thrown.  ``kS`` and ``kCos`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:71
+msgid "The ``ArmFeedforward`` class calculates feedforwards for arms that are controlled directly by a permanent-magnet DC motor, with external loading of friction, inertia, and mass of the arm.  This is an accurate model of most arms in FRC."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:73
+msgid "To create an ``ArmFeedforward``, simply construct it with the required gains:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:89
+msgid "To calculate the feedforward, simply call the ``calculate()`` method with the desired arm position, velocity, and acceleration:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:110
+msgid "ElevatorFeedforward"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:112
+msgid "In C++, the ``ElevatorFeedforward`` class is templated on the unit type used for distance measurements, which may be angular or linear.  The passed-in gains *must* have units consistent with the distance units, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have units of ``volts``, ``kV`` should have units of ``volts * seconds / distance``, and ``kA`` should have units of ``volts * seconds^2 / distance``.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:116
+msgid "The ``ElevatorFeedforward`` class calculates feedforwards for elevators that consist of permanent-magnet DC motors loaded by friction, inertia, and the mass of the elevator.  This is an accurate model of most elevators in FRC."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:118
+msgid "To create a ``ElevatorFeedforward``, simply construct it with the required gains:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:156
+msgid "Using Feedforward to Control Mechanisms"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:158
+msgid "Since feedforward voltages are physically meaningful, it is best to use the ``setVoltage()`` (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__) method when applying them to motors to compensate for \"voltage sag\" from the battery."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:160
+msgid "Feedforward control can be used entirely on its own, without a feedback controller.  This is known as \"open-loop\" control, and for many mechanisms (especially robot drives) can be perfectly satisfactory.  A ``SimpleMotorFeedforward`` might be employed to control a robot drive as follows:"
+msgstr ""

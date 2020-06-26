@@ -1,0 +1,89 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:2
+msgid "Setting up CI for Robot Code using GitHub Actions"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:4
+msgid "An important aspect of working in a team environment is being able to test code that is pushed to a central repository such as GitHub. For example, a project manager or lead developer might want to run a set of unit tests before merging a pull request or might want to ensure that all code on the master branch of a repository is in working order."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:6
+msgid "`GitHub Actions <https://github.com/features/actions>`_ is a service that allows for teams and individuals to build and run unit tests on code on various branches and on pull requests. These types of services are more commonly known as \"Continuous Integration\" services. This tutorial will show you how to setup GitHub Actions on robot code projects."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:8
+msgid "This tutorial assumes that your team's robot code is being hosted on GitHub. For an introduction to Git and GitHub, please see this `introduction guide <docs/software/basic-programming/git-getting-started:Git Version Control Introduction>`_."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:11
+msgid "Creating the Action"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:12
+msgid "The instructions for carrying out the CI process are stored in a YAML file. To create this, click on the \"Actions\" tab at the top of your repository. Then click on the \"set up a workflow yourself\" hyperlink."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:16
+msgid "You will now be greeted with a text editor. Replace all the default text with the following:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:55
+msgid "Then, save changes by clicking the \"Start commit\" button on the top-right corner of the screen. You can amend the default commit message if you wish to do so. Then, click the green \"Commit new file\" button."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:60
+msgid "GitHub will now automatically run a build whenever a commit is pushed to master or a pull request is opened. To monitor the status of any build, you can click on the \"Actions\" tab on the top of the screen."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:65
+msgid "A Breakdown of the Actions YAML File"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:66
+msgid "Here is a breakdown of the YAML file above. Although a strict understanding of each line is not required, some level of understanding will help you add more features and debug potential issues that may arise."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:78
+msgid "This block of code dictates when the Action will run. Currently, the action will run when commits are pushed to master or when pull requests are opened against master."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:92
+msgid "Each Action workflow is made of a one or more jobs that run either sequentially (one after another) or in parallel (at the same time). In our workflow, there is only one \"build\" job."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:94
+msgid "We specify that we want the job to run on an Ubuntu virtual machine and in a virtualized `Docker container <https://www.docker.com/resources/what-container>`_ that contains the JDK, C++ compiler and roboRIO toolchains."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:111
+msgid "Each job has certain steps that will be executed. This job has three steps. The first step involves checking out the repository to access the robot code. The second step involves giving the virtual machine permission to execute gradle tasks using ``./gradlew``. The final step runs ``./gradlew build`` to compile robot code and run any unit tests."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:114
+msgid "Adding a Build Status Badge to a README.md File"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:115
+msgid "It is helpful to add a CI status badge to the top of your repository's README file to quickly check the status of the latest build on master. To do this, click on the \"Actions\" tab at the top of the screen and select the \"CI\" tab on the left side of the screen. Then, click on the \"Create status badge\" button on the top right and copy the status badge Markdown code."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-code-ci.rst:119
+msgid "Finally, paste the Markdown code you copied at the top of your README file, commit, and push your changes. Now, you should see the GitHub Actions status badge on your main repository page."
+msgstr ""

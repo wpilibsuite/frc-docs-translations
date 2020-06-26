@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:2
+msgid "Slew Rate Limiter"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:4
+msgid "A common use for filters in FRC is to soften the behavior of control inputs (for example, the joystick inputs from your driver controls).  Unfortunately, a simple low-pass filter is poorly-suited for this job; while a low-pass filter will soften the response of an input stream to sudden changes, it will also wash out fine control detail and introduce phase lag.  A better solution is to limit the rate-of-change of the control input directly.  This is performed with a *slew rate limiter* - a filter that caps the maximum rate-of-change of the signal."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:6
+msgid "A slew rate limiter can be thought of as a sort of primitive motion profile.  In fact, the slew rate limiter is the first-order equivalent of the :ref:`Trapezoidal Motion Profile <docs/software/advanced-controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in WPILib>` supported by WPILib - it is precisely the limiting case of trapezoidal motion when the acceleration constraint is allowed to tend to infinity.  Accordingly, the slew rate limiter is a good choice for applying a de-facto motion profile to a stream of velocity setpoints (or voltages, which are usually approximately proportional to velocity).  For input streams that control positions, it is usually better to use a proper trapezoidal profile."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:8
+msgid "Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` class (`Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/SlewRateLimiter.html>`__, `C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SlewRateLimiter.html>`__)."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:11
+msgid "Creating a SlewRateLimiter"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:13
+msgid "The C++ ``SlewRateLimiter`` class is templated on the unit type of the input.  For more information on C++ units, see :ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:15
+msgid "Because filters have \"memory\", each input stream requires its own filter object.  Do *not* attempt to use the same filter object for multiple input streams."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:17
+msgid "Creating a SlewRateLimiter is simple:"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:32
+msgid "Using a SlewRateLimiter"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:34
+msgid "Once your filter has been created, using it is easy - simply call the ``calculate()`` method with the most recent input to obtain the filtered output:"
+msgstr ""

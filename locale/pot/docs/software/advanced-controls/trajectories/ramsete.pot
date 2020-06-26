@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:2
+msgid "Ramsete Controller"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:3
+msgid "The Ramsete Controller is a trajectory tracker that is built in to WPILib. This tracker can be used to accurately track trajectories with correction for minor disturbances."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:6
+msgid "Constructing the Ramsete Controller Object"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:7
+msgid "The Ramsete controller should be initialized with two gains, namely ``b`` and ``zeta``. Larger values of ``b`` make convergence more aggressive like a proportional term whereas larger values of ``zeta`` provide more damping in the response. These controller gains only dictate how the controller will output adjusted velocities. It does NOT affect the actual velocity tracking of the robot. This means that these controller gains are generally robot-agnostic."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:9
+msgid "Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested repeatedly to produce desirable results when all units were in meters. As such, a zero-argument constructor for ``RamseteController`` exists with gains defaulted to these values."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:12
+msgid "Getting Adjusted Velocities"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:13
+msgid "The Ramsete controller returns \"adjusted velocities\" so that the when the robot tracks these velocities, it accurately reaches the goal point. The controller should be updated periodically with the new goal. The goal comprises of a desired pose, desired linear velocity, and desired angular velocity. Furthermore, the current position of the robot should also be updated periodically. The controller uses these four arguments to return the adjusted linear and angular velocity. Users should command their robot to these linear and angular velocities to achieve optimal trajectory tracking."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:15
+msgid "The \"goal pose\" represents the position that the robot should be at at a particular timestep when tracking the trajectory. It does NOT represent the final endpoint of the trajectory."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:17
+msgid "The controller can be updated using the ``Calculate`` (C++) / ``calculate`` (Java) method. There are two overloads for this method. Both of these overloads accept the current robot position as the first parameter. For the other parameters, one of these overloads takes in the goal as three separate parameters (pose, linear velocity, and angular velocity) whereas the other overload accepts a ``Trajectory.State`` object, which contains information about the goal pose. For its ease, users should use the latter method when tracking trajectories."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:32
+msgid "These calculations should be performed at every loop iteration, with an updated robot position and goal."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:35
+msgid "Using the Adjusted Velocities"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:36
+msgid "The adjusted velocities are of type ``ChassisSpeeds``, which contains a ``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity in the sideways direction), and an ``omega`` (angular velocity around the center of the robot frame). Because the Ramsete controller is a controller for non-holonomic robots (robots which cannot move sideways), the adjusted speeds object has a ``vy`` of zero."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:38
+msgid "The returned adjusted speeds can be converted to usable speeds using the kinematics classes for your drivetrain type. For example, the adjusted velocities can be converted to left and right velocities for a differential drive using a ``DifferentialDriveKinematics`` object."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:56
+msgid "Because these new left and right velocities are still speeds and not voltages, two PID Controllers, one for each side may be used to track these velocities. Either the WPILib PIDController (`C++ <https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDController.html>`_, `Java <https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`_) can be used, or the Velocity PID feature on smart motor controllers such as the TalonSRX and the SparkMAX can be used."
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:59
+msgid "Ramsete in the Command-Based Framework"
+msgstr ""
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:60
+msgid "For the sake of ease for users, a ``RamseteCommand`` class is built in to WPILib. For a full tutorial on implementing a path-following autonomous using RamseteCommand, see :ref:`docs/software/examples-tutorials/trajectory-tutorial/index:Trajectory Tutorial`."
+msgstr ""

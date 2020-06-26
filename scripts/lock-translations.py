@@ -74,6 +74,7 @@ def get_unused_resources(remote_resources, local_resources):
 
 
 def lock_resources(unused_resources):
+    err = False
     for resource in unused_resources:
         response = requests.put(RESOURCE_BASE_URL + resource + "/",
                     auth=("api", TX_SECRET),
@@ -82,9 +83,13 @@ def lock_resources(unused_resources):
 
         if response.status_code != 200:
             print("Error locking resource:", response, resource)
-            exit(1)
+            err = True
         else:
             print("Successfully locked resource:", resource)
+
+    if err:
+        print("Script exited with problems!")
+        exit(1)
         
 
 def main():

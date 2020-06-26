@@ -26,12 +26,6 @@ jobs:
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - name: Create Commit & Push
-        uses: EndBug/add-and-commit@v4
+        uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          author_name: 'Translation-Bot'
-          message: 'Update Translations'
-          ref: 'automation/update-translations'
-
-env:
-# This is necessary in order to push a commit to the repo
-GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+          commit_message: "Update Translations from Transifex"

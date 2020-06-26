@@ -115,6 +115,8 @@ def main():
 
         if os.getenv("CI"):
             lock_resources(unused_resources)
+        else:
+            print("Skipping lock because not running on CI")
 
 
 if __name__ == '__main__':

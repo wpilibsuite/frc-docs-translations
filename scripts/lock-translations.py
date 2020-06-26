@@ -111,7 +111,7 @@ def main():
         print("All resources are locked or in use!")
     else:
         for resource in unused_resources:
-        print("Unused resource:", resource)
+            print("Unused resource:", resource)
 
         lock_resources(unused_resources)
 

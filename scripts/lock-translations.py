@@ -113,7 +113,8 @@ def main():
         for resource in unused_resources:
             print("Unused resource:", resource)
 
-        lock_resources(unused_resources)
+        if os.getenv("CI"):
+            lock_resources(unused_resources)
 
 
 if __name__ == '__main__':

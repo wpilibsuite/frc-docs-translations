@@ -3,7 +3,7 @@ import os
 import argparse
 import configparser
 
-TX_SECRET = os.getenv('TX_SECRET')
+TX_TOKEN = os.getenv('TX_TOKEN')
 RESOURCES_URL = 'https://www.transifex.com/api/2/project/frc-docs/resources/'
 RESOURCE_BASE_URL = 'https://www.transifex.com/api/2/project/frc-docs/resource/'
 
@@ -18,7 +18,7 @@ headers = {"Content-type": "application/json"}
 details_param = {"details":""}
 
 def get_remote_resources():
-    remote_request = requests.get(RESOURCES_URL, auth=('api', TX_SECRET))
+    remote_request = requests.get(RESOURCES_URL, auth=('api', TX_TOKEN))
 
     if remote_request.status_code != 200:
         print("Error retrieving remote resources", remote_request.status_code)
@@ -58,7 +58,7 @@ def get_unused_resources(remote_resources, local_resources):
         if resource not in local_resources:
             response = requests.get(RESOURCE_BASE_URL + resource + "/",
                     params=details_param,
-                    auth=("api", TX_SECRET))
+                    auth=("api", TX_TOKEN))
     
             if response.status_code != 200:
                 print("Error retrieving information for resource:", resource)
@@ -77,7 +77,7 @@ def lock_resources(unused_resources):
     err = False
     for resource in unused_resources:
         response = requests.put(RESOURCE_BASE_URL + resource + "/",
-                    auth=("api", TX_SECRET),
+                    auth=("api", TX_TOKEN),
                     headers=headers,
                     data=lock_json)
 

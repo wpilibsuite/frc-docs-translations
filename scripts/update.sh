@@ -10,6 +10,9 @@ MAINPROJECT=frc-docs
 # Set working directory to repo root
 cd `dirname $0`/..
 
+# Update submodule
+git submodule update --recursive
+
 # Create POT Files
 sphinx-build -T -b gettext $MAINPROJECT/source locale/pot
 

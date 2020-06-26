@@ -28,6 +28,11 @@ jobs:
           sh scripts/update.sh
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
+      - name: Lock Unused Transifex Resources
+        run: |
+          python scripts/lock-translations.py .tx/config
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - name: Create Commit & Push
         uses: stefanzweifel/git-auto-commit-action@v4
         with:

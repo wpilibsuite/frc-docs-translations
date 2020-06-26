@@ -56,6 +56,18 @@ def get_unused_resources(remote_resources, local_resources):
     unused_resources = []
     for resource in remote_resources:
         if resource not in local_resources:
+            response = requests.get(RESOURCE_BASE_URL + resource + "/",
+                    params=details_param,
+                    auth=("api", TX_SECRET))
+    
+            if response.status_code != 200:
+                print("Error retrieving information for resource:", resource)
+            
+            json_response = response.json()
+            
+            if json_response["accept_translations"] is False:
+                continue
+
             unused_resources.append(resource)
 
     return unused_resources
@@ -63,19 +75,6 @@ def get_unused_resources(remote_resources, local_resources):
 
 def lock_resources(unused_resources):
     for resource in unused_resources:
-        response = requests.get(RESOURCE_BASE_URL + resource + "/",
-                    params=details_param,
-                    auth=("api", TX_SECRET))
-    
-        if response.status_code != 200:
-            print("Error retrieving information for resource:", resource)
-        
-        json_response = response.json()
-        
-        if json_response["accept_translations"] is False:
-            print("Resource is already locked:", resource)
-            continue
-
         response = requests.put(RESOURCE_BASE_URL + resource + "/",
                     auth=("api", TX_SECRET),
                     headers=headers,
@@ -102,6 +101,10 @@ def main():
     local_resources = get_local_resources(tx_config_path)
 
     unused_resources = get_unused_resources(remote_resources, local_resources)
+
+    if len(unused_resources) == 0:
+        print("All resources are locked or in use!")
+        exit(0)
 
     for resource in unused_resources:
         print("Unused resource:", resource)

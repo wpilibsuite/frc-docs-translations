@@ -17,12 +17,10 @@ git submodule update --recursive --remote
 sphinx-build -T -b gettext $MAINPROJECT/source locale/pot
 
 # Update .tx/config
-mv .tx/config .tx/config.old
+rm .tx/config
 sphinx-intl create-txconfig
 echo "lang_map = ${LANG_MAP}" >> .tx/config
 sphinx-intl update-txconfig-resources -p locale/pot -d locale --transifex-project-name $MAINPROJECT
-# TODO: Compare new and old configs and lock or remove deleted files on transifex
-rm .tx/config.old
 
 # Push and pull from Transifex. It is important to push then pull!
 # If you pull then push, the PO files will contain out of date strings.

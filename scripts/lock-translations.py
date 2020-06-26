@@ -109,12 +109,11 @@ def main():
 
     if len(unused_resources) == 0:
         print("All resources are locked or in use!")
-        exit(0)
-
-    for resource in unused_resources:
+    else:
+        for resource in unused_resources:
         print("Unused resource:", resource)
 
-    lock_resources(unused_resources)
+        lock_resources(unused_resources)
 
 
 if __name__ == '__main__':

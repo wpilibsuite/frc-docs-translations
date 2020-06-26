@@ -25,8 +25,6 @@ rm .tx/config.old
 # If you pull then push, the PO files will contain out of date strings.
 if [ "$CI" = true ]
 then
-    echo "Here is where we would push"
-    # Uncomment when we are ready to make transifex changes
-    # tx push --source --no-interactive --skip
+    tx push --source --no-interactive --skip
 fi
 tx pull -l $LANG_TO_PULL --mode onlyreviewed --use-git-timestamps

@@ -3,16 +3,463 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 02:37+0000\n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:4
+msgid "Identifying and Processing the Targets"
+msgstr "Identification et traitement des cibles"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:6
+msgid ""
+"Once an image is captured, the next step is to identify Vision Target(s) in "
+"the image. This document will walk through one approach to identifying the "
+"2016 targets. Note that the images used in this section were taken with the "
+"camera intentionally set to underexpose the images, producing very dark "
+"images with the exception of the lit targets, see the section on Camera "
+"Settings for details."
+msgstr ""
+"Une fois qu'une image est capturée, l'étape suivante consiste à identifier "
+"les cibles de vision dans l'image. Ce document présentera une approche pour "
+"identifier les cibles de la saison 2016. Notez que les images utilisées dans"
+" cette section ont été prises avec la caméra intentionnellement réglée pour "
+"sous-exposer les images, produisant des images très sombres à l'exception "
+"des cibles éclairées, voir la section sur les paramètres de caméra pour plus"
+" de détails."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:9
+msgid "Additional Options"
+msgstr "Options additionelles"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:11
+msgid ""
+"This document walks through the approach used by the example code provided "
+"in LabVIEW (for PC or roboRIO), C++ and Java. In addition to these options "
+"teams should be aware of the following alternatives that allow for vision "
+"processing on the Driver Station PC or an on-board PC:"
+msgstr ""
+"Ce document présente l'approche utilisée dans l'exemple de code fourni dans "
+"LabVIEW (pour PC ou roboRIO), C ++ et Java. En plus de ces options, les "
+"équipes doivent connaître les alternatives suivantes qui permettent le "
+"traitement de la vision sur l'ordinateur Driver Station ou sur un ordinateur"
+" embarqué:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:13
+msgid "`RoboRealm <http://www.roborealm.com/>`_"
+msgstr "`RoboRealm <http://www.roborealm.com/>`"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:14
+msgid ""
+"SmartDashboard Camera Extension (programmed in Java, works with any robot "
+"language)"
+msgstr ""
+"Extension de caméra SmartDashboard (programmée en Java, fonctionne avec "
+"n'importe autre langage de programmation)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:15
+msgid "`GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_"
+msgstr "`GRIP <https://wpiroboticsprojects.github.io/GRIP/>`"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:18
+msgid "Original Image"
+msgstr "Image d'origine"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:20
+msgid ""
+"The image shown below is the starting image for the example described here. "
+"The image was taken using the green ring light available in *FIRST*\\ |reg| "
+"Choice combined with an additional ring light of a different size. "
+"Additional sample images are provided with the vision code examples."
+msgstr ""
+"L'image ci-dessous est l'image de départ pour notre exemple. L'image a été "
+"prise à l'aide de l'anneau lumineux vert disponible dans * FIRST * \\ | reg "
+"| Choice, combiné avec un anneau supplémentaire d'une taille différente. Des"
+" exemples d'images sont fournis avec les exemples de code de vision."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:25
+msgid "What is HSL/HSV?"
+msgstr "Qu'est-ce que HSL / HSV?"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:27
+msgid ""
+"The Hue or tone of the color is commonly seen on the artist’s color wheel "
+"and contains the colors of the rainbow Red, Orange, Yellow, Green, Blue, "
+"Indigo, and Violet. The hue is specified using a radial angle on the wheel, "
+"but in imaging the circle typically contains only 256 units, starting with "
+"red at zero, cycling through the rainbow, and wrapping back to red at the "
+"upper end. Saturation of a color specifies amount of color, or the ratio of "
+"the hue color to a shade of gray. Higher ratio means more colorful, less "
+"gray. Zero saturation has no hue and is completely gray. Luminance or Value "
+"indicates the shade of gray that the hue is blended with. Black is 0 and "
+"white is 255."
+msgstr ""
+"La teinte de la couleur est généralement visible sur la roue chromatique et "
+"contient les couleurs de l'arc-en-ciel, soit le rouge, orange, jaune, vert, "
+"bleu, indigo et violet. La teinte est spécifiée en utilisant un angle radial"
+" sur la roue, mais en imagerie, le cercle ne contient généralement que 256 "
+"unités, en commençant par le rouge à zéro, en passant par l'arc-en-ciel et "
+"en revenant au rouge à l'extrémité supérieure. La saturation d'une couleur "
+"spécifie la quantité de couleur ou le rapport de la couleur de teinte à une "
+"quantité donnée de gris. Un rapport plus élevé signifie plus de couleurs, "
+"moins de gris. La saturation zéro n'a pas de teinte et est complètement "
+"grise. La luminance ou la valeur indique la quantité de gris avec laquelle "
+"la teinte est mélangée. Le noir est 0 et le blanc 255."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:29
+msgid ""
+"The example code uses the HSV color space to specify the color of the "
+"target. The primary reason is that it readily allows for using the "
+"brightness of the targets relative to the rest of the image as a filtering "
+"criteria by using the Value (HSV) or Luminance (HSL) component. Another "
+"reason to use the HSV color system is that the thresholding operation used "
+"in the example runs more efficiently on the roboRIO when done in the HSV "
+"color space."
+msgstr ""
+"L'exemple de code utilise l'espace colorimétrique HSV pour spécifier la "
+"couleur de la cible. La principale raison est qu'elle permet facilement "
+"d'utiliser la luminosité des cibles par rapport au reste de l'image comme "
+"critère de filtrage en utilisant le composant Valeur (HSV) ou Luminance "
+"(HSL). Une autre raison d'utiliser le système de couleurs HSV est que "
+"l'opération de seuillage utilisée dans l'exemple s'exécute plus efficacement"
+" sur le roboRIO lorsqu'elle est effectuée dans l'espace colorimétrique HSV."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:32
+msgid "Masking"
+msgstr "Masquage"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:34
+msgid ""
+"In this initial step, pixel values are compared to constant color or "
+"brightness values to create a binary mask shown below in yellow. This single"
+" step eliminates most of the pixels that are not part of a target’s retro-"
+"reflective tape. Color based masking works well provided the color is "
+"relatively saturated, bright, and consistent. Color inequalities are "
+"generally more accurate when specified using the HSL (Hue, Saturation, and "
+"Luminance) or HSV (Hue, Saturation, and Value) color space than the RGB "
+"(Red, Green, and Blue) space. This is especially true when the color range "
+"is quite large in one or more dimension."
+msgstr ""
+"Dans cette étape initiale, les valeurs des pixels sont comparées aux valeurs"
+" de couleur ou de luminosité constantes pour créer un masque binaire "
+"illustré ci-dessous en jaune. Cette étape unique élimine la plupart des "
+"pixels qui ne font pas partie du ruban rétroréfléchissant d’une cible. Le "
+"masquage basé sur la couleur fonctionne bien à condition que la couleur soit"
+" relativement saturée, lumineuse et cohérente. Les inégalités de couleur "
+"sont généralement plus précises lorsqu'elles sont spécifiées à l'aide de "
+"l'espace colorimétrique HSL (teinte, saturation et luminance) ou HSV "
+"(teinte, saturation et valeur) que l'espace RVB (rouge, vert et bleu). Cela "
+"est particulièrement vrai lorsque la gamme de couleurs est assez large dans "
+"une ou plusieurs dimensions."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:36
+msgid ""
+"Notice that in addition to the target, other bright parts of the image "
+"(overhead light and tower lighting) are also caught by the masking step."
+msgstr ""
+"Notez qu'en plus de la cible, d'autres parties lumineuses de l'image "
+"(lumière aérienne et éclairage de la tour) sont également capturées par "
+"l'étape de masquage."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:41
+msgid "Particle Analysis"
+msgstr "Analyse des particules"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:43
+msgid ""
+"After the masking operation, a particle report operation is used to examine "
+"the area, bounding rectangle, and equivalent rectangle for the particles. "
+"These are used to compute several scored terms to help pick the shapes that "
+"are most rectangular. Each test described below generates a score (0-100) "
+"which is then compared to pre-defined score limits to decide if the particle"
+" is a target or not."
+msgstr ""
+"Après l'opération de masquage, une opération de rapport de particules est "
+"utilisée pour examiner la zone, le rectangle de délimitation et le rectangle"
+" équivalent pour les particules. Ceux-ci sont utilisés pour calculer "
+"plusieurs termes notés pour aider à choisir les formes les plus "
+"rectangulaires. Chaque test décrit ci-dessous génère un score (0-100) qui "
+"est ensuite comparé aux limites de score prédéfinies pour décider si la "
+"particule est une cible ou non."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:46
+msgid "Coverage Area"
+msgstr "Zone de couverture"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:48
+msgid ""
+"The Area score is calculated by comparing the area of the particle compared "
+"to the area of the bounding box drawn around the particle. The area of the "
+"retroreflective strips is 80 square inches. The area of the rectangle that "
+"contains the target is 240 square inches. This means that the ideal ratio "
+"between area and bounding box area is 1/3. Area ratios close to 1/3 will "
+"produce a score near 100, as the ratio diverges from 1/3 the score will "
+"approach 0."
+msgstr ""
+"Un résultat de surface (score) est calculé en comparant l'aire de la "
+"particule par rapport à l'aire de la boîte englobante dessinée autour de la "
+"particule. La zone des bandes rétroréfléchissantes est de 80 pouces carrés "
+"(520 cm2). La zone du rectangle qui contient la cible est de 240 pouces "
+"carrés (1550 cm2). Cela signifie que le rapport idéal entre l'aire et l'aire"
+" du cadre de délimitation est de 1/3. Des ratios de surface proches de 1/3 "
+"produiront un score proche de 100, et plus le ratio s'éloigne de 1/3, le "
+"score s'approchera de 0."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:51
+msgid "Aspect Ratio"
+msgstr "Rapport d'aspect"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:53
+msgid ""
+"The aspect ratio score is based on (Particle Width / Particle Height). The "
+"width and height of the particle are determined using something called the "
+"\"equivalent rectangle\". The equivalent rectangle is the rectangle with "
+"side lengths :math:`x` and :math:`y` where :math:`2x+2y` equals the particle"
+" perimeter and :math:`x \\cdot y` equals the particle area. The equivalent "
+"rectangle is used for the aspect ratio calculation as it is less affected by"
+" skewing of the rectangle than using the bounding box. When using the "
+"bounding box rectangle for aspect ratio, as the rectangle is skewed the "
+"height increases and the width decreases."
+msgstr ""
+"Le score du ratio d'aspect est basé sur le calcul (Largeur de particule / "
+"Hauteur de particule). La largeur et la hauteur de la particule sont "
+"déterminées en utilisant ce que l'on appelle le \"rectangle équivalent\". Le"
+" rectangle équivalent est le rectangle avec des longueurs latérales: math: "
+"`x` et: math:` y` où: math: `2x + 2y` est égal au périmètre de particules "
+"et: math:` x \\ cdot y` est égal à la zone de particules. Le rectangle "
+"équivalent est utilisé pour le calcul du rapport hauteur / largeur car il "
+"est moins affecté par l'inclinaison du rectangle que par l'utilisation du "
+"cadre de sélection. Lorsque vous utilisez le rectangle du cadre de sélection"
+" pour les proportions, à mesure que le rectangle est incliné, la hauteur "
+"augmente et la largeur diminue."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:55
+msgid ""
+"The target is 20\" wide by 12\" tall, for a ratio of 1.6. The detected "
+"aspect ratio is compared to this ideal ratio. The aspect ratio score is "
+"normalized to return 100 when the ratio matches the target ratio and drops "
+"linearly as the ratio varies below or above."
+msgstr ""
+"L'objectif est de 20 pouces (50 cm) de large par 12 pouces (30 cm) de haut, "
+"pour un ratio de 1,6. Le rapport hauteur / largeur détecté est comparé à ce "
+"rapport idéal. Le score du rapport hauteur / largeur est normalisé pour "
+"renvoyer 100 lorsque le rapport correspond au rapport cible et diminue "
+"linéairement lorsque le rapport varie en dessous ou au-dessus."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:58
+msgid "Moment"
+msgstr "Moment d'inertie"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:60
+msgid ""
+"The moment measurement calculates the particles moment of inertia about it's"
+" center of mass. This measurement provides a representation of the pixel "
+"distribution in the particle. The ideal score for this test is ~0.28. See: "
+"`Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
+msgstr ""
+"Cette mesure calcule le moment d'inertie des particules autour de son centre"
+" de masse. Elle fournit une représentation de la distribution des pixels "
+"dans la particule. Le score idéal pour ce test est de ~ 0,28. Voir: `Moment "
+"d'inertie <https://en.wikipedia.org/wiki/Moment_of_inertia>`"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:63
+msgid "X/Y Profiles"
+msgstr "Profils X/Y"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:67
+msgid ""
+"The edge score describes whether the particle matches the appropriate "
+"profile in both the X and Y directions. As shown, it is calculated using the"
+" row and column averages across the bounding box extracted from the original"
+" image and comparing that to a profile mask. The score ranges from 0 to 100 "
+"based on the number of values within the row or column averages that are "
+"between the upper and lower limit values."
+msgstr ""
+"Ce score décrit si la particule correspond au profil approprié dans les "
+"directions X et Y. Il est calculé en utilisant les moyennes des lignes et "
+"des colonnes à travers le cadre de délimitation extraites de l'image "
+"d'origine et en les comparant à un masque de profil. Le score varie de 0 à "
+"100 en fonction du nombre de valeurs dans les moyennes de ligne ou de "
+"colonne qui se situent entre les valeurs limites supérieure et inférieure."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:70
+msgid "Measurements"
+msgstr "Mesures"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:72
+msgid ""
+"If a particle scores well enough to be considered a target, it makes sense "
+"to calculate some real-world measurements such as position and distance. The"
+" example code includes these basic measurements, so let’s look at the math "
+"involved to better understand it."
+msgstr ""
+"Si une particule a un score suffisamment élévé pour être considérée comme "
+"une cible, il est logique de calculer certaines mesures du monde réel telles"
+" que la position et la distance. L'exemple de code comprend ces mesures de "
+"base, alors examinons les mathématiques impliquées pour mieux les "
+"comprendre."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:75
+msgid "Position"
+msgstr "Position"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:77
+msgid ""
+"The target position is well described by both the particle and the bounding "
+"box, but all coordinates are in pixels with 0,0 being at the top left of the"
+" screen and the right and bottom edges determined by the camera resolution. "
+"This is a useful system for pixel math, but not nearly as useful for driving"
+" a robot; so let’s change it to something that may be more useful."
+msgstr ""
+"La position cible est identifiée à la fois par la particule et le cadre de "
+"sélection, mais toutes les coordonnées sont en pixels.  0,0 étant en haut et"
+" à gauche de l'écran et les bords droit et inférieur déterminés par la "
+"résolution de la caméra. Il s'agit d'un système utile pour les mathématiques"
+" des pixels, mais pas vraiment utile pour conduire un robot; alors "
+"changeons-le en quelque chose qui pourrait être plus utile."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:79
+msgid ""
+"To convert a point from the pixel system to the aiming system, we can use "
+"the formula shown below."
+msgstr ""
+"Pour convertir un point du système de pixels à un environnement plus "
+"compatible pour un robot, nous pouvons utiliser la formule ci-dessous."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:81
+msgid ""
+"The resulting coordinates are close to what you may want, but the Y axis is "
+"inverted. This could be corrected by multiplying the point by [1,-1] (Note: "
+"this is not done in the sample code). This coordinate system is useful "
+"because it has a centered origin and the scale is similar to joystick "
+"outputs and RobotDrive inputs."
+msgstr ""
+"Les coordonnées résultantes sont proches de ce que vous pouvez souhaiter, "
+"mais l'axe Y est inversé. Cela pourrait être corrigé en multipliant le point"
+" par [1, -1] (Remarque: cela n'est pas été fait dans l'exemple de code). Ce "
+"système de coordonnées est utile car il a une origine centrée et l'échelle "
+"est similaire aux sorties du joystick et aux entrées RobotDrive."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:83
+msgid ""
+"A_{x,y} = \\left(P_{x,y} - \\frac{\\textit{resolution}_{x,y}}{2}\\right) / "
+"\\frac{\\textit{resolution}_{x,y}}{2}"
+msgstr ""
+"A_{x,y} = \\left(P_{x,y} - \\frac{\\textit{resolution}_{x,y}}{2}\\right) / "
+"\\frac{\\textit{resolution}_{x,y}}{2}"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:88
+msgid "Field of View"
+msgstr "Champ de vision"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:90
+msgid ""
+"You can use known constants and the position of the target on the coordinate"
+" plane to determine your distance, yaw, and pitch from the target. However, "
+"in order to calculate these, you must determine your FOV (field of view). In"
+" order to empirically determine vertical field of view, set your camera a "
+"set distance away from an flat surface, and measure the distance between the"
+" topmost and bottommost row of pixels."
+msgstr ""
+"Vous pouvez utiliser des constantes connues et la position de la cible sur "
+"le plan de coordonnées pour déterminer votre distance, lacet (yaw) et "
+"tangage (pitch) par rapport à la cible. Cependant, pour les calculer, vous "
+"devez déterminer votre FOV (champ de vision). Afin de déterminer "
+"empiriquement le champ de vision vertical, réglez votre caméra à une "
+"distance définie d'une surface plane et mesurez la distance entre la rangée "
+"de pixels la plus haute et la plus basse."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:92
+msgid ""
+"\\frac{1}{2}FOV_{vertical}=tan\\left(\\frac{\\frac{1}{2}distance_{y}}{distance_{z}}\\right)"
+msgstr ""
+"\\frac{1}{2}FOV_{vertical}=tan\\left(\\frac{\\frac{1}{2}distance_{y}}{distance_{z}}\\right)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:94
+msgid ""
+"You can find the horizontal FOV using the same method, but using the "
+"distance between the first and last column of pixels."
+msgstr ""
+"Vous pouvez trouver le champ de vision horizontal en utilisant la même "
+"méthode, mais en utilisant la distance entre la première et la dernière "
+"colonne de pixels."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:97
+msgid "Pitch and Yaw"
+msgstr "Tangage (Pitch) et Lacet (Yaw)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:99
+msgid ""
+"Finding the pitch and yaw of the target relative to your robot is simple "
+"once you know your FOVs and the location of your target in the aiming "
+"coordinate system."
+msgstr ""
+"Trouver le tangage et le lacet de la cible par rapport à votre robot est "
+"simple une fois que vous connaissez vos FOV et l'emplacement de votre cible "
+"dans le système de coordonnées de visée."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:101
+msgid "pitch=\\frac{A_y}{2}FOV_{vertical}"
+msgstr "pitch=\\frac{A_y}{2}FOV_{vertical}"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:104
+msgid "yaw=\\frac{A_x}{2}FOV_{horizontal}"
+msgstr "yaw=\\frac{A_x}{2}FOV_{horizontal}"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:108
+msgid "Distance"
+msgstr "Distance"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:110
+msgid ""
+"If your target is at a significantly different height than your robot, you "
+"can use known constants, such as the physical height of the target and your "
+"camera, as well as the angle your camera is mounted, to calculate the "
+"distance between your camera and the target."
+msgstr ""
+"Si votre cible est à une hauteur sensiblement différente de celle de votre "
+"robot, vous pouvez utiliser des constantes connues, telles que la hauteur "
+"physique de la cible et de votre caméra, ainsi que l'angle de montage de "
+"votre caméra, pour calculer la distance entre votre caméra et la cible."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:112
+msgid ""
+"distance=\\frac{height_{target}-height_{camera}}{tan(angle_{camera}+pitch)}"
+msgstr ""
+"distance=\\frac{height_{target}-height_{camera}}{tan(angle_{camera}+pitch)}"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:115
+msgid ""
+"Another option is to create a lookup table for area to distance, or to "
+"estimate the inverse variation constant of area and distance. However, this "
+"method is less accurate."
+msgstr ""
+"Une autre option consiste à créer une table de correspondance de la zone à "
+"la distance ou à estimer la constante de variation inverse de la zone et de "
+"la distance. Cependant, cette méthode est moins précise."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:118
+msgid ""
+"For best results for the above methods of estimating angle and distance, you"
+" can calibrate your camera using OpenCV to get rid of any distortions that "
+"may be affecting accuracy by reprojecting the pixels of the target using the"
+" calibration matrix."
+msgstr ""
+"Pour de meilleurs résultats pour les méthodes d'estimation d'angle et de "
+"distance ci-dessus, vous pouvez étalonner votre caméra à l'aide d'OpenCV "
+"pour éliminer les distorsions susceptibles d'affecter la précision en "
+"reprojetant les pixels de la cible à l'aide de la matrice d'étalonnage."

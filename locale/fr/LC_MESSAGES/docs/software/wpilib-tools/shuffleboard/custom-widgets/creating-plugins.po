@@ -5,18 +5,253 @@
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 02:37+0000\n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:2
+msgid "Creating a Plugin"
+msgstr "Création d'un plugin"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:5
+msgid "Overview"
+msgstr "Aperçu"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:6
+msgid ""
+"Plugins provide the ability to create custom widgets, layouts, data "
+"sources/types, and custom themes. Shuffleboard provides the following built-"
+"in plugins:"
+msgstr ""
+"Les plugins permettent de créer des widgets, des mises en page, des sources "
+"/types de données et des thèmes personnalisés. Le Shuffleboard fournit les "
+"plugins intégrés suivants:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:8
+msgid "NetworkTables Plugin: To connect to data published over NetworkTables"
+msgstr ""
+"Plugin NetworkTables: pour se connecter aux données publiées sur "
+"NetworkTables"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:9
+msgid "Base Plugin: To display custom FRC data types in custom widgets"
+msgstr ""
+"Plugin de base: pour afficher les types de données FRC personnalisés dans "
+"des widgets personnalisés"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:10
+msgid "CameraServer Plugin: To view streams from the CameraServer"
+msgstr "Plugin CameraServer: pour afficher les flux du CameraServer"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:12
+msgid ""
+"An example custom Shuffleboard plugin which creates a custom data type and a"
+" simple widget for displaying it can be found `here "
+"<https://github.com/wpilibsuite/shuffleboard/tree/master/example-plugins"
+"/custom-data-and-widget>`__."
+msgstr ""
+"Un exemple de plugin Shuffleboard personnalisé qui crée un type de données "
+"personnalisé et un widget simple pour l'afficher peut être trouvé  `ici "
+"<https://github.com/wpilibsuite/shuffleboard/tree/master/example-plugins"
+"/custom-data-and-widget>`__."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:15
+msgid "Create a Custom Plugin"
+msgstr "Créer un plugin personnalisé"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:16
+msgid ""
+"In order to define a plugin, the plugin class must be a subclass of "
+"`edu.wpi.first.shuffleboard.api.Plugin "
+"<https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_"
+" or one of its subclasses. An example of a plugin class would be as "
+"following."
+msgstr ""
+"Afin de définir un plugin, la classe de plugin doit être une sous-classe de "
+"`edu.wpi.first.shuffleboard.api.Plugin "
+"<https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`_"
+"  ou l'une de ses sous-classes. Un exemple de classe  plugin serait le "
+"suivant."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:30
+msgid ""
+"Additional explanations on how these attributes are used, including version "
+"numbers can be found `here <https://semver.org/>`_."
+msgstr ""
+"Des explications supplémentaires sur la façon dont ces attributs sont "
+"utilisés, y compris les numéros de version, peuvent être trouvées `ici "
+"<https://semver.org/>`_."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:32
+msgid ""
+"Note the ``@Description`` annotation is needed to tell the plugin loader the"
+" properties of the custom plugin class. Plugin classes are permitted to have"
+" a default constructor but it cannot take any arguments."
+msgstr ""
+"Notez que l'annotation ``@Description``  est nécessaire pour indiquer au "
+"chargeur de plug-in les propriétés de la classe de plug-in personnalisée. "
+"Les classes de plugins sont autorisées à avoir un constructeur par défaut "
+"mais il ne peut accepter aucun argument."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:36
+msgid "Building plugin"
+msgstr "Construction d'un plugin"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:37
+msgid ""
+"Plugins require the usage of the `Shuffleboard API Library "
+"<https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_."
+" These dependencies can be resolved in the ``build.gradle`` file or using "
+"maven. The dependencies would be as follows:"
+msgstr ""
+"Les plug-ins nécessitent l'utilisation de la librairie `Shuffleboard API "
+"Library "
+"<https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/shuffleboard/api/>`_."
+"  Ces dépendances peuvent être résolues dans le fichier ``build.gradle`` ou "
+"en utilisant Apache Maven-un outil d’automatisation de construction utilisé "
+"principalement pour les projets Java.  Les dépendances seraient les "
+"suivantes:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:39
+msgid "For Gradle:"
+msgstr "Pour Gradle:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:54
+msgid ""
+"Plugins are allowed to have dependencies on other plugins and libraries, "
+"however, they must be included correctly in the maven or gradle build file. "
+"When a plugin depends on other plugins, it is good practice to define those "
+"dependencies so the plugin does not load when the dependencies do not load "
+"as well. This can be done using the ``@Requires`` annotation as shown below:"
+msgstr ""
+"Les plugins sont autorisés à avoir des dépendances avec d'autres plugins et "
+"librairies, cependant, ils doivent être inclus correctement dans le fichier "
+"de construction Maven ou Gradle. Lorsqu'un plugin dépend d'autres plugins, "
+"il est recommandé de définir ces dépendances afin que le plugin ne se charge"
+" pas lorsque les dépendances ne se chargent pas également. Cela peut être "
+"fait en utilisant l'annotation ``@Requires`` comme indiqué ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:65
+msgid ""
+"The ``minVersion`` specifies the minimum allowable version of the plugin "
+"that can be loaded. For example, if the ``minVersion`` is 1.4.5, and the "
+"plugin with the version 1.4.7 is loaded, it will be allowed to do so. "
+"However, if the plugin with the version 1.2.4 is loaded, it will not be "
+"allowed to since it is less than the ``minVersion``."
+msgstr ""
+"La ``minVersion`` spécifie la version minimale autorisée du plugin qui peut "
+"être chargée. Par exemple, si la ``minVersion`` est 1.4.5 et que le plugin "
+"avec la version 1.4.7 est chargé, il sera autorisé à le faire. Cependant, si"
+" le plugin avec la version 1.2.4 est chargé, il ne sera pas autorisé à le "
+"faire car il est inférieur à la ``minVersion``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:68
+msgid "Deploying Plugin To Shuffleboard"
+msgstr "Déploiement du plugin au Shuffleboard"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:69
+msgid ""
+"In order to load a plugin in Shuffleboard, you will need to generate a jar "
+"file of the plugin and put it in the ``~/Shuffleboard/plugins`` folder. This"
+" can be done automatically from gradle as noted:"
+msgstr ""
+"Afin de charger un plugin dans le Shuffleboard, vous devrez générer un "
+"fichier .jar du plugin et le placer dans le dossier "
+"``~/Shuffleboard/plugins``. Cela peut être fait automatiquement à partir de "
+"Gradle, comme indiqué:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:80
+msgid ""
+"The path to your Shuffleboard plugin folder will most likely be "
+"``~/Shuffleboard/plugins``."
+msgstr ""
+"Le chemin vers votre dossier de plugins Shuffleboard sera probablement "
+"``~/Shuffleboard/plugins``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:82
+msgid ""
+"The ``deployPlugin`` task takes four parameters, the ``type: Copy`` "
+"parameter makes the task implement the `CopySpec "
+"<https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_"
+" interface specifying what to copy. The group and description parameters to "
+"specify what the Group ID of the plugin is and a short descriptive "
+"description to what the Plugin does."
+msgstr ""
+"La tâche `` deployPlugin`` prend quatre paramètres, le paramètre `` type: "
+"Copy`` fait que la tâche implémente l'interface `CopySpec "
+"<https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_"
+" spécifiant quoi copier. Les paramètres de groupe et de description "
+"spécifient l'ID de groupe du plugin et une brève description de ce que fait "
+"le plugin."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:85
+msgid ""
+"In the body, the ``from`` field specifies from where the file is to be "
+"copied from, followed by the ``into`` field specifying the destination to "
+"where the file needs to be copied to. Finally, the ``include`` field ensures"
+" all files with the ``.jar`` extension is also copied."
+msgstr ""
+"Dans le corps, le champ ``from``  spécifie d'où le fichier doit être copié, "
+"suivi du champ ``into`` spécifiant la destination vers laquelle le fichier "
+"doit être copié. Enfin, le champ ``include``  garantit que tous les fichiers"
+" avec l'extension `` .jar`` sont également copiés."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:88
+msgid ""
+"After deploying, Shuffleboard will cache the path of the plugin so it can be"
+" automatically loaded the next time Shuffleboard loads. It may be necessary "
+"to click on ``Clear Cache`` under the plugins menu to remove a plugin or "
+"reload a plugin into Shuffleboard."
+msgstr ""
+"Après le déploiement, le Shuffleboard mettra en cache le chemin du plugin "
+"afin qu'il puisse être automatiquement chargé lors du prochain chargement du"
+" Shuffleboard. Il peut être nécessaire de cliquer sur ``Clear Cache`` dans "
+"le menu des plugins pour supprimer un plugin ou recharger un plugin dans le "
+"Shuffleboard."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:90
+msgid ""
+"By running ``gradle deployPlugin`` from the command line, the jar file will "
+"automatically placed into the Shuffleboard plugin folder."
+msgstr ""
+"En exécutant ``gradle deployPlugin`` à partir de la ligne de commande, le "
+"fichier .jar sera automatiquement placé dans le dossier du plugin "
+"Shuffleboard."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:93
+msgid "Manually Adding Plugin"
+msgstr "Ajout manuel d'un Plugin"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:94
+msgid ""
+"The other way to add a plugin to Shuffleboard is to compile it to a jar file"
+" and add it from Shuffleboard. First, compile your plugin into a .jar file "
+"using Maven or Gradle. Then, open Shuffleboard, click on the file tab in the"
+" top left, and choose Plugins from the drop down menu."
+msgstr ""
+"L'autre façon d'ajouter un plugin au Shuffleboard est de le compiler dans un"
+" fichier .jar et de l'ajouter à partir de Shuffleboard. Tout d'abord, "
+"compilez votre plugin dans un fichier .jar à l'aide de Maven ou Gradle. "
+"Ensuite, ouvrez le Shuffleboard, cliquez sur l'onglet fichier en haut à "
+"gauche et choisissez Plugins dans le menu déroulant."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-plugins.rst:99
+msgid ""
+"From the plugins window, choose the \"Load plugin\" button in the bottom "
+"right, and select your jar file."
+msgstr ""
+"Dans la fenêtre des plugins, choisissez le bouton \"Load plugin\" en bas à "
+"droite et sélectionnez votre fichier .jar."

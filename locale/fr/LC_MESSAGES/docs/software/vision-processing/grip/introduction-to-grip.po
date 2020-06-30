@@ -20,3 +20,372 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:2
+msgid "Introduction to GRIP"
+msgstr "Introduction à GRIP"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:3
+msgid ""
+"GRIP is a tool for developing computer vision algorithms interactively "
+"rather than through trial and error coding. After developing your algorithm "
+"you may run GRIP in headless mode on your roboRIO, on a Driver Station "
+"Laptop, or on a coprocessor connected to your robot network. With Grip you "
+"choose vision operations to create a graphical pipeline that represents the "
+"sequence of operations that are performed to complete the vision algorithm."
+msgstr ""
+"GRIP est un outil pour développer des algorithmes de vision par ordinateur "
+"de manière interactive plutôt que par le biais de codage d'essai et "
+"d'erreur. Après avoir développé votre algorithme, vous pouvez exécuter GRIP "
+"en mode réduit (headless) sur votre roboRIO, sur un ordinateur portable "
+"Driver Station ou sur un coprocesseur connecté sur le port réseau de votre "
+"robot. Avec Grip, vous choisissez les opérations de vision pour créer un "
+"pipeline graphique qui représente la séquence d'opérations qui sont "
+"effectuées pour exécuter l'algorithme de vision."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:8
+msgid ""
+"GRIP is based on OpenCV, one of the most popular computer vision software "
+"libraries used for research, robotics, and vision algorithm implementations."
+" The operations that are available in GRIP are almost a 1 to 1 match with "
+"the operations available if you were hand coding the same algorithm with "
+"some text-based programming language."
+msgstr ""
+"GRIP est basé sur OpenCV, l'une des bibliothèques de logiciels de vision par"
+" ordinateur les plus populaires utilisées pour la recherche, la robotique et"
+" les implémentations d'algorithmes de vision. Les opérations disponibles "
+"dans GRIP correspondent presque ligne pour ligne avec les opérations "
+"disponibles si vous codiez manuellement le même algorithme avec un langage "
+"de programmation textuel."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:13
+msgid "The GRIP user interface"
+msgstr "L'interface utilisateur GRIP"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:16
+msgid "The GRIP user interface consists of 4 parts:"
+msgstr "L'interface utilisateur GRIP se compose de 4 parties:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:18
+msgid ""
+"**Image Sources** are the ways of getting images into the GRIP pipeline. You"
+" can provide images through attached cameras or files. Sources are almost "
+"always the beginning of the image processing algorithm."
+msgstr ""
+"** Les sources d'images ** sont les moyens d'obtenir des images dans le "
+"pipeline GRIP. Vous pouvez fournir des images via des caméras ou des "
+"fichiers joints. Les sources sont presque toujours le début de l'algorithme "
+"de traitement d'image."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:20
+msgid ""
+"**Operation Palette** contains the image processing steps from the OpenCV "
+"library that you can chain together in the pipeline to form your algorithm. "
+"Clicking on an operation in the palette adds it to the end of the pipeline. "
+"You can then use the left and right arrows to move the operation within the "
+"pipeline."
+msgstr ""
+"** Operation Palette ** contient les étapes de traitement d'image de la "
+"librairie OpenCV que vous pouvez enchaîner dans le pipeline pour former "
+"votre algorithme. Cliquer sur une opération dans la palette l'ajoute à la "
+"fin du pipeline. Vous pouvez ensuite utiliser les flèches gauche et droite "
+"pour déplacer l'opération à l'intérieur du pipeline."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:23
+msgid ""
+"**Pipeline** is the sequence of steps that make up the algorithm. Each step "
+"(operation) in the pipeline is connected to a previous step from the output "
+"of one step to an input to the next step. The data flows from generally from"
+" left to right through the connections that you create."
+msgstr ""
+"** Pipeline ** est la séquence d'étapes qui composent l'algorithme. Chaque "
+"étape (opération) dans le pipeline est connectée à une étape précédente de "
+"la sortie d'une étape à une entrée à l'étape suivante. Les données circulent"
+" généralement de gauche à droite via les connexions que vous créez."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:26
+msgid ""
+"**Image Preview** are shows previews of the result of each step that has "
+"it's preview button pressed. This makes it easy to debug algorithms by being"
+" able to preview the outputs of each intermediate step."
+msgstr ""
+"** Image Preview ** sont des aperçus du résultat de chaque étape sur "
+"laquelle le bouton d'aperçu (Preview) est selectionné. Cela facilite le "
+"débogage des algorithmes en pouvant prévisualiser les sorties de chaque "
+"étape intermédiaire."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:30
+msgid "Finding the yellow square"
+msgstr "Une application: Trouver le carré jaune"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:33
+msgid ""
+"In this application we will try to find the yellow square in the image and "
+"display it's position. The setup is pretty simple, just a USB web camera "
+"connected to the computer looking down at some colorful objects. The yellow "
+"plastic square is the thing that we're interested in locating in the image."
+msgstr ""
+"Dans cette application, nous essaierons de trouver le carré jaune dans "
+"l'image et d'afficher sa position. La configuration est assez simple, juste "
+"une caméra Web USB connectée à l'ordinateur qui regarde des objets colorés. "
+"Le carré en plastique jaune est la chose que nous souhaitons localiser dans "
+"l'image."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:38
+msgid "Enable the image source"
+msgstr "Activer la source d'image"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:41
+msgid ""
+"The first step is to acquire an image. To use the source, click on the \"Add"
+" Webcam\" button and select the camera number. In this case the Logitech USB"
+" camera that appeared as Webcam 0 and the computer monitor camera was Webcam"
+" 1. The web camera is selected in this case to grab the image behind the "
+"computer as shown in the setup. Then select the image preview button and the"
+" real-time display of the camera stream will be shown in the preview area."
+msgstr ""
+"La première étape consiste à acquérir une image. Pour utiliser la source, "
+"cliquez sur le bouton \"Add Webcam\" et sélectionnez le numéro de la caméra."
+" Dans ce cas, la caméra USB Logitech qui est apparue sous le nom de Webcam 0"
+" et la caméra du moniteur de l'ordinateur était la Webcam 1. La caméra Web "
+"est sélectionnée dans ce cas pour saisir l'image derrière l'ordinateur comme"
+" indiqué dans la configuration. Sélectionnez ensuite le bouton de "
+"prévisualisation de l'image et l'affichage en temps réel du flux de la "
+"caméra sera affiché dans la zone de prévisualisation."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:47
+msgid "Resize the image"
+msgstr "Redimensionner l'image"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:50
+msgid ""
+"In this case the camera resolution is too high for our purposes, and in fact"
+" the entire image cannot even be viewed in the preview window. The "
+"\"Resize\" operation is clicked from the Operation Palette to add it to the "
+"end of the pipeline. To help locate the Resize operation, type \"Resize\" "
+"into the search box at the top of the palette. The steps are:"
+msgstr ""
+"Dans ce cas, la résolution de la caméra est trop élevée pour nos besoins, et"
+" en fait, l'image entière ne peut même pas être affichée dans la fenêtre "
+"d'aperçu. L'opération \"Resize\" est cliquée dans la palette d'opérations "
+"pour l'ajouter à la fin du pipeline. Pour aider à localiser l'opération de "
+"redimensionnement, tapez \"Resize\" dans la zone de recherche en haut de la "
+"palette. Les étapes sont les suivantes:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:55
+msgid "Type \"Resize\" into the search box on the palette"
+msgstr "Tapez \"Resize\" dans la boîte de recherche sur la palette"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:56
+msgid ""
+"Click the Resize operation from the palette. It will appear in the pipeline."
+msgstr ""
+"Cliquez sur l'opération de redimensionnement dans la palette. Elle "
+"apparaîtra dans le pipeline."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:57
+msgid ""
+"Enter the x and y resize scale factor into the resize operation in the "
+"pipeline. In this case 0.25 was chosen for both."
+msgstr ""
+"Entrez le facteur d'échelle (redimensionnement) x et y. Dans ce cas, 0,25 a "
+"été choisi pour les deux."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:58
+msgid ""
+"Drag from the Webcam image output mat socket to the Resize image source mat "
+"socket. A connection will be shown indicating that the camera output is "
+"being sent to the resize input."
+msgstr ""
+"Tracer une ligne en provenance de la sortie de l'image webcam vers l'entrée "
+"de la fonction \"Resize\".  Une connexion s'affiche pour indiquer que la "
+"sortie de la caméra est envoyée à l'entrée de redimensionnement."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:60
+msgid ""
+"Click on the destination preview button on the \"Resize\" operation in the "
+"pipeline. The smaller image will be displayed alongside the larger original "
+"image. You might need to scroll horizontally to see both as shown."
+msgstr ""
+"Cliquez sur le bouton \"Preview\" sur l'opération \"Resize\" . L'image plus "
+"petite sera affichée à côté de l'image originale plus grande. Vous devrez "
+"peut-être faire défiler horizontalement pour voir les deux comme indiqué."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:62
+msgid ""
+"Lastly, click the Webcam source preview button since there is no reason to "
+"look at both the large image and the smaller image at the same time."
+msgstr ""
+"Enfin, cliquez sur le bouton \"Preview\" la source de la webcam, pour fermer"
+" celle-ci,  car il n'y a aucune raison de regarder à la fois la grande image"
+" et la petite image en même temps."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:66
+msgid "Find only the yellow parts of the image"
+msgstr "Rechecher uniquement  les parties jaunes de l'image"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:69
+msgid ""
+"The next step is to remove everything from the image that doesn't match the "
+"yellow color of the piece of plastic that is the object being detected. To "
+"do that a HSV Threshold operation is chosen to set upper and lower limits of"
+" HSV values to indicate which pixels should be included in the resultant "
+"binary image. Notice that the target area is white while everything that "
+"wasn't within the threshold values are shown in black. Again, as before:"
+msgstr ""
+"L'étape suivante consiste à supprimer tout pixel de l'image qui ne "
+"correspond pas à la teinte de jaune du morceau de plastique choisi. Pour ce "
+"faire, une opération de seuil HSV est choisie pour définir les limites "
+"supérieure et inférieure des valeurs HSV pour indiquer quels pixels doivent "
+"être inclus dans l'image binaire résultante. Notez que la zone cible est "
+"blanche tandis que tout ce qui n'était pas dans les valeurs de seuil est "
+"affiché en noir.  Comme précédemment:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:74
+msgid "Type HSV into the search box to find the HSV Threshold operation."
+msgstr ""
+"Tapez HSV dans la zone de recherche pour trouver l'opération HSV Threshold."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:75
+msgid ""
+"Click on the operation in the palette and it will appear at the end of the "
+"pipeline."
+msgstr ""
+"Cliquez sur l'opération dans la palette et elle apparaîtra à la fin du "
+"pipeline."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:76
+msgid ""
+"Connect the dst (output) socket on the resize operation to the input of the "
+"HSV Threshold."
+msgstr ""
+"Connectez la prise dst (sortie) de l'opération de redimensionnement à "
+"l'entrée de HSV Threshold."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:77
+msgid ""
+"Enable the preview of the HSV Threshold operation so the result of the "
+"operation is displayed in the preview window."
+msgstr ""
+"Activez Preview sur HSV Threshold pour que le résultat de l'opération "
+"s'affiche dans la fenêtre d'aperçu."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:78
+msgid ""
+"Adjust the Hue, Saturation, and Value parameters only the target object is "
+"shown in the preview window."
+msgstr ""
+"Ajustez les paramètres Teinte, Saturation et Valeur (Hue, Saturation, "
+"Value), pour que seulement l’objet cible soit affiché dans la fenêtre "
+"d’aperçu."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:81
+msgid "Get rid of the noise and extraneous hits"
+msgstr "Limiter l'effet des éléments extérieurs"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:84
+msgid ""
+"This looks pretty good so far, but sometimes there is noise from other "
+"things that couldn't quite be filtered out. To illustrate one possible "
+"technique to reduce those occasional pixels that were detected, an Erosion "
+"operation is chosen. Erosion will remove small groups of pixels that are not"
+" part of the area of interest."
+msgstr ""
+"Cela semble bien jusqu'à présent, mais parfois il y a du bruit provenant "
+"d'autres objets qui ne peuvent pas être complètement filtrées.  Une "
+"technique pour réduire la détection de ces pixels occasionnels, qui "
+"s'avèrent être du bruit, consiste à effectuer une opération d'érosion.  "
+"L'érosion supprimera les petits groupuscules de pixels qui ne font pas "
+"partie de la zone d'intérêt."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:89
+msgid "Mask just the yellow area from the original image"
+msgstr "Masquer uniquement la zone jaune de l'image d'origine"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:92
+msgid ""
+"Here a new image is generated by taking the original image and masking (and "
+"operation) it with the the results of the erosion. This leaves just the "
+"yellow card as seen in the original image with nothing else shown. And it "
+"makes it easy to visualize exactly what was being found through the series "
+"of filters."
+msgstr ""
+"Ici, une nouvelle image est générée en prenant l'image d'origine et en la "
+"masquant avec les résultats de l'érosion. Cela ne laisse que le carton jaune"
+" comme on le voit dans l'image d'origine avec rien d'autre. Ceci permet de "
+"visualiser facilement ce qui devait être trouvé, par l'entremise de la série"
+" de filtres dans notre pipeline."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:97
+msgid "Find the yellow area (blob)"
+msgstr "Trouver la zone jaune (blob)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:100
+msgid ""
+"The last step is actually detecting the yellow card using a Blob Detector. "
+"This operation looks for a grouping of pixels that have some minimum area. "
+"In this case, the only non-black pixels are from the yellow card after the "
+"filtering is done. You can see that a circle is drawn around the detected "
+"portion of the image. In the release version of GRIP (watch for more updates"
+" between now and kickoff) you will be able to send parameters about the "
+"detected blob to your robot program using Network Tables."
+msgstr ""
+"La dernière étape consiste en fait à détecter le carton jaune à l'aide d'une"
+" fonction \"Blob Detector\". Cette opération recherche un regroupement de "
+"pixels ayant une zone d'une certaine aire. Dans ce cas, ce sont les seuls "
+"pixels non noirs en provenance de la carte jaune après le filtrage. Vous "
+"pouvez voir qu'un cercle est tracé autour de la partie détectée de l'image. "
+"Dans la version finale de GRIP (surveillez les mises à jour régulières, une "
+"fois le défi lancé), vous serez en mesure d'envoyer des paramètres "
+"concernant le blob détecté à partir de tables de réseau (Network Tables)."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:106
+msgid "Status of GRIP"
+msgstr "Statut du GRIP"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:107
+msgid ""
+"As you can see from this example, it is very easy and fast to be able to do "
+"simple object recognition using GRIP. While this is a very simple example, "
+"it illustrates the basic principles of using GRIP and feature extraction in "
+"general. Over the coming weeks the project team will be posting updates to "
+"GRIP as more features are added. Currently it supports cameras (Axis "
+"ethernet camera and web cameras) and image inputs. There is no provision for"
+" output yet although Network Tables and ROS (Robot Operating System) are "
+"planned."
+msgstr ""
+"Comme vous pouvez le voir sur cet exemple, il est très facile et rapide de "
+"pouvoir effectuer une reconnaissance d'objet simple à l'aide de GRIP. Bien "
+"qu'il s'agisse d'un exemple très simple, il illustre les principes de base "
+"de l'utilisation de GRIP et de l'extraction de fonctionnalités en général. "
+"Au cours des prochaines semaines, l'équipe du projet publiera des mises à "
+"jour de GRIP à mesure que de nouvelles fonctionnalités seront ajoutées. "
+"Actuellement, il prend en charge les caméras (caméra Ethernet Axis et "
+"caméras Web) et les entrées d'image. Il n'y a pas encore de disposition pour"
+" la sortie bien que des tables réseau et ROS (Robot Operating System) soient"
+" prévus."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:113
+msgid ""
+"You can either download a pre-built release of the code from the github page"
+" \"Releases\" section (https://github.com/WPIRoboticsProjects/GRIP) or you "
+"can clone the source repository and built it yourself. Directions on "
+"building GRIP are on the project page. There is also additional "
+"documentation on the project wiki."
+msgstr ""
+"Vous pouvez soit télécharger une version prédéfinie du code à partir de la "
+"section \"Releases\" de la page github "
+"(https://github.com/WPIRoboticsProjects/GRIP), soit cloner le référentiel "
+"source et le créer vous-même. Les instructions sur la construction du GRIP "
+"sont sur la page du projet. Il existe également une documentation "
+"supplémentaire sur le wiki du projet."
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:117
+msgid ""
+"So, please play with GRiP and give us feedback here on the forum. If you "
+"find bugs, you can either post them here or as a Github project issue on the"
+" project page."
+msgstr ""
+"Alors, essayez GRiP et faites part de vos commentaires sur le forum. Si vous"
+" trouvez des bogues, vous pouvez les publier en tant que problème de projet "
+"Github sur la page du projet."

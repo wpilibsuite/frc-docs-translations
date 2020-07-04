@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,161 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:2
+msgid "Introduction to Filters"
+msgstr "Introduction aux filtres"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:4
+msgid ""
+"Filters are some of the most common tools used in modern technology, and "
+"find numerous applications in robotics in both signal processing and "
+"controls.  Understanding the notion of a filter is crucial to understanding "
+"the utility of the various types of filters provided by WPILib."
+msgstr ""
+"Les filtres sont parmi les outils les plus couramment utilisés dans la "
+"technologie moderne et trouvent de nombreuses applications en robotique à la"
+" fois dans le traitement du signal et dans les commandes. La compréhension "
+"de la notion de filtre est cruciale pour comprendre l'utilité des différents"
+" types de filtres fournis par WPILib."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:7
+msgid "What Is a Filter?"
+msgstr "Qu'est-ce qu'un filtre?"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:9
+msgid ""
+"For the sake of this article, we will assume all data are single-dimensional"
+" time-series data.  Obviously, the concepts involved are more general than "
+"this - but a full/rigorous discussion of signals and filtering is out of the"
+" scope of this documentation."
+msgstr ""
+"Pour les besoins de cette section, nous supposerons que toutes les données "
+"sont des données chronologiques unidimensionnelles. De toute évidence, les "
+"concepts impliqués sont plus généraux que cela - mais une discussion "
+"complète et rigoureuse des signaux et du filtrage sort du cadre de cette "
+"documentation."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:11
+msgid ""
+"So, what exactly *is* a filter, then?  Simply put, a filter is a mapping "
+"from a stream of inputs to a stream of outputs.  That is to say, the value "
+"output by a filter (in principle) can depend not only on the *current* value"
+" of the input, but on *the entire set of past and future values* (of course,"
+" in practice, the filters provided by WPILib are implementable in real-time "
+"on streaming data; accordingly, they can only depend on the *past* values of"
+" the input, and not on future values).  This is an important concept, "
+"because generally we use filters to remove/mitigate unwanted *dynamics* from"
+" a signal.  When we filter a signal, we're interested in modifying *how the "
+"signal changes over time*."
+msgstr ""
+"Alors, c'est quoi un filtre? D'une façon simple, un filtre est une "
+"modélisation d'un flux d'entrées à un flux de sorties. C'est-à-dire que la "
+"valeur de sortie émise par un filtre peut dépendre (en principe) non "
+"seulement de la valeur * actuelle * de l'entrée, mais de * l'ensemble des "
+"valeurs passées et futures * (en pratique, les filtres fournis par WPILib "
+"utilisent des données en temps réel, par conséquant ils ne peuvent traiter "
+"que des valeurs * passées * de l'entrée, et non des valeurs futures). C'est "
+"un concept important, car généralement nous utilisons des filtres pour "
+"supprimer / atténuer la * dynamique * indésirable d'un signal. Lorsque nous "
+"filtrons un signal, nous souhaitons modifier * la façon dont le signal "
+"change au fil du temps *."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:14
+msgid "Effects of Using a Filter"
+msgstr "Effets de l'utilisation d'un filtre"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:17
+msgid "Noise Reduction"
+msgstr "Réduction du bruit"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:19
+msgid ""
+"One of the most typical uses of a filter is for noise reduction.  A filter "
+"that reduces noise is called a *low-pass* filter (because it allows low "
+"frequencies to \"pass through,\" while blocking high-frequencies).  Most of "
+"the filters currently included in WPILib are effectively low-pass filters."
+msgstr ""
+"L'une des utilisations les plus courantes d'un filtre est la réduction du "
+"bruit. Un filtre qui réduit le bruit est appelé filtre * passe-bas * (car il"
+" permet aux basses fréquences de «passer» tout en bloquant les hautes "
+"fréquences). La plupart des filtres actuellement inclus dans WPILib sont "
+"effectivement des filtres passe-bas."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:22
+msgid "Rate Limiting"
+msgstr "Limitation du débit"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:24
+msgid ""
+"Filters are also commonly used to reduce the rate at which a signal can "
+"change.  This is closely related to noise reduction, and filters that reduce"
+" noise also tend to limit the rate of change of their output."
+msgstr ""
+"Les filtres sont également utilisés pour réduire la vitesse à laquelle un "
+"signal peut changer. Ceci est étroitement lié à la réduction du bruit, et "
+"les filtres qui réduisent le bruit ont également une tendance à limiter le "
+"taux de variation de leur sortie."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:27
+msgid "Edge Detection"
+msgstr "Détection des transitions (Edge)"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:29
+msgid ""
+"The counterpart to the low-pass filter is the high-pass filter, which only "
+"permits high frequencies to pass through to the output.  High-pass filters "
+"can be somewhat tricky to build intuition for, but a common usage for a "
+"high-pass filter is edge-detection - since high-pass filters will reflect "
+"sudden changes in the input while ignoring slower changes, they are useful "
+"for determining the location of sharp discontinuities in the signal."
+msgstr ""
+"Le pendant du filtre passe-bas est le filtre passe-haut, qui ne laisse "
+"passer que les hautes fréquences vers la sortie. Les filtres passe-haut "
+"peuvent être quelque peu difficiles à saisir à prime abord, mais une "
+"utilisation courante pour un filtre passe-haut est la détection de "
+"transitions - puisque les filtres passe-haut refléteront les changements "
+"soudains dans l'entrée tout en ignorant les changements plus lents, ils sont"
+" utiles pour déterminer l'emplacement des discontinuités nettes dans le "
+"signal."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:32
+msgid "Phase Lag"
+msgstr "Décalage de phase"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:34
+msgid ""
+"An unavoidable negative effect of a real-time low-pass filter is the "
+"introduction of \"phase lag.\"  Since, as mentioned earlier, a real-time "
+"filter can only depend on past values of the signal (we cannot time-travel "
+"to obtain the future values), the filtered value takes some time to \"catch "
+"up\" when the input starts changing.  The greater the noise-reduction, the "
+"greater the introduced delay.  This is, in many ways, *the* fundamental "
+"trade-off of real-time filtering, and should be the primary driving factor "
+"of your filter design."
+msgstr ""
+"Un effet négatif inévitable d'un filtre passe-bas en temps réel est "
+"l'introduction du «retard de phase». Comme mentionné précédemment, un filtre"
+" en temps réel ne peut dépendre que des valeurs passées du signal (nous ne "
+"pouvons pas voyager dans le temps pour obtenir les valeurs futures), la "
+"valeur filtrée prend un certain retard sur la valeur de l'entrée, lorsque "
+"cette dernière commence à changer. Plus la réduction du bruit est "
+"importante, plus le retard introduit est important. C'est, à bien des "
+"égards, le  compromis fondamental du filtrage en temps réel, et cela devrait"
+" être le principal facteur déterminant de la conception de votre filtre."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:36
+msgid ""
+"Interestingly, high-pass filters introduce a phase *lead*, as opposed to a "
+"phase lag, as they exacerbate local changes to the value of the input."
+msgstr ""
+"Fait intéressant, les filtres passe-haut introduisent une avance, plutôt "
+"qu'un  retard de phase, car ils aggravent les changements locaux de la "
+"valeur de l'entrée."

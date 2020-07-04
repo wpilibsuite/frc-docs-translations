@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,275 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:2
+msgid "Linear Filters"
+msgstr "Filtres linéaires"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:4
+msgid ""
+"The first (and most commonly-employed) sort of filter that WPILib supports "
+"is a *linear filter* - or, more specifically, a linear time-invariant (LTI) "
+"filter."
+msgstr ""
+"Le premier type de filtre (et le plus couramment utilisé) supporté par "
+"WPILib est un * filtre linéaire * - ou, plus précisément, un filtre linéaire"
+" invariable dans le temps (LTI)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:6
+msgid ""
+"An LTI filter is, put simply, a weighted moving average - the value of the "
+"output stream at any given time is a localized, weighted average of the "
+"inputs near that time.  The difference between different types of LTI "
+"filters is thus reducible to the difference in the choice of the weighting "
+"function (also known as a \"window function\" or an \"impulse response\") "
+"used.  Mathematically, this kind of moving average is known as a "
+"`convolution <https://en.wikipedia.org/wiki/Convolution>`__."
+msgstr ""
+"Un filtre LTI est, en termes simples, une moyenne mobile pondérée - la "
+"valeur du flux de sortie à un moment donné est une moyenne localisée et "
+"pondérée des entrées près de ce moment. La différence entre les différents "
+"types de filtres LTI est se ramène au choix de la fonction de pondération "
+"(également appelée \"fonction fenêtre\" ou \"réponse impulsionnelle\") "
+"utilisée. Mathématiquement, ce type de moyenne mobile est connu sous le nom "
+"de `convolution <https://en.wikipedia.org/wiki/Convolution>` __."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:8
+msgid ""
+"There are two broad \"sorts\" of impulse responses: infinite impulse "
+"responses (IIR), and finite impulse responses (FIR)."
+msgstr ""
+"Il existe deux grandes catégories de réponses impulsionnelles: les réponses "
+"impulsionnelles infinies (IIR) et les réponses impulsionnelles finies (FIR)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:10
+msgid ""
+"Infinite impulse responses have infinite \"support\" - that is, they are "
+"nonzero over an infinitely-large region.  This means, broadly, that they "
+"also have infinite \"memory\" - once a value appears in the input stream, it"
+" will influence *all subsequent outputs, forever*.  This is typically "
+"undesirable from a strict signal-processing perspective, however filters "
+"with infinite impulse responses tend to be very easy to compute as they can "
+"be expressed by simple recursion relations."
+msgstr ""
+"Les réponses impulsionnelles infinies ont un \"support\" infini - "
+"c'est-à-dire qu'elles sont toutes non-égales à zéro sur une région "
+"infiniment grande. Cela signifie, en gros, qu'elles ont également une "
+"\"mémoire\" infinie - une fois qu'une valeur apparaît dans le flux d'entrée,"
+" elle influencera * toutes les sorties suivantes, pour toujours *. Ceci est "
+"généralement indésirable du point de vue strict du traitement du signal, "
+"cependant les filtres avec des réponses impulsionnelles infinies ont "
+"tendance à être très faciles à réaliser car ils peuvent être exprimés par de"
+" simples relations de récursivité."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:12
+msgid ""
+"Finite impulse responses have finite \"support\" - that is, they are nonzero"
+" on a bounded region.  The \"archetypical\" FIR filter is a flat moving "
+"average - that is, simply setting the output equal to the average of the "
+"past n inputs.  FIR filters tend to have more-desirable properties than IIR "
+"filters, but are more costly to compute."
+msgstr ""
+"Les réponses impulsionnelles finies ont un \"support\" fini - c'est-à-dire "
+"qu'elles sont non-égales à zéro sur une région limitée. Le filtre FIR "
+"typique est une moyenne mobile plate - c'est-à-dire qu'il suffit de régler "
+"la sortie égale à la moyenne des n dernières entrées. Les filtres FIR ont "
+"tendance à avoir des propriétés plus souhaitables que les filtres IIR, mais "
+"leur calcul est plus long."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:14
+msgid ""
+"Linear filters are supported in WPILib through the ``LinearFilter`` class "
+"(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>`__)."
+msgstr ""
+"Les filtres linéaires sont pris en charge dans WPILib via la classe `` "
+"LinearFilter '' (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>"
+" `__,` C ++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>"
+" `__)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:17
+msgid "Creating a LinearFilter"
+msgstr "Création d'un LinearFilter"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:19
+msgid ""
+"The C++ ``LinearFilter`` class is templated on the data type used for the "
+"input."
+msgstr ""
+"La classe C ++ `` LinearFilter`` est basée sur le type de données utilisé "
+"pour l'entrée."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:21
+msgid ""
+"Because filters have \"memory\", each input stream requires its own filter "
+"object.  Do *not* attempt to use the same filter object for multiple input "
+"streams."
+msgstr ""
+"Étant donné que les filtres ont une «mémoire», chaque flux d'entrée "
+"nécessite son propre objet filtre. N'essayez * pas * d'utiliser le même "
+"objet de filtre pour plusieurs flux d'entrée."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:23
+msgid ""
+"While it is possible to directly instantiate ``LinearFilter`` class to build"
+" a custom filter, it is far more convenient (and common) to use one of the "
+"supplied factory methods, instead:"
+msgstr ""
+"Bien qu'il soit possible d'instancier directement la classe `` LinearFilter "
+"'' pour créer un filtre personnalisé, il est beaucoup plus pratique (et "
+"courant) d'utiliser l'une des méthodes fournies dans WPIlib, à la place:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:26
+msgid "singlePoleIIR"
+msgstr "Filtre singlePoleIIR"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:30
+msgid ""
+"The ``singlePoleIIR()`` factory method creates a single-pole infinite "
+"impulse response filter (also known as `exponential smoothing "
+"<https://en.wikipedia.org/wiki/Exponential_smoothing>`__, on account of "
+"having an exponential impulse response).  This is the \"go-to,\" \"first-"
+"try\" low-pass filter in most applications; it is computationally trivial "
+"and works in most cases."
+msgstr ""
+"La méthode `` singlePoleIIR () '' crée un filtre de réponse impulsionnelle "
+"infinie unipolaire (également connu sous le nom de `lissage exponentiel "
+"<https://en.wikipedia.org/wiki/Exponential_smoothing>` __, en raison de sa "
+"réponse exponentielle à une impulsion). Il s'agit du filtre passe-bas \"de "
+"premier choix\" dans la plupart des applications; il est facile à réaliser "
+"et fonctionne dans la plupart des cas."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:48
+msgid ""
+"The \"time constant\" parameter determines the \"characteristic timescale\" "
+"of the filter's impulse response; the filter will cancel out any signal "
+"dynamics that occur on timescales significantly shorter than this.  "
+"Relatedly, it is also the approximate timescale of the introduced "
+":ref:`phase lag <docs/software/advanced-controls/filters/introduction:Phase "
+"Lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "
+"\"cutoff frequency\" of the filter."
+msgstr ""
+"Le paramètre \"time constant\" détermine \"l'échelle de temps "
+"caractéristique\" de la réponse impulsionnelle du filtre; le filtre annulera"
+" toute dynamique de signal se produisant sur des échelles de temps "
+"significativement plus courtes que définie par ce paramètre. De même, c'est "
+"aussi l'échelle de temps approximative du: ref: `retard de phase <docs / "
+"software / advanced-controls / filters / introduction: Phase Lag>` généré. "
+"L'inverse de cette échelle de temps, multiplié par 2 pi, est la \"fréquence "
+"de coupure\" du filtre."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:50
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:100
+msgid ""
+"The \"period\" parameter is the period at which the filter's ``calculate()``"
+" method will be called.  For the vast majority of implementations, this will"
+" be the standard main robot loop period of 0.02 seconds."
+msgstr ""
+"Le paramètre \"période\" est la période de temps entre les appels successifs"
+" de la méthode `` calculate () '' propre au filtre. Pour la grande majorité "
+"des implémentations, ce sera la période standard de boucle du robot "
+"principal, soit 20 mSec."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:53
+msgid "movingAverage"
+msgstr "Filtre à moyenne mobile (movingAverage)"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:57
+msgid ""
+"The ``movingAverage`` factory method creates a simple flat moving average "
+"filter.  This is the simplest possible low-pass FIR filter, and is useful in"
+" many of the same contexts as the single-pole IIR filter.  It is somewhat "
+"more costly to compute, but generally behaves in a somewhat nicer manner."
+msgstr ""
+"La méthode `` movingAverage '' crée un simple filtre à moyenne mobile. Il "
+"s'agit du filtre FIR passe-bas le plus simple possible et il est utile dans "
+"bon nombre des mêmes contextes que le filtre IIR unipolaire. Il est un peu "
+"plus long à calculer, mais se comporte généralement de manière un peu plus "
+"agréable."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:73
+msgid ""
+"The \"taps\" parameter is the number of samples that will be included in the"
+" flat moving average.  This behaves similarly to the \"time constant\" above"
+" - the effective time constant is the number of taps times the period at "
+"which ``calculate()`` is called."
+msgstr ""
+"Le paramètre \"taps\" est le nombre d'échantillons qui seront inclus dans la"
+" moyenne mobile. Cela se comporte de manière similaire au paramètre \"time "
+"constant\" ci-dessus - la constante de temps effective est le nombre "
+"d'échantillons multiplié par la période à laquelle `` calculate () '' est "
+"appelé (typiquement 20mSec)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:76
+msgid "highPass"
+msgstr "Filter passe-haut (highPass)"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:80
+msgid ""
+"The ``highPass`` factory method creates a simple first-order infinite "
+"impulse response high-pass filter.  This is the \"counterpart\" to the "
+"`singlePoleIIR`_."
+msgstr ""
+"La méthode `` highPass '' crée un simple filtre passe-haut à réponse "
+"impulsionnelle infinie de premier ordre. C'est le \"pendant\" du "
+"\"singlePoleIIR`_."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:98
+msgid ""
+"The \"time constant\" parameter determines the \"characteristic timescale\" "
+"of the filter's impulse response; the filter will cancel out any signal "
+"dynamics that occur on timescales significantly longer than this.  "
+"Relatedly, it is also the approximate timescale of the introduced "
+":ref:`phase lead <docs/software/advanced-controls/filters/introduction:Phase"
+" lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "
+"\"cutoff frequency\" of the filter."
+msgstr ""
+"Le paramètre \"time constant\" détermine \"l'échelle de temps "
+"caractéristique\" de la réponse impulsionnelle du filtre; le filtre annulera"
+" toute dynamique de signal qui se produit sur des échelles de temps beaucoup"
+" plus longues que définie par ce paramètre. De même, il s'agit également de "
+"la durée approximative de l' : ref: `avance de phase <docs / software / "
+"advanced-controls / filters / introduction: Phase lag>` généré. L'inverse de"
+" cette échelle de temps, multiplié par 2 pi, est la \"fréquence de coupure\""
+" du filtre."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:103
+msgid "Using a LinearFilter"
+msgstr "Utilisation d'un LinearFilter"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:105
+msgid ""
+"In order for the created filter to obey the specified timescale parameter, "
+"its ``calculate()`` function *must* be called regularly at the specified "
+"period.  If, for some reason, a significant lapse in ``calculate()`` calls "
+"must occur, the filter's ``reset()`` method should be called before further "
+"use."
+msgstr ""
+"Pour que le filtre créé obéisse au paramètre d'échelle de temps spécifié, et"
+" fonctionne correctement, sa fonction `` Calculate () '' * doit * être "
+"appelée régulièrement à la période spécifiée. Si, pour une raison "
+"quelconque, une interruption significative des appels `` Calculate () '' "
+"doit se produire, la méthode `` reset () '' du filtre doit être appelée "
+"avant de réutiliser le filtre."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:107
+msgid ""
+"Once your filter has been created, using it is easy - simply call the "
+"``calculate()`` method with the most recent input to obtain the filtered "
+"output:"
+msgstr ""
+"Une fois votre filtre créé, son utilisation est simple - il suffit d'appeler"
+" la méthode `` Calculate () '' avec l'entrée la plus récente pour obtenir la"
+" sortie filtrée:"

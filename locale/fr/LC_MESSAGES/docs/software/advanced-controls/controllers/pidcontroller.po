@@ -20,3 +20,353 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:2
+msgid "PID Control in WPILib"
+msgstr "Contrôle PID dans WPILib"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:4
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:75
+msgid "Todo"
+msgstr "Ce qui reste à compléter"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:4
+msgid "Link to conceptual PID article when it's finished"
+msgstr "Lien vers l'article PID conceptuel une fois terminé"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:6
+msgid ""
+"This article covers the in-code implementation of PID Control with WPILib's "
+"provided library classes.  Documentation describing the involved concepts in"
+" more detail is forthcoming."
+msgstr ""
+"Cet article couvre l'implémentation dans le code du contrôle PID avec les "
+"classes de bibliothèque fournies par WPILib. Une documentation décrivant les"
+" concepts impliqués plus en détail est à venir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:8
+msgid ""
+"For a guide on implementing PID control through the :ref:`command-based "
+"framework <docs/software/commandbased/what-is-command-based:What Is "
+"\"Command-Based\" Programming?>`, see :ref:`docs/software/commandbased/pid-"
+"subsystems-commands:PID Control through PIDSubsystems and PIDCommands`."
+msgstr ""
+"Pour un guide sur la mise en œuvre du contrôle PID via un : ref: "
+"`environnement basé sur les commandes <docs/software/commandbased/what-is-"
+"command-based:What Is \"Command-Based\" Programming?>``, regardez : ref: "
+"`docs / software / commandbased / pid-subsystems-commands: PID Control "
+"through PIDSubsystems and PIDCommands`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:10
+msgid ""
+"WPILib supports PID control of mechanisms through the ``PIDController`` "
+"class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDController.html>`__)."
+"  This class handles the feedback loop calculation for the user, as well as "
+"offering methods for returning the error, setting tolerances, and checking "
+"if the control loop has reached its setpoint within the specified "
+"tolerances."
+msgstr ""
+"WPILib prend en charge le contrôle PID des mécanismes via la classe `` "
+"PIDController '' (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController."
+" html> `__,` C ++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDController.html>"
+" `__). Cette classe gère le calcul de la boucle de rétroaction pour "
+"l'utilisateur, ainsi que des méthodes pour renvoyer l'erreur, définir les "
+"tolérances et vérifier si la boucle de contrôle a atteint son point de "
+"consigne dans les tolérances spécifiées."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:13
+msgid "Using the PIDController Class"
+msgstr "L'utilisation de la classe PIDController"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:15
+msgid ""
+"The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ "
+"teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java"
+" teams should use the class in the ``wpilibj.controller`` package."
+msgstr ""
+"La classe `` PIDController`` dans l'espace de noms `` frc`` est obsolète - "
+"les équipes C ++ devraient plutôt utiliser celle de l'espace de noms `` "
+"frc2``. De même, les équipes Java doivent utiliser la classe dans le package"
+" `` wpilibj.controller``."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:18
+msgid "Constructing a PIDController"
+msgstr "La construction d'un PIDController"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:20
+msgid ""
+"While ``PIDController`` may be used asynchronously, it does *not* provide "
+"any thread safety features - ensuring threadsafe operation is left entirely "
+"to the user, and thus asynchronous usage is recommended only for advanced "
+"teams."
+msgstr ""
+"Bien que `` PIDController '' puisse être utilisé de manière asynchrone, il "
+"ne fournit * aucune * fonctionnalité de sécurité des \"threads\" - la "
+"responsabilité du bon fonctionnement threadsafe est entièrement laissée à "
+"l'utilisateur.  Par conséquant, l'utilisation asynchrone est recommandée "
+"uniquement pour les équipes avancées."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:22
+msgid ""
+"In order to use WPILib's PID control functionality, users must first "
+"construct a ``PIDController`` object with the desired gains:"
+msgstr ""
+"Afin d'utiliser la fonctionnalité de contrôle PID de WPILib, les "
+"utilisateurs doivent d'abord construire un objet `` PIDController`` avec les"
+" gains souhaités:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:36
+msgid ""
+"An optional fourth parameter can be provided to the constructor, specifying "
+"the period at which the controller will be run.  The ``PIDController`` "
+"object is intended primarily for synchronous use from the main robot loop, "
+"and so this value is defaulted to 20ms."
+msgstr ""
+"Un quatrième paramètre facultatif peut être fourni au constructeur, "
+"spécifiant la période durant laquelle le contrôleur sera exécuté. L'objet ``"
+" PIDController '' est principalement destiné à une utilisation synchrone à "
+"partir de la boucle du robot principal, et cette valeur par défaut est donc "
+"de 20 mSec."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:39
+msgid "Using the Feedback Loop Output"
+msgstr "Utilisation de la sortie de boucle de rétroaction"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:41
+msgid ""
+"The ``PIDController`` assumes that the ``calculate()`` method is being "
+"called regularly at an interval consistent with the configured period.  "
+"Failure to do this will result in unintended loop behavior."
+msgstr ""
+"Le `` PIDController '' assume que la méthode `` Calculate () '' est appelée "
+"régulièrement à un intervalle cohérent avec la période configurée. Le non-"
+"respect de cette consigne entraînera un comportement de boucle involontaire."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:43
+msgid ""
+"Unlike the old ``PIDController``, the new PIDController does not "
+"automatically control an output from its own thread - users are required to "
+"call ``calculate()`` and use the resulting output in their own code."
+msgstr ""
+"Contrairement à l'ancien `` PIDController '', le nouveau PIDController ne "
+"contrôle pas automatiquement une sortie à partir de son propre thread - les "
+"utilisateurs doivent appeler `` calculate() '' et utiliser la sortie "
+"résultante dans leur propre code."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:45
+msgid ""
+"Using the constructed ``PIDController`` is simple: simply call the "
+"``calculate()`` method from the robot's main loop (e.g. the robot's "
+"``autonomousPeriodic()`` method):"
+msgstr ""
+"L'utilisation de `` PIDController ''  est simple: il suffit d'appeler la "
+"méthode `` Calculate () '' depuis la boucle principale du robot (par exemple"
+" la méthode `` autonomousPeriodic () '' du robot):"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:62
+msgid "Checking Errors"
+msgstr "La vérification des erreurs"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:64
+msgid ""
+"``getPositionError()`` and ``getVelocityError()`` are named assuming that "
+"the loop is controlling a position - for a loop that is controlling a "
+"velocity, these return the velocity error and the acceleration error, "
+"respectively."
+msgstr ""
+"`` getPositionError () '' et `` getVelocityError () '' sont définis avec "
+"l'hypothèse que la boucle contrôle une position - si toutefois la boucle "
+"contrôle plutôt une vitesse, ces dernières renvoient respectivement l'erreur"
+" de vitesse et l'erreur d'accélération."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:66
+msgid ""
+"The current error of the measured process variable is returned by the "
+"``getPositionError()`` function, while its derivative is returned by the "
+"``getVelocityError()`` function:"
+msgstr ""
+"L'erreur actuelle de la variable de processus mesurée est retournée par la "
+"fonction `` getPositionError () '', tandis que sa dérivée est retournée par "
+"la fonction `` getVelocityError () ``:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
+msgid "Specifying and Checking Tolerances"
+msgstr "La spécification et la vérification des tolérances"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:71
+msgid ""
+"If only a position tolerance is specified, the velocity tolerance defaults "
+"to infinity."
+msgstr ""
+"Si seulement une tolérance de position est spécifiée, la tolérance de "
+"vitesse par défaut est l'infini."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:73
+msgid ""
+"As above, \"position\" refers to the process variable measurement, and "
+"\"velocity\" to its derivative - thus, for a velocity loop, these are "
+"actually velocity and acceleration, respectively."
+msgstr ""
+"Comme ci-dessus, «position» fait référence à la mesure de la variable de "
+"processus et «vitesse» à sa dérivée - ainsi, pour une boucle de vitesse, ce "
+"sont en fait la vitesse et l'accélération, respectivement."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:75
+msgid "link to article on motion profiles"
+msgstr "Lien vers l'article sur les profils de mouvement"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:77
+msgid ""
+"Occasionally, it is useful to know if a controller has tracked the setpoint "
+"to within a given tolerance - for example, to determine if a command should "
+"be ended, or (while following a motion profile) if motion is being impeded "
+"and needs to be re-planned."
+msgstr ""
+"Parfois, il est utile de savoir si un contrôleur a suivi le point de "
+"consigne dans une tolérance donnée - par exemple, pour déterminer si une "
+"commande doit être terminée ou (tout en suivant un profil de mouvement) si "
+"le mouvement est entravé et doit être re -prévu."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:79
+msgid ""
+"To do this, we first must specify the tolerances with the ``setTolerance()``"
+" method; then, we can check it with the ``atSetpoint()`` method."
+msgstr ""
+"Pour ce faire, nous devons d'abord spécifier les tolérances avec la méthode "
+"`` setTolerance () ''; ensuite, nous pouvons le vérifier avec la méthode `` "
+"atSetpoint () ''."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:102
+msgid "Resetting the Controller"
+msgstr "Réinitialisation du contrôleur"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:104
+msgid ""
+"It is sometimes desirable to clear the internal state (most importantly, the"
+" integral accumulator) of a ``PIDController``, as it may be no longer valid "
+"(e.g. when the ``PIDController`` has been disabled and then re-enabled).  "
+"This can be accomplished by calling the ``reset()`` method."
+msgstr ""
+"Il est parfois souhaitable d'effacer l'état interne (le paramètre le plus "
+"important étant l'accumulateur intégré) d'un `` PIDController '', car il "
+"peut ne plus être valide (par exemple, lorsque le `` PIDController '' a été "
+"désactivé puis réactivé) . Cela peut être accompli en appelant la méthode ``"
+" reset () ''."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:107
+msgid "Setting a Max Integrator Value"
+msgstr "La définition d'une valeur d'intégrateur maximale"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:109
+msgid ""
+"Integrators introduce instability and hysteresis into feedback loop systems."
+"  It is strongly recommended that teams avoid using integral gain unless "
+"absolutely no other solution will do - very often, problems that can be "
+"solved with an integrator can be better solved through use of a more-"
+"accurate :ref:`feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`."
+msgstr ""
+"Les intégrateurs introduisent l'instabilité et l'hystérésis dans les "
+"systèmes de boucle de rétroaction. Il est fortement recommandé aux équipes "
+"d'éviter d'utiliser le gain intégral sauf si aucune autre solution ne fera "
+"l'affaire - très souvent, les problèmes qui peuvent être résolus avec un "
+"intégrateur peuvent être mieux résolus en utilisant un outil plus précis, "
+"comme le : ref: `feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:111
+msgid ""
+"A typical problem encountered when using integral feedback is excessive "
+"\"wind-up\" causing the system to wildly overshoot the setpoint.  This can "
+"be alleviated in a number of ways - the WPILib ``PIDController`` offers an "
+"integrator range limiter to help teams overcome this issue."
+msgstr ""
+"Un problème typique rencontré lors de l'utilisation de la rétroaction avec "
+"composante intégrale est un emballement excessif, ce qui fait que le système"
+" dépasse largement le point de consigne. Cela peut être atténué de plusieurs"
+" façons - le WPILib `` PIDController '' propose un limiteur de plage "
+"d'intégrateur pour aider les équipes à surmonter ce problème."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:113
+msgid ""
+"Enabling this setting with the ``setIntegratorRange()`` method will prevent "
+"the total output contribution from the integral gain from exceeding the "
+"user-specified bounds."
+msgstr ""
+"L'activation de ce paramètre avec la méthode `` setIntegratorRange () '' "
+"empêchera la contribution de sortie totale du gain intégral de dépasser les "
+"limites spécifiées par l'utilisateur."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:130
+msgid "Setting Continuous Input"
+msgstr "Le réglage de l'entrée continue"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:132
+msgid ""
+"If your mechanism is not capable of fully continuous rotational motion (e.g."
+" a turret without a slip ring, whose wires twist as it rotates), *do not* "
+"enable continuous input unless you have implemented an additional safety "
+"feature to prevent the mechanism from moving past its limit!"
+msgstr ""
+"Si votre mécanisme n'est pas capable d'un mouvement de rotation entièrement "
+"continu (par exemple, une tourelle sans bague collectrice, dont les fils se "
+"tordent en tournant),, il ne faut pas alors utiliser une entrée continue "
+"sauf si vous avez mis en place une fonction de sécurité supplémentaire pour "
+"empêcher le mécanisme de passer sa limite!"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:134
+msgid ""
+"The continuous input function does *not* automatically wrap your input "
+"values - be sure that your input values, when using this feature, are never "
+"outside of the specified range!"
+msgstr ""
+"La fonction d'entrée continue ne limite pas * automatiquement * vos valeurs "
+"d'entrée - assurez-vous que vos valeurs d'entrée, lorsque vous utilisez "
+"cette fonction, ne sont jamais en dehors de la plage spécifiée!"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:136
+msgid ""
+"Some process variables (such as the angle of a turret) are measured on a "
+"circular scale, rather than a linear one - that is, each \"end\" of the "
+"process variable range corresponds to the same point in reality (e.g. 360 "
+"degrees and 0 degrees).  In such a configuration, there are two possible "
+"values for any given error, corresponding to which way around the circle the"
+" error is measured.  It is usually best to use the smaller of these errrors."
+msgstr ""
+"Certaines variables de processus (telles que l'angle d'une tourelle) sont "
+"mesurées sur une échelle circulaire, plutôt que linéaire - c'est-à-dire que "
+"chaque \"fin\" de la plage de variables de processus correspond au même "
+"point dans la réalité (par exemple 360 ​​degrés et 0 degrés). Dans une telle"
+" configuration, il existe deux valeurs possibles pour une erreur donnée, "
+"correspondant à la direction du cercle dans laquelle l'erreur est mesurée. "
+"Il est généralement préférable d'utiliser la plus petite de ces erreurs."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:138
+msgid ""
+"To configure a ``PIDController`` to automatically do this, use the "
+"``enableContinuousInput()`` method:"
+msgstr ""
+"Pour configurer un `` PIDController '' pour le faire automatiquement, "
+"utilisez la méthode `` enableContinuousInput () '':"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:153
+msgid "Clamping Controller Output"
+msgstr "Le cramponnage de la sortie du contrôleur"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:155
+msgid ""
+"Unlike the old ``PIDController``, the new controller does not offer any "
+"output clamping features, as the user is expected to use the loop output "
+"themselves.  Output clamping can be easily achieved by composing the "
+"controller with WPI's ``clamp()`` function (or ``std::clamp`` in c++):"
+msgstr ""
+"Contrairement à l'ancien `` PIDController '', le nouveau contrôleur n'offre "
+"aucune fonction de cramponnage (clamp) de la sortie, car l'utilisateur est "
+"censé utiliser lui-même la sortie de boucle. Le cramponnage de sortie peut "
+"être facilement réalisé en ajoutant au contrôleur une  fonction `` clamp () "
+"'' (ou `` std :: clamp`` en c ++):"

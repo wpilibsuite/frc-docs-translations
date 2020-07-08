@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,118 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:2
+msgid "Transforming Trajectories"
+msgstr "La transformation des trajectoires"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:3
+msgid ""
+"Trajectories can be transformed from one coordinate system to another and "
+"moved within a coordinate system using the ``relativeTo`` and the "
+"``transformBy`` methods. These methods are useful for moving trajectories "
+"within space, or redefining an already existing trajectory in another frame "
+"of reference."
+msgstr ""
+"Les trajectoires peuvent être transformées d'un système de coordonnées à un "
+"autre et déplacées dans un système de coordonnées à l'aide des méthodes `` "
+"relativeTo '' et `` transformBy ''. Ces méthodes sont utiles pour déplacer "
+"des trajectoires dans l'espace ou redéfinir une trajectoire déjà existante "
+"dans un autre cadre de référence."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:5
+msgid "Neither of these methods changes the shape of the original trajectory."
+msgstr ""
+"Aucune de ces méthodes ne modifie la forme de la trajectoire d'origine."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:8
+msgid "The ``relativeTo`` Method"
+msgstr "La méthode `` relativeTo``"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:9
+msgid ""
+"The ``relativeTo`` method is used to redefine an already existing trajectory"
+" in another frame of reference. This method takes one argument: a pose, (via"
+" a ``Pose2d`` object) that is defined with respect to the current coordinate"
+" system, that represents the origin of the new coordinate system."
+msgstr ""
+"La méthode `` relativeTo '' permet de redéfinir une trajectoire déjà "
+"existante dans un autre référentiel. Cette méthode prend un argument: une "
+"pose, (via un objet `` Pose2d '') qui est définie par rapport au système de "
+"coordonnées courant, qui représente l'origine du nouveau système de "
+"coordonnées."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:11
+msgid ""
+"For example, a trajectory defined in coordinate system A can be redefined in"
+" coordinate system B, whose origin is at (2, 2, 30 degrees) in coordinate "
+"system A, using the ``relativeTo`` method."
+msgstr ""
+"Par exemple, une trajectoire définie dans le système de coordonnées A peut "
+"être redéfinie dans le système de coordonnées B, dont l'origine est à (2, 2,"
+" 30 degrés) dans le système de coordonnées A, en utilisant la méthode `` "
+"relativeTo ''."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:27
+msgid ""
+"In the diagram above, the original trajectory (``aTrajectory`` in the code "
+"above) has been defined in coordinate system A, represented by the black "
+"axes. The red axes, located at (2, 2) and 30° with respect to the original "
+"coordinate system, represent coordinate system B. Calling ``relativeTo`` on "
+"``aTrajectory`` will redefine all poses in the trajectory to be relative to "
+"coordinate system B (red axes)."
+msgstr ""
+"Dans le diagramme ci-dessus, la trajectoire d'origine (`` aTrajectory '' "
+"dans le code ci-dessus) a été définie dans le système de coordonnées A, "
+"représenté par les axes noirs. Les axes rouges, situés à (2, 2) et 30 ° par "
+"rapport au système de coordonnées d'origine, représentent le système de "
+"coordonnées B. L'appel de `` relativeTo '' sur `` unTrajectoire '' "
+"redéfinira toutes les poses de la trajectoire pour qu'elles soient relatives"
+" à système de coordonnées B (axes rouges)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:30
+msgid "The ``transformBy`` Method"
+msgstr "La méthode `` transformBy``"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:31
+msgid ""
+"The ``transformBy`` method can be used to move (i.e. translate and rotate) a"
+" trajectory within a coordinate system. This method takes one argument: a "
+"transform (via a ``Transform2d`` object) that maps the current initial "
+"position of the trajectory to a desired initial position of the same "
+"trajectory."
+msgstr ""
+"La méthode `` transformBy '' peut être utilisée pour déplacer (c'est-à-dire "
+"traduire et faire pivoter) une trajectoire dans un système de coordonnées. "
+"Cette méthode prend un seul argument: soit une transformation (via un objet "
+"`` Transform2d '') qui mappe la position initiale actuelle de la trajectoire"
+" à une position initiale souhaitée de la même trajectoire."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:33
+msgid ""
+"For example, one may want to transform a trajectory that begins at (2, 2, 30"
+" degrees) to make it begin at (4, 4, 50 degrees) using the ``transformBy`` "
+"method."
+msgstr ""
+"Par exemple, on peut vouloir transformer une trajectoire qui commence à (2, "
+"2, 30 degrés) pour la faire commencer à (4, 4, 50 degrés) en utilisant la "
+"méthode `` transformBy``."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:49
+msgid ""
+"In the diagram above, the original trajectory, which starts at (2, 2) and at"
+" 30° is visible in blue. After applying the transform above, the resultant "
+"trajectory's starting location is changed to (4, 4) at 50°. The resultant "
+"trajectory is visible in orange."
+msgstr ""
+"Dans le diagramme ci-dessus, la trajectoire d'origine, qui commence à (2, 2)"
+" et à 30 ° est visible en bleu. Après avoir appliqué la transformation ci-"
+"dessus, l'emplacement de départ de la trajectoire résultante est changé en "
+"(4, 4) à 50 °. La trajectoire résultante est visible en orange."

@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,637 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:2
+msgid "Adding Custom Components"
+msgstr "Ajout de composants personnalisés"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:4
+msgid ""
+"RobotBuilder works very well for creating robot programs that just use "
+"WPILib for motors, controllers, and sensors. But for teams that use custom "
+"classes, RobotBuilder doesn't have any support for those classes, so a few "
+"steps need to be taken to use them in RobotBuilder"
+msgstr ""
+"RobotBuilder fonctionne très bien pour la création de programmes de robots "
+"qui utilisent uniquement la WPILib pour les moteurs, les contrôleurs et les "
+"capteurs. Mais pour les équipes qui utilisent des classes personnalisées, "
+"RobotBuilder n’a pas de support pour ces classes, donc quelques étapes "
+"doivent être prises pour les utiliser dans RobotBuilder"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:7
+msgid "Custom Component Structure"
+msgstr "Structure d'un composants personnalisé"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:11
+msgid ""
+"Custom components all go in ``~/wpilib/YYYY/Robotbuilder/extensions`` where "
+"~ is ``C:\\Users\\Public`` on Windows and YYYY is the FRC year."
+msgstr ""
+"Les composants personnalisés sont tous dans "
+"``~/wpilib/YYYY/Robotbuilder/extensions`` où ~ est ``C:\\Users\\Public``  "
+"sous Windows et YYYY est l’année de l'édition FRC."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:13
+msgid ""
+"There are seven files and one folder that are needed for a custom component."
+" The folder contains the files describing the component and how to export "
+"it. It should have the same name as the component (e.g.\"Kiwi Drive\" for a "
+"kiwi drive controller, \"Robot Drive 6\" for a six-motor drive controller, "
+"etc.). The files should have the same names and extensions as the ones shown"
+" here. Other files can be in the folder along with these seven, but the "
+"seven must be present for RobotBuilder to recognize the custom component."
+msgstr ""
+"Il y a sept fichiers et un dossier qui sont nécessaires pour un composant "
+"personnalisé. Le dossier contient les fichiers décrivant le composant et "
+"comment l’exporter. Il doit avoir le même nom que le composant (p. ex.\"Kiwi"
+" Drive\"  pour une base pilotable de type kiwi, \"Robot Drive 6\" pour une "
+"base pilotable à six moteurs, etc.). Les fichiers doivent avoir les mêmes "
+"noms et extensions que ceux indiqués ici. D’autres fichiers peuvent être "
+"dans le dossier en plus de ces sept, mais les sept doivent être présents "
+"pour que RobotBuilder  reconnaisse le composant personnalisé."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:16
+msgid "PaletteDescription.yaml"
+msgstr "PaletteDescription.yaml"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:20
+msgid "Line-by-line:"
+msgstr "Ligne par ligne :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:22
+msgid "!Component: Declares the beginning of a new component"
+msgstr "!Component : déclare le début d’un nouveau composant"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:23
+msgid ""
+"name: The name of the component. This is what will show up in the "
+"palette/tree -- this should also be the same as the name of the containing "
+"folder"
+msgstr ""
+"name: Nom du composant. C’est ce qui s’affichera dans la palette/arbre - "
+"cela devrait également être le même que le nom du dossier contenant"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:24
+msgid ""
+"type: the type of the component (these will be explained in depth later on)"
+msgstr ""
+"type: le type du composant (ceux-ci seront expliqués en profondeur plus "
+"tard)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:25
+msgid ""
+"supports: a map of the amount of each type of component this can support. "
+"Motor controllers in RobotBuilder are all PIDOutputs, so a kiwi drive can "
+"support three PIDOutputs. If a component doesn't support anything (such as "
+"sensors or motor controllers), just leave this line out"
+msgstr ""
+"supports: une carte de la quantité de chaque type de composant qui peut "
+"prendre en charge. Les contrôleurs de moteurs de RobotBuilder sont tous des "
+"PIDOutputs, de sorte qu’une base kiwi peut prendre en charge trois "
+"PIDOutputs. Si un composant ne prend rien en charge (comme les capteurs ou "
+"les contrôleurs de moteurs), juste ignorer cette ligne"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:26
+msgid ""
+"help: a short string that gives a helpful message when one of these "
+"components is hovered over"
+msgstr ""
+"help:  une chaîne de caractères concise qui affiche un message utile "
+"lorsqu'on passe le curseur  sur l’un de ces composants"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:27
+msgid ""
+"properties: a list of the properties of this component. In this kiwi drive "
+"example, there are three very similar properties, one for each motor. A "
+"ChildSelectionProperty allows the user to choose a component of the given "
+"type from the subcomponents of the one being edited (so here, they would "
+"show a dropdown asking for a PIDOutput - i.e. a motor controller - that has "
+"been added to the kiwi drive)"
+msgstr ""
+"properties:  liste des propriétés de ce composant. Dans cet exemple de base "
+"kiwi, il y a trois propriétés très similaires, une pour chaque moteur. Un "
+"ChildSelectionProperty permet à l’utilisateur de choisir un composant du "
+"type donné à partir des sous-composants de celui qui est en cours de "
+"modification (donc ici, s'afficherait une liste déroulante demandant un "
+"PIDOutput - c’est-à-dire un contrôleur de moteur - qui a été ajouté à la "
+"base kiwi)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:29
+msgid ""
+"The types of component RobotBuilder supports (these are case-sensitive):"
+msgstr ""
+"Les types de composants que RobotBuilder prend en charge (ceux-ci sont "
+"sensibles à la casse):"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:31
+msgid "Command"
+msgstr "Command"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:32
+msgid "Subsystem"
+msgstr "Subsystem"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:33
+msgid "PIDOutput (speed controller)"
+msgstr "PIDOutput (contrôleur de vitesse)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:34
+msgid ""
+"PIDSource (sensor that implements PIDSource e.g. analog potentiometer, "
+"encoder)"
+msgstr ""
+"PIDSource (capteur qui implémente PIDSource, par exemple un potentiomètre "
+"analogique, un encodeur)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:35
+msgid "Sensor (sensor that does not implement PIDSource e.g. limit switch)"
+msgstr ""
+"Sensor (capteur qui n’implémente pas PIDSource, par exemple un interrupteur "
+"de fin de course)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:36
+msgid "Controller (robot drive, PID controller, etc.)"
+msgstr "Controller (déplacement du robot, contrôleur PID, etc.)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:37
+msgid "Actuator (an output that is not a motor, e.g. solenoid, servo)"
+msgstr ""
+"Actuator (une sortie qui n’est pas un moteur, par exemple un solenoïde, un "
+"servo)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:38
+msgid "Joystick"
+msgstr "Joystick"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:39
+msgid "Joystick Button"
+msgstr "Joystick Button"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:42
+msgid "Properties"
+msgstr "Propriétés"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:44
+msgid "The properties relevant for a custom component:"
+msgstr "Propriétés pertinentes pour un composant personnalisé :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:46
+msgid ""
+"StringProperty: used when a component needs a string e.g. the name of the "
+"component"
+msgstr ""
+"StringProperty: utilisé lorsqu’un composant a besoin d’une chaîne de "
+"caractères, par exemple le nom du composant"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:47
+msgid ""
+"BooleanProperty: used when a component needs a boolean value e.g. putting a "
+"button on the SmartDashboard"
+msgstr ""
+"BooleanProperty: utilisé lorsqu’un composant a besoin d’une valeur "
+"booléenne, par exemple en mettant un bouton sur le SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:48
+msgid ""
+"DoubleProperty: used when a component needs a number value e.g. PID "
+"constantsChoicesProperty"
+msgstr ""
+"DoubleProperty: utilisé lorsqu’un composant a besoin d’une valeur numérique,"
+" par exemple PID constantsChoicesProperty"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:49
+msgid ""
+"ChildSelectionProperty: used when you need to choose a child component e.g. "
+"speed controllers in a RobotDrive"
+msgstr ""
+"ChildSelectionProperty: utilisé lorsque vous devez choisir un composant "
+"enfant, par exemple les contrôleurs de vitesse dans un RobotDrive"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:50
+msgid ""
+"TypeSelectionProperty: used when you need to choose any component of the "
+"given type from anywhere in the program e.g. input and output for a PID "
+"command"
+msgstr ""
+"TypeSelectionProperty: utilisé lorsque vous devez choisir n’importe quel "
+"composant du type donné de n’importe où dans le programme, par exemple "
+"l’entrée et la sortie pour une commande PID"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:52
+msgid "The fields for each property are described below:"
+msgstr "Les champs de chaque propriété sont décrits ci-dessous :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:57
+msgid "Validators.yaml"
+msgstr "Validators.yaml"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:61
+msgid ""
+"You may have noticed \"KiwiDriveValidator\" in the validators entry of each "
+"of the motor properties in PaletteDescription.yaml. It's not a built-in "
+"validator, so it had to be defined in Validators.yaml. This example "
+"validator is very simple - it just makes sure that each of the named fields "
+"has a different value than the others."
+msgstr ""
+"Vous avez peut-être remarqué \"KiwiDriveValidator\" dans l’entrée "
+"validateurs de chacune des propriétés des moteurs dans "
+"PaletteDescription.yaml. Ce n’est pas un validateur intégré, il a donc dû "
+"être défini dans Validators.yaml. Cet exemple de validateur est très simple "
+"- il s’assure simplement que chacun des champs nommés a une valeur "
+"différente des autres."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:64
+msgid "Built-in Validators and Validator Types"
+msgstr "Validateurs intégrés et types de validateurs"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:68
+msgid ""
+"The built-in validators are very useful (especially the UniqueValidators for"
+" port/channel use), but sometimes a custom validator is needed, like in the "
+"previous step"
+msgstr ""
+"Les validateurs intégrés sont très utiles (en particulier les "
+"UniqueValidators pour l’utilisation port/canal), mais parfois un validateur "
+"personnalisé est nécessaire, comme dans l’étape précédente"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:70
+msgid ""
+"DistinctValidator: Makes sure the values of each of the given fields are "
+"unique"
+msgstr ""
+"DistinctValidator: Garantit que les valeurs de chacun des champs donnés sont"
+" uniques"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:71
+msgid ""
+"ExistsValidator: Makes sure that a value has been set for the property using"
+" this validator"
+msgstr ""
+"ExistsValidator: Garantit qu’une valeur a été définie pour la propriété à "
+"l’aide de ce validateur"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:72
+msgid ""
+"UniqueValidator: Makes sure that the value for the property is unique "
+"globally for the given fields"
+msgstr ""
+"UniqueValidator: S’assure que la valeur de la propriété est  unique "
+"globalement pour les champs donnés"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:73
+msgid ""
+"ListValidator: Makes sure that all the values in a list property are valid"
+msgstr ""
+"ListValidator:  S’assure que toutes les valeurs d’une liste propriété sont "
+"valides"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:76
+msgid "C++ Export.yaml"
+msgstr "C++ Export.yaml"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:80
+msgid "A line-by-line breakdown of the file:"
+msgstr "Analyse du fichier ligne par ligne"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:82
+msgid ""
+"Kiwi Drive: the name of the component being exported. This is the same as "
+"the name set in PaletteDescription.yaml, and the name of the folder "
+"containing this file"
+msgstr ""
+"Kiwi Drive: Le nom du composant exporté. Il s’agit du même nom que le nom "
+"défini dans PaletteDescription.yaml, et le nom du dossier contenant ce "
+"fichier"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:83
+msgid ""
+"Defaults: provides some default values for includes needed by this "
+"component, the name of the class, a construction template, and more. The "
+"CustomComponent default adds an include for ``Custom/${ClassName}.h`` to "
+"every generated file that uses the component (e.g. ``RobotDrive.h`` would "
+"have ``#include \"Custom/KiwiDrive.h`` the top of the file)"
+msgstr ""
+"Defaults: fournit certaines valeurs par défaut pour les fichiers d'inclusion"
+" nécessaires à ce composant, le nom de la classe, un modèle de construction,"
+" et plus encore. Le CustomComponent par défaut ajoute une inclusion pour "
+"``Custom/${ClassName}.h``  à chaque fichier généré qui utilise le composant "
+"(par exemple ``RobotDrive.h`` aurait ``#include Custom/KiwiDrive.h`` en haut"
+" du fichier)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:84
+msgid "ClassName: the name of the custom class you're adding."
+msgstr "ClassName: nom de la classe personnalisée que vous ajoutez."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:85
+msgid ""
+"Construction: an instruction for how the component should be constructed. "
+"Variables will be replaced with their values (\"${ClassName}\" will be "
+"replaced with \"KiwiDrive\"), then macros will be evaluated (for example, "
+"``#variable($Name)`` may be replaced with ``drivebaseKiwiDrive``)."
+msgstr ""
+"Construction: une instruction sur la façon dont le composant doit être "
+"construit. Les variables seront remplacées par leurs valeurs "
+"(\"${ClassName}\" sera remplacé par \"KiwiDrive\"), puis les macros seront "
+"évaluées (par exemple, ``#variable($Name)`` pourrait être remplacée par "
+"``drivebaseKiwiDrive``)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:87
+msgid "This example expects a KiwiDrive class with the constructor"
+msgstr "Cet exemple s’attend à une classe KiwiDrive avec le constructeur"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:93
+msgid "If your team uses Java, this file can be empty."
+msgstr "Si votre équipe utilise Java, ce fichier peut être laissé vide."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:96
+msgid "Java Export.yaml"
+msgstr "Java Export.yaml"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:100
+msgid ""
+"Very similar to the C++ export file; the only difference should be the "
+"Construction line. This example expects a KiwiDrive class with the "
+"constructor"
+msgstr ""
+"Très similaire au fichier d’exportation C++; la seule différence devrait "
+"être la ligne de construction. Cet exemple s’attend à une classe KiwiDrive "
+"avec le constructeur"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:106
+msgid "If your team uses C++, this file can be empty."
+msgstr "Si votre équipe utilise C++, ce fichier peut être laissé vide."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:109
+msgid "Using Macros and Variables"
+msgstr "Utilisation de macros et de variables"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:111
+msgid ""
+"Macros are simple functions that RobotBuilder uses to turn variables into "
+"text that will be inserted into generated code. They always start with the "
+"\"#\" symbol, and have a syntax similar to functions: ``<macro_name>( arg0, "
+"arg1, arg2, ...)``. The only macro you'll probably need to use is "
+"``#variable( component_name )``"
+msgstr ""
+"Les macros sont des fonctions simples que RobotBuilder utilise pour "
+"transformer des variables en texte qui seront insérées dans le code généré."
+"  Ils commencent toujours par le Symbole \"#\", et ont une syntaxe similaire"
+" aux fonctions : ``<macro_name>( arg0, arg1, arg2, ...)``. La seule macro "
+"que vous aurez probablement besoin d’utiliser est ``#variable( "
+"component_name )``"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:113
+msgid ""
+"``#variable`` takes a string, usually the a variable defined somewhere (i.e."
+" \"Name\" is the name given to the component in RobotBuilder, such as \"Arm "
+"Motor\"), and turns it into the name of a variable defined in the generated "
+"code. For example, ``#variable(\"Arm Motor\")`` results in the string "
+"``ArmMotor``"
+msgstr ""
+"``#variable``  accepte une chaîne de caractères, généralement la variable "
+"définie quelque part (c.-à-d. \"Name\" est le nom donné au composant dans "
+"RobotBuilder, tel que \"Arm Motor\"), et le transforme en nom d’une variable"
+" définie dans le code généré. Par exemple,``#variable(\"Arm Motor\")`` se "
+"traduit par la chaîne de caractères ``ArmMotor``"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:115
+msgid ""
+"Variables are referenced by placing a dollar sign (\"$\") in front of the "
+"variable name, which an optionally be placed inside curly braces to easily "
+"distinguish the variable from other text in the file. When the file is "
+"parsed, the dollar sign, variable name, and curly braces are replaced with "
+"the value of the variable (e.g. ``${ClassName}`` is replaced with "
+"``KiwiDrive``)."
+msgstr ""
+"Les variables sont référencées en plaçant un signe dollar (\"$\")  devant le"
+" nom de la variable, qui peut  optionnellement être placé à l’intérieur des "
+"accolades pour distinguer facilement la variable d'un autre texte dans le "
+"fichier. Lorsque le fichier est analysé, le signe dollar, le nom de la "
+"variable et les accolades sont remplacés par la valeur de la variable (p. "
+"ex. ``${ClassName}`` est remplacé par ``KiwiDrive``)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:117
+msgid ""
+"Variables are either component properties (e.g. \"Motor 1\", \"Motor 2\", "
+"\"Motor 3\" in the kiwi drive example), or one of the following:"
+msgstr ""
+"Les variables sont soit des propriétés de composants (p. ex. \"Motor 1\", "
+"\"Motor 2\", \"Motor 3\" dans l’exemple de l'entraînement kiwi), soit l’un "
+"des suivants :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:119
+msgid ""
+"Short_Name: the name given to the component in the editor panel in "
+"RobotBuilder"
+msgstr ""
+"Short_Name: le nom donné au composant dans le panneau d’édition de "
+"RobotBuilder"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:120
+msgid ""
+"Name: the full name of the component. If the component is in a subsystem, "
+"this will be the short name appended to the name of the subsystem"
+msgstr ""
+"Name: le nom complet du composant. Si le composant se trouve dans un sous-"
+"système, il s’agit d'un version écourtée du nom ajoutée au nom du sous-"
+"système"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:121
+msgid ""
+"Export: The name of the file this component should be created in, if any. "
+"This should be \"RobotMap\" for components like actuators, controllers, and "
+"sensors; or \"OI\" for things like gamepads or other custom OI components. "
+"Note that the \"CustomComponent\" default will export to the RobotMap."
+msgstr ""
+"Export: Le nom du fichier dans lequel ce composant doit être créé, le cas "
+"échéant. Cela doit être \"RobotMap\"  pour les composants comme les "
+"actionneurs, les contrôleurs et les capteurs; ou \"OI\" pour des composants "
+"comme les gamepads ou d’autres composants OI personnalisés. Notez que le "
+"défaut \"CustomComponent\" s’exportera vers le RobotMap."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:122
+msgid ""
+"Import: Files that need to be included or imported for this component to be "
+"able to be used."
+msgstr ""
+"Import: Les fichiers qui doivent être inclus ou importés pour que ce "
+"composant puisse être utilisé."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:123
+msgid ""
+"Declaration: an instruction, similar to Construction, for how to declare a "
+"variable of this component type. This is taken care of by the default "
+"\"None\""
+msgstr ""
+"Declaration: une instruction, similaire à Construction, pour savoir comment "
+"déclarer une variable de ce type de composant. Ceci est pris en charge par "
+"la valeur par défaut \"None\""
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:124
+msgid ""
+"Construction: an instruction for how to create a new instance of this "
+"component"
+msgstr ""
+"Construction: une instruction montrant comment créer une nouvelle instance "
+"de ce composant"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:125
+msgid ""
+"LiveWindow: an instruction for how to add this component to the LiveWindow"
+msgstr ""
+"LiveWindow: une instruction montrant comment ajouter ce composant au "
+"LiveWindow"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:126
+msgid ""
+"Extra: instructions for any extra functions or method calls for this "
+"component to behave correctly, such as encoders needing to set the encoding "
+"type."
+msgstr ""
+"Extra: les instructions relatives à toutes les fonctions ou  méthodes "
+"exigent que ce composant se fonctionne correctement, tels que les encodeurs "
+"qui doivent définir le type d’encodage."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:127
+msgid ""
+"Prototype (C++ only): The prototype for a function to be created in the file"
+" the component is declared in, typically a getter in the OI class"
+msgstr ""
+"Prototype (C++ uniquement) : Le prototype pour la création d’une fonction "
+"dans le fichier dans lequel le composant est déclaré, généralement un getter"
+" de la classe OI"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:128
+msgid ""
+"Function: A function to be created in the file the component is declared in,"
+" typically a getter in the OI class"
+msgstr ""
+"Function : Une fonction à créer dans le fichier dans lequel le composant est"
+" déclaré, généralement un getter dans la classe OI"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:129
+msgid ""
+"PID: An instruction for how to get the PID output of the component, if it "
+"has one (e.g. ``#variable($Short_Name)->PIDGet()``)"
+msgstr ""
+"PID : Une instruction montrant la façon d’obtenir la sortie PID du "
+"composant, si elle en a une (p. ex. ``#variable($Short_Name)->PIDGet()``)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:130
+msgid ""
+"ClassName: The name of the class that the component represents (e.g. "
+"``KiwiDrive`` or ``Joystick``)"
+msgstr ""
+"ClassName: Le nom de la classe que représente le composant (p. ex. "
+"''KiwiDrive'' ou ''Joystick'')"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:132
+msgid ""
+"If you have variables with spaces in the name (such as \"Motor 1\", \"Right "
+"Front Motor\", etc.), the spaces need to be replaced with underscores when "
+"using them in the export files."
+msgstr ""
+"Si vous avez des variables avec des espaces dans le nom (tels que\"Motor "
+"1\", \"Right Front Motor\", etc.), les espaces doivent être remplacés par "
+"des soulignements lors de leur utilisation dans les fichiers d’exportation."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:135
+msgid "help.html"
+msgstr "help.html"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:139
+msgid ""
+"A HTML file giving information on the component. It is better to have this "
+"be as detailed as possible, though it certainly isn't necessary if the "
+"programmer(s) are familiar enough with the component, or if it's so simple "
+"that there's little point in a detailed description."
+msgstr ""
+"Un fichier HTML donnant des informations sur le composant. Il est préférable"
+" qu'il soit aussi détaillé que possible, mais il n’est certainement pas "
+"nécessaire si le programmeur (s)  est ou sont assez familier.s avec le "
+"composant, ou si c’est si simple qu’il inutile d'avoir une description "
+"détaillée."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:142
+msgid "config.txt"
+msgstr "config.txt"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:146
+msgid ""
+"A configuration file to hold miscellaneous information about the component. "
+"Currently, this only has the section of the palette to put the component in."
+msgstr ""
+"Un fichier de configuration pour contenir diverses informations  sur le "
+"composant. Actuellement, il y a que la section de la palette pour contenir "
+"le composant"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:148
+msgid "The sections of the palette (these are case sensitive):"
+msgstr "Les sections de la palette (celles-ci sont sensibles à la casse) :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:150
+msgid "Subsystems"
+msgstr "Subsystems"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:151
+msgid "Controllers"
+msgstr "Controllers"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:152
+msgid "Sensors"
+msgstr "Sensors"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:153
+msgid "Actuators"
+msgstr "Actuators"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:154
+msgid "Pneumatics"
+msgstr "Pneumatics"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:155
+msgid "OI"
+msgstr "OI"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:156
+msgid "Commands"
+msgstr "Commands"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:159
+msgid "icon.png"
+msgstr "icon.png"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:161
+msgid ""
+"The icon that shows up in the palette and the help page. This should be a "
+"64x64 .png file."
+msgstr ""
+"L'icône qui apparaît dans la palette et la page d’aide. Il devrait être un "
+"fichier .png 64x64."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-custom-components.rst:163
+msgid ""
+"It should use the color scheme and general style of the section it's in to "
+"avoid visual clutter, but this is entirely optional. Photoshop .psd files of"
+" the icons and backgrounds are in `src/main/icons/icons "
+"<https://github.com/wpilibsuite/RobotBuilder/tree/master/src/main/icons/icons>`_"
+" and png files of the icons and backgrounds are in `src/main/resources/icons"
+" "
+"<https://github.com/wpilibsuite/RobotBuilder/tree/master/src/main/resources/icons>`_."
+msgstr ""
+"Il doit utiliser le jeu de couleurs et le style général de la section dans "
+"laquelle il se trouve pour éviter l’encombrement visuel, mais c’est "
+"entièrement facultatif. Les fichiers Photoshop .psd des icônes et des "
+"arrière-plans se trouvent dans `src/main/icons/icons "
+"<https://github.com/wpilibsuite/RobotBuilder/tree/master/src/main/icons/icons>`"
+" et les fichiers png des icônes et des arrière-plans sont dans "
+"`src/main/resources/icons "
+"<https://github.com/wpilibsuite/RobotBuilder/tree/master/src/main/resources/icons>`_."

@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,184 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:2
+msgid "Viewing Diagnostics"
+msgstr "Affichage des diagnostics"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:4
+msgid ""
+"The first diagnostic to look at is the r-squared - it should be somewhere "
+"north of ~.9. If it is significantly lower than this, there is likely a "
+"problem with your characterization data."
+msgstr ""
+"Le premier diagnostic à regarder est le r-carré - il devrait être quelque "
+"part au-dessus de ~.9. Si elle est inférieure à cette valeur de manière "
+"significative, il y a probablement un problème avec vos données de "
+"caractérisation."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:6
+msgid ""
+"To investigate further, you can generate a number of diagnostic plots with "
+"the buttons on the left-hand side:"
+msgstr ""
+"Pour approfondir votre investigation, vous pouvez générer un certain nombre "
+"de parcelles de diagnostic avec les boutons situés sur le côté gauche :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:12
+msgid "Time-Domain Diagnostics"
+msgstr "Diagnostics dans le domaine temporel"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:14
+msgid ""
+"The Time-Domain Diagnostics plots display velocity and acceleration versus "
+"time over the course of the analyzed tests. For a typical drive "
+"characterization, these should look something like this (other mechanisms "
+"will be highly similar):"
+msgstr ""
+"Les graphiques des diagnostics dans le domaine temporel affichent la vitesse"
+" et l’accélération par rapport au temps au cours des tests analysés. Pour "
+"une caractérisation d’entraînement typique, ceux-ci devraient ressembler à "
+"quelque chose comme ceci (d’autres mécanismes seront très semblables) :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:19
+msgid ""
+"The vertical \"mirroring\" visible here is normal, and is simply the result "
+"of the left- and right-side encoders having different signs - this does not "
+"cause any trouble for the characterization tool."
+msgstr ""
+"La \"mirroring\" verticale visible ici est normale, et est simplement le "
+"résultat des encodeurs gauche et droit ayant des signes différents - cela ne"
+" cause aucun problème pour l’outil de caractérisation."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:21
+msgid ""
+"The quasistatic test ought to have nearly linear velocity, and nearly-zero "
+"acceleration (hense \"quasistatic\"). The dynamic test ought to have "
+"velocity that asymptotically approaches a steady-state speed (the shape of "
+"the curve should be exponential, in fact), and acceleration that, "
+"accordingly, rapidly falls to zero (also exponentially, as the derivative of"
+" an exponential function is also an exponential function)."
+msgstr ""
+"Le test quasistatique devrait avoir une vitesse presque linéaire et une "
+"accélération presque nulle (de ce fait \"quasistatic »). Le test dynamique "
+"devrait avoir une vitesse qui approche asymptotiquement une vitesse en "
+"régime permanent (la forme de la courbe devrait être exponentielle, en "
+"fait), et l’accélération qui, par conséquent, tombe rapidement à zéro "
+"(également exponentiellement, comme la dérivée d’une fonction exponentielle "
+"est également une fonction exponentielle)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:23
+msgid ""
+"Deviation from this behavior is a sign of an :ref:`error <docs/software"
+"/wpilib-tools/robot-characterization/viewing-diagnostics:Diagnostics Plots "
+"for Common Failure Modes>`, either in your robot setup, analysis settings, "
+"or your test procedure."
+msgstr ""
+"Un écart par rapport à ce comportement est le signe d’une :ref:`erreur "
+"<docs/software/wpilib-tools/robot-characterization/viewing-"
+"diagnostics:Diagnostics Plots for Common Failure Modes>`, soit dans la "
+"configuration de votre robot, les paramètres d’analyse, ou votre procédure "
+"de test."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:26
+msgid "Voltage-Domain Diagnostics"
+msgstr "Diagnostics dans le domaine du voltage"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:28
+msgid ""
+"The ``Voltage-Domain`` Diagnostics button plots velocity and acceleration "
+"versus voltage. Velocity is ploted for the quasistatic test, and "
+"acceleration is plotted for the dynamic test. For a typical drive "
+"characterization, the plots should resemble this (again, other mechanisms "
+"will be similar)"
+msgstr ""
+"Le bouton``Voltage-Domain Diagnostic`` trace la vitesse et accélération en "
+"fonction de la tension. La vitesse est tracée pour le test quasistatique, et"
+" l’accélération est tracée pour le test dynamique. Pour une caractérisation "
+"d’entraînement typique, les graphiques devraient ressembler à ceci (encore "
+"une fois, d’autres mécanismes seront semblables)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:33
+msgid ""
+"Both plots should be linear, however the dynamic plot will almost certainly "
+"have substantially-more noise. The noise on the dynamic plot may be reduced "
+"by increasing the ``Accel Window Size`` setting."
+msgstr ""
+"Les deux graphiques doivent être linéaires, mais le graphique correspondant "
+"au test  dynamique aura presque certainement beaucoup plus de bruit. Ce "
+"bruit peut être réduit en augmentant la valeur du paramètre ``Accel Window "
+"Size``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:38
+msgid ""
+"However, if your robot or mechanism has low mass compared to the motor "
+"power, this may \"eat\" what little meaningful acceleration data you have "
+"(however, in these cases ``kA`` will tend towards zero and can usually be "
+"ignored, anyway)."
+msgstr ""
+"Toutefois, si votre robot ou mécanisme a une faible masse par rapport à la "
+"puissance du moteur, cela peut \"manger\" le peu de données d’accélération "
+"significatives que vous avez (cependant, dans ces cas  ``kA`` tendra vers "
+"zéro et peut généralement être ignoré, de toute façon)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:40
+msgid ""
+"The x-axis corresponds to ``velocity-portion voltage`` and ``acceleration-"
+"portion voltage``, respectively - as the governing voltage-balance equations"
+" are multi-dimensional, plots against raw voltage are not as useful as one "
+"might expect."
+msgstr ""
+"L’axe x correspond à la ``portion vitesse du voltage`` et à la``portion "
+"accélération du voltage``, respectivement - comme les équations régissant "
+"l'équilibre des tensions sont multidimensionnelles, les graphiques obtenues "
+"en fonction de la tension brute ne sont pas aussi utiles qu’on pourrait s’y "
+"attendre."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:43
+msgid "3D Diagnostics"
+msgstr "Diagnostics en 3D"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:45
+msgid ""
+"The ``3D Diagnostics`` button will generate a 3d plot of voltage over the "
+"entire velocity-acceleration plane (this may be an adjusted voltage to "
+"remove the nonlinearity in mechanisms with nonlinear equations, such as "
+"arms)."
+msgstr ""
+"Le bouton ``3D Diagnostics`` générera un graphique de tension 3D sur "
+"l’ensemble du plan vitesse-accélération (il peut s’agir d’une tension "
+"ajustée pour éliminer la non linéarité dans les mécanismes, tels que les "
+"bras, avec des équations non linéaires)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:50
+msgid ""
+"This plot is interactive, and may be rotated by clicking-and-dragging. The "
+"quasistatic and dynamic tests should both be clearly visible as streaks of "
+"data, and the best fit-plane should pass through all the data points. The "
+"data from both the quasistatic and dynamic tests should appear as straight "
+"lines (the reason for this is left as an exercise for the reader)."
+msgstr ""
+"Ce graphique est intéractif et peut être tourné en cliquant dessus et en le "
+"faisant glisser. Les tests quasistatiques et dynamiques doivent être "
+"clairement visibles en tant que séries de données, et le meilleur plan "
+"d’ajustement devrait passer à travers tous les points de données. Les "
+"données des tests quasistatiques et dynamiques doivent apparaître comme des "
+"lignes droites (la raison est laissée comme exercice au lecteur)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:52
+msgid ""
+"The discontinuity corresponds to ``kS``, which always opposes the direction "
+"of motion and thus changes direction as the plot crosses the 0 velocity "
+"mark."
+msgstr ""
+"La discontinuité correspond à ``kS``, qui s’oppose toujours à la direction "
+"du mouvement et change ainsi de direction lorsque la courbe franchit le "
+"point de vitesse 0."

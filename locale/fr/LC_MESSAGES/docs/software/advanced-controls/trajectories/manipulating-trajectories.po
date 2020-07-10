@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -49,9 +50,9 @@ msgid ""
 msgstr ""
 "Étant donné que toutes les trajectoires ont des horodatages à chaque point, "
 "le temps nécessaire à un robot pour parcourir la trajectoire entière est "
-"prédéterminé. La méthode `` TotalTime () '' (C ++) / `` getTotalTimeSeconds "
-"() '' (Java) peut être utilisée pour déterminer le temps qu'il faut pour "
-"parcourir la trajectoire."
+"prédéterminé. La méthode ``TotalTime()`` (C++) / ``getTotalTimeSeconds()`` "
+"(Java) peut être utilisée pour déterminer le temps qu'il faut pour parcourir"
+" la trajectoire."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:23
 msgid "Sampling the trajectory"
@@ -68,47 +69,47 @@ msgid ""
 "point."
 msgstr ""
 "La trajectoire peut être échantillonnée à différents pas de temps pour "
-"obtenir la pose, la vitesse et l'accélération à ce point. La méthode `` "
-"Sample (units :: second_t time) '' (C ++) / `` sample (double timeSeconds) "
-"'' (Java) peut être utilisée pour échantillonner la trajectoire à n'importe "
+"obtenir la pose, la vitesse et l'accélération à ce point. La méthode "
+"``Sample(units::second_t time)`` (C++) / ``sample(double timeSeconds)`` "
+"(Java) peut être utilisée pour échantillonner la trajectoire à n'importe "
 "quel pas de temps. Le paramètre fait référence au temps écoulé depuis 0 "
-"seconde (le point de départ de la trajectoire). Cette méthode renvoie un `` "
-"Trajectory :: Sample`` avec des informations sur ce point d'échantillonnage."
+"seconde (le point de départ de la trajectoire). Cette méthode renvoie un "
+"``Trajectory::Sample`` avec des informations sur ce point d'échantillonnage."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:40
 msgid ""
 "The ``Trajectory::Sample`` struct has several pieces of information about "
 "the sample point:"
 msgstr ""
-"La structure `` Trajectory :: Sample`` contient plusieurs informations sur "
-"le point d'échantillonnage:"
+"La structure ``Trajectory::Sample`` contient plusieurs informations sur le "
+"point d'échantillonnage:"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:42
 msgid ""
 "``t``: The time elapsed from the beginning of the trajectory up to the "
 "sample point."
 msgstr ""
-"`` t``: Le temps écoulé depuis le début de la trajectoire jusqu'au point "
+"``t``: Le temps écoulé depuis le début de la trajectoire jusqu'au point "
 "d'échantillonnage."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:43
 msgid "``velocity``: The velocity at the sample point."
-msgstr "`` velocity '': la vélocité au point d'échantillonnage."
+msgstr "``velocity``: la vélocité au point d'échantillonnage."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:44
 msgid "``acceleration``: The acceleration at the sample point."
-msgstr "`` acceleration '': l'accélération au point d'échantillonnage."
+msgstr "``acceleration``: l'accélération au point d'échantillonnage."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:45
 msgid "``pose``: The pose (x, y, heading) at the sample point."
-msgstr "`` pose '': la pose (x, y, cap) au point d'échantillonnage."
+msgstr "``pose``: la pose (x, y, cap) au point d'échantillonnage."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:46
 msgid ""
 "``curvature``: The curvature (rate of change of heading with respect to "
 "distance along the trajectory) at the sample point."
 msgstr ""
-"`` curvature'': la courbure (taux de changement de cap par rapport à la "
+"``curvature``: la courbure (taux de changement de cap par rapport à la "
 "distance le long de la trajectoire) au point d'échantillonnage."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:48
@@ -136,12 +137,11 @@ msgid ""
 "existing points / states in the list."
 msgstr ""
 "Un utilisateur expérimenté peut obtenir une liste de tous les états de la "
-"trajectoire en appelant la méthode `` States () '' (C ++) / `` getStates () "
-"'' (Java). Chaque état représente un point sur la trajectoire. : ref: "
-"`Lorsque la trajectoire est créée <documents / logiciels / commandes "
-"avancées / trajectoires / génération de trajectoire: génération de la "
-"trajectoire>` en utilisant la méthode `` TrajectoryGenerator :: "
-"GenerateTrajectory (...) '', une liste de trajectoire des points / états "
-"sont créés. Lorsque l'utilisateur échantillonne la trajectoire à un moment "
-"particulier, un nouveau point d'échantillonnage est interpolé entre deux "
-"points / états existants dans la liste."
+"trajectoire en appelant la méthode ``States()`` (C++) / ``getStates()`` "
+"(Java). Chaque état représente un point sur la trajectoire. :ref:`Lorsque la"
+" trajectoire est créée <docs/software/advanced-controls/trajectories"
+"/trajectory-generation:Generating the trajectory>` en utilisant la méthode "
+"``TrajectoryGenerator::GenerateTrajectory(...)``, une liste de trajectoires "
+"des points / états sont créés. Lorsque l'utilisateur échantillonne la "
+"trajectoire à un moment particulier, un nouveau point d'échantillonnage est "
+"interpolé entre deux points / états existants dans la liste."

@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,79 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:2
+msgid "Port Forwarding"
+msgstr "Transfert de port"
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:4
+msgid ""
+"This class provides an easy way to forward local ports to another host/port."
+" This is useful to provide a way to access Ethernet-connected devices from a"
+" computer tethered to the roboRIO USB port. This class acts as a raw TCP "
+"port forwarder, this means you can forward connections such as SSH."
+msgstr ""
+"La classe PortForwarder offre un moyen facile de transférer les ports locaux"
+" vers un autre hôte/port. Ceci est utile pour fournir un moyen d’accéder aux"
+" périphériques connectés par Ethernet à partir d’un ordinateur connecté au "
+"port USB du roboRIO. Cette classe agit comme un transitaire de port TCP "
+"brut, ce qui signifie que vous pouvez transférer des connexions telles que "
+"SSH."
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:7
+msgid "Forwarding a Remote Port"
+msgstr "Transférer un port distant"
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:9
+msgid ""
+"Often teams may wish to connect directly to the roboRIO for controlling "
+"their robot. The PortForwarding class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpiutil/net/PortForwarder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classwpi_1_1PortForwarder.html>`__)"
+" can be used to forward the Raspberry Pi connection for usage during these "
+"times. The PortForwarding class establishes a bridge between the remote and "
+"the client. To forward a port in Java, simply do ``PortForwarder.add(int "
+"port, String remoteName, int remotePort)``."
+msgstr ""
+"Souvent, les équipes souhaitent se connecter directement au roboRIO pour "
+"contrôler leur robot. La classe PortForwarding (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpiutil/net/PortForwarder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classwpi_1_1PortForwarder.html>`__)"
+" peut être utilisée pour transférer la connexion Raspberry Pi pour usage à "
+"dans ces cas-là. La classe PortForwarding établit un pont entre l'hôte "
+"distant et le client. Pour transférer un port en Java, il suffit d'invoquer "
+"``PortForwarder.add(int port, String remoteName, int remotePort)``."
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:26
+msgid ""
+"You **can not** use a port less than 1024 as your local forwarded port. It "
+"is also important to note that you **can not** use full URLs "
+"(``http://frcvision.local``) and should only use IP Addresses or DNS names."
+msgstr ""
+"Vous **ne pouvez pas** utiliser un port inférieur à 1024 comme votre port "
+"local transféré. Il est également important de noter que vous **ne pouvez "
+"pas ** utiliser des URL complèts (``http://frcvision.local``)  et ne devriez"
+" utiliser que des adresses IP ou des noms DNS."
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:29
+msgid "Removing a Forwarded Port"
+msgstr "Supprimer un port transféré"
+
+#: ../../frc-docs/source/docs/networking/networking-utilities/portforwarding.rst:31
+msgid ""
+"To stop forwarding on a specified port, simply call ``remove(int port)`` "
+"with port being the port number. If you call ``remove()`` on a port that is "
+"not being forwarded, nothing will happen."
+msgstr ""
+"Pour arrêter le transfert vers un port spécifié, il suffit d’appeler "
+"``remove(int port)`` avec comme port le numéro de port. Si vous appelez "
+"``remove()``  sur un port qui n’est pas transmis, il ne se passera rien."

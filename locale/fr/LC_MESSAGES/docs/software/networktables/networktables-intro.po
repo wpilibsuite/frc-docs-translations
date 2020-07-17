@@ -6,6 +6,7 @@
 # Translators:
 # Andy Chang, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,6 +63,56 @@ msgstr ""
 msgid "Network tables organization"
 msgstr "L'organisation des NetworkTables"
 
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:11
+msgid ""
+"Data is organized in NetworkTables in a hierarchy much like a directory on "
+"disk with folders and files. For any instance of NetworkTables there can be "
+"multiple values and subtables that may be nested in whatever way fits the "
+"data organization desired. Subtables actually are represented as a long key "
+"with slashes (/) separating the nested subtable and value key names. Each "
+"value has a key associated with it that is used to retrieve the value. For "
+"example, you might have a table called **datatable** as shown in the "
+"following examples. Within a **datatable** there are two keys, X and Y and "
+"their associated values. The OutlineViewer is a good utility for exploring "
+"the values stored in NetworkTables while a program is running."
+msgstr ""
+"Les données sont organisées dans les NetworkTables dans une hiérarchie un "
+"peu comme un répertoire sur disque avec des dossiers et des fichiers. Pour "
+"toute instance de NetworkTables, il peut y avoir plusieurs valeurs et sous-"
+"tables qui peuvent être imbriquées de la manière qui convient le mieux pour "
+"une organisation de données souhaitée. Les sous-tables sont en fait "
+"représentées comme une clé longue (long key) avec des barres obliques (/) "
+"séparant les noms de clé de sous-table et de valeur imbriqués. Chaque valeur"
+" est associée à une clé qui est utilisée pour récupérer la valeur. Par "
+"exemple, vous pouvez avoir une table appelée ** datatable ** comme indiqué "
+"dans les exemples suivants. Dans un ** datatable **, il y a deux clés, X et "
+"Y et leurs valeurs associées. L'utilitaire OutlineViewer est un bon outil "
+"pour explorer les valeurs stockées dans NetworkTables pendant l'exécution "
+"d'un programme."
+
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:13
+msgid ""
+"Data types for NetworkTables are either boolean, numeric, or string. Numeric"
+" values are written as double precision values. In addition you can have "
+"arrays of any of those types to ensure that multiple data items are "
+"delivered consistently. There is also the option of storing raw data which "
+"can be used for representing structured data."
+msgstr ""
+"Les types de données pour NetworkTables sont soit booléens, numériques ou "
+"chaîne. Les valeurs numériques sont écrites sous forme de valeurs à double "
+"précision. En outre, vous pouvez disposer de tableaux de n'importe lequel de"
+" ces types pour garantir que plusieurs éléments de données sont fournis de "
+"manière cohérente. Il existe également la possibilité de stocker des données"
+" brutes qui peuvent être utilisées pour représenter des données structurées."
+
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:15
+msgid ""
+"There are some default tables that are created automatically when the "
+"program starts up:"
+msgstr ""
+"Certaines tables par défaut sont créées automatiquement au démarrage du "
+"programme:"
+
 #: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:18
 msgid "Table name"
 msgstr "Nom de table"
@@ -74,14 +125,78 @@ msgstr "Utilité"
 msgid "/SmartDashboard"
 msgstr "/SmartDashboard"
 
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:20
+msgid ""
+"Used to store values written to the SmartDashboard or Shuffleboard using the"
+" ``SmartDashboard.put()`` set of methods."
+msgstr ""
+"Utilisé pour stocker les valeurs écrites sur le SmartDashboard ou le "
+"Shuffleboard à l'aide de l'ensemble de méthodes `` SmartDashboard.put () ''."
+
 #: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:27
 msgid "/LiveWindow"
 msgstr "/LiveWindow"
+
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:27
+msgid ""
+"Used to store Test mode (Test on the Driver Station) values. Typically these"
+" are Subsystems and the associated sensors and actuators."
+msgstr ""
+"Utilisé pour stocker les valeurs du mode Test (Test sur le Driver Station). "
+"Il s'agit généralement de sous-systèmes et des capteurs et actionneurs "
+"associés."
 
 #: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:35
 msgid "/FMSInfo"
 msgstr "/FMSInfo"
 
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:35
+msgid ""
+"Information about the currently running match that comes from the Driver "
+"Station and the Field Management System"
+msgstr ""
+"Informations sur le match en cours d'exécution provenant de Driver Station "
+"et du Field Management System"
+
 #: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:43
 msgid "Writing a simple NetworkTable program"
 msgstr "Écrire un programme simple utilisant les NetworkTables"
+
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:45
+msgid ""
+"The NetworkTables classes are instantiated automatically when your program "
+"starts. To access the instance of NetworkTables do call methods to read and "
+"write the getDefault() method can be used to get the default instance."
+msgstr ""
+"Les classes NetworkTables sont instanciées automatiquement au démarrage de "
+"votre programme. L'accès à l'instance de NetworkTables implique l'appel de "
+"méthodes pour lire et écrire; la méthode getDefault () peut être utilisée "
+"pour obtenir l'instance par défaut."
+
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:126
+msgid ""
+"The values for X and Y can be easily viewed using the OutlineViewer program "
+"that shows the NetworkTables hierarchy and all the values associated with "
+"each key."
+msgstr ""
+"Les valeurs de X et Y peuvent être facilement visualisées à l'aide du "
+"programme OutlineViewer qui montre la hiérarchie NetworkTables et toutes les"
+" valeurs associées à chaque clé."
+
+#: ../../frc-docs/source/docs/software/networktables/networktables-intro.rst:128
+msgid ""
+"Actually network tables has a flat namespace for the keys. Having tables and"
+" subtables is an abstraction to make it easier to organize your data. So for"
+" a table called \"SmartDashboard\" and a key named \"xValue\", it is really "
+"a single key called \"/SmartDashboard/xValue\". The hierarchy is not "
+"actually represented in the distributed data, only keys with prefixes that "
+"are the contained table."
+msgstr ""
+"En fait, les tables réseau ont un espace de noms plat pour les clés. Avoir "
+"des tables et des sous-tables est une abstraction pour faciliter "
+"l'organisation de vos données. Donc, pour une table appelée "
+"\"SmartDashboard\" et une clé nommée \"xValue\", il s'agit vraiment d'une "
+"seule clé appelée \"/ SmartDashboard / xValue\". La hiérarchie n'est pas "
+"réellement représentée dans les données distribuées.  Elle existe seulement "
+"dans les noms de clés avec des préfixes qui correspondent aux tables "
+"contenues."

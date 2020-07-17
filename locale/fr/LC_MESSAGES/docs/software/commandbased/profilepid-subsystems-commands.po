@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,519 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:2
+msgid "Combining Motion Profiling and PID in Command-Based"
+msgstr "Combinaison du profilage de mouvement et du PID dans les commandes"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:4
+msgid ""
+"For a description of the WPILib PID control features used by these command-"
+"based wrappers, see :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`."
+msgstr ""
+"Pour une description des fonctionnalités de contrôle PID WPILib utilisées "
+"par ces wrappers basés sur des commandes, voir: ref: `docs / software / "
+"advanced-controls / controllers / pidcontroller: PID Control in WPILib`."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:6
+msgid ""
+"Unlike the earlier version of ``PIDController``, the 2020 "
+"``ProfiledPIDController`` class runs *synchronously*, and is not handled in "
+"its own thread.  Accordingly, changing its ``period`` parameter will *not* "
+"change the actual frequency at which it runs in any of these wrapper "
+"classes.  Users should never modify the ``period`` parameter unless they are"
+" certain of what they are doing."
+msgstr ""
+"Contrairement à la version précédente de `` PIDController '', la version "
+"2020 de la classe `` ProfiledPIDController '' s'exécute * de manière "
+"synchrone * et n'est pas gérée dans son propre thread. Par conséquent, la "
+"modification de son paramètre `` période '' ne changera pas la fréquence "
+"réelle à laquelle elle s'exécute dans l'une de ces classes \"wrapper\". Les "
+"utilisateurs ne doivent jamais modifier le paramètre  ``period`` à moins "
+"d'être certains de ce qu'ils font."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:8
+msgid ""
+"A common FRC controls solution is to pair a trapezoidal motion profile for "
+"setpoint generation with a PID controller for setpoint tracking.  To "
+"facilitate this, WPILib includes its own :ref:`ProfiledPIDController "
+"<docs/software/advanced-controls/controllers/profiled-"
+"pidcontroller:Combining Motion Profiling and PID Control with "
+"ProfiledPIDController>` class.  To further aid teams in integrating this "
+"functionality into their robots, the command-based framework contains two "
+"convenience wrappers for the ``ProfiledPIDController`` class: "
+"``ProfiledPIDSubsystem``, which integrates the controller into a subsystem, "
+"and ``ProfiledPIDCommand``, which integrates the controller into a command."
+msgstr ""
+"Une solution de contrôle FRC courante consiste à coupler un profil de "
+"mouvement trapézoïdal pour la génération de points de consigne avec un "
+"contrôleur PID pour le suivi des points de consigne. Pour faciliter cela, "
+"WPILib inclut sa propre classe: ref: `ProfiledPIDController <docs / software"
+" / advanced-controls / controllers / profiled-pidcontroller: Combining "
+"Motion Profiling and PID Control with ProfiledPIDController>` . Pour "
+"faciliter davantage les équipes à intégrer cette fonctionnalité dans leurs "
+"robots, le cadre basé sur des commandes contient deux wrappers pratiques "
+"pour la classe `` ProfiledPIDController``: `` ProfiledPIDSubsystem``, qui "
+"intègre le contrôleur dans un sous-système, et `` ProfiledPIDCommand`` , qui"
+" intègre le contrôleur dans une commande."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:11
+msgid "ProfiledPIDSubsystem"
+msgstr "ProfiledPIDSubsystem"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:13
+msgid ""
+"In C++, the ``ProfiledPIDSubsystem`` class is templated on the unit type "
+"used for distance measurements, which may be angular or linear.  The passed-"
+"in values *must* have units consistent with the distance units, or a "
+"compile-time error will be thrown.  For more information on C++ units, see "
+":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"En C ++, la classe `` ProfiledPIDSubsystem '' est basée sur le type d'unité "
+"utilisé pour les mesures de distance, qui peut être angulaire ou linéaire. "
+"Les valeurs transmises * doivent * avoir des unités cohérentes avec les "
+"unités de distance, sinon une erreur de compilation sera levée. Pour plus "
+"d'informations sur les unités C ++, voir: ref: `docs / software / basic-"
+"programming / cpp-units: The C ++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:15
+msgid ""
+"The ``ProfiledPIDSubsystem`` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProfiledPIDSubsystem.html>`__)"
+" allows users to conveniently create a subsystem with a built-in "
+"PIDController.  In order to use the ``ProfiledPIDSubsystem`` class, users "
+"must create a subclass of it."
+msgstr ""
+"La classe `` ProfiledPIDSubsystem`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDSubsystem.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProfiledPIDSubsystem.html>"
+" `__) permet aux utilisateurs de créer facilement un sous-système avec un "
+"contrôleur PID intégré. Pour utiliser la classe `` ProfiledPIDSubsystem``, "
+"les utilisateurs doivent d'abord créer une sous-classe de celle-ci."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:18
+msgid "Creating a ProfiledPIDSubsystem"
+msgstr "Création d'un sous-système ProfiledPIDS"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:20
+msgid ""
+"When subclassing ``ProfiledPIDSubsystem``, users must override two abstract "
+"methods to provide functionality that the class will use in its ordinary "
+"operation:"
+msgstr ""
+"Dans la sous-classe `` ProfiledPIDSubsystem '', les utilisateurs doivent "
+"remplacer deux méthodes abstraites pour fournir des fonctionnalités que la "
+"classe utilisera dans son fonctionnement normal:"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:23
+msgid "getMeasurement()"
+msgstr "getMeasurement ()"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:35
+msgid ""
+"The ``getMeasurement`` method returns the current measurement of the process"
+" variable.  The ``PIDSubsystem`` will automatically call this method from "
+"its ``periodic()`` block, and pass its value to the control loop."
+msgstr ""
+"La méthode `` getMeasurement '' renvoie la mesure actuelle de la variable du"
+" processus en cours. Le `` PIDSubsystem '' appellera automatiquement cette "
+"méthode depuis son bloc `` periodic () '', et passera sa valeur à la boucle "
+"de contrôle."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:37
+msgid ""
+"Users should override this method to return whatever sensor reading they "
+"wish to use as their process variable measurement."
+msgstr ""
+"Les utilisateurs doivent remplacer cette méthode pour renvoyer la lecture du"
+" capteur qu'ils souhaitent utiliser comme mesure de variable de processus."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:40
+msgid "useOutput()"
+msgstr "useOutput ()"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:53
+msgid ""
+"The ``useOutput()`` method consumes the output of the PID controller, and "
+"the current setpoint state (which is often useful for computing a "
+"feedforward).  The ``PIDSubsystem`` will automatically call this method from"
+" its ``periodic()`` block, and pass it the computed output of the control "
+"loop."
+msgstr ""
+"La méthode `` useOutput () '' utilise la sortie du contrôleur PID et l'état "
+"actuel du point de consigne (ce qui est souvent utile pour calculer un "
+"feedforward). Le `` PIDSubsystem '' appellera automatiquement cette méthode "
+"depuis son bloc `` periodic () '', et lui passera la sortie calculée de la "
+"boucle de contrôle."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:55
+msgid ""
+"Users should override this method to pass the final computed control output "
+"to their subsystem's motors."
+msgstr ""
+"Les utilisateurs doivent remplacer cette méthode pour transmettre la sortie "
+"de contrôle calculée finale aux moteurs de leur sous-système."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:58
+msgid "Passing In the Controller"
+msgstr "Passer le contrôleur"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:60
+msgid ""
+"Users must also pass in a ``ProfiledPIDController`` to the "
+"``ProfiledPIDSubsystem`` base class through the superclass constructor call "
+"of their subclass.  This serves to specify the PID gains, the motion profile"
+" constraints, and the period (if the user is using a non-standard main robot"
+" loop period)."
+msgstr ""
+"Les utilisateurs doivent également transmettre un `` ProfiledPIDController "
+"'' à la classe de base `` ProfiledPIDSubsystem '' via l'appel du "
+"constructeur de superclasse de leur sous-classe. Cela permet de spécifier "
+"les gains PID, les contraintes du profil de mouvement et la période (si "
+"l'utilisateur utilise une période de boucle de robot principal non "
+"standard)."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:62
+msgid ""
+"Additional modifications (e.g. enabling continuous input) can be made to the"
+" controller in the constructor body by calling ``getController()``."
+msgstr ""
+"Des modifications supplémentaires (par exemple l'activation d'une entrée "
+"continue) peuvent être apportées au contrôleur dans le corps du constructeur"
+" en appelant `` getController () ''."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:65
+msgid "Using a ProfiledPIDSubsystem"
+msgstr "Utilisation d'un sous-système ProfiledPIDS"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:67
+msgid ""
+"Once an instance of a ``PIDSubsystem`` subclass has been created, it can be "
+"used by commands through the following methods:"
+msgstr ""
+"Une fois qu'une instance d'une sous-classe `` PIDSubsystem '' a été créée, "
+"elle peut être utilisée par des commandes via les méthodes suivantes:"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:70
+msgid "setGoal()"
+msgstr "setGoal ()"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:72
+msgid ""
+"If you wish to set the goal to a simple distance with an implicit target "
+"velocity of zero, an overload of ``setGoal()`` exists that takes a single "
+"distance value, rather than a full motion profile state."
+msgstr ""
+"Si vous souhaitez définir l'objectif à une distance simple avec une vitesse "
+"cible implicite de zéro, il existe une version de `` setGoal () '' qui prend"
+" une seule valeur de distance, plutôt qu'un état de profil de mouvement "
+"complet."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:74
+msgid ""
+"The ``setGoal()`` method can be used to set the setpoint of the "
+"``PIDSubsystem``.  The subsystem will automatically track to the setpoint "
+"using the defined output:"
+msgstr ""
+"La méthode `` setGoal () '' peut être utilisée pour définir le point de "
+"consigne du `` PIDSubsystem ''. Le sous-système suivra automatiquement le "
+"point de consigne à l'aide de la sortie définie:"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:89
+msgid "enable() and disable()"
+msgstr "enable() et disable()"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:91
+msgid ""
+"The ``enable()`` and ``disable()`` methods enable and disable the automatic "
+"control of the ``ProfiledPIDSubsystem``.  When the subsystem is enabled, it "
+"will automatically run the motion profile and the control loop and track to "
+"the goal.  When it is disabled, no control is performed."
+msgstr ""
+"Les méthodes `` enable () '' et `` disable () '' activent et désactivent le "
+"contrôle automatique du `` ProfiledPIDSubsystem ''. Lorsque le sous-système "
+"est activé, il exécutera automatiquement le profil de mouvement et la boucle"
+" de contrôle et suivra jusqu'au but. Lorsqu'il est désactivé, aucun contrôle"
+" n'est effectué."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:93
+msgid ""
+"Additionally, the ``enable()`` method resets the internal "
+"``ProfiledPIDController``, and the ``disable()`` method calls the user-"
+"defined `useOutput()`_ method with both output and setpoint set to ``0``."
+msgstr ""
+"De plus, la méthode `` enable () '' réinitialise le `` ProfiledPIDController"
+" '' interne, et la méthode `` disable () '' appelle la méthode définie par "
+"l'utilisateur `useOutput ()` _ avec à la fois la sortie et le point de "
+"consigne définis sur ` `0 ''."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:96
+msgid "Full ProfiledPIDSubsystem Example"
+msgstr "Exemple de sous-système ProfiledPIDS complet"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:98
+msgid ""
+"What does a PIDSubsystem look like when used in practice? The following "
+"examples are taken from the ArmBot example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ArmBot>`__):"
+msgstr ""
+"À quoi ressemble un sous-système PIDS lorsqu'il est utilisé dans la "
+"pratique? Les exemples suivants sont tirés du projet d'exemple ArmBot (`Java"
+" "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armbot>"
+" `__,` C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/ArmBot>"
+" `__):"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:126
+msgid "Using a ``ProfiledPIDSubsystem`` with commands can be very simple:"
+msgstr ""
+"L'utilisation d'un `` ProfiledPIDSubsystem '' avec des commandes peut être "
+"très simple:"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:147
+msgid "ProfiledPIDCommand"
+msgstr "ProfiledPIDCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:149
+msgid ""
+"In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used "
+"for distance measurements, which may be angular or linear.  The passed-in "
+"values *must* have units consistent with the distance units, or a compile-"
+"time error will be thrown.  For more information on C++ units, see "
+":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"En C ++, la classe `` ProfiledPIDCommand '' est basée sur le type d'unité "
+"utilisé pour les mesures de distance, qui peut être angulaire ou linéaire. "
+"Les valeurs transmises * doivent * avoir des unités cohérentes avec les "
+"unités de distance, sinon une erreur de compilation sera levée. Pour plus "
+"d'informations sur les unités C ++, voir: ref: `docs / software / basic-"
+"programming / cpp-units: The C ++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:151
+msgid ""
+"The ``ProfiledPIDCommand`` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProfiledPIDCommand.html>`__)"
+" allows users to easily create commands with a built-in "
+"ProfiledPIDController.  As with ``ProfiledPIDSubsystem``, users can create a"
+" ``ProfiledPIDCommmand`` by subclassing the ``ProfiledPIDCommand`` class.  "
+"However, as with many of the other command classes in the command-based "
+"library, users may want to save code by defining it :ref:`inline "
+"<docs/software/commandbased/convenience-features:Inline Command "
+"Definitions>`."
+msgstr ""
+"La classe `` ProfiledPIDCommand`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/ProfiledPIDCommand.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1ProfiledPIDCommand.html>"
+" `__) permet aux utilisateurs de créer facilement des commandes avec un "
+"ProfiledPIDController intégré. Comme pour `` ProfiledPIDSubsystem '', les "
+"utilisateurs peuvent créer un `` ProfiledPIDCommmand`` en sous-classant la "
+"classe `` ProfiledPIDCommand``. Cependant, comme avec la plupart des autres "
+"classes de commandes de la librairie basée sur les commandes, les "
+"utilisateurs peuvent vouloir enregistrer le code en le définissant: ref: "
+"`en-ligne <docs / software / commandbased / convenient-features: Inline "
+"Command Definitions>`."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:154
+msgid "Creating a PIDCommand"
+msgstr "Création d'une commande PID"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:156
+msgid ""
+"A ``ProfiledPIDCommand`` can be created two ways - by subclassing the "
+"``ProfiledPIDCommand`` class, or by defining the command :ref:`inline "
+"<docs/software/commandbased/convenience-features:Inline Command "
+"Definitions>`.  Both methods ultimately extremely similar, and ultimately "
+"the choice of which to use comes down to where the user desires that the "
+"relevant code be located."
+msgstr ""
+"Un `` ProfiledPIDCommand '' peut être créé de deux manières - en sous-"
+"classant la classe `` ProfiledPIDCommand '', ou en définissant la commande: "
+"ref: `en-ligne <docs / software / commandbased / commodity-features: Inline "
+"Command Definitions>`. Les deux méthodes sont extrêmement similaires et, en "
+"fin de compte, le choix de l'utilisation se résume à l'endroit où "
+"l'utilisateur souhaite que le code correspondant soit situé."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:158
+msgid ""
+"In either case, a ``ProfiledPIDCommand`` is created by passing the necessary"
+" parameters to its constructor (if defining a subclass, this can be done "
+"with a `super()` call):"
+msgstr ""
+"Dans les deux cas, un `` ProfiledPIDCommand '' est créé en passant les "
+"paramètres nécessaires à son constructeur (si vous définissez une sous-"
+"classe, cela peut être fait avec un appel `super ()`):"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:179
+msgid "controller"
+msgstr "Le paramètre controller"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:181
+msgid ""
+"The ``controller`` parameter is the ``ProfiledPIDController`` object that "
+"will be used by the command.  By passing this in, users can specify the PID "
+"gains, the motion profile constraints, and the period for the controller (if"
+" the user is using a nonstandard main robot loop period)."
+msgstr ""
+"Le paramètre `` controler '' est l'objet `` ProfiledPIDController '' qui "
+"sera utilisé par la commande. En transmettant cela, les utilisateurs peuvent"
+" spécifier les gains PID, les contraintes de profil de mouvement et la "
+"période pour le contrôleur (si l'utilisateur utilise une période de boucle "
+"de robot principal non standard)."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:183
+msgid ""
+"When subclassing ``ProfiledPIDCommand``, additional modifications (e.g. "
+"enabling continuous input) can be made to the controller in the constructor "
+"body by calling ``getController()``."
+msgstr ""
+"Lors de la sous-classification de `` ProfiledPIDCommand '', des "
+"modifications supplémentaires (par exemple, l'activation d'une entrée "
+"continue) peuvent être apportées au contrôleur dans le corps du constructeur"
+" en appelant `` getController () ''."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:186
+msgid "measurementSource"
+msgstr "Le paramètre measurementSource"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:188
+msgid ""
+"The ``measurementSource`` parameter is a function (usually passed as a "
+":ref:`lambda <docs/software/commandbased/convenience-features:Lambda "
+"Expressions (Java)>`) that returns the measurement of the process variable."
+"  Passing in the ``measurementSource`` function in ``ProfiledPIDCommand`` is"
+" functionally analogous to overriding the `getMeasurement()`_ function in "
+"``ProfiledPIDSubsystem``."
+msgstr ""
+"Le paramètre `` measureSource`` est une fonction (généralement transmise "
+"sous la forme: ref: `lambda <docs / software / commandbased /ommodity-"
+"features: Lambda Expressions (Java)>`) qui renvoie la mesure de la variable "
+"de processus. Le passage de la fonction `` mesureSource '' dans `` "
+"ProfiledPIDCommand '' est fonctionnellement analogue à la substitution de la"
+" fonction `getMeasurement ()` _ dans `` ProfiledPIDSubsystem``."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:190
+msgid ""
+"When subclassing ``ProfiledPIDCommand``, advanced users may further modify "
+"the measurement supplier by modifying the class's ``m_measurement`` field."
+msgstr ""
+"Lors de la sous-classe de `` ProfiledPIDCommand '', les utilisateurs avancés"
+" peuvent modifier davantage les sources de mesures en modifiant le champ `` "
+"m_measurement '' de la classe."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:193
+msgid "goalSource"
+msgstr "Le paramètre goalSource"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:195
+msgid ""
+"The ``goalSource`` parameter is a function (usually passed as a :ref:`lambda"
+" <docs/software/commandbased/convenience-features:Lambda Expressions "
+"(Java)>`) that returns the current goal state for the mechanism.  If only a "
+"constant goal is needed, an overload exists that takes a constant goal "
+"rather than a supplier.  Additionally, if goal velocities are desired to be "
+"zero, overloads exist that take a constant distance rather than a full "
+"profile state."
+msgstr ""
+"Le paramètre `` goalSource`` est une fonction (généralement passée sous la "
+"forme: ref: `lambda <docs / software / commandbased /ommodity-features: "
+"Lambda Expressions (Java)>`) qui renvoie l'état actuel de l'objectif pour le"
+" mécanisme. Si seul un objectif constant est nécessaire, il existe une "
+"version qui prend un objectif constant plutôt qu'un fournisseur. De plus, si"
+" l'on veut que les vitesses d'objectif soient nulles, il existe des versions"
+" qui prennent une distance constante plutôt qu'un état de profil complet."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:197
+msgid ""
+"When subclassing ``ProfiledPIDCommand``, advanced users may further modify "
+"the setpoint supplier by modifying the class's ``m_goal`` field."
+msgstr ""
+"Lors de la sous-classe de `` ProfiledPIDCommand '', les utilisateurs avancés"
+" peuvent modifier davantage le fournisseur de point de consigne en modifiant"
+" le champ `` m_goal '' de la classe."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:200
+msgid "useOutput"
+msgstr "Le paramètre useOutput"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:202
+msgid ""
+"The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda "
+"<docs/software/commandbased/convenience-features:Lambda Expressions "
+"(Java)>`) that consumes the output and setpoint state of the control loop.  "
+"Passing in the ``useOutput`` function in ``ProfiledPIDCommand`` is "
+"functionally analogous to overriding the `useOutput()`_ function in "
+"``ProfiledPIDSubsystem``."
+msgstr ""
+"Le paramètre `` useOutput`` est une fonction (généralement transmise sous la"
+" forme: ref: `lambda <docs / software / commandbased / convenient-features: "
+"Lambda Expressions (Java)>`) qui utilise l'état de sortie et le point de "
+"consigne de la boucle de contrôle . Le passage de la fonction `` useOutput "
+"'' dans `` ProfiledPIDCommand '' est fonctionnellement analogue à la "
+"substitution de la fonction `useOutput ()` _ dans `` ProfiledPIDSubsystem``."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:204
+msgid ""
+"When subclassing ``ProfiledPIDCommand``, advanced users may further modify "
+"the output consumer by modifying the class's ``m_useOutput`` field."
+msgstr ""
+"Lors de la sous-classe de `` ProfiledPIDCommand '', les utilisateurs avancés"
+" peuvent modifier davantage l'état de sortie en modifiant le champ `` "
+"m_useOutput '' de la classe."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:207
+msgid "requirements"
+msgstr "Les exigences"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:209
+msgid ""
+"Like all inlineable commands, ``ProfiledPIDCommand`` allows the user to "
+"specify its subsystem requirements as a constructor parameter."
+msgstr ""
+"Comme toutes les commandes en ligne, `` ProfiledPIDCommand`` permet à "
+"l'utilisateur de spécifier ses exigences de sous-système en tant que "
+"paramètre constructeur."
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:212
+msgid "Full ProfiledPIDCommand Example"
+msgstr "Exemple complet de ProfiledPIDCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:214
+msgid ""
+"What does a ``ProfiledPIDCommand`` look like when used in practice? The "
+"following examples are from the GyroDriveCommands example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):"
+msgstr ""
+"À quoi ressemble un `` ProfiledPIDCommand '' lorsqu'il est utilisé dans la "
+"pratique? Les exemples suivants proviennent de l'exemple de projet "
+"GyroDriveCommands (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`"
+" __):"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:242
+msgid "Todo"
+msgstr "Ce qui reste à faire"
+
+#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:242
+msgid "inlined example?"
+msgstr "Un exemple en ligne?"

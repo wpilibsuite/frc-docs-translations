@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,136 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:2
+msgid "Adding Safety Features to Your Robot Code"
+msgstr "Ajout de fonctionnalités de sécurité à votre code robot"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:6
+msgid ""
+"A common problem with complex projects is making sure that all of your code "
+"is executing when you expect it to. Problems can arise when tasks with high "
+"priority, long execution times, or frequent calls hog processing power on "
+"the roboRIO. This leads to what is known as \"starvation\" for the tasks "
+"that are not able to execute due to the processor being busy. In most cases "
+"this will simply slow the reaction time to your input from the joysticks and"
+" other devices. However, this can also cause the drive motors of your robot "
+"to stay on long after you try to stop them. To avoid any robotic "
+"catastrophes from this, you can implement safety features that check for "
+"task input starvation and automatically shut down potentially harmful "
+"operations."
+msgstr ""
+"Un problème courant avec les projets complexes est de s’assurer que tout "
+"votre code est exécuté quand vous vous y attendez. Des problèmes peuvent "
+"survenir lorsque des tâches avec une priorité élevée, de longs temps "
+"d’exécution ou des appels fréquents monopolisent la puissance de traitement "
+"sur le roboRIO. Cela conduit à ce qu’on appelle \"starvation\" ou \"famine\""
+" pour les tâches qui ne sont pas en mesure d’exécuter du que le processeur "
+"soit occupé. Dans la plupart des cas, cette situation ralentira simplement "
+"le temps de réaction à votre entrée des joysticks et autres dispositifs. "
+"Tout aussi grave, cette situation peut également amèner les moteurs de votre"
+" robot à conserver des valeurs de vitesse  longtemps après que vous ayez  "
+"envoyé une commande pour les arrêter. Pour éviter toute situation "
+"catastrophe en opérant votre robot, vous pouvez implémenter des "
+"fonctionnalités de sécurité qui vérifient la famine d’entrée de tâche et "
+"arrêter automatiquement les opérations potentiellement nocives."
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:8
+msgid ""
+"There are built-in functions for the motors that allow easy implementation "
+"of safety checks. These functions are:"
+msgstr ""
+"Il existe des fonctions intégrées pour les moteurs qui permettent une mise "
+"en œuvre facile des contrôles de sécurité. Ces fonctions sont les suivantes "
+":"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:10
+msgid "Robot Drive Safety Configuration"
+msgstr "Robot Drive Safety Configuration"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:11
+msgid "Motor Drive Safety Configuration"
+msgstr "Motor Drive Safety Configuration"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:12
+msgid "Relay Safety Configuration"
+msgstr "Relay Safety Configuration"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:13
+msgid "PWM Safety Configuration"
+msgstr "PWM Safety Configuration"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:14
+msgid "Solenoid Safety Configuration"
+msgstr "Solenoid Safety Configuration"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:15
+msgid "Robot Drive Delay and Update Safety"
+msgstr "Robot Drive Delay and Update Safety"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:17
+msgid ""
+"In all of the Safety Configuration functions, you can enable and disable the"
+" safety checks while your programming is running and configure what timeout "
+"you think is appropriate. The functions keep a cache of all devices that "
+"have the safety enabled and will check if any of them have exceeded their "
+"time limit. If any has, all devices in the cache will be disabled and the "
+"robot will come to an immediate stop or have its relay/PWM/solenoid outputs "
+"turned off. The code below demonstrates how to use the Drive Safety "
+"Configuration functions to set a maximum time limit that the motors will "
+"receive no input before being shut off."
+msgstr ""
+"Dans toutes les fonctions configuration de sécurité, vous pouvez activer et "
+"désactiver les contrôles de sécurité pendant que votre programme est en "
+"cours d’exécution et configurer le délai d’expiration que vous pensez "
+"approprié. Les fonctions conservent un cache de tous les appareils dont la "
+"sécurité est activée et vérifieront si l’un d’entre eux a dépassé sa limite "
+"de temps. Le cas échéant, tous les appareils du cache seront désactivés et "
+"le robot s’arrêtera immédiatement ou ses sorties relais/PWM/solenoid seront "
+"désactivées. Le code ci-dessous montre comment utiliser les fonctions du "
+"*Drive Safety Configuration* pour définir une limite de temps maximale "
+"pendant lequel les moteurs ne recevant aucune nouvelle donnée d'entrée "
+"devront s'éteindre."
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:21
+msgid ""
+"To test the safety shut-off, try adding a Wait function to the loop that is "
+"longer than your timeout!"
+msgstr ""
+"Pour tester l’arrêt de sécurité, essayez d’ajouter et une fonction Wait à la"
+" boucle et configuer cette fonction à un temps qui soit plus long que votre "
+"délai d’expiration!"
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:23
+msgid ""
+"The final function that relates to implementing safety checks--Robot Drive "
+"Delay and Update Safety--allows you to put the roboRIO in Autonomous Mode "
+"without exceeding the time limit. It will maintain the current motor output "
+"without making costly calls to the Drive Output functions, and will also "
+"make sure that the safety checks are regularly updated so that the motors "
+"will not suddenly stop."
+msgstr ""
+"La dernière fonction qui se rapporte à la mise en œuvre des contrôles de "
+"sécurité -- Robot Drive Delay and Update Safety -- vous permet de mettre le "
+"roboRIO en mode autonome sans dépasser la limite de temps. Il maintiendra la"
+" sortie actuelle du moteur sans faire d’appels coûteux aux fonctions de "
+"sortie du système d'entrainement, et s’assurera également que les contrôles "
+"de sécurité sont régulièrement mis à jour de sorte que les moteurs ne "
+"s’arrêteront pas soudainement."
+
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:25
+msgid ""
+"Overall, it is highly recommended that some sort of safety check is "
+"implemented in your project to make sure that your robot is not "
+"unintentionally left in a dangerous state!"
+msgstr ""
+"Dans l’ensemble, il est fortement recommandé qu’une certaine forme de "
+"contrôle de sécurité soit mise en œuvre dans votre projet pour s’assurer que"
+" votre robot ne soit pas involontairement laissé dans un état dangereux!"

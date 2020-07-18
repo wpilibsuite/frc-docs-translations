@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,313 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:2
+msgid "The C++ Units Library"
+msgstr "La librairie d'unités C ++"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:4
+msgid ""
+"The 2020 release of WPILib is coupled with a `Units "
+"<https://github.com/nholthaus/units>`_ library for C++ teams.  This library "
+"leverages the C++ `type system <https://docs.microsoft.com/en-us/cpp/cpp"
+"/cpp-type-system-modern-cpp?view=vs-2019>`__ to enforce proper "
+"dimensionality for method parameters, automatically perform unit "
+"conversions, and even allow users to define arbitrary defined unit types.  "
+"Since the C++ type system is enforced at compile-time, the library has "
+"essentially no runtime cost."
+msgstr ""
+"La version 2020 de WPILib est associée à une librairie `Units "
+"<https://github.com/nholthaus/units>` _ pour les équipes C ++. Cette "
+"librairie exploite le ` C++ type system <https://docs.microsoft.com/en-"
+"us/cpp/cpp/cpp-type-system-modern-cpp?view=vs-2019> `__ pour appliquer la "
+"dimensionnalité appropriée pour les paramètres des méthodes, effectuer "
+"automatiquement des conversions d'unités et même permettre aux utilisateurs "
+"de définir arbitrairement un type d'unités. Étant donné que le \"C++ type "
+"system\" est appliqué au moment de la compilation, la libraire n'affecte pas"
+" le temps d'exécution du programme final."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:7
+msgid "Using the Units Library"
+msgstr "Utilisation de la librairie d'unités"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:9
+msgid ""
+"The units library is a header-only library. You must include the ``units.h``"
+" header in your code files."
+msgstr ""
+"La librairie d'unités est une librairie de type \"header\", ou .h. Vous "
+"devez inclure `` units.h`` dans vos fichiers de code."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:16
+msgid "Unit Types and Container Types"
+msgstr "Types d'unités et types de conteneurs"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:18
+msgid ""
+"The C++ units library is based around two sorts of type definitions: unit "
+"types and container types."
+msgstr ""
+"La librairie d'unités C ++ est basée sur deux sortes de définitions de "
+"types: les types d'unités et les types de conteneurs."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:21
+msgid "Unit Types"
+msgstr "Types d'unités"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:23
+msgid ""
+"Unit types correspond to the abstract concept of a unit, without any actual "
+"stored value.  Unit types are the fundamental \"building block\" of the "
+"units library - all unit types are defined constructively (using the "
+"``compound_unit`` template) from a small number of \"basic\" unit types "
+"(such as ``meters``, ``seconds``, etc)."
+msgstr ""
+"Les types d'unités correspondent au concept abstrait d'une unité, sans "
+"aucune valeur stockée réelle. Les types d'unités sont le \"bloc de "
+"construction\" fondamental de la librairie d'unités - tous les types "
+"d'unités sont définis de manière constructive (en utilisant le modèle `` "
+"compound_unit '') à partir d'un petit nombre de types d'unités \"de base\" "
+"(tels que `` mètres '', ` `secondes``, etc.)."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:25
+msgid ""
+"While unit types cannot contain numerical values, their use in building "
+"other unit types means that when a type or method uses a `template parameter"
+" <http://www.cplusplus.com/doc/oldtutorial/templates/>`__ to specify its "
+"dimensionality, that parameter will be a unit type."
+msgstr ""
+"Bien que les types d'unités ne puissent pas contenir de valeurs numériques, "
+"leur utilisation dans la création d'autres types d'unités signifie que "
+"lorsqu'un type ou une méthode utilise un `paramètre de modèle "
+"<http://www.cplusplus.com/doc/oldtutorial/templates/>` __ pour spécifier sa "
+"dimensionnalité, ce paramètre sera alors un type d'unité."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:28
+msgid "Container Types"
+msgstr "Types de conteneurs"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:30
+msgid ""
+"Container types correspond to an actual quantity dimensioned according to "
+"some unit - that is, they are what actually hold the numerical value. "
+"Container types are constructed from unit types with the ``unit_t`` "
+"template.  Most unit types have a corresponding container type that has the "
+"same name suffixed by ``_t`` - for example, the unit type ``units::meter`` "
+"corresponds to the container type ``units::meter_t``."
+msgstr ""
+"Les types de conteneurs correspondent à une quantité réelle dimensionnée en "
+"fonction d'une unité, c'est-à-dire qu'ils détiennent réellement la valeur "
+"numérique. Les types de conteneurs sont construits à partir de types "
+"d'unités avec le modèle `` unit_t``. La plupart des types d'unités ont un "
+"type de conteneur correspondant qui porte le même nom suffixé par `` _t '' -"
+" par exemple, le type d'unité `` units :: meter`` correspond au type de "
+"conteneur `` units :: meter_t``."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:32
+msgid ""
+"Whenever a specific quantity of a unit is used (as a variable or a method "
+"parameter), it will be an instance of the container type.  By default, "
+"container types will store the actual value as a ``double`` - advanced users"
+" may change this by calling the ``unit_t`` template manually."
+msgstr ""
+"Chaque fois qu'une quantité spécifique d'une unité est utilisée (en tant que"
+" variable ou paramètre de méthode), ce sera une instance du type de "
+"conteneur. Par défaut, les types de conteneurs stockent la valeur réelle "
+"sous forme de `` double '' - les utilisateurs plus avancés peuvent changer "
+"cela en appelant le modèle `` unit_t '' manuellement."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:34
+msgid ""
+"A full list of unit and container types can be found in the `documentation "
+"<https://nholthaus.github.io/units/namespaces.html>`__."
+msgstr ""
+"Une liste complète des types d'unités et de conteneurs se trouve dans la "
+"`documentation <https://nholthaus.github.io/units/namespaces.html>` __."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:37
+msgid "Creating Instances of Units"
+msgstr "Création d'instances d'unités"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:39
+msgid ""
+"To create an instance of a specific unit, we create an instance of its "
+"container type:"
+msgstr ""
+"Pour créer une instance d'une unité spécifique, nous créons une instance de "
+"son type de conteneur:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:46
+msgid ""
+"Alternatively, the units library has `type literals "
+"<https://en.cppreference.com/w/cpp/language/user_literal>`__ defined for "
+"some of the more common container types.  These can be used in conjunction "
+"with type inference via ``auto`` to define a unit more succinctly:"
+msgstr ""
+"Alternativement, la librairie d'unités a des `types de littéraux "
+"<https://en.cppreference.com/w/cpp/language/user_literal>` __ définis pour "
+"certains des types de conteneurs les plus courants. Ceux-ci peuvent être "
+"utilisés en conjonction avec l'inférence de type via `` auto '' pour définir"
+" une unité plus succinctement:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:53
+msgid ""
+"Units can also be initialized using a value of an another container type, as"
+" long as the types can be converted between one another. For example, a "
+"``meter_t`` value can be created from a ``foot_t`` value."
+msgstr ""
+"Les unités peuvent également être initialisées à l'aide d'une valeur d'un "
+"autre type de conteneur, en autant que les types peuvent être convertis "
+"entre eux. Par exemple, une valeur `` mètre_t '' peut être créée à partir "
+"d'une valeur `` pied_t ''."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:60
+msgid ""
+"In fact, all container types representing convertible unit types are "
+"*implicitly convertible*.  Thus, the following is perfectly legal:"
+msgstr ""
+"En fait, tous les types de conteneurs représentant des types d'unités "
+"convertibles sont * implicitement convertibles *. Ainsi, ce qui suit est "
+"parfaitement légal:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:66
+msgid ""
+"In short, we can use *any* unit of length in place of *any other* unit of "
+"length, anywhere in our code; the units library will automatically perform "
+"the correct conversion for us."
+msgstr ""
+"En bref, nous pouvons utiliser * n'importe quelle * unité de longueur à la "
+"place de * toute autre * unité de longueur, n'importe où dans notre code; la"
+" librairie d'unités effectuera automatiquement la conversion correcte pour "
+"nous."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:69
+msgid "Performing Arithmetic with Units"
+msgstr "Exécution de l'arithmétique avec des unités"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:71
+msgid ""
+"Container types support all of the ordinary arithmetic operations of their "
+"underlying data type, with the added condition that the operation must be "
+"*dimensionally* sound.  Thus, addition must always be performed on two "
+"compatible container types:"
+msgstr ""
+"Les types de conteneurs prennent en charge toutes les opérations "
+"arithmétiques ordinaires de leur type de données sous-jacent, avec la "
+"condition supplémentaire que l'opération doit être  * dimensionnellement * "
+"valide. Ainsi, l'addition doit toujours être effectuée sur deux types de "
+"conteneurs compatibles:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:84
+msgid ""
+"Multiplication may be performed on any pair of container types, and yields "
+"the container type of a compound unit:"
+msgstr ""
+"La multiplication peut être effectuée sur n'importe quelle paire de types de"
+" conteneurs et donne le type de conteneur d'une unité composée:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:86
+msgid ""
+"When a calculation yields a compound unit type, this type will only be "
+"checked for validity at the point of operation if the result type is "
+"specified explicitly.  If ``auto`` is used, this check will not occur.  For "
+"example, when we divide distance by time, we may want to ensure the result "
+"is, indeed, a velocity (i.e. ``units::meter_per_second_t``). If the return "
+"type is declared as ``auto``, this check will not be made."
+msgstr ""
+"Lorsqu'un calcul donne un type d'unité composé, ce type ne sera vérifié pour"
+" la validité au point d'opération que si le type de résultat est spécifié "
+"explicitement. Si `` auto '' est utilisé, cette vérification n'aura pas "
+"lieu. Par exemple, lorsque nous divisons la distance par le temps, nous "
+"pouvons vouloir nous assurer que le résultat est bien une vitesse "
+"(c'est-à-dire `` units :: meter_per_second_t ''). Si le type de retour est "
+"déclaré `` auto '', cette vérification ne sera pas effectuée."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:99
+msgid "``<cmath>`` Functions"
+msgstr "Les fonctions ``<cmath> `` "
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:101
+msgid ""
+"Some ``std`` functions (such as ``clamp``) are templated to accept any type "
+"on which the arithmetic operations can be performed.  Quantities stored as "
+"container types will work with these functions without issue."
+msgstr ""
+"Certaines fonctions `` std '' (telles que `` clamp '') sont conçues pour "
+"accepter tout type sur lequel les opérations arithmétiques peuvent être "
+"effectuées. Les quantités stockées en tant que types de conteneurs "
+"fonctionneront sans problème avec ces fonctions."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:103
+msgid ""
+"However, other ``std`` functions work only on ordinary numerical types (e.g."
+" ``double``).  The units library's ``units::math`` namespace contains "
+"wrappers for several of these functions that accept units. Examples of such "
+"functions include ``sqrt``, ``pow``, etc."
+msgstr ""
+"Cependant, d'autres fonctions `` std '' ne fonctionnent que sur les types "
+"numériques ordinaires (par exemple `` double ''). L'espace de noms `` units "
+":: math`` de la librairie d'unités contient des \"wrappers\" pour plusieurs "
+"de ces fonctions qui acceptent les unités. Des exemples de telles fonctions "
+"incluent `` sqrt '', `` pow '', etc."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:111
+msgid "Removing the Unit Wrapper"
+msgstr "Retrait du \"Unit Wrapper\""
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:113
+msgid ""
+"To convert a container type to a raw numeric value, the ``to<..>()`` method "
+"can be used, where the template argument is the underlying type."
+msgstr ""
+"Pour convertir un type de conteneur en une valeur numérique brute, la "
+"méthode `` to <..> () '' peut être utilisée, où l'argument modèle est le "
+"type sous-jacent."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:122
+msgid "Example of the Units Library in WPILib Code"
+msgstr "Exemple de la librairie d'unités dans le code WPILib"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:123
+msgid ""
+"Several arguments for methods in new features of WPILib (ex. "
+":ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is kinematics?>`) use the units library. Here is an example of "
+":ref:`sampling a trajectory <docs/software/advanced-controls/trajectories"
+"/manipulating-trajectories:Sampling the trajectory>`."
+msgstr ""
+"Plusieurs arguments pour des méthodes dans les nouvelles fonctionnalités de "
+"WPILib (ex.: Ref: `kinematics <docs / software / kinematics-and-odometry / "
+"intro-and-chassis-vitesses: What is cinematics?>`)) utilisent la librairie "
+"d'unités. Voici un exemple d': ref: `échantillonnage d'une trajectoire "
+"<documents / logiciels / commandes-avancées / trajectoires / manipulations-"
+"trajectoires: échantillonnage de la trajectoire>`."
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:134
+msgid ""
+"Some WPILib classes represent objects that could naturally work with "
+"multiple choices of unit types - for example, a motion profile might operate"
+" on either linear distance (e.g. meters) or angular distance (e.g. radians)."
+"  For such classes, the unit type is required as a template parameter:"
+msgstr ""
+"Certaines classes WPILib représentent des objets qui pourraient "
+"naturellement fonctionner avec plusieurs choix de types d'unités - par "
+"exemple, un profil de mouvement peut fonctionner sur une distance linéaire "
+"(par exemple mètres) ou angulaire (par exemple radians). Pour ces classes, "
+"le type d'unité est requis comme paramètre de modèle:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:148
+msgid ""
+"For more detailed documentation, please visit the official `GitHub page "
+"<https://github.com/nholthaus/units>`_ for the units library."
+msgstr ""
+"Pour une documentation plus détaillée, veuillez visiter la page officielle "
+"`GitHub <https://github.com/nholthaus/units>` _ pour la librairie des "
+"unités."

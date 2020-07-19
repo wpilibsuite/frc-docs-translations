@@ -24,3 +24,446 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:2
 msgid "PID Control through PIDSubsystems and PIDCommands"
 msgstr "Contrôle PID via PIDSubsystems et PIDCommands"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:4
+msgid ""
+"For a description of the WPILib PID control features used by these command-"
+"based wrappers, see :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`."
+msgstr ""
+"Pour une description des fonctionnalités de contrôle PID WPILib utilisées "
+"par ces wrappers basés sur des commandes, voir: ref: `docs / software / "
+"advanced-controls / controllers / pidcontroller: PID Control in WPILib`."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:6
+msgid ""
+"Unlike the earlier version of ``PIDController``, the 2020 ``PIDController`` "
+"class runs *synchronously*, and is not handled in its own thread.  "
+"Accordingly, changing its ``period`` parameter will *not* change the actual "
+"frequency at which it runs in any of these wrapper classes.  Users should "
+"never modify the ``period`` parameter unless they are certain of what they "
+"are doing."
+msgstr ""
+"Contrairement à la version précédente de `` PIDController '', la version "
+"2020 de la classe `` PIDController '' s'exécute * de manière synchrone * et "
+"n'est pas gérée dans son propre thread. Par conséquent, la modification de "
+"son paramètre ``period`` ne changera * pas * la fréquence réelle à laquelle "
+"elle s'exécute dans l'une de ces classes wrapper. Les utilisateurs ne "
+"doivent jamais modifier le paramètre ``period`` à moins d'être certains de "
+"ce qu'ils font."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:8
+msgid ""
+"One of the most common control algorithms used in FRC is the `PID controller"
+" <https://en.wikipedia.org/wiki/PID_controller>`__. WPILib offers its own "
+":ref:`PIDController <docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib>` class to help "
+"teams implement this functionality on their robots. To further help teams "
+"integrate PID control into a command-based robot project, the command-based "
+"library includes two convenience wrappers for the ``PIDController`` class: "
+"``PIDSubsystem``, which integrates the PID controller into a subsystem, and "
+"``PIDCommand``, which integrates the PID controller into a command."
+msgstr ""
+"L'un des algorithmes de contrôle les plus couramment utilisés dans FRC est "
+"la classe `PID controller <https://en.wikipedia.org/wiki/PID_controller>`__."
+" WPILib offre sa propre version de :ref:`PIDController <docs/software"
+"/advanced-controls/controllers/pidcontroller:PID Control in WPILib>` pour "
+"aider les équipes à implémenter cette fonctionnalité sur leurs robots. Afin "
+"d'intégrer le contrôle PID dans un projet de robot, la librairie basée sur "
+"des commandes comprend deux wrappers pratiques pour la classe `` "
+"PIDController '': `` PIDSubsystem '', qui intègre le contrôleur PID dans un "
+"sous-système, et ` `PIDCommand``, qui intègre le contrôleur PID dans une "
+"commande."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:11
+msgid "PIDSubsystems"
+msgstr "Sous-systèmes PIDS"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:13
+msgid ""
+"The ``PIDSubsystem`` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__)"
+" allows users to conveniently create a subsystem with a built-in "
+"``PIDController``.  In order to use the ``PIDSubsystem`` class, users must "
+"create a subclass of it."
+msgstr ""
+"La classe `` PIDSubsystem`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDSubsystem.html>"
+" `__) permet aux utilisateurs de créer facilement un sous-système avec un "
+"``PIDController`` intégré. Afin d'utiliser la classe ``PIDSubsystem``, les "
+"utilisateurs doivent créer une sous-classe de celle-ci."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:16
+msgid "Creating a PIDSubsystem"
+msgstr "Création d'un sous-système PIDS"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:18
+msgid ""
+"When subclassing ``PIDSubsystem``, users must override two abstract methods "
+"to provide functionality that the class will use in its ordinary operation:"
+msgstr ""
+"Lors de la sous-classification de `` PIDSubsystem``, les utilisateurs "
+"doivent remplacer deux méthodes abstraites pour fournir des fonctionnalités "
+"que la classe utilisera dans son fonctionnement ordinaire:"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:21
+msgid "getMeasurement()"
+msgstr "getMeasurement ()"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:33
+msgid ""
+"The ``getMeasurement`` method returns the current measurement of the process"
+" variable.  The ``PIDSubsystem`` will automatically call this method from "
+"its ``periodic()`` block, and pass its value to the control loop."
+msgstr ""
+"La méthode `` getMeasurement '' renvoie la mesure actuelle de la variable de"
+" processus. Le `` PIDSubsystem '' appellera automatiquement cette méthode "
+"depuis son bloc ``periodic()``, et passera sa valeur à la boucle de "
+"contrôle."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:35
+msgid ""
+"Users should override this method to return whatever sensor reading they "
+"wish to use as their process variable measurement."
+msgstr ""
+"Les utilisateurs doivent remplacer cette méthode pour renvoyer plutôt la "
+"lecture du capteur qu'ils souhaitent utiliser comme mesure de variable de "
+"processus."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:38
+msgid "useOutput()"
+msgstr "useOutput ()"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:51
+msgid ""
+"The ``useOutput()`` method consumes the output of the PID controller, and "
+"the current setpoint (which is often useful for computing a feedforward).  "
+"The ``PIDSubsystem`` will automatically call this method from its "
+"``periodic()`` block, and pass it the computed output of the control loop."
+msgstr ""
+"La méthode `` useOutput () '' utilise la sortie du contrôleur PID et le "
+"point de consigne actuel (qui est souvent utile pour calculer un "
+"feedforward). ``PIDSubsystem`` appellera automatiquement cette méthode "
+"depuis son segment ``periodic()``, et lui passera la sortie calculée de la "
+"boucle de contrôle."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:53
+msgid ""
+"Users should override this method to pass the final computed control output "
+"to their subsystem's motors."
+msgstr ""
+"Les utilisateurs doivent remplacer cette méthode pour transmettre plutôt la "
+"sortie de contrôle calculée et finale aux moteurs de leur sous-système."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:56
+msgid "Passing In the Controller"
+msgstr "La transmission d'un contrôleur"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:58
+msgid ""
+"Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base "
+"class through the superclass constructor call of their subclass.  This "
+"serves to specify the PID gains, as well as the period (if the user is using"
+" a non-standard main robot loop period)."
+msgstr ""
+"Les utilisateurs doivent également transmettre un ``PIDController`` à la "
+"classe de base ``PIDSubsystem`` via l'appel de constructeur de superclasse "
+"de leur sous-classe. Cela permet de spécifier les gains PID, ainsi que la "
+"période (si l'utilisateur utilise une période de boucle différente de celle "
+"utilisée dans le code du robot standard)."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:60
+msgid ""
+"Additional modifications (e.g. enabling continuous input) can be made to the"
+" controller in the constructor body by calling ``getController()``."
+msgstr ""
+"Des modifications supplémentaires (par exemple l'activation d'une entrée "
+"continue) peuvent être apportées au contrôleur dans le corps du constructeur"
+" en appelant ``getController()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:63
+msgid "Using a PIDSubsystem"
+msgstr "Utilisation d'un sous-système PIDS"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:65
+msgid ""
+"Once an instance of a ``PIDSubsystem`` subclass has been created, it can be "
+"used by commands through the following methods:"
+msgstr ""
+"Une fois qu'une instance d'une sous-classe `` PIDSubsystem '' a été créée, "
+"elle peut être utilisée par des commandes via les méthodes suivantes:"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:68
+msgid "setSetpoint()"
+msgstr "setSetpoint ()"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:70
+msgid ""
+"The ``setSetpoint()`` method can be used to set the setpoint of the "
+"``PIDSubsystem``.  The subsystem will automatically track to the setpoint "
+"using the defined output:"
+msgstr ""
+"La méthode `` setSetpoint () '' peut être utilisée pour définir le point de "
+"consigne du `` PIDSubsystem ''. Le sous-système suivra automatiquement le "
+"point de consigne en utilisant la sortie définie:"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:85
+msgid "enable() and disable()"
+msgstr "enable() and disable()"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:87
+msgid ""
+"The ``enable()`` and ``disable()`` methods enable and disable the PID "
+"control of the ``PIDSubsystem``.  When the subsystem is enabled, it will "
+"automatically run the control loop and track the setpoint.  When it is "
+"disabled, no control is performed."
+msgstr ""
+"Les méthodes  ``enable()`` et ``disable()``  activent et désactivent "
+"respectivement le contrôle PID du ``PIDSubsystem``. Lorsque le sous-système "
+"est activé, il exécute automatiquement la boucle de contrôle et suit le "
+"point de consigne. Lorsqu'il est désactivé, aucun contrôle n'est effectué."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:89
+msgid ""
+"Additionally, the ``enable()`` method resets the internal ``PIDController``,"
+" and the ``disable()`` method calls the user-defined `useOutput()`_ method "
+"with both output and setpoint set to ``0``."
+msgstr ""
+"De plus, la méthode ``enable()`` réinitialise le ``PIDController`` interne, "
+"et la méthode ``disable()`` appelle la méthode définie par l'utilisateur "
+"`useOutput ()` _ avec à la fois la sortie et le point de consigne définis "
+"sur la valeur ``0``."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:92
+msgid "Full PIDSubsystem Example"
+msgstr "Exemple complet avec PIDSubsystem"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:94
+msgid ""
+"What does a ``PIDSubsystem`` look like when used in practice? The following "
+"examples are taken from the FrisbeeBot example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot>`__):"
+msgstr ""
+"À quoi ressemble un ``PIDSubsystem`` lorsqu'il est utilisé dans la pratique?"
+" Les exemples suivants sont tirés du projet FrisbeeBot (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/frisbeebot>"
+" `__,` C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/Frisbeebot>"
+" `__):"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:122
+msgid "Using a ``PIDSubsystem`` with commands can be very simple:"
+msgstr ""
+"L'utilisation d'un ``PIDSubsystem`` avec des commandes peut être très "
+"simple:"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:151
+msgid "PIDCommand"
+msgstr "La classe PIDCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:153
+msgid ""
+"The ``PIDCommand`` class allows users to easily create commands with a "
+"built-in PIDController.  As with PIDSubsystem, users can create a "
+"``PIDCommand`` by subclassing the ``PIDCommand`` class.  However, as with "
+"many of the other command classes in the command-based library, users may "
+"want to save code by defining a ``PIDCommand`` :ref:`inline "
+"<docs/software/commandbased/convenience-features:Inline Command "
+"Definitions>`."
+msgstr ""
+"La classe ``PIDCommand`` permet aux utilisateurs de créer facilement des "
+"commandes avec un PIDController intégré. Comme avec PIDSubsystem, les "
+"utilisateurs peuvent créer un ``PIDCommand`` en sous-classant la classe "
+"``PIDCommand``. Cependant, comme avec la plupart des autres classes de la "
+"librairie basée sur les commandes, les utilisateurs peuvent vouloir réduire "
+"la quantité de code/programme en définissant une version :ref: `inline <docs"
+" / software / commandbased /ommodity-features: Inline Command Definitions > "
+"` de  ``PIDCommand``."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:156
+msgid "Creating a PIDCommand"
+msgstr "Création d'une commande PID"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:158
+msgid ""
+"A ``PIDCommand`` can be created two ways - by subclassing the ``PIDCommand``"
+" class, or by defining the command :ref:`inline <docs/software/commandbased"
+"/convenience-features:Inline Command Definitions>`.  Both methods ultimately"
+" extremely similar, and ultimately the choice of which to use comes down to "
+"where the user desires that the relevant code be located."
+msgstr ""
+"Un ``PIDCommand`` peut être créé de deux manières - en sous-classant la "
+"classe ``PIDCommand``, ou en définissant la commande de façon: ref: `inline "
+"<docs / software / commandbased /ommodity-features: Inline Command "
+"Definitions>`. Les deux méthodes sont extrêmement similaires et, finalement,"
+" le choix de la méthode à utiliser se résume à l'endroit où l'utilisateur "
+"souhaite que le code correspondant soit situé."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:160
+msgid ""
+"In either case, a ``PIDCommand`` is created by passing the necessary "
+"parameters to its constructor (if defining a subclass, this can be done with"
+" a `super()` call):"
+msgstr ""
+"Dans les deux cas, un ``PIDCommand`` est créé en passant les paramètres "
+"nécessaires à son constructeur (lors de la définition d'une sous-classe, "
+"cela peut être fait avec un appel `super ()`):"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:181
+msgid "controller"
+msgstr "manette"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:183
+msgid ""
+"The ``controller`` parameter is the ``PIDController`` object that will be "
+"used by the command.  By passing this in, users can specify the PID gains "
+"and the period for the controller (if the user is using a nonstandard main "
+"robot loop period)."
+msgstr ""
+"Le paramètre ``controller`` est l'objet ``PIDController`` qui sera utilisé "
+"par la commande. En transmettant cela, les utilisateurs peuvent spécifier "
+"les gains PID et la période pour le contrôleur (dans ce dernier cas, si "
+"l'utilisateur utilise une période de boucle de robot principal non "
+"standard)."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:185
+msgid ""
+"When subclassing ``PIDCommand``, additional modifications (e.g. enabling "
+"continuous input) can be made to the controller in the constructor body by "
+"calling ``getController()``."
+msgstr ""
+"Lors de la sous-classification de ``PIDCommand``, des modifications "
+"supplémentaires (par exemple, l'activation d'une entrée continue) peuvent "
+"être apportées au contrôleur dans le corps du constructeur en appelant "
+"``getController()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:188
+msgid "measurementSource"
+msgstr "Le paramètre measurementSource"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:190
+msgid ""
+"The ``measurementSource`` parameter is a function (usually passed as a "
+":ref:`lambda <docs/software/commandbased/convenience-features:Lambda "
+"Expressions (Java)>`) that returns the measurement of the process variable."
+"  Passing in the ``measurementSource`` function in ``PIDCommand`` is "
+"functionally analogous to overriding the `getMeasurement()`_ function in "
+"``PIDSubsystem``."
+msgstr ""
+"Le paramètre ``measurementSource`` est une fonction (généralement transmise "
+"sous la forme: ref: `lambda <docs / software / commandbased /ommodity-"
+"features: Lambda Expressions (Java)>`) qui renvoie la mesure de la variable "
+"de processus. Le passage de la fonction ``measurementSource`` dans "
+"``PIDCommand`` est fonctionnellement similaire à la substitution de la "
+"fonction `getMeasurement()`_ dans ``PIDSubsystem``."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:192
+msgid ""
+"When subclassing ``PIDCommand``, advanced users may further modify the "
+"measurement supplier by modifying the class's ``m_measurement`` field."
+msgstr ""
+"Lors de la sous-classification de ``PIDCommand``, les utilisateurs plus "
+"expérimentés peuvent modifier le système qui fournit les mesures en "
+"modifiant le champ ``m_measurement`` de la classe."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:195
+msgid "setpointSource"
+msgstr "Le paramètre setpointSource"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:197
+msgid ""
+"The ``setpointSource`` parameter is a function (usually passed as a "
+":ref:`lambda <docs/software/commandbased/convenience-features:Lambda "
+"Expressions (Java)>`) that returns the current setpoint for the control "
+"loop.  If only a constant setpoint is needed, an overload exists that takes "
+"a constant setpoint rather than a supplier."
+msgstr ""
+"Le paramètre ``setpointSource`` est une fonction (généralement transmise "
+"sous la forme: ref: `lambda <docs / software / commandbased /ommodity-"
+"features: Lambda Expressions (Java)>`) qui renvoie le point de consigne "
+"actuel pour la boucle de contrôle. Si seulement un point de consigne "
+"constant est nécessaire, il existe une version qui utilise ce seul point de "
+"consigne constant plutôt qu'une fonction-fournisseur."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:199
+msgid ""
+"When subclassing ``PIDCommand``, advanced users may further modify the "
+"setpoint supplier by modifying the class's ``m_setpoint`` field."
+msgstr ""
+"Lors de la sous-classification de ``PIDCommand``, les utilisateurs plus "
+"expérimentés peuvent modifier le système qui fournit les mesures en "
+"modifiant le champ ``m_measurement`` de la classe."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:202
+msgid "useOutput"
+msgstr "Le paramètre useOutput"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:204
+msgid ""
+"The ``useOutput`` parameter is a function (usually passed as a :ref:`lambda "
+"<docs/software/commandbased/convenience-features:Lambda Expressions "
+"(Java)>`) that consumes the output and setpoint of the control loop.  "
+"Passing in the ``useOutput`` function in ``PIDCommand`` is functionally "
+"analogous to overriding the `useOutput()`_ function in ``PIDSubsystem``."
+msgstr ""
+"Le paramètre ``useOutput`` est une fonction (généralement transmise sous la "
+"forme: ref: `lambda <docs / software / commandbased /ommodity-features: "
+"Lambda Expressions (Java)>`) qui utilise la sortie et le point de consigne "
+"de la boucle de contrôle. Le passage de la fonction ``useOutput`` dans "
+"``PIDCommand`` est fonctionnellement similaire à la substitution de la "
+"fonction `useOutput ()` _ dans ``PIDSubsystem``."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:206
+msgid ""
+"When subclassing ``PIDCommand``, advanced users may further modify the "
+"output consumer by modifying the class's ``m_useOutput`` field."
+msgstr ""
+"Lors de la sous-classification de ``PIDCommand``, les utilisateurs plus "
+"expérimentés peuvent modifier le système qui fournit les mesures en "
+"modifiant le champ ``m_measurement`` de la classe."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:209
+msgid "requirements"
+msgstr "exigences"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:211
+msgid ""
+"Like all inlineable commands, ``PIDCommand`` allows the user to specify its "
+"subsystem requirements as a constructor parameter."
+msgstr ""
+"Comme toutes les commandes en ligne, ``PIDCommand`` permet à l'utilisateur "
+"de spécifier des exigences de sous-système via ses paramètres de "
+"constructeur."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:214
+msgid "Full PIDCommand Example"
+msgstr "Exemple complet de PIDCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:216
+msgid ""
+"What does a ``PIDCommand`` look like when used in practice? The following "
+"examples are from the GyroDriveCommands example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__):"
+msgstr ""
+"À quoi ressemble un ``PIDCommand`` lorsqu'il est utilisé dans la pratique? "
+"Les exemples suivants proviennent du projet GyroDriveCommands (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`"
+" __):"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:244
+msgid ""
+"And, for an :ref:`inlined <docs/software/commandbased/convenience-"
+"features:Inline Command Definitions>`  example:"
+msgstr ""
+"Et, pour un exemple de type :ref: `inline <docs / software / commandbased / "
+"convenient-features: Inline Command Definitions>`:"

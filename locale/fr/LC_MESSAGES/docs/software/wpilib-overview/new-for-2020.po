@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,285 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:2
+msgid "New for 2020"
+msgstr "Nouveau pour 2020"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:4
+msgid ""
+"A number of improvements have been made to FRC Control System software for "
+"2020. This article will describe and provide a brief overview of the new "
+"changes and features as well as a more complete changelog for C++/Java "
+"WPILib changes."
+msgstr ""
+"Un certain nombre d’améliorations ont été apportées à la composante "
+"logicielle du système de contrôle FRC, pour 2020. Cet article décrira et "
+"fournira un bref aperçu des nouvelles modifications et fonctionnalités ainsi"
+" qu’un journal de changements plus complet pour les modifications apportée "
+"en C++/Java WPILib."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:6
+msgid ""
+"Due to internal GradleRIO changes, it is necessary to update previous years "
+"projects. After :doc:`Installing WPILib for 2020 </docs/getting-started"
+"/getting-started-frc-control-system/wpilib-setup>`, any 2019 projects must "
+"be :doc:`imported </docs/software/wpilib-overview/importing-gradle-project>`"
+" to be compatible."
+msgstr ""
+"En raison des modifications internes apportées à gradleRIO, il est "
+"nécessaire de mettre à jour les projets des années précédentes. Après "
+":doc:`Installing WPILib for 2020 </docs/getting-started/getting-started-frc-"
+"control-system/wpilib-setup>`, tous les projets 2019 doivent être "
+":doc:`importé </docs/software/wpilib-overview/importing-gradle-project>`  "
+"pour être compatibles."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:9
+msgid "Major Features - All Languages"
+msgstr "Principales caractéristiques - Tous les langages de programmation"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:11
+msgid ""
+"**Addressable LEDs** - The roboRIO FPGA has been enhanced to be able to "
+"control individually addressable LEDs (WS2812 or compatible protocol) from "
+"the roboRIO PWM ports (non-MXP). Teams can connect the signal line of these "
+"LEDs directly to the roboRIO PWM signal line and control them from APIs in "
+"all three languages. Depending on the length of the LED string and whether "
+"any servos are also being powered from the PWM ports, teams may be able to "
+"power the string directly from the PWM port or may need to use an external "
+"supply."
+msgstr ""
+"**LEDs adressables** - Le FPGA du roboRIO  a été amélioré pour pouvoir "
+"contrôler des LED adressables individuellement (WS2812 ou protocole "
+"compatible) à partir des ports roboRIO PWM (non-MXP). Les équipes peuvent "
+"connecter ces DELs directement aux ports  PWM du roboRIO et les contrôler à "
+"partir d’API dans les trois langages de programmation disponibles. Selon la "
+"longueur de la chaîne de DELs et si des servos sont également alimentés à "
+"partir des ports PWM, les équipes peuvent être en mesure d’alimenter la "
+"chaîne directement à partir du port PWM ou peuvent avoir besoin d’utiliser "
+"une source d'alimentation externe."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:12
+msgid ""
+"**Duty Cycle Encoder** - The roboRIO FPGA has been enhanced to be able to "
+"decode the signals from Duty Cycle encoders (this includes devices like the "
+"US Digital MA3, CTRE Mag Encoder, and REV Robotics Through Bore Encoder). "
+"Teams can connect these devices to the DIO ports on the roboRIO and access "
+"the encoder data via APIs in all three languages."
+msgstr ""
+"**Encodeur avec rapport cyclique** - Le FPGA du roboRIO a été amélioré pour "
+"être en mesure de décoder les signaux des encodeurs avec rapport cyclique "
+"(cette catégorie inclut les dispositifs comme les encodeurs US Digital MA3, "
+"CTRE Mag Encoder et REV Robotics Through Bore Encoder). Les équipes peuvent "
+"connecter ces disposits aux ports DIO du roboRIO et accéder aux données de "
+"l’encodeur via des API dans les trois langages de programmation disponibles."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:13
+msgid ""
+"**CAN Bus Internal Restructure** - The internal implementation of the CAN "
+"bus has changed to reduce the latency incurred by CAN bus calls from robot "
+"programs. Team programs, particularly those with many CAN calls, should see "
+"reduced and more consistent loop timing with the new implementation. No team"
+" action is needed to take advantage of this change, the changes are limited "
+"to internal implementation. Users may notice changes in how some tools like "
+"the CTRE Phoenix Tuner work as a consequence of the restructure."
+msgstr ""
+"**Restructuration interne du bus CAN** - L'implémentation interne du bus CAN"
+" a changé pour réduire la latence encourue par les appels du bus CAN à "
+"partir des programmes de robots. Les programmes d’équipe, en particulier "
+"ceux qui font de nombreux appels CAN, devraient voir un temps de boucle "
+"réduit et plus cohérent avec la nouvelle implémentation. Aucun ajout de "
+"fonctionnalité additionnelle n’est nécessaire de la part des équipes pour "
+"tirer parti de ce changement, les changements se limitent à l'implémentation"
+" interne. Les utilisateurs pourront remarquer des changements dans la façon "
+"dont certains outils comme le CTRE Phoenix Tuner fonctionnent à la suite de "
+"cette restructuration."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:14
+msgid ""
+"**Control Packet Caching** - A change has been made to the internals of how "
+"control packet data (such as Joystick data, current mode, etc.) is "
+"retrieved, resulting in reduced latency in these calls. The user-facing API "
+"has not changed, users will see this benefit without making any changes to "
+"their programs."
+msgstr ""
+"**Mise en cache des paquets de contrôles**- Une modification a été apportée "
+"aux mécanismes internes  inhérentes à la façon dont les paquets de données "
+"de contrôle (telles que les données Joystick, mode actuel, etc.) sont "
+"récupérés, ce qui réduit la latence dans ces appels. L'interface API n’ayant"
+" pas changé, les utilisateurs profiteront de cet avantage sans avoir à "
+"apporter de modifications à leurs programmes."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:15
+msgid ""
+"**Documentation** - If you're on this page, you're likely aware that the "
+"software documentation has moved from Screensteps to this new FRC-Docs page."
+" This open source documentation, hosted on Read the Docs, allows for a "
+"greater number of contributors (including community contribution) as well as"
+" new features such as testable example code (to ensure example code remains "
+"correct as library changes are made), better support for localization, and "
+"more. For the 2020 season, KOP part documentation can still be found on "
+"`Screensteps <https://wpilib.screenstepslive.com/s/4485>`__"
+msgstr ""
+"**Documentation** - Si vous êtes sur cette page, vous savez probablement que"
+" la documentation logicielle est passée de Screensteps à cette nouvelle page"
+" FRC-Docs. Cette documentation de sources ouvertes, hébergée sur Read the "
+"Docs, permet un plus grand nombre de contributeurs (y compris la "
+"contribution communautaire) ainsi que de nouvelles fonctionnalités telles "
+"que l'exemple de code testable (pour s’assurer que l'exemple de code reste "
+"fonctionnel au fur et à mesure que des modifications sont apportées à la "
+"bibliothèque), une meilleure prise en charge de la localisation, et plus "
+"encore. Pour la saison 2020, la documentation de la partie KOP peut encore "
+"être trouvée sur `Screensteps <https://wpilib.screenstepslive.com/s/4485>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:18
+msgid "Major Features - C++/Java"
+msgstr "Principales caractéristiques- C++/Java"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:19
+msgid ""
+"More complete details on all of these changes can be found in the changelog "
+"below (under **WPILib**)."
+msgstr ""
+"Vous trouverez des détails plus complets sur toutes ces modifications dans "
+"le journal des changements ci-dessous (sous **WPILib**)."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:21
+msgid ""
+"**Command Based Framework Rewrite** - A new version of the Command Based "
+"framework has been written from the ground up based on the years of "
+"experience with the previous framework. Both frameworks will be available as"
+" options in 2020 and have been split out as \"vendor libraries\" (though "
+"they are still included in the WPILib installer) in order to reduce the "
+"chances of mixing the two which will not work correctly."
+msgstr ""
+"**Réécriture du cadre de développement orienté commande** - Une nouvelle "
+"version du cadre de développement orienté commande a été écrite à partir de "
+"zéro en fonction des années d’expérience dans le cadre précédent. Les deux "
+"cadres de développement seront disponibles en tant qu’options en 2020 et ont"
+" été divisés en tant que \"bibliothèques des fournisseurs\" (bien qu’ils "
+"soient toujours inclus dans l’installateur WPILib) afin de réduire les "
+"chances de mélanger les deux ce qui ne fonctionnera pas correctement."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:29
+msgid "WPILib"
+msgstr "WPILib"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:48
+msgid ""
+"``PIDOutput`` is no longer used.  Instead, call ``Set()`` with the output of"
+" ``Calculate()``."
+msgstr ""
+"``PIDOutput`` n’est plus utilisé. À la place, invoquez ``Set()`` avec la "
+"sortie de ``Calculate()``."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:49
+msgid ""
+"Percent tolerance has been removed. Absolute tolerance is provided via "
+"``SetTolerance()``."
+msgstr ""
+"La tolérance au pourcentage a été supprimée. La tolérance absolue est "
+"assurée via la méthode ``SetTolerance()``."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:88
+msgid "Shuffleboard"
+msgstr "Shuffleboard"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:105
+msgid "SmartDashboard"
+msgstr "SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:110
+msgid "PathWeaver"
+msgstr "PathWeaver"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:122
+msgid "GradleRIO"
+msgstr "GradleRIO"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:124
+msgid "Fixed JRE slowdown when using ``concat()`` on Strings."
+msgstr ""
+"correction du ralentissement de JRE  lors de l’invocation de la méthode "
+"``concat()`` sur des objects Strings."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:125
+msgid "Fixed JRE slowdown on garbage collection."
+msgstr ""
+" Correction du ralentissement de la JRE pendant la collecte des ordures."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:128
+msgid "CScore"
+msgstr "CScore"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:134
+msgid "WPILib All in One Installer"
+msgstr "WPILib au complet dans un seul installateur"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:136
+msgid ""
+"Use ``wpilib\\2020\\`` instead of ``frc2020\\``. This prevents cluttering "
+"the user’s home directory when installing alongside previous years’ "
+"installation."
+msgstr ""
+"Utilisez ``wpilib\\2020\\`` au lieu de ``frc2020\\``. Cela empêche "
+"l’encombrement du répertoire d’accueil de l’utilisateur lors d'une "
+"installation cottoyant des installations des années précédentes."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:137
+msgid ""
+"Fixed an issue where shortcuts would get created for installed tools, even "
+"if it was unchecked."
+msgstr ""
+"Correction du problème lié à la création des raccourcis pour les outils "
+"installés, même si cette option n’était pas cochée."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:138
+msgid ""
+"Installing for **All Users** will now create shortcuts for all users, "
+"instead of only the current one."
+msgstr ""
+"L’option d'installation **All Users** créera désormais des raccourcis pour "
+"tous les utilisateurs et non pour l'utilisateur courant seulement."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:139
+msgid "Update to latest Visual Studio Code and C++/Java extensions"
+msgstr "Actualisé aux dernières extensions Visual Studio Code et C++/Java"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:142
+msgid "Visual Studio Code Extension"
+msgstr " Extension Visual Studio Code"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:144
+msgid "Added a 2019 to 2020 project importer"
+msgstr "Ajout d’un importateur de projet 2019 à 2020"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:149
+msgid "RobotBuilder"
+msgstr "RobotBuilder"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:151
+msgid "Use individual includes instead of wpilib.h for C++"
+msgstr ""
+"Utilise des fichiers individuels d'inclusion au lieu de wpilib.h pour C++"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:153
+msgid "Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions"
+msgstr ""
+"Les extensions sont maintenant stockées dans "
+"~/wpilib/2020/Robotbuilder/extensions"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:157
+msgid "Robot Characterization"
+msgstr "Caractérisation du robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:159
+msgid "Introduced the robot characterization toolsuite."
+msgstr "Introduit la suite d'outils logiciels de caractérisation du robot."

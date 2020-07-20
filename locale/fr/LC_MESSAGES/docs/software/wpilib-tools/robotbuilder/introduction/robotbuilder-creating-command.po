@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,211 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:2
+msgid "Creating a Command"
+msgstr "Création d'une commande"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:4
+msgid ""
+"Commands are classes you create that provide behaviors or actions for your "
+"subsystems. The subsystem class should set the operation of the subsystem, "
+"like MoveElevator to start the elevator moving, or ElevatorToSetPoint to set"
+" the elevator's PID setpoint. The commands initiate the subsystem operation "
+"and keep track of when it is finished."
+msgstr ""
+"Les commandes sont des classes que vous créez qui fournissent des "
+"comportements ou des actions pour vos sous-systèmes. La classe de sous-"
+"système doit définir le fonctionnement du sous-système, comme MoveElevator "
+"pour démarrer le déplacement de d'un élévateur, ou ElevatorToSetPoint pour "
+"définir le point de consigne PID de l'élévateur. Les commandes lancent "
+"l'opération du sous-système et repèrent leur fins ( lorsqu'elles se "
+"terminent)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:7
+msgid "Drag the Command to the Commands Folder"
+msgstr "Faire glisser la commande vers le dossier Commandes"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:11
+msgid ""
+"Simple commands can be dragged from the palette to the robot description. "
+"The command will be created under the Commands folder."
+msgstr ""
+"Des commandes simples peuvent être glissées de la palette vers la "
+"description du robot. La commande sera créée sous le dossier Commandes."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:14
+msgid "Creating Commands using the Context Menu"
+msgstr "Création de commandes à l'aide du menu contextuel"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:18
+msgid ""
+"You can also create commands using the right-click context menu on the "
+"Command folder in the robot description."
+msgstr ""
+"Vous pouvez également créer des commandes en utilisant le menu contextuel du"
+" clic droit sur le dossier Command dans la description du robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:21
+msgid "Configuring the Command"
+msgstr "Configuration de la commande"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:25
+msgid ""
+"Name the command with something meaningful that describes what the command "
+"will do. Commands should be named as if they were in code, although there "
+"can be spaces between words."
+msgstr ""
+"Nommez la commande avec un nom significatif qui décrit ce que la commande "
+"fera. Les commandes doivent être nommées comme si elles faisaient partie du "
+"code, bien qu'il puisse y avoir des espaces entre les mots."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:26
+msgid ""
+"Set the subsystem that is used by this command. When this command is "
+"scheduled, it will automatically stop any command currently running that "
+"also requires this command. If a command to open the gripper is currently "
+"running (requiring the gripper subsystem) and the close gripper command is "
+"scheduled, it will immediately stop opening and start closing."
+msgstr ""
+"Définir le sous-système utilisé par cette commande. Lorsque cette commande "
+"est planifiée, elle arrêtera automatiquement toute commande en cours "
+"d'exécution qui nécessite également cette commande. Si une commande "
+"d'ouverture de la pince est en cours d'exécution (nécessitant le sous-"
+"système de la pince) et que la commande de fermeture de la pince est "
+"planifiée, elle arrêtera immédiatement l'ouverture et la fermeture."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:27
+msgid ""
+"Tell RobotBuilder if it should create buttons on the SmartDashboard for the "
+"command. A button will be created for each parameter preset."
+msgstr ""
+"Dire à RobotBuilder s'il doit créer des boutons sur le SmartDashboard pour "
+"la commande. Un bouton sera créé pour chaque paramètre prédéfini."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:28
+msgid ""
+"Set the parameters this command takes. A single command with parameters can "
+"do the same thing as two or more commands that do not take parameters. For "
+"example, \"Drive Forward\", \"Drive Backward\", and \"Drive Distance\" "
+"commands can be consolidated into a single command that takes values for "
+"direction and distance."
+msgstr ""
+"Définir les paramètres de cette commande. Une seule commande avec des "
+"paramètres peut faire la même chose que deux ou plusieurs commandes sans "
+"paramètres. Par exemple, les commandes \"Drive Forward\", \"Drive Backward\""
+" et \"Drive Distance\" peuvent être consolidées en une seule commande qui "
+"prend des valeurs de direction et de distance."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:29
+msgid ""
+"Set presets for parameters. These can be used elsewhere in RobotBuilder when"
+" using the command, such as binding it to a joystick button or setting the "
+"default command for a subsystem."
+msgstr ""
+"Définissez des préréglages pour les paramètres. Ceux-ci peuvent être "
+"utilisés ailleurs dans RobotBuilder lors de l'utilisation de la commande, "
+"Quelques exemples :  lier la commande à un bouton du joystick ou définir la "
+"commande par défaut pour un sous-système."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:31
+msgid ""
+"Setpoint commands come with a single parameter ('setpoint', of type double);"
+" parameters cannot be added, edited, or deleted for setpoint commands."
+msgstr ""
+"Les commandes de Point de consigne sont définies avec un seul paramètre "
+"('setpoint', de type double); les paramètres ne peuvent pas être ajoutés, "
+"modifiés ou supprimés pour les commandes de Points de consigne."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:34
+msgid "Adding and Editing Parameters"
+msgstr "Ajout et modification de paramètres"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:38
+msgid "To add or edit parameters:"
+msgstr "Pour ajouter ou modifier des paramètres:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:40
+msgid "Click the button in the \"Value\" column of the property table"
+msgstr "Cliquez sur le bouton dans la colonne \"Value\" du tableau des propriétés"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:41
+msgid "Press the \"Add Parameter\" button to add a parameter"
+msgstr "Appuyez sur le bouton \"Add Parameter\" pour ajouter un paramètre"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:42
+msgid ""
+"A parameter that has just been added. The name defaults to \"[change me]\" "
+"and the type defaults to String. The default name is invalid, so you will "
+"have to change it before exporting. Double click the \"Name\" cell to start "
+"changing the name; double click the \"Type\" cell to select the type."
+msgstr ""
+"Un paramètre qui vient d'être ajouté. Le nom par défaut est \"[change me]\" "
+"et le type par défaut est String (chaîne de caractères). Le nom par défaut "
+"n'est pas valide, vous devrez donc le modifier avant d'exporter. Double-"
+"cliquez sur la cellule \"Name\" pour commencer à changer le nom; double-"
+"cliquez sur la cellule \"Type\" pour sélectionner le type."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:43
+msgid "Save and close button will save all changes and close the window."
+msgstr ""
+"Le bouton \"Save and close\" enregistre toutes les modifications et ferme la"
+" fenêtre."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:45
+msgid ""
+"Rows can be reordered simply by dragging, and can be deleted by selecting "
+"them and pressing delete or backspace."
+msgstr ""
+"Les lignes peuvent être réorganisées simplement en les faisant glisser et "
+"peuvent être supprimées en les sélectionnant et en appuyant sur la touche "
+"\"Delete\" ou \"Backspace\"."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:48
+msgid "Adding and Editing Parameter Presets"
+msgstr ""
+"Ajout et modification des préréglages de paramètres (Parameter Presets)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:52
+msgid "Click \"Add parameter set\" to add a new preset."
+msgstr "Cliquez sur \"Add parameter set\" pour ajouter un nouveau préréglage."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:53
+msgid ""
+"Change the name of the preset to something descriptive. The presets in this "
+"example are for opening and closing the gripper subsystem."
+msgstr ""
+"Remplacez le nom du préréglage par quelque chose de descriptif. Les "
+"préréglages de cet exemple permettent d'ouvrir et de fermer le sous-système "
+"de pince."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:54
+msgid ""
+"Change the value of the parameter(s) for the preset. You can either type a "
+"value in (e.g. \"3.14\") or select from constants defined in the subsystem "
+"that the command requires. Note that the type of the constant has to be the "
+"same type as the parameter -- you can't have an int-type constant be passed "
+"to a double-type parameter, for example"
+msgstr ""
+"Modifiez la valeur du ou des paramètres du préréglage. Vous pouvez soit "
+"saisir une valeur (par exemple \"3.14\"), soit sélectionner parmi les "
+"constantes définies dans le sous-système requis par la commande. Notez que "
+"le type de la constante doit être du même type que le paramètre - vous ne "
+"pouvez pas faire passer une constante de type \"int\" à un paramètre de type"
+" \"double\", par exemple"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:55
+msgid ""
+"Click \"Save and close\" to save changes and exit the dialog; to exit "
+"without saving, press the exit button in the top bar of the window."
+msgstr ""
+"Cliquez sur \"Save and close\" pour enregistrer les modifications et quitter"
+" la boîte de dialogue; pour quitter sans enregistrer, appuyez sur le bouton "
+"Exit dans la barre supérieure de la fenêtre."

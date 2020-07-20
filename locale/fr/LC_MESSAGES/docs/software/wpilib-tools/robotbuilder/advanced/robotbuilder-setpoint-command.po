@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,115 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-07-09 16:07+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:2
+msgid "Setpoint Command"
+msgstr "Commande de Point de consigne (Setpoint)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:4
+msgid ""
+"A common use case in robot programs is to drive an actuator to a particular "
+"angle or position that is measured using a potentiometer or encoder. This "
+"happens so often that there is a shortcut in RobotBuilder to do this task. "
+"It is called the Setpoint command and it's one of the choices on the palette"
+" or the right-click context menu that can be inserted under \"Commands\"."
+msgstr ""
+"Un cas d'utilisation courant dans les programmes de robot consiste à activer"
+" un dispositif actionneur pour un déplacement vers un angle ou une position "
+"particulière.  Le déplacement est mesurée à l'aide d'un potentiomètre ou "
+"d'un encodeur. Cela se produit si souvent qu'il existe un raccourci dans "
+"RobotBuilder pour effectuer cette tâche. Cette commande s'appelle Setpoint "
+"et c'est l'un des choix disponibles dans la palette ou encore dans le menu "
+"issu par un clic droit.  "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:7
+msgid "Start with a PIDSubsystem"
+msgstr "Commencer avec un PIDSubsystem"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:11
+msgid ""
+"Suppose in a robot there is a wrist joint with a potentiometer that measures"
+" the angle. First :doc:`create a PIDSubsystem <../writing-code/robotbuilder-"
+"writing-pidsubsystem-code>` that include the motor that moves the wrist "
+"joint and the potentiometer that measures the angle. The PIDSubsystem should"
+" have all the PID constants filled in and working properly."
+msgstr ""
+"Supposons que dans un robot il y ait un bras articulé avec un potentiomètre "
+"qui mesure l'angle. En premier lieu :doc: `créer un PIDSubsystem <../ code-"
+"écriture / robotbuilder-writing-pidsubsystem-code>` qui inclut le moteur qui"
+" déplace l'articulation et le potentiomètre qui mesure l'angle. Le sous-"
+"système PIDS doit avoir toutes les constantes PID pré-définies et doit "
+"fonctionner correctement."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:13
+msgid ""
+"It is important to set the **Tolerance** parameter. This controls how far "
+"off the current value can be from the setpoint and be considered on target. "
+"This is the criteria that the SetpointCommand uses to move onto the next "
+"command."
+msgstr ""
+"Il est important de définir le paramètre **Tolerance**. Celui-ci permet une "
+"distance admissible entre la valeur actuelle et le point de consigne et "
+"lorsque la valeur d'erreur est inférieure à \"Tolerance\", SetpointCommand "
+"passe alors à la commande suivante."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:16
+msgid "Creating the Setpoint Command"
+msgstr "Création de la commande du Point de consigne"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:20
+msgid ""
+"Right-click on the Commands folder in the palette and select \"Add Setpoint "
+"command\"."
+msgstr ""
+"Cliquez avec le bouton droit sur le dossier Commandes dans la palette et "
+"sélectionnez \"Add Setpoint command\"."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:23
+msgid "Setpoint Command Parameters"
+msgstr "Paramètres de commande du point de consigne"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:27
+msgid ""
+"Fill in the name of the new command. The Requires field is the PIDSubsystem "
+"that is being driven to a setpoint and the Setpoint parameter is the "
+"setpoint value for the PIDSubsystem. There is no need to fill in any code "
+"for this command, it is automatically created by RobotBuilder."
+msgstr ""
+"Saisissez le nom de la nouvelle commande. Le champ \"Requires\" est le "
+"PIDSubsystem qui est conduit à un point de consigne.  Le paramètre "
+"\"Setpoint\" est la valeur de point de consigne pour le PIDSubsystem. Il "
+"n'est pas nécessaire d'écrire du code pour cette commande, elle est "
+"automatiquement créée par RobotBuilder."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:29
+msgid ""
+"Whenever this command is scheduled, it will automatically drive the "
+"subsystem to the specified setpoint. When the setpoint is reached within the"
+" tolerance specified in the PIDSubsystem, the command ends and the next "
+"command starts. It is important to specify a tolerance in the PIDSubsystem "
+"or this command might never end because the tolerance is not achieved."
+msgstr ""
+"Chaque fois que cette commande est planifiée, elle conduira automatiquement "
+"le sous-système au point de consigne spécifié. Lorsque le point de consigne "
+"est atteint dans la tolérance spécifiée dans le PIDSubsystem, la commande se"
+" termine et la commande suivante démarre. Il est important de spécifier une "
+"tolérance acceptable dans le PIDSubsystem sinon cette commande pourrait ne "
+"jamais se terminer, faute d'atteindre la tolérance."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-setpoint-command.rst:31
+msgid ""
+"For more information about PID Control, please see the :ref:`Advanced "
+"Controls Introduction <docs/software/advanced-"
+"controls/introduction/index:Advanced Controls Introduction>`."
+msgstr ""
+"Pour plus d'informations sur le contrôle PID, veuillez consulter: réf: "
+"`Introduction aux contrôles avancés <docs / software / advanced-controls / "
+"introduction / index: Introduction aux contrôles avancés>`."

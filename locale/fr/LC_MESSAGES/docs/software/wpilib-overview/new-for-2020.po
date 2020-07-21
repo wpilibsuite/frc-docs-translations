@@ -331,8 +331,8 @@ msgid ""
 " package."
 msgstr ""
 "PIDController a été réécrit; l’ancien PIDController de même que PIDSource et"
-" PIDOutput ont été déconseillés. La nouvelle version de PIDController se "
-"trouve dans l’espace de noms ``frc2`` (C++) et le package "
+" PIDOutput sont maintenant déconseillés. La nouvelle version de "
+"PIDController se trouve dans l’espace de noms ``frc2`` (C++) et le package "
 "``edu.wpi.first.wpilibj2`` (Java) tandis que la version obsolète reste dans "
 "l’ancien espace de noms et package."
 
@@ -346,11 +346,11 @@ msgid ""
 "rate."
 msgstr ""
 "Le nouveau PIDController ne s’exécute plus de manière asynchrone dans un "
-"thread séparé. Cela élimine une source majeure de bogues pour les équipes. À"
-" la place, les équipes doivent exécuter le contrôleur à l'intérieur de leur "
-"boucle périodique principale TimedRobot en appelant``Calculate()`` et en "
-"passant le résultat à la fonction ``Set()`` du moteur. Notez que cela veut "
-"dire que le contrôleur s’exécute à la même période que TimedRobot."
+"thread séparé. Ce qui élimine une source majeure de bogues pour les équipes."
+" À la place, les équipes doivent exécuter le contrôleur à l'intérieur de "
+"leur boucle périodique principale TimedRobot en appelant ``Calculate()`` et "
+"en passant le résultat à la fonction ``Set()`` du moteur. Notez que cela "
+"veut dire que le contrôleur s’exécute à la même période que TimedRobot."
 
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:46
 msgid ""
@@ -505,6 +505,30 @@ msgstr ""
 "Ajout de classes de géométrie de bas niveau : Pose2d, Rotation2d, "
 "Transform2d, Translation2d"
 
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:65
+msgid ""
+"Added C++ units library. This library provides type safety, which makes it "
+"impossible to mix up units (e.g. pass seconds as meters) and also provides "
+"automatic unit conversion. The units can be specified in literals using a "
+"suffix, e.g. ``1.0_s`` for 1 second."
+msgstr ""
+"Ajout d'une bibliothèque d’unités C++. Cette bibliothèque assure la sécurité"
+" de type, ce qui rend impossible de mélanger les unités (p. ex. passer des "
+"secondes à la place des mètres) et fournit également la conversion "
+"automatique de l’unité. Les unités peuvent être spécifiées dans les libellés"
+" à l’aide d’un suffixe, par exemple ``1.0_s`` pour spécifier 1 seconde."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:66
+msgid ""
+"Added Java units utility functions for unit conversions. This provides a set"
+" of common unit conversions (e.g. feet to meters). Unlike C++, the Java "
+"library does not provide type safety; this was done for performance reasons."
+msgstr ""
+"Ajout de fonctions utilitaires d’unités Java pour les conversions d’unités. "
+"Ce qui fournit un ensemble de conversions d’unités communes (p. ex. des "
+"pieds en mètres). Contrairement à C++, la bibliothèque Java ne fournit pas "
+"de sécurité de type ; cela a été fait pour des raisons de performance."
+
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:67
 msgid ""
 "Added TrapezoidProfile class for 1 degree-of-freedom (DOF) trajectories"
@@ -599,6 +623,42 @@ msgstr "Utiliser OS pour le port série au lieu du pilote NI"
 msgid "IterativeRobot template has been removed"
 msgstr "Le modèle IterativeRobot a été supprimé."
 
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:81
+msgid "Add support for Addressable LEDs, such as WS2812's and NeoPixels"
+msgstr ""
+"Ajout de la prise en charge des LEDs adressables, telles que WS2812's et "
+"NeoPixels"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:82
+msgid ""
+"Add support for DutyCycle inputs, such as the absolute output on many FRC "
+"encoders"
+msgstr ""
+"Ajout d'une prise en charge des entrées DutyCycle, telles que la sortie "
+"absolue sur de nombreux encodeurs FRC"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:83
+msgid ""
+"Eigen has been added to C++, and EJML has been added to Java to support "
+"linear algebra and matrix calculations. These are included by default, with "
+"no need to add anything to your robot project to use them."
+msgstr ""
+"Eigen a été ajouté à C++, et EJML a été ajouté à Java pour prendre en charge"
+" les calculs d’algèbre linéaire et de matrice. Ceux-ci sont inclus par "
+"défaut, sans avoir besoin d’ajouter quoi que ce soit à votre projet de robot"
+" pour les utiliser."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:84
+msgid ""
+"Jackson has been added to Java for JSON support. C++ support already existed"
+" with json library in the wpi header root. These can be used with no need to"
+" add anything to your robot project."
+msgstr ""
+"Jackson a été ajouté à Java pour le soutien JSON. La prise en charge C++ "
+"existait déjà avec la bibliothèque json dans la racine d’en-tête wpi. Ceux-"
+"ci peuvent être utilisés sans avoir besoin d’ajouter quoi que ce soit à "
+"votre projet de robot."
+
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:85
 msgid ""
 "The location that maven artifacts are published has changed to: "
@@ -611,17 +671,92 @@ msgstr ""
 msgid "Shuffleboard"
 msgstr "Shuffleboard"
 
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:90
+msgid "Ignore whitespace and capitalization for remotely defined settings"
+msgstr ""
+"Les espaces et les majuscules pour les paramètres définis à distance sont "
+"ignorés."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:91
+msgid "Components in grids can now have location specified remotely"
+msgstr ""
+"Les composants des grilles peuvent désormais avoir un emplacement spécifié à"
+" distance"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:92
+msgid ""
+"Upper and lower bounds on graph X and Y axis can now be manually specified"
+msgstr ""
+"Les limites supérieure et inférieure des axes X et Y  des graphiques peuvent"
+" maintenant être spécifiées manuellement"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:93
+msgid ""
+"Small numbers will properly be shown in number fields using scientific "
+"notation."
+msgstr ""
+"De nombres avec des valeurs très petites seront correctement affichés dans "
+"les champs de nombres à l’aide de la notation scientifique."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:94
+msgid "Allow widget titles to be hidden"
+msgstr "Les titres des widgets peuvent être masqués."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:95
+msgid "Added a documentation link in the about dropdown"
+msgstr "Ajout d’un lien de documentation dans la liste déroulante *à propos*"
+
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:98
 msgid "FRC Raspberry Pi Image"
 msgstr "FRC Raspberry Pi Image"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:100
+msgid "Updated to work on Raspberry Pi 4"
+msgstr "Mise à jour pour travailler sur Raspberry Pi 4"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:101
+msgid "Updated to use Raspbian Buster"
+msgstr "Mise à jour pour utiliser Raspbian Buster"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:102
+msgid "Added CPU temperature to system status screen"
+msgstr "Ajout de la température du processeur à l’écran d’état du système"
 
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:105
 msgid "SmartDashboard"
 msgstr "SmartDashboard"
 
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:107
+msgid "Properly parses special characters in MJPEG urls"
+msgstr "Analyse correctement les caractères spéciaux dans les url MJPEG"
+
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:110
 msgid "PathWeaver"
 msgstr "PathWeaver"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:112
+msgid "Updated to output WPILib splines"
+msgstr "Mise à jour pour la production des splines WPILib"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:113
+msgid "Now shows an error alert when configuration screen is invalid"
+msgstr ""
+"Affiche maintenant un message d’erreur lorsque l’écran de configuration "
+"n’est pas valide"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:116
+msgid "OutlineViewer"
+msgstr "OutlineViewer"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:118
+msgid "Fixed the initial settings dialog (it was too small on some platforms)"
+msgstr ""
+"Correction de la boîte de dialogue des paramètres initiaux (elle était trop "
+"petite sur certaines plates-formes)"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:119
+msgid "Fixed array editor"
+msgstr "L'éditeur de tableau est réglé"
 
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:122
 msgid "GradleRIO"
@@ -641,6 +776,18 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:128
 msgid "CScore"
 msgstr "CScore"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:130
+msgid ""
+"Fixed cscore compatibility with OpenCV 4 (mainly useful for coprocessors)"
+msgstr ""
+"Le problème de la compatibilité cshore avec OpenCV 4 (principalement utile "
+"pour les coprocesseurs) est réglé"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:131
+msgid "Fixed setting exposure on PS3eye cameras"
+msgstr ""
+"Le problème du réglage de l'exposition sur les caméras PS3eyel est résolu"
 
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:134
 msgid "WPILib All in One Installer"
@@ -684,6 +831,17 @@ msgstr " Extension Visual Studio Code"
 msgid "Added a 2019 to 2020 project importer"
 msgstr "Ajout d’un importateur de projet 2019 à 2020"
 
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:145
+msgid "Add a window for a simple way to grab all project information"
+msgstr ""
+"Ajout d'une fenêtre pour avoir un moyen simple de saisir toutes les "
+"informations du projet"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:146
+msgid "Add built in way to open and display API docs"
+msgstr ""
+"Ajouter une manière intégrée pour ouvrir et afficher les documents API"
+
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:149
 msgid "RobotBuilder"
 msgstr "RobotBuilder"
@@ -693,11 +851,24 @@ msgid "Use individual includes instead of wpilib.h for C++"
 msgstr ""
 "Utilise des fichiers individuels d'inclusion au lieu de wpilib.h pour C++"
 
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:152
+msgid "Add export of PWMSparkMax, PWMTalonFX, PWMVenom"
+msgstr "Ajout de l’exportation de PWMSparkMax, PWMTalonFX, PWMVeom"
+
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:153
 msgid "Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions"
 msgstr ""
 "Les extensions sont maintenant stockées dans "
 "~/wpilib/2020/Robotbuilder/extensions"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:154
+msgid ""
+"GUI for defining Command Groups was removed for maintainability reasons. "
+"Commands can be added in VS Code."
+msgstr ""
+"Suppression pour des rasisons de maintenance de l'interface graphique "
+"utilisateur pour définir les groupes de commandes. Les commandes peuvent "
+"être ajoutées dans vs code."
 
 #: ../../frc-docs/source/docs/software/wpilib-overview/new-for-2020.rst:157
 msgid "Robot Characterization"

@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,134 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-05-10 22:36+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:4
+msgid "How it Works"
+msgstr "Comment ça fonctionne"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:7
+msgid "Dockerfile"
+msgstr "Dockerfile"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:9
+msgid ""
+"The dockerfile is used to build an ECR image used by the training instance. "
+"The dockerfile contains the following important dependencies:"
+msgstr ""
+"Le dockerfile est utilisé pour créer une image ECR utilisée par l'instance "
+"d'entraînement. Le dockerfile contient les dépendances importantes "
+"suivantes:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:11
+msgid "TensorFlow for GPU"
+msgstr "TensorFlow pour un GPU"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:12
+msgid "Python 2 and 3"
+msgstr "Python 2 et 3"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:13
+msgid "Coral retraining scripts"
+msgstr "Scripts retenus par Coral"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:14
+msgid ""
+"`WPILib scripts "
+"<https://github.com/wpilibsuite/DetectCoral/tree/dev/container/coral>`__"
+msgstr ""
+"`WPILib scripts "
+"<https://github.com/wpilibsuite/DetectCoral/tree/dev/container/coral>`__"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:17
+msgid "Data"
+msgstr "Les données"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:19
+msgid ""
+"Images should be labelled in Supervisely. They should be downloaded as "
+"``jpeg + json``, in a tar file. When the user calls "
+"``estimator.fit(\"s3://bucket\")``, SageMaker automatically downloads the "
+"content of that folder/bucket to ``/opt/ml/input/data/training`` inside of "
+"the training instance."
+msgstr ""
+"Les images doivent être étiquetées dans Supervately. Ils doivent être "
+"téléchargés en tant que ``jpeg + json``, dans un fichier .tar. Lorsque "
+"l'utilisateur appelle ``estimator.fit(\"s3://bucket\")``, SageMaker "
+"télécharge automatiquement le contenu de ce dossier / compartiment dans "
+"``/opt/ml/input/data/training`` à l'intérieur de la formation exemple."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:21
+msgid ""
+"The tar is converted to the 2 records and ``.pbtxt`` used by the retraining "
+"script by the ``tar_to_record.sh`` script. It automatically finds the ONLY "
+"tar in the specified folder and extracts it. It then uses ``json_to_csv.py``"
+" to convert the jsons to 2 large csv files. ``generate_tfrecord.py`` "
+"converts the csv files into .record files. Finally, the ``meta.json`` file "
+"is parsed by ``parse_meta.py`` to create the ``.pbtxt`` file, which is a "
+"label map."
+msgstr ""
+"Le script ``tar_to_record.sh``  se charge de convertir le fichier .tar en 2 "
+"enregistrements et créé ``.pbtxt``, qui sera utilisé par le script de ré-"
+"entraînement. En gros, ``tar_to_record.sh`` trouve automatiquement le SEUL "
+"tar dans le dossier spécifié et l'extrait. Il utilise ensuite "
+"``json_to_csv.py`` pour convertir les jsons en 2 gros fichiers csv. Ensuite,"
+" ``generate_tfrecord.py`` convertit les fichiers csv en fichiers .record. "
+"Enfin, le fichier ``meta.json`` est analysé par ``parse_meta.py`` pour créer"
+" le fichier ``.pbtxt``, qui est un ensemble d'étiquettes (label map)."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:24
+msgid "Hyperparameters"
+msgstr "Hyperparamèters"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:26
+msgid ""
+"At the moment, the only hyperparameter that you can change is the number of "
+"training steps. The dict specified in the notebook is written to "
+"``/opt/ml/input/config/hyperparameters.json`` in the training instance. It "
+"is parsed by ``hyper.py``, and is used when calling ``./retrain_....sh`` in "
+"train."
+msgstr ""
+"Pour le moment, le seul hyperparamètre que vous pouvez modifier est le "
+"nombre d'étapes d'entraînement. Le \"dict\" spécifié dans le notebook est "
+"écrit dans ``/opt/ml/input/config/hyperparameters.json`` dans l'instance "
+"d'entraînement. Il est analysé par ``hyper.py``, et est utilisé lors de "
+"l'appel de ``./retrain_....sh`` dans le mode Entraînement (Train)."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:29
+msgid "Training"
+msgstr "La formation"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:31
+msgid ""
+"``estimator.fit(...)`` calls the train script inside the training instance. "
+"It downloads checkpoints, creates the records, trains, converts to .tflite, "
+"and uploads to S3."
+msgstr ""
+"`` estimator.fit (...) '' appelle le script de train dans l'instance "
+"d'entraînement. Il télécharge les points de contrôle, crée les "
+"enregistrements, entraîne, convertit en .tflite et télécharge sur S3."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:34
+msgid "Output"
+msgstr "La sortie"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/how-it-works.rst:36
+msgid ""
+"The output ``output.tflite`` is moved to ``/opt/ml/model/output.tflite``. "
+"This is then automatically uploaded to an S3 bucket generated by SageMaker. "
+"You can find exactly where this is uploaded by going into the completed "
+"training job in SageMaker. It will be inside of a tar, inside of a tar."
+msgstr ""
+"La sortie ``output.tflite`` est déplacée vers "
+"``/opt/ml/model/output.tflite``. Ceci est ensuite automatiquement téléchargé"
+" dans un compartiment S3 généré par SageMaker. Vous pouvez trouver "
+"exactement où cela est téléchargé en accédant aux fichiers de formation "
+"complétés durant la tâche (completed training job) dans SageMaker. Ce sera à"
+" l'intérieur d'un fichier .tar "

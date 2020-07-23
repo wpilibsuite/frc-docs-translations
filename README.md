@@ -59,7 +59,6 @@ The first step is to generate all translatable files from Sphinx. This can be do
 sphinx-build -T -b gettext frc-docs/source locale/pot
 ```
 
-Then run 
 Go ahead and run the below command to save your transifex token to the python transifex client, replacing the dummy token below with the one you copied earlier.
 
 ```

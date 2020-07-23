@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,280 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:2
+msgid "What is Command-Based Programming?"
+msgstr "Qu’est-ce que la programmation orientée Commande?"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Cette documentation décrit l’utilisation de la bibliothèque patrimoniale "
+"commande orientée . Bien que cette documentation ait été conservée pour "
+"aider les équipes qui ne l'ont pas encore fait, les équipes sont fortement "
+"encouragées à migrer vers la bibliothèque :ref:`new command-based library "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:6
+msgid ""
+"WPILib supports a method of writing programs called \"Command-based "
+"programming\". Command-based programming is a design pattern to help you "
+"organize your robot programs. Some of the characteristics of robot programs "
+"that might be different from other desktop programs are:"
+msgstr ""
+"WPILib prend en charge une méthode d’écriture de programmes appelée "
+"\"Command-based programming\" que nous appellerons \"programmation orientée "
+"commande\". La programmation orientée commande est un patron de conception "
+"dont le but est de vous aider à organiser vos programmes de robots. Voici "
+"quelques-unes des caractéristiques des programmes de robots qui pourraient "
+"être différents des autres programmes de bureau :"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:8
+msgid ""
+"Activities happen over time, for example a sequence of steps to shoot a "
+"Frisbee or raise an elevator and place a tube on a goal."
+msgstr ""
+"Les activités se produisent au fil du temps, par exemple une séquence "
+"d’étapes pour tirer un Frisbee ou faire monter un élevateur et placer un "
+"tube sur un but."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:9
+msgid ""
+"These activities occur concurrently, that is it might be desirable for an "
+"elevator, wrist and gripper to all be moving into a pickup position at the "
+"same time to increase robot performance."
+msgstr ""
+"Ces activités se produisent simultanément, c’est-à-dire qu’il pourrait être "
+"souhaitable qu’un élevateur, un poignet et une pince se dirigent tous en "
+"même temps vers une position de ramassage afin d'augmenter les performances "
+"du robot."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:10
+msgid ""
+"It is desirable to test the robot mechanisms and activities each "
+"individually to help debug your robot."
+msgstr ""
+"Il est souhaitable de tester, chacun individuellement, les mécanismes et les"
+" activités de votre robot pour aider à le déboguer."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:11
+msgid ""
+"Often the program needs to be augmented with additional autonomous programs "
+"at the last minute, perhaps at competitions, so easily extendable code is "
+"important."
+msgstr ""
+"Souvent, le programme doit être enrichi avec l'ajout de programmes autonomes"
+" supplémentaires à la dernière minute, peut-être même lors de compétitions, "
+"donc avoir un code facilement extensible est un facteur important."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:13
+msgid ""
+"Command-based programming supports all these goals easily to make the robot "
+"program much simpler than using some less structured technique."
+msgstr ""
+"La programmation orientée commande remplit facilement tous ces objectifs "
+"pour rendre le programme du robot beaucoup plus simple que l’utilisation "
+"d'une technique moins structurée."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:16
+msgid "Commands and Subsystems"
+msgstr "Commandes et sous-systèmes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:20
+msgid ""
+"Programs based on the WPILib Command Template are organized around two "
+"fundamental concepts: **Subsystems** and **Commands**."
+msgstr ""
+"Les programmes conçus sur le modèle de commande WPILib sont organisés autour"
+" de deux concepts fondamentaux : **Subsystems** ou**Sous-systèmes** et "
+"**Commands** ou**Commandes**."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:22
+msgid ""
+"**Subsystems** - define the capabilities of each part of the robot and are "
+"subclasses of Subsystem."
+msgstr ""
+"**Subsystems** - définissent les fonctionnalités de chaque partie du robot "
+"et sont des sous-classes de la classe Subsystem."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:24
+msgid ""
+"**Commands** - define the operation of the robot incorporating the "
+"capabilities defined in the subsystems. Commands are subclasses of Command "
+"or CommandGroup. Commands run when scheduled or in response to buttons being"
+" pressed or virtual buttons from the SmartDashboard."
+msgstr ""
+"**Commands** - définissent le fonctionnement du robot en intégrant les "
+"fonctionnalités définies dans les sous-systèmes. Les commandes sont des "
+"sous-classes de Command ou CommandGroup. Les commandes s’exécutent "
+"lorsqu'elles sont planifiés ou en réponse à des boutons appuyés ou aux "
+"boutons virtuels du SmartDashboard."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:28
+msgid "How Commands Work"
+msgstr "Comment fonctionnent des Commandes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:32
+msgid ""
+"Commands let you break up the tasks of operating the robot into small "
+"chunks. Each command has an execute() method that does some work and an "
+"isFinished() method that tells if it is done. This happens on every update "
+"from the driver station or about every 20ms. Commands can be grouped "
+"together and executed sequentially, starting the next one in the group as "
+"the previous one finishes."
+msgstr ""
+"Les commandes vous permettent de diviser en petits morceaux les tâches "
+"responsables de l’exploitation du robot. Chaque commande dispose d’une "
+"méthode ``execute()`` qui effectue un certain travail et d’une méthode "
+"``isFinished()`` qui indique si elle est effectuée. Cela se produit sur "
+"chaque mise à jour de la Driver Station ou environ tous les 20ms. Les "
+"commandes peuvent être regroupées et exécutées séquentiellement, en "
+"commençant la suivante dans le groupe au fur et à mesure que l'exécution de "
+"la précédente se termine."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:35
+msgid "Concurrency"
+msgstr "Concurrence"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:39
+msgid ""
+"Sometimes it is desirable to have several operations happening concurrently."
+" In the previous example you might want to set the wrist position while the "
+"elevator is moving up. In this case, a command group can start a parallel "
+"command (or command group) running."
+msgstr ""
+"Parfois, il est souhaitable que plusieurs opérations se déroulent "
+"simultanément. Dans l’exemple précédent, vous pouvez définir la position du "
+"poignet pendant que l’élevateur se déplace vers le haut. Dans ce cas, un "
+"groupe de commandes peut démarrer une commande parallèle (ou un groupe de "
+"commandes) en cours d’exécution."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:42
+msgid "How It Works - Scheduling Commands"
+msgstr "Comment ça marche - Planification des commandes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:46
+msgid "There are three main ways commands are scheduled:"
+msgstr "Il y a trois façons principales dont les commandes sont planifiées :"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:48
+msgid ""
+"Manually, by calling the ``start()`` method on the command (:doc:`used for "
+"autonomous <../commands/running-commands-autonomous>`)"
+msgstr ""
+"Manuellement, en appelant la méthode ``start()`` sur la commande (:doc:`used"
+" for autonomous <../commands/running-commands-autonomous>`)"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:49
+msgid ""
+"Automatically by the scheduler based on :doc:`button/trigger actions "
+"<../commands/running-commands-joystick-input>` specified in the code "
+"(typically defined in the OI class but checked by the Scheduler)."
+msgstr ""
+"Automatiquement par le scheduler ou planificateur basé sur "
+":doc:`button/trigger actions <../commands/running-commands-joystick-input>` "
+"spécifié dans le code (généralement défini dans la classe OI mais validé par"
+" le planificateur)."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:50
+msgid ""
+"Automatically when a previous command completes (:doc:`default commands "
+"<../commands/default-commands>` and :doc:`command groups  <../commands"
+"/creating-groups-commands>`)."
+msgstr ""
+"Automatiquement lorsqu’une commande précédente se termine (:doc:`default "
+"commands <../commands/default-commands>` et :doc:`command groups "
+"<../commands/creating-groups-commands>`)."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:52
+msgid ""
+"Each time the driver station gets new data, the periodic method of your "
+"robot program is called. It runs a Scheduler that checks the trigger "
+"conditions to see if any commands need to be scheduled or cancelled."
+msgstr ""
+"Chaque fois que la Driver Station obtient de nouvelles données, la méthode "
+"périodique de votre programme de robot est appelée. Elle exécute un "
+"planificateur qui vérifie les conditions de déclenchement pour voir si des "
+"commandes doivent être planifiées ou annulées."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:54
+msgid ""
+"When a command is scheduled, the Scheduler checks to make sure that no other"
+" commands are using the same subsystems that the new command requires. If "
+"one or more of the subsystems is currently in use, and the current command "
+"is interruptible, it will be interrupted and the new command will be "
+"scheduled. If the current command is not interruptible, the new command will"
+" fail to be scheduled."
+msgstr ""
+"Lorsqu’une commande est planifiée, le planificateur vérifie qu’aucune autre "
+"commande n’utilise les mêmes sous-systèmes que la nouvelle commande. Si un "
+"ou plusieurs sous-systèmes sont actuellement en service et que la commande "
+"actuelle est interrompue, elle sera interrompue et la nouvelle commande sera"
+" planifiée. Si la commande actuelle n’est pas interrompue, la nouvelle "
+"commande ne sera pas planifiée."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:57
+msgid "How It Works - Running Commands"
+msgstr "Comment ça marche - Exécution des commandes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:59
+msgid ""
+"After checking for new commands, the scheduler proceeds through the list of "
+"active commands and calls the ``execute()`` and ``isFinished()`` methods on "
+"each command. Notice that the apparent concurrent execution is done without "
+"the use of threads or tasks which would add complexity to the program. Each "
+"command simply has some code to execute (execute method) to move it further "
+"along towards its goal and a method (isFinished) that determines if the "
+"command has reached the goal. The execute and isFinished methods are just "
+"called repeatedly."
+msgstr ""
+"Après vérification des nouvelles commandes, le planificateur passe en revue "
+"la liste des commandes actives et appelle, sur chaque commande, les méthodes"
+" ``execute()`` et ``isFinished()``. Notez que l’exécution simultanée "
+"apparente se fait sans l’utilisation de threads ou de tâches qui "
+"ajouteraient de la complexité au programme. Chaque commande a simplement du "
+"code à exécuter (méthode ``execute()``) pour la déplacer plus loin vers son "
+"objectif et une méthode (``isFinished()``) qui détermine si la commande a "
+"atteint l’objectif. Les méthodes ``execute()`` et ``isFinished()`` sont "
+"simplement appelées à plusieurs reprises."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:62
+msgid "Command Groups"
+msgstr "Groupes de commandes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:64
+msgid ""
+"More complex commands can be built up from simpler commands. For example, "
+"shooting a disc may be a long sequence of commands that are executed one "
+"after another. Maybe some of these commands in the sequence can be executed "
+"concurrently. Command groups are commands, but instead of having an "
+"isFinished and execute method, they have a list of other commands to "
+"execute. This allows more complex operations to be built up out of simpler "
+"operations, a basic principle in programming. Each of the individual smaller"
+" commands can be easily tested first, then the group can be tested. More "
+"information on command groups can be found in the :doc:`Creating groups of "
+"commands article <../commands/creating-groups-commands>`."
+msgstr ""
+"Des commandes plus complexes peuvent être construites à partir de commandes "
+"plus simples. Par exemple, tirer un disque peut être une longue séquence de "
+"commandes exécutées l’une après l’autre. Il se peut bien que certaines de "
+"ces commandes dans la séquence puissent être exécutées simultanément. Les "
+"groupes de commandes sont des commandes, mais au lieu d’avoir unes méthodes "
+"``isFinished`` et ``execute()``, ils ont une liste d’autres commandes à "
+"exécuter. Cela permet de construire des opérations plus complexes à partir "
+"d’opérations plus simples, un principe de base dans la programmation. "
+"Chacune des commandes individuelles plus petites peut être facilement testée"
+" en premier, puis le groupe peut être testé. Vous trouverez plus "
+"d’informations sur les groupes de commandes dans l’article  :doc:`Création "
+"de groupes de commandes <../commands/creating-groups-commands>`."

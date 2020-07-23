@@ -51,8 +51,6 @@ This will bring up a screen containing your API key. Write this down and save it
 
 ### Pulling from Transifex
 
-**Important:** Make sure you have all [dependencies](https://docs.wpilib.org/en/latest/docs/contributing/frc-docs/build-instructions.html) installed. 
-
 The first step is to generate all translatable files from Sphinx. This can be done with the ``gettext`` builder. Type the below command to generate translatable POT files.
 
 ```

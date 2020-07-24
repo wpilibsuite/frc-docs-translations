@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,9 +13,136 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:2
+msgid "Running Commands during Autonomous"
+msgstr "Exécution des commandes pendant le mode Autonome"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Cette documentation décrit l’utilisation de la bibliothèque patrimoniale "
+"orientée commande. Bien que cette documentation ait été conservée pour aider"
+" les équipes qui ne l’ont pas encore fait, les équipes sont fortement "
+"encouragées à migrer vers la :ref:`nouvelle bibiothèque orientée commande "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:6
+msgid ""
+"Once commands are defined they can run in either the teleop or autonomous "
+"part of the program. In fact, the power of the command based programming "
+"approach is that you can reuse the same commands in either place. If the "
+"robot has a command that can shoot Frisbees during autonomous with camera "
+"aiming and accurate shooting, there is no reason not to use it to help the "
+"drivers during the teleop period of the game."
+msgstr ""
+"Une fois les commandes définies, elles peuvent s’exécuter dans la partie "
+"teleop ou autonome du programme. En fait, la puissance de l’approche de "
+"programmation orientée commande est que vous pouvez réutiliser les mêmes "
+"commandes à l’un ou l’autre endroit. Si le robot a une commande qui peut "
+"tirer des Frisbees pendant le mode autonome avec la caméra pour viser et "
+"avoir un tir précis, il n’y a aucune raison de ne pas l’utiliser pour aider "
+"les pilotes pendant le mode téléop du jeu."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:40
+msgid ""
+"Our robot must do the following tasks during the autonomous period: pick up "
+"a soda can off the floor then drive a set distance from a table and deliver "
+"the can there. The process consists of:"
+msgstr ""
+"Notre robot doit effectuer les tâches suivantes pendant le mode autonome : "
+"ramasser une canette de soda sur le sol, puis se déplacer d'une distance "
+"définie à partir d’une table et y livrer la boîte. Le processus consiste en "
+":"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:42
+msgid "Prepare to grab (move elevator, wrist, and gripper into position)"
+msgstr ""
+"Préparez-vous à saisir (mettre en position l’élevateur, le poignet et la "
+"pince )"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:43
+msgid "Grab the soda can"
+msgstr "Saisir la canette de soda"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:44
+msgid ""
+"Drive to a distance from the table indicated by an ultrasonic rangefinder"
+msgstr ""
+"Se déplacer de la table d'une distance indiquée par un télémètre "
+"ultrasonique"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:45
+msgid "Place the soda"
+msgstr "Placer le soda"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:46
+msgid "Back off to a distance from the rangefinder"
+msgstr "Reculer à une distance du télémètre"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:47
+msgid "Re-stow the gripper"
+msgstr "Ranger à nouveau la pince"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:49
+msgid ""
+"To do these tasks there are 6 commands that are executed sequentially as "
+"shown in this example (note that some of these, such as PlaceSoda are other "
+"command groups)."
+msgstr ""
+"Pour effectuer ces tâches, il y a 6 commandes qui sont exécutées "
+"séquentiellement comme indiqué dans cet exemple (notez que certaines d’entre"
+" elles, telle que PlaceSoda, sont d’autres groupes de commandes)."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:52
+msgid "Setting the Command to Run during Autonomous"
+msgstr "Définition de la commande à exécuter pendant le mode autonome"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:115
+msgid "To get the SodaDelivery command to run as the Autonomous program,"
+msgstr ""
+"Pour que la commande SodaDelivery fonctionne comme le programme autonome,"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:117
+msgid ""
+"Instantiate it in the ``RobotInit()`` method. ``RobotInit()`` is called only"
+" once when the robot starts so it is a good time to create the command "
+"instance."
+msgstr ""
+"Instanciez-la dans la méthode ``RobotInit()``. ``RobotInit()`` n’est appelée"
+" qu’une seule fois lorsque le robot démarre, c’est donc le bon moment pour "
+"créer l’instance de commande."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:118
+msgid ""
+"Start it during the ``AutonomousInit()`` method. ``AutonomousInit()`` is "
+"called once at the start of the autonomous period so we schedule the command"
+" there."
+msgstr ""
+"Démarrez-le pendant la méthode ``AutonomousInit()``. ``AutonomousInit()`` "
+"est appelée une fois au début de la période autonome, donc nous y "
+"programmons la commande."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:119
+msgid ""
+"Be sure the scheduler is called repeatedly during the "
+"``AutonomousPeriodic()`` method.  ``AutonomousPeriodic()`` is called "
+"(nominally) every 20ms so that is a good time to run the scheduler which "
+"makes a pass through all the currently scheduled commands."
+msgstr ""
+"Assurez-vous que le planificateur est appelé à plusieurs reprises pendant la"
+" méthode ``AutonomousPeriodic()``. ``AutonomousPeriodic()`` est appelée "
+"(nominalement) tous les 20ms, ce qui est un bon moment pour exécuter le "
+"planificateur qui défile à travers toutes les commandes actuellement "
+"planifiées."

@@ -57,13 +57,15 @@ The first step is to generate all translatable files from Sphinx. This can be do
 sphinx-build -T -b gettext frc-docs/source locale/pot
 ```
 
-Go ahead and run the below command to save your transifex token to the python transifex client, replacing the dummy token below with the one you copied earlier.
+Go ahead and run the below command to save your transifex token to the python transifex client.
 
 ```
-tx init --force-save --no-interactive --token 1/397c068682be925a9d47be1922f050c37b654d3e
+tx init --force-save
 ```
 
-and now we need to grab a list of currently used resources (and their slugs) to grab from transifex. Go ahead and run the command below to do that.
+This will bring up a prompt where you can paste in your API token.
+
+Now we need to grab a list of currently used resources (and their slugs) to grab from transifex. Go ahead and run the command below to do that.
 
 ```
 sphinx-intl update-txconfig-resources -p locale/pot -d locale --transifex-project-name frc-docs

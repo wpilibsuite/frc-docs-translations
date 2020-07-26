@@ -2,6 +2,8 @@ import requests
 import os
 import argparse
 import configparser
+import dateutil.parser
+import dateutil.utils
 
 TX_TOKEN = os.getenv('TX_TOKEN')
 RESOURCES_URL = 'https://www.transifex.com/api/2/project/frc-docs/resources/'
@@ -59,13 +61,33 @@ def get_unused_resources(remote_resources, local_resources):
             response = requests.get(RESOURCE_BASE_URL + resource + "/",
                     params=details_param,
                     auth=("api", TX_TOKEN))
-    
+
             if response.status_code != 200:
                 print("Error retrieving information for resource:", resource)
-            
+                # prevent script from hanging on error
+                continue
+            elif response.status_code == 404:
+                print("Resource not found!")
+                # deleted, no need to worry
+                continue
+
             json_response = response.json()
             
             if not json_response["accept_translations"]:
+                last_update = dateutil.parser.parse(json_response["last_update"])
+                current_time = dateutil.utils.today()
+                
+                delete_status = (current_time - last_update).days >= 25
+
+                if delete_status:
+                    response = requests.delete(RESOURCE_BASE_URL + resource + "/",
+                            auth=("api", TX_TOKEN))
+
+                    if response.status_code != 204:
+                        print("Error deleting resource ", resource, response.status_code)
+                    else:
+                        print("Successfully deleted old resource", resource)
+
                 continue
 
             unused_resources.append(resource)

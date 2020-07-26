@@ -67,7 +67,7 @@ def get_unused_resources(remote_resources, local_resources):
                 # prevent script from hanging on error
                 continue
             elif response.status_code == 404:
-                print("Resource not found!")
+                print("Resource not found!", resource)
                 # deleted, no need to worry
                 continue
 

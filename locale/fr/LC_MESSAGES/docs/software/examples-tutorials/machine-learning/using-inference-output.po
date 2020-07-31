@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Kaitlyn Kenwell <redrield@gmail.com>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,10 +14,100 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-05-10 22:36+0000\n"
-"Last-Translator: Kaitlyn Kenwell <redrield@gmail.com>, 2020\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:4
+msgid "Using Inference Output"
+msgstr "Utilisant les Sorties d'Inférences"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:6
+msgid ""
+"The Raspberry Pi writes all detection information to NetworkTables, which "
+"can be used by your robot code. Below is a Java example for parsing and "
+"using this data."
+msgstr ""
+"Le Raspberry Pi écrit tout l'information de détection aux NetworkTables, et "
+"celle-ci peut être utilisé par votre code de robot. Ci-dessous, un exemple "
+"Java pour analyser et utiliser ces données."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:8
+msgid "**NetworkTables Format**"
+msgstr "**Format NetworkTables**"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:10
+msgid "``ML`` – The table containing all inference data."
+msgstr "``ML`` - La table qui contient tout les données d'inférence."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:12
+msgid ""
+"``nb_objects`` – the number (double) of detected objects in the current "
+"frame."
+msgstr ""
+"``nb_objects`` – le nombre (format: double) d'objets détectés dans le cadre "
+"actuel."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:13
+msgid ""
+"``object_classes`` – a string array of the class names of each object. These"
+" are in the same order as the coordinates."
+msgstr ""
+"``object_classes`` – un tableau de chaînes de caractères des noms de la "
+"classe de chaque objet. Ils sont dans le même ordre que les coordonnées."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:14
+msgid ""
+"``boxes`` – a double array containing the coordinates of every detected "
+"object. The coordinates are in the following format: [top_left__x1, "
+"top_left_y1, bottom_right_x1, bottom_right_y1, top_left_x2, top_left_y2, ..."
+" ]. There are four coordinates per box. A way to parse this array in Java is"
+" shown below."
+msgstr ""
+"``boxes`` – un tableau (format:double) qui contient les coordonnées de "
+"chaque objet détecté. Les coordonnées sont dans le format suivant: "
+"[haut_gauche__x1, haut_gauche_y1, bas_droit_x1, bas_droit_y1, haut-"
+"gauche_x2, haut_gace_y2, ...]. Il y a quatre coordonnées par boîte. Une "
+"façon d'analyser ce tableau en Java est illustré ci-dessous."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:16
+msgid ""
+"The below ``VisionSubsystem`` Java class parses the data from NetworkTables "
+"and stores it in a usable way."
+msgstr ""
+"La classe Java ci-dessous ``VisionSubsystem`` analyse les données de "
+"NetworkTables et les garde de manière utilisable."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:18
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:24
+msgid "Example code coming soon!"
+msgstr "Exemple de code à venir!"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:20
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:26
+msgid "Todo"
+msgstr "Ce qui reste à faire"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:20
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:26
+msgid "Code example should be in allwpilib"
+msgstr "L'exemple de code devrait être en allwpilib"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:22
+msgid ""
+"Using the arrays created by the ``VisionSubsystem``, one can make a simple "
+"command to turn to face a game piece. In this example, a hatch is used. One "
+"thing to note is the ~15fps of inference attained by a Google Coral is not "
+"fast enough for PID input directly, however calculating the relative heading"
+" of a game piece and then turning to that heading works accurately."
+msgstr ""
+"On peut utiliser les tableaux crée par le ``VisionSubsystem`` pour créer une"
+" commande simple pour faire face à une pièce de jeu. Dans cette exemple, un "
+"panneau d'écoutille est utilisé. Quelque chose à noter est que le ~15fps de "
+"l'inférence atteint avec Google Coral n'est pas assez vite pour agir "
+"directement comme une entrée PID , cependant, pour calculer le cap relatif "
+"d'une pièce de jeu et tourner vers celle-ci, cela fonctionne avec précision."

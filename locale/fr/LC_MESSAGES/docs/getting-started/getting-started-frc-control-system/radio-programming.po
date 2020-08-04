@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Kaitlyn Kenwell <redrield@gmail.com>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
 # 
 #, fuzzy
@@ -33,8 +34,8 @@ msgid ""
 "events."
 msgstr ""
 "Ce guide vous montrera comment utiliser le logiciel FRC Radio Configuration "
-"Utility pour configurer votre passerelle sans fil de votre robot pour "
-"l'utiliser dans des événements autre que ceux relatifs à la FRC."
+"Utility pour configurer votre passerelle sans fil (wireless bridge) de votre"
+" robot pour l'utiliser dans des événements autre que ceux relatifs à la FRC."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:6
 msgid "Before you begin using the software:"
@@ -47,7 +48,7 @@ msgid ""
 msgstr ""
 "Désactivez les connexions WiFi sur votre ordinateur, car l'activation de ces"
 " connexions WIFI peut empêcher l'utilitaire de configuration de communiquer "
-"correctement avec le pont."
+"correctement avec la passerelle."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:9
 msgid ""
@@ -64,8 +65,8 @@ msgid ""
 "(center-pin positive)."
 msgstr ""
 "Le OM5P-AN et AC utilisent la même prise d'alimentation que le D-Link "
-"DAP1522, cependant ils sont des radios de 12V. Câblez la radio aux bornes "
-"12V 2A sur le module VRM (broche centrale positive)."
+"DAP1522, cependant ce sont des radios de 12V. Câblez la radio aux bornes 12V"
+" 2A sur le module VRM (la broche centrale étant de signe positif)."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:14
 msgid "Pre-Requisites"
@@ -91,10 +92,10 @@ msgid ""
 msgstr ""
 "L'Utilitaire de Configuration du Radio FRC requiert les privilèges "
 "d'administrateur pour configurer les paramètres réseau sur votre machine. Le"
-" logiciel devrait demander les privilèges nécessaires automatiquement (peut "
-"nécessiter un mot de passe s'il est exécuté à partir d'un compte non "
-"administrateur), mais si vous rencontrez des problèmes, essayez de "
-"l'éxecuter d'un compte administrateur."
+" logiciel devrait demander les privilèges nécessaires automatiquement (ceci "
+"peut nécessiter un mot de passe si le logiciel est exécuté à partir d'un "
+"compte non administrateur), mais si vous rencontrez des problèmes, essayez "
+"de l'éxecuter d'un compte administrateur."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:21
 msgid "Application Notes"
@@ -110,9 +111,10 @@ msgid ""
 msgstr ""
 "Par défaut, l'Utilitaire de Configuration Radio programmera la radio pour "
 "appliquer la limite de bande passante de 4 Mbps sur le trafic sortant de la "
-"radio via l'interface sans fil. Dans le configuration maison (mode AP) celle"
-" est totale, pas une limite par client. Cela veut dire que la vidéo en "
-"streaming sur plusieurs clients n'est pas recommandée."
+"radio via l'interface sans fil. Dans le configuration maison (mode AP), ce "
+"nombre de 4Mbps signifie la totalité de la bande passante, et non une limite"
+" par client. Cela veut dire que la vidéo en streaming vers plusieurs clients"
+" n'est pas recommandée."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:25
 msgid ""
@@ -132,7 +134,7 @@ msgid ""
 "into the radio when run. These settings apply to the radio in all modes "
 "(including at events). These include:"
 msgstr ""
-"L’utilitaire Radio Configuration Utility programme un certain nombre de "
+"L’utilitaire \"Radio Configuration Utility\" programme un certain nombre de "
 "paramètres de configuration dans la radio lors de son exécution. Ces "
 "paramètres s’appliquent à la radio dans tous les modes (y compris lors "
 "d’événements). Il s’agit notamment de:"
@@ -145,13 +147,13 @@ msgstr "Définir une adresse IP statique de 10.TE.AM.1"
 msgid ""
 "Set an alternate IP on the wired side of 192.168.1.1 for future programming"
 msgstr ""
-"Définir une adresse IP alternative du côté filaire de 192.168.1.1 pour une "
-"programmation future"
+"Définir une adresse IP alternative de 192.168.1.1 pour une installation "
+"câblée, ceci pour une programmation future"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:37
 msgid "Bridge the wired ports so they may be used interchangeably"
 msgstr ""
-"Relier des ports filaires afin qu’ils puissent être utilisés de façon "
+"Relier des ports câblés afin qu’ils puissent être utilisés de façon "
 "interchangeable"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:38
@@ -163,17 +165,18 @@ msgid ""
 "4Mb/s bandwidth limit on the outbound side of the wireless interface (may be"
 " disabled for home use)"
 msgstr ""
-"Limite de bande passante de 4 Mo/s du côté sortant de l’interface sans fil "
-"(peut être désactivée pour une utilisation à domicile)"
+"Limiter la bande passante à 4 Mo/s du côté sortie de l’interface sans fil "
+"(ceci peut être désactivé pour une utilisation à la maison)"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:40
 msgid ""
 "QoS rules for internal packet prioritization (affects internal buffer and "
 "which packets to discard if bandwidth limit is reached). These rules are:"
 msgstr ""
-" La qualité de service ou QS régularise la hiérarchisation interne des "
-"paquets (affecte la mémoire tampon interne et les paquets à jeter si la "
-"limite de bande passante est atteinte). Ces règles sont les suivantes :"
+"La qualité de service ou QS régularise la hiérarchisation interne des "
+"paquets (affecte la mémoire tampon interne et les paquets à éliminer si la "
+"limite de bande passante est atteinte). Les règles appliquées sont les "
+"suivantes :"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:42
 msgid "Robot Control and Status (UDP 1110, 1115, 1150)"
@@ -186,7 +189,8 @@ msgstr "TCP et  NetworkTables du robot (TCP 1735, 1740)"
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:44
 msgid "Bulk (All other traffic). (disabled if BW limit is disabled)"
 msgstr ""
-"En vrac (Tout autre trafic). (désactivé si la limite BW est désactivée)"
+"En vrac (Tout autre trafic). (désactivé si la limite de largeur de bande "
+"(BW) est désactivée)"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:46
 msgid "DHCP server enabled. Serves out:"
@@ -282,7 +286,7 @@ msgstr ""
 "La version 19.1.1 corrige un problème avec l’application de la limite de "
 "bande passante présente dans la version 19.1.0. Les équipes doivent "
 "installer la nouvelle version, puis reprogrammer leur radio (il n’est pas "
-"nécessaire de flasher à nouveau le firmware)."
+"nécessaire de réimager à nouveau le micrologiciel)."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:74
 msgid "Install the software"
@@ -294,7 +298,7 @@ msgid ""
 " Follow the prompts to complete the installation."
 msgstr ""
 "Double-cliquez sur FRC_Radio_Configuration_VERSION.exe pour lancer "
-"l’installateur. Suivez les invites pour terminer l’installation."
+"l’installateur. Suivez les instructions pour terminer l’installation."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:80
 msgid ""
@@ -302,10 +306,10 @@ msgid ""
 "already present. The Npcap installer contains a number of checkboxes to "
 "configure the install. You should leave the options as the defaults."
 msgstr ""
-"Une partie des invites d’installation inclura l’installation de Npcap si "
-"elle n’est pas déjà présente. L’installateur Npcap contient un certain "
-"nombre de cases à cocher pour configurer l’installation. Vous devez laisser "
-"les options comme valeur par défaut."
+"Durant l'installation, on proposera d'installer Npcap si il n’est pas déjà "
+"présent. L’installateur pour Npcap contient un certain nombre de cases à "
+"cocher pour configurer l’installation. Vous devez laisser les valeurs par "
+"défaut pour chacune des options."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:83
 msgid "Launch the software"
@@ -339,9 +343,9 @@ msgid ""
 "appear about allowing the configuration utility to make changes to the "
 "computer. Click \"Yes\" if the prompt appears."
 msgstr ""
-"Si votre ordinateur exécute Windows Vista ou Windows 7, une invite peut "
-"apparaître pour autoriser à l’utilitaire de configuration d’apporter des "
-"modifications à l’ordinateur. Cliquez sur \"Yes\" si l’invite s’affiche."
+"Si votre ordinateur exécute Windows Vista ou Windows 7, un message peut "
+"apparaître pour autoriser l’utilitaire de configuration à faire des "
+"modifications sur l’ordinateur. Cliquez sur \"Yes\" si cela s’affiche."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:99
 msgid "Select the network interface"
@@ -359,7 +363,8 @@ msgstr ""
 "l’utilitaire de configuration utilisera pour communiquer avec la passerelle "
 "sans fil. Sur les ordinateurs Windows, les interfaces ethernet sont "
 "généralement nommées \"Local Area Connection\". L’utilitaire de "
-"configuration ne peut pas programmer un pont sur une connexion sans fil."
+"configuration ne peut pas programmer une passerelle via une connexion sans "
+"fil."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:105
 msgid ""
@@ -404,8 +409,9 @@ msgid ""
 "Note: Radios used in 2019 **do not** need to be updated before configuring, "
 "the 2020 tool uses the same 2019 firmware."
 msgstr ""
-"Remarque : les radios utilisées en 2019 **n’ont pas** besoin d’être mises à "
-"jour avant la configuration, l’outil 2020 utilise le même firmware 2019."
+"Remarque: les radios utilisées en 2019 **n’ont pas** besoin d’être mises à "
+"jour avant la configuration, l’outil 2020 utilise le même firmware qu'en "
+"2019."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:119
 msgid "Loading FRC Firmware to OpenMesh radio"
@@ -443,7 +449,7 @@ msgid ""
 "unplugging the Ethernet to the PC, this is fine)"
 msgstr ""
 "Débranchez l’alimentation de la radio. (Si vous utilisez un câble PoE, il "
-"faudra également débrancher le Ethernet sur le PC, ce qui est très bien)"
+"faudra également débrancher le Ethernet sur le PC, ce qui est correct)"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:129
 msgid "Press the Load Firmware button"
@@ -455,7 +461,7 @@ msgid ""
 "radio, load the firmware and prompt you when complete."
 msgstr ""
 "Lorsque vous y êtes invité, branchez l'alimentation de la radio. Le logiciel"
-" doit détecter la radio, charger le firmware et vous inviter une fois "
+" doit détecter la radio, charger le firmware et vous informer, une fois "
 "terminé."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:132
@@ -466,8 +472,8 @@ msgid ""
 "Disabling Network Adapters`_\" for more info."
 msgstr ""
 "Si vous voyez une erreur sur le nom NPF, essayez de désactiver tous les "
-"adaptateurs autres que celui utilisé pour programmer la radio. Si un seul "
-"adaptateur est trouvé, l’outilitaire doit tenter de l’utiliser. Pour plus "
+"interfaces autres que celle utilisé pour programmer la radio. Si une seule "
+"interface est trouvée, l’utilitaire doit tenter de l’utiliser. Pour plus "
 "d’informations, consultez les étapes  dans \"`Troubleshooting: Disabling "
 "Network Adapters`_\"."
 
@@ -483,13 +489,13 @@ msgstr ""
 "d’exploitation en langue étrangère. Si vous rencontrez des problèmes de "
 "chargement du firmware ou de la programmation sur un système d’exploitation "
 "en langue étrangère, essayez d’utiliser un système d’exploitation en "
-"anglais, par exemple sur le PC fourni par Kit de Pièces ou de configurer les"
-" paramètres locaux sur \"en_us\" comme décrit sur `cette page "
+"anglais, par exemple sur le PC fourni dans le Kit de Pièces (KOP) ou de "
+"configurer les paramètres locaux sur \"en_us\" comme décrit sur `cette page "
 "<https://www.java.com/en/download/help/locale.xml>`_."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:137
 msgid "Select a bridge model and operating mode"
-msgstr "Sélectionner un modèle de la passerelle et un mode de fonctionnement"
+msgstr "Sélectionner le modèle de la passerelle et son mode de fonctionnement"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:141
 msgid "Select which radio you are configuring using the drop-down list."
@@ -503,8 +509,8 @@ msgid ""
 "computers support it, the 5GHz AP mode is recommended, as 5GHz is less "
 "congested in many environments."
 msgstr ""
-"Sélectionnez le mode d’exploitation à configurer. Dans la plupart des cas, "
-"la sélection par défaut du point d’accès 2.4 GHz sera suffisante. Si vos "
+"Sélectionnez le mode d'opération à configurer. Dans la plupart des cas, la "
+"sélection par défaut du point d’accès 2.4 GHz sera suffisante. Si vos "
 "ordinateurs le supporte, le mode AP 5GHz est recommandé, car 5GHz est moins "
 "encombré dans de nombreux environnements."
 
@@ -654,34 +660,33 @@ msgid ""
 "disable adapters."
 msgstr ""
 "Si vous recevez un message d’erreur sur \"NPF adapter\" lors de la tentative"
-" de chargement du firmware, vous devez désactiver tous les autres "
-"adaptateurs. Ce n’est pas toujours la même chose que d’éteindre les "
-"adaptateurs avec un bouton physique ou de mettre le PC en mode avion. Les "
-"étapes suivantes fournissent plus de détails sur la façon de désactiver les "
-"adaptateurs."
+" de chargement du firmware, vous devez désactiver tous les autres interfaces"
+" au réseau. Ce n’est pas toujours la même chose que d’éteindre les cartes "
+"avec un bouton physique ou de mettre le PC en mode \"Airplane\". Les étapes "
+"suivantes fournissent plus de détails sur la façon de désactiver les "
+"interfaces."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:201
 msgid "Open the Control Panel by going to Start->Control Panel"
 msgstr ""
-"Ouvrez le Panneau de configuration en passant par Démarrer -> Panneau de "
-"configuration "
+"Ouvrer le Panneau de configuration en passant par Start->Control Panel"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:205
 msgid "Choose the Network and Internet category."
-msgstr "Choisissez la catégorie Réseau et Internet."
+msgstr "Choisir: Network and Internet category."
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:209
 msgid "Click Network and Sharing Center"
-msgstr "Cliquez sur Centre de réseau et de partage"
+msgstr "Cliquer sur Network and Sharing Center"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:213
 msgid "On the left pane, click Change Adapter Settings"
-msgstr "Dans le volet gauche, cliquez sur Modifier les paramètres de la carte"
+msgstr "Dans le volet gauche, cliquer sur: Change Adapter Settings"
 
 #: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:217
 msgid ""
 "For each adapter other than the one connected to the radio, right click on "
 "the adapter and select Disable from the menu."
 msgstr ""
-"Pour chaque adaptateur autre que celui connecté à la radio, cliquez avec le "
-"bouton droit sur l’adaptateur et sélectionnez Désactiver dans le menu."
+"Pour chaque \"adapter\" autre que celui connecté à la radio, cliquez avec le"
+" bouton droit sur \"adapter\" et sélectionnez \"Disable\" dans le menu."

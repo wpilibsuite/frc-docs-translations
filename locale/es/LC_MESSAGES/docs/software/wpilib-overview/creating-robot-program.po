@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Daniel Núñez <daniel1_nunez@hotmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,10 +14,437 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Daniel Núñez <daniel1_nunez@hotmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:2
+msgid "Creating a Robot Program"
+msgstr "Creando un programa para el robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:4
+msgid ""
+"Once everything is installed, we're ready to create a robot program.  WPILib"
+" comes with several templates for robot programs.  Use of these templates is"
+" highly recommended for new users; however, advanced users are free to write"
+" their own robot code from scratch."
+msgstr ""
+"Una vez que todo está instalado, estamos listos para crear un programa de "
+"robot. WPILib viene con varias plantillas para programas de robots. El uso "
+"de estas plantillas es muy recomendable para los nuevos usuarios; sin "
+"embargo, los usuarios avanzados son libres de escribir su propio código "
+"robot desde cero."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:7
+msgid "Choosing a Base Class"
+msgstr "Escogiendo una clase como base"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:9
+msgid ""
+"To start a project using one of the WPILib robot program templates, users "
+"must first choose a base class for their robot.  Users subclass these base "
+"classes to create their primary :code:`Robot` class, which controls the main"
+" flow of the robot program.  There are three choices available for the base "
+"class:"
+msgstr ""
+"Para iniciar un proyecto utilizando una de las plantillas de programa de "
+"robot WPILib, los usuarios primero deben elegir una clase base para su "
+"robot. Los usuarios subclasifican estas clases base para crear su clase de "
+":code:`Robot` primaria, que controla el flujo principal del programa robot. "
+"Hay tres opciones disponibles para la clase base:"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:12
+msgid "TimedRobot"
+msgstr "TimedRobot"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:14
+msgid ""
+"Documentation: `Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/TimedRobot.html>`__"
+" - `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1TimedRobot.html>`__"
+msgstr ""
+"Documentación: `Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/TimedRobot.html>`__"
+" - `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1TimedRobot.html>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:18
+msgid ""
+"Source: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__"
+msgstr ""
+"Fuente: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:22
+msgid ""
+"The :code:`TimedRobot` class is the the base class recommended for most "
+"users.  It provides control of the robot program through a collection of "
+":code:`init()` and :code:`periodic()` methods, which are called by WPILib "
+"during specific robot states (e.g. autonomous or teleoperated)."
+msgstr ""
+"La clase :code:`TimedRobot` es la clase base recomendada para la mayoría de "
+"los usuarios. Proporciona el control del programa robot a través de una "
+"colección de métodos  :code:`init()` and :code:`periodic()`,  que son "
+"llamados por WPILib durante estados específicos del robot (por ejemplo, "
+"autónomos o teleoperados). "
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:90
+msgid ""
+"Periodic methods are called every 20 ms by default. This can be changed by "
+"calling the superclass constructor with the new desired update rate."
+msgstr ""
+"Los métodos periódicos son llamados cada 20 ms por defecto. Esto puede ser "
+"cambiado llamando al constructor de la superclase con el nuevo tiempo de "
+"actualización deseado."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:105
+msgid "IterativeRobotBase"
+msgstr "IterativeRobotBase"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:107
+msgid ""
+"Documentation: `Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/IterativeRobotBase.html>`__"
+" - `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1IterativeRobotBase.html>`__"
+msgstr ""
+"Documentación: `Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/IterativeRobotBase.html>`__"
+" - `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1IterativeRobotBase.html>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:111
+msgid ""
+"Source: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/IterativeRobotBase.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/IterativeRobotBase.cpp>`__"
+msgstr ""
+"Fuente: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/IterativeRobotBase.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cpp/IterativeRobotBase.cpp>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:115
+msgid ""
+"This is identical to TimedRobot, except the main robot loop is not run "
+"automatically - users are required to implement it inside of the "
+":code:`startCompetition()` method.  This gives more freedom for advanced "
+"users to handle the loop timing in different ways, but is also less-"
+"convenient."
+msgstr ""
+"Esto es idéntico a TimedRobot, excepto que el bucle principal del robot no "
+"se ejecuta automáticamente - los usuarios están obligados a implementarlo "
+"dentro del método :code:`startCompetition()`. Esto da más libertad para que "
+"los usuarios avanzados manejen la sincronización del bucle de diferentes "
+"maneras, pero también es menos conveniente."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:117
+msgid ""
+"Rather than checking the mode and calling the various :code:`init()` and "
+":code:`periodic()` methods themselves, user implementations can simply call "
+"the :code:`loopFunc()` method from their main loop implementation.  However,"
+" the :code:`robotInit()` method must be called manually."
+msgstr ""
+"En lugar de comprobar el modo y llamar a los diversos métodos :code:`init()`"
+" y :code:`periodic()`, las implementaciones de usuario pueden simplemente "
+"llamar al método :code:`loopFunc()` desde su implementación de bucle "
+"principal. Sin embargo, el método :code:`robotInit()` debe llamarse "
+"manualmente."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:120
+msgid "RobotBase"
+msgstr "RobotBase"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:122
+msgid ""
+"Documentation: `Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/RobotBase.html>`__"
+" - `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1RobotBase.html>`__"
+msgstr ""
+"Documentación: `Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/RobotBase.html>`__"
+" - `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1RobotBase.html>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:126
+msgid ""
+"Source: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cppcs/RobotBase.cpp>`__"
+msgstr ""
+"Fuente: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibc/src/main/native/cppcs/RobotBase.cpp>`__"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:130
+msgid ""
+"The :code:`RobotBase` class is the most minimal base-class offered, and is "
+"generally not recommended for direct use.  No robot control flow is handled "
+"for the user; everything must be written from scratch inside the "
+":code:`startCompetition()` method."
+msgstr ""
+"La clase :code:`RobotBase` es la clase base más mínima ofrecida y, por lo "
+"general, no se recomienda para uso directo. No se maneja ningún flujo de "
+"control de robot para el usuario; todo debe escribirse desde cero dentro del"
+" método :code:`startCompetition()`. "
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:133
+msgid "Not Using a Base Class"
+msgstr "No usar una clase base"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:135
+msgid ""
+"If desired, users can omit a base class entirely and simply write their "
+"program in a :code:`main()` method, as they would for any other program.  "
+"This is *highly* discouraged - users should not \"reinvent the wheel\" when "
+"writing their robot code - but it is supported for those who wish to have "
+"absolute control over their program flow."
+msgstr ""
+"Si lo desea, los usuarios pueden omitir una clase base por completo y "
+"simplemente escribir su programa en un método  :code:`main()`, como lo "
+"harían para cualquier otro programa. Esto está *altamente* desaconsejado - "
+"los usuarios no deben \"reinventar la rueda\" al escribir su código de robot"
+" - pero es compatible con aquellos que desean tener un control absoluto "
+"sobre su flujo de programa."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:137
+msgid ""
+"Users should *not* modify the :code:`main()` method of a robot program "
+"unless they are absolutely sure of what they are doing."
+msgstr ""
+"Los usuarios *no* deben modificar el método :code:`main()` de un programa "
+"robot a menos que estén absolutamente seguros de lo que están haciendo."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:140
+msgid "Creating a New WPILib Project"
+msgstr "Creando un nuevo Proyecto de WPILib"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:142
+msgid ""
+"Once we've decided on a base class, we can create our new robot project.  "
+"Bring up the Visual Studio Code command palette with "
+":kbd:\"Control+Shift+P\":"
+msgstr ""
+"Una vez que hayamos decidido una clase base, podemos crear nuestro nuevo "
+"proyecto de robot. Traiga la paleta de comandos de Visual Studio Code con "
+":kbd:\"Control+Shift+P\":"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:144
+msgid "|Command Palette|"
+msgstr "|Paleta de comandos|"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:146
+msgid ""
+"Then, type \"WPILib\" into the prompt.  Since all WPILib commands start with"
+" \"WPILib,\" this will bring up the list of WPILib-specific VS Code "
+"commands:"
+msgstr ""
+"A continuación, escriba \"WPILib\" en el símbolo del sistema. Dado a que "
+"todos los comandos WPILib comienzan con \"WPILib,\" esto mostrará la lista "
+"de comandos en VS Code específicos de WPILib:"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:148
+msgid "|WPILib Commands|"
+msgstr "|Comandos WPILib|"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:150
+msgid "Now, select the \"Create a new project\" command:"
+msgstr "Ahora, seleccione el comando \"Crear un nuevo proyecto\":"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:152
+msgid "|Create New Project|"
+msgstr "|Crear un nuevo proyecto|"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:154
+msgid "This will bring up the \"New Project Creator Window:\""
+msgstr "Esto mostrará la \"Ventana de Creador de Proyectos:\""
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:156
+msgid "|New Project Creator|"
+msgstr "|Creador de Proyectos|"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:158
+msgid "The elements of the New Project Creator Window are explained below:"
+msgstr ""
+"Los elementos de la ventana del creador de proyectos se explican a "
+"continuación:"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:160
+msgid ""
+"**Project Type**: The kind of project we wish to create.  This can be an "
+"example project, or one of the project templates provided by WPILib.  "
+"Templates exist for each of the robot base classes.  Additionally, a "
+"template exists for :ref:`Command-based <docs/software/commandbased/what-is-"
+"command-based:What is \"command-based\" programming?>` projects, which are "
+"built on the :code:`TimedRobot` base class but include a number of "
+"additional features - this type of robot program is highly recommended for "
+"new teams."
+msgstr ""
+"**Tipo de proyecto:** El tipo de proyecto que queremos crear. Puede ser un "
+"proyecto de ejemplo o una de las plantillas de proyecto proporcionadas por "
+"WPILib. Existen plantillas para cada una de las clases base del robot. "
+"Además, existe una plantilla para proyectos :ref:`basados-en-comandos "
+"<docs/software/commandbased/what-is-command-based:What is \"command-based\" "
+"programming?>`, que se basan en la clase base :code:`TimedRobot` pero "
+"incluyen una serie de características adicionales - este tipo de programa de"
+" robot es muy recomendable para los nuevos equipos."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:161
+msgid ""
+"**Language**: This is the language (C++ or Java) that will be used for this "
+"project."
+msgstr ""
+"**Lenguaje:** Este es el lenguaje (C++ o Java) que se utilizará para este "
+"proyecto."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:162
+msgid ""
+"**Project Base**: If this is a template project, this specifies the type of "
+"template that will be used."
+msgstr ""
+"**Base del proyecto:** si se trata de un proyecto de plantilla, especifica "
+"el tipo de plantilla que se usará."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:163
+msgid ""
+"**Project Location**: This determines the folder in which the robot project "
+"will be located."
+msgstr ""
+"Ubicación del proyecto: Determina la carpeta en la que se ubicará el "
+"proyecto del robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:164
+msgid ""
+"**Create New Folder**: If this is checked, a new folder will be created to "
+"hold the project within the previously-specified folder.  If it is *not* "
+"checked, the project will be located directly in the previously-specified "
+"folder.  An error will be thrown if the folder is not empty and this is not "
+"checked."
+msgstr ""
+"**Crear nueva carpeta:** si está marcada, se creará una nueva carpeta para "
+"contener el proyecto dentro de la carpeta especificada anteriormente. Si no "
+"está marcado, el proyecto se ubicará directamente en la carpeta especificada"
+" anteriormente. Se producirá un error si la carpeta no está vacía y esto no "
+"está comprobado."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:165
+msgid ""
+"**Project Name**: The name of the robot project.  This also specifies the "
+"name that the project folder will be given if the Create New Folder box is "
+"checked."
+msgstr ""
+"**Nombre del proyecto:** El nombre del proyecto del robot. Esto también "
+"especifica el nombre que se dará a la carpeta del proyecto si la casilla "
+"Crear nueva carpeta está activada."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:166
+msgid ""
+"**Team Number**: The team number for the project, which will be used for "
+"package names within the project and to locate the robot when deploying "
+"code."
+msgstr ""
+"**Número de equipo:** El número de equipo del proyecto, que se usará para "
+"los nombres de paquetes dentro del proyecto y para localizar el robot al "
+"desarrollar el código."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:167
+msgid ""
+"**Desktop Support**: Enables unit test and simulation. While WPILib supports"
+" this, third party software libraries may not. If libraries do not support "
+"desktop, then your code may not compile or may crash. It should be left "
+"unchecked unless unit testing or simulation is needed and all libraries "
+"support it."
+msgstr ""
+"**Soporte de escritorio:** Habilita la prueba y la simulación. Aunque WPILib"
+" es compatible con esto, es posible que las bibliotecas de software de "
+"terceros no. Si las bibliotecas no admiten escritorio, es posible que el "
+"código no se compile o que se bloquee. Debe quedar sin marcar a menos que se"
+" necesiten pruebas o simulaciones y todas las bibliotecas lo admitan."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:169
+msgid ""
+"Once all the above have been configured, click \"Generate Project\" and the "
+"robot project will be created."
+msgstr ""
+"Una vez configurado todo lo anterior, haga clic en \"Generar proyecto\" y se"
+" creará el proyecto del robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:171
+msgid ""
+"Any errors in project generation will appear in the bottom right-hand corner"
+" of the screen."
+msgstr ""
+"Cualquier error en la creación del proyecto aparecerá en la esquina inferior"
+" derecha de la pantalla."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:173
+msgid "An example after all options are selected is shown below."
+msgstr ""
+"A continuación se muestra un ejemplo después de seleccionar todas las "
+"opciones."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:175
+msgid "|New Project Configured|"
+msgstr "|Nuevo Proyecto Configurado|"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:178
+msgid "Opening The New Project"
+msgstr "Abriendo el nuevo proyecto"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:180
+msgid ""
+"After successfully creating your project, VS Code will give the option of "
+"opening the project as shown below. We can choose to do that now or later by"
+" typing :kbd:`Ctrl-K` then :kbd:`Ctrl-O` (or just :kbd:`Command+O` on macOS)"
+" and select the folder where We saved our project."
+msgstr ""
+"Después de crear correctamente el proyecto, VS Code dará la opción de abrir "
+"el proyecto como se muestra a continuación. Podemos elegir hacerlo ahora o "
+"más tarde escribiendo :kbd:`Ctrl-K` y luego :kbd:`Ctrl-O` (o simplemente "
+":kbd:`Command+O` en macOS) y seleccionar la carpeta donde guardamos nuestro "
+"proyecto."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:182
+msgid ""
+"Once opened we will see the project hierarchy on the left. Double clicking "
+"on the file will open that file in the editor."
+msgstr ""
+"Una vez abierto veremos la jerarquía del proyecto a la izquierda. Al hacer "
+"doble clic en el archivo se abrirá ese archivo en el editor."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:184
+msgid "|Opened Robot Project|"
+msgstr "|Proyecto del Robot Abierto|"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:187
+msgid "C++ Configurations (C++ Only)"
+msgstr "Configuraciones de C++ (Solamente C++)"
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:189
+msgid ""
+"For C++ projects, there is one more step to set up IntelliSense.  Whenever "
+"we open a project, we should get a pop-up in the bottom right corner asking "
+"to refresh C++ configurations.  Click \"Yes\" to set up IntelliSense."
+msgstr ""
+"Para los proyectos de C++, hay un paso más para configurar IntelliSense. "
+"Cada vez que abrimos un proyecto, debemos obtener una ventana emergente en "
+"la esquina inferior derecha pidiendo actualizar las configuraciones de C++. "
+"Haga clic en \"Sí\" para configurar IntelliSense."
+
+#: ../../frc-docs/source/docs/software/wpilib-overview/creating-robot-program.rst:191
+msgid "|C++ Configurations|"
+msgstr "|Configuraciones de C++|"

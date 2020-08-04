@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# MARTIN REGIMBALD <MRegimbald@robotiquefirstquebec.org>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: MARTIN REGIMBALD <MRegimbald@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:2
 msgid "Programming Radios for FMS Offseason"
-msgstr "Programmer les  radios pour FMS Offseason"
+msgstr "Programmer la radio pour FMS Offseason"
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:4
 msgid ""
@@ -39,7 +40,7 @@ msgstr ""
 "et WPA. Cela signifie que les radios doivent toutes être programmées pour se"
 " connecter à ce réseau, mais avec des IP différents pour chaque équipe. La "
 "version Team de l’utilitaire FRC Bridge Configuration Utility  est utilisée "
-"pour effectuer cette configuration."
+"pour effectuer cette configuration en mode FMS-Lite."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:6
 msgid "Before you begin using the software:"
@@ -71,8 +72,8 @@ msgid ""
 "Even though WPILib uses Java 11, the FRC Radio Configuration Utility "
 "requires Java 8."
 msgstr ""
-"Même si la WPILib utilise Java 11, l’utilitaire de configuration radio FRC "
-"nécessite Java 8."
+"Même si la WPILib utilise Java 11, l’utilitaire FRC Radio Configuration "
+"Utility nécessite Java 8."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:16
 msgid ""
@@ -80,9 +81,9 @@ msgid ""
 "If you do not have Java installed, you can download the JRE from `here "
 "<https://www.java.com/en/download/>`__."
 msgstr ""
-"L’utilitaire de configuration radio FRC nécessite le Java Runtime "
+"L’utilitaire FRC Radio Configuration Utility nécessite le Java Runtime "
 "Environment (JRE). Si vous n’avez pas Java installé, vous pouvez télécharger"
-" le JRE à partir de `ici <https://www.java.com/en/download/>`__."
+" le JRE `ici <https://www.java.com/en/download/>`__."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:18
 msgid ""
@@ -92,10 +93,10 @@ msgid ""
 " non-Administrator account), but if you are having trouble try running it "
 "from an Administrator account."
 msgstr ""
-"L’utilitaire de configuration radio FRC nécessite des privilèges "
+"L’utilitaire FRC Radio Configuration Utility nécessite des privilèges "
 "d’administrateur pour configurer les paramètres réseau de votre ordinateur. "
-"Le programme demande automatiquement les privilèges nécessaires (peut "
-"nécessiter un mot de passe s’il est exécuté à partir d’un compte non "
+"Le programme demande automatiquement les privilèges nécessaires (ce qui peut"
+" nécessiter un mot de passe s’il est exécuté à partir d’un compte non "
 "administrateur), mais si vous rencontrez des difficultés, essayez de "
 "l’exécuter à partir d’un compte Administrateur."
 
@@ -110,18 +111,18 @@ msgid ""
 "configuration (AP mode) this is a total, not a per client limit. This means "
 "that streaming video to multiple clients is not recommended."
 msgstr ""
-"Le Kiosque radio programmera la radio pour faire respecter la limite de "
+"Le kiosque radio programmera votre radio pour faire respecter la limite de "
 "bande passante de 4 Mbps sur le trafic sortant de la radio via l’interface "
-"sans fil. Dans la configuration de la maison (mode AP), il s’agit d’un "
-"total, pas d’une limite par client. Cela signifie que la diffusion de vidéos"
-" en continu vers plusieurs clients n’est pas recommandée."
+"sans fil. Dans la configuration maison (mode AP), il s’agit d’un total, pas "
+"d’une limite par client. Cela signifie que la diffusion de vidéos en continu"
+" vers plusieurs clients n’est pas recommandée."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:25
 msgid ""
 "The Kiosk has been tested on Windows 7, 8, and 10. It may work on other "
 "operating systems, but has not been tested."
 msgstr ""
-"Le Kiosque a été testé sur Windows 7, 8 et 10. Il se peut qu'il fonctionne "
+"Le kiosque a été testé sur Windows 7, 8 et 10. Il se peut qu'il fonctionne "
 "sous d’autres systèmes d’exploitation, mais n’a pas été testé."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:28
@@ -136,7 +137,7 @@ msgid ""
 msgstr ""
 "L’utilitaire de configuration radio, pendant son exécution, programme un "
 "certain nombre de paramètres de configuration dans la radio. Ces paramètres "
-"s’appliquent à la radio dans tous les Modes (y compris lors d’événements). "
+"s’appliquent à la radio dans tous les modes (y compris lors d’événements). "
 "Il s’agit notamment de:"
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:32
@@ -175,9 +176,9 @@ msgid ""
 msgstr ""
 "Les règles QoS pour la hiérarchisation interne des paquets (affecte la "
 "mémoire tampon interne et les paquets à jeter si la limite de bande passante"
-" est atteinte). Ces règles sont le  contrôle et le statut du Robot (UDP "
-"1110, 1115, 1150) >> TCP - NetworkTables du Robot (TCP 1735, 1740) >> En "
-"vrac (Tout autre trafic)."
+" est atteinte). Ces règles sont Robot Control and Status (UDP 1110, 1115, "
+"1150) >> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (tout autre "
+"trafic)."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:39
 msgid ""
@@ -185,10 +186,10 @@ msgid ""
 "lights-ref:OpenMesh Radio>` for details on the behavior of the radio status "
 "lights when configured."
 msgstr ""
-"Voir la :ref:` Référence sur les lumières d'indication d’état <docs/hardware"
-"/hardware-basics/status-lights-ref:OpenMesh Radio>` pour plus de détails sur"
-" le comportement des lumières d'indication d’état de la radio lorsqu’elle "
-"est configurée."
+"Voir la :ref:` Référence sur les témoins d’état <docs/hardware/hardware-"
+"basics/status-lights-ref:OpenMesh Radio>` pour plus de détails sur le "
+"comportement des lumières d'indication d’état de la radio lorsqu’elle est "
+"configurée."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:41
 msgid ""
@@ -196,9 +197,9 @@ msgid ""
 "the user accounts will be left at (or set to) the firmware - defaults **for "
 "the DAPs only**:"
 msgstr ""
-"Lorsqu’ils sont programmés avec la version d’équipe de l’utilitaire De "
-"configuration Radio, les comptes utilisateurs seront laissés au (ou "
-"configurés sur) firmware - par défaut **pour les DAP uniquement**:"
+"Lorsqu’ils sont programmés avec la version d’équipe de l’utilitaire Radio "
+"Configuration Utility, les comptes utilisateurs seront laissés (ou "
+"configurés) au défaut **pour les DAP uniquement**:"
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:43
 msgid "Username: root"
@@ -222,8 +223,8 @@ msgid ""
 "`WPILib project File Releases "
 "<https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__."
 msgstr ""
-"Téléchargez le dernier installateur de l'utilitaire de configuration radio "
-"FRC à partir de `WPILib project File Releases "
+"Téléchargez le dernier installateur de l'utilitaire  FRC Radio Configuration"
+" Utility à partir de `WPILib project File Releases "
 "<https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:56
@@ -282,7 +283,7 @@ msgid ""
 "computer.  Click \"Yes\" if the prompt appears."
 msgstr ""
 "Si votre ordinateur fonctionne sous Windows Vista ou Windows 7, une invite "
-"peut apparaître pour demander une autorisation de l’utilitaire de "
+"peut apparaître pour demander une autorisation pour l’utilitaire de "
 "configuration d'apporter des modifications à l’ordinateur. Cliquez sur "
 "\"Yes\" si l’invite s’affiche."
 
@@ -308,7 +309,7 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:95
 msgid "Enter WPA Key"
-msgstr "Entrez la clé WPA"
+msgstr "Entrer la clé WPA"
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:99
 msgid ""
@@ -320,7 +321,7 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:102
 msgid "Program Radios"
-msgstr "Programmer les Radios"
+msgstr "Programmer les radios"
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:106
 msgid ""
@@ -328,10 +329,10 @@ msgid ""
 "network entered. To program each radio, connect the radio to the Kiosk, set "
 "the Team Number in the box, and click Configure."
 msgstr ""
-"Le Kiosque est maintenant prêt à programmer autant de radios qu'on veut pour"
+"Le kiosque est maintenant prêt à programmer autant de radios qu'on veut pour"
 " se connecter au réseau configuré. Pour programmer chaque radio, connectez "
 "la radio au kiosque, définissez le numéro d’équipe dans la zone, puis "
-"cliquez sur Configurer."
+"cliquez sur Configure."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:108
 msgid ""
@@ -362,7 +363,7 @@ msgid ""
 " Mode. When you click again to put the Kiosk back in FMS-Lite Mode, you will"
 " be re-prompted for the SSID and Key."
 msgstr ""
-"Si vous entrez un paramètre incorrecte ou si vous devez modifier la clé SSID"
-" ou WPA, accédez au menu Outils et cliquez sur mode FMS-Lite pour sortir le "
-"kiosque du Mode FMS-Lite. Lorsque vous cliquez à nouveau pour remettre le "
-"kiosque en Mode FMS-Lite, vous serez ré-invité pour le SSID et la clé."
+"Si vous entrez incorrectement un paramètre ou si vous devez modifier la clé "
+"SSID ou WPA, accédez au menu Tools et cliquez sur mode FMS-Lite pour sortir "
+"le kiosque du Mode FMS-Lite. Lorsque vous cliquez à nouveau pour remettre le"
+" kiosque en Mode FMS-Lite, vous serez ré-invité pour le SSID et la clé."

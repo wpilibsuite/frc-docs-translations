@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Hugo Espino <hugo-daniel7@hotmail.com>, 2020
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
@@ -13,10 +14,144 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-06-26 00:48-0700\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Hugo Espino <hugo-daniel7@hotmail.com>, 2020\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:2
+msgid "Introduction to Robot Simulation"
+msgstr "Introducción a la Simulación del Robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:4
+msgid ""
+"Often a team may want to test their code without having an actual robot "
+"available. WPILib provides teams with the ability to simulate various robot "
+"features using simple gradle commands."
+msgstr ""
+"A veces un equipo puede querer probar su código sin tener un robot "
+"disponible. WPILib proporciona a los equipos la capacidad de simular varias "
+"características del robot usando simples comandos gradle."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:7
+msgid "Enabling Desktop Support"
+msgstr "Habilitación del Soporte de Escritorio"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:9
+msgid ""
+"Use of the Desktop Simulator requires Desktop Support to be enabled. This "
+"can be done by checking the \"Enable Desktop Support Checkbox\" when "
+"creating your robot project or by running \"WPILib: Change Desktop Support "
+"Enabled Setting\" from the Visual Studio Code command palette."
+msgstr ""
+"El uso del Simulador de Escritorio requiere que el Soporte de Escritorio "
+"esté habilitado. Esto se puede hacer marcando la casilla \"Enable Desktop "
+"Support Checkbox\" o Activar Soporte de Escritorio al crear su proyecto del "
+"robot o ejecutando  \"WPILib: Change Desktop Support Enabled Setting\" desde"
+" la paleta de comandos de Visual Studio Code."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:18
+msgid ""
+"Desktop support can also be enabled by manually editing your "
+"``build.gradle`` file located at the root of your robot project. Simply "
+"change ``includeDesktopSupport = false`` to ``includeDesktopSupport = true``"
+msgstr ""
+"El soporte de escritorio también puede ser habilitado de forma manual "
+"editando su archivo ``build.gradle`` ubicado en la raíz del proyecto de su "
+"robot. Simplemente cambie ``includeDesktopSupport = false`` por "
+"``includeDesktopSupport = true``"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:24
+msgid ""
+"It is important to note that enabling desktop/simulation support can have "
+"unintended consequences. Not all vendors will support this option, and code "
+"that uses their libraries may even crash when attempting to run simulation!"
+msgstr ""
+"Es importante señalar que la habilitación del soporte de "
+"escritorio/simulación puede tener consecuencias imprevistas. No todos los "
+"proveedores soportan esta opción, y el código que utiliza sus bibliotecas "
+"puede incluso bloquearse al intentar ejecutar la simulación."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:26
+msgid ""
+"If at any point in time you want to disable Desktop Support, simply re-run "
+"the \"WPILib: Change Desktop Support Enabled Setting\" from the command "
+"palette."
+msgstr ""
+"Si en algún momento usted quiere desactivar el Soporte de Escritorio, "
+"simplemente vuelve a ejecutar \"WPILib: Change Desktop Support Enabled "
+"Setting\" de la paleta de comandos."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:29
+msgid "Additional C++ Dependency"
+msgstr "Dependencia de C++ Adicional"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:31
+msgid ""
+"C++ robot simulation requires that a native compiler to be installed. For "
+"Windows, this would be `Visual Studio 2019 "
+"<https://visualstudio.microsoft.com/vs/>`__ (**not** VS Code), macOS "
+"requires `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`__, and "
+"Linux (Ubuntu) requires the ``build-essential`` package."
+msgstr ""
+"La simulación de un robot con C++ requiere que se instale un compilador "
+"nativo. En el caso de Windows, es `Visual Studio 2019 "
+"<https://visualstudio.microsoft.com/vs/>`__ ( **no** VS Code), en macOS "
+"requiere `Xcode <https://apps.apple.com/us/app/xcode/id497799835>`__, y "
+"Linux (Ubuntu) requiere el paquete ``build-essential``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:33
+msgid ""
+"Ensure the ``Desktop Development with C++`` option is checked in the Visual "
+"Studio installer for simulation support."
+msgstr ""
+"Asegúrese de que la opción ``Desktop Development with C++`` esté marcada en "
+"el instalador de Visual Studio para la compatibilidad de la simulación."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:39
+msgid "Running Robot Simulation"
+msgstr "Ejecutar la Simulación del Robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:41
+msgid ""
+"Basic robot simulation can be run using VS Code. This can be done without "
+"using any commands by using VS Code's command palette."
+msgstr ""
+"La simulación básica del robot puede ser ejecutada usando Visual Studio "
+"Code. Esto puede ser hecho sin usar ningún comando usando la paleta de "
+"comandos de Visual Studio Code."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:46
+msgid ""
+"Your console output in Visual Studio Code should look like the below. "
+"However, teams probably will want to actually *test* their code versus just "
+"running the simulation. This can be done using :doc:`WPILib's Simulation GUI"
+" <simulation-gui>`."
+msgstr ""
+"La salida de información de la consola en Visual Studio Code debería verse "
+"como la siguiente. Sin embargo, los equipos probablemente querrán probar su "
+"código en vez de sólo ejecutar la simulación. Esto se puede hacer usando  "
+":doc:`WPILib's Simulation GUI <simulation-gui>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:55
+msgid ""
+"Simulation can also be run outside of VS Code using ``./gradlew "
+"simulateJava``. It's important to note that C++ simulation is not available "
+"through command-line at this time."
+msgstr ""
+"La simulación también puede ser ejecutada fuera de VS Code usando "
+"``./gradlew simulateJava``. Es importante señalar que la simulación en C++ "
+"no está disponible a través de la línea de comandos en este momento."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/introduction.rst:57
+msgid ""
+"macOS users should be aware of the :ref:`simulation fails to launch known "
+"issue <docs/software/wpilib-overview/known-issues:macOS Simulation fails to "
+"launch in Visual Studio Code>`"
+msgstr ""
+" Los usuarios de MacOs deben ser conscientes de que la simulación falla al "
+"abrirse por un problema conocido <docs/software/wpilib-overview/known-"
+"issues:macOS Simulation fails to launch in Visual Studio Code>`"

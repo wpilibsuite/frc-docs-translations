@@ -20,3 +20,277 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:2
+msgid "Analog Inputs - Software"
+msgstr "Entradas análogas - Software"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:4
+msgid ""
+"This section covers analog inputs in software.  For a hardware guide to "
+"analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-hardware:Analog"
+" Inputs - Hardware`."
+msgstr ""
+"Esta sección cubre las entradas análogas en software. Para una guía de "
+"entradas análogas en Hardware, lea :ref:`docs/hardware/sensors/analog-"
+"inputs-hardware:Analog Inputs - Hardware`."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:6
+msgid ""
+"The roboRIO's FPGA supports up to 8 analog input channels that can be used "
+"to read the value of an analog voltage from a sensor.  Analog inputs may be "
+"used for any sensor that outputs a simple voltage."
+msgstr ""
+"El FPGA de roboRIO admite hasta 8 canales de entrada analógica que se pueden"
+" usar para leer el valor de un voltaje analógico de un sensor. Las entradas "
+"analógicas se pueden usar para cualquier sensor que emite un voltaje simple."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:8
+msgid ""
+"Analog inputs from the FPGA by default return a 12-bit integer proportional "
+"to the voltage, from 0 to 5 volts."
+msgstr ""
+"Las entradas analógicas del FPGA por defecto devuelven un número entero de "
+"12 bits proporcional al voltaje, de 0 a 5 voltios."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:11
+msgid "The AnalogInput class"
+msgstr "Clase AnalogInput "
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:13
+msgid ""
+"It is often more convenient to use the :doc:`Analog Potentiometers <analog-"
+"potentiometers-software>` wrapper class than to use :code:`AnalogInput` "
+"directly, as it supports scaling to meaningful units."
+msgstr ""
+"Normalmente es más conveniente usar la clase `Analog Potentiometers<analog-"
+"potentiometers-software>` que usar la `AnalogInput` directamente, ya que "
+"permite escalar a unidades más significativas."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:15
+msgid ""
+"Support for reading the voltages on the FPGA analog inputs is provided "
+"through the :code:`AnalogInput` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogInput.html>`__)."
+msgstr ""
+"El soporte para leer los voltajes en las entradas analógicas FPGA se "
+"proporciona a través de la clase: `AnalogInput`(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/AnalogInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1AnalogInput.html>`__)."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:18
+msgid "Initializing an AnalogInput"
+msgstr "Inicializando una AnalogInput"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:20
+msgid "An :code:`AnalogInput` may be initialized as follows:"
+msgstr "Una AnalogInput tiene que inicializarse de esta forma:"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:35
+msgid "Oversampling and Averaging"
+msgstr "Sobremuestreo y Promedio"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:37
+msgid "|Oversampling and Averaging|"
+msgstr "|Sobremuestreo y Promedio|"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:39
+msgid ""
+"The FPGA's analog input modules supports both oversampling and averaging.  "
+"These behaviors are highly similar, but differ in a few important ways.  "
+"Both may be used at the same time."
+msgstr ""
+"Los módulos de entrada analógica de FPGA admiten sobremuestreo y promedio. "
+"Estos comportamientos son muy similares, pero difieren en algunas formas "
+"importantes. Ambos pueden usarse al mismo tiempo."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:42
+msgid "Oversampling"
+msgstr "Sobremuestreo"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:44
+msgid ""
+"When oversampling is enabled, the FPGA will add multiple consecutive samples"
+" together, and return the accumulated value.  Users may specify the number "
+"of *bits* of oversampling - for :math:`n` bits of oversampling, the number "
+"of samples added together is :math:`2~{n}`:"
+msgstr ""
+"Cuando se habilita el sobremuestreo, el FPGA agregará varias muestras "
+"consecutivas y devolverá el valor acumulado. Los usuarios pueden especificar"
+" el número de *bits*  de sobremuestreo: para `n` bits de sobremuestreo, el "
+"número de muestras sumadas es `2~{n}`: "
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:63
+msgid "Averaging"
+msgstr "Promedio"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:65
+msgid ""
+"Averaging behaves much like oversampling, except the accumulated values are "
+"divided by the number of samples so that the scaling of the returned values "
+"does not change.  This is often more-convenient, but occasionally the "
+"additional roundoff error introduced by the rounding is undesirable."
+msgstr ""
+"El promedio se comporta como un sobremuestreo, excepto que los valores "
+"acumulados se dividen por el número de muestras para que la escala de los "
+"valores devueltos no cambie. Esto suele ser más-conveniente, pero "
+"ocasionalmente el error de redondeo adicional introducido por el redondeo es"
+" indeseable."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:81
+msgid ""
+"When oversampling and averaging are used at the same time, the oversampling "
+"is applied *first,* and then the oversampled values are averaged.  Thus, "
+"2-bit oversampling and 2-bit averaging used at the same time will increase "
+"the scale of the returned values by approximately a factor of 2, and "
+"decrease the update rate by approximately a factor of 4."
+msgstr ""
+"Cuando se utilizan sobremuestreo y promedio al mismo tiempo, primero se "
+"aplica el sobremuestreo y luego se promedian los valores sobremuestreados. "
+"Por lo tanto, el sobremuestreo de 2 bits y el promedio de 2 bits utilizados "
+"al mismo tiempo aumentará la escala de los valores devueltos en "
+"aproximadamente un factor de 2 y disminuirá la velocidad de actualización en"
+" aproximadamente un factor de 4."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:84
+msgid "Reading values from an AnalogInput"
+msgstr "Leyendo valores de la clase AnalogInput"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:86
+msgid ""
+"Values can be read from an AnalogInput with one of four different methods:"
+msgstr ""
+"Los valores se pueden leer desde AnalogInput con uno de cuatro métodos "
+"diferentes:"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:89
+msgid "getValue"
+msgstr "getValue"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:91
+msgid ""
+"The :code:`getValue` method returns the raw instantaneous measured value "
+"from the analog input, without applying any calibration and ignoring "
+"oversampling and averaging settings.  The returned value is an integer."
+msgstr ""
+"El método getValue devuelve el valor bruto instantáneo medido de la entrada "
+"analógica, sin aplicar ninguna calibración e ignorar las configuraciones de "
+"sobremuestreo y promedio. El valor devuelto es un entero. "
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:104
+msgid "getVoltage"
+msgstr "getVoltage"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:106
+msgid ""
+"The :code:`getVoltage` method returns the instantaneous measured voltage "
+"from the analog input.  Oversampling and averaging settings are ignored, but"
+" the value is rescaled to represent a voltage.  The returned value is a "
+"double."
+msgstr ""
+"El método getVoltage devuelve el voltaje medido instantáneo desde la entrada"
+" analógica. Las configuraciones de sobremuestreo y promedio se ignoran, pero"
+" el valor se vuelve a escalar para representar un voltaje. El valor devuelto"
+" es un doble. "
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:119
+msgid "getAverageValue"
+msgstr "getAverageValue"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:121
+msgid ""
+"The :code:`getAverageValue` method returns the averaged value from the "
+"analog input.  The value is not rescaled, but oversampling and averaging are"
+" both applied.  The returned value is an integer."
+msgstr ""
+"El método getAverageValue devuelve el valor promedio de la entrada "
+"analógica. El valor no se vuelve a escalar, pero se aplican sobremuestreo y "
+"promedio. El valor devuelto es un entero."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:134
+msgid "getAverageVoltage"
+msgstr "getAverageVoltage"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:136
+msgid ""
+"The :code:`getAverageVoltage` method returns the averaged voltage from the "
+"analog input.  Rescaling, oversampling, and averaging are all applied.  The "
+"returned value is a double."
+msgstr ""
+"El método getAverageVoltage devuelve el voltaje promedio de la entrada "
+"analógica. El reescalado, el sobremuestreo y el promedio se aplican. El "
+"valor devuelto es un doble. "
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:149
+msgid "Accumulator"
+msgstr "Acumulador"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:151
+msgid ""
+"The accumulator methods do not currently support returning a value in units "
+"of volts - the returned value will always be an integer (specifically, a "
+":code:`long`)."
+msgstr ""
+"Los métodos de acumulación no admiten actualmente la devolución de un valor "
+"en unidades de voltios; el valor devuelto siempre será un entero "
+"(específicamente, uno largo)."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:153
+msgid ""
+"Analog input channels 0 and 1 additionally support an accumulator, which "
+"integrates (adds up) the signal indefinitely, so that the returned value is "
+"the sum of all past measured values.  Oversampling and averaging are applied"
+" prior to accumulation."
+msgstr ""
+"Los canales de entrada analógica 0 y 1 soportan adicionalmente un "
+"acumulador, que integra (suma) la señal indefinidamente, de modo que el "
+"valor devuelto es la suma de todos los valores medidos pasados. El "
+"sobremuestreo y el promedio se aplican antes de la acumulación."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:196
+msgid "Obtaining synchronized count and value"
+msgstr "Obtención de recuento y valor sincronizados"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:198
+msgid ""
+"Sometimes, it is necessarily to obtain matched measurements of the count and"
+" the value.  This can be done using the :code:`getAccumulatorOutput` method:"
+msgstr ""
+"A veces, es necesario obtener medidas coincidentes de la cuenta y el valor. "
+"Esto se puede hacer usando el método getAccumulatorOutput:"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:224
+msgid "Using analog inputs in code"
+msgstr "Usar entradas analógicas en código"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:226
+msgid ""
+"The :code:`AnalogInput` class can be used to write code for a wide variety "
+"of sensors (including potentiometers, accelerometers, gyroscopes, "
+"ultrasonics, and more) that return their data as an analog voltage.  "
+"However, if possible it is almost always more convenient to use one of the "
+"other existing WPILib classes that handles the lower-level code (reading the"
+" analog voltages and converting them to meaningful units) for you.  Users "
+"should only directly use :code:`AnalogInput` as a \"last resort.\""
+msgstr ""
+"La clase AnalogInput se puede usar para escribir código para una amplia "
+"variedad de sensores (incluidos potenciómetros, acelerómetros, giroscopios, "
+"ultrasonidos y más) que devuelven sus datos como un voltaje analógico. Sin "
+"embargo, si es posible, casi siempre es más conveniente utilizar una de las "
+"otras clases WPILib existentes que manejan el código de nivel inferior (leer"
+" los voltajes analógicos y convertirlos en unidades significativas) para "
+"usted. Los usuarios solo deben usar AnalogInput directamente como \"último "
+"recurso\". "
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:228
+msgid ""
+"Accordingly, for examples of how to effectively use analog sensors in code, "
+"users should refer to the other pages of this chapter that deal with more-"
+"specific classes."
+msgstr ""
+"En consecuencia, para obtener ejemplos de cómo usar efectivamente sensores "
+"analógicos en el código, los usuarios deben consultar las otras páginas de "
+"este capítulo que tratan sobre clases más específicas."

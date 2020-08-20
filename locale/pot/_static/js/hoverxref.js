@@ -1,4 +1,4 @@
-var mathjax = false;
+var mathjax = true;
 var sphinxtabs = false;
 
 

@@ -1,0 +1,81 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-20 04:09+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:4
+msgid "2020 Game Data Details"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:6
+msgid "In the 2020 *FIRST*\\ |reg| Robotics Competition game, the Position Control objective requires alliances to select a specific color transmitted to them when specific pre-requisites have been met. The field will transmit the selected color to teams using Game Data. This page details the timing and structure of the sent data and provides examples of how to access it in the three supported programming languages."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:9
+msgid "The Data"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:12
+msgid "Timing"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:13
+msgid "Color assignment data is sent to both alliances simultaneously once the first alliance in a match has reached Capacity on Stage 3 of the Shield Generator (see the Game Manual for more complete details). Between the beginning of the match and this point, the Game Data will be an empty string."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:16
+msgid "Data format"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:17
+msgid "The selected color for an alliance will be provided as a single character representing the color (i.e. 'R' = red, 'G' = green, 'B' = blue, 'Y' = yellow). This color indicates the color that must be placed underneath the Control Panel's color sensor in order to complete the Position Control objective (see the Game Manual for information about the location of the Control Panel sensor)."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:20
+msgid "Accessing the Data"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:21
+msgid "The data is accessed using the Game Data methods or VIs in each language. Below are descriptions and examples of how to access the data from each of the three languages. As the data is provided to the Robot during the Teleop period, teams will likely want to query the data in Teleop periodic code, or trigger reading it off a button press or other action after they have reached Stage 3 capacity."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:24
+msgid "C++/Java"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:25
+msgid "In C++ and Java the Game Data is accessed by using the GetGameSpecificMessage method of the DriverStation class. Teams likely want to query the data in a Teleop method such as Teleop Periodic in order to receive the data after it is sent during the match. Make sure to handle the case where the data is an empty string as this is what the data will be until the criteria are reached to enable Position Control for either alliance."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:90
+msgid "LabVIEW"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:91
+msgid "The Game Data in LabVIEW is accessed from the Game Specific Data VI. This VI can be found in the WPI Robotics Library -> Driver Station palette."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:93
+msgid "LabVIEW teams will likely want to query the data in the Teleop or PeriodicTasks VIs and may choose to gate the query behind a button press or other action. The code below reads the data and then uses a case structure to react differently to each of the 5 possible cases (empty, or any of the 4 letters)."
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:98
+msgid "Testing Game Specific Data"
+msgstr ""
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:99
+msgid "You can test your Game Specific Data code without FMS by using the Driver Station. Click on the Setup tab of the Driver Station, then enter the desired test string into the Game Data text field. The data will be transmitted to the robot in one of two conditions: Enable the robot in Teleop mode, or when the DS reaches the End Game time in a Practice Match (times are configurable on the Setup tab). It is recommended to run at least one match using the Practice functionality to verify that your code works correctly in a full match flow."
+msgstr ""

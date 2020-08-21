@@ -11,7 +11,7 @@ MAINPROJECT=frc-docs
 cd `dirname $0`/..
 
 # Create POT Files
-rm locale/pot
+rm -rf locale/pot
 sphinx-build -T -b gettext $MAINPROJECT/source locale/pot
 
 # Update .tx/config

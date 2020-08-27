@@ -6,18 +6,142 @@
 # Translators:
 # Pierre Cote <persini24@outlook.com>, 2020
 # Patricio Tobon <tobonvegapatricio@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 04:12+0000\n"
+"POT-Creation-Date: 2020-08-27 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
-"Last-Translator: Patricio Tobon <tobonvegapatricio@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:2
+msgid "Synchronizing Two Commands"
+msgstr "Sincronizar dos comandos  "
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Esta documentación describe el uso de la biblioteca dejada basada en "
+"comandos. Si bien esta documentación se ha conservado para ayudar a los "
+"equipos que aún no lo han hecho, se recomienda encarecidamente a los equipos"
+" que migren a la nueva biblioteca <docs/software/commandbased/index:Command-"
+"Based Programming>`."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:6
+msgid ""
+"Commands can be nested inside of command groups to create more complex "
+"commands. The simpler commands can be added to the command groups to either "
+"run sequentially (each command finishing before the next starts) or in "
+"parallel (the command is scheduled, and the next command is immediately "
+"scheduled also). Occasionally there are times where you want to make sure "
+"that two parallel command complete before moving onto the next command. This"
+" article describes how to do that."
+msgstr ""
+"Los comandos se pueden anidar dentro de los grupos de comandos para crear "
+"comandos más complejos. Los comandos más simples se pueden agregar a los "
+"grupos de comandos para que se ejecuten secuencialmente (cada comando "
+"termina antes de que comience el siguiente) o en paralelo (el comando está "
+"programado y el siguiente comando también está programado de inmediato). "
+"Ocasionalmente, hay momentos en los que desea asegurarse que se completen "
+"dos comandos paralelos antes de pasar al siguiente comando. Este artículo "
+"describe cómo hacer eso."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:9
+msgid "CommandGroup with Sequential and Parallel Commands"
+msgstr "CommandGroup con comandos secuenciales y paralelos"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:53
+msgid ""
+"In this example some commands are added in parallel and others are added "
+"sequentially to the CommandGroup CoopBridgeAutonomous (1). The first command"
+" \"SetTipperState\" is added and completes before the SetVirtualSetpoint "
+"command starts (2). Before SetVirtualSetpoint command completes, the "
+"DriveToBridge command is immediately scheduled because of the "
+"SetVirtualSetpoint is added in parallel (3). This example might give you an "
+"idea of how commands are scheduled."
+msgstr ""
+"En este ejemplo ciertos comandos son añadidos en paralelos y otros son "
+"añadidos secuencialmente al CommandGroup CoopBridgeAutonomous (1). El primer"
+" comando \"SetTipperState\" es añadido y se completa antes de que comience "
+"el comando SetVirtualSetpoint (2). Antes de que se complete el comando "
+"SetVirtualSetpoint, el comando DriveToBridge se programa inmediatamente "
+"debido a que el SetVirtualSetpoint se agrega en paralelo (3). Este ejemplo "
+"podría darle una idea de cómo se programan los comandos."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:56
+msgid "Example Flowchart"
+msgstr "Ejemplo, Diagrama de Flujo"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:60
+msgid ""
+"There is no dependency coming from the commands scheduled using \"Add "
+"Parallel\" either or both of these commands could still be running when the "
+"MoveBallToShooter command is reached."
+msgstr ""
+"No hay dependencia proveniente de los comandos programados usando \"Agregar "
+"paralelo\", o ambos de estos comandos aún podrían ejecutarse cuando se "
+"alcanza el comando MoveBallToShooter."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:62
+msgid ""
+"Here is the code shown above represented as a flowchart.  Any command in the"
+" main sequence (the sequence on the right here) that requires a subsystem in"
+" use by a parallel command will cause the parallel command to be canceled. "
+"For example, if the ``FireSequence`` required a subsystem in use by "
+"``SetVirtualSetpoint``, the ``SetVirtualSetpoint`` command will be canceled "
+"when ``FireSequence`` is scheduled."
+msgstr ""
+"Aquí está el código que se muestra arriba representado como un diagrama de "
+"flujo. Cualquier comando en la secuencia principal (la secuencia de la "
+"derecha aquí) que requiera un subsistema en uso por un comando paralelo hará"
+" que se cancele el comando paralelo. Por ejemplo, si ``FireSequence requirió"
+" un subsistema en uso por ``SetVirtualSetpoint``, el comando "
+"``SetVirtualSetpoint`` se cancelará cuando se programe ``FireSequence``."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:65
+msgid "Waiting for a Command"
+msgstr "Esperando por un Comando"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:69
+msgid ""
+"If there are two commands that need to complete before the following "
+"commands are scheduled, they can be put into a command group by themselves, "
+"adding both in parallel. Then that command group can be scheduled "
+"sequentially from an enclosing command group. When a command group is "
+"scheduled sequentially, the commands inside it will all finish before the "
+"next outer command is scheduled. In this way you can be sure that an action "
+"consisting of multiple parallel commands has completed before going on to "
+"the next command."
+msgstr ""
+"Si hay dos comandos que deben completarse antes de que se programen los "
+"siguientes comandos, se pueden colocar en un grupo de comandos por sí "
+"mismos, agregando ambos en paralelo. Entonces ese grupo de comandos se puede"
+" programar secuencialmente desde un grupo de comandos adjunto. Cuando un "
+"grupo de comandos se programa secuencialmente, los comandos dentro de él "
+"finalizarán antes de que se programe el siguiente comando externo. De esta "
+"manera, puede estar seguro de que una acción que consta de múltiples "
+"comandos paralelos se ha completado antes de pasar al siguiente comando."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/synchronizing-two-commands.rst:71
+msgid ""
+"In this example you can see that the addition of a command group \"Move to "
+"Bridge\" containing the **Set Virtual Setpoint** and **Drive to Bridge** "
+"commands forces both to complete before the next commands are scheduled."
+msgstr ""
+"En este ejemplo, puede ver que la adición de un grupo de comandos \"Move to "
+"Bridge\" que contiene los comandos **Set Virtual Setpoint** y **Drive to "
+"Bridge** obliga a ambos a completarse antes de que se programen los "
+"siguientes comandos."

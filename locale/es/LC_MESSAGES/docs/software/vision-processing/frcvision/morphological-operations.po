@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 04:12+0000\n"
+"POT-Creation-Date: 2020-08-27 04:10+0000\n"
 "PO-Revision-Date: 2020-06-12 20:55+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -21,3 +21,129 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:2
+msgid "Morphological Operations"
+msgstr "Operaciones morfológicas"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:4
+msgid ""
+"Sometimes, after thresholding your image, you have unwanted noise in your "
+"binary image. Morphological operations can help remove that noise from the "
+"image."
+msgstr ""
+"A veces, después de descomponer su imagen, tiene ruido no deseado en su "
+"imagen binaria. Las operaciones morfológicas pueden ayudar a eliminar ese "
+"ruido de la imagen."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:7
+msgid "Kernel"
+msgstr "Núcleo"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:9
+msgid ""
+"The kernel is a simple shape where the origin is superimposed on each pixel "
+"of value 1 of the binary image. OpenCV limits the kernel to a NxN matrix "
+"where N is an odd number. The origin of the kernel is the center. A common "
+"kernel is"
+msgstr ""
+"El núcleo es una forma simple donde el origen se superpone en cada píxel de "
+"valor 1 de la imagen binaria. OpenCV limita el núcleo a una matriz NxN donde"
+" N es un número impar. El origen del núcleo es el centro. Un núcleo común es"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:11
+msgid ""
+"kernel = \\begin{pmatrix}             1 & 1 & 1\\\\             1 & 1 & "
+"1\\\\             1 & 1 & 1          \\end{pmatrix}"
+msgstr ""
+"kernel = \\begin{pmatrix}            1 & 1 & 1\\\\                1 & 1 & "
+"1\\\\             1 & 1 & 1          \\end{pmatrix}"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:18
+msgid ""
+"Different kernels can affect the image differently, such as only eroding or "
+"dilating vertically."
+msgstr ""
+"Diferentes núcleos pueden afectar la imagen de manera diferente, como "
+"erosionarse o dilatarse verticalmente."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:20
+msgid "For reference, this is our binary image we created:"
+msgstr "Como referencia, esta es nuestra imagen binaria que creamos:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:25
+msgid "Erosion"
+msgstr "Erosión"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:27
+msgid ""
+"Erosion in computer vision is similar to erosion on soil. It takes away from"
+" the borders of foreground objects. This process can remove noise from the "
+"background."
+msgstr ""
+"La erosión en la visión por computadora es similar a la erosión en el suelo."
+" Le quita las fronteras de objetos en primer plano. Este proceso puede "
+"eliminar el ruido del fondo."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:38
+msgid ""
+"During erosion, if the superimposed kernel's pixels are not contained "
+"completely by the binary image's pixels, the pixel that it was superimposed "
+"on is deleted."
+msgstr ""
+"Durante la erosión, si los píxeles superpuestos del núcleo no están "
+"contenidos completamente por los píxeles de la imagen binaria, se elimina el"
+" píxel en el que se superpuso."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:41
+msgid "Dilation"
+msgstr "Dilatación"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:43
+msgid ""
+"Dilation is opposite of erosion. Instead of taking away from the borders, it"
+" adds to them. This process can remove small holes inside a larger region."
+msgstr ""
+"La dilatación es opuesta a la erosión. En lugar de alejarse de las "
+"fronteras, se agrega a ellos. Este proceso puede eliminar pequeños agujeros "
+"dentro de una región más grande."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:54
+msgid ""
+"During dilation, every pixel of every superimposed kernel is included in the"
+" dilation."
+msgstr ""
+"Durante la dilatación, cada píxel de cada núcleo superpuesto se incluye en "
+"la dilatación."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:57
+msgid "Opening"
+msgstr "Apertura"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:59
+msgid ""
+"Opening is erosion followed by dilation. This process removes noise without "
+"affecting the shape of larger features."
+msgstr ""
+"La apertura es erosión seguida de dilatación. Este proceso elimina el ruido "
+"sin afectar el forma de características más grandes."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:70
+msgid ""
+"In this specific case, it is appropriate to do more iterations of opening in"
+" order to get rid of the pixels in the top right."
+msgstr ""
+" En este caso específico, es apropiado hacer más iteraciones de apertura "
+"para lograr deshacerse de los píxeles en la parte superior derecha."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:73
+msgid "Closing"
+msgstr "Clausura"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/morphological-operations.rst:75
+msgid ""
+"Closing is dilation followed by erosion. This process removes small holes or"
+" breaks without affecting the shape of larger features."
+msgstr ""
+"El cierre es dilatación seguida de erosión. Este proceso elimina pequeños "
+"agujeros o roturas sin afectar la forma de las características más grandes."

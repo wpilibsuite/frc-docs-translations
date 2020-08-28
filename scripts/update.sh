@@ -3,7 +3,7 @@
 
 set -ex
 
-LANG_TO_PULL=${1:-'fr_CA,es_MX'}
+LANG_TO_PULL=${1:-'fr_CA,es_MX,zh_CN,tr_TR,he_IL,pt'}
 LANG_MAP='es_MX: es, fr_CA: fr, he_IL: he, tr_TR: tr'
 MAINPROJECT=frc-docs
 

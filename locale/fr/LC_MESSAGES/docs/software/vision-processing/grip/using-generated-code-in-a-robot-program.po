@@ -6,15 +6,16 @@
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Andy Chang, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-08-30 04:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Andy Chang, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -67,11 +68,12 @@ msgstr ""
 "**L'utilisation de la sortie de la caméra pour diriger le robot peut être "
 "problématique**. Dans cet exemple, le code de la caméra qui capture et "
 "traite les images s'exécute à un rythme beaucoup trop lent de ce qui est "
-"souhaitable pour diriger le robot à l'aide d'une boucle d'asservissement   "
-"Une meilleure solution, légèrement plus complexe, consiste à obtenir les "
-"caps directionnels (Headings) de la caméra et sa fréquence de traitement, "
-"puis utiliser un asservissement pour ces caps à l'aide d'un capteur de type "
-"gyroscope."
+"souhaitable pour diriger le robot à l'aide d'une boucle d'asservissement. "
+"Une meilleure solution, légèrement plus complexe, consiste à obtenir la "
+"direction (Headings) relatif au robot à partir de la position de la caméra "
+"sur le robot. Ensuite, rafraîchir cette direction à la fréquence de "
+"traitement d'image. Finalement, utiliser un gyroscope comme senseur pour "
+"compléter la boucle de contrôle."
 
 #: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:16
 msgid ""
@@ -149,9 +151,9 @@ msgid ""
 "creates a **CameraServer** instance that begins capturing images at the "
 "requested resolution (IMG_WIDTH by IMG_HEIGHT)."
 msgstr ""
-"La méthode **robotInit ()** est appelée une fois au démarrage du programme. "
-"Il crée une instance **CameraServer** qui commence à capturer des images à "
-"la résolution demandée (IMG_WIDTH par IMG_HEIGHT)."
+"La méthode **robotInit()** est appelée une fois au démarrage du programme. "
+"Il crée une instance de **CameraServer** qui commence à capturer des images "
+"à la résolution demandée (IMG_WIDTH par IMG_HEIGHT)."
 
 #: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:87
 msgid ""
@@ -215,5 +217,5 @@ msgid ""
 "Note the **synchronized** block at the beginning. This takes a snapshot of "
 "the most recent centerX value found by the VisionThread."
 msgstr ""
-"Notez le bloc **synchronisé** au début. Cela prend un instantané de la "
-"valeur centerX la plus récente trouvée par VisionThread."
+"Notez le bloc **synchronisé** au début. Ce dernier conserve la valeur la "
+"plus récente de centerX trouvée par VisionThread."

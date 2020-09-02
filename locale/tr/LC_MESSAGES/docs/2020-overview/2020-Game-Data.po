@@ -4,20 +4,20 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # Ege Feyzioglu <egefeyzioglu@yahoo.com>, 2020
 # Kaan Çakıl <kaancakil16@gmail.com>, 2020
 # Demet T <dtumkaya19@ku.edu.tr>, 2020
 # Eray Özsaray <erayozsaray@gmail.com>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-02 04:10+0000\n"
+"POT-Creation-Date: 2020-09-02 16:10+0000\n"
 "PO-Revision-Date: 2020-08-20 04:11+0000\n"
-"Last-Translator: Eray Özsaray <erayozsaray@gmail.com>, 2020\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,6 +29,22 @@ msgstr ""
 msgid "2020 Game Data Details"
 msgstr "2020 Game Data Detayları"
 
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:6
+msgid ""
+"In the 2020 *FIRST*\\ |reg| Robotics Competition game, the Position Control "
+"objective requires alliances to select a specific color transmitted to them "
+"when specific pre-requisites have been met. The field will transmit the "
+"selected color to teams using Game Data. This page details the timing and "
+"structure of the sent data and provides examples of how to access it in the "
+"three supported programming languages."
+msgstr ""
+"2020 *FIRST*\\ |reg| Robotics Competition oyununda, Konum Kontrolü hedefi, "
+"ittifakların belirli ön koşullar karşılandığında kendilerine iletilen "
+"belirli bir rengi seçmelerini gerektirir. Saha, seçilen rengi Game Data "
+"kullanarak takımlara iletecektir. Bu sayfa, gönderilen verilerin "
+"zamanlamasını ve yapısını ayrıntılarıyla açıklar ve desteklenen üç "
+"programlama dilinde bunlara nasıl erişileceğine dair örnekler sunar."
+
 #: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:9
 msgid "The Data"
 msgstr "The Data - Veri"
@@ -37,13 +53,79 @@ msgstr "The Data - Veri"
 msgid "Timing"
 msgstr "Timing - Zamanlama"
 
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:13
+msgid ""
+"Color assignment data is sent to both alliances simultaneously once the "
+"first alliance in a match has reached Capacity on Stage 3 of the Shield "
+"Generator (see the Game Manual for more complete details). Between the "
+"beginning of the match and this point, the Game Data will be an empty "
+"string."
+msgstr ""
+"Bir maçtaki herhangi bir ittifak, Shield Generator'u 3. aşamasındaki "
+"kapasiteye ulaştırdığında, renk ataması verileri her iki ittifaka aynı anda "
+"gönderilir (daha ayrıntılı bilgi için Oyun Kılavuzuna bakın). Maçın "
+"başlangıcı ile bu nokta arasında Game Data boş bir dizi olacaktır."
+
 #: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:16
 msgid "Data format"
 msgstr "Data format - Veri formatı"
 
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:17
+msgid ""
+"The selected color for an alliance will be provided as a single character "
+"representing the color (i.e. 'R' = red, 'G' = green, 'B' = blue, 'Y' = "
+"yellow). This color indicates the color that must be placed underneath the "
+"Control Panel's color sensor in order to complete the Position Control "
+"objective (see the Game Manual for information about the location of the "
+"Control Panel sensor)."
+msgstr ""
+"Bir ittifak için seçilen renk, rengi temsil eden tek bir karakter olarak "
+"sunulacaktır (yani 'R' = kırmızı, 'G' = yeşil, 'B' = mavi, 'Y' = sarı). Bu "
+"renk, Konum Kontrolü hedefini tamamlamak için Kontrol Panelinin renk "
+"sensörünün altına denk getirilmesi gereken rengi belirtir (Kontrol Paneli "
+"sensörünün konumu hakkında bilgi için Oyun Kılavuzuna bakın)."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:20
+msgid "Accessing the Data"
+msgstr "Veriye erişmek"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:21
+msgid ""
+"The data is accessed using the Game Data methods or VIs in each language. "
+"Below are descriptions and examples of how to access the data from each of "
+"the three languages. As the data is provided to the Robot during the Teleop "
+"period, teams will likely want to query the data in Teleop periodic code, or"
+" trigger reading it off a button press or other action after they have "
+"reached Stage 3 capacity."
+msgstr ""
+"Verilere, Game Data yöntemleri veya VI'lar kullanılarak erişilir. Aşağıda, "
+"üç dilin her birindeki verilere nasıl erişileceğine ilişkin açıklamalar ve "
+"örnekler bulunmaktadır. Veriler, Teleop döneminde Robota sunulduğunda, "
+"takımlar muhtemelen verileri Teleop periyodik kodunda sorgulamak veya Aşama "
+"3 kapasitesine ulaştıktan sonra bir düğmeye basarak veya başka bir işlemle "
+"okumayı tetiklemek isteyeceklerdir."
+
 #: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:24
 msgid "C++/Java"
 msgstr "C++/Java"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:25
+msgid ""
+"In C++ and Java the Game Data is accessed by using the "
+"GetGameSpecificMessage method of the DriverStation class. Teams likely want "
+"to query the data in a Teleop method such as Teleop Periodic in order to "
+"receive the data after it is sent during the match. Make sure to handle the "
+"case where the data is an empty string as this is what the data will be "
+"until the criteria are reached to enable Position Control for either "
+"alliance."
+msgstr ""
+"C ++ ve Java'da Game Data, DriverStation sınıfının GetGameSpecificMessage "
+"yöntemi kullanılarak erişilir. Takımlar, maç sırasında gönderildikten sonra "
+"verileri almak için muhtemelen Teleop Periodic gibi bir Teleop yönteminde "
+"verileri sorgulamak isteyecektir. Verilerin boş bir dizi olduğu durumu "
+"tamamladığınızdan emin olun, çünkü bu, ittifaklardan herhangi biri için "
+"Konum Kontrolünü etkinleştirmek için uygun kriterlere ulaşılana kadar "
+"alacağı veriler olacaktır."
 
 #: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:90
 msgid "LabVIEW"
@@ -56,6 +138,24 @@ msgid ""
 msgstr ""
 "LabVIEW'deki Game Data verilerine Game Specific Data VI'dan erişilir. Bu VI,"
 " WPI Robotics Library -> Driver Station paletinde bulunabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:93
+msgid ""
+"LabVIEW teams will likely want to query the data in the Teleop or "
+"PeriodicTasks VIs and may choose to gate the query behind a button press or "
+"other action. The code below reads the data and then uses a case structure "
+"to react differently to each of the 5 possible cases (empty, or any of the 4"
+" letters)."
+msgstr ""
+"LabVIEW takımları büyük olasılıkla Teleop veya PeriodicTasks VI' içinde "
+"verileri sorgulamak isteyecek ve sorguyu bir düğmeye basma veya başka bir "
+"eylemin arkasına yerleştirmeyi seçecektir. Aşağıdaki kod, verileri okur ve "
+"ardından olası 5 durumun her birine (boş veya 4 renk harfinden herhangi "
+"biri) farklı tepki vermek için bir yapı kullanır."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:98
+msgid "Testing Game Specific Data"
+msgstr "Oyun Verisinin - Game Specific Data Denenmesi"
 
 #: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:99
 msgid ""

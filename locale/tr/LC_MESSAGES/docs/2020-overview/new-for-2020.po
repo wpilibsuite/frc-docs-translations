@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# MUFIT ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-01 04:12+0000\n"
+"POT-Creation-Date: 2020-09-03 16:10+0000\n"
 "PO-Revision-Date: 2020-08-20 04:11+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: MUFIT ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +26,805 @@ msgstr ""
 msgid "New for 2020"
 msgstr "2020 İçin Yenilikler"
 
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:4
+msgid ""
+"A number of improvements have been made to FRC Control System software for "
+"2020. This article will describe and provide a brief overview of the new "
+"changes and features as well as a more complete changelog for C++/Java "
+"WPILib changes."
+msgstr ""
+"2020 için FRC Kontrol Sistemi yazılımında bir dizi iyileştirme yapılmıştır. "
+"Bu makale, yeni değişiklikler ve özelliklerin kısa bir özetini ve ayrıca C++"
+" / Java WPILib değişiklikleri için daha eksiksiz bir değişiklik günlüğünü "
+"açıklayacak ve sağlayacaktır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:6
+msgid ""
+"Due to internal GradleRIO changes, it is necessary to update previous years "
+"projects. After :doc:`Installing WPILib for 2020 </docs/getting-started"
+"/getting-started-frc-control-system/wpilib-setup>`, any 2019 projects must "
+"be :doc:`imported </docs/software/vscode-overview/importing-gradle-project>`"
+" to be compatible."
+msgstr ""
+"Dahili GradleRIO değişiklikleri nedeniyle, önceki yıl projelerinin "
+"güncellenmesi gerekmektedir. Sonra :doc:`Installing WPILib for 2020 </docs"
+"/getting-started/getting-started-frc-control-system/wpilib-setup>'ile uyumlu"
+" olması için tüm 2019 projeleri :doc:`imported </docs/software/vscode-"
+"overview/importing-gradle-project> ` olmalıdır."
+
 #: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:9
 msgid "Major Features - All Languages"
 msgstr "Başlıca Özellikler - Tüm Diller"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:11
+msgid ""
+"**Addressable LEDs** - The roboRIO FPGA has been enhanced to be able to "
+"control individually addressable LEDs (WS2812 or compatible protocol) from "
+"the roboRIO PWM ports (non-MXP). Teams can connect the signal line of these "
+"LEDs directly to the roboRIO PWM signal line and control them from APIs in "
+"all three languages. Depending on the length of the LED string and whether "
+"any servos are also being powered from the PWM ports, teams may be able to "
+"power the string directly from the PWM port or may need to use an external "
+"supply."
+msgstr ""
+"**Adreslenebilir LED'ler** - roboRIO FPGA, roboRIO PWM bağlantı "
+"noktalarından (MXP olmayan) ayrı ayrı adreslenebilir LED'leri (WS2812 veya "
+"uyumlu protokol) kontrol edebilecek şekilde geliştirilmiştir. Takımlar, bu "
+"LED'lerin sinyal hattını doğrudan roboRIO PWM sinyal hattına bağlayabilir ve"
+" bunları üç dilde de API'lerden kontrol edebilir. LED dizisinin uzunluğuna "
+"ve herhangi bir servonun da PWM bağlantı noktalarından çalıştırılıp "
+"çalıştırılmadığına bağlı olarak, ekipler diziyi doğrudan PWM bağlantı "
+"noktasından çalıştırabilir veya harici bir kaynak kullanmaları gerekebilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:12
+msgid ""
+"**Duty Cycle Encoder** - The roboRIO FPGA has been enhanced to be able to "
+"decode the signals from Duty Cycle encoders (this includes devices like the "
+"US Digital MA3, CTRE Mag Encoder, and REV Robotics Through Bore Encoder). "
+"Teams can connect these devices to the DIO ports on the roboRIO and access "
+"the encoder data via APIs in all three languages."
+msgstr ""
+"**Duty Cycle Encoder - Görev Döngüsü Kodlayıcı** - roboRIO FPGA, Duty Cycle "
+"Encoder'lerden gelen sinyallerin kodunu çözebilecek şekilde geliştirilmiştir"
+" (US Digital MA3, CTRE Mag Encoder ve REV Robotics Through Bore Encoder gibi"
+" cihazları içerir). Ekipler bu cihazları roboRIO üzerindeki DIO bağlantı "
+"noktalarına bağlayabilir ve kodlayıcı verilerine üç dilde API'ler "
+"aracılığıyla erişebilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:13
+msgid ""
+"**CAN Bus Internal Restructure** - The internal implementation of the CAN "
+"bus has changed to reduce the latency incurred by CAN bus calls from robot "
+"programs. Team programs, particularly those with many CAN calls, should see "
+"reduced and more consistent loop timing with the new implementation. No team"
+" action is needed to take advantage of this change, the changes are limited "
+"to internal implementation. Users may notice changes in how some tools like "
+"the CTRE Phoenix Tuner work as a consequence of the restructure."
+msgstr ""
+"**CAN Veri Yolu Dahili Yeniden Yapılandırması** - CAN veri yolunun dahili "
+"uygulaması, robot programlarından CAN veri yolu çağrılarının neden olduğu "
+"gecikmeyi azaltmak için değiştirildi. Takım programları, özellikle çok "
+"sayıda CAN çağrısı olanlar, yeni uygulamayla birlikte azaltılmış ve daha "
+"tutarlı döngü zamanlaması görecektir. Bu değişiklikten yararlanmak için "
+"herhangi bir takım işlemine gerek yoktur, değişiklikler dahili uygulamayla "
+"sınırlıdır. Kullanıcılar, yeniden yapılanmanın bir sonucu olarak CTRE "
+"Phoenix Tuner gibi bazı araçların çalışma şeklindeki değişiklikleri fark "
+"edebilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:14
+msgid ""
+"**Control Packet Caching** - A change has been made to the internals of how "
+"control packet data (such as Joystick data, current mode, etc.) is "
+"retrieved, resulting in reduced latency in these calls. The user-facing API "
+"has not changed, users will see this benefit without making any changes to "
+"their programs."
+msgstr ""
+"**Kontrol Paketini Önbelleğe Alma** - Kontrol paketi verilerinin (Joystick "
+"verileri, geçerli mod, vb.) Nasıl alındığına ilişkin dahili bir değişiklik "
+"yapıldı ve bu çağrılarda daha az gecikme sağlandı. Kullanıcıya dönük API "
+"değişmedi, kullanıcılar programlarında herhangi bir değişiklik yapmadan bu "
+"avantajı göreceklerdir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:15
+msgid ""
+"**Documentation** - If you're on this page, you're likely aware that the "
+"software documentation has moved from Screensteps to this new FRC-Docs page."
+" This open source documentation, hosted on Read the Docs, allows for a "
+"greater number of contributors (including community contribution) as well as"
+" new features such as testable example code (to ensure example code remains "
+"correct as library changes are made), better support for localization, and "
+"more. For the 2020 season, KOP part documentation can still be found on "
+"`Screensteps <https://wpilib.screenstepslive.com/s/4485>`__"
+msgstr ""
+"**Belgeler** - Bu sayfadaysanız, yazılım belgelerinin Screensteps'ten bu "
+"yeni FRC-Docs sayfasına taşındığını muhtemelen biliyorsunuzdur. Read the "
+"Docs'da barındırılan bu açık kaynak dokümantasyon, daha fazla sayıda "
+"katılımcının (topluluk katkısı dahil) yanı sıra test edilebilir örnek kod "
+"(kütüphane değişiklikleri yapılırken örnek kodun doğru kalmasını sağlamak "
+"için) gibi yeni özelliklerin yanı sıra yerelleştirme ve daha fazlasını "
+"içermektedir. 2020 sezonu için, KOP malzeme belgeleri hala `Ekran Adımları "
+"<https://wpilib.screenstepslive.com/s/4485>`__ adresinde bulunabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:18
+msgid "Major Features - C++/Java"
+msgstr "Önemli Özellikler - C++/Java"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:19
+msgid ""
+"More complete details on all of these changes can be found in the changelog "
+"below (under **WPILib**)."
+msgstr ""
+"Tüm bu değişikliklerle ilgili daha detaylı ayrıntılar aşağıdaki değişiklik "
+"günlüğünde bulunabilir (**WPILib** altında)."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:21
+msgid ""
+"**Command Based Framework Rewrite** - A new version of the Command Based "
+"framework has been written from the ground up based on the years of "
+"experience with the previous framework. Both frameworks will be available as"
+" options in 2020 and have been split out as \"vendor libraries\" (though "
+"they are still included in the WPILib installer) in order to reduce the "
+"chances of mixing the two which will not work correctly."
+msgstr ""
+"**Command Based Framework Yeniden Yazımı** - Komut Tabanlı Framework'ün yeni"
+" bir sürümü, önceki framework deneyimine dayalı olarak sıfırdan yazılmıştır."
+" Her iki framework' de 2020'de seçenekli olarak sunulacak ve doğru şekilde "
+"çalışmama olasılığı olabilecek \"üretici kütüphaneleri\"(yine de WPILib "
+"yükleyicisine dahil edilmişlerdir) için destek sağlanmış olacaktır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:22
+msgid ""
+"**PID Controller Rewrite** - A new synchronous PID controller class has been"
+" written that is structured in a way that makes it simpler to compose with "
+"other higher level classes such as filters, motion profiles, kinematics and "
+"more. The new PID Controller is located in a new package to maintain "
+"separation from the existing implementation."
+msgstr ""
+"**PID Denetleyicisi Yeniden Yazımı** - Filtreler, hareket profilleri, "
+"kinematik ve daha fazlası gibi diğer üst düzey sınıflarla oluşturmayı "
+"kolaylaştıracak şekilde yapılandırılmış yeni bir eşzamanlı PID denetleyici "
+"sınıfı yazılmıştır. Yeni PID Denetleyici, mevcut uygulama ile karışmaması "
+"için yeni bir pakette bulunur."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:23
+msgid ""
+"**High level controls & Trajectory generation** - A number of new classes "
+"have been added to assist teams with higher level controls including "
+"kinematics, odometry, and trajectory generation. In addition to the "
+"characterization GUI mentioned below this should allow teams a much easier "
+"entry to high level control of mechanisms included drivetrains (with smooth "
+"trajectories), arms, and elevators."
+msgstr ""
+"**Yüksek seviyeli kontroller ve Yörünge oluşturma** - Kinematik, odometri ve"
+" yörünge oluşturma dahil olmak üzere daha yüksek seviyeli kontrollere sahip "
+"takımlara yardımcı olmak için bir dizi yeni sınıf eklendi. Aşağıda "
+"belirtilen GUI karakterizasyonuna ek olarak, bu değişiklik, takımlara "
+"aktarma organları (düzgün yörüngeli), kollar ve asansörler dahil olmak üzere"
+" mekanizmaların üst düzey kontrolüne çok daha kolay girmesini sağlayacaktır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:24
+msgid ""
+"**Robot Characterization Tool** - This new tool helps teams characterize "
+"their mechanical systems (currently supports drivetrains, elevators, and "
+"arms) to help tune control loops. Combined with the new controls classes "
+"this should enable teams to follow an end-to-end solution for autonomous "
+"trajectory following."
+msgstr ""
+"**Robot Karakterizasyon Aracı** - Bu yeni araç, kontrol döngülerini "
+"ayarlamaya yardımcı olmak için ekiplerin mekanik sistemlerini (şu anda "
+"aktarma organlarını, asansörleri ve kolları destekler) karakterize "
+"etmelerine yardımcı olur. Yeni kontrol sınıfları ile birlikte bu araç, "
+"takımların otonom yol takibi için uçtan uca bir çözüme sahip olmasını "
+"sağlar."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:25
+msgid ""
+"**Simulation GUI** - A basic simulation GUI has been implemented allowing "
+"teams to visualize outputs and control basic inputs when simulating code on "
+"their desktop. While vendor support at Kickoff is expected to be limited, we"
+" hope this will expand in the future."
+msgstr ""
+"**Simülasyon GUI** - Ekiplerin, masaüstlerinde kodu simüle ederken çıktıları"
+" görselleştirmesine ve temel girdileri kontrol etmesine olanak tanıyan temel"
+" bir simülasyon GUI'si hazırlandı. Kickoff'ta donanım üretici desteğinin "
+"sınırlı olması beklenirken, bunun gelecekte genişleyeceğini umuyoruz."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:29
+msgid "WPILib"
+msgstr "WPILib"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:31
+msgid ""
+"There are many changes and additions to the main WPILib library for 2020. "
+"Most notably, there is a new version of the command-based framework with "
+"several major enhancements, a new (synchronous) PIDController, a GUI "
+"simulator, and kinematics classes have been added for closed loop driving. "
+"The full change log can be read below."
+msgstr ""
+"2020 için ana WPILib kitaplığında pek çok değişiklik ve ekleme var. En "
+"önemlisi, command-based framework'ün birkaç önemli geliştirmeye sahip yeni "
+"bir sürümü, kapalı döngü sürüşü için yeni (eşzamanlı) PIDController, GUI "
+"simülatörü ve kinematik sınıfları eklenmiştir. Tam değişiklik günlüğü "
+"aşağıda okunabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:33
+msgid ""
+"The command-based framework has been rewritten. The design rationale behind "
+"the rewrite can be found `here <https://github.com/wpilibsuite/design-"
+"docs/blob/master/CommandRewriteDesignDoc.md>`__. The new version of the "
+"framework is located in the ``frc2`` namespace (C++) and the "
+"``edu.wpi.first.wpilibj2`` package (Java)."
+msgstr ""
+"Command-based framework yeniden yazıldı. Yeniden yazmanın arkasındaki "
+"tasarım mantığı `burada <https://github.com/wpilibsuite/design-"
+"docs/blob/master/CommandRewriteDesignDoc.md>`__ bulunabilir. Framework'ün "
+"yeni sürümü, ``frc2`` ad alanında (C ++) ve ``edu.wpi.first.wpilibj2`` "
+"paketinde (Java) bulunur."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:34
+msgid ""
+"The command-based frameworks are now separate vendor libraries, rather then "
+"built into WPILib itself."
+msgstr ""
+"Command-based framework'ler artık WPILib'in kendisinde yerleşik olmak yerine"
+" ayrı üretici kütüphaneleri şeklindedir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:36
+msgid ""
+"LinearDigitalFilter has been renamed to LinearFilter, and now has a "
+"``Calculate()`` method which returns the filtered value."
+msgstr ""
+"LinearDigitalFilter, LinearFilter olarak yeniden adlandırıldı ve artık "
+"filtrelenmiş değeri döndüren bir ``Calculate()`` methoduna sahiptir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:38
+msgid ""
+"Takes a double in the ``Calculate()`` method instead of a ``PIDSource`` in "
+"the constructor"
+msgstr ""
+"constructor, ``PIDSource`` yerine ``Calculate()`` methodunda double alır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:39
+msgid "``PIDGet()`` was replaced with ``Calculate()``"
+msgstr "``PIDGet()``, ``Calculate()`` ile değiştirildi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:40
+msgid ""
+"Both of these changes make it easy to compose the LinearFilter class with "
+"the new PIDController class"
+msgstr ""
+"Bu değişikliklerin her ikisi de yeni PIDController sınıfı ile LinearFilter "
+"sınıfını oluşturmayı kolaylaştırır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:41
+msgid ""
+"More details about the new LinearFilter can be found in :ref:`this article "
+"<docs/software/advanced-controls/filters/linear-filter:Linear Filters>`"
+msgstr ""
+"Yeni LinearFilter hakkında daha fazla ayrıntı şu adreste bulunabilir "
+":ref:`bu makale <docs/software/advanced-controls/filters/linear-"
+"filter:Linear Filters>`"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:43
+msgid ""
+"PIDController has been rewritten; the old PIDController along with PIDSource"
+" and PIDOutput have been deprecated. The new version of PIDController is "
+"located in the ``frc2`` namespace (C++) and the ``edu.wpi.first.wpilibj2`` "
+"package (Java) while the deprecated version remains in the old namespace and"
+" package."
+msgstr ""
+"PIDController yeniden yazıldı; eski PIDController, PIDSource ve PIDOutput "
+"ile birlikte kullanımdan kaldırıldı. PIDController'ın yeni sürümü ``frc2`` "
+"ad alanında (C++) ve ``edu.wpi.first.wpilibj2`` paketinde (Java) bulunurken,"
+" kullanımdan kaldırılan sürüm eski ad alanında ve pakette kalır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:45
+msgid ""
+"The new PIDController no longer runs asynchronously in a separate thread. "
+"This eliminates a major source of bugs for teams. Instead, teams should run "
+"the controller as part of their main periodic TimedRobot loop by calling "
+"``Calculate()`` and passing the result to the motor’s ``Set()`` function. "
+"Note this means that the controller will run at the TimedRobot periodic "
+"rate."
+msgstr ""
+"Yeni PIDController artık ayrı bir iş parçacığında asenkron olarak "
+"çalışmamaktadır. Bu, takımlar için önemli bir hata kaynağını ortadan "
+"kaldırır. Bunun yerine takımlar, main periodic TimedRobot döngüsünün bir "
+"parçası olarak ``Calculate()`` i çağırarak ve sonucu motorun ``Set ()`` "
+"fonksiyonuna aktararak denetleyiciyi çalıştırmalıdır. Bunun, denetleyicinin "
+"TimedRobot periyodik hızında çalışacağı anlamına geldiğini unutmayın."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:46
+msgid ""
+"Input range was replaced with ``EnableContinuousInput()`` and output range "
+"was replaced with integrator range.  If it’s necessary to clamp inputs or "
+"outputs to a range, use ``std::clamp()`` or ``wpiutil.MathUtils.clamp()`` on"
+" either the input or output of ``Calculate()`` as appropriate. To deal with "
+"steady-state error, use ProfiledPIDController instead of reducing the output"
+" range or having an integral term."
+msgstr ""
+"Girdi aralığı, ``EnableContinuousInput ()`` ile değiştirildi ve çıktı "
+"aralığı, entegratör aralığı ile değiştirildi. Girişleri veya çıkışları bir "
+"aralığa sabitlemek gerekirse, ``std::clamp()`` veya ``Calculate()``'in uygun"
+" giriş/çıkışında ``wpiutil.MathUtils.clamp()`` kullanın. Steady-state "
+"hatasıyla başa çıkmak için, çıktı aralığını azaltmak veya bir integral "
+"terimi kullanmak yerine ProfiledPIDController 'ı kullanın."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:47
+msgid ""
+"``PIDSource`` is no longer used.  Instead, pass the sensor value directly to"
+" ``Calculate()``."
+msgstr ""
+"``PIDSource`` artık kullanılmamaktadır. Bunun yerine, sensör değerini "
+"doğrudan ``Calculate()`` öğesine iletin."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:48
+msgid ""
+"``PIDOutput`` is no longer used.  Instead, call ``Set()`` with the output of"
+" ``Calculate()``."
+msgstr ""
+"``PIDOutput`` artık kullanılmamaktadır. Bunun yerine, ``Calculate()`` "
+"çıktısı ile ``Set()`` çağırın."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:49
+msgid ""
+"Percent tolerance has been removed. Absolute tolerance is provided via "
+"``SetTolerance()``."
+msgstr ""
+"Yüzde tolerans kaldırıldı. Mutlak tolerans, ``SetTolerance()`` aracılığıyla "
+"sağlanır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:50
+msgid ""
+"More details about the new PIDController can be found in :ref:`this article "
+"<docs/software/advanced-controls/controllers/pidcontroller:PID Control in "
+"WPILib>`."
+msgstr ""
+"Yeni PIDController hakkında daha fazla ayrıntı şu adreste bulunabilir: ref: "
+"`bu makale <docs/software/advanced-controls/controllers/pidcontroller:PID "
+"Control in WPILib>`."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:52
+msgid ""
+"Added kinematics classes for Swerve, Mecanum, and DifferentialDrive. These "
+"classes can be used to implement closed loop driving of these drive types."
+msgstr ""
+"Swerve, Mecanum ve DifferentialDrive için kinematik sınıfları eklendi. Bu "
+"sınıflar, bu sürücü türlerinin kapalı döngü sürüşünü uygulamak için "
+"kullanılabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:53
+msgid ""
+"Added odometry classes for Swerve, Mecanum, and DifferentialDrive. These are"
+" needed for closed loop feedback control on global pose (as opposed to just "
+"PID on the two drivetrain sides, which can accrue error since there are "
+"multiple ending positions a robot can be in for a given set of encoder "
+"measurements)"
+msgstr ""
+"Swerve, Mecanum ve DifferentialDrive için odometri sınıfları eklendi. "
+"Bunlar, genel çapta kapalı döngü geri bildirim kontrolü için gereklidir "
+"(sadece iki aktarma sistemi tarafına uygulanan ve encoder ölçüm sonuçlarına "
+"göre birden fazla sonlanma pozisyonu nedeniyle artan miktarda hata oluşturan"
+" PID'nin aksine)"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:54
+msgid ""
+"Add RamseteController for closed loop feedback control on global pose for "
+"unicycles (the DifferentialDriveKinematics class can convert the chassis "
+"speeds to that of a differential drive)"
+msgstr ""
+"Kapalı döngü geri bildirim kontrolü için Unicycles global pozda "
+"RamseteController ekleyin (DifferentialDriveKinematics sınıfı şasi hızlarını"
+" diferansiyel sürüş hızına dönüştürebilir)"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:55
+msgid "(C++) Add frc2::Timer which is unit safe"
+msgstr "(C++) Güvenli olan frc2::Timer ekleyin"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:56
+msgid ""
+"Real-time trajectory generation for 2 DOF trajectories (e.g., x and y "
+"position for a drivetrain)"
+msgstr ""
+"2 DOF-degree of freedom yörünge için gerçek zamanlı yörünge oluşturma "
+"(örneğin, bir drivetrainiçin x ve y konumu)"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:57
+msgid ""
+"Added a PortForwarding class to allow forwarding ports from a remote, to a "
+"client. This can be used when connecting to the roboRIO from USB and needing"
+" to access Ethernet content."
+msgstr ""
+"Bir uzaktaki bir istemciye bağlantı noktalarının iletilmesine izin vermek "
+"için bir PortForwarding sınıfı eklendi. Bu, roboRIO'ya USB'den bağlanırken "
+"ve Ethernet içeriğine erişmeniz gerektiğinde kullanılabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:58
+msgid ""
+"Added an interactive GUI for desktop simulation of robot code.  The GUI "
+"provides DS-like controls for operating mode and joystick input and provides"
+" live display/control of virtual hardware inputs and outputs."
+msgstr ""
+"Robot kodunun masaüstü simülasyonu için etkileşimli bir GUI eklendi. GUI, "
+"çalışma modu ve kumanda kolu girişi için DS benzeri kontroller sağlar ve "
+"sanal donanım giriş ve çıkışlarının canlı görüntüsünü / kontrolünü sağlar."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:59
+msgid "Removed SampleRobot"
+msgstr "Kaldırılan SampleRobot-örnek robot"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:60
+msgid "Made null checks on Java parameters more descriptive"
+msgstr "Java parametrelerinde boş kontrolleri daha açıklayıcı hale getirdi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:61
+msgid "Removed deprecated LiveWindow functions"
+msgstr "Kullanımdan kaldırılmış LiveWindow işlevleri kaldırıldı"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:62
+msgid "Deprecated frc/WPILib.h. Instead, include only what you use."
+msgstr ""
+"frc/WPILib.h kullanımdan kaldırıldı . Bunun yerine, yalnızca kullandığınız "
+"şeyi ekleyin."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:63
+msgid "Removed deprecated shim header files for wpilibc and llvm."
+msgstr ""
+"Wpilibc ve llvm için kullanımdan kaldırılan başlık dosyaları kaldırıldı."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:64
+msgid ""
+"Added low-level geometry classes: Pose2d, Rotation2d, Transform2d, "
+"Translation2d"
+msgstr ""
+"Düşük seviyeli geometri sınıfları eklendi: Pose2d, Rotation2d, Transform2d, "
+"Translation2d"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:65
+msgid ""
+"Added C++ units library. This library provides type safety, which makes it "
+"impossible to mix up units (e.g. pass seconds as meters) and also provides "
+"automatic unit conversion. The units can be specified in literals using a "
+"suffix, e.g. ``1.0_s`` for 1 second."
+msgstr ""
+"C++ birimler kitaplığı eklendi. Bu kitaplık, birimlerin karıştırılmasını "
+"(örneğin, sayaç olarak saniye geçişi) imkansız kılan yazım hatası güvenliği "
+"sağlar ve ayrıca otomatik birim çevirme sağlar. Birimler, bir son ek "
+"kullanılarak belirtilebilir, ör. 1 saniye için ``1.0_s``."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:66
+msgid ""
+"Added Java units utility functions for unit conversions. This provides a set"
+" of common unit conversions (e.g. feet to meters). Unlike C++, the Java "
+"library does not provide type safety; this was done for performance reasons."
+msgstr ""
+"Birim dönüştürmeleri için Java birimleri yardımcı programı işlevleri "
+"eklendi. Bu, bir dizi ortak birim dönüştürme sağlar (örn. Feet'ten metreye)."
+" C ++ 'dan farklı olarak, Java kitaplığı yazım hatası güvenliği sağlamaz; bu"
+" performans sebebiyle yapıldı."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:67
+msgid ""
+"Added TrapezoidProfile class for 1 degree-of-freedom (DOF) trajectories"
+msgstr ""
+"1 serbestlik-dereceli degree-of-freedom (DOF) yörüngeler için "
+"TrapezoidProfile sınıfı eklendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:68
+msgid ""
+"Added ProfiledPIDController class. Given a goal, this class constrains the "
+"setpoint movement over time to a max velocity and acceleration."
+msgstr ""
+"ProfiledPIDController sınıfı eklendi. Bir hedef verildiğinde, bu sınıf zaman"
+" içindeki ayar noktası hareketini maksimum hız ve ivmeyle sınırlar."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:69
+msgid ""
+"Moved the CircularBuffer/circular_buffer classes from wpilib to wpiutil"
+msgstr "CircularBuffer/round_buffer sınıfları wpilib'den wpiutil'e taşındı"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:70
+msgid ""
+"Deprecated the GearTooth class. Based on usage reporting, no teams have used"
+" this class in the last several years. The Counter class can be used "
+"directly instead."
+msgstr ""
+"GearTooth sınıfı kullanımdan kaldırıldı. Kullanım raporlamasına göre, son "
+"birkaç yılda bu sınıfı hiçbir ekip kullanmamıştır. Counter sınıfı bunun "
+"yerine doğrudan kullanılabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:71
+msgid ""
+"Deprecated the Filter class. Since PIDSource is deprecated, it no longer "
+"serves a purpose. Teams should use the derived classes of Filter directly "
+"rather than using polymorphism."
+msgstr ""
+"Filtre sınıfı kullanımdan kaldırıldı. PIDSource kullanımdan kaldırıldığı "
+"için artık bir amaca hizmet etmemektedir. Ekipler, polimorfizm kullanmak "
+"yerine doğrudan Filter sınıflarını kullanmalıdır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:72
+msgid ""
+"Added the PWMSparkMax class for PWM control of the REV Robotics SPARK MAX "
+"Motor Controller"
+msgstr ""
+"REV Robotics SPARK MAX Motor Denetleyicisinin PWM kontrolü için PWMSparkMax "
+"sınıfı eklendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:73
+msgid ""
+"Simplified the Sendable interface and deprecated SendableBase. The name and "
+"subsystem have been removed from individual objects, and instead this data "
+"is stored in a new singleton class, SendableRegistry. Much of LiveWindow has"
+" been refactored into SendableRegistry."
+msgstr ""
+"Sendable arayüzü basitleştirildi ve SendableBase kullanımdan kaldırıldı. "
+"name ve subsystem tek tek nesnelerden kaldırılmıştır ve bunun yerine bu "
+"veriler SendableRegistry adlı yeni bir tekil sınıfta depolanmıştır. "
+"LiveWindow'un büyük bir kısmı SendableRegistry'de yeniden düzenlendi."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:75
+msgid ""
+"In C++, a new CRTP helper class, SendableHelper, has been added to provide "
+"move and destruction functionality."
+msgstr ""
+"C++ 'da, taşıma ve silme işlevselliği sağlamak için yeni bir CRTP yardımcı "
+"sınıfı olan SendableHelper eklenmiştir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:76
+msgid ""
+"Shims for GetName, SetName, GetSubsystem, and SetSubsystem have been added "
+"to Command and Subsystem (both old and new), and also to SendableHelper to "
+"prevent code breakage."
+msgstr ""
+"GetName, SetName, GetSubsystem ve SetSubsystem için girintiler, Command ve "
+"Subsystem'e (hem eski hem de yeni) ve ayrıca kod bozulmasını önlemek için "
+"SendableHelper'a eklenmiştir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:78
+msgid "Update to GCC 7, and use C++17"
+msgstr "GCC 7'ye güncelleyin ve C++17 kullanın"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:79
+msgid "Use OS for serial port instead of the NI driver"
+msgstr ""
+"Seri bağlantı noktası için NI sürücüsü yerine işletim sistemini kullanın"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:80
+msgid "IterativeRobot template has been removed"
+msgstr "IterativeRobot şablonu kaldırıldı"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:81
+msgid "Add support for Addressable LEDs, such as WS2812's and NeoPixels"
+msgstr "WS2812'ler ve NeoPikseller gibi adreslenebilir LED'ler için destek"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:82
+msgid ""
+"Add support for DutyCycle inputs, such as the absolute output on many FRC "
+"encoders"
+msgstr "Birçok FRC encoderdeki mutlak çıktı gibi DutyCycle girişlerine destek"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:83
+msgid ""
+"Eigen has been added to C++, and EJML has been added to Java to support "
+"linear algebra and matrix calculations. These are included by default, with "
+"no need to add anything to your robot project to use them."
+msgstr ""
+"C++ 'ya doğrusal cebir ve matris hesaplamalarını desteklemek için Eigen, "
+"Java'ya EJML eklenmiştir. Bunlar varsayılan olarak dahil edilmiştir ve "
+"bunları kullanmak için robot projenize herhangi bir şey eklemenize gerek "
+"yoktur."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:84
+msgid ""
+"Jackson has been added to Java for JSON support. C++ support already existed"
+" with json library in the wpi header root. These can be used with no need to"
+" add anything to your robot project."
+msgstr ""
+"Jackson, JSON desteği için Java'ya eklenmiştir. Wpi başlık kökünde json "
+"kitaplığında C++ desteği zaten vardı. Bunlar, robot projenize herhangi bir "
+"şey eklemenize gerek kalmadan kullanılabilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:85
+msgid ""
+"The location that maven artifacts are published has changed to: "
+"https://frcmaven.wpi.edu/artifactory/release/"
+msgstr ""
+"Maven yazılım eserlerinin yayınlandığı konum şu şekilde değiştirildi: "
+"https://frcmaven.wpi.edu/artifactory/release/"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:88
+msgid "Shuffleboard"
+msgstr "Shuffleboard"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:90
+msgid "Ignore whitespace and capitalization for remotely defined settings"
+msgstr ""
+"Uzaktan tanımlanan ayarlar için whitespace - tab,space v.b. ve büyük harf "
+"kullanımını göz ardı edin"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:91
+msgid "Components in grids can now have location specified remotely"
+msgstr ""
+"Izgaralardaki bileşenler artık uzaktan belirtilen konuma sahip olabilir"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:92
+msgid ""
+"Upper and lower bounds on graph X and Y axis can now be manually specified"
+msgstr ""
+"X ve Y eksenindeki üst ve alt sınırlar artık manuel olarak belirtilebilir"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:93
+msgid ""
+"Small numbers will properly be shown in number fields using scientific "
+"notation."
+msgstr ""
+"Küçük sayılar, bilimsel gösterim kullanılarak sayı alanlarında düzgün bir "
+"şekilde gösterilecektir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:94
+msgid "Allow widget titles to be hidden"
+msgstr "Widget başlıklarının gizlenmesine izin ver"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:95
+msgid "Added a documentation link in the about dropdown"
+msgstr "Hakkında açılır menüsüne bir belge bağlantısı eklendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:98
+msgid "FRC Raspberry Pi Image"
+msgstr "FRC Raspberry Pi İmajı"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:100
+msgid "Updated to work on Raspberry Pi 4"
+msgstr "Raspberry Pi 4 üzerinde çalışmak üzere güncellendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:101
+msgid "Updated to use Raspbian Buster"
+msgstr "Raspbian Buster kullanmak için güncellendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:102
+msgid "Added CPU temperature to system status screen"
+msgstr "Sistem durumu ekranına CPU sıcaklığı eklendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:105
+msgid "SmartDashboard"
+msgstr "SmartDashboard"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:107
+msgid "Properly parses special characters in MJPEG urls"
+msgstr "MJPEG URL'lerindeki özel karakterleri doğru şekilde algılar."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:110
+msgid "PathWeaver"
+msgstr "PathWeaver"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:112
+msgid "Updated to output WPILib splines"
+msgstr "WPILib şeritlerinin çıktısı için güncellendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:113
+msgid "Now shows an error alert when configuration screen is invalid"
+msgstr "Yapılandırma ekranı geçersiz olduğunda bir hata uyarısı gösteriyor"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:116
+msgid "OutlineViewer"
+msgstr "OutlineViewer"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:118
+msgid "Fixed the initial settings dialog (it was too small on some platforms)"
+msgstr ""
+"İlk ayarlar iletişim kutusu düzeltildi (bazı platformlarda çok küçüktü)"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:119
+msgid "Fixed array editor"
+msgstr "Dizi düzenleyici düzeltildi."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:122
+msgid "GradleRIO"
+msgstr "GradleRIO"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:124
+msgid "Fixed JRE slowdown when using ``concat()`` on Strings."
+msgstr "Dizelerde ``concat()`` kullanılırken JRE'nin yavaşlaması düzeltildi."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:125
+msgid "Fixed JRE slowdown on garbage collection."
+msgstr "Hata düzenlemede JRE'nin yavaşlaması düzeltildi."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:128
+msgid "CScore"
+msgstr "CScore"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:130
+msgid ""
+"Fixed cscore compatibility with OpenCV 4 (mainly useful for coprocessors)"
+msgstr ""
+"OpenCV 4 ile cscore uyumluluğu düzeltildi (çoğunlukla yardımcı işlemciler "
+"için kullanışlıdır)"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:131
+msgid "Fixed setting exposure on PS3eye cameras"
+msgstr "PS3eye kameralarda pozlama ayarı düzeltildi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:134
+msgid "WPILib All in One Installer"
+msgstr "WPILib Hepsi Bir Arada Yükleyici"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:136
+msgid ""
+"Use ``wpilib\\2020\\`` instead of ``frc2020\\``. This prevents cluttering "
+"the user’s home directory when installing alongside previous years’ "
+"installation."
+msgstr ""
+"``frc2020\\`` yerine ``wpilib\\2020\\`` kullanın. Bu, önceki yılların "
+"kurulumuyla birlikte kurulum yaparken kullanıcının ana dizininin dağınık "
+"olmasını önler."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:137
+msgid ""
+"Fixed an issue where shortcuts would get created for installed tools, even "
+"if it was unchecked."
+msgstr ""
+"İşaretlenmemiş olsa bile, kurulu araçlar için kısayolların oluşturulmasına "
+"neden olan bir sorun düzeltildi."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:138
+msgid ""
+"Installing for **All Users** will now create shortcuts for all users, "
+"instead of only the current one."
+msgstr ""
+"**All Users** için yükleme artık yalnızca mevcut kullanıcı yerine tüm "
+"kullanıcılar için kısayollar oluşturacaktır."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:139
+msgid "Update to latest Visual Studio Code and C++/Java extensions"
+msgstr "En son Visual Studio Code ve C++/Java uzantılarına güncelleyin"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:142
+msgid "Visual Studio Code Extension"
+msgstr "Visual Studio Code Extension - Uzantıları"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:144
+msgid "Added a 2019 to 2020 project importer"
+msgstr "2019 to 2020 proje içe aktarma eklendi"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:145
+msgid "Add a window for a simple way to grab all project information"
+msgstr "Tüm proje bilgilerini almanın basit bir yolu için bir pencere ekleyin"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:146
+msgid "Add built in way to open and display API docs"
+msgstr ""
+"API belgelerini açmak ve görüntülemek için yerleşik bir yöntem ekleyin"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:149
+msgid "RobotBuilder"
+msgstr "RobotBuilder"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:151
+msgid "Use individual includes instead of wpilib.h for C++"
+msgstr "C++ için wpilib.h yerine bağımsız içerme kullanın"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:152
+msgid "Add export of PWMSparkMax, PWMTalonFX, PWMVenom"
+msgstr "PWMSparkMax, PWMTalonFX, PWMVenom dışar aktarımı ekleyin"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:153
+msgid "Extensions are now stored in ~/wpilib/2020/Robotbuilder/extensions"
+msgstr "Uzantılar artık ~/wpilib/2020/Robotbuilder/extensions'ta saklanıyor"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:154
+msgid ""
+"GUI for defining Command Groups was removed for maintainability reasons. "
+"Commands can be added in VS Code."
+msgstr ""
+"Komut Gruplarını tanımlayan GUI, sürdürülebilirlik nedenleriyle kaldırıldı. "
+"VS Code'da komutlar eklenebilir."
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:157
+msgid "Robot Characterization"
+msgstr "Robot Characterization"
+
+#: ../../frc-docs/source/docs/2020-overview/new-for-2020.rst:159
+msgid "Introduced the robot characterization toolsuite."
+msgstr "Robot karakterizasyon araçları tanıtıldı."

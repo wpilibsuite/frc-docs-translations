@@ -5,19 +5,103 @@
 # 
 # Translators:
 # Pierre Cote <persini24@outlook.com>, 2020
-# Zara Moreno <Zara.moreno05@gmail.com>, 2020
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-09-06 16:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
-"Last-Translator: Zara Moreno <Zara.moreno05@gmail.com>, 2020\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:2
+msgid "Simple Subsystems"
+msgstr "Subsistemas simples"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Esta documentación describe el uso de la biblioteca heredada basada en "
+"comandos. Si bien esta documentación se ha conservado para ayudar a los "
+"equipos que aún no lo han hecho, se recomienda encarecidamente a los equipos"
+" que migren a la nueva biblioteca basada en comandos."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:6
+msgid ""
+"Subsystems are the parts of your robot that are independently controlled "
+"like collectors, shooters, drive bases, elevators, arms, wrists, grippers, "
+"etc. Each subsystem is coded as an instance of the Subsystem class. "
+"Subsystems should have methods that define the operation of the actuators "
+"and sensors but not more complex behavior that happens over time."
+msgstr ""
+"Los subsistemas son las partes de su robot que se controlan de forma "
+"independiente, como colectores, tiradores, bases de accionamiento, "
+"elevadores, brazos, muñecas, pinzas, etc. Cada subsistema se codifica como "
+"una instancia de la clase Subsistema. Los subsistemas deben tener métodos "
+"que definan el funcionamiento de los actuadores y sensores, pero no un "
+"comportamiento más complejo que ocurre con el tiempo."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:9
+msgid "Creating a Subsystem"
+msgstr "Crear un subsistema"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:103
+msgid ""
+"This is an example of a fairly straightforward subsystem that operates a "
+"claw on a robot. The claw mechanism has a single motor to open or close the "
+"claw and no sensors (not necessarily a good idea in practice, but works for "
+"the example). The idea is that the open and close operations are simply "
+"timed. There are three methods, open(), close(), and stop() that operate the"
+" claw motor. Notice that there is not specific code that actually checks if "
+"the claw is opened or closed. The open method gets the claw moving in the "
+"open direction and the close method gets the claw moving in the close "
+"direction. Use a command to control the timing of this operation to make "
+"sure that the claw opens and closes for a specific period of time."
+msgstr ""
+"Este es un ejemplo de un subsistema bastante sencillo que opera una garra en"
+" un robot. El mecanismo de garra tiene un solo motor para abrir o cerrar la "
+"garra y no tiene sensores (no necesariamente una buena idea en la práctica, "
+"pero funciona para el ejemplo). La idea es que la apertura y cierre las "
+"operaciones son simplemente cronometradas. Hay tres métodos, open(), close()"
+" y stop() que operan el motor de la garra. Observe que no hay un código "
+"específico que realmente verifique si la garra está abierta o cerrado El "
+"método abierto hace que la garra se mueva en la dirección de apertura y el "
+"método de cierre hace que la garra se mueva en la dirección cerrada. Use un "
+"comando para controlar el tiempo de esta operación para asegurarse de que la"
+" garra se abre y se cierra durante un período de tiempo específico."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:106
+msgid "Operating the Claw with a Command"
+msgstr "Operar la garra con un comando"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:164
+msgid ""
+"Commands provide the timing of the subsystems operations. Each command would"
+" do a different operation with the subsystem, the Claw in this case. The "
+"commands provides the timing for opening or closing. Here is an example of a"
+" simple Command that controls the opening of the claw.  Notice that a "
+"timeout is set for this command (0.9 seconds) to time the opening of the "
+"claw and a check for the time in the isFinished() method. You can find more "
+"details in the article about :doc:`using commands <../commands/creating-"
+"simple-commands>`."
+msgstr ""
+"Los comandos proveen el tiempo y sincronización de las operaciones de los "
+"subsistemas. Cada comando haría una operación diferente con los subsistemas,"
+" la garra en este caso. Los comandos proveerían el tiempo para abrirla o "
+"cerrarla. Aquí se muestra un ejemplo de un comando simple que controla abrir"
+" la garra. Note que un timeout se asigna a este comando (0.9 segundos) para "
+"abrir la garra y revisar el tiempo en el método isFinished(). Puede "
+"encontrar más detalles en el artículo :doc:`using commands <../commands"
+"/creating-simple-commands>`."

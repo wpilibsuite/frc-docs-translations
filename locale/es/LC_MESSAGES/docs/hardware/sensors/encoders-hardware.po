@@ -5,18 +5,269 @@
 # 
 # Translators:
 # Heriberto Gutiérrez <herigtzt04@yahoo.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-21 04:12+0000\n"
+"POT-Creation-Date: 2020-09-09 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Heriberto Gutiérrez <herigtzt04@yahoo.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:2
+msgid "Encoders - Hardware"
+msgstr "Codificadores - Hardware"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:4
+msgid ""
+"This section covers encoder hardware.  For a software guide to encoders, see"
+" :ref:`docs/software/sensors/encoders-software:Encoders - Software`."
+msgstr ""
+"Esta sección cubre el hardware de los codificadores. Para ver la guía de "
+"software de codificadores, ver :ref:`docs/software/sensores/codificadores-"
+"software:Codificadores - Software`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:6
+msgid ""
+"Quadrature encoders are by far the most common method for measuring "
+"rotational motion in FRC, and for good reason - they are cheap, easy-to-use,"
+" and reliable.  As they produce digital signals, they are less-prone to "
+"noise and interference than analog devices (such as :doc:`potentiometers "
+"<analog-potentiometers-hardware>`)."
+msgstr ""
+"Los codificadores de cuadratura son por lejos el método mas común de medida "
+"de movimiento rotativo en FRC, y por buena razón - son baratos, fáciles de "
+"usar y confiables. Cómo producen señales digitales, son menos propensos a "
+"hacer ruido e interferencia que los aparatos análogos (como "
+":doc:`potenciometros  <analog-potentiometers-hardware>)"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:8
+msgid ""
+"The term \"quadrature\" refers to the method by which the motion is "
+"measured/encoded.  A quadrature encoder produces two square-wave pulses that"
+" are 90-degrees out-of-phase from each other, as seen in the picture below:"
+msgstr ""
+"El término cuadratura se refiere al método por el cual el movimiento es "
+"medido/codificado. Un codificador de cuadratura produce 2 olas cuadradas, "
+"pulsos de 90 grados fuera de fase entre ellos como se ve en la imagen "
+"debajo:"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:12
+msgid ""
+"Thus, across both channels, there are four total \"edges\" per period (hence"
+" \"quad\").  The use of two out-of-phase pulses allows the direction of "
+"motion to be unambiguously determined from which pulse \"leads\" the other."
+msgstr ""
+"Así, a través de los 2 canales, son 4 bordes en total por periodo (por lo "
+"tanto “cuadrante”). El uso de 2 pulsos fuera de fase permite la dirección de"
+" movimiento para ser inequívocamente determinada por cuál pulso lidera a "
+"otro."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:14
+msgid ""
+"As each square wave pulse is a digital signal, quadrature encoders connect "
+"to the :doc:`digital input <digital-inputs-hardware>` ports on the RIO."
+msgstr ""
+"Como cada ola cuadrada pulsa en una señal digital, los codificadores de "
+"cuadratura se conectan en un puerto de entrada digital en la RIO <digital-"
+"inputs-hardware>."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:17
+msgid "Types of Encoders"
+msgstr "Tipos de codificadores"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:19
+msgid "There are three types of quadrature encoders typically used in FRC:"
+msgstr ""
+"Existen 3 tipos de codificadores de cuadratura usualmente usados en FRC:"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:21
+msgid "`Shafted encoders`_"
+msgstr "`Codificadores de eje`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:22
+msgid "`On-shaft encoders`_"
+msgstr "`Codificadores en el eje`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:23
+msgid "`Magnetic encoders`_"
+msgstr "`Codificadores magnéticos`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:25
+msgid ""
+"These encoders vary in how they are mounted to the mechanism in question.  "
+"In addition to these types of encoders, many FRC mechanisms come with "
+"quadrature encoders integrated into their design."
+msgstr ""
+"Estos codificadores varían en cómo son montados en el mecanismo en cuestión."
+" En adición a este tipo de codificadores, algunos mecanismos de FRC vienen "
+"con codificadores de cuadratura integrados en el diseño."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:28
+msgid "Shafted encoders"
+msgstr "Codificadores de eje"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:33
+msgid ""
+"Shafted encoders have a sealed body with a shaft protruding out of it that "
+"must be coupled rotationally to a mechanism.  This is often done with a "
+"helical beam coupling, or, more cheaply, with a length of flexible tubing "
+"(such as surgical tubing or pneumatic tubing), fastened with cable ties "
+"and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes "
+"have purpose-built mounting points for shafted encoders, such as the popular"
+" `Grayhill 63r <http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`__, "
+"pictured above."
+msgstr ""
+"Los codificadores de eje contiene un cuerpo sellado con un eje sobresaliendo"
+" de éste que puede debe ser acoplado de manera rotacional al mecanismo. Esto"
+" es a menudo hecho con una viga helicoidal acoplada o a bajo precio con la "
+"longitud de un tubo flexible (tales como entubado quirúrgico o entubado "
+"neumático) unido con cinchos y/o adhesivo en cada extremo. Algunas cajas de "
+"engranaje comerciales fuera de la plataforma de FRC tiene puntos de montaje "
+"construidos a propósito por el codificador de ejes, tales como el popular "
+"Grayhill 63r, mostrado arriba "
+"<http://www.grayhill.com/assets/1/7/Opt_Encoder_63R.pdf>`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:36
+msgid "On-shaft encoders"
+msgstr "Codificadores en eje"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:41
+msgid ""
+"On-shaft encoders (such as the `AMT103-V "
+"<https://www.cuidevices.com/product/motion/rotary-"
+"encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through "
+"FIRST Choice) couple to a shaft by fitting *around* it, forming a friction "
+"coupling between the shaft and a rotating hub inside the encoder."
+msgstr ""
+"Los codificadores en eje (tales como el AMT 103-V "
+"<https://www.cuidevices.com/product/motion/rotary-"
+"encoders/incremental/modular/amt10-v-kit/amt103-v>`__ disponibles a través "
+"de FIRST CHOICE) unido al eje por *rodeándolo*, formando un acoplamiento de "
+"fricción entre el eje y el cubo giratorio dentro del codificador."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:44
+msgid "Magnetic encoders"
+msgstr "Codificadores magnéticos"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:49
+msgid ""
+"Magnetic encoders require no mechanical coupling to the shaft at all; "
+"rather, they track the orientation of a magnet fixed to the shaft.  The "
+"`CTRE Mag Encoder <https://www.ctr-electronics.com/srx-magnetic-"
+"encoder.html>`__ is a popular option, with many FRC products offering built-"
+"in mounting options for it.  While the no-contact nature of magnetic "
+"encoders can be handy, they often require precise construction in order to "
+"ensure that the magnet is positioned correctly with respect to the encoder."
+msgstr ""
+"Los codificadores magnéticos requieren de acoplamiento mecánico del todo en "
+"el eje; sin embargo, rastrean la orientación del imán fijo en el eje. El "
+"`CTRE Codificador Mag <https://www.ctr-electronics.com/srx-magnetic-"
+"encoder.html>`__ es una muy popular opción, con varios productos de FRC "
+"ofreciendo opciones de montaje ya completas. Mientras el no contacto natural"
+" de los codificadores magnéticos puede ser práctico, a menudo requieren una "
+"construcción precisa para asegurar que el imán está bien posicionado con "
+"respecto al codificador."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:52
+msgid "Encoder Wiring"
+msgstr "Codificador alambrado"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:57
+msgid ""
+"Encoders that need two digital inputs, such as the `E4T OEM Miniature "
+"Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-"
+"optical-encoder-kit>`__, can be wired to two digital input ports. Other "
+"encoders, such as the on-shaft ones shown above, often need :doc:`an analog "
+"input port <analog-inputs-hardware>`. CTRE Magnetic encoders shown above can"
+" be wired to a :ref:`TalonSRX data port <docs/hardware/sensors/serial-"
+"buses:CAN Bus>` with a ribbon cable."
+msgstr ""
+"Los codificadores que necesitan 2 entradas digitales, tales como el E4T OEM "
+"Codificador Óptico en Miniatura <https://www.andymark.com/products/e4t-oem-"
+"miniature-optical-encoder-kit>`__,  puede ser cableado a 2 puertos de "
+"entradas digitales. Otros codificadores, tales como en eje ,mostrado "
+"anteriormente, necesita un puerto de entrada analógica <analog-inputs-"
+"hardware>. Los codificadores magnéticos CTRE mostrado anteriormente, puede "
+"ser cableado al puerto de datos Talón SRX :ref:`TalonSRX data port "
+"<docs/hardware/sensores/serial-buses:CAN Bus>` con un cable plano."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:60
+msgid "Encoder Resolution"
+msgstr "Resolución de codificadores"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:62
+msgid ""
+"The acronyms \"CPR\" and \"PPR\" are *both* used by varying sources to "
+"denote both edges per revolution *and* cycles per revolution, so the acronym"
+" alone is not enough to tell which is of the two is meant when by a given "
+"value.  When in doubt, consult the technical manual of your specific "
+"encoder."
+msgstr ""
+"Los acrónimos “CPR” y “PPR” son usados por fuentes variadas para denotar "
+"ambos bordes por revolución y ciclos por revolución, entonces el acrónimo "
+"solo no es suficiente para decir cuál de los 2 se entiende cuando se da un "
+"valor. Si hay dudas, consulta el manual técnico del codificador específico."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:64
+msgid ""
+"As encoders measure rotation with digital pulses, the accuracy of the "
+"measurement is limited by the number of pulses per given amount of "
+"rotational movement.  This is known as the \"resolution\" of the encoder, "
+"and is traditionally measured in one of two different ways: edges per "
+"revolution, or cycles per revolution."
+msgstr ""
+"Como codificadores de medida rotatoria con pulsos digitales, la exactitud de"
+" la medida es limitada por el número de pulsaciones por las cantidades dadas"
+" de los movimientos rotatorios. Esto es conocido como la “resolución” de los"
+" codificadores y es tradicionalmente medido en una de las 2 formas "
+"diferentes: bordes por revolución o ciclos por revolución."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:66
+msgid ""
+"*Edges per revolution* refers to the total number of transitions from high-"
+"to-low or low-to-high across both channels per revolution of the encoder "
+"shaft.  A full period contains *four* edges."
+msgstr ""
+"Los *bordes por revolución* se refieren al número total de transmisiones de "
+"alto a bajo o de bajo a alto a través de ambos canales por revolución del "
+"codificador de eje. Un periodo completo contiene *cuatro* bordes."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:68
+msgid ""
+"*Cycles per revolution* refers to the total number of *complete periods* of "
+"both channels per revolution of the encoder shaft.  A full period is *one* "
+"cycle."
+msgstr ""
+"*Ciclos por revolución* se refiere al número total del periodo completo de "
+"ambos canales por revolución del codificador por eje. Un periodo completo es"
+" igual a un ciclo."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:70
+msgid ""
+"Thus, a resolution stated in edges per revolution has a value four times "
+"that of the same resolution stated in cycles per revolution."
+msgstr ""
+"Así, una resolución expresada en bordes por revolución tiene un valor 4 "
+"veces mayor que la misma resolución expresada en ciclos por revolución."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:72
+msgid ""
+"In general, the resolution of your encoder in edges-per-revolution should be"
+" somewhat finer than your smallest acceptable error in positioning.  Thus, "
+"if you want to know the mechanism plus-or-minus one degree, you should have "
+"an encoder with a resolution somewhat higher than 360 edges per revolution."
+msgstr ""
+"En general, la resolución en su codificador en bordes por revolución debería"
+" ser un poco más fina que su más pequeño aceptable error en posicionamiento."
+" Así, si usted quiere conocer el mecanismo más o menos un grado, debería "
+"tener un codificador con resolución algo más alta que 360 bordes por "
+"revolución."

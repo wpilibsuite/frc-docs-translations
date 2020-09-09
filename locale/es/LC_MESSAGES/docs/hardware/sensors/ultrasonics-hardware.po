@@ -5,18 +5,160 @@
 # 
 # Translators:
 # Heriberto Gutiérrez <herigtzt04@yahoo.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-09-09 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Heriberto Gutiérrez <herigtzt04@yahoo.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:2
+msgid "Ultrasonics - Hardware"
+msgstr "Ultrasónicos - Hardware"
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:4
+msgid ""
+"This section covers ultrasonic sensor hardware.  For a software guide to "
+"ultrasonics, see :ref:`docs/software/sensors/ultrasonics-"
+"software:Ultrasonics - Software`."
+msgstr ""
+"Esta sección cubre el hardware del sensor ultrasónico. Para la guia del "
+"software de los ultrasonidos, ver :ref:`docs/software/sensors/ultrasonics-"
+"software:Ultrasonics - Software` ."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:6
+msgid ""
+"Ultrasonic rangefinders are some of the most common rangefinders used in "
+"FRC.  They are cheap, easy-to-use, and fairly reliable.  Ultrasonic "
+"rangefinders work by emitting a pulse of high-frequency sound, and then "
+"measuring how long it takes the echo to reach the sensor after bouncing off "
+"the target.  From the measured time and the speed of sound in air, it is "
+"possible to calculate the distance to the target."
+msgstr ""
+"Los telémetros ultrasónicos son los más comúnmente usados en FRC. Son "
+"baratos, fáciles de usar y muy confiables. Trabajan emitiendo pulsos de "
+"sonido de alta frecuencia, luego llegan a medir cuánto le toma al eco "
+"alcanzar el sensor luego de rebotar en el objetivo. El tiempo de medida y la"
+" velocidad del sonido en el aire, es posible calcular la distancia al "
+"objetivo."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:9
+msgid "Types of ultrasonics"
+msgstr "Tipos de ultrasónicos."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:11
+msgid ""
+"While all ultrasonic rangefinders operate on the \"ping-response\" principle"
+" outlined above, they may vary in the way they communicate with the roboRIO."
+msgstr ""
+"Mientras todos los telemetros ultrasónicos operan en “respuesta ping”, "
+"principio utilizado anteriormente, puede variar la forma en que se comunica "
+"con la roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:14
+msgid "Analog ultrasonics"
+msgstr "Ultrasónicos análogos"
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:18
+msgid ""
+"Analog ultrasonics output a simple analog voltage corresponding to the "
+"distance to the target, and thus connect to an :doc:`analog input <analog-"
+"inputs-hardware>` port.  The user will need to calibrate the voltage-to-"
+"distance conversion in :ref:`software <docs/software/sensors/ultrasonics-"
+"software:Ultrasonics - Software>`."
+msgstr ""
+"Estos ultrasónicos sacan un voltaje análogo simple que corresponde a la "
+"distancia del objetivo para así ser conectado a un puerto de entrada análoga"
+"<analog-inputs-hardware>. El usuario necesita calibrar la conversión de "
+"voltaje a distancia en :ref:`software <docs/software/sensors/ultrasonics-"
+"software:Ultrasonics - Software>`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:21
+msgid "Ping-response ultrasonics"
+msgstr "Ultrasónicos de respuesta ping"
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:25
+msgid ""
+"While, as mentioned, all ultrasonics are functionally ping-response devices,"
+" a \"ping response\" ultrasonic is one configured to connect to :ref:`both a"
+" digital input and a digital output <docs/hardware/sensors/digital-inputs-"
+"hardware:Connecting a sensor that uses multiple DIO ports>`.  The digital "
+"output is used to send the ping, while the input is used to read the "
+"response."
+msgstr ""
+"Mientras todos los ultrasónicos son dispositivos de respuesta ping "
+"funcionales, un ultrasónico de “respuesta ping“ está configurado para ser "
+"conectado en a una entrada y salida digital. Ver en <docs/hardware/sensors"
+"/digital-inputs-hardware:Connecting a sensor that uses multiple DIO ports>`."
+" La salida digital es usada para mandar el ping mientras que la entrada para"
+" mandar la respuesta."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:28
+msgid "Serial ultrasonics"
+msgstr "Ultrasónicos de serie"
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:32
+msgid ""
+"Some more-complicated ultrasonic sensors may communicate with the RIO over "
+"one of the :doc:`serial buses <serial-buses>`, such as RS-232."
+msgstr ""
+"Algunos sensores ultrasónicos más complicados pueden comunicarse con la RÍO "
+"sobre unos de los :doc:`serial buses <serial-buses>` , tales como RS-232."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:35
+msgid "Caveats"
+msgstr "Advertencias"
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:37
+msgid ""
+"Ultrasonic sensors are generally quite easy to use, however there are a few "
+"caveats.  As ultrasonics work by measuring the time between the pulse and "
+"its echo, they generally measure distance only to the *closest* target in "
+"their range.  Thus, it is extremely important to pick a the right sensor for"
+" the job.  The documentation for ultrasonic sensors will generally include a"
+" picture of the \"beam pattern\" that shows the shape of the \"window\" in "
+"which the ultrasonic will detect a target - pay close attention to this when"
+" selecting your sensor."
+msgstr ""
+"Los sensores ultrasónicos son generalmente muy fáciles de usar, sin embargo "
+"existen ciertas advertencias. Como los ultrasónicos trabajan midiendo el "
+"tiempo entre el pulso y el eco, estos suelen medir la distancia del objetivo"
+" más cercano en el rango. Por tal motivo es importante elegir el sensor "
+"adecuado para el trabajo. La documentación de los sensores ultrasónicos por "
+"lo general incluirá una foto del “patrón del haz” en el cual muestra en "
+"parte de “la ventana” en donde el ultrasonido detecta el objetivo - poner "
+"mucha atención a esto al tener que elegir un sensor."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:39
+msgid ""
+"Ultrasonic sensors are also susceptible to interference from other "
+"ultrasonic sensors.  In order to minimize this, the roboRIO can run ping-"
+"response ultrasonics in a \"round-robin\" fashion - however, in competition,"
+" there is no sure way to ensure that interference from sensors mounted on "
+"other robots does not occur."
+msgstr ""
+"Igualmente estos sensores son susceptibles a tener interferencia con otros "
+"sensores iguales. Para disminuir esto, la roboRIO puede correr un "
+"ultrasonido de respuesta ping en un \"round-robin\" - sin embargo en las "
+"competencias no existe un modo seguro de anular esta interferencia en los "
+"sensores montados en otros robots."
+
+#: ../../frc-docs/source/docs/hardware/sensors/ultrasonics-hardware.rst:41
+msgid ""
+"Finally, ultrasonics may not be able to detect objects that absorb sound "
+"waves, or that redirect them in strange ways.  Thus, they work best for "
+"detecting hard, flat objects."
+msgstr ""
+"Finalmente, estos sensores probablemente no lleguen a detectar objetos que "
+"absorben las ondas de sonido o que las lleguen a redireccionar a extrañas "
+"vías. Así los sensores trabajan mejor detectando arduamente objetos planos."

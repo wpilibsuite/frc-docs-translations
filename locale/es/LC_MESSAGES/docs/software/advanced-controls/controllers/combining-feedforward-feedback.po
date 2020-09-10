@@ -5,18 +5,133 @@
 # 
 # Translators:
 # Rodrigo Acosta <raar7366@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-09-10 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Rodrigo Acosta <raar7366@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:2
+msgid "Combining Feedforward and PID Control"
+msgstr "Combinando prealimentación y Control PID"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:4
+msgid "Todo"
+msgstr "Todo"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:4
+msgid "link to conceptual article when available"
+msgstr "enlace al artículo conceptual cuando esté disponible"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:6
+msgid ""
+"This article covers the in-code implementation of combined feedforward/PID "
+"control with WPILib's provided library classes.  Documentation describing "
+"the involved concepts in more detail is forthcoming."
+msgstr ""
+"Este artículo cubre la implementación en código del control PID / "
+"prealimentación combinado con las clases de biblioteca proporcionadas por "
+"WPILib. Próximamente se publicará documentación que describe los conceptos "
+"involucrados con más detalle."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:8
+msgid ""
+"Feedforward and feedback controllers can each be used in isolation, but are "
+"most effective when combined together.  Thankfully, combining these two "
+"control methods is *exceedingly* straightforward - one simply adds their "
+"outputs together."
+msgstr ""
+"Los controladores de realimentación y retroalimentación se pueden usar de "
+"forma aislada, pero son más efectivos cuando se combinan. Afortunadamente, "
+"combinar estos dos métodos de control es *extremadamente*  sencillo - uno "
+"simplemente suma sus resultados."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:11
+msgid "Using Feedforward with a PIDController"
+msgstr "Usando prealimentación con un PIDController"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:13
+msgid ""
+"Users familiar with the old ``PIDController`` class may notice the lack of "
+"any feedforward gain in the new controller.  As users are expected to use "
+"the controller output themselves, there is no longer any need for the "
+"``PIDController`` to implement feedforward - users may simply add any "
+"feedforward they like to the output of the controller before sending it to "
+"their motors:"
+msgstr ""
+"Los usuarios familiarizados con la antigua clase ``PIDController`` pueden "
+"notar la falta de cualquier ganancia de retroalimentación en el nuevo "
+"controlador. Como se espera que los usuarios utilicen la salida del "
+"controlador ellos mismos, ya no es necesario que el ``PIDController`` "
+"implemente el feedforward - los usuarios pueden simplemente agregar "
+"cualquier feedforward que deseen a la salida del controlador antes de "
+"enviarlo a sus motores:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:27
+msgid ""
+"Moreover, feedforward is a separate feature entirely from feedback, and thus"
+" has no reason to be handled in the same controller object, as this violates"
+" separation of concerns.  WPILib comes with several helper classes to "
+"compute accurate feedforward voltages for common FRC mechanisms - for more "
+"information, see :ref:`docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib`."
+msgstr ""
+"Además, la prealimentación es una característica completamente separada de "
+"la retroalimentación y, por lo tanto, no tiene ninguna razón para manejarse "
+"en el mismo objeto de controlador, ya que esto viola la separación de "
+"preocupaciones. WPILib viene con varias clases auxiliares para calcular "
+"voltajes de avance precisos para mecanismos FRC comunes; para obtener más "
+"información, consulte :ref:`docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:30
+msgid "Using Feedforward Components with PID"
+msgstr "Uso de componentes Feedforward con PID"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:32
+msgid ""
+"Since feedforward voltages are physically meaningful, it is best to use the "
+"``setVoltage()`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__)"
+" method when applying them to motors to compensate for \"voltage sag\" from "
+"the battery."
+msgstr ""
+"Dado que los voltajes de alimentación directa son físicamente "
+"significativos, es mejor utilizar el ``setVoltage()`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__)"
+" método al aplicarlos a motores para compensar la  \"caída del voltaje\" de "
+"la batería."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:34
+msgid ""
+"What might a more complete example of combined feedforward/PID control look "
+"like?  Consider the :ref:`drive example <docs/software/advanced-"
+"controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` "
+"from the feedforward page.  We can easily modify this to include feedback "
+"control (with a ``SimpleMotorFeedforward`` component):"
+msgstr ""
+"¿Cómo sería un ejemplo más completo de control PID / prealimentación "
+"combinado? Considera el :ref:`drive example <docs/software/advanced-"
+"controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` "
+"de la página de prealimentación. Podemos modificar esto fácilmente para "
+"incluir control de retroalimentación (con un componente "
+"``SimpleMotorFeedforward``):"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:57
+msgid "Other mechanism types can be handled similarly."
+msgstr "Otros tipos de mecanismos se pueden manejar de manera similar."

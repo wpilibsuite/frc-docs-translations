@@ -6,18 +6,182 @@
 # Translators:
 # Ranferi Lozano <ranferilozano@hotmail.com>, 2020
 # Rodrigo Acosta <raar7366@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-28 04:10+0000\n"
+"POT-Creation-Date: 2020-09-10 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Rodrigo Acosta <raar7366@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:2
+msgid "Tuning a PID Controller"
+msgstr "Ajuste de un Controlador PID"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:4
+msgid ""
+"These steps apply to position PID controllers. Velocity PID controllers "
+"typically don't need :math:`K_d`."
+msgstr ""
+"Estos pasos aplican para controladores PID de posición. Controladores PID de"
+" velocidad normalmente no requieren :math:`K_d`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:6
+msgid "Set :math:`K_p`, :math:`K_i`, and :math:`K_d` to zero."
+msgstr "Ajustar :math:`K_p`, :math:`K_i`, y :math:`K_d` a cero."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:7
+msgid ""
+"Increase :math:`K_p` until the :term:`output` starts to oscillate around the"
+" :term:`setpoint`."
+msgstr ""
+"Incrementar :math:`K_p` hasta que la :term:`salida` comience a oscilar entre"
+" el :term:`punto de referencia`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:8
+msgid ""
+"Increase :math:`K_d` as much as possible without introducing jittering in "
+"the :term:`system response`."
+msgstr ""
+"Aumentar :math:`K_d` tanto como sea posible sin introducir jittering en "
+":term:`system response`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:10
+msgid ""
+"Plot the position :term:`setpoint`, velocity :term:`setpoint`, measured "
+"position, and measured velocity. The velocity :term:`setpoint` can be "
+"obtained via numerical differentiation of the position :term:`setpoint` "
+"(i.e., :math:`v_{desired,k} = \\frac{r_k - r_{k-1}}{\\Delta t}`). Increase "
+":math:`K_p` until the position tracks well, then increase :math:`K_d` until "
+"the velocity tracks well."
+msgstr ""
+"Trace el :term:`punto de referencia` de la posición, el :term:`punto de "
+"referencia` de la velocidad, posición obtenida y velocidad obtenida. El "
+":term:`punto de referencia` de la velocidad puede ser obtenida mediante la "
+"diferenciación numérica del :term:`punto de referencia` de la posición "
+"(p.ej., :math:`v_{desired,k} = \\frac{r_k - r_{k-1}}{\\Delta t}`). Aumente "
+":math:`K_p` hasta que la posición siga bastante bien, luego incremente "
+":math:`K_d` hasta que la velocidad siga bastante bien."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:12
+msgid ""
+"If the :term:`controller` settles at an :term:`output` above or below the "
+":term:`setpoint`, one can increase :math:`K_i` such that the "
+":term:`controller` reaches the :term:`setpoint` in a reasonable amount of "
+"time. However, a steady-state feedforward is strongly preferred over "
+"integral control (especially for PID control)."
+msgstr ""
+"Si el :term:`controlador` se estabiliza en una :term:`salida` por encima o "
+"debajo del :term:`punto de referencia`, uno puede incrementar :math:`K_i` "
+"hasta que el controlador alcance el :term:`punto de referencia` en una "
+"cantidad de tiempo razonable. Sin embargo, un estado estable de compensación"
+" es fuertemente preferido sobre un control integral (especialmente para un "
+"control PID)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:14
+msgid ""
+"Adding an integral gain to the :term:`controller` is an incorrect way to "
+"eliminate :term:`steady-state error`. A better approach would be to tune it "
+"with an integrator added to the :term:`plant`, but this requires a "
+":term:`model`. Since we are doing output-based rather than model-based "
+"control, our only option is to add an integrator to the :term:`controller`."
+msgstr ""
+"Agregar una ganancia integral al :term:`controlador` es una manera "
+"incorrecta de eliminar el :term:`error de estado estable`. Un mejor enfoque "
+"sería ajustarlo con un integrador sumado a la :term:`planta`, pero esto "
+"requiere un :term:`modelo`. Como estamos haciendo un control basado en "
+"resultados en lugar de hacerlo basado en modelo, nuestra única opción es "
+"adicionar un integrador al :term:`controlador`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:16
+msgid ""
+"Beware that if :math:`K_i` is too large, integral windup can occur. "
+"Following a large change in :term:`setpoint`, the integral term can "
+"accumulate an error larger than the maximal :term:`control input`. As a "
+"result, the system overshoots and continues to increase until this "
+"accumulated error is unwound."
+msgstr ""
+"REVISAR\n"
+"Tener cuidado si :math:`K_i` es muy grande, puede ocurrir un windup integral. Después de un gran cambio en el :term:`punto de referencia`, el término integral puede acumular un error mayor que la máxima :term:`entrada de control`. Como resultado, el sistema se excede y continúa incrementando hasta que este error acumulativo es desenrollado."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:18
+msgid ""
+"The :ref:`frc-characterization toolsuite <docs/software/wpilib-tools/robot-"
+"characterization/index:Robot Characterization>` can be used to model your "
+"system and give accurate Proportional and Derivative values. This is "
+"preferred over tuning the controller yourself."
+msgstr ""
+"El :ref:`frc-characterization toolsuite <docs/software/wpilib-tools/robot-"
+"characterization/index:Robot Characterization>`  puede ser usado para "
+"modelar su sistema y proporcionar valores Proporcionales y Derivativos "
+"precisos. Esto es preferido en vez de ajustar el controlador usted mismo."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:21
+msgid "Actuator Saturation"
+msgstr "Saturación del Actuador"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:23
+msgid ""
+"A controller calculates its output based on the error between the "
+":term:`reference` and the current :term:`state`. :term:`Plant <plant>` in "
+"the real world don't have unlimited control authority available for the "
+"controller to apply. When the actuator limits are reached, the controller "
+"acts as if the gain has been temporarily reduced."
+msgstr ""
+"Un controlador calcula la salida en función del error entre el punto de "
+":term:`referencia` y el :term:`estado` actual. Una :term:`Planta <plant>` en"
+" el mundo real no tiene autoridad ilimitada de control disponible para que "
+"el controlador la aplique. Cuando los límites del actuador son alcanzados, "
+"el controlador actúa como si la ganancia se hubiera reducido temporalmente."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:25
+msgid ""
+"We'll try to explain this through a bit of math. Let's say we have a "
+"controller :math:`u = k(r - x)` where :math:`u` is the :term:`control "
+"effort`, :math:`k` is the gain, :math:`r` is the :term:`reference`, and "
+":math:`x` is the current state. Let :math:`u_{max}` be the limit of the "
+"actuator's output which is less than the uncapped value of :math:`u` and "
+":math:`k_{max}` be the associated maximum gain. We will now compare the "
+"capped and uncapped controllers for the same :term:`reference` and current "
+":term:`state`."
+msgstr ""
+"Trataremos de explicar esto a través de un poco de matemáticas. Digamos que "
+"tenemos un controlador :math:`u = k(r - x)` donde  :math:`u` es el "
+":term:`esfuerzo de control`,  :math:`k` es la ganancia,  :math:`r` es la "
+":term:`referencia` y  :math:`x` es el estado actual. Dejemos que "
+":math:`u_{max}` sea el límite de la salida del actuador la cual es menor que"
+" el valor sin límites de :math:`u` y :math:`k_{max}` sea la ganancia máxima."
+" Ahora compararemos el controlador limitado y el ilimitado para el mismo "
+"punto de :term:`referencia` y el :term:`estado` actual."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:27
+msgid "u_{max} &< u \\\\ k_{max}(r - x) &< k(r - x) \\\\ k_{max} &< k"
+msgstr "u_{max} &< u \\\\ k_{max}(r - x) &< k(r - x) \\\\ k_{max} &< k"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/tuning-pid-controller.rst:32
+msgid ""
+"For the inequality to hold, :math:`k_{max}` must be less than the original "
+"value for :math:`k`. This reduced gain is evident in a :term:`system "
+"response` when there is a linear change in state instead of an exponential "
+"one as it approaches the :term:`reference`. This is due to the "
+":term:`control effort` no longer following a decaying exponential plot. Once"
+" the :term:`system` is closer to the :term:`reference`, the controller will "
+"stop saturating and produce realistic controller values again."
+msgstr ""
+"Para que la desigualdad se mantenga, :math:`k_{max}` debe ser menor que el "
+"valor original de :math:`k`. Esta ganancia reducida es evidente en la "
+":term:`respuesta del sistema` cuando se tiene un cambio lineal en el estado "
+"en lugar de uno exponencial a medida que se va acercando a la "
+":term:`referencia`. Esto se debe a que el :term:`esfuerzo de control` ya no "
+"sigue a un gráfico de decaimiento exponencial. Cuando el :term:`sistema` "
+"está cerca de la :term:`referencia`, el controlador dejará de saturarse y "
+"producirá valores reales nuevamente."

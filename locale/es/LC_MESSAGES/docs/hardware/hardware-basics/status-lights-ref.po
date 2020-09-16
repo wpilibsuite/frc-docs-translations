@@ -7,15 +7,16 @@
 # Emiliano Vargas <joseemilianohernandezvargas04@gmail.com>, 2020
 # Luis Martinez <lamartinezr@miners.utep.edu>, 2020
 # Ranferi Lozano <ranferilozano@hotmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-13 04:10+0000\n"
+"POT-Creation-Date: 2020-09-16 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 01:59+0000\n"
-"Last-Translator: Ranferi Lozano <ranferilozano@hotmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,6 +35,12 @@ msgstr "PCM Estado del LED"
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:145
 msgid "No Fault Robot Enabled"
 msgstr "No se ha activado ningún fallo en el robot"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:150
+msgid "No CAN Comm or Solenoid Fault (Blinks Solenoid Index)"
+msgstr ""
+"No hay comunicación con el CAN o hay fallo del solenoide (parpadea índice de"
+" solenoides)"
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:150
 msgid "Compressor Fault"
@@ -125,6 +132,25 @@ msgstr ""
 "modo Brake/Coast se puede cambiar presionando el centro del triángulo y "
 "después soltando el botón. "
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:188
+msgid ""
+"At power-on, the RGB LEDs illuminate Blue, continually getting brighter. "
+"This lasts for approximately five seconds. During this time, the motor "
+"controller will not respond to an input signal, nor will the output drivers "
+"be enabled. After the initial power-on has completed, the device begins "
+"normal operation and what gets displayed on the RGB LEDs is a function of "
+"the input signal being applied, as well as the current fault state. Assuming"
+" that no faults have occurred, the RGB LEDs function as follows:"
+msgstr ""
+"Al encenderse, los LEDs RGB se iluminan de color de azul, cada vez más "
+"brillantes. Esto dura aproximadamente 5 segundos. Durante este tiempo, el "
+"controlador del motor no responderá a una entrada, ni se activarán los "
+"controladores de salida. Después de que se haya completado el encendido "
+"inicial, el dispositivo comienza a funcionar de manera normal y lo que se "
+"muestra en los LEDs RGB es una función de la señal de entrada que se aplica,"
+" así como el estado actual de la falla. Asumiendo que no se han producido "
+"fallos, los LEDs funcionan de la siguiente manera:"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:191
 msgid "PWM Signal Applied"
 msgstr "Señal PWM aplicada"
@@ -202,6 +228,14 @@ msgstr "No se ha detectado ninguna señal de entrada o error en el  Bus CAN"
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:212
 msgid ""
+"No CAN Control Frame received within the last 100ms or the last control "
+"frame specified modeNoDrive (Output Disabled)"
+msgstr ""
+"No se ha recibido ningún cuadro de control CAN en los últimos 100 ms o el "
+"último cuadro de control especificado modeNoDrive (Salida Desactivada)"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:212
+msgid ""
 "Alternate between top (LED1 and LED2) and bottom (LED3 and LED4) LEDs being "
 "illuminated Orange and Off."
 msgstr ""
@@ -209,12 +243,60 @@ msgstr ""
 "LED4) los LEDs se iluminan en naranja y apagados."
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:215
+msgid ""
+"Valid CAN Control Frame received within the last 100ms. The specified "
+"control mode resulted in a Neutral Duty Cycle being applied to Motor Output"
+msgstr ""
+"Cuadro de control CAN válido recibido en los últimos 100 ms. El modo de "
+"control especificado dio como resultado a que se aplicara un ciclo de "
+"trabajo neutro a la salida del motor. "
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:215
 msgid "All 4 LEDs illuminated solid Orange."
 msgstr "Los 4 LEDs se iluminan de naranja"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:218
+msgid ""
+"Valid CAN Control Frame received within the last 100ms. The specified "
+"control mode resulted in a Positive Duty Cycle being Motor Output"
+msgstr ""
+"Cuadro de control CAN válido recibido en los últimos 100 ms. El modo de "
+"control especificado dio como resultado un ciclo de trabajo positivo en la "
+"salida del motor."
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:221
+msgid ""
+"Valid CAN Control Frame received within the last 100ms. The specified "
+"control mode resulted in a Negative Duty Cycle being Motor Output"
+msgstr ""
+"Cuadro de control CAN válido recibido en los últimos 100 ms. El modo de "
+"control especificado dio como resultado un ciclo de trabajo negativo en la "
+"salida del motor."
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:226
 msgid "Fault Color Indicators"
 msgstr "Indicadores de color de la falla"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:228
+msgid ""
+"When a fault condition is detected, the output duty cycle is reduced to 0% "
+"and a fault is signaled. The output then remains disabled for 3 seconds. "
+"During this time the onboard LEDs (LED1-4) are used to indicate the fault "
+"condition. The fault condition is indicated by toggling between the top "
+"(LED1 and LED2) and bottom (LED3 and LED4) LEDs being illuminated Red and "
+"off. The color of the bottom LEDs depends on which faults are presently "
+"active. The table below describes how the color of the bottom LEDs maps to "
+"the presently active faults."
+msgstr ""
+"Cuando se detecta una condición de fallo, el ciclo de trabajo de salida se "
+"reduce al 0% y una falla es señalada. La salida entonces permanece "
+"desactivada durante 3 segundos. Durante este tiempo los LEDs (LED1-4) a "
+"bordo se usan para indicar la condición de fallo. La condición de fallo se "
+"indica alternando entre los LEDs superiores (LED1 y LED2) e inferiores (LED3"
+" y LED4) que se iluminan en rojo y se apagan. El color de los LEDs "
+"inferiores depende de qué fallas están actualmente activas. La siguiente "
+"tabla describe cómo el color de los LEDs inferiores corresponde con las "
+"fallas actualmente activas."
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:231
 msgid "Color"
@@ -250,6 +332,18 @@ msgstr "Cyan / Aqua"
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:241
 msgid "Break/Coast Mode"
 msgstr "Modo Break/Coast "
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:243
+msgid ""
+"When the center LED is off the device is operating in coast mode. When the "
+"center LED is illuminated the device is operating in brake mode. The "
+"Brake/Coast mode can be toggled by pressing down on the center of the "
+"triangle and then releasing the button."
+msgstr ""
+"Cuando el LED central está apagado el dispositivo está operando en el modo "
+"coast. Cuando el LED central está iluminado el dispositivo está operando en "
+"el modo brake. El modo Brake / Coast se puede cambiar presionando el centro "
+"del triángulo y después soltando el botón."
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:246
 msgid "Jaguar speed controllers"
@@ -749,6 +843,10 @@ msgstr "Interruptor de límite inverso o límite suave inverso"
 msgid "LED1 Only (closest to M+/V+)"
 msgstr "Solo LED1 (el más cercano a M+/V+)"
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:467
+msgid "In Boot-loader"
+msgstr "In Boot-loader"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:471
 msgid "Status LEDs During Calibration"
 msgstr "Estado de los LEDs durante la calibración"
@@ -772,6 +870,14 @@ msgstr "Calibración exitosa"
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:480
 msgid "Failed Calibration"
 msgstr "Calibración fallida"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:484
+msgid "B/C CAL Blink Codes"
+msgstr "B/C CAL Códigos de parpadeo"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:487
+msgid "B/C CAL Button Color"
+msgstr "B/C CAL Color del botón"
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/status-lights-ref.rst:489
 msgid "Brake Mode"

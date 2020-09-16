@@ -5,18 +5,90 @@
 # 
 # Translators:
 # Pierre Cote <persini24@outlook.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-09-16 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
-"Last-Translator: Pierre Cote <persini24@outlook.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:303
+msgid "Stabilizing heading"
+msgstr "Estabilizando el encabezado"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:305
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are not,"
+" the loop will be unstable and the robot will turn wildly."
+msgstr ""
+"Al igual que con todos los bucles de control, los usuarios deben tener "
+"cuidado de asegurarse de que la dirección del sensor y la dirección de giro "
+"sean consistentes. Si no lo están, el bucle será inestable y el robot se "
+"volverá loco."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:307
+msgid ""
+"Encoders can be used to ensure that a robot drives straight in a manner "
+"quite similar to :ref:`how it is done with a gyroscope "
+"<docs/software/sensors/gyros-software:Stabilizing heading while driving>`.  "
+"A simple implementation with a P loop is given below:"
+msgstr ""
+"Los codificadores se pueden usar para garantizar que un robot conduzca "
+"directamente de una manera bastante similar a  :ref:`como si fuera hecho con"
+" un giroscopio <docs/software/sensors/gyros-software:Stabilizing heading "
+"while driving>`.  A continuación, se muestra una implementación simple con "
+"un bucle P:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:386
+msgid ""
+"More-advanced implementations can use more-complicated control loops.  "
+"Closing a control loop on the encoder difference is roughly analogous to "
+"closing it on the heading error, and so PD loops are particularly effective."
+msgstr ""
+"Implementaciones más avanzadas pueden usar bucles de control más complejos. "
+"Cerrar un bucle de control en la diferencia del codificador es difícilmente "
+"análogo a cerrarlo en el error de rumbo, y por esto los bucles PD son "
+"particularmente efectivos."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:389
+msgid "PID Control"
+msgstr "Control PID"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:391
+msgid ""
+"Encoders are particularly useful as inputs to PID controllers (the heading "
+"stabilization example above is a simple P loop)."
+msgstr ""
+"Los codificadores son particularmente útiles como entradas para los "
+"controladores PID (el ejemplo de estabilización de rumbo anterior es un "
+"simple bucle P)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:394
+msgid "Homing a mechanism"
+msgstr "Dirigiendo un mecanismo"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:396
+msgid ""
+"Since encoders measure *relative* distance, it is often important to ensure "
+"that their \"zero-point\" is in the right place.  A typical way to do this "
+"is a \"homing routine,\" in which a mechanism is moved until it hits a known"
+" position (usually accomplished with a limit switch), or \"home,\" and then "
+"the encoder is reset.  The following code provides a basic example:"
+msgstr ""
+"Gracias a que los encoders pueden medir la distancia relativa, es importante"
+" asegurarse que el “punto cero” esta ubicado en el lugar correcto. Una forma"
+" típica de hacer esto es con una \"rutina de referencia\", en la cual se "
+"mueve un mecanismo hasta que alcanza una posición conocida (generalmente "
+"realizada con un interruptor de límite), o \"inicio\", y luego se reinicia "
+"el codificador. El siguiente código proporciona un ejemplo básico:"

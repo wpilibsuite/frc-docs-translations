@@ -3,16 +3,119 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-18 04:10+0000\n"
+"POT-Creation-Date: 2020-09-21 16:11+0000\n"
 "PO-Revision-Date: 2020-09-18 04:18+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:2
+msgid "Setting Robot Preferences"
+msgstr "Définition des préférences du robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:4
+msgid ""
+"The Robot Preferences (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Preferences.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Preferences.html>`__)"
+" class is used to store values in the flash memory on the roboRIO. The "
+"values might be for remembering preferences on the robot such as calibration"
+" settings for potentiometers, PID values, etc. that you would like to change"
+" without having to rebuild the program. The values can be viewed on the "
+"SmartDashboard and read and written by the robot program."
+msgstr ""
+"Les préférences du robot (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Preferences.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Preferences.html>`__)"
+" sont utilisées pour stocker des valeurs dans la mémoire flash du roboRIO. "
+"Les valeurs peuvent être pour mémoriser les préférences sur le robot, telles"
+" que les paramètres d'étalonnage des potentiomètres, les valeurs PID, etc. "
+"que vous souhaitez modifier sans avoir à reconstruire le programme. Les "
+"valeurs peuvent être visualisées sur le SmartDashboard et lues et écrites "
+"par le programme du robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:7
+msgid "Reading and Writing Preferences"
+msgstr "Préférences de lecture et d'écriture"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:43
+msgid ""
+"Often potentiometers are used to measure the angle of an arm or the position"
+" of some other shaft. In this case, the arm has two positions, "
+"``ArmUpPosition`` and ``ArmDownPosition``. Usually programmers create "
+"constants in the program that are the two pot values that correspond to the "
+"positions of the arm. When the potentiometer needs to be replaced or "
+"adjusted then the program needs to be edited and reloaded onto the robot."
+msgstr ""
+"Les potentiomètres sont souvent utilisés pour mesurer l'angle d'un bras ou "
+"la position d'un autre arbre. Dans ce cas, le bras a deux positions, "
+"``ArmUpPosition`` et ``ArmDownPosition``.  Habituellement, les programmeurs "
+"créent des constantes dans le programme qui sont les deux valeurs de "
+"potentiomètre correspondant aux positions du bras. Lorsque le potentiomètre "
+"doit être remplacé ou ajusté, le programme doit être édité et rechargé sur "
+"le robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:45
+msgid ""
+"Rather than having \"hard-coded\" values in the program the potentiometer "
+"settings can be stored in the preferences file and read by the program when "
+"it starts. In this case the values are read on program startup in the "
+"``robotInit()`` method. These values are automatically read from the "
+"preferences file stored in the roboRIO flash memory."
+msgstr ""
+"Plutôt que d'avoir des valeurs \"code fixe\" dans le programme, les réglages"
+" du potentiomètre peuvent être stockés dans le fichier de préférences et lus"
+" par le programme lorsqu'il démarre. Dans ce cas, les valeurs sont lues au "
+"démarrage du programme dans la méthode ``robotInit()``. Ces valeurs sont "
+"automatiquement lues à partir du fichier de préférences stocké dans la "
+"mémoire flash du roboRIO."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:48
+msgid "Displaying Preferences in SmartDashboard"
+msgstr "Affichage des préférences dans SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:52
+msgid ""
+"In the SmartDashboard, the Preferences display can be added to the display "
+"revealing the contents of the preferences file stored in the roboRIO flash "
+"memory."
+msgstr ""
+"Dans le SmartDashboard, l'écran Préférences peut être ajouté à l'écran "
+"révélant le contenu du fichier de préférences stocké dans la mémoire flash "
+"du roboRIO."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:55
+msgid "Viewing and Editing Preferences"
+msgstr "Affichage et modification des préférences"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/setting-robot-preferences-from-smartdashboard.rst:59
+msgid ""
+"The values are shown here with the default values from the code. This was "
+"read from the robot through the NetworkTables interface built into "
+"SmartDashboard. If the values need to be adjusted they can be edited here "
+"and saved. The next time the robot program starts up the new values will be "
+"loaded in the ``robotInit()`` method. Each subsequent time the robot starts,"
+" the new values will be retrieved without having to edit and "
+"recompile/reload the robot program."
+msgstr ""
+"Les valeurs sont affichées ici avec les valeurs par défaut du code. Cela a "
+"été lu à partir du robot via l'interface NetworkTables intégrée à "
+"SmartDashboard. Si les valeurs doivent être ajustées, elles peuvent être "
+"modifiées ici et enregistrées. Au prochain démarrage du programme du robot, "
+"les nouvelles valeurs seront chargées dans la méthode ``robotInit()``.  "
+"Chaque fois que le robot démarre, les nouvelles valeurs seront récupérées "
+"sans avoir à modifier et recompiler / recharger le programme du robot."

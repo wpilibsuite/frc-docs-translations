@@ -4,20 +4,476 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # Eray Özsaray <erayozsaray@gmail.com>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Ege Feyzioglu <egefeyzioglu@yahoo.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-20 04:11+0000\n"
+"POT-Creation-Date: 2020-09-22 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 01:59+0000\n"
-"Last-Translator: Eray Özsaray <erayozsaray@gmail.com>, 2020\n"
+"Last-Translator: Ege Feyzioglu <egefeyzioglu@yahoo.com>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:2
+msgid "How to Wire an FRC Robot"
+msgstr "FRC Robotu Nasıl Kablolanır"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:6
+msgid ""
+"This document details the wiring of a basic electronics board for bench-top "
+"testing."
+msgstr ""
+"Bu döküman deneme amaçlı kullanılabilecek basit bir elektronik panelinin "
+"kablolanmasını açıklar."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:8
+msgid ""
+"Some images shown in this section reflect the setup for a Robot Control "
+"System using Spark motor controllers. Wiring diagram and layout should be "
+"similar for other motor controllers. Where appropriate, a second set of "
+"images shows the wiring steps for using PWM controllers with integrated "
+"wires."
+msgstr ""
+"Bu kısımdaki bazı görüntüler Spark motor sürücü kullanılarak yapılan bir "
+"Robot Kontrol Sistemini göstermektedir.  Diğer motor sürücüler için de "
+"kabloların yerleşimi benzer olacaktır. Gerekli noktalarda PWM sürücülerin "
+"kendi kabloları ile kablolanmasını gösteren görüntüler dahildir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:11
+msgid "Overview"
+msgstr "Genel Bakış"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:16
+msgid "Diagram courtesy of FRC Team 3161 and Stefen Acepcion."
+msgstr "FRC Team 3161 ve Stefen Acepcion'un izniyle şema."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:19
+msgid "Gather Materials"
+msgstr "Malzemeleri Topla"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:21
+msgid "Locate the following control system components and tools"
+msgstr "Aşağıdaki kontrol sistemi bileşenlerini ve takımları edinin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:24
+msgid "Kit Materials:"
+msgstr "Kit Malzemeleri"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:26
+msgid "Power Distribution Panel (PDP)"
+msgstr "Power Distribution Panel (PDP)  - Güç Dağıtım Paneli"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:27
+msgid "roboRIO"
+msgstr "roboRIO"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:28
+msgid "Pneumatics Control Module (PCM)"
+msgstr "Pneumatics Control Module (PCM) - Pnömatik Kontrol Modülü"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:29
+msgid "Voltage Regulator Module (VRM)"
+msgstr "Voltage Regulator Module (VRM) - Voltaj Regülatör Modülü"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:30
+msgid "OpenMesh radio (with power cable and Ethernet cable)"
+msgstr "OpenMesh radio (Güç kablosu ve ethernet kablosuyla)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:31
+msgid "Robot Signal Light (RSL)"
+msgstr "Robot Signal Light (RSL) - Robot Sinyal Işığı"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:32
+msgid "4x Victor SPX or other speed controllers"
+msgstr "4x Victor SPX veya diğer hız kontrol cihazları"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:33
+msgid "2x PWM y-cables"
+msgstr "2 adet PWM y-kablosu"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:34
+msgid "120A Circuit breaker"
+msgstr "120A Circuit breaker - Devre Kesici"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:35
+msgid "4x 40A Circuit breaker"
+msgstr "4 adet 40A Sigorta - Circuit Breaker"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:36
+msgid "6 AWG Red wire"
+msgstr "6 AWG Kırmızı kablo"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:37
+msgid "10 AWG Red/Black wire"
+msgstr "10 AWG Kırmızı/Siyah Kablo"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:38
+msgid "18 AWG Red/Black wire"
+msgstr "18 AWG Kırmızı/Siyah Kablo"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:39
+msgid "22AWG yellow/green twisted CAN cable"
+msgstr "22AWG sarı/yeşil sargılı CAN kablosu"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:40
+msgid ""
+"16x 10-12 AWG  (yellow) ring terminals (8x quick disconnect pairs if using "
+"integrated wire controllers)"
+msgstr ""
+"16 adet 10-12 AWG (sarı) halka terminalleri (entegre kablolu kontrol "
+"cihazlar kullanılıyorsa 8 adet takıp çıkarılabilen kablo çifti)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:42
+msgid "2x Andersen SB50 battery connectors"
+msgstr "2xAndersen SB50 Batarya konnektörü"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:43
+msgid "6AWG Terminal lugs"
+msgstr "6AWG Kablo Pabuçları"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:44
+msgid "12V Battery"
+msgstr "12V Akü"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:45
+msgid "Red/Black Electrical tape"
+msgstr "Kırmızı/Siyah Elektrik Bantı"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:46
+msgid "Dual Lock material or fasteners"
+msgstr "Dual Lock malzemesi veya bağlantı elemanları"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:47
+msgid "Zip ties"
+msgstr "Plastik kelepçe"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:48
+msgid "1/4\" or 1/2\" plywood"
+msgstr "1/4 \"veya 1/2\" kontrplak"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:50
+msgid "Tools Required:"
+msgstr "Gerekli Aletler:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:52
+msgid "Wago Tool or small flat-head screwdriver"
+msgstr "Wago Aleti veya küçük düz başlı tornavida"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:53
+msgid "Very small flat head screwdriver (eyeglass repair size)"
+msgstr "Oldukça küçük düz tornavida (gözlük tamir boyutu)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:54
+msgid "Philips head screw driver"
+msgstr "Philips başlı tornavida"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:55
+msgid "5mm Hex key (3/16\" may work if metric is unavailable)"
+msgstr "5 mm Altıgen anahtar - alyan (metrik yoksa 3/16\"çalışabilir)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:56
+msgid "1/16\" Hex key"
+msgstr "1/16\" Alyan"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:57
+msgid "Wire cutters, strippers, and crimpers"
+msgstr "Yan keski, kablo soyucu ve kablo pabucu sıkıştırma pensesi"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:58
+msgid "7/16” box end wrench or nut driver"
+msgstr "7/16”kapalı uçlu anahtar veya somun anahtarı"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:61
+msgid "Create the Base for the Control System"
+msgstr "Kontrol Sistemini Monte Edecek Bir Yüzey Oluşturun"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:63
+msgid ""
+"For a benchtop test board, cut piece of 1/4” or 1/2\" material (wood or "
+"plastic) approximately 24\" x 16\". For a Robot Quick Build control board "
+"see the supporting documentation for the proper size board for the chosen "
+"chassis configuration."
+msgstr ""
+"Tezgah üstü test tahtası için, 1/4 ”veya 1/2\" malzemeden (ahşap veya "
+"plastik) yaklaşık 24 \"x 16\" bir parça kesin. Hızlı Robot Yapımı kontrol "
+"sistemi için seçtiğiniz şase konfigürasyonu ve tahta boyutuna göre yardımcı "
+"dökümana bakabilirsiniz."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:66
+msgid "Layout the Core Control System Components"
+msgstr "Temel Kontrol Sistemi Bileşenlerini Düzenleme"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:71
+msgid ""
+"Lay out the components on the board. An example layout is shown in the image"
+" above."
+msgstr ""
+"Bileşenleri tahtaya yerleştirin. Yukarıdaki resimde örnek bir düzen "
+"gösterilmektedir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:77
+msgid "Fasten Components"
+msgstr "Bileşenleri sabitleyin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:79
+msgid ""
+"Using the Dual Lock or hardware, fasten all components to the board. Note "
+"that in many FRC games robot-to-robot contact may be substantial and Dual "
+"Lock alone is unlikely to stand up as a fastener for many electronic "
+"components. Teams may wish to use nut and bolt fasteners or (as shown in the"
+" image above) cable ties, with or without Dual Lock to secure devices to the"
+" board."
+msgstr ""
+"Dual Lock™ bant veya plastik kelepçe kullanarak, tüm bileşenleri panele "
+"sabitleyin. Birçok FRC oyununda robot bağlantısının önemli olabileceğini ve"
+"  Dual Lock™ bantın tek başına birçok elektronik bileşeni tutamayacağını "
+"unutmayın. Bileşenlerini sabitlemek için vida ve somun veya (yukarıdaki "
+"resimde gösterildiği gibi) plastik kelepçe kullanmak isteyebilirsiniz."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:82
+msgid "Attach Battery Connector to PDP"
+msgstr "Akü konnektörünü PDP'ye Takın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:86
+msgid ""
+"Requires: Battery Connector, 6AWG terminal lugs, 1/16\" Allen, 5mm Allen, "
+"7/16\" Box end"
+msgstr ""
+"Malzemeler: Akü konnektörü, 6AWG kablo pabuçları, 1/16\" alyan, 5mm alyan, "
+"7/16\" kapalı uç anahtar "
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:90
+msgid "Attach terminal lugs to battery connector:"
+msgstr "Kablo pabuçlarını akü konnektörüne takın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:92
+msgid ""
+"Using a 1/16\" Allen wrench, remove the two screws securing the PDP terminal"
+" cover."
+msgstr ""
+"1/16 \"Alyen anahtarı kullanarak, PDP terminal kapağını sabitleyen iki "
+"vidayı çıkarın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:93
+msgid ""
+"Using a 5mm Allen wrench (3/16\" will work if metric is not available), "
+"remove the negative (-) bolt and washer from the PDP and fasten the negative"
+" terminal of the battery connector."
+msgstr ""
+"5 mm (veya 3/16\") alyan anahtar kullanarak, negatif (-) cıvatayı ve pulu "
+"PDP'den çıkarın ve akü konnektörünün negatif pabucunu sabitleyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:94
+msgid ""
+"Using a 7/16\" box end wrench, remove the nut on the \"Batt\" side of the "
+"main breaker and secure the positive terminal of the battery connector"
+msgstr ""
+"7/16 \"kapalı uçlu anahtar kullanarak, ana kesicinin\" Akü \"tarafındaki "
+"somunu çıkarın ve akü konektörünün pozitif terminalini sabitleyin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:97
+msgid "Wire Breaker to PDP"
+msgstr "Kesiciyi PDP'ye bağlayın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:102
+msgid ""
+"Requires: 6AWG red wire, 2x 6AWG terminal lugs, 5mm Allen, 7/16\" box end"
+msgstr ""
+"Gerekenler: 6AWG kırmızı kablo, 2x 6AWG terminal pabuçları, 5 mm Alyen, 7/16"
+" \"kapalı uclu anahtar"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:106
+msgid ""
+"Cut, strip, and crimp the terminal to the 2nd end of the red 6AWG wire."
+msgstr ""
+"Kırmızı 6AWG kablonun ikinci ucunu doğru uzunluğa kesin, soyun ve pabucu "
+"çakın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:107
+msgid ""
+"Using the 7/16\" box end, secure the wire to the \"AUX\" side of the 120A "
+"main breaker."
+msgstr ""
+"7/16\" kapalı uç anahtarı kullanarak kabloyu 120A devre kesicinin \"AUX\" "
+"tarafına sabitleyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:108
+msgid "Using the 5mm, secure the other end to the PDP positive terminal."
+msgstr ""
+"5 mm alyanı kullanarak, diğer ucu PDPnin pozitif konektörüne sabitleyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:111
+msgid "Insulate PDP connections"
+msgstr "PDP bağlantılarını yalıtın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:115
+msgid "Requires: 1/16\" Allen, Electrical tape"
+msgstr "Gerekenler: 1/16\" (1 ½ mm) Alyan, Elektrik bandı"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:117
+msgid ""
+"Using electrical tape, insulate the two connections to the 120A breaker. "
+"Also insulate any part of the PDP terminals which will be exposed when the "
+"cover is replaced. One method for insulating the main breaker connections is"
+" to wrap the stud and nut first, then use the tape wrapped around the "
+"terminal and wire to secure the tape."
+msgstr ""
+"Elektrik bandı kullanarak 120A devre kesiciye giden iki bağlantıyı yalıtın. "
+"Ayrıca PDP konektörlerinin kapağı kaldırıldığında açığa çıkacak herhangi bir"
+" parçasını da yalıtın. Devre kesici bağlantılarını yalıtmanın bir yolu, önce"
+" saplamayı ve somunu sarmak, ardından somunun etrafındaki bandı sabitlemek "
+"için pabuç ve telin etrafına sarılmış bandı kullanmaktır."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:121
+msgid "Wago connectors"
+msgstr "Wago konnektörleri"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:129
+msgid ""
+"The next step will involve using the Wago connectors on the PDP. To use the "
+"Wago connectors, insert a small flat blade screwdriver into the rectangular "
+"hole at a shallow angle then angle the screwdriver upwards as you continue "
+"to press in to actuate the lever, opening the terminal. Two sizes of Wago "
+"connector are found on the PDP:"
+msgstr ""
+"Sonraki adımda PDP'deki Wago konnektörlerini kullanmamız gerekecek. Wago "
+"konnektörlerini kullanmak için, dikdörtgen deliğe küçük bir düz uçlu "
+"tornavidayı, yere yaklaşık paralel olacak şekilde sokun ve ardından "
+"terminali açmak için tornavidayı hafifçe yukarı kaldırarak  kablo kıskacını "
+"açın. PDP'de iki boyutta Wago konektörü bulunur:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:131
+msgid "Small Wago connector: Accepts 10AWG-24AWG, strip 11-12mm (~7/16\")"
+msgstr ""
+"Küçük Wago konnektörü: 10AWG-24AWG boyutları arasında kabul eder, kablonuzu "
+"11-12 mm kadar bakır gözükecek şekilde soyun"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:132
+msgid "Large Wago connector: Accepts 6AWG-12AWG, strip 12-13mm(~1/2\")"
+msgstr ""
+"Büyük Wago konnektörü: 6AWG-12AWG boyutları arasında kablo kabul eder, "
+"kablonuzu 12-13 mm kadar bakır gözükecek şekilde soyun"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:134
+msgid ""
+"To maximize pullout force and minimize connection resistance wires should "
+"not be tinned (and ideally not twisted) before inserting into the Wago "
+"connector."
+msgstr ""
+"Kıstırma kuvvetini en üst düzeye çıkarmak ve bağlantı direncini en aza "
+"indirmek için, teller Wago konnektörüne takılmadan önce lehimlenmemeli (ve "
+"tercihen bükülmemelidir)."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:137
+msgid "Motor Controller Power"
+msgstr "Motor Sürücüyü Güce Bağlamak"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:143
+msgid ""
+"Requires: Wire Stripper, Small Flat Screwdriver, 10 or 12 AWG wire, 10 or 12"
+" AWG fork/ring terminals (terminal controllers only), wire crimper"
+msgstr ""
+"Malzemeler: Kablo soyucu, küçük düz tornavida, 10 veya 12 AWG kablo, 10 veya"
+" 12 AWG çatal / halka pabuçlar (sadece motor kontrolcüde vida tipi bağlantı "
+"varsa gerekli), kablo soyucu/pabuç çakma pensesi"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:145
+msgid "For Victor SPX or other wire integrated motor controllers (top image):"
+msgstr ""
+"Victor SPX veya diğer kendinden kablolu motor sürücüler için (üstteki "
+"resim):"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:147
+msgid ""
+"Cut and strip the red and black power input wires wire, then insert into one"
+" of the 40A (larger) Wago terminal pairs."
+msgstr ""
+"Kırmızı ve siyah güç giriş kablolarını kesin ve soyun, ardından 40A (büyük) "
+"Wago terminal çiftlerinden birine takın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:149
+msgid "For terminal motor controllers (bottom image):"
+msgstr "Vida tipi bağlantılı motor sürücüleri için (alttaki resim):"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:151
+msgid ""
+"Cut red and black wire to appropriate length to reach from one of the 40A "
+"(larger) Wago terminal pairs to the input side of the speed controller (with"
+" a little extra for the length that will be inserted into the terminals on "
+"each end)"
+msgstr ""
+"40A (büyük) Wago terminal çiftlerinden birinden kırmızı ve siyah kabloyu "
+"motor sürücünün giriş tarafına ulaşacak uzunlukta kesin (her iki uçtaki "
+"pabuçlara eklenecek uzunluk için biraz fazladan kablo bırakın)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:152
+msgid ""
+"Strip one end of each of the wires, then insert into the Wago terminals."
+msgstr "İki kablonun da bir ucunu soyun, Wago terminallerine yerleştirin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:153
+msgid "Strip the other end of each wire, and crimp on a ring or fork terminal"
+msgstr ""
+"İki kablonun da diğer ucunu soyun ve bir halka veya çatal pabuç ile "
+"sıkıştırın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:154
+msgid ""
+"Attach the terminal to the speed controller input terminals (red to +, black"
+" to -)"
+msgstr ""
+"Pabucları motor sürücü giriş terminallerine takın (kırmızı + 'ya, siyah "
+"-'ye)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:157
+msgid "Weidmuller Connectors"
+msgstr "Weidmuller Konnektörleri"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:166
+msgid ""
+"The correct strip length is ~5/16\" (8mm), not the 5/8\" mentioned in the "
+"video."
+msgstr ""
+"Doğru şerit uzunluğu videoda bahsedilenin aksine 5/8\" değil, 5/16\" (8mm) "
+"dir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:170
+msgid ""
+"Wire should be 16AWG to 24AWG (consult rules to verify required gauge for "
+"power wiring)"
+msgstr ""
+"Kablo 16AWG ila 24AWG olmalıdır (güç kabloları için gerekli ölçüyü "
+"doğrulamak için kurallara bakın)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:171
+msgid "Wire ends should be stripped approximately 5/16\""
+msgstr "Kablo uçları yaklaşık 5/16\" (8 mm) soyulmalıdır"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:172
+msgid ""
+"To insert or remove the wire, press down on the corresponding \"button\" to "
+"open the terminal"
+msgstr "Kabloyu takmak veya çıkarmak için, terminali açan düğmeye basın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:174
+msgid ""
+"After making the connection check to be sure that it is clean and secure:"
+msgstr ""
+"Bağlantıyı yaptıktan sonra temiz ve sağlam olduğundan emin olmak için:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/how-to-wire-a-robot.rst:176
+msgid ""
+"Verify that there are no \"whiskers\" outside the connector that may cause a"
+" short circuit"
+msgstr ""
+"Konnektörün dışında kısa devreye neden olabilecek hiçbir \"kedi bıyığı\" "
+"olmadığını doğrulayın"

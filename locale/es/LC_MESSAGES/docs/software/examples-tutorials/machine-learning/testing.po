@@ -5,18 +5,212 @@
 # 
 # Translators:
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-28 04:11+0000\n"
+"POT-Creation-Date: 2020-09-29 16:12+0000\n"
 "PO-Revision-Date: 2020-05-10 22:36+0000\n"
-"Last-Translator: Sofia Fernandez <sofiafdz.val@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:4
+msgid "Testing"
+msgstr "Probar"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:6
+msgid ""
+"These steps are for testing your model in SageMaker, before you load it onto"
+" your Raspberry Pi with Google Coral. It will use your model to annotate a "
+"video, and output the video for you to view. This is useful if you think you"
+" may have under or over fitted, or if you think you may not have enough data"
+" to develop a strong model."
+msgstr ""
+"Estos pasos son para probar su modelo en SageMaker, antes de cargarlo en su "
+"Raspberry Pi con Google Coral. Utilizará su modelo para hacer anotaciones en"
+" un video y generará el video para que lo vea. Esto es útil si cree que "
+"puede tener un ajuste insuficiente o excesivo, o si cree que es posible que "
+"no tenga suficientes datos para desarrollar un modelo sólido."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:8
+msgid "You can skip these steps if you would like to not test your model."
+msgstr "Puede omitir estos pasos si no desea probar su modelo."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:10
+msgid "Open ``Training jobs`` on the far left. Open the most recent job."
+msgstr ""
+"Abra ``Trabajos de formación`` en el extremo izquierdo. Abra el trabajo más "
+"reciente."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:11
+msgid ""
+"Once the model is done training (the job says ``Completed``), scroll to the "
+"bottom inside the training job. Copy on the link in the ``Output`` section, "
+"where it says ``S3 model artifact``."
+msgstr ""
+"Una vez que el modelo haya terminado de entrenarse (el trabajo dice "
+"``Completado``), desplácese hasta la parte inferior dentro del trabajo de "
+"entrenamiento. Copie el enlace en la sección ``Salida``, donde dice "
+"``Artefacto del modelo S3``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:16
+msgid ""
+"In SageMaker, click Start on the notebook you have already created if it "
+"does not say \"In Service\"."
+msgstr ""
+"En SageMaker, haga clic en Iniciar en el cuaderno que ya ha creado si no "
+"dice \"En servicio\"."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:17
+msgid "Once the notebook is \"In Service\", open it using the JupyterLab option."
+msgstr ""
+"Una vez que el cuaderno esté \"En servicio\", ábralo usando la opción "
+"JupyterLab."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:22
+msgid ""
+"Open the ``DetectCoral`` folder, and then ``testing.ipynb`` this time. These"
+" can be found on the left side of the screen. We've noticed that the first "
+"time a notebook is opened that it doesn't work correctly. To fix this, "
+"follow these steps:"
+msgstr ""
+"Abra la carpeta ``DetectCoral`` y luego ``testing.ipynb`` esta vez. Estos se"
+" pueden encontrar en el lado izquierdo de la pantalla. Hemos notado que la "
+"primera vez que se abre un notebook, no funciona correctamente. Para "
+"solucionar este problema, siga estos pasos:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:24
+msgid ""
+"Reload the tab. Dismiss the error. When prompted, select the kernel "
+"``conda_amazonei_tensorflow_p36``"
+msgstr ""
+"Vuelve a cargar la pestaña. Descarte el error. Cuando se le solicite, "
+"seleccione el kernel ``conda_amazonei_tensorflow_p36``"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:25
+msgid ""
+"If the tab does not finish reloading, close the tab, and open the notebook "
+"in JupyterLab once again. It will work this time."
+msgstr ""
+"Si la pestaña no termina de recargarse, cierre la pestaña y abra el notebook"
+" en JupyterLab una vez más. Funcionará esta vez."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:27
+msgid ""
+"In the code block, replace the string value of ``model`` with the link you "
+"copied in step 2."
+msgstr ""
+"En el bloque de código, reemplace el valor de string de ``modelo`` con el "
+"enlace que copió en el paso 2."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:28
+msgid ""
+"If you want to test your model with a different ``video`` than the current "
+"value of video, follow these steps:"
+msgstr ""
+"Si desea probar su modelo con un ``video`` diferente al valor actual del "
+"video, siga estos pasos:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:30
+msgid "Open AWS S3 by searching for the service in the ``Services`` dropdown."
+msgstr ""
+"Abra AWS S3 buscando el servicio en el menú desplegable ``Servicios``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:31
+msgid ""
+"Create a new bucket by giving it a unique name. Hit next until you reach the"
+" ``Set permissions`` page. On the third page, make sure it has public read "
+"permissions if multiple accounts will be using this data."
+msgstr ""
+"Cree un nuevo depósito dándole un nombre único. Presione Siguiente hasta "
+"llegar a la página ``Establecer permisos``. En la tercera página, asegúrese "
+"de que tenga permisos de lectura públicos si varias cuentas utilizarán estos"
+" datos."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:36
+msgid ""
+"Once you've made the bucket, go into the bucket, then ``Permissions`` --> "
+"``Access Control List``. Then change the public access to allow ``List "
+"objects`` and ``Read bucket permissions``."
+msgstr ""
+"Una vez que haya hecho el cubo, vaya al cubo, luego a ``Permisos`` --> "
+"``Lista de control de acceso``. Luego, cambie el acceso público para "
+"permitir ``Listar objetos`` y ``Leer permisos de depósito``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:41
+msgid ""
+"Upload the video file that you wish to use into the new S3 bucket. Click "
+"\"Add files\", then select the file, click \"Next\", then make sure it also "
+"has public read permissions if multiple accounts will be using this video. "
+"Keep the file properties \"Standard\", and then click \"Upload\"."
+msgstr ""
+"Sube el archivo de video que deseas usar en el nuevo bucket de S3. Haga clic"
+" en \"Agregar archivos\", luego seleccione el archivo, haga clic en "
+"\"Siguiente\", luego asegúrese de que también tenga permisos públicos de "
+"lectura si varias cuentas usarán este video. Mantenga las propiedades del "
+"archivo como \"Estándar\" y luego haga clic en \"Cargar\"."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:46
+msgid ""
+"Click on the video after it is done uploading, then click ``Copy Path``."
+msgstr ""
+"Haga clic en el video después de que haya terminado de cargarse, luego haga "
+"clic en ``Copiar ruta``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:51
+msgid ""
+"Go back into the notebook in SageMaker, and replace the string value of "
+"``model`` with the path you copied in the last step."
+msgstr ""
+"Vuelva al notebook en SageMaker y reemplace el valor de cadena de ``modelo``"
+" con la ruta que copió en el último paso."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:53
+msgid ""
+"Run the code block by clicking the play button at the top of your screen. "
+"This block may take several hours to finish annotating your video."
+msgstr ""
+"Ejecute el bloque de código haciendo clic en el botón de reproducción en la "
+"parte superior de su pantalla. Este bloque puede tardar varias horas en "
+"terminar de anotar su video."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:54
+msgid ""
+"Go back to SageMaker. Open ``Training jobs`` on the far left. Open the most "
+"recent training job."
+msgstr ""
+"Vuelve a SageMaker. Abra ``Trabajos de formación`` en el extremo izquierdo. "
+"Abra el trabajo de formación más reciente."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:55
+msgid ""
+"Once the model is done training (the job says ``Completed``), scroll to the "
+"bottom inside the training job. Click on the link in the Output section, "
+"where it says ``S3 model artifact``."
+msgstr ""
+"Una vez que el modelo haya terminado de formarse (el trabajo dice "
+"``Completado``), desplácese hasta la parte inferior dentro del trabajo de "
+"entrenamiento. Haga clic en el enlace en la sección Salida, donde dice "
+"``Artefacto del modelo S3``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:56
+msgid "Click on ``model.tar.gz``. Click on Download."
+msgstr "Haga clic en ``model.tar.gz``. Haga clic en Descargar."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/testing.rst:57
+msgid ""
+"Using an extraction tool (like 7Zip if you have Windows), extract the file "
+"you just downloaded. Then, view ``inference.avi`` that is inside of it. "
+"Frames should look like the one below."
+msgstr ""
+"Con una herramienta de extracción (como 7Zip si tiene Windows), extraiga el "
+"archivo que acaba de descargar. Luego, vea ``inference.avi`` que está dentro"
+" de él. Los marcos deben verse como el de abajo."

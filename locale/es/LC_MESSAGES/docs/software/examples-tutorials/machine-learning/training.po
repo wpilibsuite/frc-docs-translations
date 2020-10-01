@@ -5,18 +5,188 @@
 # 
 # Translators:
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-27 16:11+0000\n"
+"POT-Creation-Date: 2020-10-01 04:12+0000\n"
 "PO-Revision-Date: 2020-05-10 22:36+0000\n"
-"Last-Translator: Sofia Fernandez <sofiafdz.val@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:4
+msgid "Training"
+msgstr "Formación"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:6
+msgid ""
+"Training on AWS with the provided dataset should take about 2 hours and cost"
+" roughly $1. If you add more images or add new labeling classes the cost and"
+" time will be higher."
+msgstr ""
+"La capacitación en AWS con el conjunto de datos proporcionado debería tomar "
+"aproximadamente 2 horas y costar aproximadamente $ 1 USD. Si agrega más "
+"imágenes o agrega nuevas clases de etiquetado, el costo y el tiempo serán "
+"mayores."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:9
+msgid "Train with AWS"
+msgstr "Entrenar con AWS"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:11
+msgid ""
+"If you are not in the AWS Console main page, click the AWS logo in the top "
+"left if you're logged in, or go to the page through your `awseducate.com "
+"classroom <https://www.awseducate.com/>`__ if you are not logged in."
+msgstr ""
+"Si no se encuentra en la página principal de la consola de AWS, haga clic en"
+" el logotipo de AWS en la parte superior izquierda si ha iniciado sesión, o "
+"vaya a la página a través de su aula `awseducate.com "
+"<https://www.awseducate.com/>` __ si no ha iniciado sesión."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:12
+msgid ""
+"Search \"SageMaker\" in the \"Find Services\" field and create a new "
+"SageMaker notebook instance."
+msgstr ""
+"Busque \"SageMaker\" en el campo \"Find Services\" y cree una nueva "
+"instancia de cuaderno de SageMaker."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:23
+msgid "Notebook instance name: Give your notebook a name"
+msgstr "Nombre de la instancia de su notebook: asigne un nombre a su notebook"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:24
+msgid ""
+"IAM Role: Click Create a new role inside of the dropdown. Let it have access"
+" to Any S3 bucket."
+msgstr ""
+"Función de IAM: haga clic en Crear una nueva función dentro del menú "
+"desplegable. Deje que tenga acceso a Any S3 bucket."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:25
+msgid ""
+"Git repositories: open the panel, then click on where it says None. Click "
+"Clone a public Git repository to this notebook instance only, then paste in "
+"this link: https://github.com/wpilibsuite/DetectCoral.git"
+msgstr ""
+"Repositorios de Git: abra el panel, luego haga clic en donde dice Ninguno. "
+"Haga clic en Clonar un repositorio público de Git solo en esta instancia de "
+"notebook, luego pegue este enlace: "
+"https://github.com/wpilibsuite/DetectCoral.git"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:26
+msgid "Create the instance"
+msgstr "Crear la instancia"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:28
+msgid ""
+"After several minutes, the notebook will be \"In Service\". Open the "
+"notebook using the JupyterLab option."
+msgstr ""
+"Después de varios minutos, el portátil estará \"En servicio\". Abra el "
+"cuaderno con la opción JupyterLab."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:33
+msgid ""
+"Open the ``DetectCoral`` folder, and then ``training.ipynb``, found on the "
+"left side of the screen. We've noticed that the first time a notebook is "
+"opened that it doesn't work correctly. To fix this, follow these steps:"
+msgstr ""
+"Abra la carpeta ``DetectCoral`` y luego ``training.ipynb``, que se encuentra"
+" en el lado izquierdo de la pantalla. Hemos notado que la primera vez que se"
+" abre una notebook, no funciona correctamente. Para solucionar este "
+"problema, siga estos pasos:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:35
+msgid ""
+"Reload the tab. Dismiss the error. When prompted, select the kernel "
+"``conda_amazonei_tensorflow_p36``."
+msgstr ""
+"Vuelve a cargar la pestaña. Descarte el error. Cuando se le solicite, "
+"seleccione el kernel ``conda_amazonei_tensorflow_p36``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:36
+msgid ""
+"If the tab does not finish reloading, close the tab, and open the notebook "
+"in JupyterLab once again. It will work this time."
+msgstr ""
+"Si la pestaña no termina de recargarse, cierre la pestaña y abra la notebook"
+" en JupyterLab una vez más. Funcionará esta vez."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:38
+msgid ""
+"Replace ``estimator.fit(s3://wpilib)`` with ``estimator.fit(s3://<<your-"
+"bucket-name>>)``. If you could not access Supervisely in earlier steps, do "
+"not replace the bucket's name."
+msgstr ""
+"Reemplace ``estimator.fit(s3://wpilib)`` por ``estimator.fit(s3://<<your-"
+"bucket-name>>)``. Si no pudo acceder a Supervisar en los pasos anteriores, "
+"no reemplace el nombre del depósito."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:39
+msgid ""
+"Run the code block by clicking the play button at the top of your screen. "
+"This block could take up to two hours to train your model depending on the "
+"value of ``epochs`` in the ``hyperparameters`` dictionary."
+msgstr ""
+"Ejecute el bloque de código haciendo clic en el botón de reproducción en la "
+"parte superior de su pantalla. Este bloque puede tardar hasta dos horas en "
+"entrenar su modelo, dependiendo del valor de ``épocas`` en el diccionario de"
+" ``hiperparámetros``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:40
+msgid ""
+"Once the code block finishes running, the precision for each epoch is "
+"outputted. More information about what precision means can be found in "
+":ref:`Understanding Precision <docs/software/examples-tutorials/machine-"
+"learning/understanding-precision:Understanding Precision>`."
+msgstr ""
+"Una vez que el bloque de código termina de ejecutarse, se genera la "
+"precisión para cada época. Puede encontrar más información sobre lo que "
+"significa precisión en :ref: `Understanding Precision <docs/software"
+"/examples-tutorials/machine-learning/understanding-precision:Understanding "
+"Precision>`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:41
+msgid ""
+"Go back to SageMaker. Open ``Training jobs`` on the far left. Open the most "
+"recent training job."
+msgstr ""
+"Vuelve a SageMaker. Abra ``Trabajos de formación`` en el extremo izquierdo. "
+"Abra el trabajo de formación más reciente."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:42
+msgid ""
+"Once the model is done training (the job says ``Completed``), scroll to the "
+"bottom inside the training job. Click on the link in the ``Output`` section,"
+" where it says ``S3 model artifact``."
+msgstr ""
+"Una vez que el modelo haya terminado de entrenarse (el trabajo dice "
+"``Completado``), desplácese hasta la parte inferior dentro del trabajo de "
+"entrenamiento. Haga clic en el enlace en la sección ``Salida``, donde dice "
+"``Artefacto del modelo S3``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:43
+msgid "Click on ``model.tar.gz``. Click on ``Download``."
+msgstr "Haga clic en ``model.tar.gz``. Haga clic en ``Descargar``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/training.rst:44
+msgid ""
+"Stop the notebook now that the training job is completed. Do this by going "
+"back to the SageMaker tab, clicking on ``Notebook instances`` on the far "
+"left, selecting the instance that is no longer needed, and selecting "
+"``Actions -> Stop``."
+msgstr ""
+"Detenga el notebook ahora que se completó el trabajo de capacitación. Haga "
+"esto volviendo a la pestaña SageMaker, haciendo clic en ``Instancias de "
+"Notebook`` en el extremo izquierdo, seleccionando la instancia que ya no es "
+"necesaria y seleccionando ``Acciones -> Detener``."

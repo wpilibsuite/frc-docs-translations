@@ -1,6 +1,6 @@
 ![Update Translations](https://github.com/wpilibsuite/frc-docs-translations/workflows/Update%20Translations/badge.svg)
 
-# frc-docs-translations
+# frc-docs-translations - an amazing project
 This is the central repository that RTD points toward to view translations.
 
 ## Interested in Translating?

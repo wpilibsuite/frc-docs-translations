@@ -5,18 +5,143 @@
 # 
 # Translators:
 # Gibrán Verástegui <Gibranbasket1526@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-27 16:11+0000\n"
+"POT-Creation-Date: 2020-10-02 16:12+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: Gibrán Verástegui <Gibranbasket1526@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:2
+msgid "Waiting for Target to Respond - Recovering from bad loops"
+msgstr ""
+"Esperando que el objetivo responda - Recuperándose de bucles defectuosos"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:6
+msgid ""
+"If you download LabVIEW code which contains an unconstrained loop (a loop "
+"with no delay) it is possible to get the roboRIO into a state where LabVIEW "
+"is unable to connect to download new code. This document explains the "
+"process required to load new, fixed, code to recover from this state"
+".waiting-for-target-to-respond/"
+msgstr ""
+"Si descarga código de LabVIEW que contiene un bucle sin restricciones (un "
+"bucle sin demora), es posible que el roboRIO entre en un estado en el que "
+"LabVIEW no pueda conectarse para descargar código nuevo. Este documento "
+"explica el proceso necesario para cargar código nuevo y fijo para "
+"recuperarse de este estado.state.waiting-for-target-to-respond/"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:9
+msgid "The Symptom"
+msgstr "El síntoma"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:13
+msgid ""
+"The primary symptom of this issue is attempts to download new robot code "
+"hang at the \"Waiting for the target (Target) to respond\" step as shown "
+"above. Note that there are other possible causes of this symptom (such as "
+"switching from a C++\\Java program to LabVIEW program) but the steps "
+"described here should resolve most or all of them."
+msgstr ""
+"El síntoma principal de este problema es que los intentos de descargar un "
+"nuevo código de robot se cuelgan en el paso \"Esperando que el objetivo "
+"(Target) responda\" como se muestra arriba. Tenga en cuenta que hay otras "
+"causas posibles de este síntoma (como cambiar de un programa C++\\Java a un "
+"programa LabVIEW) pero los pasos descritos aquí deberían resolver la mayoría"
+" o todos ellos."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:15
+msgid "Click ``Cancel`` to close the download dialog."
+msgstr ""
+"Haga clic en ``Cancelar`` para cerrar el cuadro de diálogo de descarga."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:18
+msgid "The Problem"
+msgstr "El problema"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:22
+msgid ""
+"One common source of this issue is unconstrained loops in your LabVIEW code."
+" An unconstrained loop is a loop which does not contain any delay element "
+"(such as the one on the left). If you are unsure where to begin looking, "
+"Disabled.VI, Periodic Tasks.VI and Vision Processing.VI are the common "
+"locations for this type of loop. To fix the issue with the code, add a delay"
+" element such as the Wait (ms) VI from the Timing palette, found in the "
+"right loop."
+msgstr ""
+"Una fuente común de este problema son los bucles sin restricciones en su "
+"código de LabVIEW. Un bucle sin restricciones es un bucle que no contiene "
+"ningún elemento de retardo (como el de la izquierda). Si no está seguro de "
+"dónde empezar a buscar, Disabled.VI, Periodic Tasks.VI y Vision "
+"Processing.VI son las ubicaciones comunes para este tipo de bucle. Para "
+"solucionar el problema con el código, agregue un elemento de retardo como "
+"Wait (ms) VI de la paleta Timing, que se encuentra en el bucle derecho."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:25
+msgid "Set No App"
+msgstr "Establecer ninguna aplicación"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:29
+msgid ""
+"Using the roboRIO webserver (see the article on the :ref:`roboRIO Web "
+"Dashboard Startup Settings <docs/software/roborio-info/roborio-web-"
+"dashboard:Startup Settings>` for more details). **Check** the box to "
+"\"Disable RT Startup App\"."
+msgstr ""
+"Usando el servidor web roboRIO (consulte el artículo sobre :ref:`roboRIO Web"
+" Dashboard Startup Settings <docs/software/roborio-info/roborio-web-"
+"dashboard:Startup Settings>` para obtener más detalles) **Marque** la "
+"casilla para \"Desactivar la aplicación de inicio RT\"."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:32
+msgid "Reboot"
+msgstr "Reiniciar"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:34
+msgid ""
+"Reboot the roboRIO, either using the Reset button on the device or by click "
+"Restart in the top right corner of the webpage."
+msgstr ""
+"Reinicia el roboRIO, ya sea usando el botón Restablecer en el dispositivo o "
+"haciendo clic en Reiniciar en la esquina superior derecha de la página web."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:37
+msgid "Clear No App"
+msgstr "Borrar ninguna aplicación"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:41
+msgid ""
+"Using the roboRIO webserver (see the article on the :ref:`roboRIO Web "
+"Dashboard Startup Settings <docs/software/roborio-info/roborio-web-"
+"dashboard:Startup Settings>` for more details). **Uncheck** the box to "
+"\"Disable RT Startup App\"."
+msgstr ""
+"Usando el servidor web roboRIO (consulte el artículo sobre: :ref:`roboRIO "
+"Web Dashboard Startup Settings <docs/software/roborio-info/roborio-web-"
+"dashboard:Startup Settings>` para obtener más detalles) **Desmarque** la "
+"casilla para \"Desactivar la aplicación de inicio RT\"."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:44
+msgid "Load LabVIEW Code"
+msgstr "Cargar código de LabVIEW"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:46
+msgid ""
+"Load LabVIEW code (either using the Run button or Run as Startup). Make sure"
+" to set LabVIEW code to Run as Startup before rebooting the roboRIO or you "
+"will need to follow the instructions above again."
+msgstr ""
+"Cargue el código de LabVIEW (ya sea usando el botón Ejecutar o Ejecutar como"
+" inicio). Asegúrese de configurar el código de LabVIEW en Ejecutar como "
+"inicio antes de reiniciar el roboRIO o deberá seguir las instrucciones "
+"anteriores nuevamente."

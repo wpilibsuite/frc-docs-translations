@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-02 16:12+0000\n"
+"POT-Creation-Date: 2020-10-03 04:11+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -21,3 +21,122 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:2
+msgid "Step 2: Entering the Calculated Constants"
+msgstr "Paso 2: Introducción de las constantes calculadas"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:4
+msgid ""
+"In C++, it is important that the feedforward constants be entered as the "
+"correct unit type.  For more information on C++ units, see "
+":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"En C++, es importante que las constantes feedforward se ingresen como el "
+"tipo de unidad correcto. Para obtener más información sobre las unidades "
+"C++, consulte :ref:`docs/software/basic-programming/cpp-units:The C++ Units "
+"Library`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:6
+msgid ""
+"Now that we have our characterization constants, it is time to place them in"
+" our code.  The recommended place for this is the ``Constants`` file of the "
+":ref:`standard command-based project structure <docs/software/commandbased"
+"/structuring-command-based-project:Constants>`."
+msgstr ""
+"Ahora que tenemos nuestras constantes de caracterización, es hora de "
+"colocarlas en nuestro código. El lugar recomendado para esto es el archivo "
+"``Constantes`` de la :ref:`estructura estándar de proyectos basada en "
+"comandos <docs/software/commandbased/structuring-command-based-"
+"project:Constants>`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:8
+msgid ""
+"The relevant parts of the constants file from the RamseteCommand Example "
+"Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below."
+msgstr ""
+"Las partes relevantes del archivo de constantes del proyecto de ejemplo "
+"RamseteCommand (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" se puede ver a continuación."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:11
+msgid "Feedforward/Feedback Gains"
+msgstr "Ganancias de Feedforward/Feedback"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:13
+msgid ""
+"Firstly, we must enter the feedforward and feedback gains which we obtained "
+"from the characterization tool."
+msgstr ""
+"En primer lugar, debemos ingresar las ganancias de feedforward y feedback "
+"que obtuvimos de la herramienta de caracterización."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:15
+msgid ""
+"Feedforward and feedback gains do *not*, in general, transfer across robots."
+"  Do *not* use the gains from this tutorial for your own robot."
+msgstr ""
+"Las ganancias de feedforward y feedback, en general, *no* se transfieren "
+"entre robots. *No* use las ganancias de este tutorial para su propio robot."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:36
+msgid "DifferentialDriveKinematics"
+msgstr "DifferentialDriveKinematics"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:38
+msgid ""
+"Additionally, we must create an instance of the "
+"``DifferentialDriveKinematics`` class, which allows us to use the trackwidth"
+" (i.e. horizontal distance between the wheels) of the robot to convert from "
+"chassis speeds to wheel speeds.  As elsewhere, we keep our units in meters."
+msgstr ""
+"Además, debemos crear una instancia de la clase "
+"``DifferentialDriveKinematics``, que nos permite usar el ancho de vía (es "
+"decir, la distancia horizontal entre las ruedas) del robot para convertir "
+"las velocidades del chasis a las velocidades de las ruedas. Como en otros "
+"lugares, mantenemos nuestras unidades en metros."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:59
+msgid "Max Trajectory Velocity/Acceleration"
+msgstr "Velocidad máxima de la trayectoria/Aceleración"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:61
+msgid ""
+"We must also decide on a nominal max acceleration and max velocity for the "
+"robot during path-following.  The maximum velocity value should be set "
+"somewhat below the nominal free-speed of the robot.  Due to the later use of"
+" the ``DifferentialDriveVoltageConstraint``, the maximum acceleration value "
+"is not extremely crucial."
+msgstr ""
+"También debemos decidir sobre una aceleración máxima nominal y una velocidad"
+" máxima para el robot durante el seguimiento de la trayectoria. El valor de "
+"velocidad máxima debe establecerse algo por debajo de la velocidad libre "
+"nominal del robot. Debido al uso posterior del "
+"``DifferentialDriveVoltageConstraint``, el valor máximo de aceleración no es"
+" extremadamente crucial."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:82
+msgid "Ramsete Parameters"
+msgstr "Parámetros de Ramsete"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:84
+msgid ""
+"Finally, we must include a pair of parameters for the RAMSETE controller.  "
+"The values shown below should work well for most robots, provided distances "
+"have been correctly measured in meters - for more information on tuning "
+"these values (if it is required), see :ref:`docs/software/advanced-"
+"controls/trajectories/ramsete:Constructing the Ramsete Controller Object`."
+msgstr ""
+"Finalmente, debemos incluir un par de parámetros para el controlador "
+"RAMSETE. Los valores que se muestran a continuación deberían funcionar bien "
+"para la mayoría de los robots, siempre que las distancias se hayan medido "
+"correctamente en metros; para obtener más información sobre cómo ajustar "
+"estos valores (si es necesario), consulte :ref:`docs/software/advanced-"
+"controls/trajectories/ramsete:Constructing the Ramsete Controller Object`."

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-04 04:11+0000\n"
+"POT-Creation-Date: 2020-10-04 16:12+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -50,9 +50,73 @@ msgstr ""
 "Une entrée pour :term:`Usine` (d'où le nom) qui peut être utilisée pour "
 "changer :term:`l'état` de :term:`Usine<plant>`."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:12
+msgid "Ex. A flywheel will have 1 input: the voltage of the motor driving it."
+msgstr ""
+"Ex. Un volant d'inertie aura 1 entrée: la tension du moteur qui l'entraîne."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:13
+msgid ""
+"Ex. A drivetrain might have 2 inputs: the voltages of the left and right "
+"motors."
+msgstr ""
+"Ex. Un groupe motopropulseur peut avoir 2 entrées: les tensions des moteurs "
+"gauche et droit."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:15
+msgid ""
+"Inputs are often represented by the variable :math:`\\mathbf{u}`, a column "
+"vector with one entry per :term:`input` to the :term:`system`."
+msgstr ""
+"Les entrées sont souvent représentées par la variable :math:`\\mathbf{u}`, "
+"un vecteur de colonne avec une entrée par:term:`Entrées` au :term:`Système`."
+
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:16
 msgid "output"
 msgstr "Sortie"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:18
+msgid ""
+"Measurements from sensors. There can be more measurements then states. These"
+" outputs are used in the \"correct\" step of Kalman Filters."
+msgstr ""
+"Mesures des capteurs. Il peut y avoir plus de mesures que d'états. Ces "
+"sorties sont utilisées dans l'étape «correcte» des filtres de Kalman."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:20
+msgid ""
+"Ex. A flywheel might have 1 :term:`output` from a encoder that measures it's"
+" velocity."
+msgstr ""
+"Ex. Un volant peut avoir une :term:`sortie` d'un encodeur qui mesure sa "
+"vitesse."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:21
+msgid ""
+"Ex. A drivetrain might use solvePNP and V-SLAM to find it's x/y/heading "
+"position on the field. It's fine that there are 6 measurements (solvePNP "
+"x/y/heading and V-SLAM x/y/heading) and 3 states (robot x/y/heading)."
+msgstr ""
+"Ex. Un groupe motopropulseur peut utiliser solvePNP et V-SLAM pour trouver "
+"sa position x / y / cap sur le terrain. C'est bien qu'il y ait 6 mesures "
+"(résoudrePNP x / y / cap et V-SLAM x / y / cap) et 3 états (robot x / y / "
+"cap)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:23
+msgid ""
+"Outputs of a :term:`system` are often represented using the variable "
+":math:`\\mathbf{y}`, a column vector with one entry per :term:`output` (or "
+"thing we can measure). For example, if our :term:`system` had states for "
+"velocity and acceleration but our sensor could only measure velocity, our, "
+"our :term:`output` vector would only include the :term:`system`\\'s "
+"velocity."
+msgstr ""
+"Les sorties d'un :term:`Système` sont souvent représentées en utilisant la "
+"variable :math:`\\mathbf{y}`, un vecteur de colonne avec une entrée par "
+":term:`Sortie` (ou chose que nous pouvons mesurer). Par exemple, si notre "
+":term:`Système` avait des états pour la vitesse et l'accélération mais que "
+"notre capteur ne pouvait mesurer que la vitesse, notre vecteur "
+":term:`Sortie` inclurait seulement la vitesse du :term:`Système`."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:24
 msgid "process variable"
@@ -87,6 +151,46 @@ msgstr ":term:`Référence<reference>` moins la :term:`Sortie` ou :term:`état`.
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:33
 msgid "state"
 msgstr "état"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:35
+msgid ""
+"A characteristic of a :term:`system` (e.g., velocity) that can be used to "
+"determine the :term:`system's <system>` future behavior. In state-space "
+"notation, the state of a system is written as a column vector describing "
+"it's position in state-space."
+msgstr ""
+"Une caractéristique d'un :term:`Système` (par exemple, la vitesse) qui peut "
+"être utilisée pour déterminer le comportement futur du :term:`Système`. Dans"
+" la notation d'espace d'états, l'état d'un système est écrit sous la forme "
+"d'un vecteur de colonne décrivant sa position dans l'espace d'états."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:37
+msgid ""
+"Ex. A drivetrain system might have the states :math:`\\begin{bmatrix}x \\\\ "
+"y \\\\ \\theta \\end{bmatrix}` to describe it's position on the field."
+msgstr ""
+"Ex. Un système de transmission peut avoir les états :math:`\\ begin "
+"{bmatrix} x \\\\ y \\\\ \\ theta \\ end {bmatrix}` pour décrire sa position "
+"sur le terrain."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:38
+msgid ""
+"Ex. An elevator system might have the states :math:`\\begin{bmatrix} "
+"\\text{position} \\\\ \\text{velocity} \\end{bmatrix}` to describe its "
+"current height and velocity."
+msgstr ""
+"Ex. Un système d'ascenseur peut avoir les états :math:`\\ begin {bmatrix} \\"
+" text {position} \\\\ \\ text {vitesse} \\ end {bmatrix}` pour décrire sa "
+"hauteur et sa vitesse actuelles."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:40
+msgid ""
+"A :term:`system's <system>` state is often represented by the variable "
+":math:`\\mathbf{x}`, a column vector with one entry per :term:`state`."
+msgstr ""
+"L'état du :term:`Système`  est souvent représenté par la variable "
+":math:`\\mathbf{x}`, un vecteur de colonne avec une entrée par "
+":terme:`état`."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:41
 msgid "system"
@@ -131,6 +235,38 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:50
 msgid "observer"
 msgstr "Observateur"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:52
+msgid ""
+"In control theory, a system that provides an estimate of the internal "
+":term:`state` of a given real :term:`system` from measurements of the "
+":term:`input` and :term:`output` of the real :term:`system`. WPILib includes"
+" a Kalman Filter class for observing linear systems, and "
+"ExtendedKalmanFilter and UnscentedKalmanFilter classes for nonlinear "
+"systems."
+msgstr ""
+"Dans la théorie du contrôle, un système qui fournit une estimation de l' "
+":term:`état` interne d'un :term:`système` réel à partir de mesures des "
+":term:`Entrées` et de la :term:`Sortie` du :term:`système`. WPILib inclut "
+"une classe de filtre Kalman pour l'observation des systèmes linéaires, et "
+"les classes ExtendedKalmanFilter et UnscentedKalmanFilter pour les systèmes "
+"non linéaires."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:53
+msgid "moment of inertia"
+msgstr "moment d'inertie"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:55
+msgid ""
+"A measurement of a rotating body's resistance to angular acceleration or "
+"deceleration. Angular moment of inertia can be thought of as angular mass. "
+"See also: `Moment of inertia "
+"<https://en.wikipedia.org/wiki/Moment_of_inertia>`__."
+msgstr ""
+"Une mesure de la résistance d'un corps en rotation à l'accélération ou à la "
+"décélération angulaire. Le moment d'inertie angulaire peut être considéré "
+"comme une masse angulaire. Voir aussi: `Moment d'inertie "
+"<https://en.wikipedia.org/wiki/Moment_of_inertia>`__."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/controls-glossary.rst:56
 msgid "control input"

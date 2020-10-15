@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 18:00+0000\n"
+"POT-Creation-Date: 2020-10-15 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -131,6 +131,14 @@ msgstr "Paramètre P, ou Proportionnel"
 msgid "The *Proportional* term drives the position error to zero."
 msgstr "Le terme *proportionnel* force l'erreur de position vers zéro."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:24
+msgid ""
+"u(t) = K_p e(t)\n"
+"\n"
+msgstr ""
+"u(t) = K_p e(t)\n"
+"\n"
+
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:26
 msgid ""
 "where :math:`K_p` is the proportional gain and :math:`e(t)` is the error at "
@@ -168,6 +176,16 @@ msgstr ""
 "d'équilibre comme le :term:`Point de consigne` de notre contrôleur à "
 "rétroaction, les équations correspondent terme pour terme."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:36
+msgid ""
+"F &= k(r - x) \\\\\n"
+"u(t) &= K_p e(t) = K_p(r(t) - y(t))\n"
+"\n"
+msgstr ""
+"F &= k(r - x) \\\\\n"
+"u(t) &= K_p e(t) = K_p(r(t) - y(t))\n"
+"\n"
+
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:40
 msgid ""
 "so the \"force\" with which the proportional controller pulls the "
@@ -185,6 +203,14 @@ msgstr "Paramètre D, ou dérivée"
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:45
 msgid "The *Derivative* term drives the velocity error to zero."
 msgstr "Le terme *dérivée* ramène l'erreur de vitesse vers zéro."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:47
+msgid ""
+"u(t) = K_p e(t) + K_d \\frac{de}{dt}\n"
+"\n"
+msgstr ""
+"u(t) = K_p e(t) + K_d \\frac{de}{dt}\n"
+"\n"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:50
 msgid ""
@@ -216,6 +242,14 @@ msgstr ""
 "façon dont le :term:`Point de consigne` de la position change avec le temps."
 " Pour le prouver, nous allons reformuler l'équation pour un contrôleur PD."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:60
+msgid ""
+"u_k = K_p e_k + K_d \\frac{e_k - e_{k-1}}{dt}\n"
+"\n"
+msgstr ""
+"u_k = K_p e_k + K_d \\frac{e_k - e_{k-1}}{dt}\n"
+"\n"
+
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:63
 msgid ""
 "where :math:`u_k` is the :term:`control input` at timestep :math:`k` and "
@@ -227,6 +261,24 @@ msgstr ""
 ":math:`e_k` est l’ :term:`Erreur` au moment :math:`k`. :math:`e_k` est "
 "défini comme :math:`e_k = r_k - x_k` où :math:`r_k` est le :term:`Point de "
 "consigne` et :math:`x_k` est l’ :term:`état` au moment :math:`k`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:65
+msgid ""
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - x_k - r_{k-1} + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - r_{k-1} - x_k + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - r_{k-1}) - (x_k - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\left(\\frac{r_k - r_{k-1}}{dt} -\n"
+"  \\frac{x_k - x_{k-1}}{dt}\\right)\n"
+"\n"
+msgstr ""
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - x_k - r_{k-1} + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - r_{k-1} - x_k + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - r_{k-1}) - (x_k - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\left(\\frac{r_k - r_{k-1}}{dt} -\n"
+"\\frac{x_k - x_{k-1}}{dt}\\right)\n"
+"\n"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:73
 msgid ""
@@ -286,6 +338,14 @@ msgstr ""
 ":term:`l'erreur` de position), et ajoute cette somme à :term:`l'Entrée "
 "contrôlée`. L'accumulation de l'aire entre deux courbes s'appelle "
 "intégration."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:84
+msgid ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau\n"
+"\n"
+msgstr ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau\n"
+"\n"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:87
 msgid ""
@@ -371,6 +431,14 @@ msgid ""
 msgstr ""
 "Lorsque ces termes sont combinés, on obtient alors la définition typique "
 "d'un contrôleur PID."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:116
+msgid ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau + K_d \\frac{de}{dt}\n"
+"\n"
+msgstr ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau + K_d \\frac{de}{dt}\n"
+"\n"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:119
 msgid ""

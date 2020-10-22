@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-21 16:16+0000\n"
+"POT-Creation-Date: 2020-10-22 16:16+0000\n"
 "PO-Revision-Date: 2020-10-08 04:19+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -21,3 +21,374 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:2
+msgid "Programming your Radio"
+msgstr "Programando su Radio"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:4
+msgid ""
+"This guide will show you how to use the FRC Radio Configuration Utility "
+"software to configure your robot's wireless bridge for use outside of FRC "
+"events."
+msgstr ""
+"Ésta guía le enseñará cómo usar el software FRC Radio Configuration Utility "
+"para configurar el puente inalámbrico de su robot para usarlo fuera de los "
+"eventos de FRC."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:6
+msgid "Before you begin using the software:"
+msgstr "Antes de empezar a usar el software:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:8
+msgid ""
+"Disable WiFi connections on your computer, as it may prevent the "
+"configuration utility from properly communicating with the bridge"
+msgstr ""
+"Deshabilite las conexiones de Wi-Fi en su computadora, debido a que puede "
+"prevenir la configuración de utilidad de comunicarse apropiadamente con el "
+"puente"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:9
+msgid ""
+"Make sure no devices are connected to your computer via ethernet, other than"
+" the wireless bridge."
+msgstr ""
+"Asegúrese que no haya dispositivos conectados a su computadora vía ethernet,"
+" excepto el puente inalámbrico."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:11
+msgid ""
+"The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however "
+"they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM "
+"(center-pin positive)."
+msgstr ""
+"El OM5P-AN y AC usan el mismo enchufe que el D-Link DAP 1522, sin embargo, "
+"son radios de 12V. Conecte la radio a los terminales de 12V 2A en el VRM "
+"(pin central positivo)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:22
+msgid ""
+"`FRC Radio Configuration 20.0.0 "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_"
+msgstr ""
+"` Configuración FRC Radio 20.0.0 "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:24
+msgid ""
+"`FRC Radio Configuration 20.0.0 Israel Version "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_"
+msgstr ""
+"`Configuración FRC Radio 20.0.0 Versión Israel "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:26
+msgid ""
+"The _IL version is for Israel teams and contains a version of the OM5PAC "
+"firmware with restricted channels for use in Israel."
+msgstr ""
+"La versión _IL es para los equipos de Israel y contiene una versión del "
+"firmware OM5PAC con canales restringidos para uso en Israel."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:29
+msgid "Application Notes"
+msgstr "Notas de aplicación "
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:31
+msgid ""
+"By default, the Radio Configuration Utility will program the radio to "
+"enforce the 4Mbps bandwidth limit on traffic exiting the radio over the "
+"wireless interface. In the home configuration (AP mode) this is a total, not"
+" a per client limit. This means that streaming video to multiple clients is "
+"not recommended."
+msgstr ""
+"Por default, la Radio Configuration Utility programará para imponer el "
+"límite de ancho de banda de 4Mbps en el tráfico que sale de la radio a "
+"través de la interfaz inalámbrica. En la configuración de inicio (Modo AP) "
+"este es un límite total, no por cliente. Esto significa que no se recomienda"
+" transmitir video a múltiples clientes."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:33
+msgid ""
+"The Utility has been tested on Windows 7, 8 and 10. It may work on other "
+"operating systems, but has not been tested."
+msgstr ""
+"La Utility ha sido probada en Windows 7, 8 y 10. Puede que trabaje en otros "
+"sistemas operativos, pero no ha sido probada."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:36
+msgid "Programmed Configuration"
+msgstr "Configuración Programada "
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:40
+msgid ""
+"The Radio Configuration Utility programs a number of configuration settings "
+"into the radio when run. These settings apply to the radio in all modes "
+"(including at events). These include:"
+msgstr ""
+"La Radio Configuration Utility programa un número de ajustes de "
+"configuración en la radio cuando se ejecuta. Estos ajustes aplican a la "
+"radio en todos los modos (incluyendo en eventos). Estos incluyen:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:44
+msgid "Bridge the wired ports so they may be used interchangeably"
+msgstr "Puentear los puertos cableados para que puedan usarse indistintamente"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:45
+msgid "The LED configuration noted in the graphic above."
+msgstr "Las configuraciones LED en el gráfico anterior."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:46
+msgid ""
+"4Mb/s bandwidth limit on the outbound side of the wireless interface (may be"
+" disabled for home use)"
+msgstr ""
+"Límite de ancho de banda de 4 Mb/s en el lado de salida de la interfaz "
+"inalámbrica (puede deshabilitarse para uso doméstico)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:47
+msgid ""
+"QoS rules for internal packet prioritization (affects internal buffer and "
+"which packets to discard if bandwidth limit is reached). These rules are:"
+msgstr ""
+"Reglas QoS para priorización interna de paquetes (afecta el búfer interno y "
+"qué paquetes descartar si se alcanza el límite de ancho de banda). Estas "
+"reglas son:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:51
+msgid "Bulk (All other traffic). (disabled if BW limit is disabled)"
+msgstr ""
+"Granel (todo el resto del tráfico). (deshabilitado si el límite de BW está "
+"deshabilitado)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:53
+msgid "DHCP server enabled. Serves out:"
+msgstr "Servidor DHCP habilitado. Sirve:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:60
+msgid ""
+"DNS server enabled. DNS server IP and domain suffix (.lan) are served as "
+"part of the DHCP."
+msgstr ""
+"Servidor DNS habilitado. La dirección IP del servidor DNS y el sufijo de "
+"dominio (.lan) se sirven como parte del DHCP."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:62
+msgid "At home only:"
+msgstr "Solo en casa:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:64
+msgid ""
+"SSID may have a \"Robot Name\" appended to the team number to distinguish "
+"multiple networks."
+msgstr ""
+"El SSID puede tener un \"Nombre del robot\" anexado al número de equipo para"
+" distinguir varias redes."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:65
+msgid ""
+"Firewall option may be enabled to mimic the field firewall rules (open ports"
+" may be found in the Game Manual)"
+msgstr ""
+"La opción Firewall puede estar habilitada para imitar las reglas del "
+"firewall de campo (los puertos abiertos se pueden encontrar en el Manual del"
+" Juego)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:76
+msgid ""
+"Part of the installation prompts will include installing Npcap if it is not "
+"already present. The Npcap installer contains a number of checkboxes to "
+"configure the install. You should leave the options as the defaults."
+msgstr ""
+"Algunas de las indicaciones incluirán instalar Npcap si aún no está "
+"presente. El instalador de Npcap contiene un número de casillas de "
+"verificación para configurar la instalación. Debe dejar las opciones como "
+"default."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:79
+msgid "Launch the software"
+msgstr "Iniciar el software"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:83
+msgid "Use the Start menu or desktop shortcut to launch the program."
+msgstr "Use el menú de Inicio o el acceso rápido para iniciar el programa."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:88
+msgid "Allow the program to make changes, if prompted"
+msgstr "Permita que el programa realice cambios, si lo solicita"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:95
+msgid "Select the network interface"
+msgstr "Seleccione la interfaz de red"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:99
+msgid ""
+"Use the pop-up window to select the which ethernet interface the "
+"configuration utility will use to communicate with the wireless bridge. On "
+"Windows machines, ethernet interfaces are typically named \"Local Area "
+"Connection\". The configuration utility can not program a bridge over a "
+"wireless connection."
+msgstr ""
+"Use la ventana desplegable para seleccionar cual interfaz ethernet usará la "
+"utilidad de configuración para comunicarse con el puente inalámbrico. En "
+"máquinas Windows, interfaces ethernet son llamadas \"Local Area "
+"Connection\". La configuration utility no puede programar el puente sobre "
+"una conexión inalámbrica."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:106
+msgid "Open Mesh Firmware Note"
+msgstr "Nota de Open Mesh Firmware "
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:108
+msgid ""
+"For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC "
+"radio, the radio must be running an FRC specific build of the OpenWRT "
+"firmware. OM5P-AC radios in the 2019 KoP should not need an update."
+msgstr ""
+"Para la FRC Radio Configuration Utility para programar la radio OM5P-AN y "
+"OM5P-AC, la radio debe estar ejecutando una compilación específica de FRC "
+"del firmware OpenWRT. Las radios OM5P-AC en el KoP de 2019 no deberían "
+"necesitar una actualización."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:110
+msgid ""
+"If you do not need to update or re-load the firmware, skip the next step."
+msgstr ""
+"Si no necesita actualizar o recargar el firmware, salte el siguiente paso."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:119
+msgid ""
+"If you need to load the FRC firmware (or reset the radio), you can do so "
+"using the FRC Radio Configuration Utility."
+msgstr ""
+"Si necesitar cargar el firmware de FRC (o reiniciar el radio), puede hacerlo"
+" usando la FRC Radio Configuration Utility."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:121
+msgid ""
+"Follow the instructions above to install the software, launch the program "
+"and select the Ethernet interface."
+msgstr ""
+"Siga las instrucciones anteriores para instalar el software, inicie el "
+"programa y seleccione la interfaz Ethernet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:123
+msgid "Make sure the radio is connected to the PC via Ethernet."
+msgstr "Asegúrese que la radio esté conectada a la PC vía Ethernet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:124
+msgid ""
+"Unplug the power from the radio. (If using a PoE cable, this will also be "
+"unplugging the Ethernet to the PC, this is fine)"
+msgstr ""
+"Desenchufe la energía del radio. (Si esta usando un cable PoE, también "
+"desenchufará el Ethernet de la PC, esto está bien)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:125
+msgid "Press the Load Firmware button"
+msgstr "Presione el botón Load Firmware"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:126
+msgid ""
+"When prompted, plug in the radio power. The software should detect the "
+"radio, load the firmware and prompt you when complete."
+msgstr ""
+"Cuando se le indique, enchufe energía al radio. El software debería detectar"
+" el radio, cargue el firmware e indique cuando termine."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:130
+msgid ""
+"Teams may also see this error with foreign language Operating Systems. If "
+"you experience issues loading firmware or programming on a foreign language "
+"OS, try using an English OS, such as on the KOP provided PC or setting the "
+"Locale setting to \"en_us\" as described on `this page "
+"<https://www.java.com/en/download/help/locale.xml>`_."
+msgstr ""
+"Equipos también podrían ver este error con Sistemas Operativos con idiomas "
+"extranjeros. Si experimenta problemas al cargar el firmware o programando "
+"con Sistemas Operativos en idiomas extranjeros, pruebe usando un Sistema "
+"Operativo en inglés, como en la PC provista por KOP o estableciendo la "
+"configuración Regional en \"en_us\" como se describe en `esta página "
+"<https://www.java.com/en/download/help/locale.xml>`_."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:137
+msgid "Select which radio you are configuring using the drop-down list."
+msgstr "Seleccione cual radio va a configurar usando la lista desplegable."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:138
+msgid ""
+"Select which operating mode you want to configure. For most cases, the "
+"default selection of 2.4GHz Access Point will be sufficient. If your "
+"computers support it, the 5GHz AP mode is recommended, as 5GHz is less "
+"congested in many environments."
+msgstr ""
+"Seleccione cual modo operativo desea configurar. Para la mayoría de los "
+"casos, la selección default de 2.4GHz Access Point será suficiente. Si sus "
+"computadoras lo soportan, el modo 5GHz AP es recomendado, debido a que el "
+"5GHz está menos congestionado en muchos entornos."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:141
+msgid "Select Options"
+msgstr "Seleccione Opciones"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:145
+msgid ""
+"The default values of the options have been selected to match the use case "
+"of most teams, however, you may wish to customize these options to your "
+"specific scenario:"
+msgstr ""
+"Los valores default de las opciones han sido seleccionados para corresponder"
+" el caso de uso de la mayoría de los equipos, de cualquier forma, podría "
+"desear personalizar estas opciones para su específico escenario:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:160
+msgid ""
+"Follow the on-screen instructions for preparing your wireless bridge, "
+"entering the settings the bridge will be configured with, and starting the "
+"configuration process. These on-screen instructions update to match the "
+"bridge model and operating mode chosen."
+msgstr ""
+"Siga las instrucciones en la pantalla para preparar su puente inalámbrico, "
+"ingresando los ajustes con los que el puente será configurado, e iniciando "
+"el proceso de configuración. Estas instrucciones en la pantalla se "
+"actualizan para corresponder al modelo del puente y el modo operativo "
+"elegido."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:163
+msgid "Configuration Progress"
+msgstr "Progreso de Configuración"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:167
+msgid "Throughout the configuration process, the window will indicate:"
+msgstr "Durante el proceso de configuración, la ventana indicará:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:178
+msgid "Once the configuration is complete:"
+msgstr "Una vez que se complete la configuración:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:188
+msgid ""
+"If an error occurs during the configuration process, follow the instructions"
+" in the error message to correct the problem."
+msgstr ""
+"Si ocurre un error durante el proceso de configuración, siga las "
+"instrucciones en el mensaje de error para corregir el problema."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:191
+msgid "Troubleshooting: Disabling Network Adapters"
+msgstr "Solución de Problemas: Deshabilitando Adaptadores de Red"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/radio-programming.rst:193
+msgid ""
+"If you get an error message about \"NPF adapter\" when attempting to load "
+"firmware, you need to disable all other adapters. This is not always the "
+"same as turning the adapters off with a physical button or putting the PC "
+"into airplane mode. The following steps provide more detail on how to "
+"disable adapters."
+msgstr ""
+"Si recibe un mensaje de error sobre el \"adaptador NPF\" cuando intenta "
+"cargar el firmware, debe desactivar todos los demás adaptadores. Esto no "
+"siempre es lo mismo que apagar los adaptadores con un botón físico o poner "
+"la PC en modo avión. Los siguientes pasos proporcionan más detalles sobre "
+"cómo deshabilitar los adaptadores."

@@ -5,18 +5,245 @@
 # 
 # Translators:
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-11 04:12+0000\n"
+"POT-Creation-Date: 2020-10-22 16:16+0000\n"
 "PO-Revision-Date: 2020-09-04 16:14+0000\n"
-"Last-Translator: Sofia Fernandez <sofiafdz.val@gmail.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:2
+msgid "A Technical Discussion on C++ Commands"
+msgstr "Una discusión técnica sobre los comandos de C ++"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:3
+msgid ""
+"This article serves as a technical discussion on some of the design "
+"decisions that were made when designing the new command-based framework in "
+"C++. You do not need to understand the information within this article to "
+"use the command-based framework in your robot code."
+msgstr ""
+"Este artículo sirve como una discusión técnica sobre algunas de las "
+"decisiones de diseño que se tomaron al diseñar el nuevo marco basado en "
+"comandos en C++. No es necesario que comprenda la información de este "
+"artículo para utilizar el marco basado en comandos en su código de robot."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:5
+msgid ""
+"This article assumes that you have a fair understanding of advanced C++ "
+"concepts, including templates, smart pointers, inheritance, rvalue "
+"references, copy semantics, move semantics, and CRTP."
+msgstr ""
+"Este artículo asume que usted comprende los conceptos avanzados de C++, "
+"incluidas plantillas, punteros inteligentes, herencia, referencias de "
+"rvalue, semántica de copia, semántica de movimiento y CRTP."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:7
+msgid ""
+"This article will help you understand the reasoning behind some of the "
+"decisions made in the new command-based framework (such as the use of "
+"``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, "
+"the lack of more advanced decorators that are available in Java, etc.)"
+msgstr ""
+"Este artículo lo ayudará a comprender el razonamiento detrás de algunas de "
+"las decisiones tomadas en el nuevo marco basado en comandos (como el uso de "
+"``std::unique_ptr``, CRTP en la forma de ``CommandHelper<Base, Derived>``, "
+"la falta de decoradores más avanzados que están disponibles en Java, etc.)"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:10
+msgid "Ownership Model"
+msgstr "Modelo de propiedad"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:11
+msgid ""
+"The old command-based framework employed the use of raw pointers, meaning "
+"that users had to use ``new`` (resulting in manual heap allocations) in "
+"their robot code. Since there was no clear indication on who owned the "
+"commands (the scheduler, the command groups, or the user themselves), it was"
+" not apparent who was supposed to take care of freeing the memory."
+msgstr ""
+"El antiguo marco basado en comandos empleaba el uso de punteros sin "
+"procesar, lo que significa que los usuarios tenían que usar ``nuevo`` (lo "
+"que resultaba en asignaciones de montón manuales) en su código de robot. "
+"Dado que no había una indicación clara sobre quién era el propietario de los"
+" comandos (el programador, los grupos de comandos o el usuario mismo), no "
+"era evidente quién se suponía que debía encargarse de liberar la memoria."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:13
+msgid ""
+"Several examples in the old command-based framework involved code like this:"
+msgstr ""
+"Varios ejemplos en el antiguo marco basado en comandos involucraban código "
+"como este:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:27
+msgid ""
+"In the command-group above, the component commands of the command group were"
+" being heap allocated and passed into ``AddSequential`` all in the same "
+"line. This meant that that user had no reference to that object in memory "
+"and therefore had no means of freeing the allocated memory once the command "
+"group ended. The command group itself never freed the memory and neither did"
+" the command scheduler. This led to memory leaks in robot programs (i.e. "
+"memory was allocated on the heap but never freed)."
+msgstr ""
+"En el grupo de comandos anterior, los comandos de los componentes del grupo "
+"de comandos se asignaban en montón y se pasaban a ``AddSequential`` todos en"
+" la misma línea. Esto significaba que ese usuario no tenía ninguna "
+"referencia a ese objeto en la memoria y, por lo tanto, no tenía forma de "
+"liberar la memoria asignada una vez que finalizaba el grupo de comando. El "
+"grupo de comandos en sí nunca liberó la memoria y tampoco el programador de "
+"comandos. Esto condujo a pérdidas de memoria en los programas de robot (es "
+"decir, la memoria se asignó en el montón pero nunca se liberó)."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:29
+msgid ""
+"This glaring problem was one of the reasons for the rewrite of the "
+"framework. A comprehensive ownership model was introduced with this rewrite,"
+" along with the usage of smart pointers which will automatically free memory"
+" when they go out of scope."
+msgstr ""
+"Este problema evidente fue una de las razones de la reescritura del marco. "
+"Se introdujo un modelo de propiedad integral con esta reescritura, junto con"
+" el uso de punteros inteligentes que liberarán memoria automáticamente "
+"cuando se salgan del alcance."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:31
+msgid ""
+"Default commands are owned by the command scheduler whereas component "
+"commands of command groups are owned by the command group. Other commands "
+"are owned by whatever the user decides they should be owned by (e.g. a "
+"subsystem instance or a ``RobotContainer`` instance). This means that the "
+"ownership of the memory allocated by any commands or command groups is "
+"clearly defined."
+msgstr ""
+"Los comandos predeterminados son propiedad del programador de comandos, "
+"mientras que los comandos de componentes de los grupos de comandos "
+"pertenecen al grupo de comandos. Otros comandos son propiedad de lo que el "
+"usuario decida que debe pertenecer (por ejemplo, una instancia de subsistema"
+" o una instancia de ``RobotContainer``). Esto significa que la propiedad de "
+"la memoria asignada por cualquier comando o grupo de comando está claramente"
+" definida."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:34
+msgid "``std::unique_ptr`` vs. ``std::shared_ptr``"
+msgstr "``std::unique_ptr`` vs. ``std::shared_ptr``"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:35
+msgid ""
+"Using ``std::unique_ptr`` allows us to clearly determine who owns the "
+"object. Because an ``std::unique_ptr`` cannot be copied, there will never be"
+" more than one instance of a ``std::unique_ptr`` that points to the same "
+"block of memory on the heap. For example, a constructor for "
+"``SequentialCommandGroup`` takes in a "
+"``std::vector<std::unique_ptr<Command>>&&``. This means that it requires an "
+"rvalue reference to a vector of ``std::unique_ptr<Command>``. Let's go "
+"through some example code step-by-step to understand this better:"
+msgstr ""
+"El uso de ``std::unique_ptr`` nos permite determinar claramente quién es el "
+"propietario del objeto. Debido a que un ``std::unique_ptr`` no se puede "
+"copiar, nunca habrá más de una instancia de un `` td::unique_ptr`` que "
+"apunte al mismo bloque de memoria en el montón. Por ejemplo, un constructor "
+"para ``SequentialCommandGroup`` toma un "
+"``std::vector<std::unique_ptr<Command>> &&``. Esto significa que requiere "
+"una referencia rvalue a un vector de ``std::unique_ptr <Command>``. "
+"Repasemos un código de ejemplo paso a paso para comprender esto mejor:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:61
+msgid ""
+"With ``std::shared_ptr``, there is no clear ownership model because there "
+"can be multiple instances of a ``std::shared_ptr`` that point to the same "
+"block of memory. If commands were in ``std::shared_ptr`` instances, a "
+"command group or the command scheduler cannot take ownership and free the "
+"memory once the command has finished executing because the user might still "
+"unknowingly still have a ``std::shared_ptr`` instance pointing to that block"
+" of memory somewhere in scope."
+msgstr ""
+"Con ``std::shared_ptr``, no hay un modelo de propiedad claro porque puede "
+"haber varias instancias de un ``std::shared_ptr`` que apuntan al mismo "
+"bloque de memoria. Si los comandos estuvieran en instancias "
+"``std::shared_ptr``, un grupo de comandos o el programador de comandos no "
+"puede tomar posesión y liberar la memoria una vez que el comando ha "
+"terminado de ejecutarse porque el usuario, sin saberlo, todavía podría tener"
+" un ``std::shared_ptr`` instancia que apunta a ese bloque de memoria en "
+"algún lugar del alcance."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:64
+msgid "Use of CRTP"
+msgstr "Uso de CRTP"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:65
+msgid ""
+"You may have noticed that in order to create a new command, you must extend "
+"``CommandHelper``, providing the base class (usually ``frc2::Command``) and "
+"the class that you just created. Let's take a look at the reasoning behind "
+"this:"
+msgstr ""
+"Es posible que haya notado que para crear un nuevo comando, debe extender "
+"``std::shared_ptr`` , proporcionando la clase base (generalmente "
+"``frc2::Command`` ) y la clase que acaba de crear. Echemos un vistazo al "
+"razonamiento detrás de esto:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:68
+msgid "Command Decorators"
+msgstr "Decoradores de comando"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:69
+msgid ""
+"The new command-based framework includes a feature known as \"command "
+"decorators\", which allows the user to something like this:"
+msgstr ""
+"El nuevo marco basado en comandos incluye una función conocida como "
+"\"decoradores de comandos\", que permite al usuario hacer algo como esto:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:76
+msgid ""
+"When ``task`` is scheduled, it will first execute ``MyCommand()`` and once "
+"that command has finished executing, it will print the message to the "
+"console. The way this is achieved internally is by using a sequential "
+"command group."
+msgstr ""
+"Cuando se programa la ``tarea`` , primero ejecutará ``MyCommand()`` y una "
+"vez que ese comando haya terminado de ejecutarse, imprimirá el mensaje en la"
+" consola. La forma en que esto se logra internamente es mediante el uso de "
+"un grupo de comando secuencial."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:78
+msgid ""
+"Recall from the previous section that in order to construct a sequential "
+"command group, we need a vector of unique pointers to each command. Creating"
+" the unique pointer for the print function is pretty trivial:"
+msgstr ""
+"Recuerde de la sección anterior que para construir un grupo de comando "
+"secuencial, necesitamos un vector de punteros únicos para cada comando. "
+"Crear el puntero único para la función de impresión es bastante trivial:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:94
+msgid "Solutions to the Problem"
+msgstr "Soluciones al problema"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:138
+msgid "Lack of Advanced Decorators"
+msgstr "Falta de decoradores avanzados"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:142
+msgid "Templating Decorators"
+msgstr "Decoradores de plantillas"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:169
+msgid "We use a forward declaration at the top of ``Command.h``:"
+msgstr ""
+"Usamos una declaración hacia adelante en la parte superior de ``Command.h``:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:180
+msgid "Java vs C++ Syntax"
+msgstr "Sintaxis de Java vs Sintaxis de C++"

@@ -5,18 +5,330 @@
 # 
 # Translators:
 # Duru Ünlü <aodunlu@gmail.com>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-02 04:12+0000\n"
+"POT-Creation-Date: 2020-10-26 04:15+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Duru Ünlü <aodunlu@gmail.com>, 2020\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:2
+msgid "Proximity Switches - Hardware"
+msgstr "Yakınlık-Proximity Anahtarları - Donanım"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:4
+msgid ""
+"This section covers proximity switch hardware.  For a guide to using "
+"proximity switches in software, see :ref:`docs/software/sensors/digital-"
+"inputs-software:Digital Inputs - Software`."
+msgstr ""
+"Bu bölüm yakınlık anahtarı donanımını kapsar. Yazılımda yakınlık "
+"anahtarlarının kullanımına ilişkin bir kılavuz için bkz "
+":ref:`docs/software/sensors/digital-inputs-software:Digital Inputs - "
+"Software`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:6
+msgid ""
+"One of the most common sensing tasks on a robot is detecting when an object "
+"(be it a mechanism, game piece, or field element) is within a certain "
+"distance of a known point on the robot.  This type of sensing is "
+"accomplished by a \"proximity switch.\""
+msgstr ""
+"Bir robot üzerindeki en yaygın algılama görevlerinden biri, bir nesnenin "
+"(bir mekanizma, oyun parçası veya saha öğesi) robot üzerinde bilinen bir "
+"noktaya belirli bir mesafe içinde olup olmadığını algılamaktır. Bu tür bir "
+"algılama, \"yakınlık anahtarı\" ile gerçekleştirilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:9
+msgid "Proximity switch operation"
+msgstr "Yakınlık anahtarı çalışması"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:11
+msgid ""
+"Proximity switches are switches - they operate a circuit between an \"open\""
+" state (in which there *is not* connectivity across the circuit) and a "
+"\"closed\" one (in which there *is*).  Thus, proximity switches generate a "
+"digital signal, and accordingly, they are almost always connected to the "
+"roboRIO's :doc:`digital input <digital-inputs-hardware>` ports."
+msgstr ""
+"Yakınlık anahtarları switch-anahtardır - \"açık\" durum (devre boyunca "
+"*bağlantının olmadığı *) ve \"kapalı\" bir (devrede *bağlantı olduğu*) nu "
+"belirtir. Bu nedenle, yakınlık anahtarları dijital bir sinyal üretir ve buna"
+" göre neredeyse her zaman roboRIO'ların:doc:`digital giriş <digital-inputs-"
+"hardware>` bağlantı noktalarına bağlanırlar."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:13
+msgid ""
+"Proximity switches can be either \"normally-open,\" in which activating the "
+"switch closes the circuit, or \"normally closed,\" in which activating the "
+"switch opens the circuit.  Some switches offer *both* a NO and a NC circuit "
+"connected to the same switch.  In practice, the effective difference between"
+" a NO and a NC switch is the behavior of the system in the case that the "
+"wiring to the switch fails, as a wiring failure will almost always result in"
+" an open circuit.  NO switches are often \"safer,\" in that a wiring failure"
+" causes the system to behave as if the switch were pressed - as switches are"
+" often used to prevent a mechanism from damaging itself, this mitigates the "
+"chance of damage to the mechanism in the case of a wiring fault."
+msgstr ""
+"Yakınlık anahtarları, anahtarın çalıştırılması ile devreyi kapattığı "
+"\"normalde açık\" veya anahtarın çalıştırışmasıyla devreyi açtığı \"normalde"
+" kapalı\" olabilir. Bazı anahtarlar, hem bir NO-normally open hem de aynı "
+"anahtara bağlı bir NC-normally closed devresi sunar. Pratikte, bir NO ve bir"
+" NC anahtarı arasındaki fark, bir kablolama arızası hemen hemen her zaman "
+"bir açık devreye neden olacağından, anahtara giden kablolamanın başarısız "
+"olması durumunda sistemin davranışıdır. NO anahtarları genellikle daha "
+"güvenlidir, çünkü bir kablo arızası sistemin anahtara basılmış gibi "
+"davranmasına neden olur - anahtarlar genellikle bir mekanizmanın kendisine "
+"zarar vermesini önlemek için kullanıldığından, bu durumda mekanizmanın hasar"
+" görme olasılığını azaltır. "
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:16
+msgid "Types of proximity switches"
+msgstr "Yakınlık Anahtarı Türleri"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:18
+msgid ""
+"There are several types of proximity switches that are commonly-used in FRC:"
+msgstr "FRC'de yaygın olarak kullanılan birkaç tür yakınlık anahtarı vardır:"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:20
+msgid "`Mechanical Proximity Switches (\"limit switches\")`_"
+msgstr "`Mekanik Yakınlık Anahtarları (\"limit anahtarları\")`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:21
+msgid "`Magnetic Proximity Switches`_"
+msgstr "`Manyetik Yakınlık Anahtarları`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:22
+msgid "`Inductive Proximity Switches`_"
+msgstr "`Endüktif Yakınlık Anahtarları`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:23
+msgid "`Photoelectric Proximity Switches`_"
+msgstr "`Fotoelektrik Yakınlık Anahtarları`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:24
+msgid "`Time-of-flight Proximity Switches`_"
+msgstr "`Uçuş Süresi Yakınlık Anahtarları`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:27
+msgid "Mechanical Proximity Switches (\"limit switches\")"
+msgstr "Mekanik Yakınlık Anahtarları (\"limit anahtarları\")"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:31
+msgid ""
+"Mechanical proximity switches (more commonly known as \"limit switches\") "
+"are probably the most-commonly used proximity switch in FRC, due to their "
+"simplicity, ease-of-use, and low cost.  A limit switch is quite simply a "
+"switch attached to a mechanical arm.  The switch is activated when an object"
+" pushes against the switch arm, actuating the switch."
+msgstr ""
+"Mekanik yaklaşım anahtarları (daha yaygın olarak \"limit anahtarları\" "
+"olarak bilinir), basitlikleri, kullanım kolaylıkları ve düşük maliyetleri "
+"nedeniyle muhtemelen FRC'de en yaygın kullanılan yaklaşım anahtarıdır. Limit"
+" anahtarı, mekanik bir kola bağlı bir anahtardır. Anahtar, bir nesne anahtar"
+" kolunu itip anahtarı çalıştırdığında etkinleştirilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:33
+msgid ""
+"Limit switches vary in size, the geometry of the switch-arm, and in the "
+"amount of \"throw\" required to activate the switch.  While limit switches "
+"are quite cheap, their mechanical actuation is sometimes less-reliable than "
+"no-contact alternatives.  However, they are also extremely versatile, as "
+"they can be triggered by any physical object capable of moving the switch "
+"arm."
+msgstr ""
+"Limit anahtarlarının boyutu, anahtar kolunun geometrisi ve anahtarı "
+"etkinleştirmek için gereken \"itiş\" miktarı değişir. Limit anahtarları "
+"oldukça ucuz olsa da, mekanik çalıştırma bazen temassız alternatiflere göre "
+"daha az güvenilirdir. Bununla birlikte, anahtar kolunu hareket ettirebilen "
+"herhangi bir fiziksel nesne tarafından tetiklenebildikleri için son derece "
+"fazla kullanım alanı bulurlar."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:36
+msgid "Magnetic Proximity Switches"
+msgstr "Manyetik Yakınlık Anahtarları"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:40
+msgid ""
+"Magnetic proximity switches are activated when a magnet comes within a "
+"certain range of the sensor.  Accordingly, they are \"no-contact\" switches "
+"- they do not require contact with the object being sensed."
+msgstr ""
+"Manyetik yakınlık anahtarları, sensörün belirli bir mesafesine bir mıknatıs "
+"yaklaştığında etkinleşir. Buna göre, \"temassız\" anahtarlardır - algılanan "
+"nesne ile temas gerektirmezler."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:42
+msgid ""
+"There are two major types of magnetic proximity switches - reed switches and"
+" hall-effect sensors.  In a reed switch, the magnetic field causes a pair of"
+" flexible metal contacts (the \"reeds\") to touch each other, closing the "
+"circuit.  A hall-effect sensor, on the other hand, detects the induced "
+"voltage transversely across a current-carrying conductor.  Hall-effect "
+"sensors are generally the cheaper and more-reliable of the two. Pictured "
+"above is the `Hall effect sensor from West Coast Products "
+"<https://www.wcproducts.com/wcp-0971>`__."
+msgstr ""
+"İki ana manyetik yakınlık anahtarı türü vardır - kamış anahtarları ve salon "
+"etkisi sensörleri. Manyetik bir anahtarda, manyetik alan bir çift esnek "
+"metal kontağın (\"kamışlar\") birbirine dokunarak devreyi kapatmasına neden "
+"olur. Öte yandan, bir salon etkisi sensörü, akım taşıyan bir iletken boyunca"
+" indüklenen gerilimi enlemesine algılar. Hall etkisi sensörleri genellikle "
+"ikisinden daha ucuz ve daha güvenilirdir. Yukarıdaki resimde,  `West Coast "
+"firmanının Hall effect sensor  <https://www.wcproducts.com/wcp-0971>`__ Hall"
+" etkisi sensörü görülmektedir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:44
+msgid ""
+"Magnetic proximity switches may be either \"unipolar,\" \"bipolar,\" or "
+"\"omnipolar.\"  A unipolar switch activates and deactivates depending on the"
+" presence of a given pole of the magnet (either north or south, depending on"
+" the switch).  A bipolar switch activates from the proximity of one pole, "
+"and deactivates from the proximity of the opposite pole.  An omnipolar "
+"switch will activate in the presence of either pole, and deactivates when no"
+" magnet is present."
+msgstr ""
+"Manyetik yakınlık anahtarları \"tek kutuplu-unipolar\", \"iki kutuplu-"
+"bipolar\" veya \"omnipolar\" olabilir. Tek kutuplu bir anahtar, mıknatısın "
+"belirli bir kutbunun varlığına bağlı olarak etkinleştirilir ve devre dışı "
+"bırakılır (anahtara bağlı olarak mıknatısın N- kuzey veya S- güney kutpu). "
+"İki kutuplu bir anahtar, bir kutbun yakınlığından harekete geçer ve karşı "
+"kutbun yakınlığından devre dışı kalır. Omnipolar anahtarlar da her iki "
+"kutbun varlığında etkinleşir ve mıknatıs olmadığında devre dışı kalır."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:46
+msgid ""
+"While magnetic proximity switches are often more reliable than their "
+"mechanical counterparts, they require the user to mount a magnet on the "
+"object to be sensed - thus, they are mostly used for sensing mechanism "
+"location."
+msgstr ""
+"Manyetik yakınlık anahtarları genellikle mekanik benzerlerinden daha "
+"güvenilir olsa da, kullanıcının algılanacak nesneye bir mıknatıs monte "
+"etmesini gerektirir - bu nedenle, çoğunlukla mekanizma konumunu algılamak "
+"için kullanılırlar."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:49
+msgid "Inductive Proximity Switches"
+msgstr "Endüktif Yakınlık Anahtarları"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:53
+msgid ""
+"Inductive proximity switches are activated when a conductor of any sort "
+"comes within a certain range of the sensor.  Like magnetic proximity "
+"switches, they are \"no-contact\" switches."
+msgstr ""
+"Endüktif yakınlık anahtarları, herhangi bir tür iletken sensörün belirli bir"
+" aralığına geldiğinde etkinleşir. Manyetik yakınlık anahtarları gibi, bunlar"
+" \"temassız\" anahtarlardır."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:55
+msgid ""
+"Inductive proximity switches are used for many of the same purposes as "
+"magnetic proximity switches.  Their more-general nature (activating in the "
+"presence of any conductor, rather than just a magnet) can be either a help "
+"or a hindrance, depending on the nature of the application."
+msgstr ""
+"Endüktif yaklaşım anahtarları, manyetik yakınlık anahtarları ile aynı "
+"amaçların çoğu için uyumludur. Daha genel yapıları nedeniyle (sadece bir "
+"mıknatıs yerine herhangi bir iletkenin mevcudiyetinde aktif hale gelmeleri),"
+" uygulamanın doğasına bağlı olarak yardım veya engel teşgil edebilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:58
+msgid "Photoelectric Proximity Switches"
+msgstr "Fotoelektrik-Photoelectric Yakınlık Anahtarları"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:62
+msgid ""
+"Photoelectric proximity switches are another type of no-contact proximity "
+"switch in widespread use in FRC.  Photoelectric proximity switches contain a"
+" light source (usually an IR laser) and a photoelectric sensor that "
+"activates the switch when the detected light (which bounces off of the "
+"sensor target) exceeds a given threshold. One such sensor is the `IR "
+"Obstacle Avoidance Module <https://www.electrodragon.com/product/infraredir-"
+"obstacle-avoidance-sensor-moduleadjust-distance/>`__ pictured below."
+msgstr ""
+"Fotoelektrik yakınlık anahtarları, FRC'de yaygın olarak kullanılan bir başka"
+" temassız yakınlık anahtarı türüdür. Fotoelektrik yaklaşım anahtarları, bir "
+"ışık kaynağı (genellikle bir IR lazer) ve algılanan ışık (sensör hedefinden "
+"seken) belirli bir eşiği aştığında anahtarı etkinleştiren bir fotoelektrik "
+"sensör içerir. Böyle bir sensör, aşağıda gösterilen `IR Engel Önleme Modülü "
+"<https://www.electrodragon.com/product/infraredir-obstacle-avoidance-sensor-"
+"moduleadjust-distance/>`__  'dir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:64
+msgid ""
+"Since photoelectric proximity switches rely on measuring the amount of "
+"reflected light, they are often inconsistent in their triggering range "
+"between different materials - accordingly, most photoelectric sensors have "
+"an adjustable activation point (typically controller by turning a screw "
+"somewhere on the sensor body).  On the other hand, photoelectric sensors are"
+" also extremely versatile, as they can detect a greater variety of objects "
+"than the other types of no-contact switches."
+msgstr ""
+"Fotoelektrik yakınlık anahtarları yansıyan ışık miktarını ölçmeye "
+"dayandığından, farklı malzemeler arasındaki tetikleme aralıklarında "
+"genellikle tutarsızdırlar - buna göre, çoğu fotoelektrik sensör "
+"ayarlanabilir bir çalışma noktasına sahiptir (tipik olarak sensör gövdesi "
+"üzerinde bir yerde bir vidayı döndürerek ayarlanır). Öte yandan, "
+"fotoelektrik sensörler, diğer temassız anahtar türlerinden çok daha çeşitli "
+"nesneleri algılayabildikleri için son derece çok yönlüdür."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:66
+msgid ""
+"Photoelectric sensors are also often often used in a \"beam break\" "
+"configuration, in which the emitter is separate from the sensor.  These "
+"typically activate when an object is interposed between the emitter and the "
+"sensor. Pictured above is a `beam break sensor with an IR LED transmitter "
+"and IR receiver <https://www.adafruit.com/product/2167>`__."
+msgstr ""
+"Fotoelektrik sensörler genellikle, yayıcının sensörden ayrı olduğu bir "
+"\"ışın kırılması\" konfigürasyonunda sıklıkla kullanılır. Bunlar tipik "
+"olarak, ışık yayıcı ve sensör arasına bir nesne girdiğinde etkinleşir. "
+"Yukarıdaki resimde bir `IR LED vericisi ve IR alıcısı ışın kesme "
+"<https://www.adafruit.com/product/2167> `__ sensörü gösterilmektedir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:71
+msgid "Time-of-flight Proximity Switches"
+msgstr "Uçuş Süresi -Time-of-flight Yakınlık Anahtarları"
+
+#: ../../frc-docs/source/docs/hardware/sensors/proximity-switches.rst:75
+msgid ""
+"Time-of-flight Proximity Switches are newer to the market and are not "
+"commonly found in FRC. They use a concentrated light source, such as a small"
+" laser, and measure the time between the emission of light and when the "
+"receiver detects it. Using the speed of light, it can produce a very "
+"accurate distance measurement for a very small target area. Range on this "
+"type of sensor can range greatly, between 30mm to around 1000mm for the "
+"`VL53L0X sensor <https://www.adafruit.com/product/3317>`__ pictured above. "
+"There are also longer range version available. More information about time "
+"of flight sensors can be found in `this article <https://learn.adafruit.com"
+"/adafruit-vl53l0x-micro-lidar-distance-sensor-breakout>`__ and more about "
+"the circuitry can be found in `this article "
+"<https://www.allaboutcircuits.com/technical-articles/how-do-time-of-flight-"
+"sensors-work-pmdtechnologies-tof-3D-camera/>`__."
+msgstr ""
+"Uçuş Süresi Yakınlık Anahtarları pazarda daha yenidir ve FRC'de yaygın "
+"olarak bulunmaz. Küçük bir lazer gibi konsantre bir ışık kaynağı kullanırlar"
+" ve ışık emisyonu ile alıcının onu algılaması arasındaki süreyi ölçer. Işık "
+"hızını kullanarak, çok küçük bir hedef alan için çok hassas bir mesafe "
+"ölçümü üretebilir. Bu tip sensördeki menzil, yukarıda gösterilen `VL53L0X "
+"sensör <https://www.adafruit.com/product/3317>`__ için 30 mm ile yaklaşık "
+"1000 mm arasında değişebilir. Daha uzun menzilli versiyon da mevcuttur. Uçuş"
+" süresi sensörleri ile ilgili daha fazla bilgiyi `bu makale "
+"<https://learn.adafruit.com/adafruit-vl53l0x-micro-lidar-distance-sensor-"
+"breakout>`__ 'de bulabilirsiniz ve devre şeması hakkında daha fazla bilgiyi "
+"`bu makale <https://www.allaboutcircuits.com/technical-articles/how-do-time-"
+"of-flight-sensors-work-pmdtechnologies-tof-3D-camera/>`__ 'de "
+"bulabilirsiniz."

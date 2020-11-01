@@ -5,18 +5,198 @@
 # 
 # Translators:
 # nesrin serra köşkeroğlu <nsk-2004@hotmail.com>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-03 04:11+0000\n"
+"POT-Creation-Date: 2020-11-01 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: nesrin serra köşkeroğlu <nsk-2004@hotmail.com>, 2020\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:2
+msgid "Addressable LEDs"
+msgstr "Adreslenebilir LED'ler"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:4
+msgid ""
+"LED strips have been commonly used by teams for several years for a variety "
+"of reasons. They allow teams to debug robot functionality from the audience,"
+" provide a visual marker for their robot, and can simply add some visual "
+"appeal. WPILib has an API for controlling WS2812 LEDs with their data pin "
+"connected via PWM."
+msgstr ""
+"LED şeritler, çeşitli nedenlerle birkaç yıldır ekipler tarafından yaygın "
+"olarak kullanılmaktadır. Ekiplerin, izleyicilerden robot işlevlerinde hata "
+"ayıklamasına, robotları için görsel bir işaretçi sağlamasına ve sadece biraz"
+" görsel çekicilik katmasına olanak tanır. WPILib, WS2812 LED'leri PWM "
+"aracılığıyla bağlı veri pinleri ile kontrol etmek için bir API'ye sahiptir."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:7
+msgid "Instantiating the AddressableLED Object"
+msgstr "AddressableLED Nesnesini Örnekleme"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:9
+msgid ""
+"You first create an ``AddressableLED`` object that takes the PWM port as an "
+"argument. It *must* be a PWM header on the roboRIO. Then you set the number "
+"of LEDs located on your LED strip, with can be done with the ``setLength()``"
+" function."
+msgstr ""
+"Önce PWM bağlantı noktasını argüman olarak alan bir ``AddressableLED`` "
+"nesnesi oluşturun. RoboRIO'da bir PWM bağlantısı *olmalıdır*. Ardından, LED "
+"şeridinizde bulunan LED'lerin sayısını ``setLength()``  işlevi ile "
+"yapabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:11
+msgid ""
+"It is important to note that setting the length of the LED header is an "
+"expensive task and it's **not** recommended to run this periodically."
+msgstr ""
+"LED başlığının uzunluğunun ayarlanmasının pahalı bir iş olduğunu ve bunu "
+"periyodik olarak yapmanızın **tavsiye edilmediğini** unutmamak önemlidir."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:13
+msgid ""
+"After the length of the strip has been set, you'll have to create an "
+"``AddressableLEDBuffer`` object that takes the number of LEDs as an input. "
+"You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set"
+" the led output data. Finally, you can call ``myAddressableLed.start()`` to "
+"write the output continuously. Below is a full example of the initialization"
+" process."
+msgstr ""
+"Şeridin uzunluğu ayarlandıktan sonra, LED'lerin sayısını girdi olarak alan "
+"bir ``AddressableLEDBuffer`` nesnesi oluşturmanız gerekecektir. Daha sonra "
+"led çıkış verilerini ayarlamak için "
+"``myAddressableLed.setData(myAddressableLEDBuffer)`` çağrısı yapacaksınız. "
+"Son olarak, çıktıyı sürekli yazmak için ``myAddressableLed.start()``  "
+"çağrısı yapabilirsiniz. Aşağıda, başlatma sürecinin tam bir örneği "
+"bulunmaktadır."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:15
+msgid "C++ does not have an AddressableLEDBuffer, and instead uses an Array."
+msgstr ""
+"C ++ 'da AddressableLEDBuffer yoktur ve bunun yerine bir Array-dizi "
+"kullanır."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:42
+msgid "Setting the Entire Strip to One Color"
+msgstr "Tüm Şeridi Tek Renge Ayarlama"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:44
+msgid ""
+"Color can be set to an individual led on the strip using two "
+"methods.``setRGB`` which takes RGB values as an input and ``setHSV()`` which"
+" takes HSV values as an input."
+msgstr ""
+"Renk, şerit üzerinde iki yöntem kullanılarak ayarlanabilir. RGB değerlerini "
+"girdi olarak alan ``setRGB`` ve HSV değerlerini giriş olarak alan "
+"``setHSV()`` "
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:47
+msgid "Using RGB Values"
+msgstr "RGB Değerlerini Kullanma"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:49
+msgid ""
+"RGB stands for Red, Green, and Blue. This is a fairly common color model as "
+"it's quite easy to understand. LEDs can be set with the ``setRGB`` method "
+"that takes 4 arguments: index of the LED, amount of red, amount of green, "
+"amount of blue. The amount of Red, Green, and Blue are integer values "
+"between 0-255."
+msgstr ""
+"RGB, Kırmızı, Yeşil ve Mavi anlamına gelir. Bu, anlaşılması oldukça kolay "
+"olduğu için oldukça yaygın bir renk modelidir. LED'ler, 4 argüman alan  "
+"``setRGB`` yöntemi ile ayarlanabilir: LED'in indeksi, kırmızı miktarı, yeşil"
+" miktarı, mavi miktarı. Kırmızı, Yeşil ve Mavi miktarı 0-255 arasındaki tam "
+"sayılardır."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:75
+msgid "Using HSV Values"
+msgstr "HSV Değerlerini Kullanma"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:77
+msgid ""
+"HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, "
+"saturation being the amount of gray, and value being the brightness. In "
+"WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers "
+"from 0 - 255. If you look at a color picker like `Google's "
+"<https://www.google.com/search?q=color+picker>`_, Hue will be 0 - 360 and "
+"Saturation and Value are from 0% to 100%. This is the same way that OpenCV "
+"handles HSV colors. Make sure the HSV values entered to WPILib are correct, "
+"or the color produced might not be the same as was expected."
+msgstr ""
+"HSV, Ton, Doygunluk ve Değer anlamına gelir. Ton, rengi veya tonu, doygunluk"
+" gri miktarını ve değeri parlaklık olarak tanımlar. WPILib'de Hue, 0 - 180 "
+"arasında bir tam sayıdır. Doygunluk ve Değer, 0 - 255 arası tam sayılardır. "
+"`Google'ın <https://www.google.com/search?q=color+picker>`_ gibi bir renk "
+"seçiciye bakarsanız, Ton 0 - 360 olacaktır ve Doygunluk ve Değer %0 -%100 "
+"arasındadır. Bu, OpenCV'nin HSV renklerini işlediği yolla aynıdır. WPILib'e "
+"girilen HSV değerlerinin doğru olduğundan emin olun, aksi takdirde üretilen "
+"renk beklendiği gibi aynı olmayabilir."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:82
+msgid ""
+"LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of "
+"the LED, hue, saturation, and value. An example is shown below for setting "
+"the color of an LED strip to red (hue of 0)."
+msgstr ""
+"LED'ler, 4 bağımsız değişken alan ``setHSV`` yöntemiyle ayarlanabilir: "
+"LED'in dizini, renk tonu, doygunluk ve değer. Bir LED şeridin rengini "
+"kırmızıya (0 tonu) ayarlamak için aşağıda bir örnek gösterilmiştir."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:108
+msgid "Creating a Rainbow Effect"
+msgstr "Gökkuşağı Etkisi Yaratmak"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:110
+msgid ""
+"The below method does a couple of important things. Inside of the *for* "
+"loop, it equally distributes the hue over the entire length of the strand "
+"and stores the individual LED hue to a variable called ``hue``. Then the for"
+" loop sets the HSV value of that specified pixel using the ``hue`` value."
+msgstr ""
+"Aşağıdaki yöntem birkaç önemli şey yapar. *For* döngüsünün içinde, tonu "
+"telin tüm uzunluğu boyunca eşit olarak dağıtır ve ayrı LED tonunu ``hue`` "
+"adı verilen bir değişkene kaydeder. Daha sonra for döngüsü, ``hue`` değerini"
+" kullanarak belirtilen pikselin HSV değerini ayarlar."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:112
+msgid ""
+"Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates"
+" the pixel that contains the \"initial\" hue creating the rainbow effect. "
+"``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside "
+"the hue boundaries of 180. This is because HSV hue is a value from 0-180."
+msgstr ""
+"For döngüsünün dışına çıkan ``m_rainbowFirstPixelHue``, daha sonra gökkuşağı"
+" efektini oluşturan \"initial\" renk tonunu içeren pikseli yineler. "
+"``m_rainbowFirstPixelHue`` daha sonra tonun 180 ton sınırları içinde olup "
+"olmadığını kontrol eder. Bunun nedeni HSV tonunun 0-180 arası bir değer "
+"olmasıdır."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:114
+msgid ""
+"It's good robot practice to keep the ``robotPeriodic()`` method as clean as "
+"possible, so we'll create a method for handling setting our LED data. We'll "
+"call this method ``rainbow()`` and call it from ``robotPeriodic()``."
+msgstr ""
+"``robotPeriodic()``  yöntemini olabildiğince temiz tutmak iyi bir robot "
+"uygulamasıdır, bu nedenle LED verilerimizi ayarlamak için bir yöntem "
+"oluşturacağız. Bu yönteme ``rainbow()``diyeceğiz ve onu  ``robotPeriodic()``"
+" den çağıracağız."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:134
+msgid ""
+"Now that we have our ``rainbow`` method created, we have to actually call "
+"the method and set the data of the LED."
+msgstr ""
+"Artık ``rainbow`` yöntemimizi oluşturduğumuza göre, aslında yöntemi "
+"çağırmalı ve LED'in verilerini ayarlamalıyız."

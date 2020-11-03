@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-08-28 04:10+0000\n"
+"POT-Creation-Date: 2020-11-03 16:17+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -312,23 +312,11 @@ msgstr ""
 " `C++ "
 "<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1JoystickButton.html>`__):"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:73
-msgid ""
-"There is an issue with using JoystickButtons and POVButtons in C++. Take a "
-"look at the :ref:`known issues <docs/2020-overview/known-issues:C++ Command "
-"Based JoystickButton and POVButton not functioning>` page for more "
-"information."
-msgstr ""
-"Il y a un problème avec l'utilisation de JoystickButtons et POVButtons en C "
-"++. Jetez un œil à la page :ref:`known issues <docs/2020-overview/known-"
-"issues:C++ Command Based JoystickButton and POVButton not functioning>`  "
-"pour plus d'informations."
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:86
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:84
 msgid "Binding a Command to a JoystickButton"
 msgstr "Liaison d’une commande à un JoystickButton"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:88
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:86
 msgid ""
 "In the C++ command-based library, button objects *do not need to survive "
 "past the call to a binding method*, and so the binding methods may be simply"
@@ -338,7 +326,7 @@ msgstr ""
 "besoin de survivre après l’appel à une méthode de liaison*, de sorte que les"
 " méthodes de liaison peuvent être simplement appelées sur une temp."
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:90
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:88
 msgid ""
 "Putting it all together, it is very simple to bind a button to a "
 "JoystickButton:"
@@ -346,7 +334,7 @@ msgstr ""
 "En mettant tout cela ensemble, il est très simple de lier un bouton à un "
 "JoystickButton:"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:104
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:102
 msgid ""
 "It is useful to note that the command binding methods all return the "
 "trigger/button that they were initially called on, and thus can be chained "
@@ -358,7 +346,7 @@ msgstr ""
 " et peuvent donc être enchaînées pour lier plusieurs commandes à différents "
 "états du même bouton. Par exemple:"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:124
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:122
 msgid ""
 "Remember that button binding is *declarative*: bindings only need to be "
 "declared once, ideally some time during robot initialization. The library "
@@ -368,11 +356,11 @@ msgstr ""
 "doivent être déclarées qu’une seule fois, idéalement pendant "
 "l’initialisation du robot. La bibliothèque gère tout le reste."
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:127
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:125
 msgid "Composing Triggers"
 msgstr "Composition de déclencheurs"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:129
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:127
 msgid ""
 "The ``Trigger`` class (including its ``Button`` subclasses) can be composed "
 "to create composite triggers through the ``and()``, ``or()``, and "
@@ -384,7 +372,7 @@ msgstr ""
 "``and()``, ``or()``, et ``negate()`` (ou, en C++, les opérateurs ``&&``, "
 "``||``, et ``!`` ). Par exemple :"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:147
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:145
 msgid ""
 "Note that these methods return a ``Trigger``, not a ``Button``, so the "
 "``Trigger`` binding method names must be used even when buttons are "
@@ -394,11 +382,11 @@ msgstr ""
 " que les noms de méthode de liaison  ``Trigger`` doivent être utilisés même "
 "lorsque les boutons sont composés."
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:150
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:148
 msgid "Creating Your Own Custom Trigger"
 msgstr "Création de votre propre déclencheur personnalisé"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:152
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:150
 msgid ""
 "While binding to HID buttons is by far the most common use case, advanced "
 "users may occasionally want to bind commands to arbitrary triggering events."
@@ -411,7 +399,7 @@ msgstr ""
 "facilement fait en écrivant simplement votre propre sous-classe de "
 "``trigger`` ou ``button``:"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:174
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:172
 msgid ""
 "Alternatively, this can also be done inline by passing a lambda to the "
 "constructor of ``trigger`` or ``button``:"

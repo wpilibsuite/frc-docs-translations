@@ -5,18 +5,82 @@
 # 
 # Translators:
 # Kaitlyn Kenwell <redrield@gmail.com>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-03 04:11+0000\n"
+"POT-Creation-Date: 2020-11-11 04:09+0000\n"
 "PO-Revision-Date: 2020-11-02 16:21+0000\n"
-"Last-Translator: Kaitlyn Kenwell <redrield@gmail.com>, 2020\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:2
+msgid "Scheduling Functions at Custom Frequencies"
+msgstr "Planification des Fonctions à des Fréquences Personnalisées"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:3
+msgid ""
+"``TimedRobot``'s ``addPeriodic()`` method allows one to run custom methods "
+"at a rate faster than the default ``TimedRobot`` periodic update rate (20 "
+"ms). Previously, teams had to make a ``Notifier`` to run feedback "
+"controllers more often than the ``TimedRobot`` loop period of 20 ms (running"
+" ``TimedRobot`` more often than this is not advised). Now, users can run "
+"feedback controllers more often than the main robot loop, but synchronously "
+"with the ``TimedRobot`` periodic functions, eliminating potential thread "
+"safety issues."
+msgstr ""
+"La méthode ``addPeriodic()`` de ``TimedRobot`` nous permettons d'exécuter "
+"des méthodes personnalisées à un rythme plus rapide que le taux de mise à "
+"jour périodique par défault de ``TimedRobot`` (20 ms). Précédemment, les "
+"équipes auraient dû créer un ``Notifier`` pour exécuter les contrôleurs de "
+"rétroaction plus souvent que la période de boucle de ``TimedRobot`` de 20 ms"
+" (Exécuter ``TimedRobot`` plus souvent que ça n'est pas conseillé). "
+"Maintenant, les utilisateurs peuvent exécuter les contrôleurs de rétroaction"
+" plus souvent que la boucle principale du robot, mais de manière synchrone "
+"avec les fonctions périodiques de ``TimedRobot``, ce qui élimine les "
+"problèmes potentiels de sécurité des threads."
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:5
+msgid ""
+"The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a "
+"lambda (the function to run), along with the requested period and an "
+"optional offset from the common starting time. The optional third argument "
+"is useful for scheduling a function in a different timeslot relative to the "
+"other ``TimedRobot`` periodic methods."
+msgstr ""
+"La méthode ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) prend un "
+"lambda (la fonction à exécuter), ainsi que la période demandée et un offset "
+"optionnel à partir de l'heure de départ commune. La troisième argument "
+"optionnel est utile pour la planification d'une fonction dans un créneau "
+"horaire différent par rapport aux autre méthodes périodiques de "
+"``TimedRobot``."
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:7
+msgid ""
+"The units for the period and offset are seconds in Java. In C++, the `units "
+"library <docs/software/basic-programming/cpp-units:The C++ Units Library>`_ "
+"can be used to specify a period and offset in any time unit."
+msgstr ""
+"Les unités pour la période et l'offset sont des secondes en Java. En C++, le"
+" `logithèque d'unités <docs/software/basic-programming/cpp-units:The C++ "
+"Units Library>`_ peut être utilisé pour spécifier une periode et un offset "
+"dans n'importe quelle unité de temps."
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:75
+msgid ""
+"The ``teleopPeriodic()`` method in this example runs every 20 ms, and the "
+"controller update is run every 10ms with an offset of 10ms from when "
+"``teleopPeriodic()`` runs so that their timeslots don't conflict."
+msgstr ""
+"La méthode ``teleopPeriodic()`` dans cette exemple s'exécute chaque 20 ms, "
+"et le contrôleur est mis à jour chaque 10ms avec un offset de 10ms de quand "
+"``teleopPeriodic()`` est exécuter pour que leurs tranches de temps ne sont "
+"pas en conflit."

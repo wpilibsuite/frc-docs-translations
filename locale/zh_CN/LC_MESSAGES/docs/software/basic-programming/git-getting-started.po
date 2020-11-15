@@ -5,18 +5,382 @@
 # 
 # Translators:
 # Team 5308 <team5308@163.com>, 2020
+# Ran Xin <xinryanryan@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-14 16:12+0000\n"
+"POT-Creation-Date: 2020-11-15 16:12+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
+"Last-Translator: Ran Xin <xinryanryan@gmail.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:2
+msgid "Git Version Control Introduction"
+msgstr "Git 版本控制介绍"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:4
+msgid ""
+"A more in-depth guide on Git is available on the `Git website <https://git-"
+"scm.com/book/en/v2>`__."
+msgstr "有关 Git 的更深入的指南可以在 `Git 网站 <https://git-scm.com/book/en/v2>`__ 上找到。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:6
+msgid ""
+"`Git <https://git-scm.com/about>`_ is a Distributed Version Control System "
+"(VCS) created by Linus Torvalds, also known for creating and maintaining the"
+" Linux kernel. Version Control is a system for tracking changes of code for "
+"developers. The advantages of Git Version Control are:"
+msgstr ""
+"`git <https://git-scm.com/about>`_ 是 Linus Torvalds 创建的分布式版本控制系统 "
+"(VCS)，也因创建和维护 Linux 内核而闻名。版本控制是一个为开发人员跟踪代码更改的系统。 Git 版本控制的优点是："
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:8
+msgid "Separate testing environments into *branches*"
+msgstr "将测试环境分离进 *分支*"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:9
+msgid "Ability to navigate to a particular *commit* without removing history"
+msgstr "能够导航到特定的 \"提交\" 而不删除历史记录"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:10
+msgid "Ability to manage *commits* in various ways, including combining them"
+msgstr "能够以多种方式管理 *提交*，包括将它们组合在一起"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:11
+msgid "Various other features, see `here <https://git-scm.com/about>`__"
+msgstr "各种其他功能，请参见 `这里 <https://git-scm.com/about>`__"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:14
+msgid "Prerequisites"
+msgstr "先决条件"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:16
+msgid "This tutorial uses the Windows operating system"
+msgstr "本教程使用 Windows 操作系统"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:18
+msgid "You have to download and install Git from the following links:"
+msgstr "你必须从以下链接下载并安装 Git ："
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:20
+msgid "`Windows <https://git-scm.com/download/win>`_"
+msgstr "`Windows <https://git-scm.com/download/win>`_"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:21
+msgid "`macOS <https://git-scm.com/download/mac>`_"
+msgstr "`macOS <https://git-scm.com/download/mac>`_"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:22
+msgid "`Linux <https://git-scm.com/download/linux>`_"
+msgstr "`Linux <https://git-scm.com/download/linux>`_"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:24
+msgid ""
+"You may need to add Git to your `path "
+"<https://www.google.com/search?q=adding+git+to+path>`__"
+msgstr ""
+"你可能需要将 Git 添加到 `路径 <https://www.google.com/search?q=adding+git+to+path>` __"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:27
+msgid "Git Vocabulary"
+msgstr "Git 词汇"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:29
+msgid "Git revolves around several core commands:"
+msgstr "Git 围绕着几个核心命令："
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:31
+msgid ""
+"**Repository:** the data structure of your code, including a ``.git`` folder"
+" in the root directory"
+msgstr "**Repository**  代码的数据结构，包括根目录中的 .git 文件夹"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:32
+msgid ""
+"**Commit:** a particular saved state of the repository, this includes all "
+"files and additions"
+msgstr "**Commit:** 存储库的特定保存状态，其中包括所有文件和添加项"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:33
+msgid ""
+"**Branch:** a means of separating various commits, having a unique history. "
+"This is primarily used for separating development and stable branches."
+msgstr "**Branch:** 一种分离各种提交的方法，具有独特的历史记录。这主要用于分离开发和稳定分支。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:34
+msgid "**Push:** update the remote repository with your local changes"
+msgstr "**Push:** 使用本地更改更新远程存储库"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:35
+msgid "**Pull:** update your local repository with the remote changes"
+msgstr "**Pull:** 使用远程更改更新本地存储库"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:36
+msgid "**Clone:** retrieving a local copy of a repository to modify"
+msgstr "**Clone:** 检索存储库的本地副本以进行修改"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:37
+msgid ""
+"**Fork:** duplicating a pre-existing repository to modify, and to compare "
+"against the original"
+msgstr "**Fork:** 复制先前存在的存储库以进行修改，并与原始存储库进行比较"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:38
+msgid ""
+"**Merge:** combining various changes from different branches/commits/forks "
+"into a single history"
+msgstr "**Merge:** 将来自不同分支/提交/分支的各种更改合并到一个历史中"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:41
+msgid "Repository"
+msgstr "资料库"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:43
+msgid ""
+"A Git repository is a data structure containing the structure, history, and "
+"files of a project."
+msgstr "Git 存储库是一种数据结构，其中包含项目的结构，历史记录和文件。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:45
+msgid "Git repositories usually consist of:"
+msgstr "Git 存储库通常包括："
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:47
+msgid ""
+"A ``.git`` folder. This folder contains the various information about the "
+"repository."
+msgstr "一个 .git 文件夹。此文件夹包含有关存储库的各种信息。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:48
+msgid ""
+"A ``.gitignore`` file. This file contains the files or directories that you "
+"do *not* want included when you commit."
+msgstr "一个 .gitignore 文件。该文件包含您你在提交时不希望包含的文件或目录。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:49
+msgid "Files and folders. This is the main content of the repository."
+msgstr "文件和文件夹。这是存储库的主要内容。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:52
+msgid "Creating the repository"
+msgstr "创建存储库"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:54
+msgid ""
+"You can store the repository locally, or through a remote. A remote being "
+"the cloud, or possibly another storage medium that hosts your repository. "
+"`GitHub <https://github.com/>`_ is a popular free hosting service. Numerous "
+"developers use it, and that's what this tutorial will use."
+msgstr ""
+"你可以在本地或通过远程存储存储库。远程服务器是云服务，或者是托管您的存储库的另一种存储介质。 GitHub <https://github.com/> "
+"_ 是一种流行的免费托管服务。许多开发人员都使用它，而本教程将使用它。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:56
+msgid ""
+"There are various providers that can host repositories. `Gitlab "
+"<https://about.gitlab.com>`_, `Bitbucket <https://bitbucket.org/>`_, and "
+"`Cloudforge <https://www.cloudforge.com/>`_ are a few alternatives to Github"
+msgstr ""
+"有很多可以托管存储库的提供程序。 gitlab <https://about.gitlab.com> _ ，Bitbucket "
+"<https://bitbucket.org/> _ 和 Cloudforge <https://www.cloudforge.com/> _ 是 "
+"Github 的一些替代方案"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:59
+msgid "Creating a GitHub Account"
+msgstr "创建一个 GitHub 帐户"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:61
+msgid ""
+"Go ahead and create a GitHub account by visiting the `website "
+"<https://github.com>`_ and following the own screen prompts."
+msgstr "继续并通过访问 `<https://github.com>`_ 网站并按照自己的屏幕提示来创建 GitHub 帐户。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:66
+msgid "Local Creation"
+msgstr "本地创作"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:68
+msgid ""
+"After creating and verifying your account, you'll want to visit the "
+"homepage. It'll look similar to the shown image."
+msgstr "创建并验证您的帐户后，你会要访问主页。它看起来类似于展示的图像。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:72
+msgid "Click the plus icon in the top right."
+msgstr "单击右上角的加号图标。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:76
+msgid "Then click *\"New Repository\"*"
+msgstr "然后点击*“New Repository” *"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:80
+msgid ""
+"Fill out the appropriate information, and then click *\"Create repository\"*"
+msgstr "填写适当的信息，然后单击 *“Create repository” *"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:84
+msgid "You should see a screen similar to this"
+msgstr "你应该会在屏幕上看到与此类似的内容"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:88
+msgid ""
+"The keyboard shortcut ``ctrl`` + ``~`` can be used to open a terminal in "
+"Visual Studio Code."
+msgstr "键盘快捷键 \"ctrl\" +\"〜\" 可用于在 Visual Studio Code 中打开终端。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:90
+msgid ""
+"Now you'll want to open a PowerShell window and navigate to your project "
+"directory. An excellent tutorial on PowerShell can be found `here "
+"<https://programminghistorian.org/en/lessons/intro-to-powershell>`__. Please"
+" consult your search engine on how to open a terminal on alternative "
+"operating systems."
+msgstr ""
+"现在，你将要打开一个 PowerShell "
+"窗口并导航到您的项目目录。可以在此处找到<https://programminghistorian.org/en/lessons/intro-to-"
+"powershell> __ 上有关 PowerShell 的优秀教程。请使用你的搜索引擎，以了解如何在其他操作系统上打开终端。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:94
+msgid ""
+"If a directory is empty, a file needs to be created in order for git to have"
+" something to track. In the below Empty Directory example, we created a file"
+" called ``README.md`` with the contents of ``# Example Repo``. For FRC Robot"
+" projects, the below Existing Project commands should be run in the root of "
+"a project :ref:`created by the VS Code WPILib Project Creator <docs/zero-to-"
+"robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New WPILib "
+"Project>`. More details on the various commands can be found in the "
+"subsequent sections."
+msgstr ""
+"如果目录为空，则需要创建一个文件，以便 git 跟踪某些内容。在下面的 \"空目录\" 示例中，我们创建了一个名为 \"README.md\" "
+"的文件，其内容为 \"＃Example Repo\"。对于 FRC 机器人项目，以下现有项目命令应在 VS 代码 WPILib 项目创建者 <docs"
+"/zero-to-robot/step-3/creating-benchtop-test-program-cpp-java:Creating a New"
+" WPILib Project> 创建的项目的根目录中运行。在以下各节中可以找到有关各种命令的更多详细信息。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:96
+msgid ""
+"Replace the filepath ``\"C:\\Users\\ExampleUser9007\\Documents\\Example "
+"Folder\"`` with the one you want to create the repo in, and replace the "
+"remote URL ``https://github.com/ExampleUser9007/ExampleRepo.git`` with the "
+"URL for the repo you created in the previous steps."
+msgstr ""
+"将文件路径 \"C：\\ Users \\ ExampleUser9007 \\ Documents \\ Example Folder\" "
+"替换为你要在其中创建存储库的路径，然后替换远程 URL                                "
+"'https://github.com/ExampleUser9007/ExampleRepo.git'. 以及你在先前步骤中创建的仓库的 URL。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:100
+msgid "Empty Directory"
+msgstr "空目录"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:116
+msgid "Existing Project"
+msgstr "现有的项目"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:132
+msgid "Commits"
+msgstr "提交"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:134
+msgid ""
+"Repositories are primarily composed of commits. Commits are saved states or "
+"*versions* of code."
+msgstr "存储库主要由提交组成。提交是保存状态或代码的 \"版本\"。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:136
+msgid ""
+"In the previous example, we created a file called README.md. Open that file "
+"in your favorite text editor and edit a few lines. After tinkering with the "
+"file for a bit, simply save and close. Navigate to PowerShell and type the "
+"following commands."
+msgstr ""
+"在前面的示例中，我们创建了一个名为 README.md 的文件。在你喜欢的文本编辑器中打开该文件，然后编辑几行。修补文件后，只需保存并关闭即可。导航到 "
+"PowerShell，然后键入以下命令。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:146
+msgid ""
+"Writing good commit messages is a key part of a maintainable project. A "
+"guide on writing commit messages can be found `here "
+"<https://chris.beams.io/posts/git-commit/>`_."
+msgstr ""
+"编写良好的提交消息是可维护项目的关键部分。可以在此处找到有关编写提交消息的指南：\" <https://chris.beams.io/posts"
+"/git-commit/>\" _。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:149
+msgid "Git Pull"
+msgstr "Git Pull"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:151
+msgid ""
+"``git fetch`` can be used when the user does not wish to automatically merge"
+" into the current working branch"
+msgstr "当用户不希望自动合并到当前工作分支时，可以使用 ``git fetch`` 。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:153
+msgid ""
+"This command retrieves the history or commits from the remote repository. "
+"When the remote contains work you do not have, it will attempt to "
+"automatically merge. See :ref:`docs/software/basic-programming/git-getting-"
+"started:Merging`."
+msgstr ""
+"此命令从远程存储库检索历史记录或提交。当遥控器包含你没有的工作时，它将尝试自动合并。请参阅：docs/software/basic-"
+"programming/git-getting-started:Merging。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:155
+msgid "Run: ``git pull``"
+msgstr "运行: ``git pull``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:158
+msgid "Git Add"
+msgstr "Git Add"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:160
+msgid ""
+"This command adds a selected file(s) to a commit. To commit every "
+"file/folder that isn't excluded via *gitignore*."
+msgstr "该命令将选定的文件添加到提交中。提交未通过 * gitignore * 排除的每个文件/文件夹。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:162
+msgid ""
+"Run: ``git add FILENAME.txt`` where FILENAME.txt is the name and extension "
+"of the file to add to a commit. Run: ``git add .`` will add every untracked,"
+" unexcluded file when ran in the root of the repository."
+msgstr ""
+"运行： git add FILENAME.txt，其中 FILENAME.txt 是要添加到提交的文件的名称和扩展名。运行：``git add .`` "
+"在存储库的根目录中运行时将添加每个未跟踪和未排除的文件。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:166
+msgid "Git Commit"
+msgstr "Git Commit"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:168
+msgid ""
+"This command creates the commit and stores it locally. This saves the state "
+"and adds it to the repositories history."
+msgstr "该命令创建提交并将其存储在本地。这将保存状态并将其添加到存储库历史记录中。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:170
+msgid "Run: ``git commit -m \"type message here\"``"
+msgstr "运行：``git commit -m \"在此处输入消息\"``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:173
+msgid "Git Push"
+msgstr "Git Push"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:175
+msgid "Upload (Push) your local changes to the remote (Cloud)"
+msgstr "将本地更改上传 (推送) 到远程 (云)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:177
+msgid "Run: ``git push``"
+msgstr "运行: ``git push``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:180
+msgid "Branches"
+msgstr "分支"

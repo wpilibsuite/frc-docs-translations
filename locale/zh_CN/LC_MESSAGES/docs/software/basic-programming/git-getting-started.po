@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 16:12+0000\n"
+"POT-Creation-Date: 2020-11-16 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Ran Xin <xinryanryan@gmail.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -384,3 +384,201 @@ msgstr "运行: ``git push``"
 #: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:180
 msgid "Branches"
 msgstr "分支"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:182
+msgid ""
+"Branches are a similar to parallel worlds to Git. They start off the same, "
+"and then they can \"branch\" out into different varying paths. Consider the "
+"Git control flow to look similar to this."
+msgstr "分支类似于 Git 的平行世界。它们以相同的方式开始，然后可以 \"分支\" 到不同的变化路径中。 Git 控制流看起来与此类似。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:186
+msgid ""
+"In the above example, main was branched (or duplicated) into the branch "
+"Feature 1 and someone checked out the branch, creating a local copy. Then, "
+"someone committed (or uploaded) their changes, merging them into the branch "
+"Feature 1. You are \"merging\" the changes from one branch into another."
+msgstr ""
+"在上面的示例中，main 被分支 (或复制) 到分支 Feature 1 中，并且有人查看了分支，从而创建了本地副本。然后，某人提交 (或上传) "
+"了他们的更改，将其合并到分支功能 1 中。你正在将更改从一个分支 \"合并\" 到另一个分支。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:189
+msgid "Creating a Branch"
+msgstr "创建一个分支"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:191
+msgid ""
+"Run: ``git branch branch-name`` where branch-name is the name of the branch "
+"to create. The new branch history will be created from the current active "
+"branch."
+msgstr ""
+"运行: ``git branch branch-name``，其中 branch-name 是要创建的分支的名称。新的分支历史将从当前的活动分支中创建。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:194
+msgid "Entering a Branch"
+msgstr "输入一个分支"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:196
+msgid "Once a branch is created, you have to then enter the branch."
+msgstr "创建分支后，你必须进入分支。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:198
+msgid ""
+"Run: ``git checkout branch-name`` where branch-name is the branch that was "
+"previously created."
+msgstr "运行: ``git checkout branch-name`` 其中 branch-name 是先前创建的分支。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:201
+msgid "Merging"
+msgstr "合并"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:203
+msgid ""
+"In scenarios where you want to copy one branches history into another, you "
+"can merge them. A merge is done by calling ``git merge branch-name`` with "
+"branch-name being the name of the branch to merge from. It is automatically "
+"merged in the current active branch."
+msgstr ""
+"在你要将一个分支历史复制到另一个分支的情况下，也可以合并它们。合并是通过调用 ``git merge branch-name`` 来完成的"
+"，branch-name 是要从中合并的分支的名称。它会自动合并到当前活动分支中。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:205
+msgid ""
+"It's common for a remote repository to contain work (history) that you do "
+"not have. Whenever you run ``git pull``, it will attempt to automatically "
+"merge those commits. That merge may look like the below."
+msgstr ""
+"远程存储库通常包含你没有的工作 (历史记录)。每当你运行 ``git pull`` 时，它将尝试自动合并那些提交的内容。该合并可能如下所示。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:209
+msgid ""
+"However, in the above example, what if File 1 was modified by both branch "
+"FeatureA and FeatureB? This is called a **merge conflict**. A merge conflict"
+" will can be resolved by editing the conflicting file. In the example, we "
+"would need to edit File 1 to keep the history or changes that we want. After"
+" that has been done. Simply re-add, re-commit, and then push your changes."
+msgstr ""
+"但是，在上面的示例中，如果文件 1 被分支 FeatureA 和 FeatureB 修改了怎么办？这称为 **合并冲突** "
+"。合并冲突的问题可以通过编辑冲突文件来解决。在该示例中，我们需要编辑文件1以保留历史记录或所需的更改。完成之后。只需重新添加，重新提交，然后推送你的更改。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:212
+msgid "Resets"
+msgstr "重置"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:214
+msgid ""
+"Sometimes history needs to be reset, or a commit needs to be undone. This "
+"can be done multiple ways."
+msgstr "有时历史记录需要被重置，或者提交需要被撤消。这可以通过多种方式完成。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:217
+msgid "Reverting the Commit"
+msgstr "还原提交"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:219
+msgid ""
+"You cannot revert a merge, as git does not know which branch or origin it "
+"should choose."
+msgstr "你无法还原合并，因为 git 不知道应选择哪个分支或源。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:221
+msgid ""
+"To revert history leading up to a commit run ``git revert commit-id``. The "
+"commit IDs can be shown using the ``git log`` command."
+msgstr "要还原导致提交的历史记录，运行 ``git revert commit-id``。可以使用 ``git log`` 命令显示提交ID。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:228
+msgid "Run: ``git reset --hard commit-id``."
+msgstr "运行: ``git reset --hard commit-id``。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:238
+msgid ""
+"Add the upstream: ``git remote add upstream "
+"https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git``"
+msgstr ""
+"添加上游: ``git remote add upstream "
+"https://github.com/ORIGINAL_OWNER/ORIGINAL_REPOSITORY.git``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:239
+msgid "Confirm it was added via: ``git remote -v``"
+msgstr "确认通过以下方式添加了它：``git remote -v``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:240
+msgid "Pull changes from upstream: ``git fetch upstream``"
+msgstr "从上游进行 Pull 更改: ``git fetch upstream``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:241
+msgid ""
+"Merge the changes into head: ``git merge upstream/upstream-branch-name``"
+msgstr "将更改整合进 head: ``git merge upstream/upstream-branch-name``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:244
+msgid "Gitignore"
+msgstr "Gitignore"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:246
+msgid ""
+"It is extremely important that teams **do not** modify the ``.gitignore`` "
+"file that is included with their robot project. This can lead to offline "
+"deployment not working."
+msgstr "队伍 **请勿** 修改其机器人项目中随附的 ``.gitignore`` 文件，这一点非常重要。这可能导致下线部署无法正常工作。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:248
+msgid ""
+"A ``.gitignore`` file is commonly used as a list of files to not "
+"automatically commit with ``git add``. Any files or directory listed in this"
+" file will **not** be committed. They will also not show up with `git status"
+" <https://git-scm.com/docs/git-status>`_."
+msgstr ""
+"一个 ``.gitignore`` 文件通常用作不使用 ``git add`` 自动提交的文件列表。此文件中列出的任何文件或目录都将 "
+"**不提交**。它们也不会显示为 `git status <https://git-scm.com/docs/git-status>`_."
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:250
+msgid ""
+"Additional Information can be found `here "
+"<https://www.atlassian.com/git/tutorials/saving-changes/gitignore>`__"
+msgstr ""
+"可以在此处找到附加信息 <https://www.atlassian.com/git/tutorials/saving-"
+"changes/gitignore>`__"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:253
+msgid "Hiding a Folder"
+msgstr "隐藏一个文件夹"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:255
+msgid ""
+"Simply add a new line containing the folder to hide, with a forward slash at"
+" the end"
+msgstr "只需添加包含要隐藏的文件夹的新行，并在末尾加正斜杠"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:257
+msgid "EX: ``directory-to-exclude/``"
+msgstr "例如: ``directory-to-exclude/``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:260
+msgid "Hiding a File"
+msgstr "隐藏一个文件"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:262
+msgid ""
+"Add a new line with the name of the file to hide, including any prepending "
+"directory relative to the root of the repository."
+msgstr "用要隐藏的文件名添加新行，包括相对于存储库根目录的任何前缀目录。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:264
+msgid "EX: ``directory/file-to-hide.txt``"
+msgstr "例如:`` directory / file-to-hide.txt ``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:266
+msgid "EX: ``file-to-hide2.txt``"
+msgstr "例如:`` file-to-hide2.txt ``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:269
+msgid "Additional Information"
+msgstr "附加的信息"
+
+#: ../../frc-docs/source/docs/software/basic-programming/git-getting-started.rst:271
+msgid ""
+"A much more in-depth tutorial can be found at the official `git <https"
+"://git-scm.com/docs/gittutorial>`__ website."
+msgstr "在 git `<https://git-scm.com/docs/gittutorial>` 官方网站上可以找到更深入的教程。"

@@ -5,18 +5,106 @@
 # 
 # Translators:
 # Demet T <dtumkaya19@ku.edu.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-21 04:11+0000\n"
+"POT-Creation-Date: 2020-11-16 16:15+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Demet T <dtumkaya19@ku.edu.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:2
+msgid "Median Filter"
+msgstr "Median  Filtresi"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:6
+msgid ""
+"A `robust <https://en.wikipedia.org/wiki/Robust_statistics>`__ alternative "
+"to the :ref:`moving-average filter <docs/software/advanced-controls/filters"
+"/linear-filter:movingAverage>` is the *median filter*.  Where a moving "
+"average filter takes the arithmetic *mean* of the input over a moving sample"
+" window, a median filter (per the name) takes a median instead."
+msgstr ""
+"<https://en.wikipedia.org/wiki/Robust_statistics> \"__  güçlü bir alternatif"
+" :ref:`moving-average filter <docs/software/advanced-controls/filters"
+"/linear-filter:movingAverage>`  * median filtresi *dir.  Hareketli bir "
+"ortalama filtresinin, girdinin aritmetik * ortalamasını * hareketli bir "
+"örnek penceresi üzerinden aldığı durumlarda, bir median filtresi (ad başına)"
+" bunun yerine bir median alır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:8
+msgid ""
+"The median filter is most-useful for removing occasional outliers from an "
+"input stream.  This makes it particularly well-suited to filtering inputs "
+"from distance sensors, which are prone to occasional interference.  Unlike a"
+" moving average, the median filter will remain completely unaffected by "
+"small numbers of outliers, no matter how extreme."
+msgstr ""
+"Median filtresi, bir giriş akışından ara sıra aykırı değerleri kaldırmak "
+"için çok kullanışlıdır. Bu, ara sıra parazitlere eğilimli olan mesafe "
+"sensörlerinden gelen girdileri filtrelemek için özellikle uygun hale "
+"getirir. Hareketli bir ortalamanın aksine; median filtresi, ne kadar aşırı "
+"olursa olsun, az sayıdaki aykırı değerlerden tamamen etkilenmeyecektir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:10
+msgid ""
+"The median filter is supported in WPILib through the ``MedianFilter`` class "
+"(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/MedianFilter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1MedianFilter.html>`__)."
+msgstr ""
+"Median filtresi, WPILib'de ``MedianFilter`` sınıfı (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/MedianFilter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1MedianFilter.html>`__)"
+" aracılığıyla desteklenir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:13
+msgid "Creating a MedianFilter"
+msgstr "MedianFilter Oluşturma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:15
+msgid ""
+"The C++ ``MedianFilter`` class is templated on the data type used for the "
+"input."
+msgstr ""
+"C++ ``MedianFilter`` sınıfı, girdi için kullanılan veri türüne göre "
+"şablonlanır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:17
+msgid ""
+"Because filters have \"memory\", each input stream requires its own filter "
+"object.  Do *not* attempt to use the same filter object for multiple input "
+"streams."
+msgstr ""
+"Filtrelerin \"belleği\" olduğundan, her giriş akışı kendi filtre nesnesini "
+"gerektirir. Birden çok giriş akışı için aynı filtre nesnesini kullanmaya "
+"*çalışmayın*."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:19
+msgid "Creating a ``MedianFilter`` is simple:"
+msgstr "Bir ``MedianFilter`` oluşturmak basittir:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:34
+msgid "Using a MedianFilter"
+msgstr "MedianFilter kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/median-filter.rst:36
+msgid ""
+"Once your filter has been created, using it is easy - simply call the "
+"``calculate()`` method with the most recent input to obtain the filtered "
+"output:"
+msgstr ""
+"Filtreniz oluşturulduktan sonra kullanımı kolaydır - filtrelenmiş çıktıyı "
+"elde etmek için en son girdiyle ``calculate()`` yöntemini çağırmanız "
+"yeterlidir:"

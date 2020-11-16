@@ -5,18 +5,110 @@
 # 
 # Translators:
 # Duru Ünlü <aodunlu@gmail.com>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-12 16:13+0000\n"
+"POT-Creation-Date: 2020-11-16 16:15+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
-"Last-Translator: Duru Ünlü <aodunlu@gmail.com>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:2
+msgid "Debugging State-Space Models and Controllers"
+msgstr "Durum Uzayı Modellerinde ve Denetleyicilerinde Hata Ayıklama"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:5
+msgid "Checking Signs"
+msgstr "İşaretleri Kontrol Etmek"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:7
+msgid ""
+"One of the most common causes of bugs with state-space controllers is signs "
+"being flipped. For example, models included in WPILib expect positive "
+"voltage to result in a positive acceleration, and vice versa. If applying a "
+"positive voltage does not make the mechanism accelerate forwards, or if "
+"moving \"forwards\" makes encoder (or other sensor readings) decrease, they "
+"should be inverted so that positive voltage input results in a positive "
+"encoder reading. For example, if I apply an :term:`input` of :math:`[12, "
+"12]^T` (full forwards for the left and right motors) to my differential "
+"drivetrain, my wheels should propel my robot \"forwards\" (along the +X axis"
+" locally), and for my encoders to read a positive velocity."
+msgstr ""
+"Durum alanı denetleyicilerindeki hataların en yaygın nedenlerinden biri, "
+"işaretlerin ters çevrilmesidir. Örneğin, WPILib'e dahil olan modeller, "
+"pozitif voltajın pozitif bir ivmeyle sonuçlanmasını bekler ve bunun tersi de"
+" geçerlidir. Pozitif voltaj uygulanması mekanizmanın ileriye doğru "
+"hızlanmasına neden olmazsa veya \"ileri\" hareket etmek kodlayıcıyı (veya "
+"diğer sensör okumalarını) düşürürse, pozitif voltaj girişinin pozitif "
+"kodlayıcı okumasıyla sonuçlanması için ters çevrilmelidirler. Örneğin, "
+"kodlayıcılarımın pozitif bir hız okuması için diferansiyel aktarma sistemime"
+" bir :term:`input` of :math:`[12, 12]^T`  (sol ve sağ motorlar için tam "
+"ileri) uygularsam, tekerleklerim robotumu \"ileri\" (yerel olarak + X ekseni"
+" boyunca) itmelidir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:10
+msgid ""
+"The WPILib DifferentialDrive by default inverts the right motors. This "
+"behavior can be changed by calling "
+"``setRightSideInverted(false)``/``SetRightSideInverted(false)`` (Java/C++) "
+"on the DifferentialDrive object."
+msgstr ""
+"WPILib DifferentialDrive varsayılan olarak doğru motorları ters çevirir. Bu "
+"davranış, DifferentialDrive nesnesinde ``setRightSideInverted (false)``/ `` "
+"SetRightSideInverted (false)`` (Java / C ++) çağrılarak değiştirilebilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:13
+msgid "The Importance of Graphs"
+msgstr "Grafiklerin Önemi"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:15
+msgid ""
+"Reliable data of the :term:`system's <system>` :term:`state`\\s, "
+":term:`input`\\s and :term:`output`\\s over time is important when debugging"
+" state-space controllers and observers. One common approach is to send this "
+"data over NetworkTables and use tools such as :ref:`Shuffleboard "
+"<docs/software/wpilib-tools/shuffleboard/index:Shuffleboard>`, which allow "
+"us to both graph the data in real-time as well as save it to a CSV file for "
+"plotting later with tools such as Google Sheets, Excel or Python."
+msgstr ""
+"::term:`system's 1` :term:`state`\\s, :term:`input`\\s and :term:`output`\\s"
+" `ların güvenilir verileri, durum-uzay denetleyicileri ve gözlemcilerde hata"
+" ayıklarken önemlidir. Yaygın bir yaklaşım, bu verileri NetworkTables "
+"üzerinden göndermek ve aşağıdaki gibi araçları "
+"kullanmaktır:ref:`Shuffleboard <docs/software/wpilib-"
+"tools/shuffleboard/index:Shuffleboard>`, bu, hem verilerin gerçek zamanlı "
+"grafiğini çizmemize hem de daha sonra bu tür araçlarla daha sonra çizim "
+"yapmak için bir CSV dosyasına kaydetmemize olanak tanır. Google E-Tablolar, "
+"Excel veya Python olarak."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:17
+msgid ""
+"By default, NetworkTables is limited to a 10hz update rate. For testing, "
+"this can be bypassed with the following code snippet to submit data at up to"
+" 100hz. This code should be run periodically to forcibly publish new data."
+msgstr ""
+"Varsayılan olarak, NetworkTables 10 hz güncelleme hızıyla sınırlıdır. Test "
+"için, 100 hz'ye kadar veri göndermek için aşağıdaki kod parçacığı ile bu "
+"atlanabilir. Yeni verileri zorla yayınlamak için bu kod periyodik olarak "
+"çalıştırılmalıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:19
+msgid ""
+"This will send extra data (at up to 100hz) over NetworkTables, which can "
+"cause lag with both user code and robot dashboards. This will also increase "
+"network utilization. It is often a good idea to disable this during "
+"competitions."
+msgstr ""
+"Bu, NetworkTables üzerinden fazladan veri (100 hz'ye kadar) gönderecek ve "
+"bu, hem kullanıcı kodu hem de robot gösterge tablolarında gecikmeye neden "
+"olabilir. Bu aynı zamanda ağ kullanımını da artıracaktır. Yarışmalar "
+"sırasında bunu devre dışı bırakmak genellikle iyi bir fikirdir."

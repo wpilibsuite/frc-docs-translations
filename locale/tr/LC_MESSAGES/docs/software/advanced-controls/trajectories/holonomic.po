@@ -5,18 +5,165 @@
 # 
 # Translators:
 # Demet T <dtumkaya19@ku.edu.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-17 04:10+0000\n"
+"POT-Creation-Date: 2020-11-16 16:15+0000\n"
 "PO-Revision-Date: 2020-08-16 04:12+0000\n"
-"Last-Translator: Demet T <dtumkaya19@ku.edu.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:2
+msgid "Holonomic Drive Controller"
+msgstr "Holonomik Sürücü Kontrolcüsü"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:3
+msgid ""
+"The holonomic drive controller is a trajectory tracker for robots with "
+"holonomic drivetrains (e.g. swerve, mecanum, etc.). This can be used to "
+"accurately track trajectories with correction for minor disturbances."
+msgstr ""
+"Holonomik sürücü kontrolcüsü, holonomik aktarma organlarına sahip robotlar "
+"için bir yörünge izleyicidir (örn. sapma, mekanum, vb.). Bu, küçük "
+"sıkıntılar için düzeltme ile yörüngeleri doğru bir şekilde izlemek için "
+"kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:6
+msgid "Constructing a Holonomic Drive Controller"
+msgstr "Holonomik Sürücü Kontrolcüsü Oluşturma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:7
+msgid ""
+"The holonomic drive controller should be instantiated with 2 PID controllers"
+" and 1 profiled PID controller."
+msgstr ""
+"Holonomik sürücü kontrolcüsü, 2 PID kontrolcüsü ve 1 profilli PID "
+"kontrolcüsü ile somutlaştırılmalıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:9
+msgid ""
+"For more information on PID control, see :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`."
+msgstr ""
+"PID kontrolü hakkında daha fazla bilgi için bakınız :ref:`docs/software"
+"/advanced-controls/controllers/pidcontroller:PID Control in WPILib`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:11
+msgid ""
+"The 2 PID controllers are controllers that should correct for error in the "
+"field-relative x and y directions respectively. For example, if the first 2 "
+"arguments are ``PIDController(1, 0, 0)`` and ``PIDController(1.2, 0, 0)`` "
+"respectively, the holonomic drive controller will add an additional meter "
+"per second in the x direction for every meter of error in the x direction "
+"and will add an additional 1.2 meters per second in the y direction for "
+"every meter of error in the y direction."
+msgstr ""
+"2 PID kontrolcü, sırasıyla alana-göre x ve y yönlerindeki hatayı düzeltmesi "
+"gereken kontrolcülerdir. Örneğin, ilk 2 bağımsız değişken sırasıyla  "
+"``PIDController (1, 0, 0)`` ve ``PIDController (1.2, 0, 0)`` ise, holonomik "
+"sürücü kontrolcüsü; x yönündeki her hata metresi için x' e saniyede ek bir "
+"metre ekleyecektir ve y yönündeki her hata metresi için y' ye saniyede ek "
+"1,2 metre ekleyecektir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:13
+msgid ""
+"The final parameter is a ``ProfiledPIDController`` for the rotation of the "
+"robot. Because the rotation dynamics of a holonomic drivetrain are decoupled"
+" from movement in the x and y directions, users can set custom heading "
+"references while following a trajectory. These heading references are "
+"profiled according to the parameters set in the ``ProfiledPIDController``."
+msgstr ""
+"Son parametre, robotun dönüşü için bir ``ProfiledPIDController``dır. Bir "
+"holonomik aktarma organının dönüş dinamikleri x ve y yönlerindeki hareketten"
+" ayrıldığından, kullanıcılar bir yörüngeyi izlerken özel yön referansları "
+"ayarlayabilir. Bu rota referansları, ``ProfiledPIDController`` içinde "
+"ayarlanan parametrelere göre profillenmiştir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:38
+msgid "Getting Adjusted Velocities"
+msgstr "Ayarlanmış Hızları Alma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:39
+msgid ""
+"The holonomic drive controller returns \"adjusted velocities\" such that "
+"when the robot tracks these velocities, it accurately reaches the goal "
+"point. The controller should be updated periodically with the new goal. The "
+"goal is comprised of a desired pose, linear velocity, and heading."
+msgstr ""
+"Holonomik sürücü kontrolcüsü, robot bu hızları takip ettiğinde hedef "
+"noktasına doğru bir şekilde ulaşacak şekilde \"ayarlanmış hızları\" geri "
+"döndürür. Kontrolcü, yeni hedefle periyodik olarak güncellenmelidir. Hedef, "
+"istenen bir poz, doğrusal hız ve rotadan oluşur."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:41
+msgid ""
+"The \"goal pose\" represents the position that the robot should be at at a "
+"particular timestamp when tracking the trajectory. It does NOT represent the"
+" trajectory's endpoint."
+msgstr ""
+"\"Hedef pozu\", yörüngeyi izlerken robotun belirli bir zaman diliminde "
+"olması gereken konumu temsil eder. Yörüngenin son noktasını temsil ETMEZ."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:43
+msgid ""
+"The controller can be updated using the ``Calculate`` (C++) / ``calculate`` "
+"(Java) method. There are two overloads for this method. Both of these "
+"overloads accept the current robot position as the first parameter and the "
+"desired heading as the last parameter. For the middle parameters, one "
+"overload accepts the desired pose and the linear velocity reference while "
+"the other accepts a ``Trajectory.State`` object, which contains information "
+"about the goal pose. The latter method is preferred for tracking "
+"trajectories."
+msgstr ""
+"Kontrolcü, ``Calculate`` (C++) / ``calculate`` (Java) yöntemi kullanılarak "
+"güncellenebilir. Bu yöntem için iki aşırı yük vardır. Bu aşırı yüklerin her "
+"ikisi de mevcut robot konumunu ilk parametre olarak ve istenen rotayı son "
+"parametre olarak kabul eder. Ortadaki parametreler için, bir aşırı yük "
+"istenen pozu ve doğrusal hız referansını kabul ederken, diğeri hedef pozu "
+"hakkında bilgi içeren bir ``Trajectory.State`` nesnesini kabul eder. İkinci "
+"yöntem, yörüngeleri izlemek için tercih edilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:67
+msgid "Using the Adjusted Velocities"
+msgstr "Ayarlanmış Hızları Kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:68
+msgid ""
+"The adjusted velocities are of type ``ChassisSpeeds``, which contains a "
+"``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity"
+" in the sideways direction), and an ``omega`` (angular velocity around the "
+"center of the robot frame)."
+msgstr ""
+"Ayarlanan hızlar ``ChassisSpeeds`` tipindedir, bir `` vx '' (ileri yönde "
+"doğrusal hız) içerir, a `` vy '' (yan yöndeki doğrusal hız) ve bir `` omega "
+"'' (robot çerçevesinin merkezi etrafındaki açısal hız)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:70
+msgid ""
+"The returned adjusted speeds can be converted into usable speeds using the "
+"kinematics classes for your drivetrain type. In the example code below, we "
+"will assume a swerve drive robot; however, the kinematics code is exactly "
+"the same for a mecanum drive robot except using ``MecanumDriveKinematics``."
+msgstr ""
+"Döndürülen ayarlanmış hızlar, aktarma sistemi tipiniz için kinematik "
+"sınıfları kullanılarak kullanılabilir hızlara dönüştürülebilir. Aşağıdaki "
+"örnek kodda, bir swerve sürücü robotu varsayacağız; bununla birlikte, "
+"kinematik kodu, ``MecanumDriveKinematics``  kullanımı haricinde bir mecanum "
+"tahrik robotu için tamamen aynıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:86
+msgid ""
+"Because these swerve module states are still speeds and angles, you will "
+"need to use PID controllers to set these speeds and angles."
+msgstr ""
+"Bu sapma modülü durumları, hala hızlar ve açılar olduğundan; bu hızları ve "
+"açıları ayarlamak için PID kontrolcüleri kullanmanız gerekecektir."

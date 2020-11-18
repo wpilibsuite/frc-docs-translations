@@ -5,18 +5,103 @@
 # 
 # Translators:
 # Demet T <dtumkaya19@ku.edu.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-24 16:11+0000\n"
+"POT-Creation-Date: 2020-11-18 16:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
-"Last-Translator: Demet T <dtumkaya19@ku.edu.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:2
+msgid "Simple Subsystems"
+msgstr "Simple Subsystems-Basit Alt Sistemler"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Bu belge, eski komut tabanlı kütüphanenin kullanımını açıklar. Bu belgeler "
+"henüz bunu yapmamış takımlara yardımcı olmak için korunmuş olsa da, "
+"ekiplerin :ref:`yeni komut tabanlı kütüphane "
+"<docs/software/commandbased/index:Command-Based Programming>`ye geçmeleri "
+"şiddetle tavsiye edilir."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:6
+msgid ""
+"Subsystems are the parts of your robot that are independently controlled "
+"like collectors, shooters, drive bases, elevators, arms, wrists, grippers, "
+"etc. Each subsystem is coded as an instance of the Subsystem class. "
+"Subsystems should have methods that define the operation of the actuators "
+"and sensors but not more complex behavior that happens over time."
+msgstr ""
+"Alt sistemler, robotunuzun toplayıcılar, atıcılar, drive bases, asansörler, "
+"kollar, bilekler, grippers-tutucular gibi bağımsız olarak kontrol edilen "
+"parçalarıdır. Her bir alt sistem, Subsystem sınıfının bir örneği olarak "
+"kodlanır. Alt sistemler, aktüatörlerin ve sensörlerin çalışmasını tanımlayan"
+" yöntemlere sahip olmalıdır, ancak zamanla meydana gelen daha karmaşık "
+"davranışları tanımlayan yöntemlere değil."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:9
+msgid "Creating a Subsystem"
+msgstr "Bir Subsystem Oluşturma"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:103
+msgid ""
+"This is an example of a fairly straightforward subsystem that operates a "
+"claw on a robot. The claw mechanism has a single motor to open or close the "
+"claw and no sensors (not necessarily a good idea in practice, but works for "
+"the example). The idea is that the open and close operations are simply "
+"timed. There are three methods, open(), close(), and stop() that operate the"
+" claw motor. Notice that there is not specific code that actually checks if "
+"the claw is opened or closed. The open method gets the claw moving in the "
+"open direction and the close method gets the claw moving in the close "
+"direction. Use a command to control the timing of this operation to make "
+"sure that the claw opens and closes for a specific period of time."
+msgstr ""
+"Bu, bir robot üzerinde bir claw -kıskaç, çalıştıran oldukça basit bir alt "
+"sistem örneğidir. Kıskaç mekanizması, kıskacı açmak veya kapatmak için tek "
+"bir motora sahiptir ve sensör içermez (pratikte mutlaka iyi bir fikir "
+"değildir, ancak bu örnek için çalışır). Buradaki fikir, açma ve kapama "
+"işlemlerinin basitçe zamanlanmış olmasıdır. Kıskaç motorunu çalıştıran "
+"open(), close() ve stop() olmak üzere üç yöntem vardır. Kıskacın açık mı "
+"yoksa kapalı mı olduğunu kontrol eden belirli bir kod olmadığına dikkat "
+"edin. Açık yöntem kıskacın açık yönde hareket etmesini sağlar ve kapatma "
+"yöntemi kıskacın yakın yönde hareket etmesini sağlar. Kıskacın belirli bir "
+"süre boyunca açılıp kapandığından emin olmak için bu işlemin zamanlamasını "
+"kontrol etmeye yarayan bir komut kullanın."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:106
+msgid "Operating the Claw with a Command"
+msgstr "Kıskacı bir Komutla Çalıştırmak"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/subsystems/simple-subsystems.rst:164
+msgid ""
+"Commands provide the timing of the subsystems operations. Each command would"
+" do a different operation with the subsystem, the Claw in this case. The "
+"commands provides the timing for opening or closing. Here is an example of a"
+" simple Command that controls the opening of the claw.  Notice that a "
+"timeout is set for this command (0.9 seconds) to time the opening of the "
+"claw and a check for the time in the isFinished() method. You can find more "
+"details in the article about :doc:`using commands <../commands/creating-"
+"simple-commands>`."
+msgstr ""
+"Komutlar, alt sistem işlemlerinin zamanlamasını sağlar. Claw durumunda, her "
+"komut alt sistemle farklı bir işlem yapacaktır. Komutlar, açma veya kapama "
+"için zamanlama sağlar. İşte kıskacın açılmasını kontrol eden basit bir komut"
+" örneği. Kıskacın açılmasını zamanlamak için bu komuta zaman aşımının (0,9 "
+"saniye) ayarlandığına ve isFinished() yönteminde zamanın kontrol edildiğine "
+"dikkat edin. Aşağıdaki makalede daha fazla ayrıntı bulabilirsiniz "
+":doc:`komutları kullanma <../commands/creating-simple-commands>`."

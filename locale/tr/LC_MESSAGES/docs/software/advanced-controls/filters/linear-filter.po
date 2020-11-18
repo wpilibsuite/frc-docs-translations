@@ -5,18 +5,277 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-17 16:15+0000\n"
+"POT-Creation-Date: 2020-11-18 16:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:2
+msgid "Linear Filters"
+msgstr "Doğrusal Filtreler"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:4
+msgid ""
+"The first (and most commonly-employed) sort of filter that WPILib supports "
+"is a *linear filter* - or, more specifically, a linear time-invariant (LTI) "
+"filter."
+msgstr ""
+"WPILib'in desteklediği ilk (ve en yaygın kullanılan) filtre türü, *doğrusal "
+"bir filtre* veya daha spesifik olarak, doğrusal zamanla değişmeyen-linear "
+"time-invariant (LTI) filtredir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:6
+msgid ""
+"An LTI filter is, put simply, a weighted moving average - the value of the "
+"output stream at any given time is a localized, weighted average of the "
+"inputs near that time.  The difference between different types of LTI "
+"filters is thus reducible to the difference in the choice of the weighting "
+"function (also known as a \"window function\" or an \"impulse response\") "
+"used.  Mathematically, this kind of moving average is known as a "
+"`convolution <https://en.wikipedia.org/wiki/Convolution>`__."
+msgstr ""
+"Basitçe ifade etmek gerekirse, LTI filtresi ağırlıklı hareketli ortalamadır "
+"- herhangi bir zamanda çıktı akışının değeri, o zamana yakın girdilerin "
+"yerelleştirilmiş, ağırlıklı ortalamasıdır. Farklı tipte LTI filtreleri "
+"arasındaki fark, bu nedenle kullanılan ağırlıklandırma fonksiyonunun (aynı "
+"zamanda bir \"pencere fonksiyonu\" veya \"dürtü tepkisi\" olarak da bilinir)"
+" seçimindeki farka indirgenebilir. Matematiksel olarak, bu tür hareketli "
+"ortalama,  `evrişim <https://en.wikipedia.org/wiki/Convolution>`__ olarak "
+"bilinir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:8
+msgid ""
+"There are two broad \"sorts\" of impulse responses: infinite impulse "
+"responses (IIR), and finite impulse responses (FIR)."
+msgstr ""
+"impuls yanıtlarının iki geniş \"sorts-türü\" vardır: sonsuz dürtü yanıtları "
+"(IIR) ve sonlu dürtü yanıtları (FIR)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:10
+msgid ""
+"Infinite impulse responses have infinite \"support\" - that is, they are "
+"nonzero over an infinitely-large region.  This means, broadly, that they "
+"also have infinite \"memory\" - once a value appears in the input stream, it"
+" will influence *all subsequent outputs, forever*.  This is typically "
+"undesirable from a strict signal-processing perspective, however filters "
+"with infinite impulse responses tend to be very easy to compute as they can "
+"be expressed by simple recursion relations."
+msgstr ""
+"Sonsuz dürtü tepkilerinin sonsuz \"desteği\" vardır - yani, sonsuz "
+"büyüklükte bir bölgede sıfırdan farklıdırlar. Bu, genel olarak, sonsuz "
+"\"hafızaya\" sahip oldukları anlamına gelir - giriş akışında bir değer "
+"göründüğünde, *sonraki tüm çıktıları sonsuza kadar* etkileyecektir. Bu, katı"
+" bir sinyal işleme perspektifinden tipik olarak istenmeyen bir durumdur, "
+"ancak sonsuz dürtü yanıtlarına sahip filtrelerin, basit özyineleme "
+"ilişkileri ile ifade edilebildikleri için hesaplanması çok kolay olma "
+"eğilimindedir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:12
+msgid ""
+"Finite impulse responses have finite \"support\" - that is, they are nonzero"
+" on a bounded region.  The \"archetypical\" FIR filter is a flat moving "
+"average - that is, simply setting the output equal to the average of the "
+"past n inputs.  FIR filters tend to have more-desirable properties than IIR "
+"filters, but are more costly to compute."
+msgstr ""
+"Sonlu dürtü yanıtlarının sonlu \"desteği\" vardır - yani, sınırlı bir "
+"bölgede sıfırdan farklıdırlar. \"Arketipik\" FIR filtresi düz hareketli bir "
+"ortalamadır - yani, basitçe çıktıyı son n girdinin ortalamasına eşit olarak "
+"ayarlamaktır. FIR filtreleri, IIR filtrelerinden daha çok istenen "
+"özelliklere sahip olma eğilimindedir, ancak hesaplamaları daha maliyetlidir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:14
+msgid ""
+"Linear filters are supported in WPILib through the ``LinearFilter`` class "
+"(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>`__)."
+msgstr ""
+"Doğrusal filtreler, WPILib'de  through the ``LinearFilter`` sınıfı (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/LinearFilter.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1LinearFilter.html>`"
+" __) aracılığıyla desteklenir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:17
+msgid "Creating a LinearFilter"
+msgstr "LinearFilter - Doğrusal Filtre Oluşturma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:19
+msgid ""
+"The C++ ``LinearFilter`` class is templated on the data type used for the "
+"input."
+msgstr ""
+"C ++ ``LinearFilter`` sınıfı, girdi için kullanılan veri türüne göre "
+"şablonlanır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:21
+msgid ""
+"Because filters have \"memory\", each input stream requires its own filter "
+"object.  Do *not* attempt to use the same filter object for multiple input "
+"streams."
+msgstr ""
+"Filtrelerin \"belleği\" olduğundan, her giriş akışı kendi filtre nesnesini "
+"gerektirir. Birden çok giriş akışı için aynı filtre nesnesini kullanmaya * "
+"çalışmayın *."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:23
+msgid ""
+"While it is possible to directly instantiate ``LinearFilter`` class to build"
+" a custom filter, it is far more convenient (and common) to use one of the "
+"supplied factory methods, instead:"
+msgstr ""
+"Özel bir filtre oluşturmak için `` LinearFilter '' sınıfını doğrudan "
+"somutlaştırmak mümkün olsa da, bunun yerine sağlanan fabrika yöntemlerinden "
+"birini kullanmak çok daha uygundur (ve yaygındır):"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:26
+msgid "singlePoleIIR"
+msgstr "singlePoleIIR - tek Kutuplu IIR"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:30
+msgid ""
+"The ``singlePoleIIR()`` factory method creates a single-pole infinite "
+"impulse response filter (also known as `exponential smoothing "
+"<https://en.wikipedia.org/wiki/Exponential_smoothing>`__, on account of "
+"having an exponential impulse response).  This is the \"go-to,\" \"first-"
+"try\" low-pass filter in most applications; it is computationally trivial "
+"and works in most cases."
+msgstr ""
+"`` SinglePoleIIR () '' fabrika yöntemi, tek kutuplu bir sonsuz dürtü yanıtı "
+"filtresi oluşturur (üstel bir dürtü tepkisine sahip olduğu için `` üstel "
+"yumuşatma <https://en.wikipedia.org/wiki/Exponential_smoothing>`__, olarak "
+"da bilinir).  Bu, çoğu uygulamada \"go-to, gitme\", \" first-try, ilk "
+"deneme\" düşük geçiş filtresidir; sayısal olarak önemsizdir ve çoğu durumda "
+"işe yarar."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:48
+msgid ""
+"The \"time constant\" parameter determines the \"characteristic timescale\" "
+"of the filter's impulse response; the filter will cancel out any signal "
+"dynamics that occur on timescales significantly shorter than this.  "
+"Relatedly, it is also the approximate timescale of the introduced "
+":ref:`phase lag <docs/software/advanced-controls/filters/introduction:Phase "
+"Lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "
+"\"cutoff frequency\" of the filter."
+msgstr ""
+"\" time constant- zaman sabiti\" parametresi, filtrenin dürtü yanıtının "
+"\"karakteristik zaman ölçeğini\" belirler; filtre, bundan önemli ölçüde daha"
+" kısa zaman ölçeklerinde meydana gelen sinyal dinamiklerini iptal edecektir."
+" Benzer şekilde, aynı zamanda tanıtılan yaklaşık zaman ölçeğidir: ref: \"faz"
+" gecikmesi <docs/software/advanced-controls/filters/introduction:Phase "
+"Lag>\". 2 pi ile çarpılan bu zaman ölçeğinin tersi, filtrenin \"cutoff "
+"frequency-kesme frekansı\" dır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:50
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:100
+msgid ""
+"The \"period\" parameter is the period at which the filter's ``calculate()``"
+" method will be called.  For the vast majority of implementations, this will"
+" be the standard main robot loop period of 0.02 seconds."
+msgstr ""
+"\" period - dönem\" parametresi, filtrenin ``calculate() ``  yönteminin "
+"çağrılacağı dönemdir. Uygulamaların büyük çoğunluğu için bu, 0,02 saniyelik "
+"standart ana robot döngüsü süresi olacaktır. -"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:53
+msgid "movingAverage"
+msgstr "movingAverage - hareketliOrtalama"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:57
+msgid ""
+"The ``movingAverage`` factory method creates a simple flat moving average "
+"filter.  This is the simplest possible low-pass FIR filter, and is useful in"
+" many of the same contexts as the single-pole IIR filter.  It is somewhat "
+"more costly to compute, but generally behaves in a somewhat nicer manner."
+msgstr ""
+"``movingAverage`` fabrika yöntemi, basit bir düz hareketli ortalama filtre "
+"oluşturur. Bu, mümkün olan en basit düşük geçişli FIR filtresidir ve tek "
+"kutuplu IIR filtresiyle aynı bağlamların çoğunda kullanışlıdır. Hesaplamak "
+"biraz daha maliyetlidir, ancak genellikle biraz daha hoş bir şekilde "
+"davranır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:73
+msgid ""
+"The \"taps\" parameter is the number of samples that will be included in the"
+" flat moving average.  This behaves similarly to the \"time constant\" above"
+" - the effective time constant is the number of taps times the period at "
+"which ``calculate()`` is called."
+msgstr ""
+" \"taps- vuruşlar\" parametresi, düz hareketli ortalamaya dahil edilecek "
+"örneklerin sayısıdır. Bu, yukarıdaki \"time constant-zaman sabiti\" ne "
+"benzer şekilde davranır - etkin zaman sabiti, dokunma sayısı çarpı "
+"``calculate()`` çağrısının yapıldığı sürenin sayısıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:76
+msgid "highPass"
+msgstr "highPass-yüksekGeçiş"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:80
+msgid ""
+"The ``highPass`` factory method creates a simple first-order infinite "
+"impulse response high-pass filter.  This is the \"counterpart\" to the "
+"`singlePoleIIR`_."
+msgstr ""
+"``highPass-yüksekGeçiş`` fabrika yöntemi, basit bir birinci dereceden sonsuz"
+" dürtü tepkisi yüksek geçiren filtre oluşturur. Bu, \"singlePoleIIR\" nin "
+"\"karşılığıdır\"."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:98
+msgid ""
+"The \"time constant\" parameter determines the \"characteristic timescale\" "
+"of the filter's impulse response; the filter will cancel out any signal "
+"dynamics that occur on timescales significantly longer than this.  "
+"Relatedly, it is also the approximate timescale of the introduced "
+":ref:`phase lead <docs/software/advanced-controls/filters/introduction:Phase"
+" lag>`.  The reciprocal of this timescale, multiplied by 2 pi, is the "
+"\"cutoff frequency\" of the filter."
+msgstr ""
+"\"time constant-zaman sabiti\" parametresi, filtrenin dürtü yanıtının "
+"\"characteristic timescale-karakteristik zaman ölçeğini\" belirler; filtre, "
+"bundan önemli ölçüde daha uzun zaman ölçeklerinde meydana gelen sinyal "
+"dinamiklerini iptal edecektir. Benzer şekilde, bu aynı zamanda tanıtılan "
+"yaklaşık zaman ölçeğidir: ref: \"faz kurşun <docs/software/advanced-"
+"controls/filters/introduction:Phase lag>\". 2 pi ile çarpılan bu zaman "
+"ölçeğinin tersi, filtrenin \" cutoff frequency-kesme frekansı\" dır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:103
+msgid "Using a LinearFilter"
+msgstr "LinearFilter kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:105
+msgid ""
+"In order for the created filter to obey the specified timescale parameter, "
+"its ``calculate()`` function *must* be called regularly at the specified "
+"period.  If, for some reason, a significant lapse in ``calculate()`` calls "
+"must occur, the filter's ``reset()`` method should be called before further "
+"use."
+msgstr ""
+"Oluşturulan filtrenin belirtilen zaman ölçeği parametresine uyması için, `` "
+"calculate () '' işlevinin * belirtilen sürede düzenli olarak çağrılması "
+"gerekir *. Herhangi bir nedenle `` hesapla () '' çağrılarında önemli bir "
+"hata olması gerekiyorsa, filtrenin `` reset () '' yöntemi daha fazla "
+"kullanılmadan önce çağrılmalıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/linear-filter.rst:107
+msgid ""
+"Once your filter has been created, using it is easy - simply call the "
+"``calculate()`` method with the most recent input to obtain the filtered "
+"output:"
+msgstr ""
+"Filtreniz oluşturulduktan sonra kullanımı kolaydır - filtrelenmiş çıktıyı "
+"elde etmek için en son girdiyle ``calculate()``  yöntemini çağırmanız "
+"yeterlidir:"

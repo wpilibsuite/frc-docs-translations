@@ -5,18 +5,116 @@
 # 
 # Translators:
 # Duru Ünlü <aodunlu@gmail.com>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-07 04:12+0000\n"
+"POT-Creation-Date: 2020-11-18 16:14+0000\n"
 "PO-Revision-Date: 2020-06-12 20:56+0000\n"
-"Last-Translator: Duru Ünlü <aodunlu@gmail.com>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:2
+msgid "Using Multiple Cameras"
+msgstr "Birden Fazla Kamera Kullanma"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:5
+msgid "Switching the Driver Views"
+msgstr "Sürücü Görünümlerini Değiştirme"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:7
+msgid ""
+"If you're interested in just switching what the driver sees, and are using "
+"SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option "
+"(\"Selected Camera Path\") that reads the given NT key and changes the "
+"\"Camera Choice\" to that value (displaying that camera). The robot code "
+"then just needs to set the NT key to the correct camera name. Assuming "
+"\"Selected Camera Path\" is set to \"CameraSelection\", the following code "
+"uses the joystick 1 trigger button state to show camera1 and camera2."
+msgstr ""
+"Yalnızca sürücünün gördüğü şeyi değiştirmekle ilgileniyorsanız ve "
+"SmartDashboard'u kullanıyorsanız, SmartDashboard CameraServer Stream Viewer,"
+" belirtilen NT anahtarını okuyan ve \"Kamera Seçimi\" ni bu değere "
+"değiştiren bir seçeneğe (\"Seçili Kamera Yolu\") sahiptir. (bu kamerayı "
+"gösteriyor). \"Selected Camera Path-Seçili Kamera Yolu\" nun "
+"\"CameraSelection-Kamera Seçimi\" olarak ayarlandığını varsayarak, aşağıdaki"
+" kod, kamera1 ve kamera2' yi göstermek için  joystick 1  başlatma durumunu "
+"kullanır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:62
+msgid ""
+"If you're using some other dashboard, you can change the camera used by the "
+"camera server dynamically. If you open a stream viewer nominally to camera1,"
+" the robot code will change the stream contents to either camera1 or camera2"
+" based on the joystick trigger."
+msgstr ""
+"Başka bir gösterge tablosu kullanıyorsanız, kamera sunucusu tarafından "
+"kullanılan kamerayı dinamik olarak değiştirebilirsiniz. Bir akış "
+"görüntüleyiciyi nominal olarak kamera1'e açarsanız, robot kodu, kumanda kolu"
+" tetikleyicisine göre akış içeriğini kamera1 veya kamera2 olarak değiştirir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:117
+msgid "Keeping Streams Open"
+msgstr "Akışları Açık Tutmak"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:119
+msgid ""
+"By default, the cscore library is pretty aggressive in turning off cameras "
+"not in use. What this means is that when you switch cameras, it may "
+"disconnect from the camera not in use, so switching back will have some "
+"delay as it reconnects to the camera. To keep both camera connections open, "
+"use the ``SetConnectionStrategy()`` method to tell the library to keep the "
+"streams open, even if you aren't using them."
+msgstr ""
+"Varsayılan olarak, cscore kitaplığı, kullanılmayan kameraları kapatmada "
+"oldukça agresiftir. Bunun anlamı, kameraları değiştirdiğinizde, kullanımda "
+"olmayan kamerayla bağlantısının kesilebileceği, bu nedenle geri geçişin "
+"kameraya yeniden bağlanırken biraz gecikeceği anlamına gelir. Her iki kamera"
+" bağlantısını da açık tutmak için kitaplığa, kullanmıyor olsanız bile "
+"akışları açık tutmasını söylemek için ``SetConnectionStrategy()`` yöntemini "
+"kullanın."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:178
+msgid ""
+"If both cameras are USB, you may run into USB bandwidth limitations with "
+"higher resolutions, as in all of these cases the roboRIO is going to be "
+"streaming data from both cameras to the roboRIO simultaneously (for a short "
+"period in options 1 and 2, and continuously in option 3). It is "
+"theoretically possible for the library to avoid this simultaneity in the "
+"option 2 case (only), but this is not currently implemented."
+msgstr ""
+"Her iki kamera da USB ise, daha yüksek çözünürlüklerde USB bant genişliği "
+"sınırlamalarıyla karşılaşabilirsiniz, çünkü tüm bu durumlarda roboRIO, her "
+"iki kameradan roboRIO'ya aynı anda veri akışı yapacaktır (1 ve 2 "
+"seçeneklerinde kısa bir süre için ve sürekli seçenek 3). Kitaplığın bu "
+"eşzamanlılıktan kaçınması seçenek 2 durumunda (sadece) teorik olarak "
+"mümkündür, ancak bu şu anda uygulanmamaktadır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:180
+msgid ""
+"Different cameras report bandwidth usage differently. The library will tell "
+"you if you're hitting the limit; you'll get this error message:"
+msgstr ""
+"Farklı kameralar bant genişliği kullanımını farklı şekilde rapor eder. "
+"Kütüphane, sınıra ulaşıp ulaşmadığınızı size söyleyecektir; bu hata mesajını"
+" alacaksınız:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:188
+msgid ""
+"If you're using Option 3 it will give you this error during ``RobotInit()``."
+" Thus you should just try your desired resolution and adjusting as necessary"
+" until you both don't get that error and don't exceed the radio bandwidth "
+"limitations."
+msgstr ""
+"3. Seçeneği kullanıyorsanız, ``RobotInit ()`` sırasında size bu hatayı "
+"verecektir. Bu nedenle, her ikiniz de bu hatayı almayana ve radyo bant "
+"genişliği sınırlamalarını aşmayana kadar istediğiniz çözünürlüğü denemeli ve"
+" gerektiği gibi ayarlamalısınız."

@@ -5,18 +5,147 @@
 # 
 # Translators:
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-24 04:10+0000\n"
+"POT-Creation-Date: 2020-11-18 16:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Esra özemre <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:2
+msgid "Power Distribution Panel"
+msgstr "Power Distribution Panel"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:4
+msgid ""
+"The Power Distribution Panel (PDP) can use its CAN connectivity to "
+"communicate a wealth of status information regarding the robot's power use "
+"to the roboRIO, for use in user code.  The PDP has the capability to report "
+"its current temperature, the bus voltage, the total robot current draw, the "
+"total robot energy use, and the individual current draw of each device power"
+" channel.  These data can be used for a number of advanced control "
+"techniques, such as motor torque limiting and brownout avoidance."
+msgstr ""
+"Power Distribution Panel (PDP), kullanıcı kodunda kullanılmak üzere robotun "
+"güç kullanımına ilişkin çok sayıda durum bilgisini roboRIO'ya iletmek için "
+"CAN bağlantısını kullanabilir. PDP, mevcut sıcaklığını, veriyolu voltajını, "
+"toplam robot akım çekişini, toplam robot enerji kullanımını ve her bir cihaz"
+" güç kanalının bireysel akım çekimini raporlama özelliğine sahiptir. Bu "
+"veriler, motor torku sınırlama ve voltaj düşmesini önleme gibi bir dizi "
+"gelişmiş kontrol tekniği için kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:7
+msgid "Creating a PDP Object"
+msgstr "PDP Nesnesi Yaratma"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:9
+msgid ""
+"To use the PDP, create an instance of the :code:`PowerDistributionPanel` "
+"class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):"
+msgstr ""
+"PDP'yi kullanmak için şu kodun bir örneğini oluşturun "
+":code:`PowerDistributionPanel` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1PowerDistributionPanel.html>`__):"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:21
+msgid ""
+"Note: it is not necessary to create a PowerDistributionPanel object unless "
+"you need to read values from it. The board will work and supply power on all"
+" the channels even if the object is never created."
+msgstr ""
+"Not: Değerleri okumanız gerekmedikçe bir PowerDistributionPanel nesnesi "
+"oluşturmanız gerekmez. Nesne hiç yaratılmamış olsa bile pano çalışacak ve "
+"tüm kanallarda güç sağlayacaktır."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:23
+msgid ""
+"To enable voltage and current logging in the Driver Station, the CAN ID for "
+"the PDP *must* be 0."
+msgstr ""
+"Sürücü İstasyonunda gerilim ve akım kaydını etkinleştirmek için, PDP * için "
+"CAN Kimliği * 0 olmalıdır."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:26
+msgid "Reading the Bus Voltage"
+msgstr "Veriyolu Voltajı-Bus Voltage Okuma"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:38
+msgid ""
+"Monitoring the bus voltage can be useful for (among other things) detecting "
+"when the robot is near a brownout, so that action can be taken to avoid "
+"brownout in a controlled manner. See the :doc:`roboRIO Brownouts "
+"document</docs/software/roborio-info/roborio-brownouts>` for more "
+"information."
+msgstr ""
+"Veriyolu voltajının izlenmesi, (diğer şeylerin yanı sıra), robotun bir "
+"elektrik kesintisine yakın olduğunu tespit etmek için yararlı olabilir, "
+"böylece kontrollü bir şekilde kesintiyi önlemek için önlem alınabilir. Daha "
+"fazla bilgi için :doc:`roboRIO Brownouts document </docs/software/roborio-"
+"info/roborio-brownouts>` belgesine bakın."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:41
+msgid "Reading the Temperature"
+msgstr "Sıcaklığın Okunması"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:53
+msgid ""
+"Monitoring the temperature can be useful for detecting if the robot has been"
+" drawing too much power and needs to be shut down for a while, or if there "
+"is a short or other wiring problem."
+msgstr ""
+"Sıcaklığın izlenmesi, robotun çok fazla güç çekip çekmediğini ve bir süredir"
+" kapatılması gerekip gerekmediğini veya kısa veya başka bir kablolama sorunu"
+" olup olmadığını tespit etmek için yararlı olabilir."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:56
+msgid "Reading the Total Current and Energy"
+msgstr "Toplam Akımı ve Enerjiyi Okuma"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:70
+msgid ""
+"Monitoring the total current and total energy (the total energy is simply "
+"the total current multiplied by the bus voltage) can be useful for "
+"controlling how much power is being drawn from the battery, both for "
+"preventing brownouts and ensuring that mechanisms have sufficient power "
+"available to perform the actions required."
+msgstr ""
+"Toplam akımın ve toplam enerjinin izlenmesi (toplam enerji basitçe toplam "
+"akımın bara voltajıyla çarpımıdır), hem elektrik kesintilerini önlemek hem "
+"de mekanizmaların yeterli güce sahip olmasını sağlamak için bataryadan ne "
+"kadar güç çekildiğini kontrol etmek ve  gerekli eylemleri gerçekleştirmek "
+"için yararlı olabilir."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:73
+msgid "Reading Individual Channel Currents"
+msgstr "Özel Kanal Akımlarını Okuma"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:75
+msgid ""
+"The PDP also allows users to monitor the current drawn by the individual "
+"device power channels.  For example, to read the current on channel 0:"
+msgstr ""
+"PDP ayrıca, kullanıcıların ayrı cihaz güç kanalları tarafından çekilen akımı"
+" izlemesine olanak tanır. Örneğin, 0 kanalındaki akımı okumak için:"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:87
+msgid ""
+"Monitoring individual device current draws can be useful for detecting "
+"shorts or stalled motors."
+msgstr ""
+"Cihazın ayrı ayrı akım çekimlerini izlemek, kısa devreleri veya durmuş "
+"motorları tespit etmek için faydalı olabilir."

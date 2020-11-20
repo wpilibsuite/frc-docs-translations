@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-11-20 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -144,43 +144,7 @@ msgstr ""
 msgid "Creating the RamseteCommand"
 msgstr "Création de la commande Ramsete ou RamseteCommand"
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:107
-msgid "Todo"
-msgstr "À faire"
-
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:107
-msgid "link to ``relativeTo`` api docs once they're uploaded"
-msgstr "lien vers ``relativeTo`` api docs une fois qu’ils sont téléchargés"
-
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:109
-msgid ""
-"It is very important that the initial robot pose match the first pose in the"
-" trajectory.  For the purposes of our example, the robot will be reliably "
-"starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use,"
-" however, it is probably not desirable to base your coordinate system on the"
-" robot position, and so the starting position for both the robot and the "
-"trajectory should be set to some other value.  If you wish to use a "
-"trajectory that has been defined in robot-centric coordinates in such a "
-"situation, you can transform it to be relative to the robot's current pose "
-"using the ``transformBy`` method.  For more information about transforming "
-"trajectories, see :ref:`docs/software/advanced-controls/trajectories"
-"/transforming-trajectories:Transforming Trajectories`."
-msgstr ""
-"Il est très important que la pose initiale du robot corresponde à la "
-"première pose de la trajectoire. Pour les besoins de notre exemple, le robot"
-" commencera plus simplement à la position ``(0,0)`` avec une orientation de "
-"``0``. En pratique, cependant, il n’est probablement pas souhaitable de "
-"baser votre système de coordonnées sur la position du robot, et donc la "
-"position de départ pour le robot et la trajectoire doit être définie sur une"
-" autre valeur. Si vous souhaitez utiliser une trajectoire qui a été définie "
-"dans un système de coordonnées centrées sur le robot dans une telle "
-"situation, vous pouvez transformer la trajectoire pour la mettre relative à "
-"la pose actuelle du robot en utilisant la méthode ``transformBy``. Pour plus"
-" d’informations sur la transformation des trajectoires, voir "
-":ref:`docs/software/advanced-controls/trajectories/transforming-"
-"trajectories:Transforming Trajectories`."
-
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:111
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:130
 msgid ""
 "Now that we have a trajectory, we can create a command that, when executed, "
 "will follow that trajectory.  To do this, we use the ``RamseteCommand`` "
@@ -196,7 +160,7 @@ msgstr ""
 " `C++ "
 "<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1RamseteCommand.html>`__)"
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:131
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:150
 msgid ""
 "This declaration is fairly substantial, so we'll go through it argument-by-"
 "argument:"
@@ -204,7 +168,7 @@ msgstr ""
 "Cette déclaration est assez substantielle, nous allons donc la scruter "
 "paramètre par paramètre:"
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:133
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:152
 msgid ""
 "The trajectory: This is the trajectory to be followed; accordingly, we pass "
 "the command the trajectory we just constructed in our earlier steps."
@@ -213,7 +177,7 @@ msgstr ""
 "à la commande la trajectoire que nous venons de construire dans nos étapes "
 "antérieures."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:134
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:153
 msgid ""
 "The pose supplier: This is a method reference (or lambda) to the :ref:`drive"
 " subsystem method that returns the pose <docs/software/examples-tutorials"
@@ -227,7 +191,7 @@ msgstr ""
 "subsystem:Odometry Accessor Method>`.  Le contrôleur RAMSETE a besoin de la "
 "valeur de la pose actuelle pour déterminer les sorties requises des roues ."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:135
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:154
 msgid ""
 "The RAMSETE controller: This is the ``RamseteController`` object (`Java "
 "<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/RamseteController.html>`__,"
@@ -244,7 +208,7 @@ msgstr ""
 "la pose actuelle mesurée et l’état de trajectoire en un point de consigne de"
 " vitesse du châssis."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:136
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:155
 msgid ""
 "The drive feedforward: This is a ``SimpleMotorFeedforward`` object (`Java "
 "<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/SimpleMotorFeedforward.html>`__,"
@@ -263,7 +227,7 @@ msgstr ""
 "prédictive avec les gains feedforward (``kS``, ``kV``, and ``kA``) que nous "
 "avons obtenus à partir de l’outil de caractérisation de la base pilotable."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:137
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:156
 msgid ""
 "The drive kinematics: This is the ``DifferentialDriveKinematics`` object "
 "(`Java "
@@ -281,7 +245,7 @@ msgstr ""
 " que nous avons construit plus tôt dans notre fichier de constantes, et qui "
 "sera utilisé pour convertir les vitesses du châssis en vitesses de roue."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:138
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:157
 msgid ""
 "The wheel speed supplier: This is a method reference (or lambda) to the "
 ":ref:`drive subsystem method that returns the wheel speeds <docs/software"
@@ -293,7 +257,7 @@ msgstr ""
 "des roues <docs/software/examples-tutorials/trajectory-tutorial/creating-"
 "drive-subsystem:Encoder Accessor Method>`"
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:139
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:158
 msgid ""
 "The left-side PIDController: This is the ``PIDController`` object (`Java "
 "<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__,"
@@ -310,7 +274,7 @@ msgstr ""
 "gauche du robot, en utilisant le gain P que nous avons obtenu à partir de "
 "l’outil de caractérisation de la base pilotable."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:140
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:159
 msgid ""
 "The right-side PIDController: This is the ``PIDController`` object (`Java "
 "<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__,"
@@ -327,7 +291,7 @@ msgstr ""
 "droit du robot, en utilisant le gain P que nous avons obtenu à partir de "
 "l’outil de caractérisation de la base pilotable."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:141
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:160
 msgid ""
 "The output consumer: This is a method reference (or lambda) to the "
 ":ref:`drive subsystem method that passes the voltage outputs to the drive "
@@ -339,7 +303,7 @@ msgstr ""
 "sortie aux moteurs de déplacement  <docs/software/examples-tutorials"
 "/trajectory-tutorial/creating-drive-subsystem:Voltage-Based Drive Method>`."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:142
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:161
 msgid ""
 "The robot drive: This is the drive subsystem itself, included to ensure the "
 "command does not operate on the drive at the same time as any other command "
@@ -350,7 +314,7 @@ msgstr ""
 "en même temps que toute autre commande qui utilise cette même base "
 "pilotable."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:144
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:163
 msgid ""
 "Finally, note that we append a final \"stop\" command in sequence after the "
 "path-following command, to ensure that the robot stops moving at the end of "
@@ -360,11 +324,11 @@ msgstr ""
 "après la commande de suivi de la trajectoire, pour s’assurer que le robot "
 "s'immobilise à la fin de la trajectoire."
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:147
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:166
 msgid "Video"
 msgstr "Vidéo"
 
-#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:149
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:168
 msgid ""
 "If all has gone well, your robot's autonomous routine should look something "
 "like this:"

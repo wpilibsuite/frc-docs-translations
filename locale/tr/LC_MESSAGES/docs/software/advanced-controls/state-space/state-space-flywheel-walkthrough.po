@@ -5,18 +5,113 @@
 # 
 # Translators:
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-16 04:10+0000\n"
+"POT-Creation-Date: 2020-11-21 04:10+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
-"Last-Translator: Esra özemre <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:8
+msgid ""
+"Create an accurate state-space model of a flywheel using :term:`system "
+"identification` or CAD software."
+msgstr ""
+":term:`system identification` kullanarak veya CAD yazılımı kullanarak bir "
+"çakın doğru durum-uzay modelini oluşturun.  "
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:9
+msgid ""
+"Implement a Kalman Filter to filter encoder velocity measurements without "
+"lag."
+msgstr ""
+"Enkoder hızı ölçümlerini gecikmeden filtrelemek için bir Kalman Filtresi "
+"uygulayın."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:10
+msgid ""
+"Implement a :ref:`LQR <docs/software/advanced-controls/state-space/state-"
+"space-intro:The Linear-Quadratic Regulator>` feedback controller which, when"
+" combined with model-based feedforward, will generate voltage :term:`inputs "
+"<input>` to drive the flywheel to a :term:`reference`."
+msgstr ""
+"Bir:ref:`LQR <docs/software/advanced-controls/state-space/state-space-"
+"intro:The Linear-Quadratic Regulator>` geri besleme denetleyicisi uygulayın;"
+" bu, model tabanlı ileri besleme ile birleştirildiğinde, çarkı a "
+":term:`reference` \"referans\" a sürmek için voltaj :term:`inputs <input>`  "
+"oluşturur."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:12
+msgid ""
+"This tutorial is intended to be approachable for teams without a great deal "
+"of programming expertise.  While the WPILib library offers significant "
+"flexibility in the manner in which its state-space control features are "
+"implemented, closely following the implementation outlined in this tutorial "
+"should provide teams with a basic structure which can be reused for a "
+"variety of state-space systems."
+msgstr ""
+"Bu öğretici, çok fazla programlama uzmanlığı olmayan ekipler için "
+"ulaşılabilir olması amaçlanmıştır. WPILib kitaplığı, durum-uzay kontrol "
+"özelliklerinin uygulanma biçiminde önemli bir esneklik sunarken, bu eğitimde"
+" ana hatları verilen uygulamayı yakından takip etmek, ekiplere çeşitli "
+"durum-uzay sistemleri için yeniden kullanılabilecek temel bir yapı "
+"sağlamalıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:14
+msgid ""
+"The full example is available in the state-space flywheel (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++"
+" "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__)"
+" and state-space flywheel system identification (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++"
+" "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__)"
+" example projects."
+msgstr ""
+"Tam örnek, durum uzayı volanında (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`"
+" __ / `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`"
+" __) ve durum uzayı çark sistemi tanımlamasında (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`"
+" __ / `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/master/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>"
+" ') mevcuttur."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:17
+msgid "Why Use State-Space Control?"
+msgstr "State-Space Control-Durum Uzayı Kontrolü Neden Kullanılır?"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:19
+msgid ""
+"Because state-space control focuses on creating an accurate model of our "
+"system, we can accurately predict how our :term:`model` will respond to "
+"control :term:`inputs <input>`. This allows us to simulate our mechanisms "
+"without access to a physical robot, as well as easily choose :term:`gains "
+"<gain>` that we know will work well. Having a model also allows us to create"
+" lagless filters, such as Kalman Filters, to optimally filter sensor "
+"readings."
+msgstr ""
+"State-Space Control-Durum-uzay kontrolü, sistemimizin doğru bir modelini "
+"oluşturmaya odaklandığından, :term:`model` will respond to control "
+":term:`inputs 1` e nasıl tepki vereceğini doğru bir şekilde tahmin "
+"edebiliriz. Bu, mekanizmalarımızı fiziksel bir robota erişim olmadan simüle "
+"etmemize ve aynı zamanda kolayca seçim yapmamıza olanak tanır :term:`gains "
+"<gain>` iyi çalışacağını bildiğimiz kazançlardır.  Bir modele sahip olmak, "
+"sensör okumalarını en iyi şekilde filtrelemek için Kalman Filtreleri gibi "
+"gecikmesiz filtreler oluşturmamıza da olanak tanır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:22
+msgid "Modeling Our Flywheel"
+msgstr "Flywheel-Volanımızın Modellenmesi"

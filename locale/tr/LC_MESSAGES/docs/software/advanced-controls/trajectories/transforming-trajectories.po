@@ -5,18 +5,123 @@
 # 
 # Translators:
 # ceren oktemer <ceren.oktemer@gmail.com>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-20 16:14+0000\n"
+"POT-Creation-Date: 2020-11-21 04:10+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:2
+msgid "Transforming Trajectories"
+msgstr "Yörüngeleri Dönüştürmek"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:3
+msgid ""
+"Trajectories can be transformed from one coordinate system to another and "
+"moved within a coordinate system using the ``relativeTo`` and the "
+"``transformBy`` methods. These methods are useful for moving trajectories "
+"within space, or redefining an already existing trajectory in another frame "
+"of reference."
+msgstr ""
+"Yörüngeler bir koordinat sisteminden diğerine dönüştürülebilir ve bir "
+"koordinat sistemi içinde \"relativeTo''  ve \"transformBy'' yöntemleri "
+"kullanılarak taşınabilir. Bu yöntemler, uzayda yörüngeleri hareket ettirmek "
+"veya başka bir referans çerçevesinde zaten var olan bir yörüngeyi yeniden "
+"tanımlamak için kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:5
+msgid "Neither of these methods changes the shape of the original trajectory."
+msgstr "Bu yöntemlerin hiçbiri orijinal yörüngenin şeklini değiştirmez."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:8
+msgid "The ``relativeTo`` Method"
+msgstr "\"relativeTo'' Metodu"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:9
+msgid ""
+"The ``relativeTo`` method is used to redefine an already existing trajectory"
+" in another frame of reference. This method takes one argument: a pose, (via"
+" a ``Pose2d`` object) that is defined with respect to the current coordinate"
+" system, that represents the origin of the new coordinate system."
+msgstr ""
+"\"relativeTo'' metodu, başka bir referans çerçevesinde zaten mevcut bir "
+"yörüngeyi yeniden tanımlamak için kullanılır. Bu yöntem bir argüman alır: "
+"yeni koordinat sisteminin başlangıcını temsil eden mevcut koordinat "
+"sistemine göre tanımlanan bir poz (bir \" Pose2d'' nesnesi aracılığıyla)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:11
+msgid ""
+"For example, a trajectory defined in coordinate system A can be redefined in"
+" coordinate system B, whose origin is at (2, 2, 30 degrees) in coordinate "
+"system A, using the ``relativeTo`` method."
+msgstr ""
+"Örneğin, koordinat sistemi A'da tanımlanan bir yörünge, orijini koordinat "
+"sistemi A'da (2, 2, 30 derece) olan B koordinat sisteminde, `relativeTo`` "
+"methodu kullanılarak yeniden tanımlanabilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:27
+msgid ""
+"In the diagram above, the original trajectory (``aTrajectory`` in the code "
+"above) has been defined in coordinate system A, represented by the black "
+"axes. The red axes, located at (2, 2) and 30° with respect to the original "
+"coordinate system, represent coordinate system B. Calling ``relativeTo`` on "
+"``aTrajectory`` will redefine all poses in the trajectory to be relative to "
+"coordinate system B (red axes)."
+msgstr ""
+"Yukarıdaki diyagramda, orijinal yörünge (yukarıdaki koddaki ``aTrajectory`` "
+"), siyah eksenlerle temsil edilen A koordinat sisteminde tanımlanmıştır. "
+"Orijinal koordinat sistemine göre (2, 2) ve 30 ° 'de bulunan kırmızı "
+"eksenler B koordinat sistemini temsil eder. ``aTrajectory`` üzerinde "
+"``relativeTo`` çağrısı yapmak yörüngedeki tüm pozları göreceli olacak "
+"şekilde koordinat sistemi B' ye (kırmızı eksenler) yeniden tanımlayacaktır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:30
+msgid "The ``transformBy`` Method"
+msgstr "``transformBy`` Metodu"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:31
+msgid ""
+"The ``transformBy`` method can be used to move (i.e. translate and rotate) a"
+" trajectory within a coordinate system. This method takes one argument: a "
+"transform (via a ``Transform2d`` object) that maps the current initial "
+"position of the trajectory to a desired initial position of the same "
+"trajectory."
+msgstr ""
+"``transformBy`` metodu, bir koordinat sistemi içindeki bir yörüngeyi hareket"
+" ettirmek (yani çevirmek ve döndürmek) için kullanılabilir. Bu yöntem bir "
+"argüman alır: yörüngenin mevcut başlangıç konumunu aynı yörüngenin istenen "
+"bir başlangıç konumuna eşleyen bir dönüşüm (bir ``Transform2d`` nesnesi "
+"aracılığıyla)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:33
+msgid ""
+"For example, one may want to transform a trajectory that begins at (2, 2, 30"
+" degrees) to make it begin at (4, 4, 50 degrees) using the ``transformBy`` "
+"method."
+msgstr ""
+"Örneğin, ``transformBy`` yöntemini kullanarak (2, 2, 30 derece) 'de başlayan"
+" bir yörüngeyi (4, 4, 50 derece) başlaması için dönüştürmek "
+"isteyebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/transforming-trajectories.rst:49
+msgid ""
+"In the diagram above, the original trajectory, which starts at (2, 2) and at"
+" 30° is visible in blue. After applying the transform above, the resultant "
+"trajectory's starting location is changed to (4, 4) at 50°. The resultant "
+"trajectory is visible in orange."
+msgstr ""
+"Yukarıdaki diyagramda, (2, 2) 'de ve 30 ° 'de başlayan orijinal yörünge mavi"
+" olarak görülebilir. Yukarıdaki dönüşümü uyguladıktan sonra, ortaya çıkan "
+"yörüngenin başlangıç konumu 50 ° 'de (4, 4) olarak değiştirilir. Ortaya "
+"çıkan yörünge turuncu renkte görünür."

@@ -5,18 +5,133 @@
 # 
 # Translators:
 # Demet T <dtumkaya19@ku.edu.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-21 16:11+0000\n"
+"POT-Creation-Date: 2020-11-21 04:10+0000\n"
 "PO-Revision-Date: 2020-09-20 04:20+0000\n"
-"Last-Translator: Demet T <dtumkaya19@ku.edu.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:2
+msgid "Built-in Plugins"
+msgstr "Yerleşik Eklentiler"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:4
+msgid ""
+"Shuffleboard provides a number of built-in plugins that handle common tasks "
+"for FRC use, such as camera streams, all widgets, and NetworkTables "
+"connections."
+msgstr ""
+"Shuffleboard, kamera akışları, tüm widget'lar ve NetworkTables bağlantıları "
+"gibi FRC kullanımına yönelik yaygın görevleri gerçekleştiren bir dizi "
+"yerleşik eklenti sağlar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:7
+msgid "Base Plugin"
+msgstr "Temel Eklenti"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:9
+msgid ""
+"The base plugin defines all the data types, widgets, and layouts necessary "
+"for FRC use. It does *not* define any of the source types, or any special "
+"data types or widgets for those source types. Those are handled by the "
+"`NetworkTables Plugin`_ and the `CameraServer Plugin`_. This separation of "
+"concerns makes it easier for teams to create plugins for custom source types"
+" or protocols (eg HTTP, ZeroMQ) for the FRC data types without needing a "
+"NetworkTables client."
+msgstr ""
+"Temel eklenti, FRC kullanımı için gerekli tüm veri türlerini, widget'ları ve"
+" layout'ları tanımlar. Kaynak türlerinden herhangi birini veya bu kaynak "
+"türleri için özel veri türlerini veya pencere öğelerini *tanımlamaz*. Bunlar"
+" `NetworkTables Plugin`_ ve `CameraServer Plugin`_ tarafından yönetilir. Bu "
+"alanların ayrılması, ekiplerin bir NetworkTables istemcisine ihtiyaç "
+"duymadan FRC veri türleri için özel kaynak türleri veya protokoller (örn. "
+"HTTP, ZeroMQ) için eklentiler oluşturmasını kolaylaştırır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:13
+msgid "CameraServer Plugin"
+msgstr "CameraServer Eklentisi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:15
+msgid ""
+"The camera server plugin provides sources and widgets for viewing "
+"camerastreams from the ``CameraServer`` WPILib class."
+msgstr ""
+"Kamera sunucusu eklentisi, ``CameraServer`` WPILib sınıfından kamera "
+"yayınlarını görüntülemek için kaynaklar ve widget'lar sağlar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:17
+msgid ""
+"This plugin depends on the `NetworkTables Plugin`_ in order to discover the "
+"available camera streams."
+msgstr ""
+"Bu eklenti, mevcut kamera akışlarını keşfetmek için `NetworkTables Plugin`_e"
+" bağlıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:20
+msgid "Stream discovery"
+msgstr "Stream discovery"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:22
+msgid ""
+"CameraServer sources are automatically discovered by looking at the "
+"``/CameraPublisher`` NetworkTable."
+msgstr ""
+"CameraServer kaynakları, ``/CameraPublisher`` NetworkTable'a bakılarak "
+"otomatik olarak keşfedilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:31
+msgid ""
+"For example, a camera named “Camera” with a server at "
+"``roborio-0000-frc.local`` would have this table layout:"
+msgstr ""
+"Örneğin, ``roborio-0000-frc.local`` adresinde bir sunucuya sahip “Camera” "
+"adlı bir kamera şu layout'a sahip olacaktır:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:40
+msgid ""
+"This setup will automatically discover all camera streams hosted on a "
+"roboRIO by the CameraServer class in WPILib. Any non-WPILib projects that "
+"want to have camera streams appear in shuffleboard will have to set the "
+"streams entry for the camera server."
+msgstr ""
+"Bu kurulum, WPILib'deki CameraServer sınıfı tarafından bir roboRIO'da "
+"barındırılan tüm kamera akışlarını otomatik olarak keşfedecektir. Kamera "
+"akışlarının shuffleboard'da görünmesini isteyen WPILib dışı projeler, kamera"
+" sunucusu için stream-akış girişini ayarlamalıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:43
+msgid "NetworkTables Plugin"
+msgstr "NetworkTables Eklentisi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:45
+msgid ""
+"The NetworkTables plugin provides data sources backed by ntcore. Since the "
+"``LiveWindow`` and ``SmartDashboard`` classes in WPILib use NetworkTables to"
+" send the data to the driver station, this plugin will need to be loaded in "
+"order to use those classes."
+msgstr ""
+"NetworkTables eklentisi, ntcore tarafından desteklenen veri kaynakları "
+"sağlar. WPILib'deki ``LiveWindow`` ve ``SmartDashboard`` sınıfları, verileri"
+" driver station'a göndermek için NetworkTables kullandığından, bu sınıfları "
+"kullanmak için bu eklentinin yüklenmesi gerekecektir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/builtin-plugins.rst:47
+msgid ""
+"This plugin handles the connection and reconnection to NetworkTables "
+"automatically, users of shuffleboard and writers of custom plugins will not "
+"have to worry about the intricacies of the NT protocol."
+msgstr ""
+"Bu eklenti, NetworkTables'a bağlantıyı ve yeniden bağlanmayı otomatik olarak"
+" yönetir, shuffleboard kullanıcıları ve özel eklenti yazarları, NT "
+"protokolünün karmaşıklıkları hakkında endişelenmek zorunda kalmaz."

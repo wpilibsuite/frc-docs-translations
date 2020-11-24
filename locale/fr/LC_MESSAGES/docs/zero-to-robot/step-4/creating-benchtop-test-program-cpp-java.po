@@ -3,16 +3,402 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Dalton Smith <daltzsmith@gmail.com>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-20 04:10+0000\n"
+"POT-Creation-Date: 2020-11-24 04:11+0000\n"
 "PO-Revision-Date: 2020-11-20 04:22+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:2
+msgid "Creating your Benchtop Test Program (C++/Java)"
+msgstr "Création de votre Programme prototype (C++/Java)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:4
+msgid ""
+"Once everything is installed, we're ready to create a robot program.  WPILib"
+" comes with several templates for robot programs.  Use of these templates is"
+" highly recommended for new users; however, advanced users are free to write"
+" their own robot code from scratch. This article walks through creating a "
+"project from one of the provided examples which has some code already "
+"written to drive a basic robot."
+msgstr ""
+"Une fois que tout est installé, nous sommes prêts à créer un programme de "
+"robots. WPILib est livré avec plusieurs modèles pour les programmes de "
+"robots. L’utilisation de ces modèles est fortement recommandée pour les "
+"nouveaux utilisateurs; cependant, les utilisateurs avancés sont libres "
+"d’écrire leur propre code robot à partir de zéro. Cet article explore la "
+"création d’un projet à partir de l’un des exemples fournis qui a un certain "
+"code déjà écrit pour conduire un robot de base."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:7
+msgid "Creating a New WPILib Project"
+msgstr "Création d’un nouveau projet WPILib"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:9
+msgid ""
+"Bring up the Visual Studio Code command palette with :kbd:`Control+Shift+P`:"
+msgstr ""
+"Faites apparaitre la palette de commandes Visual Studio Code avec "
+":kbd:`Control+Shift+P`:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:11
+msgid "|Command Palette|"
+msgstr "|Command Palette|"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:13
+msgid ""
+"Then, type \"WPILib\" into the prompt.  Since all WPILib commands start with"
+" \"WPILib,\" this will bring up the list of WPILib-specific VS Code "
+"commands:"
+msgstr ""
+"Ensuite, tapez \"WPILib\" dans l’invite. Étant donné que toutes les "
+"commandes WPILib commencent par \"WPILib\" cette opération fera apparaitre "
+"la liste des commandes VS Code propres à WPILib :"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:15
+msgid "|WPILib Commands|"
+msgstr "|WPILib Commands|"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:17
+msgid "Now, select the \"Create a new project\" command:"
+msgstr "Sélectionnez maintenant la commande \"Create a new project\":"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:19
+msgid "|Create New Project|"
+msgstr "|Create New Project|"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:21
+msgid "This will bring up the \"New Project Creator Window:\""
+msgstr "Cette opération fera ressortir la fenêtre \"New Project Creator Window:\""
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:23
+msgid "|New Project Creator|"
+msgstr "|New Project Creator|"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:25
+msgid "The elements of the New Project Creator Window are explained below:"
+msgstr ""
+"Les éléments de la fenêtre New Project Creator sont expliqués ci-dessous :"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:27
+msgid ""
+"**Project Type**: The kind of project we wish to create.  For this example, "
+"select **Example**"
+msgstr ""
+"**Project Type**: Le genre de projet que nous voulons créer. Pour cet "
+"exemple, sélectionnez **Example**"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:28
+msgid ""
+"**Language**: This is the language (C++ or Java) that will be used for this "
+"project."
+msgstr ""
+"**Language**: C’est le langage de programmation (C++ ou Java) qui sera "
+"utilisé pour ce projet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:29
+msgid ""
+"**Project Base**: This box is used to select the base class or example to "
+"generate the project from. For this example, select **Getting Started**"
+msgstr ""
+"**Project Base**: Cette zone est utilisée pour sélectionner la classe de "
+"base ou l’exemple à partir de laquelle ou duquel  générer le projet. Pour "
+"cet exemple, sélectionnez **Getting Started**"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:30
+msgid ""
+"**Project Location**: This determines the folder in which the robot project "
+"will be located."
+msgstr ""
+"**Project Location**: Ce paramètre définit le dossier dans lequel le projet "
+"de robot sera situé."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:31
+msgid ""
+"**Create New Folder**: If this is checked, a new folder will be created to "
+"hold the project within the previously-specified folder.  If it is *not* "
+"checked, the project will be located directly in the previously-specified "
+"folder.  An error will be thrown if the folder is not empty and this is not "
+"checked."
+msgstr ""
+"**Create New Folder**: Si ce paramèetre est coché, un nouveau dossier sera "
+"créé pour contenir le projet dans le dossier précédemment spécifié. S’il "
+"*n’est pas* vérifié, le projet sera situé directement dans le dossier "
+"précédemment spécifié. Un message d'erreur sera émis si le dossier n’est pas"
+" vide et que le paramètre n’est pas coché."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:32
+msgid ""
+"**Project Name**: The name of the robot project.  This also specifies the "
+"name that the project folder will be given if the Create New Folder box is "
+"checked."
+msgstr ""
+"**Project Name**: Le nom du projet de robot. Ce paramètre spécifie également"
+" le nom que le dossier de projet recevra si la zone Create New Folder est "
+"cochée."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:33
+msgid ""
+"**Team Number**: The team number for the project, which will be used for "
+"package names within the project and to locate the robot when deploying "
+"code."
+msgstr ""
+"**Team Number**: Numéro d’équipe du projet, qui sera utilisé pour les noms "
+"de packages dans le projet et pour localiser le robot au moment du "
+"déploiement du code."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:34
+msgid ""
+"**Desktop Support**: Enables unit test and simulation. While WPILib supports"
+" this, third party software libraries may not. If libraries do not support "
+"desktop, then your code may not compile or may crash. It should be left "
+"unchecked unless unit testing or simulation is needed and all libraries "
+"support it. For this example, do not check this box."
+msgstr ""
+"**Desktop Support**: Permet de faire le test unitaire et la simulation. Bien"
+" que WPILib prenne en charge cette fonctionnalité, pour les bibliothèques de"
+" logiciels tiers cette prise en charge n'est pas garantie. Si les "
+"bibliothèques  logicielles  ne prennent pas en charge les applications de "
+"bureau, votre code peut ne pas compiler ou se bloquer. Cette case doit être "
+"laissée non cochée à moins que des tests unitaires ou une simulation ne "
+"soient nécessaires et que toutes les bibliothèques de logiciels  le prennent"
+" en charge. Pour cet exemple, ne cochez pas cette case."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:36
+msgid ""
+"Once all the above have been configured, click \"Generate Project\" and the "
+"robot project will be created."
+msgstr ""
+"Une fois que tout ce qui précède a été configuré, cliquez sur \"Generate "
+"Project\" et le projet robot sera créé."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:38
+msgid ""
+"Any errors in project generation will appear in the bottom right-hand corner"
+" of the screen."
+msgstr ""
+"Toutes les erreurs lors de la génération de projet apparaîtront dans le coin"
+" inférieur droit de l’écran."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:41
+msgid "Opening The New Project"
+msgstr "Ouverture du nouveau projet"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:43
+msgid ""
+"After successfully creating your project, VS Code will give the option of "
+"opening the project as shown below. We can choose to do that now or later by"
+" typing :kbd:`Ctrl-K` then :kbd:`Ctrl-O` (or just :kbd:`Command+O` on macOS)"
+" and select the folder where we saved our project."
+msgstr ""
+"Après avoir créé avec succès  votre projet, VS Code offrira la possibilité "
+"d’ouvrir le projet comme indiqué ci-dessous. Nous pouvons choisir de le "
+"faire maintenant ou plus tard en tapant :kbd:`Ctrl-K` ensuite :kbd:`Ctrl-O` "
+"(ou juste :kbd:`Command+O` sous macOS) et sélectionnez le dossier où nous "
+"avons enregistré notre projet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:45
+msgid ""
+"Once opened we will see the project hierarchy on the left. Double clicking "
+"on the file will open that file in the editor."
+msgstr ""
+"Une fois ouvert, nous pouvons voir la hiérarchie du projet à gauche. En "
+"double-cliquant sur un fichier, on ouvre ce fichier dans l’éditeur."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:47
+msgid "|Opened Robot Project|"
+msgstr "|Opened Robot Project|"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:50
+msgid "C++ Configurations (C++ Only)"
+msgstr "Configurations C++ (C++ uniquement)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:52
+msgid ""
+"For C++ projects, there is one more step to set up IntelliSense.  Whenever "
+"we open a project, we should get a pop-up in the bottom right corner asking "
+"to refresh C++ configurations.  Click \"Yes\" to set up IntelliSense."
+msgstr ""
+"Pour les projets C++, il y a une étape de plus pour configurer IntelliSense."
+" Chaque fois que nous ouvrons un projet, nous devrions obtenir un pop-up "
+"dans le coin inférieur droit demandant de rafraîchir les configurations C++."
+" Cliquez sur \"Yes\" pour configurer IntelliSense."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:54
+msgid "|C++ Configurations|"
+msgstr "|C++ Configurations|"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:57
+msgid "Imports/Includes"
+msgstr "Imports/Includes"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:77
+msgid ""
+"Our code needs to reference the components of WPILib that are used. In C++ "
+"this is accomplished using ``#include`` statements; in Java it is done with "
+"``import`` statements. The program references classes for ``Joystick`` (for "
+"driving), ``PWMVictorSPX`` (for controlling motors), ``TimedRobot`` (the "
+"base class used for the example), ``Timer`` (used for autonomous), "
+"``DifferentialDrive`` (for connecting the joystick control to the motors), "
+"and ``LiveWindow`` (C++ only)."
+msgstr ""
+"Notre code doit faire référence aux composants de WPILib qui sont utilisés. "
+"En C++, cette condition est réalisée à l’aide d’instructions ``#include`` ; "
+"en Java, elle est réalisée avec des instructions ``import``. Le programme "
+"fait référence à des classes pour ``Joystick`` (pour la conduite),  "
+"``PWMVictorSPX`` (pour contrôler les moteurs), ``TimedRobot`` (la classe de "
+"base utilisée pour l’exemple), ``Timer`` (utilisé pour le mode autonome), "
+"``DifferentialDrive`` (pour connecter le contrôle joystick aux moteurs) et "
+"``LiveWindow`` (C++ uniquement)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:80
+msgid "Defining the variables for our sample robot"
+msgstr "Définition des variables de notre prototype de robot"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:111
+msgid ""
+"The sample robot in our examples will have a joystick on USB port 0 for "
+"arcade drive and two motors on PWM ports 0 and 1. Here we create objects of "
+"type DifferentialDrive (m_robotDrive), Joystick (m_stick) and time "
+"(m_timer). This section of the code does three things:"
+msgstr ""
+"Le prototype de robot dans nos exemples aura un joystick sur le port USB 0 "
+"pour l'entraînement arcade et deux moteurs sur les ports PWM 0 et 1. Ici, "
+"nous créons des objets de type DifférentielDrive (m_robotDrive), Joystick "
+"(m_stick) et le temps (m_timer). Cette section du code accomplit trois "
+"choses :"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:113
+msgid "Defines the variables as members of our Robot class."
+msgstr "Définit les variables en tant que membres de notre classe Robot."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:114
+msgid "Initializes the variables."
+msgstr "Initialise les variables."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:116
+msgid ""
+"The variable initializations for C++ are in the ``private`` section at the "
+"bottom of the program. This means they are private to the class (``Robot``)."
+" The C++ code also sets the Motor Safety expiration to 0.1 seconds (the "
+"drive will shut off if we don't give it a command every .1 seconds) and "
+"starts the ``Timer`` used for autonomous."
+msgstr ""
+"L'initialisation des variables en C++ se trouve dans la section ``private`` "
+"en bas du programme. Ce qui signifie qu’ils sont privés à la classe  "
+"``Robot``. Le code C++ définit configure également le paramètre Motor Safety"
+" expiration à 0,1 seconde (le déplacement s’arrêtera si nous ne lui donnons "
+"pas une commande toutes les 0,1 secondes) et démarre le ``Timer`` utilisé "
+"pour le mode autonome."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:119
+msgid "Robot Initialization"
+msgstr "Initialisation du robot"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:133
+msgid ""
+"The ``RobotInit`` method is run when the robot program is starting up, but "
+"after the constructor. The ``RobotInit`` for our sample program gets a "
+"pointer to the ``LiveWindow`` instance (this is used in the test method "
+"discussed below). This method is omitted from the code, meaning the default "
+"version will be run (if we wanted to run something here we could provide the"
+" code above to override the default)."
+msgstr ""
+"La méthode ``RobotInit`` est exécutée lorsque le programme robot démarre, "
+"mais après le constructeur. La méthode ``RobotInit``  dans notre exemple de "
+"programme obtient un pointeur vers l’instance ``LiveWindow`` (utilisé dans "
+"la méthode de test discuté ci-dessous). Cette méthode est omise du code, ce "
+"qui signifie que la version par défaut sera exécutée (si nous voulions "
+"exécuter quelque chose ici, nous pourrions fournir le code ci-dessus et "
+"surchager la méthode par défaut)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:136
+msgid "Simple Autonomous Example"
+msgstr "Exemple de mode autonome simple"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:176
+msgid ""
+"The ``AutonomousInit`` method is run once each time the robot transitions to"
+" autonomous from another mode. In this program, we reset the ``Timer`` and "
+"then start it in this method."
+msgstr ""
+"La méthode ``AutonomousInit`` est exécutée une fois à chaque fois que le "
+"robot passe au mode autonomie à partir d’un autre mode. Dans ce programme, "
+"nous réinitialisons le ``Timer`` et le repartons ensuite dans cette méthode."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:178
+msgid ""
+"``AutonomousPeriodic`` is run once every period while the robot is in "
+"autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
+"which defaults to 20ms. In this example, the periodic code checks if the "
+"timer is less than 2 seconds and if so, drives forward at half speed using "
+"the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than "
+"2 seconds has elapsed, the code stops the robot drive."
+msgstr ""
+"``AutonomousPeriodic`` est exécuté une fois par période lorsque que le robot"
+" est en mode autonome. Dans la classe ``TimedRobot``  la période est de "
+"durée fixe, qui par défaut est égale à 20ms. Dans cet exemple, le code "
+"périodique vérifie si la minuterie est inférieure à 2 secondes et, dans ce "
+"cas, fait avancer le robot à mi-vitesse à l’aide de la méthode "
+"``ArcadeDrive`` de la classe ``DifferentialDrive``. S'il s'est écoulé plus "
+"de 2 secondes, le code met fin au déplacement du robot."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:181
+msgid "Joystick Control for teleoperation"
+msgstr "Contrôle par Joystick pendant le mode téléopéré"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:205
+msgid ""
+"Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
+"``TeleopPeriodic`` function. In this example we don't have anything to do in"
+" ``TeleopInit``, it is provided for illustration purposes only. In "
+"``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the "
+"Y-axis of the ``Joystick`` to forward/back motion of the drive motors and "
+"the X-axis to turning motion."
+msgstr ""
+"Comme dans le mode Autonomous, le mode Teleop possède les fonctions "
+"``TeleopInit`` et ``TeleopPeriodic``. Dans cet exemple, nous n’avons rien à "
+"faire dans  ``TeleopInit``, qui est fourni uniquement à des fins "
+"d’illustration. Dans ``TeleopPeriodic``, le code utilise la méthode "
+"``ArcadeDrive`` pour faire correspondre l’axe Y du ``Joystick`` pour le "
+"mouvement en ligne droite avancer/reculer des moteurs d’entraînement et "
+"l’axe X pour le mouvement de rotation."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:208
+msgid "Test Mode"
+msgstr "Mode test"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:221
+msgid ""
+"Test Mode is used for testing robot functionality. Similar to "
+"``TeleopInit``, the ``TestPeriodic`` is provided here for example."
+msgstr ""
+"Le mode test est utilisé afin de tester la fonctionnalité du robot. À "
+"l’instar de ``TeleopInit``, et ``TestPeriodic``  est fourni ici par exemple."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:232
+msgid "Deploying the Project to a Robot"
+msgstr "Déploiement du code projet sur un robot"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:234
+msgid ""
+"Please see the instructions :ref:`here <docs/software/vscode-overview"
+"/deploying-robot-code:Building and Deploying Robot Code>` for deploying the "
+"program onto a robot."
+msgstr ""
+"Veuillez consulter les instructions  :ref:`ici <docs/software/vscode-"
+"overview/deploying-robot-code:Building and Deploying Robot Code>` pour "
+"déployer le programme sur un robot."

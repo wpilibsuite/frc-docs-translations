@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-18 16:14+0000\n"
+"POT-Creation-Date: 2020-12-07 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,11 +21,11 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:2
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:4
 msgid "Introduction to PID"
 msgstr "PID'ye Giriş"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:4
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:6
 msgid ""
 "The PID controller is a commonly used feedback controller consisting of "
 "proportional, integral, and derivative terms, hence the name. This article "
@@ -38,7 +38,7 @@ msgstr ""
 "sağlamaya çalışırken, bir PID denetleyicisinin terim tanımını "
 "oluşturacaktır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:6
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:8
 msgid ""
 "First, we'll get some nomenclature for PID controllers out of the way. The "
 ":term:`reference` is called the setpoint (the desired position) and the "
@@ -52,43 +52,43 @@ msgstr ""
 "adlandırılır. Aşağıda, ilgili miktarlar için bazı yaygın değişken adlandırma"
 " kuralları verilmiştir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":math:`r(t)`"
 msgstr ":math:`r(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":term:`setpoint`"
 msgstr ":term:`setpoint`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":math:`u(t)`"
 msgstr ":math:`u(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":term:`control input`"
 msgstr ":term:`control input`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":math:`e(t)`"
 msgstr ":math:`e(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":term:`error`"
 msgstr ":term:`error`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":math:`y(t)`"
 msgstr ":math:`y(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":term:`output`"
 msgstr ":term:`output`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:13
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:15
 msgid "The :term:`error` :math:`e(t)` is :math:`r(t) - y(t)`."
 msgstr ":term:`error` :math:`e(t)`,  :math:`r(t) - y(t)` dır"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:15
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:17
 msgid ""
 "For those already familiar with PID control, this book's interpretation "
 "won't be consistent with the classical intuition of \"past\", \"present\", "
@@ -106,7 +106,7 @@ msgstr ""
 ":term:`setpoints <setpoint>` ler için davranışının daha eksiksiz bir "
 "açıklamasını sağlayacaktır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:17
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:19
 msgid ""
 "The proportional term drives the position error to zero, the derivative term"
 " drives the velocity error to zero, and the integral term accumulates the "
@@ -120,15 +120,15 @@ msgstr ""
 "integrali) ve mevcut toplamı  :term:`control input` ne ekler. Bunların her "
 "biri hakkında daha fazla ayrıntıya gireceğiz."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:20
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:22
 msgid "Proportional Term"
 msgstr "Proportional Term - Oransal terimi"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:22
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:24
 msgid "The *Proportional* term drives the position error to zero."
 msgstr "*Proportional-Orantılı* terimi, konum hatasını sıfıra götürür."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:24
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:26
 msgid ""
 "u(t) = K_p e(t)\n"
 "\n"
@@ -136,7 +136,7 @@ msgstr ""
 "u(t) = K_p e(t)\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:26
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:28
 msgid ""
 "where :math:`K_p` is the proportional gain and :math:`e(t)` is the error at "
 "the current time :math:`t`."
@@ -144,7 +144,7 @@ msgstr ""
 "burada :math:`K_p` orantılı kazançtır ve  :math:`e(t)` geçerli zamandaki "
 ":math:`t` hatadır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:28
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:30
 msgid ""
 "The below figure shows a block diagram for a :term:`system` controlled by a "
 "P controller."
@@ -152,7 +152,7 @@ msgstr ""
 "Aşağıdaki şekil, bir P kontrolörü tarafından kontrol edilen bir  "
 ":term:`system`  için bir blok diyagramı göstermektedir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:34
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:36
 msgid ""
 "Proportional gains act like a \"software-defined springs\" that pull the "
 ":term:`system` toward the desired position. Recall from physics that we "
@@ -171,7 +171,7 @@ msgstr ""
 "noktasıdır. Denge noktasının geri besleme denetleyicimizin :term:`setpoint` "
 "olmasına izin verirsek, denklemlerin bire bir karşılığı olur."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:36
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:38
 msgid ""
 "F &= k(r - x) \\\\\n"
 "u(t) &= K_p e(t) = K_p(r(t) - y(t))\n"
@@ -181,7 +181,7 @@ msgstr ""
 "u(t) &= K_p e(t) = K_p(r(t) - y(t))\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:40
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:42
 msgid ""
 "so the \"force\" with which the proportional controller pulls the "
 ":term:`system's <system>` :term:`output` toward the :term:`setpoint` is "
@@ -191,15 +191,15 @@ msgstr ""
 ":term:`output` u : term:`setpoint` yönünde çektiği \"kuvvet\", bir yay gibi"
 "  :term:`error` ile orantılıdır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:43
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:45
 msgid "Derivative Term"
 msgstr "Derivative-  Türev Terimi"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:45
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:47
 msgid "The *Derivative* term drives the velocity error to zero."
 msgstr "*Türev* terimi hız hatasını sıfıra çeker."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:47
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:49
 msgid ""
 "u(t) = K_p e(t) + K_d \\frac{de}{dt}\n"
 "\n"
@@ -207,7 +207,7 @@ msgstr ""
 "u(t) = K_p e(t) + K_d \\frac{de}{dt}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:50
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:52
 msgid ""
 "where :math:`K_p` is the proportional gain, :math:`K_d` is the derivative "
 "gain, and :math:`e(t)` is the error at the current time :math:`t`."
@@ -215,7 +215,7 @@ msgstr ""
 "burada :math:`K_p` oransal kazançtır, :math:`K_d` türevsel kazançtır ve "
 ":math:`e(t)` şu andaki :math:`t` zamanındaki hatadır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:52
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:54
 msgid ""
 "The below figure shows a block diagram for a :term:`system` controlled by a "
 "PD controller."
@@ -223,7 +223,7 @@ msgstr ""
 "Aşağıdaki şekil, bir PD kontrolörü tarafından kontrol edilen bir "
 ":term:`system`  için bir blok diyagramı göstermektedir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:58
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:60
 msgid ""
 "A PD controller has a proportional controller for position (:math:`K_p`) and"
 " a proportional controller for velocity (:math:`K_d`). The velocity "
@@ -237,7 +237,7 @@ msgstr ""
 " nasıl değiştiğiyle sağlanır. Bunu kanıtlamak için, bir PD kontrolörü için "
 "denklemi yeniden düzenleyeceğiz."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:60
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:62
 msgid ""
 "u_k = K_p e_k + K_d \\frac{e_k - e_{k-1}}{dt}\n"
 "\n"
@@ -245,7 +245,7 @@ msgstr ""
 "u_k = K_p e_k + K_d \\frac{e_k - e_{k-1}}{dt}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:63
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:65
 msgid ""
 "where :math:`u_k` is the :term:`control input` at timestep :math:`k` and "
 ":math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is "
@@ -258,7 +258,7 @@ msgstr ""
 ":term:`setpoint`dir ve :math:`x_k`, timestep :math:`k`.'da varolan "
 ":term:`state` durumudur."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:65
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:67
 msgid ""
 "u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\\\\n"
 "u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - x_k - r_{k-1} + x_{k-1}}{dt} \\\\\n"
@@ -276,7 +276,7 @@ msgstr ""
 "  \\frac{x_k - x_{k-1}}{dt}\\right)\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:73
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:75
 msgid ""
 "Notice how :math:`\\frac{r_k - r_{k-1}}{dt}` is the velocity of the "
 ":term:`setpoint`. By the same reason, :math:`\\frac{x_k - x_{k-1}}{dt}` is "
@@ -290,7 +290,7 @@ msgstr ""
 "hızıdır. Bu, PD kontrol cihazının :math:`K_d` teriminin, tahmini hızı "
 ":term:`setpoint` hızına sürdüğü anlamına gelir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:75
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:77
 msgid ""
 "If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` "
 "is zero, so the :math:`K_d` term slows the :term:`system` down if it's "
@@ -303,23 +303,11 @@ msgstr ""
 "tampon\" gibi davranır. Bunlar genellikle kapı kapatıcılarda görülür ve "
 "sönümleme kuvveti hız ile doğrusal olarak artar."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:78
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:80
 msgid "Integral Term"
 msgstr "İntegral Terimi"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:80
-msgid ""
-"Integral gain is generally not recommended for FRC use. There are better "
-"approaches to fix :term:`steady-state error` like using feedforwards or "
-"constraining when the integral control acts using other knowledge of the "
-":term:`system`."
-msgstr ""
-"FRC kullanımı için integral kazanç genellikle tavsiye edilmez. :term"
-":`steady-state error`  hatasını düzeltmek için daha iyi yaklaşımlar vardır, "
-"ileri beslemeyi kullanmak veya integral kontrol :term:`system` ile ilgili "
-"diğer bilgileri kullanarak hareket ettiğinde kısıtlama gibi."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:82
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:84
 msgid ""
 "The *Integral* term accumulates the area between the :term:`setpoint` and "
 ":term:`output` plots over time (i.e., the integral of position "
@@ -331,7 +319,7 @@ msgstr ""
 "integrali) ve mevcut toplamı :term:`control input` a ekler. İki eğri "
 "arasındaki alanı biriktirmeye entegrasyon denir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:84
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:86
 msgid ""
 "u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau\n"
 "\n"
@@ -339,7 +327,7 @@ msgstr ""
 "u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:87
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:89
 msgid ""
 "where :math:`K_p` is the proportional gain, :math:`K_i` is the integral "
 "gain, :math:`e(t)` is the error at the current time :math:`t`, and "
@@ -349,7 +337,7 @@ msgstr ""
 ":math:`e(t)` geçerli zamandaki hatadır :math:`t` ve  :math:`\\tau` "
 "entegrasyon değişkenidir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:89
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:91
 msgid ""
 "The Integral integrates from time :math:`0` to the current time :math:`t`. "
 "we use :math:`\\tau` for the integration because we need a variable to take "
@@ -361,7 +349,7 @@ msgstr ""
 "fazla değeri alacak bir değişkene ihtiyacımız vardır, ancak şunu "
 "kullanamayız :math:`t` çünkü bunu şimdiki zaman olarak tanımlamıştık."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:91
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:93
 msgid ""
 "The below figure shows a block diagram for a :term:`system` controlled by a "
 "PI controller."
@@ -369,7 +357,7 @@ msgstr ""
 "Aşağıdaki şekil, bir PI kontrolörü tarafından kontrol edilen bir "
 ":term:`system` için bir blok diyagramı gösterir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:97
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:99
 msgid ""
 "When the :term:`system` is close the :term:`setpoint` in steady-state, the "
 "proportional term may be too small to pull the :term:`output` all the way to"
@@ -381,7 +369,7 @@ msgstr ""
 "ve türev terimi sıfırdır. Bu, şekil 2.4'te gösterildiği gibi :term:`steady-"
 "state error`  ile sonuçlanabilir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:103
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:105
 msgid ""
 "A common way of eliminating :term:`steady-state error` is to integrate the "
 ":term:`error` and add it to the :term:`control input`. This increases the "
@@ -400,11 +388,11 @@ msgstr ""
 " yüksek bir integral kazanım, şekil 2.6'da gösterildiği gibi, aşmaya neden "
 "olabilir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:110
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:112
 msgid "PID Controller Definition"
 msgstr "PID Denetleyici Tanımı"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:112
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:114
 msgid ""
 "For information on using the WPILib provided PIDController, see the "
 ":ref:`relevant article <docs/software/advanced-"
@@ -414,7 +402,7 @@ msgstr ""
 ":ref:`ilgili makale <docs/software/advanced-"
 "controls/controllers/pidcontroller:PID Control in WPILib>`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:114
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:116
 msgid ""
 "When these terms are combined, one gets the typical definition for a PID "
 "controller."
@@ -422,7 +410,7 @@ msgstr ""
 "Bu terimler birleştirildiğinde, bir PID denetleyicisinin tipik tanımını "
 "alır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:116
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:118
 msgid ""
 "u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau + K_d \\frac{de}{dt}\n"
 "\n"
@@ -430,7 +418,7 @@ msgstr ""
 "u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau + K_d \\frac{de}{dt}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:119
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:121
 msgid ""
 "where :math:`K_p` is the proportional gain, :math:`K_i` is the integral "
 "gain, :math:`K_d` is the derivative gain, :math:`e(t)` is the error at the "
@@ -440,16 +428,16 @@ msgstr ""
 ":math:`K_d` türevsel kazançtır, :math:`e(t)` şu andaki hatadır :math:`t`  ve"
 " :math:`\\tau` entegrasyon değişkenidir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:121
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:123
 msgid "The below figure shows a block diagram for a PID controller."
 msgstr ""
 "Aşağıdaki şekil, bir PID kontrolörü için bir blok diyagramı göstermektedir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:128
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:130
 msgid "Response Types"
 msgstr "Yanıt Türleri"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:130
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:132
 msgid ""
 "A :term:`system` driven by a PID controller generally has three types of "
 "responses: underdamped, over-damped, and critically damped. These are shown "
@@ -459,7 +447,7 @@ msgstr ""
 "yanıt içerir: yetersiz sönümlü, aşırı sönümlü ve kritik sönümlü. Bunlar "
 "şekil 2.8'de gösterilmektedir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:132
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:134
 msgid ""
 "For the :term:`step responses <step response>` in figure 2.7, :term:`rise "
 "time` is the time the :term:`system` takes to initially reach the reference "
@@ -470,7 +458,7 @@ msgstr ""
 "Resim 2.7 de :term:`step responses <step response>` için; \n"
 ":term:`rise time`, :term:`system`in :term:`step input`u uyguladıktan sonra referansa ulaşmaya başlaması için gereken zamandır. :term:`Settling time <settling time>`:term:`system`in :term:`step input`u uyguladıktan sonra :term:`reference`a oturmaya başlaması için gereken zamandır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:134
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:136
 msgid ""
 "An *underdamped* response oscillates around the :term:`reference` before "
 "settling. An *overdamped* response"
@@ -479,7 +467,7 @@ msgstr ""
 ":term:`reference` etrafında salınır. *Aşırı sönümlenmiş-overdamped* bir "
 "yanıt"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:140
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:142
 msgid ""
 "is slow to rise and does not overshoot the :term:`reference`. A *critically "
 "damped* response has the fastest :term:`rise time` without overshooting the "

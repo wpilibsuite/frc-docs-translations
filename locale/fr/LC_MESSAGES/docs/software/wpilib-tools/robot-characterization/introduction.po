@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-31 16:12+0000\n"
+"POT-Creation-Date: 2020-12-07 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:2
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:4
 msgid "Introduction to Robot Characterization"
 msgstr "Introduction à la caractérisation des robots"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:4
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:6
 msgid ""
 "The characterization tools consist of a python application that runs on the "
 "user's PC and matching robot code that runs on the user's robot. The PC "
@@ -46,11 +46,11 @@ msgstr ""
 "données peuvent être enregistrées (au format JSON) pour une utilisation "
 "future, si vous le souhaitez."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:7
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:9
 msgid "What is \"Characterization?\""
 msgstr "En quoi consiste la caractérisation?"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:9
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:11
 msgid ""
 "\"Characterization\" - or, more formally, `system identification "
 "<https://en.wikipedia.org/wiki/System_identification>`__ - is the process of"
@@ -63,7 +63,7 @@ msgstr ""
 "comportement d’un système par l’analyse statistique de ses entrées et "
 "sorties."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:11
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:13
 msgid ""
 "In FRC, the most common system that we're interested in characterizing is "
 "the `permanent-magnet DC motor "
@@ -80,7 +80,7 @@ msgstr ""
 "nécessaire pour produire nos *sorties* souhaitées (c.-à-d. vitesse et "
 "accélération du moteur)."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:13
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:15
 msgid ""
 "Fortunately, it is not so difficult to do this.  A permanent-magnet DC motor"
 " (with no load other than friction and inertia) will obey the following "
@@ -93,9 +93,9 @@ msgstr ""
 "`cet article "
 "<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:15
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:48
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:57
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:17
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:50
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:59
 msgid ""
 "V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
 "\n"
@@ -103,7 +103,7 @@ msgstr ""
 "V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:17
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:19
 msgid ""
 "where :math:`V` is the applied voltage, :math:`d` is the displacement "
 "(position) of the motor, :math:`\\dot{d}` is its velocity, and "
@@ -117,7 +117,7 @@ msgstr ""
 "traditionnellement la `dérivée <https://en.wikipedia.org/wiki/Derivative>`__"
 " par rapport au temps)."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:19
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:21
 msgid ""
 "Heuristically, we can interpret the coefficients in the above equation as "
 "follows:"
@@ -125,7 +125,7 @@ msgstr ""
 "Heuristiquement, nous pouvons interpréter les coefficients dans l'équation "
 "ci-dessus comme suit:"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:21
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:23
 msgid ""
 "``kS`` is the voltage needed to overcome the motor's static friction, or in "
 "other words to just barely get it moving; it turns out that this static "
@@ -150,28 +150,7 @@ msgstr ""
 "<https://fr.wikipedia.org/wiki/Fonction_signe>`__, parce que la force de "
 "friction s’oppose toujours à la direction de mouvement."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:23
-msgid ""
-"``kV`` describes how much voltage is needed to hold (or “cruise”) at a given"
-" constant velocity while overcoming the `electromagnetic resistance in the "
-"motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and any"
-" additional friction that increases with speed (known as `viscous drag "
-"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
-" The relationship between speed and voltage (at constant acceleration) is "
-"almost entirely linear (with FRC components, anyway) because of how "
-"permanent-magnet DC motors work."
-msgstr ""
-"``kV`` décrit la quantité de tension nécessaire pour maintenir (ou « "
-"entretenir ») une vitesse constante donnée tout en surmontant la `résistance"
-" électromagnétique du motor <https://en.wikipedia.org/wiki/Counter-"
-"electromotive_force>`__ et toute friction supplémentaire qui augmente avec "
-"la vitesse (connue sous `traînée  "
-"<https://fr.wikipedia.org/wiki/Tra%C3%AEn%C3%A9e#Tra%C3%AEn%C3%A9e_de_frottement>`__)."
-" La relation entre la vitesse et la tension (à accélération constante) est "
-"presque entièrement linéaire (avec les composants FRC, en tout cas) en "
-"raison du fonctionnement des moteurs DC à aimant permanent."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:25
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:27
 msgid ""
 "``kA`` describes the voltage needed to induce a given acceleration in the "
 "motor shaft. As with ``kV``, the relationship between voltage and "
@@ -183,7 +162,7 @@ msgstr ""
 "l'accélération (à vitesse constante) est quasiment parfaitement linéaire "
 "pour les composants FRC."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:27
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:29
 msgid ""
 "Once these coefficients have been determined (here accomplished by a "
 "`multiple linear regression "
@@ -204,7 +183,7 @@ msgstr ""
 "boucle ouverte, parce que vos entrées joystick correspondront plus "
 "étroitement au mouvement du mécanisme réel."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:29
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:31
 msgid ""
 "Some of the tools in this toolsuite introduce additional terms into the "
 "above equation to account for known differences from the simple case "
@@ -215,11 +194,11 @@ msgstr ""
 "connues par rapport au cas simple décrit ci-dessus - les détails pour chaque"
 " outil peuvent être trouvés ci-dessous:"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:32
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:34
 msgid "Included Characterization Tools"
 msgstr "Outils de caractérisation inclus"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:34
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:36
 msgid ""
 "Many other types of mechanisms can be characterized by simply adapting the "
 "existing code in this library."
@@ -227,7 +206,7 @@ msgstr ""
 "De nombreux autres types de mécanismes peuvent être caractérisés par "
 "l’adaptation du code existant dans cette logithèque."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:36
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:38
 msgid ""
 "The robot characterization toolsuite currently supports characterization "
 "for:"
@@ -235,27 +214,27 @@ msgstr ""
 "La suite logicielle de caractérisation de robot prend actuellement en charge"
 " la caractérisation pour:"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:38
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:40
 msgid "Simple Motor Setups"
 msgstr "Configurations de simples moteurs "
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:39
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:41
 msgid "Drivetrains"
 msgstr "Bases pilotables"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:40
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:42
 msgid "Arms"
 msgstr "Bras"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:41
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:43
 msgid "Elevators"
 msgstr "Élevateurs"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:44
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:46
 msgid "Simple Motor Characterization"
 msgstr "Caractérisation d'un simple moteur"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:46
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:48
 msgid ""
 "The simple motor characterization tool determines the best-fit parameters "
 "for the equation:"
@@ -263,7 +242,7 @@ msgstr ""
 "L’outil de caractérisation d'un simple moteur détermine les paramètres les "
 "mieux adaptés à l’équation :"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:50
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:52
 msgid ""
 "where :math:`V` is the applied voltage, :math:`d` is the displacement "
 "(position) of the drive, :math:`\\dot{d}` is its velocity, and "
@@ -279,11 +258,11 @@ msgstr ""
 "l'inertie, comme mentionné ci-dessus, et ceci est un modèle précis pour les "
 "volants d'inertie, les tourelles et les curseurs linéaires horizontaux."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:53
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:55
 msgid "Drivetrain Characterization"
 msgstr "Caractérisation de la base pilotable"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:55
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:57
 msgid ""
 "The drivetrain characterization tool determines the best-fit parameters for "
 "the equation:"
@@ -291,7 +270,7 @@ msgstr ""
 "L’outil de caractérisation de la base pilotable détermine les paramètres les"
 " mieux adaptés à l’équation :"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:59
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:61
 msgid ""
 "where :math:`V` is the applied voltage, :math:`d` is the displacement "
 "(position) of the drive, :math:`\\dot{d}` is its velocity, and "
@@ -308,7 +287,7 @@ msgstr ""
 "spécifiquement  pour fonctionner sur les entraînements différentiels, et "
 "caractérisera indépendamment chaque côté de l'entraînement  au besoin."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:61
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:63
 msgid ""
 "The drivetrain characterizer can also determine the effective trackwidth of "
 "your robot using a gyro. More information on how to run the characterization"
@@ -322,11 +301,11 @@ msgstr ""
 ":ref:`track width characterization <docs/software/wpilib-tools/robot-"
 "characterization/characterization-routine:Running Tests>`."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:64
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:66
 msgid "Arm Characterization"
 msgstr "Caractérisation du bras"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:66
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:68
 msgid ""
 "The arm characterization tool determines the best-fit parameters for the "
 "equation:"
@@ -334,7 +313,7 @@ msgstr ""
 "L’outil de caractérisation du bras détermine les paramètres les mieux "
 "adaptés à l’équation :"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:68
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:70
 msgid ""
 "V = kS \\cdot sgn(\\dot{\\theta}) + kCos \\cdot cos(\\theta) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
 "\n"
@@ -342,7 +321,7 @@ msgstr ""
 "V = kS \\cdot sgn(\\dot{\\theta}) + kCos \\cdot cos(\\theta) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:70
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:72
 msgid ""
 "where :math:`V` is the applied voltage, :math:`\\theta` is the angular "
 "displacement (position) of the arm, :math:`\\dot{\\theta}` is its angular "
@@ -356,11 +335,11 @@ msgstr ""
 "terme en cosinus (:math:`kCos`) est ajouté pour parfaitement tenir compte de"
 " l'effet de la gravité."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:73
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:75
 msgid "Elevator Characterization"
 msgstr "Caractérisation de l'élevateur"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:75
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:77
 msgid ""
 "The elevator characterization tool determines the best-fit parameters for "
 "the equation:"
@@ -368,7 +347,7 @@ msgstr ""
 "L’outil de caractérisation de l'élevateur détermine les paramètres les mieux"
 " adaptés à l’équation :"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:77
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:79
 msgid ""
 "V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
 "\n"
@@ -376,7 +355,7 @@ msgstr ""
 "V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:79
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:81
 msgid ""
 "where :math:`V` is the applied voltage, :math:`d` is the displacement "
 "(position) of the drive, :math:`\\dot{d}` is its velocity, and "
@@ -388,11 +367,11 @@ msgstr ""
 ":math:`\\ddot{d}` est son accélération. Le terme constant (:math:`kG`) est "
 "ajouté pour parfaitement tenir compte de l’effet de la gravité."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:82
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:84
 msgid "Prerequisites"
 msgstr "Conditions préalables"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:84
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:86
 msgid ""
 "To use the Robot Characterization Toolsuite, you must have Python 3.7 "
 "installed on your computer, as well as the standard WPILib programming "
@@ -402,11 +381,11 @@ msgstr ""
 "avoir Python 3.7 installé sur votre ordinateur, ainsi que les outils "
 "logiciels de programmation WPILib standard."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:86
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:88
 msgid "`Python 3.7 <https://www.python.org/downloads/>`__"
 msgstr "`Python 3.7 <https://www.python.org/downloads/>`__"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:88
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:90
 msgid ""
 "Do not install Python from the Microsoft Store. Please use the link above to"
 " download and install Python."
@@ -414,11 +393,11 @@ msgstr ""
 "N’installez pas Python à partir du Microsoft Store. S’il vous plaît, "
 "utilisez plutôt le lien ci-dessus pour télécharger et installer Python."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:91
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:93
 msgid "Installing and Launching the Toolsuite"
 msgstr "Installation et lancement de la suite logicielle"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:93
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:95
 msgid ""
 "To install the Robot Characterization Toolsuite, open a console and enter "
 "the following command"
@@ -426,7 +405,7 @@ msgstr ""
 "Pour installer la suite logicielle Robot Characterization, ouvrez une "
 "console et entrez la commande suivante"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:99
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:101
 msgid ""
 "The toolsuite, and all of its dependencies, should be automatically "
 "downloaded and installed. If you are using a Windows machine and the command"
@@ -439,7 +418,7 @@ msgstr ""
 "dossier de scripts Python `a été ajouté à la variable d'environnement PATH "
 "<https://datatofish.com/add-python-to-windows-path/>`__."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:101
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:103
 msgid ""
 "If you are on Ubuntu, you will have to manually install tkinter with ``sudo "
 "apt-get install python3-tk``. You will also have to use the ``pip3`` command"
@@ -450,7 +429,7 @@ msgstr ""
 "commande ``pip3`` au lieu de ``pip`` puisque ``pip`` se réfère à Python 2 "
 "sous les distributions Ubuntu."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:103
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:105
 msgid ""
 "If you already have the toolsuite installed, be sure to update it regularly "
 "to benefit from bugfixes and new features additions:"
@@ -459,7 +438,7 @@ msgstr ""
 " jour régulièrement pour tier profit des corrections d'erreurs et de l'ajout"
 " de nouvelles fonctionnalités:"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:109
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:111
 msgid ""
 "If you would like to use the beta version of this tool, you must type ``pip "
 "install --pre frc-characterization`` instead."
@@ -467,7 +446,7 @@ msgstr ""
 "Si vous souhaitez utiliser la version bêta de cet outilitaire, à la place, "
 "vous devez plutôt taper ``pip install --pre frc-characterization``."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:111
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:113
 msgid ""
 "Once the toolsuite has been installed, launch a new drive characterization "
 "project to ensure that it works by running the following command from "
@@ -478,7 +457,7 @@ msgstr ""
 " exécutant la commande suivante à partir de powershell ou d’une fenêtre du "
 "terminal."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:117
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:119
 msgid ""
 "The new project GUI should open momentarily. To launch other "
 "characterization projects, simply replace ``drive`` with the desired "
@@ -488,7 +467,7 @@ msgstr ""
 "projets de caractérisation, il suffit de remplacer ``drive`` par le type de "
 "caractérisation souhaité (``arm``, ``elevator``, ``simple-motor``)."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:119
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:121
 msgid ""
 "While the new project GUI has buttons for launching both the logging tool "
 "and the analyzer tool, these can also be launched directly from the CLI by "
@@ -500,7 +479,7 @@ msgstr ""
 "l'Interface de Ligne de Commande remplaçant ``new`` par ``logger`` ou "
 "``analyzer``."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:121
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/introduction.rst:123
 msgid "For more information on CLI usage, enter ``frc-characterization -h``."
 msgstr ""
 "Pour plus d’informations sur l’utilisation de l'Interface de Ligne de "

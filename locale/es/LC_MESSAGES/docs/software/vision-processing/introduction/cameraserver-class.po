@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2020-12-07 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -22,31 +22,15 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:2
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:4
 msgid "Read and Process Video: CameraServer Class"
 msgstr "Vídeo de Lectura y Procesamiento: Clase de CameraServer "
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:5
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:7
 msgid "Concepts"
 msgstr "Conceptos"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:7
-msgid ""
-"The cameras typically used in FRC (commodity USB and Ethernet cameras such "
-"as the Axis camera) offer relatively limited modes of operation. In general,"
-" they provide only a single image output (typically in an RGB compressed "
-"format such as JPG) at a single resolution and frame rate. USB cameras are "
-"particularly limited as only one application may access the camera at a "
-"time."
-msgstr ""
-"La cámara usualmente usada en FRC (cámaras de USB Y Ethernet de consumo como"
-" el Axis cámara) ofrece modos de operación relativamente limitados. En "
-"general, te dan solo una imagen de salida (normalmente en formato comprimido"
-" RGB como JPG) en una simple resolución y cuadros por segundo. Las cámaras "
-"USB son particularmente limitadas ya que solo una aplicación puede acceder a"
-" la cámara a la vez."
-
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:9
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:11
 msgid ""
 "CameraServer supports multiple cameras. It handles details such as "
 "automatically reconnecting when a camera is disconnected, and also makes "
@@ -58,11 +42,11 @@ msgstr ""
 "desde la disponibilidad de la cámara hacia múltiples “clientes” ( p.ej. El "
 "código del robot y su dashboard pueden conectarse simultáneamente)."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:12
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:14
 msgid "Camera Names"
 msgstr "Nombres de Cámaras"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:14
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:16
 msgid ""
 "Each camera in CameraServer must be uniquely named. This is also the name "
 "that appears for the camera in the Dashboard. Some variants of the "
@@ -78,15 +62,15 @@ msgstr ""
 "nombre más descriptivo a la cámara ( p.ej. “Intake Camera” ). El único "
 "requisito es que la cámara tenga su propio nombre. "
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:17
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:19
 msgid "USB Camera Notes"
 msgstr "Notas de Cámara USB"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:20
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:22
 msgid "CPU Usage"
 msgstr "Uso de CPU"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:22
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:24
 msgid ""
 "The CameraServer is designed to minimize CPU usage by only performing "
 "compression and decompression operations when required and automatically "
@@ -97,7 +81,7 @@ msgstr ""
 "deshabilitar automáticamente la transmisión cuando no hay clientes "
 "conectados."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:24
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:26
 msgid ""
 "To minimize CPU usage, the dashboard resolution should be set to the same "
 "resolution as the camera; this allows the CameraServer to not decompress and"
@@ -116,11 +100,11 @@ msgstr ""
 "resolución de la cámara puede ser hecho llamando setResolution() en el "
 "objeto de la cámara."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:27
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:29
 msgid "USB Bandwidth"
 msgstr "Ancho de Banda de USB"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:29
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:31
 msgid ""
 "The roboRIO can only transmit and receive so much data at a time over its "
 "USB interfaces. Camera images can require a lot of data, and so it is "
@@ -135,11 +119,11 @@ msgstr ""
 "seleccionar un modo de video non-JPEG o corriendo una resolución muy alta, "
 "particularmente cuando múltiples cámaras están conectadas."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:32
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:34
 msgid "Architecture"
 msgstr "Arquitectura "
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:34
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:36
 msgid ""
 "The CameraServer consists of two layers, the high level WPILib "
 "**CameraServer class** and the low level **cscore library**."
@@ -147,11 +131,11 @@ msgstr ""
 "La CameraServer consiste en dos capas, el nivel alto WPILib CameraServer "
 "clase y el nivel bajo librería cscore."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:37
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:39
 msgid "CameraServer Class"
 msgstr "Clase de CameraServer"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:39
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:41
 msgid ""
 "The CameraServer class (part of WPILib) provides a high level interface for "
 "adding cameras to your robot code. It also is responsible for publishing "
@@ -168,11 +152,11 @@ msgstr ""
 "está localizada la transmisión de estas. Esto usa un patrón único para "
 "mantener una base de datos de todos los servidores y cámaras creadas."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:41
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:43
 msgid "Some key functions in CameraServer are:"
 msgstr "Algunas funciones clave en la CameraServer son:"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:43
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:45
 msgid ""
 "``startAutomaticCapture()``: Add a USB camera (e.g. Microsoft LifeCam) and "
 "starts a server for it so it can be viewed from the dashboard."
@@ -180,7 +164,7 @@ msgstr ""
 "startAutomaticCapture(): Agregue una cámara USB ( p.ej. Microsoft LifeCam ) "
 "e inicie un servidor para que pueda verse desde el dashboard."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:44
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:46
 msgid ""
 "``addAxisCamera()``: Add an Axis camera. Even if you aren't processing "
 "images from the Axis camera in your robot code, you may want to use this "
@@ -198,7 +182,7 @@ msgstr ""
 "RoboRIO via USB (es útil que en una competencia si tiene conectado la "
 "RoboRIO y una Cámara Axis a los dos puertos Ethernet del robot)"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:45
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:47
 msgid ""
 "``getVideo()``: Get OpenCV access to a camera. This allows you to get images"
 " from the camera for image processing on the roboRIO (in your robot code)."
@@ -207,7 +191,7 @@ msgstr ""
 " imágenes desde la cámara para el procesamiento de la imagen en la RoboRIO "
 "(en el código del robot)."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:46
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:48
 msgid ""
 "``putVideo()``: Start a server that you can feed OpenCV images to. This "
 "allows you to pass custom processed and/or annotated images to the "
@@ -217,45 +201,45 @@ msgstr ""
 "Esto le permite pasar imágenes personalizadas procesadas y/o anotadas en el "
 "dashboard."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:49
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:51
 msgid "cscore Library"
 msgstr "Librería cscore"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:51
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:53
 msgid "The cscore library provides the lower level implementation to:"
 msgstr "La librería cscore provisiona el menor nivel de implementación para:"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:53
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:55
 msgid "Get images from USB and HTTP (e.g. Axis) cameras"
 msgstr "Obtener imágenes desde las cámaras USB y HTTP ( p.ej. Axis )"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:54
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:56
 msgid "Change camera settings (e.g. contrast and brightness)"
 msgstr "Cambiar la configuración de la cámara ( p.ej. contraste y brillo )"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:55
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:57
 msgid "Change camera video modes (pixel format, resolution and frame rate)"
 msgstr ""
 "Cambiar los modos de vídeo de la cámara (formato del pixel, resolución y "
 "cuadros por segundo)"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:56
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:58
 msgid "Act as a web server and serve images as a standard MJPEG stream"
 msgstr ""
 "Actuar como un servidor web y servir imágenes como una transmisión MJPEG "
 "estándar"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:57
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:59
 msgid "Convert images to/from OpenCV ``Mat`` objects for image processing"
 msgstr ""
 "Convertir imágenes a/desde objetos Mat OpenCV para el procesamiento de la "
 "imagen"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:60
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:62
 msgid "Sources and Sinks"
 msgstr "Fuentes y Receptores"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:62
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:64
 msgid ""
 "The basic architecture of the cscore library is similar to that of "
 "MJPGStreamer, with functionality split between sources and sinks. There can "
@@ -265,7 +249,7 @@ msgstr ""
 "funcionalidad dividida entre fuentes y receptores. Puede haber múltiples "
 "fuentes y múltiples receptores creado y operando simultáneamente."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:64
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:66
 msgid ""
 "An object that generates images is a source and an object that "
 "accepts/consumes images is a sink. The generate/consume is from the "
@@ -287,7 +271,7 @@ msgstr ""
 "receptor se conecta a una fuente, la biblioteca cscore se encarga de pasar "
 "cada imagen desde la fuente al sumidero."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:66
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:68
 msgid ""
 "**Sources** obtain individual frames (such as provided by a USB camera) and "
 "fire an event when a new frame is available. If no sinks are listening to a "
@@ -305,7 +289,7 @@ msgstr ""
 "de eventos (por ejemplo, una desconexión no genera nuevos marcos, no hay un "
 "error). "
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:67
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:69
 msgid ""
 "**Sinks** listen to a particular source's event, grab the latest image, and "
 "forward it to its destination in the appropriate format. Similarly to "
@@ -320,7 +304,7 @@ msgstr ""
 "HTTP), la biblioteca puede deshabilitar partes de su procesamiento para "
 "ahorrar recursos del procesador. "
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:69
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:71
 msgid ""
 "User code (such as that used in a FRC robot program) can act as either a "
 "source (providing processed frames as if it were a camera) or as a sink "
@@ -335,7 +319,7 @@ msgstr ""
 "de procesamiento de imágenes que obtiene imágenes de una cámara y sirve las "
 "imágenes procesadas se ve como el siguiente gráfico:"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:73
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:75
 msgid ""
 "Because sources can have multiple sinks connected, the pipeline may branch. "
 "For example, the original camera image can also be served by connecting the "
@@ -348,7 +332,7 @@ msgstr ""
 " MjpegServer además del CvSink, lo que da como resultado el siguiente "
 "gráfico:"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:77
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:79
 msgid ""
 "When a new image is captured by the camera, both the CvSink and the "
 "MjpegServer [1] receive it."
@@ -356,12 +340,12 @@ msgstr ""
 "Cuando la cámara captura una nueva imagen, tanto el CvSink como el "
 "MjpegServer [1] la reciben."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:79
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:81
 msgid "The above graph is what the following CameraServer snippet creates:"
 msgstr ""
 "El gráfico anterior es lo que crea el siguiente fragmento de CameraServer:"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:111
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:113
 msgid ""
 "The CameraServer implementation effectively does the following at the cscore"
 " level (for explanation purposes). CameraServer takes care of many of the "
@@ -377,11 +361,11 @@ msgstr ""
 "CameraServer también mantiene un registro único de los objetos creados para "
 "que no se destruyan si salen del alcance."
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:155
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:157
 msgid "Reference Counting"
 msgstr "Recuento de Referencias"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:157
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:159
 msgid ""
 "All cscore objects are internally reference counted. Connecting a sink to a "
 "source increments the source's reference count, so it's only strictly "

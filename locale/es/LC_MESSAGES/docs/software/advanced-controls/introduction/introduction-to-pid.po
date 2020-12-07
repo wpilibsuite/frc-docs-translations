@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-08 18:00+0000\n"
+"POT-Creation-Date: 2020-12-07 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:2
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:4
 msgid "Introduction to PID"
 msgstr "Introducción a PID"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:4
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:6
 msgid ""
 "The PID controller is a commonly used feedback controller consisting of "
 "proportional, integral, and derivative terms, hence the name. This article "
@@ -39,7 +39,7 @@ msgstr ""
 "controlador PID término por término mientras trata de proporcionar alguna "
 "intuición de cómo se comporta cada uno de ellos."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:6
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:8
 msgid ""
 "First, we'll get some nomenclature for PID controllers out of the way. The "
 ":term:`reference` is called the setpoint (the desired position) and the "
@@ -53,43 +53,43 @@ msgstr ""
 ":term:`process variable` (la posición medido u obtenida). A continuación, se"
 " presenta algunas denominaciones de las variables más comunes."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":math:`r(t)`"
 msgstr ":math:`r(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":term:`setpoint`"
 msgstr ":term:`punto de referencia`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":math:`u(t)`"
 msgstr ":math:`u(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
 msgid ":term:`control input`"
 msgstr ":term:`entrada de control`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":math:`e(t)`"
 msgstr ":math:`e(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":term:`error`"
 msgstr ":term:`error`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":math:`y(t)`"
 msgstr ":math:`y(t)`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:10
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
 msgid ":term:`output`"
 msgstr ":term:`salida`"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:13
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:15
 msgid "The :term:`error` :math:`e(t)` is :math:`r(t) - y(t)`."
 msgstr "El :term:`error` e(t) es :math:`r(t) - y(t)`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:15
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:17
 msgid ""
 "For those already familiar with PID control, this book's interpretation "
 "won't be consistent with the classical intuition of \"past\", \"present\", "
@@ -108,7 +108,7 @@ msgstr ""
 "derivativos para constantes y movimientos de los :term:`puntos de "
 "referencia<setpoint>`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:17
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:19
 msgid ""
 "The proportional term drives the position error to zero, the derivative term"
 " drives the velocity error to zero, and the integral term accumulates the "
@@ -122,15 +122,15 @@ msgstr ""
 "tiempo (la integral del :term:`error` de posición) y suma el resultado de la"
 " :term:`entrada de control`. Iremos a mas detalles con cada uno de ellos."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:20
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:22
 msgid "Proportional Term"
 msgstr "Término Proporcional"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:22
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:24
 msgid "The *Proportional* term drives the position error to zero."
 msgstr "El término proporcional lleva la posición de error a cero."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:26
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:28
 msgid ""
 "where :math:`K_p` is the proportional gain and :math:`e(t)` is the error at "
 "the current time :math:`t`."
@@ -138,7 +138,7 @@ msgstr ""
 "donde :math:`K_p` es la ganancia proporcional y :math:`e(t)` es el error en "
 "tiempo actual :math:`t`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:28
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:30
 msgid ""
 "The below figure shows a block diagram for a :term:`system` controlled by a "
 "P controller."
@@ -146,7 +146,7 @@ msgstr ""
 "La imagen a continuación muestra un diagrama de bloques para un "
 ":term:`system` controlado por un controlador P."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:34
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:36
 msgid ""
 "Proportional gains act like a \"software-defined springs\" that pull the "
 ":term:`system` toward the desired position. Recall from physics that we "
@@ -167,7 +167,7 @@ msgstr ""
 "referencia` de la retroalimentación del controlador, la ecuación "
 "correspondería uno a uno."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:40
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:42
 msgid ""
 "so the \"force\" with which the proportional controller pulls the "
 ":term:`system's <system>` :term:`output` toward the :term:`setpoint` is "
@@ -177,15 +177,15 @@ msgstr ""
 ":term:`salida` del :term:`system's<system>` hacia la :term:`referencia` es "
 "proporcional al :term:`error`, así como un resorte."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:43
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:45
 msgid "Derivative Term"
 msgstr "Término Derivativo"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:45
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:47
 msgid "The *Derivative* term drives the velocity error to zero."
 msgstr "El término *derivativo* lleva el error de velocidad a cero."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:50
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:52
 msgid ""
 "where :math:`K_p` is the proportional gain, :math:`K_d` is the derivative "
 "gain, and :math:`e(t)` is the error at the current time :math:`t`."
@@ -193,7 +193,7 @@ msgstr ""
 "Donde :math:`K_p` es la ganancia proporcional, :math:`K_d` es la ganancia "
 "derivativa y :math:`e(t)` es el error en el tiempo actual :math:`t`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:52
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:54
 msgid ""
 "The below figure shows a block diagram for a :term:`system` controlled by a "
 "PD controller."
@@ -201,7 +201,7 @@ msgstr ""
 "La figura a continuación muestra un diagrama de bloques para un sistema "
 "controlado por un controlador PD."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:58
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:60
 msgid ""
 "A PD controller has a proportional controller for position (:math:`K_p`) and"
 " a proportional controller for velocity (:math:`K_d`). The velocity "
@@ -216,7 +216,7 @@ msgstr ""
 "al tiempo. Para comprobar esto, reacomodaremos la ecuación para un "
 "controlador PD."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:63
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:65
 msgid ""
 "where :math:`u_k` is the :term:`control input` at timestep :math:`k` and "
 ":math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is "
@@ -229,7 +229,7 @@ msgstr ""
 "valor del :term:`punto de referencia` y :math:`x_k` es el :term:`estado` en "
 "un tiempo unitario :math:`k`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:73
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:75
 msgid ""
 "Notice how :math:`\\frac{r_k - r_{k-1}}{dt}` is the velocity of the "
 ":term:`setpoint`. By the same reason, :math:`\\frac{x_k - x_{k-1}}{dt}` is "
@@ -243,7 +243,7 @@ msgstr ""
 " que el término :math:`K_d` del controlador PD lleva la velocidad estimada "
 "al :term:`punto de referencia` de la velocidad."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:75
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:77
 msgid ""
 "If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` "
 "is zero, so the :math:`K_d` term slows the :term:`system` down if it's "
@@ -258,23 +258,11 @@ msgstr ""
 "comúnmente en cierrapuertas y su velocidad de amortiguamiento aumenta "
 "linealmente con la velocidad."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:78
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:80
 msgid "Integral Term"
 msgstr "Término Integral"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:80
-msgid ""
-"Integral gain is generally not recommended for FRC use. There are better "
-"approaches to fix :term:`steady-state error` like using feedforwards or "
-"constraining when the integral control acts using other knowledge of the "
-":term:`system`."
-msgstr ""
-"La ganancia integral generalmente no se recomienda ser usada en FRC. Existen"
-" mejores formas para corregir el :term:`error en estado estable` por ejemplo"
-" usar la compensación o limitarlo cuando la integral de control actúe "
-"utilizando otro conocimiento del :term:`sistema`."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:82
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:84
 msgid ""
 "The *Integral* term accumulates the area between the :term:`setpoint` and "
 ":term:`output` plots over time (i.e., the integral of position "
@@ -286,7 +274,7 @@ msgstr ""
 ":term:`error` de posición) y suma el total actual a la :term:`entrada de "
 "control`. La acumulación el área entre dos curvas es llamada integración."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:87
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:89
 msgid ""
 "where :math:`K_p` is the proportional gain, :math:`K_i` is the integral "
 "gain, :math:`e(t)` is the error at the current time :math:`t`, and "
@@ -296,7 +284,7 @@ msgstr ""
 "integral, :math:`e(t)` es el error en el tiempo actual :math:`t` y "
 ":math:`\\tau` es la integración de la variable."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:89
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:91
 msgid ""
 "The Integral integrates from time :math:`0` to the current time :math:`t`. "
 "we use :math:`\\tau` for the integration because we need a variable to take "
@@ -308,7 +296,7 @@ msgstr ""
 "variable que tome múltiples valores a través de la integral, pero no se "
 "podemos usar :math:`\\t` debido a que ya la definimos como tiempo actual."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:91
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:93
 msgid ""
 "The below figure shows a block diagram for a :term:`system` controlled by a "
 "PI controller."
@@ -316,7 +304,7 @@ msgstr ""
 "La imagen a continuación muestra un diagrama de bloque para un "
 ":term:`sistema` controlado por un controlador PI."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:97
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:99
 msgid ""
 "When the :term:`system` is close the :term:`setpoint` in steady-state, the "
 "proportional term may be too small to pull the :term:`output` all the way to"
@@ -329,7 +317,7 @@ msgstr ""
 "derivativo es cero. Esto pude resultar en un :term:`error de estado estable`"
 " como se muestra en la figura 2.4."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:103
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:105
 msgid ""
 "A common way of eliminating :term:`steady-state error` is to integrate the "
 ":term:`error` and add it to the :term:`control input`. This increases the "
@@ -347,11 +335,11 @@ msgstr ""
 " volante lo elimina. Sin embargo, una ganancia integral muy alta pude "
 "llevarlo a excederse, como se muestra en la figura 2.6."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:110
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:112
 msgid "PID Controller Definition"
 msgstr "Definición de Controlador PID"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:112
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:114
 msgid ""
 "For information on using the WPILib provided PIDController, see the "
 ":ref:`relevant article <docs/software/advanced-"
@@ -361,7 +349,7 @@ msgstr ""
 "PIDController, ver el :ref:`artículo relevante <docs/software/advanced-"
 "controls/controllers/pidcontroller:PID Control in WPILib>`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:114
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:116
 msgid ""
 "When these terms are combined, one gets the typical definition for a PID "
 "controller."
@@ -369,7 +357,7 @@ msgstr ""
 "Cuando estos términos son combinados, uno obtiene la típica definición para "
 "un controlador PID."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:119
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:121
 msgid ""
 "where :math:`K_p` is the proportional gain, :math:`K_i` is the integral "
 "gain, :math:`K_d` is the derivative gain, :math:`e(t)` is the error at the "
@@ -379,16 +367,16 @@ msgstr ""
 "integral, :math:`K_d` es la ganancia derivativa, :math:`e(t)` es el error en"
 " el tiempo actual :math:`t` y :math:`\\tau` es la variable de integración."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:121
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:123
 msgid "The below figure shows a block diagram for a PID controller."
 msgstr ""
 "A continuación, se muestra un diagrama de bloques para un controlador PID."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:128
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:130
 msgid "Response Types"
 msgstr "Tipos de Respuesta"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:130
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:132
 msgid ""
 "A :term:`system` driven by a PID controller generally has three types of "
 "responses: underdamped, over-damped, and critically damped. These are shown "
@@ -398,7 +386,7 @@ msgstr ""
 "tipos de respuesta: subamortiguada, sobreamortiguada y críticamente "
 "amortiguada. Son mostradas en la figura 2.8."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:132
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:134
 msgid ""
 "For the :term:`step responses <step response>` in figure 2.7, :term:`rise "
 "time` is the time the :term:`system` takes to initially reach the reference "
@@ -413,7 +401,7 @@ msgstr ""
 "time>` es el tiempo que le lleva al :term:`sistema` estabilizarse en la "
 ":term:`referencia` después de haber aplicado la :term:`entrada unitaria`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:134
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:136
 msgid ""
 "An *underdamped* response oscillates around the :term:`reference` before "
 "settling. An *overdamped* response"
@@ -421,7 +409,7 @@ msgstr ""
 "Una respuesta *subamortiguada* oscila alrededor de la :term:`referencia` "
 "antes de estabilizarse. Una respuesta *sobreamortiguada*"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:140
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:142
 msgid ""
 "is slow to rise and does not overshoot the :term:`reference`. A *critically "
 "damped* response has the fastest :term:`rise time` without overshooting the "

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-03 04:13+0000\n"
+"POT-Creation-Date: 2020-12-08 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -45,6 +45,14 @@ msgstr "Robotum hareket etmiyor."
 msgid "Are you actually outputting to your motors?"
 msgstr "Gerçekten motorlarınıza çıktı mı veriyorsunuz?"
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:11
+msgid ""
+"Is a ``MalformedSplineException`` getting printed to the driver station? If "
+"yes, go to the ``MalformedSplineException`` section below."
+msgstr ""
+"Sürücü istasyonuna bir ``MalformedSplineException``  yazdırılıyor mu? Evet "
+"ise, aşağıdaki ``MalformedSplineException`` bölümüne gidin."
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:12
 msgid "Is your trajectory very short or in the wrong units?"
 msgstr "Yörüngeniz çok kısa mı yoksa yanlış birimlerde mi?"
@@ -61,6 +69,15 @@ msgstr "Yörüngenizin başlangıç ve bitiş yörüngeleri yanlış mı?"
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:17
 msgid "Is your robot's gyro getting reset to the wrong heading?"
 msgstr "Robotunuzun jiroskopu yanlış yöne mi sıfırlanıyor?"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:18
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:29
+msgid ""
+":ref:`Do you have the reverse flag set incorrectly? <docs/software/advanced-"
+"controls/trajectories/trajectory-generation:Creating the trajectory config>`"
+msgstr ""
+":ref:`Ters bayrağı yanlış mı ayarlanmış? <docs/software/advanced-"
+"controls/trajectories/trajectory-generation:Creating the trajectory config>`"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:19
 msgid ""
@@ -87,6 +104,14 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:25
 msgid "Is your track width correct? Is it in the correct units?"
 msgstr "İz genişliğiniz doğru mu? Doğru birimlerde mi?"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:27
+msgid ""
+"I get a ``MalformedSplineException`` printout on the driver station and the "
+"robot doesn't move."
+msgstr ""
+"Sürücü istasyonunda bir ``MalformedSplineException``  çıktısı alıyorum ve "
+"robot hareket etmiyor."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:30
 msgid ""
@@ -144,6 +169,40 @@ msgstr ""
 "Bu bölüm diferansiyel tahrikli robotlar için tasarlanmıştır, ancak "
 "fikirlerin çoğu swerve veya mecanum sürüşü yönlendirmek için uyarlanabilir."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:49
+msgid ""
+"Poor trajectory tracking performance can be difficult to troubleshoot. "
+"Although the trajectory generator and follower are intended to be easy-to-"
+"use and performant out of the box, there are situations where your robot "
+"doesn't quite end up where it should. The trajectory generator and followers"
+" have many knobs to tune and many moving parts, so it can be difficult to "
+"know where to start, especially because it is difficult to locate the source"
+" of trajectory problems from the robot's general behavior."
+msgstr ""
+"Zayıf yörünge izleme performansının giderilmesi zor olabilir. Yörünge "
+"oluşturucu ve takipçinin kullanımı kolay ve kutudan çıkar çıkmaz performans "
+"göstermesi amaçlansa da, robotunuzun olması gerektiği yere tam olarak "
+"varmadığı durumlar vardır. Yörünge oluşturucu ve takipçilerin ayarlanması "
+"gereken çok sayıda düğmesi ve birçok hareketli parçası vardır, bu nedenle, "
+"özellikle robotun genel davranışından yörünge sorunlarının kaynağını bulmak "
+"zor olduğu için nereden başlayacağını bilmek zor olabilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:51
+msgid ""
+"Because it can be so hard to locate the layer of the trajectory generator "
+"and followers that is misbehaving, a systematic, layer-by-layer approach is "
+"recommended for general poor tracking performance (e.g. the robot is off by "
+"few feet or more than twenty degrees). The below steps are listed in the "
+"order that you should do them in; it is important to follow this order so "
+"that you can isolate the effects of different steps from each other."
+msgstr ""
+"Yörünge oluşturucu katmanını ve hatalı davranan takipçileri bulmak çok zor "
+"olabileceğinden, genel olarak kötü izleme performansı için sistematik, "
+"katman katman bir yaklaşım önerilir (örneğin, robot birkaç feet veya yirmi "
+"dereceden fazla uzakta) . Aşağıdaki adımlar, yapmanız gereken sıraya göre "
+"listelenmiştir; Farklı adımların etkilerini birbirinden ayırabilmeniz için "
+"bu sırayı takip etmeniz önemlidir."
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:53
 msgid ""
 "The below examples put diagnostic values onto Network Tables. The easiest "
@@ -159,6 +218,16 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:56
 msgid "Verify Odometry"
 msgstr "Odometriyi Doğrula"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:57
+msgid ""
+"If your odometry is bad, then your Ramsete controller may misbehave, because"
+" it modifies your robot's target velocities based on where your odometry "
+"thinks the robot is."
+msgstr ""
+"Odometreniz kötüyse, Ramsete kontrol cihazınız yanlış davranabilir, çünkü "
+"robotunuzun hedef hızlarını, odometrenizin robotun nerede olduğunu "
+"düşündüğüne bağlı olarak değiştirir."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:59
 msgid ""
@@ -179,9 +248,60 @@ msgstr ""
 "yerleştirin ve baştan başlayın, robotunuzu X ekseni boyunca bir metre ve Y "
 "ekseni boyunca bir metre kaba bir yay çizerek itin."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:96
+msgid ""
+"Compare X and Y reported by the robot to actual X and Y. If X is off by more"
+" than 5 centimeters in the first test then you should check that you "
+"measured your wheel diameter correctly, and that your wheels are not worn "
+"down. If the second test is off by more than 5 centimeters in either X or Y "
+"then your track width (distance from the center of the left wheel to the "
+"center of the right wheel) may be incorrect; if you're sure that you "
+"measured the track width correctly with a tape measure then your robot's "
+"wheels may be slipping in a way that is not accounted for by track width--if"
+" this is the case then you should :ref:`run the track width characterization"
+" <docs/software/wpilib-tools/robot-characterization/characterization-"
+"routine:Running Tests>` and use that track width instead of the one from "
+"your tape measure."
+msgstr ""
+"Robot tarafından bildirilen X ve Y'yi gerçek X ve Y ile karşılaştırın. X ilk"
+" testte 5 santimetreden fazla sapmışsa, tekerlek çapınızı doğru ölçtüğünüzü "
+"ve tekerleklerinizin aşınmadığını kontrol etmelisiniz. İkinci test X veya "
+"Y'de 5 santimetreden fazla saparsa, iz genişliğiniz (sol tekerleğin "
+"merkezinden sağ tekerleğin merkezine olan mesafe) yanlış olabilir; İz "
+"genişliğini bir şerit metre ile doğru ölçtüğünüzden eminseniz, robotunuzun "
+"tekerlekleri iz genişliğine göre hesaba katılmayacak bir şekilde kayıyor "
+"olabilir - bu durumda yapmanız gerekenler :ref:`iz genişliği "
+"karakterizasyonu <docs/software/wpilib-tools/robot-characterization"
+"/characterization-routine:Running Tests>` `ve şerit ölçünüzdeki iz genişliği"
+" yerine bu iz genişliğini kullanın."
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:101
 msgid "Verify Feedforward"
 msgstr "Feedforward - ileribesleme'yi Doğrula"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:102
+msgid ""
+"If your feedforwards are bad then the P controllers for each side of the "
+"robot will not track as well, and your "
+"``DifferentialDriveVoltageConstraint`` will not limit your robot's "
+"acceleration accurately. We mostly want to turn off the wheel P controllers "
+"so that we can isolate and test the feedforwards."
+msgstr ""
+"İleri beslemeniz kötüyse, robotun her iki tarafındaki P denetleyicileri de "
+"takip etmeyecek ve ``DifferentialDriveVoltageConstraint``, robotunuzun "
+"hızlanmasını doğru bir şekilde sınırlamayacaktır. İleriye doğru ilerlemeyi "
+"izole edip test edebilmek için çoğunlukla tekerlek P kontrol cihazlarını "
+"kapatmak istiyoruz."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:104
+msgid ""
+"First, we must set disable the P controller for each wheel. Set the ``P`` "
+"gain to 0 for every controller. In the ``RamseteCommand`` example, you would"
+" set ``kPDriveVel`` to 0:"
+msgstr ""
+"İlk olarak, her tekerlek için P kontrolörünü devre dışı bırakmalıyız. Her "
+"kontrolör için ``P`` kazancını 0'a ayarlayın. ``RamseteCommand`` örneğinde, "
+"``kPDriveVel`` değerini 0 olarak ayarlarsınız:"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:124
 msgid ""
@@ -195,6 +315,16 @@ msgstr ""
 "Bu biraz daha karmaşık çünkü kazançları (b ve zeta) 0'a ayarlayamayız. "
 "Aşağıdakileri ``RamseteCommand`` e aktarın:"
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:147
+msgid ""
+"Finally, we need to log desired wheel velocity and actual wheel velocity "
+"(you should put actual and desired velocities on the same graph if you're "
+"using Shuffleboard, or if your graphing software has that capability):"
+msgstr ""
+"Son olarak, istenen tekerlek hızını ve gerçek tekerlek hızını kaydetmemiz "
+"gerekir (Shuffleboard kullanıyorsanız veya grafik yazılımınız bu özelliğe "
+"sahipse, gerçek ve istenen hızları aynı grafiğe koymalısınız):"
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:219
 msgid ""
 "Run the robot on a variety of trajectories (curved and straight line), and "
@@ -204,6 +334,20 @@ msgstr ""
 "Robotu çeşitli yörüngelerde (eğimli ve düz çizgi) çalıştırın ve Ağ "
 "Tablolarından grafiklere bakarak gerçek hızın istenen hızı takip edip "
 "etmediğini kontrol edin."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:220
+msgid ""
+"If the desired and actual are off by *a lot* then you should check if the "
+"wheel diameter and ``encoderEPR`` you used for characterization were "
+"correct. If you've verified that your units and conversions are correct, "
+"then you should try recharacterizing on the same floor that you're testing "
+"on to see if you can get better data."
+msgstr ""
+"İstenilen ve gerçek olan *çok* yanlışsa, karakterizasyon için kullandığınız "
+"tekerlek çapının ve ``kodlayıcı EPR`` nin doğru olup olmadığını kontrol "
+"etmelisiniz. Birimlerinizin ve dönüştürmelerinizin doğru olduğunu "
+"doğruladıysanız, daha iyi veri alıp alamayacağınızı görmek için test "
+"ettiğiniz aynı zeminde yeniden nitelendirmeyi denemelisiniz."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:223
 msgid "Verify P Gain"
@@ -288,6 +432,10 @@ msgstr ""
 "için bu işlemi tekrarlayın. Aşağıdaki kontrol listesi, bir seferde yalnızca "
 "bir kısıtlama kullandığınızı varsayar."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:238
+msgid "``DifferentialDriveVoltageConstraint``:"
+msgstr "``DifferentialDriveVoltageConstraint``:"
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:240
 msgid ""
 "If your robot accelerates very slowly then it's possible that the max "
@@ -303,6 +451,10 @@ msgid ""
 msgstr ""
 "Robotunuz yolun sonuna ulaşmazsa, karakterizasyon verileriniz sorunlu "
 "olabilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:243
+msgid "``DifferentialDriveKinematicsConstraint``:"
+msgstr "``DifferentialDriveKinematicsConstraint``:"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:245
 msgid ""

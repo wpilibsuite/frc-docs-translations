@@ -5,18 +5,226 @@
 # 
 # Translators:
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-29 04:13+0000\n"
+"POT-Creation-Date: 2020-12-08 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Esra özemre <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:2
+msgid "Creating a Command"
+msgstr "Bir Command-Komut Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:4
+msgid ""
+"RobotBuilder has been updated to support the new commandbased framework! "
+"Unfortunately, this documentation is outdated and only for the old "
+"commandbased framework. Individuals interested in updating this "
+"documentation can open a pull request on the `frc-docs "
+"<https://github.com/wpilibsuite/frc-docs>`__ repository."
+msgstr ""
+"RobotBuilder, yeni komut tabanlı çerçeveyi desteklemek için güncellendi! Ne "
+"yazık ki, bu dokümantasyon güncelliğini yitirmiştir ve yalnızca eski komut "
+"tabanlı çerçeve içindir. Bu dokümantasyonu güncellemek isteyen kişiler, "
+"`frc-docs <https://github.com/wpilibsuite/frc-docs>`__ repository deposunda "
+"bir çekme talebi açabilirler."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:6
+msgid ""
+"Commands are classes you create that provide behaviors or actions for your "
+"subsystems. The subsystem class should set the operation of the subsystem, "
+"like MoveElevator to start the elevator moving, or ElevatorToSetPoint to set"
+" the elevator's PID setpoint. The commands initiate the subsystem operation "
+"and keep track of when it is finished."
+msgstr ""
+"Komutlar, alt sistemleriniz için davranışlar veya eylemler sağlayan, "
+"oluşturduğunuz sınıflardır. Alt sistem sınıfı, asansörü hareket ettirmek "
+"için MoveElevator gibi alt sistemin çalışmasını veya asansörün PID ayar "
+"noktasını ayarlamak için ElevatorToSetPoint'i ayarlamalıdır. Komutlar alt "
+"sistem işlemini başlatır ve ne zaman bittiğini takip eder."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:9
+msgid "Drag the Command to the Commands Folder"
+msgstr "Komutu Commands Klasörüne sürükleyin"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:13
+msgid ""
+"Simple commands can be dragged from the palette to the robot description. "
+"The command will be created under the Commands folder."
+msgstr ""
+"Basit komutlar paletten robot açıklamasına sürüklenebilir. Komut, Commands "
+"klasörü altında oluşturulacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:16
+msgid "Creating Commands using the Context Menu"
+msgstr "Context menüsünü Kullanarak Komut Oluşturma"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:20
+msgid ""
+"You can also create commands using the right-click context menu on the "
+"Command folder in the robot description."
+msgstr ""
+"Robot açıklamasındaki Command klasöründe sağ tıklanan context menüsünü "
+"kullanarak da komutlar oluşturabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:23
+msgid "Configuring the Command"
+msgstr "Komutu Yapılandırma"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:27
+msgid ""
+"Name the command with something meaningful that describes what the command "
+"will do. Commands should be named as if they were in code, although there "
+"can be spaces between words."
+msgstr ""
+"Komuta, komutun ne yapacağını açıklayan anlamlı bir ad verin. Sözcükler "
+"arasında boşluklar olabilmesine rağmen komutlar kod içindeymiş gibi "
+"adlandırılmalıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:28
+msgid ""
+"Set the subsystem that is used by this command. When this command is "
+"scheduled, it will automatically stop any command currently running that "
+"also requires this command. If a command to open the gripper is currently "
+"running (requiring the gripper subsystem) and the close gripper command is "
+"scheduled, it will immediately stop opening and start closing."
+msgstr ""
+"Bu komut tarafından kullanılan alt sistemi ayarlayın. Bu komut "
+"zamanlandığında, o anda çalışan ve bu komutu da gerektiren herhangi bir "
+"komutu otomatik olarak durduracaktır. Kavrayıcıyı açma komutu o anda "
+"çalışıyorsa (kavrayıcı alt sistemini gerektiriyorsa) ve kavrayıcı kapat "
+"komutu programlanmışsa, açmayı hemen durdurur ve kapatmaya başlar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:29
+msgid ""
+"Tell RobotBuilder if it should create buttons on the SmartDashboard for the "
+"command. A button will be created for each parameter preset."
+msgstr ""
+"RobotBuilder'a komut için SmartDashboard'da düğmeler oluşturması gerekip "
+"gerekmediğini söyleyin. Her parametre ön ayarı için bir düğme "
+"oluşturulacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:30
+msgid ""
+"Set the parameters this command takes. A single command with parameters can "
+"do the same thing as two or more commands that do not take parameters. For "
+"example, \"Drive Forward\", \"Drive Backward\", and \"Drive Distance\" "
+"commands can be consolidated into a single command that takes values for "
+"direction and distance."
+msgstr ""
+"Bu komutun alacağı parametreleri ayarlayın. Parametreli tek bir komut, "
+"parametre almayan iki veya daha fazla komutla aynı şeyi yapabilir. Örneğin, "
+"\"Drive Forward\", \"Drive Backward\" ve \"Drive Distance\"  komutları, yön "
+"ve mesafe için değerler alan tek bir komutta birleştirilebilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:31
+msgid ""
+"Set presets for parameters. These can be used elsewhere in RobotBuilder when"
+" using the command, such as binding it to a joystick button or setting the "
+"default command for a subsystem."
+msgstr ""
+"Parametreler için ön ayarları ayarlayın. Bunlar, bir kumanda kolu düğmesine "
+"bağlamak veya bir alt sistem için varsayılan komutu ayarlamak gibi komutu "
+"kullanırken RobotBuilder'ın başka bir yerinde kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:33
+msgid ""
+"Setpoint commands come with a single parameter ('setpoint', of type double);"
+" parameters cannot be added, edited, or deleted for setpoint commands."
+msgstr ""
+"Setpoint  komutları tek bir parametre ile gelir (double türünde 'setpoint');"
+" ayar noktası komutları için parametreler eklenemez, düzenlenemez veya "
+"silinemez."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:36
+msgid "Adding and Editing Parameters"
+msgstr "Parametreleri Ekleme ve Düzenleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:40
+msgid "To add or edit parameters:"
+msgstr "Parametre eklemek veya düzenlemek için:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:42
+msgid "Click the button in the \"Value\" column of the property table"
+msgstr "Özellik tablosunun \"Value\" sütunundaki düğmeyi tıklayın"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:43
+msgid "Press the \"Add Parameter\" button to add a parameter"
+msgstr "Bir parametre eklemek için \"Add Parameter\" düğmesine basın"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:44
+msgid ""
+"A parameter that has just been added. The name defaults to \"[change me]\" "
+"and the type defaults to String. The default name is invalid, so you will "
+"have to change it before exporting. Double click the \"Name\" cell to start "
+"changing the name; double click the \"Type\" cell to select the type."
+msgstr ""
+"Yeni eklenen bir parametre. Ad varsayılan olarak  \"[change me]\"  ve tür "
+"varsayılan olarak String şeklindedir. Varsayılan ad geçersizdir, bu nedenle "
+"dışa aktarmadan önce değiştirmeniz gerekecektir. Adı değiştirmeye başlamak "
+"için \"Name\" hücresine çift tıklayın; türü seçmek için \"Type\" hücresine "
+"çift tıklayın."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:45
+msgid "Save and close button will save all changes and close the window."
+msgstr ""
+"Save and close düğmesi tüm değişiklikleri kaydedecek ve pencereyi "
+"kapatacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:47
+msgid ""
+"Rows can be reordered simply by dragging, and can be deleted by selecting "
+"them and pressing delete or backspace."
+msgstr ""
+"Satırlar basitçe sürüklenerek yeniden sıralanabilir ve seçilip sil veya geri"
+" tuşuna basılarak silinebilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:50
+msgid "Adding and Editing Parameter Presets"
+msgstr "Parametre Ön Ayarları Ekleme ve Düzenleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:54
+msgid "Click \"Add parameter set\" to add a new preset."
+msgstr "Yeni bir ön ayar eklemek için \"Add parameter set\" yi tıklayın."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:55
+msgid ""
+"Change the name of the preset to something descriptive. The presets in this "
+"example are for opening and closing the gripper subsystem."
+msgstr ""
+"Ön ayarın adını açıklayıcı bir adla değiştirin. Bu örnekteki ön ayarlar, "
+"gripper alt sistemini açmak ve kapatmak içindir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:56
+msgid ""
+"Change the value of the parameter(s) for the preset. You can either type a "
+"value in (e.g. \"3.14\") or select from constants defined in the subsystem "
+"that the command requires. Note that the type of the constant has to be the "
+"same type as the parameter -- you can't have an int-type constant be passed "
+"to a double-type parameter, for example"
+msgstr ""
+"Ön ayar için parametre (ler) in değerini değiştirin. Ya bir değer yazabilir "
+"(ör. \"3.14\") veya komutun gerektirdiği alt sistemde tanımlanan sabitler "
+"arasından seçim yapabilirsiniz. Sabitin türünün parametre ile aynı türde "
+"olması gerektiğine dikkat edin - örneğin, double tür bir parametreye bir "
+"int-türü sabit atayamazsınız."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:57
+msgid ""
+"Click \"Save and close\" to save changes and exit the dialog; to exit "
+"without saving, press the exit button in the top bar of the window."
+msgstr ""
+"Değişiklikleri kaydetmek ve iletişim kutusundan çıkmak için\"Save and "
+"close\" ı tıklayın; kaydetmeden çıkmak için, pencerenin üst çubuğundaki "
+"çıkış düğmesine basın."

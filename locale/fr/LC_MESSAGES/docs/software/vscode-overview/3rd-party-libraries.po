@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 04:14+0000\n"
+"POT-Creation-Date: 2020-12-13 16:17+0000\n"
 "PO-Revision-Date: 2020-08-20 04:15+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -26,13 +26,175 @@ msgstr ""
 msgid "3rd Party Libraries"
 msgstr "Librairies tierces"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:4
+msgid ""
+"Teams that are not using parts provided in the KoP will likely need to "
+"install external dependencies. Please view the below section to see "
+"information on adding an external library."
+msgstr ""
+"Les équipes qui n’utilisent pas les pièces fournies dans le KoP devront "
+"probablement installer des dépendances externes. Veuillez consulter la "
+"section ci-dessous pour voir les informations sur l’ajout d’une bibliothèque"
+" externe."
+
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:7
 msgid "The Mechanism"
 msgstr "Processus"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:9
+msgid ""
+"In support of this effort NI (for LabVIEW) and FIRST/WPI (for Java/C++) have"
+" developed mechanisms that should make it easy for vendors to plug their "
+"code into the WPILib software and for teams to use that code once it has "
+"been installed. A brief description of how the system works for each "
+"language can be found below."
+msgstr ""
+"À l’appui de cet effort, NI (pour LabVIEW) et FIRST/WPI (pour Java/C++) ont "
+"développé des mécanismes qui devraient permettre aux fournisseurs d'intégrer"
+" facilement leur code sur le logiciel WPILib et aux équipes d’utiliser ce "
+"code une fois qu’il a été installé. Vous trouverez ci-dessous une brève "
+"description du fonctionnement du système pour chaque langage de "
+"programmation."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:12
+msgid "The Mechanism - Java/C++"
+msgstr "Le mécanisme - Java/C++"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:14
+msgid ""
+"For Java and C++ a JSON file describing the vendor library is installed on "
+"your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is"
+" ``C:\\Users\\Public`` on Windows). This can either be done by an offline "
+"installer or the file can be fetched from an online location using the menu "
+"item in Visual Studio Code. This file is then used from VS Code to add to "
+"the library to each individual project. Vendor library information is "
+"managed on a per-project basis to make sure that a project is always "
+"pointing to a consistent version of a given vendor library. The libraries "
+"themselves are placed in the Maven cache at "
+"``C:\\Users\\Public\\wpilib\\YYYY\\maven``. Vendors can place a local copy "
+"here with an offline installer (recommended) or require users to be online "
+"for an initial build to fetch the library from a remote Maven location."
+msgstr ""
+"Pour Java et C++ un fichier JSON décrivant la librairie du fournisseur est "
+"installé dans votre système à ``~/wpilib/YYYY/vendordeps`` (où YYYY est "
+"l'année et ~ est ``C:\\Users\\Public`` sous Windows). Ceci peut être fait "
+"par un installateur hors ligne ou le fichier peut être récupéré à partir "
+"d’un emplacement en ligne en utilisant l’élément de menu dans Visual Studio "
+"Code. Ce fichier est ensuite utilisé à partir de VS Code pour être ajouté à "
+"la librairie de chaque projet individuel. Les informations de la librairie "
+"du fournisseur sont gérées par projet pour s’assurer qu’un projet pointe "
+"toujours vers une version cohérente de la librairie d'un fournisseur donné. "
+"Les librairies elles-mêmes sont placées dans le cache Maven à "
+"``C:\\Users\\Public\\wpilib\\YYYY\\maven``. Les vendeurs peuvent placer une "
+"copie locale ici avec un installateur hors ligne (recommandé) ou exiger des "
+"utilisateurs d’être en ligne pour une première compilation pour aller "
+"chercher la librairie dans un emplacement maven à distance."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:16
+msgid ""
+"The JSON file allows specification of complex libraries with multiple "
+"components (Java, C++, JNI, etc.) and also helps handle some complexities "
+"related to simulation. Vendors choosing to provide a remote URL in the JSON "
+"also enable users to check for updates from within VS Code."
+msgstr ""
+"Le fichier JSON permet la spécification de librairies complexes avec "
+"plusieurs composants (Java, C++, JNI, etc.) et aide également à gérer "
+"certaines complexités liées à la simulation. Les fournisseurs qui "
+"choisissent de fournir une URL distante dans le fichier JSON permettent "
+"également aux utilisateurs de vérifier les mises à jour à partir de VS Code."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:18
+msgid ""
+"The vendor JSON files are actually processed by GradleRIO once they are in "
+"your projects ``vendordeps`` folder. If you are using another IDE, you will "
+"need to manually create a “vendordeps” folder in your project and copy any "
+"desired vendor JSON files from the “wpilib/YYYY” folder (where they should "
+"be placed by an offline installer) or download them directly from the vendor"
+" and place them into the folder in the project."
+msgstr ""
+"Les fichiers JSON des fournisseurs sont effectivement traités par GradleRIO "
+"une fois qu’ils sont dans votre dossier de projets ``vendordeps``. Si vous "
+"utilisez un autre IDE, vous devrez créer manuellement un dossier "
+"``vendordeps`` dans votre projet et copier tous les fichiers JSON du "
+"fournisseur désiré à partir du dossier “wpilib/YYYY” (où ils doivent être "
+"placés par un installateur hors ligne) ou les télécharger directement à "
+"partir du fournisseur et les placer dans le dossier du projet."
+
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:21
 msgid "The Mechanism - LabVIEW"
 msgstr "Processus - LabVIEW"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:23
+msgid ""
+"For LabVIEW teams, you may notice a few new Third Party items on various "
+"palettes (specifically, one in :guilabel:`Actuators`, one in "
+":guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN "
+"Motor`, and one in :guilabel:`Sensors`). These correspond to folders in "
+"``C:\\Program Files\\National Instruments\\LabVIEW YYYY\\vi.lib\\Rock "
+"Robotics\\WPI\\Third Party`` where ``YYYY`` is the current year - 1. If it’s"
+" 2020, the directory would be ``LabVIEW 2019``."
+msgstr ""
+"Pour les équipes labview, vous remarquerez peut-être quelques nouveaux "
+"éléments tiers partie sur différentes palettes (en particulier, un dans "
+":guilabel:`Actuators`, un dans :guilabel:`Actuators` -> :guilabel:`Motor "
+"Control` étiqueté  :guilabel:`CAN Motor`,  et un dans :guilabel:`Sensors`). "
+"Ceux-ci correspondent à des dossiers dans ``C:\\Program Files\\National "
+"Instruments\\LabVIEW YYYY\\vi.lib\\Rock Robotics\\WPI\\Third Party`` où "
+"``YYYY`` est l’année en cours - 1. Si nous sommes en 2020, le repertoire "
+"devrait être ``LabVIEW 2019``."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:25
+msgid ""
+"To use installed \"Third Party\" libraries, simply locate the VIs in one of "
+"these 3 locations and drag them into your project as you would with any "
+"other VI."
+msgstr ""
+"Pour utiliser les librairies \"Tierce partie\" installées, il vous suffit de"
+" localiser les VIs dans l’un de ces 3 emplacements et de les faire glisser "
+"dans votre projet comme vous le feriez avec n’importe quel autre VI."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:28
+msgid "Managing VS Code Libraries"
+msgstr "Gestion des librairies sous VS Code"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:31
+msgid "Adding Offline Libraries"
+msgstr "Ajout de librairies hors ligne"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:34
+msgid "VS Code"
+msgstr "VS Code"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:38
+msgid ""
+"To add a vendor library that has been installed by an offline installer, "
+"press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the"
+" top right to open the WPILib Command Palette and begin typing "
+":guilabel:`Manage Vendor Libraries`, then select it from the menu. Select "
+"the option to :guilabel:`Install new libraries (offline)`."
+msgstr ""
+"Pour ajouter une librairie d'un fournisseur qui a été installée par un "
+"installateur hors ligne, appuyez sur :kbd:`Ctrl+Shift+P` et tapez WPILib ou "
+"cliquez sur l’icône WPILib en haut à droite pour ouvrir la palette de "
+"commande WPILib et commencer à taper :guilabel:`Manage Vendor Libraries`, "
+"puis sélectionnez-la dans le menu. Sélectionnez l’option :guilabel:`Install "
+"new libraries (offline)`."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:42
+msgid ""
+"Select the desired libraries to add to the project by checking the box next "
+"to each, then click :guilabel:`OK`. The JSON file will be copied to the "
+"``vendordeps`` folder in the project, adding the library as a dependency to "
+"the project."
+msgstr ""
+"Sélectionnez les librairies que l'on souhaite ajouter au projet en cochant "
+"la case à côté de chacune, puis cliquez sur :guilabel:`OK`. Le fichier JSON "
+"sera copié dans le dossier ``vendordeps`` dans le projet, ajoutant la "
+"librairie comme une dépendance au projet."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:45
+msgid "Command-line"
+msgstr "Ligne de commande"
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:47
 msgid ""
@@ -69,17 +231,69 @@ msgstr ""
 msgid "Checking for Updates (Offline)"
 msgstr "Vérification des mises à jour (hors ligne)"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:54
+msgid ""
+"Dependencies are now version managed and done on a per-project bases. Even "
+"if you have installed an updated library using an offline installer, you "
+"will need to :guilabel:`Manage Vendor Libraries` and select :guilabel:`Check"
+" for updates (offline)` for each project you wish to update."
+msgstr ""
+"Les dépendances sont maintenant gérées par version et effectuées sur une "
+"base par projet. Même si vous avez installé une librairie mise à jour à "
+"l’aide d’un installateur hors ligne, vous devrez vous servir de "
+":guilabel:`Manage Vendor Libraries` et sélectionner :guilabel:`Check for "
+"updates (offline)` pour chaque projet que vous souhaitez mettre à jour."
+
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:57
 msgid "Checking for Updates (Online)"
 msgstr "Vérification des mises à jour (en ligne)"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:59
+msgid ""
+"Part of the JSON file that vendors may optionally populate is an online "
+"update location. If a library has an appropriate location specified, running"
+" :guilabel:`Check for updates (online)` will check if a newer version of the"
+" library is available from the remote location."
+msgstr ""
+"Une partie du fichier JSON que les fournisseurs peuvent optionnellement "
+"remplir est un emplacement de mise à jour en ligne. Si une librairie a un "
+"emplacement approprié spécifié, l'exécution de :guilabel:`Check for updates "
+"(online)` vérifiera si une nouvelle version de la librairie est disponible à"
+" partir de l’emplacement distant."
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:62
 msgid "Removing a Library Dependency"
 msgstr "Suppression d'une dépendance"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:64
+msgid ""
+"To remove a library dependency from a project, select :guilabel:`Manage "
+"Current Libraries` from the :guilabel:`Manage Vendor Libraries` menu, check "
+"the box for any libraries to uninstall and click :guilabel:`OK`. These "
+"libraries will be removed as dependencies from the project."
+msgstr ""
+"Pour supprimer une dépendance d’un projet à une librairie, sélectionnez "
+":guilabel:`Manage Current Libraries` du menu :guilabel:`Manage Vendor "
+"Libraries`, cochez les cases correspondant à toutes les librairies à "
+"désinstaller et cliquer sur :guilabel:`OK`. Ces librairies seront supprimées"
+" en tant que dépendances du projet."
+
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:67
 msgid "Libraries"
 msgstr "Librairies"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:69
+msgid ""
+"These are **not** links to directly plug in to the :guilabel:`VS Code` -> "
+":guilabel:`Install New Libraries (online)` feature. Click these links to "
+"visit the vendor site to see whether they offer online installers, offline "
+"installers, or both."
+msgstr ""
+"Il ne s’agit **pas** de liens  pour se brancher directement à la "
+"fonctionnalité :guilabel:`VS Code` -> :guilabel:`Install New Libraries "
+"(online)`. Cliquez sur ces liens pour visiter le site du fournisseur pour "
+"voir s’ils offrent des installateurs en ligne, des installateurs hors ligne,"
+" ou les deux."
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:71
 msgid ""
@@ -191,6 +405,18 @@ msgstr ""
 "Elles sont toutes les deux installées par le programme d'installation de "
 "WPILib pour une installation hors ligne. Elles peuvent également être "
 "installées avec les liens en ligne suivants:"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:97
+msgid ""
+"`Old Command Library "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibOldCommands/WPILibOldCommands.json>`__"
+" `New Command Library "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibNewCommands/WPILibNewCommands.json>`__"
+msgstr ""
+"`Ancienne librairie Command  "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibOldCommands/WPILibOldCommands.json>`__"
+" `Nouvelle librairie Command "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/master/wpilibNewCommands/WPILibNewCommands.json>`__"
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:100
 msgid ""

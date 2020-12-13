@@ -5,6 +5,9 @@
 # 
 # Translators:
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# heriberto gutierrez <herigtzt04@yahoo.com>, 2020
+# Gibrán Verástegui <Gibranbasket1526@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2020
 # Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
@@ -12,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-22 16:16+0000\n"
+"POT-Creation-Date: 2020-12-13 04:14+0000\n"
 "PO-Revision-Date: 2020-09-04 16:14+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -227,23 +230,176 @@ msgstr ""
 "secuencial, necesitamos un vector de punteros únicos para cada comando. "
 "Crear el puntero único para la función de impresión es bastante trivial:"
 
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:85
+msgid ""
+"Here ``temp`` is storing the vector of commands that we need to pass into "
+"the ``SequentialCommandGroup`` constructor. But before we add that "
+"``InstantCommand``, we need to add ``MyCommand()`` to the "
+"``SequentialCommandGroup``. How do we do that?"
+msgstr ""
+"Aquí, ``temp`` almacena el vector de comandos que necesitamos pasar al "
+"constructor ``SequentialCommandGroup`` . Pero antes de agregar ese "
+"``InstantCommand``,necesitamos agregar ``MyCommand()`` "
+"al``SequentialCommandGroup`` . ¿Como hacemos eso?"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:91
+msgid ""
+"You might think it would be this straightforward, but that is not the case. "
+"Because this decorator code is in the ``Command`` interface, ``*this`` "
+"refers to the ``Command`` in the subclass that you are calling the decorator"
+" from and has the type of ``Command``. Effectively, you will be trying to "
+"move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` "
+"pointer to a ``MyCommand*`` and then dereference it but we have no "
+"information about the subclass to cast to at compile-time."
+msgstr ""
+"Podría pensar que sería así de sencillo, pero ese no es el caso. Debido a "
+"que este código de decorador está en el ``Command`` interface, ``*this`` "
+"referiendo a  ``Command``  en la subclase desde la que está llamando al "
+"decorador y tiene el tipo de ``Command``. Efectivamente, intentará mover un "
+"``Command`` en lugar de ``MyCommand``. Podríamos lanzar el  ``esto``  "
+"puntero a un  ``MyCommand*`` y luego desreferenciarlo, pero no tenemos "
+"información sobre la subclase a la que convertir en tiempo de compilación."
+
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:94
 msgid "Solutions to the Problem"
 msgstr "Soluciones al problema"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:96
+msgid ""
+"Our initial solution to this was to create a virtual method in ``Command`` "
+"called ``TransferOwnership()`` that every subclass of ``Command`` had to "
+"override. Such an override would have looked like this:"
+msgstr ""
+"Nuestra solución inicial a esto fue crear un método virtual en ``Command`` "
+"llamado ``TransferOwnership()`` que cada subclase de ``Command`` tenía que "
+"anular. Tal anulación se habría visto así:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:104
+msgid ""
+"Because the code would be in the derived subclass, ``*this`` would actually "
+"point to the desired subclass instance and the user has the type info of the"
+" derived class to make the unique pointer."
+msgstr ""
+"Debido a que el código estaría en la subclase derivada, ``*this`` realmente "
+"apuntaría a la instancia de subclase deseada y el usuario tiene la "
+"información de tipo de la clase derivada para hacer el puntero único."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:106
+msgid ""
+"After a few days of deliberation, a CRTP method was proposed. Here, an "
+"intermediary derived class of ``Command`` called ``CommandHelper`` would "
+"exist. ``CommandHelper`` would have two template arguments, the original "
+"base class and the desired derived subclass. Let's take a look at a basic "
+"implementation of ``CommandHelper`` to understand this:"
+msgstr ""
+"Después de unos días de deliberación, se propuso un método CRTP. Aquí, una "
+"clase derivada intermedia de ``Command`` llamada ``CommandHelper``  "
+"esxistiría. ``CommandHelper`` tendría dos argumentos de plantilla, la clase "
+"base original y la subclase derivada deseada. Echemos un vistazo a una "
+"implementación básica de ``CommandHelper`` para entender esto:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:126
+msgid ""
+"Thus, making your custom commands extend ``CommandHelper`` instead of "
+"``Command`` will automatically implement this boilerplate for you and this "
+"is the reasoning behind asking teams to use what may seem to be a rather "
+"obscure way of doing things."
+msgstr ""
+"Así, haciendo que tus comandos personalizados extiendan ``CommandHelper`` en"
+" lugar de ``Command`` implementará automáticamente esta plantilla para ti y "
+"este es el razonamiento detrás de pedir a los equipos que usen lo que puede "
+"parecer una forma bastante oscura de hacer las cosas."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:128
+msgid "Going back to our ``AndThen()`` example, we can now do the following:"
+msgstr ""
+"Volviendo a nuestro ``AndThen()`` ejemplo, ahora podemos hacer lo siguiente:"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:138
 msgid "Lack of Advanced Decorators"
 msgstr "Falta de decoradores avanzados"
 
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:139
+msgid ""
+"Most of the C++ decorators take in ``std::function<void()>`` instead of "
+"actual commands themselves. The idea of taking in actual commands in "
+"decorators such as ``AndThen()``, ``BeforeStarting()``, etc. was considered "
+"but then abandoned due to a variety of reasons."
+msgstr ""
+"La mayoría de los decoradores de C++ toman ``std::function<void()>`` en "
+"lugar de comandos reales ellos mismos. La idea de tomar comandos reales en "
+"decoradores como ``AndThen()``, ``BeforeStarting()``, etc. fue considerada "
+"pero luego abandonada debido a una variedad de razones."
+
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:142
 msgid "Templating Decorators"
 msgstr "Decoradores de plantillas"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:143
+msgid ""
+"Because we need to know the types of the commands that we are adding to a "
+"command group at compile-time, we will need to use templates (variadic for "
+"multiple commands). However, this might not seem like a big deal. The "
+"constructors for command groups do this anyway:"
+msgstr ""
+"Debido a que necesitamos saber los tipos de los comandos que estamos "
+"añadiendo a un grupo de comandos en tiempo de compilación, necesitaremos "
+"usar plantillas (variadic para múltiples comandos). Sin embargo, esto podría"
+" no parecer un gran problema. Los constructores de grupos de comandos lo "
+"hacen de todas formas:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:165
+msgid ""
+"This is a secondary constructor for ``SequentialCommandGroup`` in addition "
+"to the vector constructor that we described above."
+msgstr ""
+"Este es un constructor secundario para el ``SequentialCommandGroup``, además"
+" del constructor de vectores que describimos anteriormente."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:167
+msgid ""
+"However, when we make a templated function, its definition must be declared "
+"inline. This means that we will need to instantiate the "
+"``SequentialCommandGroup`` in the ``Command.h`` header, which poses a "
+"problem. ``SequentialCommandGroup.h`` includes ``Command.h``. If we include "
+"``SequentialCommandGroup.h`` inside of ``Command.h``, we have a circular "
+"dependency. How do we do it now then?"
+msgstr ""
+"Sin embargo, cuando realizamos una función de plantilla, su definición debe "
+"ser declarada en línea. Esto significa que tendremos que instanciar el "
+"``SequentialCommandGroup`` en el encabezado \"Command.h\", lo que plantea un"
+" problema. ``SequentialCommandGroup`` incluye \"Command.h\". Si incluimos "
+"``SequentialCommandGroup`` dentro de \"Command.h\", tenemos una dependencia "
+"circular. ¿Cómo lo hacemos ahora entonces?"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:169
 msgid "We use a forward declaration at the top of ``Command.h``:"
 msgstr ""
 "Usamos una declaración hacia adelante en la parte superior de ``Command.h``:"
 
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:177
+msgid ""
+"And then we include ``SequentialCommandGroup.h`` in ``Command.cpp``. If "
+"these decorator functions were templated however, we cannot write "
+"definitions in the ``.cpp`` files, resulting in a circular dependency."
+msgstr ""
+"Y luego incluimos ``SequentialCommandGroup.h`` en \"Command.cpp\". Sin "
+"embargo, si estas funciones de decorador se templaron, no podemos escribir "
+"definiciones en los archivos ``.cpp``, resultando en una dependencia "
+"circular."
+
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:180
 msgid "Java vs C++ Syntax"
 msgstr "Sintaxis de Java vs Sintaxis de C++"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:181
+msgid ""
+"These decorators usually save more verbosity in Java (because Java requires "
+"raw ``new`` calls) than in C++, so in general, it does not make much of a "
+"syntanctic difference in C++ if you create the command group manually in "
+"user code."
+msgstr ""
+"Estos decoradores suelen ahorrar más verbosidad en Java (porque Java "
+"requiere llamadas ``nuevas`` sin procesar) que en C++, así que en general, "
+"no hay mucha diferencia sintáctica en C++ si se crea el grupo de comandos "
+"manualmente en código de usuario."

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-13 04:14+0000\n"
+"POT-Creation-Date: 2020-12-14 16:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,22 +21,343 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
+msgid "The Command Scheduler"
+msgstr "Komut Zamanlayıcı - Command Scheduler"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:4
+msgid ""
+"The ``CommandScheduler`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__)"
+" is the class responsible for actually running commands.  Each iteration "
+"(ordinarily once per 20ms), the scheduler polls all registered buttons, "
+"schedules commands for execution accordingly, runs the command bodies of all"
+" scheduled commands, and ends those commands that have finished or are "
+"interrupted."
+msgstr ""
+"``CommandScheduler`` (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__),"
+" komutları gerçekten çalıştırmaktan sorumlu sınıftır. Her yineleme (normalde"
+" 20 ms'de bir kez), programlayıcı tüm kayıtlı düğmeleri yoklar, buna göre "
+"yürütme için komutları planlar, programlanan tüm komutların komut "
+"gövdelerini çalıştırır ve biten veya kesilen komutları sonlandırır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
+msgid ""
+"The ``CommandScheduler`` also runs the ``periodic()`` method of each "
+"registered ``Subsystem``."
+msgstr ""
+"``CommandScheduler`` ayrıca kayıtlı her bir ``Alt Sistemin`` ``periodic()`` "
+"yöntemini çalıştırır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:9
+msgid "Using the Command Scheduler"
+msgstr "Komut Zamanlayıcıyı Kullanma"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:11
+msgid ""
+"The ``CommandScheduler`` is a *singleton*, meaning that it is a globally-"
+"accessible class with only one instance.  Accordingly, in order to access "
+"the scheduler, users must call the ``CommandScheduler.getInstance()`` "
+"command."
+msgstr ""
+"``CommandScheduler`` bir *singleton* 'dur, yani yalnızca bir örneğe sahip "
+"global olarak erişilebilir bir sınıftır. Buna göre, zamanlayıcıya erişmek "
+"için kullanıcıların ``CommandScheduler.getInstance()`` komutunu çağırması "
+"gerekir."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:13
+msgid ""
+"For the most part, users do not have to call scheduler methods directly - "
+"almost all important scheduler methods have convenience wrappers elsewhere "
+"(e.g. in the ``Command`` and ``Subsystem`` interfaces)."
+msgstr ""
+"Çoğunlukla, kullanıcıların zamanlayıcı yöntemlerini doğrudan çağırması "
+"gerekmez - neredeyse tüm önemli zamanlayıcı yöntemlerinin başka yerlerde "
+"kolaylık sarmalayıcıları vardır (örneğin, ``Komut`` ve ``Alt Sistem`` "
+"arayüzlerinde)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:15
+msgid ""
+"However, there is one exception: users *must* call "
+"``CommandScheduler.getInstance().run()`` from the ``robotPeriodic()`` method"
+" of their ``Robot`` class.  If this is not done, the scheduler will never "
+"run, and the command framework will not work.  The provided command-based "
+"project template has this call already included."
+msgstr ""
+"Bununla birlikte, bir istisna vardır: kullanıcılar, ``Robot`` sınıfının "
+"``robotPeriodic()`` yönteminden ``CommandScheduler.getInstance().run()`` "
+"çağrısı *yapmalıdır*. Bu yapılmazsa, zamanlayıcı asla çalışmaz ve komut "
+"çerçevesi çalışmaz. Sağlanan komut tabanlı proje şablonunda bu çağrı zaten "
+"dahil edilmiştir."
+
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:18
 msgid "The ``schedule()`` Method"
 msgstr "``schedule()`` Methodu"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:22
+msgid ""
+"To schedule a command, users call the ``schedule()`` method (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
+"  This method takes a command (and, optionally, a specification as to "
+"whether that command is interruptible), and attempts to add it to list of "
+"currently-running commands, pending whether it is already running or whether"
+" its requirements are available.  If it is added, its ``initialize()`` "
+"method is called."
+msgstr ""
+"Bir komutu planlamak için kullanıcılar ``schedule()`` yöntemini çağırır "
+"(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
+" Bu yöntem bir komut alır (ve isteğe bağlı olarak, bu komutun kesilebilir "
+"olup olmadığına dair bir belirtim), ve halihazırda çalışıp çalışmadığını ya "
+"da gereksinimlerinin mevcut olup olmadığını bekleyerek onu şu anda çalışan "
+"komutlar listesine eklemeye çalışır. Eklenirse, ``initialize()`` yöntemi "
+"çağrılır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:25
+msgid "The Scheduler Run Sequence"
+msgstr "Schedukler-Zamanlayıcı Çalıştırma Sırası"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:27
+msgid ""
+"The ``initialize()`` method of each ``Command`` is called when the command "
+"is scheduled, which is not necessarily when the scheduler runs (unless that "
+"command is bound to a button)."
+msgstr ""
+"Her bir ``Command`` ``initialize()`` yöntemi, komut zamanlandığında "
+"çağrılır, bu, zamanlayıcı çalıştığında zorunlu değildir (bu komut bir "
+"düğmeye bağlı değilse)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:31
+msgid ""
+"What does a single iteration of the scheduler's ``run()`` method (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
+" actually do?  The following section walks through the logic of a scheduler "
+"iteration."
+msgstr ""
+"Zamanlayıcının-scheduler ``run()`` yönteminin (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
+" tek bir yinelemesi aslında ne yapar? Aşağıdaki bölüm, bir zamanlayıcı "
+"yinelemesinin mantığını açıklamaktadır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:34
+msgid "Step 1: Run Subsystem Periodic Methods"
+msgstr "Adım 1: Alt Sistem Periyodik Yöntemlerini Çalıştırın"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
+msgid ""
+"First, the scheduler runs the ``periodic()`` method of each registered "
+"``Subsystem``."
+msgstr ""
+"İlk olarak, programlayıcı her kayıtlı ``Alt Sistemin-Subsystem`` "
+"``periodic()`` yöntemini çalıştırır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:39
+msgid "Step 2: Poll Command Scheduling Triggers"
+msgstr "Adım 2: Poll Command Scheduling Tetikleyicileri"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:41
+msgid ""
+"For more information on how trigger bindings work, see :doc:`binding-"
+"commands-to-triggers`"
+msgstr ""
+"Tetikleyici bağlamalarının nasıl çalıştığı hakkında daha fazla bilgi için "
+"bkz. :doc:`binding-commands-to-triggers`"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:43
+msgid ""
+"Secondly, the scheduler polls the state of all registered triggers to see if"
+" any new commands that have been bound to those triggers should be "
+"scheduled.  If the conditions for scheduling a bound command are met, the "
+"command is scheduled and its ``Initialize()`` method is run."
+msgstr ""
+"İkinci olarak, programlayıcı, bu tetikleyicilere bağlanan yeni komutların "
+"programlanıp programlanmayacağını görmek için tüm kayıtlı tetikleyicilerin "
+"durumunu sorgular. Bağlı bir komutu zamanlama koşulları karşılanırsa, komut "
+"zamanlanır ve ``Initialize()`` yöntemi çalıştırılır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:46
+msgid "Step 3: Run/Finish Scheduled Commands"
+msgstr "3. Adım: Zamanlanmış-Scheduled Komutları Run/Finish"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:48
+msgid ""
+"Thirdly, the scheduler calls the ``execute()`` method of each currently-"
+"scheduled command, and then checks whether the command has finished by "
+"calling the ``isFinished()`` method.  If the command has finished, the "
+"``end()`` method is also called, and the command is de-scheduled and its "
+"required subsystems are freed."
+msgstr ""
+"Üçüncüsü, zamanlayıcı, şu anda zamanlanmış olan her komutun ``execute()`` "
+"yöntemini çağırır ve ardından ``isFinished()`` yöntemini çağırarak komutun "
+"bitip bitmediğini kontrol eder. Komut bittiyse, ``end()`` yöntemi de "
+"çağrılır ve komutun programı kaldırılır ve gerekli alt sistemleri serbest "
+"bırakılır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:50
+msgid ""
+"Note that this sequence of calls is done in order for each command - thus, "
+"one command may have its ``end()`` method called before another has its "
+"``execute()`` method called.  Commands are handled in the order they were "
+"scheduled."
+msgstr ""
+"Bu çağrı dizisinin her komut için yapıldığına dikkat edin - bu nedenle, bir "
+"komutun ``end()`` yöntemi, diğerinin ``execute()`` yöntemi çağrılmadan önce "
+"çağrılmasına sahip olabilir. Komutlar planlandıkları sırayla işlenir."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:53
+msgid "Step 4: Schedule Default Commands"
+msgstr "4. Adım: Varsayılan Komutları Programlayın - Schedule"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:55
+msgid ""
+"Finally, any registered ``Subsystem`` has its default command scheduled (if "
+"it has one).  Note that the ``initialize()`` method of the default command "
+"will be called at this time."
+msgstr ""
+"Son olarak, kayıtlı herhangi bir ``Alt Sistemin-Subsystem`` varsayılan "
+"komutu planlanmıştır (eğer varsa). Varsayılan komutun ``initialize()`` "
+"yönteminin şu anda çağrılacağını unutmayın."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:58
+msgid "Disabling the Scheduler"
+msgstr "Scheduler - Devre Dışı Bırakma"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:60
+msgid ""
+"The scheduler can be disabled by calling "
+"``CommandScheduler.getInstance().disable()``.  When disabled, the "
+"scheduler's ``schedule()`` and ``run()`` commands will not do anything."
+msgstr ""
+"Programlayıcı, ``CommandScheduler.getInstance().Disable()`` çağrısı "
+"yapılarak devre dışı bırakılabilir. Devre dışı bırakıldığında, planlayıcının"
+" ``schedule()`` ve ``run()`` komutları hiçbir şey yapmaz."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:62
+msgid ""
+"The scheduler may be re-enabled by calling "
+"``CommandScheduler.getInstance().enable()``."
+msgstr ""
+"Programlayıcı, ``CommandScheduler.getInstance().enable()`` çağrılarak "
+"yeniden etkinleştirilebilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:65
+msgid "Command Event Methods"
+msgstr "Komut Olay Yöntemleri"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:67
+msgid ""
+"Occasionally, it is desirable to have the scheduler execute a custom action "
+"whenever a certain command event (initialization, execution, or ending) "
+"occurs.  This can be done with the following three methods:"
+msgstr ""
+"Bazen, belirli bir komut olayı (başlatma, yürütme veya sonlandırma) meydana "
+"geldiğinde scheduler-programlayıcının özel bir eylemi yürütmesi arzu edilir."
+" Bu, aşağıdaki üç yöntemle yapılabilir:"
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:70
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:72
+msgid ""
+"The ``onCommandInitialize`` method (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
+" runs a specified action whenever a command is initialized."
+msgstr ""
+"``OnCommandInitialize`` yöntemi (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__),"
+" bir komut her başlatıldığında belirli bir eylemi çalıştırır."
+
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:75
 msgid "onCommandExecute"
 msgstr "onCommandExecute"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
+msgid ""
+"The ``onCommandExecute`` method (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
+" runs a specified action whenever a command is executed."
+msgstr ""
+"``onCommandExecute`` yöntemi (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__),"
+" bir komut çalıştırıldığında belirli bir eylemi çalıştırır."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:80
 msgid "onCommandFinish"
 msgstr "onCommandFinish"
 
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
+msgid ""
+"The ``onCommandFinish`` method (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
+" runs a specified action whenever a command finishes normally (i.e. the "
+"``isFinished()`` method returned true)."
+msgstr ""
+"``onCommandFinish`` yöntemi (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__),"
+" bir komut normal olarak tamamlandığında belirli bir eylemi çalıştırır "
+"(yani, ``isFinished()`` yöntemi true döndürür)."
+
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:85
 msgid "onCommandInterrupt"
 msgstr "onCommandInterrupt"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
+msgid ""
+"The ``onCommandInterrupt`` method (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
+" runs a specified action whenever a command is interrupted (i.e. by being "
+"explicitly canceled or by another command that shares one of its "
+"requirements)."
+msgstr ""
+"``onCommandInterrupt`` yöntemi (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
+" "
+"`C++<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__),"
+" bir komut kesintiye uğradığında (yani, açıkça iptal edilerek veya "
+"gereksinimlerinden birini paylaşan başka bir komut tarafından) belirtilen "
+"bir eylemi çalıştırır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:89
+msgid ""
+"A typical use-case for these methods is adding markers in an event log "
+"whenever a command scheduling event takes place, as demonstrated in the "
+"SchedulerEventLogging example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):"
+msgstr ""
+"Bu yöntemler için tipik bir kullanım durumu, SchedulerEventLogging örnek "
+"projesinde "
+"(`Java<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__)"
+" gösterildiği gibi, bir komut zamanlama olayı gerçekleştiğinde olay "
+"günlüğüne işaretler eklemektir:"

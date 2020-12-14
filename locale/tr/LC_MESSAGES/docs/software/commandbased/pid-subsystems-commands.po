@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-13 04:14+0000\n"
+"POT-Creation-Date: 2020-12-14 16:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -25,6 +25,24 @@ msgstr ""
 msgid "PIDSubsystems"
 msgstr "PIDSubsystems"
 
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:15
+msgid ""
+"The ``PIDSubsystem`` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__)"
+" allows users to conveniently create a subsystem with a built-in "
+"``PIDController``.  In order to use the ``PIDSubsystem`` class, users must "
+"create a subclass of it."
+msgstr ""
+"``PIDSubsystem`` sınıfı (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/PIDSubsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1PIDSubsystem.html>`__),"
+" kullanıcıların yerleşik bir ``PIDController`` ile uygun bir şekilde bir alt"
+" sistem oluşturmasına olanak tanır. ``PIDSubsystem`` sınıfını kullanmak için"
+" kullanıcıların bir alt sınıf oluşturması gerekir."
+
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:23
 msgid "getMeasurement()"
 msgstr "getMeasurement()"
@@ -32,6 +50,22 @@ msgstr "getMeasurement()"
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:40
 msgid "useOutput()"
 msgstr "useOutput()"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:58
+msgid "Passing In the Controller"
+msgstr "Controller'a Geçirme"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:60
+msgid ""
+"Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base "
+"class through the superclass constructor call of their subclass.  This "
+"serves to specify the PID gains, as well as the period (if the user is using"
+" a non-standard main robot loop period)."
+msgstr ""
+"Kullanıcılar ayrıca, alt sınıflarının üst sınıf yapıcı çağrısı aracılığıyla "
+"``PIDSubsystem`` temel sınıfına bir ``PIDController`` geçirmelidir. Bu, PID "
+"kazançlarının yanı sıra periyodu (kullanıcı standart olmayan bir main robot "
+"looğ döngü periyodu kullanıyorsa) belirlemeye yarar."
 
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:65
 msgid "Using a PIDSubsystem"
@@ -45,9 +79,35 @@ msgstr "setSetpoint()"
 msgid "enable() and disable()"
 msgstr "enable() ve disable()"
 
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:89
+msgid ""
+"The ``enable()`` and ``disable()`` methods enable and disable the PID "
+"control of the ``PIDSubsystem``.  When the subsystem is enabled, it will "
+"automatically run the control loop and track the setpoint.  When it is "
+"disabled, no control is performed."
+msgstr ""
+"``enable()`` ve ``disable()`` yöntemleri ``PIDSubsystem`` in PID kontrolünü "
+"etkinleştirir ve devre dışı bırakır. Alt sistem etkinleştirildiğinde, "
+"kontrol döngüsünü otomatik olarak çalıştıracak ve ayar noktasını "
+"izleyecektir. Devre dışı bırakıldığında hiçbir kontrol gerçekleştirilmez."
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:124
+msgid "Using a ``PIDSubsystem`` with commands can be very simple:"
+msgstr "Komutlarla bir ``PIDSubsystem`` kullanmak çok basit olabilir:"
+
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:153
 msgid "PIDCommand"
 msgstr "PIDCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:162
+msgid ""
+"In either case, a ``PIDCommand`` is created by passing the necessary "
+"parameters to its constructor (if defining a subclass, this can be done with"
+" a `super()` call):"
+msgstr ""
+"Her iki durumda da, gerekli parametreleri kurucusuna ileterek bir "
+"``PIDCommand`` oluşturulur (eğer bir alt sınıf tanımlıyorsa, bu bir "
+"`super()` çağrısıyla yapılabilir):"
 
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:183
 msgid "controller"

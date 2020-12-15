@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-24 16:11+0000\n"
+"POT-Creation-Date: 2020-12-15 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -53,19 +53,11 @@ msgstr ""
 msgid "Using the Units Library"
 msgstr "Usar la Biblioteca de Unidades"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:9
-msgid ""
-"The units library is a header-only library. You must include the ``units.h``"
-" header in your code files."
-msgstr ""
-"La librería de unidades es solo una librería de título. Usted debe incluir "
-"el título de ``units.h`` en sus archivos de código."
-
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:16
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:56
 msgid "Unit Types and Container Types"
 msgstr "Tipos de Unidades y Tipos de Contenedores"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:18
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:58
 msgid ""
 "The C++ units library is based around two sorts of type definitions: unit "
 "types and container types."
@@ -73,11 +65,11 @@ msgstr ""
 "Las librerías de unidades de C++ están basadas en dos clases de "
 "definiciones: tipos de unidades y tipos de contenedores."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:21
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:61
 msgid "Unit Types"
 msgstr "Tipos de Unidades"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:23
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:63
 msgid ""
 "Unit types correspond to the abstract concept of a unit, without any actual "
 "stored value.  Unit types are the fundamental \"building block\" of the "
@@ -92,7 +84,7 @@ msgstr ""
 "``compound_unit``) de un número pequeño de unit types \"básicas\" (como "
 "``meters``, ``seconds``, etc)."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:25
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:65
 msgid ""
 "While unit types cannot contain numerical values, their use in building "
 "other unit types means that when a type or method uses a `template parameter"
@@ -105,11 +97,11 @@ msgstr ""
 "<http://www.cplusplus.com/doc/oldtutorial/templates/>`__  para especificar "
 "su dimensionalidad, ese parámetro será un tipo de unidad."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:28
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:68
 msgid "Container Types"
 msgstr "Tipos de contenedores"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:30
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:70
 msgid ""
 "Container types correspond to an actual quantity dimensioned according to "
 "some unit - that is, they are what actually hold the numerical value. "
@@ -125,7 +117,7 @@ msgstr ""
 "correponde que tiene el mismo sufijo de nombre por ``_t`` - por ejemplo, el "
 "unit type ``units::meter`` corresponde al container type ``units::meter_t``."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:32
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:72
 msgid ""
 "Whenever a specific quantity of a unit is used (as a variable or a method "
 "parameter), it will be an instance of the container type.  By default, "
@@ -138,7 +130,7 @@ msgstr ""
 "como ``double`` - usuarios avanzados pueden cambiar esto llamando al modelo "
 "``unit_t`` manualmente."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:34
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:74
 msgid ""
 "A full list of unit and container types can be found in the `documentation "
 "<https://github.com/nholthaus/units#namespaces>`__."
@@ -146,11 +138,11 @@ msgstr ""
 "Una lista completa de tipos unitarios y contenedores puede ser encontrada en"
 " la `documentación <https://github.com/nholthaus/units#namespaces>`__."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:37
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:77
 msgid "Creating Instances of Units"
 msgstr "Creando instancias de unidades"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:39
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:79
 msgid ""
 "To create an instance of a specific unit, we create an instance of its "
 "container type:"
@@ -158,7 +150,7 @@ msgstr ""
 "Para crear una instancia de una unidad específica, creamos una instancia con"
 " su tipo contenedor:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:46
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:86
 msgid ""
 "Alternatively, the units library has `type literals "
 "<https://en.cppreference.com/w/cpp/language/user_literal>`__ defined for "
@@ -171,7 +163,7 @@ msgstr ""
 "conjunción con tipo de inferencia vía ``auto`` para definir una unidad más "
 "sucintamente:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:53
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:93
 msgid ""
 "Units can also be initialized using a value of an another container type, as"
 " long as the types can be converted between one another. For example, a "
@@ -182,7 +174,7 @@ msgstr ""
 "otros. Por ejemplo, un valor ``meter_t`` puede ser creado desde un valor "
 "``foot_t``."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:60
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:100
 msgid ""
 "In fact, all container types representing convertible unit types are "
 "*implicitly convertible*.  Thus, the following is perfectly legal:"
@@ -190,7 +182,7 @@ msgstr ""
 "DE hecho, todos los tipos contenedor representando tipo unidad convertibles "
 "son *implícitamente convertibles*. Así, lo siguiente es perfectamente legal:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:66
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:106
 msgid ""
 "In short, we can use *any* unit of length in place of *any other* unit of "
 "length, anywhere in our code; the units library will automatically perform "
@@ -200,11 +192,11 @@ msgstr ""
 "medida, en ningun lugar del codigo; las librerias de unidades pueden "
 "automáticamente realizar la conversión por nosotros."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:69
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:109
 msgid "Performing Arithmetic with Units"
 msgstr "Realizando aritmética con unidades"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:71
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:111
 msgid ""
 "Container types support all of the ordinary arithmetic operations of their "
 "underlying data type, with the added condition that the operation must be "
@@ -216,7 +208,7 @@ msgstr ""
 "debe estar *dimensionalmente* sólido. Así, las adiciones siempre tienen que "
 "estar realizadas en dos tipos de contenedores compatibles:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:84
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:124
 msgid ""
 "Multiplication may be performed on any pair of container types, and yields "
 "the container type of a compound unit:"
@@ -224,7 +216,7 @@ msgstr ""
 "La multiplicación debe de ser realizada en cualquier par de tipo contenedor,"
 " y dar al tipo contenedor de una unidad compuesta:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:86
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:126
 msgid ""
 "When a calculation yields a compound unit type, this type will only be "
 "checked for validity at the point of operation if the result type is "
@@ -241,11 +233,11 @@ msgstr ""
 "ejemplo, ``units::meter_per_second_t``). Si el tipo resultante es declarado "
 "como ``auto``, esta verificación no se hará."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:99
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:139
 msgid "``<cmath>`` Functions"
 msgstr "``<cmath>`` Funciones"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:101
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:141
 msgid ""
 "Some ``std`` functions (such as ``clamp``) are templated to accept any type "
 "on which the arithmetic operations can be performed.  Quantities stored as "
@@ -256,7 +248,7 @@ msgstr ""
 "almacenadas como tipo contenedores pueden funcionar con estas funciones sin "
 "ningún problema."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:103
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:143
 msgid ""
 "However, other ``std`` functions work only on ordinary numerical types (e.g."
 " ``double``).  The units library's ``units::math`` namespace contains "
@@ -269,11 +261,11 @@ msgstr ""
 "algunas de estas funciones que aceptan unidades. Ejemplos de estas funciones"
 " incluyen ``sqrt``, ``pow``, etc."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:111
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:151
 msgid "Removing the Unit Wrapper"
 msgstr "Quitar el envoltorio de la unidad"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:113
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:153
 msgid ""
 "To convert a container type to a raw numeric value, the ``to<..>()`` method "
 "can be used, where the template argument is the underlying type."
@@ -282,11 +274,11 @@ msgstr ""
 "``to<..>()`` puede ser utilizado, donde el argumento de plantilla es de tipo"
 " subyacente."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:122
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:162
 msgid "Example of the Units Library in WPILib Code"
 msgstr "Ejemplo de librería de unidades en el código WPILib"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:123
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:163
 msgid ""
 "Several arguments for methods in new features of WPILib (ex. "
 ":ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-"
@@ -300,7 +292,7 @@ msgstr ""
 "ejemplo de :ref:`probando una trayectoria <docs/software/advanced-"
 "controls/trajectories/manipulating-trajectories:Sampling the trajectory>`."
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:134
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:174
 msgid ""
 "Some WPILib classes represent objects that could naturally work with "
 "multiple choices of unit types - for example, a motion profile might operate"
@@ -313,7 +305,7 @@ msgstr ""
 "ejemplo, metros) o distancia angular (por ejemplo, radianes). Para esas "
 "clases, el tipo unitario es requerido como un parámetro modelo:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:148
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:188
 msgid ""
 "For more detailed documentation, please visit the official `GitHub page "
 "<https://github.com/nholthaus/units>`_ for the units library."

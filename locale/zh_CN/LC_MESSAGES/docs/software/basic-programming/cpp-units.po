@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-15 16:12+0000\n"
+"POT-Creation-Date: 2020-12-15 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Ran Xin <xinryanryan@gmail.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -47,27 +47,21 @@ msgstr ""
 msgid "Using the Units Library"
 msgstr "使用单位库"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:9
-msgid ""
-"The units library is a header-only library. You must include the ``units.h``"
-" header in your code files."
-msgstr "单位库是仅标头的库。你必须在代码文件中包含 “units.h” 标头。"
-
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:16
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:56
 msgid "Unit Types and Container Types"
 msgstr "单位类型和容器类型"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:18
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:58
 msgid ""
 "The C++ units library is based around two sorts of type definitions: unit "
 "types and container types."
 msgstr "C ++ 单位库基于两种类型定义 : 单位类型和容器类型。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:21
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:61
 msgid "Unit Types"
 msgstr "单位类型"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:23
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:63
 msgid ""
 "Unit types correspond to the abstract concept of a unit, without any actual "
 "stored value.  Unit types are the fundamental \"building block\" of the "
@@ -78,7 +72,7 @@ msgstr ""
 "单元类型对应于单元的抽象概念，没有任何实际的存储值。单元类型是单元库的基本“构建块”-所有单元类型都通过少量“基本”单元类型 ( 例如“ "
 "meters”，“ `seconds'等 ) 在被构造时定义 ( 通过 \"compound_unit\" 模版 ) 。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:25
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:65
 msgid ""
 "While unit types cannot contain numerical values, their use in building "
 "other unit types means that when a type or method uses a `template parameter"
@@ -89,11 +83,11 @@ msgstr ""
 "<http://www.cplusplus.com/doc/oldtutorial/templates/>'  __ "
 "指定其尺寸时，该参数将成为单位类型。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:28
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:68
 msgid "Container Types"
 msgstr "容器类型"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:30
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:70
 msgid ""
 "Container types correspond to an actual quantity dimensioned according to "
 "some unit - that is, they are what actually hold the numerical value. "
@@ -106,7 +100,7 @@ msgstr ""
 "模板的单元类型构造的。大多数单位类型都有一个对应的容器类型，其名称后缀有 \"_t\" -例如，单元类型 \"units :: meter\" "
 "对应于容器类型 \"units :: meter_t\"。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:32
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:72
 msgid ""
 "Whenever a specific quantity of a unit is used (as a variable or a method "
 "parameter), it will be an instance of the container type.  By default, "
@@ -116,7 +110,7 @@ msgstr ""
 "每当使用特定数量的单位 (作为变量或方法参数) 时，它将是容器类型的实例。默认情况下，容器类型会将实际值存储为 \"double\" "
 "-高级用户可以通过手动调用 \"unit_t\" 模板来更改此值。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:34
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:74
 msgid ""
 "A full list of unit and container types can be found in the `documentation "
 "<https://github.com/nholthaus/units#namespaces>`__."
@@ -124,17 +118,17 @@ msgstr ""
 "单位和容器类型的完整列表可以在文档   \"<https://github.com/nholthaus/units#namespaces>\" __ "
 "中找到。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:37
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:77
 msgid "Creating Instances of Units"
 msgstr "创建单位的实例"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:39
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:79
 msgid ""
 "To create an instance of a specific unit, we create an instance of its "
 "container type:"
 msgstr "为了创建特定单元的实例，我们需要创建其容器类型的实例："
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:46
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:86
 msgid ""
 "Alternatively, the units library has `type literals "
 "<https://en.cppreference.com/w/cpp/language/user_literal>`__ defined for "
@@ -145,31 +139,31 @@ msgstr ""
 "\"类型文字<https://en.cppreference.com/w/cpp/language/user_literal>\" __ "
 "。这些可以与通过 \"auto\" 进行的类型推断结合使用，以更简洁地定义一个单元:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:53
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:93
 msgid ""
 "Units can also be initialized using a value of an another container type, as"
 " long as the types can be converted between one another. For example, a "
 "``meter_t`` value can be created from a ``foot_t`` value."
 msgstr "只要可以在另一个容器类型之间进行转换，单元也可以使用另一个容器类型的值来初始化。例如，可以从 \"foot_t\" 值创建 \"meter_t\" 值。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:60
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:100
 msgid ""
 "In fact, all container types representing convertible unit types are "
 "*implicitly convertible*.  Thus, the following is perfectly legal:"
 msgstr "实际上，代表可转换单位类型的所有容器类型都是 \"隐式可转换的\" 。因此，以下内容完全合法："
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:66
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:106
 msgid ""
 "In short, we can use *any* unit of length in place of *any other* unit of "
 "length, anywhere in our code; the units library will automatically perform "
 "the correct conversion for us."
 msgstr "简而言之，我们可以在代码中的任何位置使用 *任意* 长度单位代替 *任何其他* 长度单位；单位库将自动为我们执行正确的转换。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:69
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:109
 msgid "Performing Arithmetic with Units"
 msgstr "执行含有单位的算术"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:71
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:111
 msgid ""
 "Container types support all of the ordinary arithmetic operations of their "
 "underlying data type, with the added condition that the operation must be "
@@ -177,13 +171,13 @@ msgid ""
 "compatible container types:"
 msgstr "容器类型支持其基础数据类型的所有普通算术运算，其附加条件是该运算必须是 *维* 的。因此，必须始终对两种兼容的容器类型执行添加："
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:84
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:124
 msgid ""
 "Multiplication may be performed on any pair of container types, and yields "
 "the container type of a compound unit:"
 msgstr "乘法可以对任何一对容器类型执行，并得出复合单元的容器类型："
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:86
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:126
 msgid ""
 "When a calculation yields a compound unit type, this type will only be "
 "checked for validity at the point of operation if the result type is "
@@ -196,11 +190,11 @@ msgstr ""
 "当我们将距离除以时间时, 我们希望确保结果确实是速度即 ( \"units :: meter_per_second_t\" )。如果返回类型声明为 "
 "\"auto\" ，则不会进行此检查。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:99
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:139
 msgid "``<cmath>`` Functions"
 msgstr "``<cmath>''函数"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:101
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:141
 msgid ""
 "Some ``std`` functions (such as ``clamp``) are templated to accept any type "
 "on which the arithmetic operations can be performed.  Quantities stored as "
@@ -209,7 +203,7 @@ msgstr ""
 "一些 \"std\" 函数 (例如 ``clamp`` ) "
 "被模板化以接受可以在其上执行算术运算的任何类型。以容器类型存储的数量可以使用这些功能而不会出现问题。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:103
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:143
 msgid ""
 "However, other ``std`` functions work only on ordinary numerical types (e.g."
 " ``double``).  The units library's ``units::math`` namespace contains "
@@ -219,21 +213,21 @@ msgstr ""
 "但是，其他``std`` 函数仅适用于普通数字类型 (例如 ``double`` )。单元库的 ``units :: math`` "
 "命名空间包含一些接受单元的函数的包装。此类功能的示例包括 ``sqrt``, ``pow`` 等。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:111
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:151
 msgid "Removing the Unit Wrapper"
 msgstr "去除 ``Unit Wrapper``"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:113
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:153
 msgid ""
 "To convert a container type to a raw numeric value, the ``to<..>()`` method "
 "can be used, where the template argument is the underlying type."
 msgstr "要将容器类型转换为原始数值，可以使用 to <..>（）函数，其中 template 参数是基础类型。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:122
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:162
 msgid "Example of the Units Library in WPILib Code"
 msgstr "WPILib 代码中的单位库示例"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:123
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:163
 msgid ""
 "Several arguments for methods in new features of WPILib (ex. "
 ":ref:`kinematics <docs/software/kinematics-and-odometry/intro-and-chassis-"
@@ -246,7 +240,7 @@ msgstr ""
 "/advanced-controls/trajectories/manipulating-trajectories:Sampling the "
 "trajectory> 进行采样的示例。"
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:134
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:174
 msgid ""
 "Some WPILib classes represent objects that could naturally work with "
 "multiple choices of unit types - for example, a motion profile might operate"
@@ -256,7 +250,7 @@ msgstr ""
 "某些 WPILib 类表示可以自然地与多种单位类型一起使用的对象 -例如，运动曲线可能会在线性距离 (例如米) 或角距离 (例如弧度) "
 "上运行。对于这种类，必须将单位类型作为模板参数："
 
-#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:148
+#: ../../frc-docs/source/docs/software/basic-programming/cpp-units.rst:188
 msgid ""
 "For more detailed documentation, please visit the official `GitHub page "
 "<https://github.com/nholthaus/units>`_ for the units library."

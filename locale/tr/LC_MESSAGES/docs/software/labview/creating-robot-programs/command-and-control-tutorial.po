@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-15 16:17+0000\n"
+"POT-Creation-Date: 2020-12-16 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,13 +21,131 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:4
+msgid "Command and Control Tutorial"
+msgstr "Command ve Control Eğitimi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:9
+msgid "Introduction"
+msgstr "Giriş"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:11
+msgid ""
+"Command and Control is a new LabVIEW template added for the 2016 season "
+"which organizes robot code into commands and controllers for a collection of"
+" robot-specific subsystems. Each subsystem has an independent control loop "
+"or state machine running at the appropriate rate for the mechanism and high-"
+"level commands that update desired operations and set points. This makes it "
+"very easy for autonomous code to build synchronous sequences of commands. "
+"Meanwhile, TeleOp benefits because it can use the same commands without "
+"needing to wait for completion, allowing for easy cancellation and "
+"initiation of new commands according to the drive team input. Each subsystem"
+" has a panel displaying its sensor and control values over time, and command"
+" tracing to aid in debugging."
+msgstr ""
+"Command and Control, robota özgü alt sistemlerden oluşan bir koleksiyon için"
+" robot kodunu komutlar ve denetleyiciler halinde düzenleyen 2016 sezonu için"
+" eklenen yeni bir LabVIEW şablonudur. Her bir alt sistem, mekanizma için "
+"uygun hızda çalışan bağımsız bir kontrol döngüsüne veya state machine ve "
+"istenen işlemleri ve ayar noktalarını güncelleyen yüksek seviyeli komutlara "
+"sahiptir. Bu, otonom kodun eşzamanlı komut dizileri oluşturmasını çok "
+"kolaylaştırır. Bu arada TeleOp, aynı komutları tamamlanmayı beklemeye gerek "
+"kalmadan kullanabildiği ve sürücü ekibinin girdisine göre yeni komutların "
+"kolay iptaline ve başlatılmasına izin verdiği için avantaj sağlar. Her alt "
+"sistemde, zaman içindeki sensör ve kontrol değerlerini gösteren bir panel ve"
+" hata ayıklamaya yardımcı olmak için komut izleme bulunur."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:14
+msgid "What is Command and Control?"
+msgstr "Command ve Control nedir ?"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:18
+msgid ""
+"Game code, primarily consisting of Autonomous and TeleOp, will typically "
+"need to update set points and react to the state of certain mechanisms. For "
+"Autonomous, it is very common to define the robot’s operation as a  sequence"
+" of operations – drive here, pick that up, carry it there, shoot it, etc. "
+"Commands can be wired sequentially with additional logic to quickly build "
+"complex routines. For teleOp, the same commands can execute asynchronously, "
+"allowing the robot to always process the latest driver inputs, and if "
+"implemented properly, new commands will interrupt, allowing the drive team "
+"to quickly respond to field conditions while also taking advantage of "
+"automated commands and command sequences."
+msgstr ""
+"Öncelikle Otonom ve TeleOp'tan oluşan oyun kodunun tipik olarak ayar "
+"noktalarını güncellemesi ve belirli mekanizmaların durumuna tepki vermesi "
+"gerekecektir. Autonomous için, robotun çalışmasını bir dizi işlem olarak "
+"tanımlamak çok yaygındır - buraya sürün, alın, oraya taşıyın, ateş edin, vb."
+" Komutlar, hızlı bir şekilde karmaşık rutinler oluşturmak için ek mantıkla "
+"sırayla bağlanabilir. TeleOp için, aynı komutlar eşzamansız olarak "
+"yürütülebilir, robotun her zaman en son sürücü girdilerini işlemesine izin "
+"verir ve uygun şekilde uygulanırsa yeni komutlar kesintiye uğrayarak, sürücü"
+" ekibinin saha koşullarına hızlı bir şekilde yanıt verirken aynı zamanda "
+"otomatikleştirilmiş komutlardan ve komutlardan dizilerinden yararlanmasını "
+"sağlar.."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:23
+msgid ""
+"Command and Control adds functionality to the existing LabVIEW project "
+"templates, allowing code to scale better with more sophisticated robots and "
+"robot code. Subsystems are used to abstract the details of the "
+"implementation, and game code is built from sequences of high level command "
+"VIs. The commands themselves are VIs that can update set points, perform "
+"numerical scaling/mapping between engineering units and mechanism units, and"
+" offer synchronization options. If physical changes are made to the robot, "
+"such as changing a gearing ratio, changes can be made to just a few command "
+"Vis to reflect this change across the entire code base."
+msgstr ""
+"Command ve Control, mevcut LabVIEW proje şablonlarına işlevsellik ekleyerek "
+"kodun daha karmaşık robotlar ve robot koduyla daha iyi ölçeklenmesini "
+"sağlar. Alt sistemler, uygulamanın ayrıntılarını soyutlamak için kullanılır "
+"ve oyun kodu, yüksek seviyeli komut VI dizilerinden oluşturulur. Komutların "
+"kendileri, ayar noktalarını güncelleyebilen, mühendislik birimleri ve "
+"mekanizma birimleri arasında sayısal ölçeklendirme / haritalama "
+"gerçekleştirebilen ve senkronizasyon seçenekleri sunan VI'lardır. Robotta "
+"dişli oranının değiştirilmesi gibi fiziksel değişiklikler yapılırsa, bu "
+"değişikliği kod tabanının tamamında yansıtmak için yalnızca birkaç Vis "
+"komutunda değişiklikler yapılabilir."
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:28
 msgid "Part 1: Project Explorer"
 msgstr "Part 1: Proje Gezgini"
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:35
+msgid "My Computer"
+msgstr "My Computer"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:35
+msgid ""
+"The items that define operation on the computer that the project was loaded "
+"on. For a robot project, this is used as a simulation target and is "
+"populated with simulation files."
+msgstr ""
+"Projenin yüklendiği bilgisayardaki işlemi tanımlayan öğeler. Bir robot "
+"projesi için, bu bir simülasyon hedefi olarak kullanılır ve simülasyon "
+"dosyalarıyla doldurulur."
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:41
 msgid "Robot Simulation Readme.html"
 msgstr "Robot Simulation Readme.html"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:44
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:96
+msgid "Dependencies"
+msgstr "Dependencies-Bağımlılıklar"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:44
+msgid ""
+"Shows the files used by the simulated robot’s code. This will populate when "
+"you designate the code for the simulated robot target."
+msgstr ""
+"Simüle edilmiş robotun kodu tarafından kullanılan dosyaları gösterir. Simüle"
+" edilmiş robot hedefi için kod belirlediğinizde bu doldurulacaktır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:47
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:99
+msgid "Build Specifications"
+msgstr "Derleme Özellikleri"
 
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:50
 msgid "Target (roboRIO-TEAM-FRC.local)"
@@ -37,6 +155,77 @@ msgstr "Target (roboRIO-TEAM-FRC.local)"
 msgid "Drive"
 msgstr "Drive - Sürüş"
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:53
+msgid ""
+"The subsystem implementation and commands for the robot drive base. This "
+"serves as a custom replacement for the WPILib RobotDrive VIs."
+msgstr ""
+"Robot sürücü tabanı için alt sistem uygulaması ve komutları. Bu, WPILib "
+"RobotDrive VI'lar için özel bir yedek görevi görür."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:72
+msgid "Framework"
+msgstr "Framework-Çerçeve "
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:56
+msgid ""
+"VIs used for robot code that is not part of a subsystem that are not used "
+"very often."
+msgstr ""
+"Çok sık kullanılmayan bir alt sistemin parçası olmayan robot kodu için "
+"kullanılan VI'lar."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:59
+msgid "Begin"
+msgstr "Begin"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:59
+msgid ""
+"Called once when robot code first starts. This is useful for initialization "
+"code that doesn’t belong to a particular subsystem."
+msgstr ""
+"Robot kodu ilk başladığında bir kez çağrılır. Bu, belirli bir alt sisteme "
+"ait olmayan başlatma kodu için kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:62
+msgid "Disabled"
+msgstr "Disabled"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:62
+msgid ""
+"Called once for each disabled packet and can be used to debug sensors when "
+"you don’t want the robot to move."
+msgstr ""
+"Devre dışı bırakılan her paket için bir kez çağrılır ve robotun hareket "
+"etmesini istemediğinizde sensörlerde hata ayıklamak için kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:68
+msgid "Periodic Tasks"
+msgstr "Periodic Tasks"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:68
+msgid "A good place for ad hoc periodic loops for debugging or monitoring"
+msgstr ""
+"Hata ayıklama veya izleme için ad hoc periyodik döngüler için iyi bir yer"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:72
+msgid "Robot Global Data"
+msgstr "Robot Global Data"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:71
+msgid ""
+"Useful for sharing robot information that doesn’t belong to a subsystem."
+msgstr ""
+"Bir alt sisteme ait olmayan robot bilgilerini paylaşmak için kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:75
+msgid "Support Code"
+msgstr "Destek Kodu"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:78
+msgid "Vision"
+msgstr "Vision"
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:81
 msgid "Robot Main.vi"
 msgstr "Robot Main.vi"
@@ -45,18 +234,300 @@ msgstr "Robot Main.vi"
 msgid "Autonomous.vi"
 msgstr "Autonomous.vi"
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:84
+msgid "VI that runs during autonomous period."
+msgstr "Otonom periyodu boyunca çalışan VI."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:87
+msgid "Teleop.vi"
+msgstr "Teleop.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:90
+msgid "Test.vi"
+msgstr "Test.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:90
+msgid "VI that runs when driver station is in test mode."
+msgstr "Driver Station test modundayken çalışan VI."
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:93
 msgid "SubSystems.vi"
 msgstr "SubSystems.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:96
+msgid "Shows the files used by the robot code."
+msgstr "Robot kodu tarafından kullanılan dosyaları gösterir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:99
+msgid ""
+"Used to build and run the code as a startup application once code works "
+"correctly."
+msgstr ""
+"Kod doğru çalıştıktan sonra kodu bir başlangıç uygulaması olarak oluşturmak "
+"ve çalıştırmak için kullanılır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:104
+msgid "Drive Subsystem Project Explorer"
+msgstr "Drive Subsystem Project Explorer"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:108
+msgid ""
+"This folder contains the command VIs that request the controller carry out "
+"an operation. It also contains templates for creating additional drive "
+"commands."
+msgstr ""
+"Bu klasör, denetleyiciden bir işlem gerçekleştirmesini isteyen komut VI'ları"
+" içerir. Ayrıca, ek sürücü komutları oluşturmak için şablonlar içerir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:113
+msgid "Implementation"
+msgstr "Uygulama"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:115
+msgid "These are the VIs and Controls used to build the subsystem."
+msgstr ""
+"Bunlar, alt sistemi oluşturmak için kullanılan VI'lar ve Kontrollerdir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:120
+msgid "Infrastructure VIs"
+msgstr "Altyapı VI ları"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:118
+msgid ""
+"Drive Check for New Command: It is called each iteration of the controller "
+"loop. It checks for new commands, updates timing data, and upon completion "
+"notifies a waiting command."
+msgstr ""
+"Drive Check for New Command: Denetleyici döngüsünün her yinelemesi olarak "
+"adlandırılır. Yeni komutları kontrol eder, zamanlama verilerini günceller ve"
+" tamamlandığında bir bekleme komutunu bildirir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:119
+msgid ""
+"Drive Command Helper.vi: Commands call this VI to notify the controller that"
+" a new command has been issued."
+msgstr ""
+"Drive Command Helper.vi:  Komutlar, yeni bir komutun verildiğini kontrolöre "
+"bildirmek için bu VI'yı çağırır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:122
+msgid ""
+"Drive Controller.vi: This VI contains the control/state machine loop. The "
+"panel may also contain displays useful for debugging."
+msgstr ""
+"Drive Controller.vi: Bu VI, control/state machine döngüsünü içerir. Panel "
+"ayrıca hata ayıklama için yararlı ekranlar içerebilir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:123
+msgid ""
+"Drive Operation.ctl: This typedef defines the operational modes of the "
+"controller. Many commands can share an operation."
+msgstr ""
+"Drive Operation.ctl: Bu typedef, denetleyicinin çalışma modlarını tanımlar. "
+"Birçok komut bir işlemi paylaşabilir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:124
+msgid ""
+"Drive Setpoint.ctl: It contains the data fields used by all operating modes "
+"of the Drive subsystem."
+msgstr ""
+"Drive Setpoint.ctl: Drive alt sisteminin tüm çalışma modları tarafından "
+"kullanılan veri alanlarını içerir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:125
+msgid ""
+"Drive Published Globals.vi: A useful place for publishing global information"
+" about the drive subsystem."
+msgstr ""
+"Drive Published Globals.vi: Sürücü alt sistemi hakkında genel bilgileri "
+"yayınlamak için yararlı bir yer."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:130
+msgid ""
+"There are green comments on the controller’s block diagram that point out "
+"key areas that you will want to know how to edit."
+msgstr ""
+"Denetleyicinin blok diyagramında, nasıl düzenleneceğini bilmek isteyeceğiniz"
+" önemli alanları gösteren yeşil yorumlar vardır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:132
+msgid ""
+"The area to the left of the control loop will execute once when the "
+"subsystem starts up. This is where you will typically allocate and "
+"initialize all I/O and state data. You may publish the I/O refnums, or you "
+"may register them for Test Mode Only to keep them private so that other code"
+" cannot update motors without using a command."
+msgstr ""
+"Kontrol döngüsünün solundaki alan, alt sistem başladığında bir kez "
+"çalıştırılacaktır. Burası, genellikle tüm I/O ve durum verilerini tahsis "
+"edeceğiniz ve başlatacağınız yerdir. I/O refnum'larını yayınlayabilirsiniz "
+"veya onları yalnızca Test Modu'na kaydederek diğer kodların bir komut "
+"kullanmadan motorları güncelleyememesi için onları gizli tutabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:136
+msgid ""
+"Initializing the resources for each subsystem in their respective "
+"Controller.vi rather than in Begin.vi improves I/O encapsulation, reducing "
+"potential resource conflicts and simplifies debugging."
+msgstr ""
+"Her bir alt sistem için kaynakları Begin.vi yerine ilgili Controller.vi'de "
+"başlatmak, I/O kapsüllemeyi geliştirir, olası kaynak çakışmalarını azaltır "
+"ve hata ayıklamayı basitleştirir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:140
+msgid ""
+"Part of the initialization is to select the default operation and set point "
+"values when no other operation is being processed."
+msgstr ""
+"Başlatma işleminin bir kısmı, başka hiçbir işlem işlenmediğinde varsayılan "
+"işlemi ve ayar noktası değerlerini seçmektir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:150
+msgid ""
+"The primary goal of the controller is to update actuators for the subsystem."
+" This can occur within the case structure, but many times, it is beneficial "
+"to do it downstream of the structure to ensure that values are always "
+"updated with the correct value and in only one location in the code."
+msgstr ""
+"Kontrolörün birincil amacı, alt sistem için aktüatörleri güncellemektir. Bu,"
+" case yapısı içinde meydana gelebilir, ancak çoğu zaman, değerlerin her "
+"zaman doğru değerle ve kodda yalnızca bir konumda güncellendiğinden emin "
+"olmak için bunu yapının aşağı yönünde yapmak yararlıdır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:155
+msgid "Part 3: Drive Subsystem Shipped Commands"
+msgstr "Bölüm 3: Drive Subsystem Taşınan Komutlar"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:157
+msgid "There are 3 shipped example commands for each new subsystem:"
+msgstr "Her yeni alt sistem için gönderilen 3 örnek komut vardır:"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:160
+msgid "Drive For Time.vi"
+msgstr "Time For Drive.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:164
+msgid ""
+"This VI sets the motors to run for a given number of seconds. It optionally "
+"synchronizes with the completion of the command."
+msgstr ""
+"Bu VI, motorları belirli bir saniye kadar çalışacak şekilde ayarlar. İsteğe "
+"bağlı olarak komutun tamamlanmasıyla senkronize olur."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:166
+msgid ""
+"The Drive for Time case will operate the motors at the set point until the "
+"timer elapses or a new command is issued. If the motors have the safety "
+"timeout enabled, it is necessary to update the motors at least once every "
+"100ms. This is why the code waits for the smaller of the remaining time and "
+"50ms."
+msgstr ""
+"Drive for Time durumu, zamanlayıcı sona erene veya yeni bir komut verilene "
+"kadar motorları ayar noktasında çalıştıracaktır. Motorlarda güvenlik zaman "
+"aşımı etkinleştirilmişse, motorların en az 100 ms'de bir güncellenmesi "
+"gerekir. Bu nedenle kod kalan sürenin küçük olanını ve 50ms'yi bekler."
 
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:171
 msgid "Drive Immediate.vi"
 msgstr "Drive Immediate.vi"
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:175
+msgid ""
+"Gets the desired left and right speeds for the motors and will set the "
+"motors immediately to those set points."
+msgstr ""
+"Motorlar için istenen sol ve sağ hızları alır ve motorları hemen bu ayar "
+"noktalarına ayarlar."
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:182
 msgid "Stop Driving.vi"
 msgstr "Stop Driving.vi"
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:188
+msgid ""
+"The Reserve command turns off the motors and waits for a new command. When "
+"used with a named command sequence, reserve identifies that the drive "
+"subsystem is part of a sequence, even if not currently moving the robot. "
+"This helps to arbitrate subsystem resource between simultaneously running "
+"commands."
+msgstr ""
+"Reserve komutu motorları kapatır ve yeni bir komut bekler. Reserve, "
+"adlandırılmış bir komut dizisi ile kullanıldığında, robotu hareket "
+"ettirmiyor olsa bile sürücü alt sisteminin bir dizinin parçası olduğunu "
+"tanımlar. Bu, aynı anda çalışan komutlar arasında alt sistem kaynağında "
+"arabuluculuk yapmaya yardımcı olur."
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:193
 msgid "Part 4: Creating New Commands"
 msgstr "Part 4: Yeni Komutlar Yaratmak"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:198
+msgid ""
+"**Immediate with deadband**: This VI compares the input value to the "
+"deadband and optionally notifies the subsystem about the new setpoint. This "
+"is very useful when joystick continuous values are being used."
+msgstr ""
+"**Immediate with deadband** : Bu VI, giriş değerini ölü bantla karşılaştırır"
+" ve isteğe bağlı olarak alt sistemi yeni ayar noktası hakkında "
+"bilgilendirir. Bu, joystick devamlı değerleri kullanıldığında çok "
+"kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:199
+msgid ""
+"**With duration**: This VI notifies the subsystem to perform this command "
+"for the given duration, and then return to the default state. "
+"Synchronization determines whether this VI Starts the operation and returns "
+"immediately, or waits for the operation to complete. The first option is "
+"commonly used for TeleOp, and the second for Autonomous sequencing."
+msgstr ""
+" **With duration** : Bu VI, alt sistemi verilen süre boyunca bu komutu "
+"yerine getirmesi ve ardından varsayılan duruma geri dönmesi için "
+"bilgilendirir. Senkronizasyon, bu VI'nın işlemi başlatıp başlatmayacağını ve"
+" hemen geri dönüp dönmeyeceğini veya işlemin tamamlanmasını bekleyip "
+"beklemeyeceğini belirler. İlk seçenek genellikle TeleOp için ve ikincisi "
+"Otonom dizileme için kullanılır."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:201
+msgid "In this example we will add the new command “Drive for Distance”."
+msgstr "Bu örnekte yeni “Drive for Distance” komutunu ekleyeceğiz."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:205
+msgid ""
+"First, save the new VI with a descriptive name such as “Drive for Distance”."
+" Next, determine whether the new command needs a new value added the Drive "
+"Operations enum typedef. The initial project code already has an enum value "
+"of Drive for Distance, but the following image shows how you would add one "
+"if needed."
+msgstr ""
+"İlk olarak, yeni VI'yı  “Drive for Distance” gibi açıklayıcı bir adla "
+"kaydedin. Ardından, yeni komutun Drive Operations enum typedef'e yeni bir "
+"değer katması gerekip gerekmediğini belirleyin. İlk proje kodunun zaten bir "
+"Drive for Distance enum değeri vardır, ancak aşağıdaki görüntü, gerekirse "
+"nasıl ekleyeceğinizi gösterir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:213
+msgid ""
+"Once that we have all of the fields needed to specify our command, we can "
+"modify the newly created Drive for Distance.vi. As shown below, select Drive"
+" for Distance from the enum’s drop down menu and add a VI parameters to "
+"specify distance, speeds, etc. If the units do not match, the command VI is "
+"a great place to map between units."
+msgstr ""
+"Bundan sonra, komutumuzu belirtmek için gereken tüm alanlara sahip "
+"olduğumuzda, yeni oluşturulan  Drive for Distance.vi ı değiştirebiliriz. "
+"Aşağıda gösterildiği gibi, enum açılır menüsünden Drive for Distance öğesini"
+" seçin ve mesafeyi, hızları vb. belirtmek için bir VI parametresi ekleyin. "
+"Birimler uyuşmuyorsa, VI komutu birimler arasında haritalamak için harika "
+"bir yerdir."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:217
+msgid ""
+"Next, add code to the Drive Controller to define what happens when the Drive"
+" for Distance command executes. Right click on the Case Structure and "
+"Duplicate or Add Case for Every Value. This will create a new “Drive for "
+"Distance” case."
+msgstr ""
+"Ardından, Mesafe için Sürüş komutu yürütüldüğünde ne olacağını tanımlamak "
+"için Drive Controller kod ekleyin. Case Structure sağ tıklayın ve Duplicate "
+"veya Add Case for Every Value e tıklayınız. Bu, yeni bir “Drive for "
+"Distance” durumu yaratacaktır."

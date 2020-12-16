@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-15 16:17+0000\n"
+"POT-Creation-Date: 2020-12-16 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,9 +21,22 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:4
+msgid "Programming Radios for FMS Offseason"
+msgstr "FMS Offseason için Radyo Programlama"
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:8
 msgid "Before you begin using the software:"
 msgstr "Yazılımı kullanmaya başlamadan önce:"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:10
+msgid ""
+"Disable WiFi connections on your computer, as it may prevent the "
+"configuration utility from properly communicating with the bridge"
+msgstr ""
+"Yapılandırma yardımcı programının köprü ile düzgün bir şekilde iletişim "
+"kurmasını engelleyebileceğinden bilgisayarınızdaki WiFi bağlantılarını devre"
+" dışı bırakın."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:11
 msgid ""
@@ -36,6 +49,24 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:14
 msgid "Pre-Requisites"
 msgstr "Önkoşullar"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:16
+msgid ""
+"Even though WPILib uses Java 11, the FRC Radio Configuration Utility "
+"requires Java 8."
+msgstr ""
+"WPILib, Java 11 kullansa da,  FRC Radio Configuration Utility Java 8 "
+"gerektirir."
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:18
+msgid ""
+"The FRC Radio Configuration Utility requires the Java Runtime Engine (JRE). "
+"If you do not have Java installed, you can download the JRE from `here "
+"<https://www.java.com/en/download/>`__."
+msgstr ""
+"FRC Radyo Yapılandırma Yardımcı Programı, Java Runtime Engine (JRE) "
+"gerektirir. Java kurulu değilse, JRE'yi `buradan "
+"<https://www.java.com/en/download/>`__ adresinden indirebilirsiniz."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:20
 msgid ""
@@ -54,6 +85,18 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:23
 msgid "Application Notes"
 msgstr "Uygulama Notları"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:25
+msgid ""
+"The Radio Kiosk will program the radio to enforce the 4 Mbps bandwidth limit"
+" on traffic exiting the radio over the wireless interface. In the home "
+"configuration (AP mode) this is a total, not a per client limit. This means "
+"that streaming video to multiple clients is not recommended."
+msgstr ""
+"Radyo Kiosku, radyoyu kablosuz arayüz üzerinden radyodan çıkan trafiğe 4 "
+"Mbps bant genişliği sınırını uygulayacak şekilde programlayacaktır. Ev "
+"yapılandırmasında (AP modu) bu, istemci başına bir sınır değil, toplamdır. "
+"Bu, birden fazla istemciye video akışının tavsiye edilmediği anlamına gelir."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:27
 msgid ""
@@ -88,6 +131,20 @@ msgstr ""
 "Gelecekteki programlama ihtiyaçları için 192.168.1.1 'in kablolu tarafında "
 "alternatif bir IP ayarı."
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:36
+msgid "Bridge the wired ports so they may be used interchangeably"
+msgstr ""
+"Kablolu bağlantı noktalarını köprüleyin, böylece birbirlerinin yerine "
+"kullanılabilirler"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:37
+msgid "The LED configuration noted in the graphic above"
+msgstr "Yukarıdaki grafikte belirtilen LED konfigürasyonu"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:38
+msgid "4Mb/s bandwidth limit on the outbound side of the wireless interface"
+msgstr "Kablosuz arayüzün giden tarafında 4Mb/s bant genişliği sınırı"
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:39
 msgid ""
 "QoS rules for internal packet prioritization (affects internal buffer and "
@@ -100,6 +157,16 @@ msgstr ""
 "etkiler). Bu kurallar Robot Control and Status-Durum (UDP 1110, 1115, 1150) "
 ">> Robot TCP & Network Tables (TCP 1735, 1740) >> Bulk (Diğer tüm trafik)."
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:43
+msgid ""
+"When programmed with the team version of the Radio Configuration - Utility, "
+"the user accounts will be left at (or set to) the firmware - defaults **for "
+"the DAPs only**:"
+msgstr ""
+"Radio Configuration yardımcı programının takım sürümü ile programlandığında,"
+" kullanıcı hesapları **sadece DAP'ler için** farbrika ayarı varsayılanları "
+"olarak bırakılır (veya ayarlanır)"
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:45
 msgid "Username: root"
 msgstr "Kullanıcı adı : root"
@@ -108,13 +175,56 @@ msgstr "Kullanıcı adı : root"
 msgid "Password: root"
 msgstr "Şifre : root"
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:48
+msgid "It is not recommended to modify the configuration manually"
+msgstr "Yapılandırmayı manuel olarak değiştirmeniz önerilmez"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:51
+msgid "Download the software"
+msgstr "Yazılımı indirin"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:55
+msgid ""
+"Download the latest FRC Radio Configuration Utility Installer from the "
+"`WPILib project File Releases "
+"<https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__."
+msgstr ""
+"En son FRC Radio Configuration Utility yükleyicisini `WPILib project File "
+"Releases "
+"<https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__."
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:58
 msgid "Install the software"
 msgstr "Yazılımı kurun"
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:62
+msgid ""
+"Double click on FRC_Radio_Configuration_MM_DD_YY.exe to launch the "
+"installer. Follow the prompts to complete the installation."
+msgstr ""
+"Yükleyiciyi başlatmak için FRC_Radio_Configuration_MM_DD_YY.exe üzerine çift"
+" tıklayın. Kurulumu tamamlamak için talimatları izleyin."
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:64
+msgid ""
+"Part of the installation prompts will include installing WinPCap if it is "
+"not already present. The WinPCap installer contains a checkbox (checked by "
+"default) to start the WinPCap driver on boot. You should leave this box "
+"checked."
+msgstr ""
+"Kurulum bilgi istemlerinin bir kısmı, zaten mevcut değilse WinPCap'in "
+"kurulmasını içerecektir. WinPCap yükleyicisi, WinPCap sürücüsünü önyüklemede"
+" başlatmak için bir onay kutusu (varsayılan olarak işaretlidir) içerir. Bu "
+"kutuyu işaretli bırakmalısınız."
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:67
 msgid "Launch the software"
 msgstr "Yazılımı başlatın"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:71
+msgid "Use the Start menu or desktop shortcut to launch the program."
+msgstr ""
+"Programı başlatmak için Start menüsünü veya masaüstü kısayolunu kullanın."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:73
 msgid ""
@@ -125,6 +235,20 @@ msgstr ""
 "Programı bulmanız gerekirse, ``C:/Program Files (x86)/FRC Radio "
 "Configuration Utility`` konumuna kurulur. 32 bit makineler için yol "
 "``C:/Program Files/FRC Radio Configuration Utility``dır."
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:76
+msgid "Allow the program to make changes, if prompted"
+msgstr "İstenirse programın değişiklik yapmasına izin verin"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:80
+msgid ""
+"If the your computer is running Windows Vista or Windows 7, a prompt may "
+"appear about allowing the configuration utility to make changes to the "
+"computer.  Click \"Yes\" if the prompt appears."
+msgstr ""
+"Bilgisayarınız Windows Vista veya Windows 7 çalıştırıyorsa, yapılandırma "
+"yardımcı programının bilgisayarda değişiklik yapmasına izin verilmesi "
+"hakkında bir istem görünebilir. İstem görünürse \"Yes\" i tıklayın."
 
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:83
 msgid "Enter FMS-Lite Mode"
@@ -139,10 +263,67 @@ msgstr ""
 msgid "Enter SSID"
 msgstr "SSID girin"
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:94
+msgid ""
+"Enter the SSID (name) of your wireless network in the box and click OK."
+msgstr "Kablosuz ağınızın SSID'sini (adını) kutuya girin ve Tamam'ı tıklayın."
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:97
 msgid "Enter WPA Key"
 msgstr "WPA Key girin"
 
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:101
+msgid ""
+"Enter the WPA key for your network in the box and click OK. Leave the box "
+"blank if you are using an unsecured network."
+msgstr ""
+"Ağınız için WPA anahtarını kutuya girin ve Tamam'ı tıklayın. Güvenli olmayan"
+" bir ağ kullanıyorsanız kutuyu boş bırakın."
+
 #: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:104
 msgid "Program Radios"
 msgstr "Radyoları Programlama "
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:108
+msgid ""
+"The Kiosk is now ready to program any number of radios to connect to the "
+"network entered. To program each radio, connect the radio to the Kiosk, set "
+"the Team Number in the box, and click Configure."
+msgstr ""
+"Kiosk artık girilen ağa bağlanmak için herhangi bir sayıda radyoyu "
+"programlamaya hazırdır. Her bir radyoyu programlamak için, radyoyu Kiosk'a "
+"bağlayın, kutuda Team Number ayarlayın ve Configure'e tıklayın."
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:110
+msgid ""
+"The kiosk will program OpenMesh, D-Link Rev A or D-Link Rev B radios to work"
+" on an offseason FMS network by selecting the appropriate option from the "
+"\"Radio\" dropdown."
+msgstr ""
+"Kiosk, OpenMesh, D-Link Rev A veya D-Link Rev B telsizlerini \"Radio\" "
+"açılır menüsünden uygun seçeneği seçerek sezon dışı bir FMS ağında çalışacak"
+" şekilde programlayacaktır."
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:112
+msgid ""
+"Bandwidth limitations and QoS will not be configured on the D-Link radios in"
+" this mode."
+msgstr ""
+"Bu modda D-Link telsizlerinde bant genişliği sınırlamaları ve QoS "
+"yapılandırılmayacaktır."
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:115
+msgid "Changing SSID or Key"
+msgstr "SSID veya Anahtarın Değiştirilmesi"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:117
+msgid ""
+"If you enter something incorrectly or need to change the SSID or WPA Key, go"
+" to the Tools menu and click FMS-Lite Mode to take the kiosk out of FMS-Lite"
+" Mode. When you click again to put the Kiosk back in FMS-Lite Mode, you will"
+" be re-prompted for the SSID and Key."
+msgstr ""
+"Yanlış bir şey girerseniz veya SSID veya WPA anahtarını değiştirmeniz "
+"gerekirse, kiosku FMS-Lite Modundan çıkarmak için Tools menüsüne gidin ve "
+"FMS-Lite Moduna tıklayın. Kiosk'u FMS-Lite Moduna geri getirmek için tekrar "
+"tıkladığınızda, SSID ve Anahtar için yeniden sorulacaktır."

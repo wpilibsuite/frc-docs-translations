@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-15 16:17+0000\n"
+"POT-Creation-Date: 2020-12-16 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -25,9 +25,126 @@ msgstr ""
 msgid "Swerve Drive Kinematics"
 msgstr "Swerve Drive Kinematiği"
 
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:3
+msgid ""
+"The ``SwerveDriveKinematics`` class is a useful tool that converts between a"
+" ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which "
+"contains velocities and angles for each swerve module of a swerve drive "
+"robot."
+msgstr ""
+"`` SwerveDriveKinematics`` sınıfı, bir `` ChassisSpeeds`` nesnesi ile bir "
+"swerve sürücü robotunun her bir dönüş modülü için hızları ve açıları içeren "
+"birkaç `` SwerveModuleState`` nesnesi arasında dönüşüm sağlayan kullanışlı "
+"bir araçtır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:6
+msgid "The swerve module state class"
+msgstr "Swerve modülü durum sınıfı"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:7
+msgid ""
+"The ``SwerveModuleState`` class contains information about the velocity and "
+"angle of a singular module of a swerve drive. The constructor for a "
+"``SwerveModuleState`` takes in two arguments, the velocity of the wheel on "
+"the module, and the angle of the module."
+msgstr ""
+"``SwerveModuleState`` sınıfı, bir swerve sürücüsünün tekil modülünün hızı ve"
+" açısı hakkında bilgi içerir. Bir ``SwerveModuleState`` in constructor'ı iki"
+" argüman alır: modüldeki çarkın hızı ve modülün açısı."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:9
+msgid ""
+"In Java, the velocity of the wheel must be in meters per second. In C++, the"
+" units library can be used to provide the velocity using any linear velocity"
+" unit."
+msgstr ""
+"Java'da, tekerleğin hızı saniyede metre cinsinden olmalıdır. C++ 'da, units-"
+"birimler kitaplığı herhangi bir doğrusal hız birimi kullanılarak hızı "
+"sağlamak için kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:10
+msgid "An angle of 0 corresponds to the modules facing forward."
+msgstr "0 açı, öne bakan modüllere karşılık gelir."
+
 #: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:13
 msgid "Constructing the kinematics object"
 msgstr "Kinematik Nesnesinin Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:14
+msgid ""
+"The ``SwerveDriveKinematics`` class accepts a variable number of constructor"
+" arguments, with each argument being the location of a swerve module "
+"relative to the robot center (as a ``Translation2d``. The number of "
+"constructor arguments corresponds to the number of swerve modules."
+msgstr ""
+"``SwerveDriveKinematics`` sınıfı, değişken sayıda yapıcı argümanı kabul "
+"eder, her argüman robot merkezine göre bir swerve modülünün konumu olur "
+"(``Translation2d`` olarak. Constructor argümanlarının sayısı, swerve "
+"modüllerinin sayısına karşılık gelir."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:16
+msgid "A swerve drive must have 2 or more modules."
+msgstr "Swerve sürücüsünün 2 veya daha fazla modülü olmalıdır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:18
+msgid ""
+"In C++, the class is templated on the number of modules. Therefore, when "
+"constructing a ``SwerveDriveKinematics`` object as a member variable of a "
+"class, the number of modules must be passed in as a template argument. For "
+"example, for a typical swerve drive with four modules, the kinematics object"
+" must be constructed as follows: ``frc::SwerveDriveKinematics<4> "
+"m_kinematics{...}``."
+msgstr ""
+"C++ 'da, sınıf modül sayısına göre şablonlanır. Bu nedenle, bir sınıfın üye "
+"değişkeni olarak bir ``SwerveDriveKinematics`` nesnesi oluştururken, modül "
+"sayısı bir şablon argümanı olarak iletilmelidir. Örneğin, dört modüllü tipik"
+" bir swerve sürücü için kinematik nesnesi şu şekilde oluşturulmalıdır: "
+"``frc:: SwerveDriveKinematics<4> m_kinematics{...}``."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:20
+msgid ""
+"The locations for the modules must be relative to the center of the robot. "
+"Positive x values represent moving toward the front of the robot whereas "
+"positive y values represent moving toward the left of the robot."
+msgstr ""
+"Modüllerin konumları, robotun merkezine göre olmalıdır. Pozitif x değerleri "
+"robotun önüne doğru hareket etmeyi temsil ederken, pozitif y değerleri "
+"robotun soluna doğru hareket etmeyi temsil eder."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:51
+msgid "Converting chassis speeds to module states"
+msgstr "Şase hızlarını modül durumlarına dönüştürme"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:52
+msgid ""
+"The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java) / "
+"``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) method should be used "
+"to convert a ``ChassisSpeeds`` object to a an array of ``SwerveModuleState``"
+" objects. This is useful in situations where you have to convert a forward "
+"velocity, sideways velocity, and an angular velocity into individual module "
+"states."
+msgstr ""
+"``toSwerveModuleStates(ChassisSpeeds hızları)`` (Java) / "
+"``toSwerveModuleStates (ChassisSpeeds hızları)`` (C ++) yöntemi, bir "
+"``ChassisSpeeds`` nesnesini ``SwerveModuleState`` nesnelerinden oluşan bir "
+"diziye dönüştürmek için kullanılmalıdır. Bu, ileri hız, yan hız ve açısal "
+"hızı ayrı modül durumlarına dönüştürmeniz gereken durumlarda kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:54
+msgid ""
+"The elements in the array that is returned by this method are the same order"
+" in which the kinematics object was constructed. For example, if the "
+"kinematics object was constructed with the front left module location, front"
+" right module location, back left module location, and the back right module"
+" location in that order, the elements in the array would be the front left "
+"module state, front right module state, back left module state, and back "
+"right module state in that order."
+msgstr ""
+"Bu yöntemle döndürülen dizideki öğeler, kinematik nesnesinin oluşturulduğu "
+"sırayla aynıdır. Örneğin, kinematik nesnesi ön sol modül konumu, ön sağ "
+"modül konumu, arka sol modül konumu ve bu sırayla sağ arka modül konumu ile "
+"oluşturulmuşsa, dizideki öğeler ön sol modül durumu, ön bu sırayla sağ modül"
+" durumu, arka sol modül durumu ve arka sağ modül durumu olacaktır."
 
 #: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:93
 msgid "Field-oriented drive"
@@ -62,3 +179,33 @@ msgstr ""
 "sağlanan ``vx`` ve ``vy`` hızları, robotun tamamı için geçerli olmaya devam "
 "edecektir. Bununla birlikte, ``ChassisSpeeds`` nesnesindeki ``omega``, dönüş"
 " merkezinden ölçülecektir."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:130
+msgid ""
+"For example, one can set the center of rotation on a certain module and if "
+"the provided ``ChassisSpeeds`` object has a ``vx`` and ``vy`` of zero and a "
+"non-zero ``omega``, the robot will appear to rotate around that particular "
+"swerve module."
+msgstr ""
+"Örneğin, belirli bir modülde dönme merkezi ayarlanabilir ve sağlanan "
+"``ChassisSpeeds`` nesnesinin bir ``vx`` ve ``vy`` si sıfır ve sıfır olmayan "
+"bir ``omega`` ise robot, söz konusu dönüş modülü etrafında dönüyormuş gibi "
+"görünecektir."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:133
+msgid "Converting module states to chassis speeds"
+msgstr "Modül durumlarını şase hızlarına dönüştürme"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:134
+msgid ""
+"One can also use the kinematics object to convert an array of "
+"``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The "
+"``toChassisSpeeds(SwerveModuleState... states)`` (Java) / "
+"``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to"
+" achieve this."
+msgstr ""
+"Bir ``SwerveModuleState`` nesnesi dizisini tekil bir ``ChassisSpeeds`` "
+"nesnesine dönüştürmek için kinematik nesnesi de kullanılabilir. Bunu "
+"başarmak için ``toChassisSpeeds(SwerveModuleState ... states)`` (Java) / "
+"``ToChassisSpeeds(SwerveModuleState ... states)`` (C ++) yöntemi "
+"kullanılabilir."

@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-15 16:17+0000\n"
+"POT-Creation-Date: 2020-12-16 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,18 +21,201 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:4
+msgid "Step 3: Creating a Drive Subsystem"
+msgstr "3. Adım: Bir Sürücü Alt Sistemi Oluşturma"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:6
+msgid ""
+"Now that our drive is characterized, it is time to start writing our robot "
+"code *proper*.  As mentioned before, we will use the :ref:`command-based "
+"<docs/software/commandbased/what-is-command-based:What Is \"Command-Based\" "
+"Programming?>` framework for our robot code.  Accordingly, our first step is"
+" to write a suitable drive :ref:`subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>` class."
+msgstr ""
+"Artık sürücümüzün özelliği belirlendiğine göre, robot kodumuzu *doğru* "
+"yazmaya başlamanın zamanı geldi. Daha önce de belirtildiği gibi, robot "
+"kodumuz için :ref:`komut tabanlı <docs/software/commandbased/what-is-"
+"command-based:What Is \"Command-Based\" Programming?>` çerçevesini "
+"kullanacağız. Buna göre, ilk adımımız uygun bir sürücü yazmaktır "
+":ref:`subsystem<docs/software/commandbased/subsystems:Subsystems>` 'sınıfı."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:8
+msgid ""
+"The full drive class from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will describe the steps "
+"involved in writing this class."
+msgstr ""
+"RamseteCommand Örnek Projesindeki tam sürücü sınıfı (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" aşağıda görülebilir. Makalenin geri kalanı bu sınıfı yazmanın adımlarını "
+"anlatacak."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:37
+msgid "Configuring the Drive Encoders"
+msgstr "Drive-Sürüş Kodlayıcılarını-Encoder Yapılandırma"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:39
+msgid ""
+"The drive encoders measure the rotation of the wheels on each side of the "
+"drive.  To properly configure the encoders, we need to specify two things: "
+"the ports the encoders are plugged into, and the distance per encoder pulse."
+"  Then, we need to write methods allowing access to the encoder values from "
+"code that uses the subsystem."
+msgstr ""
+"Sürücü encoderleri, sürücünün her iki yanındaki tekerleklerin dönüşünü "
+"ölçer. Kodlayıcıları doğru şekilde yapılandırmak için iki şeyi belirtmemiz "
+"gerekir: kodlayıcıların takılı olduğu bağlantı noktaları ve kodlayıcı "
+"darbesi başına mesafe. Ardından, alt sistemi kullanan koddan kodlayıcı "
+"değerlerine erişime izin veren yöntemler yazmamız gerekir."
+
 #: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:42
 msgid "Encoder Ports"
 msgstr "Encoder Portları"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:44
+msgid "The encoder ports are specified in the encoder's constructor, like so:"
+msgstr ""
+"Kodlayıcı bağlantı noktaları, kodlayıcının constructtor'ında şu şekilde "
+"belirtilir:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:65
+msgid "Encoder Distance per Pulse"
+msgstr "Darbe Başına Enkoder Mesafesi"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:67
+msgid ""
+"The distance per pulse is specified by calling the encoder's "
+"``setDistancePerPulse`` method.  Note that for the WPILib Encoder class, "
+"\"pulse\" refers to a full encoder cycle (i.e. four edges), and thus will be"
+" 1/4 the value that was specified in the FRC-Characterization config.  "
+"Remember, as well, that the distance should be measured in meters!"
+msgstr ""
+"Darbe başına mesafe, kodlayıcının ``setDistancePerPulse`` yöntemi çağrılarak"
+" belirlenir. WPILib Encoder sınıfı için \"pulse\", tam bir kodlayıcı "
+"döngüsüne (yani dört kenar) karşılık gelir ve bu nedenle FRC-Karakterizasyon"
+" yapılandırmasında belirtilen değerin 1/4'ü olacaktır. Ayrıca mesafenin "
+"metre cinsinden ölçülmesi gerektiğini de unutmayın!"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:88
+msgid "Encoder Accessor Method"
+msgstr "Encoder Accessor Erişimci Yöntemi"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:90
+msgid ""
+"To access the values measured by the encoders, we include the following "
+"method:"
+msgstr ""
+"Kodlayıcılar tarafından ölçülen değerlere erişmek için aşağıdaki yöntemi "
+"dahil ediyoruz:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:110
+msgid ""
+"We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` "
+"object for easier integration with the ``RamseteCommand`` class later on."
+msgstr ""
+"Ölçülen kodlayıcı değerlerini daha sonra ``RamseteCommand`` sınıfıyla daha "
+"kolay entegrasyon için bir ``DifferentialDriveWheelSpeeds`` nesnesine "
+"bağlıyoruz."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:113
+msgid "Configuring the Gyroscope"
+msgstr "Jiroskopu Yapılandırma"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:136
+msgid "Gyroscope Accessor Method"
+msgstr "Jiroskop Accessor Yöntemi"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:138
+msgid ""
+"To access the current heading measured by the gyroscope, we include the "
+"following method:"
+msgstr ""
+"Jiroskop tarafından ölçülen varolan yönelim yönüne erişmek için aşağıdaki "
+"yöntemi dahil ediyoruz:"
 
 #: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:159
 msgid "Configuring the Odometry"
 msgstr "Odemetriyi yapılandırma"
 
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:161
+msgid ""
+"Now that we have our encoders and gyroscope configured, it is time to set up"
+" our drive subsystem to automatically compute its position from the encoder "
+"and gyroscope readings."
+msgstr ""
+"Artık kodlayıcılarımızı ve jiroskopumuzu yapılandırdığımıza göre, konumunu "
+"kodlayıcı ve jiroskop okumalarından otomatik olarak hesaplamak için sürücü "
+"alt sistemimizi kurmanın zamanı geldi."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:163
+msgid ""
+"First, we create a member instance of the ``DifferentialDriveOdometry`` "
+"class:"
+msgstr ""
+"İlk olarak, ``DifferentialDriveOdometry`` sınıfınına üye bir örneğini "
+"oluşturuyoruz:"
+
 #: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:184
 msgid "Updating the Odometry"
 msgstr "Odemetriyi Güncelleme"
 
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:186
+msgid ""
+"The odometry class must be regularly updated to incorporate new readings "
+"from the encoder and gyroscope.  We accomplish this inside the subsystem's "
+"``periodic`` method, which is automatically called once per main loop "
+"iteration:"
+msgstr ""
+"Odometri sınıfı, kodlayıcı ve jiroskoptan gelen yeni okumaları dahil etmek "
+"için düzenli olarak güncellenmelidir. Bunu, her main loop yinelemesinde "
+"otomatik olarak bir kez çağrılan alt sistemin ``periodic`` yöntemi içinde "
+"gerçekleştiriyoruz:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:207
+msgid "Odometry Accessor Method"
+msgstr "Odometri Accessor Yöntemi"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:209
+msgid ""
+"To access the robot's current computed pose, we include the following "
+"method:"
+msgstr ""
+"Robotun mevcut hesaplanan pozuna-konumuna erişmek için aşağıdaki yöntemi "
+"ekliyoruz:"
+
 #: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:230
 msgid "Voltage-Based Drive Method"
 msgstr "Voltaj tabanlı Sürüş Methodu"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:232
+msgid ""
+"Finally, we must include one additional method - a method that allows us to "
+"set the voltage to each side of the drive using the ``setVoltage()`` method "
+"of the ``SpeedController`` interface.  The default WPILib drive class does "
+"not include this functionality, so we must write it ourselves:"
+msgstr ""
+"Son olarak, ``SpeedController`` arayüzünün ``setVoltage()`` yöntemini "
+"kullanarak sürücünün her iki tarafına voltajı ayarlamamıza olanak tanıyan "
+"bir ek yöntem eklemeliyiz. Varsayılan WPILib sürücü sınıfı bu işlevselliği "
+"içermez, bu yüzden kendimiz yazmalıyız:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:252
+msgid ""
+"It is very important to use the ``setVoltage()`` method rather than the "
+"ordinary ``set()`` method, as this will automatically compensate for battery"
+" \"voltage sag\" during operation.  Since our feedforward voltages are "
+"physically-meaningful (as they are based on measured characterization data),"
+" this is essential to ensuring their accuracy."
+msgstr ""
+"Normal ``set()`` yönteminden ziyade ``setVoltage()`` yöntemini kullanmak çok"
+" önemlidir, çünkü bu, çalışma sırasında pil \"voltaj düşüşünü\" otomatik "
+"olarak telafi edecektir. İleri besleme gerilimlerimiz fiziksel olarak "
+"anlamlı olduğundan (ölçülen karakterizasyon verilerine dayandıkları için), "
+"bu, doğruluklarını sağlamak için çok önemlidir."

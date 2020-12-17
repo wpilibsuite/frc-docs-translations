@@ -3,16 +3,117 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 04:14+0000\n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
 "PO-Revision-Date: 2020-12-16 04:21+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:2
+msgid "Step 4: Updating Odometry and Visualizing Robot Position"
+msgstr ""
+"Étape 4: Mise à jour de l'odométrie et visualisation de la position du robot"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:3
+msgid ""
+"Now that the simulated encoder positions, velocities, and gyro angles are "
+"being updated with accurate information periodically, this data can be used "
+"to update the pose of the robot in a periodic loop (such as the "
+"``periodic()`` method in a ``Subsystem``). In simulation, the periodic loop "
+"will use simulated encoder and gyro readings to update odometry whereas on "
+"the real robot, the same code will use real readings from physical hardware."
+msgstr ""
+"Maintenant que les positions, les vitesses et les angles du gyroscope "
+"simulés sont régulièrement mis à jour avec des informations précises, ces "
+"données peuvent être utilisées pour mettre à jour la pose du robot dans une "
+"boucle périodique (telle que la méthode ``periodic()`` dans un "
+"``Subsystem``). En simulation, la boucle périodique utilisera des lectures "
+"simulées d'encodeur et de gyroscope pour mettre à jour l'odométrie alors que"
+" sur le robot réel, le même code utilisera des lectures réelles provenant du"
+" matériel physique."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:5
+msgid ""
+"For more information on using odometry, see :ref:`this document "
+"<docs/software/kinematics-and-odometry/differential-drive-"
+"odometry:Differential Drive Odometry>`."
+msgstr ""
+"Pour plus d'informations sur l'utilisation de l'odométrie, voir :ref: `ce "
+"document <docs / software / cinematics-and-odometry / différentiel-drive-"
+"odometry: Differential Drive Odometry>`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:8
+msgid "Robot Pose Visualization"
+msgstr "Visualisation de la pose du robot"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:9
+msgid ""
+"The robot pose can be visualized on the Simulator GUI (during simulation) or"
+" on a dashboard such as Glass (on a real robot) by sending the odometry pose"
+" over a ``Field2d`` object. A ``Field2d`` can be trivially constructed "
+"without any constructor arguments:"
+msgstr ""
+"La pose du robot peut être visualisée sur l'interface graphique du "
+"simulateur (pendant la simulation) ou sur un tableau de bord tel que Glass "
+"(sur un vrai robot) en envoyant la pose d'odométrie sur un objet ``Field2d``"
+" .  Un ``Field2d`` peut être construit de manière triviale sans aucun "
+"argument de constructeur:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:24
+msgid ""
+"This ``Field2d`` instance must then be sent over NetworkTables. The best "
+"place to do this is in the constructor of your subsystem."
+msgstr ""
+"Cette instance ``Field2d`` doit ensuite être envoyée via les NetworkTables. "
+"Le meilleur endroit pour faire cela est dans le constructeur de votre sous-"
+"système."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:43
+msgid ""
+"The ``Field2d`` instance can also be sent using a lower-level NetworkTables "
+"API or using the :ref:`Shuffleboard API <docs/software/wpilib-"
+"tools/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying "
+"data from your robot>`."
+msgstr ""
+"L'instance `` Field2d '' peut également être envoyée en utilisant une API "
+"NetworkTables de niveau inférieur ou en utilisant: ref: `Shuffleboard API "
+"<docs / software / wpilib-tools / shuffleboard / getting-started / "
+"shuffleboard-display-data: Affichage des données depuis votre robot>"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:45
+msgid ""
+"Finally, the pose from your odometry must be updated periodically into the "
+"``Field2d`` object. Remember that this should be in a general ``periodic()``"
+" method i.e. one that runs both during simulation and during real robot "
+"operation."
+msgstr ""
+"Enfin, la pose de votre odométrie doit être mise à jour périodiquement dans "
+"l'objet ``Field2d``. Rappelez-vous que cela devrait être une méthode "
+"générale ``periodic()``, c'est-à-dire une méthode qui s'exécute à la fois "
+"pendant la simulation et pendant le fonctionnement réel du robot."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:74
+msgid ""
+"It is important that this code is placed in a regular ``periodic()`` method "
+"-- one that is called periodically regardless of mode of operation. If you "
+"are using the command-based library, this method already exists. If not, you"
+" are responsible for calling this method periodically from the main "
+"``Robot`` class."
+msgstr ""
+"Il est important que ce code soit placé dans une méthode régulière "
+"``periodic()`` - une méthode qui est appelée périodiquement quel que soit le"
+" mode de fonctionnement. Si vous utilisez la librairie basée sur les "
+"commandes, cette méthode existe déjà. Sinon, vous êtes responsable d'appeler"
+" cette méthode périodiquement à partir de la classe principale ``Robot``."

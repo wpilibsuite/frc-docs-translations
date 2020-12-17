@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 16:18+0000\n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -20,3 +20,114 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:4
+msgid "Creating a client-side program"
+msgstr "İstemci tarafı bir program oluşturmak"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:6
+msgid ""
+"If all you need to do is have your robot program communicate with GRIP or a "
+"dashboard running on the Driver Station laptop, then the previous examples "
+"of writing robot programs are sufficient. But if you would like to write "
+"some custom client code that would run on the drivers station or on a "
+"coprocessor then you need to know how to build Network Tables programs for "
+"those (non-roboRIO) platforms."
+msgstr ""
+"Yapmanız gereken tek şey, robot programınızın GRIP veya Driver Station "
+"dizüstü bilgisayarda çalışan bir gösterge panosu ile iletişim kurması ise, o"
+" zaman önceki robot programları yazma örnekleri yeterlidir. Ancak, sürücü "
+"istasyonunda veya bir yardımcı işlemcide çalışacak bazı özel istemci kodları"
+" yazmak isterseniz, bu (roboRIO olmayan) platformlar için Network Table  "
+"programlarını nasıl oluşturacağınızı bilmeniz gerekir."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:8
+msgid "A basic client program looks like the following example."
+msgstr "Temel bir istemci programı aşağıdaki örneğe benzer."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:44
+msgid ""
+"In this example an instance of NetworkTables is created and a "
+"NetworkTableEntry if created to reference the values of \"x\" and \"y\" from"
+" a table called \"datatable\"."
+msgstr ""
+"Bu örnekte bir NetworkTables örneği yaratılır ve \"datatable\" adlı bir "
+"tablodan \"x\" ve \"y\" değerlerine başvurmak için oluşturulmuşsa bir "
+"NetworkTableEntry."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:46
+msgid ""
+"Then this instance is started as a NetworkTable client with the team number "
+"(the roboRIO is always the server). Additionally, if the program is running "
+"on the Driver Station computer, by using the startDSClient() method, "
+"NetworkTables will get the robot IP address from the Driver Station."
+msgstr ""
+"Daha sonra bu örnek, takım numarasıyla (roboRIO her zaman sunucudur) bir "
+"NetworkTable istemcisi olarak başlatılır. Ek olarak, program Driver Station "
+"bilgisayarında çalışıyorsa startDSClient() yöntemini kullanarak, "
+"NetworkTables robot IP adresini Driver Station'dan alacaktır."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:48
+msgid ""
+"Then this sample program simply loops once a second and gets the values for "
+"x and y and prints them on the console. In a more realistic program, the "
+"client might be processing or generating values for the robot to consume."
+msgstr ""
+"Daha sonra bu örnek program, saniyede bir döngü yapar ve x ve y değerlerini "
+"alır ve bunları konsolda yazdırır. Daha gerçekçi bir programda, istemci "
+"robotun tüketmesi için değerleri işliyor veya üretiyor olabilir."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:51
+msgid "Building the program"
+msgstr "Programı oluşturmak"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:52
+msgid ""
+"When building and running the program you will need some additional "
+"libraries to include with your client-side program. These are:"
+msgstr ""
+"Programı oluştururken ve çalıştırırken, istemci tarafı programınıza dahil "
+"etmek için bazı ek kitaplıklara ihtiyacınız olacaktır. Bunlar:"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:56
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"jni/ (ntcore native libs for all desktop platforms)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"jni/ (tüm masaüstü platformları için ntcore yerel kitaplıklar)"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:60
+msgid "The desktop platform jar is for Windows, macOS, and Linux."
+msgstr "Desktop platform jar Windows, macOS ve Linux içindir."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:63
+msgid "Building using Gradle"
+msgstr "Gradle kullanarak inşa etme"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:65
+msgid ""
+"The dependencies above can be added to the ``dependencies`` block in a "
+"``build.gradle`` file. The ``ntcore-java`` and ``wpiutil-java`` libraries "
+"are required at compile-time and the JNI dependencies are required at "
+"runtime. The JNI dependencies for all supported platforms should be added to"
+" the ``build.gradle`` if cross-platform support for the application is "
+"desired."
+msgstr ""
+"Yukarıdaki dependencies, bir ``build.gradle`` dosyasındaki ``dependencies`` "
+"bloğuna eklenebilir. Derleme sırasında ``ntcore-java`` ve ``wpiutil-java`` "
+"kitaplıkları gereklidir ve çalışma zamanında JNI dependencies gereklidir. "
+"Uygulama için platformlar arası destek isteniyorsa, desteklenen tüm "
+"platformlar için JNI bağımlılıkları ``build.gradle`` öğesine eklenmelidir."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:75
+msgid ""
+"Then, the dependencies can be added to the ``dependencies`` block. Here, "
+"``VERSION`` should be replaced with the latest version number of the "
+"following dependencies. This usually corresponds to the version number of "
+"the latest WPILib release."
+msgstr ""
+"Daha sonra bağımlılıklar ``dependencies`` bloğuna eklenebilir. Burada, "
+"``VERSION`` aşağıdaki bağımlılıkların en son sürüm numarası ile "
+"değiştirilmelidir. Bu genellikle en son WPILib sürümünün sürüm numarasına "
+"karşılık gelir."

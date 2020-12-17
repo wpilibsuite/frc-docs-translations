@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 16:18+0000\n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -20,3 +20,99 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:2
+msgid "Waiting for Target to Respond - Recovering from bad loops"
+msgstr "Waiting for Target to Respond - Bozuk döngülerden kurtarma"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:6
+msgid ""
+"If you download LabVIEW code which contains an unconstrained loop (a loop "
+"with no delay) it is possible to get the roboRIO into a state where LabVIEW "
+"is unable to connect to download new code. This document explains the "
+"process required to load new, fixed, code to recover from this state"
+".waiting-for-target-to-respond/"
+msgstr ""
+"Kısıtlanmamış bir döngü (gecikmesiz bir döngü) içeren LabVIEW kodunu "
+"indirirseniz, roboRIO'yu LabVIEW'in yeni kodu indirmek için bağlanamayacağı "
+"bir duruma getirmek mümkündür. Bu belge, bu durumdan kurtarmak için yeni, "
+"sabit bir kod yüklemek için gereken işlemi açıklar. state.waiting-for-"
+"target-to-respond/"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:9
+msgid "The Symptom"
+msgstr "Belirti"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:13
+msgid ""
+"The primary symptom of this issue is attempts to download new robot code "
+"hang at the \"Waiting for the target (Target) to respond\" step as shown "
+"above. Note that there are other possible causes of this symptom (such as "
+"switching from a C++\\Java program to LabVIEW program) but the steps "
+"described here should resolve most or all of them."
+msgstr ""
+"Bu sorunun birincil belirtisi, yukarıda gösterildiği gibi \"Waiting for the "
+"target (Target) to respond\" adımında askıda kalan yeni robot kodunu indirme"
+" girişimleridir. Bu semptomun başka olası nedenleri de olduğunu unutmayın "
+"(bir C++\\Java programından LabVIEW programına geçmek gibi), ancak burada "
+"açıklanan adımlar bunların çoğunu veya tümünü çözecektir."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:15
+msgid "Click ``Cancel`` to close the download dialog."
+msgstr "İndirme iletişim kutusunu kapatmak için ``Cancel`` a tıklayın."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:18
+msgid "The Problem"
+msgstr "Sorun"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:22
+msgid ""
+"One common source of this issue is unconstrained loops in your LabVIEW code."
+" An unconstrained loop is a loop which does not contain any delay element "
+"(such as the one on the left). If you are unsure where to begin looking, "
+"Disabled.VI, Periodic Tasks.VI and Vision Processing.VI are the common "
+"locations for this type of loop. To fix the issue with the code, add a delay"
+" element such as the Wait (ms) VI from the Timing palette, found in the "
+"right loop."
+msgstr ""
+"Bu sorunun yaygın bir kaynağı, LabVIEW kodunuzdaki kısıtlanmamış "
+"döngülerdir. Sınırlandırılmamış döngü, herhangi bir gecikme öğesi içermeyen "
+"bir döngüdür (soldaki gibi). Nereden bakmaya başlayacağınızdan emin "
+"değilseniz, Disabled.VI, Periodic Tasks.VI ve Vision Processing.VI, bu tür "
+"döngü için ortak konumlardır. Kodla ilgili sorunu çözmek için, sağ döngüde "
+"bulunan Timing paletinden Wait(ms) VI gibi bir gecikme öğesi ekleyin."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:25
+msgid "Set No App"
+msgstr "Set No App - Uygulama Yok Ayarla"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:32
+msgid "Reboot"
+msgstr "Reboot -Yeniden başlat"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:34
+msgid ""
+"Reboot the roboRIO, either using the Reset button on the device or by click "
+"Restart in the top right corner of the webpage."
+msgstr ""
+"Cihazdaki Reset düğmesini kullanarak veya web sayfasının sağ üst köşesindeki"
+" Restart sseçeneğine tıklayarak roboRIO'yu yeniden başlatın."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:37
+msgid "Clear No App"
+msgstr "Uygulama Yok'u Temizle"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:44
+msgid "Load LabVIEW Code"
+msgstr "LabVIEW Kodunu Yükle"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:46
+msgid ""
+"Load LabVIEW code (either using the Run button or Run as Startup). Make sure"
+" to set LabVIEW code to Run as Startup before rebooting the roboRIO or you "
+"will need to follow the instructions above again."
+msgstr ""
+"LabVIEW kodunu yükleyin (Run düğmesini veya Run as Startup'ı kullanarak). "
+"RoboRIO'yu yeniden başlatmadan önce LabVIEW kodunu Run as Startup olarak "
+"ayarladığınızdan emin olun, aksi takdirde yukarıdaki talimatları tekrar "
+"izlemeniz gerekecektir."

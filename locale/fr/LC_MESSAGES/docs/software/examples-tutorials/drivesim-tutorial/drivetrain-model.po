@@ -3,16 +3,217 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 04:14+0000\n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
 "PO-Revision-Date: 2020-12-16 04:21+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:2
+msgid "Step 2: Creating a Drivetrain Model"
+msgstr "Étape 2: Création d'un modèle de transmission pour une base pilotable"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:3
+msgid ""
+"In order to accurately determine how your physical drivetrain will respond "
+"to given motor voltage inputs, an accurate model of your drivetrain must be "
+"created. This model is usually created by measuring various physical "
+"parameters of your real robot. In WPILib, this drivetrain simulation model "
+"is represented by the ``DifferentialDrivetrainSim`` class."
+msgstr ""
+"Afin de déterminer avec précision comment votre transmission physique "
+"répondra à des entrées de tension moteur données, un modèle précis de votre "
+"transmission doit être créé. Ce modèle est généralement créé en mesurant "
+"divers paramètres physiques de votre vrai robot. Dans WPILib, ce modèle de "
+"simulation de transmission est représenté par la classe "
+"``DifferentialDrivetrainSim``."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:6
+msgid "Creating a ``DifferentialDrivetrainSim`` from Physical Measurements"
+msgstr ""
+"Création d'un ``DifferentialDrivetrainSim`` à partir de mesures physiques"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:7
+msgid ""
+"One way to creating a ``DifferentialDrivetrainSim`` instance is by using "
+"physical measurements of the drivetrain and robot -- either obtained through"
+" CAD software or real-world measurements (the latter will usually yield "
+"better results as it will more closely match reality). This constructor "
+"takes the following parameters:"
+msgstr ""
+"Une façon de créer une instance ``DifferentialDrivetrainSim`` consiste à "
+"utiliser des mesures physiques de la transmission et du robot - obtenues via"
+" un logiciel de CAO ou des mesures réelles (ces dernières donneront "
+"généralement de meilleurs résultats car elles correspondront plus "
+"étroitement à la réalité). Ce constructeur prend les paramètres suivants:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:9
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:74
+msgid "The type and number of motors on one side of the drivetrain."
+msgstr "Le type et le nombre de moteurs d'un côté de la transmission."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:10
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:75
+msgid ""
+"The gear ratio between the motors and the wheels as output over input (this "
+"number is usually greater than 1 for drivetrains)."
+msgstr ""
+"Le rapport de démultiplication entre les moteurs et les roues en sortie sur "
+"entrée (ce nombre est généralement supérieur à 1 pour les transmissions)."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:11
+msgid ""
+"The moment of inertia of the drivetrain (this can be obtained from a CAD "
+"model of your drivetrain. Usually, this is between 3 and 8 :math:`kg m^2`)."
+msgstr ""
+"Le moment d'inertie de la transmission (il peut être obtenu à partir d'un "
+"modèle CAO de votre transmission. Habituellement, il est compris entre 3 et "
+"8: math: `kg m ^ 2`)."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:12
+msgid ""
+"The mass of the drivetrain (it is recommended to use the mass of the entire "
+"robot itself, as it will more accurately model the acceleration "
+"characteristics of your robot for trajectory tracking)."
+msgstr ""
+"La masse de la transmission (il est recommandé d'utiliser la masse de "
+"l'ensemble du robot lui-même, car elle modélisera plus précisément les "
+"caractéristiques d'accélération de votre robot pour le suivi de "
+"trajectoire)."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:13
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:76
+msgid "The radius of the drive wheels."
+msgstr "Le rayon des roues motrices."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:14
+msgid "The track width (distance between left and right wheels)."
+msgstr "La largeur de voie (distance entre les roues gauche et droite)."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:15
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:77
+msgid ""
+"Standard deviations of measurement noise: this represents how much "
+"measurement noise you expect from your real sensors. The measurement noise "
+"is an array with 7 elements, with each element representing the standard "
+"deviation of measurement noise in x, y, heading, left velocity, right "
+"velocity, left position, and right position respectively. This option can be"
+" omitted in C++ or set to ``null`` in Java if measurement noise is not "
+"desirable."
+msgstr ""
+"Écarts types du bruit de mesure: cela représente le bruit de mesure que vous"
+" attendez de vos capteurs réels. Le bruit de mesure est un tableau avec 7 "
+"éléments, chaque élément représentant l'écart type du bruit de mesure en x, "
+"y, cap, vitesse gauche, vitesse droite, position gauche et position droite "
+"respectivement. Cette option peut être omise en C ++ ou définie sur `` null "
+"'' en Java si le bruit de mesure n'est pas souhaitable."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:17
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:79
+msgid ""
+"You can calculate the measurement noise of your sensors by taking multiple "
+"data points of the state you are trying to measure and calculating the "
+"standard deviation using a tool like Python. For example, to calculate the "
+"standard deviation in your encoders' velocity estimate, you can move your "
+"robot at a constant velocity, take multiple measurements, and calculate "
+"their standard deviation from the known mean. If this process is too "
+"tedious, the values used in the example below should be a good "
+"representation of average noise from encoders."
+msgstr ""
+"Vous pouvez calculer le bruit de mesure de vos capteurs en prenant plusieurs"
+" points de données de l'état que vous essayez de mesurer et en calculant "
+"l'écart type à l'aide d'un outil comme Python. Par exemple, pour calculer "
+"l'écart type dans l'estimation de la vitesse de vos encodeurs, vous pouvez "
+"déplacer votre robot à une vitesse constante, prendre plusieurs mesures et "
+"calculer leur écart type par rapport à la moyenne connue. Si ce processus "
+"est trop fastidieux, les valeurs utilisées dans l'exemple ci-dessous doivent"
+" être une bonne représentation du bruit moyen des codeurs."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:19
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:81
+msgid ""
+"The standard deviation of the noise for a measurement has the same units as "
+"that measurement. For example, the standard deviation of the velocity noise "
+"has units of m/s."
+msgstr ""
+"L'écart type du bruit pour une mesure a les mêmes unités que cette mesure. "
+"Par exemple, l'écart type du bruit de vitesse a des unités de m"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:21
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:83
+msgid ""
+"It is very important to use SI units (i.e. meters and radians) when passing "
+"parameters in Java. In C++, the :ref:`units library <docs/software/basic-"
+"programming/cpp-units:The C++ Units Library>` can be used to specify any "
+"unit type."
+msgstr ""
+"Il est très important d'utiliser des unités SI (c'est-à-dire des mètres et "
+"des radians) lors du passage de paramètres en Java. En C ++, la librairie "
+"d'unités: ref: `<docs / software / basic-programming / cpp-units: La "
+"bibliothèque d'unités C ++>` peut être utilisée pour spécifier n'importe "
+"quel type d'unité."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:65
+msgid "Creating a ``DifferentialDrivetrainSim`` from Characterization Gains"
+msgstr ""
+"Création d'un ``DifferentialDrivetrainSim`` à partir des gains de "
+"caractérisation"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:66
+msgid ""
+"You can also use the gains produced by :ref:`robot characterization "
+"<docs/software/wpilib-tools/robot-characterization/introduction:Introduction"
+" to Robot Characterization>`, which you may have performed as part of "
+"setting up the trajectory tracking workflow outlined :ref:`here "
+"<docs/software/examples-tutorials/trajectory-tutorial/index:Trajectory "
+"Tutorial>` to create a simulation model of your drivetrain and often yield "
+"results closer to real-world behavior than the method above."
+msgstr ""
+"Vous pouvez également utiliser les gains produits par :ref: `robot "
+"characterization <docs / software / wpilib-tools / robot-characterization / "
+"introduction: Introduction to Robot Characterization>`, que vous avez pu "
+"effectuer dans le cadre de la mise en place du workflow de suivi de "
+"trajectoire souligné :ref: `ici <docs / software / examples-tutorials / "
+"trajectory-tutorial / index: Trajectory Tutorial>` pour créer un modèle de "
+"simulation de votre transmission.  Ceci produit des résultats plus proches "
+"du comportement du monde réel que la méthode ci-dessus."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:68
+msgid ""
+"You must need two sets of ``Kv`` and ``Ka`` gains from the characterization "
+"tool -- one from straight-line motion and the other from rotating in place. "
+"We will refer to these two sets of gains as linear and angular gains "
+"respectively."
+msgstr ""
+"Vous devez avoir besoin de deux ensembles de gains ``Kv`` et ``Ka`` de "
+"l'outil de caractérisation - l'un du mouvement en ligne droite et l'autre de"
+" la rotation sur place. Nous appellerons ces deux ensembles de gains "
+"respectivement des gains linéaires et angulaires."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:70
+msgid "This constructor takes the following parameters:"
+msgstr "Ce constructeur prend les paramètres suivants:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:72
+msgid ""
+"A linear system representing the drivetrain -- this can be created using the"
+" characterization gains."
+msgstr ""
+"Un système linéaire représentant la transmission - cela peut être créé en "
+"utilisant les gains de caractérisation."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/drivetrain-model.rst:73
+msgid "The track width (distance between the left and right wheels)."
+msgstr "La largeur de voie (distance entre les roues gauche et droite)."

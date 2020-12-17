@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 16:18+0000\n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -38,6 +38,45 @@ msgstr ""
 "<docs/software/commandbased/index:Command-Based Programming>` ' a geçmeleri "
 "şiddetle tavsiye edilir."
 
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:6
+msgid ""
+"WPILib supports a method of writing programs called \"Command-based "
+"programming\". Command-based programming is a design pattern to help you "
+"organize your robot programs. Some of the characteristics of robot programs "
+"that might be different from other desktop programs are:"
+msgstr ""
+"WPILib, \"Komut tabanlı programlama\" adı verilen bir program yazma "
+"yöntemini destekler. Komut tabanlı programlama, robot programlarınızı "
+"düzenlemenize yardımcı olacak bir tasarım modelidir. Diğer masaüstü "
+"programlarından farklı olabilecek robot programlarının bazı özellikleri "
+"şunlardır:"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:8
+msgid ""
+"Activities happen over time, for example a sequence of steps to shoot a "
+"Frisbee or raise an elevator and place a tube on a goal."
+msgstr ""
+"Aktiviteler zamanla gerçekleşir, örneğin bir Frizbi vurmak veya bir asansörü"
+" kaldırmak ve bir hedefe tüp yerleştirmek için bir dizi adım."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:9
+msgid ""
+"These activities occur concurrently, that is it might be desirable for an "
+"elevator, wrist and gripper to all be moving into a pickup position at the "
+"same time to increase robot performance."
+msgstr ""
+"Bu faaliyetler eşzamanlı olarak gerçekleşir, yani robot performansını "
+"artırmak için asansörün, bileğin ve kavrayıcının hepsinin aynı anda toplama "
+"konumuna hareket etmesi istenebilir."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:10
+msgid ""
+"It is desirable to test the robot mechanisms and activities each "
+"individually to help debug your robot."
+msgstr ""
+"Robotunuzun hatalarını gidermeye yardımcı olmak için robot mekanizmalarını "
+"ve etkinliklerini ayrı ayrı test etmeniz istenir."
+
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:11
 msgid ""
 "Often the program needs to be augmented with additional autonomous programs "
@@ -48,6 +87,19 @@ msgstr ""
 "programlarla güçlendirilmesi gerekir, bu nedenle kolayca genişletilebilir "
 "kod önemlidir."
 
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:13
+msgid ""
+"Command-based programming supports all these goals easily to make the robot "
+"program much simpler than using some less structured technique."
+msgstr ""
+"Komuta dayalı programlama, robot programını daha az yapılandırılmış bir "
+"teknik kullanmaktan çok daha basit hale getirmek için tüm bu hedefleri "
+"kolayca destekler."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:16
+msgid "Commands and Subsystems"
+msgstr "Commands ve Subsystems"
+
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:20
 msgid ""
 "Programs based on the WPILib Command Template are organized around two "
@@ -55,6 +107,26 @@ msgid ""
 msgstr ""
 "WPILib Komut Şablonunu temel alan programlar iki temel kavram etrafında "
 "düzenlenmiştir: **Subsystems** ve **Commands**."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:22
+msgid ""
+"**Subsystems** - define the capabilities of each part of the robot and are "
+"subclasses of Subsystem."
+msgstr ""
+"**Subsystems** - robotun her bir parçasının yeteneklerini tanımlar ve "
+"Sunsystem'in alt sınıflarıdır."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:24
+msgid ""
+"**Commands** - define the operation of the robot incorporating the "
+"capabilities defined in the subsystems. Commands are subclasses of Command "
+"or CommandGroup. Commands run when scheduled or in response to buttons being"
+" pressed or virtual buttons from the SmartDashboard."
+msgstr ""
+"**Commands** - alt sistemlerde tanımlanan yetenekleri içeren robotun "
+"çalışmasını tanımlar. Komutlar, Command veya CommandGroup'un alt "
+"sınıflarıdır. Komutlar programlandığında veya basılmakta olan düğmelere veya"
+" SmartDashboard'daki sanal düğmelere yanıt olarak çalışır."
 
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:28
 msgid "How Commands Work"
@@ -80,9 +152,33 @@ msgstr ""
 msgid "Concurrency"
 msgstr "Eşzamanlılık"
 
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:39
+msgid ""
+"Sometimes it is desirable to have several operations happening concurrently."
+" In the previous example you might want to set the wrist position while the "
+"elevator is moving up. In this case, a command group can start a parallel "
+"command (or command group) running."
+msgstr ""
+"Bazen aynı anda birden fazla operasyon yapılması arzu edilir. Önceki "
+"örnekte, asansör yukarı hareket ederken bilek pozisyonunu ayarlamak "
+"isteyebilirsiniz. Bu durumda, bir komut grubu çalışan bir paralel komutu "
+"(veya komut grubunu) başlatabilir."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:42
+msgid "How It Works - Scheduling Commands"
+msgstr "Nasıl Çalışır - Scheduling-Zamanlama Komutları"
+
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:46
 msgid "There are three main ways commands are scheduled:"
 msgstr "Komutların programlanmasının üç ana yolu vardır:"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:48
+msgid ""
+"Manually, by calling the ``start()`` method on the command (:doc:`used for "
+"autonomous <../commands/running-commands-autonomous>`)"
+msgstr ""
+"Manuel olarak, komutta ``start()`` yöntemini çağırarak ( :doc:`otonom için "
+"kullanılır <../commands/running-commands-autonomous>`)"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:49
 msgid ""
@@ -95,9 +191,55 @@ msgstr ""
 "kodda belirtilir (tipik olarak OI sınıfında tanımlanır, ancak Zamanlayıcı-"
 "Scheduler tarafından kontrol edilir)."
 
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:50
+msgid ""
+"Automatically when a previous command completes (:doc:`default commands "
+"<../commands/default-commands>` and :doc:`command groups  <../commands"
+"/creating-groups-commands>`)."
+msgstr ""
+"Bir önceki komut tamamlandığında otomatik olarak ( :doc:`varsayılan komutlar"
+" <../commands/default-commands>` ve :doc:`komut grupları <../commands"
+"/creating-groups-commands>`)."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:54
+msgid ""
+"When a command is scheduled, the Scheduler checks to make sure that no other"
+" commands are using the same subsystems that the new command requires. If "
+"one or more of the subsystems is currently in use, and the current command "
+"is interruptible, it will be interrupted and the new command will be "
+"scheduled. If the current command is not interruptible, the new command will"
+" fail to be scheduled."
+msgstr ""
+"Bir komut zamanlandığında, Scheduler, başka hiçbir komutun yeni komutun "
+"gerektirdiği alt sistemleri kullanmadığından emin olmak için denetler. Alt "
+"sistemlerden biri veya daha fazlası şu anda kullanımdaysa ve mevcut komut "
+"kesintiye uğrayabilirse, kesintiye uğrayacak ve yeni komut "
+"programlanacaktır. Mevcut komut kesilebilir değilse, yeni komut "
+"programlanamaz."
+
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:57
 msgid "How It Works - Running Commands"
 msgstr "Nasıl Çalışır - Komutları Çalıştırma "
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:59
+msgid ""
+"After checking for new commands, the scheduler proceeds through the list of "
+"active commands and calls the ``execute()`` and ``isFinished()`` methods on "
+"each command. Notice that the apparent concurrent execution is done without "
+"the use of threads or tasks which would add complexity to the program. Each "
+"command simply has some code to execute (execute method) to move it further "
+"along towards its goal and a method (isFinished) that determines if the "
+"command has reached the goal. The execute and isFinished methods are just "
+"called repeatedly."
+msgstr ""
+"Yeni komutları kontrol ettikten sonra, zamanlayıcı, etkin komutlar "
+"listesinde ilerler ve her komutta ``execute()`` ve ``isFinished()`` "
+"yöntemlerini çağırır. Görünür eşzamanlı yürütmenin programa karmaşıklık "
+"katacak iş parçacıkları veya görevler kullanılmadan yapıldığına dikkat edin."
+" Her komutun basitçe, onu hedefine doğru ilerletmek için yürütmek için bir "
+"kodu (yürütme yöntemi) ve komutun hedefe ulaşıp ulaşmadığını belirleyen bir "
+"yöntem (isFinished) vardır. Execute ve isFinished yöntemleri sadece tekrar "
+"tekrar çağrılır."
 
 #: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:62
 msgid "Command Groups"

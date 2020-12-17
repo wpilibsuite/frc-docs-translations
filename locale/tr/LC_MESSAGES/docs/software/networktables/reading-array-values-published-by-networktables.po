@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 16:18+0000\n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -20,3 +20,113 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:2
+msgid "Reading array values published by NetworkTables"
+msgstr "NetworkTables tarafından yayınlanan dizi değerlerini okuma"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:3
+msgid ""
+"This article describes how to read values published by NetworkTables using a"
+" program running on the robot. This is useful when using computer vision "
+"where the images are processed on your driver station laptop and the results"
+" stored into NetworkTables possibly using a separate vision processor like a"
+" raspberry pi, or a tool on the robot like GRIP, or a python program to do "
+"the image processing."
+msgstr ""
+"Bu makale, robot üzerinde çalışan bir program kullanılarak NetworkTables "
+"tarafından yayınlanan değerlerin nasıl okunacağını açıklar. Bu, görüntülerin"
+" sürücü istasyonu dizüstü bilgisayarınızda işlendiği ve sonuçların "
+"muhtemelen bir raspberry pi gibi ayrı bir görüntü işlemcisi veya robot "
+"üzerinde GRIP gibi bir araç veya görüntü işleyen python programı için "
+"faydalıdır."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:8
+msgid ""
+"Very often the values are for one or more areas of interest such as goals or"
+" game pieces and multiple instances are returned. In the example below, "
+"several x, y, width, height, and areas are returned by the image processor "
+"and the robot program can sort out which of the returned values are "
+"interesting through further processing."
+msgstr ""
+"Çoğunlukla değerler, hedefler veya oyun parçaları gibi bir veya daha fazla "
+"ilgi alanı içindir ve birden çok örnek döndürülür. Aşağıdaki örnekte, "
+"görüntü işlemcisi tarafından birkaç x, y, genişlik, yükseklik ve alan "
+"döndürülür ve robot programı, daha sonraki işlemlerle döndürülen değerlerden"
+" hangisinin ilgi çekici olduğunu belirleyebilir."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:13
+msgid "Verify the network table keys being published"
+msgstr "Yayınlanmakta olan ağ tablosu anahtarlarını doğrulayın"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:22
+msgid ""
+"In this case the values are stored in a table called GRIP and a sub-table "
+"called myContoursReport. You can see that the values are in brackets and "
+"there are 2 values in this case for each key. The network table key names "
+"are centerX, centerY, area, height and width."
+msgstr ""
+"Bu durumda değerler GRIP adlı bir tabloda ve myContoursReport adlı bir alt "
+"tabloda saklanır. Değerlerin parantez içinde olduğunu ve bu durumda her "
+"anahtar için 2 değer olduğunu görebilirsiniz. Ağ tablosu anahtar adları "
+"centerX, centerY, area, height ve width'dir."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:26
+msgid ""
+"Both of the following examples are extremely simplified programs that just "
+"illustrate the use of NetworkTables. All the code is in the robotInit() "
+"method so it's only run when the program starts up. In your programs, you "
+"would more likely get the values in code that is evaluating which direction "
+"to aim the robot in a command or a control loop during the autonomous or "
+"teleop periods."
+msgstr ""
+"Aşağıdaki örneklerin her ikisi de, sadece NetworkTables'ın kullanımını "
+"gösteren, son derece basitleştirilmiş programlardır. Tüm kod robotInit() "
+"yöntemindedir, bu nedenle yalnızca program başladığında çalıştırılır. "
+"Programlarınızda, otonom veya teleop dönemlerinde robotu bir komutta veya "
+"bir kontrol döngüsünde hangi yöne hedefleyeceğinizi değerlendiren koddaki "
+"değerleri büyük olasılıkla alırsınız."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:31
+msgid "Writing a program to access the keys"
+msgstr "Anahtarlara erişmek için bir program yazma"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:76
+msgid ""
+"The steps to getting the values and, in this program, printing them are:"
+msgstr "Değerleri alma ve bu programda yazdırmanın adımları şunlardır:"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:78
+msgid ""
+"Declare the table variable that will hold the instance of the subtable that "
+"have the values."
+msgstr ""
+"Değerlere sahip alt tablo örneğini tutacak tablo değişkenini bildirin."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:79
+msgid ""
+"Initialize the subtable instance so that it can be used later for retrieving"
+" the values."
+msgstr ""
+"Daha sonra değerleri almak için kullanılabilmesi için alt tablo örneğini "
+"başlatın."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:80
+msgid ""
+"Read the array of values from NetworkTables. In the case of a communicating "
+"programs, it's possible that the program producing the output being read "
+"here might not yet be available when the robot program starts up. To avoid "
+"issues of the data not being ready, a default array of values is supplied. "
+"This default value will be returned if the network table key hasn't yet been"
+" published. This code will loop over the value of areas every 20ms."
+msgstr ""
+"NetworkTables'dan değer dizisini okuyun. İletişim programları söz konusu "
+"olduğunda, burada okunan çıktıyı üreten program, robot programı başladığında"
+" henüz mevcut olmayabilir. Verilerin hazır olmaması sorunlarından kaçınmak "
+"için varsayılan bir değerler dizisi sağlanır. Ağ tablosu anahtarı henüz "
+"yayınlanmadıysa bu varsayılan değer döndürülecektir. Bu kod, her 20 ms'de "
+"bir alanların değeri üzerinde döngü oluşturacaktır."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:86
+msgid "Program output"
+msgstr "Program çıktısı"

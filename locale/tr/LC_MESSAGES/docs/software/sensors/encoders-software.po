@@ -5,18 +5,382 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-19 16:22+0000\n"
+"POT-Creation-Date: 2020-12-20 16:21+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:4
+msgid "Encoders - Software"
+msgstr "Encoders - Software, Kodlayıcılar - Yazılım"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:6
+msgid ""
+"This section covers encoders in software.  For a hardware guide to encoders,"
+" see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`."
+msgstr ""
+"Bu bölüm yazılımdaki kodlayıcıları kapsar. Kodlayıcılarla ilgili bir donanım"
+" kılavuzu için bkz .:ref:`docs / hardware / sensor / encoders-hardware: "
+"Encoders - Hardware`."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:8
+msgid "|Encoding Direction|"
+msgstr "|Encoding Direction|"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:10
+msgid ""
+"Encoders are devices used to measure motion (usually, the rotation of a "
+"shaft).  The encoders used in FRC\\ |reg| are known as \"quadrature "
+"encoders.\"  These encoders produce square-wave signals on two channels that"
+" are a quarter-period out-of-phase (hence the term, \"quadrature\").  The "
+"pulses are used to measure the rotation, and the direction of motion can be "
+"determined from which channel \"leads\" the other."
+msgstr ""
+"Kodlayıcılar, hareketi (genellikle bir şaftın dönüşünü) ölçmek için "
+"kullanılan cihazlardır. FRC \\ | reg | 'de kullanılan kodlayıcılar \"karesel"
+" kodlayıcılar\" olarak bilinir. Bu kodlayıcılar, çeyrek dönem faz dışı olan "
+"iki kanalda kare dalga sinyalleri üretir (bu nedenle \"kareleme\" terimi). "
+"Darbeler dönüşü ölçmek için kullanılır ve hareketin yönü hangi kanalın "
+"diğerine \"yönlendirdiği\" belirlenebilir."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:12
+msgid "|Encoder Modules|"
+msgstr "|Encoder Modules|"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:14
+msgid ""
+"The FPGA handles encoders either through a counter module or an encoder "
+"module, depending on the :ref:`decoding type <docs/software/sensors"
+"/encoders-software:Decoding type>` - the choice is handled automatically by "
+"WPILib.  The FPGA contains 8 encoder modules."
+msgstr ""
+"FPGA, şunlara bağlı olarak bir sayaç modülü veya bir kodlayıcı modülü "
+"aracılığıyla kodlayıcıları işler  :ref:`decoding type <docs/software/sensors"
+"/encoders-software:Decoding type>`  seçim WPILib tarafından otomatik olarak "
+"yapılır. FPGA, 8 kodlayıcı modülü içerir."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:17
+msgid "The Encoder class"
+msgstr " Encoder sınıfı"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:19
+msgid ""
+"WPILib provides support for encoders through the :code:`Encoder` class "
+"(`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"encoders."
+msgstr ""
+"WPILib, kodlayıcılar için :code:`Encoder` class (`Java "
+"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc_1_1Encoder.html>`__)."
+"  Bu sınıf, kodlayıcılardan verileri yapılandırmak ve okumak için basit bir "
+"API sağlar."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:22
+msgid "Initializing an encoder"
+msgstr "Bir encoder-kodlayıcıyı başlatma"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:24
+msgid "An encoder can be instantiated as follows:"
+msgstr "Bir kodlayıcı aşağıdaki gibi başlatılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:41
+msgid "Decoding type"
+msgstr "Decoding type- Kod çözme türü"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:43
+msgid ""
+"The WPILib :code:`Encoder` class can decode encoder signals in three "
+"different modes:"
+msgstr ""
+"WPILib: code:`Encoder`  sınıfı, kodlayıcı sinyallerinin kodunu üç farklı "
+"modda çözebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:45
+msgid ""
+"**1X Decoding**: Increments the distance for every complete period of the "
+"encoder signal (once per four edges)."
+msgstr ""
+"** 1X Decoding **: Enkoder sinyalinin her tam periyodu için mesafeyi artırır"
+" (dört kenarda bir)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:46
+msgid ""
+"**2X Decoding**: Increments the distance for every half-period of the "
+"encoder signal (once per two edges)."
+msgstr ""
+"** 2X Decoding **: Enkoder sinyalinin her yarım dönemi için mesafeyi artırır"
+" (iki kenarda bir kez)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:47
+msgid ""
+"**4X Decoding**: Increments the distance for every edge of the encoder "
+"signal (four times per period)."
+msgstr ""
+"** 4X Decoding **: Kodlayıcı sinyalinin her kenarı için mesafeyi artırır "
+"(periyot başına dört kez)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:49
+msgid ""
+"4X decoding offers the greatest precision, but at the potential cost of "
+"increased \"jitter\" in rate measurements.  To use a different decoding "
+"type, use the following constructor:"
+msgstr ""
+"4X Decoding-kod çözme, en yüksek hassasiyeti sunar, ancak hız ölçümlerinde "
+"artan \"jitter-seğirme\" potansiyel maliyetiyle. Farklı bir kod çözme türü "
+"kullanmak için aşağıdaki yapıcıyı kullanın:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:66
+msgid "Configuring encoder parameters"
+msgstr "Enkoder parametrelerini yapılandırma"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:68
+msgid ""
+"The :code:`Encoder` class does not make any assumptions about units of "
+"distance; it will return values in whatever units were used to calculate the"
+" distance-per-pulse value.  Users thus have complete control over the "
+"distance units used.  However, units of time are *always* in seconds."
+msgstr ""
+":code:`Encoder` sınıfı, mesafe birimleri hakkında herhangi bir varsayımda "
+"bulunmaz; darbe başına mesafe değerini hesaplamak için kullanılan "
+"birimlerdeki değerleri döndürür. Kullanıcılar böylece kullanılan mesafe "
+"birimleri üzerinde tam kontrole sahip olur. Ancak, zaman birimleri *always-"
+"her zaman * saniye cinsindendir."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:70
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does *not* "
+"depend on the :ref:`decoding type <docs/software/sensors/encoders-"
+"software:Decoding type>` - each \"pulse\" should always be considered to be "
+"a full cycle (four edges)."
+msgstr ""
+"Darbe başına mesafe hesaplamasında kullanılan darbe sayısı şuna * bağlı "
+"değildir * :ref:`decoding type <docs/software/sensors/encoders-"
+"software:Decoding type>` her \"pulse-darbe\" her zaman dikkate alınmalıdır "
+"tam bir döngü (dört kenar)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:72
+msgid "The :code:`Encoder` class offers a number of configuration methods:"
+msgstr ":code:`Encoder` sınıfı bir dizi yapılandırma yöntemi sunar:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:115
+msgid "Reading information from encoders"
+msgstr "Kodlayıcılardan bilgi okuma"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:117
+msgid ""
+"The :code:`Encoder` class provides a wealth of information to the user about"
+" the motion of the encoder."
+msgstr ""
+":code:`Encoder` sınıfı, kullanıcıya kodlayıcının hareketi hakkında zengin "
+"bilgi sağlar."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:120
+msgid "Distance"
+msgstr "Distance-Mesafe"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:122
+msgid ""
+"Quadrature encoders measure *relative* distance, not absolute; the distance "
+"value returned will depend on the position of the encoder when the robot was"
+" turned on or the encoder value was last :ref:`reset <docs/software/sensors"
+"/encoders-software:Resetting an encoder>`."
+msgstr ""
+"Quadrature kodlayıcılar *relative- göreli* mesafeyi ölçer, mutlak değil; "
+"döndürülen mesafe değeri, robot açıldığında veya kodlayıcı değeri en son "
+"olduğunda kodlayıcının konumuna bağlı olacaktır :ref:`reset "
+"<docs/software/sensors/encoders-software:Resetting an encoder>`."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:124
+msgid ""
+"Users can obtain the total distance traveled by the encoder with the "
+":code:`getDistance()` method:"
+msgstr ""
+"Kullanıcılar, kodlayıcının kat ettiği toplam mesafeyi : code: `getDistance "
+"()' yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:139
+msgid "Rate"
+msgstr "Rate-Oran"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:141
+msgid "Units of time for the :code:`Encoder` class are *always* in seconds."
+msgstr ""
+":code:`Encoder` sınıfı için zaman birimleri saniye cinsinden *always-her "
+"zaman* şeklindedir."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:143
+msgid ""
+"Users can obtain the current rate of change of the encoder with the "
+":code:`getRate()` method:"
+msgstr ""
+"Kullanıcılar, kodlayıcının geçerli değişim oranını : code: `getRate ()` "
+"yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:158
+msgid "Stopped"
+msgstr "Stopped-Durduruldu"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:160
+msgid ""
+"Users can obtain whether the encoder is stationary with the "
+":code:`getStopped()` method:"
+msgstr ""
+"Kullanıcılar, kodlayıcının sabit olup olmadığını şu yöntemle öğrenebilir  : "
+"code: `getStopped ()` yöntemi:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:175
+msgid "Direction"
+msgstr "Direction-Yön"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:177
+msgid ""
+"Users can obtain the direction in which the encoder last moved with the "
+":code:`getDirection()` method:"
+msgstr ""
+"Kullanıcılar, kodlayıcının en son hareket ettiği yönü: code: `getDirection "
+"()` yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:192
+msgid "Period"
+msgstr "Period"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:194
+msgid ""
+"Users can obtain the period of the encoder pulses (in seconds) with the "
+":code:`getPeriod()` method:"
+msgstr ""
+"Kullanıcılar, kodlayıcı darbelerinin süresini (saniye cinsinden): code : "
+"`getPeriod ()`  yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:209
+msgid "Resetting an encoder"
+msgstr "Resetting an encoder-Bir kodlayıcının sıfırlanması"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:211
+msgid ""
+"To reset an encoder to a distance reading of zero, call the :code:`reset()` "
+"method.  This is useful for ensuring that the measured distance corresponds "
+"to the actual desired physical measurement, and is often called during a "
+":ref:`homing <docs/software/sensors/encoders-software:Homing a mechanism>` "
+"routine:"
+msgstr ""
+"Bir kodlayıcıyı sıfır mesafeli okumaya sıfırlamak için : code: `reset ()` "
+"yöntemini çağırın. Bu, ölçülen mesafenin istenen gerçek fiziksel ölçüme "
+"karşılık gelmesini sağlamak için kullanışlıdır ve genellikle : ref: `homing "
+"<docs/software/sensors/encoders-software:Homing a mechanism>` rutini "
+"sırasında çağrılır:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:226
+msgid "Using encoders in code"
+msgstr "Using encoders in code-Kodlayıcıları kodda kullanma"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:228
+msgid ""
+"Encoders are some of the most useful sensors in FRC; they are very nearly a "
+"requirement to make a robot capable of nontrivially-automated actuations and"
+" movement.  The potential applications of encoders in robot code are too "
+"numerous to summarize fully here, but a few basic examples are provided "
+"below:"
+msgstr ""
+"Kodlayıcılar, FRC'deki en kullanışlı sensörlerden bazılarıdır; bunlar, "
+"otomatik olmayan çalıştırma ve hareket kabiliyetine sahip bir robot yapmak "
+"için neredeyse bir gerekliliktir. Kodlayıcıların robot kodundaki potansiyel "
+"uygulamaları burada tam olarak özetlenemeyecek kadar çoktur, ancak aşağıda "
+"birkaç temel örnek verilmiştir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:231
+msgid "Driving to a distance"
+msgstr "Driving to a distance-Bir mesafeye sürüş"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:233
+msgid ""
+"Encoders can be used on a robot drive to create a simple \"drive to "
+"distance\" routine.  This is very useful for robot autonomy:"
+msgstr ""
+"Kodlayıcılar, basit bir \"\"drive to distance-uzaklığa sür\" rutini "
+"oluşturmak için bir robot sürücüsünde kullanılabilir. Bu, robot özerkliği "
+"için çok kullanışlıdır:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:305
+msgid "Stabilizing heading"
+msgstr "Stabilizing heading-Sabitleyici başlık"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:307
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are not,"
+" the loop will be unstable and the robot will turn wildly."
+msgstr ""
+"Tüm kontrol döngülerinde olduğu gibi, kullanıcılar sensör yönünün ve dönüş "
+"yönünün tutarlı olmasını sağlamak için dikkatli olmalıdır. Aksi takdirde, "
+"döngü dengesiz olacak ve robot çılgınca dönecektir."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:309
+msgid ""
+"Encoders can be used to ensure that a robot drives straight in a manner "
+"quite similar to :ref:`how it is done with a gyroscope "
+"<docs/software/sensors/gyros-software:Stabilizing heading while driving>`.  "
+"A simple implementation with a P loop is given below:"
+msgstr ""
+"Kodlayıcılar, bir robotun aşağıdakine oldukça benzer bir şekilde düz hareket"
+" etmesini sağlamak için kullanılabilir <docs/software/sensors/gyros-"
+"software:Stabilizing heading while driving>`.  P döngüsü ile basit bir "
+"uygulama aşağıda verilmiştir:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:388
+msgid ""
+"More-advanced implementations can use more-complicated control loops.  "
+"Closing a control loop on the encoder difference is roughly analogous to "
+"closing it on the heading error, and so PD loops are particularly effective."
+msgstr ""
+"Daha gelişmiş uygulamalar, daha karmaşık kontrol döngüleri kullanabilir. "
+"Kodlayıcı farkında bir kontrol döngüsünün kapatılması, başlık hatasında "
+"kapatılmasına kabaca benzer ve bu nedenle PD döngüleri özellikle etkilidir."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:391
+msgid "PID Control"
+msgstr "PID Kontrol"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:393
+msgid ""
+"Encoders are particularly useful as inputs to PID controllers (the heading "
+"stabilization example above is a simple P loop)."
+msgstr ""
+"Enkoderler özellikle PID denetleyicilerine girdi olarak kullanışlıdır "
+"(yukarıdaki başlık sabitleme örneği basit bir P döngüsüdür)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:396
+msgid "Homing a mechanism"
+msgstr "Bir mekanizmaya yön verme"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:398
+msgid ""
+"Since encoders measure *relative* distance, it is often important to ensure "
+"that their \"zero-point\" is in the right place.  A typical way to do this "
+"is a \"homing routine,\" in which a mechanism is moved until it hits a known"
+" position (usually accomplished with a limit switch), or \"home,\" and then "
+"the encoder is reset.  The following code provides a basic example:"
+msgstr ""
+"Kodlayıcılar * relative-göreli * mesafeyi ölçtüğünden, \"zero-point-sıfır "
+"noktalarının\" doğru yerde olmasını sağlamak genellikle önemlidir. Bunu "
+"yapmanın tipik bir yolu, bir mekanizmanın bilinen bir konuma (genellikle bir"
+" limit anahtarı ile gerçekleştirilir) veya \"ana konuma\" ulaşana kadar "
+"hareket ettirildiği ve ardından kodlayıcının sıfırlandığı bir \"hedef arama "
+"rutini\" dir. Aşağıdaki kod, temel bir örnek sağlar:"

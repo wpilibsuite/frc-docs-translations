@@ -5,18 +5,177 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 16:23+0000\n"
+"POT-Creation-Date: 2020-12-20 16:21+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:2
+msgid "Driving the Robot with Tank Drive and Joysticks"
+msgstr "Robotu Tank Sürüş methodu ve Joysticklerle Sürmek"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:4
+msgid ""
+"RobotBuilder has been updated to support the new commandbased framework! "
+"Unfortunately, this documentation is outdated and only for the old "
+"commandbased framework. Individuals interested in updating this "
+"documentation can open a pull request on the `frc-docs "
+"<https://github.com/wpilibsuite/frc-docs>`__ repository."
+msgstr ""
+"RobotBuilder, yeni komut tabanlı çerçeveyi desteklemek için güncellendi! Ne "
+"yazık ki, bu dokümantasyon güncelliğini yitirmiştir ve yalnızca eski komut "
+"temelli çerçeve içindir. Bu dokümantasyonu güncellemekle ilgilenen kişiler, "
+"`frc-docs <https://github.com/wpilibsuite/frc-docs>`__  deposuna "
+"bakabilirler."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:6
+msgid ""
+"A common use case is to have a joystick that should drive some actuators "
+"that are part of a subsystem. The problem is that the joystick is created in"
+" the OI class and the motors to be controlled are in the subsystem. The idea"
+" is to create a command that, when scheduled, reads input from the joystick "
+"and calls a method that is created on the subsystem that drives the motors."
+msgstr ""
+"Yaygın bir kullanım durumu, bir alt sistemin parçası olan bazı aktüatörleri "
+"çalıştırması gereken bir joystick'e sahip olmaktır. Sorun, joystick'in OI "
+"sınıfında oluşturulması ve kontrol edilecek motorların alt sistemde "
+"olmasıdır. Buradaki fikir, programlandığında, joystick'ten girdi okuyan ve "
+"motorları çalıştıran alt sistemde oluşturulan bir yöntemi çağıran bir komut "
+"oluşturmaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:8
+msgid ""
+"In this example a drive base subsystem is shown that is operated in tank "
+"drive using a pair of joysticks."
+msgstr ""
+"Bu örnekte, bir çift kumanda kolu kullanılarak tank sürücüsünde çalıştırılan"
+" bir sürücü tabanı alt sistemi gösterilmektedir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:11
+msgid "Create a Drive Train Subsystem"
+msgstr "Drive Train Subsystem Oluşturun"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:15
+msgid ""
+"Create a subsystem called Drive Train. Its responsibility will be to handle "
+"the driving for the robot base. Inside the Drive Train is a Robot Drive "
+"object for a two motor drive robot (in this case). There is a left motor and"
+" right motor as part of the Robot Drive 2 class."
+msgstr ""
+"Drive Train adlı bir alt sistem oluşturun. Sorumluluğu, robot tabanı için "
+"sürüşü idare etmek olacaktır. Aktarma Organının içinde iki motorlu bir robot"
+" için bir Robot Drive nesnesi bulunur (bu durumda). Robot Drive 2 sınıfının "
+"bir parçası olarak sol motor ve sağ motor bulunmaktadır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:18
+msgid "Add the Joysticks to the Operator Interface"
+msgstr "Joystickleri Operatör Arayüzüne Ekleyin"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:22
+msgid ""
+"Add two joysticks to the Operator Interface, one is the left stick and the "
+"other is the right stick. The y-axis on the two joysticks are used to drive "
+"the robots left and right sides."
+msgstr ""
+"Operatör Arayüzüne iki kumanda çubuğu ekleyin, biri sol çubuk ve diğeri sağ "
+"çubuktur. İki kumanda kolundaki y ekseni, robotları sola ve sağa sürmek için"
+" kullanılır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:24
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:62
+msgid ""
+"Be sure to export your program to C++ or Java before continuing to the next "
+"step."
+msgstr ""
+"Sonraki adıma geçmeden önce programınızı C ++ veya Java'ya aktardığınızdan "
+"emin olun."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:27
+msgid "Create a Method to Write the Motors on the Subsystem"
+msgstr "Motorları Alt Sisteme Yazmak İçin Bir Yöntem Oluşturun"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:51
+msgid ""
+"Create a method that takes the joystick inputs, in this case the the left "
+"and right driver joystick. The values are passed to the RobotDrive object "
+"that in turn does tank steering using the joystick values. Also create a "
+"method called stop() that stops the robot from driving, this might come in "
+"handy later."
+msgstr ""
+"Kumanda kolu girişlerini, bu durumda sol ve sağ sürücü kumanda çubuğunu alan"
+" bir yöntem oluşturun. Değerler, joystick değerlerini kullanarak tankı "
+"yönlendiren RobotDrive nesnesine aktarılır. Ayrıca robotun hareket etmesini "
+"engelleyen stop () adında bir yöntem oluşturun, bu daha sonra kullanışlı "
+"olabilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:53
+msgid ""
+"The extra RobotBuilder comments have been removed to format the example for "
+"the documentation."
+msgstr ""
+"Ek RobotBuilder yorumları, dokümantasyon örneğini biçimlendirmek için "
+"kaldırılmıştır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:56
+msgid "Read Joystick Values and Call the Subsystem Methods"
+msgstr "Kumanda Kolu Değerlerini Okuyun ve Alt Sistem Yöntemlerini Çağırın"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:60
+msgid ""
+"Create a command, in this case called DriveWithJoysticks. Its purpose will "
+"be to read the joystick values and send them to the Drive Base subsystem. "
+"Notice that this command Requires the Drive Train subsystem. This will cause"
+" it to stop running whenever anything else tries to use the Drive Train."
+msgstr ""
+"Bu durumda DriveWithJoysticks adlı bir komut oluşturun. Amacı, joystick "
+"değerlerini okumak ve Drive Base alt sistemine göndermek olacaktır. Bu "
+"komutun Drive Train alt sistemini Gerektirdiğine dikkat edin. Bu, Drive "
+"Train'i başka bir şey kullanmaya çalıştığında çalışmasının durmasına neden "
+"olacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:65
+msgid "Add the Code to do the Driving"
+msgstr "Sürüş yapmak için Kodu Ekleyin"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:99
+msgid ""
+"Add code to the execute method to do the actual driving. All that is needed "
+"is to get the Joystick objects for the left and right drive joysticks and "
+"pass them to the Drive Train subsystem. The subsystem just uses them for the"
+" tank steering method on its RobotDrive object. And we get tank steering."
+msgstr ""
+"Gerçek sürüşü yapmak için yürütme yöntemine kod ekleyin. Tek gereken, sol ve"
+" sağ sürüş joystickleri için Joystick nesnelerini almak ve bunları Drive "
+"Train alt sistemine iletmektir. Alt sistem, bunları yalnızca RobotDrive "
+"nesnesinde tank yönlendirme yöntemi için kullanır. Ve tankı yönlendiriyoruz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:101
+msgid ""
+"We also filled in the ``end()`` and ``interrupted()`` methods so that when "
+"this command is interrupted or stopped, the motors will be stopped as a "
+"safety precaution."
+msgstr ""
+"Ayrıca `` end ()``  ve `` interrupted ()``  yöntemlerini de doldurduk, "
+"böylece bu komut kesildiğinde veya durdurulduğunda, güvenlik önlemi olarak "
+"motorlar durdurulacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:104
+msgid "Make Default Command"
+msgstr "Varsayılan Komutu Yap"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/advanced/robotbuilder-drive-tank.rst:110
+msgid "Be sure to export your program to C++ or Java before continuing."
+msgstr ""
+"Devam etmeden önce programınızı C ++ veya Java'ya aktardığınızdan emin olun."

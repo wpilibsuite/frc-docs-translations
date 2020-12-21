@@ -5,18 +5,346 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-18 04:16+0000\n"
+"POT-Creation-Date: 2020-12-21 16:23+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:4
+msgid "Identifying and Processing the Targets"
+msgstr "Hedeflerin Belirlenmesi ve İşlenmesi"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:6
+msgid ""
+"Once an image is captured, the next step is to identify Vision Target(s) in "
+"the image. This document will walk through one approach to identifying the "
+"2016 targets. Note that the images used in this section were taken with the "
+"camera intentionally set to underexpose the images, producing very dark "
+"images with the exception of the lit targets, see the section on Camera "
+"Settings for details."
+msgstr ""
+"Bir görüntü yakalandıktan sonraki adım, görüntüdeki Vision Target(s)-Görme "
+"Hedeflerini belirlemektir. Bu belge, 2016 hedeflerini belirlemek için tek "
+"bir yaklaşımdan geçecektir. Bu bölümde kullanılan görüntülerin kamera ile "
+"kasıtlı olarak düşük pozlama ayarlı olarak çekildiğini ve yanan hedefler "
+"haricinde çok karanlık görüntüler oluşturduğunu unutmayın, ayrıntılar için "
+"Kamera Ayarları bölümüne bakın."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:9
+msgid "Additional Options"
+msgstr "Ekstra seçenekler"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:11
+msgid ""
+"This document walks through the approach used by the example code provided "
+"in LabVIEW (for PC or roboRIO), C++ and Java. In addition to these options "
+"teams should be aware of the following alternatives that allow for vision "
+"processing on the Driver Station PC or an on-board PC:"
+msgstr ""
+"Bu belge, LabVIEW (PC veya roboRIO için), C ++ ve Java'da sağlanan örnek kod"
+" tarafından kullanılan yaklaşımı açıklamaktadır. Ekipler, bu seçeneklere ek "
+"olarak, Driver Station PC veya yerleşik bir PC üzerinde görüntü işlemeye "
+"izin veren aşağıdaki alternatiflerin farkında olmalıdır:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:13
+msgid "`RoboRealm <http://www.roborealm.com/>`_"
+msgstr "`RoboRealm <http://www.roborealm.com/>`_"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:14
+msgid ""
+"SmartDashboard Camera Extension (programmed in Java, works with any robot "
+"language)"
+msgstr ""
+"SmartDashboard Kamera Uzantısı (Java'da programlanmıştır, herhangi bir robot"
+" diliyle çalışır)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:15
+msgid "`GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_"
+msgstr "`GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:18
+msgid "Original Image"
+msgstr "Gerçek görüntü"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:20
+msgid ""
+"The image shown below is the starting image for the example described here. "
+"The image was taken using the green ring light available in *FIRST*\\ |reg| "
+"Choice combined with an additional ring light of a different size. "
+"Additional sample images are provided with the vision code examples."
+msgstr ""
+"Aşağıda gösterilen görüntü, burada açıklanan örnek için başlangıç "
+"görüntüsüdür. Görüntü, *FIRST*\\ |reg|  konumunda bulunan yeşil halka ışığı "
+"kullanılarak alınmıştır Seçim, farklı boyutta ek bir halka ışıkla "
+"birleştirildi. Görüntü kodu örnekleriyle birlikte ek örnek görüntüler "
+"sağlanır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:25
+msgid "What is HSL/HSV?"
+msgstr "HSL / HSV nedir?"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:27
+msgid ""
+"The Hue or tone of the color is commonly seen on the artist’s color wheel "
+"and contains the colors of the rainbow Red, Orange, Yellow, Green, Blue, "
+"Indigo, and Violet. The hue is specified using a radial angle on the wheel, "
+"but in imaging the circle typically contains only 256 units, starting with "
+"red at zero, cycling through the rainbow, and wrapping back to red at the "
+"upper end. Saturation of a color specifies amount of color, or the ratio of "
+"the hue color to a shade of gray. Higher ratio means more colorful, less "
+"gray. Zero saturation has no hue and is completely gray. Luminance or Value "
+"indicates the shade of gray that the hue is blended with. Black is 0 and "
+"white is 255."
+msgstr ""
+"Ton veya rengin tonu  genellikle sanatçının renk çarkında görülür ve "
+"gökkuşağı Kırmızı, Turuncu, Sarı, Yeşil, Mavi, Çivit Mavisi ve Menekşe "
+"renklerini içerir. Renk tonu, tekerlek üzerindeki bir radyal açı "
+"kullanılarak belirlenir, ancak görüntülemede daire tipik olarak, sıfırdan "
+"kırmızıdan başlayarak, gökkuşağı boyunca dönerek ve üst uçta tekrar "
+"kırmızıya sararak yalnızca 256 birim içerir. Bir rengin doygunluğu, renk "
+"miktarını veya ton renginin gri gölgeye oranını belirtir. Daha yüksek oran, "
+"daha renkli, daha az gri demektir. Sıfır doygunluğun tonu yoktur ve tamamen "
+"gridir. Parlaklık veya Değer, tonun harmanlandığı gri tonunu gösterir. Siyah"
+" 0 ve beyaz 255'tir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:29
+msgid ""
+"The example code uses the HSV color space to specify the color of the "
+"target. The primary reason is that it readily allows for using the "
+"brightness of the targets relative to the rest of the image as a filtering "
+"criteria by using the Value (HSV) or Luminance (HSL) component. Another "
+"reason to use the HSV color system is that the thresholding operation used "
+"in the example runs more efficiently on the roboRIO when done in the HSV "
+"color space."
+msgstr ""
+"Örnek kod, hedefin rengini belirtmek için HSV renk uzayını kullanır. "
+"Birincil neden, Hedeflerin parlaklığını, görüntünün geri kalanına göre, "
+"Değer (HSV) veya Parlaklık (HSL) bileşenini kullanarak bir filtreleme "
+"kriteri olarak kullanmaya kolayca izin vermesidir. HSV renk sistemini "
+"kullanmanın bir başka nedeni, örnekte kullanılan eşikleme işleminin HSV renk"
+" uzayında yapıldığında roboRIO üzerinde daha verimli çalışmasıdır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:32
+msgid "Masking"
+msgstr "Maskeleme"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:34
+msgid ""
+"In this initial step, pixel values are compared to constant color or "
+"brightness values to create a binary mask shown below in yellow. This single"
+" step eliminates most of the pixels that are not part of a target’s retro-"
+"reflective tape. Color based masking works well provided the color is "
+"relatively saturated, bright, and consistent. Color inequalities are "
+"generally more accurate when specified using the HSL (Hue, Saturation, and "
+"Luminance) or HSV (Hue, Saturation, and Value) color space than the RGB "
+"(Red, Green, and Blue) space. This is especially true when the color range "
+"is quite large in one or more dimension."
+msgstr ""
+"Bu ilk adımda, aşağıda sarı renkte gösterilen bir ikili maske oluşturmak "
+"için piksel değerleri sabit renk veya parlaklık değerleriyle "
+"karşılaştırılır. Bu tek adım, hedefin geriye dönük yansıtıcı bandının "
+"parçası olmayan piksellerin çoğunu ortadan kaldırır. Renk tabanlı maskeleme,"
+" rengin nispeten doygun, parlak ve tutarlı olması koşuluyla iyi çalışır. "
+"Renk eşitsizlikleri genellikle HSL (Ton, Doygunluk ve Parlaklık) veya HSV "
+"(Ton, Doygunluk ve Değer) renk alanı kullanılarak belirtildiğinde RGB "
+"(Kırmızı, Yeşil ve Mavi) alanından daha doğrudur. Bu, özellikle renk aralığı"
+" bir veya daha fazla boyutta oldukça geniş olduğunda geçerlidir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:36
+msgid ""
+"Notice that in addition to the target, other bright parts of the image "
+"(overhead light and tower lighting) are also caught by the masking step."
+msgstr ""
+"Hedefe ek olarak, görüntünün diğer parlak kısımlarının da (üstten ışık ve "
+"kule aydınlatması) maskeleme adımında yakalandığına dikkat edin."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:41
+msgid "Particle Analysis"
+msgstr "Parçacık Analizi"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:43
+msgid ""
+"After the masking operation, a particle report operation is used to examine "
+"the area, bounding rectangle, and equivalent rectangle for the particles. "
+"These are used to compute several scored terms to help pick the shapes that "
+"are most rectangular. Each test described below generates a score (0-100) "
+"which is then compared to pre-defined score limits to decide if the particle"
+" is a target or not."
+msgstr ""
+"Maskeleme işleminden sonra, alanı, sınırlayıcı dikdörtgeni ve parçacıklar "
+"için eşdeğer dikdörtgeni incelemek için bir parçacık raporu işlemi "
+"kullanılır. Bunlar, en dikdörtgen olan şekilleri seçmeye yardımcı olmak için"
+" birkaç puanlanmış terimi hesaplamak için kullanılır. Aşağıda açıklanan her "
+"test bir puan (0-100) oluşturur ve bu daha sonra parçacığın hedef olup "
+"olmadığına karar vermek için önceden tanımlanmış puan limitleriyle "
+"karşılaştırılır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:46
+msgid "Coverage Area"
+msgstr "Kapsama alanı"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:48
+msgid ""
+"The Area score is calculated by comparing the area of the particle compared "
+"to the area of the bounding box drawn around the particle. The area of the "
+"retroreflective strips is 80 square inches (~516 :math:`cm^2`). The area of "
+"the rectangle that contains the target is 240 square inches (~0.15 "
+":math:`m^2`). This means that the ideal ratio between area and bounding box "
+"area is 1/3. Area ratios close to 1/3 will produce a score near 100, as the "
+"ratio diverges from 1/3 the score will approach 0."
+msgstr ""
+"Alan puanı, parçacığın çevresine çizilen sınırlayıcı kutunun alanıyla "
+"karşılaştırılarak parçacık alanı karşılaştırılarak hesaplanır. Arkadan "
+"yansıtmalı şeritlerin alanı 80 inç karedir (~ 516: matematik: \"cm ^ 2\"). "
+"Hedefi içeren dikdörtgenin alanı 240 inç karedir (~ 0,15: matematik: \"m ^ "
+"2\"). Bu, alan ve sınırlayıcı kutu alanı arasındaki ideal oranın 1/3 olduğu "
+"anlamına gelir. 1 / 3'e yakın alan oranları 100'e yakın bir puan "
+"üretecektir, oran 1 / 3'ten farklılaştıkça puan 0'a yaklaşacaktır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:51
+msgid "Aspect Ratio"
+msgstr "En Boy Oranı"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:53
+msgid ""
+"The aspect ratio score is based on (Particle Width / Particle Height). The "
+"width and height of the particle are determined using something called the "
+"\"equivalent rectangle\". The equivalent rectangle is the rectangle with "
+"side lengths :math:`x` and :math:`y` where :math:`2x+2y` equals the particle"
+" perimeter and :math:`x \\cdot y` equals the particle area. The equivalent "
+"rectangle is used for the aspect ratio calculation as it is less affected by"
+" skewing of the rectangle than using the bounding box. When using the "
+"bounding box rectangle for aspect ratio, as the rectangle is skewed the "
+"height increases and the width decreases."
+msgstr ""
+"En boy oranı puanı (Partikül Genişliği / Partikül Yüksekliği) temel alınarak"
+" belirlenir. Parçacığın genişliği ve yüksekliği \"eşdeğer dikdörtgen\" adı "
+"verilen bir şey kullanılarak belirlenir. Eşdeğer dikdörtgen, kenar "
+"uzunlukları olan dikdörtgendir : math:`x` ve: math:`y` burada: math:`2x+2y`,"
+" parçacık çevresine ve: math:`x \\ cdot y`, parçacık alanına eşittir. "
+"Eşdeğer dikdörtgen, en boy oranı hesaplamasında kullanılır, çünkü "
+"dikdörtgenin eğrilmesinden sınırlayıcı kutuyu kullanmaktan daha az "
+"etkilenir. En boy oranı için sınırlayıcı kutu dikdörtgeni kullanıldığında, "
+"dikdörtgen eğriltildikçe yükseklik artar ve genişlik azalır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:55
+msgid ""
+"The target is 20\" (508 mm) wide by 12\" (304.8 mm) tall, for a ratio of "
+"1.6. The detected aspect ratio is compared to this ideal ratio. The aspect "
+"ratio score is normalized to return 100 when the ratio matches the target "
+"ratio and drops linearly as the ratio varies below or above."
+msgstr ""
+"Hedef 1,6 oran için 20 \"(508 mm) genişliğinde ve 12\" (304,8 mm) "
+"yüksekliğindedir. Tespit edilen en boy oranı bu ideal oran ile "
+"karşılaştırılır. En boy oranı puanı, oran hedef oranla eşleştiğinde ve oran "
+"aşağı veya yukarı değiştikçe doğrusal olarak düştüğünde 100'e geri dönecek "
+"şekilde normalleştirilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:58
+msgid "Moment"
+msgstr "An"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:60
+msgid ""
+"The moment measurement calculates the particles moment of inertia about it's"
+" center of mass. This measurement provides a representation of the pixel "
+"distribution in the particle. The ideal score for this test is ~0.28. See: "
+"`Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
+msgstr ""
+"Moment ölçümü, parçacıkların kütle merkezi etrafındaki eylemsizlik momentini"
+" hesaplar. Bu ölçüm, partiküldeki piksel dağılımının bir temsilini sağlar. "
+"Bu test için ideal puan ~ 0.28'dir. Bakınız: ``Atalet Momenti "
+"<https://en.wikipedia.org/wiki/Moment_of_inertia>`` _"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:63
+msgid "X/Y Profiles"
+msgstr "X / Y Profilleri"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:67
+msgid ""
+"The edge score describes whether the particle matches the appropriate "
+"profile in both the X and Y directions. As shown, it is calculated using the"
+" row and column averages across the bounding box extracted from the original"
+" image and comparing that to a profile mask. The score ranges from 0 to 100 "
+"based on the number of values within the row or column averages that are "
+"between the upper and lower limit values."
+msgstr ""
+"Kenar puanı, parçacığın hem X hem de Y yönlerinde uygun profille eşleşip "
+"eşleşmediğini açıklar. Gösterildiği gibi, orijinal görüntüden çıkarılan "
+"sınırlayıcı kutu boyunca satır ve sütun ortalamaları kullanılarak ve bunu "
+"bir profil maskesi ile karşılaştırarak hesaplanır. Puan, üst ve alt sınır "
+"değerleri arasındaki satır veya sütun ortalamaları içindeki değerlerin "
+"sayısına bağlı olarak 0 ile 100 arasında değişir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:70
+msgid "Measurements"
+msgstr "Ölçümler"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:72
+msgid ""
+"If a particle scores well enough to be considered a target, it makes sense "
+"to calculate some real-world measurements such as position and distance. The"
+" example code includes these basic measurements, so let’s look at the math "
+"involved to better understand it."
+msgstr ""
+"Bir parçacık hedef olarak değerlendirilebilecek kadar iyi puan alırsa, konum"
+" ve mesafe gibi bazı gerçek dünya ölçümlerini hesaplamak mantıklıdır. Örnek "
+"kod bu temel ölçümleri içerir, bu yüzden onu daha iyi anlamak için ilgili "
+"matematiğe bakalım."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:75
+msgid "Position"
+msgstr "Durum"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:77
+msgid ""
+"The target position is well described by both the particle and the bounding "
+"box, but all coordinates are in pixels with 0,0 being at the top left of the"
+" screen and the right and bottom edges determined by the camera resolution. "
+"This is a useful system for pixel math, but not nearly as useful for driving"
+" a robot; so let’s change it to something that may be more useful."
+msgstr ""
+"Hedef konum, hem parçacık hem de sınırlayıcı kutu tarafından iyi "
+"tanımlanmıştır, ancak tüm koordinatlar, ekranın sol üst köşesinde 0,0 ve "
+"kamera çözünürlüğü tarafından belirlenen sağ ve alt kenarlar olmak üzere "
+"piksel cinsindendir. Bu, piksel matematiği için kullanışlı bir sistemdir, "
+"ancak bir robotu sürmek için neredeyse hiç kullanışlı değildir; Öyleyse daha"
+" yararlı olabilecek bir şeyle değiştirelim."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:79
+msgid ""
+"To convert a point from the pixel system to the aiming system, we can use "
+"the formula shown below."
+msgstr ""
+"Bir noktayı piksel sisteminden nişan alma sistemine dönüştürmek için aşağıda"
+" gösterilen formülü kullanabiliriz."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:81
+msgid ""
+"The resulting coordinates are close to what you may want, but the Y axis is "
+"inverted. This could be corrected by multiplying the point by [1,-1] (Note: "
+"this is not done in the sample code). This coordinate system is useful "
+"because it has a centered origin and the scale is similar to joystick "
+"outputs and RobotDrive inputs."
+msgstr ""
+"Ortaya çıkan koordinatlar isteyebileceğinize yakın, ancak Y ekseni tersine "
+"çevrildi. Bu, nokta [1, -1] ile çarpılarak düzeltilebilir (Not: bu örnek "
+"kodda yapılmaz). Bu koordinat sistemi, merkezlenmiş bir orijine sahip olduğu"
+" ve ölçek, joystick çıkışlarına ve RobotDrive girişlerine benzer olduğu için"
+" kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:108
+msgid "Distance"
+msgstr "Mesafe"

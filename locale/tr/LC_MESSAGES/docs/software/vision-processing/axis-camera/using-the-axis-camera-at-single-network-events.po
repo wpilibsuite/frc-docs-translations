@@ -6,18 +6,208 @@
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-23 04:22+0000\n"
+"POT-Creation-Date: 2020-12-24 16:29+0000\n"
 "PO-Revision-Date: 2020-06-12 20:55+0000\n"
-"Last-Translator: Esra özemre <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:4
+msgid "Using the Axis Camera at Single Network Events"
+msgstr "Eksen Kamerasını Tek Ağ Etkinliklerinde Kullanma"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:6
+msgid ""
+"The convention for using the Axis camera uses mDNS with the camera name set "
+"to ``axis-camera.local``. At home, this works fine as there is only one "
+"camera on the network. At official events, this works fine as each team is "
+"on their own VLAN and therefore doesn't have visibility to another team's "
+"camera. However, at an off-season event using a single network, this will "
+"cause an issue where all teams will connect to whichever team's camera "
+"\"wins\" the mDNS resolution and becomes ``axis-camera``. The other cameras "
+"will see that the name is taken and use an alternative name. This article "
+"describes how to modify the Dashboard and/or robot code to use a different "
+"mDNS name to separate the camera streams."
+msgstr ""
+"Axis kamerayı kullanma kuralı, kamera adı ``axis-camera.local`` olarak "
+"ayarlanmış mDNS kullanır. Evde, ağda yalnızca bir kamera olduğu için bu iyi "
+"çalışıyor. Resmi etkinliklerde, her takım kendi VLAN'ında olduğundan ve bu "
+"nedenle başka bir ekibin kamerasını göremediğinden bu iyi çalışıyor. Bununla"
+" birlikte, tek bir ağ kullanan sezon dışı bir etkinlikte, bu, tüm takımların"
+" hangi takımın kamerası mDNS çözünürlüğünü \"wins-kazanırsa\" ve \"axis-"
+"camera-eksen kamerası\" haline gelirse ona bağlanacağı bir soruna neden "
+"olacaktır. Diğer kameralar adın alındığını görecek ve alternatif bir ad "
+"kullanacaktır. Bu makale, kamera akışlarını ayırmak için farklı bir mDNS adı"
+" kullanmak için Dashboard ve / veya robot kodunun nasıl değiştirileceğini "
+"açıklar."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:9
+msgid "Changing the Camera mDNS Name"
+msgstr "Kamera mDNS Adını Değiştirme"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:11
+msgid ""
+"To change the mDNS name in the camera, follow the instructions in :doc"
+":`configuring-an-axis-camera`, but substitute the new name such as ``axis-"
+"cameraTEAM`` where ``TEAM`` is your team number."
+msgstr ""
+"Kameradaki mDNS adını değiştirmek için şuradaki talimatları izleyin  :doc"
+":`configuring-an-axis-camera`, ancak ``axis-cameraTEAM_eksen-kamera TAKIM ''"
+" gibi yeni bir adı kullanın, burada ``TEAM``  izin takım numaranızdır ."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:14
+msgid "Viewing the Camera on the DS PC -  Browser or SmartDashboard"
+msgstr "Kamerayı DS PC'de Görüntüleme - Tarayıcı veya SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:16
+msgid ""
+"If you are using a web-browser or SmartDashboard (which accepts mDNS names "
+"for the Simple Camera Viewer widget), updating to use the new mDNS name is "
+"simple. Simply change the URL in the browser or the address in the Simple "
+"Camera Viewer widget properties to the new mDNS name and you are all set."
+msgstr ""
+"Bir web tarayıcısı veya SmartDashboard kullanıyorsanız (Basit Kamera "
+"Görüntüleyici widget'ı için mDNS adlarını kabul eder), yeni mDNS adını "
+"kullanmak için güncelleme yapmak basittir. Basit Kamera Görüntüleyici gereci"
+" özelliklerindeki tarayıcıdaki URL'yi veya adresi yeni mDNS adına değiştirin"
+" ve artık hazırsınız."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:19
+msgid "Viewing the Camera on the DS PC - LabVIEW Dashboard"
+msgstr "Kamerayı DS PC'de Görüntüleme - LabVIEW Dashboard"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:21
+msgid ""
+"To view the camera stream in the LabVIEW Dashboard, you will need to build a"
+" customized version of the Dashboard. Note that this customized version will"
+" only work for the Axis camera and will no longer work for a USB camera. "
+"Revert to the default Dashboard to use a USB camera."
+msgstr ""
+"Kamera akışını LabVIEW Dashboard'da görüntülemek için, Dashboard'un "
+"özelleştirilmiş bir sürümünü oluşturmanız gerekecektir. Bu özelleştirilmiş "
+"sürümün yalnızca Axis kamera için çalışacağını ve artık bir USB kamera için "
+"çalışmayacağını unutmayın. USB kamera kullanmak için varsayılan Kontrol "
+"Paneline dönün."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:24
+msgid "Creating a Dashboard Project"
+msgstr "Dashboard Projesi Oluşturma"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:28
+msgid ""
+"From the LabVIEW Splash screen, select \"FRC\\ |reg| Dashboard Project\". "
+"Name the project as desired, then click Finish."
+msgstr ""
+"LabVIEW Açılış ekranından \"FRC\\| reg| Dashboard Project\" öğesini seçin. "
+"Projeyi istediğiniz gibi adlandırın, ardından Bitir'i tıklayın."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:31
+msgid "Locating Loop 2 - Camera IP"
+msgstr "Konum Bulma Döngüsü 2 - Kamera IP'si"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:35
+msgid ""
+"Double click on ``Dashboard Main.vi`` in the project explorer to open it and"
+" press :kbd:`Ctrl+E` to see the block diagram. Scroll down to the loop with "
+"the comment that says Loop 2 and locate the \"Camera IP\" input."
+msgstr ""
+"Proje gezgininde``Dashboard Main.vi``üzerine çift tıklayarak açın ve blok "
+"diyagramını görmek için: kbd: `Ctrl+E` tuşlarına basın. Döngü 2 yazan "
+"açıklamanın bulunduğu döngüye gidin ve \"Kamera IP'si\" girişini bulun."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:38
+msgid "Editing the Camera IP"
+msgstr "Kamera IP'sini Düzenleme"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:42
+msgid ""
+"Delete the Camera IP node, right click on the broken wire and click Create "
+"Constant (connect the constant to the wire if necessary). In the box, enter "
+"the mDNS name of your camera with a ``.local`` suffix (e.g. ``axis-"
+"cameraTEAM.local`` where ``TEAM`` is replaced with your team number). The "
+"example above shows a sample name for team 9999. Then click File->Save or "
+":kbd:`Ctrl+S` to save the VI."
+msgstr ""
+"Kamera IP düğümünü silin, kopuk kabloya sağ tıklayın ve Sabit Oluştur'a "
+"tıklayın (gerekirse sabiti kabloya bağlayın). Kutuya, kameranızın mDNS adını"
+" bir ``.local`` sonekiyle girin (örneğin,``axis-cameraTEAM.local``, "
+"burada``TEAM``  takım numaranızla değiştirilir). Yukarıdaki örnek, 9999 "
+"takımı için bir örnek adı göstermektedir. Sonra VI'yı kaydetmek için Dosya->"
+" Kaydet veya: kbd: `Ctrl+S` tıklayın."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:44
+msgid ""
+"You may also wish to make a minor modification to the Front Panel to verify "
+"that you are running the right dashboard later."
+msgstr ""
+"Daha sonra doğru panoyu çalıştırdığınızı doğrulamak için Ön Panelde küçük "
+"bir değişiklik yapmak isteyebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:47
+msgid "Building the Dashboard"
+msgstr "Kontrol Panelini Oluşturma"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:51
+msgid ""
+"To build the new dashboard, expand Build Specifications in the Project "
+"Explorer, right click on FRC_Dashboard and select Build."
+msgstr ""
+"Yeni gösterge panosunu oluşturmak için, Proje Gezgini'nde Özellik "
+"Oluşturma'yı genişletin, FRC_Dashboard'a sağ tıklayın ve Oluştur'u seçin."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:54
+msgid "Setting the Driver Station to Launch the Modified Dashboard"
+msgstr ""
+"Driver Station'ı Değiştirilmiş Kontrol Panelini Başlatacak Şekilde Ayarlama"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:58
+msgid ""
+"On the Setup tab of the Driver Station, change to dropdown box to LabVIEW to"
+" launch your new Dashboard."
+msgstr ""
+"Driver Station'ın Kurulum sekmesinde, yeni Kontrol Panelinizi başlatmak için"
+" açılır kutuyu LabVIEW olarak değiştirin."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:61
+msgid "Accessing the Camera from Robot Code"
+msgstr "Kameraya Robot Kodundan Erişim"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:63
+msgid ""
+"If you wish to access the renamed camera from your robot code, you will have"
+" to modify it as well. In C++ and Java, just change the String used for the "
+"camera host name to match the new name. In LabVIEW follow the step below."
+msgstr ""
+"Yeniden adlandırılan kameraya robot kodunuzdan erişmek isterseniz, onu da "
+"değiştirmeniz gerekecektir. C ++ ve Java'da, kamera ana bilgisayar adı için "
+"kullanılan Dizeyi yeni adla eşleşecek şekilde değiştirin. LabVIEW'de "
+"aşağıdaki adımı izleyin."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:66
+msgid "Modifying LabVIEW Robot Code"
+msgstr "LabVIEW Robot Kodunu Değiştirme"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:70
+msgid ""
+"In the Project Explorer, locate ``Vision Processing.VI`` and double click to"
+" open it. Then press :kbd:`Ctrl+E` to open the Block Diagram. Locate the "
+"string ``axis-camera.local`` near the left of the image and replace with "
+"``axis-cameraTEAM.local``. Also make sure the constant is set to ``False`` "
+"to use the Axis camera instead of USB."
+msgstr ""
+"Proje Gezgini'nde, ``Vision Processing.VI`` yı bulun ve açmak için çift "
+"tıklayın. Ardından Blok Diyagramı açmak için: kbd: `Ctrl + E` tuşlarına "
+"basın. Görüntünün sol tarafındaki ``axis-camera.local`` dizesini bulun ve ``"
+" axis-cameraTEAM.local`` ile değiştirin. Ayrıca Axis kamerayı USB yerine "
+"kullanmak için sabitin `` False`` olarak ayarlandığından emin olun."

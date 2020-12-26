@@ -5,18 +5,431 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 04:14+0000\n"
+"POT-Creation-Date: 2020-12-26 16:24+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:4
+msgid "RobotBuilder Overview"
+msgstr "RobotBuilder'a Genel Bakış"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:6
+msgid ""
+"RobotBuilder has been updated to support the new commandbased framework! "
+"Unfortunately, this documentation is outdated and only for the old "
+"commandbased framework. Individuals interested in updating this "
+"documentation can open a pull request on the `frc-docs "
+"<https://github.com/wpilibsuite/frc-docs>`__ repository."
+msgstr ""
+"RobotBuilder, yeni komut tabanlı çerçeveyi desteklemek için güncellendi! Ne "
+"yazık ki, bu dokümantasyon güncelliğini yitirmiştir ve yalnızca eski komut "
+"temelli çerçeve içindir. Bu dokümantasyonu güncellemekle ilgilenen kişiler, "
+"\"frc-docs <https://github.com/wpilibsuite/frc-docs>\" __ deposuna destekte "
+"bulunabilirler."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:8
+msgid ""
+"RobotBuilder is an application designed to aid the robot development "
+"process. RobotBuilder can help you:"
+msgstr ""
+"RobotBuilder, robot geliştirme sürecine yardımcı olmak için tasarlanmış bir "
+"uygulamadır. RobotBuilder size şu konularda yardımcı olabilir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:10
+msgid ""
+"Generating boilerplate code. Organize your robot and figure out what its key"
+" subsystems are. Check that you have enough channels for all of your sensors"
+" and actuators. Generate wiring diagrams. Easily modify your operator "
+"interface. More..."
+msgstr ""
+"Standart kod üretiliyor. Robotunuzu düzenleyin ve temel alt sistemlerinin "
+"neler olduğunu bulun. Tüm sensörleriniz ve aktüatörleriniz için yeterli "
+"kanalınız olup olmadığını kontrol edin. Kablolama şemaları oluşturun. "
+"Operatör arayüzünüzü kolayca değiştirin. Daha..."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:17
+msgid ""
+"Creating a program with RobotBuilder is a very straight forward procedure by"
+" following a few steps that are the same for any robot. This lesson "
+"describes the steps that you can follow. You can find more details about "
+"each of these steps in subsequent sections of the document."
+msgstr ""
+"RobotBuilder ile bir program oluşturmak, herhangi bir robot için aynı olan "
+"birkaç adımı izleyerek çok basit bir işlemdir. Bu ders takip edebileceğiniz "
+"adımları açıklamaktadır. Belgenin sonraki bölümlerinde bu adımların her biri"
+" hakkında daha fazla ayrıntı bulabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:19
+msgid ""
+"In addition to the text documentation provided here, a `series of videos "
+"about RobotBuilder and many other FRC\\ |reg| Robotics Engineering topics "
+"<https://wp.wpi.edu/wpilib/robotics-videos/>`__ is also available."
+msgstr ""
+"Burada sağlanan metin belgelerine ek olarak, RobotBuilder ve diğer birçok "
+"FRC\\|reg| hakkında bir dizi video Robotik Mühendisliği konuları "
+"<https://wp.wpi.edu/wpilib/robotics-videos/>`__ da bulunmaktadır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:21
+msgid ""
+"RobotBuilder generates code using the old Command Framework. For more "
+"details on the old framework see :ref:`[Old] Command Based Programming "
+"<docs/software/old-commandbased/index:[Old] Command Based Programming>`."
+msgstr ""
+"RobotBuilder, eski Komut Çerçevesini kullanarak kod üretir. Eski çerçeve "
+"hakkında daha fazla ayrıntı için bkz :ref:`[Old] Command Based Programming "
+"<docs/software/old-commandbased/index:[Old] Command Based Programming>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:24
+msgid "Divide the Robot into Subsystems"
+msgstr "Robotu Subsystems-Alt Sistemlere Ayırın"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:28
+msgid ""
+"Your robot is naturally made up of a number of smaller systems like the "
+"drive trains, arms, shooters, collectors, manipulators, wrist joints, etc. "
+"You should look at the design of your robot and break it up into smaller, "
+"separately operated subsystems. In this particular example there is an "
+"elevator, a minibot alignment device, a gripper, and a camera system. In "
+"addition one might include the drive base. Each of these parts of the robot "
+"are separately controlled and make good candidates for subsystems."
+msgstr ""
+"Robotunuz doğal olarak tahrik trenleri, kollar, atıcılar, toplayıcılar, "
+"manipülatörler, bilek eklemleri vb. Gibi bir dizi küçük sistemden oluşur. "
+"Robotunuzun tasarımına bakmalı ve onu daha küçük, ayrı çalıştırılan alt "
+"sistemlere bölmelisiniz. Bu özel örnekte bir asansör, bir minibot hizalama "
+"cihazı, bir kavrayıcı ve bir kamera sistemi bulunmaktadır. Ek olarak sürücü "
+"tabanı da içerebilir. Robotun bu parçalarının her biri ayrı ayrı kontrol "
+"edilir ve alt sistemler için iyi adaylar oluşturur."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:30
+msgid ""
+"For more information see :doc:`Creating a Subsystem <robotbuilder-creating-"
+"subsystem>`."
+msgstr ""
+"Daha fazla bilgi için bkz : doc: \"Bir Alt Sistem Oluşturma <robotbuilder-"
+"creating-subsystem>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:33
+msgid "Adding each Subsystem to the Project"
+msgstr "Her Alt Sistemi Projeye Ekleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:37
+msgid ""
+"Each subsystem will be added to the \"Subsystems\" folder in the "
+"RobotBuilder and given a meaningful name. For each of the subsystems there "
+"are several attributes that get filled in to specify more information about "
+"the subsystems. In addition there are two types of subsystems that you might"
+" want to create:"
+msgstr ""
+"Her alt sistem, RobotBuilder'daki \"Subsystems-Alt Sistemler\" klasörüne "
+"eklenecek ve anlamlı bir ad verilecektir. Alt sistemlerin her biri için, alt"
+" sistemler hakkında daha fazla bilgi belirtmek için doldurulan birkaç "
+"öznitelik vardır. Ek olarak, oluşturmak isteyebileceğiniz iki tür alt sistem"
+" vardır:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:39
+msgid ""
+"PIDSubsystems - often it is desirable to control a subsystems operation with"
+" a PID controller. This is code in your program that makes the subsystem "
+"element, for example arm angle, more quickly to a desired position then stop"
+" when reaching it. PIDSubsystems have the PID Controller code built-in and "
+"are often more convenient then adding it yourself. PIDSubsystems have a "
+"sensor that determines when the device has reached the target position and "
+"an actuator (motor controller) that is driven to the setpoint."
+msgstr ""
+"PIDS alt sistemleri - genellikle bir alt sistemin çalışmasını bir PID "
+"denetleyicisi ile kontrol etmek istenir. Bu, programınızdaki alt sistem "
+"elemanını, örneğin kol açısı gibi, istenen bir konuma daha hızlı ve sonra "
+"ulaşırken durmasını sağlayan koddur. PIDSubsystems yerleşik PID Denetleyici "
+"koduna sahiptir ve genellikle kendiniz eklemekten daha kullanışlıdır. PIDS "
+"alt sistemleri, cihazın hedef konuma ne zaman ulaştığını belirleyen bir "
+"sensöre ve ayar noktasına sürülen bir aktüatöre (motor kontrolörü) sahiptir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:40
+msgid ""
+"Regular subsystem - these subsystems don't have an integrated PID controller"
+" and are used for subsystems without PID control for feedback or for "
+"subsystems requiring more complex control than can be handled with the "
+"default embedded PID controller."
+msgstr ""
+"Normal alt sistem - bu alt sistemlerin entegre bir PID denetleyicisi yoktur "
+"ve geri bildirim için PID kontrolü olmayan alt sistemler için veya "
+"varsayılan yerleşik PID denetleyiciyle ele alınabilecek olandan daha "
+"karmaşık denetim gerektiren alt sistemler için kullanılır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:42
+msgid ""
+"As you look through more of this documentation the differences between the "
+"subsystem types will become more apparent."
+msgstr ""
+"Bu belgelerin çoğuna baktıkça, alt sistem türleri arasındaki farklar daha "
+"belirgin hale gelecektir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:44
+msgid ""
+"For more information see :doc:`Creating a Subsystem <robotbuilder-creating-"
+"subsystem>` and :ref:`Writing Code for a Subsystem <docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing "
+"the Code for a Subsystem>`."
+msgstr ""
+"Daha fazla bilgi için bkz : doc: \"Creating a Subsystem <robotbuilder-"
+"creating-subsystem>\" ve : ref: `Write Code for a Subsystem <docs/software"
+"/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-"
+"code:Writing the Code for a Subsystem>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:47
+msgid "Adding Components to each of the Subsystems"
+msgstr "Alt Sistemlerin her birine Bileşen Ekleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:51
+msgid ""
+"Each subsystem consists of a number of actuators, sensors and controllers "
+"that it uses to perform its operations. These sensors and actuators are "
+"added to the subsystem with which they are associated.  Each of the sensors "
+"and actuators comes from the RobotBuilder palette and is dragged to the "
+"appropriate subsystem. For each, there are usually other properties that "
+"must be set such as port numbers and other parameters specific to the "
+"component."
+msgstr ""
+"Her bir alt sistem, işlemlerini gerçekleştirmek için kullandığı bir dizi "
+"aktüatör, sensör ve denetleyiciden oluşur. Bu sensörler ve aktüatörler, "
+"ilişkili oldukları alt sisteme eklenir. Sensörlerin ve aktüatörlerin her "
+"biri, RobotBuilder paletinden gelir ve uygun alt sisteme sürüklenir. Her "
+"biri için, genellikle bağlantı noktası numaraları ve bileşene özgü diğer "
+"parametreler gibi ayarlanması gereken başka özellikler vardır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:53
+msgid ""
+"In this example there is an Elevator subsystem that uses a motor and a "
+"potentiometer (motor and pot) that have been dragged to the Elevator "
+"subsystem."
+msgstr ""
+"Bu örnekte, Elevator alt sistemine sürüklenen bir motor ve bir "
+"potansiyometre (motor ve pot) kullanan bir Elevator alt sistemi vardır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:56
+msgid "Adding Commands That Describe Subsystem Goals"
+msgstr "Alt Sistem Hedeflerini Açıklayan Komutlar Ekleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:58
+msgid ""
+"Commands are distinct goals that the robot will perform. These commands are "
+"added by dragging the command under the \"Commands\" folder. When creating a"
+" command, there are 3 primary choices (shown on the palette on the left of "
+"the picture):"
+msgstr ""
+"Komutlar, robotun gerçekleştireceği farklı hedeflerdir. Bu komutlar, komut "
+"\"Commands\" klasörünün altına sürüklenerek eklenir. Bir komut oluştururken,"
+" 3 ana seçenek vardır (resmin solundaki palette gösterilir):"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:60
+msgid ""
+"Normal commands - these are the most flexible command, you have to write all"
+" of the code to perform the desired actions necessary to accomplish the "
+"goal."
+msgstr ""
+"Normal komutlar - bunlar en esnek komutlardır, hedefe ulaşmak için gerekli "
+"eylemleri gerçekleştirmek için tüm kodu yazmanız gerekir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:61
+msgid ""
+"Command groups - these commands are a combination of other commands running "
+"both in a sequential order and in parallel. Use these to build up more "
+"complicated actions after you have a number of basic commands implemented."
+msgstr ""
+"Komut grupları - bu komutlar, hem sıralı hem de paralel olarak çalışan diğer"
+" komutların birleşimidir. Bir dizi temel komut uygulandıktan sonra daha "
+"karmaşık eylemler oluşturmak için bunları kullanın."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:62
+msgid ""
+"Setpoint commands - setpoint commands move a PID Subsystem to a fixed "
+"setpoint, or the desired location."
+msgstr ""
+"Ayar noktası komutları - ayar noktası komutları bir PID Alt Sistemini sabit "
+"bir ayar noktasına veya istenen konuma taşır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:64
+msgid ""
+"For more information see :doc:`Creating a Command <robotbuilder-creating-"
+"command>` and :ref:`Writing Command Code <docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing "
+"the Code for a Command>`."
+msgstr ""
+"Daha fazla bilgi için bakınız : doc: ` Bir Komut Oluşturma <robotbuilder-"
+"creating-command>`   ve : ref: ` Komut Kodunu Yazma <docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing "
+"the Code for a Command>` ."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:67
+msgid "Testing each Command"
+msgstr "Her Komutu Test Etme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:71
+msgid ""
+"Each command can be run from the SmartDashboard. This is useful for testing "
+"commands before you add them to the operator interface or to a command "
+"group. As long as you leave the \"Button on SmartDashboard\" property "
+"checked, a button will be created on the SmartDashboard. When you press the "
+"start button, the command will run and you can check that it performs the "
+"desired action."
+msgstr ""
+"Her komut SmartDashboard'dan çalıştırılabilir. Bu, komutları operatör "
+"arayüzüne veya bir komut grubuna eklemeden önce test etmek için "
+"kullanışlıdır. \"Button on SmartDashboard\" özelliğini işaretli bıraktığınız"
+" sürece, SmartDashboard'da bir düğme oluşturulur. Başlat düğmesine "
+"bastığınızda, komut çalışacak ve istediğiniz eylemi gerçekleştirip "
+"gerçekleştirmediğini kontrol edebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:73
+msgid ""
+"By creating buttons, each command can be tested individually. If all the "
+"commands work individually, you can be pretty sure that the robot will work "
+"as a whole."
+msgstr ""
+"Düğmeler oluşturarak her komut ayrı ayrı test edilebilir. Tüm komutlar ayrı "
+"ayrı çalışıyorsa, robotun bir bütün olarak çalışacağından oldukça emin "
+"olabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:75
+msgid ""
+"For more information see :doc:`Testing with Smartdashboard <robotbuilder-"
+"testing-with-smartdashboard>`."
+msgstr ""
+"Daha fazla bilgi için bkz :doc:`Testing with Smartdashboard<robotbuilder-"
+"testing-with-smartdashboard>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:78
+msgid "Adding Operator Interface Components"
+msgstr "Operatör Arayüzü Bileşenlerinin Eklenmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:82
+msgid ""
+"The operator interface consists of joysticks, gamepads and other HID input "
+"devices. You can add operator interface components (joysticks, joystick "
+"buttons) to your program in RobotBuilder. It will automatically generate "
+"code that will initialize all of the components and allow them to be "
+"connected to commands."
+msgstr ""
+"Operatör arayüzü, kumanda kollarından, oyun kumandalarından ve diğer HID "
+"giriş cihazlarından oluşur. RobotBuilder'daki programınıza operatör arayüzü "
+"bileşenleri (kumanda kolları, kumanda kolu düğmeleri) ekleyebilirsiniz. Tüm "
+"bileşenleri başlatacak ve komutlara bağlanmalarına izin verecek kodu "
+"otomatik olarak üretecektir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:84
+msgid ""
+"The operator interface components are dragged from the palette to the "
+"\"Operator Interface\" folder in the RobotBuilder program. First (1) add "
+"Joysticks to the program then put buttons under the associated joysticks (2)"
+" and give them meaningful names, like ShootButton."
+msgstr ""
+"Operatör arayüz bileşenleri paletten RobotBuilder programındaki \"Operator "
+"Interface\" klasörüne sürüklenir. Önce (1) programa Joystick'i ekleyin, "
+"ardından ilgili joysticklerin (2) altına düğmeler koyun ve bunlara "
+"ShootButton gibi anlamlı adlar verin."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:87
+msgid "Connecting the Commands to the Operator Interface"
+msgstr "Komutların Operatör Arayüzüne Bağlanması"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:91
+msgid ""
+"Commands can be associated with buttons so that when a button is pressed the"
+" command is scheduled. This should, for the most part, handle most of the "
+"tele-operated part of your robot program."
+msgstr ""
+"Komutlar düğmelerle ilişkilendirilebilir, böylece bir düğmeye basıldığında "
+"komut zamanlanır. Bu, çoğunlukla, robot programınızın uzaktan çalıştırılan "
+"bölümünün çoğunu işlemelidir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:93
+msgid ""
+"This is simply done by (1) adding the command to the JoystickButton object "
+"in the RobotBuilder program, then (2) setting the condition in which the "
+"command is scheduled."
+msgstr ""
+"Bu, RobotBuilder programındaki JoystickButton nesnesine (1) komutu "
+"ekleyerek, ardından (2) komutun programlandığı koşulu ayarlayarak yapılır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:95
+msgid ""
+"For more information see :doc:`Connecting the Operator Interface to a "
+"Command <robotbuilder-operator-interface-to-command>`."
+msgstr ""
+"Daha fazla bilgi için bkz : doc:`Operatör Arayüzünü Komuta Bağlama "
+"<robotbuilder-operator-interface-to-command>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:98
+msgid "Developing Autonomous Commands"
+msgstr "Otonom Komutlar Geliştirme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:102
+msgid ""
+"Commands make it simple to develop autonomous programs. You simply specify "
+"which command should run when the robot enters the autonomous period and it "
+"will automatically be scheduled. If you have tested commands as discussed "
+"above, this should simply be a matter of choosing which command should run."
+msgstr ""
+"Komutlar, otonom programlar geliştirmeyi kolaylaştırır. Robot otonom döneme "
+"girdiğinde hangi komutun çalıştırılması gerektiğini belirtirsiniz ve "
+"otomatik olarak programlanacaktır. Komutları yukarıda tartışıldığı gibi test"
+" ettiyseniz, bu sadece hangi komutun çalıştırılması gerektiğini seçme "
+"meselesi olmalıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:104
+msgid ""
+"Select the robot at the root of the RobotBuilder project, then edit the "
+"Autonomous Command property to choose the command to run. It's that simple!"
+msgstr ""
+"RobotBuilder projesinin kökündeki robotu seçin, ardından çalıştırılacak "
+"komutu seçmek için Otonom Komut özelliğini düzenleyin. Bu kadar basit!"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:106
+msgid ""
+"For more information see :doc:`Setting the Default Autonomous Command "
+"<robotbuilder-default-autonomous-command>`."
+msgstr ""
+"Daha fazla bilgi için bkz : doc:`Varsayılan Otonom Komutu Ayarlama "
+"<robotbuilder-default-autonomous-command>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:109
+msgid "Generating Code"
+msgstr "Kod Oluşturuluyor"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:113
+msgid ""
+"At any point in the process outlined above you can have RobotBuilder "
+"generate a C++ or Java program that will represent the project you have "
+"created. This is done by specifying the location of the project in the "
+"project properties (1), then clicking the appropriate toolbar button to "
+"generate the code."
+msgstr ""
+"Yukarıda belirtilen sürecin herhangi bir noktasında, RobotBuilder'ın "
+"oluşturduğunuz projeyi temsil edecek bir C ++ veya Java programı "
+"oluşturmasını sağlayabilirsiniz. Bu, proje özelliklerinde (1) projenin "
+"konumu belirtilerek ve ardından kodu oluşturmak için uygun araç çubuğu "
+"düğmesine tıklanarak yapılır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:115
+msgid ""
+"For more information see :ref:`Generating RobotBuilder Code <docs/software"
+"/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-"
+"code:Generating Code for a Project>`."
+msgstr ""
+"Daha fazla bilgi için bkz :ref:`Generating RobotBuilder Code <docs/software"
+"/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-"
+"code:Generating Code for a Project>`."

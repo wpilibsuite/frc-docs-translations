@@ -5,18 +5,363 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 16:27+0000\n"
+"POT-Creation-Date: 2020-12-26 16:24+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:2
+msgid "Creating A Widget"
+msgstr "Bir Widget Oluşturma"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:3
+msgid ""
+"Widgets allow us to view, change, and interact with data published through "
+"different data sources. The CameraServer, NetworkTables, and Base plugins "
+"provide the widgets to control basic data types (including FRC-specific data"
+" types). However, custom widgets allow us to control our custom data types "
+"we made in the previous sections or Java Objects."
+msgstr ""
+"Widget'lar, farklı veri kaynakları aracılığıyla yayınlanan verileri "
+"görüntülememize, değiştirmemize ve bunlarla etkileşim kurmamıza olanak "
+"tanır. CameraServer, NetworkTables ve Base eklentileri, temel veri türlerini"
+" (FRC'ye özgü veri türleri dahil) kontrol etmek için pencere öğeleri sağlar."
+" Bununla birlikte, özel widget'lar, önceki bölümlerde veya Java Nesnelerinde"
+" yaptığımız özel veri türlerimizi kontrol etmemize izin verir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:5
+msgid ""
+"The basic ``Widget`` interface inherits from the ``Component`` and "
+"``Sourced`` interfaces. ``Component`` is the most basic building block of "
+"components that be displayed in Shuffleboard. ``Sourced`` is an interface "
+"for things that can handle and interface with data sources to display or "
+"modify data. Widgets that don't support data bindings but simply have child "
+"nodes would not use the ``Sourced`` interface but simply the ``Component`` "
+"interface. Both are basic building blocks towards making widgets and allows "
+"us to modify and display data."
+msgstr ""
+"Temel ``Widget`` arayüzü, ``Bileşen`` ve ``Kaynaklı`` arayüzlerden miras "
+"alır. ``Bileşen``, Shuffleboard'da görüntülenebilecek bileşenlerin en temel "
+"yapı taşıdır. ``Kaynaklı``, verileri görüntülemek veya değiştirmek için veri"
+" kaynaklarını işleyebilen ve bunlarla arayüz oluşturabilen şeyler için bir "
+"arayüzdür. Veri bağlamalarını desteklemeyen ancak sadece alt düğümlere sahip"
+" olan widget'lar ``Kaynaklı`` arayüzü değil, sadece ``Bileşen`` arayüzünü "
+"kullanır. Her ikisi de widget oluşturmaya yönelik temel yapı taşlarıdır ve "
+"verileri değiştirmemizi ve görüntülememizi sağlar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:7
+msgid ""
+"A good widget allows the end-user to customize the widget to suit their "
+"needs. An example could be to allow the user to control the range of the "
+"number slider, that is, its maximum and minimum or the orientation of the "
+"slider itself. The view of the widget or how it looks is defined using FXML."
+" ``FXML`` is an XML based language that is useful for defining the static "
+"layout of the widget (Panes, Labels and Controls)."
+msgstr ""
+"İyi bir pencere öğesi, son kullanıcının pencere öğesini ihtiyaçlarına göre "
+"özelleştirmesine olanak tanır. Bir örnek, kullanıcının sayı kaydırıcısının "
+"aralığını, yani maksimum ve minimumunu veya kaydırıcının kendisinin yönünü "
+"kontrol etmesine izin vermek olabilir. Widget'ın görünümü veya nasıl "
+"göründüğü FXML kullanılarak tanımlanır. ``FXML``, widget'ın (Bölmeler, "
+"Etiketler ve Kontroller) statik düzenini tanımlamak için yararlı olan XML "
+"tabanlı bir dildir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:9
+msgid ""
+"More about FXML can be found `here "
+"<https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-"
+"files/introduction_to_fxml.html>`_."
+msgstr ""
+"FXML hakkında daha fazla bilgi `burada "
+"<https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-"
+"files/introduction_to_fxml.html>` _ bulunabilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:12
+msgid "Defining a Widget's FXML"
+msgstr "Bir Widget'ın FXML'sini Tanımlama"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:13
+msgid ""
+"In this example, we will create two sliders to help us control the X and Y "
+"coordinates of our Point2D data type we created in previous sections. It is "
+"helpful to place the FXML file in the same package as the Java class."
+msgstr ""
+"Bu örnekte, önceki bölümlerde oluşturduğumuz Point2D veri tipimizin X ve Y "
+"koordinatlarını kontrol etmemize yardımcı olmak için iki kaydırıcı "
+"oluşturacağız. FXML dosyasını Java sınıfıyla aynı pakete yerleştirmek "
+"faydalıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:15
+msgid ""
+"In order to create an empty, blank window for our widget, we need to create "
+"a ``Pane``. A Pane is a parent node that contains other child nodes, in this"
+" case, 2 sliders. There are many different types of Pane, they are as noted:"
+msgstr ""
+"Widget'ımız için boş, boş bir pencere oluşturmak için bir ``Bölme`` "
+"oluşturmamız gerekiyor. Bölme, diğer alt düğümleri, bu durumda 2 kaydırıcıyı"
+" içeren bir ana düğümdür. Birçok farklı Bölme türü vardır, bunlar "
+"belirtildiği gibidir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:18
+msgid "Stack Pane"
+msgstr "Stack Pane-Yığın Bölmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:20
+msgid ""
+"Stack Panes allow elements to be overlaid. Also, StackPanes by default "
+"center child nodes."
+msgstr ""
+"Stack Pane-Yığın Bölmeleri, öğelerin üst üste bindirilmesine izin verir. "
+"Ayrıca, StackPanes varsayılan merkez alt düğümleri olarak."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:22
+msgid "Grid Pane"
+msgstr "Grid Pane-Izgara Bölmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:24
+msgid ""
+"Grid Panes are extremely useful defining child elements using a coordinate "
+"system by creating a flexible grid of rows and columns on the pane."
+msgstr ""
+"Izgara Bölmeleri, bölmede esnek bir satır ve sütun ızgarası oluşturarak bir "
+"koordinat sistemi kullanarak alt öğeleri tanımlamak için son derece "
+"yararlıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:26
+msgid "Flow Pane"
+msgstr "Flow Pane-Akış Bölmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:28
+msgid ""
+"Flow Panes wrap all child nodes at a boundary set. Child nodes can flow "
+"vertically (wrapped at the height boundary for the pane) or horizontally "
+"(wrapped at the width boundary of the pane)."
+msgstr ""
+"Flow Pane-Akış Bölmeleri, tüm alt düğümleri bir sınır kümesinde sarar. Alt "
+"düğümler dikey (bölmenin yükseklik sınırına sarılmış) veya yatay (bölmenin "
+"genişlik sınırına sarılmış) olarak akabilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:30
+msgid "Anchor Pane"
+msgstr "Anchor Pane-Bağlantı Bölmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:32
+msgid ""
+"Anchor Panes allow child elements to be placed in the top, bottom, left "
+"side, right side, or center of the pane."
+msgstr ""
+"Anchor Pane-Bağlantı Bölmeleri, alt öğelerin bölmenin üstüne, altına, sol "
+"tarafına, sağ tarafına veya ortasına yerleştirilmesine izin verir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:34
+msgid ""
+"Layout panes are also extremely useful for placing child nodes in one "
+"horizontal row using a `HBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`_"
+" or one vertical column using a `VBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`_."
+msgstr ""
+"Düzen bölmeleri, alt düğümleri bir `HBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`"
+" _ kullanarak tek bir yatay satıra veya bir `VBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`_"
+" kullanarak bir dikey sütuna yerleştirmek için de son derece kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:36
+msgid ""
+"The basic syntax for defining a Pane using FXML would be as the following:"
+msgstr ""
+"FXML kullanarak bir Bölmeyi tanımlamak için temel sözdizimi aşağıdaki gibi "
+"olacaktır:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:45
+msgid ""
+"The ``fx:controller`` attribute contains the name of the widget class. An "
+"instance of this class is created when the FXML file is loaded. For this to "
+"work, the controller class must have a no-argument constructor."
+msgstr ""
+"``fx: controller`` özniteliği, widget sınıfının adını içerir. FXML dosyası "
+"yüklendiğinde bu sınıfın bir örneği oluşturulur. Bunun çalışması için, "
+"denetleyici sınıfının bağımsız değişken olmayan bir kurucuya sahip olması "
+"gerekir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:48
+msgid "Creating A Widget Class"
+msgstr "Bir Widget Sınıfı Oluşturma"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:50
+msgid ""
+"Now that we have a Pane, we can now add child elements to that pane. In this"
+" example, we can add two slider objects. Remember to add an ``fx:id`` to "
+"each element so they can be referenced in our Java class we will make later "
+"on. We will use a ``VBox`` to position our slider on top of each other."
+msgstr ""
+"Artık bir Bölmeye sahip olduğumuza göre, artık bu bölmeye alt öğeler "
+"ekleyebiliriz. Bu örnekte, iki kaydırıcı nesnesi ekleyebiliriz. Her öğeye "
+"bir ``fx: id '' eklemeyi unutmayın, böylece daha sonra yapacağımız Java "
+"sınıfımızda referans alınabilirler. Kaydırıcımızı üst üste konumlandırmak "
+"için bir ``VBox`` kullanacağız."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:64
+msgid ""
+"Now that we have finished creating our FXML file, we can now create a widget"
+" class. The widget class should include a ``@Description`` annotation that "
+"states the supported data types of the widget and the name of the widget. If"
+" a ``@Description`` annotation is not present, the plugin class must "
+"implement the ``get()`` method to return its widgets."
+msgstr ""
+"FXML dosyamızı oluşturmayı bitirdiğimize göre, artık bir widget sınıfı "
+"oluşturabiliriz. Parçacık sınıfı, parçacığın desteklenen veri türlerini ve "
+"parçacığın adını belirten bir ``@ Açıklama`` ek açıklaması içermelidir. Bir "
+"``@ Description`` ek açıklaması yoksa, eklenti sınıfı, widget'larını "
+"döndürmek için ``get ()`` yöntemini uygulamalıdır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:66
+msgid ""
+"It also must include a ``@ParametrizedController`` annotation that points to"
+" the FXML file containing the layout of the widget. If the class that only "
+"supports one data source it must extend the ``SimpleAnnotatedWidget`` class."
+" If the class supports multiple data sources, it must extend the "
+"``ComplexAnnotatedWidget`` class. For more information, see :doc:`widget-"
+"types`."
+msgstr ""
+"Ayrıca, pencere aracının düzenini içeren FXML dosyasına işaret eden bir ``@ "
+"ParametrizedController`` ek açıklaması içermelidir. Yalnızca bir veri "
+"kaynağını destekleyen sınıf, ``SimpleAnnotatedWidget`` sınıfını "
+"genişletmelidir. Sınıf birden çok veri kaynağını destekliyorsa, "
+"``ComplexAnnotatedWidget``sınıfını genişletmelidir. Daha fazla bilgi için, "
+"bakınız : :doc:`widget-types`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:86
+msgid ""
+"If you are not using a custom data type, you can reference any Java data "
+"type (ie. ``Double.class``), or if the widget does not need data binding you"
+" can pass ``NoneType.class``."
+msgstr ""
+"Özel bir veri türü kullanmıyorsanız, herhangi bir Java veri türüne (yani "
+"`Double.class``) başvurabilirsiniz veya widget veri bağlamaya ihtiyaç "
+"duymuyorsa, ``NoneType.class`` öğesini iletebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:88
+msgid ""
+"Now that we have created our class we can create fields for the widgets we "
+"declared in our FXML file using the ``@FXML`` annotation. For our two "
+"sliders, an example would be:"
+msgstr ""
+"Artık sınıfımızı oluşturduğumuza göre, ``@ FXML`` notunu kullanarak FXML "
+"dosyamızda beyan ettiğimiz widget'lar için alanlar oluşturabiliriz. İki "
+"kaydırıcımız için bir örnek şöyle olabilir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:111
+msgid ""
+"In order to display our pane on our custom widget we need to override the "
+"``getView()`` method and return our ``StackPane``."
+msgstr ""
+"Bölmemizi özel widget'ımızda görüntülemek için ``getView()`` yöntemini "
+"geçersiz kılmamız ve ``StackPane`` i döndürmemiz gerekir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:141
+msgid "Binding Elements and Adding Listeners"
+msgstr "Bağlama Öğeleri ve Dinleyiciler Ekleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:142
+msgid ""
+"Binding is a mechanism that allows JavaFX widgets to express direct "
+"relationships with the data source. For example, changing a widget will "
+"change its related NetworkTableEntry and vise versa."
+msgstr ""
+"Bağlama, JavaFX widget'larının veri kaynağıyla doğrudan ilişkileri ifade "
+"etmesine izin veren bir mekanizmadır. Örneğin, bir pencere aracını "
+"değiştirmek, ilgili NetworkTableEntry değerini değiştirir ve bunun tersi de "
+"geçerlidir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:144
+msgid ""
+"An example, in this case, would be changing the X and Y coordinate of our 2D"
+" point by changing the values of xSlider and ySlider respectively."
+msgstr ""
+"Bu durumda bir örnek, sırasıyla xSlider ve ySlider değerlerini değiştirerek "
+"2B noktamızın X ve Y koordinatlarını değiştirmek olabilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:146
+msgid ""
+"A good practice is to set bindings in the ``initialize()`` method tagged "
+"with the ``@FXML`` annotation which is required to call the method from FXML"
+" if the method is not ``public``."
+msgstr ""
+"Method ``public`` değilse, yöntemi FXML'den çağırmak için gerekli olan ``@ "
+"FXML`` ek açıklaması ile etiketlenmiş ``initialize()`` yönteminde "
+"bağlamaları ayarlamak iyi bir uygulamadır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:181
+msgid ""
+"The above ``initialize`` method binds the slider's value property to the "
+"``MyPoint2D`` data class' corresponding X and Y value. Meaning, changing the"
+" slider will change the coordinate and vise versa. The "
+"``dataOrDefault.map()`` method will get the data source's value, or, if no "
+"source is present, will return the default value."
+msgstr ""
+"Yukarıdaki `` nitialize`` yöntemi, kaydırıcının value özelliğini X ve Y "
+"değerine karşılık gelen ``MyPoint2D`` veri sınıfına bağlar. Yani, "
+"kaydırıcıyı değiştirmek koordinatı değiştirir ve bunun tersi de geçerlidir. "
+"``DataOrDefault.map()`` yöntemi, veri kaynağının değerini alır veya kaynak "
+"yoksa varsayılan değeri döndürür."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:184
+msgid ""
+"Using a listener is another way to change values when the slider or data "
+"source has changed. For example a listener for our slider would be:"
+msgstr ""
+"Dinleyici kullanmak, kaydırıcı veya veri kaynağı değiştiğinde değerleri "
+"değiştirmenin başka bir yoludur. Örneğin kaydırıcımız için bir dinleyici "
+"şöyle olacaktır:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:190
+msgid ""
+"In this case, the ``setData()`` method sets the value in the data source of "
+"the widget to the ``newValue``."
+msgstr ""
+"Bu durumda, ``setData()``yöntemi, widget'ın veri kaynağındaki değeri "
+"``newValue`` olarak ayarlar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:193
+msgid "Exploring Custom Components"
+msgstr "Özel Bileşenleri Keşfetme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:194
+msgid ""
+"Widgets are not automatically discovered when loading plugins; the defining "
+"plugin must explicitly export it for it to be usable. This approach is taken"
+" to allow multiple plugins to be defined in the same JAR."
+msgstr ""
+"Eklentiler yüklenirken widget'lar otomatik olarak keşfedilmez; tanımlayıcı "
+"eklentinin kullanılabilir olması için onu açıkça dışa aktarması gerekir. Bu "
+"yaklaşım, aynı JAR'da birden fazla eklentinin tanımlanmasına izin vermek "
+"için kullanılır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:204
+msgid "Set Default Widget For Data type"
+msgstr "Veri türü için Varsayılan Widget'ı Ayarla"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-a-new-widget.rst:205
+msgid ""
+"In order to set your widget as default for your custom data type, you can "
+"override the ``getDefaultComponents()`` in your plugin class that stores a "
+"Map for all default widgets as noted below:"
+msgstr ""
+"Widget'ınızı özel veri türünüz için varsayılan olarak ayarlamak için, "
+"aşağıda belirtildiği gibi tüm varsayılan widget'lar için bir Harita "
+"depolayan eklenti sınıfınızdaki ``getDefaultComponents ()`` öğesini geçersiz"
+" kılabilirsiniz:"

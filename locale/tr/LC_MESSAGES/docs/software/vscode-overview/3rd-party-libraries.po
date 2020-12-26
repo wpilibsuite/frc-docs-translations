@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Demet T <dtumkaya19@ku.edu.tr>, 2020
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-23 04:22+0000\n"
+"POT-Creation-Date: 2020-12-26 16:24+0000\n"
 "PO-Revision-Date: 2020-08-20 04:15+0000\n"
-"Last-Translator: Esra özemre <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,15 +25,170 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:2
 msgid "3rd Party Libraries"
-msgstr "3. Şahıs Kütüphaneleri"
+msgstr "3. Taraf Kütüphaneleri"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:4
+msgid ""
+"Teams that are not using parts provided in the KoP will likely need to "
+"install external dependencies. Please view the below section to see "
+"information on adding an external library."
+msgstr ""
+"KoP'ta sağlanan parçaları kullanmayan ekiplerin büyük olasılıkla harici "
+"bağımlılıklar kurması gerekecektir. Harici kitaplık eklemeyle ilgili "
+"bilgileri görmek için lütfen aşağıdaki bölümü inceleyin."
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:7
 msgid "The Mechanism"
 msgstr "Mekanizma"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:9
+msgid ""
+"In support of this effort NI (for LabVIEW) and FIRST/WPI (for Java/C++) have"
+" developed mechanisms that should make it easy for vendors to plug their "
+"code into the WPILib software and for teams to use that code once it has "
+"been installed. A brief description of how the system works for each "
+"language can be found below."
+msgstr ""
+"Bu çabayı desteklemek için NI (LabVIEW için) ve FIRST/WPI (Java/C++ için), "
+"satıcıların kodlarını WPILib yazılımına eklemesini ve ekiplerin bu kodu "
+"yüklendikten sonra kullanmasını kolaylaştıracak mekanizmalar geliştirmiştir."
+" . Sistemin her dil için nasıl çalıştığına dair kısa bir açıklama aşağıda "
+"bulunabilir."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:12
+msgid "The Mechanism - Java/C++"
+msgstr "Mekanizma - Java/C++"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:14
+msgid ""
+"For Java and C++ a JSON file describing the vendor library is installed on "
+"your system to ``~/wpilib/YYYY/vendordeps`` (where YYYY is the year and ~ is"
+" ``C:\\Users\\Public`` on Windows). This can either be done by an offline "
+"installer or the file can be fetched from an online location using the menu "
+"item in Visual Studio Code. This file is then used from VS Code to add to "
+"the library to each individual project. Vendor library information is "
+"managed on a per-project basis to make sure that a project is always "
+"pointing to a consistent version of a given vendor library. The libraries "
+"themselves are placed in the Maven cache at "
+"``C:\\Users\\Public\\wpilib\\YYYY\\maven``. Vendors can place a local copy "
+"here with an offline installer (recommended) or require users to be online "
+"for an initial build to fetch the library from a remote Maven location."
+msgstr ""
+"Java ve C++ için, satıcı kitaplığını açıklayan bir JSON dosyası sisteminize "
+"`` ~/wpilib/YYYY/vendordeps``  olarak yüklenir (burada YYYY yıl ve ~, "
+"Windows'ta `` C:\\ Users\\Public`` şeklindedir) . Bu, çevrimdışı bir "
+"yükleyici tarafından yapılabilir veya dosya, Visual Studio Code'daki menü "
+"öğesi kullanılarak çevrimiçi bir konumdan getirilebilir. Bu dosya daha sonra"
+" VS Code'dan her bir projeye kitaplığa eklemek için kullanılır. Satıcı "
+"kitaplığı bilgileri, bir projenin her zaman belirli bir satıcı kitaplığının "
+"tutarlı bir sürümüne işaret ettiğinden emin olmak için proje bazında "
+"yönetilir. Kitaplıkların kendileri "
+"``C:\\Users\\Public\\wpilib\\YYYY\\maven`` konumunda Maven önbelleğine "
+"yerleştirilir. Satıcılar, çevrimdışı bir yükleyiciyle buraya yerel bir kopya"
+" yerleştirebilir (önerilir) veya kitaplığı uzak bir Maven konumundan "
+"getirmek için kullanıcıların ilk derlemede çevrimiçi olmalarını isteyebilir."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:16
+msgid ""
+"The JSON file allows specification of complex libraries with multiple "
+"components (Java, C++, JNI, etc.) and also helps handle some complexities "
+"related to simulation. Vendors choosing to provide a remote URL in the JSON "
+"also enable users to check for updates from within VS Code."
+msgstr ""
+"JSON dosyası, birden çok bileşenle (Java, C ++, JNI vb.) Karmaşık "
+"kitaplıkların belirtilmesine izin verir ve ayrıca simülasyonla ilgili bazı "
+"karmaşıklıkların üstesinden gelmeye yardımcı olur. JSON'da bir uzak URL "
+"sağlamayı seçen satıcılar, kullanıcıların VS Code içinden güncellemeleri "
+"kontrol etmesine de olanak tanır."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:18
+msgid ""
+"The vendor JSON files are actually processed by GradleRIO once they are in "
+"your projects ``vendordeps`` folder. If you are using another IDE, you will "
+"need to manually create a “vendordeps” folder in your project and copy any "
+"desired vendor JSON files from the “wpilib/YYYY” folder (where they should "
+"be placed by an offline installer) or download them directly from the vendor"
+" and place them into the folder in the project."
+msgstr ""
+"Sağlayıcı JSON dosyaları, projelerinizin ``vendordeps``  klasörüne girdikten"
+" sonra aslında GradleRIO tarafından işlenir. Başka bir IDE kullanıyorsanız, "
+"projenizde manuel olarak bir \"vendordeps\" klasörü oluşturun  ve "
+"istediğiniz sağlayıcı JSON dosyalarını “wpilib/YYYY” klasöründen (çevrimdışı"
+" bir yükleyici tarafından yerleştirilmeleri gereken yer) kopyalayın veya "
+"doğrudan sağlayıcıdan indirin ve bunları projedeki klasöre yerleştirin."
+
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:21
 msgid "The Mechanism - LabVIEW"
 msgstr "Mekanizma - LabVIEW"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:23
+msgid ""
+"For LabVIEW teams, you may notice a few new Third Party items on various "
+"palettes (specifically, one in :guilabel:`Actuators`, one in "
+":guilabel:`Actuators` -> :guilabel:`Motor Control` labeled :guilabel:`CAN "
+"Motor`, and one in :guilabel:`Sensors`). These correspond to folders in "
+"``C:\\Program Files\\National Instruments\\LabVIEW YYYY\\vi.lib\\Rock "
+"Robotics\\WPI\\Third Party`` where ``YYYY`` is the current year - 1. If it’s"
+" 2020, the directory would be ``LabVIEW 2019``."
+msgstr ""
+"LabVIEW ekipleri için, çeşitli paletlerde birkaç yeni Üçüncü Taraf öğesi "
+"fark edebilirsiniz (özellikle biri::guilabel:`Actuators` biri "
+":guilabel:`Actuators` -> :guilabel:`Motor Control` etiketli::guilabel:`CAN "
+"Motor` ve biri:  :guilabel:`Sensors`). Bunlar, ``C:\\Program Files\\National"
+" Instruments\\LabVIEW YYYY\\vi.lib\\Rock Robotics\\WPI\\Third Party`` "
+"içindeki klasörlere karşılık gelir; burada ``YYYY`` mevcut yıl anlamına "
+"gelir - 1. 2020 ise, dizin ``LabVIEW 2019`` olacaktır."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:25
+msgid ""
+"To use installed \"Third Party\" libraries, simply locate the VIs in one of "
+"these 3 locations and drag them into your project as you would with any "
+"other VI."
+msgstr ""
+"Yüklü \"Üçüncü Taraf\" kitaplıklarını kullanmak için, VI'leri bu 3 konumdan "
+"birinde bulun ve diğer VI'larda olduğu gibi bunları projenize sürükleyin."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:28
+msgid "Managing VS Code Libraries"
+msgstr "VS Code Kütüphaneleri Yönetme"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:31
+msgid "Adding Offline Libraries"
+msgstr "Çevrimdışı Kütüphane Ekleme"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:34
+msgid "VS Code"
+msgstr "VS Kodu"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:38
+msgid ""
+"To add a vendor library that has been installed by an offline installer, "
+"press :kbd:`Ctrl+Shift+P` and type WPILib or click on the WPILib icon in the"
+" top right to open the WPILib Command Palette and begin typing "
+":guilabel:`Manage Vendor Libraries`, then select it from the menu. Select "
+"the option to :guilabel:`Install new libraries (offline)`."
+msgstr ""
+"Çevrimdışı bir sağlayıcı tarafından kurulan bir satıcı kütüphanesini eklemek"
+" için, şu tuşa basın: kbd:`Ctrl +Shift+P` ve WPILib yazın veya WPILib Komut "
+"Paletini açmak için sağ üstteki WPILib simgesine tıklayın ve yazmaya "
+"başlayın: :guilabel:`Manage Vendor Libraries`, ardından menüden  "
+":guilabel:`Install new libraries (offline)` seçeneğini seçin."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:42
+msgid ""
+"Select the desired libraries to add to the project by checking the box next "
+"to each, then click :guilabel:`OK`. The JSON file will be copied to the "
+"``vendordeps`` folder in the project, adding the library as a dependency to "
+"the project."
+msgstr ""
+"Her birinin yanındaki kutuyu işaretleyerek projeye eklemek için istenen "
+"kitaplıkları seçin ve ardından tıklayın :guilabel:`OK`. JSON dosyası, "
+"kütüphaneyi projeye bağımlılık olarak ekleyerek projedeki ``vendordeps`` "
+"klasörüne kopyalanacaktır."
+
+#: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:45
+msgid "Command-line"
+msgstr "Komut satırı"
 
 #: ../../frc-docs/source/docs/software/vscode-overview/3rd-party-libraries.rst:47
 msgid ""

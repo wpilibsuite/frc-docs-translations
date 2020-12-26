@@ -5,18 +5,597 @@
 # 
 # Translators:
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-22 04:20+0000\n"
+"POT-Creation-Date: 2020-12-26 04:20+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: Esra özemre <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:4
+msgid "New for 2021"
+msgstr "2021 için yeni"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:6
+msgid ""
+"A number of improvements have been made to FRC\\ |reg| Control System "
+"software for 2021. This article will describe and provide a brief overview "
+"of the new changes and features as well as a more complete changelog for "
+"C++/Java WPILib changes. This document only includes the most relevant "
+"changes for end users, the full list of changes can be viewed on the various"
+" `WPILib <https://github.com/wpilibsuite/>`__ GitHub repositories."
+msgstr ""
+"FRC\\ |reg| için bir dizi iyileştirme yapılmıştır. 2021 için Kontrol Sistemi"
+" yazılımı. Bu makale, yeni değişiklikler ve özelliklerin kısa bir özetini ve"
+" ayrıca C++/Java WPILib  değişiklikleri için daha eksiksiz bir değişiklik "
+"günlüğünü açıklayacak ve sağlayacaktır. Bu belge yalnızca son kullanıcılar "
+"için en alakalı değişiklikleri içerir, değişikliklerin tam listesi çeşitli "
+"`WPILib <https://github.com/wpilibsuite/>`__ GitHub depolarında "
+"görüntülenebilir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:8
+msgid ""
+"Due to internal GradleRIO changes, it is necessary to update previous years "
+"projects. After :doc:`Installing WPILib for 2021 </docs/zero-to-robot/step-2"
+"/wpilib-setup>`, any 2020 projects must be :doc:`imported </docs/software"
+"/vscode-overview/importing-gradle-project>` to be compatible."
+msgstr ""
+"Dahili GradleRIO değişiklikleri nedeniyle, önceki yıl projelerinin "
+"güncellenmesi gerekmektedir. Sonra: :doc:`Installing WPILib for 2021</docs"
+"/zero-to-robot/step-2/wpilib-setup>` uyumlu olması için tüm 2020 "
+"projeleri:doc:`imported</docs/software/vscode-overview/importing-gradle-"
+"project>` olmalıdır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:11
+msgid "Major Features"
+msgstr "Başlıca Özellikler"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:13
+msgid ""
+"A WebSocket interface has been added to allow remote access to the robot "
+"simulator"
+msgstr ""
+"Robot simülatörüne uzaktan erişime izin vermek için bir WebSocket arayüzü "
+"eklendi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:14
+msgid ""
+"A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-"
+"tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the "
+"simulator GUI and supports much of the same features; however, Glass can be "
+"used as a standalone dashboard and is not tied in to the robot program."
+msgstr ""
+"Yeni bir robot veri görselleştiricisi -- :ref:`Glass <docs/software/wpilib-"
+"tools/glass/index:Glass>` -- eklendi. Glass, simülatör GUI'sine benzer bir "
+"UI'ye sahiptir ve aynı özelliklerin çoğunu destekler; ancak Glass, bağımsız "
+"bir kontrol paneli olarak kullanılabilir ve robot programına bağlı değildir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:15
+msgid ""
+"WPILibInstaller has been rewritten to support macOS and Linux, and to  be "
+"easier to use. - Installer is notarized on macOS, no need for Gatekeeper "
+"bypass steps. - Please see the :ref:`installation instructions <docs/zero-"
+"to-robot/step-2/wpilib-setup:WPILib Installation Guide>` as it differs from "
+"previous years."
+msgstr ""
+"WPILibInstaller, macOS ve Linux'u desteklemek ve kullanımı daha kolay olacak"
+" şekilde yeniden yazılmıştır. - Yükleyici macOS'ta noter tarafından "
+"onaylanmıştır, Gatekeeper atlama adımlarına gerek yoktur. - Önceki yıllardan"
+" farklı olduğu için lütfen bakınız: ref: `kurulum talimatları <docs/zero-to-"
+"robot/step-2/wpilib-setup:WPILib Installation Guide>` "
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:20
+msgid "WPILib"
+msgstr "WPILib"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:23
+msgid "Breaking Changes"
+msgstr "Son Dakika Değişiklikler"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:25
+msgid "``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)"
+msgstr "``curvature_t``, ``frc``den ``units`` ad alanına (C ++) taşındı"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:27
+msgid ""
+"Trajectory constraint methods are now ``const`` in C++. Teams defining their"
+" own custom constraints should mark the ``MaxVelocity()`` and "
+"``MinMaxAcceleration()`` methods as ``const``."
+msgstr ""
+"Yörünge kısıtlama yöntemleri artık C ++ 'da ``const`` . Kendi özel "
+"kısıtlamalarını tanımlayan ekipler,  ``MaxVelocity()`` ve "
+"``MinMaxAcceleration()`` yöntemlerini ``const`` olarak işaretlemelidir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:29
+msgid ""
+"The ``Field2d`` class was moved from the simulation package "
+"(``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the "
+"SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / "
+"``frc/SmartDashboard/``). This allows teams to send their robot position "
+"over NetworkTables to be viewed in Glass. The Field2d instance can be sent "
+"using ``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` or by using one of "
+"the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard"
+"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be"
+" done in order to see the Field2d in the Simulator GUI."
+msgstr ""
+"``Field2d '' sınıfı simülasyon paketinden "
+"(``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``)SmartDashboard "
+"paketine (``edu.wpi.first.wpilibj.smartdashboard`` / "
+"``frc/SmartDashboard/``). Bu, ekiplerin robot konumlarını Glass'ta "
+"görüntülenmek üzere Ağ Tabloları üzerinden göndermelerine olanak tanır. "
+"Field2d örneği, ``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` kullanılarak veya  "
+":ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-"
+"with-code/sending-data:Sending sensors, motors, etc>`. Simülatör GUI'de "
+"Field2d'yi görmek için bu yapılmalıdır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:33
+msgid "New Command-Based Library"
+msgstr "Yeni Komut Tabanlı Kütüphane"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:35
+msgid ""
+"Watchdog and epoch reporting has been added to the command scheduler. This "
+"will let teams know exactly which command or subsystem is responsible for a "
+"loop overrun if one occurs."
+msgstr ""
+"Komut zamanlayıcıya gözcü ve dönem raporlaması eklendi. Bu, ekiplerin bir "
+"döngü taşması meydana gelirse tam olarak hangi komutun veya alt sistemin "
+"sorumlu olduğunu bilmesini sağlayacaktır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:37
+msgid ""
+"A ``withName()`` command decorator has been added for Java teams. This lets "
+"teams set the name of a particular command using the :ref:`decorator pattern"
+" <docs/software/commandbased/convenience-features:withName (Java only)>`."
+msgstr ""
+"Java ekipleri için bir ``withName()`` komut dekoratörü eklendi. Bu, "
+"ekiplerin :ref:`decorator pattern <docs/software/commandbased/convenience-"
+"features:withName (Java only)>`.kullanarak belirli bir komutun adını "
+"ayarlamasını sağlar."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:39
+msgid ""
+"Added a ``NetworkButton`` class, allowing users to use a boolean "
+"``NetworkTableEntry`` as a button to trigger commands."
+msgstr ""
+"Kullanıcıların komutları tetiklemek için bir düğme olarak bir boolean "
+"``NetworkTableEntry`` kullanmasına izin veren bir ``NetworkButton`` sınıfı "
+"eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:41
+msgid ""
+"Added a ``simulationPeriodic()`` method to Subsystem. This method runs "
+"periodically during simulation, in addition to the regular ``periodic()`` "
+"method."
+msgstr ""
+"Subsystem'e bir ``simulationPeriodic()`` yöntemi eklendi. Bu yöntem, normal "
+"``periodic()`` yöntemine ek olarak simülasyon sırasında periyodik olarak "
+"çalışır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:44
+msgid "General Library"
+msgstr "Genel Kütüphane"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:46
+msgid ""
+"Holonomic Drive Controller - A controller that teams with holonomic "
+"drivetrains (i.e. swerve and mecanum) can use to follow trajectories. This "
+"also supports custom ``Rotation2d`` heading inputs that are separate from "
+"the trajectory because heading dynamics are decoupled from translational "
+"movement in holonomic drivetrains."
+msgstr ""
+"Holonomic Drive Controller - Holonomik aktarma organları (yani, sapma ve "
+"mekanizma) ile ekiplerin yörüngeleri takip etmek için kullanabileceği bir "
+"kontrolör. Bu aynı zamanda yörüngeden ayrı olan özel  ``Rotation2d`` yön "
+"girdilerini de destekler çünkü yön dinamikleri, holonomik aktarma "
+"organlarındaki öteleme hareketinden ayrıştırılır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:49
+msgid ""
+"Added support for scheduling functions more often than the robot loop via "
+"``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to"
+" run feedback controllers more often than the TimedRobot loop period of 20ms"
+" (running TimedRobot more often than this is not advised). Now, users can "
+"run feedback controllers more often than the main robot loop, but "
+"synchronously with the TimedRobot periodic functions so there aren't any "
+"thread safety issues. See an example :ref:`here <docs/software/convenience-"
+"features/scheduling-functions:Scheduling Functions at Custom Frequencies>`."
+msgstr ""
+"TimedRobot'ta  ``addPeriodic()``aracılığıyla robot döngüsünden daha sık "
+"programlama işlevleri için destek eklendi. Daha önce, ekipler geri bildirim "
+"denetleyicilerini 20 ms'lik TimedRobot döngü süresinden daha sık çalıştırmak"
+" için bir Bildirici yapmak zorundaydı (TimedRobot'u bundan daha sık "
+"çalıştırmak önerilmez). Artık kullanıcılar geri besleme denetleyicilerini "
+"ana robot döngüsünden daha sık çalıştırabilir, ancak TimedRobot periyodik "
+"işlevleriyle eşzamanlı olarak iş parçacığı güvenliği sorunu yaşamaz. Bir "
+"örneğe bakın :ref:`here <docs/software/convenience-features/scheduling-"
+"functions:Scheduling Functions at Custom Frequencies>`."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:51
+msgid "Added a ``toggle()`` function to Solenoid and DoubleSolenoid."
+msgstr "Solenoid ve Çift Solenoid'e ``toggle()``işlevi eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:53
+msgid ""
+"Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` "
+"(C++) / ``SpeedController[]`` (Java), allowing the list to be constructed "
+"dynamically. (Teams shouldn't use this directly. This is only intended for "
+"bindings in languages like Python.)"
+msgstr ""
+"Listenin dinamik olarak oluşturulmasına izin veren bir ``std::vector<>`` "
+"(C++) /  ``SpeedController[]`` (Java)alan bir ``SpeedControllerGroup`` "
+"kurucusu eklendi. (Ekipler bunu doğrudan kullanmamalıdır. Bu yalnızca Python"
+" gibi dillerdeki bağlamalar için tasarlanmıştır.)"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:55
+msgid ""
+"Added methods (``isOperatorControlEnabled()`` and ``isAutonomousEnabled()``)"
+" to check game and enabled state together."
+msgstr ""
+"Oyunu ve etkin durumu birlikte kontrol etmek için yöntemler "
+"(``isOperatorControlEnabled()`` ve ``isAutonomousEnabled()``)  eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:57
+msgid ""
+"Added a ``ScopedTracer`` class for C++ teams to be able to time pieces of "
+"code. Simply instantiate the ``ScopedTracer`` at the top of a block of code "
+"and the time will be printed to the console when the instance goes out of "
+"scope."
+msgstr ""
+"C ++ ekiplerinin kod parçalarını zamanlayabilmeleri için bir "
+"``ScopedTracer``sınıfı eklendi. Basitçe bir kod bloğunun üstündeki "
+"``ScopedTracer`` ı somutlaştırın ve örnek kapsam dışına çıktığında zaman "
+"konsola yazdırılacaktır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:59
+msgid ""
+"Added a static method ``fromHSV(int h, int s, int v)`` to create a ``Color``"
+" instance from HSV values."
+msgstr ""
+"HSV değerlerinden bir ``Color`` örneği oluşturmak için ``fromHSV(int h, int "
+"s, int v)`` statik bir yöntem eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:61
+msgid ""
+"Added RT priority constructor to ``Notifier`` in C++. This makes the thread "
+"backing the Notifier run at real-time priority, reducing timing jitter."
+msgstr ""
+"C++ 'da ``Notifier`` 'a RT öncelik oluşturucusu eklendi. Bu, Notifier’ı "
+"destekleyen iş parçacığının gerçek zamanlı öncelikte çalışmasını sağlayarak "
+"zamanlama seğirmesini azaltır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:63
+msgid ""
+"Added a ``DriverStation.getInstance().isJoystickConnected(int)`` method to "
+"check if a joystick is connected to the Driver Station."
+msgstr ""
+"Driver Station'a bir joystick'in bağlı olup olmadığını kontrol etmek için "
+"bir ``DriverStation.getInstance().isJoystickConnected(int)`` yöntemi "
+"eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:65
+msgid ""
+"Added a "
+"``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)`` "
+"method to silence the warning when a joystick is not connected. This setting"
+" has no effect (i.e. warnings will continue to be printed) when the robot is"
+" connected to a real FMS."
+msgstr ""
+"Bir joystick bağlı olmadığında uyarıyı susturmak için "
+"``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)``yöntemi"
+" eklendi. Robot gerçek bir FMS'ye bağlandığında bu ayarın hiçbir etkisi "
+"yoktur (yani uyarılar yazdırılmaya devam edecektir)."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:67
+msgid ""
+"Added a constructor to ``Translation2d`` that takes in a distance and angle."
+" This is effectively converting from polar coordinates to Cartesian "
+"coordinates."
+msgstr ""
+"Mesafe ve açı alan  ``Translation2d`` ye bir kurucu eklendi. Bu, kutupsal "
+"koordinatlardan Kartezyen koordinatlara etkili bir şekilde dönüştürülür."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:69
+msgid ""
+"Added ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, and "
+"``MaxVelocityConstraint`` to allow constraining trajectory velocity in a "
+"certain region of the field."
+msgstr ""
+"Alanın belirli bir bölgesinde yörünge hızının sınırlandırılmasına izin "
+"vermek için ``EllipticalRegionConstraint`` , `` RectangularRegionConstraint "
+"'' ve ``MaxVelocityConstraint``eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:71
+msgid ""
+"Added equals() operator to the ``Trajectory`` class to compare two or more "
+"trajectories."
+msgstr ""
+"İki veya daha fazla yörüngeyi karşılaştırmak için ``Trajectory`` sınıfına "
+"eşittir () operatörü eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:73
+msgid ""
+"Added zero-arg constructor to the ``Trajectory`` class in Java that creates "
+"an empty trajectory."
+msgstr ""
+"Java'daki  ``Trajectory``  sınıfına boş bir yörünge oluşturan sıfır "
+"argümanlı yapıcı eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:75
+msgid ""
+"Added a special exception to catch trajectory constraint misbehavior. This "
+"notifies users when user-defined constraints are misbehaving (i.e. min "
+"acceleration is greater than max acceleration)."
+msgstr ""
+"Yörünge kısıtlaması yanlış davranışını yakalamak için özel bir istisna "
+"eklendi. Bu, kullanıcı tanımlı kısıtlamalar yanlış davrandığında (yani "
+"minimum hızlanma maksimum hızlanmadan daha büyük olduğunda) kullanıcıları "
+"bilgilendirir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:77
+msgid ""
+"Added a ``getRotation2d()`` method to the ``Gyro`` interface. This method "
+"automatically takes care of converting from gyro conventions to geometry "
+"conventions."
+msgstr ""
+"``Gyro`` arayüzüne bir ``getRotation2d()`` yöntemi eklendi. Bu yöntem "
+"otomatik olarak cayro kurallarından geometri kurallarına dönüştürme ile "
+"ilgilenir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:79
+msgid ""
+"Added angular acceleration units for C++ teams. These are available in the "
+"``<units/angular_acceleration.h>`` header."
+msgstr ""
+"C ++ ekipleri için açısal hızlandırma birimleri eklendi. Bunlar, "
+"``<units/angular_acceleration.h>`` başlığında bulunur."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:81
+msgid ""
+"Added X and Y component getters in ``Pose2d`` - ``getX()`` and ``getY()`` in"
+" Java, ``X()`` and ``Y()`` in C++."
+msgstr ""
+"Java'da ``Pose2d`` - ``getX()`` ve `` getY () '', C++ 'da ``X()`` 've "
+"``Y()`` 'içine X ve Y bileşen alıcıları eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:83
+msgid ""
+"Added implicit conversion from ``degree_t`` to ``Rotation2d`` in C++. This "
+"allows teams to use a degree value (i.e. ``47_deg``) wherever a "
+"``Rotation2d`` is required."
+msgstr ""
+"C++ 'da ``degree_t``' 'den ``Rotation2d`` 'ye örtük dönüşüm eklendi. Bu, "
+"takımların ``Rotation2d`` nin gerekli olduğu her yerde bir derece değeri "
+"(i.e. ``47_deg``) kullanmasına izin verir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:85
+msgid ""
+"Fixed bug in path following examples where odometry was not being reset to "
+"the starting pose of the trajectory."
+msgstr ""
+"Odometrinin yörüngenin başlangıç pozisyonuna sıfırlanmadığı örneklerden "
+"sonraki örneklerdeki hata düzeltildi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:87
+msgid ""
+"Fixed some spline generation bugs for advanced users who were using control "
+"vectors directly."
+msgstr ""
+"Doğrudan kontrol vektörlerini kullanan ileri düzey kullanıcılar için bazı "
+"spline oluşturma hataları düzeltildi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:89
+msgid ""
+"Fixed theta controller continuous input in swerve examples. This fixes the "
+"behavior where the shortest path is not used during drivetrain rotation."
+msgstr ""
+"Swerve örneklerinde sabit teta denetleyicisi sürekli girişi. Bu, aktarma "
+"organlarının dönüşü sırasında en kısa yolun kullanılmadığı davranışı "
+"düzeltir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:91
+msgid ""
+"Deprecated ``units.h``, use individual units headers instead which speeds "
+"compile times."
+msgstr ""
+"Kullanımdan kaldırılan  ``units.h``, bunun yerine derleme sürelerini "
+"hızlandıran ayrı birim başlıklarını kullanın."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:93
+msgid ""
+"Added support for model-based control with Kalman filters, extended Kalman "
+"filters, unscented Kalman filters, and linear-quadratic regulators. See "
+":ref:`Introduction to State-Space Control <docs/software/advanced-controls"
+"/state-space/state-space-intro:Introduction to State-Space Control>` for "
+"more information."
+msgstr ""
+"Kalman filtreleri, genişletilmiş Kalman filtreleri, kokusuz Kalman "
+"filtreleri ve doğrusal karesel düzenleyiciler ile model tabanlı kontrol için"
+" destek eklendi. Bakınız :ref:`Introduction to State-Space Control "
+"<docs/software/advanced-controls/state-space/state-space-intro:Introduction "
+"to State-Space Control>` daha fazla bilgi için."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:96
+msgid "Simulation"
+msgstr "Simülasyon"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:98
+msgid "Added joystick simulation support."
+msgstr "Kumanda kolu simülasyon desteği eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:99
+msgid "Added Mechanism2D for simulating mechanisms."
+msgstr "Mekanizmaları simüle etmek için Mechanism2D eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:100
+msgid ""
+"Added simulation physics classes for common robot mechanisms (DrivetrainSim,"
+" ElevatorSim, SingleJointedArmSim, and FlywheelSim)"
+msgstr ""
+"Yaygın robot mekanizmaları için simülasyon fizik sınıfları eklendi "
+"(DrivetrainSim, ElevatorSim, SingleJointedArmSim ve FlywheelSim)"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:103
+msgid "Shuffleboard"
+msgstr "Shuffleboard"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:105
+msgid "Number Slider now displays the text value"
+msgstr "Number Slider-Sayı Kaydırıcısı artık metin değerini gösterir"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:106
+msgid "Graphing Widget now uses ChartFX, a high performance graphing library"
+msgstr ""
+"Graphing Widget artık yüksek performanslı bir grafik kitaplığı olan "
+"ChartFX'i kullanıyor"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:107
+msgid "Fix decimal digit formatting with large numbers"
+msgstr "Büyük sayılarla ondalık basamak biçimlendirmesini düzeltin"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:108
+msgid "Size and position can now be set separately in the Shuffleboard API"
+msgstr "Boyut ve konum artık Shuffleboard API'sinde ayrı ayrı ayarlanabilir"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:109
+msgid "Analog Input can now be viewed with a Text Widget"
+msgstr "Analog Giriş artık bir Metin Widget'ı ile görüntülenebilir"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:112
+msgid "SmartDashboard"
+msgstr "SmartDashboard"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:114
+msgid "Host IP can be specified in configuration."
+msgstr "Ana bilgisayar IP'si yapılandırmada belirtilebilir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:117
+msgid "PathWeaver"
+msgstr "PathWeaver"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:119
+msgid "Added support for reversed splines"
+msgstr "Ters spline'lar için destek eklendi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:120
+msgid ""
+"The coordinate system in the exported JSON has changed to be compatible with"
+" the simulator GUI. See :ref:`Importing a PathWeaver JSON <docs/software"
+"/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver "
+"JSON>` for more information."
+msgstr ""
+"Dışa aktarılan JSON'daki koordinat sistemi simülatör GUI'si ile uyumlu "
+"olacak şekilde değiştirildi. Daha fazla bilgi için :ref:`Importing a "
+"PathWeaver JSON <docs/software/wpilib-tools/pathweaver/integrating-robot-"
+"program:Importing a PathWeaver JSON>`  bölümüne bakın."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:123
+msgid "GradleRIO"
+msgstr "GradleRIO"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:125
+msgid ""
+"Added a ``vendordep`` task for downloading vendor JSONs or fetching them "
+"from the user `wpilib` folder"
+msgstr ""
+"Satıcı JSON'larını indirmek veya bunları kullanıcı \"wpilib\" klasöründen "
+"getirmek için bir \"vendordep\" görevi eklendi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:126
+msgid ""
+"Added a ``gradlerio.vendordep.folder.path`` property to set a non-default "
+"location for the vendor JSON folder"
+msgstr ""
+"Satıcı JSON klasörü için varsayılan olmayan bir konum ayarlamak için bir `` "
+"gradlerio.vendordep.folder.path '' özelliği eklendi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:127
+msgid ""
+"Renamed the ``wpi`` task (that prints current versions of WPILib and tools) "
+"to `wpiVersions`"
+msgstr ""
+"``wpi`` görevini (WPILib ve araçların mevcut sürümlerini yazdıran) "
+"`wpiVersions` olarak yeniden adlandırdı"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:130
+msgid "CSCore"
+msgstr "CSCore"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:132
+msgid "Now only lists streamable devices on Linux platforms."
+msgstr ""
+"Artık yalnızca Linux platformlarındaki akışa uygun cihazları listeler."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:135
+msgid "Visual Studio Code Extension"
+msgstr "Visual Studio Kod Uzantısı"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:137
+msgid "Updated Java and C++ language extensions"
+msgstr "Güncellenmiş Java ve C++ dil uzantıları"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:138
+msgid "Driverstation sim extension is enabled by default"
+msgstr "Driverstation sim uzantısı varsayılan olarak etkindir"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:141
+msgid "RobotBuilder"
+msgstr "RobotBuilder"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:143
+msgid ""
+"Updated to be compatible with the new command based framework and PID "
+"Controller"
+msgstr ""
+"Yeni komut tabanlı çerçeve ve PID Denetleyici ile uyumlu olacak şekilde "
+"güncellendi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:144
+msgid "C++: use uniform initialization of objects in header"
+msgstr "C++: başlıktaki nesnelerin tek tip başlatılmasını kullanın"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:145
+msgid ""
+"C++: fix case of includes so that code compiles on case-sensitive "
+"filesystems"
+msgstr ""
+"C++: kodun büyük / küçük harfe duyarlı dosya sistemlerinde derlenmesi için "
+"kapsama durumunu düzeltin"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:146
+msgid "Use project name as default for save file"
+msgstr "Dosyayı kaydetmek için proje adını varsayılan olarak kullan"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:147
+msgid "Fix export of wiring file"
+msgstr "Kablolama dosyasının dışa aktarımını düzeltin"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:150
+msgid "Robot Characterization"
+msgstr "Robot Karakterizasyonu"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:152
+msgid "Added LQR latency compensation"
+msgstr "LQR gecikme telafisi eklendi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:153
+msgid ""
+"The tool backend was improved to be more approachable for developers. "
+"Configuration and JSON files from the old tool will no longer work with the "
+"new version."
+msgstr ""
+"Backend, bir yazılımda kullanıcıların görmediği kısımların tümü ve ana "
+"sistemdir. Backend, yazılımcılar için daha ulaşılabilir olacak şekilde "
+"geliştirildi. Eski  JSON dosyaları artık yeni sürümle çalışmayacaktır."

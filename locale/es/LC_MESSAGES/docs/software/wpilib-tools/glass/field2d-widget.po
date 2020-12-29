@@ -5,18 +5,115 @@
 # 
 # Translators:
 # Pierre Cote <persini24@outlook.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 04:14+0000\n"
+"POT-Creation-Date: 2020-12-29 04:25+0000\n"
 "PO-Revision-Date: 2020-12-18 04:25+0000\n"
-"Last-Translator: Pierre Cote <persini24@outlook.com>, 2020\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:2
+msgid "The Field2d Widget"
+msgstr "El widget Field2d"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:3
+msgid ""
+"Glass supports displaying your robot's position on the field using the "
+":guilabel:`Field2d` widget. An instance of the ``Field2d`` class should be "
+"created, sent over NetworkTables, and updated periodically with the latest "
+"robot pose in your robot code."
+msgstr ""
+"Glass permite mostrar la posición de su robot en el campo usando el widget "
+":guilabel:`Field2d`. Debe crearse una instancia de la clase ``Field2d``, "
+"enviarse a través de NetworkTables y actualizarse periódicamente con la "
+"última pose de robot en su código de robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:6
+msgid "Sending Robot Pose from User Code"
+msgstr "Enviando la pose del robot desde el código de usuario"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:7
+msgid ""
+"To send your robot's position (usually obtained by :ref:`odometry "
+"<docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is "
+"odometry?>` or a pose estimator), a ``Field2d`` instance must be created in "
+"robot code and sent over NetworkTables. The instance must then be updated "
+"periodically with the latest robot pose."
+msgstr ""
+"Para enviar la posición de tu robot (normalmente obtenida por "
+":ref:`odometría <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>` o un estimador de poses), se debe crear una "
+"instancia de ``Campo2d`` en código de robot y enviarla a través de "
+"NetworkTables. La instancia debe ser actualizada periódicamente con la "
+"última pose del robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:45
+msgid ""
+"The ``Field2d`` instance can also be sent using a lower-level NetworkTables "
+"API or using the :ref:`Shuffleboard API <docs/software/wpilib-"
+"tools/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying "
+"data from your robot>`. In this case, the ``SmartDashboard`` API was used, "
+"meaning that the :guilabel:`Field2d` widget will appear under the "
+"``SmartDashboard`` table name."
+msgstr ""
+"La instancia de ``Field2d`` también se puede enviar usando una API "
+"NetworkTables de nivel inferior o usando :ref:`API de Shuffleboard "
+"<docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-"
+"displaying-data:Displaying data from your robot>`.  En este caso, se utilizó"
+" la API ``SmartDashboard``, lo que significa que el widget "
+":guilabel:`Field2d` aparecerá debajo del nombre de la tabla "
+"``SmartDashboard``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:48
+msgid "Viewing the Robot Pose in Glass"
+msgstr "Ver la postura del robot en glass"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:49
+msgid ""
+"After sending the ``Field2d`` instance over NetworkTables, the "
+":guilabel:`Field2d` widget can be added to Glass by selecting "
+":guilabel:`NetworkTables` in the menu bar, choosing the table name that the "
+"instance was sent over, and then clicking on the :guilabel:`Field` button."
+msgstr ""
+"Después de enviar la instancia ``Field2d`` a través de NetworkTables, el "
+"widget :guilabel:`Field2d` se puede agregar a Glass seleccionando "
+":guilabel:`NetworkTables` en la barra de menú, eligiendo el nombre de la "
+"tabla a la que se envió la instancia, y luego haciendo clic en el botón "
+":guilabel:`Campo`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:53
+msgid ""
+"Once the widget appears, you can resize and place it on the Glass workspace "
+"as you desire. Right-clicking the top of the widget will allow you to "
+"customize the name of the widget, select a custom field image, select a "
+"custom robot image, and choose the dimensions of the field and robot."
+msgstr ""
+"Una vez que aparece el widget, puede cambiar su tamaño y colocarlo en el "
+"espacio de trabajo de Glass como desee. Al hacer clic con el botón derecho "
+"en la parte superior del widget, podrá personalizar el nombre del widget, "
+"seleccionar una imagen de campo personalizada, seleccionar una imagen de "
+"robot personalizada y elegir las dimensiones del campo y el robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/glass/field2d-widget.rst:55
+msgid ""
+"You can retrieve the latest field image from `here "
+"<https://github.com/wpilibsuite/PathWeaver/tree/master/src/main/resources/edu/wpi/first/pathweaver>`__."
+" This is the same image that is used when generating paths using "
+":ref:`PathWeaver <docs/software/wpilib-"
+"tools/pathweaver/introduction:Introduction to PathWeaver>`."
+msgstr ""
+"Puede recuperar la imagen de campo más reciente desde `aquí "
+"<https://github.com/wpilibsuite/PathWeaver/tree/master/src/main/resources/edu/wpi/first/pathweaver>`"
+"  __. Esta es la misma imagen que se usa al generar rutas usando "
+":ref:`PathWeaver<docs/software/wpilib-"
+"tools/pathweaver/introduction:Introduction to PathWeaver>`."

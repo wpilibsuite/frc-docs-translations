@@ -3,16 +3,118 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2020\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-16 04:14+0000\n"
+"POT-Creation-Date: 2020-12-29 16:30+0000\n"
 "PO-Revision-Date: 2020-12-16 04:21+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:2
+msgid "Drivetrain Simulation Overview"
+msgstr "Aktarma Organları Simülasyonuna Genel Bakış"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:3
+msgid ""
+"WPILib only supports simulating differential drivetrains for the 2021 "
+"season. Support for similar simulation capabilities for teams using swerve "
+"and mecanum drivetrains is in development."
+msgstr ""
+"WPILib, yalnızca 2021 sezonu için diferansiyel aktarma organlarının "
+"simülasyonunu destekler. Swerve ve mekanik aktarma organlarını kullanan "
+"ekipler için benzer simülasyon yetenekleri için destek geliştirme "
+"aşamasındadır."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:5
+msgid ""
+"The code in this tutorial does not use any specific framework (i.e. command-"
+"based vs. simple data flow); however, guidance will be provided in certain "
+"areas for how to best implement certain pieces of code in specific framework"
+" types."
+msgstr ""
+"Bu öğreticideki kod, herhangi bir özel çerçeve kullanmaz (yani, komut "
+"temelli ve basit veri akışı); ancak, belirli çerçeve türlerinde belirli kod "
+"parçalarının en iyi şekilde nasıl uygulanacağına dair belirli alanlarda "
+"rehberlik sağlanacaktır."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:7
+msgid ""
+"The goal of this tutorial is to provide guidance on implementing simulation "
+"capabilities for a differential-drivetrain robot. By the end of this "
+"tutorial, you should be able to:"
+msgstr ""
+"Bu eğitimin amacı, bir diferansiyel aktarma organı robotu için simülasyon "
+"yeteneklerini uygulama konusunda rehberlik sağlamaktır. Bu eğitimin sonunda "
+"şunları yapabilmelisiniz:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:9
+msgid ""
+"Understand the basic underlying concepts behind the WPILib simulation "
+"framework."
+msgstr ""
+"WPILib simülasyon çerçevesinin altında yatan temel kavramları anlayın."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:10
+msgid ""
+"Create a drivetrain simulation model using your robot's physical parameters."
+msgstr ""
+"Robotunuzun fiziksel parametrelerini kullanarak bir aktarma organı "
+"simülasyon modeli oluşturun."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:11
+msgid ""
+"Use the simulation model to predict how your real robot will move given "
+"specific voltage inputs."
+msgstr ""
+"Belirli voltaj girdileri verildiğinde gerçek robotunuzun nasıl hareket "
+"edeceğini tahmin etmek için simülasyon modelini kullanın."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:12
+msgid ""
+"Tune feedback constants and squash common bugs (e.g. motor inversion) before"
+" having access to physical hardware."
+msgstr ""
+"Fiziksel donanıma erişmeden önce geri bildirim sabitlerini ayarlayın ve "
+"yaygın hataları (ör. Motor ters çevirme) ezin."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:13
+msgid "Use the Simulation GUI to visualize robot movement on a virtual field."
+msgstr ""
+"Sanal bir alanda robot hareketini görselleştirmek için Simülasyon GUI'sini "
+"kullanın."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:18
+msgid "Why Simulate a Drivetrain?"
+msgstr "Neden Aktarma Organını Simüle Etmelisiniz?"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/diffdrive-sim-overview.rst:19
+msgid ""
+"The drivetrain of a robot is one of the most important mechanisms on the "
+"robot -- therefore, it is important to ensure that the software powering "
+"your drivetrain is as robust as possible. By being able to simulate how a "
+"physical drivetrain responds, you can get a head start on writing quality "
+"software before you have access to the physical hardware. With the "
+"simulation framework, you can verify not only basic functionality, like "
+"making sure that the inversions on motors and encoders are correct, but also"
+" advanced capabilities such as verifying accuracy of path following."
+msgstr ""
+"Bir robotun aktarma organı, robot üzerindeki en önemli mekanizmalardan "
+"biridir - bu nedenle, aktarma sisteminize güç veren yazılımın mümkün "
+"olduğunca sağlam olmasını sağlamak önemlidir. Fiziksel bir aktarma organının"
+" nasıl tepki verdiğini simüle ederek, fiziksel donanıma erişmeden önce "
+"kaliteli yazılım yazmaya bir adım önde başlayabilirsiniz. Simülasyon "
+"çerçevesiyle, motorlar ve kodlayıcılar üzerindeki ters çevirmelerin doğru "
+"olduğundan emin olmak gibi yalnızca temel işlevleri değil, aynı zamanda yol "
+"izlemenin doğruluğunu doğrulama gibi gelişmiş yetenekleri de "
+"doğrulayabilirsiniz."

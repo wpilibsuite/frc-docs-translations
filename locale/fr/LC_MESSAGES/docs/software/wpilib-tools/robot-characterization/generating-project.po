@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-29 04:25+0000\n"
+"POT-Creation-Date: 2020-12-30 04:25+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -41,9 +41,57 @@ msgstr ""
 "Premièrement, sélectionner l’emplacement du projet souhaité dans la nouvelle"
 " interface graphique du projet :"
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:14
+msgid ""
+"The project type dropdown now chooses between the different types of "
+"characterization tests as the previous motor setups have been integrated "
+"into the :guilabel:`Control Type` field."
+msgstr ""
+"Le menu déroulant pour le type de projet choisit désormais entre les "
+"différents types de tests de caractérisation car les configurations de "
+"moteur précédentes ont été intégrées dans le champ :guilabel:`Control Type`."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:17
 msgid "Configure Project Parameters"
 msgstr "Configurer les paramètres du projet"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:19
+msgid ""
+"In order to run on your robot, the tool must know some parameters about how "
+"your robot is set up."
+msgstr ""
+"Afin de fonctionner sur votre robot, l’outil doit connaître certains "
+"paramètres donnant des indications sur la façon dont votre robot est "
+"configuré."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:21
+msgid ""
+"First, you need to use the :guilabel:`Control Type` field to select the "
+"appropriate project config template. ``Simple`` is for PWM Based motor "
+"controllers, ``CTRE`` is for CAN connected CTRE Motor Controllers (e.g. "
+"Talon SRX), and ``SparkMax`` is for the Spark Max Motor Controller. This "
+"allows you to fill out the parameters specific to the type of controllers "
+"you are using."
+msgstr ""
+"Pour commencer, vous devez utiliser le champ :guilabel:`Control Type` pour "
+"sélectionner le modèle  approprié de configuration de projet. ``Simple`` "
+"correspond à des contrôleurs de moteurs de type PWM, `CTRE`` correspond aux "
+"contrôleurs de moteurs CTRE (par exemple Talon SRX) connectés au réseau CAN,"
+" et ``SparkMax`` correspond au contrôleur de moteur Spark Max. Cela vous "
+"permet de remplir les paramètres spécifiques au type de contrôleurs que vous"
+" utilisez."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:26
+msgid ""
+"Project config settings are formatted as a `Python dictionary literal "
+"<https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`__. "
+"These can be modified via the in-window config editor:"
+msgstr ""
+"Les paramètres de configuration de projet sont formatés comme un "
+"`dictionnaire Python littéral "
+"<https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`__. "
+"Ceux-ci peuvent être modifiés via la fenêtre intégrée dans l’éditeur de "
+"configuration:"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:31
 msgid ""
@@ -79,6 +127,12 @@ msgstr ""
 "types d’unités) *doivent* être enveloppées dans des guillemets et *doivent* "
 "correspondre exactement à l’une des options décrites."
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:37
+msgid "Read the comments provided in the config file carefully."
+msgstr ""
+"Lisez attentivement les commentaires fournis dans le fichier de "
+"configuration."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:39
 msgid ""
 "Once your robot configuration is set, you may save it to a location/name of "
@@ -109,6 +163,43 @@ msgstr ""
 " et modifier les unités et les unités par rotation si nécessaire (les unités"
 " par rotation ne sont pas l'équivalent du diamètre de la roue de "
 "l’outilitaire de l’année dernière)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:54
+msgid ""
+"The :guilabel:`Unit Type` field lets you choose between various rotational "
+"and translational units (rotations, radians, degrees, feet, meters, and "
+"inches). You should choose a unit that facilitates a rough validation of the"
+" recorded measurements. For example, you could choose rotations when testing"
+" a flywheel to see if the tool's recorded rotations seem reasonable, or you "
+"could choose feet when testing a drive base to see if the recorded distance "
+"seems reasonable."
+msgstr ""
+"Le champ  :guilabel:`Unit Type` vous permet de choisir entre différentes "
+"unités de rotation et translation (rotations, radians, degrés, pieds, mètres"
+" et pouces). Vous devez choisir une unité qui facilite une validation "
+"approximative des mesures enregistrées. Par exemple, vous pouvez choisir des"
+" rotations lors de l’essai d’un volant d'inertie pour voir si les rotations "
+"enregistrées par l’outil de caractérisation semblent raisonnables, ou vous "
+"pouvez choisir des pieds lors de l’essai d’une base d’entraînement pour voir"
+" si la distance enregistrée semble raisonnable."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:60
+msgid ""
+"On the other hand, the :guilabel:`Units per Rotation` entry is how many of "
+"the previously specified units are recorded per rotation of the shaft. Do "
+"note that rotational units (rotations, radians, and degrees) have "
+"predefined/unmutable units per rotations. In contrast, translational units "
+"(meters, feet, inches) require that you specify the conversion, such as a "
+"wheel with a 3-inch diameter can be converted to 9.42 inches per rotation "
+"(:math:`\\pi * 3`)."
+msgstr ""
+"D’autre part, l’entrée :guilabel:`Units per Rotation` est le nombre d’unités"
+" précédemment spécifiées enregistrées par rotation de l’arbre. Notez que les"
+" unités de rotation (rotations, radians et degrés) ont des unités "
+"prédéfinis/immuables par rotation. En revanche, les unités correspondant à "
+"des mouvement de translation (mètres, pieds, pouces) exigent que vous "
+"spécifiez la conversion, comme par exemple, une roue d’un diamètre de 3 "
+"pouces peut être convertie en 9,42 pouces par rotation (:math:`\\pi * 3`)."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:67
 msgid "Generate Project"

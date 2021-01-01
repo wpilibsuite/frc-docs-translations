@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-30 16:29+0000\n"
+"POT-Creation-Date: 2021-01-01 16:29+0000\n"
 "PO-Revision-Date: 2020-12-10 16:26+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -20,3 +20,132 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:2
+msgid "Troubleshooting Dashboard Connectivity"
+msgstr "Kontrol Paneli Bağlanabilirliğinde Sorun Giderme"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:4
+msgid ""
+"We have received a number of reports of Dashboard connectivity issues from "
+"events. This document will help explain how to recognize if the Dashboard is"
+" not connected to your robot, steps to troubleshoot this condition and a "
+"code modification you can make."
+msgstr ""
+"Etkinliklerden Gösterge Tablosu bağlantı sorunlarıyla ilgili bir dizi rapor "
+"aldık. Bu belge, Gösterge Panosunun robotunuza bağlı olup olmadığını nasıl "
+"anlayacağınızı, bu durumu gidermek için adımları ve yapabileceğiniz bir kod "
+"değişikliğini açıklamaya yardımcı olacaktır."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:7
+msgid "LabVIEW Dashboard"
+msgstr "LabVIEW Kontrol Paneli"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:9
+msgid ""
+"This section discusses connectivity between the robot and LabVIEW dashboard"
+msgstr ""
+"Bu bölümde robot ve LabVIEW panosu arasındaki bağlantı anlatılmaktadır."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:12
+msgid "Recognizing LabVIEW Dashboard Connectivity"
+msgstr "LabVIEW Dashboard Bağlantısını Tanıma"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:16
+msgid ""
+"If you have an indicator on your dashboard that you expect to be changing it"
+" may be fairly trivial to recognize if the Dashboard is connected. If not, "
+"there is a way to check without making any changes to your robot code. On "
+"the Variables tab of the Dashboard, the variables are shown with a black "
+"diamond when they are not synced with the robot. Once the Dashboard connects"
+" to the robot and these variables are synced, the diamond will disappear."
+msgstr ""
+"Kontrol panelinizde değişmeyi beklediğiniz bir gösterge varsa, Kontrol "
+"Panelinin bağlı olup olmadığını anlamak oldukça önemsiz olabilir. Değilse, "
+"robot kodunuzda herhangi bir değişiklik yapmadan kontrol etmenin bir yolu "
+"vardır. Gösterge Panosunun Değişkenler sekmesinde, değişkenler robotla "
+"senkronize olmadıklarında siyah baklava ile gösterilir. Gösterge Tablosu "
+"robota bağlandığında ve bu değişkenler senkronize edildiğinde elmas "
+"kaybolur."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:19
+msgid "Troubleshooting LabVIEW Dashboard Connectivity"
+msgstr "LabVIEW Dashboard Bağlantısıyla İlgili Sorunları Giderme"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:21
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:42
+msgid ""
+"If the Dashboard does not connect to the Robot (after the Driver Station has"
+" connected to the robot) the recommended troubleshooting steps are:"
+msgstr ""
+"Dashboard Robota bağlanmazsa (Driver Station robota bağlandıktan sonra) "
+"önerilen sorun giderme adımları şunlardır:"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:23
+msgid ""
+"Close the Driver Station and Dashboard, then re-open the Driver Station "
+"(which should launch the Dashboard)."
+msgstr ""
+"Driver Station ve Dashboard'u kapatın, ardından Driver Station'ı yeniden "
+"açın (Dashboard'u başlatması gerekir)."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:25
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:46
+msgid ""
+"If that doesn't work, restart the Robot Code using the Restart Robot Code "
+"button on the Diagnostics tab of the Driver Station"
+msgstr ""
+"Bu işe yaramazsa, Driver Station'ın Diagnostics sekmesindeki Robot Kodunu "
+"Yeniden Başlat düğmesini kullanarak Robot Kodunu yeniden başlatın."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:28
+msgid "SmartDashboard"
+msgstr "SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:30
+msgid ""
+"This section discusses connectivity between the robot and Java "
+"SmartDashboard"
+msgstr ""
+"Bu bölümde robot ile Java SmartDashboard arasındaki bağlantı "
+"anlatılmaktadır."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:33
+msgid "Recognizing SmartDashboard Connectivity"
+msgstr "SmartDashboard Bağlantısını Tanıma"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:37
+msgid ""
+"The typical way to recognize connectivity with the Java SmartDashboard is to"
+" add a Connection Indicator widget and to make sure your code is writing at "
+"least one key during initialization or disabled to trigger the connection "
+"indicator. The connection indicator can be moved or re-sized if the Editable"
+" checkbox is checked."
+msgstr ""
+"Java SmartDashboard ile bağlantıyı tanımanın tipik yolu, bir Bağlantı "
+"Göstergesi widget'ı eklemek ve kodunuzun başlatma sırasında en az bir "
+"anahtar yazdığından veya bağlantı göstergesini tetiklemek için devre dışı "
+"bırakıldığından emin olmaktır. Düzenlenebilir onay kutusu işaretliyse "
+"bağlantı göstergesi taşınabilir veya yeniden boyutlandırılabilir."
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:40
+msgid "Troubleshooting SmartDashboard Connectivity"
+msgstr "SmartDashboard Bağlantısında Sorun Giderme"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:44
+msgid ""
+"Restart the SmartDashboard (there is no need to restart the Driver Station "
+"software for the Java SmartDashboard)"
+msgstr ""
+"SmartDashboard'u yeniden başlatın (Java SmartDashboard için Driver Station "
+"yazılımını yeniden başlatmaya gerek yoktur)"
+
+#: ../../frc-docs/source/docs/software/labview-dashboard/troubleshooting-dashboard-connectivity.rst:48
+msgid ""
+"If it still doesn't connect, verify that the Team Number is set properly in "
+"the Dashboard and that your Robot Code writes a SmartDashboard value during "
+"initialization or disabled"
+msgstr ""
+"Hala bağlanmazsa, Takım Numarasının Kontrol Panelinde doğru şekilde "
+"ayarlandığını ve Robot Kodunuzun başlatma sırasında veya devre dışı "
+"bırakıldığında SmartDashboard değeri yazdığını doğrulayın"

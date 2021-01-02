@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-30 16:29+0000\n"
+"POT-Creation-Date: 2021-01-02 04:26+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,6 +35,36 @@ msgstr ""
 "Bu kazanımlar aslında \"eğitimli tahminlerdir\" - mükemmel olmaları garanti "
 "edilmez ve daha fazla ayarlama için \"başlangıç noktası-starting point\" "
 "olarak görülmelidir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:8
+msgid ""
+"The feedback gain calculation assumes that there is no mechanical backlash, "
+"sensor noise, or phase lag in the sensor measurement.  While these are "
+"reasonable assumptions in many situations, none of them are strictly true in"
+" practice.  In particular, many \"smart motor controllers\" (such as the "
+"``Talon SRX``, ``Talon FX``, and ``SPARK MAX``) have default settings that "
+"apply substantial :ref:`low-pass filtering <docs/software/advanced-"
+"controls/filters/introduction:Introduction to Filters>` to their encoder "
+"velocity measurements, which introduces a significant amount of phase lag.  "
+"This can cause the calculated gains for velocity loops to be unstable.  To "
+"rectify this, either decrease the amount of filtering through the "
+"controller's API, or reduce the magnitude of the PID gains - it has been "
+"found that shrinking gains by about a factor of 10 works well for most "
+"default filtering settings."
+msgstr ""
+"Geri besleme kazancı hesaplaması, sensör ölçümünde mekanik boşluk, sensör "
+"gürültüsü veya faz gecikmesi olmadığını varsayar. Bunlar birçok durumda "
+"makul varsayımlar olsa da, hiçbiri pratikte kesinlikle doğru değildir. "
+"Özellikle, birçok \"akıllı motor kontrol cihazı\" (``Talon SRX``, ``Talon "
+"FX`` ve `` SPARK MAX`` gibi) önemli ölçüde geçerli olan varsayılan ayarlara "
+"sahiptir : ref: `düşük geçişli filtreleme <docs/software/advanced-"
+"controls/filters/introduction:Introduction to Filters>` önemli miktarda faz "
+"gecikmesi ortaya çıkaran kodlayıcı hız ölçümlerine. Bu, hız döngüleri için "
+"hesaplanan kazançların kararsız olmasına neden olabilir. Bunu düzeltmek "
+"için, ya denetleyicinin API'si aracılığıyla filtreleme miktarını azaltın ya "
+"da PID kazançlarının büyüklüğünü azaltın - kazançların yaklaşık 10 kat "
+"azaltılmasının çoğu varsayılan filtreleme ayarı için iyi çalıştığı "
+"bulunmuştur."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:10
 msgid ""
@@ -59,6 +89,29 @@ msgstr ""
 msgid "Enter Controller Parameters"
 msgstr "Denetleyici Parametrelerini Girin"
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:20
+msgid ""
+"The \"Spark Max\" preset assumes that the user has configured the controller"
+" to operate in the units of analysis with the SPARK MAX API's "
+"position/velocity scaling factor feature."
+msgstr ""
+"\"Spark Max\" ön ayarı, kullanıcının denetleyiciyi SPARK MAX API'nin konum /"
+" hız ölçekleme faktörü özelliği ile analiz birimlerinde çalışacak şekilde "
+"yapılandırdığını varsayar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:22
+msgid ""
+"The calculated feedforward gains are *dimensioned quantities*. "
+"Unfortunately, not much attention is often paid to the units of PID gains in"
+" FRC\\ |reg| controls, and so the various typical options for PID controller"
+" implementations differ in their unit conventions (which are often not made "
+"clear to the user)."
+msgstr ""
+"Hesaplanan ileri besleme kazançları *boyutlandırılmış miktarlardır*. Ne "
+"yazık ki, FRC \\ |reg| kontroller ve bu nedenle PID kontrolör uygulamaları "
+"için çeşitli tipik seçenekler, kendi ünite kurallarında farklılık gösterir "
+"(bunlar genellikle kullanıcıya açıklanmaz)."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:24
 msgid ""
 "To specify the correct settings for your PID controller, use the following "
@@ -66,6 +119,23 @@ msgid ""
 msgstr ""
 "PID denetleyiciniz için doğru ayarları belirlemek için aşağıdaki seçenekleri"
 " kullanın."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:29
+msgid ""
+"**Gain Settings Preset:** This drop-down menu will auto-populate the "
+"remaining fields with likely settings for one of a number of common FRC "
+"controller setups. Note that some settings, such as post-encoder gearing, "
+"PPR, and the presence of a follower motor must still be manually specified "
+"(as the analyzer has no way of knowing these without user input), and that "
+"others may vary from the given defaults depending on user setup."
+msgstr ""
+"**Gain Settings Preset-Kazanç Ayarları Ön Ayarı:** Bu açılır menü, kalan "
+"alanları bir dizi genel FRC denetleyici kurulumundan biri için olası "
+"ayarlarla otomatik olarak dolduracaktır. Kodlayıcı sonrası dişli, PPR ve "
+"takipçi motor varlığı gibi bazı ayarların yine de manuel olarak belirtilmesi"
+" gerektiğini (analizörün bunları kullanıcı girişi olmadan bilmesinin bir "
+"yolu olmadığı için) ve diğerlerinin verilen varsayılanlardan farklı "
+"olabileceğini unutmayın. kullanıcı kurulumuna bağlı olarak."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:30
 msgid ""
@@ -100,6 +170,16 @@ msgstr ""
 "ölçeklendirmesini etkileyen yürütme süresine normalize edilip edilmeyeceğini"
 " belirtir."
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:33
+msgid ""
+"**Controller Type:** This specifies whether the controller is an onboard RIO"
+" loop, or is running on a smart motor controller such as a Talon or a SPARK "
+"MAX."
+msgstr ""
+"**Controller Type-Denetleyici Tipi: ** Bu, denetleyicinin yerleşik bir RIO "
+"döngüsü olup olmadığını veya Talon veya SPARK MAX gibi akıllı bir motor "
+"denetleyicisinde çalışıp çalışmadığını belirtir."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:34
 msgid ""
 "**Post-Encoder Gearing:** This specifies the gearing between the encoder and"
@@ -121,6 +201,41 @@ msgstr ""
 "**Enkoder EPR:** Bu, Kullanılan enkoderin, Post-Encoder Gearing ile aynı "
 "durumlarda gerekli olan, devir başına kenarlarını (devir başına döngüleri "
 "değil) belirtir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:36
+msgid ""
+"**Has Follower:** Whether there is a motor controller following the "
+"controller running the control loop, if the control loop is being run on a "
+"peripheral device. This changes the effective loop period."
+msgstr ""
+"**Has Follower-İzleyici Var:** Kontrol döngüsü bir çevresel aygıt üzerinde "
+"çalıştırılıyorsa, kontrol döngüsünü çalıştıran denetleyiciyi takip eden bir "
+"motor denetleyicisinin olup olmadığı. Bu, etkin döngü süresini değiştirir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:37
+msgid ""
+"**Follower Update Period:** The rate at which the follower (if present) is "
+"updated. By default, this is 100Hz (every 0.01s) for the Talon SRX, Talon "
+"FX, and the SPARK MAX, but can be changed."
+msgstr ""
+"**Follower Update Period-Takipçi Güncelleme Süresi: ** Takipçinin (varsa) "
+"güncellenme oranı. Varsayılan olarak bu, Talon SRX, Talon FX ve SPARK MAX "
+"için 100 Hz'dir (her 0.01 saniyede), ancak değiştirilebilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:39
+msgid ""
+"If you select a smart motor controller as the preset (e.g. TalonSRX, SPARK "
+"MAX, etc.) the :guilabel:`Convert Gains` checkbox will be automatically "
+"checked. This means the tool will convert your gains so that they can be "
+"used through the smart motor controller's PID methods. Therefore, if you "
+"would like to use WPILib's PID Loops, you must uncheck that box."
+msgstr ""
+"Ön ayar olarak bir akıllı motor kontrolörü seçerseniz (örneğin, TalonSRX, "
+"SPARK MAX, vb.) :guilabel:`Convert Gains`  onay kutusu otomatik olarak "
+"işaretlenir. Bu, aracın kazançlarınızı akıllı motor denetleyicisinin PID "
+"yöntemleriyle kullanılabilecek şekilde dönüştüreceği anlamına gelir. Bu "
+"nedenle, WPILib'in PID Döngülerini kullanmak istiyorsanız, bu kutunun "
+"işaretini kaldırmalısınız."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:42
 msgid "Specify Optimality Criteria"

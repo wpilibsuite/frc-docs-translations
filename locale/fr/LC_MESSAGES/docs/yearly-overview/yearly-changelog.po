@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-03 04:27+0000\n"
+"POT-Creation-Date: 2021-01-04 16:31+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -61,15 +61,7 @@ msgstr ""
 msgid "Major Features"
 msgstr "Principales caractéristiques"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:13
-msgid ""
-"A WebSocket interface has been added to allow remote access to the robot "
-"simulator"
-msgstr ""
-"Une interface WebSocket a été ajoutée pour permettre l'accès à distance au "
-"simulateur de robot"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:15
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:17
 msgid ""
 "A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-"
 "tools/glass/index:Glass>` -- has been added. Glass has a similar UI to the "
@@ -83,21 +75,7 @@ msgstr ""
 "utilisé comme un tableau de bord autonome et n'est pas lié au programme du "
 "robot."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:17
-msgid ""
-"WPILibInstaller has been rewritten to support macOS and Linux, and to be "
-"easier to use."
-msgstr ""
-"WPILibInstaller a été réécrit pour prendre en charge macOS et Linux, et pour"
-" être plus facile à utiliser."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
-msgid "Installer is notarized on macOS, no need for Gatekeeper bypass steps."
-msgstr ""
-"L’installateur est authentifié sous macOS, pas besoin de contrôleur d'accès "
-"pour contourner les étapes."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:20
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:22
 msgid ""
 "Please see the :ref:`installation instructions <docs/zero-to-robot/step-2"
 "/wpilib-setup:WPILib Installation Guide>` as it differs from previous years."
@@ -106,20 +84,35 @@ msgstr ""
 "robot/step-2/wpilib-setup:WPILib Installation Guide>` car il diffère des "
 "années précédentes."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:23
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:24
+msgid ""
+"Added support for model-based control with Kalman filters, extended Kalman "
+"filters, unscented Kalman filters, and linear-quadratic regulators. See "
+":ref:`Introduction to State-Space Control <docs/software/advanced-controls"
+"/state-space/state-space-intro:Introduction to State-Space Control>` for "
+"more information."
+msgstr ""
+"Ajout de la prise en charge du contrôle basé sur un modèle avec des filtres "
+"de Kalman, des filtres de Kalman étendus, des filtres de Kalman non parfumés"
+" (unscented) et des régulateurs linéaires-quadratiques. Voir "
+":ref:`Introduction à la commande dans l’Espace-d’État <docs/software"
+"/advanced-controls/state-space/state-space-intro:Introduction to State-Space"
+" Control>` pour plus d'informations."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:27
 msgid "WPILib"
 msgstr "WPILib"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:26
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:30
 msgid "Breaking Changes"
 msgstr "Changements majeurs"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:28
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:32
 msgid "``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)"
 msgstr ""
 "``curvature_t`` est passé de  ``frc`` à l'espace de nommage ``units`` (C++)"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:30
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:34
 msgid ""
 "Trajectory constraint methods are now ``const`` in C++. Teams defining their"
 " own custom constraints should mark the ``MaxVelocity()`` and "
@@ -130,38 +123,11 @@ msgstr ""
 "marquer les méthodes ``MaxVelocity()`` and ``MinMaxAcceleration()`` comme "
 "``const``."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:32
-msgid ""
-"The ``Field2d`` class was moved from the simulation package "
-"(``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) to the "
-"SmartDashboard package (``edu.wpi.first.wpilibj.smartdashboard`` / "
-"``frc/SmartDashboard/``). This allows teams to send their robot position "
-"over NetworkTables to be viewed in Glass. The Field2d instance can be sent "
-"using ``SmartDashboard.putData(\"Field\", m_field2d)`` / "
-"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` or by using one of "
-"the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard"
-"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be"
-" done in order to see the Field2d in the Simulator GUI."
-msgstr ""
-"La classe ``Field2d``  est passée du package de simulation The ``Field2d`` "
-"class was moved from the simulation package "
-"(``edu.wpi.first.wpilibj.simulation`` / ``frc/simulation/``) au package "
-"SmartDashboard (``edu.wpi.first.wpilibj.smartdashboard`` / "
-"``frc/SmartDashboard/``). Ce qui permet aux équipes d’envoyer la position de"
-" leur robot à travers NetworkTables pour être visualisée dans Glass. "
-"L’instance Field2d peut être envoyée à l’aide de "
-"``SmartDashboard.putData(\"Field\", m_field2d)`` / "
-"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` ou en utilisant "
-"l’une des méthodes  :ref:`Shuffleboard methods <docs/software/wpilib-"
-"tools/shuffleboard/layouts-with-code/sending-data:Sending sensors, motors, "
-"etc>`.  Cette opération doit être faite afin de voir le Field2d dans "
-"l’interface graphique du simulateur."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:36
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:40
 msgid "New Command-Based Library"
 msgstr "Nouvelle librairie orientée commande"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:38
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:42
 msgid ""
 "Watchdog and epoch reporting has been added to the command scheduler. This "
 "will let teams know exactly which command or subsystem is responsible for a "
@@ -172,18 +138,7 @@ msgstr ""
 "quelle commande ou quel sous-système est responsable d'un dépassement de "
 "boucle le cas échéant."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:40
-msgid ""
-"A ``withName()`` command decorator has been added for Java teams. This lets "
-"teams set the name of a particular command using the :ref:`decorator pattern"
-" <docs/software/commandbased/convenience-features:withName (Java only)>`."
-msgstr ""
-"Un décorateur de commande ``withName()`` a été ajouté pour les équipes Java."
-" Cela permet aux équipes de définir le nom d'une commande particulière à "
-"l'aide du :ref:`patron de conception décorateur <docs/software/commandbased"
-"/convenience-features:withName (Java only)>`."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:42
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:46
 msgid ""
 "Added a ``NetworkButton`` class, allowing users to use a boolean "
 "``NetworkTableEntry`` as a button to trigger commands."
@@ -192,7 +147,7 @@ msgstr ""
 "un booléen ``NetworkTableEntry``  comme bouton pour déclencher des "
 "commandes."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:44
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:48
 msgid ""
 "Added a ``simulationPeriodic()`` method to Subsystem. This method runs "
 "periodically during simulation, in addition to the regular ``periodic()`` "
@@ -202,11 +157,11 @@ msgstr ""
 "s'exécute périodiquement pendant la simulation, en plus de la méthode "
 "habituelle ``periodic()``."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:47
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:51
 msgid "General Library"
 msgstr "Librairies générales"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:49
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:53
 msgid ""
 "Holonomic Drive Controller - A controller that teams with holonomic "
 "drivetrains (i.e. swerve and mecanum) can use to follow trajectories. This "
@@ -221,7 +176,7 @@ msgstr ""
 "trajectoire parce que la dynamique de cap est découplée du mouvement de "
 "translation dans les transmissions holonomiques."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:52
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:56
 msgid ""
 "Added support for scheduling functions more often than the robot loop via "
 "``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to"
@@ -244,11 +199,11 @@ msgstr ""
 "trouvant :ref:`ici <docs/software/convenience-features/scheduling-"
 "functions:Scheduling Functions at Custom Frequencies>`."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:54
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:58
 msgid "Added a ``toggle()`` function to Solenoid and DoubleSolenoid."
 msgstr "Ajout d'une fonction ``toggle()`` à Solenoid et DoubleSolenoid."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:56
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:60
 msgid ""
 "Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` "
 "(C++) / ``SpeedController[]`` (Java), allowing the list to be constructed "
@@ -261,7 +216,7 @@ msgstr ""
 "l'utiliser directement. Ceci est uniquement destiné aux liaisons dans des "
 "langages comme Python.)"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:58
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:62
 msgid ""
 "Added methods (``isOperatorControlEnabled()`` and ``isAutonomousEnabled()``)"
 " to check game and enabled state together."
@@ -269,7 +224,7 @@ msgstr ""
 "Ajout de méthodes (``isOperatorControlEnabled()`` et "
 "``isAutonomousEnabled()``) pour vérifier le jeu et l'état activé ensemble."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:60
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:64
 msgid ""
 "Added a ``ScopedTracer`` class for C++ teams to be able to time pieces of "
 "code. Simply instantiate the ``ScopedTracer`` at the top of a block of code "
@@ -281,7 +236,7 @@ msgstr ""
 " en haut d'un bloc de code et le timing sera imprimée sur la console lorsque"
 " l'instance sortira de sa portée."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:62
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:66
 msgid ""
 "Added a static method ``fromHSV(int h, int s, int v)`` to create a ``Color``"
 " instance from HSV values."
@@ -289,7 +244,7 @@ msgstr ""
 "Ajout d'une méthode statique ``fromHSV(int h, int s, int v)`` pour créer une"
 " instance ``Color`` à partir des valeurs HSV."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:64
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:68
 msgid ""
 "Added RT priority constructor to ``Notifier`` in C++. This makes the thread "
 "backing the Notifier run at real-time priority, reducing timing jitter."
@@ -299,7 +254,7 @@ msgstr ""
 "temps réel, ce qui réduit la dérive ou les changements brusques de "
 "synchronisation."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:66
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:70
 msgid ""
 "Added a ``DriverStation.getInstance().isJoystickConnected(int)`` method to "
 "check if a joystick is connected to the Driver Station."
@@ -307,7 +262,7 @@ msgstr ""
 "Ajout d’une méthode ``DriverStation.getInstance().isJoystickConnected(int)``"
 "  pour vérifier si un joystick est connecté à l'application Driver Station."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:68
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:72
 msgid ""
 "Added a "
 "``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)`` "
@@ -322,7 +277,7 @@ msgstr ""
 "d'avertissement continueront d’être imprimés) lorsque le robot est connecté "
 "à un véritable FMS."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:70
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:74
 msgid ""
 "Added a constructor to ``Translation2d`` that takes in a distance and angle."
 " This is effectively converting from polar coordinates to Cartesian "
@@ -332,7 +287,7 @@ msgstr ""
 "angle. Ceci convertit efficacement des coordonnées polaires en coordonnées "
 "cartésiennes."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:72
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:76
 msgid ""
 "Added ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, and "
 "``MaxVelocityConstraint`` to allow constraining trajectory velocity in a "
@@ -342,7 +297,7 @@ msgstr ""
 " ``MaxVelocityConstraint`` pour permettre de contraindre la vitesse de "
 "trajectoire dans une certaine région du champ."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:74
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:78
 msgid ""
 "Added equals() operator to the ``Trajectory`` class to compare two or more "
 "trajectories."
@@ -350,7 +305,7 @@ msgstr ""
 "Ajout de l'opérateur equals() à la classe ``Trajectory`` pour comparer deux "
 "ou plusieurs trajectoires."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:76
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:80
 msgid ""
 "Added zero-arg constructor to the ``Trajectory`` class in Java that creates "
 "an empty trajectory."
@@ -358,7 +313,7 @@ msgstr ""
 "Ajout d'un constructeur sans argument à la classe ``Trajectory`` en Java qui"
 " crée une trajectoire vide."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:78
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:82
 msgid ""
 "Added a special exception to catch trajectory constraint misbehavior. This "
 "notifies users when user-defined constraints are misbehaving (i.e. min "
@@ -369,7 +324,7 @@ msgstr ""
 "contraintes définies par l'utilisateur se comportent mal (c'est-à-dire que "
 "l'accélération minimale est supérieure à l'accélération maximale)."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:80
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:84
 msgid ""
 "Added a ``getRotation2d()`` method to the ``Gyro`` interface. This method "
 "automatically takes care of converting from gyro conventions to geometry "
@@ -379,7 +334,7 @@ msgstr ""
 "méthode prend automatiquement en charge la conversion des conventions "
 "gyroscopiques en conventions géométriques."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:82
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:86
 msgid ""
 "Added angular acceleration units for C++ teams. These are available in the "
 "``<units/angular_acceleration.h>`` header."
@@ -387,7 +342,7 @@ msgstr ""
 "Ajout d'unités d'accélération angulaire pour les équipes C++. Ceux-ci sont "
 "disponibles dans l'en-tête ``<units/angular_acceleration.h>``."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:84
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:88
 msgid ""
 "Added X and Y component getters in ``Pose2d`` - ``getX()`` and ``getY()`` in"
 " Java, ``X()`` and ``Y()`` in C++."
@@ -395,7 +350,7 @@ msgstr ""
 "Ajout des getters de composants X et Y dans ``Pose2d`` - ``getX()`` and "
 "``getY()`` en Java, ``X()`` and ``Y()`` en C++."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:86
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:90
 msgid ""
 "Added implicit conversion from ``degree_t`` to ``Rotation2d`` in C++. This "
 "allows teams to use a degree value (i.e. ``47_deg``) wherever a "
@@ -405,7 +360,7 @@ msgstr ""
 "Cela permet aux équipes d'utiliser une valeur de degré (comme ``47_deg``) "
 "partout où une ``Rotation2d`` est requise."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:88
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:92
 msgid ""
 "Fixed bug in path following examples where odometry was not being reset to "
 "the starting pose of the trajectory."
@@ -413,7 +368,7 @@ msgstr ""
 "Bogue réglé dans les exemples de suivi des trajectoires où l’odométrie "
 "n’était pas réinitialisée à la pose de départ de la trajectoire."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:90
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:94
 msgid ""
 "Fixed some spline generation bugs for advanced users who were using control "
 "vectors directly."
@@ -421,7 +376,7 @@ msgstr ""
 "Correction de quelques bogues de génération de spline pour les utilisateurs "
 "avancés qui utilisaient directement des vecteurs de contrôle."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:92
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:96
 msgid ""
 "Fixed theta controller continuous input in swerve examples. This fixes the "
 "behavior where the shortest path is not used during drivetrain rotation."
@@ -430,7 +385,7 @@ msgstr ""
 "Swerve. Cela corrige le comportement où le chemin le plus court n'est pas "
 "utilisé pendant la rotation de la transmission."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:94
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:98
 msgid ""
 "Deprecated ``units.h``, use individual :ref:`units headers <docs/software"
 "/basic-programming/cpp-units:Using the Units Library>` instead which speeds "
@@ -440,34 +395,11 @@ msgstr ""
 "<docs/software/basic-programming/cpp-units:Using the Units Library>` "
 "individuelles au lieu de ceux qui accélèrent le temps de compilation."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:96
-msgid ""
-"Added support for model-based control with Kalman filters, extended Kalman "
-"filters, unscented Kalman filters, and linear-quadratic regulators. See "
-":ref:`Introduction to State-Space Control <docs/software/advanced-controls"
-"/state-space/state-space-intro:Introduction to State-Space Control>` for "
-"more information."
-msgstr ""
-"Ajout de la prise en charge du contrôle basé sur un modèle avec des filtres "
-"de Kalman, des filtres de Kalman étendus, des filtres de Kalman non parfumés"
-" (unscented) et des régulateurs linéaires-quadratiques. Voir "
-":ref:`Introduction à la commande dans l’Espace-d’État <docs/software"
-"/advanced-controls/state-space/state-space-intro:Introduction to State-Space"
-" Control>` pour plus d'informations."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:99
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:101
 msgid "Simulation"
 msgstr "Simulation"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:101
-msgid "Added joystick simulation support."
-msgstr "Ajout du support de simulation de joystick."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:102
-msgid "Added Mechanism2D for simulating mechanisms."
-msgstr "Ajout de Mechanism2D pour la simulation de mécanismes."
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:103
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:105
 msgid ""
 "Added simulation physics classes for common robot mechanisms (DrivetrainSim,"
 " ElevatorSim, SingleJointedArmSim, and FlywheelSim)"
@@ -475,52 +407,48 @@ msgstr ""
 "Ajout de classes de physique de simulation pour les mécanismes de robot "
 "courants (DrivetrainSim, ElevatorSim, SingleJointedArmSim et FlywheelSim)"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:106
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:108
 msgid "Shuffleboard"
 msgstr "Shuffleboard"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:108
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:110
 msgid "Number Slider now displays the text value"
 msgstr "Le curseur numérique affiche maintenant la valeur du texte"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:109
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:111
 msgid "Graphing Widget now uses ChartFX, a high performance graphing library"
 msgstr ""
 "Graphing Widget utilise désormais ChartFX, une bibliothèque graphique haute "
 "performance"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:110
-msgid "Fix decimal digit formatting with large numbers"
-msgstr "Correction du formatage des chiffres décimaux avec de grands nombres"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:111
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:113
 msgid "Size and position can now be set separately in the Shuffleboard API"
 msgstr ""
 "La taille et la position peuvent désormais être définies séparément dans "
 "l'API Shuffleboard"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:112
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:114
 msgid "Analog Input can now be viewed with a Text Widget"
 msgstr ""
 "L'entrée analogique peut maintenant être visualisée avec un widget de texte"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:115
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:117
 msgid "SmartDashboard"
 msgstr "SmartDashboard"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:117
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:119
 msgid "Host IP can be specified in configuration."
 msgstr "L'adresse IP de l'hôte peut être spécifiée dans la configuration."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:120
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:122
 msgid "PathWeaver"
 msgstr "PathWeaver"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:122
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:124
 msgid "Added support for reversed splines"
 msgstr "Ajout de la prise en charge des splines inversées"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:123
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:125
 msgid ""
 "The coordinate system in the exported JSON has changed to be compatible with"
 " the simulator GUI. See :ref:`Importing a PathWeaver JSON <docs/software"
@@ -532,11 +460,11 @@ msgstr ""
 "fichier JSON PathWeaver  <docs/software/wpilib-tools/pathweaver/integrating-"
 "robot-program:Importing a PathWeaver JSON>` pour plus d'informations."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:126
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:128
 msgid "GradleRIO"
 msgstr "GradleRIO"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:128
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:130
 msgid ""
 "Added a ``vendordep`` task for downloading vendor JSONs or fetching them "
 "from the user `wpilib` folder"
@@ -544,7 +472,7 @@ msgstr ""
 "Ajout d'une tâche ``vendordep`` pour télécharger les JSON du fournisseur ou "
 "les récupérer dans le dossier de l'utilisateur ``wpilib``"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:129
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:131
 msgid ""
 "Added a ``gradlerio.vendordep.folder.path`` property to set a non-default "
 "location for the vendor JSON folder"
@@ -552,7 +480,7 @@ msgstr ""
 "Ajout d'une propriété ``gradlerio.vendordep.folder.path`` pour définir un "
 "emplacement autre que par défaut pour le dossier JSON du fournisseur"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:130
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:132
 msgid ""
 "Renamed the ``wpi`` task (that prints current versions of WPILib and tools) "
 "to `wpiVersions`"
@@ -560,33 +488,29 @@ msgstr ""
 "Renommé la tâche ``wpi`` (qui imprime les versions actuelles de WPILib et "
 "des outils) en ``wpiVersions``"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:142
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:144
 msgid "CSCore"
 msgstr "CScore"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:144
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:146
 msgid "Now only lists streamable devices on Linux platforms."
 msgstr ""
 "Désormais, ne répertorie que les périphériques diffusables sur les plates-"
 "formes Linux."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:147
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:149
 msgid "Visual Studio Code Extension"
 msgstr "Extension de code Visual Studio"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:149
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:152
 msgid "Updated Java and C++ language extensions"
 msgstr "Extensions de langage Java et C++ mises à jour"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:150
-msgid "Driverstation sim extension is enabled by default"
-msgstr "L'extension Driverstation sim est activée par défaut"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:158
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:161
 msgid "RobotBuilder"
 msgstr "RobotBuilder"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:160
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:163
 msgid ""
 "Updated to be compatible with the new command based framework and PID "
 "Controller."
@@ -594,7 +518,7 @@ msgstr ""
 "Mise à jour pour être compatible avec la nouvelle infrastructure logicielle "
 "orientée commande et le contrôleur PID."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:162
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:165
 msgid ""
 "Due to the major changes in templates, RobotBuilder will not accept a save "
 "file from a previous year. You must regenerate the yaml save file and export"
@@ -605,45 +529,23 @@ msgstr ""
 "régénérer le fichier de sauvegarde yaml et l’exporter vers un nouveau "
 "repertoire."
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:165
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:168
 msgid "C++: use uniform initialization of objects in header"
 msgstr "C++: utiliser l'initialisation uniforme des objets dans l'en-tête"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:166
-msgid ""
-"C++: fix case of includes so that code compiles on case-sensitive "
-"filesystems"
-msgstr ""
-"C++: correction de la casse (minuscules-majuscules) des inclusions pour que "
-"le code se compile sur des systèmes de fichiers sensibles à la casse"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:167
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:170
 msgid "Use project name as default for save file"
 msgstr "Utiliser le nom du projet par défaut pour enregistrer le fichier"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:168
-msgid "Fix export of wiring file"
-msgstr "Correction de l'exportation du fichier de câblage"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:169
-msgid "Fix line-endings for scripts so they work on MacOS/Linux"
-msgstr ""
-"Correction des fins de ligne pour les scripts afin qu’ils fonctionnent sous "
-"MacOS/Linux"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:170
-msgid "Add XboxController"
-msgstr "Ajout du contrôleur XboxController"
-
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:173
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:176
 msgid "Robot Characterization"
 msgstr "Caractérisation du robot"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:175
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:178
 msgid "Added LQR latency compensation"
 msgstr "Ajout de la compensation de latence LQR"
 
-#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:176
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:179
 msgid ""
 "The tool backend was improved to be more approachable for developers. "
 "Configuration and JSON files from the old tool will no longer work with the "

@@ -77,7 +77,7 @@ def get_unused_resources(remote_resources, local_resources):
                 last_update = dateutil.parser.parse(json_response["last_update"])
                 current_time = dateutil.utils.today()
                 
-                delete_status = (current_time - last_update).days >= 25
+                delete_status = (current_time - last_update).days >= 3
 
                 if delete_status:
                     response = requests.delete(RESOURCE_BASE_URL + resource + "/",

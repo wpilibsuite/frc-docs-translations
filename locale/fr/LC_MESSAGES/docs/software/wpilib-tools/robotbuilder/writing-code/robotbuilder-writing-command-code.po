@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-20 04:15+0000\n"
+"POT-Creation-Date: 2021-01-05 04:29+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -26,107 +26,7 @@ msgstr ""
 msgid "Writing the Code for a Command"
 msgstr "Écrire le code d'une commande"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:4
-msgid ""
-"RobotBuilder has been updated to support the new commandbased framework! "
-"Unfortunately, this documentation is outdated and only for the old "
-"commandbased framework. Individuals interested in updating this "
-"documentation can open a pull request on the `frc-docs "
-"<https://github.com/wpilibsuite/frc-docs>`__ repository."
-msgstr ""
-"RobotBuilder a été mis à jour pour prendre en charge le nouveau cadre de "
-"développement orienté commande! Malheureusement, cette documentation est "
-"obsolète et n'est valable que pour l’ancien cadre de développement orienté "
-"commande. Les personnes intéressées à mettre à jour la nouvelle "
-"documentation peuvent ouvrir un pull request sur le dépôt `frc-docs "
-"<https://github.com/wpilibsuite/frc-docs>`__ ."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:6
-msgid ""
-"Subsystem classes get the mechanisms on your robot moving, but to get it to "
-"stop at the right time and sequence through more complex operations you "
-"write Commands. Previously in :doc:`writing the code for a subsystem "
-"<robotbuilder-writing-subsystem-code>` we developed the code for the Claw "
-"subsystem on a robot to start the claw opening, closing, or to stop moving. "
-"Now we will write the code for a command that will actually run the Claw "
-"motor for the right time to get the claw to open and close. Our claw example"
-" is a very simple mechanism where we run the motor for 1 second to open it "
-"or 0.9 seconds to close it."
-msgstr ""
-"Les classes de sous-système font bouger les mécanismes de votre robot, mais "
-"pour qu'il s'arrête au bon moment et enchaîne des opérations plus complexes,"
-" vous écrivez des commandes. Précédemment dans :doc:`écrire le code d'un "
-"sous-système<robotbuilder-writing-subsystem-code>` nous avons développé le "
-"code du sous-système Claw sur un robot pour démarrer l'ouverture, la "
-"fermeture ou arrêter le déplacement de la pince. Nous allons maintenant "
-"écrire le code d'une commande qui exécutera le moteur Claw pendant le bon "
-"moment pour ouvrir et fermer la pince. Notre exemple de pince est un "
-"mécanisme très simple où nous faisons tourner le moteur pendant 1 seconde "
-"pour l'ouvrir ou 0,9 seconde pour le fermer."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:9
-msgid "Closeclaw Command in RobotBuilder"
-msgstr "Commande Closeclaw dans RobotBuilder"
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:13
-msgid ""
-"This is the definition of the Closeclaw command in RobotBuilder. Notice that"
-" it requires the Claw subsystem. This is explained in the next step."
-msgstr ""
-"Il s'agit de la définition de la commande Closeclaw dans RobotBuilder. Notez"
-" qu'elle nécessite le sous-système Claw. Ceci est expliqué à l'étape "
-"suivante."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:16
-msgid "Generated Closeclaw Class"
-msgstr "Classe Closeclaw générée"
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:84
-msgid ""
-"RobotBuilder will generate the class files for the Closeclaw command. The "
-"command represents the behavior of the claw, that is the operation over "
-"time. To operate this very simple claw mechanism the motor needs to operate "
-"for 1 second in the close direction. The Claw subsystem has methods to start"
-" the motor running in the right direction and to stop it. The commands "
-"responsibility is to run the motor for the correct time. The lines of code "
-"that are shown in the boxes are added to add this behavior."
-msgstr ""
-"RobotBuilder générera les fichiers de classe pour la commande Closeclaw. La "
-"commande représente le comportement de la pince, c'est-à-dire son opération "
-"dans le temps. Pour faire fonctionner ce mécanisme de pince très simple, le "
-"moteur doit fonctionner pendant 1 seconde dans la direction de fermeture. Le"
-" sous-système Claw a les méthodes pour démarrer le moteur dans la bonne "
-"direction et pour l'arrêter. La responsabilité des commandes est de faire "
-"tourner le moteur pour le délai requis. Les lignes de code qui sont "
-"affichées dans les boîtes sont ajoutées pour créer ce comportement."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:86
-msgid ""
-"Set the one second timeout for this command. When the command is scheduled, "
-"a timer will be started so the one second operation can easily be tested."
-msgstr ""
-"Définir le délai d'une seconde pour cette commande. Lorsque la commande est "
-"planifiée, une minuterie sera lancée afin que l'opération qui va durer une "
-"seconde puisse être facilement testée."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:87
-msgid ""
-"Start the claw motor moving in the closing direction by calling the Close "
-"method that was added to the Claw subsystem."
-msgstr ""
-"Démarrer le moteur qui controle la pince, pour qu'elle se déplaçe dans la "
-"direction de fermeture   Ceci est accompli en appelant la méthode Close qui "
-"a été ajoutée au sous-système Claw."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:88
-msgid ""
-"This command is finished when the timer runs out which happens after one "
-"second has passed. This is the timer set in step 1."
-msgstr ""
-"Cette commande est terminée lorsque la minuterie (définie à l'étape 1) "
-"atteint la valeur du délai,  ce qui se produit après une seconde. "
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:89
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:136
 msgid ""
 "The ``End()`` method is called when the command is finished and is a place "
 "to clean up. In this case, the motor is stopped since the time has run out."
@@ -135,18 +35,3 @@ msgstr ""
 "c'est un moment idéal pour réinitialiser certaines variables et relâcher les"
 " ressources qui ne seront plus utilisées. Dans ce cas, on arrête le moteur "
 "car le temps est écoulé."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:90
-msgid ""
-"The ``Interrupted()`` method is called is this command is interrupted if "
-"another command that also requires the Claw subsystem is scheduled before "
-"this finishes. For example, if the Closeclaw command was scheduled and "
-"running, then the Openclaw command was scheduled it would interrupt the "
-"Openclaw command, call its Interrupted() method, and the motor would stop."
-msgstr ""
-"La méthode ``Interrupted()`` est appelée si cette commande est interrompue "
-"parce qu'une autre commande nécessite également le sous-système Claw, et "
-"ceci, avant qu'elle se termine. Par exemple, si la commande Closeclaw est "
-"planifiée ET en cours d'exécution, et ensuite, la commande Openclaw est "
-"planifiée, elle va interrompre la commande Closeclaw, appelerait ainsi sa "
-"méthode ``Interrupted()``, et dans notre exemple, le moteur s'arrêterait."

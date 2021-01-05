@@ -5,18 +5,18 @@
 # 
 # Translators:
 # Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
 # ceren oktemer <ceren.oktemer@gmail.com>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-04 16:31+0000\n"
+"POT-Creation-Date: 2021-01-05 04:29+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,6 +62,28 @@ msgstr ""
 msgid "Major Features"
 msgstr "Başlıca Özellikler"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:13
+msgid ""
+"A hardware-level `WebSocket interface "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`"
+" has been added to allow remote access to robot code being simulated in a "
+"desktop environment."
+msgstr ""
+"Masaüstü ortamında simüle edilen robot koduna uzaktan erişime izin vermek "
+"için donanım düzeyinde bir `WebSocket arabirimi "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`"
+" eklenmiştir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:15
+msgid ""
+"Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi "
+"robot code runs in the desktop simulator environment and talks to the Romi "
+"via the new WebSocket interface."
+msgstr ""
+"Destek :doc:`Romi </docs/romi-robot/index>` robot platformu. Romi robot "
+"kodu, masaüstü simülatör ortamında çalışır ve yeni WebSocket arayüzü "
+"üzerinden Romi ile konuşur."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:17
 msgid ""
 "A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-"
@@ -73,6 +95,22 @@ msgstr ""
 "tools/glass/index:Glass>` -- eklendi. Glass, simülatör GUI'sine benzer bir "
 "UI'ye sahiptir ve aynı özelliklerin çoğunu destekler; ancak Glass, bağımsız "
 "bir kontrol paneli olarak kullanılabilir ve robot programına bağlı değildir."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
+msgid ""
+"The WPILib installer has been rewritten to support macOS and Linux and to "
+"improve ease of use."
+msgstr ""
+"WPILib yükleyici, macOS ve Linux'u desteklemek ve kullanım kolaylığını "
+"artırmak için yeniden yazılmıştır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:21
+msgid ""
+"The macOS installer is notarized, eliminating the need for Gatekeeper "
+"bypass."
+msgstr ""
+"MacOS yükleyici, Gatekeeper baypas gereksinimini ortadan kaldırarak noter "
+"tarafından onaylanmıştır."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:22
 msgid ""
@@ -119,6 +157,31 @@ msgstr ""
 "kısıtlamalarını tanımlayan ekipler,  ``MaxVelocity()`` ve "
 "``MinMaxAcceleration()`` yöntemlerini ``const`` olarak işaretlemelidir."
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:36
+msgid ""
+"The ``Field2d`` class (added midway through the 2020 season) was moved from "
+"the simulation package (``edu.wpi.first.wpilibj.simulation`` / "
+"``frc/simulation/``) to the SmartDashboard package "
+"(``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This "
+"allows teams to send their robot position over NetworkTables to be viewed in"
+" Glass. The Field2d instance can be sent using "
+"``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` or by using one of "
+"the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard"
+"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be"
+" done in order to see the Field2d in the Simulator GUI."
+msgstr ""
+"``Field2d`` sınıfı (2020 sezonunun ortasında eklendi) simülasyon paketinden "
+"(``edu.wpi.first.wpilibj.simulation`` / ``frc/simülasyon/``) SmartDashboard "
+"paketine ( ``edu.wpi.first.wpilibj.smartdashboard`` / "
+"``frc/SmartDashboard/``). Bu, ekiplerin robot konumlarını Glass'ta "
+"görüntülenmek üzere NetworkTables üzerinden göndermelerine olanak tanır. "
+"Field2d örneği,  ``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` kullanılarak veya "
+":ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard/layouts-"
+"with-code/sending-data:Sending sensors, motors, etc>` . Simülatör GUI'de "
+"Field2d'yi görmek için bu yapılmalıdır."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:40
 msgid "New Command-Based Library"
 msgstr "Yeni Komut Tabanlı Kütüphane"
@@ -132,6 +195,17 @@ msgstr ""
 "Komut zamanlayıcıya gözcü ve dönem raporlaması eklendi. Bu, ekiplerin bir "
 "döngü taşması meydana gelirse tam olarak hangi komutun veya alt sistemin "
 "sorumlu olduğunu bilmesini sağlayacaktır."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:44
+msgid ""
+"Added a ``withName()`` command decorator for Java teams. This lets teams set"
+" the name of a particular command using the :ref:`decorator pattern "
+"<docs/software/commandbased/convenience-features:withName (Java only)>`."
+msgstr ""
+"Java ekipleri için ``withName()`` komut dekoratörü eklendi. Bu, ekiplerin "
+":ref:`dekoratör kalıbı <docs/software/commandbased/convenience-"
+"features:withName (Java only)>` kullanarak belirli bir komutun adını "
+"ayarlamasını sağlar."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:46
 msgid ""
@@ -282,8 +356,8 @@ msgid ""
 "certain region of the field."
 msgstr ""
 "Alanın belirli bir bölgesinde yörünge hızının sınırlandırılmasına izin "
-"vermek için ``EllipticalRegionConstraint`` , `` RectangularRegionConstraint "
-"'' ve ``MaxVelocityConstraint``eklendi."
+"vermek için ``EllipticalRegionConstraint`` , ``RectangularRegionConstraint``"
+" ve ``MaxVelocityConstraint``eklendi."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:78
 msgid ""
@@ -327,7 +401,7 @@ msgid ""
 "Added angular acceleration units for C++ teams. These are available in the "
 "``<units/angular_acceleration.h>`` header."
 msgstr ""
-"C ++ ekipleri için açısal hızlandırma birimleri eklendi. Bunlar, "
+"C++ ekipleri için açısal hızlandırma birimleri eklendi. Bunlar, "
 "``<units/angular_acceleration.h>`` başlığında bulunur."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:88
@@ -335,8 +409,8 @@ msgid ""
 "Added X and Y component getters in ``Pose2d`` - ``getX()`` and ``getY()`` in"
 " Java, ``X()`` and ``Y()`` in C++."
 msgstr ""
-"Java'da ``Pose2d`` - ``getX()`` ve `` getY () '', C++ 'da ``X()`` 've "
-"``Y()`` 'içine X ve Y bileşen alıcıları eklendi."
+"Java'da ``Pose2d`` - ``getX()`` ve ``getY()`` , C++ 'da ``X()`` 've ``Y()`` "
+"'içine X ve Y bileşen alıcıları eklendi."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:90
 msgid ""
@@ -344,7 +418,7 @@ msgid ""
 "allows teams to use a degree value (i.e. ``47_deg``) wherever a "
 "``Rotation2d`` is required."
 msgstr ""
-"C++ 'da ``degree_t``' 'den ``Rotation2d`` 'ye örtük dönüşüm eklendi. Bu, "
+"C++ 'da ``degree_t`` 'den ``Rotation2d`` 'ye örtük dönüşüm eklendi. Bu, "
 "takımların ``Rotation2d`` nin gerekli olduğu her yerde bir derece değeri "
 "(i.e. ``47_deg``) kullanmasına izin verir."
 
@@ -380,12 +454,21 @@ msgid ""
 "compile times."
 msgstr ""
 "Kullanımdan kaldırılan ``units.h`` bunun yerine derleme sürelerini "
-"hızlandıran bireysel : ref: `unit başlıkları <docs/software/basic-"
-"programming/cpp-units:Using the Units Library>` kullanın."
+"hızlandıran bireysel :ref:`unit başlıkları <docs/software/basic-programming"
+"/cpp-units:Using the Units Library>` kullanın."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:101
 msgid "Simulation"
 msgstr "Simülasyon"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:103
+msgid "Added keyboard virtual joystick simulation support."
+msgstr "Klavye sanal oyun çubuğu simülasyon desteği eklendi."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:104
+msgid "Added Mechanism2D for visualizing mechanisms in simulation."
+msgstr ""
+"Simülasyondaki mekanizmaları görselleştirmek için Mekanizma2D eklendi."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:105
 msgid ""
@@ -408,6 +491,10 @@ msgid "Graphing Widget now uses ChartFX, a high performance graphing library"
 msgstr ""
 "Graphing Widget artık yüksek performanslı bir grafik kitaplığı olan "
 "ChartFX'i kullanıyor"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:112
+msgid "Fixed decimal digit formatting with large numbers"
+msgstr "Büyük sayılarla sabit ondalık basamak biçimlendirmesi"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:113
 msgid "Size and position can now be set separately in the Shuffleboard API"
@@ -454,16 +541,16 @@ msgid ""
 "Added a ``vendordep`` task for downloading vendor JSONs or fetching them "
 "from the user `wpilib` folder"
 msgstr ""
-"Satıcı JSON'larını indirmek veya bunları kullanıcı \"wpilib\" klasöründen "
-"getirmek için bir \"vendordep\" görevi eklendi"
+"Satıcı JSON'larını indirmek veya bunları kullanıcı ``wpilib`` klasöründen "
+"getirmek için bir ``vendordep`` görevi eklendi"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:131
 msgid ""
 "Added a ``gradlerio.vendordep.folder.path`` property to set a non-default "
 "location for the vendor JSON folder"
 msgstr ""
-"Satıcı JSON klasörü için varsayılan olmayan bir konum ayarlamak için bir `` "
-"gradlerio.vendordep.folder.path '' özelliği eklendi"
+"Satıcı JSON klasörü için varsayılan olmayan bir konum ayarlamak için bir "
+"``gradlerio.vendordep.folder.path`` özelliği eklendi"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:132
 msgid ""
@@ -494,9 +581,44 @@ msgstr ""
 msgid "Visual Studio Code Extension"
 msgstr "Visual Studio Kod Uzantısı"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:151
+msgid "Visual Studio Code has been updated to 1.52.1"
+msgstr "Visual Studio Code, 1.52.1'e güncellendi"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:152
 msgid "Updated Java and C++ language extensions"
 msgstr "Güncellenmiş Java ve C++ dil uzantıları"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:153
+msgid "Driverstation sim extension is now enabled by default"
+msgstr "Driverstation sim uzantısı artık varsayılan olarak etkindir"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:154
+msgid ""
+"Project importer now retains the commands version used in the original "
+"project"
+msgstr ""
+"Proje içeri alıcısı artık orijinal projede kullanılan komut sürümünü koruyor"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:155
+msgid "Clarified the text on the new project and project importer screens"
+msgstr "Yeni proje ve proje ithalatçı ekranlarındaki metin netleştirildi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:156
+msgid "Fixed import corrupting binary files"
+msgstr "Bozuk ikili dosyaları içe aktarma düzeltildi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:157
+msgid "Fixed link order in C++ ``build.gradle`` projects"
+msgstr "C ++ ``build.gradle`` projelerinde bağlantı sırası düzeltildi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:158
+msgid ""
+"Updated \"Change Select Default Simulate Extension Setting\" command to work"
+" with multiple sim extensions"
+msgstr ""
+"Birden çok sim uzantısıyla çalışmak için ``Change Select Default Simulate "
+"Extension Setting`` komutu güncellendi"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:161
 msgid "RobotBuilder"
@@ -532,9 +654,31 @@ msgstr ""
 msgid "C++: use uniform initialization of objects in header"
 msgstr "C++: başlıktaki nesnelerin tek tip başlatılmasını kullanın"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:169
+msgid ""
+"C++: fixed case of includes so that code compiles on case-sensitive "
+"filesystems"
+msgstr ""
+"C++: kodun büyük / küçük harfe duyarlı dosya sistemlerinde derlenmesi için "
+"düzeltildi"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:170
 msgid "Use project name as default for save file"
 msgstr "Dosyayı kaydetmek için proje adını varsayılan olarak kullan"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:171
+msgid "Fixed export of wiring file"
+msgstr "Kablolama dosyasının dışa aktarımı düzeltildi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:172
+msgid "Fixed line-endings for scripts so they work on MacOS/Linux"
+msgstr ""
+"Betikler için sabit satır sonları, böylece MacOS / Linux üzerinde çalışması "
+"düzeltildi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:173
+msgid "Added XboxController"
+msgstr "XboxController eklendi"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:176
 msgid "Robot Characterization"

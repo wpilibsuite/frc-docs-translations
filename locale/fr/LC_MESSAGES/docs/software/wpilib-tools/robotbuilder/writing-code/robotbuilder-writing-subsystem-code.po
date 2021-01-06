@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 04:29+0000\n"
+"POT-Creation-Date: 2021-01-06 04:30+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,16 +26,100 @@ msgstr ""
 msgid "Writing the Code for a Subsystem"
 msgstr "Écrire le code d'un sous-système"
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:4
+msgid ""
+"Adding code to create an actual working subsystem is very straightforward. "
+"For simple subsystems that don't use feedback it turns out to be extremely "
+"simple. In this section we will look at an example of a `Claw` subsystem. "
+"The `Claw` subsystem also has a limit switch to determine if an object is in"
+" the grip."
+msgstr ""
+"L'ajout de code pour créer un sous-système fonctionnel est très simple. Pour"
+" les sous-systèmes qui n'utilisent pas de rétroaction, cela s'avère "
+"extrêmement simple. Dans cette section, nous allons regarder un exemple de "
+"sous-système de pince ou `Claw`  sur un bras articulé de robot. Le sous-"
+"système `Claw` dispose également d’un interrupteur de fin de course pour "
+"déterminer si un objet est bien saisi."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:7
 msgid "RobotBuilder Representation of the Claw Subsystem"
 msgstr "Représentation de RobotBuilder du sous-système Claw"
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:11
+msgid ""
+"The claw at the end of a robot arm is a subsystem operated by a single "
+"VictorSPX Motor Controller. There are three things we want the motor to do, "
+"start opening, start closing, and stop moving. This is the responsibility of"
+" the subsystem. The timing for opening and closing will be handled by a "
+"command later in this tutorial. We will also define a method to get if the "
+"claw is gripping an object."
+msgstr ""
+"La pince à l’extrémité du bras du robot est un sous-système actionné par un "
+"seul contrôleur de moteur VictorSPX. Il y a trois choses que nous voulons "
+"que la pince fasse, commence à s'ouvrir, commencer à se fermer, et "
+"s'arrêter. C’est la responsabilité du sous-système. La prise en charge pour "
+"l’ouverture et la fermeture sera assurée par une commande plus tard dans ce "
+"didacticiel. Nous définirons également une méthode pour savoir si la pince "
+"est en train de saisir un objet."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:14
 msgid "Adding Subsystem Capabilities"
 msgstr "Ajout de capacités de sous-système"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:132
+msgid ""
+"Add methods to the ``claw.java`` or ``claw.cpp`` that will open, close, and "
+"stop the claw from moving and get the claw limit switch. Those will be used "
+"by commands that actually operate the claw."
+msgstr ""
+"Ajoutez des méthodes aux fichiers ``claw.java`` ou ``claw.cpp`` qui "
+"ouvriront, fermeront et empêcheront la pince de bouger et de lire l’état de "
+"l'interrupteur de fin de course de la pince. Ceux-ci seront utilisés par les"
+" commandes qui gèrent réellement le fonctionnement de la pince."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:134
+msgid ""
+"The comments have been removed from this file to make it easier to see the "
+"changes for this document."
+msgstr ""
+"Les commentaires ont été éliminés de ce fichier pour faciliter le suivi des "
+"changements de ce document."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:136
+msgid ""
+"Notice that member variable called ``motor`` and ``limitswitch`` are created"
+" by RobotBuilder so it can be used throughout the subsystem. Each of your "
+"dragged-in palette items will have a member variable with the name given in "
+"RobotBuilder."
+msgstr ""
+"Notez que les variables membres appelées ``motor`` et ``limitswitch``  sont "
+"créés par RobotBuilder afin qu’elles puissent être utilisées dans l’ensemble"
+" du sous-système. Chacun de vos éléments  glissés dans la palette aura une "
+"variable membre avec le nom donné dans RobotBuilder."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:139
 msgid "Adding the Method Declarations to the Header File (C++ Only)"
 msgstr ""
 "Ajout des déclarations de méthode au fichier Header, ou d'en-tête (C ++ "
 "uniquement)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:178
+msgid ""
+"In addition to adding the methods to the class implementation file, "
+"``Claw.cpp``, the declarations for the methods need to be added to the "
+"header file, ``Claw.h``. Those declarations that must be added are shown "
+"here."
+msgstr ""
+"En plus d'ajouter les méthodes au fichier d'implémentation de classe, "
+"``Claw.cpp``, les déclarations des méthodes doivent être ajoutées au fichier"
+" d'en-tête, soit ``Claw.h``. Les déclarations à ajouter sont indiquées ici."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:180
+msgid ""
+"To add the behavior to the claw subsystem to handle opening and closing you "
+"need to :doc:`define commands <../introduction/robotbuilder-creating-"
+"command>`."
+msgstr ""
+"Pour ajouter la fonctionnalité au sous-système Claw afin de gérer "
+"l'ouverture et la fermeture, vous devez  :doc:`définir des commandes "
+"<../introduction/robotbuilder-creating-command>`."

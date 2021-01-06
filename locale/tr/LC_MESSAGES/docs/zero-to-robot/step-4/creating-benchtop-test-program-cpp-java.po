@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-03 16:29+0000\n"
+"POT-Creation-Date: 2021-01-06 04:30+0000\n"
 "PO-Revision-Date: 2020-11-20 04:22+0000\n"
 "Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -234,7 +234,7 @@ msgstr "|C++ Configurations| - C ++ Yapılandırmaları "
 msgid "Imports/Includes"
 msgstr "Imports/Includes-İthalat / İçerir"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:77
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:76
 msgid ""
 "Our code needs to reference the components of WPILib that are used. In C++ "
 "this is accomplished using ``#include`` statements; in Java it is done with "
@@ -252,11 +252,11 @@ msgstr ""
 "``DifferentialDrive``  (joystick kontrolünü motorlara bağlamak için) ve "
 "``LiveWindow``  (yalnızca C ++)."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:80
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:79
 msgid "Defining the variables for our sample robot"
 msgstr "Örnek robotumuz için değişkenleri tanımlama"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:111
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:105
 msgid ""
 "The sample robot in our examples will have a joystick on USB port 0 for "
 "arcade drive and two motors on PWM ports 0 and 1. Here we create objects of "
@@ -268,15 +268,15 @@ msgstr ""
 "DifferentialDrive (m_robotDrive), Joystick (m_stick) ve zaman (m_timer) tipi"
 " nesneler oluşturuyoruz. Kodun bu bölümü üç şey yapar:"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:113
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:107
 msgid "Defines the variables as members of our Robot class."
 msgstr "Değişkenleri Robot sınıfımızın üyeleri olarak tanımlar."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:114
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:108
 msgid "Initializes the variables."
 msgstr "Değişkenleri başlatır."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:116
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:110
 msgid ""
 "The variable initializations for C++ are in the ``private`` section at the "
 "bottom of the program. This means they are private to the class (``Robot``)."
@@ -290,31 +290,15 @@ msgstr ""
 "saniyede bir komut vermezsek sürücü kapanır) ve otonom için kullanılan "
 "``Timer-Zamanlayıcıyı`` başlatır."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:119
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:113
 msgid "Robot Initialization"
 msgstr "Robot Başlatma"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:133
-msgid ""
-"The ``RobotInit`` method is run when the robot program is starting up, but "
-"after the constructor. The ``RobotInit`` for our sample program gets a "
-"pointer to the ``LiveWindow`` instance (this is used in the test method "
-"discussed below). This method is omitted from the code, meaning the default "
-"version will be run (if we wanted to run something here we could provide the"
-" code above to override the default)."
-msgstr ""
-"``RobotInit``  yöntemi, robot programı başlatıldığında, ancak kurucudan "
-"sonra çalıştırılır. Örnek programımız için ``RobotInit`` , ``LiveWindow``  "
-"örneğine bir işaretçi alır (bu, aşağıda tartışılan test yönteminde "
-"kullanılır). Bu yöntem koddan çıkarılır, yani varsayılan sürüm çalıştırılır "
-"(burada bir şey çalıştırmak istersek, varsayılanı geçersiz kılmak için "
-"yukarıdaki kodu sağlayabiliriz)."
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:136
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:130
 msgid "Simple Autonomous Example"
 msgstr "Basit Otonom Örnek"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:176
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:150
 msgid ""
 "The ``AutonomousInit`` method is run once each time the robot transitions to"
 " autonomous from another mode. In this program, we reset the ``Timer`` and "
@@ -324,7 +308,7 @@ msgstr ""
 "geçişinde bir kez çalıştırılır. Bu programda ``Zamanlayıcı``  yı "
 "sıfırlıyoruz ve ardından bu yöntemde başlatıyoruz."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:178
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:152
 msgid ""
 "``AutonomousPeriodic`` is run once every period while the robot is in "
 "autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
@@ -340,11 +324,11 @@ msgstr ""
 "sınıfının `` ArcadeDrive``  yöntemini kullanarak yarı hızda ilerler. 2 "
 "saniyeden fazla bir süre geçtiyse, kod robot sürücüsünü durdurur."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:181
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:155
 msgid "Joystick Control for teleoperation"
 msgstr "Teleoperasyon için Joystick Kontrolü"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:205
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:175
 msgid ""
 "Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
 "``TeleopPeriodic`` function. In this example we don't have anything to do in"
@@ -360,23 +344,15 @@ msgstr ""
 "ileri/geri hareketine ve X eksenini dönüş hareketine eşlemek için "
 "``ArcadeDrive``  yöntemini kullanır."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:208
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:178
 msgid "Test Mode"
 msgstr "Test modu"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:221
-msgid ""
-"Test Mode is used for testing robot functionality. Similar to "
-"``TeleopInit``, the ``TestPeriodic`` is provided here for example."
-msgstr ""
-"Test Modu, robot işlevselliğini test etmek için kullanılır. ``TeleopInit``  "
-"e benzer şekilde, ``TestPeriodic`` burada örneğin sağlanmıştır."
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:232
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:209
 msgid "Deploying the Project to a Robot"
 msgstr "Projeyi Robota Deploy etmek "
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:234
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-benchtop-test-program-cpp-java.rst:211
 msgid ""
 "Please see the instructions :ref:`here <docs/software/vscode-overview"
 "/deploying-robot-code:Building and Deploying Robot Code>` for deploying the "

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-06 16:33+0000\n"
+"POT-Creation-Date: 2021-01-09 04:35+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
 "Last-Translator: Ofek Ashery, 2021\n"
 "Language-Team: Hebrew (Israel) (https://www.transifex.com/wpilib/teams/109324/he_IL/)\n"
@@ -39,7 +39,7 @@ msgstr ""
 "יתאר ויספק סקירה קצרה של השינויים והתכונות החדשות וכן יומן שינויים מפורט "
 "יותר לשינויי WPILib ב-C++/Java. מסמך זה כולל רק את השינויים הרלוונטיים ביותר"
 " עבור משתמשי הקצה, ניתן לראות את רשימת השינויים המלאה ב-Repositories השונים "
-"של `WPILib <https://github.com/wpilibsuite/>`__ ב-GitHub."
+"של WPILib ב-`GitHub <https://github.com/wpilibsuite/>`__."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:8
 msgid ""
@@ -49,14 +49,318 @@ msgid ""
 "/vscode-overview/importing-gradle-project>` to be compatible."
 msgstr ""
 "בשל שינויים פנימיים ב-GradleRIO, יש צורך לעדכן פרוייקטים של שנים קודמות. "
-"אחרי :doc:`Installing WPILib for 2021 </docs/zero-to-robot/step-2/wpilib-"
-"setup>`, כל פרויקט 2020 חייב להיות :doc:`imported </docs/software/vscode-"
+"אחרי :doc:`התקנת WPILib עבור עונת 2021 </docs/zero-to-robot/step-2/wpilib-"
+"setup>`, כל פרויקט 2020 חייב להיות :doc:`מיובא </docs/software/vscode-"
 "overview/importing-gradle-project>` כדי להיות תואם."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:11
 msgid "Major Features"
 msgstr "פיצ׳רים עיקריים"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:13
+msgid ""
+"A hardware-level `WebSocket interface "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`__"
+" has been added to allow remote access to robot code being simulated in a "
+"desktop environment."
+msgstr ""
+"נוסף ממשק `ממשק WebSocket "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`__"
+"  ברמת החומרה כדי לאפשר גישה מרחוק לקוד הרובוט המדומה בסביבת שולחן עבודה."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:15
+msgid ""
+"Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi "
+"robot code runs in the desktop simulator environment and talks to the Romi "
+"via the new WebSocket interface."
+msgstr ""
+"תמיכה בפלטפורמת הרובוט :doc:`Romi </docs/romi-robot/index>`. קוד הרובוט של "
+"Romi פועל בסביבת סימולטור בשולחן העבודה ומדבר עם ה-Romi דרך ממשק ה-WebSocket"
+" החדש."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
+msgid ""
+"The WPILib installer has been rewritten to support macOS and Linux and to "
+"improve ease of use."
+msgstr ""
+"תוכנית ההתקנה של WPILib נכתבה מחדש כדי לתמוך ב-macOS ובלינוקס וכדי לשפר את "
+"קלות השימוש."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:21
+msgid ""
+"The macOS installer is notarized, eliminating the need for Gatekeeper "
+"bypass."
+msgstr "תוכנית ההתקנה עבור macOS מאושרת, ומבטלת את הצורך במעקף ה-Gatekeeper."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:22
+msgid ""
+"Please see the :ref:`installation instructions <docs/zero-to-robot/step-2"
+"/wpilib-setup:WPILib Installation Guide>` as it differs from previous years."
+msgstr ""
+"אנא עיינו ב:ref:`הוראות ההתקנה <docs/zero-to-robot/step-2/wpilib-"
+"setup:WPILib Installation Guide> כיוון שהן שונות משנים קודמות."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:27
+msgid "WPILib"
+msgstr "WPILib"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:30
+msgid "Breaking Changes"
+msgstr "Breaking Changes"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:32
+msgid "``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)"
+msgstr "``curvature_t`` עבר מה-namespace ``frc`` ל ``units`` (C++)"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:46
+msgid ""
+"Added a ``NetworkButton`` class, allowing users to use a boolean "
+"``NetworkTableEntry`` as a button to trigger commands."
+msgstr ""
+"נוספה המחלקה ``NetworkButton``, המאפשרת למשתמשים להשתמש "
+"ב-``NetworkTableEntry`` בוליאני ככפתור טריגר להפעלת פקודות."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:51
+msgid "General Library"
+msgstr "הספרייה הכללית"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:58
+msgid "Added a ``toggle()`` function to Solenoid and DoubleSolenoid."
+msgstr "נוספה הפונקציה ``toggle()`` עבור Solenoid ו-DoubleSolenoid."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:62
+msgid ""
+"Added methods (``isOperatorControlEnabled()`` and ``isAutonomousEnabled()``)"
+" to check game and enabled state together."
+msgstr ""
+"נוספו פעולות (``isOperatorControlEnabled()`` ו-``isAutonomousEnabled()``) "
+"כדי לבדוק את מצב ההפעלה והמשחק יחד."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:66
+msgid ""
+"Added a static method ``fromHSV(int h, int s, int v)`` to create a ``Color``"
+" instance from HSV values."
+msgstr ""
+"נוספה הפעולה הסטטית ``fromHSV(int h, int s, int v)`` ליצירת מופע ``Color`` "
+"מערכי HSV."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:70
+msgid ""
+"Added a ``DriverStation.getInstance().isJoystickConnected(int)`` method to "
+"check if a joystick is connected to the Driver Station."
+msgstr ""
+"נוספה הפעולה ``DriverStation.getInstance().isJoystickConnected(int)`` כדי "
+"לבדוק אם ג׳ויסטיק מחובר ל-Driver Station."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:72
+msgid ""
+"Added a "
+"``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)`` "
+"method to silence the warning when a joystick is not connected. This setting"
+" has no effect (i.e. warnings will continue to be printed) when the robot is"
+" connected to a real FMS."
+msgstr ""
+"נוספה הפעולה "
+"``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)`` "
+"כדי להשתיק את האזהרה כאשר ג׳ויסטיק אינו מחובר. להגדרה זו אין כל השפעה "
+"(לדוגמא, אזהרות ימשיכו להיות מודפסות) כאשר הרובוט מחובר ל-FMS אמיתי."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:76
+msgid ""
+"Added ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, and "
+"``MaxVelocityConstraint`` to allow constraining trajectory velocity in a "
+"certain region of the field."
+msgstr ""
+"נוספו ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, "
+"ו-``MaxVelocityConstraint`` כדי לאפשר הגבלת מהירות מסלול באזור מסוים של "
+"הזירה."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:78
+msgid ""
+"Added equals() operator to the ``Trajectory`` class to compare two or more "
+"trajectories."
+msgstr ""
+"נוסף האופרטור ``equals()`` למחלקה ``Trajectory`` כדי להשוות בין שני מסלולים "
+"או יותר."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:82
+msgid ""
+"Added a special exception to catch trajectory constraint misbehavior. This "
+"notifies users when user-defined constraints are misbehaving (i.e. min "
+"acceleration is greater than max acceleration)."
+msgstr ""
+"נוסף exception מיוחד כדי לתפוס התנהגות לא נכונה של מסלול. זה מודיע למשתמשים "
+"כאשר אילוצים המוגדרים על ידי המשתמש מתנהגים בצורה לא נכונה (לדוגמא, תאוצה "
+"מינימלית גדולה יותר מהאצה מקסימלית)."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:84
+msgid ""
+"Added a ``getRotation2d()`` method to the ``Gyro`` interface. This method "
+"automatically takes care of converting from gyro conventions to geometry "
+"conventions."
+msgstr ""
+"נוספה הפעולה ``getRotation2d()`` לממשק ה-``Gyro``. פעולה זו מטפלת באופן "
+"אוטומטי בהמרה ממוסכמות גירו למוסכמות גיאומטריה."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:101
 msgid "Simulation"
 msgstr "סימולציה"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:103
+msgid "Added keyboard virtual joystick simulation support."
+msgstr "נוספה תמיכה בסימולציית מקלדת של ג'ויסטיק וירטואלי."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:104
+msgid "Added Mechanism2D for visualizing mechanisms in simulation."
+msgstr "נוסף Mechanism2D להדמיית מנגנונים בסימולציה."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:105
+msgid ""
+"Added simulation physics classes for common robot mechanisms (DrivetrainSim,"
+" ElevatorSim, SingleJointedArmSim, and FlywheelSim)"
+msgstr ""
+"נוספו מחלקות פיזיקה של סימולציה למנגנוני רובוט נפוצים (DrivetrainSim, "
+"ElevatorSim, SingleJointedArmSim, and FlywheelSim)"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:108
+msgid "Shuffleboard"
+msgstr "Shuffleboard"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:110
+msgid "Number Slider now displays the text value"
+msgstr "Number Slider מציג כעת את ערך הטקסט"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:111
+msgid "Graphing Widget now uses ChartFX, a high performance graphing library"
+msgstr ""
+"ה-Graphing Widget משתמש כעת ב-ChartFX, ספריית גרפים עם ביצועים גבוהים."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:112
+msgid "Fixed decimal digit formatting with large numbers"
+msgstr "תוקנה תצוגת הספרות עם מספרים גדולים"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:113
+msgid "Size and position can now be set separately in the Shuffleboard API"
+msgstr "ניתן להגדיר כעת גודל ומיקום בנפרד ב-Shuffleboard API."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:114
+msgid "Analog Input can now be viewed with a Text Widget"
+msgstr "ניתן להציג כעת קלט אנלוגי עם Text Widget"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:117
+msgid "SmartDashboard"
+msgstr "SmartDashboard"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:119
+msgid "Host IP can be specified in configuration."
+msgstr "ניתן לציין את כתובת ה-IP של המארח בקונפיגורציה."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:122
+msgid "PathWeaver"
+msgstr "PathWeaver"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:125
+msgid ""
+"The coordinate system in the exported JSON has changed to be compatible with"
+" the simulator GUI. See :ref:`Importing a PathWeaver JSON <docs/software"
+"/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver "
+"JSON>` for more information."
+msgstr ""
+"מערכת הקואורדינטות ב-JSON המיוצא השתנתה ותואמת ל-GUI של הסימולטור. ראו "
+":ref:`ייבוא PathWeaver JSON <docs/software/wpilib-tools/pathweaver"
+"/integrating-robot-program:Importing a PathWeaver JSON>` למידע נוסף."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:128
+msgid "GradleRIO"
+msgstr "GradleRIO"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:130
+msgid ""
+"Added a ``vendordep`` task for downloading vendor JSONs or fetching them "
+"from the user `wpilib` folder"
+msgstr ""
+" נוספה משימת ``vendordep`` להורדת JSON של ספקים או אחזורם מתיקיית `wpilib` "
+"של המשתמש"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:133
+msgid "Added the ability to set environment variables during simulation"
+msgstr "נוספה היכולת להגדיר משתני סביבה במהלך סימולציה"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:135
+msgid "To set the environment variable ``HALSIMWS_HOST`` use:"
+msgstr "להגדרת משתנה הסביבה ``HALSIMWS_HOST`` השתמש ב:"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:144
+msgid "CSCore"
+msgstr "CSCore"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:149
+msgid "Visual Studio Code Extension"
+msgstr "הרחבת Visual Studio Code"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:151
+msgid "Visual Studio Code has been updated to 1.52.1"
+msgstr "Visual Studio Code עודכן לגרסת 1.52.1"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:152
+msgid "Updated Java and C++ language extensions"
+msgstr "הרחבות השפה של Java ו-C++ עודכנו"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:153
+msgid "Driverstation sim extension is now enabled by default"
+msgstr "הרחבת הסימולציה של ה-Driverstation מופעלת כעת כברירת מחדל"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:154
+msgid ""
+"Project importer now retains the commands version used in the original "
+"project"
+msgstr "מייבא הפרויקט שומר כעת על גרסת הפקודות המשמשת בפרויקט המקורי"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:155
+msgid "Clarified the text on the new project and project importer screens"
+msgstr "הטקסטים במסכי פרויקט חדש וייבוא פרוייקט הובהרו"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:156
+msgid "Fixed import corrupting binary files"
+msgstr "תיקון הייבוא של קבצים בינאריים"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:157
+msgid "Fixed link order in C++ ``build.gradle`` projects"
+msgstr "תוקן סדר הקישורים ב-``build.gradle`` בפרויקט C++."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:158
+msgid ""
+"Updated \"Change Select Default Simulate Extension Setting\" command to work"
+" with multiple sim extensions"
+msgstr ""
+"הפקודה ``בחרו הרחבת ברירת מחדל לסימולציה`` עודכנה לעבוד עם מספר הרחבות "
+"סימולציה"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:161
+msgid "RobotBuilder"
+msgstr "RobotBuilder"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:165
+msgid ""
+"Due to the major changes in templates, RobotBuilder will not accept a save "
+"file from a previous year. You must regenerate the yaml save file and export"
+" to a new directory."
+msgstr ""
+"בשל השינויים הגדולים בתבניות, ה-RobotBuilder לא יקבל קובץ שמירה מהשנה קודמת."
+" עליכם ליצור מחדש את קובץ השמירה yaml ולייצא לתקיה חדשה."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:170
+msgid "Use project name as default for save file"
+msgstr "שימוש בשם הפרויקט כברירת מחדל לשמירת הקובץ"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:171
+msgid "Fixed export of wiring file"
+msgstr "תיקון הייצוא של קובץ החיווט"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:172
+msgid "Fixed line-endings for scripts so they work on MacOS/Linux"
+msgstr "תוקנה סיומת השורה עבור סקריפטים כך שהם יעבדו ב-macOS/Linux"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:173
+msgid "Added XboxController"
+msgstr "נוסף XboxController"

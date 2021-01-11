@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-02 04:13+0000\n"
+"POT-Creation-Date: 2021-01-11 04:37+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -25,29 +25,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
 msgid "The Command Scheduler"
 msgstr "El planificador de comandos"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:4
-msgid ""
-"The ``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__)"
-" is the class responsible for actually running commands.  Each iteration "
-"(ordinarily once per 20ms), the scheduler polls all registered buttons, "
-"schedules commands for execution accordingly, runs the command bodies of all"
-" scheduled commands, and ends those commands that have finished or are "
-"interrupted."
-msgstr ""
-"El  ``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html>`__)"
-" es la clase responsable de ejecutar realmente los comandos. En cada "
-"iteración (normalmente una vez cada 20 ms), el programador sondea todos los "
-"botones registrados, programa los comandos para su ejecución en "
-"consecuencia, ejecuta los cuerpos de comando de todos los comandos "
-"programados y finaliza los comandos que han finalizado o están "
-"interrumpidos."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
 msgid ""
@@ -102,29 +79,6 @@ msgstr ""
 msgid "The ``schedule()`` Method"
 msgstr "El método ``schedule()``"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:22
-msgid ""
-"To schedule a command, users call the ``schedule()`` method (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
-"  This method takes a command (and, optionally, a specification as to "
-"whether that command is interruptible), and attempts to add it to list of "
-"currently-running commands, pending whether it is already running or whether"
-" its requirements are available.  If it is added, its ``initialize()`` "
-"method is called."
-msgstr ""
-"Para programar un comando los usuarios utilizan el método ``schedule()``  "
-"(`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
-" Este método toma un comando (y, opcionalmente, una especificación sobre si "
-"ese comando es interrumpible) e intenta agregarlo a la lista de comandos "
-"actualmente en ejecución, dependiendo de si ya se está ejecutando o si sus "
-"requisitos están disponibles. Si es añadido, su método ``initialize()`` es "
-"llamado."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:25
 msgid "The Scheduler Run Sequence"
 msgstr "La secuencia de ejecución del programador"
@@ -138,23 +92,6 @@ msgstr ""
 "El método ``initialize()`` de cada ``Comando`` es llamado cuando el comando "
 "es programado, lo cual no es necesariamente cuando un programador este "
 "ejecutándose (a menos que ese comando este atado a un botón)."
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:31
-msgid ""
-"What does a single iteration of the scheduler's ``run()`` method (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
-" actually do?  The following section walks through the logic of a scheduler "
-"iteration."
-msgstr ""
-"¿Qué hace en realidad una sola iteración del método ``run()`` del "
-"planificador (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
-" ? La siguiente sección aborda sobre la lógica de la iteración del "
-"programador."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:34
 msgid "Step 1: Run Subsystem Periodic Methods"
@@ -278,79 +215,17 @@ msgstr ""
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:72
-msgid ""
-"The ``onCommandInitialize`` method (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
-" runs a specified action whenever a command is initialized."
-msgstr ""
-"El método ``onCommandInitialize``  (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
-" ejecuta una acción específica cuando un comando es inicializado."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:75
 msgid "onCommandExecute"
 msgstr "onCommandExecute"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
-msgid ""
-"The ``onCommandExecute`` method (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
-" runs a specified action whenever a command is executed."
-msgstr ""
-"El método ``onCommandExecute`` (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
-" ejecuta una acción específica cuando un comando es ejecutado."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:80
 msgid "onCommandFinish"
 msgstr "onCommandFinish"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
-msgid ""
-"The ``onCommandFinish`` method (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
-" runs a specified action whenever a command finishes normally (i.e. the "
-"``isFinished()`` method returned true)."
-msgstr ""
-"El método ``onCommandFinish``  (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
-"  ejecuta una acción específica cuando un comando termina normalmente (ej.: "
-"el método ``isFinished()`` devolvió un valor verdadero). "
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:85
 msgid "onCommandInterrupt"
 msgstr "onCommandInterrupt"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
-msgid ""
-"The ``onCommandInterrupt`` method (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
-" runs a specified action whenever a command is interrupted (i.e. by being "
-"explicitly canceled or by another command that shares one of its "
-"requirements)."
-msgstr ""
-"El método ``onCommandInterrupt`` (`Java "
-"<https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/FRC/roborio/release/docs/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
-" ejecuta una acción especificada cuando sea que un comando es interrumpido "
-"(ej. : al ser explícitamente cancelado o por otro comando que comparte uno "
-"de sus requisitos)."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:89
 msgid ""

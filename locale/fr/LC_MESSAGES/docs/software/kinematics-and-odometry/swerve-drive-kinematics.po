@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-13 04:40+0000\n"
+"POT-Creation-Date: 2021-01-13 16:48+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -154,6 +154,43 @@ msgstr ""
 "tableau seront:  état du module avant-gauche, état du module avant-droit, "
 "état du module arrière-gauche et état du module arrière-droit (en respectant"
 " cet ordre)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:93
+msgid "Module angle optimization"
+msgstr "Module d'optimisation de l’angle"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:94
+msgid ""
+"The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / "
+"``Optimize()`` (C++) method that is used to \"optimize\" the speed and angle"
+" setpoint of a given ``SwerveModuleState`` to minimize the change in "
+"heading. For example, if the angular setpoint of a certain module from "
+"inverse kinematics is 90 degrees, but your current angle is -89 degrees, "
+"this method will automatically negate the speed of the module setpoint and "
+"make the angular setpoint -90 degrees to reduce the distance the module has "
+"to travel."
+msgstr ""
+"La classe ``SwerveModuleState`` contient une méthode statique ``optimize()``"
+" (Java) / ``Optimize()`` (C++) qui est utilisée pour \"optimiser\" les "
+"points de consigne de vitesse et d’angle pour un  ``SwerveModuleState`` "
+"donné afin de minimiser le changement d'orientation angulaire. Par exemple, "
+"si le point de consigne angulaire d’un certain module de cinématique inverse"
+" est de 90 degrés, mais que votre angle actuel est de -89 degrés, cette "
+"méthode annulera automatiquement la vitesse du point de consigne du module "
+"et fournira le point de consigne angulaire -90 degrés pour réduire la "
+"distance parcourue par le module."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:96
+msgid ""
+"This method takes two parameters: the desired state (usually from the "
+"``toSwerveModuleStates`` method) and the current angle. It will return the "
+"new optimized state which you can use as the setpoint in your feedback "
+"control loop."
+msgstr ""
+"Cette méthode prend deux paramètres : l’état désiré (généralement par "
+"l'intermédiaire de la méthode ``toSwerveModuleStates``) et l’angle actuel. "
+"Il retournera le nouvel état optimisé que vous pouvez utiliser comme point "
+"de consigne dans votre boucle de contrôle de rétroaction."
 
 #: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:110
 msgid "Field-oriented drive"

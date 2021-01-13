@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-08 04:14+0000\n"
+"POT-Creation-Date: 2021-01-13 16:48+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,34 +21,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:2
-msgid "WPILib Pose and State Estimators"
-msgstr "WPILib Poz ve Durum Tahmin Edicileri"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:4
-msgid ""
-"WPILib includes pose and state estimators for differential, swerve and "
-"mecanum drivetrains. These estimators are designed to be drop-in "
-"replacements for the existing :ref:`odometry <docs/software/kinematics-and-"
-"odometry/index:Kinematics and Odometry>` classes, with added features that "
-"utilize an Extended :ref:`Kalman Filter <docs/software/advanced-controls"
-"/state-space/state-space-observers:Kalman Filters>` to fuse latency-"
-"compensated robot pose estimates with encoder and gyro measurements. These "
-"estimators can account for encoder drift and noisy vision data. These "
-"estimators can behave identically to their corresponding odometry classes if"
-" only ``update`` is called on these estimators."
-msgstr ""
-"WPILib, diferansiyel, sapma ve mekanik aktarma organları için poz ve durum "
-"tahmin ediciler içerir. Bu tahmin ediciler, gecikme telafili robot poz "
-"tahminlerini kodlayıcı ve cayro ölçümleriyle birleştirmek için Genişletilmiş"
-" :ref:`Kalman Filter <docs/software/advanced-controls/state-space/state-"
-"space-observers:Kalman Filters>`  kullanan ek özelliklere sahip mevcut  "
-":ref:`odometry <docs/software/kinematics-and-odometry/index:Kinematics and "
-"Odometry>` sınıflarının yerine geçecek şekilde tasarlanmıştır. . Bu tahmin "
-"ediciler, kodlayıcı sapmasını ve gürültülü görüş verilerini hesaba "
-"katabilir. Bu tahmin ediciler, yalnızca ``update`` çağrılırsa, karşılık "
-"gelen odometri sınıflarıyla aynı şekilde davranabilirler."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:6
 msgid ""
@@ -131,53 +103,3 @@ msgstr ""
 "bir şekilde reddedebileceği anlamına gelebilir. Bu değerler önceden tahmin "
 "edilebilirken, bunlar büyük ölçüde her robotun benzersiz kurulumuna ve genel"
 " ölçüm yöntemine bağlıdır."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:37
-msgid "The Differential Drive State Estimator"
-msgstr "Diferansiyel Sürüş Durum Tahmincisi"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:39
-msgid ""
-"The ``DifferentialDriveStateEstimator`` (C++/Java) is a more advanced "
-"estimator, which includes u-error estimation and encoder distance "
-"measurements to more accurately estimate robot position. U-error can account"
-" for unmodeled dynamics by estimating the voltage being lost to wheel drag "
-"or scrub. The ``DifferentialDriveStateEstimator`` uses a system with the "
-"states :math:`\\begin{bmatrix} x & y & \\theta & \\text{vel}_l & "
-"\\text{vel}_r & \\text{dist}_l & \\text{dist}_r & \\text{voltError}_l & "
-"\\text{voltError}_r & \\text{headingError} \\end{bmatrix}^T`, outputs left "
-"and right voltages, and can take inputs from either vision (as "
-":math:`\\begin{bmatrix}x & y & \\theta \\end{bmatrix}^T`) or encoders and "
-"gyros (as  :math:`\\begin{bmatrix} \\text{dist}_l & \\text{dist}_r & \\theta"
-" \\end{bmatrix}^T`)."
-msgstr ""
-"``DifferentialDriveStateEstimator`` (C ++ / Java), robot konumunu daha doğru"
-" bir şekilde tahmin etmek için u-error tahmini ve kodlayıcı mesafe "
-"ölçümlerini içeren daha gelişmiş bir tahmincidir. U hatası, tekerlek "
-"sürüklemesi veya itilmeye bağlı olarak kaybedilen voltajı tahmin ederek "
-"modellenmemiş dinamikleri açıklayabilir. ``DifferentialDriveStateEstimator``"
-" şu durumlara-states sahip bir sistem kullanır :math:`\\begin{bmatrix} x & y"
-" & \\theta & \\text{vel}_l & \\text{vel}_r & \\text{dist}_l & \\text{dist}_r"
-" & \\text{voltError}_l & \\text{voltError}_r & \\text{headingError} "
-"\\end{bmatrix}^T`,sol ve sağ voltaj çıkışlarını sağlar ve girişleri "
-"matematik görüntüden  (:math:`\\begin{bmatrix}x & y & \\theta "
-"\\end{bmatrix}^T`) veya kodlayıcılar ve jiroskoplar  (as "
-":math:`\\begin{bmatrix} \\text{dist}_l & \\text{dist}_r & \\theta "
-"\\end{bmatrix}^T`) dan."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:41
-msgid ""
-"For the ``DifferentialDriveStateEstimator``, it is important that the state-"
-"space model is accurate to the physical hardware. Characterization using the"
-" frc-characterization drivetrain tools to find linear and angular kV and kA,"
-" combined with ``LinearSystem``'s ``identifyDrivetrainSystem`` "
-"(Java)/``IdentifyDrivetrainSystem`` (C++), is an easy way to accurately "
-"create a state-space model of your robot's drivetrain."
-msgstr ""
-"``DifferentialDriveStateEstimator`` için, durum-uzay modelinin fiziksel "
-"donanım için doğru olması önemlidir. Doğrusal ve açısal kV ve kA'yı bulmak "
-"için frc-characterization drivetrain tools araçlarını kullanarak, "
-"``LinearSystem`` in "
-"``identifyDrivetrainSystem''(Java)/``IdentifyDrivetrainSystem`` (C++) ile "
-"birlikte, doğru bir şekilde Robotunuzun aktarma organlarının durum uzay "
-"modelini oluşturun."

@@ -5,16 +5,17 @@
 # 
 # Translators:
 # ceren oktemer <ceren.oktemer@gmail.com>, 2020
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-15 04:39+0000\n"
+"POT-Creation-Date: 2021-01-17 16:43+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -53,6 +54,25 @@ msgstr ""
 "profillemeyi WPILib'in ``PIDController`` ile birleştirmek için, bakınız :doc"
 ":`profilepid-subsystems-commands`."
 
+#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:8
+msgid ""
+"When controlling a mechanism, is often desirable to move it smoothly between"
+" two positions, rather than to abruptly change its setpoint.  This is called"
+" \"motion-profiling,\" and is supported in WPILib through the "
+"``TrapezoidProfile`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1TrapezoidProfile.html>`__)."
+msgstr ""
+"Bir mekanizmayı kontrol ederken, ayar noktasını aniden değiştirmek yerine, "
+"genellikle onu iki konum arasında yumuşak bir şekilde hareket ettirmek "
+"istenir. Buna \"motion-profiling, hareket profili oluşturma\" denir ve "
+"WPILib'de ``TrapezoidProfile`` sınıfı (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/trajectory/TrapezoidProfile.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1TrapezoidProfile.html>`"
+" __) aracılığıyla desteklenir."
+
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:10
 msgid ""
 "To further help teams integrate motion profiling into their command-based "
@@ -87,6 +107,25 @@ msgstr ""
 "olmalıdır, aksi takdirde bir derleme zamanı hatası atılır. C ++ birimleri "
 "hakkında daha fazla bilgi için bakınız :ref:`docs/software/basic-programming"
 "/cpp-units:The C++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:17
+msgid ""
+"The ``TrapezoidProfileSubsystem`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1TrapezoidProfileSubsystem.html>`__)"
+" will automatically create and execute trapezoidal motion profiles to reach "
+"the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` "
+"class, users must create a subclass of it."
+msgstr ""
+"``TrapezoidProfileSubsystem`` sınıfı (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1TrapezoidProfileSubsystem.html>`"
+" __), kullanıcı tarafından sağlanan hedef durumuna ulaşmak için otomatik "
+"olarak trapezoidal hareket profilleri oluşturacak ve yürütecektir. "
+"``TrapezoidProfileSubsystem`` sınıfını kullanmak için kullanıcılar bunun bir"
+" alt sınıfını oluşturmalıdır."
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:20
 msgid "Creating a TrapezoidProfileSubsystem"
@@ -255,6 +294,24 @@ msgstr ""
 "aksi takdirde bir derleme zamanı hatası atılır. C ++ birimleri hakkında daha"
 " fazla bilgi için bakınız :ref:`docs/software/basic-programming/cpp-"
 "units:The C++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:133
+msgid ""
+"The ``TrapezoidProfileCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1TrapezoidProfileCommand.html>`__)"
+" allows users to create a command that will execute a single "
+"``TrapezoidProfile``, passing its current state at each iteration to a user-"
+"defined function."
+msgstr ""
+"``TrapezoidProfileCommand`` sınıfı (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`"
+" __, `C ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1TrapezoidProfileCommand.html>`__),"
+" kullanıcıların her yinelemede mevcut durumunu kullanıcı tanımlı bir işleve "
+"geçirerek tek bir ``TrapezoidProfile`` yürütecek bir komut oluşturmasına "
+"olanak tanır. ."
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:135
 msgid ""

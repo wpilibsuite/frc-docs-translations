@@ -1,22 +1,291 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Michael Zhao <haitong1110@126.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-29 16:14+0000\n"
+"POT-Creation-Date: 2021-01-21 04:41+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
-"Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:2
+msgid "Introduction to GRIP"
+msgstr "GRIP简介"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:3
+msgid ""
+"GRIP is a tool for developing computer vision algorithms interactively "
+"rather than through trial and error coding. After developing your algorithm "
+"you may run GRIP in headless mode on your roboRIO, on a Driver Station "
+"Laptop, or on a coprocessor connected to your robot network. With Grip you "
+"choose vision operations to create a graphical pipeline that represents the "
+"sequence of operations that are performed to complete the vision algorithm."
+msgstr ""
+"GRIP是一种用于交互式开发计算机视觉算法的工具，而不是通过反复试验来开发。开发算法之后，您可以在roboRIO，Driver Station "
+"Laptop或连接到机器人网络的协处理器上以headless模式运行GRIP。使用Grip，您可以选择视觉操作来创建一个图形线程，该线程代表完成视觉算法所执行的操作顺序。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:8
+msgid ""
+"GRIP is based on OpenCV, one of the most popular computer vision software "
+"libraries used for research, robotics, and vision algorithm implementations."
+" The operations that are available in GRIP are almost a 1 to 1 match with "
+"the operations available if you were hand coding the same algorithm with "
+"some text-based programming language."
+msgstr ""
+"GRIP基于OpenCV，OpenCV是最流行的计算机视觉软件库之一，用于研究，机器人技术和视觉算法实现。如果您使用某种基于文本的编程语言对同一算法进行手工编码，则GRIP中可用的操作几乎与可用的操作一对一匹配。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:13
+msgid "The GRIP user interface"
+msgstr "GRIP用户界面"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:16
+msgid "The GRIP user interface consists of 4 parts:"
+msgstr "GRIP用户界面包括4个部分："
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:18
+msgid ""
+"**Image Sources** are the ways of getting images into the GRIP pipeline. You"
+" can provide images through attached cameras or files. Sources are almost "
+"always the beginning of the image processing algorithm."
+msgstr "**图像来源**是将图像导入GRIP线程的方法。您可以通过连接的相机或文件来提供图像。来源几乎总是图像处理算法的开始。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:20
+msgid ""
+"**Operation Palette** contains the image processing steps from the OpenCV "
+"library that you can chain together in the pipeline to form your algorithm. "
+"Clicking on an operation in the palette adds it to the end of the pipeline. "
+"You can then use the left and right arrows to move the operation within the "
+"pipeline."
+msgstr ""
+"** Operation Palette "
+"**包含OpenCV库中的图像处理步骤，您可以在线程中将它们链接在一起以形成算法。单击调色板中的一个操作会将其添加到线程的末尾。然后，您可以使用左右箭头在线程中移动操作。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:23
+msgid ""
+"**Pipeline** is the sequence of steps that make up the algorithm. Each step "
+"(operation) in the pipeline is connected to a previous step from the output "
+"of one step to an input to the next step. The data flows from generally from"
+" left to right through the connections that you create."
+msgstr ""
+"\"线程\"是构成算法的步骤序列。流水线中的每个步骤（操作）都连接到从一个步骤的输出到下一个步骤的输入的上一步。数据通常通过您创建的连接从左到右流动。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:26
+msgid ""
+"**Image Preview** are shows previews of the result of each step that has "
+"it's preview button pressed. This makes it easy to debug algorithms by being"
+" able to preview the outputs of each intermediate step."
+msgstr "**“图像预览 **显示已按下预览按钮的每个步骤的结果预览。通过预览每个中间步骤的输出，可以轻松调试算法。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:30
+msgid "Finding the yellow square"
+msgstr "寻找黄色方块"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:33
+msgid ""
+"In this application we will try to find the yellow square in the image and "
+"display it's position. The setup is pretty simple, just a USB web camera "
+"connected to the computer looking down at some colorful objects. The yellow "
+"plastic square is the thing that we're interested in locating in the image."
+msgstr ""
+"在此应用程序中，我们将尝试在图像中找到黄色方块并显示其位置。设置非常简单，只需将USB网络摄像头连接到计算机，即可向下看一些五颜六色的物体。黄色的塑料方块是我们感兴趣的位于图像中的东西。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:38
+msgid "Enable the image source"
+msgstr "启用图片来源"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:41
+msgid ""
+"The first step is to acquire an image. To use the source, click on the \"Add"
+" Webcam\" button and select the camera number. In this case the Logitech USB"
+" camera that appeared as Webcam 0 and the computer monitor camera was Webcam"
+" 1. The web camera is selected in this case to grab the image behind the "
+"computer as shown in the setup. Then select the image preview button and the"
+" real-time display of the camera stream will be shown in the preview area."
+msgstr ""
+"第一步是获取图像。要使用信号源，请单击“添加网络摄像头”按钮，然后选择摄像头编号。在这种情况下，Logitech USB摄像头显示为Webcam "
+"0，而计算机监控摄像头为Webcam1。在这种情况下，选择Web摄像头以捕获计算机后面的图像，如设置所示。然后选择图像预览按钮，摄像机流的实时显示将显示在预览区域中。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:47
+msgid "Resize the image"
+msgstr "调整图像大小"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:50
+msgid ""
+"In this case the camera resolution is too high for our purposes, and in fact"
+" the entire image cannot even be viewed in the preview window. The "
+"\"Resize\" operation is clicked from the Operation Palette to add it to the "
+"end of the pipeline. To help locate the Resize operation, type \"Resize\" "
+"into the search box at the top of the palette. The steps are:"
+msgstr ""
+"在这种情况下，相机分辨率对于我们的目的来说太高了，实际上，整个图像甚至都无法在预览窗口中查看。从“操作面板”中单击“调整大小”操作，以将其添加到线程的末尾。为了帮助找到“调整大小”操作，请在面板顶部的搜索框中键入“调整大小”。这些步骤是："
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:55
+msgid "Type \"Resize\" into the search box on the palette"
+msgstr "在面板上的搜索框中输入“调整大小”"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:56
+msgid ""
+"Click the Resize operation from the palette. It will appear in the pipeline."
+msgstr "单击调色板中的“调整大小”操作。它将出现在线程中。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:57
+msgid ""
+"Enter the x and y resize scale factor into the resize operation in the "
+"pipeline. In this case 0.25 was chosen for both."
+msgstr "在线程的调整大小操作中输入x和y调整大小比例因子。在这种情况下，两者均选择0.25。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:58
+msgid ""
+"Drag from the Webcam image output mat socket to the Resize image source mat "
+"socket. A connection will be shown indicating that the camera output is "
+"being sent to the resize input."
+msgstr "从网络摄像头图像输出垫插槽中拖动到调整图像源垫插槽。将显示一个连接，指示摄像头输出正在发送到调整大小输入。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:60
+msgid ""
+"Click on the destination preview button on the \"Resize\" operation in the "
+"pipeline. The smaller image will be displayed alongside the larger original "
+"image. You might need to scroll horizontally to see both as shown."
+msgstr "单击线程中“调整大小”操作上的目标预览按钮。较小的图像将与较大的原始图像一起显示。您可能需要水平滚动才能看到两者，如图所示。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:62
+msgid ""
+"Lastly, click the Webcam source preview button since there is no reason to "
+"look at both the large image and the smaller image at the same time."
+msgstr "最后，单击Webcam源预览按钮，因为没有理由同时查看大图像和小图像。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:66
+msgid "Find only the yellow parts of the image"
+msgstr "仅查找图像的黄色部分"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:69
+msgid ""
+"The next step is to remove everything from the image that doesn't match the "
+"yellow color of the piece of plastic that is the object being detected. To "
+"do that a HSV Threshold operation is chosen to set upper and lower limits of"
+" HSV values to indicate which pixels should be included in the resultant "
+"binary image. Notice that the target area is white while everything that "
+"wasn't within the threshold values are shown in black. Again, as before:"
+msgstr ""
+"下一步是从图像中删除与被检测物体塑料片的黄色不匹配的所有东西。为此，选择HSV阈值操作以设置HSV值的上限和下限，以指示在最终的二进制图像中应包含哪些像素。请注意，目标区域为白色，而未超出阈值的所有区域均显示为黑色。再次，和以前一样："
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:74
+msgid "Type HSV into the search box to find the HSV Threshold operation."
+msgstr "在搜索框中键入HSV以查找HSV阈值操作。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:75
+msgid ""
+"Click on the operation in the palette and it will appear at the end of the "
+"pipeline."
+msgstr "单击面板中的操作，它将出现在线程的结尾。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:76
+msgid ""
+"Connect the dst (output) socket on the resize operation to the input of the "
+"HSV Threshold."
+msgstr "将调整大小操作上的dst（输出）插座连接到HSV阈值的输入。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:77
+msgid ""
+"Enable the preview of the HSV Threshold operation so the result of the "
+"operation is displayed in the preview window."
+msgstr "启用“ HSV阈值”操作的预览，以便操作结果显示在预览窗口中。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:78
+msgid ""
+"Adjust the Hue, Saturation, and Value parameters only the target object is "
+"shown in the preview window."
+msgstr "调整“色相”，“饱和度”和“值”参数，只有目标对象显示在预览窗口中。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:81
+msgid "Get rid of the noise and extraneous hits"
+msgstr "摆脱噪音和无关紧要的干扰"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:84
+msgid ""
+"This looks pretty good so far, but sometimes there is noise from other "
+"things that couldn't quite be filtered out. To illustrate one possible "
+"technique to reduce those occasional pixels that were detected, an Erosion "
+"operation is chosen. Erosion will remove small groups of pixels that are not"
+" part of the area of interest."
+msgstr ""
+"到目前为止，这看起来还不错，但有时会出现其他无法完全滤除的噪声。为了说明减少某些偶然像素的一种可能的技术，选择了腐蚀操作。侵蚀会去除不属于关注区域的一小组像素。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:89
+msgid "Mask just the yellow area from the original image"
+msgstr "仅遮盖原始图像的黄色区域"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:92
+msgid ""
+"Here a new image is generated by taking the original image and masking (and "
+"operation) it with the the results of the erosion. This leaves just the "
+"yellow card as seen in the original image with nothing else shown. And it "
+"makes it easy to visualize exactly what was being found through the series "
+"of filters."
+msgstr ""
+"在这里，通过获取原始图像并用腐蚀的结果对其进行遮罩（和操作）来生成新图像。这样就只剩下黄卡了，如原始图像中所示，没有其他任何显示。而且，它可以很容易地直观显示通过一系列过滤器发现的内容。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:97
+msgid "Find the yellow area (blob)"
+msgstr "查找黄色区域（斑点）"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:100
+msgid ""
+"The last step is actually detecting the yellow card using a Blob Detector. "
+"This operation looks for a grouping of pixels that have some minimum area. "
+"In this case, the only non-black pixels are from the yellow card after the "
+"filtering is done. You can see that a circle is drawn around the detected "
+"portion of the image. In the release version of GRIP (watch for more updates"
+" between now and kickoff) you will be able to send parameters about the "
+"detected blob to your robot program using Network Tables."
+msgstr ""
+"最后一步实际上是使用斑点检测器检测黄牌。此操作将查找具有最小面积的一组像素。在这种情况下，过滤完成后，唯一的非黑色像素来自黄卡。您可以看到在检测到的图像部分周围绘制了一个圆圈。在GRIP的发行版中（请注意从现在到启动之间的更多更新），您将能够使用Network"
+" Tables将有关检测到的Blob的参数发送到机器人程序。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:106
+msgid "Status of GRIP"
+msgstr "GRIP的状态"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:107
+msgid ""
+"As you can see from this example, it is very easy and fast to be able to do "
+"simple object recognition using GRIP. While this is a very simple example, "
+"it illustrates the basic principles of using GRIP and feature extraction in "
+"general. Over the coming weeks the project team will be posting updates to "
+"GRIP as more features are added. Currently it supports cameras (Axis "
+"ethernet camera and web cameras) and image inputs. There is no provision for"
+" output yet although Network Tables and ROS (Robot Operating System) are "
+"planned."
+msgstr ""
+"从该示例中可以看到，使用GRIP进行简单的对象识别非常简单快捷。尽管这是一个非常简单的示例，但它说明了使用GRIP和特征提取的基本原理。在接下来的几周中，随着更多功能的添加，项目团队将向GRIP发布更新。当前，它支持摄像机（Axis以太网摄像机和网络摄像机）和图像输入。尽管计划了网络表和ROS（机器人操作系统），但仍未提供输出。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:113
+msgid ""
+"You can either download a pre-built release of the code from the GitHub page"
+" \"Releases\" section (https://github.com/WPIRoboticsProjects/GRIP) or you "
+"can clone the source repository and built it yourself. Directions on "
+"building GRIP are on the project page. There is also additional "
+"documentation on the project wiki."
+msgstr ""
+"您可以从GitHub页面“发布”部分（https://github.com/WPIRoboticsProjects/GRIP）下载代码的预构建版本，也可以克隆源存储库并自行构建。有关构建GRIP的说明，请参见项目页面。项目Wiki上还有其他文档。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/introduction-to-grip.rst:117
+msgid ""
+"So, please play with GRiP and give us feedback here on the forum. If you "
+"find bugs, you can either post them here or as a GitHub project issue on the"
+" project page."
+msgstr "因此，请与GRIP一起玩，并在论坛上向我们提供反馈。如果发现错误，则可以在此处发布它们，也可以在项目页面上将其发布为GitHub项目。"

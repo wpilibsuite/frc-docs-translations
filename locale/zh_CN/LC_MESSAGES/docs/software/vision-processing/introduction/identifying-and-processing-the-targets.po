@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-01-21 04:41+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,348 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:4
+msgid "Identifying and Processing the Targets"
+msgstr "确定和处理目标"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:6
+msgid ""
+"Once an image is captured, the next step is to identify Vision Target(s) in "
+"the image. This document will walk through one approach to identifying the "
+"2016 targets. Note that the images used in this section were taken with the "
+"camera intentionally set to underexpose the images, producing very dark "
+"images with the exception of the lit targets, see the section on Camera "
+"Settings for details."
+msgstr ""
+"捕获图像后，下一步就是识别图像中的视觉目标。本文档将通过一种方法来确定2016年目标。请注意，本节中使用的图像是在相机故意将其设置为曝光不足的情况下拍摄的，除了被照亮的目标外，还会产生非常暗的图像，有关详细信息，请参见“相机设置”部分。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:9
+msgid "Additional Options"
+msgstr "其他选项"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:11
+msgid ""
+"This document walks through the approach used by the example code provided "
+"in LabVIEW (for PC or roboRIO), C++ and Java. In addition to these options "
+"teams should be aware of the following alternatives that allow for vision "
+"processing on the Driver Station PC or an on-board PC:"
+msgstr ""
+"本文档介绍了LabVIEW（适用于PC或roboRIO），C "
+"++和Java中提供的示例代码所使用的方法。除这些选项外，团队还应注意以下替代方法，这些替代方法允许在Driver Station "
+"PC或车载PC上进行视觉处理："
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:13
+msgid "`RoboRealm <http://www.roborealm.com/>`_"
+msgstr "`RoboRealm <http://www.roborealm.com/>`_"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:14
+msgid ""
+"SmartDashboard Camera Extension (programmed in Java, works with any robot "
+"language)"
+msgstr "SmartDashboard Camera Extension（用Java编程，可与任何机器人语言一起使用）"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:15
+msgid "`GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_"
+msgstr "`GRIP <https://wpiroboticsprojects.github.io/GRIP/>`_"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:18
+msgid "Original Image"
+msgstr "原始图片"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:20
+msgid ""
+"The image shown below is the starting image for the example described here. "
+"The image was taken using the green ring light available in *FIRST*\\ |reg| "
+"Choice combined with an additional ring light of a different size. "
+"Additional sample images are provided with the vision code examples."
+msgstr ""
+"下面显示的图像是此处描述的示例的起始图像。使用* FIRST * \\ | reg "
+"|中可用的绿色环形灯拍摄图像。可选配不同尺寸的附加环形灯。视觉代码示例提供了其他示例图像。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:25
+msgid "What is HSL/HSV?"
+msgstr "什么是HSL / HSV？"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:27
+msgid ""
+"The Hue or tone of the color is commonly seen on the artist’s color wheel "
+"and contains the colors of the rainbow Red, Orange, Yellow, Green, Blue, "
+"Indigo, and Violet. The hue is specified using a radial angle on the wheel, "
+"but in imaging the circle typically contains only 256 units, starting with "
+"red at zero, cycling through the rainbow, and wrapping back to red at the "
+"upper end. Saturation of a color specifies amount of color, or the ratio of "
+"the hue color to a shade of gray. Higher ratio means more colorful, less "
+"gray. Zero saturation has no hue and is completely gray. Luminance or Value "
+"indicates the shade of gray that the hue is blended with. Black is 0 and "
+"white is 255."
+msgstr ""
+"颜色的色相或色调通常出现在艺术家的色轮上，并包含红色，橙色，黄色，绿色，蓝色，靛蓝和紫罗兰色的彩虹色。色相是使用车轮上的径向角指定的，但是在成像中，圆通常仅包含256个单位，从零开始的红色开始，循环穿过彩虹，然后在上端回绕为红色。颜色的饱和度指定颜色的数量，或色调颜色与灰色阴影的比率。较高的比率表示更多彩色，较少灰色。零饱和度没有色相，并且完全是灰色。"
+" “亮度”或“值”指示与色调混合的灰色阴影。黑色为0，白色为255。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:29
+msgid ""
+"The example code uses the HSV color space to specify the color of the "
+"target. The primary reason is that it readily allows for using the "
+"brightness of the targets relative to the rest of the image as a filtering "
+"criteria by using the Value (HSV) or Luminance (HSL) component. Another "
+"reason to use the HSV color system is that the thresholding operation used "
+"in the example runs more efficiently on the roboRIO when done in the HSV "
+"color space."
+msgstr ""
+"该示例代码使用HSV颜色空间指定目标的颜色。主要原因是通过使用“值”（HSV）或“亮度”（HSL）分量，可以轻松地将目标相对于图像其余部分的亮度用作过滤标准。使用HSV色彩系统的另一个原因是，在示例中使用的阈值操作在HSV色彩空间中完成时，在roboRIO上更有效地运行。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:32
+msgid "Masking"
+msgstr "掩蔽"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:34
+msgid ""
+"In this initial step, pixel values are compared to constant color or "
+"brightness values to create a binary mask shown below in yellow. This single"
+" step eliminates most of the pixels that are not part of a target’s retro-"
+"reflective tape. Color based masking works well provided the color is "
+"relatively saturated, bright, and consistent. Color inequalities are "
+"generally more accurate when specified using the HSL (Hue, Saturation, and "
+"Luminance) or HSV (Hue, Saturation, and Value) color space than the RGB "
+"(Red, Green, and Blue) space. This is especially true when the color range "
+"is quite large in one or more dimension."
+msgstr ""
+"在此初始步骤中，将像素值与恒定的颜色或亮度值进行比较，以创建下面以黄色显示的二进制掩码。这一步消除了目标反光带中不包含的大多数像素。如果颜色相对饱和，明亮且一致，则基于颜色的遮罩效果很好。使用HSL（色相，饱和度和亮度）或HSV（色相，饱和度和值）颜色空间指定时，颜色不平等通常比RGB（红色，绿色和蓝色）空间更准确。当颜色范围在一维或多个维上很大时，尤其如此。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:36
+msgid ""
+"Notice that in addition to the target, other bright parts of the image "
+"(overhead light and tower lighting) are also caught by the masking step."
+msgstr "请注意，除了目标之外，图像的其他明亮部分（顶灯和塔顶照明）也会被遮罩步骤捕获。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:41
+msgid "Particle Analysis"
+msgstr "粒子分析"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:43
+msgid ""
+"After the masking operation, a particle report operation is used to examine "
+"the area, bounding rectangle, and equivalent rectangle for the particles. "
+"These are used to compute several scored terms to help pick the shapes that "
+"are most rectangular. Each test described below generates a score (0-100) "
+"which is then compared to pre-defined score limits to decide if the particle"
+" is a target or not."
+msgstr ""
+"遮罩操作之后，使用粒子报告操作检查像素的面积，边界矩形和等效矩形。这些用于计算几个计分项，以帮助选择最矩形的形状。下文所述的每个测试都会生成一个分数（0-100），然后将其与预定义的分数限制进行比较，以确定粒子是否为目标。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:46
+msgid "Coverage Area"
+msgstr "覆盖区域"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:48
+msgid ""
+"The Area score is calculated by comparing the area of the particle compared "
+"to the area of the bounding box drawn around the particle. The area of the "
+"retroreflective strips is 80 square inches (~516 :math:`cm^2`). The area of "
+"the rectangle that contains the target is 240 square inches (~0.15 "
+":math:`m^2`). This means that the ideal ratio between area and bounding box "
+"area is 1/3. Area ratios close to 1/3 will produce a score near 100, as the "
+"ratio diverges from 1/3 the score will approach 0."
+msgstr ""
+"面积分数是通过将粒子的面积与粒子周围绘制的边界框的面积进行比较来计算的。逆反射带的面积为80平方英寸（〜516：数学：`cm ^ "
+"2`）。包含目标的矩形区域为240平方英寸（〜0.15：math：`m ^ "
+"2`）。这意味着面积与边界框面积之间的理想比率为1/3。接近1/3的面积比将产生接近100的得分，因为该比例偏离1/3时得分将接近0。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:51
+msgid "Aspect Ratio"
+msgstr "长宽比"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:53
+msgid ""
+"The aspect ratio score is based on (Particle Width / Particle Height). The "
+"width and height of the particle are determined using something called the "
+"\"equivalent rectangle\". The equivalent rectangle is the rectangle with "
+"side lengths :math:`x` and :math:`y` where :math:`2x+2y` equals the particle"
+" perimeter and :math:`x \\cdot y` equals the particle area. The equivalent "
+"rectangle is used for the aspect ratio calculation as it is less affected by"
+" skewing of the rectangle than using the bounding box. When using the "
+"bounding box rectangle for aspect ratio, as the rectangle is skewed the "
+"height increases and the width decreases."
+msgstr ""
+"长宽比得分基于（粒子宽度/粒子高度）。粒子的宽度和高度使用称为“等效矩形”的值来确定。等效矩形是边长为：math：`x`和：math：`y`的矩形，其中：math：`2x+2y`等于粒子周长，而：math：`x"
+" \\ cdot "
+"y`等于粒子面积。等效矩形用于纵横比计算，因为与使用边框相比，等效矩形受矩形倾斜的影响较小。当使用边框矩形作为宽高比时，随着矩形的倾斜，高度会增加，宽度会减小。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:55
+msgid ""
+"The target is 20\" (508 mm) wide by 12\" (304.8 mm) tall, for a ratio of "
+"1.6. The detected aspect ratio is compared to this ideal ratio. The aspect "
+"ratio score is normalized to return 100 when the ratio matches the target "
+"ratio and drops linearly as the ratio varies below or above."
+msgstr ""
+"目标的高度为20英寸（508毫米），高为12英寸（304.8毫米），比率为1.6。将检测到的纵横比与该理想比例进行比较。当该比例与目标比例匹配时，将纵横比得分归一化为100，并随着该比例的变化而线性下降。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:58
+msgid "Moment"
+msgstr "力矩"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:60
+msgid ""
+"The moment measurement calculates the particles moment of inertia about it's"
+" center of mass. This measurement provides a representation of the pixel "
+"distribution in the particle. The ideal score for this test is ~0.28. See: "
+"`Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
+msgstr ""
+"力矩测量可计算粒子在其质心附近的惯性矩。该测量提供了粒子中像素分布的表示。该测试的理想分数是〜0.28。参见：`惯性矩<https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:63
+msgid "X/Y Profiles"
+msgstr "X / Y配置文件"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:67
+msgid ""
+"The edge score describes whether the particle matches the appropriate "
+"profile in both the X and Y directions. As shown, it is calculated using the"
+" row and column averages across the bounding box extracted from the original"
+" image and comparing that to a profile mask. The score ranges from 0 to 100 "
+"based on the number of values within the row or column averages that are "
+"between the upper and lower limit values."
+msgstr ""
+"边缘分数描述了粒子在X和Y方向上是否都匹配适当的轮廓。如图所示，它是使用从原始图像中提取的边界框上的行和列平均值，并将其与轮廓蒙版进行比较来计算的。根据行平均值或列平均值中上限值和下限值之间的值的数量，分数的范围为0到100。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:70
+msgid "Measurements"
+msgstr "测量"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:72
+msgid ""
+"If a particle scores well enough to be considered a target, it makes sense "
+"to calculate some real-world measurements such as position and distance. The"
+" example code includes these basic measurements, so let’s look at the math "
+"involved to better understand it."
+msgstr ""
+"如果粒子得分足够好，可以视为目标，则可以计算一些实际的测量值，例如位置和距离。该示例代码包含这些基本度量，因此让我们看一下所涉及的数学以更好地理解它。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:75
+msgid "Position"
+msgstr "位置"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:77
+msgid ""
+"The target position is well described by both the particle and the bounding "
+"box, but all coordinates are in pixels with 0,0 being at the top left of the"
+" screen and the right and bottom edges determined by the camera resolution. "
+"This is a useful system for pixel math, but not nearly as useful for driving"
+" a robot; so let’s change it to something that may be more useful."
+msgstr ""
+"粒子和边界框都很好地描述了目标位置，但是所有坐标均以像素为单位，其中0,0位于屏幕的左上角，其右边缘和下边缘由相机分辨率确定。这对于像素数学来说是一个有用的系统，但是对于驱动机器人却没有那么有用。因此，让我们将其更改为可能更有用的内容。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:79
+msgid ""
+"To convert a point from the pixel system to the aiming system, we can use "
+"the formula shown below."
+msgstr "要将点从像素系统转换为瞄准系统，可以使用以下公式。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:81
+msgid ""
+"The resulting coordinates are close to what you may want, but the Y axis is "
+"inverted. This could be corrected by multiplying the point by [1,-1] (Note: "
+"this is not done in the sample code). This coordinate system is useful "
+"because it has a centered origin and the scale is similar to joystick "
+"outputs and RobotDrive inputs."
+msgstr ""
+"结果坐标接近您想要的坐标，但是Y轴反转了。可以通过将点乘以[1，-1]来纠正（注意：这在示例代码中没有完成）。此坐标系很有用，因为它具有居中的原点，并且比例尺类似于操纵杆输出和RobotDrive输入。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:83
+msgid ""
+"A_{x,y} = \\left(P_{x,y} - \\frac{\\textit{resolution}_{x,y}}{2}\\right) / \\frac{\\textit{resolution}_{x,y}}{2}\n"
+"\n"
+msgstr ""
+"A_ {x，y} = \\ left（P_ {x，y}-\\ frac {\\ textit {resolution} _ {x，y}} {2} \\ right）/ \\ frac {\\ textit {resolution} _ {x ，y}} {2}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:88
+msgid "Field of View"
+msgstr "视场"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:90
+msgid ""
+"You can use known constants and the position of the target on the coordinate"
+" plane to determine your distance, yaw, and pitch from the target. However, "
+"in order to calculate these, you must determine your FOV (field of view). In"
+" order to empirically determine vertical field of view, set your camera a "
+"set distance away from an flat surface, and measure the distance between the"
+" topmost and bottommost row of pixels."
+msgstr ""
+"您可以使用已知常数和目标在坐标平面上的位置来确定距目标的距离，偏航和俯仰。但是，为了计算这些，您必须确定您的FOV（视场）。为了凭经验确定垂直视场，请将相机设置为与平面保持一定距离，然后测量最顶部和最底部像素行之间的距离。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:92
+msgid ""
+"\\frac{1}{2}FOV_{vertical}=tan\\left(\\frac{\\frac{1}{2}distance_{y}}{distance_{z}}\\right)\n"
+"\n"
+msgstr ""
+"\\frac{1}{2}FOV_{vertical}=tan\\left(\\frac{\\frac{1}{2}distance_{y}}{distance_{z}}\\right)\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:94
+msgid ""
+"You can find the horizontal FOV using the same method, but using the "
+"distance between the first and last column of pixels."
+msgstr "您可以使用相同的方法，但使用像素的第一列和最后一列之间的距离来找到水平FOV。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:97
+msgid "Pitch and Yaw"
+msgstr "俯仰和偏航"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:99
+msgid ""
+"Finding the pitch and yaw of the target relative to your robot is simple "
+"once you know your FOVs and the location of your target in the aiming "
+"coordinate system."
+msgstr "一旦知道了视野和目标在瞄准坐标系中的位置，就可以轻松找到目标相对于机器人的俯仰和偏航。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:101
+msgid ""
+"pitch=\\frac{A_y}{2}FOV_{vertical}\n"
+"\n"
+msgstr ""
+"pitch = \\ frac {A_y} {2} FOV_ {vertical}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:104
+msgid ""
+"yaw=\\frac{A_x}{2}FOV_{horizontal}\n"
+"\n"
+msgstr ""
+"yaw=\\frac{A_x}{2}FOV_{horizontal}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:108
+msgid "Distance"
+msgstr "距离"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:110
+msgid ""
+"If your target is at a significantly different height than your robot, you "
+"can use known constants, such as the physical height of the target and your "
+"camera, as well as the angle your camera is mounted, to calculate the "
+"distance between your camera and the target."
+msgstr "如果目标的高度与机器人的高度明显不同，则可以使用已知的常数，例如目标和摄像机的物理高度以及摄像机的安装角度，来计算摄像机与目标之间的距离。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:112
+msgid ""
+"distance=\\frac{height_{target}-height_{camera}}{tan(angle_{camera}+pitch)}\n"
+"\n"
+msgstr ""
+"distance=\\frac{height_{target}-height_{camera}}{tan(angle_{camera}+pitch)}\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:115
+msgid ""
+"Another option is to create a lookup table for area to distance, or to "
+"estimate the inverse variation constant of area and distance. However, this "
+"method is less accurate."
+msgstr "另一种选择是创建一个面积到距离的查找表，或估算面积和距离的反变常数。但是，此方法不太准确。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:118
+msgid ""
+"For best results for the above methods of estimating angle and distance, you"
+" can calibrate your camera using OpenCV to get rid of any distortions that "
+"may be affecting accuracy by reprojecting the pixels of the target using the"
+" calibration matrix."
+msgstr ""
+"为了获得上述估计角度和距离的方法的最佳结果，您可以使用OpenCV校准相机，以通过使用校准矩阵重新投影目标像素来消除可能影响精度的任何失真。"

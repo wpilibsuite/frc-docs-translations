@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-20 16:47+0000\n"
+"POT-Creation-Date: 2021-01-21 04:41+0000\n"
 "PO-Revision-Date: 2020-06-12 20:55+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -179,3 +179,94 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:63
 msgid "Taking Measurements"
 msgstr "完成测量"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:67
+msgid ""
+"One way to take the required measurements is to use the same images of the "
+"retro-reflective tape that were used for the color calibration above. We can"
+" use Vision Assistant to provide the height of the detected blob in pixels. "
+"By measuring the real-world distance between the camera and the target, we "
+"now have all of the variables to solve our equation for the view angle."
+msgstr ""
+"进行所需测量的一种方法是使用前述用于颜色校准相同的反光图像。我们可以使用视觉助手来提供被检测斑点的像素高度。测量了相机和目标之间的真实距离后，我们就有了所有的变量，可以进一步求解视角方程。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:69
+msgid ""
+"To measure the particles in the image, click the Binary tab, then click the "
+"Particle Analysis icon."
+msgstr "要测量图像中的粒子，先单击二进制选项卡，再单击粒子分析图标。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:72
+msgid "Selecting Measurements"
+msgstr "选择性测量 "
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:76
+msgid ""
+"Click on the Select Measurements button. In this case, we are only "
+"interested in the bounding box height. Click on the button with the X to "
+"deselect all measurements, then locate the Bounding Rect Height measurement "
+"and check the box. Click OK to save."
+msgstr ""
+"点击选择测量按钮。在示例中，我们只对边界框的高度感兴趣。单击带有X的按钮取消选择所有测量值，然后定位包围矩形高度测量值并选中复选框。单击OK保存。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:79
+msgid "Measuring the Particle"
+msgstr "颗粒测量"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:83
+msgid ""
+"The measurements for each particle will now be displayed in the window at "
+"the bottom of the screen. If your image has multiple particles, you can "
+"click in each box to have Vision Assistant highlight the particle so you can"
+" make sure you have the right one. This article will show the calculation "
+"using a single image, but you may wish to perform the calculation on "
+"multiple images from multiple distances and use a technique such as "
+"averaging or least squares fit to determine the appropriate value for the "
+"View angle. You can use the same arrow controls described in the color "
+"section above to change the active image."
+msgstr ""
+"每个颗粒的测量值将显示在屏幕底部的窗口中。 如果图像有多个颗粒，可以通过框中点击，让视觉助手突出显示该颗粒，以便确定所选择操作的颗粒。 "
+"本文展示的是对单个图像进行的计算，但您可能希望对来自多个距离的多个图像进行计算，并使用平均或最小二乘法拟合等技术确定视角的适当值。 "
+"可以使用与上述颜色部分中描述的相同箭头控件来更改活动图像。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:86
+msgid "Calculation"
+msgstr "计算"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:88
+msgid ""
+"As seen in the previous step, the particle representing the 32in tall "
+"vertical target in this example measured 85 pixels tall in a 640x480 image. "
+"The image shown was taken from (very roughly) 18 ft. away. Plugging these "
+"numbers into the equation from above...."
+msgstr ""
+"如前一步所示，本例中代表32英寸高垂直目标的颗粒在640x480图像中测量了85个像素高。 "
+"所示图像取自（非常粗略）18英尺之外。把这些数字代入上面的方程式…..."
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:90
+msgid ""
+"\\theta = \\arctan \\left(2.66 \\cdot \\frac{480}{2 \\cdot 85 \\cdot 18} \\right) = 22.65^{\\circ}\n"
+"\n"
+msgstr ""
+"\\theta = \\arctan \\left(2.66 \\cdot \\frac{480}{2 \\cdot 85 \\cdot 18} "
+"\\right) = 22.65^{\\circ}\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:92
+msgid ""
+"Depending on what you use to calculate the arctangent, your answer may be in"
+" radians, make sure to convert back to degrees if entering directly into the"
+" sample code as the view angle."
+msgstr "根据你计算的反正切函数，答案可能是弧度，如果直接输入样本代码作为视角，一定要把它转换回角度。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/calibration.rst:94
+msgid ""
+"The code uses View Angle and we just calculated |theta|. Make sure to "
+"multiply |theta| by 2 if replacing the constants in the code. Multiplying "
+"our result by 2 yields 45.3\\ |deg|. This image is from a M1013 camera, so "
+"our value is a bit off from the previously measured 29.1 but given that the "
+"18ft. was a very rough measurement this shows that we are in the ballpark "
+"and likely performed the calculation correctly."
+msgstr ""
+"采用视角作为代码，我们刚刚计算了θ。 如果替换代码中的常量，请确保θ乘以2。 将我们的结果也乘以2，得到45.3°。 "
+"该图像来自M1013相机，因此我们的值与先前测量的29.1略微偏离，但考虑到18英尺。 "
+"这是一个非常粗略的测量，这表明我们处于大致范围内，并且可能正确地执行了计算。 "

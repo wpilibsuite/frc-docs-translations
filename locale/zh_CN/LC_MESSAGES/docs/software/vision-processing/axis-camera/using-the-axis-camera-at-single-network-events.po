@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-01-21 04:41+0000\n"
 "PO-Revision-Date: 2020-06-12 20:55+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,160 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:4
+msgid "Using the Axis Camera at Single Network Events"
+msgstr "在单个网络事件中使用Axis摄像机"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:6
+msgid ""
+"The convention for using the Axis camera uses mDNS with the camera name set "
+"to ``axis-camera.local``. At home, this works fine as there is only one "
+"camera on the network. At official events, this works fine as each team is "
+"on their own VLAN and therefore doesn't have visibility to another team's "
+"camera. However, at an off-season event using a single network, this will "
+"cause an issue where all teams will connect to whichever team's camera "
+"\"wins\" the mDNS resolution and becomes ``axis-camera``. The other cameras "
+"will see that the name is taken and use an alternative name. This article "
+"describes how to modify the Dashboard and/or robot code to use a different "
+"mDNS name to separate the camera streams."
+msgstr ""
+"使用Axis摄像机的惯例是使用mDNS，将摄像机名称设置为``axis-"
+"camera.local``。在家里，这很好用，因为网络上只有一台摄像机。在官方活动中，这很好用，因为每个团队都在自己的VLAN上，因此无法看到其他团队的摄像机。然而，在使用单一网络的淡季活动中，这将导致一个问题，即所有团队将连接到任何一个团队的摄像机"
+" \"赢得 \"mDNS解析并成为``axis-"
+"camera``。其他摄像机将看到该名称被占用，并使用其他名称。本文介绍了如何修改Dashboard和/或机器人代码，以使用不同的mDNS名称来分离相机流。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:9
+msgid "Changing the Camera mDNS Name"
+msgstr "更改相机的mDNS名称"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:11
+msgid ""
+"To change the mDNS name in the camera, follow the instructions in :doc"
+":`configuring-an-axis-camera`, but substitute the new name such as ``axis-"
+"cameraTEAM`` where ``TEAM`` is your team number."
+msgstr ""
+"要在摄像机中更改mDNS名称，请按照：doc：configuring-an-axis-camera`中的说明进行操作，但使用新名称例如“ axis-"
+"cameraTEAM”代替，其中“ TEAM”是您的团队编号。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:14
+msgid "Viewing the Camera on the DS PC -  Browser or SmartDashboard"
+msgstr "在DS PC上查看相机-浏览器或SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:16
+msgid ""
+"If you are using a web-browser or SmartDashboard (which accepts mDNS names "
+"for the Simple Camera Viewer widget), updating to use the new mDNS name is "
+"simple. Simply change the URL in the browser or the address in the Simple "
+"Camera Viewer widget properties to the new mDNS name and you are all set."
+msgstr ""
+"如果您使用的是网络浏览器或SmartDashboard（对于Simple Camera "
+"Viewer小部件接受mDNS名称），则使用新的mDNS名称进行更新会很简单。只需将浏览器中的URL或“简单相机查看器”窗口小部件属性中的地址更改为新的mDNS名称，便一切就绪。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:19
+msgid "Viewing the Camera on the DS PC - LabVIEW Dashboard"
+msgstr "在DS PC上查看相机-LabVIEW仪表板"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:21
+msgid ""
+"To view the camera stream in the LabVIEW Dashboard, you will need to build a"
+" customized version of the Dashboard. Note that this customized version will"
+" only work for the Axis camera and will no longer work for a USB camera. "
+"Revert to the default Dashboard to use a USB camera."
+msgstr ""
+"要在LabVIEW仪表板中查看相机流，您将需要构建自定义版本的仪表板。请注意，此自定义版本仅适用于Axis相机，而不再适用于USB相机。恢复为默认的仪表板以使用USB摄像头。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:24
+msgid "Creating a Dashboard Project"
+msgstr "创建仪表板项目"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:28
+msgid ""
+"From the LabVIEW Splash screen, select \"FRC\\ |reg| Dashboard Project\". "
+"Name the project as desired, then click Finish."
+msgstr "在LabVIEW Splash屏幕上，选择“ FRC \\ | reg |仪表板项目”。根据需要命名项目，然后单击“完成”。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:31
+msgid "Locating Loop 2 - Camera IP"
+msgstr "定位环2-摄像机IP"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:35
+msgid ""
+"Double click on ``Dashboard Main.vi`` in the project explorer to open it and"
+" press :kbd:`Ctrl+E` to see the block diagram. Scroll down to the loop with "
+"the comment that says Loop 2 and locate the \"Camera IP\" input."
+msgstr ""
+"双击项目浏览器中的``Dashboard Main.vi''将其打开，然后按Ctrl + "
+"E组合键以查看框图。向下滚动到带有循环2的注释的循环，然后找到“摄像机IP”输入。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:38
+msgid "Editing the Camera IP"
+msgstr "编辑相机IP"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:42
+msgid ""
+"Delete the Camera IP node, right click on the broken wire and click Create "
+"Constant (connect the constant to the wire if necessary). In the box, enter "
+"the mDNS name of your camera with a ``.local`` suffix (e.g. ``axis-"
+"cameraTEAM.local`` where ``TEAM`` is replaced with your team number). The "
+"example above shows a sample name for team 9999. Then click File->Save or "
+":kbd:`Ctrl+S` to save the VI."
+msgstr ""
+"删除“摄像机IP”节点，右键单击断开的导线，然后单击“创建常数”（如有必要，将常数连接到导线）。在框中，输入带有.local后缀的摄像机的mDNS名称（例如"
+"，其中axis-cameraTEAM.local，其中TEAM替换为您的团队编号）。上例显示了团队9999的示例名称。然后单击File-> "
+"Save或Ctrl + S：kbd：Ctrl + S保存VI。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:44
+msgid ""
+"You may also wish to make a minor modification to the Front Panel to verify "
+"that you are running the right dashboard later."
+msgstr "您可能还需要对前面板进行较小的修改，以验证以后是否在运行正确的仪表板。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:47
+msgid "Building the Dashboard"
+msgstr "建立仪表板"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:51
+msgid ""
+"To build the new dashboard, expand Build Specifications in the Project "
+"Explorer, right click on FRC_Dashboard and select Build."
+msgstr "要构建新的仪表板，请在项目资源管理器中展开“构建规范”，右键单击FRC_Dashboard并选择“构建”。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:54
+msgid "Setting the Driver Station to Launch the Modified Dashboard"
+msgstr "设置Driver Station以启动修改后的仪表板"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:58
+msgid ""
+"On the Setup tab of the Driver Station, change to dropdown box to LabVIEW to"
+" launch your new Dashboard."
+msgstr "在Driver Station的“设置”选项卡上，切换至LabVIEW的下拉框以启动新的仪表板。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:61
+msgid "Accessing the Camera from Robot Code"
+msgstr "从机器人代码访问摄像机"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:63
+msgid ""
+"If you wish to access the renamed camera from your robot code, you will have"
+" to modify it as well. In C++ and Java, just change the String used for the "
+"camera host name to match the new name. In LabVIEW follow the step below."
+msgstr ""
+"如果您希望通过机器人代码访问重命名的摄像机，则也必须对其进行修改。在C "
+"++和Java中，只需更改用于摄像机主机名的字符串以匹配新名称即可。在LabVIEW中，请执行以下步骤。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:66
+msgid "Modifying LabVIEW Robot Code"
+msgstr "修改LabVIEW机器人代码"
+
+#: ../../frc-docs/source/docs/software/vision-processing/axis-camera/using-the-axis-camera-at-single-network-events.rst:70
+msgid ""
+"In the Project Explorer, locate ``Vision Processing.VI`` and double click to"
+" open it. Then press :kbd:`Ctrl+E` to open the Block Diagram. Locate the "
+"string ``axis-camera.local`` near the left of the image and replace with "
+"``axis-cameraTEAM.local``. Also make sure the constant is set to ``False`` "
+"to use the Axis camera instead of USB."
+msgstr ""
+"在项目浏览器中，找到``视觉处理.VI''并双击将其打开。然后按Ctrl + E键打开程序框图。在图片左侧找到字符串``axis-"
+"camera.local''并替换为``axis-"
+"cameraTEAM.local''。还要确保将常数设置为``False''以使用Axis摄像头而不是USB。"

@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
 # ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 16:48+0000\n"
+"POT-Creation-Date: 2021-01-23 04:40+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -147,6 +147,42 @@ msgstr ""
 "modül konumu, arka sol modül konumu ve bu sırayla sağ arka modül konumu ile "
 "oluşturulmuşsa, dizideki öğeler ön sol modül durumu, ön bu sırayla sağ modül"
 " durumu, arka sol modül durumu ve arka sağ modül durumu olacaktır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:93
+msgid "Module angle optimization"
+msgstr "Modül açısı optimizasyonu"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:94
+msgid ""
+"The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / "
+"``Optimize()`` (C++) method that is used to \"optimize\" the speed and angle"
+" setpoint of a given ``SwerveModuleState`` to minimize the change in "
+"heading. For example, if the angular setpoint of a certain module from "
+"inverse kinematics is 90 degrees, but your current angle is -89 degrees, "
+"this method will automatically negate the speed of the module setpoint and "
+"make the angular setpoint -90 degrees to reduce the distance the module has "
+"to travel."
+msgstr ""
+"Başlıktaki değişikliği en aza indirmek için. ``SwerveModuleState``  sınıfı, "
+"belirli bir ``SwerveModuleState`` in hız ve açı ayar noktasını \"optimize "
+"etmek\" için kullanılan statik bir``optimize()`` (Java) / ``Optimize()`` "
+"(C++)  yöntemini içerir.  Örneğin, belirli bir modülün ters kinematikten "
+"açısal set noktası 90 derece ise, ancak mevcut açınız -89 derecedir, bu "
+"yöntem modülün ayar noktasının hızını otomatik olarak geçersiz kılar ve "
+"modülün gitmesi gereken mesafeyi azaltmak için açısal ayar noktasını -90 "
+"derece yapar."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:96
+msgid ""
+"This method takes two parameters: the desired state (usually from the "
+"``toSwerveModuleStates`` method) and the current angle. It will return the "
+"new optimized state which you can use as the setpoint in your feedback "
+"control loop."
+msgstr ""
+"Bu yöntem iki parametre alır: istenen durum (genellikle "
+"``toSwerveModuleStates`` metodundan) ve geçerli açı. Geri bildirim kontrol "
+"döngünüzde ayar noktası olarak kullanabileceğiniz yeni optimize edilmiş "
+"durumu döndürecektir."
 
 #: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:110
 msgid "Field-oriented drive"

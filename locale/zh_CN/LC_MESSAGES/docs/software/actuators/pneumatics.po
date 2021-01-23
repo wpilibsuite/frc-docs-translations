@@ -1,22 +1,106 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # 怡静 陆 <2238710874@qq.com>, 2020
+# Tianrui Wu <tw2789@columbia.edu>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-07 04:13+0000\n"
+"POT-Creation-Date: 2021-01-23 04:40+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2020\n"
+"Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:4
+msgid "Operating pneumatic cylinders"
+msgstr "使用气缸"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:7
+msgid "Using the FRC Control System to control Pneumatics"
+msgstr "使用 FRC 控制系统控制气动装置"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:9
+msgid ""
+"The Pneumatics Control Module (PCM) is a CAN-based device that provides "
+"complete control over the compressor and up to 8 solenoids per module. The "
+"PCM is integrated into WPILib through a series of classes that make it "
+"simple to use. The closed loop control of the Compressor and Pressure switch"
+" is handled by the PCM hardware and the Solenoids are handled by the "
+"upgraded Solenoid class that now controls the solenoid channels on the PCM. "
+"An additional PCM module can be used where the modules corresponding "
+"solenoids are differentiated by the module number in the constructors of the"
+" Solenoid and Compressor classes."
+msgstr ""
+"气动控制模块 (PCM) 是基于 CAN 的设备，可对空气压缩机进行完全控制，每个模块最多可控制8个电磁阀。PCM 通过一系列易于使用的类被集成到 "
+"WPILib 中。 空气压缩机和压力开关的闭环控制由 PCM 硬件处理，电磁阀由已升级的 Solenoid 类处理，该类现在控制 PCM "
+"上的电磁阀通道。可以使用额外的 PCM 模块，在 Solenoid 和 Compressor 类的构造函数中，对应的电磁阀模块通过模块编号来区分。"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:14
+msgid ""
+"The Pneumatics Control Module from CTR Electronics is responsible for "
+"regulating the robot's pressure using a pressure switch and a compressor and"
+" switching solenoids on and off. The PCM communicates with the roboRIO over "
+"CAN. For more information, see `FRC Control System Hardware Overview`"
+msgstr ""
+"CTR Electronics 的气动控制模块使用压力开关和压缩机以及打开和关闭电磁阀来调节机器的气压。PCM 通过 CAN 与 roboRIO "
+"通信。有关更多信息，参见 FRC 控制系统硬件概述。"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:17
+msgid "PCM Module Numbers"
+msgstr "PCM 模块编号"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:19
+msgid ""
+"PCM Modules are identified by their Node ID. The default Node ID for PCMs is"
+" 0. If using a single PCM on the bus it is recommended to leave it at the "
+"default Node ID."
+msgstr "PCM 模块由其节点 ID 标识。PCM 的默认节点 ID 为 0。如果在总线上使用单个 PCM，建议保留其默认节点 ID 。"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:22
+msgid "Generating and Storing Pressure"
+msgstr "产生和存储气压"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:26
+msgid ""
+"The Pneumatics Control Module from Cross the Road Electronics allows for "
+"integrated closed loop control of a compressor. Creating any instance of a "
+"Solenoid or Double Solenoid object will enable the Compressor control on the"
+" corresponding PCM. The Compressor object is only needed if you want the "
+"ability to turn off the compressor or query compressor status."
+msgstr ""
+"CTRE 的气动模组允许对整体的闭环控制。创建任何一个单电磁阀或者多电磁阀的实例时都会使得压缩器对 PCM "
+"进行反应。只有当需要关掉压缩器或者查询其状态时才需要调用压缩器。"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:56
+msgid "Solenoid control"
+msgstr "电磁阀控制"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:58
+msgid ""
+"FRC teams use solenoids to preform a variety of tasks, from shifting "
+"gearboxes to operating robot mechanisms. A solenoid is a valve used to "
+"electronically switch a pressurized air line \"on\" or \"off\". For more "
+"information on solenoids, see `this wikipedia article "
+"<https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled "
+"by a robot's Pneumatics Control Module, or PCM, which is in turn connected "
+"to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is"
+" via the small red LED (which indicates if the valve is \"on\" or not), and "
+"solenoids can be manually actuated when un-powered with the small button "
+"adjacent to the LED."
+msgstr ""
+"从变速箱换挡到操作机器人机构，FRC "
+"队伍使用电磁阀执行各种各样的任务。电磁阀是一种将加压空气管路“打开”或“关闭”的电动阀门。有关电磁阀的更多信息，请参阅 '这篇维基百科文章< "
+"https://en.wikipedia.org/wiki/Solenoid_valve > ' __。电磁阀由机器人的气动控制模块 (PCM) "
+"控制，后者又通过 CAN 连接到机器人的 roboRIO。 查看电磁阀状态最简单的方法是通过其上的红色 LED 指示灯 "
+"(指示阀门是否打开)。电磁阀在不通电时可以用LED灯旁的按钮来手动启动。"

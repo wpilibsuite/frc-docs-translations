@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-06 04:30+0000\n"
+"POT-Creation-Date: 2021-01-24 16:46+0000\n"
 "PO-Revision-Date: 2020-12-18 04:24+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,82 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:2
+msgid "Thresholding an Image"
+msgstr "阈值图像"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:4
+msgid ""
+"In order to turn a colored image, such as the one captured by your camera, "
+"into a binary image, with the target as the \"foreground\", we need to "
+"threshold the image using the hue, saturation, and value of each pixel."
+msgstr "为了将彩色图像，例如由您的相机捕获的图像，转换为以目标为“前景”的二进制图像，我们需要使用每个像素的色相，饱和度和值对图像进行阈值处理。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:7
+msgid "The HSV Model"
+msgstr "HSV模型"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:9
+msgid ""
+"Unlike RGB, HSV allows you to not only filter based on the colors of the "
+"pixels, but also by the intensity of color and the brightness."
+msgstr "与RGB不同，HSV不仅可以根据像素的颜色进行过滤，还可以根据颜色的强度和亮度进行过滤。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:11
+msgid "Hue: Measures the color of the pixel."
+msgstr "色相：测量像素的颜色。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:12
+msgid "Saturation: Measures the intensity of color of the pixel."
+msgstr "饱和度：测量像素的颜色强度。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:13
+msgid "Value: Measures the brighness of the pixel."
+msgstr "值：测量像素的亮度。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:17
+msgid "You can use OpenCV to convert a BGR image matrix to HSV."
+msgstr "您可以使用OpenCV将BGR图像矩阵转换为HSV。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:25
+msgid ""
+"OpenCV's hue range is from 1° to 180° instead of the common 1° to 360°. In "
+"order to convert a common hue value to OpenCV, divide by 2."
+msgstr "OpenCV的色相范围从1°到180°，而不是普通的1°到360°。为了将通用色相值转换为OpenCV，请除以2。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:28
+msgid "Thresholding"
+msgstr "阈值"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:30
+msgid ""
+"We will use this field image as an example for the whole process of image "
+"processing."
+msgstr "我们将以现场图像为例来说明整个图像处理过程。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:34
+msgid ""
+"By thresholding the image using HSV, you can separate the image into the "
+"vision target (foreground), and the other things that the camera sees "
+"(background). The following code example converts a HSV image into a binary "
+"image by thresholding with HSV values."
+msgstr ""
+"通过使用HSV对图像进行阈值处理，可以将图像分为视觉目标（前景）和相机看到的其他物体（背景）。以下代码示例通过使用HSV值进行阈值处理将HSV图像转换为二进制图像。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:42
+msgid ""
+"These values may have to be tuned on an per-venue basis, as ambient lighting"
+" may differ across venues. It is recommended to allow editing of these "
+"values through NetworkTables in order to facilitate on-the-fly editing."
+msgstr "这些值可能必须在每个场所进行调整，因为不同场所的环境照明可能会有所不同。建议通过NetworkTables编辑这些值，以便于即时编辑。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:44
+msgid "After thresholding, your image should look like this."
+msgstr "阈值化后，您的图像应如下所示。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/wpilibpi/image-thresholding.rst:48
+msgid ""
+"As you can see, the thresholding process may not be 100% clean. You can use "
+"morphological operations to deal with the noise."
+msgstr "如您所见，阈值处理可能不是100％干净。您可以使用形态学运算来处理噪声。"

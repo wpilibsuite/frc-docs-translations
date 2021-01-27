@@ -5,16 +5,16 @@
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-27 04:18+0000\n"
+"POT-Creation-Date: 2021-01-27 16:23+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -87,6 +87,19 @@ msgstr ""
 "fait), et l’accélération qui, par conséquent, tombe rapidement à zéro "
 "(également exponentiellement, comme la dérivée d’une fonction exponentielle "
 "est également une fonction exponentielle)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:23
+msgid ""
+"Deviation from this behavior is a sign of an :ref:`error <docs/software"
+"/wpilib-tools/robot-characterization/viewing-diagnostics:Common Failure "
+"Modes>`, either in your robot setup, analysis settings, or your test "
+"procedure."
+msgstr ""
+"Un écart par rapport à ce comportement est le signe d’une :ref:`erreur "
+"<docs/software/wpilib-tools/robot-characterization/viewing-"
+"diagnostics:Diagnostics Plots for Common Failure Modes>`, soit dans la "
+"configuration de votre robot, les paramètres d’analyse, ou votre procédure "
+"de test."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:26
 msgid "Voltage-Domain Diagnostics"
@@ -183,6 +196,25 @@ msgstr ""
 "La discontinuité correspond à ``kS``, qui s’oppose toujours à la direction "
 "du mouvement et change ainsi de direction lorsque la courbe franchit le "
 "point de vitesse 0."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:55
+msgid "Common Failure Modes"
+msgstr "Modes de défaillances courantes"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:57
+msgid ""
+"When something has gone wrong with the characterization, diagnostic plots "
+"and console output provide crucial clues as to *what* has gone wrong.  This "
+"section describes some common failures encountered while running the "
+"characterization tool, the identifying features of their diagnostic plots, "
+"and the steps that can be taken to fix them."
+msgstr ""
+"Lorsque quelque chose a mal tourné avec la caractérisation, les graphiques "
+"de diagnostic fournissent des indices cruciaux quant à *ce* qui a mal "
+"tourné. Cette section décrit certaines défaillances couramment rencontrées "
+"lors de l’exécution de l’outil de caractérisation, les caractéristiques "
+"d’identification de leurs graphiques de diagnostic et les mesures qui "
+"peuvent être prises pour les corriger."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:60
 msgid "Improperly Set Motion Threshold"
@@ -286,3 +318,31 @@ msgstr ""
 "recommandé d’essayer une configuration d’encodeurs différente: soit en "
 "déplaçant les encodeurs sur un autre arbre ou en les remplaçant par un autre"
 " type d’encodeurs."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:104
+msgid "Template Lag"
+msgstr "Décalage du modèle"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:106
+msgid ""
+"With the new characterization tool, the logging code might not be able to "
+"keep up with its 5 ms refresh rate thus causing faulty data to be collected."
+msgstr ""
+"Avec le nouvel outil de caractérisation, le code effectuant l'historisation "
+"pourrait ne pas être en mesure de suivre son taux de rafraîchissement de 5 "
+"ms, ce qui entraîne la collecte de données erronées."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:108
+msgid ""
+"To see if this is the case, enable print statements on the Driver Station "
+"whenever running the data logger. When Autonomous mode is exited, the "
+"console will output ``Collected : n in t seconds`` where ``n`` is the number"
+" of samples and ``t`` is the time elapsed. If the sampling was successful, "
+"``n`` should equal ``200t`` (rounded)."
+msgstr ""
+"Pour voir si c’est le cas, programmez des instructions d'affichage sur la "
+"Driver Station  chaque fois que vous lancez le enregistreur de données. "
+"Lorsqu'on sort du mode autonome, la console affiche ``Collected : n in t "
+"seconds`` où ``n`` est le nombre d’échantillons et ``t`` est le temps "
+"écoulé. Si l’échantillonnage a été réussi, ``n`` devrait être égal à "
+"``200t`` (arrondi)."

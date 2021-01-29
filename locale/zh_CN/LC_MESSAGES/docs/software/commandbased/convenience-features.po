@@ -6,18 +6,689 @@
 # Translators:
 # Jiangshan Gong <jiangshan_gong@163.com>, 2020
 # Tianrui Wu <tw2789@columbia.edu>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-11 04:37+0000\n"
+"POT-Creation-Date: 2021-01-29 16:25+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2020\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:2
+msgid "Convenience Features"
+msgstr "便利功能"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:4
+msgid ""
+"While the previously-described methodologies will work fine for writing "
+"command-based robot code, the command-based libraries contain several "
+"convenience features for more-advanced users that can greatly reduce the "
+"verbosity/complexity of command-based code. It is highly recommended that "
+"users familiarize themselves with these features to maximize the value they "
+"get out of the command-based libraries."
+msgstr ""
+"虽然先前描述的方法对于编写基于命令的机器人代码将很好地工作，但是基于命令的库包含一些高级功能，可帮助高级用户大大减少基于命令的代码的冗长/复杂性。强烈建议用户熟悉这些功能，以最大化从基于命令的库中获得的价值。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:7
+msgid "Inline Command Definitions"
+msgstr "内联命令定义"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:9
+msgid ""
+"While users are able to create commands by explicitly writing command "
+"classes (either by subclassing ``CommandBase`` or implementing ``Command``),"
+" for many commands (such as those that simply call a single subsystem "
+"method) this involves a lot of wasteful boilerplate code. To help alleviate "
+"this, many of the prewritten commands included in the command-based library "
+"may be *inlined* - that is, the command body can be defined in a single line"
+" of code at command construction."
+msgstr ""
+"尽管用户可以通过显式编写命令类（通过子类化“CommandBase”或实现“Command”）来创建命令，但是对于许多命令（例如那些仅调用单个子系统方法的命令）而言，这涉及很多浪费的样板代码。为了缓解这种情况，可以*内嵌*基于命令的库中包含的许多预写命令-即，可以在命令构造时以单行代码定义命令主体。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:12
+msgid "Passing Subroutines As Parameters"
+msgstr "将子例程作为参数传递"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:14
+msgid ""
+"In order to inline a command definition, users require some way to specify "
+"what code the commands will run as constructor parameters. Fortunately, both"
+" Java and C++ offer users the ability to pass subroutines as parameters."
+msgstr ""
+"为了内联命令定义，用户需要某种方式来指定命令将作为构造函数参数运行的代码。幸运的是，Java和C ++都为用户提供了将子例程作为参数传递的功能。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:17
+msgid "Method References (Java)"
+msgstr "方法参考（Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:19
+msgid ""
+"In Java, a reference to a subroutine that can be passed as a parameter is "
+"called a method reference. The general syntax for a method reference is "
+"``object::method``. Note that no method parameters are included, since the "
+"method *itself* is the parameter. The method is not being called - it is "
+"being passed to another piece of code (in this case, a command) so that "
+"*that* code can call it when needed. For further information on method "
+"references, see `the official Oracle documentation "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__."
+msgstr ""
+"在Java中，对可以作为参数传递的子例程的引用称为方法引用。方法参考的一般语法是“object::method”。请注意，由于方法*itself*是参数，因此不包括方法参数"
+"。该方法没有被调用-它被传递给另一段代码（在本例中为命令），以便*那个*代码可以在需要时调用它。有关方法引用的更多信息，请参见`the official"
+" Oracle documentation "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:22
+msgid "Lambda Expressions (Java)"
+msgstr "Lambda表达式（Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:24
+msgid ""
+"While method references work well for passing a subroutine that has already "
+"been written, often it is inconvenient/wasteful to write a subroutine solely"
+" for the purpose of sending as a method reference, if that subroutine will "
+"never be used elsewhere. To avoid this, Java also supports a feature called "
+"“lambda expressions.” A lambda expression is an inline method definition - "
+"it allows a subroutine to be defined *inside of a parameter list*. For "
+"specifics on how to write Java lambda expressions, see `this tutorial "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__."
+msgstr ""
+"尽管方法引用可以很好地传递已编写的子例程，但是如果子例程永远不会在其他地方使用，则仅出于发送方法引用的目的而编写子例程通常是不便/浪费的。为避免这种情况，Java还支持称为“"
+" lambda表达式”的功能。 Lambda表达式是一个内联方法定义——它允许在*参数列表*内定义子例程。有关如何编写Java "
+"lambda表达式的详细信息，请参见本教程`this tutorial "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:27
+msgid "Lambda Expressions (C++)"
+msgstr "Lambda表达式（C ++）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:29
+msgid ""
+"C++ lacks a close equivalent to Java method references - pointers to member "
+"functions are generally not directly useable as parameters due to the "
+"presence of the implicit ``this`` parameter.  However, C++ does offer lambda"
+" expressions - in addition, the lambda expressions offered by C++ are in "
+"many ways more powerful than those in Java.  For specifics on how to write "
+"C++ lambda expressions, see `cppreference "
+"<https://en.cppreference.com/w/cpp/language/lambda>`__."
+msgstr ""
+"C ++缺少与Java方法引用几乎相同的功能-成员函数的指针由于存在隐式的“this”参数而通常不能直接用作参数。但是，C "
+"++确实提供了lambda表达式——此外，C ++提供的lambda表达式在许多方面都比Java语言更强大。有关如何编写C ++ "
+"lambda表达式的详细信息，请参见`cppreference "
+"<https://en.cppreference.com/w/cpp/language/lambda>`__。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:32
+msgid "Inlined Command Example"
+msgstr "内联命令示例"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:34
+msgid "So, what does an inlined command definition look like in practice?"
+msgstr "那么，内联命令定义实际上是什么样的？"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:36
+msgid ""
+"The ``InstantCommand`` class provides an example of a type of command that "
+"benefits greatly from inlining. Consider the following from the "
+"HatchBotInlined example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):"
+msgstr ""
+"“InstantCommand”类提供了一个受益于内联的命令类型的示例。考虑一下HatchBotInlined示例项目中的以下内容（`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__）："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:64
+msgid ""
+"Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` "
+"commands which call only one method before ending, both can be accomplished "
+"with a simple inline definition by passing appropriate subsystem method."
+msgstr ""
+"不必浪费时间编写单独的“GrabHatch”和“ReleaseHatch”命令，这些命令在结束前仅调用一个方法，而可以通过传递适当的子系统方法，通过简单的内联定义来完成这两个命令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:67
+msgid "Included Command Types"
+msgstr "包含的命令类型"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:69
+msgid ""
+"The command-based library includes a variety of pre-written commands for "
+"commonly-encountered use cases. Many of these commands are intended to be "
+"used “out-of-the-box” via `inlining <#inline-command-definitions>`_, however"
+" they may be subclassed, as well. A list of the included pre-made commands "
+"can be found below, along with brief examples of each - for more rigorous "
+"documentation, see the API docs (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command"
+"/package-summary.html>`__, `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__)."
+msgstr ""
+"基于命令的库包括针对常见用例的各种预写命令。这些命令中的许多命令旨在通过内联<#inline-command-definitions> "
+"_来“开箱即用”使用，但是也可以将其子类化。可以在下面找到包含的预制命令列表，以及每个命令的简短示例-有关更严格的文档，请参见API文档（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command"
+"/package-summary.html> __，C ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>"
+" __）。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:72
+msgid "ConditionalCommand"
+msgstr "条件命令"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:74
+msgid ""
+"The ``ConditionalCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ConditionalCommand.html>`__)"
+" runs one of two commands when executed, depending on a user-specified true-"
+"or-false condition:"
+msgstr ""
+"ConditionalCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ConditionalCommand.html>`__）在执行时会运行两个命令之一，具体取决于用户指定的是非条件："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:89
+msgid "SelectCommand"
+msgstr "SelectCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:91
+msgid ""
+"While the Java version of SelectCommand simply uses an ``Object`` as a key, "
+"the C++ version is templated on the key type."
+msgstr "Java版本的SelectCommand仅使用“Object”作为键，而C ++版本则以键类型为模板。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:93
+msgid ""
+"An alternate version of SelectCommand simply takes a method that supplies "
+"the command to be run - this can be very succinct, but makes inferring the "
+"command's requirements impossible, and so leaves the user responsible for "
+"manually adding the requirements to the SelectCommand."
+msgstr ""
+"SelectCommand的替代版本仅采用一种提供要运行的命令的方法——这可能非常简洁，但是使推断命令的需求成为不可能，因此，用户需要手动将需求添加到SelectCommand。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:95
+msgid ""
+"The ``SelectCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1SelectCommand.html>`__)"
+" is a generalization of the ``ConditionalCommand`` class that runs one of a "
+"selection of commands based on the value of a user-specified selector.  The "
+"following example code is taken from the SelectCommand example project "
+"(`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__):"
+msgstr ""
+"SelectCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SelectCommand.html>`__，C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1SelectCommand.html>`__）是ConditionalCommand类的概括，它根据用户指定的选择器的值运行选择的命令之一。以下示例代码来自SelectCommand示例项目（Java"
+" "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/selectcommand>`__，`C"
+" ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/master/wpilibcExamples/src/main/cpp/examples/SelectCommand>`__）："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:116
+msgid "InstantCommand"
+msgstr "InstantCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:118
+msgid ""
+"The ``InstantCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1InstantCommand.html>`__)"
+" executes a single action on initialization, and then ends immediately:"
+msgstr ""
+"InstantCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/InstantCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1InstantCommand.html>`__）在初始化时执行一个动作，然后立即结束："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:133
+msgid "RunCommand"
+msgstr "RunCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:135
+msgid ""
+"The ``RunCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1RunCommand.html>`__)"
+" runs a specified method repeatedly in its ``execute()`` block. It does not "
+"have end conditions by default; users can either subclass it, or `decorate "
+"<#command-decorator-methods>`_ it to add them."
+msgstr ""
+"RunCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RunCommand.html>`__，C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1RunCommand.html>`__）在其execute（）块中重复运行指定的方法。默认情况下，它没有结束条件。用户可以将其子类化，也可以`装饰"
+"<#command-decorator-methods>`_以添加它们。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:161
+msgid "StartEndCommand"
+msgstr "StartEndCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:163
+msgid ""
+"The ``StartEndCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1StartEndCommand.html>`__)"
+" executes an action when starting, and a second one when ending. It does not"
+" have end conditions by default; users can either subclass it, or `decorate "
+"<#command-decorator-methods>`_ an inlined command to add them."
+msgstr ""
+"StartEndCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1StartEndCommand.html>`__）在开始时执行一个动作，在结束时执行第二个动作。默认情况下，它没有结束条件。用户可以将其子类化，也可以`装饰"
+"<#command-decorator-methods>`_内联命令来添加它们。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:190
+msgid "FunctionalCommand"
+msgstr "FunctionalCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:192
+msgid ""
+"The ``FunctionalCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1FunctionalCommand.html>`__)"
+" allows all four ``Command`` methods to be passed in as method references or"
+" lambdas:"
+msgstr ""
+"FunctionCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/FunctionalCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1FunctionalCommand.html>`__）允许将所有四个Command方法作为方法引用或lambda传入："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:227
+msgid "PrintCommand"
+msgstr "PrintCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:229
+msgid ""
+"The ``PrintCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PrintCommand.html>`__)"
+" prints a given string."
+msgstr ""
+"PrintCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PrintCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PrintCommand.html>`__）打印给定的字符串。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:242
+msgid "ScheduleCommand"
+msgstr "ScheduleCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:244
+msgid ""
+"The ``ScheduleCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ScheduleCommand.html>`__)"
+" schedules a specified command, and ends instantly:"
+msgstr ""
+"ScheduleCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ScheduleCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ScheduleCommand.html>`__）调度指定的命令并立即结束："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:258
+msgid ""
+"This is often useful for \"forking off\" from command groups: by default, "
+"commands in command groups are run *through* the command group, and are "
+"never themselves seen by the scheduler.  Accordingly, their requirements are"
+" added to the group's requirements.  While this is usually fine, sometimes "
+"it is undesirable for the entire command group to gain the requirements of a"
+" single command - a good solution is to \"fork off\" from the command group "
+"and schedule that command separately."
+msgstr ""
+"这通常对于从命令组“forking "
+"off”很有用：默认情况下，命令组中的命令是*通过*命令组运行的，而调度程序永远不会看到它们。因此，他们的要求被添加到组的要求中。尽管这通常很好，但有时整个命令组都不希望获得单个命令的要求——一个好的解决方案是从命令组“fork"
+" off”并单独计划该命令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:261
+msgid "ProxyScheduleCommand"
+msgstr "ProxyScheduleCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:263
+msgid ""
+"The ``ProxyScheduleCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyScheduleCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ProxyScheduleCommand.html>`__)"
+" schedules a specified command, and does not end until that command ends:"
+msgstr ""
+"ProxyScheduleCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ProxyScheduleCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1ProxyScheduleCommand.html>`__）计划指定的命令，并且直到该命令结束才结束："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:277
+msgid ""
+"This is often useful for \"forking off\" from command groups: by default, "
+"commands in command groups are run *through* the command group, and are "
+"never themselves seen by the scheduler.  Accordingly, their requirements are"
+" added to the group's requirements.  While this is usually fine, sometimes "
+"it is undesirable for the entire command group to gain the requirements of a"
+" single command - a good solution is to \"fork off\" from the command group "
+"and schedule the command separately."
+msgstr ""
+"这通常对于从命令组“forking "
+"off”很有用：默认情况下，命令组中的命令是通过命令组运行的，而调度程序永远不会看到它们。因此，他们的要求被添加到组的要求中。虽然这通常很好，但是有时整个命令组都不希望获得单个命令的要求——一个好的解决方案是从命令组“fork"
+" iff”并单独计划命令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:280
+msgid "WaitCommand"
+msgstr "WaitCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:282
+msgid ""
+"The ``WaitCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1WaitCommand.html>`__)"
+" does nothing, and ends after a specified period of time elapses after its "
+"initial scheduling:"
+msgstr ""
+"``WaitCommand``类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1WaitCommand.html>`__）不执行任何操作，并在其初始调度后经过指定的时间段后结束："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:296
+msgid "This is often useful as a component of a command group."
+msgstr "这通常作为命令组的组成部分很有用。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:298
+msgid ""
+"``WaitCommand`` can also be subclassed to create a more complicated command "
+"that runs for a period of time. If ``WaitCommand`` is used in this method, "
+"the user must ensure that the ``WaitCommand``'s ``Initialize``, ``End``, and"
+" ``IsFinished`` methods are still called in order for the WaitCommand's "
+"timer to work."
+msgstr ""
+"也可以将``WaitCommand``子类化以创建运行一段时间的更复杂的命令。如果在此方法中使用了“ WaitCommand”，则用户必须确保仍然调用“"
+" WaitCommand”的“ Initialize”，“ End”和“ IsFinished”方法，以便WaitCommand的计时器起作用。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:301
+msgid "WaitUntilCommand"
+msgstr "WaitUnitilCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:303
+msgid ""
+"The match timer used by WaitUntilCommand does *not* provide an official "
+"match time!  While it is fairly accurate, use of this timer can *not* "
+"guarantee the legality of your robot's actions."
+msgstr "WaitUntilCommand使用的比赛计时器*不*提供官方比赛时间！虽然非常准确，但是使用此计时器*不能*保证机器人动作的合法性。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:305
+msgid ""
+"The ``WaitUntilCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1WaitUntilCommand.html>`__)"
+" does nothing, and ends once a specified condition becomes true, or until a "
+"specified match time passes."
+msgstr ""
+"``WaitUntilCommand``类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/WaitUntilCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1WaitUntilCommand.html>`__）不执行任何操作，并在指定条件为真或经过指定的匹配时间后结束。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:326
+msgid "PerpetualCommand"
+msgstr "PerpetualCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:328
+msgid ""
+"The ``PerpetualCommand`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PerpetualCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PerpetualCommand.html>`__)"
+" runs a given command with its end condition removed, so that it runs "
+"forever (unless externally interrupted):"
+msgstr ""
+"PerpetualCommand类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/PerpetualCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PerpetualCommand.html>`__）运行给定命令并删除其终止条件，以便其永久运行（除非外部中断）："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:343
+msgid "Command Decorator Methods"
+msgstr "命令装饰器的方法"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:345
+msgid ""
+"The ``Command`` interface contains a number of defaulted “decorator” methods"
+" which can be used to add additional functionality to existing commands. A "
+"“decorator” method is a method that takes an object (in this case, a "
+"command) and returns an object of the same type (i.e. a command) with some "
+"additional functionality added to it. A list of the included decorator "
+"methods with brief examples is included below - for rigorous documentation, "
+"see the API docs (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__)."
+msgstr ""
+"“ Command”界面包含许多默认的“ decorator”方法，可用于向现有命令添加其他功能。 "
+"“装饰器”方法是一种方法，该方法接受一个对象（在这种情况下为命令）并返回相同类型的对象（即命令），并添加了一些其他功能"
+"。下面包括了包含的装饰器方法的列表以及简短的示例-有关严格的文档，请参见API文档（Java Java 0533721bad8e2z0 __，C ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>"
+" __）。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:354
+msgid "withTimeout"
+msgstr "withTimeout"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:356
+msgid ""
+"The ``withTimeout()`` decorator (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#a3a10e79038afc9bc7c98461b7dbb895b>`__)"
+" adds a timeout to a command. The decorated command will be interrupted if "
+"the timeout expires:"
+msgstr ""
+"withTimeout（）装饰器（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withTimeout(double)>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#a3a10e79038afc9bc7c98461b7dbb895b>`__）将超时添加到命令中。如果超时到期，修饰的命令将被中断："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:372
+msgid "withInterrupt"
+msgstr "withInterrupt"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:374
+msgid ""
+"The ``withInterrupt()`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withInterrupt(java.util.function.BooleanSupplier)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#a4a6078c253a1578b3310833dcdfc01f0>`__)"
+" decorator adds a condition on which the command will be interrupted:"
+msgstr ""
+"withInterrupt（）``（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#withInterrupt(java.util.function.BooleanSupplier)>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#a4a6078c253a1578b3310833dcdfc01f0>`__）装饰器添加了一个条件，命令将被中断："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:389
+msgid "andThen"
+msgstr "andThen"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:391
+msgid ""
+"The ``andThen()`` decorator (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(java.lang.Runnable)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#ade79bfb9d4ad670cdcb35369c0081b37>`__)"
+" adds a method to be executed after the command ends:"
+msgstr ""
+"andThen（）装饰器（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#andThen(java.lang.Runnable)>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#ade79bfb9d4ad670cdcb35369c0081b37>`__）添加了一个在命令结束后要执行的方法："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:406
+msgid "beforeStarting"
+msgstr "beforeStarting"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:408
+msgid ""
+"The ``beforeStarting()`` decorator (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(java.lang.Runnable)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#a65155a6d7062deed375da196d2ba4c89>`__)"
+" adds a method to be executed before the command starts:"
+msgstr ""
+"``beforeStarting（）``装饰器（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#beforeStarting(java.lang.Runnable)>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#a65155a6d7062deed375da196d2ba4c89>`__）添加了要在命令启动之前执行的方法："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:423
+msgid "alongWith (Java only)"
+msgstr "alongWith（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:425
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel command group the ordinary way instead."
+msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行命令组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:427
+msgid ""
+"The ``alongWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a parallel command group containing the command, along with all the"
+" other commands passed in as arguments:"
+msgstr ""
+"装饰器<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__会返回一个并行命令组，其中包含该命令以及作为参数传递的所有其他命令："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:435
+msgid "raceWith (Java only)"
+msgstr "raceWith（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:437
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel race group the ordinary way instead."
+msgstr "由于技术限制，C ++不支持该装饰器——用户应该简单地以常规方式构造一个并行竞争组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:439
+msgid ""
+"The ``raceWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a parallel command race containing the command, along with all the "
+"other commands passed in as arguments:"
+msgstr ""
+"raceWith（）装饰器<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__返回一个并行命令竞争，其中包含该命令以及作为参数传递的所有其他命令："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:447
+msgid "deadlineWith (Java only)"
+msgstr "deadlineWith（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:449
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel deadline group the ordinary way instead."
+msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行的截止时间组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:451
+msgid ""
+"The ``deadlineWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a parallel deadline group containing the command, along with all "
+"the other commands passed in as arguments:"
+msgstr ""
+"deadlineWith（）装饰器<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__返回一个并行的截止时间组，其中包含命令以及作为参数传递的所有其他命令："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:459
+msgid "withName (Java only)"
+msgstr "withName（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:461
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should set the name of the command inside their command class instead."
+msgstr "由于技术限制，C ++不支持此装饰器——用户应在其命令类中设置命令名称。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:463
+msgid ""
+"The ``withName()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__"
+" adds a name to a command. This name will appear on a dashboard when the "
+"command is sent via the `sendable interface "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.wpilibj.smartdashboard.SendableBuilder)>`__."
+msgstr ""
+"withName（）装饰器<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#withName(java.lang.String)>`__为命令添加名称。通过可发送接口<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandBase.html#initSendable(edu.wpi.first.wpilibj.smartdashboard.SendableBuilder)>`__发送命令时，此名称将出现在仪表板上。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:471
+msgid "perpetually"
+msgstr "perpetually"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:473
+msgid ""
+"The ``perpetually()`` decorator (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#perpetually()>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#ae1583c73c9b953d8ff730d4809926518>`__)"
+" removes the end condition of a command, so that it runs forever."
+msgstr ""
+"``perpetually（）''装饰器（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#perpetually()>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html#ae1583c73c9b953d8ff730d4809926518>`__）删除了命令的结束条件，因此它可以永远运行。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:488
+msgid "Composing Decorators"
+msgstr "组成装饰器"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:490
+msgid ""
+"Remember that decorators, like all command groups, can be composed! This "
+"allows very powerful and concise inline expressions:"
+msgstr "请记住，装饰器和所有命令组一样都可以组成！这允许非常强大而简洁的内联表达式："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:498
+msgid "Static Factory Methods for Command Groups (Java only)"
+msgstr "命令组的静态工厂方法 (仅Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:500
+msgid ""
+"These factory methods are not included in the C++ command library, as the "
+"reduction in verbosity would be minimal - C++ commands should be stack-"
+"allocated, removing the need for the ``new`` keyword."
+msgstr "这些工厂方法未包含在C ++命令库中，因为冗长程度的降低极小——C ++命令应进行堆栈分配，而无需使用“new”关键字。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:502
+msgid ""
+"If users do not wish to use the ``andThen``, ``alongWith``, ``raceWith``, "
+"and ``deadlineWith`` decorators for declaring command groups, but still wish"
+" to reduce verbosity compared to calling the constructors, the "
+"``CommandGroupBase`` `class "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__"
+" contains four static factory methods for declaring command groups: "
+"``sequence()``, ``parallel()``, ``race()``, and ``deadline()``. When used "
+"from within a command group subclass or in combination with ``import "
+"static``, these become extremely concise and greatly aid in command "
+"composition:"
+msgstr ""
+"如果用户不希望使用装饰器“ andThen”，“ alongWith”，“ raceWith”和“ "
+"deadlineWith”修饰符来声明命令组，但与调用构造函数相比，仍然希望减少冗长性， "
+"``CommandGroupBase''类<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandGroupBase.html>`__包含四个用于声明命令组的静态工厂方法：``sequence（）``，``parallel（）``，``race（）``和``deadline（"
+" ）。当从命令组子类中使用或与``import static''结合使用时，这些变得非常简洁，并极大地有助于命令的编写"

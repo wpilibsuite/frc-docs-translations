@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-20 16:21+0000\n"
+"POT-Creation-Date: 2021-01-29 16:25+0000\n"
 "PO-Revision-Date: 2020-09-04 16:14+0000\n"
 "Last-Translator: Jiangshan Gong <jiangshan_gong@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,288 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:2
+msgid "A Technical Discussion on C++ Commands"
+msgstr "有关C ++指令的技术讨论"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:3
+msgid ""
+"This article serves as a technical discussion on some of the design "
+"decisions that were made when designing the new command-based framework in "
+"C++. You do not need to understand the information within this article to "
+"use the command-based framework in your robot code."
+msgstr "本文是对在C ++中设计基于指令的新框架时所做的一些设计决策的技术讨论。您无需了解本文中的信息即可在机器人代码中使用基于指令的框架。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:5
+msgid ""
+"This article assumes that you have a fair understanding of advanced C++ "
+"concepts, including templates, smart pointers, inheritance, rvalue "
+"references, copy semantics, move semantics, and CRTP."
+msgstr "本文假定您对高级C ++概念有一定的了解，包括模板，智能指针，继承，右值引用，复制语义，移动语义和CRTP。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:7
+msgid ""
+"This article will help you understand the reasoning behind some of the "
+"decisions made in the new command-based framework (such as the use of "
+"``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, "
+"the lack of more advanced decorators that are available in Java, etc.)"
+msgstr ""
+"本文将帮助您了解在基于指令的新框架中做出某些决策的原因（例如“std :: unique_ptr”的使用，CRTP以“CommandHelper "
+"<Base, Derived>”的形式存在，缺乏Java可用的更高级的装饰器等）"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:10
+msgid "Ownership Model"
+msgstr "所有权模型"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:11
+msgid ""
+"The old command-based framework employed the use of raw pointers, meaning "
+"that users had to use ``new`` (resulting in manual heap allocations) in "
+"their robot code. Since there was no clear indication on who owned the "
+"commands (the scheduler, the command groups, or the user themselves), it was"
+" not apparent who was supposed to take care of freeing the memory."
+msgstr ""
+"基于指令的旧框架使用原始指针，这意味着用户必须在其机器人代码中使用“new'”（导致手动堆分配）。由于没有明确指示谁拥有命令（调度程序，指令组或用户自己），因此不清楚谁应该负责释放内存。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:13
+msgid ""
+"Several examples in the old command-based framework involved code like this:"
+msgstr "旧的基于命指令的框架中的几个示例涉及如下代码："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:27
+msgid ""
+"In the command-group above, the component commands of the command group were"
+" being heap allocated and passed into ``AddSequential`` all in the same "
+"line. This meant that that user had no reference to that object in memory "
+"and therefore had no means of freeing the allocated memory once the command "
+"group ended. The command group itself never freed the memory and neither did"
+" the command scheduler. This led to memory leaks in robot programs (i.e. "
+"memory was allocated on the heap but never freed)."
+msgstr ""
+"在上面的指令组中，指令组的组件指令正在堆中分配，并传递到同一行中的“AddSequential”中。这意味着该用户没有对内存中该对象的引用，因此，一旦指令组结束，该用户就无法释放分配的内存。指令组本身从不释放内存，指令调度程序也没有。这导致机器人程序中的内存泄漏（即，内存在堆上分配但从未释放）。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:29
+msgid ""
+"This glaring problem was one of the reasons for the rewrite of the "
+"framework. A comprehensive ownership model was introduced with this rewrite,"
+" along with the usage of smart pointers which will automatically free memory"
+" when they go out of scope."
+msgstr "这个明显的问题是重写框架的原因之一。这次重写引入了一个全面的所有权模型，以及智能指针的使用，这些智能指针将在超出范围时自动释放内存。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:31
+msgid ""
+"Default commands are owned by the command scheduler whereas component "
+"commands of command groups are owned by the command group. Other commands "
+"are owned by whatever the user decides they should be owned by (e.g. a "
+"subsystem instance or a ``RobotContainer`` instance). This means that the "
+"ownership of the memory allocated by any commands or command groups is "
+"clearly defined."
+msgstr ""
+"默认指令归指令调度程序所有，而指令组的组件指令归指令组所有。其他指令归用户决定应归其所有的对象（例如子系统实例或“RobotContainer”实例）。这意味着可以清楚地定义任何指令或指令组分配的内存的所有权。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:34
+msgid "``std::unique_ptr`` vs. ``std::shared_ptr``"
+msgstr "“std::unique_ptr”vs.“std::shared_ptr”"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:35
+msgid ""
+"Using ``std::unique_ptr`` allows us to clearly determine who owns the "
+"object. Because an ``std::unique_ptr`` cannot be copied, there will never be"
+" more than one instance of a ``std::unique_ptr`` that points to the same "
+"block of memory on the heap. For example, a constructor for "
+"``SequentialCommandGroup`` takes in a "
+"``std::vector<std::unique_ptr<Command>>&&``. This means that it requires an "
+"rvalue reference to a vector of ``std::unique_ptr<Command>``. Let's go "
+"through some example code step-by-step to understand this better:"
+msgstr ""
+"使用“std::unique_ptr”以让我们清楚地确定谁拥有对象。由于无法复制“std::unique_ptr”，因此不会有超过一个“std::unique_ptr”实例指向堆上的同一内存块。例如，“SequentialCommandGroup”的构造函数采用“std"
+" :: vector <std::unique_ptr<Command>> &&”。这意味着它需要对向量“std::unique_ptr "
+"<Command>”的右值引用。让我们逐步看一些示例代码，以更好地理解这一点："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:61
+msgid ""
+"With ``std::shared_ptr``, there is no clear ownership model because there "
+"can be multiple instances of a ``std::shared_ptr`` that point to the same "
+"block of memory. If commands were in ``std::shared_ptr`` instances, a "
+"command group or the command scheduler cannot take ownership and free the "
+"memory once the command has finished executing because the user might still "
+"unknowingly still have a ``std::shared_ptr`` instance pointing to that block"
+" of memory somewhere in scope."
+msgstr ""
+"使用“std::shared_ptr”时，没有明确的所有权模型，因为“std::shared_ptr”可能有多个实例指向同一块内存。如果指令在“std::shared_ptr”实例中，则指令组或指令调度程序将无法获得所有权并在指令完成执行后释放内存，因为用户可能仍然不知不觉中仍然拥有“std::shared_ptr”。指向范围内某处内存块的实例。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:64
+msgid "Use of CRTP"
+msgstr "CRTP的使用"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:65
+msgid ""
+"You may have noticed that in order to create a new command, you must extend "
+"``CommandHelper``, providing the base class (usually ``frc2::Command``) and "
+"the class that you just created. Let's take a look at the reasoning behind "
+"this:"
+msgstr ""
+"您可能已经注意到，为了创建新指令，必须扩展“CommandHelper”，提供基类（通常是“frc2::Command”）和刚创建的类。让我们看一下其背后的原因："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:68
+msgid "Command Decorators"
+msgstr "Command Decorators"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:69
+msgid ""
+"The new command-based framework includes a feature known as \"command "
+"decorators\", which allows the user to something like this:"
+msgstr "新的基于指令的框架包括称为“command decorators”的功能，该功能允许用户执行以下操作："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:76
+msgid ""
+"When ``task`` is scheduled, it will first execute ``MyCommand()`` and once "
+"that command has finished executing, it will print the message to the "
+"console. The way this is achieved internally is by using a sequential "
+"command group."
+msgstr ""
+"计划好“task”之后，它将首先执行“MyCommand()”，一旦该命令执行完毕，它将把消息打印到控制台。在内部实现此目标的方法是使用顺序指令组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:78
+msgid ""
+"Recall from the previous section that in order to construct a sequential "
+"command group, we need a vector of unique pointers to each command. Creating"
+" the unique pointer for the print function is pretty trivial:"
+msgstr "回顾上一节，为了构建顺序指令组，我们需要一个指向每个指令的唯一指针的向量。为打印功能创建唯一的指针非常简单："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:85
+msgid ""
+"Here ``temp`` is storing the vector of commands that we need to pass into "
+"the ``SequentialCommandGroup`` constructor. But before we add that "
+"``InstantCommand``, we need to add ``MyCommand()`` to the "
+"``SequentialCommandGroup``. How do we do that?"
+msgstr ""
+"这里的“temp”存储我们需要传递给“SequentialCommandGroup”构造函数的指令向量。但是在添加“InstantCommand”之前，我们需要将“MyCommand()”添加到“SequentialCommandGroup”中。我们该怎么做？"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:91
+msgid ""
+"You might think it would be this straightforward, but that is not the case. "
+"Because this decorator code is in the ``Command`` interface, ``*this`` "
+"refers to the ``Command`` in the subclass that you are calling the decorator"
+" from and has the type of ``Command``. Effectively, you will be trying to "
+"move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` "
+"pointer to a ``MyCommand*`` and then dereference it but we have no "
+"information about the subclass to cast to at compile-time."
+msgstr ""
+"您可能会认为这很简单，但事实并非如此。因为此修饰符代码在“Command”界面中，所以“*this”指代您从其调用修饰符的子类中的“Command”，并且具有“Command”的类型。实际上，您将尝试移动“Command”而不是“MyCommand”。我们可以将“this”指针转换为“MyCommand*”，然后取消引用，但我们没有有关在编译时要转换为子类的信息。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:94
+msgid "Solutions to the Problem"
+msgstr "解决问题的方法"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:96
+msgid ""
+"Our initial solution to this was to create a virtual method in ``Command`` "
+"called ``TransferOwnership()`` that every subclass of ``Command`` had to "
+"override. Such an override would have looked like this:"
+msgstr ""
+"我们对此的最初解决方案是在“Command”中创建一个虚拟方法，称为“TransferOwnership()”，“Command”的每个子类都必须重写。这样的覆盖看起来像这样："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:104
+msgid ""
+"Because the code would be in the derived subclass, ``*this`` would actually "
+"point to the desired subclass instance and the user has the type info of the"
+" derived class to make the unique pointer."
+msgstr "因为代码将在派生的子类中，所以“*this”实际上将指向所需的子类实例，并且用户具有派生类的类型信息以构成唯一的指针。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:106
+msgid ""
+"After a few days of deliberation, a CRTP method was proposed. Here, an "
+"intermediary derived class of ``Command`` called ``CommandHelper`` would "
+"exist. ``CommandHelper`` would have two template arguments, the original "
+"base class and the desired derived subclass. Let's take a look at a basic "
+"implementation of ``CommandHelper`` to understand this:"
+msgstr ""
+"经过几天的审议，提出了一种CRTP方法。在这里，将存在一个称为“CommandCommander”的中间派生类“Command”。 "
+"“CommandHelper”有两个模板参数，原始基类和所需的派生子类。让我们看一下“CommandHelper”的基本实现以了解这一点："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:126
+msgid ""
+"Thus, making your custom commands extend ``CommandHelper`` instead of "
+"``Command`` will automatically implement this boilerplate for you and this "
+"is the reasoning behind asking teams to use what may seem to be a rather "
+"obscure way of doing things."
+msgstr ""
+"因此，使您的自定义命令扩展为“CommandHelper”而不是“Command”将自动为您实现此样板，这就是要求团队使用似乎是一种相当晦涩的处理方式的原因。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:128
+msgid "Going back to our ``AndThen()`` example, we can now do the following:"
+msgstr "回到我们的“AndThen()”示例，我们现在可以执行以下操作："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:138
+msgid "Lack of Advanced Decorators"
+msgstr "缺乏高级装饰"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:139
+msgid ""
+"Most of the C++ decorators take in ``std::function<void()>`` instead of "
+"actual commands themselves. The idea of taking in actual commands in "
+"decorators such as ``AndThen()``, ``BeforeStarting()``, etc. was considered "
+"but then abandoned due to a variety of reasons."
+msgstr ""
+"大多数C ++装饰器都采用“std::function "
+"<void()>”代替实际的命令本身。考虑了在装饰器中接收实际命令的想法，例如“AndThen()”，“BeforeStarting()”等，但由于多种原因而被放弃。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:142
+msgid "Templating Decorators"
+msgstr "模板装饰器"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:143
+msgid ""
+"Because we need to know the types of the commands that we are adding to a "
+"command group at compile-time, we will need to use templates (variadic for "
+"multiple commands). However, this might not seem like a big deal. The "
+"constructors for command groups do this anyway:"
+msgstr ""
+"因为我们需要在编译时知道要添加到指令组的指令的类型，所以我们将需要使用模板（对于多个指令来说是可变的）。但是，这似乎没什么大不了的。无论如何，指令组的构造函数都会这样做："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:165
+msgid ""
+"This is a secondary constructor for ``SequentialCommandGroup`` in addition "
+"to the vector constructor that we described above."
+msgstr "除了我们上面描述的向量构造器之外，这是“SequentialCommandGroup”的辅助构造器。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:167
+msgid ""
+"However, when we make a templated function, its definition must be declared "
+"inline. This means that we will need to instantiate the "
+"``SequentialCommandGroup`` in the ``Command.h`` header, which poses a "
+"problem. ``SequentialCommandGroup.h`` includes ``Command.h``. If we include "
+"``SequentialCommandGroup.h`` inside of ``Command.h``, we have a circular "
+"dependency. How do we do it now then?"
+msgstr ""
+"但是，当我们制作模板函数时，必须将其定义内联声明。这意味着我们将需要在“Command.h”标头中实例化“SequentialCommandGroup”，这会带来问题。"
+" "
+"“SequentialCommandGroup.h”包括“Command.h”。如果我们在“Command.h”内包含“SequentialCommandGroup.h”，则具有循环依赖关系。那我们现在怎么办呢？"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:169
+msgid "We use a forward declaration at the top of ``Command.h``:"
+msgstr "我们在“Command.h”的顶部使用前向声明："
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:177
+msgid ""
+"And then we include ``SequentialCommandGroup.h`` in ``Command.cpp``. If "
+"these decorator functions were templated however, we cannot write "
+"definitions in the ``.cpp`` files, resulting in a circular dependency."
+msgstr ""
+"然后我们在“Command.cpp”中包含“SequentialCommandGroup.h”。但是，如果这些装饰器函数是模板化的，则无法在“.cpp”文件中编写定义，从而导致循环依赖。"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:180
+msgid "Java vs C++ Syntax"
+msgstr "Java与C ++语法"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:181
+msgid ""
+"These decorators usually save more verbosity in Java (because Java requires "
+"raw ``new`` calls) than in C++, so in general, it does not make much of a "
+"syntanctic difference in C++ if you create the command group manually in "
+"user code."
+msgstr ""
+"这些装饰器通常在Java中保存比在C ++中更多的详细信息（因为Java需要原始的“new”调用），因此通常，如果您在用户代码中手动创建指令组，则在C "
+"++中并不会产生太大的区别。"

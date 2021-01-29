@@ -6,15 +6,17 @@
 # Translators:
 # Fernando Soltero <fersg806@gmail.com>, 2020
 # Diana Ramos <dianaracasas@gmail.com>, 2020
+# Sofia Fernandez <sofiafdz.val@gmail.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 04:29+0000\n"
+"POT-Creation-Date: 2021-01-29 04:20+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -79,6 +81,21 @@ msgstr ""
 "hará. Los comandos deben ser nombrados como si estuvieran en código, aunque "
 "puede haber espacios entre las palabras."
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:26
+msgid ""
+"Set the subsystem that is required by this command. When this command is "
+"scheduled, it will automatically stop any command currently running that "
+"also requires this command. If a command to open the claw is currently "
+"running (requiring the claw subsystem) and the close claw command is "
+"scheduled, it will immediately stop opening and start closing."
+msgstr ""
+"Configure el subsistema requerido por este comando. Cuando este comando está"
+" programado, detendrá automáticamente cualquier comando que se esté "
+"ejecutando y que también requiera este comando. Si se está ejecutando un "
+"comando para abrir la garra (que requiere el subsistema de garra) y el "
+"comando de cierre de la garra está programado, dejará de abrirse "
+"inmediatamente y comenzará a cerrarse."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:27
 msgid ""
 "Tell RobotBuilder if it should create buttons on the SmartDashboard for the "
@@ -112,6 +129,23 @@ msgstr ""
 "ejemplo, enlazarlo a un botón del joystick o establecer el comando por "
 "defecto para un subsistema."
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:30
+msgid ""
+"*Run When Disabled*. Allows the command to run when the robot is disabled. "
+"However, any actuators commanded while disabled will not actuate."
+msgstr ""
+"*Run When Disabled*. Permite que el comando se ejecute cuando el robot está "
+"desactivado. Sin embargo, los actuadores comandados mientras están "
+"desactivados no se activarán."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:31
+msgid ""
+"*Autonomous Selection*. Whether the command should be added to the Sendable "
+"Chooser so that it can be selected for autonomous."
+msgstr ""
+"*Autonomous Selection*. Si el comando debe agregarse al Selector de envío "
+"para que pueda seleccionarse para el autónomo."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:33
 msgid ""
 "Setpoint commands come with a single parameter ('setpoint', of type double);"
@@ -128,6 +162,29 @@ msgstr "Añadiendo y editando parámetros"
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:40
 msgid "To add or edit parameters:"
 msgstr "Para añadir o editar parámetros:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:42
+msgid "Click the button in the :guilabel:`Value` column of the property table"
+msgstr ""
+"Dé clic al botón en la columna :guilabel:`Value` de la tabla de propiedades."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:43
+msgid "Press the :guilabel:`Add Parameter` button to add a parameter"
+msgstr "Presione el botón:guilabel:`Add Parameter` para agregar un parámetro."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:44
+msgid ""
+"A parameter that has just been added. The name defaults to `[change me]` and"
+" the type defaults to String. The default name is invalid, so you will have "
+"to change it before exporting. Double click the :guilabel:`Name` cell to "
+"start changing the name. Double click the :guilabel:`Type` cell to select "
+"the type."
+msgstr ""
+"Un parámetro que se acaba de agregar. El nombre predeterminado será `[change"
+" me]` y el tipo predeterminado es String. El nombre predeterminado no es "
+"válido, por lo que deberá cambiarlo antes de exportar. Haga doble clic en la"
+" celda:guilabel:`Name` para comenzar a cambiar el nombre. Haga doble clic en"
+" la celda :guilabel:`Type` para seleccionar el tipo."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:45
 msgid "Save and close button will save all changes and close the window."
@@ -146,6 +203,11 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:50
 msgid "Adding and Editing Parameter Presets"
 msgstr "Añadiendo y editando preajustes de parámetros"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:54
+msgid "Click :guilabel:`Add parameter set` to add a new preset."
+msgstr ""
+"Haga clic en :guilabel:`Add parameter set` para agregar un nuevo preset."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:55
 msgid ""
@@ -168,3 +230,12 @@ msgstr ""
 "en el subsistema que el comando requiere. Tenga en cuenta que el tipo de la "
 "constante tiene que ser del mismo tipo que el parámetro -- no se puede pasar"
 " una constante de tipo int a un parámetro de tipo doble, por ejemplo"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-creating-command.rst:57
+msgid ""
+"Click :guilabel:`Save and close` to save changes and exit the dialog; to "
+"exit without saving, press the exit button in the top bar of the window."
+msgstr ""
+"Haga clic en :guilabel:`Save and close`  para guardar los cambios y salir "
+"del diálogo; para salir sin guardar, presione el botón de salida en la barra"
+" superior de la ventana."

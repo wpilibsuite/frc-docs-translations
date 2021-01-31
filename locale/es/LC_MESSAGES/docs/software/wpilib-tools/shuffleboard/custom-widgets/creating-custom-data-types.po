@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-14 16:10+0000\n"
+"POT-Creation-Date: 2021-01-31 04:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -41,29 +41,11 @@ msgstr ""
 " widget manejará tipos de datos con un solo campo, tales como doubles, "
 "arrays o strings."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:7
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:6
 msgid "Creating The Data Class"
 msgstr "Crear Clase de Datos"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:8
-msgid ""
-"In this example, we will create a custom data type for a 2D Point and its x "
-"and y coordinates. In order to create a custom data type class, it must "
-"extend the abstract class `ComplexData "
-"<https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_."
-" Your custom data class must also implement the ``asMap()`` method that "
-"returns the represented data as a simple map as noted below with the "
-"``@Override`` annotation:"
-msgstr ""
-"En este ejemplo, se creará un tipo de datos personalizados para un Punto 2D "
-"y sus coordenadas x,y. Para crear una clase de datos personalizados, debe "
-"extenderse la clase abstracta `ComplexData "
-"<https://github.com/wpilibsuite/shuffleboard/blob/master/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_."
-" Su clase de datos personalizados también debe implementar el método "
-"``asMap()``, el cual regresa el dato representado como un mapa simple, tal "
-"como se muestra a continuación con la anotación  ``@Override``:"
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:34
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:33
 msgid ""
 "It is also good practice to override the default ``equals`` and ``hashcode``"
 " methods to ensure that different objects are considered equivalent when "
@@ -80,7 +62,7 @@ msgstr ""
 "caso, puede representar el punto como sus coordenadas X,Y y regresar un Mapa"
 " que los contenga."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:60
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:59
 msgid ""
 "Other methods can be added to retrieve or edit fields and instance "
 "variables, however, it is good practice to make these classes immutable to "
@@ -96,7 +78,7 @@ msgstr ""
 "quisiera cambiar la coordenada y de su punto, podría definir el siguiente "
 "método:"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:68
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:67
 msgid ""
 "This creates a new ``MyPoint2D`` object and returns it with the new "
 "y-coordinate. Same can be done for changing the x coordinate."
@@ -104,11 +86,11 @@ msgstr ""
 "Esto crea un nuevo objeto ``MyPoint2D`` y lo regresa con una nueva "
 "coordenada Y. Puede hacerse lo mismo para la coordenada X."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:71
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:70
 msgid "Creating a Data Type"
 msgstr "Crear un Tipo de Dato"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:72
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:71
 msgid ""
 "There are two different data types that can be made: Simple data types that "
 "have only one field (ie. a single number or string), and Complex data types "
@@ -119,7 +101,7 @@ msgstr ""
 "datos complejos que contienen varios campos (por ejemplo, múltiples strings "
 "o números)."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:74
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:73
 msgid ""
 "In order to define a simple data type, the class must extend the "
 "``SimpleDataType<DataType>`` class with the data type needed and implement "
@@ -131,7 +113,7 @@ msgstr ""
 " método ``getDefaultValue()``. En este ejemplo, usaremos un double como su "
 "tipo de dato simple."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:93
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:92
 msgid ""
 "The class constructor is set to private to ensure that only a single "
 "instance of the data type will exist."
@@ -139,7 +121,7 @@ msgstr ""
 "El constructor de la clase es privado para asegurar que una sola instancia "
 "del tipo de dato exista"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:95
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:94
 msgid ""
 "In order to define a complex data type, the class must extend the "
 "``ComplexDataType`` class and override the ``fromMap()`` and "
@@ -151,11 +133,11 @@ msgstr ""
 "``getDefaultValue()``. Se continuará usando como ejemplo la clase MyPoint2D "
 "para demostrar cómo se ve una clase de tipos de datos complejos."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:124
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:123
 msgid "The following code above works as noted:"
 msgstr "El código de arriba funciona de la siguiente forma:"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:126
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:125
 msgid ""
 "The ``fromMap()`` method creates a new MyPoint2D using the values in the "
 "NetworkTable entry it is bound to. The ``getOrDefault`` method will return "
@@ -167,11 +149,11 @@ msgstr ""
 "obtiene los valores de entrada. El ``getDefaultValue`` regresará un nuevo "
 "objeto ``MyPoint2D`` si la fuente no se encuentra presente."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:130
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:129
 msgid "Exporting Data Type To Plugin"
 msgstr "Exportar un tipo de dato al plugin"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:131
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:130
 msgid ""
 "In order to have the data type be recognized by Shuffleboard, the plugin "
 "must export them by overriding the ``getDataTypes`` method. For example,"

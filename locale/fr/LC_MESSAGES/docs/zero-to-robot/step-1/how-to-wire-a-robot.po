@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-04 04:13+0000\n"
+"POT-Creation-Date: 2021-02-04 16:18+0000\n"
 "PO-Revision-Date: 2020-10-08 04:19+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -34,6 +34,21 @@ msgid ""
 msgstr ""
 "Ce document détaille le câblage des composants électronique de base pour un "
 "robot, afin de faire des tests de prototypage. "
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:10
+msgid ""
+"Some images shown in this section reflect the setup for a Robot Control "
+"System using Victor SPX Motor Controllers. Wiring diagram and layout should "
+"be similar for other motor controllers. Where appropriate, two sets of "
+"images are provided to show connections using controllers with and without "
+"integrated wires."
+msgstr ""
+"Certaines images affichées dans cette section reflètent la configuration "
+"d’un système de contrôle de robot à l’aide des contrôleurs de moteur Victor "
+"SPX. Le diagramme et la disposition du câblage devraient être semblables "
+"pour d’autres contrôleurs de moteur. Le cas échéant, deux ensembles d’images"
+" sont fournis pour afficher les connexions à l’aide de contrôleurs avec et "
+"sans fils intégrés."
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:13
 msgid "Overview"
@@ -78,6 +93,10 @@ msgstr "Radio OpenMesh (avec câble d'alimentation et câble Ethernet)"
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:33
 msgid "Robot Signal Light (RSL)"
 msgstr "Lumière de Signal de Robot (LSR)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:34
+msgid "4x SPARK MAX or other motor controllers"
+msgstr "4x SPARK MAX ou d’autres contrôleurs de moteur"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:35
 msgid "2x PWM y-cables"
@@ -411,6 +430,20 @@ msgstr ""
 "Nécessite: pince à dénuder, petit tournevis plat, fil 10 ou 12 AWG (4-6 "
 ":math:`mm^2`), 10 ou 12 AWG (4-6 :math:`mm^2`) bornes fourche/anneau ( "
 "contrôleurs de borne uniquement), pince à sertir"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:147
+msgid "For SPARK MAX or other wire integrated motor controllers (top image):"
+msgstr ""
+"Pour SPARK MAX ou d’autres contrôleurs de moteur avec fil intégré (image du "
+"haut) :"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:149
+msgid ""
+"Cut and strip the red and black power input wires, then insert into one of "
+"the 40A (larger) Wago terminal pairs."
+msgstr ""
+"Coupez et dénudez les fils d’entrée d'alimentation rouges et noirs, puis "
+"insérez-les dans l’une des paires terminales Wago 40A (plus grands)."
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:151
 msgid "For terminal motor controllers (bottom image):"
@@ -781,13 +814,89 @@ msgstr ""
 msgid "PWM Cables"
 msgstr "Câbles PWM"
 
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:281
+msgid ""
+"This section details how to wire the SPARK MAX controllers using PWM "
+"signaling. This is a recommended starting point as it is simpler and easier "
+"to troubleshoot than CAN operation."
+msgstr ""
+"Cette section explique comment brancher les contrôleurs SPARK MAX à l’aide "
+"de connexion PWM. Il s’agit d’un point de départ recommandé car il est plus "
+"simple et plus facile à dépanner que l’utilisation d'un réseau CAN."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:283
+msgid ""
+"Requires: 4x SPARK MAX PWM adapters (if using SPARK MAX), 4x PWM cables (if "
+"controllers without integrated wires or adapters, otherwise optional), 2x "
+"PWM Y-cable (Optional)"
+msgstr ""
+"Cela requiert : 4x adaptateurs SPARK MAX PWM (si vous utilisez SPARK MAX), "
+"4x câbles PWM  (si les contrôleurs sont sans fils ou adaptateurs intégrés, "
+"autrement facultatif), 2x câble en Y  PWM (facultatif) "
+
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:285
 msgid "Option 1 (Direct connect):"
 msgstr "Option 1 (connexion directe):"
 
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:287
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:293
+msgid ""
+"If using SPARK MAX, attach the PWM adapter to the SPARK MAX (small adapter "
+"with a 3 pin connector with black/white wires)."
+msgstr ""
+"Si vous utilisez SPARK MAX, fixez l’adaptateur PWM au SPARK MAX (petit "
+"adaptateur avec un connecteur à 3 broches avec fils noirs/blancs)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:288
+msgid ""
+"If needed, attach PWM extension cables to the controller or adapter. On the "
+"controller side, match the colors or markings (some controllers may have "
+"green/yellow wiring, green should connect to black)."
+msgstr ""
+"Au besoin, attachez des câbles d’extension PWM au contrôleur ou à "
+"l’adaptateur. Du côté du contrôleur, faire correspondre les couleurs ou les "
+"marques (certains contrôleurs peuvent avoir un câblage vert/jaune, le vert "
+"doit se connecter au noir)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:289
+msgid ""
+"Attach the other end of the cable to the roboRIO with the black wire towards"
+" the outside of the roboRIO. It is recommended to connect the left side to "
+"PWM 0 and 1 and the right side to PWM 2 and 3 for the most straightforward "
+"programming experience, but any channel will work as long as you note which "
+"side goes to which channel and adjust the code accordingly."
+msgstr ""
+"Fixez l’autre extrémité du câble au roboRIO avec le fil noir vers "
+"l’extérieur du roboRIO. Il est recommandé de connecter le côté gauche à PWM "
+"0 et 1 et le côté droit à PWM 2 et 3 pour concevoir une manipulation de "
+"programmation la plus simple, mais n’importe quel canal fonctionnera aussi "
+"longtemps que vous notez quel côté va à quel canal et ajuster le code en "
+"conséquence."
+
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:291
 msgid "Option 2 (Y-cable):"
-msgstr "Option 2 (câble Y):"
+msgstr "Option 2 (câble en Y):"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:294
+msgid ""
+"If needed, attach PWM extension cables between the controller or adapter and"
+" the PWM Y-cable. On the controller side, match the colors or markings (some"
+" controllers may have green/yellow wiring, green should connect to black)."
+msgstr ""
+"Au besoin, fixez des câbles d’extension PWM entre le contrôleur ou "
+"l’adaptateur et le câble en Y de PWM. Du côté du contrôleur, faire "
+"correspondre les couleurs ou les marques (certains contrôleurs peuvent avoir"
+" un câblage vert/jaune, le vert doit se connecter au noir)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:295
+msgid ""
+"Connect 1 PWM Y-cable to the 2 PWM cables for the controllers controlling "
+"each side of the robot. The brown wire on the Y-cable should match the black"
+" wire on the PWM cable."
+msgstr ""
+"Connectez 1 câble en Y PWM aux 2 câbles PWM pour les contrôleurs contrôlant "
+"chaque côté du robot. Le fil brun sur le câble en Y doit correspondre au fil"
+" noir du câble PWM."
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:296
 msgid ""
@@ -797,9 +906,9 @@ msgid ""
 "straightforward programming experience, but any channel will work as long as"
 " you note which side goes to which channel and adjust the code accordingly."
 msgstr ""
-"Connectez les câbles Y PWM aux ports PWM sur le roboRIO. Le fil brun devrait"
-" être vers l'extérieur du roboRIO. Il est recommandé de connectez le côté "
-"gauche à PWM 0 et le côté droit à PWM 1 pour pour faciliter la "
+"Connectez les câbles en Y PWM aux ports PWM sur le roboRIO. Le fil brun "
+"devrait être vers l'extérieur du roboRIO. Il est recommandé de connectez le "
+"côté gauche à PWM 0 et le côté droit à PWM 1 pour pour faciliter la "
 "programmation. Cependant, n'importe quel branchement fonctionnera "
 "convenablement si vous prenez soin de noter la disposition des PWMs et de "
 "changer le code en conséquence."
@@ -873,7 +982,7 @@ msgstr "Les disjoncteurs"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:319
 msgid "Requires: 4x 40A circuit breakers"
-msgstr "Besoin: 4x disjoncteurs 40A"
+msgstr "Cela requiert: 4x disjoncteurs 40A"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:321
 msgid ""
@@ -886,8 +995,8 @@ msgstr ""
 "Insérez les disjoncteurs 40A dans les positions correspondantes aux "
 "connecteurs Wago sur le PDP. (ceux qui ont des fils reliés aux contrôleurs "
 "de moteurs).  Notez que le disjoncteur correspond à la borne positive "
-"(rouge) la plus proche (voir graphique ci-dessus). Tout les bornes negatives"
-" sur le PDP sont électriquement reliées ensemble."
+"(rouge) la plus proche (voir graphique ci-dessus). Toutes les bornes "
+"négatives sur le PDP sont électriquement reliées ensemble."
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:323
 msgid ""
@@ -916,6 +1025,40 @@ msgstr "Pour chaque moteur CIM:"
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:334
 msgid "Strip the ends of the red and black wires from the CIM"
 msgstr "Dénudez les extrémités des fils rouge et noir du CIM"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:336
+msgid "For integrated wire controllers including SPARK MAX (top image):"
+msgstr ""
+"Pour les contrôleurs à fil intégré, y compris SPARK MAX (image du haut) :"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:338
+msgid ""
+"Strip the red and black wires (or white and green wires) from the controller"
+" (the SPARK MAX white wire is unused for brushed motors such as the CIM, it "
+"should be secured and the end should be insulated such with electrical tape "
+"or other insulation method)."
+msgstr ""
+"Dénudez les fils rouges et noirs (ou fils blancs et verts) du contrôleur (le"
+" fil blanc SPARK MAX n’est pas utilisé pour les moteurs à balais tels que le"
+" CIM, il doit être fixé et l’extrémité doit être isolée par exemple avec du "
+"ruban électrique ou d’autres méthodes d’isolation)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:339
+msgid ""
+"Connect the motor wires to the matching controller output wires (for "
+"controllers with white/green, connect red to white and green to black). The "
+"images above show an example using quick disconnect terminals which are "
+"provided in the Rookie KOP."
+msgstr ""
+"Connectez les fils du moteur aux fils de sortie du contrôleur correspondant "
+"(pour les contrôleurs avec du blanc/vert, connectez-vous rouge à blanc et "
+"vert à noir). Les images ci-dessus montrent un exemple d'utilisation de "
+"bornes de déconnexion rapide qui sont fournis dans le KOP Rookie."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:341
+msgid "For the SPARK or other non-integrated-wire controllers (bottom image):"
+msgstr ""
+"Pour le SPARK ou d’autres contrôleurs à fil non intégré (image du bas) :"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:343
 msgid "Crimp a ring/fork terminal on each of the motor wires."
@@ -1028,3 +1171,54 @@ msgstr ""
 "Connectez la batterie au côté robot du connecteur Anderson. Mettez le robot "
 "sous tension en déplaçant le levier sur le dessus du disjoncteur principal "
 "120A."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:377
+msgid "If stuff blinks, you probably did it right."
+msgstr ""
+"Si des voyants clignotent, c'est que vous l’avez probablement bien fait."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:379
+msgid ""
+"Before moving on, if using SPARK MAX controllers, there is one more "
+"configuration step to complete. The SPARK MAX motor controllers are "
+"configured to control a brushless motor by default. You can verify this by "
+"checking that the light on the controller is blinking either cyan or magenta"
+" (indicating brushless brake or brushless coast respectively). To change to "
+"to brushed mode, press and hold the mode button for 3-4 seconds until the "
+"status LED changes color. The LED should change to either blue or yellow, "
+"indicating that the controller is in brushed mode (brake or coast "
+"respectively). To change the brake or coast mode, which control how quickly "
+"the motor slows down when a neutral signal is applied, press the mode button"
+" briefly."
+msgstr ""
+"Avant de passer à autre chose, si vous utilisez des contrôleurs SPARK MAX, "
+"il reste une étape de configuration à effectuer. Les contrôleurs de moteur "
+"SPARK MAX sont configurés pour contrôler par défaut un moteur sans balais. "
+"Vous pouvez vérifier cela en vous assurant que la lumière sur le contrôleur "
+"clignote soit cyan ou magenta (indiquant frein sans balais ou roue libre "
+"sans balais respectivement). Pour passer au mode avec balais, appuyez et "
+"maintenez le bouton mode pendant 3-4 secondes jusqu’à ce que la LED d’état "
+"change de couleur. La LED doit passer au bleu ou au jaune, ce qui indique "
+"que le contrôleur est en mode avec balais (frein ou roue libre "
+"respectivement). Pour changer le mode frein ou roue libre, qui contrôle la "
+"vitesse à laquelle le moteur ralentit lorsqu’un signal neutre est appliqué, "
+"appuyez brièvement sur le bouton mode."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:381
+msgid ""
+"For more information on the SPARK MAX motor controllers, including how to "
+"test your motors/controllers without writing any code by using the REV "
+"Hardware Client, see the `SPARK MAX Quickstart guide "
+"<https://docs.revrobotics.com/sparkmax/gs-sm>`__."
+msgstr ""
+"Pour plus d’informations sur les contrôleurs de moteur SPARK MAX, y compris "
+"la façon de tester vos moteurs/contrôleurs sans avoir à écrire de code en "
+"utilisant le client REV Hardware, veuillez consulter le document `SPARK MAX "
+"Quickstart guide <https://docs.revrobotics.com/sparkmax/gs-sm>`__."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-1/how-to-wire-a-robot.rst:383
+msgid ""
+"From here, you should connect to the roboRIO and try uploading your code!"
+msgstr ""
+"De là, vous devez vous connecter au roboRIO et essayer de télécharger votre "
+"code!"

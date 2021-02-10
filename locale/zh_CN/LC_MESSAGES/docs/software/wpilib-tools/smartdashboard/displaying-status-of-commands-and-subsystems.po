@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-24 16:29+0000\n"
+"POT-Creation-Date: 2021-02-10 04:13+0000\n"
 "PO-Revision-Date: 2020-09-18 04:18+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,144 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:2
+msgid "Displaying the Status of Commands and Subsystems"
+msgstr "显示指令和子系统的状态"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:4
+msgid ""
+"If you are using the command-based programming features of WPILib, you will "
+"find that they are very well integrated with SmartDashboard. It can help "
+"diagnose what the robot is doing at any time and it gives you control and a "
+"view of what's currently running."
+msgstr ""
+"如果你是用的是基于指令的WPI程序框架，你会发现该框架与智能仪表盘的兼容性极佳。智能仪表盘可以呈现在任何时间点上机器人的状态，并赋予你直观的理解机器人在做什么与控制机器人的行动的能力。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:7
+msgid "Overview of Command and Subsystem Displays"
+msgstr "指令与子系统显示概述"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:11
+msgid ""
+"With SmartDashboard you can display the status of the commands and "
+"subsystems in your robot program in various ways. The outputs should "
+"significantly reduce the debugging time for your programs. In this picture "
+"you can see a number of displays that are possible. Displayed here are:"
+msgstr ""
+"你可以通过多种方式在智能仪表盘上显示指令和子系统的状态。仪表盘的输出将显著节省调试的时间。在这张图片中，你可以看到一些可以被使用的显示方式。这些包括："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:13
+msgid ""
+"The Scheduler currently with ``No commands running``. In the next example "
+"you can see what it looks like with a few commands running showing the "
+"status of the robot."
+msgstr ""
+"调度器当前显示为 \"No commands running\"。在下一个例子当中，你将能看到在数个指令运行的情况下，机器人状态如何被智能仪表盘显示。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:14
+msgid ""
+"A subsystem, ``ExampleSubsystem`` that indicates that there are currently no"
+" commands running that are \"requiring\" it. When commands are running, it "
+"will indicate the name of the commands that are using the subsystem."
+msgstr ""
+"一个名为\"ExampleSubsystem\"的子系统被用来表示目前没有正在运行的命令需要调用。当有命令运行时，它将指示正在使用子系统的命令的名称。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:15
+msgid ""
+"A command written to SmartDashboard that shows a ``start`` button that can "
+"be pressed to run the command. This is an excellent way of testing your "
+"commands one at a time."
+msgstr "将一条指令写入SmartDashboard时为它添加一个“开始”按钮。你可以通过按下这个按钮来运行该指令。这是逐个测试指令的好方法。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:16
+msgid ""
+"And a few data values written to the dashboard to help debug the code that's"
+" running."
+msgstr "同时，将一些值直接写入智能仪表盘将帮助你更好地调试正在运行的代码。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:18
+msgid ""
+"In the following examples, you'll see what the screen would look like when "
+"there are commands running, and the code that produces this display."
+msgstr "接下来，你将会看到一些有指令正在运行时的智能仪表盘的显示状况，以及产生这些显示结果的代码的样子。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:21
+msgid "Displaying the Scheduler Status"
+msgstr "显示调度器的状态"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:25
+msgid ""
+"You can display the status of the Scheduler (the code that schedules your "
+"commands to run). This is easily done by adding a single line to the "
+"``RobotInit`` method in your RobotProgram as shown here. In this example the"
+" Scheduler instance is written using the ``putData`` method to "
+"SmartDashboard. This line of code produces the display in the previous "
+"image."
+msgstr ""
+"你可以显示调度程序的状态（调度命令运行的代码）。只需在 \"RobotProgram\" 中的\"\"RobotInit\" "
+"方法中添加一行即可轻松完成此操作。如下图所示，在此示例中，使用 \"putData\" 方法将调度器的实例写入智能仪表盘。这行代码在上一张图像中有呈现。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:29
+msgid ""
+"This is the scheduler status when there are two commands running, "
+"``ExampleCommand`` and ``newCommand``. This replaces the ``No commands "
+"running.`` message from the previous screen image. You can see commands "
+"displayed on the dashboard as the program runs and various commands are "
+"triggered."
+msgstr ""
+"当有两个命令正在运行时，这是调度程序的状态：\"ExampleCommand\" 和 \"newCommand\"。这将替换上一个屏幕图像中的 \"No"
+" commands running\" 消息。你可以在程序运行和触发各种指令时看到仪表板上显示的指令。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:32
+msgid "Displaying Subsystem Status"
+msgstr "显示子系统状态"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:36
+msgid ""
+"In this example we are writing the command instance, ``exampleSubsystem`` "
+"and instance of the ``ExampleSubsystem`` class to the SmartDashboard. This "
+"causes the display shown in the previous image. The text field will either "
+"contain a few dashes, ``---`` indicating that no command is current using "
+"this subsystem, or the name of the command currently using this subsystem."
+msgstr ""
+"在此示例中，我们将指令实例 \"exampleSubsystem\" 和 \"ExampleSubsystem\" "
+"类的实例写入智能仪表盘。这将产生如上图所示的结果。文本字段将包含一些破折号，\"---\" "
+"表示当前没有指令在使用该子系统，或者当前正在使用该子系统的指令的名称。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:40
+msgid ""
+"Running commands will \"require\" subsystems. That is the command is "
+"reserving the subsystem for its exclusive use. If you display a subsystem on"
+" SmartDashboard, it will display which command is currently using it. In "
+"this example, ``ExampleSubsystem`` is in use by ``ExampleCommand``."
+msgstr ""
+"运行指令将需要调用子系统。也就是说指令需要保留子系统以供其专用。如果在智能仪表盘上显示子系统，它将显示当前哪个指令正在使用它。在此示例中，\"ExampleCommand\""
+" 正在使用 \"ExampleSubsystem\"。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:43
+msgid "Activating Commands with a Button"
+msgstr "用按钮激活指令"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:47
+msgid ""
+"This is the code required to create a button for the command on "
+"SmartDashboard. RobotBuilder will automatically generate this code for you, "
+"but it can easily be done by hand as shown here. Pressing the button will "
+"schedule the command. While the command is running, the button label changes"
+" from ``start`` to ``cancel`` and pressing the button will cancel the "
+"command."
+msgstr ""
+"这是在智能仪表盘上为指令创建按钮所需的代码。\"RobotBuilder\" "
+"会自动为您生成此代码，但是这个任务也可以手动完成，如下所示。按钮被按下时将调度该指令。在指令运行时，按钮标签将从“开始”更改为“取消”，再次按下按钮将终止该指令。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/displaying-status-of-commands-and-subsystems.rst:51
+msgid ""
+"In this example you can see a button labeled ``Autonomous Command``. "
+"Pressing this button will run the associated command and is an excellent way"
+" of testing commands one at a time without having to add throw-away test "
+"code to your robot program. Adding buttons for each command makes it simple "
+"to test the program, one command at a time."
+msgstr ""
+"在此示例中，您可以看到标记为 \"Autonomous Command\" "
+"的按钮。按下此按钮将运行关联的指令。这是逐个测试指令的绝佳方法，而无需向您的机器人程序中添加一次性的测试代码。为每个指令添加按钮可以简化程序的测试。这将允许你一次仅测试一个指令。"

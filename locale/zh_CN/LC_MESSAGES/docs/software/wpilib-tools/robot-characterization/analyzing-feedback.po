@@ -1,22 +1,270 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Team 5308 <team5308@163.com>, 2020
+# 志鹏 邢 <2913768075@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-29 04:25+0000\n"
+"POT-Creation-Date: 2021-02-10 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
+"Last-Translator: 志鹏 邢 <2913768075@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:4
+msgid "Feedback Analysis"
+msgstr "反馈分析"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:6
+msgid ""
+"These gains are, in effect, \"educated guesses\" - they are not guaranteed "
+"to be perfect, and should be viewed as a \"starting point\" for further "
+"tuning."
+msgstr ""
+"这些“Gains”实际上是“Educated Guesses”-不能保证它们是完美的，应该被视为 \"Starting Point\" 为了进一步优化"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:8
+msgid ""
+"The feedback gain calculation assumes that there is no mechanical backlash, "
+"sensor noise, or phase lag in the sensor measurement.  While these are "
+"reasonable assumptions in many situations, none of them are strictly true in"
+" practice.  In particular, many \"smart motor controllers\" (such as the "
+"``Talon SRX``, ``Talon FX``, and ``SPARK MAX``) have default settings that "
+"apply substantial :ref:`low-pass filtering <docs/software/advanced-"
+"controls/filters/introduction:Introduction to Filters>` to their encoder "
+"velocity measurements, which introduces a significant amount of phase lag.  "
+"This can cause the calculated gains for velocity loops to be unstable.  To "
+"rectify this, either decrease the amount of filtering through the "
+"controller's API, or reduce the magnitude of the PID gains - it has been "
+"found that shrinking gains by about a factor of 10 works well for most "
+"default filtering settings."
+msgstr ""
+"反馈增益计算假定传感器测量中没有机械侧隙，传感器噪声或相位滞后。虽然这些假设在很多情况下都是合理的，但在实践中没有一个是严格正确的。特别是，许多\"Smart"
+" Motor Controllers\" （例如“ Talon SRX”，“ Talon FX”和“ SPARK MAX”）有应用实质性的默认设置：裁判"
+"<low-pass filtering <docs/software/advanced-"
+"controls/filters/introduction:Introduction to "
+"Filters>`编码器速度测量，这引入了大量的相位滞后.这可能会导致速度循环的计算增益不稳定。为了解决这个问题,要么减少API控制器的过滤量，要么或者降低PID增益的幅度。人们发现对滤波的设置，大约把增益缩小10倍，效果是最好的"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:10
+msgid ""
+"Once the feedforward coefficients have been computed, the controls on the "
+":guilabel:`Feedback Analysis` pane become available."
+msgstr "一旦计算前馈系数后，```Feedback Analysis''窗格上的控件将变为可用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:15
+msgid ""
+"These can be used to calculate optimal feedback gains for a PD or P "
+"controller for your mechanism (via `LQR "
+"<https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__)."
+msgstr ""
+"这些可以用来为您的机构的PD，P控制器计算最佳反馈增益（通过`LQR "
+"<https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:18
+msgid "Enter Controller Parameters"
+msgstr "输入控制器参数"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:20
+msgid ""
+"The \"Spark Max\" preset assumes that the user has configured the controller"
+" to operate in the units of analysis with the SPARK MAX API's "
+"position/velocity scaling factor feature."
+msgstr "“Spark Max”预设假设用户已配置控制器，使其在分析单元中使用Spark Max API的位置/速度缩放因子特征进行操作。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:22
+msgid ""
+"The calculated feedforward gains are *dimensioned quantities*. "
+"Unfortunately, not much attention is often paid to the units of PID gains in"
+" FRC\\ |reg| controls, and so the various typical options for PID controller"
+" implementations differ in their unit conventions (which are often not made "
+"clear to the user)."
+msgstr ""
+"计算的前馈增益为 *Dimensioned Quantities*。很不幸，很少有人注意到PID的增幅单位在FRC \\ | reg "
+"|控制，所以在以PID控制器中各种经典的选项，实现在它们的单元约定中有所不同(用户通常不清楚)。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:24
+msgid ""
+"To specify the correct settings for your PID controller, use the following "
+"options."
+msgstr "要为PID控制器指定正确的设置，请使用以下选项。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:29
+msgid ""
+"**Gain Settings Preset:** This drop-down menu will auto-populate the "
+"remaining fields with likely settings for one of a number of common FRC "
+"controller setups. Note that some settings, such as post-encoder gearing, "
+"PPR, and the presence of a follower motor must still be manually specified "
+"(as the analyzer has no way of knowing these without user input), and that "
+"others may vary from the given defaults depending on user setup."
+msgstr ""
+"* *增益设置预置：* "
+"*这个下拉菜单将为若干常见的FRC控制器设置中的一个自动填充剩馀的具有可能设置的字段。注意一些设置，如后编码器齿轮化、PPR以及从动电机的存在仍然必须手动指定(因为分析器在没有用户输入的情况下无法知道这些)，另外一些可能会根据用户设置而与给定的默认值不同。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:30
+msgid ""
+"**Controller Period:** This is the execution period of the control loop, in "
+"seconds. The default RIO loop rate is 50Hz, corresponding to a period of "
+"0.02s. The onboard controllers on most \"smart controllers\" run at 1Khz, or"
+" a period of 0.001s."
+msgstr ""
+"**Controller "
+"Perio：**这是控制循环的执行周期，以秒为单位。默认的RIO环路速率为50Hz，对应于0.02s的周期。大多数“智能控制器”上的板载控制器以1Khz或0.001s的周期运行。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:31
+msgid ""
+"**Max Controller Output:** This is the maximum value of the controller "
+"output, with respect to the PID calculation. Most controllers calculate "
+"outputs with a maximum value of 1, but Talon controllers have a maximum "
+"output of 1023."
+msgstr ""
+"**Max Controller "
+"Output:**这是控制器输出的最大值，相对于PID计算而言。大多数控制器计算的输出最大值为1，但Talon控制器的输出最大值为1023。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:32
+msgid ""
+"**Time-Normalized Controller:** This specifies whether the PID calculation "
+"is normalized to the period of execution, which affects the scaling of the D"
+" gain."
+msgstr "**Time-Normalized Controller:**这指定PID计算是否标准化为执行周期，从而影响D增益的缩放。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:33
+msgid ""
+"**Controller Type:** This specifies whether the controller is an onboard RIO"
+" loop, or is running on a smart motor controller such as a Talon or a SPARK "
+"MAX."
+msgstr "**控制器类型：**这指定控制器是板载RIO回路，还是在智能电机控制器上运行例如Talon或SPARK MAX。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:34
+msgid ""
+"**Post-Encoder Gearing:** This specifies the gearing between the encoder and"
+" the mechanism itself. This is necessary for control loops that do not allow"
+" user-specified unit scaling in their PID computations (e.g. those running "
+"on Talons). This will be disabled if not relevant."
+msgstr ""
+"**Post-Encoder Gearing:** "
+"这指定了编码器和机构本身之间的传动装置。这对于在其PID计算中不允许用户指定单元缩放的控制回路(如在Talons上运行的回路)是必要的。如果不相关，这将被禁用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:35
+msgid ""
+"**Encoder EPR:** This specifies the edges-per-revolution (not cycles per "
+"revolution) of the encoder used, which is needed in the same cases as Post-"
+"Encoder Gearing."
+msgstr "**Encoder EPR:**这指定了所用编码器的每转边沿（不是每转周期），在与后期编码器齿轮传动相同的情况下需要使用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:36
+msgid ""
+"**Has Follower:** Whether there is a motor controller following the "
+"controller running the control loop, if the control loop is being run on a "
+"peripheral device. This changes the effective loop period."
+msgstr "**Has Follower:**如果在外围设备上运行控制回路，则在运行控制回路的控制器之后是否有电动机控制器，这将更改有效循环周期。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:37
+msgid ""
+"**Follower Update Period:** The rate at which the follower (if present) is "
+"updated. By default, this is 100Hz (every 0.01s) for the Talon SRX, Talon "
+"FX, and the SPARK MAX, but can be changed."
+msgstr ""
+"**Follower Update Period:** 跟随者(如果当前)更新的速率。默认情况下，这是100Hz (每0.01s )的Talon "
+"SRX，Talon FX和SPARK MAX，但可以更改。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:39
+msgid ""
+"If you select a smart motor controller as the preset (e.g. TalonSRX, SPARK "
+"MAX, etc.) the :guilabel:`Convert Gains` checkbox will be automatically "
+"checked. This means the tool will convert your gains so that they can be "
+"used through the smart motor controller's PID methods. Therefore, if you "
+"would like to use WPILib's PID Loops, you must uncheck that box."
+msgstr ""
+"如果您选择智能电动机控制器作为预设（例如TalonSRX，SPARK MAX等），则会自动选中```Convert "
+"Gains''复选框：这意味着该工具将转换您的增益，以便可以通过智能电机控制器的PID方法使用它们。因此，如果要使用WPILib的PID循环，则必须取消选中该框。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:42
+msgid "Specify Optimality Criteria"
+msgstr "指定最佳标准"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:44
+msgid ""
+"Finally, the user must specify what will be considered an \"optimal\" "
+"controller.  This takes the form of desired tolerances for the system error "
+"and control effort - note that it is *not* guaranteed that the system will "
+"obey these tolerances at all times."
+msgstr ""
+"最后，用户必须指定将被视为“optimal：最佳”控制器的位置。这采取了系统误差和控制工作所需公差的形式-请注意，不能保证系统始终遵守这些公差。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:49
+msgid ""
+"As a rule, smaller values for the :guilabel:`Max Acceptable Error` and "
+"larger values for the :guilabel:`Max Acceptable Control Effort` will result "
+"in larger gains - this will result in larger control efforts, which can "
+"grant better setpoint-tracking but may cause more violent behavior and "
+"greater wear on components."
+msgstr ""
+"通常，“``Max Acceptable Error`` 的较小值和``Max Acceptable Control Effort`` "
+"的较大值将导致较大的增益-这将导致较大的控制工作，可以提供更好的设定值跟踪，但是可能会导致更猛烈的行为和更大的组件磨损。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:51
+msgid ""
+"The :guilabel:`Max Acceptable Control Effort` should never exceed 12V, as "
+"that corresponds to full battery voltage, and ideally should be somewhat "
+"lower than this."
+msgstr "``Max Acceptable Control Effort`` 绝不能超过12V，因为这相当于电池的满电压，理想情况下应低于此电压。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:54
+msgid "Select Loop Type"
+msgstr "选择循环类型"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:56
+msgid ""
+"It is typical to control mechanisms with both position and velocity PIDs, "
+"depending on application. Either can be selected using the drop-down "
+":guilabel:`Loop Type` menu."
+msgstr "根据应用情况，通常同时使用位置和速度PID来控制机构。可以使用下拉的``Loop Type``菜单选择任何一种。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:62
+msgid "Enter Known Velocity/Acceleration"
+msgstr "输入已知速度/加速度"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:64
+msgid ""
+"Sometimes, with an exceptionally light mechanism/robot and/or exceptionally-"
+"noisy data, it is possible for the ``kA`` value to be exceedingly small (or "
+"even slightly negative).  In this case, the user should set ``kA`` to zero."
+"  The computed feedback gains in this case may also be zero - this is "
+"because such a mechanism should not require feedback to accurately track the"
+" setpoint under the assumptions of LQR.  These assumptions may not be "
+"perfectly accurate, and users may need to add feedback regardless - in this "
+"case, the loop must be tuned manually."
+msgstr ""
+"有时，如果使用异常轻巧的机械/机器人和/或异常嘈杂的数据，则``kA''值可能会非常小（甚至略微为负）。在这种情况下，用户应将“ "
+"kA”设置为零。在这种情况下，计算得出的反馈增益也可能为零-这是因为在LQR的假设下，这样的机制不应该要求反馈精确跟踪设定值。这些假设可能并不十分准确"
+"，并且无论如何用户都可能需要添加反馈-在这种情况下，必须手动调整循环。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:66
+msgid ""
+"If one wishes to use the :guilabel:`Feedback Analysis` pane without running "
+"a full analysis on a set of data, or otherwise view the effect of modifying "
+"the ``kV`` and ``kA`` values, this can be done here."
+msgstr ""
+"如果希望使用 ``Feedback Analysis`` "
+"窗格而不对一组数据进行全面分析，或者希望查看修改``kV''和``kA''值的效果，可以在此处完成。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:72
+msgid "Calculate Gains"
+msgstr "计算收益"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:74
+msgid ""
+"Finally, press the :guilabel:`Calculate Optimal Controller Gains` to "
+"determine the feedback gains."
+msgstr "最后，按 ``Calculate Optimal Controller Gains`` 以确定反馈增益。"

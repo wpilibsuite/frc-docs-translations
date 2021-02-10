@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-27 04:18+0000\n"
+"POT-Creation-Date: 2021-02-10 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,169 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:2
+msgid "Viewing Diagnostics"
+msgstr "查看诊断"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:4
+msgid ""
+"The first diagnostic to look at is the r-squared - it should be somewhere "
+"north of ~.9. If it is significantly lower than this, there is likely a "
+"problem with your characterization data."
+msgstr "首先要看的诊断是r²：它应该在〜.9以北的某个地方。如果它远低于此值，则特征数据可能存在问题。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:6
+msgid ""
+"To investigate further, you can generate a number of diagnostic plots with "
+"the buttons on the left-hand side:"
+msgstr "要进一步调查，您可以使用左侧的按钮生成许多诊断图："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:12
+msgid "Time-Domain Diagnostics"
+msgstr "时域诊断"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:14
+msgid ""
+"The Time-Domain Diagnostics plots display velocity and acceleration versus "
+"time over the course of the analyzed tests. For a typical drive "
+"characterization, these should look something like this (other mechanisms "
+"will be highly similar):"
+msgstr "“时域诊断”图显示了经过分析的测试过程中速度和加速度与时间的关系。对于典型的驱动器表征，这些应该看起来像这样（其他机制将非常相似）："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:19
+msgid ""
+"The vertical \"mirroring\" visible here is normal, and is simply the result "
+"of the left- and right-side encoders having different signs - this does not "
+"cause any trouble for the characterization tool."
+msgstr "此处可见的垂直“镜像”是正常现象，并且仅仅是具有不同符号的左侧和右侧编码器的结果-这不会对特征化工具造成任何麻烦。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:21
+msgid ""
+"The quasistatic test ought to have nearly linear velocity, and nearly-zero "
+"acceleration (hense \"quasistatic\"). The dynamic test ought to have "
+"velocity that asymptotically approaches a steady-state speed (the shape of "
+"the curve should be exponential, in fact), and acceleration that, "
+"accordingly, rapidly falls to zero (also exponentially, as the derivative of"
+" an exponential function is also an exponential function)."
+msgstr ""
+"准静态测试应具有接近线性的速度和接近零的加速度（即“准静态”）。这个动态测试应该具有渐近接近稳态速度的速度（实际上，曲线的形状应该是指数形式的），并且加速度，相应地，迅速下降到零（也是指数函数，因为指数函数的导数仍为指数函数）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:26
+msgid "Voltage-Domain Diagnostics"
+msgstr "电压域诊断"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:33
+msgid ""
+"Both plots should be linear, however the dynamic plot will almost certainly "
+"have substantially-more noise. The noise on the dynamic plot may be reduced "
+"by increasing the ``Accel Window Size`` setting."
+msgstr "两个图都应该是线性的，但是动态图一般会具有更多的噪声。动态图上的噪声可以通过增加设置中的``加速窗口大小''参数来减少。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:38
+msgid ""
+"However, if your robot or mechanism has low mass compared to the motor "
+"power, this may \"eat\" what little meaningful acceleration data you have "
+"(however, in these cases ``kA`` will tend towards zero and can usually be "
+"ignored, anyway)."
+msgstr ""
+"但是，如果您的机器人或机械装置与电机功率相比，质量相对较小，这可能\"吃掉\"您本拥有的几乎没有意义的加速度数据（然而，在这些情况下，\"kA\"将趋于零，而且通常可以忽略，"
+" 所以并不会产生大的影响）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:40
+msgid ""
+"The x-axis corresponds to ``velocity-portion voltage`` and ``acceleration-"
+"portion voltage``, respectively - as the governing voltage-balance equations"
+" are multi-dimensional, plots against raw voltage are not as useful as one "
+"might expect."
+msgstr ""
+"x轴分别对应于``速度部分电压''和``加速度部分电压''：由于控制电压平衡方程是多维的，因此相对于原始电压的绘图并不像人们期望的那样有用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:43
+msgid "3D Diagnostics"
+msgstr "3D诊断"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:50
+msgid ""
+"This plot is interactive, and may be rotated by clicking-and-dragging. The "
+"quasistatic and dynamic tests should both be clearly visible as streaks of "
+"data, and the best fit-plane should pass through all the data points. The "
+"data from both the quasistatic and dynamic tests should appear as straight "
+"lines (the reason for this is left as an exercise for the reader)."
+msgstr ""
+"此图是交互式的，并可以通过单击并拖动鼠标来旋转。准静态测试和动态测试都应因作为数据体条纹而清晰可见，并且最佳拟合平面应穿过所有数据点。准静态和动态测试的数据均应显示为直线（其原因留给读者练习）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:52
+msgid ""
+"The discontinuity corresponds to ``kS``, which always opposes the direction "
+"of motion and thus changes direction as the plot crosses the 0 velocity "
+"mark."
+msgstr "不连续性对应于``kS''，它始终与运动方向相反，因此在绘图穿过0速度标记时会改变方向。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:60
+msgid "Improperly Set Motion Threshold"
+msgstr "动作阈值设置不正确"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:62
+msgid ""
+"One of the most-common errors is an inappropriate value for the motion "
+"threshold."
+msgstr "最常见的错误之一是运动阈值不合适。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:68
+msgid "Motion Threshold Too Low"
+msgstr "运动阈值太低"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:78
+msgid "To solve this, increase the setting and re-analyze the data."
+msgstr "要解决此问题，请增加设置并重新分析数据。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:81
+msgid "Motion Threshold Too High"
+msgstr "运动阈值过高"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:86
+msgid ""
+"While not nearly as problematic as a too-low threshold, a motion threshold "
+"that is too high will result in a large \"gap\" in the voltage domain "
+"quasistatic plot."
+msgstr "虽然运动阈值过高不像过低的阈值那样有问题，但过高的运动阈值会在电压域准静态图中导致较大的“间隙”。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:88
+msgid "To solve this, decrease the setting and re-analyze the data."
+msgstr "要解决此问题，请降低设置并重新分析数据。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:91
+msgid "Magnetic Encoders Velocity Noise"
+msgstr "电磁编码器速度噪声"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:99
+msgid ""
+"Magnetic encoders such as the `CTRE Mag Encoder <http://www.ctr-"
+"electronics.com/srx-magnetic-encoder.html>`__ and the `AndyMark magnetic "
+"encoder <https://www.andymark.com/products/am-mag-encoder>`__ are extremely "
+"popular in FRC.  However, a particular noise pattern has been observed when "
+"these encoders are used on robot drives, whose particular cause is not yet "
+"known.  This noise pattern is uniquely distinguished by significant velocity"
+" noise proportional to motor velocity, and is particularly common on the "
+"kit-of-parts `toughbox mini <https://www.andymark.com/products/toughbox-"
+"mini-options>`__ gearboxes."
+msgstr ""
+"电磁编码器，例如“ CTRE磁性编码器  http://www.ctr-electronics.com/srx-magnetic-"
+"encoder.html “和“ AndyMark磁性编码器  https://www.andymark.com/products/am-mag-"
+"encoder ” "
+"在FRC中非常流行。但是，将这些编码器用于机器人驱动器时，会观察到特定的噪声模式，其具体原因尚不清楚。这种噪声模式通过与电动机速度成比例的明显的速度噪声而得到独特的区分，并且在零件套件“"
+" Toughbox mini  https://www.andymark.com/products/toughbox-mini-options” "
+"变速箱上特别常见。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:101
+msgid ""
+"Characterization constants can sometimes be accurately determined even from "
+"data polluted this noise by increasing the accel window size setting.  "
+"However, this sort of encoder noise is problematic for robot code much the "
+"same way it is problematic for the characterization tool.  As the root cause"
+" of the noise is not known, it is recommended to try a different encoder "
+"setup if this is observed, either by moving the encoders to a different "
+"shaft or replacing them with a different type of encoder."
+msgstr ""
+"有时甚至可以通过增加加速窗口大小设置，甚至从被该噪声污染的数据中准确确定特征常数。但是，这种编码器噪声对机器人代码来说是有问题的，与对特征化工具来说是有问题的方式非常相似。由于不知道产生噪声的根本原因，因此建议您尝试使用不同的编码器设置，方法是将编码器移至不同的轴上，或将其替换为其他类型的编码器。"

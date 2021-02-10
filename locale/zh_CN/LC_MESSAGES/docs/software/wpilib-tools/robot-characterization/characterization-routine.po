@@ -5,18 +5,143 @@
 # 
 # Translators:
 # Team 5308 <team5308@163.com>, 2020
+# 志鹏 邢 <2913768075@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-27 04:18+0000\n"
+"POT-Creation-Date: 2021-02-10 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
+"Last-Translator: 志鹏 邢 <2913768075@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:2
+msgid "Running the Characterization Routine"
+msgstr "运行表征程序"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:4
+msgid ""
+"Once the characterization code has been deployed, we can now run the "
+"characterization routine, and record the resulting data for analysis."
+msgstr "部署特征代码后，我们现在可以运行特征例程，并记录结果数据以进行分析。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:6
+msgid ""
+"Ensure you have sufficient space around the robot before running any "
+"characterization routine! The drive characterization requires at least 10' "
+"of space, ideally closer to 20'. The robot drive can not be accurately "
+"characterized while on blocks."
+msgstr ""
+"在运行任何表征程序之前，请确保机器人周围有足够的空间！驱动器表征至少需要10'的空间，理想情况下更接近20'。机器人在块上行驶时，无法准确地表征其驱动特性。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:9
+msgid "Launch the Data Logger"
+msgstr "启动数据记录器"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:16
+msgid "This should open the data logger GUI."
+msgstr "这需要打开数据记录器GUI。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:21
+msgid ""
+"The logger allows you to change the previously selected test type through "
+"the :guilabel:`Test Type` dropdown. Also, the ``Angular Mode``, "
+"``Trackwidth``, and ``Rotation Wheel`` features will do nothing unless you "
+"have selected ``Drivetrain`` as your Test Type."
+msgstr ""
+"记录器允许您通过：TestType下拉菜单更改以前选择的测试类型。此外，除非您选择``Drivetrain`` 作为测试类型，否则``Angular "
+"Mode``，``Trackwidt和 ``Rotation Wheel``功能将不起作用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:24
+msgid "Connect to the Robot"
+msgstr "连接到机器人"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:31
+msgid ""
+"If the tool does not seem to be successfully connecting, try rebooting the "
+"robot. Eventually, the status should change to ``Connected``, indicating the"
+" tool is successfully communicating with the robot."
+msgstr "如果工具没有成功连接，试着重新启动机器人。最终，状态应更改为``已连接''，表明工具已与机器人成功通信。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:37
+msgid "Running Tests"
+msgstr "运行测试"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:39
+msgid ""
+"A standard motor characterization routine consists of two types of tests:"
+msgstr "标准电机表征程序由两类测试组成："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:41
+msgid ""
+"**Quasistatic:** In this test, the mechanism is gradually sped-up such that "
+"the voltage corresponding to acceleration is negligible (hence, \"as if "
+"static\")."
+msgstr "**Quasistatic:**在此测试中，机制逐渐加速，使得与加速度相对应的电压可以忽略不计（测量，如果是否是静态的）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:42
+msgid ""
+"**Dynamic:** In this test, a constant 'step voltage' is given to the "
+"mechanism, so that the behavior while accelerating can be determined."
+msgstr "**Dynamic:** 在此测试中，将恒定的 'step voltage'赋予该途径，使其在加速时的行为得以确定。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:44
+msgid ""
+"Each test type is run both forwards and backwards, for four tests in total, "
+"corresponding to the four buttons."
+msgstr "每种测试类型都向前和向后运行，总共进行四个测试，分别与四个按钮相对应。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:49
+msgid ""
+"The tests can be run in any order, but running a \"backwards\" test directly"
+" after a \"forwards\" test is generally advisable (as it will more or less "
+"reset the mechanism to its original position)."
+msgstr ""
+"可以按任何顺序运行测试，但是通常建议在 "
+"\"forwards\"测试之后直接运行\"backwards\"测试（因为它或多或少会将机械装置复位到原来的位置）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:51
+msgid ""
+"Follow the instructions in the pop-up windows after pressing each test "
+"button."
+msgstr "按下每个测试按钮后，请按照弹出窗口中的说明进行操作。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:57
+msgid "Trackwidth"
+msgstr "轨道宽度"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:59
+msgid ""
+"The trackwidth test will spin your robot to determine an empirical "
+"trackwidth. It compares how far the wheel encoders drove against the "
+"reported rotation from the gyroscope.  To get the best results your wheels "
+"should maintain contact with the ground."
+msgstr ""
+"磁道或轨迹宽度测试将使您的机器人旋转以确定经验的磁道宽度。它比较了车轮编码器与陀螺仪报告的旋转所驱动的距离。为了获得最佳结果，您的车轮应保持与地面的接触。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:61
+msgid ""
+"If your robot is having trouble turning during the Trackwidth test you "
+"should increase the :guilabel:`Rotation Wheel voltage (V):` value until your"
+" robot is smoothly turning and run the test again."
+msgstr "如果您的机器人在Trackwidth测试期间无法旋转，则应增加转轮电压（V）的值，直到机器人平稳转动并再次运行测试。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:63
+msgid ""
+"For high-friction wheels (like pneumatic tires), the empirical trackwidth "
+"calculated by frc-characterization may be significantly different from the "
+"real trackwidth (e.g., off by a factor of 2). The empirical value should be "
+"preferred over the real one in robot code."
+msgstr ""
+"对于高摩擦轮（例如充气轮胎），通过frc特征计算的经验轨迹宽度可能与实际轨迹宽度显着不同（例如，取2的因子）。在机器人代码中，经验值应优先于实际值。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/characterization-routine.rst:65
+msgid "The entire routine should look something like this:"
+msgstr "整个例程应如下所示："

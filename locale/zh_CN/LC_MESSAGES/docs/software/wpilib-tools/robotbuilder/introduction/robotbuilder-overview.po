@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-05 04:29+0000\n"
+"POT-Creation-Date: 2021-02-10 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,244 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:4
+msgid "RobotBuilder Overview"
+msgstr "RobotBuilder 概述"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:6
+msgid ""
+"RobotBuilder is an application designed to aid the robot development "
+"process. RobotBuilder can help you:"
+msgstr "RobotBuilder 是旨在帮助机器人开发过程的应用程序。 RobotBuilder 可以帮助您："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:15
+msgid ""
+"Creating a program with RobotBuilder is a very straight forward procedure by"
+" following a few steps that are the same for any robot. This lesson "
+"describes the steps that you can follow. You can find more details about "
+"each of these steps in subsequent sections of the document."
+msgstr ""
+"通过遵循对于任何机器人都相同的几个步骤，使用RobotBuilder创建程序是非常简单的过程。本课描述了您可以执行的步骤。您可以在本文档的后续部分中找到有关每个步骤的更多详细信息。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:20
+msgid "Divide the Robot into Subsystems"
+msgstr "将机器人划分为不同的子系统"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:24
+msgid ""
+"Your robot is naturally made up of a number of smaller systems like the "
+"drive trains, arms, shooters, collectors, manipulators, wrist joints, etc. "
+"You should look at the design of your robot and break it up into smaller, "
+"separately operated subsystems. In this particular example there is an "
+"elevator, a minibot alignment device, a gripper, and a camera system. In "
+"addition one might include the drive base. Each of these parts of the robot "
+"are separately controlled and make good candidates for subsystems."
+msgstr ""
+"您的机器人是由许多较小的系统组成的，例如动力传动系统，手臂，射手，收集器，机械手，腕关节等。您应该研究一下机器人的设计并将其分解成较小的，可单独操作的子系统。在这个特定的例子中，有一个升降舵，一个小型机器人对准装置，一个抓具和一个摄像系统。另外，可能包括驱动器基座。机器人的这些部分中的每一个都受到单独控制。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:26
+msgid ""
+"For more information see :doc:`Creating a Subsystem <robotbuilder-creating-"
+"subsystem>`."
+msgstr "有关更多信息，请参阅创建子系统<robotbuilder-creating-subsystem>。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:29
+msgid "Adding each Subsystem to the Project"
+msgstr "将每个子系统添加到项目"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:33
+msgid ""
+"Each subsystem will be added to the \"Subsystems\" folder in the "
+"RobotBuilder and given a meaningful name. For each of the subsystems there "
+"are several attributes that get filled in to specify more information about "
+"the subsystems. In addition there are two types of subsystems that you might"
+" want to create:"
+msgstr ""
+"每个子系统将被添加到RobotBuilder的“ "
+"Subsystems”文件夹中，并赋予一个有意义的名称。对于每个子系统，都有几个属性被填充以指定有关子系统的更多信息。另外，您可能要创建两种类型的子系统："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:35
+msgid ""
+"PIDSubsystems - often it is desirable to control a subsystems operation with"
+" a PID controller. This is code in your program that makes the subsystem "
+"element, for example arm angle, more quickly to a desired position then stop"
+" when reaching it. PIDSubsystems have the PID Controller code built-in and "
+"are often more convenient then adding it yourself. PIDSubsystems have a "
+"sensor that determines when the device has reached the target position and "
+"an actuator (motor controller) that is driven to the setpoint."
+msgstr ""
+"PIDSubsystems-"
+"通常希望使用PID控制器控制子系统的运行。这是程序中的代码，可使子系统，例如手臂角度，更快地到达所需位置，然后在到达所需位置时停止。 "
+"PIDSubsystems内置了PID控制器代码，通常比自己添加起来更方便。 "
+"PIDSubsystems具有确定设备何时到达目标位置的传感器和驱动至设定点的执行器（电动机控制器）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:36
+msgid ""
+"Regular subsystem - these subsystems don't have an integrated PID controller"
+" and are used for subsystems without PID control for feedback or for "
+"subsystems requiring more complex control than can be handled with the "
+"default embedded PID controller."
+msgstr ""
+"常规子系统-这些子系统没有集成的PID控制器，用于没有PID控制的子系统来进行反馈，或者用于需要比默认嵌入式PID控制器更复杂的控制的子系统。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:38
+msgid ""
+"As you look through more of this documentation the differences between the "
+"subsystem types will become more apparent."
+msgstr "当您仔细阅读本文档的更多内容时，不同类型的子系统之间的差异将变得更加明显。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:40
+msgid ""
+"For more information see :doc:`Creating a Subsystem <robotbuilder-creating-"
+"subsystem>` and :ref:`Writing Code for a Subsystem <docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing "
+"the Code for a Subsystem>`."
+msgstr ""
+"有关更多信息，请参见创建子系统<robotbuilder-creating-subsystem>和创建子系统<docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code:Writing "
+"the Code for a Subsystem>的代码。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:43
+msgid "Adding Components to each of the Subsystems"
+msgstr "向每个子系统添加组件"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:47
+msgid ""
+"Each subsystem consists of a number of actuators, sensors and controllers "
+"that it uses to perform its operations. These sensors and actuators are "
+"added to the subsystem with which they are associated.  Each of the sensors "
+"and actuators comes from the RobotBuilder palette and is dragged to the "
+"appropriate subsystem. For each, there are usually other properties that "
+"must be set such as port numbers and other parameters specific to the "
+"component."
+msgstr ""
+"每个子系统都包含许多执行器，传感器和控制器，用于执行其操作。这些传感器和执行器将添加到与其关联的子系统。每个传感器和执行器均来自RobotBuilder面板，并拖到相应的子系统中。对于每一个传感器和执行器，通常都必须设置一些特定的属性，例如端口号和特定于组件的其他参数。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:49
+msgid ""
+"In this example there is an Elevator subsystem that uses a motor and a "
+"potentiometer (motor and pot) that have been dragged to the Elevator "
+"subsystem."
+msgstr "在此示例中，有一个升降舵系统，该子系统使用已拖动到电梯子系统的电动机和电位计（电动机和电位计）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:52
+msgid "Adding Commands That Describe Subsystem Goals"
+msgstr "添加描述子系统目标的命令"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:56
+msgid ""
+"Normal commands - these are the most flexible command, you have to write all"
+" of the code to perform the desired actions necessary to accomplish the "
+"goal."
+msgstr "普通指令-这是最灵活的指令，您必须编写所有代码才能执行实现目标所需的所需动作。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:59
+msgid ""
+"Command groups - these commands are a combination of other commands running "
+"both in a sequential order and in parallel. Use these to build up more "
+"complicated actions after you have a number of basic commands implemented."
+msgstr "指令组-这些指令是按顺序和并行运行的其他命令的组合。在您实现了许多基本指令之后，可以使用这些指令建立更复杂的操作。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:60
+msgid ""
+"Setpoint commands - setpoint commands move a PID Subsystem to a fixed "
+"setpoint, or the desired location."
+msgstr "设定设定值值指令-指令将PID子系统移动到固定的设定值或所需的位置。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:65
+msgid ""
+"For more information see :doc:`Creating a Command <robotbuilder-creating-"
+"command>` and :ref:`Writing Command Code <docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing "
+"the Code for a Command>`."
+msgstr ""
+"有关更多信息，请参见创建指令<robotbuilder-creating-command>和编写指令代码<docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-writing-command-code:Writing "
+"the Code for a Command>。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:68
+msgid "Testing each Command"
+msgstr "测试每个命令"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:74
+msgid ""
+"By creating buttons, each command can be tested individually. If all the "
+"commands work individually, you can be pretty sure that the robot will work "
+"as a whole."
+msgstr "通过创建按钮，可以分别测试每个指令。如果所有指令可以单独运行，则可以确定机器人将可以整体运行。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:79
+msgid "Adding Operator Interface Components"
+msgstr "添加操作界面组件"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:83
+msgid ""
+"The operator interface consists of joysticks, gamepads and other HID input "
+"devices. You can add operator interface components (joysticks, joystick "
+"buttons) to your program in RobotBuilder. It will automatically generate "
+"code that will initialize all of the components and allow them to be "
+"connected to commands."
+msgstr ""
+"操作界面由操纵杆，手柄和其他HID输入设备组成。您可以在RobotBuilder中的程序中添加操作界面组件（操纵杆，操纵杆按钮）。它将自动生成将初始化所有组件并将其连接到特定的指令。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:85
+msgid ""
+"The operator interface components are dragged from the palette to the "
+"\"Operator Interface\" folder in the RobotBuilder program. First (1) add "
+"Joysticks to the program then put buttons under the associated joysticks (2)"
+" and give them meaningful names, like ShootButton."
+msgstr ""
+"将操作界面组件从面板拖到RobotBuilder程序中的“ Operator "
+"Interface”文件夹中。首先（1）将操纵杆添加到程序中，然后将按钮放在关联的操纵杆下方（2），并给它们起有意义的名称，例如ShootButton。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:88
+msgid "Connecting the Commands to the Operator Interface"
+msgstr "将指令连接到操作界面"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:92
+msgid ""
+"Commands can be associated with buttons so that when a button is pressed the"
+" command is scheduled. This should, for the most part, handle most of the "
+"tele-operated part of your robot program."
+msgstr "可以将指令与按钮关联，以便在按下按钮时执行指令。在大多数情况下，此方法可以处理机器人程序的大部分远程操作部分。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:94
+msgid ""
+"This is simply done by (1) adding the command to the JoystickButton object "
+"in the RobotBuilder program, then (2) setting the condition in which the "
+"command is scheduled."
+msgstr "只需通过（1）将指令添加到RobotBuilder程序中的JoystickButton对象，然后（2）设置运行指令的条件，即可完成此操作。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:96
+msgid ""
+"For more information see :doc:`Connecting the Operator Interface to a "
+"Command <robotbuilder-operator-interface-to-command>`."
+msgstr "有关更多信息，请参见将操作界面连接到指令<robotbuilder-operator-interface-to-command>`。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:99
+msgid "Developing Autonomous Commands"
+msgstr "开发自动命令"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:103
+msgid ""
+"Commands make it simple to develop autonomous programs. You simply specify "
+"which command should run when the robot enters the autonomous period and it "
+"will automatically be scheduled. If you have tested commands as discussed "
+"above, this should simply be a matter of choosing which command should run."
+msgstr ""
+"不同的指令使开发自动程序变得简单。您只需指定当机器人进入自动阶段应运行的指令，它将自动进行调度。如果您如上所述测试了指令，则只需选择要运行的指令即可。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:110
+msgid "Generating Code"
+msgstr "生成代码"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/introduction/robotbuilder-overview.rst:116
+msgid ""
+"For more information see :ref:`Generating RobotBuilder Code <docs/software"
+"/wpilib-tools/robotbuilder/writing-code/robotbuilder-generating-"
+"code:Generating Code for a Project>`."
+msgstr ""
+"有关更多信息，请参阅: Generating RobotBuilder Code \"<docs/software/wpilib-"
+"tools/robotbuilder/writing-code/robotbuilder-generating-code:Generating Code"
+" for a Project>\""

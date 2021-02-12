@@ -8,15 +8,16 @@
 # Ricardo Rentería <richier_99@hotmail.com>, 2020
 # Pierre Cote <persini24@outlook.com>, 2020
 # Paulina Maynez <paump22@hotmail.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"POT-Creation-Date: 2021-02-12 04:13+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,6 +63,28 @@ msgstr ""
 msgid "Major Features"
 msgstr "Características Principales"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:13
+msgid ""
+"A hardware-level `WebSocket interface "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`__"
+" has been added to allow remote access to robot code being simulated in a "
+"desktop environment."
+msgstr ""
+"Se ha añadido una interfaz `WebSocket a nivel de hardware "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`__"
+" para permitir el acceso remoto al código del robot que se está simulando en"
+" un entorno de escritorio."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:15
+msgid ""
+"Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi "
+"robot code runs in the desktop simulator environment and talks to the Romi "
+"via the new WebSocket interface."
+msgstr ""
+"Soporte para la plataforma de robots :doc:`Romi</docs/romi-robot/index>` . "
+"El código del robot Romi se ejecuta en el entorno del simulador de "
+"escritorio y habla con el Romi a través de la nueva interfaz WebSocket."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:17
 msgid ""
 "A new robot data visualizer -- :ref:`Glass <docs/software/wpilib-"
@@ -74,6 +97,31 @@ msgstr ""
 "interfaz de usuario similar a la del simulador y soporta muchas de las "
 "mismas características; sin embargo, Glass puede ser usado como un dashboard"
 " de mandos autónomo y no está ligado al programa del robot."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
+msgid ""
+"The WPILib installer has been rewritten to support macOS and Linux and to "
+"improve ease of use."
+msgstr ""
+"El instalador de WPILib ha sido reescrito para que sea compatible con macOS "
+"y Linux y para mejorar la facilidad de uso."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:21
+msgid ""
+"The macOS installer is notarized, eliminating the need for Gatekeeper "
+"bypass."
+msgstr ""
+"El instalador de macOS está notarizado, lo que elimina la necesidad del "
+"Gatekeeper."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:22
+msgid ""
+"Please see the :ref:`installation instructions <docs/zero-to-robot/step-2"
+"/wpilib-setup:WPILib Installation Guide>` as it differs from previous years."
+msgstr ""
+"Por favor, consulte las :ref:`instrucciones de instalación <docs/zero-to-"
+"robot/step-2/wpilib-setup:WPILib Installation Guide>` ya que difiere de años"
+" anteriores."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:24
 msgid ""
@@ -112,6 +160,49 @@ msgstr ""
 "equipos que definen sus propias restricciones deben marcar los métodos "
 "``MaxVelocity()`` y ``MinMaxAcceleration()`` como ``const``."
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:36
+msgid ""
+"The ``Field2d`` class (added midway through the 2020 season) was moved from "
+"the simulation package (``edu.wpi.first.wpilibj.simulation`` / "
+"``frc/simulation/``) to the SmartDashboard package "
+"(``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This "
+"allows teams to send their robot position over NetworkTables to be viewed in"
+" Glass. The Field2d instance can be sent using "
+"``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` or by using one of "
+"the :ref:`Shuffleboard methods <docs/software/wpilib-tools/shuffleboard"
+"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be"
+" done in order to see the Field2d in the Simulator GUI."
+msgstr ""
+"La clase ``Field2d`` (añadida a mediados de la temporada 2020) fue "
+"trasladada del paquete de simulación (``edu.wpi.first.wpilibj.simulation`` /"
+" ``frc/simulation/``) al paquete SmartDashboard "
+"(``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). Esto "
+"permite que los equipos envíen la posición de su robot a través de "
+"NetworkTables para ser visualizada en Glass. La instancia Field2d puede "
+"enviarse utilizando ``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` o utilizando uno de "
+"los métodos :ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard"
+"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. Esto debe "
+"hacerse para poder ver el Field2d en la GUI del Simulador."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:38
+msgid ""
+"PWM Speed Controllers ``get()`` method has been modified to return the same "
+"value as was ``set()`` regardless of inversion. The value that still stakes "
+"into account the inversion can be retrieved with the ``getSpeed()`` method. "
+"This affects the following classes ``DMC60``, ``Jaguar``, ``PWMSparkMax``, "
+"``PWMTalonFX``, ``PWMTalonSRX``, ``PWMVenom``, ``PWMVictorSPX``, ``SD540``, "
+"``Spark``, ``Talon``, ``Victor``, and ``VictorSP`` classes."
+msgstr ""
+"El método ``get()`` de los controladores de velocidad PWM ha sido modificado"
+" para devolver el mismo valor que tenía ``set()`` independientemente de la "
+"inversión. El valor que todavía tiene en cuenta la inversión puede ser "
+"recuperado con el método ``getSpeed()``. Esto afecta a las clases ``DMC60``,"
+" ``Jaguar``, ``PWMSparkMax``, ``PWMTalonFX``, ``PWMTalonSRX``, ``PWMVenom``,"
+" ``PWMVictorSPX``, ``SD540``, ``Spark``, ``Talon``, ``Victor`` y "
+"``VictorSP``."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:41
 msgid "New Command-Based Library"
 msgstr "Nueva Librería Basada en Comandos"
@@ -125,6 +216,17 @@ msgstr ""
 "Se han agregado informes de vigilancia y época al programador de comandos. "
 "Esto permitirá a los equipos saber exactamente qué comando o subsistema es "
 "responsable de un bucle desbordado si ocurre uno."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:45
+msgid ""
+"Added a ``withName()`` command decorator for Java teams. This lets teams set"
+" the name of a particular command using the :ref:`decorator pattern "
+"<docs/software/commandbased/convenience-features:withName (Java only)>`."
+msgstr ""
+"Se ha añadido un decorador de comandos ``withName()`` para los equipos Java."
+" Esto permite a los equipos establecer el nombre de un comando en particular"
+" utilizando el patrón :ref:`decorador <docs/software/commandbased"
+"/convenience-features:withName (Java only)>`."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:47
 msgid ""
@@ -370,9 +472,28 @@ msgstr ""
 "desvíos. Esto corrige el comportamiento en el que no se usa la ruta más "
 "corta durante la rotación del tren motriz."
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:99
+msgid ""
+"Deprecated ``units.h``, use individual :ref:`units headers <docs/software"
+"/basic-programming/cpp-units:Using the Units Library>` instead which speeds "
+"compile times."
+msgstr ""
+"Se ha obviado ``units.h``, utilice las cabeceras individuales de :ref:`units"
+" <docs/software/basic-programming/cpp-units:Using the Units Library>` en su "
+"lugar, lo que acelera los tiempos de compilación."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:102
 msgid "Simulation"
 msgstr "Simulación"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:104
+msgid "Added keyboard virtual joystick simulation support."
+msgstr "Se ha añadido soporte de simulación de joystick virtual con teclado."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:105
+msgid "Added Mechanism2D for visualizing mechanisms in simulation."
+msgstr ""
+"Se ha añadido Mechanism2D para visualizar los mecanismos en la simulación."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:106
 msgid ""
@@ -395,6 +516,10 @@ msgid "Graphing Widget now uses ChartFX, a high performance graphing library"
 msgstr ""
 "Graphing Widget ahora usa ChartFX, una biblioteca de gráficos de alto "
 "rendimiento"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:113
+msgid "Fixed decimal digit formatting with large numbers"
+msgstr "Se corrigió el formato de los dígitos decimales con números grandes"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:114
 msgid "Size and position can now be set separately in the Shuffleboard API"
@@ -462,6 +587,16 @@ msgstr ""
 "Se renombró la tarea ``wpi`` (que muestra las versiones actuales de WPILib  "
 "y herramientas) a `wpiVersions`"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:134
+msgid "Added the ability to set environment variables during simulation"
+msgstr ""
+"Se ha añadido la posibilidad de establecer variables de entorno durante la "
+"simulación"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:136
+msgid "To set the environment variable ``HALSIMWS_HOST`` use:"
+msgstr "Para establecer la variable de entorno ``HALSIMWS_HOST`` utilice:"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:145
 msgid "CSCore"
 msgstr "CSCore"
@@ -476,23 +611,113 @@ msgstr ""
 msgid "Visual Studio Code Extension"
 msgstr "Visual Studio Code Extension"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:152
+msgid "Visual Studio Code has been updated to 1.52.1"
+msgstr "Visual Studio Code ha sido actualizado a 1.52.1"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:153
 msgid "Updated Java and C++ language extensions"
 msgstr "Se actualizó las extensiones de los lenguajes Java y C++"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:154
+msgid "Driverstation sim extension is now enabled by default"
+msgstr "La extensión Driverstation sim está ahora activada por defecto"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:155
+msgid ""
+"Project importer now retains the commands version used in the original "
+"project"
+msgstr ""
+"El importador de proyectos ahora conserva la versión de los comandos "
+"utilizados en el proyecto original"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:156
+msgid "Clarified the text on the new project and project importer screens"
+msgstr ""
+"Se ha aclarado el texto de las pantallas del nuevo proyecto y del importador"
+" de proyectos"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:157
+msgid "Fixed import corrupting binary files"
+msgstr "Se corrigió la importación que corrompía los archivos binarios"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:158
+msgid "Fixed link order in C++ ``build.gradle`` projects"
+msgstr ""
+"Se ha corregido el orden de los enlaces en los proyectos C++ "
+"``build.gradle``."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:159
+msgid ""
+"Updated \"Change Select Default Simulate Extension Setting\" command to work"
+" with multiple sim extensions"
+msgstr ""
+"Se ha actualizado el comando \"Change Select Default Simulate Extension "
+"Setting\" para que funcione con varias extensiones de sim."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:162
 msgid "RobotBuilder"
 msgstr "RobotBuilder"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:164
+msgid ""
+"Updated to be compatible with the new command based framework and PID "
+"Controller."
+msgstr ""
+"Actualizado para ser compatible con el nuevo marco basado en comandos y el "
+"controlador PID."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:166
+msgid ""
+"Due to the major changes in templates, RobotBuilder will not accept a save "
+"file from a previous year. You must regenerate the yaml save file and export"
+" to a new directory."
+msgstr ""
+"Debido a los grandes cambios en las plantillas, RobotBuilder no aceptará un "
+"archivo guardado de un año anterior. Debe regenerar el archivo de guardado "
+"yaml y exportarlo a un nuevo directorio."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:167
+msgid ""
+"A version of RobotBuilder that still exports to the old command based "
+"framework has included with the installer and is called RobotBuilder-Old"
+msgstr ""
+"Con el instalador se ha incluido una versión de RobotBuilder que todavía "
+"exporta al antiguo marco de trabajo basado en comandos y que se llama "
+"RobotBuilder-Old"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:169
 msgid "C++: use uniform initialization of objects in header"
 msgstr ""
 "C++: utilice la inicialización uniforme de los objetos en el encabezado"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:170
+msgid ""
+"C++: fixed case of includes so that code compiles on case-sensitive "
+"filesystems"
+msgstr ""
+"C++: se han corregido las mayúsculas y minúsculas de los includes para que "
+"el código compile en sistemas de archivos que distinguen entre mayúsculas y "
+"minúsculas."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:171
 msgid "Use project name as default for save file"
 msgstr ""
 "Usar el nombre del proyecto como predeterminado para guardar el archivo"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:172
+msgid "Fixed export of wiring file"
+msgstr "Se corrigió la exportación del archivo de cableado"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:173
+msgid "Fixed line-endings for scripts so they work on MacOS/Linux"
+msgstr ""
+"Se corrigieron los finales de línea de los scripts para que funcionen en "
+"MacOS/Linux"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:174
+msgid "Added XboxController"
+msgstr "Se agregó un XboxController"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:177
 msgid "Robot Characterization"
@@ -511,3 +736,9 @@ msgstr ""
 "Se mejoró la herramienta backend para que fuera más accesible para los "
 "desarrolladores. La configuración y los archivos JSON de la antigua "
 "herramienta ya no funcionarán con la nueva versión."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:181
+msgid "Deploy code in a new thread to avoid causing the GUI to hang."
+msgstr ""
+"Desplegar el código en un nuevo hilo para evitar que se cuelgue la interfaz "
+"gráfica de usuario."

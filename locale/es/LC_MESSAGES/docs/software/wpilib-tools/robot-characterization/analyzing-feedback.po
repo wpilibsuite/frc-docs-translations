@@ -9,15 +9,17 @@
 # Paulina Maynez <paump22@hotmail.com>, 2020
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
 # Pierre Cote <persini24@outlook.com>, 2021
+# heriberto gutierrez <herigtzt04@yahoo.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"POT-Creation-Date: 2021-02-12 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Pierre Cote <persini24@outlook.com>, 2021\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -38,6 +40,37 @@ msgstr ""
 "Estas ganancias son, en efecto, \"conjeturas educadas\" - no se garantiza "
 "que sean perfectas, y debe ser visto como un \"punto de inicio\" para una "
 "mayor sintonía."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:8
+msgid ""
+"The feedback gain calculation assumes that there is no mechanical backlash, "
+"sensor noise, or phase lag in the sensor measurement.  While these are "
+"reasonable assumptions in many situations, none of them are strictly true in"
+" practice.  In particular, many \"smart motor controllers\" (such as the "
+"``Talon SRX``, ``Talon FX``, and ``SPARK MAX``) have default settings that "
+"apply substantial :ref:`low-pass filtering <docs/software/advanced-"
+"controls/filters/introduction:Introduction to Filters>` to their encoder "
+"velocity measurements, which introduces a significant amount of phase lag.  "
+"This can cause the calculated gains for velocity loops to be unstable.  To "
+"rectify this, either decrease the amount of filtering through the "
+"controller's API, or reduce the magnitude of the PID gains - it has been "
+"found that shrinking gains by about a factor of 10 works well for most "
+"default filtering settings."
+msgstr ""
+"La retroalimentación de la ganancia asume que no hay retroceso mecánico, el "
+"ruido en sensor, o el desfase en la medición del sensor. Aunque son "
+"suposiciones razonables en muchas situaciones, ninguna de ellas es "
+"estrictamente cierta en la práctica. En particular, muchos \"controladores "
+"de motor inteligentes\" (como el Talon SRX, Talon FX y SparkMax) tienen "
+"configuraciones predeterminadas que aplican un filtrado sustancial :ref: `de"
+" paso bajo docs/software/advanced-controls/filters/introduction:Introduction"
+" to Filters>` a sus mediciones de velocidad del codificador, lo que "
+"introduce una cantidad significativa de desfase. Esto puede causar que la "
+"ganancia calculada para que los bucles de velocidad sean inestables. Para "
+"rectificar esto, o bien se reduce la cantidad de filtrado a través de la API"
+" del controlador, o se reduce la magnitud de las ganancias del PID – se ha "
+"encontrado que reducir las ganancias por un factor de 10 funciona bien para "
+"la mayoría de los filtros predeterminados de configuración"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:10
 msgid ""
@@ -230,9 +263,44 @@ msgstr ""
 "el error del sistema y el esfuerzo de control - note que no está garantizado"
 " que el sistema obedecerá estas tolerancias en todo momento."
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:49
+msgid ""
+"As a rule, smaller values for the :guilabel:`Max Acceptable Error` and "
+"larger values for the :guilabel:`Max Acceptable Control Effort` will result "
+"in larger gains - this will result in larger control efforts, which can "
+"grant better setpoint-tracking but may cause more violent behavior and "
+"greater wear on components."
+msgstr ""
+"Por regla general, los valores más pequeños para la :guilabel:`Error Máximo "
+"Aceptable` y los valores más grandes para la :guilabel:`Esfuerzo de Control "
+"Máximo Aceptable` darán lugar a mayores ganancias - esto dará lugar a "
+"mayores esfuerzos de control, lo que puede garantizar un mejor seguimiento "
+"del punto de ajuste, pero puede causar un comportamiento más violento y un "
+"mayor desgaste de los componentes."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:51
+msgid ""
+"The :guilabel:`Max Acceptable Control Effort` should never exceed 12V, as "
+"that corresponds to full battery voltage, and ideally should be somewhat "
+"lower than this."
+msgstr ""
+"La etiqueta :guilabel:`Esfuerzo de Control Máximo Aceptable` nunca debe "
+"exceder los 12V, ya que eso corresponde al voltaje total de la batería, e "
+"idealmente debería ser algo menor que esto."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:54
 msgid "Select Loop Type"
 msgstr "Seleccione el tipo de bucle"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:56
+msgid ""
+"It is typical to control mechanisms with both position and velocity PIDs, "
+"depending on application. Either can be selected using the drop-down "
+":guilabel:`Loop Type` menu."
+msgstr ""
+"Es típico controlar mecanismos con PIDs de posición y de velocidad, "
+"dependiendo de la aplicación. Cualquiera de ellos puede seleccionarse "
+"mediante el menú desplegable :guilabel:`Tipo de lazo`."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:62
 msgid "Enter Known Velocity/Acceleration"
@@ -259,6 +327,24 @@ msgstr ""
 "los usuarios pueden necesitar agregar retroalimentación de todos modos - en "
 "este caso, el bucle debe ser configurado manualmente."
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:66
+msgid ""
+"If one wishes to use the :guilabel:`Feedback Analysis` pane without running "
+"a full analysis on a set of data, or otherwise view the effect of modifying "
+"the ``kV`` and ``kA`` values, this can be done here."
+msgstr ""
+"Si se desea utilizar el panel :guilabel:`Análisis de retroalimentación` sin "
+"ejecutar un análisis completo en un conjunto de datos, o bien ver el efecto "
+"de la modificación de los valores ``kV`` y ``kA``, se puede hacer aquí."
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:72
 msgid "Calculate Gains"
 msgstr "Calcular las ganancias"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:74
+msgid ""
+"Finally, press the :guilabel:`Calculate Optimal Controller Gains` to "
+"determine the feedback gains."
+msgstr ""
+"Por último, pulse :guilabel:`Calcular ganancias óptimas del controlador` "
+"para determinar las ganancias de retroalimentación."

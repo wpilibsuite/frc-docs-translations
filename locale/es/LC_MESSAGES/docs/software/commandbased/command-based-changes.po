@@ -8,15 +8,16 @@
 # heriberto gutierrez <herigtzt04@yahoo.com>, 2021
 # Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
 # Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2021
+# Paulina Maynez <paump22@hotmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"POT-Creation-Date: 2021-02-12 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2021\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -219,6 +220,18 @@ msgstr ""
 msgid "Changes to the Scheduler"
 msgstr "Cambios al Planificador"
 
+#: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:48
+msgid ""
+"``Scheduler`` has been renamed to ``CommandScheduler`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__)."
+msgstr ""
+"``Scheduler`` ha sido renombrado como ``CommandScheduler`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__)."
+
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:49
 msgid ""
 "Interruptibility of commands is now the responsibility of the scheduler, not"
@@ -245,6 +258,27 @@ msgstr "Cambios al Subsistema"
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:55
 msgid "For more information on subsystems, see :doc:`subsystems`."
 msgstr "Para mas información sobre subsistemas, véase :doc:`subsystems`."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:57
+msgid ""
+"As noted earlier, ``Subsystem`` is now an interface (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Subsystem.html>`__);"
+" the closest equivalent of the old ``Subsystem`` is the new "
+"``SubsystemBase`` class.  Many of the Sendable-related constructor overloads"
+" have been removed to reduce clutter; users can call the setters directly "
+"from their own constructor, if needed."
+msgstr ""
+"Como se señaló anteriormente, ``Subsystem`` ahora es una interfaz (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Subsystem.html>`__);"
+" el equivalente más cercano del antiguo ``Subsystem`` es la nueva clase "
+"``SubsystemBase``. Muchas de las sobrecargas de constructores relacionadas "
+"con Sendable se han eliminado para reducir el desorden; los usuarios pueden "
+"llamar a los establecedores directamente desde su propio constructor, si es "
+"necesario."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:58
 msgid ""
@@ -276,6 +310,27 @@ msgstr "Cambios a Comandos"
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:64
 msgid "For more information on commands, see :doc:`commands`."
 msgstr "Para mas información sobre comandos, véase  :doc:`commands`."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:66
+msgid ""
+"As noted earlier, ``Command`` is now an interface (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__);"
+" the closest equivalent of the old ``Command`` is the new ``CommandBase`` "
+"class.  Many of the Sendable-related constructor overloads have been removed"
+" to reduce clutter; users can call the setters directly from their own "
+"constructor, if needed."
+msgstr ""
+"Como se señaló anteriormente, ``Command`` ahora es una interfaz (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1Command.html>`__);"
+" el equivalente más cercano del antiguo ``Command`` es la nueva clase "
+"``CommandBase``. Muchas de las sobrecargas de constructores relacionadas con"
+" Sendable se han eliminado para reducir el desorden; los usuarios pueden "
+"llamar a los establecedores directamente desde su propio constructor, si es "
+"necesario."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:67
 msgid ""
@@ -331,6 +386,25 @@ msgstr ""
 "permitir modificaciones de comandos inline sencillas (e.g. agregar un "
 "temporizador)."
 
+#: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:73
+msgid ""
+"(C++ only) In order to allow the decorators to work with the command "
+"ownership model, a `CRTP "
+"<https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ is "
+"used via the ``CommandHelper`` `class "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__."
+"  Any user-defined Command subclass ``Foo`` *must* extend "
+"``CommandHelper<Foo, Base>`` where ``Base`` is the desired base class."
+msgstr ""
+"(Solo C ++) Para permitir que los decoradores trabajen con el modelo de "
+"propiedad de comandos, se usa un `CRTP "
+"<https://en.wikipedia.org/wiki/Curiously_recurring_template_pattern>`__ a "
+"través de la clase ``CommandHelper`` "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibNewCommands/src/main/native/include/frc2/command/CommandHelper.h>`__."
+" Cualquier subclase de comando definida por el usuario ``Foo`` *debe* "
+"extender  ``CommandHelper<Foo, Base>`` donde ``Base`` es la clase base "
+"deseada."
+
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:76
 msgid "Changes to PIDSubsystem/PIDCommand"
 msgstr "Cambios a PIDSubsystem/PIDCommand"
@@ -362,6 +436,20 @@ msgstr ""
 "El `` PIDController`` ahora se inyecta a través del constructor, eliminando "
 "muchos de los métodos de reenvío. Se puede modificar después de la "
 "construcción con `` getController() ``."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:82
+msgid ""
+"``PIDCommand`` is intended largely for inline use, as shown in the "
+"GyroDriveCommands example (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__)."
+msgstr ""
+"``PIDCommand`` está pensado en gran medida para su uso en línea, como se "
+"muestra en el ejemplo GyroDriveCommands (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/gyrodrivecommands>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/GyroDriveCommands>`__)."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-based-changes.rst:83
 msgid ""

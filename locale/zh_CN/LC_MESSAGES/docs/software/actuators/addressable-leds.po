@@ -5,18 +5,89 @@
 # 
 # Translators:
 # 怡静 陆 <2238710874@qq.com>, 2021
+# Tianrui Wu <tw2789@columbia.edu>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-25 16:47+0000\n"
+"POT-Creation-Date: 2021-02-17 16:17+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:2
+msgid "Addressable LEDs"
+msgstr "可寻址 LED"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:4
+msgid ""
+"LED strips have been commonly used by teams for several years for a variety "
+"of reasons. They allow teams to debug robot functionality from the audience,"
+" provide a visual marker for their robot, and can simply add some visual "
+"appeal. WPILib has an API for controlling WS2812 LEDs with their data pin "
+"connected via PWM."
+msgstr ""
+"出于多种原因，LED 灯带在近几年来被各个队伍广泛使用。LED 灯带可以让队伍能够通过观察 LED "
+"灯调试机器人的各项功能，为他们的机器人提供一个视觉标记，并且可增添一些视觉上的吸引力。 WPILib 有一个用于控制 WS2812 LED 的 API "
+"，其数据线通过 PWM 连接。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:7
+msgid "Instantiating the AddressableLED Object"
+msgstr "实例化 AddressableLED 对象"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:9
+msgid ""
+"You first create an ``AddressableLED`` object that takes the PWM port as an "
+"argument. It *must* be a PWM header on the roboRIO. Then you set the number "
+"of LEDs located on your LED strip, with can be done with the ``setLength()``"
+" function."
+msgstr ""
+"首先，创建一个 AddressableLED 对象，并将 PWM 端口作为构造函数的参数。这个端口必须是 roboRIO 上的 PWM "
+"接口。然后，可以通过该 setLength() 功能设置 LED 灯带上的 LED 数量。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:11
+msgid ""
+"It is important to note that setting the length of the LED header is an "
+"expensive task and it's **not** recommended to run this periodically."
+msgstr "要注意，设置 LED 的接头长度是一项耗时耗计算量的任务，不建议其在循环中运行。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:13
+msgid ""
+"After the length of the strip has been set, you'll have to create an "
+"``AddressableLEDBuffer`` object that takes the number of LEDs as an input. "
+"You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set"
+" the led output data. Finally, you can call ``myAddressableLed.start()`` to "
+"write the output continuously. Below is a full example of the initialization"
+" process."
+msgstr ""
+"设置灯带的长度后，您必须创建一个 \"AddressableLEDBuffer\" 对象，该对象将 LED 的数量作为输入。然后，您可以调用 "
+"\"myAddressableLed.setData(myAddressableLEDBuffer)\" 以设置 LED 的输出数据。最后，您可以调用 "
+"\"myAddressableLed.start()\" 以连续输入输出。以下是初始化过程的完整示例。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:15
+msgid "C++ does not have an AddressableLEDBuffer, and instead uses an Array."
+msgstr "C++ 没有 AddressableLEDBuffer 类，而是使用 Array 。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:42
+msgid "Setting the Entire Strip to One Color"
+msgstr "将整个灯带设置成单色"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:44
+msgid ""
+"Color can be set to an individual led on the strip using two methods. "
+"``setRGB()`` which takes RGB values as an input and ``setHSV()`` which takes"
+" HSV values as an input."
+msgstr ""
+"可以使用两种方法将颜色设置为条带上的单个 LED ：``setRGB()``，即接受 RGB 值作为输入；``setHSV()``，接受 HSV "
+"值作为输入。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:47
+msgid "Using RGB Values"
+msgstr "使用 RGB 值"

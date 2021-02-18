@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-17 16:17+0000\n"
+"POT-Creation-Date: 2021-02-18 04:13+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
 "Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -91,3 +91,68 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:47
 msgid "Using RGB Values"
 msgstr "使用 RGB 值"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:49
+msgid ""
+"RGB stands for Red, Green, and Blue. This is a fairly common color model as "
+"it's quite easy to understand. LEDs can be set with the ``setRGB`` method "
+"that takes 4 arguments: index of the LED, amount of red, amount of green, "
+"amount of blue. The amount of Red, Green, and Blue are integer values "
+"between 0-255."
+msgstr ""
+"RGB 指红、绿、蓝。这是一个相当常见的色彩模型，因为它很容易理解。可以使用带有4个参数的 ``setRGB`` 方法设置 LED ：LED "
+"的索引，红色量，绿色量，蓝色量。红色，绿色和蓝色的量是一个介于 0-255 之间的整数值。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:75
+msgid "Using HSV Values"
+msgstr "使用 HSV 值"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:77
+msgid ""
+"HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, "
+"saturation being the amount of gray, and value being the brightness. In "
+"WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers "
+"from 0 - 255. If you look at a color picker like `Google's "
+"<https://www.google.com/search?q=color+picker>`_, Hue will be 0 - 360 and "
+"Saturation and Value are from 0% to 100%. This is the same way that OpenCV "
+"handles HSV colors. Make sure the HSV values entered to WPILib are correct, "
+"or the color produced might not be the same as was expected."
+msgstr ""
+"HSV 中的 H 代表色相，S 代表饱和度，V 代表亮度值。色相描述颜色或色调，饱和度表示灰度，亮度值表示亮度。在 WPILib "
+"中，色相是0到180之间的整数。饱和度和值是0到255之间的整数。如果您使用像 `Google's "
+"<https://www.google.com/search?q=color+picker>`_ "
+"的颜色选择器，色相将是0到360，饱和度和值是0％至100％。这与 OpenCV 处理 HSV 颜色的方式相同。确保输入到 WPILib 的 HSV "
+"值正确，否则产生的颜色可能与预期的颜色不同。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:82
+msgid ""
+"LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of "
+"the LED, hue, saturation, and value. An example is shown below for setting "
+"the color of an LED strip to red (hue of 0)."
+msgstr ""
+"可以使用带有4个参数的方法 ``setHSV`` 设置LED：LED的索引，色相，饱和度和亮度值。下面展示了将LED灯条的颜色设置为红色 (色相为0) "
+"的示例。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:108
+msgid "Creating a Rainbow Effect"
+msgstr "创建彩虹效果"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:110
+msgid ""
+"The below method does a couple of important things. Inside of the *for* "
+"loop, it equally distributes the hue over the entire length of the strand "
+"and stores the individual LED hue to a variable called ``hue``. Then the for"
+" loop sets the HSV value of that specified pixel using the ``hue`` value."
+msgstr ""
+"下面的方法可以做到一些重要的功能。在 *for* 循环内部，它将色相均匀地分布在整个灯带的长度上，并将各个 LED 色相存储到名为的变量 ``hue``"
+" 中。然后 for 循环使用该 ``hue`` 值设置该指定像素的 HSV 值。"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:112
+msgid ""
+"Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates"
+" the pixel that contains the \"initial\" hue creating the rainbow effect. "
+"``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside "
+"the hue boundaries of 180. This is because HSV hue is a value from 0-180."
+msgstr ""
+"循环之外，``m_rainbowFirstPixelHue`` 迭代包含 “初始” 色调的像素，从而创建彩虹效果。然后 "
+"``m_rainbowFirstPixelHue`` 检查色相是否位于0-180范围内。这是因为HSV色相的值介于0至180之间。"

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
+# 怡静 陆 <2238710874@qq.com>, 2020
 # Tianrui Wu <tw2789@columbia.edu>, 2021
-# 怡静 陆 <2238710874@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-25 16:47+0000\n"
+"POT-Creation-Date: 2021-02-19 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,6 +70,25 @@ msgstr "PCM 模块由其节点 ID 标识。PCM 的默认节点 ID 为 0。如果
 #: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:22
 msgid "Generating and Storing Pressure"
 msgstr "产生和存储气压"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:24
+msgid ""
+"In FRC\\ |reg|, pressure is created using a pneumatic compressor and stored "
+"in pneumatic tanks. The compressor doesn't necessarily have to be on the "
+"robot, but must be powered by the robot's PCM(s). The \"Closed Loop\" mode "
+"on the Compressor is enabled by default, and it is *not* recommended that "
+"teams change this setting. When closed loop control is enabled the PCM will "
+"automatically turn the compressor on when the pressure switch is closed "
+"(below the pressure threshold) and turn it off when the pressure switch is "
+"open (~120PSI). When closed loop control is disabled the compressor will not"
+" be turned on. Using a Compressor, users can query the status of the "
+"compressor. The state (currently on or off), pressure switch state, and "
+"compressor current can all be queried from the Compressor object."
+msgstr ""
+"在 FRC\\ |reg| 中，压缩气体需使用压缩机产生，并存储在气罐中。压缩机不一定必须在机器上，但必须由机器的 PCM(s) "
+"供电。默认情况下压缩机的\"闭环\"模式是开启的，我们不建议队伍修改此设置。当启用闭环控制时，PCM 将在压力开关关闭 (低于压力阈值时) "
+"自动打开压缩机，并在压力开关打开(~120PSI) 时关闭压缩机。禁用闭环控制时，压缩机将不会开启。通过使用 Compressor "
+"对象，用户可以查询压缩器的状态。可以从 Compressor 对象查询压缩机状态 (当前为开或关) 、压力开关状态和压缩机电流。"
 
 #: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:26
 msgid ""
@@ -174,6 +193,22 @@ msgstr ""
 "双控电磁阀由 WPILib 中的 DoubleSolenoid 类控制。它们的构造类似于单控电磁阀，但是现在有两个端口号可以传递给构造函数，即正向通道 "
 "(第一个)和反向通道 (第二个)。然后可以将阀的状态设置为 kOff (均未激活输出)， kForward (启用正向通道) 或 kReverse "
 "(启用反向通道)。此外，如果队伍使用非标准的 PCM CAN ID，可以将 PCM CAN ID 传递给 DoubleSolenoid 对象。"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:119
+msgid "Toggling Solenoids"
+msgstr "切换电磁阀"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:121
+msgid ""
+"Solenoids can be switched from one output to the other (known as toggling) "
+"by using the `.toggle()` method."
+msgstr "电磁阀可以通过 .toggle() 方法切换 (也叫做toggling) 气压输出端"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:124
+msgid ""
+"Since a DoubleSolenoid defaults to off you will have to set it before it can"
+" be toggled."
+msgstr "因为一个 DoubleSolenoid 对象预设值为关闭，所以需要在初始化时进行设置以切换电磁阀。"
 
 #: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:155
 msgid "Pressure Transducers"

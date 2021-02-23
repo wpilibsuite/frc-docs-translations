@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 04:13+0000\n"
+"POT-Creation-Date: 2021-02-23 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -161,3 +161,86 @@ msgstr ""
 "Motor Safety功 能通过维持计时器来运行，该计时器跟踪自从对该执行器调用feed() 方法以来已有多长时间。Driver Station "
 "类中的代码每收到5个包 (名义上 100ms)，就会对这些计时器超时值进行比较。每个速度控制器类的set() 方法以及伺服类的 set() 和 "
 "setAngle() 方法调用 feed() 来指示执行器的输出已被更新。"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:59
+msgid ""
+"The Motor Safety interface of motor controllers can be interacted with by "
+"the user using the following methods:"
+msgstr "用户可以使用以下方法与速度控制器的 \"Motor Safety\" 界面进行交互："
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:77
+msgid ""
+"By default all RobotDrive objects enable Motor Safety. Depending on the "
+"mechanism and the structure of your program, you may wish to configure the "
+"timeout length of the motor safety (in seconds). The timeout length is "
+"configured on a per actuator basis and is not a global setting. The default "
+"(and minimum useful) value is 100ms."
+msgstr ""
+"默认情况下，所有 RobotDrive 对象都启用 \"Motor Safety\" 。根据程序的机制和结构，您可能希望配置电动机安全的超时时间 "
+"(以秒为单位)。超时长度是基于每个执行器配置的，不是全局设置。默认值 (最小可用值) 为100ms。"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:80
+msgid "Axis Conventions"
+msgstr "操纵轴惯例"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:84
+msgid ""
+"This library uses the NED axes convention (North-East-Down as external "
+"reference in the world frame). The positive X axis points ahead, the "
+"positive Y axis points right, and the positive Z axis points down. Rotations"
+" follow the right-hand rule, so clockwise rotation around the Z axis is "
+"positive."
+msgstr ""
+"WPILib 使用 NED 操纵轴惯例 (在世界座标系中将North-East-Down作为外部参考)。正 X 轴指向前方，正 Y 轴指向右侧，正 Z "
+"轴指向下方。旋转遵循右手定则，因此绕 Z 轴的顺时针旋转为正。"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:86
+msgid ""
+"This convention is different than the convention for joysticks which "
+"typically have -Y as Up (commonly mapped to throttle) and +X as Right. Pay "
+"close attention to the examples below if you want help with typical "
+"Joystick->Drive mapping."
+msgstr ""
+"此约定不同于操纵杆的约定，操纵杆通常将 -Y 表示为 Up (通常映射为节流阀) ，将 +X 表示为 Right "
+"。如果您需要典型操纵杆至驱动器映射的帮助，请参考以下示例。"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:93
+msgid ""
+"DifferentialDrive is a method provided for the control of \"skid-steer\" or "
+"\"West Coast\" drivetrains, such as the Kit of Parts chassis. Instantiating "
+"a DifferentialDrive is as simple as so:"
+msgstr ""
+"DifferentialDrive 是一种用于控制 \"skid-steer\" 或 \"West Coast\" 类型的底盘 (例如 KoP 底盘) "
+"的方法。实例化 DifferentialDrive 就是如下那么简单："
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:131
+msgid "Multi-Motor DifferentialDrive with SpeedControllerGroups"
+msgstr "使用 SpeedControllerGroups 实现多电机差速器"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:133
+msgid ""
+"Many FRC\\ |reg| drivetrains have more than 1 motor on each side. In order "
+"to use these with DifferentialDrive, the motors on each side have to be "
+"collected into a single SpeedController, using the SpeedControllerGroup "
+"class. The examples below show a 4 motor (2 per side) drivetrain. To extend "
+"to more motors, simply create the additional controllers and pass them all "
+"into the SpeedController group constructor (it takes an arbitrary number of "
+"inputs)."
+msgstr ""
+"许多 FRC\\ |reg| 底盘的每一侧都至少有2个电机。为了将它们与 DifferentialDrive 一起使用，必须使用 "
+"SpeedControllerGroup 类将每一侧的电动机收集到单个 SpeedController 中。以下示例显示了4电机 (每侧2个) "
+"的底盘。要扩展到更多电机，只需创建其他控制器，然后将它们全部传递给 SpeedController 组构造函数 (需要任意数量的输入)。"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:183
+msgid "Drive Modes"
+msgstr "驱动模式"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:185
+msgid ""
+"The DifferentialDrive class contains three different default modes of "
+"driving your robot's motors."
+msgstr "DifferentialDrive 类包含三种不同的驱动机器人电机的默认模式"
+
+#: ../../frc-docs/source/docs/software/actuators/wpi-drive-classes.rst:187
+msgid "Tank Drive, which controls the left and right side independently"
+msgstr "Tank Drive，可以独立控制底盘的左右侧"

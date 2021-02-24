@@ -5,7 +5,6 @@
 # 
 # Translators:
 # Lian Eng <lianengc@gmail.com>, 2020
-# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020
 # Diana Ramos <dianaracasas@gmail.com>, 2020
 # Paulina Maynez <paump22@hotmail.com>, 2020
 # heriberto gutierrez <herigtzt04@yahoo.com>, 2020
@@ -14,15 +13,17 @@
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
 # Fernando Soltero <fersg806@gmail.com>, 2020
 # Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2020
+# Rodrigo Acosta <raar7366@gmail.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 16:17+0000\n"
+"POT-Creation-Date: 2021-02-24 04:11+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2020\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -69,6 +70,44 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:14
 msgid "What is Command and Control?"
 msgstr "¿Qué es Command and Control?"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:16
+msgid ""
+"Command and Control recognizes that FRC\\ |reg| robots tend to be built up "
+"of relatively independent mechanisms such as Drive, Shooter, Arm, etc. Each "
+"of these is referred to as a subsystem and needs code that will coordinate "
+"the various sensors and actuators of the subsystem in order to complete "
+"requested commands, or actions, such as \"Close Gripper\" or \"Lower Arm\". "
+"One of the key principles of this framework is that subsystems will each "
+"have an independent controller loop that is solely responsible for updating "
+"motors and other actuators. Code outside of the subsystem controller can "
+"issue commands which may change the robot’s output, but should not directly "
+"change any outputs. The difference is very subtle but this means that "
+"outputs can only possibly be updated from one location in the project. This "
+"speeds up debugging a robot behaving unexpectedly by giving you the ability "
+"to look through a list of commands sent to the subsystem rather than "
+"searching your project for where an output may have been modified. It also "
+"becomes easier to add an additional sensor, change gearing, or disable a "
+"mechanism without needing to modify code outside of the controller."
+msgstr ""
+"Command and Control reconoce que los robots FRC\\ |reg|  tienden a estar "
+"formados por mecanismos relativamente independientes como Drive, Shooter, "
+"Arm, etc. Cada uno de estos se conoce como un subsistema y necesita un "
+"código que coordine los diversos sensores y actuadores del subsistema para "
+"completar los comandos solicitados. o acciones, como \"Cerrar pinza\" o "
+"\"Brazo inferior\". Uno de los principios clave de este marco es que los "
+"subsistemas tendrán cada uno un circuito de controlador independiente que es"
+" el único responsable de actualizar los motores y otros actuadores. El "
+"código fuera del controlador del subsistema puede emitir comandos que pueden"
+" cambiar la salida del robot, pero no deben cambiar directamente ninguna "
+"salida. La diferencia es muy sutil, pero esto significa que los resultados "
+"solo pueden actualizarse desde una ubicación en el proyecto. Esto acelera la"
+" depuración de un robot que se comporta de manera inesperada al brindarle la"
+" capacidad de revisar una lista de comandos enviados al subsistema en lugar "
+"de buscar en su proyecto donde se haya modificado una salida. También se "
+"vuelve más fácil agregar un sensor adicional, cambiar de marcha o "
+"deshabilitar un mecanismo sin necesidad de modificar el código fuera del "
+"controlador."
 
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:18
 msgid ""
@@ -705,6 +744,24 @@ msgstr ""
 "inmediatamente, o espera a que la operación se complete. La primera opción "
 "se usa comúnmente para TeleOp, y la segunda para Secuenciación Autónoma."
 
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:201
+msgid "In this example we will add the new command \"Drive for Distance\"."
+msgstr "En este ejemplo, agregaremos el nuevo comando \"Conducir por distancia\"."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:205
+msgid ""
+"First, save the new VI with a descriptive name such as \"Drive for "
+"Distance\". Next, determine whether the new command needs a new value added "
+"the Drive Operations enum typedef. The initial project code already has an "
+"enum value of Drive for Distance, but the following image shows how you "
+"would add one if needed."
+msgstr ""
+"Primero, guarde el nuevo VI con un nombre descriptivo como \"Drive for "
+"Distance\". A continuación, determine si el nuevo comando necesita un nuevo "
+"valor agregado en Drive Operations enum typedef. El código del proyecto "
+"inicial ya tiene un valor de enumeración de Drive for Distance, pero la "
+"siguiente imagen muestra cómo agregaría uno si fuera necesario."
+
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:209
 msgid ""
 "If a command needs additional information to execute, add it to the "
@@ -735,6 +792,39 @@ msgstr ""
 " del enum y añada un parámetro VI para especificar la distancia, las "
 "velocidades, etc. Si las unidades no coinciden, el comando VI es un gran "
 "lugar para mapear entre unidades."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:217
+msgid ""
+"Next, add code to the Drive Controller to define what happens when the Drive"
+" for Distance command executes. Right click on the Case Structure and "
+"Duplicate or Add Case for Every Value. This will create a new \"Drive for "
+"Distance\" case."
+msgstr ""
+"A continuación, agregue código al controlador de unidad para definir qué "
+"sucede cuando se ejecuta el comando de unidad para distancia. Haga clic "
+"derecho en la estructura del caso y duplique o agregue caso para cada valor."
+" Esto creará un nuevo caso \"Drive for Distance\"."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:221
+msgid ""
+"In order to access new setpoint fields, grow the \"Access Cmd setpoints\" "
+"unbundle node. Open your encoder(s) on the outside, to the left of the loop."
+" In the new diagram of the case structure, we added a call to reset the "
+"encoder on the first loop iteration and read it otherwise. There is also "
+"some simple code that compares encoder values and updates the motor power. "
+"If new controls are added to the setpoints cluster, you should also consider"
+" adding them to the Trace. The necessary changes are shown in the image "
+"below."
+msgstr ""
+"Para acceder a nuevos campos de puntos de ajuste, haga crecer el nodo de "
+"deshacer \"Puntos de ajuste de Cmd de acceso\". Abra su codificador (o "
+"codificadores) en el exterior, a la izquierda del bucle. En el nuevo "
+"diagrama de la estructura del caso, agregamos una llamada para restablecer "
+"el codificador en la primera iteración del bucle y leerlo de otra manera. "
+"También hay un código simple que compara los valores del codificador y "
+"actualiza la potencia del motor. Si se agregan nuevos controles al grupo de "
+"puntos de ajuste, también debe considerar agregarlos al Trace. Los cambios "
+"necesarios se muestran en la imagen a continuación."
 
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:226
 msgid "Part 5: Creating a Subsystem"

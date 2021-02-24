@@ -6,15 +6,17 @@
 # Translators:
 # Diana Ramos <dianaracasas@gmail.com>, 2020
 # Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020
+# Emiliano Vargas <joseemilianohernandezvargas04@gmail.com>, 2021
+# Paulina Maynez <paump22@hotmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-16 16:17+0000\n"
+"POT-Creation-Date: 2021-02-24 04:11+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -78,6 +80,18 @@ msgstr ""
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:20
 msgid "Public vs Private IP Addresses"
 msgstr "Direcciones Públicas vs Privadas"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:22
+msgid ""
+"To be efficient with using IP Addresses, the idea of \"Reserved IP Ranges\" "
+"was implemented. In short, this means that there are ranges of IP Addresses "
+"that will never be assigned to web servers, and will only be used for local "
+"networks, such as those in your house."
+msgstr ""
+"Para ser eficientes con el uso de las direcciones IP, la idea de \"Rangos de"
+" IP reservados\" fue implementada. En resumen, esto significa que hay rangos"
+" de direcciones IP que no serán asignados a servidores web, y serán "
+"solamente usados por redes locales, como las de su casa."
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:24
 msgid ""
@@ -173,6 +187,29 @@ msgstr "192.168.255.255"
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:33
 msgid "65,536"
 msgstr "65,536"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:36
+msgid ""
+"These reserved ranges let us assign one \"unreserved IP Address\" to an "
+"entire house, and then use multiple addresses in a reserved range to connect"
+" more than one computer to the internet. A process on the home’s internet "
+"router known as **NAT** (Network Address Translation), handles the process "
+"of keeping track which private IP is requesting data, using the public IP to"
+" request that data from the internet, and then passing the returned data "
+"back to the private IP that requested it. This allows us to use the same "
+"reserved IP addresses for many local networks, without causing any "
+"conflicts. An image of this process is presented below."
+msgstr ""
+"Estos rangos reservados nos permiten asignar una \"dirección IP no "
+"reservada\" a toda una casa, y luego utilizar múltiples direcciones en un "
+"rango reservado para conectar más de un ordenador a Internet. Un proceso en "
+"el router de internet de la casa conocido como **NAT** (Network Address "
+"Translation), maneja el proceso de mantener un registro de qué IP privada "
+"está solicitando datos, usando la IP pública para solicitar esos datos desde"
+" internet, y luego pasando los datos devueltos a la IP privada que los "
+"solicitó. Esto nos permite utilizar las mismas direcciones IP reservadas "
+"para muchas redes locales, sin causar ningún conflicto. A continuación se "
+"presenta una imagen de este proceso."
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:42
 msgid ""
@@ -322,6 +359,30 @@ msgstr ""
 "dispositivo es un servidor DHCP, y a pesar de ser los únicos dos "
 "dispositivos conectados en la red, no serán asignadas automáticamente las "
 "direcciones IP."
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:72
+msgid ""
+"Link-local addresses give us a standard set of addresses that we can \"fall-"
+"back\" to if a device set to acquire dynamically is not able to acquire an "
+"address. If this happens, the device will assign itself an IP address in the"
+" ``169.254.xx.yy`` address range; this is a link-local address. In our "
+"roboRIO and computer example above, both devices will realize they haven’t "
+"been assigned an IP address and assign themselves a link-local address. Once"
+" they are both assigned addresses in the ``169.254.xx.yy`` range, they will "
+"be in the same network and will be able to communicate, even though they "
+"were set to dynamic and a DHCP server did not assign addresses."
+msgstr ""
+"Las direcciones link-local nos dan un conjunto estándar de direcciones al "
+"que podemos recurrir si un dispositivo configurado para adquirir "
+"dinámicamente no es capaz de adquirir una dirección. Si esto ocurre, el "
+"dispositivo se asignará a sí mismo una dirección IP en el rango de "
+"direcciones ``169.254.xx.yy``;  esto es una dirección link-local. En nuestro"
+" ejemplo del roboRIO y el ordenador, ambos dispositivos se darán cuenta de "
+"que no se les ha asignado una dirección IP y se asignarán una dirección "
+"link-local. Una vez que se les hayan asignado direcciones en el rango "
+"``169.254.xx.yy``, estarán en la misma red y podrán comunicarse, aunque "
+"hayan sido configurados como dinámicos y un servidor DHCP no les haya "
+"asignado direcciones."
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:75
 msgid "IP Addressing for FRC"

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,100 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:2
+msgid "Running Commands during Autonomous"
+msgstr "自动期间运行指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"本文档描述了旧式基于指令的库的用法。尽管保留了该文档以帮助尚未这样做的团队，但强烈建议团队迁移到新的基于指令的库<docs/software/commandbased/index"
+":Command-Based Programming>。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:6
+msgid ""
+"Once commands are defined they can run in either the teleop or autonomous "
+"part of the program. In fact, the power of the command based programming "
+"approach is that you can reuse the same commands in either place. If the "
+"robot has a command that can shoot Frisbees during autonomous with camera "
+"aiming and accurate shooting, there is no reason not to use it to help the "
+"drivers during the teleop period of the game."
+msgstr ""
+"定义指令后，它们可以在程序的Teleop或自动部分中运行。实际上，基于指令的编程方法的强大之处在于，您可以在任何地方重用相同的指令。如果机器人具有可以在自动对焦过程中通过相机瞄准和精确拍摄来拍摄飞盘的指令，则没有理由在游戏的转播期间不使用它来帮助驾驶员。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:40
+msgid ""
+"Our robot must do the following tasks during the autonomous period: pick up "
+"a soda can off the floor then drive a set distance from a table and deliver "
+"the can there. The process consists of:"
+msgstr "我们的机器人在自主期内必须执行以下任务：从地板上捡起一个汽水罐，然后从桌子上开车一段固定的距离，然后将汽水罐运到那里。该过程包括："
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:42
+msgid "Prepare to grab (move elevator, wrist, and gripper into position)"
+msgstr "准备抓握（将电梯，手腕和抓手移动到位）"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:43
+msgid "Grab the soda can"
+msgstr "抓住汽水罐"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:44
+msgid ""
+"Drive to a distance from the table indicated by an ultrasonic rangefinder"
+msgstr "开车到超声波测距仪指示的桌子旁一定距离"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:45
+msgid "Place the soda"
+msgstr "放苏打水"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:46
+msgid "Back off to a distance from the rangefinder"
+msgstr "退缩到测距仪一定距离"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:47
+msgid "Re-stow the gripper"
+msgstr "重新存放抓爪"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:49
+msgid ""
+"To do these tasks there are 6 commands that are executed sequentially as "
+"shown in this example (note that some of these, such as PlaceSoda are other "
+"command groups)."
+msgstr "要执行这些任务，有6个指令按顺序执行，如本示例所示（请注意，其中一些指令（例如PlaceSoda）是其他指令组）。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:52
+msgid "Setting the Command to Run during Autonomous"
+msgstr "将指令设置为在自主运行期间运行"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:115
+msgid "To get the SodaDelivery command to run as the Autonomous program,"
+msgstr "要使SodaDelivery指令作为自动程序运行，"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:117
+msgid ""
+"Instantiate it in the ``RobotInit()`` method. ``RobotInit()`` is called only"
+" once when the robot starts so it is a good time to create the command "
+"instance."
+msgstr "用RobotInit（）方法实例化它。机器人启动时，只会调用一次“ RobotInit（）”，因此现在是创建指令实例的好时机。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:118
+msgid ""
+"Start it during the ``AutonomousInit()`` method. ``AutonomousInit()`` is "
+"called once at the start of the autonomous period so we schedule the command"
+" there."
+msgstr ""
+"在AutonomousInit（）方法中启动它。 ``AutonomousInit（）''在自动周期开始时被调用一次，因此我们在此调度指令。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:119
+msgid ""
+"Be sure the scheduler is called repeatedly during the "
+"``AutonomousPeriodic()`` method.  ``AutonomousPeriodic()`` is called "
+"(nominally) every 20ms so that is a good time to run the scheduler which "
+"makes a pass through all the currently scheduled commands."
+msgstr ""
+"确保在“ "
+"AutonomousPeriodic（）”方法期间重复调用调度程序。每20毫秒一次（名义上）会调用一次AutonomousPeriodic（），因此这是运行调度程序的好时机，该调度程序会传递所有当前调度的指令。"

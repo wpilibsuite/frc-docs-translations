@@ -5,18 +5,137 @@
 # 
 # Translators:
 # Michael Zhao <haitong1110@126.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 04:18+0000\n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:2
+msgid "Differential Drive Odometry"
+msgstr "差速驱动测距法"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:3
+msgid ""
+"A user can use the differential drive kinematics classes in order to perform"
+" :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>`. WPILib contains a ``DifferentialDriveOdometry`` "
+"class that can be used to track the position of a differential drive robot "
+"on the field."
+msgstr ""
+"用户可以使用差速驱动运动学类来执行:ref:`odometry <docs/software/kinematics-and-odometry"
+"/intro-and-chassis-speeds:What is "
+"odmetry?>`。WPILib中包含了一个``差动驱动里程测量``类，可以用来跟踪差动驱动机器人在现场的位置。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:5
+msgid ""
+"Because this method only uses encoders and a gyro, the estimate of the "
+"robot's position on the field will drift over time, especially as your robot"
+" comes into contact with other robots during gameplay. However, odometry is "
+"usually very accurate during the autonomous period."
+msgstr ""
+"由于这种方法只使用编码器和陀螺仪，机器人在场上的位置估计会随着时间的推移而漂移，特别是当你的机器人在游戏过程中与其他机器人接触时。不过，在自主期，测距法通常非常准确。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:8
+msgid "Creating the Odometry Object"
+msgstr "创建Odometry对象"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:9
+msgid ""
+"The ``DifferentialDriveOdometry`` class requires one mandatory argument and "
+"one optional argument. The mandatory argument is the angle reported by your "
+"gyroscope (as a Rotation2d). The optional argument is the starting pose of "
+"your robot on the field (as a ``Pose2d``). By default, the robot will start "
+"at ``x = 0, y = 0, theta = 0``."
+msgstr ""
+"``DifferentialDriveOdometry``类需要一个强制参数和一个可选参数。强制参数是您的陀螺仪报告的角度（作为一个Rotation2d）。可选参数是机器人在场地上的起始姿势（作为``Pose2d``）。默认情况下，机器人将以``x"
+" = 0, y = 0, theta = 0``开始。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:11
+msgid ""
+"0 degrees / radians represents the robot angle when the robot is facing "
+"directly toward your opponent's alliance station. As your robot turns to the"
+" left, your gyroscope angle should increase. By default, WPILib gyros "
+"exhibit the opposite behavior, so you should negate the gyro angle."
+msgstr ""
+"0度/弧度代表机器人角度，当机器人正对着你的对手的联盟站。当您的机器人向左转时，您的陀螺仪角度应该增加。默认情况下，WPILib陀螺仪表现出相反的行为，因此您应该对陀螺仪的角度加上负号。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:13
+msgid ""
+"The encoder positions must be reset to zero before constructing the "
+"``DifferentialDriveOdometry`` class."
+msgstr "在构建``DifferentialDriveOdomety``类之前，编码器的位置必须重置为零。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:35
+msgid "Updating the Robot Pose"
+msgstr "更新机器人姿势"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:36
+msgid ""
+"The ``update`` method can be used to update the robot's position on the "
+"field. This method must be called periodically, preferably in the "
+"``periodic()`` method of a :ref:`Subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method "
+"returns the new updated pose of the robot. This method takes in the gyro "
+"angle of the robot, along with the left encoder distance and right encoder "
+"distance."
+msgstr ""
+"``update``方法可用于更新机器人在场地上的位置。该方法必须定期调用，最好是在:ref:`Subsystem\n"
+"<docs/software/commandbased/subsystems:Subsystems>`的``periodic()``方法中调用。``update``方法返回机器人新的更新姿势。该方法获取机器人的陀螺仪角度，以及左编码器距离和右编码器距离。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:38
+msgid ""
+"The encoder distances in Java must be in meters. In C++, the units library "
+"can be used to represent the distance using any linear distance unit. If the"
+" robot is moving forward in a straight line, **both** distances (left and "
+"right) must be positive."
+msgstr ""
+"Java中的编码器距离必须以米为单位。在C++中，单位库可以使用任何线性距离单位来表示距离。如果机器人是直线前进，**两个**的距离（左和右）必须是正数。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:67
+msgid "Resetting the Robot Pose"
+msgstr "重置机器人姿势"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:68
+msgid ""
+"The robot pose can be reset via the ``resetPose`` method. This method "
+"accepts two arguments -- the new field-relative pose and the current gyro "
+"angle."
+msgstr "机器人姿势可以通过``resetPose``方法重新设定。该方法接受两个参数 -- -- 新的相关场位和当前陀螺仪角度。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:70
+msgid ""
+"If at any time, you decide to reset your gyroscope, the ``resetPose`` method"
+" MUST be called with the new gyro angle. Furthermore, the encoders must also"
+" be reset to zero when resetting the pose."
+msgstr "在任何时候如果您决定重置陀螺仪，则必须使用新的陀螺仪角度调用``resetPose``方法。此外，在复位姿势时，还必须将编码器复位为零。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:72
+msgid ""
+"A full example of a differential drive robot with odometry is available "
+"here: `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot>`_"
+" / `Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`_."
+msgstr ""
+"此处提供具有里程表的差动驱动机器人的完整示例：`C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot>`_"
+" /`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`_。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:74
+msgid ""
+"In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be"
+" used to retrieve the current robot pose without an update."
+msgstr "此外，可以使用GetPose（C ++）/ getPoseMeters（Java）方法来检索当前的机器人姿态，而无需进行更新。"

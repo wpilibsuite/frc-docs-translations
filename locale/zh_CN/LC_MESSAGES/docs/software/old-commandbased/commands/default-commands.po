@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,56 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:2
+msgid "Default Commands"
+msgstr "默认指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"本文档描述了旧式基于指令的库的用法。尽管保留了该文档以帮助尚未这样做的团队，但强烈建议团队迁移到新的基于指令的库<docs/software/commandbased/index"
+":Command-Based Programming>。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:6
+msgid ""
+"In some cases you may have a subsystem which you want to always be running a"
+" command no matter what. So what do you do when the command you are "
+"currently running ends? That's where default commands come in."
+msgstr "在某些情况下，您可能有一个子系统，无论如何都希望始终运行指令。那么，当您当前正在运行的指令结束时，您该怎么办？这就是默认指令的输入。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:9
+msgid "The Default Command"
+msgstr "默认指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:11
+msgid ""
+"Each subsystem may, but is not required to, have a default command which is "
+"scheduled whenever the subsystem is idle (the command currently requiring "
+"the system completes). The most common example of a default command is a "
+"command for the drivetrain that implements the normal joystick control. This"
+" command may be interrupted by other commands for specific maneuvers "
+"(\"precision mode\", automatic alignment/targeting, etc.) but after any "
+"command requiring the drivetrain completes the joystick command would be "
+"scheduled again."
+msgstr ""
+"每个子系统可以但不必须具有默认指令，该指令在子系统空闲时进行调度（当前要求系统完成的指令）。默认指令的最常见示例是用于实现常规操纵杆控制的传动系统的指令。对于特定操作（“精确模式”，自动对准/瞄准等），该指令可能会被其他指令打断，但是在需要动力传动系统的任何指令完成后，操纵杆指令都会重新安排。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:14
+msgid "Setting the Default Command"
+msgstr "设置默认指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/default-commands.rst:47
+msgid ""
+"All subsystems should contain a method called ``initDefaultCommand()`` which"
+" is where you will set the default command if desired. If you do not wish to"
+" have a default command, simply leave this method blank. If you do wish to "
+"set a default command, call setDefaultCommand from within this method, "
+"passing in the command to be set as the default."
+msgstr ""
+"所有子系统都应包含一个名为“ "
+"initDefaultCommand（）”的方法，如果需要，可以在该方法中设置默认指令。如果您不希望使用默认指令，只需将此方法留空。如果您希望设置默认指令，请从此方法中调用setDefaultCommand，传入要设置为默认指令的指令。"

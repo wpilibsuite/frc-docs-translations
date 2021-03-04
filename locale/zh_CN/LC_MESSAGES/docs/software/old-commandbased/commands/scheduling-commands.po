@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,269 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:2
+msgid "Scheduling Commands"
+msgstr "调度指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"本文档描述了旧式基于指令的库的用法。尽管保留了该文档以帮助尚未这样做的团队，但强烈建议团队迁移到新的基于指令的库<docs/software/commandbased/index"
+":Command-Based Programming>。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:6
+msgid ""
+"Commands are scheduled to run based on a number of factors such as triggers,"
+" default commands when no other running commands require a subsystem, a "
+"prior command in a group finishes, button presses, autonomous period "
+"starting, etc. Although many commands may be running virtually at the same "
+"time, there is only a single thread (the main robot thread). This is to "
+"reduce the complexity of synchronization between threads. There are threads "
+"that run in the system for systems like PID loops, communications, etc. but "
+"those are all self contained with very little interaction requiring complex "
+"synchronization. This makes the system much more robust and predictable."
+msgstr ""
+"计划根据多种因素来计划指令的运行，例如触发器，没有其他正在运行的指令需要子系统时的默认指令，组中的先前指令完成，按钮按下，自主周期启动等。尽管许多指令可能实际上正在运行同时，只有一个线程（机器人主线程）。这是为了减少线程之间同步的复杂性。系统中运行着一些线程，用于PID循环，通信等系统，但是这些线程都是自包含的，几乎没有交互，需要复杂的同步。这使系统更加健壮和可预测。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:8
+msgid ""
+"This is accomplished by a class called Scheduler. It has a ``run()`` method "
+"that is called periodically (typically every 20ms in response to a driver "
+"station update) that tries to make progress on every command that is "
+"currently running. This is done by calling the ``execute()`` method on the "
+"command followed by the ``isFinished()`` method. If ``isFinished()`` returns"
+" true, the command is marked to be removed from execution  on the next pass "
+"through the scheduler. So if there are a number of commands all scheduled to"
+" run at the same time, then every time the ``Scheduler.run()`` method is "
+"called, each of the active commands execute() and ``isFinished()`` methods "
+"are called. This has the same effect as using multiple threads."
+msgstr ""
+"这是通过称为Scheduler的类完成的。它有一个“ "
+"run（）”方法，该方法会定期调用（通常每20毫秒响应一次驱动程序站更新），该方法会尝试在当前正在运行的每个指令上取得进展。这是通过在指令上调用“ "
+"execute（）”方法，然后再调用“ "
+"isFinished（）”方法来完成的。如果isFinished（）返回true，则该指令被标记为在下一次通过调度程序时从执行中删除。因此，如果有多个指令都计划同时运行，那么每次调用Scheduler.run（）方法时，每个活动指令execute（）和isFinished（）方法被调用。这与使用多个线程具有相同的效果。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:11
+msgid "Command-Based Program Anatomy"
+msgstr "基于指令的程序剖析"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:15
+msgid ""
+"This shows a typical command-based Robot program and all the code needed to "
+"ensure that commands are scheduled correctly. The ``Scheduler.run`` method "
+"causes one pass through the scheduler which will let each currently active "
+"command run through its ``execute()`` and ``isFinished()`` methods. Ignore "
+"the ``log()`` methods in the Java example."
+msgstr ""
+"这显示了一个典型的基于指令的Robot程序以及确保正确调度指令所需的所有代码。 "
+"Scheduler.run方法导致一次通过调度程序，这将使每个当前活动的指令通过其execute（）和isFinished（）方法运行。忽略Java示例中的log（）方法。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:18
+msgid "Command Life Cycle"
+msgstr "指令生命周期"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:22
+msgid ""
+"The work in command-based programs occurs whenever the ``Scheduler.Run`` "
+"(C++) or ``Scheduler.run`` (Java) method is called. This is typically called"
+" on each driver station update which occurs every 20 ms or 50 times per "
+"second. The pseudo code illustrates what happens on each call to the run "
+"method."
+msgstr ""
+"每当调用Scheduler.Run（C "
+"++）或Scheduler.run（Java）方法时，都会在基于指令的程序中进行工作。通常在每个20毫秒或每秒50次的每次驱动程序站更新上调用此方法。伪代码说明了在每次调用run方法时发生的情况。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:24
+msgid ""
+"Buttons and triggers are polled to see if the associated commands should be "
+"scheduled. If the trigger is true, the command is added to a list of "
+"commands that should be scheduled."
+msgstr "轮询按钮和触发器以查看是否应安排相关指令。如果触发器为true，则将指令添加到应安排的指令列表中。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:25
+msgid ""
+"Loop through the list of all the commands that are currently runnable and "
+"call their execute and isFinished methods. Commands where the isFinished "
+"method returns true are removed from the list of currently running commands."
+msgstr ""
+"循环浏览当前可运行的所有指令的列表，并调用它们的execute和isFinished方法。 "
+"isFinished方法返回true的指令将从当前运行的指令列表中删除。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:26
+msgid ""
+"Loop through all the commands that have been scheduled to run in the "
+"previous steps. Those commands are added to the list of running commands."
+msgstr "循环浏览先前步骤中计划运行的所有指令。这些指令将添加到正在运行的指令列表中。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:27
+msgid ""
+"Default commands are added for each subsystem that currently has no commands"
+" running that require that subsystem."
+msgstr "将为当前没有运行需要该子系统的指令的每个子系统添加默认指令。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:30
+msgid "Optimizing Command Groups"
+msgstr "优化指令组"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:52
+msgid ""
+"Once you have working commands that operate the mechanisms on your robot you"
+" can combine those commands into groups to make more complex actions. "
+"Commands can be added to command groups to execute sequentially or in "
+"parallel. Sequential commands wait until they are finished (isFinished "
+"method returns true) before running the next command in the group. Parallel "
+"commands start running, then immediately schedule the next command in the "
+"group."
+msgstr ""
+"一旦有了可以操作机器人上的机械装置的有效指令，就可以将这些指令组合成组，以执行更复杂的操作。可以将指令添加到指令组以顺序或并行执行。顺序指令要等到它们完成（isFinished方法返回true）后，再运行组中的下一个指令。并行指令开始运行，然后立即调度组中的下一个指令。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:54
+msgid ""
+"It is important to notice that the commands are added to the group in the "
+"constructor. The command group is simply a list of command instances that "
+"run when scheduled and any parameters that are passed to the commands are "
+"evaluated during the constructor for the group."
+msgstr "重要的是要注意，指令已添加到构造函数中的组中。指令组仅是按计划运行的指令实例的列表，并且在组的构造函数期间评估传递给指令的任何参数。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:56
+msgid ""
+"Imagine that in a robot design, there is a claw, attached to a wrist joint "
+"and all of those on an elevator. When picking up something, the claw needs "
+"to close first before either the elevator or wrist can move otherwise the "
+"object may slip out of the claw. In the example shown above the "
+"``CloseClaw`` command will be scheduled first. After it is finished (the "
+"claw is closed), the wrist will move to it's setpoint and in parallel, the "
+"elevator will move. This gets both the elevator and wrist moving "
+"simultaneously optimizing the time required to complete the task."
+msgstr ""
+"想象一下，在机器人设计中，有一个爪子附着在腕关节上，而所有爪子都附着在电梯上。拿起东西时，需要先关闭爪子，然后电梯或手腕才能移动，否则物体可能会从爪子中滑出。在上面显示的示例中，将首先安排“"
+" CloseClaw”指令。完成后（爪闭合），手腕将移动至其设定点，平行移动，电梯将移动。这使电梯和手腕同时运动，从而优化了完成任务所需的时间。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:59
+msgid "When do command groups finish?"
+msgstr "指令组何时结束？"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:63
+msgid ""
+"A command group finishes when all the commands started in that group finish."
+" This is true regardless of the type of commands that are added to the "
+"group. For example, if a number of commands are added in parallel and "
+"sequentially, the group is finished when all the commands added to the group"
+" are finished. As each command is added to a command group, it is put on a "
+"list. As those child commands finish, they are taken off the list. The "
+"command group is finished when the list of child commands is empty."
+msgstr ""
+"当指令组中所有启动的指令完成时，该指令组也将完成。不管添加到组中的指令的类型都是如此。例如，如果并行并顺序添加了许多指令，则当添加到组中的所有指令完成时，该组也将完成。将每个指令添加到指令组后，它会被置于列表中。这些子指令完成后，它们将从列表中删除。当子指令列表为空时，指令组完成。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:65
+msgid ""
+"In the Pickup command shown in the example above, the command is finished "
+"when ``CloseClaw``, ``SetWristSetpoint``, and ``SetElevatorSetpoint`` all "
+"finish. It doesn't matter that some of the commands are sequential and some "
+"parallel."
+msgstr ""
+"在上面示例中显示的Pickup指令中，当CloseClaw，SetWristSetpoint和SetElevatorSetpoint都完成时，该指令完成。某些指令是顺序的，而某些指令是并行的，这并不重要。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:68
+msgid "Schedule a Command within a Running Command"
+msgstr "在正在运行的指令中安排指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:70
+msgid ""
+"Commands can be scheduled by calling the ``start()`` method (Java) or "
+"``Start()`` method (C++) on a command instance. This will cause the command "
+"to be added to the currently running set of commands in the scheduler. This "
+"is often useful when a program needs to conditionally schedule one command "
+"or another. The newly scheduled command will be added to a list of new "
+"commands on this pass through the run method of the scheduler and actually "
+"will run the first time on the next pass through the run method. Newly "
+"created commands are never executed in the same call to the scheduler run "
+"method, always queued for the next call which usually occurs 20ms later."
+msgstr ""
+"可以通过在指令实例上调用start（）方法（Java）或Start（）方法（C "
+"++）来调度指令。这将导致指令被添加到调度程序中当前正在运行的指令集中。当程序需要有条件地调度一个或另一个指令时，这通常很有用。通过调度程序的run方法，新调度的指令将添加到新指令列表中，并且实际上将在下次通过run方法的第一次运行。新创建的指令永远不会在对调度程序run方法的同一调用中执行，而总是排队等待通常在20毫秒后发生的下一次调用。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:73
+msgid "Removing all Commands from the Scheduler"
+msgstr "从调度程序中删除所有指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:85
+msgid ""
+"It is occasionally useful to make sure that there are no running commands in"
+" the scheduler. To remove all running commands use the "
+"``Scheduler.removeAll()`` method (Java) or ``Scheduler::RemoveAll()`` method"
+" (C++). This will cause all currently running to have their "
+"``interrupted()`` method (Java) or ``Interrupted()`` method (C++) called. "
+"Commands that have not yet started will have their ``end()`` method (Java) "
+"or ``End()`` method (C++) called."
+msgstr ""
+"确保调度程序中没有正在运行的指令有时会很有用。要删除所有正在运行的指令，请使用Scheduler.removeAll（）方法（Java）或Scheduler"
+" :: RemoveAll（）方法（C "
+"++）。这将导致当前正在运行的所有程序都调用其Interrupted（）方法（Java）或Interrupted（）方法（C "
+"++）。尚未启动的指令将调用其end（）方法（Java）或End（）方法（C ++）。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:88
+msgid "The \"requires\" method"
+msgstr "“需要”方法"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:92
+msgid ""
+"If you have multiple commands that use the same subsystem it makes sense "
+"that they don't run at the same time. For example, if there is a Claw "
+"subsystem with OpenClaw and CloseClaw commands, they can't both run at the "
+"same time. Each command that uses the Claw subsystem declares that by 1 "
+"calling the ``requires()`` method (Java) or ``Requires()`` method (C++). "
+"When one of the commands is running, say from a joystick button press, and "
+"you try to run another command that also requires the Claw, the second one "
+"preempts the first one. Suppose that OpenClaw was running, and you press the"
+" button to run the CloseClaw command. The OpenClaw command is interrupted - "
+"2 it's interrupted method is called on the next run cycle and the CloseClaw "
+"command is scheduled. If you think about it, this is almost always the "
+"desired behavior. If you pressed a button to start opening the claw and you "
+"change your mind and want to close it, it makes sense for the OpenClaw "
+"command to be stopped and the CloseClaw to be started."
+msgstr ""
+"如果您有多个使用同一子系统的指令，则可以认为它们不能同时运行。例如，如果有一个带有OpenClaw和CloseClaw指令的Claw子系统，则它们不能同时运行。每个使用Claw子系统的指令都通过1调用requires（）方法（Java）或Requires（）方法（C"
+" "
+"++）来声明。当其中一个指令正在运行时（例如，按下操纵杆按钮），而您尝试运行另一个也需要爪的指令，则第二个指令将抢占第一个指令。假设OpenClaw正在运行，然后按按钮以运行CloseClaw指令。"
+" OpenClaw指令被中断-"
+"2它的中断方法在下一个运行周期被调用，并且CloseClaw指令被调度。如果您考虑一下，这几乎总是所需的行为。如果按下按钮开始打开爪子，并且改变主意并想要将其关闭，则可以停止OpenClaw指令并启动CloseClaw。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:94
+msgid ""
+"A command may require many subsystems, for example a complex autonomous "
+"sequence might use a number of subsystems to complete its task."
+msgstr "指令可能需要许多子系统，例如，复杂的自治序列可能会使用许多子系统来完成其任务。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:96
+msgid ""
+"Command groups automatically require all the subsystems for each of the "
+"commands in the group. There is no need to call the requires method for a "
+"group."
+msgstr "指令组自动需要该组中每个指令的所有子系统。无需为组调用require方法。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:99
+msgid "How are the requirements of a group evaluated?"
+msgstr "小组的要求如何评估？"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/scheduling-commands.rst:101
+msgid ""
+"The subsystems that a command group requires is the union of the set of "
+"subsystems that are required for all of the child commands. If a 4 commands "
+"are added to a group, then the group will require all of the subsystems "
+"required by each of the 4 commands in the group. For example, if are three "
+"commands scheduled in a group - the first requires subsystem A, the second "
+"requires subsystem B, and the third requires subsystems C and D. The group "
+"will require subsystems A, B, C, and D. If another command is started, say "
+"from a joystick button, that requires either A, B, C, or D it will interrupt"
+" the entire group including any parallel or sequential commands that might "
+"be running from that group."
+msgstr ""
+"指令组所需的子系统是所有子指令所需的子系统集合的并集。如果将4个指令添加到组中，则该组将需要该组中4个指令中的每一个都需要的所有子系统。例如"
+"，如果在一个组中调度了三个指令-"
+"第一个需要子系统A，第二个需要子系统B，第三个需要子系统C和D。该组将需要子系统A，B，C和D。从需要A，B，C或D的操纵杆按钮启动后，它将中断整个组，包括可能从该组运行的任何并行或顺序指令。"

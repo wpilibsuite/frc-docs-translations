@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,77 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:2
+msgid "Creating Groups of Commands"
+msgstr "创建指令组"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"本文档描述了旧式基于指令的库的用法。尽管保留了该文档以帮助尚未这样做的团队，但强烈建议团队迁移到新的基于指令的库<docs/software/commandbased/index"
+":Command-Based Programming>。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:6
+msgid ""
+"Once you have created commands to operate the mechanisms in your robot, they"
+" can be grouped together to get more complex operations. These groupings of "
+"commands are called CommandGroups and are easily defined as shown in this "
+"article."
+msgstr ""
+"一旦创建了用于操作机器人中机械装置的指令，就可以将它们组合在一起以获得更复杂的操作。这些指令分组称为CommandGroups，可以轻松定义，如本文所示。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:9
+msgid "Complex Operations"
+msgstr "复杂操作"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:37
+msgid ""
+"This is an example of a command group that places a soda can on a table. To "
+"accomplish this, (1) the robot elevator must move to the ``TABLE_HEIGHT``, "
+"then (2) set the wrist angle, then (3) open the claw. All of these tasks "
+"must run sequentially to make sure that the soda can isn't dropped. The "
+"``addSequential()`` method takes a command (or a command group) as a "
+"parameter and will execute them one after another when this command is "
+"scheduled."
+msgstr ""
+"这是将汽水罐放在桌子上的指令组的示例。为此，（1）机器人电梯必须移至``TABLE_HEIGHT''，然后（2）设置手腕角度，然后（3）打开爪子。所有这些任务都必须按顺序运行，以确保不丢弃汽水罐。"
+" addSequential（）方法将指令（或指令组）作为参数，并在计划此指令时一个接一个地执行它们。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:40
+msgid "Running Commands in Parallel"
+msgstr "并行运行指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:68
+msgid ""
+"To make the program more efficient, often it is desirable to run multiple "
+"commands at the same time. In this example, the robot is getting ready to "
+"grab a soda can. Since the robot isn't holding anything, all the joints can "
+"move at the same time without worrying about dropping anything. Here all the"
+" commands are run in parallel so all the motors are running at the same time"
+" and each completes whenever the ``isFinished()`` method is called. The "
+"commands may complete out of order. The steps are: (1) move the wrist to the"
+" pickup setpoint, then (2) move the elevator to the floor pickup position, "
+"and (3) open the claw"
+msgstr ""
+"为了使程序更高效，经常需要同时运行多个指令。在此示例中，机器人准备抓汽水罐。由于机器人没有握住任何东西，因此所有关节都可以同时移动，而不必担心会掉落任何东西。这里所有指令都是并行运行的，因此所有电动机都同时运行，每当调用isFinished（）方法时，每个电动机就完成。指令可能会无序完成。步骤是：（1）将手腕移至拾音器设定点，然后（2）将电梯移至地面拾音器位置，以及（3）打开卡爪"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:71
+msgid "Mixing Parallel and Sequential Commands"
+msgstr "混合并行指令和顺序指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:99
+msgid ""
+"Often there are some parts of a command group that must complete before "
+"other parts run. In this example, a soda can is grabbed, then the elevator "
+"and wrist can move to their stowed positions. In this case, the wrist and "
+"elevator have to wait until the can is grabbed, then they can operate "
+"independently. The first command (1) ``CloseClaw`` grabs the soda and "
+"nothing else runs until it is finished since it is sequential, then the (2) "
+"elevator and (3) wrist move at the same time."
+msgstr ""
+"通常，指令组的某些部分必须在其他部分运行之前完成。在此示例中，抓住汽水罐，然后升降机和手腕可以移动到其收起位置。在这种情况下，手腕和升降机必须等到抓住罐子后才能独立操作。第一个指令（1）``CloseClaw''（抓爪）抓住苏打水，直到它完成为止没有其他操作，因为它是连续的，然后（2）升降机和（3）手腕同时运动。"

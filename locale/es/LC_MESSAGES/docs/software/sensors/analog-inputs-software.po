@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-30 04:18+0000\n"
+"POT-Creation-Date: 2021-03-06 04:14+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -94,11 +94,7 @@ msgstr "Una AnalogInput tiene que inicializarse de esta forma:"
 msgid "Oversampling and Averaging"
 msgstr "Sobremuestreo y Promedio"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:37
-msgid "|Oversampling and Averaging|"
-msgstr "|Sobremuestreo y Promedio|"
-
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:39
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:40
 msgid ""
 "The FPGA's analog input modules supports both oversampling and averaging.  "
 "These behaviors are highly similar, but differ in a few important ways.  "
@@ -108,11 +104,11 @@ msgstr ""
 "Estos comportamientos son muy similares, pero difieren en algunas formas "
 "importantes. Ambos pueden usarse al mismo tiempo."
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:42
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:43
 msgid "Oversampling"
 msgstr "Sobremuestreo"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:44
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:45
 msgid ""
 "When oversampling is enabled, the FPGA will add multiple consecutive samples"
 " together, and return the accumulated value.  Users may specify the number "
@@ -124,11 +120,11 @@ msgstr ""
 " el número de *bits*  de sobremuestreo: para `n` bits de sobremuestreo, el "
 "número de muestras sumadas es `2~{n}`: "
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:63
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:64
 msgid "Averaging"
 msgstr "Promedio"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:65
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:66
 msgid ""
 "Averaging behaves much like oversampling, except the accumulated values are "
 "divided by the number of samples so that the scaling of the returned values "
@@ -141,7 +137,7 @@ msgstr ""
 "ocasionalmente el error de redondeo adicional introducido por el redondeo es"
 " indeseable."
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:81
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:82
 msgid ""
 "When oversampling and averaging are used at the same time, the oversampling "
 "is applied *first,* and then the oversampled values are averaged.  Thus, "
@@ -156,22 +152,22 @@ msgstr ""
 "aproximadamente un factor de 2 y disminuirá la velocidad de actualización en"
 " aproximadamente un factor de 4."
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:84
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:85
 msgid "Reading values from an AnalogInput"
 msgstr "Leyendo valores de la clase AnalogInput"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:86
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:87
 msgid ""
 "Values can be read from an AnalogInput with one of four different methods:"
 msgstr ""
 "Los valores se pueden leer desde AnalogInput con uno de cuatro métodos "
 "diferentes:"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:89
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:90
 msgid "getValue"
 msgstr "getValue"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:91
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:92
 msgid ""
 "The :code:`getValue` method returns the raw instantaneous measured value "
 "from the analog input, without applying any calibration and ignoring "
@@ -181,11 +177,11 @@ msgstr ""
 "analógica, sin aplicar ninguna calibración e ignorar las configuraciones de "
 "sobremuestreo y promedio. El valor devuelto es un entero. "
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:104
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:105
 msgid "getVoltage"
 msgstr "getVoltage"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:106
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:107
 msgid ""
 "The :code:`getVoltage` method returns the instantaneous measured voltage "
 "from the analog input.  Oversampling and averaging settings are ignored, but"
@@ -197,11 +193,11 @@ msgstr ""
 " el valor se vuelve a escalar para representar un voltaje. El valor devuelto"
 " es un doble. "
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:119
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:120
 msgid "getAverageValue"
 msgstr "getAverageValue"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:121
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:122
 msgid ""
 "The :code:`getAverageValue` method returns the averaged value from the "
 "analog input.  The value is not rescaled, but oversampling and averaging are"
@@ -211,11 +207,11 @@ msgstr ""
 "analógica. El valor no se vuelve a escalar, pero se aplican sobremuestreo y "
 "promedio. El valor devuelto es un entero."
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:134
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:135
 msgid "getAverageVoltage"
 msgstr "getAverageVoltage"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:136
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:137
 msgid ""
 "The :code:`getAverageVoltage` method returns the averaged voltage from the "
 "analog input.  Rescaling, oversampling, and averaging are all applied.  The "
@@ -225,11 +221,11 @@ msgstr ""
 "analógica. El reescalado, el sobremuestreo y el promedio se aplican. El "
 "valor devuelto es un doble. "
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:149
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:150
 msgid "Accumulator"
 msgstr "Acumulador"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:151
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:152
 msgid ""
 "The accumulator methods do not currently support returning a value in units "
 "of volts - the returned value will always be an integer (specifically, a "
@@ -239,7 +235,7 @@ msgstr ""
 "en unidades de voltios; el valor devuelto siempre será un entero "
 "(específicamente, uno largo)."
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:153
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:154
 msgid ""
 "Analog input channels 0 and 1 additionally support an accumulator, which "
 "integrates (adds up) the signal indefinitely, so that the returned value is "
@@ -251,11 +247,11 @@ msgstr ""
 "valor devuelto es la suma de todos los valores medidos pasados. El "
 "sobremuestreo y el promedio se aplican antes de la acumulación."
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:196
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:197
 msgid "Obtaining synchronized count and value"
 msgstr "Obtención de recuento y valor sincronizados"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:198
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:199
 msgid ""
 "Sometimes, it is necessarily to obtain matched measurements of the count and"
 " the value.  This can be done using the :code:`getAccumulatorOutput` method:"
@@ -263,11 +259,11 @@ msgstr ""
 "A veces, es necesario obtener medidas coincidentes de la cuenta y el valor. "
 "Esto se puede hacer usando el método getAccumulatorOutput:"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:224
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:225
 msgid "Using analog inputs in code"
 msgstr "Usar entradas analógicas en código"
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:226
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:227
 msgid ""
 "The :code:`AnalogInput` class can be used to write code for a wide variety "
 "of sensors (including potentiometers, accelerometers, gyroscopes, "
@@ -286,7 +282,7 @@ msgstr ""
 "usted. Los usuarios solo deben usar AnalogInput directamente como \"último "
 "recurso\". "
 
-#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:228
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:229
 msgid ""
 "Accordingly, for examples of how to effectively use analog sensors in code, "
 "users should refer to the other pages of this chapter that deal with more-"

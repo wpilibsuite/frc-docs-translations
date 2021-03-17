@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Austin Shalit <austinshalit@gmail.com>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-16 16:19+0000\n"
+"POT-Creation-Date: 2021-03-17 16:23+0000\n"
 "PO-Revision-Date: 2021-03-16 04:19+0000\n"
-"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2021\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,10 +22,131 @@ msgstr ""
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:2
+msgid "Using External Libraries with Robot Code"
+msgstr "Utilisation de librairies externes avec le code du robot"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:4
+msgid ""
+"Using external libraries may have unintended behavior with your robot code! "
+"It is not recommended unless you are aware of what you are doing!"
+msgstr ""
+"L’utilisation de librairies externes peut avoir un comportement inattendue "
+"avec votre code robot! Il n’est pas recommandé à moins que vous ne sachiez "
+"ce que vous faites!"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:6
+msgid ""
+"Often a team might want to add external Java or C++ libraries for usage with"
+" their robot code. This article highlights adding Java libraries to your "
+"Gradle dependencies, or the options that C++ teams have."
+msgstr ""
+"Souvent, une équipe peut vouloir ajouter des librairies externes Java ou C++"
+" pour une utilisation avec son code robot. Cet article met l'emphase sur "
+"l’ajout de librairies Java à vos dépendances Gradle, ou les options "
+"disponibles pour les équipes C++."
+
 #: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:9
 msgid "Java"
 msgstr "Java"
 
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:11
+msgid ""
+"Any external dependencies that rely on native libraries (JNI) are likely not"
+" going to work."
+msgstr ""
+"Toutes les dépendances externes qui dépendent des librairies natives (JNI) "
+"ne fonctionneront probablement pas."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:13
+msgid ""
+"Java is quite simple to add external dependencies. You simply add the "
+"required ``repositories`` and ``dependencies``."
+msgstr ""
+"Il est assez simple d'ajouter des dépendances externes avec Java. Il vous "
+"suffit d’ajouter les ``repositories`` (référentiels) et les ``dependencies``"
+" (dépendances) requises."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:15
+msgid ""
+"Robot projects by default do not have a ``repositories {}`` block in the "
+"``build.gradle`` file. You will have to add this yourself. Above the "
+"``dependencies {}`` block, please add the following:"
+msgstr ""
+"Les projets de robot par défaut n’ont pas de bloc ``repositories {}`` dans "
+"le fichier ``build.gradle``. Vous devrez les ajouter vous-même. Au-dessus du"
+" bloc ``dependencies {}``, veuillez ajouter ce qui suit :"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:24
+msgid ""
+"``mavenCentral()`` can be replaced with whatever repository the library you "
+"want to import is using. Now you have to add the dependency on the library "
+"itself. This is done by adding the necessary line to your ``dependencies "
+"{}`` block. The below example showcases adding Apache Commons to your Gradle"
+" project."
+msgstr ""
+"``mavenCentral()`` peut être remplacé par n’importe quel référentiel que la "
+"librairie que vous souhaitez importer utilise. Maintenant, vous devez "
+"ajouter la dépendance à la librairie elle-même. Ceci est fait en ajoutant la"
+" ligne nécessaire à votre bloc ``dependencies {}``. L’exemple ci-dessous "
+"présente l’ajout d’Apache Commons à votre projet Gradle."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:33
+msgid ""
+"Now you run a build and ensure the dependencies are downloaded. Intellisense"
+" may not work properly until a build is ran!"
+msgstr ""
+"Maintenant, vous lancez une compilation et assurez-vous que les dépendances "
+"sont téléchargées. Intellisense peut ne pas fonctionner correctement jusqu’à"
+" ce qu’une compilation soit en cours d’exécution!"
+
 #: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:36
 msgid "C++"
 msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:38
+msgid ""
+"Adding C++ dependencies to your robot project is non-trivial due to needing "
+"to compile for the roboRIO. You have a couple of options."
+msgstr ""
+"L’ajout de dépendances C++ à votre projet de robot n’est pas une tâche "
+"triviale en raison de la nécessité de compiler pour le roboRIO. Vous avez "
+"deux options."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:40
+msgid "Copy the source code of the wanted library into your robot project."
+msgstr ""
+"Copiez le code source de la librairie souhaitée dans votre projet de robot."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:41
+msgid ""
+"Use the `vendordep template <https://github.com/wpilibsuite/vendor-"
+"template>`__ as an example and create a vendordep."
+msgstr ""
+"Utilisez le `modèle vendordep <https://github.com/wpilibsuite/vendor-"
+"template>`__  comme exemple et créez un vendordep."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:44
+msgid "Copying Source Code"
+msgstr "Copie du code source"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:46
+msgid ""
+"Simply copy the necessary source and/or headers into your robot project. You"
+" can then configure any necessary platform args like below:"
+msgstr ""
+"Il vous suffit de copier la source et/ou les en-têtes nécessaires dans votre"
+" projet de robot. Vous pouvez alors configurer toutes les args plate-forme "
+"nécessaires comme ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:55
+msgid "Creating a Vendordep"
+msgstr "Création d’un Vendordep"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:57
+msgid ""
+"Please follow the instructions in the `vendordep repository "
+"<https://github.com/wpilibsuite/vendor-template>`__."
+msgstr ""
+"Veuillez suivre les instructions dans `le référentiel vendordep "
+"<https://github.com/wpilibsuite/vendor-template>`__."

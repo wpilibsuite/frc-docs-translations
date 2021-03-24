@@ -1,22 +1,131 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# 8192 DHC <hehehehehehe886@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-22 16:13+0000\n"
+"POT-Creation-Date: 2021-03-24 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: 楚涵 张 <zhangchuhan1210@126.com>, 2020\n"
+"Last-Translator: 8192 DHC <hehehehehehe886@gmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:2
+msgid "Introduction to Filters"
+msgstr "过滤器简介"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:4
+msgid ""
+"Filters are some of the most common tools used in modern technology, and "
+"find numerous applications in robotics in both signal processing and "
+"controls.  Understanding the notion of a filter is crucial to understanding "
+"the utility of the various types of filters provided by WPILib."
+msgstr ""
+"滤波器是现代技术中最常用的工具之一，在机器人的信号处理和控制的中有广泛的应用。理解过滤器的概念对于理解WPILib提供的各种类型的过滤器的实用性至关重要。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:7
+msgid "What Is a Filter?"
+msgstr "什么是滤波器？"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:9
+msgid ""
+"For the sake of this article, we will assume all data are single-dimensional"
+" time-series data.  Obviously, the concepts involved are more general than "
+"this - but a full/rigorous discussion of signals and filtering is out of the"
+" scope of this documentation."
+msgstr ""
+"为了本文的方便，我们将假定所有数据均为一维的时间序列数据。显然，滤波器的概念并非仅仅如此，但对信号和滤波完整，严格的讨论超出了本文档的讨论。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:11
+msgid ""
+"So, what exactly *is* a filter, then?  Simply put, a filter is a mapping "
+"from a stream of inputs to a stream of outputs.  That is to say, the value "
+"output by a filter (in principle) can depend not only on the *current* value"
+" of the input, but on *the entire set of past and future values* (of course,"
+" in practice, the filters provided by WPILib are implementable in real-time "
+"on streaming data; accordingly, they can only depend on the *past* values of"
+" the input, and not on future values).  This is an important concept, "
+"because generally we use filters to remove/mitigate unwanted *dynamics* from"
+" a signal.  When we filter a signal, we're interested in modifying *how the "
+"signal changes over time*."
+msgstr ""
+"那么，什么才是过滤器呢？简而言之，过滤器是从输入流到输出流的映射。也就是说，过滤器输出的值（原则上）不仅可以取决于输入的当前值，还可以取决于过去和将来的值的整个集合（当然，实际上，WPILib提供的滤波器只能数据流上实时实现；因此，它们只能取决于过去的输入值，而不能取决于将来的值）。这是一个重要的概念，因为通常我们使用滤波器来去除或减轻信号中不需要的动态特性。当我们过滤信号时，我们要修改信号随时间的变化。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:14
+msgid "Effects of Using a Filter"
+msgstr "使用滤波器的效果"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:17
+msgid "Noise Reduction"
+msgstr "降噪"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:19
+msgid ""
+"One of the most typical uses of a filter is for noise reduction.  A filter "
+"that reduces noise is called a *low-pass* filter (because it allows low "
+"frequencies to \"pass through,\" while blocking high-frequencies).  Most of "
+"the filters currently included in WPILib are effectively low-pass filters."
+msgstr ""
+"滤波器最典型的用途之一就是降低噪声。降低噪声的滤波器称为低通滤波器（因为它允许低频“通过”，并阻止高频）。当前WPILib中包含的大多数滤波器实际上都是低通滤波器。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:22
+msgid "Rate Limiting"
+msgstr "速率限制"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:24
+msgid ""
+"Filters are also commonly used to reduce the rate at which a signal can "
+"change.  This is closely related to noise reduction, and filters that reduce"
+" noise also tend to limit the rate of change of their output."
+msgstr "滤波器通常也用于降低信号变化的速率。这与降噪密切相关，并且降低噪声的滤波器也往往会限制信号变化的速率。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:27
+msgid "Edge Detection"
+msgstr "边缘探测"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:29
+msgid ""
+"The counterpart to the low-pass filter is the high-pass filter, which only "
+"permits high frequencies to pass through to the output.  High-pass filters "
+"can be somewhat tricky to build intuition for, but a common usage for a "
+"high-pass filter is edge-detection - since high-pass filters will reflect "
+"sudden changes in the input while ignoring slower changes, they are useful "
+"for determining the location of sharp discontinuities in the signal."
+msgstr ""
+"与低通滤波器相对应的是高通滤波器，它只允许高频通过输出。高通滤波器很难用直觉理解, 但它被普遍用于边缘检测, "
+"因为高通滤波器将反映输入的突然变化而忽略慢变化, 可以用于决定大幅不连续的信号。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:32
+msgid "Phase Lag"
+msgstr "相位滞后"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:34
+msgid ""
+"An unavoidable negative effect of a real-time low-pass filter is the "
+"introduction of \"phase lag.\"  Since, as mentioned earlier, a real-time "
+"filter can only depend on past values of the signal (we cannot time-travel "
+"to obtain the future values), the filtered value takes some time to \"catch "
+"up\" when the input starts changing.  The greater the noise-reduction, the "
+"greater the introduced delay.  This is, in many ways, *the* fundamental "
+"trade-off of real-time filtering, and should be the primary driving factor "
+"of your filter design."
+msgstr ""
+"实时低通滤波器不可避免的一个负面影响是“相位滞后”的引入。正如前面提到的，实时滤波器只能依赖于信号的过去值(我们不能通过时间旅行来获得未来值)，因此当输入开始变化时，滤波后的值需要一段时间才能“赶上”。降噪越大，引入的延迟就越大。在许多方面，这是实时过滤基本的权衡，并且应该是您的过滤器设计的主要考虑因素。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:36
+msgid ""
+"Interestingly, high-pass filters introduce a phase *lead*, as opposed to a "
+"phase lag, as they exacerbate local changes to the value of the input."
+msgstr "有趣的是，高通滤波器引入了相位超前，而不是相位滞后，因为它们加剧了输入值的局部变化。"

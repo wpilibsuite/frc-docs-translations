@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-25 16:05+0000\n"
+"POT-Creation-Date: 2021-03-26 04:09+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
 "Last-Translator: Sun Eric <eric.szh@hotmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -110,11 +110,11 @@ msgid ""
 "in the example runs more efficiently on the roboRIO when done in the HSV "
 "color space."
 msgstr ""
-"该示例代码使用HSV颜色空间指定了目标的颜色。这一操作的主要原因是因为通过使用“值”（HSV）或“亮度”（HSL）分量，可以轻松地将目标相对于图像其余部分的亮度用作过滤标准。使用HSV色彩系统的另一个原因是，在示例中使用的阈值操作在HSV色彩空间中完成时，在roboRIO上更有效地运行。"
+"该示例代码使用HSV颜色空间指定了目标的颜色。这一操作的主要原因是因为通过使用“值”（HSV）或“亮度”（HSL）分量，可以轻松地将目标相对于图像其余部分的亮度用作过滤标准。使用HSV色彩系统的另一个原因是，当在HSV色彩空间中进行阈值过滤操作时，能roboRIO上更有效地运行。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:33
 msgid "Masking"
-msgstr "掩蔽"
+msgstr "遮罩"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:35
 msgid ""
@@ -128,7 +128,7 @@ msgid ""
 "(Red, Green, and Blue) space. This is especially true when the color range "
 "is quite large in one or more dimension."
 msgstr ""
-"在此初始步骤中，将像素值与恒定的颜色或亮度值进行比较，以创建下面以黄色显示的二进制掩码。这一步消除了目标反光带中不包含的大多数像素。如果颜色相对饱和，明亮且一致，则基于颜色的遮罩效果很好。使用HSL（色相，饱和度和亮度）或HSV（色相，饱和度和值）颜色空间指定时，颜色不平等通常比RGB（红色，绿色和蓝色）空间更准确。当颜色范围在一维或多个维上很大时，尤其如此。"
+"一开始，像素值会与恒定的颜色或亮度值进行比较，以创建下面以黄色显示的二元遮罩。这一步消除了除了反光带以外的大部分像素。如果颜色相对饱和，明亮且一致，则基于颜色的遮罩效果会很好。使用HSL（色相，饱和度和亮度）或HSV（色相，饱和度和值）颜色空间时，捕捉颜色的区别通常比RGB（红色，绿色和蓝色）空间更准确。当颜色范围在一维或多个维上很大时，尤其如此。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:37
 msgid ""
@@ -138,7 +138,7 @@ msgstr "请注意，除了目标之外，图像的其他明亮部分（顶灯和
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:43
 msgid "Particle Analysis"
-msgstr "粒子分析"
+msgstr "像素块分析"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:45
 msgid ""
@@ -149,7 +149,7 @@ msgid ""
 "which is then compared to pre-defined score limits to decide if the particle"
 " is a target or not."
 msgstr ""
-"遮罩操作之后，使用粒子报告操作检查像素的面积，边界矩形和等效矩形。这些用于计算几个计分项，以帮助选择最矩形的形状。下文所述的每个测试都会生成一个分数（0-100），然后将其与预定义的分数限制进行比较，以确定粒子是否为目标。"
+"遮罩操作之后，像素块报告将检查像素块的面积，边界矩形和等效矩形。这些用于计算几个计分项，以帮助选择最矩形的形状。下文所述的每个测试都会生成一个分数（0-100），然后将其与预定义的分数限制进行比较，以确定像素块是否为目标。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:48
 msgid "Coverage Area"
@@ -165,9 +165,9 @@ msgid ""
 "area is 1/3. Area ratios close to 1/3 will produce a score near 100, as the "
 "ratio diverges from 1/3 the score will approach 0."
 msgstr ""
-"面积分数是通过将粒子的面积与粒子周围绘制的边界框的面积进行比较来计算的。逆反射带的面积为80平方英寸（〜516：数学：`cm ^ "
+"面积分数是通过将像素块的面积与像素块周围绘制的边界框的面积进行比较来计算的。全反射条的面积为80平方英寸（〜516：数学：`cm ^ "
 "2`）。包含目标的矩形区域为240平方英寸（〜0.15：math：`m ^ "
-"2`）。这意味着面积与边界框面积之间的理想比率为1/3。接近1/3的面积比将产生接近100的得分，因为该比例偏离1/3时得分将接近0。"
+"2`）。这意味着面积与边界框面积之间的理想比率为1/3。接近1/3的面积比将产生接近100的得分，比例越偏离1/3时，得分越接近0。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:53
 msgid "Aspect Ratio"
@@ -185,9 +185,9 @@ msgid ""
 "bounding box rectangle for aspect ratio, as the rectangle is skewed the "
 "height increases and the width decreases."
 msgstr ""
-"长宽比得分基于（粒子宽度/粒子高度）。粒子的宽度和高度使用称为“等效矩形”的值来确定。等效矩形是边长为：math：`x`和：math：`y`的矩形，其中：math：`2x+2y`等于粒子周长，而：math：`x"
+"长宽比得分基于（像素块宽度/像素块高度）。像素块的宽度和高度使用称为“等效矩形”的值来确定。等效矩形是边长为：math：`x`和：math：`y`的矩形，其中：math：`2x+2y`等于像素块周长，而：math：`x"
 " \\ cdot "
-"y`等于粒子面积。等效矩形用于纵横比计算，因为与使用边框相比，等效矩形受矩形倾斜的影响较小。当使用边框矩形作为宽高比时，随着矩形的倾斜，高度会增加，宽度会减小。"
+"y`等于像素块面积。等效矩形用于纵横比计算，因为与使用边框相比，等效矩形受矩形倾斜的影响较小。当使用边框矩形作为宽高比时，随着矩形的倾斜，高度会增加，宽度会减小。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:57
 msgid ""
@@ -196,7 +196,7 @@ msgid ""
 "ratio score is normalized to return 100 when the ratio matches the target "
 "ratio and drops linearly as the ratio varies below or above."
 msgstr ""
-"目标的高度为20英寸（508毫米），高为12英寸（304.8毫米），比率为1.6。将检测到的纵横比与该理想比例进行比较。当该比例与目标比例匹配时，将纵横比得分归一化为100，并随着该比例的变化而线性下降。"
+"视觉目标宽为20英寸（508毫米），高为12英寸（304.8毫米），比率为1.6。将检测到像素块的纵横比与该理想比例进行比较。当该比例与目标比例匹配时，纵横比得分会归一化为100，并随着该比例的变化而线性下降。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:60
 msgid "Moment"
@@ -209,7 +209,7 @@ msgid ""
 "distribution in the particle. The ideal score for this test is ~0.28. See: "
 "`Moment of Inertia <https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
 msgstr ""
-"力矩测量可计算粒子在其质心附近的惯性矩。该测量提供了粒子中像素分布的表示。该测试的理想分数是〜0.28。参见：`惯性矩<https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
+"力矩测量可计算像素块在其质心附近的惯性矩。该测量提供了像素块中像素分布的表示。该测试的理想分数是〜0.28。参见：`惯性矩<https://en.wikipedia.org/wiki/Moment_of_inertia>`_"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:65
 msgid "X/Y Profiles"
@@ -224,7 +224,7 @@ msgid ""
 "based on the number of values within the row or column averages that are "
 "between the upper and lower limit values."
 msgstr ""
-"边缘分数描述了粒子在X和Y方向上是否都匹配适当的轮廓。如图所示，它是使用从原始图像中提取的边界框上的行和列平均值，并将其与轮廓蒙版进行比较来计算的。根据行平均值或列平均值中上限值和下限值之间的值的数量，分数的范围为0到100。"
+"边缘分数描述了像素块在X和Y方向上是否都匹配适当的轮廓。如图所示，它是使用从原始图像中提取的边界框上的行和列平均值，并将其与轮廓蒙版进行比较来计算的。根据行平均值或列平均值中上限值和下限值之间的值的数量，分数的范围为0到100。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:73
 msgid "Measurements"
@@ -237,7 +237,7 @@ msgid ""
 " example code includes these basic measurements, so let’s look at the math "
 "involved to better understand it."
 msgstr ""
-"如果粒子得分足够好，可以视为目标，则可以计算一些实际的测量值，例如位置和距离。该示例代码包含这些基本度量，因此让我们看一下所涉及的数学以更好地理解它。"
+"如果像素块得分足够好，其将视为目标，此时则可以计算一些实际的测量值，例如位置和距离。该示例代码包含这些基本度量，因此让我们看一下所涉及的数学以更好地理解它。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:78
 msgid "Position"
@@ -251,7 +251,7 @@ msgid ""
 "This is a useful system for pixel math, but not nearly as useful for driving"
 " a robot; so let’s change it to something that may be more useful."
 msgstr ""
-"粒子和边界框都很好地描述了目标位置，但是所有坐标均以像素为单位，其中0,0位于屏幕的左上角，其右边缘和下边缘由相机分辨率确定。这对于像素数学来说是一个有用的系统，但是对于驱动机器人却没有那么有用。因此，让我们将其更改为可能更有用的内容。"
+"像素块和边界框都很好地描述了目标位置，但是所有坐标均以像素为单位，其中0,0位于屏幕的左上角，其右边缘和下边缘由相机分辨率确定。这对于像素数学来说是一个有用的系统，但是对于驱动机器人却没有那么有用。因此，让我们将其更改为可能更有用的内容。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:82
 msgid ""
@@ -267,7 +267,7 @@ msgid ""
 "because it has a centered origin and the scale is similar to joystick "
 "outputs and RobotDrive inputs."
 msgstr ""
-"结果坐标接近您想要的坐标，但是Y轴反转了。可以通过将点乘以[1，-1]来纠正（注意：这在示例代码中没有完成）。此坐标系很有用，因为它具有居中的原点，并且比例尺类似于操纵杆输出和RobotDrive输入。"
+"结果坐标接近想要的坐标，但是Y轴反转了。可以通过将点乘以[1，-1]来纠正（注意：这在示例代码中没有完成）。此坐标系很有用，因为它原点是居中的，并且比例尺类似于操纵杆输出和RobotDrive输入。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:86
 msgid ""
@@ -356,7 +356,8 @@ msgid ""
 "Another option is to create a lookup table for area to distance, or to "
 "estimate the inverse variation constant of area and distance. However, this "
 "method is less accurate."
-msgstr "另一种选择是创建一个面积到距离的查找表，或估算面积和距离的反变常数。但是，此方法不太准确。"
+msgstr ""
+"另一种选择是创建一个面积到距离的查找表，或估算面积和距离的反变常数（ inverse variation constant ）。但是，此方法不太准确。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/identifying-and-processing-the-targets.rst:122
 msgid ""
@@ -365,4 +366,4 @@ msgid ""
 "may be affecting accuracy by reprojecting the pixels of the target using the"
 " calibration matrix."
 msgstr ""
-"为了获得上述估计角度和距离的方法的最佳结果，您可以使用OpenCV校准相机，以通过使用校准矩阵重新投影目标像素来消除可能影响精度的任何失真。"
+"为了获得上述估计角度和距离的方法的最佳结果，您可以使用OpenCV校准相机，并使用校准矩阵重新投影目标像素。这样能够消除可能影响精度的任何失真。"

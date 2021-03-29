@@ -1,22 +1,123 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Michael Zhao <haitong1110@126.com>, 2020
+# Epsilon Mao <704856115@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-12 16:17+0000\n"
+"POT-Creation-Date: 2021-03-29 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
+"Last-Translator: Epsilon Mao <704856115@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:4
+msgid "roboRIO Network Troubleshooting"
+msgstr "roboRIO网络故障排除"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:6
+msgid ""
+"The roboRIO and FRC\\ |reg| tools use dynamic IP addresses (DHCP) for "
+"network connectivity. This article describes steps for troubleshooting "
+"networking connectivity between your PC and your roboRIO"
+msgstr ""
+"roboRIO和FRC \\ | reg "
+"|工具使用动态IP地址（DHCP）进行网络连接。本文介绍了对PC和roboRIO之间的网络连接进行故障排除的步骤"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:9
+msgid "Ping the roboRIO using mDNS"
+msgstr "使用mDNS 检查 roboRIO"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:11
+msgid ""
+"The first step to identifying roboRIO networking issues is to isolate if it "
+"is an application issue or a general network issue. To do this, click "
+"**Start -> type cmd -> press Enter** to open the command prompt. Type ``ping"
+" roboRIO-####-FRC.local`` where #### is your team number (with no leading "
+"zeroes) and press enter. If the ping succeeds, the issue is likely with the "
+"specific application, verify your team number configuration in the "
+"application, and check your firewall configuration."
+msgstr ""
+"识别roboRIO网络问题的第一步是隔离如果其是应用程序问题或常规网络问题的话。为此，请单击**开始->输入cmd->按Enter "
+"**以打开命令提示符。输入``ping "
+"roboRIO-####-FRC.local``，其中####是您的团队编号（没有前导零），然后按Enter键。如果ping操作成功，则可能是特定应用程序出现了问题，请在应用程序中验证您的团队编号配置，然后检查防火墙配置。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:14
+msgid "Ping the roboRIO IP Address"
+msgstr "ping roboRIO IP的地址"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:18
+msgid ""
+"Verify that you have an mDNS resolver installed on your system. On Windows, "
+"this is typically fulfilled by the NI FRC Game Tools. For more information "
+"on mDNS resolvers, see the :ref:`roboRIO Networking article <docs/software"
+"/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>`."
+msgstr ""
+"验证您的系统上安装了mDNS解析器。在Windows上，通常可以通过NI "
+"FRC游戏工具来实现。有关mDNS解析器的更多信息，请参见：roboRIO网络文章<docs/software/roborio-info"
+"/roborio-web-dashboard:roboRIO Web Dashboard>`。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:43
+msgid ""
+"If you are attempting to troubleshoot the USB connection, try pinging the "
+"roboRIO's IP address. As long as there is only one roboRIO connected to the "
+"PC, it should be configured as 172.22.11.2. If this ping fails, make sure "
+"you have the roboRIO connected and powered, and that you have installed the "
+"NI FRC Game Tools. The game tools installs the roboRIO drivers needed for "
+"the USB connection."
+msgstr ""
+"如果您尝试对USB连接进行故障排除，请尝试ping "
+"roboRIO的IP地址。只要仅将一个roboRIO连接到PC，就应将其配置为172.22.11.2。如果无法ping通，请确保已连接roboRIO并为其供电，并且已安装NI"
+" FRC游戏工具。游戏工具会安装USB连接所需的roboRIO驱动程序。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:45
+msgid ""
+"If this ping succeeds, but the .local ping fails, it is likely that either "
+"the roboRIO hostname is configured incorrectly, or you are connected to a "
+"DNS server which is attempting to resolve the .local address."
+msgstr ""
+"如果此ping成功，但.local ping失败，则可能是roboRIO主机名配置错误，或者您已连接到尝试解析.local地址的DNS服务器。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:48
+msgid ""
+":ref:`Disable all other network adapters <docs/networking/networking-"
+"introduction/roborio-network-troubleshooting:Disabling Network Adapters>`"
+msgstr ""
+"：ref：`禁用所有其他网络适配器<docs/networking/networking-introduction/roborio-network-"
+"troubleshooting:Disabling Network Adapters>`"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:56
+msgid ""
+"If you are troubleshooting an Ethernet connection, it may be helpful to "
+"first make sure that you can connect to the roboRIO using the USB "
+"connection. Using the USB connection, open the :ref:`roboRIO webdashboard "
+"<docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` "
+"and verify that the roboRIO has an IP address on the ethernet interface. If "
+"you are tethering to the roboRIO directly this should be a self-assigned "
+"``169.*.*.*`` address, if you are connected to the OM5P-AN radio, it should "
+"be an address of the form ``10.TE.AM.XX`` where TEAM is your four digit FRC "
+"team number. If the only IP address here is the USB address, verify the "
+"physical roboRIO ethernet connection."
+msgstr ""
+"如果要对以太网连接进行故障排除，首先确保你可以使用USB连接连接到roboRIO可能会有所帮助。使用USB连接，打开roboRIO "
+"Web面板<docs/software/roborio-info/roborio-web-dashboard:roboRIO Web "
+"Dashboard>，并验证roboRIO在以太网接口上是否具有IP地址。如果要直接绑定到roboRIO，则应为自定义的``169。*。*。*''地址"
+"，如果已连接到OM5P-"
+"AN无线电，则应为``10''形式的地址.TE.AM.XX``，其中TEAM是您的四位数FRC团队编号。如果此处唯一的IP地址是USB地址，请验证物理roboRIO以太网连接。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:112
+msgid ""
+"Proxies. Having a proxy enabled may cause issues with the roboRIO "
+"networking."
+msgstr "代理。启用代理可能会导致roboRIO网络出现问题。"

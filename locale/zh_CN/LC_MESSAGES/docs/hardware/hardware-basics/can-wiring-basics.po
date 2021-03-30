@@ -5,18 +5,76 @@
 # 
 # Translators:
 # Yuhao Li <yuhao_li@hotmail.com>, 2021
+# 陈 Sherry <3361738391@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-05 16:18+0000\n"
+"POT-Creation-Date: 2021-03-30 04:04+0000\n"
 "PO-Revision-Date: 2021-02-15 16:21+0000\n"
-"Last-Translator: Yuhao Li <yuhao_li@hotmail.com>, 2021\n"
+"Last-Translator: 陈 Sherry <3361738391@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:2
+msgid "CAN Wiring Basics"
+msgstr "CAN接线基础"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:4
+msgid ""
+"CAN is a two wire network that is designed to facilitate communication "
+"between multiple devices on your robot. It is recommended that CAN on your "
+"robot follow a \"daisy-chain\" topology. This means that the CAN wiring "
+"should usually start at your roboRIO and go into and out of each device "
+"successively until finally ending at the PDP."
+msgstr ""
+"CAN是为了促进机器人上多个设备之间通信，从而设计的的一种二线制网络。您机器人上的CAN推荐遵循“菊花链”拓扑：通常CAN布线应从roboRIO开始，并依次进入和退出每个设备，最终在PDP处结束。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:9
+msgid "Standard Wiring"
+msgstr "标准接线"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:11
+msgid ""
+"CAN is generally wired with yellow and green wire with yellow acting as the "
+"CAN-High and green as the CAN-Low signals.  Many devices show this yellow "
+"and green color scheme to indicate how the wires should be plugged in."
+msgstr ""
+"CAN通常使用黄色和绿色的导线布线，黄色表示CAN-High信号，绿色则表示CAN-"
+"Low信号。大多设备都使用黄色和绿色的配色方案用来指导应如何插入导线。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:13
+msgid "CAN wiring from the roboRIO to the PCM."
+msgstr "从roboRIO到PCM的CAN接线。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:17
+msgid "CAN wiring from the PCM to the PDP."
+msgstr "从PCM到PDP的CAN接线。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:22
+msgid "Termination"
+msgstr "终端"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/can-wiring-basics.rst:24
+msgid ""
+"It is recommended that the wiring starts at the roboRIO and ends at the PDP "
+"because the CAN network is required to be terminated by 120 :math:`\\Omega` "
+"resistors and these are built into these two devices.  The PDP ships with "
+"the CAN bus terminating resistor jumper in the \"ON\" position. It is "
+"recommended to leave the jumper in this position and place any additional "
+"CAN nodes between the roboRIO and the PDP (leaving the PDP as the end of the"
+" bus). If you wish to place the PDP in the middle of the bus (utilizing both"
+" pairs of PDP CAN terminals) move the jumper to the \"OFF\" position and "
+"place your own 120 :math:`\\Omega` terminating resistor at the end of your "
+"CAN bus chain."
+msgstr ""
+"布线从roboRIO处开始，在PDP处结束是被建议的，因为CAN网络需要用120:math:`\\Omega`电阻终止，而这两个器件都内置了这些电阻。PDP随附的CAN总线终端电阻的跳线处于“"
+" "
+"ON”位置。建议将跳线保持在此位置，并将任何额外的CAN节点放置在roboRIO和PDP之间（保证PDP位于总线末端）。如果您希望将PDP放置在总线中间（使用两对PDP"
+" CAN端子），将跳线移至“ OFF”位置，并将自己的120 :math:`\\Omega` 终端电阻放置在CAN总线链的末端。 "

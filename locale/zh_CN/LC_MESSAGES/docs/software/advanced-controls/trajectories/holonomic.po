@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-26 16:05+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-08-16 04:12+0000\n"
 "Last-Translator: 8192 DHC <hehehehehehe886@gmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -43,3 +43,100 @@ msgid ""
 "The holonomic drive controller should be instantiated with 2 PID controllers"
 " and 1 profiled PID controller."
 msgstr "全向驱动控制器应使用2个PID控制器和1个简略PID控制器实例化。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:9
+msgid ""
+"For more information on PID control, see :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`."
+msgstr ""
+"有关PID控制的更多信息，请参见 :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:11
+msgid ""
+"The 2 PID controllers are controllers that should correct for error in the "
+"field-relative x and y directions respectively. For example, if the first 2 "
+"arguments are ``PIDController(1, 0, 0)`` and ``PIDController(1.2, 0, 0)`` "
+"respectively, the holonomic drive controller will add an additional meter "
+"per second in the x direction for every meter of error in the x direction "
+"and will add an additional 1.2 meters per second in the y direction for "
+"every meter of error in the y direction."
+msgstr ""
+"2个PID控制器是分别应校正相对于磁场的x和y方向误差的控制器。例如，如果前两个参数分别是``PIDController(1, 0, 0)`` "
+"和``PIDController(1.2, 0, "
+"0)``，则完整驱动控制器将在x方向上为x方向上每米的误差增加每秒1米的附加误差。在y方向上为y方向上每米的误差增加每秒1.2米的附加误差。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:13
+msgid ""
+"The final parameter is a ``ProfiledPIDController`` for the rotation of the "
+"robot. Because the rotation dynamics of a holonomic drivetrain are decoupled"
+" from movement in the x and y directions, users can set custom heading "
+"references while following a trajectory. These heading references are "
+"profiled according to the parameters set in the ``ProfiledPIDController``."
+msgstr ""
+"最后一个参数是用于机器人旋转的“ProfiledPIDController”。由于完整传动系统的旋转动力学在x和y方向上与运动解耦，用户可以设置自定义的航向参考，同时遵循轨迹。这些标题引用是根据``ProfiledPIDController``中的参数设置的概要。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:38
+msgid "Getting Adjusted Velocities"
+msgstr "调整速度"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:39
+msgid ""
+"The holonomic drive controller returns \"adjusted velocities\" such that "
+"when the robot tracks these velocities, it accurately reaches the goal "
+"point. The controller should be updated periodically with the new goal. The "
+"goal is comprised of a desired pose, linear velocity, and heading."
+msgstr ""
+"完整的驱动控制器返回“已调整的速度”，以便当机器人跟踪这些速度时，它可以精确地达到目标点。 "
+"应使用新目标定期更新控制器。目标包括所需的姿势，线速度和航向。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:41
+msgid ""
+"The \"goal pose\" represents the position that the robot should be at at a "
+"particular timestamp when tracking the trajectory. It does NOT represent the"
+" trajectory's endpoint."
+msgstr "“目标姿势”表示机器人在跟踪轨迹时应处于特定时间戳的位置。它不代表轨迹的终点。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:43
+msgid ""
+"The controller can be updated using the ``Calculate`` (C++) / ``calculate`` "
+"(Java) method. There are two overloads for this method. Both of these "
+"overloads accept the current robot position as the first parameter and the "
+"desired heading as the last parameter. For the middle parameters, one "
+"overload accepts the desired pose and the linear velocity reference while "
+"the other accepts a ``Trajectory.State`` object, which contains information "
+"about the goal pose. The latter method is preferred for tracking "
+"trajectories."
+msgstr ""
+"控制器可以使用``Calculate`` (c++) / ``Calculate`` "
+"(Java)方法更新。此方法有两个重载。这两种重载都接受当前机器人位置作为第一个参数，并将期望的航向作为最后一个参数。对于中间的参数，一个重载接受所需的姿态和线速度参考，而另一个接受'"
+" '轨迹。对象，它包含关于目标姿态的信息。后一种方法是跟踪轨迹的首选方法。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:67
+msgid "Using the Adjusted Velocities"
+msgstr "使用调整后的速度"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:68
+msgid ""
+"The adjusted velocities are of type ``ChassisSpeeds``, which contains a "
+"``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity"
+" in the sideways direction), and an ``omega`` (angular velocity around the "
+"center of the robot frame)."
+msgstr ""
+"调整后的速度为``ChassisSpeeds''类型，其中包含``vx''（向前方向的线速度），``vy''（横向方向的线速度）和``omega'' "
+"（围绕机器人框架中心的角速度）。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:70
+msgid ""
+"The returned adjusted speeds can be converted into usable speeds using the "
+"kinematics classes for your drivetrain type. In the example code below, we "
+"will assume a swerve drive robot; however, the kinematics code is exactly "
+"the same for a mecanum drive robot except using ``MecanumDriveKinematics``."
+msgstr ""
+"可以使用适用于您的传动系统类型的运动学类将返回的调整速度转换为可用速度。在下面的示例代码中，我们将假定一个弧形驱动机器人；但是，除了使用``MecanumDriveKinematics''外，运动学代码与麦克纳姆驱动机器人完全相同。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/holonomic.rst:86
+msgid ""
+"Because these swerve module states are still speeds and angles, you will "
+"need to use PID controllers to set these speeds and angles."
+msgstr "由于这些转弯模块状态仍然是速度和角度，因此您将需要使用PID控制器来设置这些速度和角度。"

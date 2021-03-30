@@ -7,15 +7,16 @@
 # Tianrui Wu <tw2789@columbia.edu>, 2021
 # 怡静 陆 <2238710874@qq.com>, 2021
 # 堂晋 徐 <tangjinx@buffalo.edu>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-17 04:14+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-12-11 04:16+0000\n"
-"Last-Translator: 堂晋 徐 <tangjinx@buffalo.edu>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,6 +36,15 @@ msgid ""
 "documentation."
 msgstr "本文档的目的是简要概述构成FRC\\ |reg| 控制系统的硬件组件。每个组件都将包含对该组件功能的简短描述以及指向更多文档的链接。"
 
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:8
+msgid ""
+"For complete wiring instructions/diagrams, please see the :doc:`Wiring the "
+"FRC Control System </docs/zero-to-robot/step-1/how-to-wire-a-robot>` "
+"document."
+msgstr ""
+"有关完整的接线说明/图表，请参阅文档：:doc:`FRC控制系统的接线</docs/zero-to-robot/step-1/how-to-"
+"wire-a-robot>`"
+
 #: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:11
 msgid "Overview of Control System"
 msgstr "控制系统概述"
@@ -47,6 +57,565 @@ msgstr "图由FRC Team 3161和Stefen Acepcion提供。"
 msgid "NI roboRIO"
 msgstr "NI roboRIO"
 
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:26
+msgid ""
+"The :ref:`NI-roboRIO <docs/software/roborio-info/roborio-"
+"introduction:roboRIO Introduction>` is the main robot controller used for "
+"FRC. The roboRIO serves as the \"brain\" for the robot running team-"
+"generated code that commands all of the other hardware."
+msgstr ""
+":ref:`NI-roboRIO <docs/software/roborio-info/roborio-introduction:roboRIO "
+"Introduction>`是用于FRC的主要机器人控制器。 roboRIO充当机器人运行团队生成的代码的“大脑”，该代码命令所有其他硬件。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:29
+msgid "Power Distribution Panel"
+msgstr "配电板"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:35
+msgid ""
+"The :ref:`Power Distribution Panel <docs/software/can-devices/power-"
+"distribution-panel:Power Distribution Panel>` (PDP) is designed to "
+"distribute power from a 12VDC battery to various robot components through "
+"auto-resetting circuit breakers and a small number of special function fused"
+" connections. The PDP provides 8 output pairs rated for 40A continuous "
+"current and 8 pairs rated for 30A continuous current. The PDP provides "
+"dedicated 12V connectors for the roboRIO, as well as connectors for the "
+"Voltage Regulator Module and Pneumatics Control Module. It also includes a "
+"CAN interface for logging current, temperature, and battery voltage. For "
+"more detailed information, see the `PDP User Manual <https://www.ctr-"
+"electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__."
+msgstr ""
+":ref:`配电面板（PDP） <docs/software/can-devices/power-distribution-panel:Power "
+"Distribution Panel>` 旨在通过自动重置断路器和少量特殊功能的熔断连接将12VDC电池的功率分配给机器人的各个组件。 "
+"PDP提供了8对额定电流为40A连续电流的输出对和8对额定电流为30A连续电流的输出对。 "
+"PDP为roboRIO提供了专用的12V连接器，还为电压调节器模块和气动控制模块提供了连接器。它还包括一个用于记录电流，温度和电池电压的CAN接口。有关更多详细信息，请参见`PDP用户手册<https://www"
+".ctr-electronics.com/downloads/pdf/PDP%20User's%20Guide.pdf>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:38
+msgid "Voltage Regulator Module"
+msgstr "稳压器模块"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:44
+msgid ""
+"The Voltage Regulator Module (VRM) is an independent module that is powered "
+"by 12 volts. The device is wired to a dedicated connector on the PDP. The "
+"module has multiple regulated 12V and 5V outputs. The purpose of the VRM is "
+"to provide regulated power for the robot radio, custom circuits, and IP "
+"vision cameras. For more information, see the `VRM User Manual <https://www"
+".ctr-electronics.com/VRM%20User's%20Guide.pdf>`__."
+msgstr ""
+"稳压器模块（VRM）是由12伏特供电的独立模块。该设备已连接至PDP上的专用连接器。该模块具有多个稳压的12V和5V输出。 "
+"VRM的目的是为机器人无线电，定制电路和IP视觉摄像机提供稳压电源。有关更多信息，请参见`VRM 用户手册 <https://www.ctr-"
+"electronics.com/VRM%20User's%20Guide.pdf>`__."
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:47
+msgid "OpenMesh OM5P-AN or OM5P-AC Radio"
+msgstr "OpenMesh OM5P-AN或OM5P-AC无线路由器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:53
+msgid ""
+"Either the OpenMesh OM5P-AN or `OpenMesh OM5P-AC <https://www.openmesh.com"
+"/resource-downloads/OM-Series-Datasheet.pdf>`__ wireless radio is used as "
+"the robot radio to provide wireless communication functionality to the "
+"robot. The device can be configured as an Access Point for direct connection"
+" of a laptop for use at home. It can also be configured as a bridge for use "
+"on the field. The robot radio should be powered by one of the 12V/2A outputs"
+" on the VRM and connected to the roboRIO controller over Ethernet. For more "
+"information, see :ref:`Programming your Radio <docs/zero-to-robot/step-3"
+"/radio-programming:Programming your Radio>`."
+msgstr ""
+"OpenMesh OM5P-AN或`OpenMesh OM5P-AC <https://www.openmesh.com/resource-"
+"downloads/OM-Series-"
+"Datasheet.pdf>`__无线无线电都被用作机器人无线电，以向机器人提供无线通信功能。可以将设备配置为接入点，以直接连接笔记本电脑以在家中使用。也可以将其配置为在现场使用的桥梁。机器人无线电应由VRM上的12V"
+" / 2A输出之一供电，并通过以太网连接到roboRIO控制器。有关更多信息，请参见：:ref:`对无线电编程 <docs/zero-to-"
+"robot/step-3/radio-programming:Programming your Radio>`."
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:55
+msgid ""
+"The OM5P-AN `is no longer available for purchase "
+"<https://www.firstinspires.org/robotics/frc/blog/radio-silence>`__. The "
+"OM5P-AC is slightly heavier, has more cooling grates, and has a rough "
+"surface texture compared to the OM5P-AN."
+msgstr ""
+"OM5P-AN`不再可用于购买<https://www.firstinspires.org/robotics/frc/blog/radio-"
+"silence>`__。与OM5P-AN相比，OM5P-AC稍重，具有更多的冷却格栅，并且具有粗糙的表面纹理。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:58
+msgid "120A Circuit Breaker"
+msgstr "120A断路器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:64
+msgid ""
+"The 120A Main Circuit Breaker serves two roles on the robot: the main robot "
+"power switch and a protection device for downstream robot wiring and "
+"components. The 120A circuit breaker is wired to the positive terminals of "
+"the robot battery and Power Distribution boards. For more information, "
+"please see the `Cooper Bussmann 18X Series Datasheet (PN: 185120F) "
+"<https://www.mouser.com/datasheet/2/87/BUS_Tns_DS_18X_CIRCUITBREAKER-515519.pdf>`__"
+msgstr ""
+"120A主断路器在机器人上起着两个作用：主机器人电源开关和用于下游机器人接线和组件的保护装置。 "
+"120A断路器已连接至机器人电池和配电板的正极。有关更多信息，请参见`Cooper Bussmann "
+"18X系列数据表（PN：185120F）<https://www.mouser.com/datasheet/2/87/BUS_Tns_DS_18X_CIRCUITBREAKER-515519.pdf>`__"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:67
+msgid "Snap Action Circuit Breakers"
+msgstr "速动断路器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:73
+msgid ""
+"The Snap Action circuit breakers, `MX5 series "
+"<http://www.snapaction.net/pdf/MX5%20Spec%20Sheet.pdf>`__ and `VB3 Series "
+"<http://www.snapaction.net/pdf/vb3.pdf>`__, are used with the Power "
+"Distribution Panel to limit current to branch circuits. The ratings on these"
+" circuit breakers are for continuous current, temporary peak values can be "
+"considerably higher."
+msgstr ""
+"速动断路器，MX5系列<http://www.snapaction.net/pdf/MX5%20Spec%20Sheet.pdf>`__和`VB3系列<http://www.snapaction.net/pdf/vb3.pdf>`__，与配电面板一起使用，以限制分支电路的电流。这些断路器的额定值适用于连续电流，临时峰值可能会更高。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:76
+msgid "Robot Battery"
+msgstr "机器人电池"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:82
+msgid ""
+"The power supply for an FRC robot is a single 12V 18Ah battery. The "
+"batteries used for FRC are sealed lead acid batteries capable of meeting the"
+" high current demands of an FRC robot. For more information, see the "
+"datasheet for the `MK ES17-12 "
+"<https://www.mkbattery.com/application/files/2515/3308/8109/ES17-12.pdf>`__."
+msgstr ""
+"FRC机器人的电源是单个12V 18Ah电池。用于FRC的电池是密封铅酸电池，能够满足FRC机器人的高电流要求。有关更多信息，请参见`MK "
+"ES17-12 "
+"<https://www.mkbattery.com/application/files/2515/3308/8109/ES17-12.pdf>`__的数据表。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:84
+msgid ""
+"Other battery part numbers may be legal, consult the `FRC Manual "
+"<https://www.firstinspires.org/resource-library/frc/competition-manual-qa-"
+"system>`__ for a complete list."
+msgstr ""
+"其他电池部件号可能是合法的，有关完整列表，请参考`FRC手册<https://www.firstinspires.org/resource-"
+"library/frc/competition-manual-qa-system>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:87
+msgid "Robot Signal Light"
+msgstr "机器人信号灯"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:93
+msgid ""
+"The Robot Signal Light (RSL) is required to be the Allen-Bradley 855PB-"
+"B12ME522.  It is directly controlled by the roboRIO and will flash when "
+"enabled and stay solid while disabled."
+msgstr ""
+"机器人信号灯（RSL）必须是Allen-Bradley 855PB-B12ME522。它由roboRIO直接控制，启用后会闪烁，禁用时会保持稳定。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:96
+msgid "Pneumatics Control Module"
+msgstr "气动控制模块"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:102
+msgid ""
+"The :ref:`Pneumatics Control Module <docs/software/can-devices/pneumatics-"
+"control-module:Pneumatics Control Module>` (PCM) contains all of the inputs "
+"and outputs required to operate 12V or 24V pneumatic solenoids and the on "
+"board compressor. The PCM contains an input for the pressure sensor and will"
+" control the compressor automatically when the robot is enabled and a "
+"solenoid has been created in the code. For more information see the `PCM "
+"User Manual <https://www.ctr-"
+"electronics.com/downloads/pdf/PCM%20User's%20Guide.pdf>`__."
+msgstr ""
+":ref:`气动控制模块<docs/software/can-devices/pneumatics-control-module:Pneumatics "
+"Control Module>`（PCM）包含操作12V或24V气动螺线管和车载压缩机所需的所有输入和输出。 "
+"PCM包含压力传感器的输入，当启用机器人并在代码中创建了螺线管时，它将自动控制压缩机。有关更多信息，请参见`PCM用户手册<https://www"
+".ctr-electronics.com/downloads/pdf/PCM%20User's%20Guide.pdf>`__。"
+
 #: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:105
 msgid "Motor Controllers"
 msgstr "电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:107
+msgid ""
+"There are a variety of different :ref:`motor controllers "
+"<docs/software/actuators/overview:Actuator Overview>` which work with the "
+"FRC Control System and are approved for use. These devices are used to "
+"provide variable voltage control of the brushed and brushless DC motors used"
+" in FRC. They are listed here in order of `usage "
+"<https://www.firstinspires.org/robotics/frc/blog/2021-beta-testing-usage-"
+"report>`__."
+msgstr ""
+"有多种不同的电机控制器可与FRC控制系统配合使用并被批准使用。这些设备用于对FRC中使用的有刷和无刷直流电动机提供可变电压控制。它们在`这里<https://www.firstinspires.org/robotics/frc/blog/2021"
+"-beta-testing-usage-report>`__按使用的顺序列出。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:109
+msgid ""
+"3rd Party CAN control is not supported from WPILib. See this section on "
+":ref:`docs/software/can-devices/third-party-devices:Third-Party CAN Devices`"
+" for more information."
+msgstr ""
+"WPILib不支持第三方CAN控制。有关更多信息，请参见docs / software / can-devices / third-party-"
+"devices：第三方CAN设备`上的此部分。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:112
+msgid "Talon SRX"
+msgstr "Talon SRX"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:118
+msgid ""
+"The `Talon SRX Motor Controller <https://www.ctr-electronics.com/talon-"
+"srx.html>`__ is a \"smart motor controller\" from Cross The Road "
+"Electronics/VEX Robotics. The Talon SRX can be controlled over the CAN bus "
+"or PWM interface. When using the CAN bus control, this device can take "
+"inputs from limit switches and potentiometers, encoders, or similar sensors "
+"in order to perform advanced control. For more information see the `Talon "
+"SRX User's Guide <http://www.ctr-"
+"electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__."
+msgstr ""
+" `Talon SRX 电机控制器<https://www.ctr-electronics.com/talon-srx.html>`__ 是Cross "
+"The Road Electronics / VEX Robotics的“智能电动机控制器”。 Talon "
+"SRX可以通过CAN总线或PWM接口进行控制。使用CAN总线控制时，此设备可以从限位开关和电位计，编码器或类似传感器获取输入，以执行高级控制。有关更多信息，请参见`《"
+" Talon SRX用户指南<http://www.ctr-"
+"electronics.com/Talon%20SRX%20User's%20Guide.pdf>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:121
+msgid "Victor SPX"
+msgstr "Victor SPX"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:127
+msgid ""
+"The `Victor SPX Motor Controller <http://www.ctr-electronics.com/control-"
+"system/motor-control/victor-spx.html>`__ is a CAN or PWM controlled motor "
+"controller from Cross The Road Electronics/VEX Robotics. The device is "
+"connectorized to allow easy connection to the roboRIO PWM connectors or a "
+"CAN bus. The case is sealed to prevent debris from entering the controller. "
+"For more information, see the `Victor SPX User Guide <http://www.ctr-"
+"electronics.com/downloads/pdf/Victor%20SPX%20User's%20Guide.pdf>`__."
+msgstr ""
+"`Victor SPX电动机控制器<http://www.ctr-electronics.com/control-system/motor-"
+"control/victor-spx.html>`__是Cross The Road Electronics / VEX "
+"Robotics提供的CAN或PWM控制的电动机控制器。该设备已连接，可轻松连接到roboRIO "
+"PWM连接器或CAN总线。外壳被密封以防止碎屑进入控制器。有关更多信息，请参见`Victor SPX用户指南<http://www.ctr-"
+"electronics.com/downloads/pdf/Victor%20SPX%20User's%20Guide.pdf>` __。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:130
+msgid "SPARK MAX Motor Controller"
+msgstr "SPARK MAX电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:136
+msgid ""
+"The `SPARK MAX Motor Controller "
+"<https://www.revrobotics.com/rev-11-2158/>`__ is an advanced brushed and "
+"brushless DC motor controller from REV Robotics. When using CAN bus or USB "
+"control, the SPARK MAX uses input from limit switches, encoders, and other "
+"sensors, including the integrated encoder of the REV NEO Brushless Motor, to"
+" perform advanced control modes. The SPARK MAX can be controlled over PWM, "
+"CAN or USB (for configuration/testing only). For more information, see the "
+"`SPARK MAX User's Manual <https://docs.revrobotics.com/sparkmax/>`__."
+msgstr ""
+"SPARK MAX电动机控制器<https://www.revrobotics.com/rev-11-2158/>`__是REV "
+"Robotics提供的高级有刷和无刷直流电动机控制器。当使用CAN总线或USB控制时，SPARK MAX使用限位开关，编码器和其他传感器（包括REV "
+"NEO无刷电机的集成编码器）的输入来执行高级控制模式。 SPARK "
+"MAX可以通过PWM，CAN或USB进行控制（仅用于配置/测试）。有关更多信息，请参见`SPARK "
+"MAX用户手册<https://docs.revrobotics.com/sparkmax/>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:139
+msgid "TalonFX Motor Controller"
+msgstr "TalonFX电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:145
+msgid ""
+"The `TalonFX Motor Controller <http://www.ctr-electronics.com/talon-"
+"fx.html>`__  is integrated into the Falcon 500 brushless motor.  It features"
+" an integrated encoder and all of the smart features of the Talon SRX and "
+"more!  For more information see the `Falcon 500 User Guide <http://www.ctr-"
+"electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__."
+msgstr ""
+"`TalonFX电动机控制器<http://www.ctr-electronics.com/talon-fx.html>`__已集成到Falcon "
+"500无刷电动机中。它具有集成的编码器以及Talon SRX的所有智能功能以及更多功能！有关更多信息，请参见`Falcon "
+"500用户指南<http://www.ctr-"
+"electronics.com/downloads/pdf/Falcon%20500%20User%20Guide.pdf>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:148
+msgid "SPARK Motor Controller"
+msgstr "SPARK电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:154
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:165
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:175
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:186
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:197
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:208
+msgid ""
+"While this motor controller is still legal for FRC use, the manufacturer has"
+" discontinued this product."
+msgstr "尽管此电机控制器仍可用于FRC，但制造商已停止使用该产品。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:156
+msgid ""
+"The `SPARK Motor Controller <https://www.revrobotics.com/rev-11-1200/>`__ "
+"from REV Robotics is an inexpensive brushed DC motor controller. The SPARK "
+"is controlled using the PWM interface. Limit switches may be wired directly "
+"to the SPARK to limit motor travel in one or both directions. For more "
+"information, see the `SPARK User's Manaul "
+"<https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>`__."
+msgstr ""
+"REV "
+"Robotics的`SPARK电动机控制器<https://www.revrobotics.com/rev-11-1200/>`__是一种廉价的有刷直流电动机控制器。使用PWM接口控制SPARK。限位开关可以直接连接到SPARK，以限制电机在一个或两个方向上的行程。有关更多信息，请参见“"
+" SPARK用户的手册<https://www.revrobotics.com/content/docs/REV-11-1200-UM.pdf>” "
+"__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:159
+msgid "Victor SP"
+msgstr "Victor SP"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:167
+msgid ""
+"The `Victor SP Motor Controller <https://www.ctr-"
+"electronics.com/downloads/pdf/Victor-SP-Quick-Start-Guide.pdf>`__ is a PWM "
+"motor controller from Cross The Road Electronics/VEX Robotics. The Victor SP"
+" has an electrically isolated metal housing for heat dissipation, making the"
+" use of the fan optional. The case is sealed to prevent debris from entering"
+" the controller. The controller is approximately half the size of previous "
+"models."
+msgstr ""
+"`Victor SP Motor Controller <https://www.ctr-electronics.com/downloads/pdf"
+"/Victor-SP-Quick-Start-Guide.pdf>`__是Cross The Road Electronics / VEX "
+"Robotics的PWM电机控制器。 Victor "
+"SP具有用于散热的电气隔离金属外壳，因此可以选择使用风扇。外壳被密封以防止碎屑进入控制器。该控制器的尺寸约为以前型号的一半。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:170
+msgid "Talon Motor Controller"
+msgstr "Talon电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:177
+msgid ""
+"The `Talon Motor Controller <https://ctr-"
+"electronics.com/Talon_User_Manual_1_1.pdf>`__ from Cross the Road "
+"Electronics is a PWM controlled brushed DC motor controller with passive "
+"cooling."
+msgstr ""
+"Cross the Road Electronics的`Talon电动机控制器<https://ctr-"
+"electronics.com/Talon_User_Manual_1_1.pdf>`__是具有被动冷却功能的PWM控制的有刷直流电动机控制器。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:180
+msgid "Victor 888 Motor Controller / Victor 884 Motor Controller"
+msgstr "Victor 888电机控制器/ Victor 884电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:188
+msgid ""
+"The `Victor 884 <https://content.vexrobotics.com/docs/ifi-v884-users-"
+"manual-9-25-06.pdf>`__ and `Victor 888 "
+"<https://content.vexrobotics.com/docs/217-2769-Victor888UserManual.pdf>`__ "
+"motor controllers from VEX Robotics are variable speed PWM motor controllers"
+" for use in FRC. The Victor 888 replaces the Victor 884, which is also "
+"usable in FRC."
+msgstr ""
+"VEX Robotics的`Victor 884 <https://content.vexrobotics.com/docs/ifi-v884"
+"-users-manual-9-25-06.pdf>`__和`Victor 888 "
+"<https://content.vexrobotics.com/docs/217-2769-Victor888UserManual.pdf>`__电动机控制器是用于FRC的变速PWM电动机控制器。Victor888替代了也在FRC中使用的Victor884。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:191
+msgid "Jaguar Motor Controller"
+msgstr "Jaguar电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:199
+msgid ""
+"The `Jaguar Motor Controller "
+"<https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581>`__ from "
+"VEX Robotics (formerly made by Luminary Micro and Texas Instruments) is a "
+"variable speed motor controller for use in FRC. For FRC, the Jaguar may only"
+" be controlled using the PWM interface."
+msgstr ""
+"VEX Robotics（以前由Luminary Micro和Texas Instruments生产）的`Jaguar Motor Controller"
+" "
+"<https://www.ti.com/lit/an/spma033a/spma033a.pdf?ts=1607574399581>`__是用于FRC的变速电动机控制器。对于FRC，Jaguar只能使用PWM接口进行控制。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:202
+msgid "DMC-60 and DMC-60C Motor Controller"
+msgstr "DMC-60和DMC-60C电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:210
+msgid ""
+"The DMC-60 is a PWM motor controller from Digilent. The DMC-60 features "
+"integrated thermal sensing and protection including current-foldback to "
+"prevent overheating and damage, and four multi-color LEDs to indicate speed,"
+" direction, and status for easier debugging. For more information, see the "
+"`DMC-60 reference manual "
+"<https://reference.digilentinc.com/_media/dmc-60/dmc60_rm.pdf>`__"
+msgstr ""
+"DMC-60是Digilent的PWM电机控制器。 DMC-"
+"60具有集成的热感应和保护功能，包括电流折返功能以防止过热和损坏，以及四个多色LED指示速度，方向和状态，以便于调试。有关更多信息，请参见`DMC-"
+"60参考手册<https://reference.digilentinc.com/_media/dmc-60/dmc60_rm.pdf>`__"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:212
+msgid ""
+"The DMC-60C adds CAN smart controller capabilities to the DMC-60 controller."
+" Due to the manufacturer discontinuing this product, the DMC-60C is only "
+"usable with PWM. For more information see the `DMC-60C Product Page "
+"<https://reference.digilentinc.com/dmc-60c/start/>`__"
+msgstr ""
+"DMC-60C在DMC-60控制器中增加了CAN智能控制器功能。由于制造商停止生产该产品，因此DMC-60C仅可与PWM一起使用。有关更多信息，请参见"
+"`DMC-60C产品页面<https://reference.digilentinc.com/dmc-60c/start/>`__"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:215
+msgid "Venom Motor Controller"
+msgstr "Venom电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:221
+msgid ""
+"The `Venom Motor Controller "
+"<https://www.playingwithfusion.com/productview.php?pdid=99>`__ from Playing "
+"With Fusion is integrated into a motor based on the original CIM.  Speed, "
+"current, temperature, and position are all measured onboard, enabling "
+"advanced control modes without complicated sensing and wiring schemes."
+msgstr ""
+"Play With "
+"Fusion的`Venom电机控制器<https://www.playingwithfusion.com/productview.php?pdid=99>`__已集成到基于原始CIM的马达中。速度，电流，温度和位置都在机上测量，从而实现了高级控制模式，而无需复杂的检测和接线方案。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:224
+msgid "Nidec Dynamo BLDC Motor with Controller"
+msgstr "带控制器的Nidec Dynamo BLDC电机"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:230
+msgid ""
+"The `Nidec Dynamo BLDC Motor with Controller "
+"<https://www.andymark.com/products/dynamo-brushless-motor-controller>`__ is "
+"the first brushless motor and controller legal in FRC.  This motor's "
+"controller is integrated into the back of the motor.  The `motor data sheet "
+"<https://andymark-weblinc.netdna-"
+"ssl.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__"
+" provides more device specifics."
+msgstr ""
+"`具有控制器的Nidec Dynamo BLDC电动机<https://www.andymark.com/products/dynamo-"
+"brushless-motor-"
+"controller>`__是FRC中首款合法的无刷电动机和控制器。该电动机的控制器集成在电动机的背面。`电机数据表<https://andymark-"
+"weblinc.netdna-"
+"ssl.com/media/W1siZiIsIjIwMTkvMDUvMDkvMDkvNTEvNDQvZjQwYjliZDctYzdkOC00MWFlLWIzZmYtZTQyNTJhYjRkNmIyL2FtLTM3NDAgTmlkZWMgRHluYW1vIERNMzAxMi0xMDYzLUIgU3BlYy5wZGYiXV0/am-3740%20Nidec%20Dynamo%20DM3012-1063-B%20Spec.pdf?sha=eb03d3f578fe782e>`__提供了更多设备详细信息。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:233
+msgid "SD540B and SD540C Motor Controllers"
+msgstr "SD540B和SD540C电机控制器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:239
+msgid ""
+"The SD540B and SD540C Motor Controllers from Mindsensors are controlled "
+"using PWM. CAN control is no longer available for the SD540C due to lack of "
+"manufacturer support. Limit switches may be wired directly to the SD540 to "
+"limit motor travel in one or both directions.  For more information see the "
+"`Mindsensors FRC page <http://www.mindsensors.com/68-frc>`__"
+msgstr ""
+"Mindsensors的SD540B和SD540C电机控制器使用PWM控制。由于缺乏制造商的支持，SD540C不再可以使用CAN控制。限位开关可以直接连接到SD540，以限制电机在一个或两个方向上的行程。有关更多信息，请参见`Mindsensors"
+" FRC页面<http://www.mindsensors.com/68-frc>`__"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:242
+msgid "Spike H-Bridge Relay"
+msgstr "Spike H-Bridge继电器"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:248
+msgid ""
+"While this relay is still legal for FRC use, the manufacturer has "
+"discontinued this product."
+msgstr "尽管该继电器仍可用于FRC，但制造商已停止使用该产品。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:250
+msgid ""
+"The Spike H-Bridge Relay from VEX Robotics is a device used for controlling "
+"power to motors or other custom robot electronics. When connected to a "
+"motor, the Spike provides On/Off control in both the forward and reverse "
+"directions. The Spike outputs are independently controlled so it can also be"
+" used to provide power to up to 2 custom electronic circuits. The Spike "
+"H-Bridge Relay should be connected to a relay output of the roboRIO and "
+"powered from the Power Distribution Panel. For more information, see the "
+"`Spike User’s Guide <https://content.vexrobotics.com/docs/spike-blue-guide-"
+"sep05.pdf>`__."
+msgstr ""
+"VEX Robotics的Spike "
+"H桥继电器是一种用于控制电动机或其他自定义机器人电子设备电源的设备。当连接到电动机时，Spike可以在正向和反向上提供开/关控制。 "
+"Spike输出是独立控制的，因此它也可以用于为最多2个定制电子电路提供电源。 Spike "
+"H桥继电器应连接到roboRIO的继电器输出，并由配电盘供电。有关更多信息，请参见 "
+"`Spike用户指南<https://content.vexrobotics.com/docs/spike-blue-guide-"
+"sep05.pdf>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:253
+msgid "Servo Power Module"
+msgstr "伺服电源模块"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:259
+msgid ""
+"The Servo Power Module from Rev Robotics is capable of expanding the power "
+"available to servos beyond what the roboRIO integrated power supply is "
+"capable of. The Servo Power Module provides up to 90W of 6V power across 6 "
+"channels. All control signals are passed through directly from the roboRIO. "
+"For more information, see the `Servo Power Module webpage "
+"<https://www.revrobotics.com/rev-11-1144/>`__."
+msgstr ""
+"Rev "
+"Robotics的伺服电源模块能够将伺服器可用的功率扩展到roboRIO集成电源所不具备的能力。伺服电源模块可通过6个通道提供高达90W的6V电源。所有控制信号都直接从roboRIO传递。有关更多信息，请参见`伺服电源模块网页<https://www.revrobotics.com/rev-11-1144/>`__。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:262
+msgid "Axis M1013/M1011/206 Ethernet Camera"
+msgstr "Axis M1013 / M1011 / 206以太网摄像机"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:268
+msgid ""
+"While this camera is legal for FRC use, the manufacturer has discontinued "
+"support."
+msgstr "尽管此相机在FRC是合法的，但制造商已停止支持。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:270
+msgid ""
+"The Axis M1013, M1011 and Axis 206 Ethernet cameras are used for capturing "
+"images for vision processing and/or sending video back to the Driver Station"
+" laptop. The camera should be wired to a 5V power output on the Voltage "
+"Regulator Module and an open ethernet port on the robot radio. For more "
+"information, see :ref:`Configuring an Axis Camera <docs/software/vision-"
+"processing/axis-camera/configuring-an-axis-camera:Configuring an Axis "
+"Camera>` and the `Axis 206 <https://www.axis.com/en-"
+"us/products/axis-206>`__, `Axis M1011 <https://www.axis.com/en-"
+"us/products/axis-m1011>`__, `Axis M1013 pages <https://www.axis.com/en-"
+"us/products/axis-m1013>`__."
+msgstr ""
+"Axis M1013，M1011和Axis 206以太网摄像机用于捕获图像以进行视觉处理和/或将视频发送回Driver "
+"Station便携式计算机。摄像机应连接至稳压器模块上的5V电源输出以及机器人无线电上的开放以太网端口。有关更多信息，请参阅 :ref:`配置Axis "
+"相机<docs/software/vision-processing/axis-camera/configuring-an-axis-"
+"camera:Configuring an Axis Camera>` and the `Axis 206 <https://www.axis.com"
+"/en-us/products/axis-206>`__, `Axis M1011 <https://www.axis.com/en-"
+"us/products/axis-m1011>`__, `Axis M1013 pages <https://www.axis.com/en-"
+"us/products/axis-m1013>`__."
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:273
+msgid "Microsoft Lifecam HD3000"
+msgstr "Microsoft Lifecam HD3000"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:279
+msgid ""
+"The Microsoft Lifecam HD3000 is a USB webcam that can be plugged directly "
+"into the roboRIO. The camera is capable of capturing up to 1280x720 video at"
+" 30 FPS. For more information about the camera, see the `Microsoft product "
+"page <https://www.microsoft.com/accessories/en-us/business/lifecam-hd-3000"
+"-for-business/t4h-00002>`__. For more information about using the camera "
+"with the roboRIO, see the :ref:`Vision Processing <docs/software/vision-"
+"processing/index:Vision Processing>` section of this documentation."
+msgstr ""
+"Microsoft Lifecam HD3000是可直接插入roboRIO的USB网络摄像头。该摄像机能够以30 "
+"FPS的速度捕获多达1280x720的视频。有关相机的更多信息，请参见`Microsoft产品页面<https://www.microsoft.com/accessories"
+"/en-us/business/lifecam-hd-3000-for-"
+"business/t4h-00002>`__。有关将相机与roboRIO结合使用的更多信息，请参阅本文档的“视觉处理”部分。"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:282
+msgid "Image Credits"
+msgstr "图片积分"
+
+#: ../../frc-docs/source/docs/controls-overviews/control-system-hardware.rst:284
+msgid ""
+"Image of roboRIO courtesy of National Instruments. Image of DMC-60 courtesy "
+"of Digilent. Image of SD540 courtesy of Mindsensors. Images of Jaguar Motor "
+"Controller, Talon SRX, Talon FX, Victor 888, Victor SP, Victor SPX, and "
+"Spike H-Bridge Relay courtesy of VEX Robotics, Inc. Image of SPARK MAX "
+"courtesy of REV Robotics. Lifecam, PDP, PCM, SPARK, and VRM photos courtesy "
+"of *FIRST*\\ |reg|. All other photos courtesy of AndyMark Inc."
+msgstr ""
+"roboRIO的图片由National Instruments提供。 DMC-60的图片由Digilent提供。 "
+"SD540图片由Mindsensors提供。Jaguar电机控制器，Talon SRX，Talon FX，Victor 888，Victor "
+"SP，Victor SPX和Spike H-Bridge继电器的图像由VEX Robotics，Inc.提供。SPARK MAX的图像由REV "
+"Robotics提供。 Lifecam，PDP，PCM，SPARK和VRM照片由*FIRST*\\ |reg|提供。所有其他照片均由AndyMark "
+"Inc.提供。"

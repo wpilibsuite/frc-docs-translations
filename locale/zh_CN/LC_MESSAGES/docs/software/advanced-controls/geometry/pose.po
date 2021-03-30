@@ -5,19 +5,113 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Atlus Zhang <atluslan@yahoo.co.jp>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 16:18+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-06-26 02:40+0000\n"
-"Last-Translator: Atlus Zhang <atluslan@yahoo.co.jp>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:2
+msgid "Translation, Rotation, and Pose"
+msgstr "平移、旋转和姿态"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:5
+msgid "Translation"
+msgstr "翻译"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:7
+msgid ""
+"Translation in 2 dimensions is represented by WPILib's ``Translation2d`` "
+"class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/geometry/Translation2d.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Translation2d.html>`__)."
+" This class has an x and y component, representing the point :math:`(x, y)` "
+"or the vector :math:`\\begin{bmatrix}x \\\\ y \\end{bmatrix}` on a "
+"2-dimensional coordinate system."
+msgstr ""
+"二维翻译由WPILib的Translation2d类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/geometry/Translation2d.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Translation2d.html>`__）表示。此类具有x和y分量，表示二维点上的点：math：`（x，y）`或矢量：math：`\\"
+" begin {bmatrix} x \\\\ y \\ end {bmatrix}`系统。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:9
+msgid ""
+"You can get the distance to another ``Translation2d`` object by using the "
+"``getDistance(Translation2d other)``, which returns the distance to another "
+"Translation2d by using the Pythagorean theorem."
+msgstr ""
+"您可以使用“ getDistance（Translation2d other）”来获取到另一个“ "
+"Translation2d”对象的距离，该距离可以通过毕达哥拉斯定理返回到另一个Translation2d的距离。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:11
+msgid ""
+"``Translation2d`` uses the C++ Units library. If you're planning on using "
+"other WPILib classes that use ``Translation2d`` in Java, such as the "
+"trajectory generator, make sure to use meters."
+msgstr ""
+"``Translation2d``使用了c++单元库。如果你计划使用Java中使用``Translation2d`` "
+"的其他WPILib类，如轨迹生成器，请确保使用仪表。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:14
+msgid "Rotation"
+msgstr "旋转"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:16
+msgid ""
+"Rotation in 2 dimensions is representated by WPILib's ``Rotation2d`` class "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Rotation2d.html>`__)."
+" This class has an angle component, which represents the robot's rotation "
+"relative to an axis on a 2-dimensional coordinate system. Positive rotations"
+" are counterclockwise."
+msgstr ""
+"二维尺寸的旋转由WPILib的``Rotation2d''类（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/geometry/Rotation2d.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Rotation2d.html>`__）表示。该类具有一个角度分量，该角度分量表示机器人相对于二维坐标系上的轴的旋转。正旋转为逆时针方向。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:18
+msgid ""
+"``Rotation2d`` uses the C++ Units library. The contructor in Java accepts "
+"either the angle in radians, or the sine and cosine of the angle, but the "
+"``fromDegrees`` method will construct a ``Rotation2d`` object from degrees."
+msgstr ""
+"``Rotation2d``使用C ++单元库。 "
+"Java中的构造函数可以接受以弧度为单位的角度，也可以接受该角度的正弦和余弦，但是fromDegrees方法将根据度数构造一个“ "
+"Rotation2d”对象。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:21
+msgid "Pose"
+msgstr "位姿"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/geometry/pose.rst:23
+msgid ""
+"Pose is a combination of both translation and rotation and is represented by"
+" the ``Pose2d`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/geometry/Pose2d.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Pose2d.html>`__)."
+" It can be used to describe the pose of your robot in the field coordinate "
+"system, or the pose of objects, such as vision targets, relative to your "
+"robot in the robot coordinate system. ``Pose2d`` can also represent the "
+"vector :math:`\\begin{bmatrix}x \\\\ y \\\\ \\theta\\end{bmatrix}`."
+msgstr ""
+"姿态是平移和旋转的组合，由“ Pose2d”类（Java a065bb98126709zz` __，`C ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Pose2d.html>`__）表示。它可用于描述您的机器人在场坐标系中的姿态，或相对于机器人在坐标系中的物体（例如视觉目标）的姿态。"
+" ``pose2d``也可以表示向量：\\ begin {bmatrix} x \\\\ y \\\\ \\ theta \\ end "
+"{bmatrix}`。"

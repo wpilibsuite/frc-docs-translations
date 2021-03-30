@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-12-13 16:17+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: 楚涵 张 <zhangchuhan1210@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,409 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:4
+msgid "Introduction to PID"
+msgstr "PID简介"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:6
+msgid ""
+"The PID controller is a commonly used feedback controller consisting of "
+"proportional, integral, and derivative terms, hence the name. This article "
+"will build up the definition of a PID controller term by term while trying "
+"to provide some intuition for how each of them behaves."
+msgstr ""
+"PID控制器是一种常用的反馈控制器，由比例项，积分项和微分项组成，因此也称为名称。本文将逐项建立PID控制器项的定义，同时试图直观地反应它们各自的行为。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:8
+msgid ""
+"First, we'll get some nomenclature for PID controllers out of the way. The "
+":term:`reference` is called the setpoint (the desired position) and the "
+":term:`output` is called the :term:`process variable` (the measured "
+"position). Below are some common variable naming conventions for relevant "
+"quantities."
+msgstr ""
+"首先，我们将对PID控制器进行一些命名。 :term:`reference`被称为设定点（期望位置）， :term:`output` 被称为 "
+":term:`process variable`（测量位置）。以下是有关数量的一些常见变量命名约定。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
+msgid ":math:`r(t)`"
+msgstr ":math:`r(t)`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
+msgid ":term:`setpoint`"
+msgstr ":term:`setpoint`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
+msgid ":math:`u(t)`"
+msgstr ":math:`u(t)`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:11
+msgid ":term:`control input`"
+msgstr ":term:`control input`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
+msgid ":math:`e(t)`"
+msgstr ":math:`e(t)`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
+msgid ":term:`error`"
+msgstr ":term:`error`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
+msgid ":math:`y(t)`"
+msgstr ":math:`y(t)`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:12
+msgid ":term:`output`"
+msgstr ":term:`output`"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:15
+msgid "The :term:`error` :math:`e(t)` is :math:`r(t) - y(t)`."
+msgstr "The :term:`error` :math:`e(t)` is :math:`r(t) - y(t)`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:17
+msgid ""
+"For those already familiar with PID control, this book's interpretation "
+"won't be consistent with the classical intuition of \"past\", \"present\", "
+"and \"future\" error. We will be approaching it from the viewpoint of modern"
+" control theory with proportional controllers applied to different physical "
+"quantities we care about. This will provide a more complete explanation of "
+"the derivative term's behavior for constant and moving :term:`setpoints "
+"<setpoint>`."
+msgstr ""
+"对于那些已经熟悉PID控制的人来说，本书的解释与“过去”，“现在”和“未来”错误的经典直觉是不一致的。我们将从现代控制理论的观点着手，将比例控制器应用于我们所关心的不同物理量。这将为导数项对于常数和移动：term：`setpoints"
+" <setpoint>`的行为提供更完整的解释。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:19
+msgid ""
+"The proportional term drives the position error to zero, the derivative term"
+" drives the velocity error to zero, and the integral term accumulates the "
+"area between the :term:`setpoint` and :term:`output` plots over time (the "
+"integral of position :term:`error`) and adds the current total to the "
+":term:`control input`. We'll go into more detail on each of these."
+msgstr ""
+"比例项将位置误差驱动为零，微分项将速度误差驱动为零，并且积分项会累积时间上的：term：`setpoint`和：term：`output之间的区域（位置的积分"
+" :term:`error`），然后将电流总和添加到控制输入中。我们将对每一个进行更详细的介绍。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:22
+msgid "Proportional Term"
+msgstr "比例项"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:24
+msgid "The *Proportional* term drives the position error to zero."
+msgstr "比例项将位置误差驱动至零。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:26
+msgid ""
+"u(t) = K_p e(t)\n"
+"\n"
+msgstr ""
+"u（t）= K_p e（t）\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:28
+msgid ""
+"where :math:`K_p` is the proportional gain and :math:`e(t)` is the error at "
+"the current time :math:`t`."
+msgstr "其中 :math:`K_p` 是成比例增益，:math:`e(t)` 是当前时间:math:`t`.的误差。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:30
+msgid ""
+"The below figure shows a block diagram for a :term:`system` controlled by a "
+"P controller."
+msgstr "下图显示了由P控制器控制的：term：`system的框图。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:36
+msgid ""
+"Proportional gains act like a \"software-defined springs\" that pull the "
+":term:`system` toward the desired position. Recall from physics that we "
+"model springs as :math:`F = - kx` where :math:`F` is the force applied, "
+":math:`k` is a proportional constant, and :math:`x` is the displacement from"
+" the equilibrium point. This can be written another way as :math:`F = "
+"k(0-x)` where :math:`0` is the equilibrium point. If we let the equilibrium "
+"point be our feedback controller's :term:`setpoint`, the equations have a "
+"one to one correspondence."
+msgstr ""
+"比例增益就像“软件定义的弹簧”一样，将： :term:`system`拉向所需位置。从物理学中回想起，我们将弹簧建模为 :math:`F = - "
+"kx`，其中:math:`F`是施加的力， :math:`k`是比例常数，:math:`x` "
+"是位移。从平衡点开始这可以用另一种方式写成：:math:`F = k(0-x)` 其中:math:`0` "
+"是平衡点。如果我们将平衡点设为反馈控制器的：term：`setpoint`，则方程具有一对一的对应关系。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:38
+msgid ""
+"F &= k(r - x) \\\\\n"
+"u(t) &= K_p e(t) = K_p(r(t) - y(t))\n"
+"\n"
+msgstr ""
+"F &= k(r - x) \\\\\n"
+"u(t) &= K_p e(t) = K_p(r(t) - y(t))\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:42
+msgid ""
+"so the \"force\" with which the proportional controller pulls the "
+":term:`system's <system>` :term:`output` toward the :term:`setpoint` is "
+"proportional to the :term:`error`, just like a spring."
+msgstr ""
+"因此，比例控制器将 :term:`system's 1` :term:`output`拉向 :term:`setpoint` 的“力”与 "
+":term:`error`成正比，就像弹簧一样。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:45
+msgid "Derivative Term"
+msgstr "导数项"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:47
+msgid "The *Derivative* term drives the velocity error to zero."
+msgstr "*导数*项将速度误差驱动为零。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:49
+msgid ""
+"u(t) = K_p e(t) + K_d \\frac{de}{dt}\n"
+"\n"
+msgstr ""
+"u(t) = K_p e(t) + K_d \\frac{de}{dt}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:52
+msgid ""
+"where :math:`K_p` is the proportional gain, :math:`K_d` is the derivative "
+"gain, and :math:`e(t)` is the error at the current time :math:`t`."
+msgstr "其中 :math:`K_p`是比例增益，:math:`K_d`是微分增益，:math:`e(t)` 是当前时间 :math:`t`的误差。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:54
+msgid ""
+"The below figure shows a block diagram for a :term:`system` controlled by a "
+"PD controller."
+msgstr "下图显示了由PD控制器控制的：term：`system的框图。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:60
+msgid ""
+"A PD controller has a proportional controller for position (:math:`K_p`) and"
+" a proportional controller for velocity (:math:`K_d`). The velocity "
+":term:`setpoint` is implicitly provided by how the position :term:`setpoint`"
+" changes over time. To prove this, we will rearrange the equation for a PD "
+"controller."
+msgstr ""
+"PD控制器具有用于位置的比例控制器(:math:`K_p`) 和用于速度的比例控制器 "
+"(:math:`K_d`)。速度:term:`setpoint`是由位置 :term:`setpoint` "
+"随时间变化的方式隐式提供的。为了证明这一点，我们将重新排列PD控制器的公式。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:62
+msgid ""
+"u_k = K_p e_k + K_d \\frac{e_k - e_{k-1}}{dt}\n"
+"\n"
+msgstr ""
+"u_k = K_p e_k + K_d \\frac{e_k - e_{k-1}}{dt}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:65
+msgid ""
+"where :math:`u_k` is the :term:`control input` at timestep :math:`k` and "
+":math:`e_k` is the :term:`error` at timestep :math:`k`. :math:`e_k` is "
+"defined as :math:`e_k = r_k - x_k` where :math:`r_k` is the :term:`setpoint`"
+" and :math:`x_k` is the current :term:`state` at timestep :math:`k`."
+msgstr ""
+"其中 :math:`u_k` 是在时间步长 :math:`k`的:term:`control input`， :math:`e_k` "
+"是在时间步长:math:`k`的:term:`error` ， :math:`e_k` 被定义为:math:`e_k = r_k - "
+"x_k`，其中:math:`r_k` 为 :term:`setpoint`，:math:`x_k`为时间步长:math:`k`时的当前 "
+":term:`state`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:67
+msgid ""
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - x_k - r_{k-1} + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - r_{k-1} - x_k + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - r_{k-1}) - (x_k - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\left(\\frac{r_k - r_{k-1}}{dt} -\n"
+"  \\frac{x_k - x_{k-1}}{dt}\\right)\n"
+"\n"
+msgstr ""
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - x_k) - (r_{k-1} - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - x_k - r_{k-1} + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{r_k - r_{k-1} - x_k + x_{k-1}}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\frac{(r_k - r_{k-1}) - (x_k - x_{k-1})}{dt} \\\\\n"
+"u_k &= K_p (r_k - x_k) + K_d \\left(\\frac{r_k - r_{k-1}}{dt} -\n"
+"\\frac{x_k - x_{k-1}}{dt}\\right)\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:75
+msgid ""
+"Notice how :math:`\\frac{r_k - r_{k-1}}{dt}` is the velocity of the "
+":term:`setpoint`. By the same reason, :math:`\\frac{x_k - x_{k-1}}{dt}` is "
+"the :term:`system's <system>` velocity at a given timestep. That means the "
+":math:`K_d` term of the PD controller is driving the estimated velocity to "
+"the :term:`setpoint` velocity."
+msgstr ""
+"注意:math:`\\frac{r_k - "
+"r_{k-1}}{dt}`是：term：`setpoint`的速度的方式。出于相同的原因，:math:`\\frac{x_k - "
+"x_{k-1}}{dt}` 是 :term:`system's "
+"在给定时间步长下的速度。这意味着PD控制器的:math:`K_d`项将估计的速度驱动到:term:`setpoint` 速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:77
+msgid ""
+"If the :term:`setpoint` is constant, the implicit velocity :term:`setpoint` "
+"is zero, so the :math:`K_d` term slows the :term:`system` down if it's "
+"moving. This acts like a \"software-defined damper\". These are commonly "
+"seen on door closers, and their damping force increases linearly with "
+"velocity."
+msgstr ""
+"如果：term：`setpoint`是常数，则隐式速度：term：`setpoint`为零，因此：math：`K_d`项在移动时会降低：term：`system的速度。这就像一个“软件定义的阻尼器”。这些通常在闭门器上看到，它们的阻尼力随速度线性增加。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:80
+msgid "Integral Term"
+msgstr "积分项"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:82
+msgid ""
+"Integral gain is generally not recommended for FRC\\ |reg| use. There are "
+"better approaches to fix :term:`steady-state error` like using feedforwards "
+"or constraining when the integral control acts using other knowledge of the "
+":term:`system`."
+msgstr ""
+"积分增益一般不推荐用于FRC。有更好的方法来修复 :term:`steady-state error` ，例如使用前馈或在积分控制使用 "
+":term:`system`的其他知识进行操作时进行约束。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:84
+msgid ""
+"The *Integral* term accumulates the area between the :term:`setpoint` and "
+":term:`output` plots over time (i.e., the integral of position "
+":term:`error`) and adds the current total to the :term:`control input`. "
+"Accumulating the area between two curves is called integration."
+msgstr ""
+"将:term: ' setpoint '和:term: ' output '之间的面积随着时间累积(即position:term: ' error "
+"'的积分)，并将当前的总和加到:term: ' control input '。累积两条曲线之间的面积称为积分。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:86
+msgid ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau\n"
+"\n"
+msgstr "u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:89
+msgid ""
+"where :math:`K_p` is the proportional gain, :math:`K_i` is the integral "
+"gain, :math:`e(t)` is the error at the current time :math:`t`, and "
+":math:`\\tau` is the integration variable."
+msgstr ""
+"其中：math：`K_p`是比例增益，：math：`K_i`是积分增益，：math：`e（t）`是当前时间 "
+":math:`t`的误差`和:math:`\\tau` 是集成变量。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:91
+msgid ""
+"The Integral integrates from time :math:`0` to the current time :math:`t`. "
+"we use :math:`\\tau` for the integration because we need a variable to take "
+"on multiple values throughout the integral, but we can't use :math:`t` "
+"because we already defined that as the current time."
+msgstr ""
+"积分从时间:math:`0`到当前时间 "
+":math:`t`进行积分。我们使用:math:`\\tau`来进行积分，因为我们需要一个变量来在整个积分中采用多个值，但是不能使用:math:`t`来实现，因为我们已经将其定义为当前时间。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:93
+msgid ""
+"The below figure shows a block diagram for a :term:`system` controlled by a "
+"PI controller."
+msgstr "下图显示了由PI控制器控制的 :term:`system` 的框图。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:99
+msgid ""
+"When the :term:`system` is close the :term:`setpoint` in steady-state, the "
+"proportional term may be too small to pull the :term:`output` all the way to"
+" the :term:`setpoint`, and the derivative term is zero. This can result in "
+":term:`steady-state error` as shown in figure 2.4"
+msgstr ""
+"当 :term:`system` 处于稳定状态时关闭系统 :term:`setpoint`时，比例项可能太小而无法将输出一直拉至 "
+":term:`setpoint`，导数项为零。这可能导致 :term:`steady-state error` ，如图2.4所示。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:105
+msgid ""
+"A common way of eliminating :term:`steady-state error` is to integrate the "
+":term:`error` and add it to the :term:`control input`. This increases the "
+":term:`control effort` until the :term:`system` converges. Figure 2.4 shows "
+"an example of :term:`steady-state error` for a flywheel, and figure 2.5 "
+"shows how an integrator added to the flywheel controller eliminates it. "
+"However, too high of an integral gain can lead to overshoot, as shown in "
+"figure 2.6."
+msgstr ""
+"消除 :term:`steady-state error` 的常见方法是将 :term:`error` 积分，并将其添加到:term:`control "
+"input`中。这会增加 :term:`control effort` ，直到:term:`system` 收敛为止。图2.4显示了飞轮 :term"
+":`steady-state "
+"error`的一个例子，图2.5显示了添加到飞轮控制器的积分器如何消除稳态误差。然而，过高的积分增益会导致超调，如图2.6所示。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:112
+msgid "PID Controller Definition"
+msgstr "PID控制器定义"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:114
+msgid ""
+"For information on using the WPILib provided PIDController, see the "
+":ref:`relevant article <docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib>`."
+msgstr ""
+"有关使用WPILib提供的PIDController的信息，请参见 :ref:`relevant article <docs/software"
+"/advanced-controls/controllers/pidcontroller:PID Control in WPILib>`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:116
+msgid ""
+"When these terms are combined, one gets the typical definition for a PID "
+"controller."
+msgstr "将这些术语组合在一起，就可以得到PID控制器的典型定义。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:118
+msgid ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau + K_d \\frac{de}{dt}\n"
+"\n"
+msgstr ""
+"u(t) = K_p e(t) + K_i \\int_0^t e(\\tau) \\,d\\tau + K_d \\frac{de}{dt}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:121
+msgid ""
+"where :math:`K_p` is the proportional gain, :math:`K_i` is the integral "
+"gain, :math:`K_d` is the derivative gain, :math:`e(t)` is the error at the "
+"current time :math:`t`, and :math:`\\tau` is the integration variable."
+msgstr ""
+"其中 :math:`K_p` 是比例增益，:math:`K_i` 是积分增益，:math:`K_d`是微分增益， :math:`e(t)` "
+"是当前时间的误差。 :math:`t`和 :math:`\\tau`是积分变量。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:123
+msgid "The below figure shows a block diagram for a PID controller."
+msgstr "下图显示了PID控制器的框图。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:130
+msgid "Response Types"
+msgstr "回应类型"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:132
+msgid ""
+"A :term:`system` driven by a PID controller generally has three types of "
+"responses: underdamped, over-damped, and critically damped. These are shown "
+"in figure 2.8."
+msgstr "由PID控制器驱动的 :term:`system` 通常具有三种类型的响应：欠阻尼，过阻尼和临界阻尼。这些如图2.8所示。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:134
+msgid ""
+"For the :term:`step responses <step response>` in figure 2.7, :term:`rise "
+"time` is the time the :term:`system` takes to initially reach the reference "
+"after applying the :term:`step input`. :term:`Settling time <settling time>`"
+" is the time the :term:`system` takes to settle at the :term:`reference` "
+"after the :term:`step input` is applied."
+msgstr ""
+"对于图2.7中的 :term:`step responses <step response>，:term:`rise time` "
+"是指:term:`system`在应用 :term:`step input`后初始到达参考所花费的时间。:term:`Settling "
+"time<settling time>是指在应用:term:`step input` 之后，:term:`system` 在 "
+":term:`reference` 考建立时所花费的时间。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:136
+msgid ""
+"An *underdamped* response oscillates around the :term:`reference` before "
+"settling. An *overdamped* response"
+msgstr "在建立之前，*衰减*的响应会在 :term:`reference` 附近振荡。 *过度*响应"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/introduction-to-pid.rst:142
+msgid ""
+"is slow to rise and does not overshoot the :term:`reference`. A *critically "
+"damped* response has the fastest :term:`rise time` without overshooting the "
+":term:`reference`."
+msgstr ""
+"上升缓慢，并且不会超出 :term:`reference`。 “临界阻尼”响应具有最快的 :term:`rise time` ，而不会超出 "
+":term:`reference`。"

@@ -5,19 +5,110 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2021
-# Atlus Zhang <atluslan@yahoo.co.jp>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 16:18+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Atlus Zhang <atluslan@yahoo.co.jp>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:4
+msgid "Combining Feedforward and PID Control"
+msgstr "前馈与PID控制相结合"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:6
+msgid "Todo"
+msgstr "待办事项"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:6
+msgid "link to conceptual article when available"
+msgstr "可用时链接到概念文章"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:8
+msgid ""
+"This article covers the in-code implementation of combined feedforward/PID "
+"control with WPILib's provided library classes.  Documentation describing "
+"the involved concepts in more detail is forthcoming."
+msgstr "本文介绍了结合前馈/ PID控制和WPILib提供的库类的代码内实现。以及详细描述所涉及概念的文档。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:10
+msgid ""
+"Feedforward and feedback controllers can each be used in isolation, but are "
+"most effective when combined together.  Thankfully, combining these two "
+"control methods is *exceedingly* straightforward - one simply adds their "
+"outputs together."
+msgstr "前馈和反馈控制器可以单独使用，但组合在一起时最有效。值得庆幸的是，将这两种控制方法结合起来*非常*简单明了-只需将它们的输出相加即可。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:13
+msgid "Using Feedforward with a PIDController"
+msgstr "将前馈与PIDController一起使用"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:15
+msgid ""
+"Users familiar with the old ``PIDController`` class may notice the lack of "
+"any feedforward gain in the new controller.  As users are expected to use "
+"the controller output themselves, there is no longer any need for the "
+"``PIDController`` to implement feedforward - users may simply add any "
+"feedforward they like to the output of the controller before sending it to "
+"their motors:"
+msgstr ""
+"熟悉旧的``PIDController''类的用户可能会注意到新控制器中缺少任何前馈增益。由于期望用户自己使用控制器输出，因此不再需要``PIDController"
+"''来实现前馈-用户可以在将其喜欢的前馈添加到控制器的输出之前，只需将其发送到电机即可："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:29
+msgid ""
+"Moreover, feedforward is a separate feature entirely from feedback, and thus"
+" has no reason to be handled in the same controller object, as this violates"
+" separation of concerns.  WPILib comes with several helper classes to "
+"compute accurate feedforward voltages for common FRC\\ |reg| mechanisms - "
+"for more information, see :ref:`docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib`."
+msgstr ""
+"此外，前馈是与反馈完全独立的功能，因此没有理由在同一控制器对象中进行处理，因为这违反了关注点分离。 WPILib带有多个帮助程序类，可以为常见的FRC "
+"\\ | reg |计算准确的前馈电压。机制-有关更多信息，请参阅:ref:`docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:32
+msgid "Using Feedforward Components with PID"
+msgstr "通过PID使用前馈组件"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:34
+msgid ""
+"Since feedforward voltages are physically meaningful, it is best to use the "
+"``setVoltage()`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__)"
+" method when applying them to motors to compensate for \"voltage sag\" from "
+"the battery."
+msgstr ""
+"由于前馈电压在物理上是有意义的，因此在将其应用于电动机时，最好使用setVoltage（）（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/SpeedController.html#setVoltage(double)>`__，C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SpeedController.html#a8252b1dbd027218c7966b15d0f9faff7>`__）方法来补偿电池的“电压骤降”。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:36
+msgid ""
+"What might a more complete example of combined feedforward/PID control look "
+"like?  Consider the :ref:`drive example <docs/software/advanced-"
+"controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` "
+"from the feedforward page.  We can easily modify this to include feedback "
+"control (with a ``SimpleMotorFeedforward`` component):"
+msgstr ""
+"前馈/ PID组合控制的更完整示例是什么样子？考虑前馈页面上的驱动器示例<docs / software / advanced-controls / "
+"controllers / feedforward：将前馈用于控制机制>。我们可以很容易地修改它以包括反馈控制（带有“ "
+"SimpleMotorFeedforward”组件）："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:59
+msgid "Other mechanism types can be handled similarly."
+msgstr "其他机制类型也可以类似地处理。"

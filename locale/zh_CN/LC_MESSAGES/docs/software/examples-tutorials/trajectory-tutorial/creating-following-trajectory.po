@@ -5,18 +5,307 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# tianshuang Zhang <2948026254@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-31 04:18+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: 楚涵 张 <zhangchuhan1210@126.com>, 2020\n"
+"Last-Translator: tianshuang Zhang <2948026254@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:2
+msgid "Step 4: Creating and Following a Trajectory"
+msgstr "步骤4：创建和遵循轨迹"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:4
+msgid ""
+"With our drive subsystem written, it is now time to generate a trajectory "
+"and write an autonomous command to follow it."
+msgstr "编写了驱动子系统后，现在是时候生成一个轨迹并编写一个自动阶段的指令来遵循它。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:6
+msgid ""
+"As per the :ref:`standard command-based project structure "
+"<docs/software/commandbased/structuring-command-based-project:Structuring a "
+"Command-Based Robot Project>`, we will do this in the "
+"``getAutonomousCommand`` method of the ``RobotContainer`` class.  The full "
+"method from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will break down the different "
+"parts of the method in more detail."
+msgstr ""
+"根据基于指令的标准项目结构<docs/software/commandbased/structuring-command-based-"
+"project:Structuring a Command-Based Robot Project>，我们将在“ RobotContainer”类的“ "
+"getAutonomousCommand”方法中执行此操作。可以在下面看到RamseteCommand示例项目的完整方法（Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>"
+" __，C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>"
+" __）。本文的其余部分将更详细地介绍该方法的不同部分。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:27
+msgid "Configuring the Trajectory Constraints"
+msgstr "配置轨迹约束"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:29
+msgid ""
+"First, we must set some configuration parameters for the trajectory which "
+"will ensure that the generated trajectory is followable."
+msgstr "首先，我们必须为轨迹设置一些配置参数，以确保生成的轨迹是可追踪的。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:32
+msgid "Creating a Voltage Constraint"
+msgstr "创建电压约束"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:34
+msgid ""
+"The first piece of configuration we will need is a voltage constraint.  This"
+" will ensure that the generated trajectory never commands the robot to go "
+"faster than it is capable of achieving with the given voltage supply:"
+msgstr "我们需要的第一个配置是电压约束。这将确保生成的轨迹不会命令机器人以比给定电压供电下所能达到的速度更快的速度前进:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:54
+msgid ""
+"Notice that we set the maximum voltage to 10V, rather than the nominal "
+"battery voltage of 12V.  This gives us some \"headroom\" to deal with "
+"\"voltage sag\" during operation."
+msgstr "注意，我们将最大电压设置为10V，而不是标称电池电压12V。这给了我们一些“净空”来处理运行过程中的“电压跌落”。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:57
+msgid "Creating the Configuration"
+msgstr "创建配置"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:59
+msgid ""
+"Now that we have our voltage constraint, we can create our "
+"``TrajectoryConfig`` instance, which wraps together all of our path "
+"constraints:"
+msgstr "现在我们有了电压约束，我们可以创建“ TrajectoryConfig”实例，该实例将所有路径约束包装在一起："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:80
+msgid "Generating the Trajectory"
+msgstr "产生轨迹"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:82
+msgid ""
+"With our trajectory configuration in hand, we are now ready to generate our "
+"trajectory.  For this example, we will be generating a \"clamped cubic\" "
+"trajectory - this means we will specify full robot poses at the endpoints, "
+"and positions only for interior waypoints (also known as \"knot points\").  "
+"As elsewhere, all distances are in meters."
+msgstr ""
+"有了轨迹配置之后，我们现在就可以生成轨迹了。对于这个例子，我们将生成一个“三次样条”轨迹-"
+"这意味着我们将指定机器人在端点的完整姿态，并且只指定内部路径点的位置(也称为“结点”)。和其他地方一样，所有的距离都以米为单位。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:102
+msgid ""
+"Instead of generating the trajectory on the roboRIO as outlined above, one "
+"can also :ref:`import a PathWeaver JSON <docs/software/wpilib-"
+"tools/pathweaver/integrating-robot-program:Importing a PathWeaver JSON>`."
+msgstr ""
+"除了上面概述的在roboRIO上生成轨迹外，还可以用:ref:`import a PathWeaver JSON <docs/software"
+"/wpilib-tools/pathweaver/integrating-robot-program:Importing a PathWeaver "
+"JSON>`。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:105
+msgid "Creating the RamseteCommand"
+msgstr "创建Ramsete Command"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:107
+msgid ""
+"We will first reset our robot's pose to the starting pose of the trajectory."
+" This ensures that the robot's location on the coordinate system and the "
+"trajectory's starting position are the same."
+msgstr "首先，我们将机器人的姿态重置为轨迹的初始位姿。这保证了机器人在坐标系中的位置和轨迹的起始位置是相同的。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:128
+msgid ""
+"It is very important that the initial robot pose match the first pose in the"
+" trajectory.  For the purposes of our example, the robot will be reliably "
+"starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use,"
+" however, it is probably not desirable to base your coordinate system on the"
+" robot position, and so the starting position for both the robot and the "
+"trajectory should be set to some other value.  If you wish to use a "
+"trajectory that has been defined in robot-centric coordinates in such a "
+"situation, you can transform it to be relative to the robot's current pose "
+"using the ``transformBy`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/trajectory/Trajectory.html#transformBy(edu.wpi.first.wpilibj.geometry.Transform2d)>`_,"
+"  `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_)."
+"  For more information about transforming trajectories, see "
+":ref:`docs/software/advanced-controls/trajectories/transforming-"
+"trajectories:Transforming Trajectories`."
+msgstr ""
+"初始机器人姿态必须与轨迹中的第一个姿态相匹配，这一点非常重要。就我们的示例而言，机器人将可靠地从``（0,0）``的位置开始，并以``0''的方向启动。但是，在实际使用中，可能不希望将坐标系建立在机器人的位置上，因此，机器人和轨迹的起始位置都应设置为其他值。如果您希望在这种情况下使用以机器人为中心的坐标定义的轨迹，可以使用transformBy方法（Java"
+" "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/trajectory/Trajectory.html#transformBy(edu.wpi.first.wpilibj.geometry.Transform2d)>"
+" _，C ++）将其转换为相对于机器人当前姿势的轨迹。 "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_）。有关变换轨迹的更多信息，请参阅：docs"
+" / software / advanced-controls / trajectories / transforming-"
+"trajectories：Transforming Trajectories。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:130
+msgid ""
+"Now that we have a trajectory, we can create a command that, when executed, "
+"will follow that trajectory.  To do this, we use the ``RamseteCommand`` "
+"class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1RamseteCommand.html>`__)"
+msgstr ""
+"现在我们有了一条轨迹，我们可以创建一个指令，该指令在执行时将遵循该轨迹。为此，我们使用``RamseteCommand``类（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1RamseteCommand.html>`__）"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:150
+msgid ""
+"This declaration is fairly substantial, so we'll go through it argument-by-"
+"argument:"
+msgstr "这个声明是相当重要的，所以我们将逐个逐个地讨论它:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:152
+msgid ""
+"The trajectory: This is the trajectory to be followed; accordingly, we pass "
+"the command the trajectory we just constructed in our earlier steps."
+msgstr "轨迹:这是要遵循的轨迹;相应地，我们将在前面的步骤中构造的轨迹传递给指令。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:153
+msgid ""
+"The pose supplier: This is a method reference (or lambda) to the :ref:`drive"
+" subsystem method that returns the pose <docs/software/examples-tutorials"
+"/trajectory-tutorial/creating-drive-subsystem:Odometry Accessor Method>`.  "
+"The RAMSETE controller needs the current pose measurement to determine the "
+"required wheel outputs."
+msgstr ""
+"“pose供应商”:这是一个 :ref:`drive subsystem method that returns the pose "
+"<docs/software/examples-tutorials/trajectory-tutorial/creating-drive-"
+"subsystem:Odometry Accessor Method>`的方法引用(或lambda)。横夯控制器需要当前位姿测量来确定所需的车轮输出。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:154
+msgid ""
+"The RAMSETE controller: This is the ``RamseteController`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/RamseteController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1RamseteController.html>`__)"
+" that will perform the path-following computation that translates the "
+"current measured pose and trajectory state into a chassis speed setpoint."
+msgstr ""
+"RAMSETE控制器：这是“ RamseteController”对象（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/RamseteController.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1RamseteController.html>`__），它将执行路径跟踪计算，该计算将当前测得的姿态和轨迹状态转换为底盘速度设定值。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:155
+msgid ""
+"The drive feedforward: This is a ``SimpleMotorFeedforward`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/SimpleMotorFeedforward.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SimpleMotorFeedforward.html>`__)"
+" that will automatically perform the correct feedforward calculation with "
+"the feedforward gains (``kS``, ``kV``, and ``kA``) that we obtained from the"
+" drive characterization tool."
+msgstr ""
+"驱动器前馈：这是一个``SimpleMotorFeedforward''对象（Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/SimpleMotorFeedforward.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SimpleMotorFeedforward.html>`__），将自动使用前馈增益（``kS''，``kV''执行正确的前馈计算，以及我们从驱动器表征工具获得的``kA''）。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:156
+msgid ""
+"The drive kinematics: This is the ``DifferentialDriveKinematics`` object "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveKinematics.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1DifferentialDriveKinematics.html>`__)"
+" that we constructed earlier in our constants file, and will be used to "
+"convert chassis speeds to wheel speeds."
+msgstr ""
+"驱动器运动学：这是我们在常量文件中先前构建的“ DifferentialDriveKinematics”对象（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/kinematics/DifferentialDriveKinematics.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1DifferentialDriveKinematics.html>`__），将用于将底盘速度转换为车轮速度。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:157
+msgid ""
+"The wheel speed supplier: This is a method reference (or lambda) to the "
+":ref:`drive subsystem method that returns the wheel speeds <docs/software"
+"/examples-tutorials/trajectory-tutorial/creating-drive-subsystem:Encoder "
+"Accessor Method>`"
+msgstr ""
+"车轮速度提供者:这是 :ref:`drive subsystem method that returns the wheel speeds "
+"<docs/software/examples-tutorials/trajectory-tutorial/creating-drive-"
+"subsystem:Encoder Accessor Method>`一个方法引用(或lambda)。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:158
+msgid ""
+"The left-side PIDController: This is the ``PIDController`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__)"
+" that will track the left-side wheel speed setpoint, using the P gain that "
+"we obtained from the drive characterization tool."
+msgstr ""
+"左侧PIDController：这是“ PIDController”对象（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__），它将使用从驱动器表征获得的P增益跟踪左侧车轮速度设定值。工具。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:159
+msgid ""
+"The right-side PIDController: This is the ``PIDController`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__)"
+" that will track the right-side wheel speed setpoint, using the P gain that "
+"we obtained from the drive characterization tool."
+msgstr ""
+"右侧PIDController：这是“ PIDController”对象（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__），这将跟踪右侧车轮速度设定值，使用我们从驱动特性工具获得的P增益。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:160
+msgid ""
+"The output consumer: This is a method reference (or lambda) to the "
+":ref:`drive subsystem method that passes the voltage outputs to the drive "
+"motors <docs/software/examples-tutorials/trajectory-tutorial/creating-drive-"
+"subsystem:Voltage-Based Drive Method>`."
+msgstr ""
+"输出消费者:这是 :ref:`drive subsystem method that passes the voltage outputs to the"
+" drive motors <docs/software/examples-tutorials/trajectory-tutorial"
+"/creating-drive-subsystem:Voltage-Based Drive Method>`的一个方法引用(或lambda)。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:161
+msgid ""
+"The robot drive: This is the drive subsystem itself, included to ensure the "
+"command does not operate on the drive at the same time as any other command "
+"that uses the drive."
+msgstr "机器人驱动器:这是驱动器子系统本身，包含它是为了确保指令不会与使用驱动器的任何其他指令同时在驱动器上操作。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:163
+msgid ""
+"Finally, note that we append a final \"stop\" command in sequence after the "
+"path-following command, to ensure that the robot stops moving at the end of "
+"the trajectory."
+msgstr "最后需要注意的是，我们在路径跟随指令之后依次添加最后一个“stop”指令，以确保机器人在轨迹结束时停止移动"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:166
+msgid "Video"
+msgstr "视频"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-following-trajectory.rst:168
+msgid ""
+"If all has gone well, your robot's autonomous routine should look something "
+"like this:"
+msgstr "如果一切顺利，你的机器人的自主程序应该看起来像这样:"

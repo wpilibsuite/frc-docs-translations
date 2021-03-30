@@ -7,15 +7,16 @@
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
 # Atlus Zhang <atluslan@yahoo.co.jp>, 2021
 # 8192 DHC <hehehehehehe886@gmail.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-24 04:04+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
-"Last-Translator: 8192 DHC <hehehehehehe886@gmail.com>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,3 +40,783 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:7
 msgid "From PID to Model-Based Control"
 msgstr "从PID到基于模型的控制"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:9
+msgid ""
+"When tuning PID controllers, we focus on fiddling with controller parameters"
+" relating to the current, past, and future :term:`error` (P, I and D terms) "
+"rather than the underlying system states. While this approach works in a lot"
+" of situations, it is an incomplete view of the world."
+msgstr ""
+"当调优PID控制器时，我们关注于摆弄与当前、过去和未来 :term:`error` "
+"(P、I和D项)相关的控制器参数，而不是底层系统状态。虽然这种方法在很多情况下都有效，但它是一种不完整的世界观。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:11
+msgid ""
+"Model-based control focuses on developing an accurate model of the "
+":term:`system` (mechanism) we are trying to control. These models help "
+"inform :term:`gains <gain>` picked for feedback controllers based on the "
+"physical responses of the system, rather than an arbitrary proportional "
+":term:`gain` derived through testing. This allows us not only to predict "
+"ahead of time how a system will react, but also test our controllers without"
+" a physical robot and save time debugging simple bugs."
+msgstr ""
+"基于模型的控制重点在于开发我们试图控制的 :term:`system` (机制)的精确模型。这些模型帮助反馈控制器根据系统的物理响应选择 "
+":term:`gains 1`，而不是通过测试得到的任意比例 "
+":term:`gain`。这使我们不仅能够提前预测系统的反应，而且可以在没有物理机器人的情况下测试控制器，节省调试简单bug的时间。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:13
+msgid ""
+"State-space control makes extensive use of linear algebra. More on linear "
+"algebra in modern control theory, including an introduction to linear "
+"algebra and resources, can be found in Chapter 4 of `Controls Engineering in"
+" FRC <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__."
+msgstr ""
+"状态空间控制广泛使用线性代数。更多关于现代控制理论中的线性代数，包括线性代数的介绍和资源，可以在`Controls Engineering in FRC"
+" <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`的第4章中找到。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:15
+msgid ""
+"If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` "
+"or its sister classes, or used FRC-Characterization to pick PID :term:`gains"
+" <gain>` for you, you're already familiar with model-based control! The "
+"``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor "
+"(or arm, or drivetrain) will react to voltage. We can put these constants "
+"into standard state-space notation using WPILib's ``LinearSystem``, "
+"something we will do in a later article."
+msgstr ""
+"如果您为SimpleMotorFeedforward或它的姐妹类使用过WPILib的前馈类，或者使用frc特性为您选择PID:term:`gains "
+"1` ，那么您已经熟悉基于模型的控制了。 kv和ka :term:`gains "
+"2`可用于描述电机(或手臂，或传动系统)对电压的反应。我们可以使用WPILib的线性系统将这些常数放入标准状态空间符号中，我们将在后面的文章中做一些事情。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:18
+msgid "Vocabulary"
+msgstr "词汇表"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:20
+msgid ""
+"For the background vocabulary that will be used throughout this article, see"
+" the :ref:`Glossary <docs/software/advanced-controls/state-space/state-"
+"space-glossary:State-Space Glossary>`."
+msgstr ""
+"本文将使用的背景词汇，请参见:ref:`Glossary <docs/software/advanced-controls/state-space"
+"/state-space-glossary:State-Space Glossary>`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:23
+msgid "Introduction to Linear Algebra"
+msgstr "线性代数导论"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:25
+msgid ""
+"For a short and intuitive introduction to the core concepts of Linear "
+"Algebra, we recommend chapters 1 through 4 of `3Blue1Brown's Essence of "
+"linear algebra series "
+"<https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__"
+" (Vectors, what even are they?, Linear combinations, span, and basis "
+"vectors, Linear transformations and matrices, and Matrix multiplication as "
+"composition)."
+msgstr ""
+"为了简短，直观地介绍线性代数的核心概念，我们建议`3Blue1Brown线性代数系列<https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab>`__的第1章至第4章（向量，它们甚至是什么？，线性组合，跨度和基向量，线性变换和矩阵，以及矩阵乘法作为组合）。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:28
+msgid "What is State-Space?"
+msgstr "什么是状态空间？"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:30
+msgid ""
+"Recall that 2D space has two axes: x and y. We represent locations within "
+"this space as a pair of numbers packaged in a vector, and each coordinate is"
+" a measure of how far to move along the corresponding axis. State-space is a"
+" `Cartesian coordinate system "
+"<https://en.wikipedia.org/wiki/Cartesian_coordinate_system>`__ with an axis "
+"for each state variable, and we represent locations within it the same way "
+"we do for 2D space: with a list of numbers in a vector. Each element in the "
+"vector corresponds to a state of the system. This example shows two example "
+"state vectors in the state-space of an elevator model with the states "
+":math:`[\\text{position}, \\text{velocity}]`:"
+msgstr ""
+"回想一下2D空间有两个轴：x和y。我们将此空间内的位置表示为包装在矢量中的一对数字，每个坐标是沿相应轴移动多远的度量。状态空间是一个“笛卡尔坐标系<https://en.wikipedia.org/wiki/Cartesian_coordinate_system>”"
+" "
+"__，每个状态变量都有一个轴，我们在其中表示位置的方式与二维空间相同：在向量中带有数字列表。向量中的每个元素都对应于系统的状态。此示例显示了电梯模型的状态空间中状态为[math：`[\\"
+" text {position}，\\ text {velocity}]`的两个示例状态向量："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:35
+msgid ""
+"In this image, the vectors representing states in state-space are arrows. "
+"From now on these vectors will be represented simply by a point at the "
+"vector's tip, but remember that the rest of the vector is still there."
+msgstr "在此图像中，表示状态空间中状态的向量是箭头。从现在开始，这些向量将仅由向量尖端处的一个点表示，但请记住，向量的其余部分仍然存在。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:37
+msgid ""
+"In addition to the :term:`state`, :term:`inputs <input>` and :term:`outputs "
+"<output>` are represented as vectors. Since the mapping from the current "
+"states and inputs to the change in state is a system of equations, it’s "
+"natural to write it in matrix form. This matrix equation can be written in "
+"state-space notation."
+msgstr ""
+"除了 :term:`state`之外，:term:`inputs 1` and :term:`outputs "
+"2`也被表示为向量。由于从当前状态和输入到状态变化的映射是一个方程式系统，因此很自然地以矩阵形式编写它。该矩阵方程式可以用状态空间符号表示。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:40
+msgid "What is State-Space Notation?"
+msgstr "什么是状态空间符号？"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:42
+msgid ""
+"State-space notation is a set of matrix equations which describe how a "
+"system will evolve over time. These equations relate the change in state "
+":math:`\\dot{\\mathbf{x}}`, and the :term:`output` :math:`\\mathbf{y}`, to "
+"linear combinations of the current state vector :math:`\\mathbf{x}` and "
+":term:`input` vector :math:`\\mathbf{u}`."
+msgstr ""
+"状态空间符号是一组矩阵方程，描述了系统随着时间的变化。这些方程将状态 :math:`\\dot{\\mathbf{x}}`和:term:`output`"
+" :math:`\\mathbf{y}`的变化与当前状态向量的线性组合相关联：:math:`\\mathbf{x}` and :term:`input`"
+" vector :math:`\\mathbf{u}`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:44
+msgid ""
+"State-space control can deal with continuous-time and discrete-time systems."
+" In the continuous-time case, the rate of change of the system's state "
+":math:`\\mathbf{\\dot{x}}` is expressed as a linear combination of the "
+"current state :math:`\\mathbf{x}` and input :math:`\\mathbf{u}`."
+msgstr ""
+"状态空间控制可以处理连续时间和离散时间系统。在连续时间情况下，系统状态:math:`\\mathbf{\\dot{x}}`的变化率表示为当前状态 "
+":math:`\\mathbf{x}` 和输入:math:`\\mathbf{u}`的线性组合。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:46
+msgid ""
+"In contrast, discrete-time systems expresses the state of the system at our "
+"next timestep :math:`\\mathbf{x}_{k+1}` based on the current state "
+":math:`\\mathbf{x}_k` and input :math:`\\mathbf{u}_k`, where :math:`k` is "
+"the current timestep and :math:`k+1` is the next timestep."
+msgstr ""
+"相反，离散时间系统基于当前状态 "
+":math:`\\mathbf{x}_k`和下一个时间步表示系统状态:math:`\\mathbf{x}_{k+1}`和输入:math:`\\mathbf{u}_k`，其中"
+" :math:`k`是当前时间步，而:math:`k+1` 是下一个时间步。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:48
+msgid ""
+"In both the continuous- and discrete-time forms, the :term:`output` vector "
+":math:`\\mathbf{y}` is expressed as a linear combination of the current "
+":term:`state` and :term:`input`. In many cases, the output is a subset of "
+"the system's state, and has no contribution from the current input."
+msgstr ""
+"无论是连续时间形式还是离散时间形式， :term:`output` 向量:math:`\\mathbf{y}` 都表示为当前:term:`state` "
+"和 :term:`input`的线性组合。在许多情况下，输出是系统状态的子集，没有来自当前输入的贡献。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:50
+msgid ""
+"When modeling systems, we first derive the continuous-time representation "
+"because the equations of motion are naturally written as the rate of change "
+"of a system's state as a linear combination of its current state and inputs."
+" We convert this representation to discrete-time on the robot because we "
+"update the system in discrete timesteps there instead of continuously."
+msgstr ""
+"在对系统进行建模时，我们首先导出连续时间表示形式，因为运动方程很自然地写为系统状态的变化率，即系统当前状态和输入的线性组合。我们将这种表示形式转换为机器人上的离散时间，因为我们在此以离散时间步长而不是连续地更新系统。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:52
+msgid ""
+"The following two sets of equations are the standard form of continuous-time"
+" and discrete-time state-space notation:"
+msgstr "以下两组方程式是连续时间和离散时间状态空间符号的标准形式："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:54
+msgid ""
+"\\text{Continuous: }\n"
+"\\dot{\\mathbf{x}} &= \\mathbf{A}\\mathbf{x} + \\mathbf{B}\\mathbf{u} \\\\\n"
+"\\mathbf{y} &= \\mathbf{C}\\mathbf{x} + \\mathbf{D}\\mathbf{u} \\\\\n"
+"\\nonumber \\\\\n"
+"\\text{Discrete: }\n"
+"\\mathbf{x}_{k+1} &= \\mathbf{A}\\mathbf{x}_k + \\mathbf{B}\\mathbf{u}_k \\\\\n"
+"\\mathbf{y}_k &= \\mathbf{C}\\mathbf{x}_k + \\mathbf{D}\\mathbf{u}_k\n"
+"\n"
+msgstr ""
+"\\text{Continuous: }\n"
+"\\dot{\\mathbf{x}} &= \\mathbf{A}\\mathbf{x} + \\mathbf{B}\\mathbf{u} \\\\\n"
+"\\mathbf{y} &= \\mathbf{C}\\mathbf{x} + \\mathbf{D}\\mathbf{u} \\\\\n"
+"\\nonumber \\\\\n"
+"\\text{Discrete: }\n"
+"\\mathbf{x}_{k+1} &= \\mathbf{A}\\mathbf{x}_k + \\mathbf{B}\\mathbf{u}_k \\\\\n"
+"\\mathbf{y}_k &= \\mathbf{C}\\mathbf{x}_k + \\mathbf{D}\\mathbf{u}_k\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:63
+msgid ""
+"\\begin{array}{llll}\n"
+"  \\mathbf{A} & \\text{system matrix}      & \\mathbf{x} & \\text{state vector} \\\\\n"
+"  \\mathbf{B} & \\text{input matrix}       & \\mathbf{u} & \\text{input vector} \\\\\n"
+"  \\mathbf{C} & \\text{output matrix}      & \\mathbf{y} & \\text{output vector} \\\\\n"
+"  \\mathbf{D} & \\text{feedthrough matrix} &  &  \\\\\n"
+"\\end{array}\n"
+"\n"
+msgstr ""
+"\\begin{array}{llll}\n"
+"\\mathbf{A} & \\text{system matrix} & \\mathbf{x} & \\text{state vector} \\\\\n"
+"\\mathbf{B} & \\text{input matrix} & \\mathbf{u} & \\text{input vector} \\\\\n"
+"\\mathbf{C} & \\text{output matrix} & \\mathbf{y} & \\text{output vector} \\\\\n"
+"\\mathbf{D} & \\text{feedthrough matrix} & & \\\\\n"
+"\\end{array}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:71
+msgid ""
+"A continuous-time state-space system can be converted into a discrete-time "
+"system through a process called discretization."
+msgstr "连续时间状态空间系统可以通过称为离散化的过程转换为离散时间系统。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:73
+msgid ""
+"In the discrete-time form, the system's state is held constant between "
+"updates. This means that we can only react to disturbances as quickly as our"
+" state estimate is updated. Updating our estimate more quickly can help "
+"improve performance, up to a point. WPILib's ``Notifier`` class can be used "
+"if updates faster than the main robot loop are desired."
+msgstr ""
+"在离散时间形式中，系统状态在两次更新之间保持不变。这意味着我们只能在状态估计值更新后尽快对干扰做出反应。更快地更新我们的估计值可以在一定程度上帮助改善性能。如果需要比机械手主循环更快的更新速度，则可以使用WPILib的“"
+" Notifier”类。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:75
+msgid ""
+"While a system's continuous-time and discrete-time matrices A, B, C, and D "
+"have the same names, they are not equivalent. The continuous-time matrices "
+"describes the rate of change of the state, :math:`\\mathbf{x}`, while the "
+"discrete-time matrices describe the system's state at the next timestep as a"
+" function of the current state and input."
+msgstr ""
+"虽然系统的连续时间矩阵和离散时间矩阵A，B，C和D具有相同的名称，但它们并不等效。连续时间矩阵描述状态的变化率:math:`\\mathbf{x}`，而离散时间矩阵描述系统在下一时间步的状态是当前状态和输入的函数。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:77
+msgid ""
+"WPILib's LinearSystem takes continuous-time system matrices, and converts "
+"them internally to the discrete-time form where necessary."
+msgstr "WPILib的LinearSystem采用连续时间系统矩阵，并在必要时将其内部转换为离散时间形式。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:80
+msgid "State-space Notation Example: Flywheel from kV and kA"
+msgstr "状态空间符号示例：飞轮从kV和kA"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:82
+msgid ""
+":ref:`Recall <docs/software/advanced-"
+"controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model "
+"the motion of a flywheel connected to a brushed DC motor with the equation "
+":math:`V = kV \\cdot v + kA \\cdot a`, where V is voltage output, v is the "
+"flywheel's angular velocity and a is its angular acceleration. This equation"
+" can be rewritten as :math:`a = \\frac{V - kV \\cdot v}{kA}`, or :math:`a = "
+"\\frac{-kV}{kA} \\cdot v + \\frac{1}{kA} \\cdot V`. Notice anything "
+"familiar? This equation relates the angular acceleration of the flywheel to "
+"its angular velocity and the voltage applied."
+msgstr ""
+":ref:`Recall <docs/software/advanced-"
+"controls/controllers/feedforward:SimpleMotorFeedforward>`，我们可以用这个方程来模拟与有刷直流电动机相连的飞轮的运动"
+" :math:`V = kV \\cdot v + kA \\cdot a`, 其中V是电压输出，v是飞轮的角速度，a是其角加速度。该等式可以重写为 "
+":math:`a = \\frac{V - kV \\cdot v}{kA}`, 或者:math:`a = \\frac{-kV}{kA} \\cdot"
+" v + \\frac{1}{kA} \\cdot V`。发现它是不是很熟悉?这个方程将飞轮的角加速度与飞轮的角速度和施加的电压联系起来。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:84
+msgid ""
+"We can convert this equation to state-space notation. We can create a system"
+" with one state (velocity), one :term:`input` (voltage), and one "
+":term:`output` (velocity). Recalling that the first derivative of velocity "
+"is acceleration, we can write our equation as follows, replacing velocity "
+"with :math:`\\mathbf{x}`, acceleration with :math:`\\mathbf{\\dot{x}}`, and "
+"voltage :math:`\\mathbf{V}` with :math:`\\mathbf{u}`:"
+msgstr ""
+"我们可以将该方程转换为状态空间符号。我们可以创建一个具有一个状态（速度），一个 :term:`input` （电压）和 "
+":term:`output`（速度）的系统。回想一下速度的一阶导数是加速度，我们可以编写如下公式，用 :math:`\\mathbf{x}`代替速度，用"
+" :math:`\\mathbf{\\dot{x}}`代替加速度，并且用 "
+":math:`\\mathbf{u}`代替电压:math:`\\mathbf{V}` :"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:86
+msgid ""
+"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} \\mathbf{x} + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} \\mathbf{u}\n"
+"\n"
+msgstr ""
+"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} "
+"\\mathbf{x} + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} \\mathbf{u}\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:89
+msgid ""
+"That's it! That's the state-space model of a system for which we have the kV"
+" and kA constants. This same math is use in FRC-Characterization to model "
+"flywheels and drivetrain velocity systems."
+msgstr "就是这样！那就是我们具有kV和kA常数的系统的状态空间模型。在FRC特征化中使用相同的数学模型对飞轮和传动系统速度系统进行建模。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:92
+msgid "Visualizing State-Space Responses: Phase Portrait"
+msgstr "可视化状态空间响应:相位图"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:94
+msgid ""
+"A `phase portrait <https://en.wikipedia.org/wiki/Phase_portrait>`__ can help"
+" give a visual intuition for the response of a system in state-space. The "
+"vectors on the graph have their roots at some point :math:`\\mathbf{x}` in "
+"state-space, and point in the direction of :math:`\\mathbf{\\dot{x}}`, the "
+"direction that the system will evolve over time. This example shows a model "
+"of a pendulum with the states of angle and angular velocity."
+msgstr ""
+"一个 `phase portrait "
+"<https://en.wikipedia.org/wiki/Phase_portrait>`可以帮助直观地了解状态空间中系统的响应。图上的向量的根源在状态空间的某个位置"
+" :math:`\\mathbf{x}` "
+"，并指向：:math:`\\mathbf{\\dot{x}}`的方向，即该系统将随着时间的推移而发展。此示例显示了具有角和角速度状态的摆的模型。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:96
+msgid ""
+"To trace a potential trajectory that a system could take through state-"
+"space, choose a point to start at and follow the arrows around. In this "
+"example, we might start at :math:`[-2, 0]`. From there, the velocity "
+"increases as we swing through vertical and starts to decrease until we reach"
+" the opposite extreme of the swing. This cycle of spinning about the origin "
+"repeats indefinitely."
+msgstr ""
+"要追踪系统可能会穿越状态空间的潜在轨迹，请选择一个起点并遵循周围的箭头。在此示例中，我们可能从:math:`[-2, "
+"0]`开始。从那里开始，速度随着我们垂直摆动而增加，并开始降低，直到达到相反的极端。围绕原点旋转的循环无限期地重复。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:101
+msgid ""
+"Note that near the edges of the phase portrait, the X axis wraps around as a"
+" rotation of :math:`\\pi` radians counter clockwise and a rotation of "
+":math:`\\pi` radians clockwise will end at the same point."
+msgstr "注意，在相像的边缘附近，X轴绕着:math:`\\pi` 弧度逆时针旋转，并且:math:`\\pi` 弧度顺时针旋转将在同一点结束。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:103
+msgid ""
+"For more on differential equations and phase portraits, see `3Blue1Brown's "
+"Differential Equations video "
+"<https://www.youtube.com/watch?v=p_di4Zn4wz4>`__ -- they do a great job of "
+"animating the pendulum phase space at around 15:30."
+msgstr ""
+"有关微分方程和相画像的更多信息，请参见`3Blue1Brown's Differential Equations video "
+"<https://www.youtube.com/watch?v=p_di4Zn4wz4>`，它们在15:30左右为摆相空间设置动画效果非常出色。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:106
+msgid "Visualizing Feedforward"
+msgstr "可视化前馈"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:108
+msgid ""
+"This phase portrait shows the \"open loop\" responses of the system -- that "
+"is, how it will react if we were to let the state evolve naturally. If we "
+"want to, say, balance the pendulum horizontal (at :math:`(\\frac{\\pi}{2}, "
+"0)` in state space), we would need to somehow apply a control :term:`input` "
+"to counteract the open loop tendency of the pendulum to swing downward. This"
+" is what feedforward is trying to do -- make it so that our phase portrait "
+"will have an equilibrium at the :term:`reference` position (or setpoint) in "
+"state-space."
+msgstr ""
+"这个阶段描述显示了系统的“开环”响应——也就是说，如果我们让状态自然发展，它将如何反应。例如，如果要平衡水平摆（在状态空间中的:math:`(\\frac{\\pi}{2},"
+" 0)`处），我们将需要以某种方式应用控制:term:`input` "
+"以抵消摆向下摆动的开环趋势。这就是前馈正在尝试做的——以使我们的相位图在状态空间中的 :term:`reference` 位置（或设定点）处具有平衡。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:110
+msgid ""
+"Looking at our phase portrait from before, we can see that at "
+":math:`(\\frac{\\pi}{2}, 0)` in state space, gravity is pulling the pendulum"
+" down with some torque T, and producing some downward angular acceleration "
+"with magnitude :math:`\\frac{\\tau}{I}`, where I is angular :term:`moment of"
+" inertia` of the pendulum. If we want to create an equilibrium at our "
+":term:`reference` of :math:`(\\frac{\\pi}{2}, 0)`, we would need to apply an"
+" :term:`input` can counteract the system's natural tendency to swing "
+"downward. The goal here is to solve the equation :math:`\\mathbf{0 = Ax + "
+"Bu}` for :math:`\\mathbf{u}`. Below is shown a phase portrait where we apply"
+" a constant :term:`input` that opposes the force of gravity at "
+":math:`(\\frac{\\pi}{2}, 0)`:"
+msgstr ""
+"从之前的相位图中可以看到，在状态空间中的 :math:`(\\frac{\\pi}{2}, 0)` "
+"处，重力以一定的扭矩T将摆锤向下拉，并向下方产生一些摆锤。角加速度，大小为 "
+":math:`\\frac{\\tau}{I}`，其中，I为角速度:term:`moment of "
+"inertia`。如果我们想在:math:`(\\frac{\\pi}{2}, 0)`的:term:`reference`处创建一个平衡，则需要应用 "
+":term:`input`来抵消系统自然会向下摆动。这里的目标是解决:math:`\\mathbf{u}`的等式 :math:`\\mathbf{0 ="
+" Ax + Bu}` 。下面显示了一个相位图，其中我们应用了常量 :term:`input`，它在:math:`(\\frac{\\pi}{2}, "
+"0)`处与重力相反："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:116
+msgid "Feedback Control"
+msgstr "反馈控制"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:118
+msgid ""
+"In the case of a DC motor, with just a mathematical model and knowledge of "
+"all current states of the system (i.e., angular velocity), we can predict "
+"all future states given the future voltage inputs. But if the system is "
+"disturbed in any way that isn’t modeled by our equations, like a load or "
+"unexpected friction, the angular velocity of the motor will deviate from the"
+" model over time. To combat this, we can give the motor corrective commands "
+"using a feedback controller."
+msgstr ""
+"在直流电动机的情况下，只需要一个数学模型和系统的所有当前状态(即角速度)的知识，我们就可以根据未来的电压输入预测所有未来的状态。但是，如果系统受到我们的方程所没有模拟的任何干扰，比如负载或意外摩擦，电机的角速度会随着时间的推移偏离模型。为了解决这个问题，我们可以使用反馈控制器给电机校正命令。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:120
+msgid ""
+"A PID controller is a form of feedback control. State-space control often "
+"uses the following :term:`control law`, where :math:`\\mathbf{K}` is some "
+"controller :term:`gain` matrix, :math:`\\mathbf{r}` is the :term:`reference`"
+" state, and :math:`\\mathbf{x}` is the current state in state-space. The "
+"difference between these two vectors, :math:`\\mathbf{r-x}`, is the "
+":term:`error`."
+msgstr ""
+"PID控制器是反馈控制的一种形式。状态空间控制通常使用以下控制法则，其中 :math:`\\mathbf{K}` "
+"是一些控制器：term：`gain`矩阵，:math:`\\mathbf{r}` 是 :term:`reference` 状态，而 "
+":math:`\\mathbf{x}` 是状态空间中的当前状态。这两个向量的差 "
+":math:`\\mathbf{r-x}`，是:term:`error`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:122
+msgid ""
+"\\mathbf{u} = \\mathbf{K(r - x)}\n"
+"\n"
+msgstr ""
+"\\ mathbf {u} = \\ mathbf {K（r-x）}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:125
+msgid ""
+"This :term:`control law` is a proportional controller for each state of our "
+"system. Proportional controllers create software-defined springs that pull "
+"our system's state toward our reference state in state-space. In the case "
+"that the system being controlled has position and velocity states, the "
+":term:`control law` above will behave as a PD controller, which also tries "
+"to drive position and velocity error to zero."
+msgstr ""
+" :term:`control "
+"law`是系统每个状态的比例控制器。比例控制器创建软件定义的弹簧，该弹簧将我们的系统状态拉到状态空间中的参考状态。在被控制的系统具有位置和速度状态的情况下，上述"
+" :term:`control law`将充当PD控制器，PD控制器还将试图将位置和速度误差驱动为零。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:127
+msgid ""
+"Let's show an example of this control law in action. We'll use the pendulum "
+"system from above, where the swinging pendulum circled the origin in state-"
+"space. The case where :math:`\\mathbf{K}` is the zero matrix (a matrix with "
+"all zeros) would be like picking P and D gains of zero -- no control "
+":term:`input` would be applied, and the phase portrait would look identical "
+"to the one above."
+msgstr ""
+"让我们举例说明这种控制律的实际作用。我们将从上方使用钟摆系统，其中摆动的钟摆环绕状态空间中的原点。:math:`\\mathbf{K}`是零矩阵（一个全为零的矩阵"
+"）的情况就像选择P和D增益为零-没有控制输入将被应用，并且相画像看起来与上面的相同。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:129
+msgid ""
+"To add some feedback, we arbitrarily pick a :math:`\\mathbf{K}` of [2, 2], "
+"where our :term:`input` to the pendulum is angular acceleration. This K "
+"would mean that for every radian of position :term:`error`, the angular "
+"acceleration would be 2 radians per second squared; similarly, we accelerate"
+" by 2 radians per second squared for every radian per second of "
+":term:`error`. Try following an arrow from somewhere in state-space inwards "
+"-- no matter the initial conditions, the state will settle at the "
+":term:`reference` rather than circle endlessly with pure feedforward."
+msgstr ""
+"要添加一些反馈，我们可以任意选择 :math:`\\mathbf{K}`  [2, 2]，其中摆的:term:`input` "
+"是角加速度。这个K意味着对于每一个位置 "
+":term:`error`弧度，角加速度是为2弧度每二次方秒；类似地，我们以2弧度每二次方秒的加速度对于每弧度每二次方秒的 :term:`error"
+"`。尝试从状态空间中的某个地方向内跟随箭头-无论初始条件如何，状态将稳定在:term:`reference`，而不是用纯粹的前馈无休止地循环。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:134
+msgid ""
+"But how can we choose an optimal :term:`gain` matrix K for our system? While"
+" we can manually choose :term:`gains <gain>` and simulate the system "
+"response or tune it on-robot like a PID controller, modern control theory "
+"has a better answer: the Linear-Quadratic Regulator (LQR)."
+msgstr ""
+"但是我们如何为我们的系统选择一个最优的:term:`gain`矩阵K？虽然我们可以手动选择： :term:`gains 1` "
+"并模拟系统响应或像PID控制器一样在机器人上对其进行调整，但现代控制理论有一个更好的答案：线性二次调节器（LQR）。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:137
+msgid "The Linear-Quadratic Regulator"
+msgstr "线性二次调节器"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:139
+msgid ""
+"Because model-based control means that we can predict the future states of a"
+" system given an initial condition and future control inputs, we can pick a "
+"mathematically optimal :term:`gain` matrix :math:`\\mathbf{K}`. To do this, "
+"we first have to define what a \"good\" or \"bad\" :math:`\\mathbf{K}` would"
+" look like. We do this by summing the square of error and control input over"
+" time, which gives us a number representing how \"bad\" our control law will"
+" be. If we minimize this sum, we will have arrived at the optimal control "
+"law."
+msgstr ""
+"因为基于模型的控制意味着我们可以在给定初始条件和未来控制输入的情况下预测系统的未来状态，所以我们可以选择数学上最优的:term:`gain` "
+"矩阵:math:`\\mathbf{K}`。要做到这一点，我们首先必须定义“好”或“坏”的:math:`\\mathbf{K}` "
+"会是什么样子。我们通过将误差平方和控制输入随时间的变化相加来做到这一点，这将给我们一个数字，表示我们的控制律有多“糟糕”。如果我们使这个和最小化，我们就得到了最优控制律。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:142
+msgid "LQR: Definition"
+msgstr "LQR：定义"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:144
+msgid ""
+"Linear-Quadratic Regulators work by finding a :term:`control law` that "
+"minimizes the following cost function, which weights the sum of "
+":term:`error` and :term:`control effort` over time, subject to the linear "
+":term:`system` dynamics :math:`\\mathbf{\\dot{x} = Ax + Bu}`."
+msgstr ""
+"线性二次型调节器的工作原理是找到一种 :term:`control law`，使下列成本函数最小，该函数随时间加权求:term:`error` 和 "
+":term:`control effort` 的总和，服从线性系统:math:`\\mathbf{\\dot{x} = Ax + Bu}`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:146
+msgid ""
+"J = \\int\\limits_0^\\infty \\left(\\mathbf{x}^T\\mathbf{Q}\\mathbf{x} + \\mathbf{u}^T\\mathbf{R}\\mathbf{u}\\right) dt\n"
+"\n"
+msgstr ""
+"J = \\int\\limits_0^\\infty \\left(\\mathbf{x}^T\\mathbf{Q}\\mathbf{x} + "
+"\\mathbf{u}^T\\mathbf{R}\\mathbf{u}\\right) dt\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:149
+msgid ""
+"The :term:`control law` that minimizes :math:`\\mathbf{J}` can be written as"
+" :math:`\\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`."
+msgstr ""
+"最小化 :math:`\\mathbf{J}` 的:term:`control law` 可以写成 :math:`\\mathbf{u = K(r - "
+"x)}`, 其中 :math:`r-x` 是 :term:`error`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:151
+msgid ""
+"LQR design's :math:`\\mathbf{Q}` and :math:`\\mathbf{R}` matrices don't need"
+" discretization, but the :math:`\\mathbf{K}` calculated for continuous-time "
+"and discrete time :term:`systems <system>` will be different."
+msgstr ""
+"LQR设计的 :math:`\\mathbf{Q}` 和 :math:`\\mathbf{R}` "
+"矩阵不需要离散化，但是为连续时间和离散时间:term:`systems 1` 计算的 :math:`\\mathbf{K}` 将有所不同。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:154
+msgid "LQR: tuning"
+msgstr "LQR: 调试"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:156
+msgid ""
+"Like PID controllers can be tuned by adjusting their gains, we also want to "
+"change how our control law balances our error and input. For example, a "
+"spaceship might want to minimize the fuel it expends to reach a given "
+"reference, while a high-speed robotic arm might need to react quickly to "
+"disturbances."
+msgstr ""
+"就像可以通过调节PID增益来调整PID控制器一样，我们也想改变控制律平衡误差和输入的方式。例如，一艘太空船可能希望将其消耗的燃料减至最小，以达到给定的参考值，而高速机械臂可能需要对干扰做出快速反应。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:158
+msgid ""
+"We can weight error and control effort in our LQR with :math:`\\mathbf{Q}` "
+"and :math:`\\mathbf{R}` matrices. In our cost function (which describes how "
+"\"bad\" our control law will perform), :math:`\\mathbf{Q}` and "
+":math:`\\mathbf{R}` weight our error and control input relative to each "
+"other. In the spaceship example from above, we might use a "
+":math:`\\mathbf{Q}` with relatively small numbers to show that we don't want"
+" to highly penalize error, while our :math:`\\mathbf{R}` might be large to "
+"show that expending fuel is undesirable."
+msgstr ""
+"我们可以使用 :math:`\\mathbf{Q}` 和 :math:`\\mathbf{R}` "
+"矩阵在LQR中加权错误并控制工作量。在我们的成本函数（描述了控制律将如何“糟糕”地执行）中， :math:`\\mathbf{Q}` 和 "
+":math:`\\mathbf{R}` "
+"分别权衡我们的误差和控制输入。在上面的飞船示例中，我们可以使用带有相对较小数字的:math:`\\mathbf{Q}` "
+"来表明我们不想过度影响误差，而我们的 :math:`\\mathbf{R}`可能很大，表明燃料消耗是不可取的。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:160
+msgid ""
+"With WPILib, the LQR class takes a vector of desired maximum state "
+"excursions and control efforts and converts them internally to full Q and R "
+"matrices with Bryson's rule. We often use lowercase :math:`\\mathbf{q}` and "
+":math:`\\mathbf{r}` to refer to these vectors, and :math:`\\mathbf{Q}` and "
+":math:`\\mathbf{R}` to refer to the matrices."
+msgstr ""
+"使用WPILib，LQR类可以获取所需的最大状态偏移和控制量的向量，并根据布赖森规则在内部将它们转换为完整的Q和R矩阵。我们经常使用小写的:math:`\\mathbf{q}`"
+" 和 :math:`\\mathbf{r}`指代这些向量，使用:math:`\\mathbf{Q}` 和 "
+":math:`\\mathbf{R}`指代矩阵。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:162
+msgid ""
+"Increasing the :math:`\\mathbf{q}` elements would make the LQR less heavily "
+"weight large errors, and the resulting :term:`control law` will behave more "
+"conservatively. This has a similar effect to penalizing :term:`control "
+"effort` more heavily by decreasing :math:`\\mathbf{q}`\\'s elements."
+msgstr ""
+"增加:math:`\\mathbf{q}` 元素将使LQR的权重较大，误差较小，并且由此产生的 :term:`control law` "
+"将表现得更加保守。这与通过减少:math:`\\mathbf{q}`元素来更严厉地惩罚:term:`control effort` 具有相似的效果。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:164
+msgid ""
+"Similarly, decreasing the :math:`\\mathbf{q}` elements would make the LQR "
+"penalize large errors more heavily, and the resulting :term:`control law` "
+"will behave more aggressively. This has a similar effect to penalizing "
+":term:`control effort` less heavily by increasing :math:`\\mathbf{q}` "
+"elements."
+msgstr ""
+"同样，减少 :math:`\\mathbf{q}` 元素会使LQR对较大误差的不利影响更大，所得到的:term:`control law` "
+"也会表现得更激进。这与通过增加:math:`\\mathbf{q}`元素来减轻:term:`control effort` 有相似的效果。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:166
+msgid ""
+"For example, we might use the following Q and R for an elevator system with "
+"position and velocity states."
+msgstr "例如，对于具有位置和速度状态的抬升系统，我们可以使用以下Q和R。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:200
+msgid "LQR: example application"
+msgstr "LQR：示例应用"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:202
+msgid ""
+"Let's apply a Linear-Quadratic Regulator to a real-world example. Say we "
+"have a flywheel velocity system determined through system identification to "
+"have :math:`kV = 1 \\frac{\\text{volts}}{\\text{radian per second}}` and "
+":math:`kA = 1.5 \\frac{\\text{volts}}{\\text{radian per second squared}}`. "
+"Using the flywheel example above, we have the following linear "
+":term:`system`:"
+msgstr ""
+"让我们将线性二次稳压器应用于实际示例。假设我们有一个通过系统标识确定为:math:`kV = 1 "
+"\\frac{\\text{volts}}{\\text{radian per second}}`和:math:`kA = 1.5 "
+"\\frac{\\text{volts}}{\\text{radian per second squared}}`的飞轮速度系统 "
+"。使用上面的飞轮示例，我们具有以下线性:term:`system`:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:204
+msgid ""
+"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} v + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} V\n"
+"\n"
+msgstr ""
+"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} v + "
+"\\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} V\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:207
+msgid ""
+"We arbitrarily choose a desired state excursion (maximum error) of :math:`q "
+"= [0.1\\ \\text{rad/sec}]`, and an :math:`\\mathbf{r}` of :math:`[12\\ "
+"\\text{volts}]`. After discretization with a timestep of 20ms, we find a "
+":term:`gain` of :math:`\\mathbf{K} = ~81`. This K :term:`gain` acts as the "
+"proportional component of a PID loop on flywheel's velocity."
+msgstr ""
+"我们任意选择所需的状态偏移(最大误差):math:`q = [0.1\\ \\text{rad/sec}]`，  :math:`[12\\ "
+"\\text{volts}]`的 :math:`\\mathbf{r}` 。在20ms的时间步长下离散化后，我们得到的:term:`gain`为   "
+":math:`\\mathbf{K} = ~81`。这个:term:`gain` K作为PID回路对飞轮速度的比例分量。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:209
+msgid ""
+"Let's adjust :math:`\\mathbf{q}` and :math:`\\mathbf{r}`. We know that "
+"increasing the q elements or decreasing the :math:`\\mathbf{r}` elements we "
+"use to create :math:`\\mathbf{Q}` and :math:`\\mathbf{R}` would make our "
+"controller more heavily penalize :term:`control effort`, analogous to trying"
+" to driving a car more conservatively to improve fuel economy. In fact, if "
+"we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` "
+"matrix :math:`\\mathbf{K}` drops from ~81 to ~11. Similarly, decreasing our "
+"maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant "
+":math:`\\mathbf{K}`."
+msgstr ""
+"让我们调整 :math:`\\mathbf{q}`和 "
+":math:`\\mathbf{r}`。我们知道，增加用于创建:math:`\\mathbf{Q}` 和 :math:`\\mathbf{R}` "
+"的增加q元素或减少 :math:`\\mathbf{r}`元素将使控制器更严重地不利于:term:`control "
+"effort`，类似于尝试驾驶一辆汽车更保守地提高燃油经济性。事实上，如果我们把 "
+":term:`error`容忍度q从0.1增加到1.0，:term:`gain`矩阵:math:`\\mathbf{K}` "
+"从~81下降到~11。同样地，将最大电压 :math:`r` 从12.0降低到1.2也会产生相同的合成:math:`\\mathbf{K}`。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:211
+msgid ""
+"The following graph shows the flywheel's angular velocity and applied "
+"voltage over time with two different :term:`gain`\\s. We can see how a "
+"higher :term:`gain` will make the system reach the reference more quickly "
+"(at t = 0.8 seconds), while keeping our motor saturated at 12V for longer. "
+"This is exactly the same as increasing the P gain of a PID controller by a "
+"factor of ~8x."
+msgstr ""
+"下图显示了飞轮的角速度和施加的电压随时间的变化，具有两个不同的 :term:`gain`。我们可以看到更高的 "
+":term:`gain`将如何使系统更快地到达参考点（t = "
+"0.8秒时），同时使我们的电机在12V时保持更长时间的饱和状态。这与将PID控制器的P增益增加约8倍完全相同。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:217
+msgid "LQR and Measurement Latency Compensation"
+msgstr "LQR和测量延迟补偿"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:219
+msgid ""
+"Oftentimes, our sensors have a delay associated with their measurements. For"
+" example the SPARK MAX motor controller over CAN can have up to 30ms of "
+"delay associated with velocity measurements."
+msgstr "通常，我们的传感器会因测量而延迟。例如，通过CAN的SPARK MAX电动机控制器可能具有与速度测量相关的长达30ms的延迟。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:221
+msgid ""
+"This lag means that our feedback controller will be generating voltage "
+"commands based on state estimates from the past. This often has the effect "
+"of introducing instability and oscillations into our system, as shown in the"
+" graph below."
+msgstr "这种滞后现象意味着我们的反馈控制器将基于过去的状态估计来生成电压命令。如下图所示，这通常会给我们的系统带来不稳定性和振荡。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:223
+msgid ""
+"However, we can model our controller to control where the system's "
+":term:`state` is delayed into the future. This will reduce the LQR's "
+":term:`gain` matrix :math:`\\mathbf{K}`, trading off controller performance "
+"for stability. The below formula, which adjusts the :term:`gain` matrix to "
+"account for delay, is also used in frc-characterization."
+msgstr ""
+"但是，我们可以对控制器进行建模，以控制 :term:`state`延迟到未来的时间。 这将减少LQR的 "
+":term:`gain`矩阵:math:`\\mathbf{K}`，以牺牲控制器性能为代价。下面的公式用于调整 "
+":term:`gain矩阵以解决延迟问题，该公式也用于frc表征。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:225
+msgid ""
+"\\mathbf{K_{compensated}} = \\mathbf{K} \\cdot \\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}\n"
+"\n"
+msgstr ""
+"\\mathbf{K_{compensated}} = \\mathbf{K} \\cdot \\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:228
+msgid ""
+"Multiplying :math:`\\mathbf{K}` by :math:`\\mathbf{A} - \\mathbf{BK}` "
+"essentially advances the gains by one timestep. In this case, we multiply by"
+" :math:`\\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}` to "
+"advance the gains by measurement's delay."
+msgstr ""
+" :math:`\\mathbf{K}` 与:math:`\\mathbf{A} - \\mathbf{BK}`的乘积实质上使增益提高了一个时间步长。 "
+"在这种情况下，我们将乘以 :math:`\\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay}"
+" / dt}`来提高测量延时的增益。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:233
+msgid ""
+"This can have the effect of reducing :math:`\\mathbf{K}` to zero, "
+"effectively disabling feedback control."
+msgstr "这样可以将:math:`\\mathbf{K}`减小为零，从而有效地禁用反馈控制。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:235
+msgid ""
+"The SPARK MAX motor controller uses a 40-tap FIR filter with a delay of "
+"19.5ms, and status frames are by default sent every 20ms."
+msgstr "SPARK Max电机控制器使用40抽头FIR滤波器，其延迟为19.5ms，默认情况下每20ms发送一次状态帧。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:237
+msgid ""
+"The code below shows how to adjust the LQR controller's K gain for sensor "
+"input delays:"
+msgstr "以下代码显示了如何针对传感器输入延迟来调整LQR控制器的K增益："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:255
+msgid "Linearization"
+msgstr "线性化"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:257
+msgid ""
+"Linearization is a tool used to approximate nonlinear functions and state-"
+"space systems using linear ones. In two-dimensional space, linear functions "
+"are straight lines while nonlinear functions curve. A common example of a "
+"nonlinear function and its corresponding linear approximation is "
+":math:`y=\\sin{x}`. This function can be approximated by :math:`y=x` near "
+"zero. This approximation is accurate while near :math:`x=0`, but looses "
+"accuracy as we stray further from the linearization point. For example, the "
+"approximation :math:`\\sin{x} \\approx x` is accurate to within 0.02 within "
+"0.5 radians of :math:`y = 0`, but quickly loses accuracy past that. In the "
+"following picture, we see :math:`y =\\sin{x}`, :math:`y=x` and the "
+"difference between the approximation and the true value of :math:`\\sin{x}` "
+"at :math:`x`."
+msgstr ""
+"线性化是一种工具，用于近似非线性函数和状态空间系统的线性处理。在二维空间中，线性函数是直线，而非线性函数是曲线。一个常见的非线性函数及其对应的线性近似例子是"
+" :math:`y=\\sin{x}`， :math:`y=x` 在0附近时，可以近似使用这个函数。当接近 "
+":math:`x=0`时，这个近似是准确的，但随着我们离线性化点越来越远，该精度会降低。例如，在:math:`y = 0的0.5弧度内，近似值 "
+":math:`\\sin{x} \\approx x`精确到0.02以内，但是很快就失去了精度。在下面的图中，我们看到:math:`y "
+"=\\sin{x}`, :math:`y=x`以及 :math:`x`处 :math:`\\sin{x}`的近似值和真实值之间的差值。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:262
+msgid ""
+"We can also linearize state-space systems with nonlinear :term:`dynamics`. "
+"We do this by picking a point :math:`\\mathbf{x}` in state-space and using "
+"this as the input to our nonlinear functions. Like in the above example, "
+"this works well for states near the point about which the system was "
+"linearized, but can quickly diverge further from that state."
+msgstr ""
+"我们还可以使用非线性 :term:`dynamics`将状态空间系统线性化。为此，我们在状态空间中选择一个点 :math:`\\mathbf{x}` "
+"并将其用作非线性函数的输入。像上面的示例一样，这对于系统线性化的点附近的状态效果很好，但是可以迅速偏离该状态。"

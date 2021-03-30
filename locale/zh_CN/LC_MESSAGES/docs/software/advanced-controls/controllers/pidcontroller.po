@@ -5,19 +5,294 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Atlus Zhang <atluslan@yahoo.co.jp>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 16:18+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Atlus Zhang <atluslan@yahoo.co.jp>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:2
+msgid "PID Control in WPILib"
+msgstr "WPILib中的PID控制"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:4
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:75
+msgid "Todo"
+msgstr "待办事项"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:4
+msgid "Link to conceptual PID article when it's finished"
+msgstr "完成后链接到概念性PID文章"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:6
+msgid ""
+"This article covers the in-code implementation of PID Control with WPILib's "
+"provided library classes.  Documentation describing the involved concepts in"
+" more detail is forthcoming."
+msgstr "本文介绍了WPILib提供的库类在PID控制中的代码实现。即将详细描述所涉及概念的文档。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:8
+msgid ""
+"For a guide on implementing PID control through the :ref:`command-based "
+"framework <docs/software/commandbased/what-is-command-based:What Is "
+"\"Command-Based\" Programming?>`, see :ref:`docs/software/commandbased/pid-"
+"subsystems-commands:PID Control through PIDSubsystems and PIDCommands`."
+msgstr ""
+"关于通过以下指南来实现PID控制 :ref:`command-based framework <docs/software/commandbased"
+"/what-is-command-based:What Is \"Command-Based\" Programming?>`，参见 "
+":ref:`docs/software/commandbased/pid-subsystems-commands:PID Control through"
+" PIDSubsystems and PIDCommands`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:10
+msgid ""
+"WPILib supports PID control of mechanisms through the ``PIDController`` "
+"class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__)."
+"  This class handles the feedback loop calculation for the user, as well as "
+"offering methods for returning the error, setting tolerances, and checking "
+"if the control loop has reached its setpoint within the specified "
+"tolerances."
+msgstr ""
+"WPILib通过``PIDController''类（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1PIDController.html>`__）支持对机制的PID控制。该类为用户处理反馈回路的计算，并提供返回错误，设置公差以及检查控制回路是否在指定公差内达到设定值的方法。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:13
+msgid "Using the PIDController Class"
+msgstr "使用PIDController类 "
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:15
+msgid ""
+"The ``PIDController`` class in the ``frc`` namespace is deprecated - C++ "
+"teams should use the one in the ``frc2`` namespace, instead.  Likewise, Java"
+" teams should use the class in the ``wpilibj.controller`` package."
+msgstr ""
+"“frc”名称空间中的“PIDController”类是不推荐的——c++团队应该使用“frc2”名称空间中的类。同样，Java团队应使用wpilibj.controller包中的类。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:18
+msgid "Constructing a PIDController"
+msgstr "构造一个PIDController"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:20
+msgid ""
+"While ``PIDController`` may be used asynchronously, it does *not* provide "
+"any thread safety features - ensuring threadsafe operation is left entirely "
+"to the user, and thus asynchronous usage is recommended only for advanced "
+"teams."
+msgstr ""
+"虽然``PIDController``可以异步使用，但它不提供任何线程安全功能-确保线程安全操作完全留给用户使用，因此仅建议高级团队使用异步方法。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:22
+msgid ""
+"In order to use WPILib's PID control functionality, users must first "
+"construct a ``PIDController`` object with the desired gains:"
+msgstr "为了使用WPILib的PID控制功能，用户必须首先构造具有所需增益的“ PIDController”对象："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:36
+msgid ""
+"An optional fourth parameter can be provided to the constructor, specifying "
+"the period at which the controller will be run.  The ``PIDController`` "
+"object is intended primarily for synchronous use from the main robot loop, "
+"and so this value is defaulted to 20ms."
+msgstr ""
+"可以向构造函数提供一个可选的第四个参数，指定控制器将运行的时间段。 "
+"PIDController对象主要用于与机器人主循环同步使用，因此该值默认为20ms。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:39
+msgid "Using the Feedback Loop Output"
+msgstr "使用反馈回路输出"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:41
+msgid ""
+"The ``PIDController`` assumes that the ``calculate()`` method is being "
+"called regularly at an interval consistent with the configured period.  "
+"Failure to do this will result in unintended loop behavior."
+msgstr "PIDController假定以与配置的周期一致的时间间隔定期调用calculate（）方法。否则，将导致意外的循环行为。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:43
+msgid ""
+"Unlike the old ``PIDController``, the new PIDController does not "
+"automatically control an output from its own thread - users are required to "
+"call ``calculate()`` and use the resulting output in their own code."
+msgstr ""
+"与旧的PIDController不同，新的PIDController不会自动控制其自己线程的输出-"
+"用户需要调用calculate（）并在自己的代码中使用结果输出。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:45
+msgid ""
+"Using the constructed ``PIDController`` is simple: simply call the "
+"``calculate()`` method from the robot's main loop (e.g. the robot's "
+"``autonomousPeriodic()`` method):"
+msgstr ""
+"使用构造的PIDController很简单：只需从机器人主循环中调用calculate（）方法（例如，机器人的autonomousPeriodic（）方法）："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:62
+msgid "Checking Errors"
+msgstr "检查错误"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:64
+msgid ""
+"``getPositionError()`` and ``getVelocityError()`` are named assuming that "
+"the loop is controlling a position - for a loop that is controlling a "
+"velocity, these return the velocity error and the acceleration error, "
+"respectively."
+msgstr ""
+"getPositionError（）和getVelocityError（）的命名是假设循环正在控制位置-"
+"对于控制速度的循环，它们分别返回速度误差和加速度误差。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:66
+msgid ""
+"The current error of the measured process variable is returned by the "
+"``getPositionError()`` function, while its derivative is returned by the "
+"``getVelocityError()`` function:"
+msgstr "测量的过程变量的当前错误由getPositionError（）函数返回，而其派生由getVelocityError（）函数返回："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
+msgid "Specifying and Checking Tolerances"
+msgstr "指定和检查公差"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:71
+msgid ""
+"If only a position tolerance is specified, the velocity tolerance defaults "
+"to infinity."
+msgstr "如果仅指定位置公差，则速度公差默认为无穷大。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:73
+msgid ""
+"As above, \"position\" refers to the process variable measurement, and "
+"\"velocity\" to its derivative - thus, for a velocity loop, these are "
+"actually velocity and acceleration, respectively."
+msgstr "如上所述，“位置”是指过程变量的测量值，“速度”是指其导数-因此，对于速度环，它们实际上分别是速度和加速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:75
+msgid "link to article on motion profiles"
+msgstr "链接到有关运动轮廓的文章"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:77
+msgid ""
+"Occasionally, it is useful to know if a controller has tracked the setpoint "
+"to within a given tolerance - for example, to determine if a command should "
+"be ended, or (while following a motion profile) if motion is being impeded "
+"and needs to be re-planned."
+msgstr ""
+"有时，知道控制器是否跟踪了设定值到给定的容忍范围内是有用的——例如，确定一个命令是否应该结束，或者(在遵循一个运动轮廓时)是否运动被阻碍，需要重新规划。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:79
+msgid ""
+"To do this, we first must specify the tolerances with the ``setTolerance()``"
+" method; then, we can check it with the ``atSetpoint()`` method."
+msgstr ""
+"为此，我们首先必须使用' ' setTolerance() ' '方法指定公差;然后，我们可以用' ' atSetpoint() ' '方法检查它。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:102
+msgid "Resetting the Controller"
+msgstr "重置控制器"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:104
+msgid ""
+"It is sometimes desirable to clear the internal state (most importantly, the"
+" integral accumulator) of a ``PIDController``, as it may be no longer valid "
+"(e.g. when the ``PIDController`` has been disabled and then re-enabled).  "
+"This can be accomplished by calling the ``reset()`` method."
+msgstr ""
+"有时需要清除``PIDController ``的内部状态(最重要的是，积分累加器)，因为它可能不再有效(例如，``PIDController "
+"``已禁用，然后重新启用)。这可以通过调用`` reset() ``方法来完成。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:107
+msgid "Setting a Max Integrator Value"
+msgstr "设置最大积分器值"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:109
+msgid ""
+"Integrators introduce instability and hysteresis into feedback loop systems."
+"  It is strongly recommended that teams avoid using integral gain unless "
+"absolutely no other solution will do - very often, problems that can be "
+"solved with an integrator can be better solved through use of a more-"
+"accurate :ref:`feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`."
+msgstr ""
+"积分器将不稳定性和迟滞引入反馈回路系统。强烈建议团队避免使用积分增益除非绝对没有其他解决方案——通常,问题可以解决一个积分器可以更好的通过使用更为精确的解决"
+" :ref:`feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:111
+msgid ""
+"A typical problem encountered when using integral feedback is excessive "
+"\"wind-up\" causing the system to wildly overshoot the setpoint.  This can "
+"be alleviated in a number of ways - the WPILib ``PIDController`` offers an "
+"integrator range limiter to help teams overcome this issue."
+msgstr ""
+"使用积分反馈时遇到的典型问题是过度的“缠绕”，从而导致系统大大超出设定值。\n"
+"这可以通过多种方式缓解-WPILib``PIDController''提供了一个积分器范围限制器，以帮助团队克服这一问题。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:113
+msgid ""
+"Enabling this setting with the ``setIntegratorRange()`` method will prevent "
+"the total output contribution from the integral gain from exceeding the "
+"user-specified bounds."
+msgstr "使用 ``setIntegratorRange() `` 方法启用此设置将防止积分增益的总输出超出用户指定的范围。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:130
+msgid "Setting Continuous Input"
+msgstr "设置连续输入"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:132
+msgid ""
+"If your mechanism is not capable of fully continuous rotational motion (e.g."
+" a turret without a slip ring, whose wires twist as it rotates), *do not* "
+"enable continuous input unless you have implemented an additional safety "
+"feature to prevent the mechanism from moving past its limit!"
+msgstr ""
+"如果你的机械装置不能完全连续旋转运动(例如，一个没有滑环的炮塔，它的电线在旋转时扭曲)，*不要*开启连续输入，除非你安装了额外的安全装置，以防止机械装置移动超过其限制!"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:134
+msgid ""
+"The continuous input function does *not* automatically wrap your input "
+"values - be sure that your input values, when using this feature, are never "
+"outside of the specified range!"
+msgstr "连续输入函数*不会*自动包装您的输入值-请确保您的输入值，在使用此功能时，永远不会超出指定的范围!"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:136
+msgid ""
+"Some process variables (such as the angle of a turret) are measured on a "
+"circular scale, rather than a linear one - that is, each \"end\" of the "
+"process variable range corresponds to the same point in reality (e.g. 360 "
+"degrees and 0 degrees).  In such a configuration, there are two possible "
+"values for any given error, corresponding to which way around the circle the"
+" error is measured.  It is usually best to use the smaller of these errrors."
+msgstr ""
+"有些过程变量(比如炮塔的角度)是用圆形尺度而不是线性尺度来测量的——也就是说，过程变量范围的每一个“末端”都对应于现实中的同一点(例如360度和0度)。在这种结构中，任何给定的误差都有两个可能的值，对应于测量误差在圆内的位置。通常最好使用较小的错误。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:138
+msgid ""
+"To configure a ``PIDController`` to automatically do this, use the "
+"``enableContinuousInput()`` method:"
+msgstr "要配置一个`` PIDController ``来自动执行此操作，请使用``enableContinuousInput() ``方法:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:153
+msgid "Clamping Controller Output"
+msgstr "钳位控制器输出"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:155
+msgid ""
+"Unlike the old ``PIDController``, the new controller does not offer any "
+"output clamping features, as the user is expected to use the loop output "
+"themselves.  Output clamping can be easily achieved by composing the "
+"controller with WPI's ``clamp()`` function (or ``std::clamp`` in c++):"
+msgstr ""
+"与旧的``PIDController''不同，新的控制器不提供任何输出钳位功能，因为希望用户自己使用循环输出。通过使用WPI的``clamp（）''函数（或c"
+" ++中的``std :: clamp``）组合控制器，可以轻松实现输出钳位："

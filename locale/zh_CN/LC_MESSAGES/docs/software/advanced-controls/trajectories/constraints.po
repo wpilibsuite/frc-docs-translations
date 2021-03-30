@@ -5,19 +5,162 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Atlus Zhang <atluslan@yahoo.co.jp>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 16:18+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Atlus Zhang <atluslan@yahoo.co.jp>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:2
+msgid "Trajectory Constraints"
+msgstr "轨迹约束"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:3
+msgid ""
+"In the :ref:`previous article <docs/software/advanced-controls/trajectories"
+"/trajectory-generation:Generating the trajectory>`, you might have noticed "
+"that no custom constraints were added when generating the trajectories. "
+"Custom constraints allow users to impose more restrictions on the velocity "
+"and acceleration at points along the trajectory based on location and "
+"curvature."
+msgstr ""
+"在 :ref:`previous article <docs/software/advanced-controls/trajectories"
+"/trajectory-generation:Generating the "
+"trajectory>`中，您可能已经注意到在生成轨迹时没有添加自定义约束。自定义约束允许用户基于位置和曲率对轨迹上点的速度和加速度施加更多的限制。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:5
+msgid ""
+"For example, a custom constraint can keep the velocity of the trajectory "
+"under a certain threshold in a certain region or slow down the robot near "
+"turns for stability purposes."
+msgstr "例如，自定义约束可以将轨迹的速度保持在某一区域的某一阈值以下，或者在转弯附近使机器人减速以达到稳定的目的。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:8
+msgid "WPILib-Provided Constraints"
+msgstr "WPILib-Provided约束"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:9
+msgid ""
+"WPILib includes a set of predefined constraints that users can utilize when "
+"generating trajectories. The list of WPILib-provided constraints is as "
+"follows:"
+msgstr "WPILib包括一组预定义的约束，用户在生成轨迹时可以利用这些约束。 WPILib提供的约束列表如下："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:11
+msgid ""
+"``CentripetalAccelerationConstraint``: Limits the centripetal acceleration "
+"of the robot as it traverses along the trajectory. This can help slow down "
+"the robot around tight turns."
+msgstr ""
+"``CentripetalAccelerationConstraint''：限制机器人沿轨迹行进时的向心加速度。这可以帮助机器人在急转弯时减速。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:12
+msgid ""
+"``DifferentialDriveKinematicsConstraint``: Limits the velocity of the robot "
+"around turns such that no wheel of a differential-drive robot goes over a "
+"specified maximum velocity."
+msgstr ""
+"``DifferentialDriveKinematicsConstraint''：限制转弯时机器人的速度，以使差速驱动机器人的车轮都不会超过指定的最大速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:13
+msgid ""
+"``DifferentialDriveVoltageConstraint``: Limits the acceleration of a "
+"differential drive robot such that no commanded voltage goes over a "
+"specified maximum."
+msgstr "``DifferentialDriveVoltageConstraint''：限制差动驱动机器人的加速度，以使命令电压不超过指定的最大值。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:14
+msgid ""
+"``EllipticalRegionConstraint``: Imposes a constraint only in an elliptical "
+"region on the field."
+msgstr "``EllipticalRegionConstraint''：仅在赛场上的椭圆区域中施加约束。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:15
+msgid ""
+"``MaxVelocityConstraint``: Imposes a max velocity constraint. This can be "
+"composed with the ``EllipticalRegionConstraint`` or "
+"``RectangularRegionConstraint`` to limit the velocity of the robot only in a"
+" specific region."
+msgstr ""
+"``MaxVelocityConstraint''：施加最大速度约束。这可以与``EllipticalRegionConstraint''或``RectangularRegionConstraint''组成，以仅在特定区域限制机器人的速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:16
+msgid ""
+"``MecanumDriveKinematicsConstraint``: Limits the velocity of the robot "
+"around turns such that no wheel of a mecanum-drive robot goes over a "
+"specified maximum velocity."
+msgstr ""
+"``MecanumDriveKinematicsConstraint''：限制转弯时机器人的速度，以使麦克纳姆驱动机器人的车轮都不会超过指定的最大速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:17
+msgid ""
+"``RectangularRegionConstraint``: Imposes a constraint only in a rectangular "
+"region on the field."
+msgstr "``RectangularRegionConstraint''：仅在字段的矩形区域中施加约束。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:18
+msgid ""
+"``SwerveDriveKinematicsConstraint``: Limits the velocity of the robot around"
+" turns such that no wheel of a swerve-drive robot goes over a specified "
+"maximum velocity."
+msgstr ""
+"``SwerveDriveKinematicsConstraint''：限制转弯时机器人的速度，以使转弯驱动机器人的车轮都不会超过指定的最大速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:20
+msgid ""
+"The ``DifferentialDriveVoltageConstraint`` only ensures that theoretical "
+"voltage commands do not go over the specified maximum using a "
+":ref:`feedforward model <docs/software/advanced-"
+"controls/controllers/feedforward:SimpleMotorFeedforward>`. If the robot were"
+" to deviate from the reference while tracking, the commanded voltage may be "
+"higher than the specified maximum."
+msgstr ""
+"``DifferentialDriveVoltageConstraint''只确保使用:ref:`feedforward model "
+"<docs/software/advanced-"
+"controls/controllers/feedforward:SimpleMotorFeedforward>`的理论电压命令不会超过指定的最大值。如果机器人在跟踪过程中偏离基准，指令电压可能会高于指定的最大电压。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:23
+msgid "Creating a Custom Constraint"
+msgstr "创建自定义约束"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:24
+msgid ""
+"Users can create their own constraint by implementing the "
+"``TrajectoryConstraint`` interface."
+msgstr "用户可以通过实现``TrajectoryConstraint''接口来创建自己的约束。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:56
+msgid ""
+"The ``MaxVelocity`` method should return the maximum allowed velocity for "
+"the given pose, curvature, and original velocity of the trajectory without "
+"any constraints. The ``MinMaxAcceleration`` method should return the minimum"
+" and maximum allowed acceleration for the given pose, curvature, and "
+"constrained velocity."
+msgstr ""
+"MaxVelocity方法应返回给定姿势，曲率和轨迹的原始速度的最大允许速度，且无任何限制。MinMaxAcceleration``方法应返回给定姿势，曲率和约束速度的最小和最大允许加速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/constraints.rst:58
+msgid ""
+"See the source code (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/java/edu/wpi/first/wpilibj/trajectory/constraint>`_,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/native/cpp/trajectory/constraint>`_)"
+" for the WPILib-provided constraints for more examples on how to write your "
+"own custom trajectory constraints."
+msgstr ""
+"有关WPILib提供的约束的信息，请参见源代码（Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/java/edu/wpi/first/wpilibj/trajectory/constraint>"
+" __，C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpimath/src/main/native/cpp/trajectory/constraint>"
+" _），以获取有关如何编写自己的自定义轨迹约束的更多示例。"

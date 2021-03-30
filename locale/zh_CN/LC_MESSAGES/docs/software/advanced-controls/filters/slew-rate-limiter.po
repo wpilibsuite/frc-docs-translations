@@ -5,19 +5,105 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Atlus Zhang <atluslan@yahoo.co.jp>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-12 16:18+0000\n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Atlus Zhang <atluslan@yahoo.co.jp>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:4
+msgid "Slew Rate Limiter"
+msgstr "回转速率限制器"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:6
+msgid ""
+"A common use for filters in FRC\\ |reg| is to soften the behavior of control"
+" inputs (for example, the joystick inputs from your driver controls).  "
+"Unfortunately, a simple low-pass filter is poorly-suited for this job; while"
+" a low-pass filter will soften the response of an input stream to sudden "
+"changes, it will also wash out fine control detail and introduce phase lag."
+"  A better solution is to limit the rate-of-change of the control input "
+"directly.  This is performed with a *slew rate limiter* - a filter that caps"
+" the maximum rate-of-change of the signal."
+msgstr ""
+"FRC \\ | reg "
+"|中过滤器的常见用法用于软化控制输入的行为（例如，驱动程序控件的操纵杆输入）。不幸的是，一个简单的低通滤波器不适合该工作。低通滤波器将软化输入流对突然变化的响应，但同时也会淘汰精细的控制细节并引入相位滞后。更好的解决方案是直接限制控制输入的变化率。这是通过*压摆率限制器"
+"*执行的-限制信号最大变化率的滤波器。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:8
+msgid ""
+"A slew rate limiter can be thought of as a sort of primitive motion profile."
+"  In fact, the slew rate limiter is the first-order equivalent of the "
+":ref:`Trapezoidal Motion Profile <docs/software/advanced-"
+"controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in "
+"WPILib>` supported by WPILib - it is precisely the limiting case of "
+"trapezoidal motion when the acceleration constraint is allowed to tend to "
+"infinity.  Accordingly, the slew rate limiter is a good choice for applying "
+"a de-facto motion profile to a stream of velocity setpoints (or voltages, "
+"which are usually approximately proportional to velocity).  For input "
+"streams that control positions, it is usually better to use a proper "
+"trapezoidal profile."
+msgstr ""
+"回转速率限制器可以被认为是一种原始的运动曲线。事实上，回转速率限制器是由WPILib支持的梯形运动曲线:ref:`Trapezoidal Motion "
+"Profile <docs/software/advanced-controls/controllers/trapezoidal-"
+"profiles:Trapezoidal Motion Profiles in WPILib>` "
+"的一阶等价物。它恰恰是梯形运动的极限情况下，当加速度约束被允许趋向于无穷大。因此，转换速率限制器是一个很好的选择，应用实际的运动剖面流的速度设定值(或电压，通常是近似成比例的速度)。对于控制位置的输入流，通常最好使用适当的梯形剖面。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:10
+msgid ""
+"Slew rate limiting is supported in WPILib through the ``SlewRateLimiter`` "
+"class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/SlewRateLimiter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SlewRateLimiter.html>`__)."
+msgstr ""
+"通过``SlewRateLimiter''类（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/SlewRateLimiter.html>`__，`C"
+" ++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1SlewRateLimiter.html>`__），在WPILib中支持斜率限制。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:13
+msgid "Creating a SlewRateLimiter"
+msgstr "创建一个SlewRateLimiter"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:15
+msgid ""
+"The C++ ``SlewRateLimiter`` class is templated on the unit type of the "
+"input.  For more information on C++ units, see :ref:`docs/software/basic-"
+"programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"C ++的“ SlewRateLimiter”类以输入的单位类型为模板。有关C ++单元的更多信息，请参见:ref:`docs/software"
+"/basic-programming/cpp-units:The C++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:17
+msgid ""
+"Because filters have \"memory\", each input stream requires its own filter "
+"object.  Do *not* attempt to use the same filter object for multiple input "
+"streams."
+msgstr "因为过滤器具有“内存”，所以每个输入流都需要其自己的过滤器对象。 *不要*尝试对多个输入流使用相同的过滤器对象。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:19
+msgid "Creating a SlewRateLimiter is simple:"
+msgstr "创建SlewRateLimiter很简单："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:34
+msgid "Using a SlewRateLimiter"
+msgstr "使用SlewRateLimiter"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:36
+msgid ""
+"Once your filter has been created, using it is easy - simply call the "
+"``calculate()`` method with the most recent input to obtain the filtered "
+"output:"
+msgstr "创建过滤器后，使用起来很容易-只需使用最新输入调用calculate（）方法即可获取过滤后的输出："

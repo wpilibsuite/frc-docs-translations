@@ -5,7 +5,7 @@
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Zimeng Chai <zhiwan13579@126.com>, 2021
+# KeseterG <zhiwan13579@126.com>, 2021
 # Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-30 16:05+0000\n"
+"POT-Creation-Date: 2021-04-03 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -27,17 +27,6 @@ msgstr ""
 msgid "Reading array values published by NetworkTables"
 msgstr "读取网络表发布的数组值"
 
-#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:3
-msgid ""
-"This article describes how to read values published by NetworkTables using a"
-" program running on the robot. This is useful when using computer vision "
-"where the images are processed on your driver station laptop and the results"
-" stored into NetworkTables possibly using a separate vision processor like a"
-" raspberry pi, or a tool on the robot like GRIP, or a python program to do "
-"the image processing."
-msgstr ""
-"本文介绍如何使用机器人上运行的程序读取NetworkTables发布的值。当使用计算机视觉在驱动站笔记本电脑上处理图像并将结果存储到NetworkTables中时，这很有用，可能使用单独的视觉处理器（例如，树莓派）或机器人上的工具（例如GRIP）或Python程序来执行图像处理。"
-
 #: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:8
 msgid ""
 "Very often the values are for one or more areas of interest such as goals or"
@@ -47,33 +36,6 @@ msgid ""
 "interesting through further processing."
 msgstr ""
 "通常，这些值是针对一个或多个感兴趣区域（例如目标或游戏片段）的，并且会返回多个实例。在下面的示例中，图像处理器返回了多个x，y，宽度，高度和区域，并且机器人程序可以通过进一步的处理来找出返回的值中哪些是有趣的。"
-
-#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:13
-msgid "Verify the network table keys being published"
-msgstr "验证发布的网络表密钥"
-
-#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:17
-msgid ""
-"You can verify the names of the network table keys used for publishing the "
-"values by using the Outline Viewer application. It is a Java program in your"
-" user directory in the wpilib/<YEAR>/tools folder. The application is "
-"started by selecting the \"WPILib\" menu in Visual Studio Code then Start "
-"Tool then \"OutlineViewer\". In this example, with the image processing "
-"program running (GRIP) you can see the values being put into NetworkTables."
-msgstr ""
-"您可以使用Outline "
-"Viewer应用程序来验证用于发布值的网络表键的名称。它是用户目录下wpilib/<YEAR>/tools文件夹中的一个Java程序。可通过在Visual"
-" Studio Code中选择“ WPILib”菜单，然后依次单击“启动工具”和“ "
-"OutlineViewer”来启动应用程序。在此示例中，在运行图像处理程序（GRIP）的情况下，您可以看到值被添加到网络表中。"
-
-#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:22
-msgid ""
-"In this case the values are stored in a table called GRIP and a sub-table "
-"called myContoursReport. You can see that the values are in brackets and "
-"there are 2 values in this case for each key. The network table key names "
-"are centerX, centerY, area, height and width."
-msgstr ""
-"在这种情况下，这些值存储在一个名为GRIP的表和一个名为myContoursReport的子表中。您可以看到每个键对应一个有着2个值的列表。网络表的键名为centerX，centerY，area，height和width。"
 
 #: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:26
 msgid ""
@@ -106,17 +68,6 @@ msgid ""
 "Initialize the subtable instance so that it can be used later for retrieving"
 " the values."
 msgstr "初始化子表实例，以便以后可用于检索值。"
-
-#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:80
-msgid ""
-"Read the array of values from NetworkTables. In the case of a communicating "
-"programs, it's possible that the program producing the output being read "
-"here might not yet be available when the robot program starts up. To avoid "
-"issues of the data not being ready, a default array of values is supplied. "
-"This default value will be returned if the network table key hasn't yet been"
-" published. This code will loop over the value of areas every 20ms."
-msgstr ""
-"从NetworkTables中读取值的数组。在通讯程序的情况下，当机器人程序启动时，可能产生在此处读取输出的程序可能不可用。为避免数据未准备就绪的问题，提供了一个默认值数组。如果尚未发布网络表密钥，则将返回此默认值。该代码将每20ms遍历一次Area的值。"
 
 #: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:86
 msgid "Program output"

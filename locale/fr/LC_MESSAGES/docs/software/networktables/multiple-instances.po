@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"POT-Creation-Date: 2021-04-03 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -26,25 +26,7 @@ msgstr ""
 msgid "Creating multiple instances of NetworkTables"
 msgstr "Création de plusieurs instances de NetworkTables"
 
-#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:3
-msgid ""
-"This feature is mainly useful for coprocessors and unit testing. It allows a"
-" single program to be a member of two completely independent Networktables "
-"\"networks\" that contain completely different (and unrelated) sets of "
-"tables. For most general usage, you should use tables within the single "
-"instance, as all current dashboard programs can only connect to a single NT "
-"server at a time."
-msgstr ""
-"Cette fonctionnalité est principalement utile pour les coprocesseurs et pour"
-" vérifier le fonctionnement d'une section d'un système. Il permet à un seul "
-"programme d'être membre de deux \"réseaux\" Networktables complètement "
-"indépendants qui contiennent des ensembles de tables complètement différents"
-" (et non liés). Pour une utilisation normale, vous devez cependant utiliser "
-"des tables au sein d'une instance unique, car les programmes de tableau de "
-"bord (Dashboard) actuels ne peuvent se connecter qu'à un seul serveur NT à "
-"la fois."
-
-#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:5
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:6
 msgid ""
 "Normally the \"default\" instance is set up on the robot as a server, and "
 "used for communication with the dashboard program running on your driver "
@@ -56,7 +38,7 @@ msgstr ""
 "de bord exécuté sur l'ordinateur de votre poste de conduite. C'est ce que "
 "les classes ``SmartDashboard`` et ``LiveWindow`` utilisent."
 
-#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:7
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:8
 msgid ""
 "If you had a coprocessor and wanted to have a set of tables that's shared "
 "only between the coprocessor and the robot, you could set up a separate "
@@ -68,32 +50,3 @@ msgstr ""
 "configurer une instance distincte dans le code du robot qui agit en tant que"
 " client (ou serveur) et y connecter le coprocesseur. , et ces tableaux NE "
 "seront PAS envoyés au tableau de bord."
-
-#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:9
-msgid ""
-"Similarly, if you wanted to do unit testing of your robot program's NT "
-"communications, you could set up your unit tests such that they create a "
-"separate client instance (still within the same program) and have it connect"
-" to the server instance that the main robot code is running."
-msgstr ""
-"De même, si vous souhaitez effectuer des tests spécifiques sur les "
-"communications NT de votre programme de robot, vous pouvez configurer vos "
-"tests de manière à créer une instance client distincte (toujours dans le "
-"même programme) et la connecter à l'instance du serveur (exécutée par le "
-"code principal du robot)."
-
-#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:11
-msgid ""
-"Another example might be having two completely separate dashboard programs. "
-"You could set up two networktables server instances in your robot program "
-"(on different TCP ports of course), set up different tables on each one, and"
-" have each dashboard connect to a different server instance. Each dashboard "
-"would only see the tables on its instance."
-msgstr ""
-"Un autre exemple pourrait être d'avoir deux programmes de tableau de bord "
-"complètement séparés. Vous pouvez configurer deux instances de serveur de "
-"tables réseau dans votre programme de robot (sur différents ports TCP), "
-"configurer des tables différentes sur chacune d'elles et faire en sorte que "
-"chaque tableau de bord se connecte à une instance de serveur différente. "
-"Chaque tableau de bord serait en mesure de voir seulement que les tables sur"
-" son instance."

@@ -5,17 +5,16 @@
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
-# Müfit ALKAYA_3390 <mufit.alkaya@tfo.k12.tr>, 2020
-# ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 16:15+0000\n"
+"POT-Creation-Date: 2021-04-03 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:07+0000\n"
-"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -46,21 +45,22 @@ msgstr ""
 msgid "Creating The Data Class"
 msgstr "Veri Sınıfının Oluşturulması"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:33
+#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:7
 msgid ""
-"It is also good practice to override the default ``equals`` and ``hashcode``"
-" methods to ensure that different objects are considered equivalent when "
-"their fields are the same. The ``asMap()`` method should return the data "
-"represented in a simple Map object as it will be mapped to the NetworkTable "
-"entry it corresponds to. In this case, we can represent the point as its X "
-"and Y coordinates and return a ``Map`` containing them."
+"In this example, we will create a custom data type for a 2D Point and its x "
+"and y coordinates. In order to create a custom data type class, it must "
+"extend the abstract class `ComplexData "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_."
+" Your custom data class must also implement the ``asMap()`` method that "
+"returns the represented data as a simple map as noted below with the "
+"``@Override`` annotation:"
 msgstr ""
-"Farklı nesnelerin alanları aynı olduğunda eşdeğer kabul edilmesini sağlamak "
-"için varsayılan ``equals-eşittir`` ve ``hashcode-karma kod '' yöntemlerini "
-"geçersiz kılmak da iyi bir uygulamadır. ``asMap()`` methodu, karşılık gelen "
-"NetworkTable girişine eşleneceği için basit bir Map nesnesinde temsil edilen"
-" verileri döndürmelidir. Bu durumda, noktayı X ve Y koordinatları olarak "
-"temsil edebilir ve bunları içeren bir ``Map-Harita`` '' döndürebiliriz."
+"Bu örnekte, bir 2B Nokta ve onun x ve y koordinatları için özel bir veri "
+"türü oluşturacağız. Özel bir veri türü sınıfı oluşturmak için, `ComplexData "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`"
+" _ soyut sınıfını genişletmesi gerekir. Özel veri sınıfınız, aşağıda `` @ "
+"Override '' ek açıklamasıyla belirtildiği gibi, temsil edilen verileri basit"
+" bir harita olarak döndüren ``asMap ()`` metodunu da uygulamalıdır:"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:59
 msgid ""
@@ -136,18 +136,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:123
 msgid "The following code above works as noted:"
 msgstr "Yukarıdaki kod, belirtildiği gibi çalışır:"
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:125
-msgid ""
-"The ``fromMap()`` method creates a new MyPoint2D using the values in the "
-"NetworkTable entry it is bound to. The ``getOrDefault`` method will return "
-"0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a"
-" new ``MyPoint2D`` object if no source is present."
-msgstr ""
-"``FromMap()`` yöntemi, bağlı olduğu NetworkTable girişindeki değerleri "
-"kullanarak yeni bir MyPoint2D oluşturur. ``GetOrDefault``  yöntemi, giriş "
-"değerlerini alamazsa 0.0 döndürür. ``GetDefaultValue`` , kaynak yoksa yeni "
-"bir ``MyPoint2D``  nesnesi döndürecektir."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/shuffleboard/custom-widgets/creating-custom-data-types.rst:129
 msgid "Exporting Data Type To Plugin"

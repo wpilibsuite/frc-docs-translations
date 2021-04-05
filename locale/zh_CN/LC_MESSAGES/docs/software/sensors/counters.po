@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-06 16:18+0000\n"
+"POT-Creation-Date: 2021-04-05 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -22,6 +22,294 @@ msgstr ""
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:2
+msgid "Counters"
+msgstr "计数器"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:7
+msgid ""
+"The :code:`Counter` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__)"
+" is a versatile class that allows the counting of pulse edges on a digital "
+"input.  :code:`Counter` is used as a component in several more-complicated "
+"WPILib classes (such as :ref:`Encoder <docs/software/sensors/encoders-"
+"software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/sensors"
+"/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on"
+" its own."
+msgstr ""
+"Counter类（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__）是一种多功能的类，允许对数字输入的脉冲边界进行计数。"
+" Counter在多个更复杂的WPILib类（例如Encoder和Ultrasonic）中用作组件，但它本身也非常有用。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:9
+msgid ""
+"There are a total of 8 counter units in the roboRIO FPGA, meaning no more "
+"than 8 :code:`Counter` objects may be instantiated at any one time, "
+"including those contained as resources in other WPILib objects.  For "
+"detailed information on when a :code:`Counter` may be used by another "
+"object, refer to the official API documentation."
+msgstr ""
+"roboRIO "
+"FPGA中总共有8个计数器单元，这意味着Counter在同时最多可以实例化8个对象，包括那些作为其他WPILib对象中资源的对象。有关Counter何时可能被其他对象使用的详细信息，请参阅官方API文档。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:12
+msgid "Configuring a counter"
+msgstr "配置计数器"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:14
+msgid ""
+"The :code:`Counter` class can be configured in a number of ways to provide "
+"differing functionalities."
+msgstr "Counter类可以以多种方式配置来提供不同的功能。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:17
+msgid "Counter Modes"
+msgstr "计数器模式"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:19
+msgid ""
+"The :code:`Counter` object may be configured to operate in one of four "
+"different modes:"
+msgstr "Counter对象可以被配置成四个不同模式中的一种："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:21
+msgid ""
+"`Two-pulse mode`_: Counts up and down based on the edges of two different "
+"channels."
+msgstr "双脉冲模式：根据两个不同通道的边界上下计数。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:22
+msgid ""
+"`Semi-period mode`_: Measures the duration of a pulse on a single channel."
+msgstr "半周期模式：测量单个通道上的脉冲持续时间。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:23
+msgid ""
+"`Pulse-length mode`_: Counts up and down based on the edges of one channel, "
+"with the direction determined by the duration of the pulse on that channel."
+msgstr "脉冲长度模式：根据一个通道的边界上下计数，其方向由该通道上的脉冲持续时间确定。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:24
+msgid ""
+"`External direction mode`_: Counts up and down based on the edges of one "
+"channel, with a separate channel specifying the direction."
+msgstr "外部方向模式：根据一个通道的边界进行上下计数，并使用单独的通道指定方向。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:26
+msgid ""
+"In all modes except semi-period mode, the counter can be configured to "
+"increment either once per edge (2X decoding), or once per pulse (1X "
+"decoding).  By default, counters are set to two-pulse mode, if only one "
+"channel is specified, the counter will only count up."
+msgstr ""
+"在除半周期模式以外的所有模式下，均可将计数器配置为每个边界增加一次（2X解码），或者每个脉冲增加一次（1X解码）。默认情况下，计数器设置为双脉冲模式，如果仅指定一个通道，则计数器只会为向上计数。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:29
+msgid "Two-pulse mode"
+msgstr "双脉冲模式"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:31
+msgid ""
+"In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on"
+" the specified \"up channel,\" and down for every edge/pulse on the "
+"specified \"down channel.\"  A counter can be initialized in two-pulse with "
+"the following code:"
+msgstr ""
+"在双脉冲模式下，Counter对于指定的“上行通道”上的每个边界/脉冲，将递增计数，对于指定的“下行通道”上的每个边界/脉冲将递减计数。可以使用以下代码在两个脉冲中初始化计数器："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:66
+msgid "Semi-period mode"
+msgstr "半周期模式"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:68
+msgid ""
+"In semi-period mode, the :code:`Counter` will count the duration of the "
+"pulses on a channel, either from a rising edge to the next falling edge, or "
+"from a falling edge to the next rising edge.  A counter can be initialized "
+"in semi-period mode with the following code:"
+msgstr ""
+"在半周期模式下，Counter将对通道上脉冲的持续时间进行计数，从上升沿到下一个下降沿，或者从下降沿到下一个上升沿。可以使用以下代码在半周期模式下初始化计数器："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:98
+msgid "To get the pulse width, call the :code:`getPeriod()` method:"
+msgstr "要获取脉冲宽度，请调用getPeriod()方法："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:113
+msgid "Pulse-length mode"
+msgstr "脉冲长度模式"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:115
+msgid ""
+"In pulse-length mode, the counter will count either up or down depending on "
+"the length of the pulse. A pulse below the specified threshold time will be "
+"interpreted as a forward count and a pulse above the threshold is a reverse "
+"count. This is useful for some gear tooth sensors which encode direction in "
+"this manner.  A counter can be initialized in this mode as follows:"
+msgstr ""
+"在脉冲长度模式下，计数器将根据脉冲长度递增或递减计数。低于指定阈值时间的脉冲将被解释为正向计数，而高于阈值的脉冲将被解释为反向计数。这对于某些以这种方式编码方向的齿轮传感器很有用。如下所示在此模式下初始化计数器："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:152
+msgid "External direction mode"
+msgstr "外部方向模式"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:154
+msgid ""
+"In external direction mode, the counter counts either up or down depending "
+"on the level on the second channel. If the direction source is low, the "
+"counter will increase, if the direction source is high, the counter will "
+"decrease (to reverse this, see the next section). A counter can be "
+"initialized in this mode as follows:"
+msgstr ""
+"在外部方向模式下，计数器根据第二个通道的电平递增或递减计数。如果方向源为低电平，则计数器将增加；如果方向源为高电平，则计数器将减小（要反转，请参见下一节）。如下所示在此模式下初始化计数器："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:187
+msgid "Configuring counter parameters"
+msgstr "配置计数器参数"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:189
+msgid ""
+"The :code:`Counter` class does not make any assumptions about units of "
+"distance; it will return values in whatever units were used to calculate the"
+" distance-per-pulse value.  Users thus have complete control over the "
+"distance units used.  However, units of time are *always* in seconds."
+msgstr ""
+"Counter类不对距离单位做任何假设；它将以用于计算每脉冲距离值的任何单位返回值。因此，用户可以决定所使用的距离单位。但是，时间单位始终以秒为单位。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:191
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does *not* "
+"depend on the decoding type - each \"pulse\" should always be considered to "
+"be a full cycle (rising and falling)."
+msgstr "计算每个脉冲的距离时使用的脉冲的数量不依赖于解码类型-每个“脉冲”应始终被认为是一个完整的周期（上升和下降）。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:193
+msgid ""
+"Apart from the mode-specific configurations, the :code:`Counter` class "
+"offers a number of additional configuration methods:"
+msgstr "除了特定于模式的配置外，Counter该类还提供了许多其他配置方法："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:236
+msgid "Reading information from counters"
+msgstr "从计数器读取信息"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:238
+msgid ""
+"Regardless of mode, there is some information that the :code:`Counter` class"
+" always exposes to users:"
+msgstr "无论采用哪种模式，Counter类始终会向用户公开一些信息："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:241
+msgid "Count"
+msgstr "计数"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:243
+msgid "Users can obtain the current count with the :code:`get()` method:"
+msgstr "用户可以使用以下get()方法获取当前计数："
+
 #: ../../frc-docs/source/docs/software/sensors/counters.rst:258
 msgid "Distance"
 msgstr "距离"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:260
+msgid ""
+"Counters measure *relative* distance, not absolute; the distance value "
+"returned will depend on the position of the encoder when the robot was "
+"turned on or the encoder value was last :ref:`reset "
+"<docs/software/sensors/counters:Resetting a Counter>`."
+msgstr ""
+"计数器测量相对距离，而不是绝对距离；返回的距离值取决于打开机器人电源或上次:ref:`重置 "
+"<docs/software/sensors/counters:Resetting a Counter>`编码器值时编码器的位置。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:262
+msgid ""
+"If the :ref:`distance per pulse <docs/software/sensors/counters:Configuring "
+"counter parameters>` has been configured, users can obtain the total "
+"distance traveled by the counted sensor with the :code:`getDistance()` "
+"method:"
+msgstr ""
+"如果已配置 :ref:`每个脉冲的距离 <docs/software/sensors/counters:Configuring counter "
+"parameters>`，则用户可以使用以下getDistance()方法获得计数传感器的总移动距离："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:277
+msgid "Rate"
+msgstr "速率"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:279
+msgid "Units of time for the :code:`Counter` class are *always* in seconds."
+msgstr "计数器类的时间单位总是秒。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:281
+msgid ""
+"Users can obtain the current rate of change of the counter with the "
+":code:`getRate()` method:"
+msgstr "用户可以通过以下方法获取计数器的当前变化率getRate()："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:296
+msgid "Stopped"
+msgstr "是否停止"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:298
+msgid ""
+"Users can obtain whether the counter is stationary with the "
+":code:`getStopped()` method:"
+msgstr "用户可以通过以下getStopped()方法获取计数器是否停止："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:313
+msgid "Direction"
+msgstr "方向"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:315
+msgid ""
+"Users can obtain the direction in which the counter last moved with the "
+":code:`getDirection()` method:"
+msgstr "用户可以使用以下getDirection()方法获取计数器最后移动的方向："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:330
+msgid "Period"
+msgstr "周期"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:332
+msgid ""
+"In :ref:`semi-period mode <docs/software/sensors/counters:Semi-period "
+"mode>`, this method returns the duration of the pulse, not of the period."
+msgstr ""
+"在:ref:`半周期模式 <docs/software/sensors/counters:Semi-period "
+"mode>`下，此方法返回脉冲的持续时间，而不是周期的持续时间。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:334
+msgid ""
+"Users can obtain the duration (in seconds) of the most-recent period with "
+"the :code:`getPeriod()` method:"
+msgstr "用户可以使用以下方法获取最近周期的持续时间（以秒为单位）getPeriod()："
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:349
+msgid "Resetting a counter"
+msgstr "重置计数器"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:351
+msgid ""
+"To reset a counter to a distance reading of zero, call the :code:`reset()` "
+"method.  This is useful for ensuring that the measured distance corresponds "
+"to the actual desired physical measurement."
+msgstr "要将计数器重置为零距离读数，请调用reset()方法。这可以确保测量的距离与实际距离相对应。"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:366
+msgid "Using counters in code"
+msgstr "在代码中使用计数器"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:368
+msgid ""
+"Counters are useful for a wide variety of robot applications - but since the"
+" :code:`Counter` class is so varied, it is difficult to provide a good "
+"summary of them here.  Many of these applications overlap with the "
+":code:`Encoder` class - a simple counter is often a cheaper alternative to a"
+" quadrature encoder.  For a summary of potential uses for encoders in code, "
+"see :ref:`docs/software/sensors/encoders-software:Encoders - Software`."
+msgstr ""
+"计数器对各种各样的机器人程序很有用-但是由于Counter类的种类繁多，因此很难在此处提供它们的完整摘要。这些应用中有许多与Encoder类重叠-"
+"简单的计数器通常是正交编码器的廉价替代品。有关代码中编码器潜在用途的摘要，请参见:ref:`docs/software/sensors"
+"/encoders-software:Encoders - Software`。"

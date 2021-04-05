@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-07 04:14+0000\n"
+"POT-Creation-Date: 2021-04-05 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
 "Last-Translator: Yuhao Li <yuhao_li@hotmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,200 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:4
+msgid "Encoders - Hardware"
+msgstr "编码器 - 硬件"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:6
+msgid ""
+"This section covers encoder hardware.  For a software guide to encoders, see"
+" :ref:`docs/software/sensors/encoders-software:Encoders - Software`."
+msgstr ""
+"本章节介绍编码器硬件的相关知识。如需编码器的软件教程，请参考:ref:`docs/software/sensors/encoders-"
+"software:Encoders - Software`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:8
+msgid ""
+"Quadrature encoders are by far the most common method for measuring "
+"rotational motion in FRC\\ |reg|, and for good reason - they are cheap, "
+"easy-to-use, and reliable.  As they produce digital signals, they are less-"
+"prone to noise and interference than analog devices (such as "
+":doc:`potentiometers <analog-potentiometers-hardware>`)."
+msgstr ""
+"使用正交编码器是FRC\\|reg|比赛中测量旋转运动的最常用方法。理由很充分：价格便宜，易于使用且可靠。正交编码器输出的是数字信号，因此不太容易想模拟信号的传感器一样存在噪音和干扰的问题（如:doc:`potentiometers"
+" <analog-potentiometers-hardware>）。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:10
+msgid ""
+"The term \"quadrature\" refers to the method by which the motion is "
+"measured/encoded.  A quadrature encoder produces two square-wave pulses that"
+" are 90-degrees out-of-phase from each other, as seen in the picture below:"
+msgstr "术语“正交”是指测量/编码运动的方法。正交编码器会产生两个相位相差为90度的方波脉冲，如下图所示："
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:15
+msgid ""
+"Thus, across both channels, there are four total \"edges\" per period (hence"
+" \"quad\").  The use of two out-of-phase pulses allows the direction of "
+"motion to be unambiguously determined from which pulse \"leads\" the other."
+msgstr ""
+"因此，在这两个信号通道之间，每个周期有四个“边”（因此为“ "
+"quad”）。通过判断两个不同相位的信号脉冲，哪个脉冲在另一个脉冲的前面，就可以明确确定运动方向，"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:17
+msgid ""
+"As each square wave pulse is a digital signal, quadrature encoders connect "
+"to the :doc:`digital input <digital-inputs-hardware>` ports on the RIO."
+msgstr "由于每个方波脉冲都是数字信号，正交编码器可以连接到roboRIO上的DIO口。<digital-inputs-hardware>"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:20
+msgid "Types of Encoders"
+msgstr "编码器的种类"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:22
+msgid "There are three types of quadrature encoders typically used in FRC:"
+msgstr "FRC比赛中，常用到以下三种正交编码器："
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:24
+msgid "`Shafted encoders`_"
+msgstr "轴编码器"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:25
+msgid "`On-shaft encoders`_"
+msgstr "轴上编码器"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:26
+msgid "`Magnetic encoders`_"
+msgstr "磁编码器"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:28
+msgid ""
+"These encoders vary in how they are mounted to the mechanism in question.  "
+"In addition to these types of encoders, many FRC mechanisms come with "
+"quadrature encoders integrated into their design."
+msgstr "这些编码器的安装方式有所不同。除了这些类型的编码器，许多队伍还将正交编码器集成到机械设计中。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:31
+msgid "Shafted encoders"
+msgstr "轴编码器"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:37
+msgid ""
+"Shafted encoders have a sealed body with a shaft protruding out of it that "
+"must be coupled rotationally to a mechanism.  This is often done with a "
+"helical beam coupling, or, more cheaply, with a length of flexible tubing "
+"(such as surgical tubing or pneumatic tubing), fastened with cable ties "
+"and/or adhesive at either end.  Many commercial off-the-shelf FRC gearboxes "
+"have purpose-built mounting points for shafted encoders, such as the popular"
+" `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`__, "
+"pictured above."
+msgstr ""
+"轴编码器具有一个密封的主体，有一个输出轴伸出其中，这个输出轴必须与机构旋转连接。这通常是通过螺丝连接。或者用一定长度的软管（例如手术管或气动管）连接，两端用扎带或胶水固定。许多现成的FRC齿轮箱都有专门用于轴编码器的安装点，例如上图的"
+" `Grayhill 63r <https://www.grayhill.com/documents/63R-Datasheet>`。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:40
+msgid "On-shaft encoders"
+msgstr "轴上编码器"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:46
+msgid ""
+"On-shaft encoders (such as the `AMT103-V "
+"<https://www.cuidevices.com/product/motion/rotary-"
+"encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through "
+"FIRST Choice) couple to a shaft by fitting *around* it, forming a friction "
+"coupling between the shaft and a rotating hub inside the encoder."
+msgstr ""
+"轴上编码器（例如AMT103-V <https://www.cuidevices.com/product/motion/rotary-"
+"encoders/incremental/modular/amt10-v-kit/amt103-v>`__可通过FIRST "
+"Choice获得）通过紧固锁紧到一个输出轴，从而使转轴和编码器内部的旋转环固定在一起。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:49
+msgid "Magnetic encoders"
+msgstr "磁编码器"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:55
+msgid ""
+"Magnetic encoders require no mechanical coupling to the shaft at all; "
+"rather, they track the orientation of a magnet fixed to the shaft.  The "
+"`CTRE Mag Encoder <https://www.ctr-electronics.com/srx-magnetic-"
+"encoder.html>`__ is a popular option, with many FRC products offering built-"
+"in mounting options for it.  While the no-contact nature of magnetic "
+"encoders can be handy, they often require precise construction in order to "
+"ensure that the magnet is positioned correctly with respect to the encoder."
+msgstr ""
+"磁性编码器完全不需要与转轴连接；它检测固定在转轴上的磁铁的方向。 “ CTRE Mag编码器<https://www.ctr-"
+"electronics.com/srx-magnetic-"
+"encoder.html>`__是一个受欢迎的选项，许多FRC产品都为其提供了内置安装孔位。虽然磁性编码器无接触的特性很方便，但它们通常需要精确的安装孔位，以确保磁体相对于编码器正确定位。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:58
+msgid "Encoder Wiring"
+msgstr "编码器接线"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:64
+msgid ""
+"Encoders that need two digital inputs, such as the `E4T OEM Miniature "
+"Optical Encoder <https://www.andymark.com/products/e4t-oem-miniature-"
+"optical-encoder-kit>`__, can be wired to two digital input ports. Other "
+"encoders, such as the on-shaft ones shown above, often need :doc:`an analog "
+"input port <analog-inputs-hardware>`. CTRE Magnetic encoders shown above can"
+" be wired to a :ref:`TalonSRX data port <docs/hardware/sensors/serial-"
+"buses:CAN Bus>` with a ribbon cable."
+msgstr ""
+"需要两个数字输入的编码器，例如`E4T OEM Miniature Optical Encoder "
+"<https://www.andymark.com/products/e4t-oem-miniature-optical-encoder-"
+"kit>`__，可以连接到两个数字输入输入端口。其他编码器，例如上面显示的轴上编码器，通常需要 :doc:`an analog input port "
+"<analog-inputs-hardware>`。上面显示的CTRE磁性编码器可以通过带状电缆连接到:ref:`TalonSRX data port "
+"<docs/hardware/sensors/serial-buses:CAN Bus>` "
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:67
+msgid "Encoder Resolution"
+msgstr "编码器分辨率"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:69
+msgid ""
+"The acronyms \"CPR\" and \"PPR\" are *both* used by varying sources to "
+"denote both edges per revolution *and* cycles per revolution, so the acronym"
+" alone is not enough to tell which is of the two is meant when by a given "
+"value.  When in doubt, consult the technical manual of your specific "
+"encoder."
+msgstr ""
+"首字母缩写词“ CPR”和“ "
+"PPR”被不同的来源*同时*使用，以表示每转的两个边沿*和*每转的循环数，因此仅首字母缩写还不足以说明两者中的哪一个是何时给定的价值。如有疑问，请查阅您特定编码器的技术手册。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:71
+msgid ""
+"As encoders measure rotation with digital pulses, the accuracy of the "
+"measurement is limited by the number of pulses per given amount of "
+"rotational movement.  This is known as the \"resolution\" of the encoder, "
+"and is traditionally measured in one of two different ways: edges per "
+"revolution, or cycles per revolution."
+msgstr ""
+"当编码器使用数字脉冲测量旋转时，测量精度受每给定旋转运动量的脉冲数限制。这被称为编码器的“分辨率”，并且通常以两种不同方式之一进行测量：每转的边沿或每转的圈数。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:73
+msgid ""
+"*Edges per revolution* refers to the total number of transitions from high-"
+"to-low or low-to-high across both channels per revolution of the encoder "
+"shaft.  A full period contains *four* edges."
+msgstr "*每转边沿*是指编码器轴每转两个通道从高到低或从低到高的过渡总数。一个完整的周期包含*四个*边。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:75
+msgid ""
+"*Cycles per revolution* refers to the total number of *complete periods* of "
+"both channels per revolution of the encoder shaft.  A full period is *one* "
+"cycle."
+msgstr "*每转周期*是指编码器轴每转两个通道的*完整周期*的总数。一个完整的周期是*一*转。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:77
+msgid ""
+"Thus, a resolution stated in edges per revolution has a value four times "
+"that of the same resolution stated in cycles per revolution."
+msgstr "因此，以每转边缘表示的分辨率的值是以每转周期表示的相同分辨率的值的四倍。"
+
+#: ../../frc-docs/source/docs/hardware/sensors/encoders-hardware.rst:79
+msgid ""
+"In general, the resolution of your encoder in edges-per-revolution should be"
+" somewhat finer than your smallest acceptable error in positioning.  Thus, "
+"if you want to know the mechanism plus-or-minus one degree, you should have "
+"an encoder with a resolution somewhat higher than 360 edges per revolution."
+msgstr "通常，编码器每转边的分辨率应比定位中可接受的最小误差稍好。因此，如果您想知道正负一度的机制，则应使用分辨率稍高于每转360个边缘的编码器。"

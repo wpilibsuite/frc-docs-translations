@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-06 16:18+0000\n"
+"POT-Creation-Date: 2021-04-05 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
 "Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,143 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:4
+msgid "Digital Inputs - Software"
+msgstr "数字输入-软件"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:6
+msgid ""
+"This section covers digital inputs in software.  For a hardware guide to "
+"digital inputs, see :ref:`docs/hardware/sensors/digital-inputs-"
+"hardware:Digital Inputs - Hardware`."
+msgstr ""
+"本节介绍软件中的数字输入。有关数字输入的硬件指南，请参阅:ref:`docs/hardware/sensors/digital-inputs-"
+"hardware:Digital Inputs - Hardware`。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:8
+msgid ""
+"The roboRIO's FPGA supports up to 26 digital inputs.  10 of these are made "
+"available through the built-in DIO ports on the RIO itself, while the other "
+"16 are available through the MXP breakout port."
+msgstr "roboRIO的FPGA支持多达26个数字输入。其中的10个可通过RIO本身的内置DIO端口使用，而其他16个可通过MXP分支端口使用。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:10
+msgid ""
+"Digital inputs read one of two states - \"high\" or \"low.\"  By default, "
+"the built-in ports on the RIO will read \"high\" due to internal pull-up "
+"resistors (for more information, see :ref:`docs/hardware/sensors/digital-"
+"inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs "
+"are most-commonly used with switches of some sort.  Support for this usage "
+"is provided through the :code:`DigitalInput` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DigitalInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1DigitalInput.html>`__)."
+msgstr ""
+"数字输入读取两种状态之一-“高”或“低”。默认情况下，由于内部上拉电阻，RIO上的内置端口将显示为“高”（有关更多信息，请参见“数字输入-"
+"硬件”）。因此，数字输入最常与某种开关一起使用。通过DigitalInput类(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DigitalInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1DigitalInput.html>`__)提供对此用法的支持。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:13
+msgid "The DigitalInput class"
+msgstr "DigitalInput类"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:15
+msgid "A :code:`DigitalInput` can be initialized as follows:"
+msgstr "DigitalInput可如下初始化："
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:30
+msgid "Reading the value of the DigitalInput"
+msgstr "读取DigitalInput的值"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:32
+msgid ""
+"The state of the :code:`DigitalInput` can be polled with the :code:`get` "
+"method:"
+msgstr "DigitalInput可以使用以下get方法轮询状态："
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:47
+msgid "Creating a DigitalInput from an AnalogInput"
+msgstr "从AnalogInput创建DigitalInput"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:49
+msgid ""
+"An :code:`AnalogTrigger` constructed with a port number argument can share "
+"that analog port with a separate :code:`AnalogInput`, but two `AnalogInput` "
+"objects may not share the same port."
+msgstr ""
+"一个AnalogTrigger与端口号的参数构造可以与一个单独的共享模拟端口AnalogInput，但有两个AnalogInput对象可以不共用相同的端口。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:51
+msgid ""
+"Sometimes, it is desirable to use an analog input as a digital input.  This "
+"can be easily achieved using the :code:`AnalogTrigger` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogTrigger.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogTrigger.html>`__)."
+msgstr ""
+"有时，希望使用模拟输入作为数字输入。使用AnalogTrigger类（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogTrigger.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogTrigger.html>`__）可以轻松实现这一点。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:53
+msgid ""
+"An :code:`AnalogTrigger` may be initialized as follows.  As with "
+":code:`AnalogPotentiometer`, an :code:`AnalogInput` may be passed explicitly"
+" if the user wishes to customize the sampling settings:"
+msgstr ""
+"一个AnalogTrigger可以如下初始化。与一样AnalogPotentiometer，AnalogInput如果用户希望自定义采样设置，则可以显式传递："
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:82
+msgid "Setting the trigger points"
+msgstr "设定触发点"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:84
+msgid ""
+"For details on the scaling of \"raw\" :code:`AnalogInput` values, see :doc"
+":`analog-inputs-software`."
+msgstr "有关缩放“原始”AnalogInput值的详细信息，请参见“模拟输入-软件”。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:86
+msgid ""
+"To convert the analog signal to a digital one, it is necessary to specify at"
+" what values the trigger will enable and disable.  These values may be "
+"different to avoid \"dithering\" around the transition point:"
+msgstr "要将模拟信号转换为数字信号，必须指定触发器将启用和禁用的值。这些值可能会有所不同，以避免在过渡点附近“抖动”："
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:107
+msgid "Using DigitalInputs in code"
+msgstr "在代码中使用DigitalInputs"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:109
+msgid ""
+"As almost all switches on the robot will be used through a "
+":code:`DigitalInput`, this class is extremely important for effective robot "
+"control."
+msgstr "由于几乎所有的机器人开关都将通过DigitalInput来使用，因此该类对于有效的机器人控制非常重要。"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:112
+msgid "Limiting the motion of a mechanism"
+msgstr "限制机制的运动"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:114
+msgid ""
+"Nearly all motorized mechanisms (such as arms and elevators) in FRC\\ |reg| "
+"should be given some form of \"limit switch\" to prevent them from damaging "
+"themselves at the end of their range of motions.  A short example is given "
+"below:"
+msgstr "FRC中几乎所有的电动机构（例如臂架和电梯）都应使用某种形式的“限位开关”，以防止它们在其运动范围结束时损坏自身。下面是一个简短的示例："
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:152
+msgid "Homing a mechanism"
+msgstr "归位编码机制"
+
+#: ../../frc-docs/source/docs/software/sensors/digital-inputs-software.rst:154
+msgid ""
+"Limit switches are very important for being able to \"home\" a mechanism "
+"with a encoder.  For an example of this, see :ref:`docs/software/sensors"
+"/encoders-software:Homing a mechanism`."
+msgstr "限位开关对于能够使编码机构“归位”非常重要。有关此示例，请参阅“设置编码机制”。"

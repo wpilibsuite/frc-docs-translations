@@ -5,18 +5,108 @@
 # 
 # Translators:
 # Xun Sun <doudarklord123@gmail.com>, 2021
+# tianshuang Zhang <2948026254@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-06 04:14+0000\n"
+"POT-Creation-Date: 2021-04-06 16:06+0000\n"
 "PO-Revision-Date: 2020-12-16 04:21+0000\n"
-"Last-Translator: Xun Sun <doudarklord123@gmail.com>, 2021\n"
+"Last-Translator: tianshuang Zhang <2948026254@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:2
+msgid "Step 4: Updating Odometry and Visualizing Robot Position"
+msgstr "第4步:更新里程测量和机器人位置可视化"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:3
+msgid ""
+"Now that the simulated encoder positions, velocities, and gyro angles are "
+"being updated with accurate information periodically, this data can be used "
+"to update the pose of the robot in a periodic loop (such as the "
+"``periodic()`` method in a ``Subsystem``). In simulation, the periodic loop "
+"will use simulated encoder and gyro readings to update odometry whereas on "
+"the real robot, the same code will use real readings from physical hardware."
+msgstr ""
+"现在，模拟编码器的位置，速度和陀螺角度被精确的信息定期更新，这个数据可以用来在一个周期循环中更新机器人的姿态(如' '子系统' '中的' ' "
+"periodic() ' "
+"'方法)。在模拟中，周期循环将使用模拟编码器和陀螺读数来更新里程计，而在真实的机器人上，相同的代码将使用来自物理硬件的真实读数。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:5
+msgid ""
+"For more information on using odometry, see :ref:`this document "
+"<docs/software/kinematics-and-odometry/differential-drive-"
+"odometry:Differential Drive Odometry>`."
+msgstr "Note：如果要了解更多关于里程计的信息，请参见this document"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:8
+msgid "Robot Pose Visualization"
+msgstr "机器人姿势视觉化"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:9
+msgid ""
+"The robot pose can be visualized on the Simulator GUI (during simulation) or"
+" on a dashboard such as Glass (on a real robot) by sending the odometry pose"
+" over a ``Field2d`` object. A ``Field2d`` can be trivially constructed "
+"without any constructor arguments:"
+msgstr ""
+"机器人姿态可以在模拟器GUI(在模拟过程中)或仪表板(如玻璃)上可视化(在一个真实的机器人上)，通过发送一个' ' Field2d ' ' "
+"'对象的里程计姿态。一个' ' Field2d ' '可以在没有任何构造函数参数的情况下简单地构造:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:24
+msgid ""
+"This ``Field2d`` instance must then be sent over NetworkTables. The best "
+"place to do this is in the constructor of your subsystem."
+msgstr "这个' ' Field2d ' '实例必须通过NetworkTables发送。最好的位置是在子系统的构造函数中。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:43
+msgid ""
+"The ``Field2d`` instance can also be sent using a lower-level NetworkTables "
+"API or using the :ref:`Shuffleboard API <docs/software/wpilib-"
+"tools/shuffleboard/getting-started/shuffleboard-displaying-data:Displaying "
+"data from your robot>`."
+msgstr ""
+"' ' Field2d ' '实例也可以使用低级的NetworkTables API发送，或者使用:ref: ' Shuffleboard API "
+"&lt;docs/software/wpilib-tools/ Shuffleboard /get -started/ Shuffleboard - "
+"Displaying -data:Displaying data from your robot&gt; '。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:45
+msgid ""
+"Finally, the pose from your odometry must be updated periodically into the "
+"``Field2d`` object. Remember that this should be in a general ``periodic()``"
+" method i.e. one that runs both during simulation and during real robot "
+"operation."
+msgstr ""
+"最后，你的里程计的姿势必须定期更新到' ' Field2d ' '对象。记住，这应该是一个通用的' ' periodic() ' "
+"'方法，即在模拟和实际机器人操作期间运行。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:74
+msgid ""
+"It is important that this code is placed in a regular ``periodic()`` method "
+"-- one that is called periodically regardless of mode of operation. If you "
+"are using the command-based library, this method already exists. If not, you"
+" are responsible for calling this method periodically from the main "
+"``Robot`` class."
+msgstr ""
+"重要的是，这段代码被放置在一个常规的' ' periodic() ' "
+"'方法中——无论操作模式如何，都会定期调用该方法。如果您正在使用基于命令的库，则此方法已经存在。如果没有，你有责任定期从“机器人”类调用这个方法。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/drivesim-tutorial/odometry-simgui.rst:76
+msgid ""
+"At this point we have covered all of the code changes required to run your "
+"code.  You should head to the :ref:`Simulation User Interface page "
+"<docs/software/wpilib-tools/robot-simulation/simulation-gui:Simulation "
+"Specific User Interface Elements>` for more info on how to run the "
+"simulation and add the field that your simulated robot will run on to the "
+"GUI."
+msgstr ""
+"至此，我们已经介绍了运行代码所需的所有代码更改。你应该去:ref: '模拟用户界面页面&lt;docs/software/wpilib-"
+"tools/robot- Simulation / Simulation - GUI:Simulation Specific User "
+"Interface Elements&gt; '获取更多关于如何运行模拟的信息，并添加你的模拟机器人将在GUI上运行的字段。"

@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Michael Zhao <haitong1110@126.com>, 2020
+# 智翔 杨 <2532498540@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 16:18+0000\n"
+"POT-Creation-Date: 2021-04-07 16:06+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
-"Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
+"Last-Translator: 智翔 杨 <2532498540@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,15 +36,6 @@ msgstr ""
 "本文档描述了旧式基于指令的库的用法。尽管保留了该文档以帮助尚未这样做的团队，但强烈建议团队迁移到新的基于指令的库<docs/software/commandbased/index"
 ":Command-Based Programming>。"
 
-#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:6
-msgid ""
-"Once you have created commands to operate the mechanisms in your robot, they"
-" can be grouped together to get more complex operations. These groupings of "
-"commands are called CommandGroups and are easily defined as shown in this "
-"article."
-msgstr ""
-"一旦创建了用于操作机器人中机械装置的指令，就可以将它们组合在一起以获得更复杂的操作。这些指令分组称为CommandGroups，可以轻松定义，如本文所示。"
-
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:9
 msgid "Complex Operations"
 msgstr "复杂操作"
@@ -58,7 +50,7 @@ msgid ""
 "parameter and will execute them one after another when this command is "
 "scheduled."
 msgstr ""
-"这是将汽水罐放在桌子上的指令组的示例。为此，（1）机器人电梯必须移至``TABLE_HEIGHT''，然后（2）设置手腕角度，然后（3）打开爪子。所有这些任务都必须按顺序运行，以确保不丢弃汽水罐。"
+"这是将汽水罐放在桌子上的指令组的示例。为此，（1）机器人电梯必须移至``TABLE_HEIGHT''，然后（2）设置腕部角度，然后（3）打开爪子。所有这些任务都必须按顺序运行，以确保汽水罐不掉落。"
 " addSequential（）方法将指令（或指令组）作为参数，并在计划此指令时一个接一个地执行它们。"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:40
@@ -77,7 +69,7 @@ msgid ""
 " pickup setpoint, then (2) move the elevator to the floor pickup position, "
 "and (3) open the claw"
 msgstr ""
-"为了使程序更高效，经常需要同时运行多个指令。在此示例中，机器人准备抓汽水罐。由于机器人没有握住任何东西，因此所有关节都可以同时移动，而不必担心会掉落任何东西。这里所有指令都是并行运行的，因此所有电动机都同时运行，每当调用isFinished（）方法时，每个电动机就完成。指令可能会无序完成。步骤是：（1）将手腕移至拾音器设定点，然后（2）将电梯移至地面拾音器位置，以及（3）打开卡爪"
+"为了使程序更高效，经常需要同时运行多个指令。在此示例中，机器人准备抓汽水罐。由于机器人没有握住任何东西，因此所有关节都可以同时移动，而不必担心会掉落任何东西。这里所有指令都是并行运行的，因此所有电动机都同时运行，当调用isFinished（）方法时就一起停止。指令可能会无序完成。步骤是：（1）将手腕移至拾音器设定点，然后（2）将电梯移至地面拾音器位置，以及（3）打开卡爪"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:71
 msgid "Mixing Parallel and Sequential Commands"

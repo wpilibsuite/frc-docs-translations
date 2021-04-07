@@ -3,16 +3,136 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-19 04:40+0000\n"
+"POT-Creation-Date: 2021-04-07 04:06+0000\n"
 "PO-Revision-Date: 2020-05-10 22:36+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:4
+msgid "Understanding Precision"
+msgstr "了解精度"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:6
+msgid ""
+"Unfortunately, this documentation is outdated and the methods described here"
+" are no longer functional. We are currently working on an a successor "
+"project and advise teams to research into a `tensorflow "
+"<https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the "
+"meantime."
+msgstr ""
+"不幸的是，该文档已过时，此处描述的方法不再起作用。我们目前正在进行一个后续项目，并建议团队同时研究`tensorflow "
+"<https://coral.ai/docs/edgetpu/retrain-detection/>`__解决方案。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:8
+msgid ""
+"With a lot of ML projects accuracy is fairly straightforward. But when doing"
+" object detection, there are a lot of nuances once you start to think about "
+"it.  I will give you a quick overview of what goes into the calculations and"
+" what we are reporting.  There are a lot of good articles that go into the "
+"subject deeper if you get interested."
+msgstr ""
+"对于许多ML项目，准确性非常简单。但是，在进行对象检测时，一旦您开始考虑它，就会有很多细微差别。我将为您简要介绍计算内容以及我们要报告的内容。如果您感兴趣，有很多不错的文章可以更深入地探讨该主题。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:10
+msgid "Some terms to start with."
+msgstr "首先要讲一些术语。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:12
+msgid ""
+"GroundTruth.  This refers to an image that was labeled by hand.  As far as "
+"the ML can tell, when it evaluates against an image like this, it is the "
+"truth."
+msgstr "GroundTruth。这是指用手标记的图像。据ML所知，当对这样的图像进行评估时，这是事实。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:13
+msgid ""
+"Predicted objects - This is when the trained neural network detects an "
+"object in an image.  Usually the GroundTruth image, without the bounding "
+"boxes so that it can compare how it is doing."
+msgstr "预测对象-这是训练有素的神经网络在图像中检测到对象时的情况。通常，GroundTruth图像没有边界框，因此可以比较其效果。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:14
+msgid ""
+"Epoch - When you provide a dataset of labeled images to the training, we "
+"take 70% of the images as input to the neural network for training, and 30% "
+"of the images for validating the trained neural network against.  One Epoch "
+"is when it has gone through a cycle of training and validating with all the "
+"supplied images.  A neural network gets better when it goes through many "
+"cycles of the training and validating."
+msgstr ""
+"时代-"
+"当您为训练提供标签图像的数据集时，我们将70％的图像作为输入到神经网络进行训练，而将30％的图像用作验证训练后的神经网络的输入。一个纪元就是经过所有提供的图像的训练和验证周期之后。当神经网络经历训练和验证的许多周期时，它会变得更好。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:16
+msgid ""
+"We have set up our training to look at the accuracy information after every "
+"100 Epochs."
+msgstr "我们已经设置了培训，以每100个Epoch之后查看一次准确性信息。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:18
+msgid ""
+"Now for some of the nuances in looking at the accuracy.  Let's say we have a"
+" GroundTruth image with 5 cargo and 4 hatches labeled on it.  To start with "
+"let's just look at Cargo.  The systems takes the GroundTruth image and "
+"compares it with the hand labeled bounding boxes and the predicted bounding "
+"boxes. The prediction shows 4 cargo.  3 are actual cargo and 1 is the person"
+" in the stands with an orange shirt on. There are two interesting numbers "
+"here.  One is called Recall.  The Recall is out of 5 true cargos it "
+"recognized 3.  This means the recall is 3/5.  The next number is precision."
+"  The precision is that out of 4 recognized cargo 3 where correct.  Making "
+"the Precision 3/4.  These numbers many times turn out to be inversely "
+"related.  So when there is more recall, the accuracy may go down, more false"
+" positives.  And when the recall goes down there may be better accuracy or "
+"fewer false positives.  In order to find a good way to represent these two "
+"numbers another number is calculated.  This is call the Average Precision "
+"(AP).   This is done by taking the amount of precision at each level of "
+"recall, creating a Precision Recall curve.  The calculation for this is very"
+" interesting and worth looking up if you are interested.  All of these are "
+"done every 100 Epochs in our case. Then this is done for each of the "
+"classes, Cargo and then Hatches.  And the mean, or average, are taken for "
+"the AP of each of the classes to make the mean Average Precision or mAP.  "
+"This gives us a pretty good feeling for the accuracy, but there is one more "
+"consideration around locality.  If you take the bounding box from the "
+"GroundTruth for and object and the predicted bounding box and overlap them, "
+"you want at least 50% of those boxes to intersect. If not, the predicted "
+"object is not accurate enough to be considered a match.  This overlapping "
+"intersection is referred to as Intersection over Union (IoU).  Different "
+"accuracy checks use different percentages of IoU, but we are going to stick "
+"with >50%."
+msgstr ""
+"现在来看一下准确性的一些细微差别。假设我们有一个GroundTruth图像，上面有5个货物和4个舱口标记。首先，让我们看一下货运。系统获取GroundTruth图像，并将其与带有手工标记的边界框和预测的边界框进行比较。预测显示有4架货物。"
+" "
+"3是实际货物，1是身穿橙色衬衫的看台上的人。这里有两个有趣的数字。一种叫做召回。召回数量是其识别出的5件真实货物中的3件。这意味着召回率是3/5。下一个数字是精度。精度是在4个已识别的货物3中正确的位置。使精度3/4。这些数字多次被证明是成反比的。因此，当召回次数更多时，准确性可能会下降，出现更多的误报。当召回事件减少时，准确性可能更高，或者误报率会更低。为了找到表示这两个数字的好方法，计算了另一个数字。这称为平均精度（AP）。这是通过在每个召回级别上获取精度值，创建精确召回曲线来完成的。对此的计算非常有趣，如果您有兴趣的话，值得查阅。在我们的案例中，所有这些操作都是每100个纪元完成的。然后，针对每个类别（货运和舱口盖）执行此操作。取每个类别的AP的均值或平均值，以得出平均平均精度或mAP。这使我们对准确性有一种很好的感觉，但是围绕局部性还有更多考虑因素。如果从GroundTruth中的和对象取边界框并与预测的边界框重叠，则希望它们中的至少50％相交。如果不是，则预测的对象不够精确，无法被视为匹配。此重叠的交集称为“联合交集”（IoU）。不同的准确性检查使用不同的IoU百分比，但我们将坚持>"
+" 50％。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/understanding-precision.rst:20
+msgid ""
+"So now if we look at the mAP for an IoU greater than 50% it gives us a level"
+" of accuracy that we can understand.  When training a network you want this "
+"number to go up over the number of Epochs. Not too fast, and many times "
+"there will be an early peak to this number, but that can be due to what is "
+"called overfitting, where it is just matching the validation images, but "
+"won't work as well on the general case of the video camera on your robot.  "
+"So you want to train until this number stops going up when looking at a "
+"smoothed curve.  If the accuracy never gets up that high, it may be that you"
+" need to change some of your hyperparameters, like the number of Epochs or "
+"Batch size.  Or it could be that you need more labeled or better labeled "
+"images in your dataset.  This tuning is part of the \"magic\" of machine "
+"learning.  Certainly over time one gets a better intuition on how to tune a "
+"network, but there is at this time a direct correlation to when you see this"
+" type of curve, change this parameter to improve it."
+msgstr ""
+"因此，现在，如果我们将IoU的mAP视为大于50％，那么它将为我们提供我们可以理解的准确度。训练网络时，您希望此数字超过Epoch的数量。不太快，很多时候这个数字会达到一个高峰，但这可能是由于所谓的过拟合，它只与验证图像匹配，但在一般情况下效果不佳机器人上的视频摄像机。因此，您要进行训练，直到在观察平滑曲线时该数字停止上升为止。如果精度永远不会达到那么高的水平，则可能是您需要更改某些超参数，例如历元数或批处理大小。也可能是您在数据集中需要更多标记或标记更好的图像。这种调整是机器学习“魔术”的一部分。当然，随着时间的流逝，人们对如何调整网络有了更好的直觉，但是此时与看到这种类型的曲线有直接的关联，请更改此参数以对其进行改进。"

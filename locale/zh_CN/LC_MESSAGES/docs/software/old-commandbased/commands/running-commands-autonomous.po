@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Michael Zhao <haitong1110@126.com>, 2020
+# 智翔 杨 <2532498540@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 16:18+0000\n"
+"POT-Creation-Date: 2021-04-09 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:04+0000\n"
-"Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
+"Last-Translator: 智翔 杨 <2532498540@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -23,7 +24,7 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:2
 msgid "Running Commands during Autonomous"
-msgstr "自动期间运行指令"
+msgstr "自动阶段运行指令"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:4
 msgid ""
@@ -44,18 +45,18 @@ msgid ""
 "aiming and accurate shooting, there is no reason not to use it to help the "
 "drivers during the teleop period of the game."
 msgstr ""
-"定义指令后，它们可以在程序的Teleop或自动部分中运行。实际上，基于指令的编程方法的强大之处在于，您可以在任何地方重用相同的指令。如果机器人具有可以在自动对焦过程中通过相机瞄准和精确拍摄来拍摄飞盘的指令，则没有理由在游戏的转播期间不使用它来帮助驾驶员。"
+"定义指令后，它们可以在程序的操控部分或自动部分中运行。实际上，基于指令的编程方法的强大之处在于，您可以在任何地方重用相同的指令。如果机器人具有可以在自动阶段中通过相机瞄准和精确射击来射击飞盘的指令，则完全可以在比赛的操控阶段使用它来帮助驾驶员。"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:40
 msgid ""
 "Our robot must do the following tasks during the autonomous period: pick up "
 "a soda can off the floor then drive a set distance from a table and deliver "
 "the can there. The process consists of:"
-msgstr "我们的机器人在自主期内必须执行以下任务：从地板上捡起一个汽水罐，然后从桌子上开车一段固定的距离，然后将汽水罐运到那里。该过程包括："
+msgstr "我们的机器人在自主期内必须执行以下任务：从地板上捡起一个汽水罐，然后从桌子上开过一段固定的距离，并将汽水罐运到那里。该过程包括："
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:42
 msgid "Prepare to grab (move elevator, wrist, and gripper into position)"
-msgstr "准备抓握（将电梯，手腕和抓手移动到位）"
+msgstr "准备抓握（将升降机，腕部和抓手移动到位）"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:43
 msgid "Grab the soda can"
@@ -72,7 +73,7 @@ msgstr "放苏打水"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:46
 msgid "Back off to a distance from the rangefinder"
-msgstr "退缩到测距仪一定距离"
+msgstr "返回到测距仪一定距离外"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:47
 msgid "Re-stow the gripper"
@@ -87,7 +88,7 @@ msgstr "要执行这些任务，有6个指令按顺序执行，如本示例所�
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:52
 msgid "Setting the Command to Run during Autonomous"
-msgstr "将指令设置为在自主运行期间运行"
+msgstr "将指令设置为在自动阶段运行"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:115
 msgid "To get the SodaDelivery command to run as the Autonomous program,"
@@ -98,7 +99,7 @@ msgid ""
 "Instantiate it in the ``RobotInit()`` method. ``RobotInit()`` is called only"
 " once when the robot starts so it is a good time to create the command "
 "instance."
-msgstr "用RobotInit（）方法实例化它。机器人启动时，只会调用一次“ RobotInit（）”，因此现在是创建指令实例的好时机。"
+msgstr "用RobotInit（）方法将它实例化。机器人启动时，只会调用一次“ RobotInit（）”，因此现在是创建指令实例的好时机。"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:118
 msgid ""
@@ -106,7 +107,7 @@ msgid ""
 "called once at the start of the autonomous period so we schedule the command"
 " there."
 msgstr ""
-"在AutonomousInit（）方法中启动它。 ``AutonomousInit（）''在自动周期开始时被调用一次，因此我们在此调度指令。"
+"在AutonomousInit（）方法中启动它。 ``AutonomousInit（）''在自动周期开始时会被调用一次，因此我们在此计划该指令。"
 
 #: ../../frc-docs/source/docs/software/old-commandbased/commands/running-commands-autonomous.rst:119
 msgid ""
@@ -116,4 +117,4 @@ msgid ""
 "makes a pass through all the currently scheduled commands."
 msgstr ""
 "确保在“ "
-"AutonomousPeriodic（）”方法期间重复调用调度程序。每20毫秒一次（名义上）会调用一次AutonomousPeriodic（），因此这是运行调度程序的好时机，该调度程序会传递所有当前调度的指令。"
+"AutonomousPeriodic（）”方法期间重复调用调度程序。每20毫秒（名义上）会调用一次AutonomousPeriodic（），因此这是运行调度程序的好时机，该调度程序会传递所有当前计划的指令。"

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-03 16:05+0000\n"
+"POT-Creation-Date: 2021-04-11 04:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,6 +25,23 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:2
 msgid "Creating multiple instances of NetworkTables"
 msgstr "Création de plusieurs instances de NetworkTables"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:4
+msgid ""
+"This feature is mainly useful for coprocessors and unit testing. It allows a"
+" single program to be a member of two completely independent "
+":term:`NetworkTables` \"networks\" that contain completely different (and "
+"unrelated) sets of tables. For most general usage, you should use tables "
+"within the single instance, as all current dashboard programs can only "
+"connect to a single NetworkTables server at a time."
+msgstr ""
+"Cette fonctionnalité est principalement utile pour les coprocesseurs et les "
+"tests unitaires. Il permet à un programme unique d'être membre de deux "
+"\"réseaux\" :term:`NetworkTables` qui contiennent des ensembles de tables "
+"complètement différents (et non liés). Pour l'utilisation la plus générale, "
+"vous devez utiliser des tables dans une seule instance, car tous les "
+"programmes de tableau de bord actuels ne peuvent se connecter qu'à un seul "
+"serveur NetworkTables à la fois."
 
 #: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:6
 msgid ""
@@ -50,3 +67,31 @@ msgstr ""
 "configurer une instance distincte dans le code du robot qui agit en tant que"
 " client (ou serveur) et y connecter le coprocesseur. , et ces tableaux NE "
 "seront PAS envoyés au tableau de bord."
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:10
+msgid ""
+"Similarly, if you wanted to do unit testing of your robot program's "
+"NetworkTables communications, you could set up your unit tests such that "
+"they create a separate client instance (still within the same program) and "
+"have it connect to the server instance that the main robot code is running."
+msgstr ""
+"De même, si vous souhaitez effectuer des tests unitaires des communications "
+"NetworkTables de votre programme de robot, vous pouvez configurer vos tests "
+"unitaires de manière à ce qu'ils créent une instance client distincte "
+"(toujours dans le même programme) et la connectent à l'instance de serveur "
+"que le robot principal le code est en cours d'exécution."
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:12
+msgid ""
+"Another example might be having two completely separate dashboard programs. "
+"You could set up two NetworkTables server instances in your robot program "
+"(on different TCP ports of course), set up different tables on each one, and"
+" have each dashboard connect to a different server instance. Each dashboard "
+"would only see the tables on its instance."
+msgstr ""
+"Un autre exemple pourrait être d'avoir deux programmes de tableau de bord "
+"complètement séparés. Vous pouvez configurer deux instances de serveur "
+"NetworkTables dans votre programme de robot (sur différents ports TCP bien "
+"sûr), configurer différentes tables sur chacune d'elles et faire en sorte "
+"que chaque tableau de bord se connecte à une instance de serveur différente."
+" Chaque tableau de bord ne verrait que les tables de son instance."

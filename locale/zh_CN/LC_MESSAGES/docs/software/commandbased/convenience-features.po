@@ -9,15 +9,16 @@
 # Yitong Zhao <lucius300er@outlook.com>, 2021
 # Atlus Zhang <atluslan@yahoo.co.jp>, 2021
 # 8192 DHC <hehehehehehe886@gmail.com>, 2021
+# tianshuang Zhang <2948026254@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-10 16:04+0000\n"
+"POT-Creation-Date: 2021-04-15 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: 8192 DHC <hehehehehehe886@gmail.com>, 2021\n"
+"Last-Translator: tianshuang Zhang <2948026254@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -110,6 +111,18 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:27
 msgid "Lambda Expressions (C++)"
 msgstr "Lambda表达式（C ++）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:29
+msgid ""
+"Due to complications in C++ semantics, capturing ``this`` in a C++ lambda "
+"can cause a null pointer exception if done from a component command of a "
+"command group.  Whenever possible, C++ users should capture relevant command"
+" members explicitly and by value.  For more details, see `here "
+"<https://github.com/wpilibsuite/allwpilib/issues/3109>`__."
+msgstr ""
+"由于C ++语义的复杂性，如果从命令组的组件命令执行此操作，则在C ++ lambda中捕获``this''会导致空指针异常。 C "
+"++用户应尽可能明确并按值捕获相关的命令成员。有关更多详细信息，请参见`here "
+"<https://github.com/wpilibsuite/allwpilib/issues/3109>`__。"
 
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:31
 msgid ""
@@ -573,6 +586,19 @@ msgid ""
 "should simply construct a parallel command group the ordinary way instead."
 msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行命令组。"
 
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:429
+msgid ""
+"The ``alongWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel command group <docs/software/commandbased/command-"
+"groups:ParallelCommandGroup>`. All commands will execute at the same time "
+"and each will end independently of each other:"
+msgstr ""
+"The ``alongWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel command group <docs/software/commandbased/command-"
+"groups:ParallelCommandGroup>`. 所有指令会在同时执行，并各自独立结束:"
+
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:437
 msgid "raceWith (Java only)"
 msgstr "raceWith（仅Java）"
@@ -583,6 +609,20 @@ msgid ""
 "should simply construct a parallel race group the ordinary way instead."
 msgstr "由于技术限制，C ++不支持该装饰器——用户应该简单地以常规方式构造一个并行竞争组。"
 
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:441
+msgid ""
+"The ``raceWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel race group <docs/software/commandbased/command-"
+"groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At "
+"this point all others are interrupted.  It doesn't matter which command is "
+"the calling command:"
+msgstr ""
+"The ``raceWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel race group <docs/software/commandbased/command-"
+"groups:ParallelRaceGroup>` 此时，所有其他的都被中断。哪个命令是调用命令并不重要:"
+
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:449
 msgid "deadlineWith (Java only)"
 msgstr "deadlineWith（仅Java）"
@@ -592,6 +632,21 @@ msgid ""
 "This decorator is not supported in C++ due to technical constraints - users "
 "should simply construct a parallel deadline group the ordinary way instead."
 msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行的截止时间组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:453
+msgid ""
+"The ``deadlineWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel deadline group <docs/software/commandbased"
+"/command-groups:ParallelDeadlineGroup>` with the calling command being the "
+"deadline.  When this deadline command ends it will interrupt any others that"
+" are not finished:"
+msgstr ""
+"The ``deadlineWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel deadline group <docs/software/commandbased"
+"/command-groups:ParallelDeadlineGroup>` "
+"调用命令为截止日期。当该截止日期命令结束时，它将中断所有其他未完成的命令:"
 
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:461
 msgid "withName (Java only)"

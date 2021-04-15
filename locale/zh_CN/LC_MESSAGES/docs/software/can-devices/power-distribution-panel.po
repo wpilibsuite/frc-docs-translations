@@ -5,18 +5,121 @@
 # 
 # Translators:
 # 怡静 陆 <2238710874@qq.com>, 2021
+# tianshuang Zhang <2948026254@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 16:15+0000\n"
+"POT-Creation-Date: 2021-04-15 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: tianshuang Zhang <2948026254@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:2
+msgid "Power Distribution Panel"
+msgstr "配电板"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:4
+msgid ""
+"The Power Distribution Panel (PDP) can use its CAN connectivity to "
+"communicate a wealth of status information regarding the robot's power use "
+"to the roboRIO, for use in user code.  The PDP has the capability to report "
+"its current temperature, the bus voltage, the total robot current draw, the "
+"total robot energy use, and the individual current draw of each device power"
+" channel.  These data can be used for a number of advanced control "
+"techniques, such as motor torque limiting and brownout avoidance."
+msgstr ""
+"配电板（PDP）可以通过CAN连接将大量有关于机器人电源使用的状况反馈给RIO，以供用户编写代码。PDP可以反馈当前的温度、总线电压、总电流消耗、总电量消耗和每个设备的电流消耗。这些数据可以用于许多的高级技术，比如说转矩限制与避免电压降低."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:7
+msgid "Creating a PDP Object"
+msgstr "创建一个PDP对象"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:9
+msgid ""
+"To use the PDP, create an instance of the :code:`PowerDistributionPanel` "
+"class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1PowerDistributionPanel.html>`__):"
+msgstr ""
+"要使用PDP，请创建:code:`PowerDistributionPanel`类的实例 (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistributionPanel.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1PowerDistributionPanel.html>`__):"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:21
+msgid ""
+"Note: it is not necessary to create a PowerDistributionPanel object unless "
+"you need to read values from it. The board will work and supply power on all"
+" the channels even if the object is never created."
+msgstr "注意：除非你想从PDP中读取数据，不然没有必要创建一个PDP对象。即使你从未创建过该对象，PDP也将在所有线路上工作并供电。"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:23
+msgid ""
+"To enable voltage and current logging in the Driver Station, the CAN ID for "
+"the PDP *must* be 0."
+msgstr "为了在驱动站中启动电流与电压的记录，PDP的CAN ID*必须*是0."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:26
+msgid "Reading the Bus Voltage"
+msgstr "读取总线电压"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:38
+msgid ""
+"Monitoring the bus voltage can be useful for (among other things) detecting "
+"when the robot is near a brownout, so that action can be taken to avoid "
+"brownout in a controlled manner. See the :doc:`roboRIO Brownouts "
+"document</docs/software/roborio-info/roborio-brownouts>` for more "
+"information."
+msgstr ""
+"监测总电压对于检测机器人何时电量不足是很有用的（相比其他事情而言），由此我们可以采取措施，以受控的方式防止电量不足。有关更多信息，请参见:doc:`roboRIO限电文档</docs/software"
+"/roborio-info/roborio-brownouts>`。"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:41
+msgid "Reading the Temperature"
+msgstr "读取温度"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:53
+msgid ""
+"Monitoring the temperature can be useful for detecting if the robot has been"
+" drawing too much power and needs to be shut down for a while, or if there "
+"is a short or other wiring problem."
+msgstr "监测温度对于检测机器人是否消耗了过多功率而需要停机一会或是存在短路或其他布线问题是很有用。"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:56
+msgid "Reading the Total Current and Energy"
+msgstr "读取总电流和能量"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:70
+msgid ""
+"Monitoring the total current and total energy (the total energy is simply "
+"the total current multiplied by the bus voltage) can be useful for "
+"controlling how much power is being drawn from the battery, both for "
+"preventing brownouts and ensuring that mechanisms have sufficient power "
+"available to perform the actions required."
+msgstr ""
+"监测总电流与总能量（总能量即总电流乘以总电压）对于控制电量使用的多少很有用。这既可以检测电量不足，也可以确保电源有足够的电量来完成接下来的操作。"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:73
+msgid "Reading Individual Channel Currents"
+msgstr "读取单个通道电流"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:75
+msgid ""
+"The PDP also allows users to monitor the current drawn by the individual "
+"device power channels.  For example, to read the current on channel 0:"
+msgstr "PDP还允许使用者监测各条电路上的电流。例如:要读取线路0上的电流："
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-panel.rst:87
+msgid ""
+"Monitoring individual device current draws can be useful for detecting "
+"shorts or stalled motors."
+msgstr "监测单条电路的电流对于检测短路或电机停转很有用。"

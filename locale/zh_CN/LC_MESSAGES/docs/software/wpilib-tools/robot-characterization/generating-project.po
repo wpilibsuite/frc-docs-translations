@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Team 5308 <team5308@163.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"POT-Creation-Date: 2021-04-16 16:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:06+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,9 +38,44 @@ msgstr "选择项目位置"
 msgid "First, select the desired project location on the new project GUI:"
 msgstr "首先，在“新项目”界面上选择理想的项目位置："
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:14
+msgid ""
+"The project type dropdown now chooses between the different types of "
+"characterization tests as the previous motor setups have been integrated "
+"into the :guilabel:`Control Type` field."
+msgstr "由于先前的电动机设置已集成到“控制类型”字段中，因此项目类型下拉列表现在可以在不同类型的特性测试之间进行选择。"
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:17
 msgid "Configure Project Parameters"
 msgstr "配置项目参数"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:19
+msgid ""
+"In order to run on your robot, the tool must know some parameters about how "
+"your robot is set up."
+msgstr "为了在机器人上运行，该工具必须知道一些有关如何设置机器人的参数。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:21
+msgid ""
+"First, you need to use the :guilabel:`Control Type` field to select the "
+"appropriate project config template. ``Simple`` is for PWM Based motor "
+"controllers, ``CTRE`` is for CAN connected CTRE Motor Controllers (e.g. "
+"Talon SRX), and ``SparkMax`` is for the Spark Max Motor Controller. This "
+"allows you to fill out the parameters specific to the type of controllers "
+"you are using."
+msgstr ""
+"首先，您需要使用“控件类型”字段来选择适当的项目配置模板。 "
+"``简单''用于基于PWM的电机控制器，``CTRE''用于CAN连接的CTRE电机控制器（例如Talon "
+"SRX），``SparkMax''用于Spark Max电机控制器。这使您可以填写特定于所使用控制器类型的参数。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:26
+msgid ""
+"Project config settings are formatted as a `Python dictionary literal "
+"<https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`__. "
+"These can be modified via the in-window config editor:"
+msgstr ""
+"项目配置设置的格式为Python字典文字<https://docs.python.org/3/library/stdtypes.html"
+"#mapping-types-dict>`__。这些可以通过窗口内配置编辑器进行修改："
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:31
 msgid ""
@@ -65,6 +101,10 @@ msgid ""
 "in quotes and *must* correspond exactly to one of the options described."
 msgstr "所有字符串值（例如控制器名称和单位类型）必须用引号引起来，并且必须完全对应于所描述的选项之一。"
 
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:37
+msgid "Read the comments provided in the config file carefully."
+msgstr "仔细阅读配置文件中提供的注释。"
+
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:39
 msgid ""
 "Once your robot configuration is set, you may save it to a location/name of "
@@ -87,6 +127,31 @@ msgid ""
 "units per rotation if necessary (units per rotation is NOT equivalent to the"
 " wheel diameter from last year's tool)."
 msgstr "现在也是设置“团队编号”框并在必要时修改每转单位和单位的好时机（每转单位不等于去年工具的轮径）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:54
+msgid ""
+"The :guilabel:`Unit Type` field lets you choose between various rotational "
+"and translational units (rotations, radians, degrees, feet, meters, and "
+"inches). You should choose a unit that facilitates a rough validation of the"
+" recorded measurements. For example, you could choose rotations when testing"
+" a flywheel to see if the tool's recorded rotations seem reasonable, or you "
+"could choose feet when testing a drive base to see if the recorded distance "
+"seems reasonable."
+msgstr ""
+"单位类型字段可让您在各种旋转和平移单位（旋转，弧度，度，英尺，米和英寸）之间进行选择。您应该选择一个有助于粗略验证所记录测量值的单位。例如，您可以在测试飞轮时选择旋转，以查看工具记录的旋转是否合理，或者在测试驱动器基座时可以选择支脚，以查看记录的距离是否合理。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:60
+msgid ""
+"On the other hand, the :guilabel:`Units per Rotation` entry is how many of "
+"the previously specified units are recorded per rotation of the shaft. Do "
+"note that rotational units (rotations, radians, and degrees) have "
+"predefined/unmutable units per rotations. In contrast, translational units "
+"(meters, feet, inches) require that you specify the conversion, such as a "
+"wheel with a 3-inch diameter can be converted to 9.42 inches per rotation "
+"(:math:`\\pi * 3`)."
+msgstr ""
+"另一方面，“每转单位”条目是每转轴记录多少个先前指定的单位。请注意，旋转单位（旋转，弧度和度）每旋转一圈具有预定义/不变的单位。相反，平移单位（米，英尺，英寸）需要您指定转换方式，例如，直径为3英寸的车轮每转可以转换为9.42英寸（：math：`\\"
+" pi * 3`）。"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/generating-project.rst:67
 msgid "Generate Project"

@@ -5,18 +5,305 @@
 # 
 # Translators:
 # Xun Sun <doudarklord123@gmail.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-08 16:18+0000\n"
+"POT-Creation-Date: 2021-04-23 04:05+0000\n"
 "PO-Revision-Date: 2020-12-22 04:24+0000\n"
-"Last-Translator: Xun Sun <doudarklord123@gmail.com>, 2021\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:2
+msgid "Getting to know your Romi"
+msgstr "了解你的ROMI"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:5
+msgid "Directional Conventions"
+msgstr "驱动器惯例"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:7
+msgid ""
+"The front of the Romi is where the Raspberry Pi USB ports, GPIO pins and "
+"suspended caster wheel are."
+msgstr "ROMI的正面是树莓派USB接口, GPIO插口和万向轮所在地。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:12
+msgid ""
+"In all Romi documentation, references to driving forward use the above "
+"definition of \"front\"."
+msgstr "在所有ROMI文档中，提到向前行驶时使用上述“前方”的定义。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:18
+msgid "Hardware, Sensors and GPIO"
+msgstr "硬件、传感器和GPIO"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:20
+msgid "The Romi has the following built-in hardware/peripherals:"
+msgstr "ROMI有以下几个内置硬件/外围设备:"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:22
+msgid "2x geared motors with encoders"
+msgstr "2个带编码器的齿轮减速电机"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:23
+msgid "1x Inertial Measurement Unit (IMU)"
+msgstr "1个惯性测量单元(IMU) "
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:24
+msgid "3x LEDs (green, yellow, red)"
+msgstr "3个led灯(绿、黄、红)"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:25
+msgid "3x pushbuttons (marked A, B, and C)"
+msgstr "3个按钮(标注A、B、C)"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:26
+msgid "5x configurable GPIO channels"
+msgstr "5个可配置的GPIO通道"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:29
+msgid "Motors, Wheels and Encoders"
+msgstr "马达，轮子和编码器"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:31
+msgid ""
+"The motors used on the Romi have a 120:1 gear reduction, and a no-load "
+"output speed of 150 RPM at 4.5V. The free current is 0.13 amps and the stall"
+" current is 1.25 amps. Stall torque is 25 oz-in (0.1765 N-m) but the built-"
+"in safety clutch might start slipping at lower torques."
+msgstr ""
+"ROMI上使用的电机有120:1齿轮减速，在4.5V下的空载输出速度为150 RPM。自由电流为0.13安培，失速电流为1.25安培"
+"。失速扭矩为25盎司-in (0.1765 N-m)，但内置的安全离合器在较低扭矩时可能开始打滑。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:33
+msgid ""
+"The wheels have a diameter of 70mm (2.75\"). They have a trackwidth of 141mm"
+" (5.55\")."
+msgstr "车轮的直径为70mm(2.75”)。它们的轨道宽度为141毫米(5.55英寸)。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:35
+msgid ""
+"The encoders are connected directly to the motor output shaft and have 12 "
+"Counts Per Revolution (CPR). With the provided gear ratio, this nets 1440 "
+"counts per wheel revolution."
+msgstr "编码器直接连接到电机输出轴，每转速分辨率(CPR)有12个计数。在提供的齿轮传动比下，每轮转数为1440。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:37
+msgid "By default, the encoders count up when the Romi moves forward."
+msgstr "注意:默认情况下，当ROMI移动时编码器开始计数。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:40
+msgid "Inertial Measurement Unit"
+msgstr "惯性测量单元"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:42
+msgid ""
+"The Romi includes an STMicroelectronics LSM6DS33 Inertial Measurement Unit "
+"(IMU) which contains a 3-axis gyro and a 3-axis accelerometer."
+msgstr "ROMI包括意法半导体LSM6DS33惯性测量单元(IMU)，其中包含一个三轴陀螺仪和一个三轴加速度计。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:44
+msgid ""
+"The accelerometer has selectable sensitivity of 2G, 4G, 8G, and 16G. The "
+"gyro has selectable sensitivity of 125 Degrees Per Second (DPS), 250 DPS, "
+"500 DPS, 1000 DPS and 2000 DPS."
+msgstr ""
+"加速度计有2G、4G、8G、16G灵敏性可供选择。该陀螺具有125度/秒(DPS)、250度/秒、500度/秒、1000度/秒和2000度/秒的可选灵敏度。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:46
+msgid ""
+"The Romi Web UI also provides a means to calibrate the gyro and measure its "
+"zero-offsets before use with robot code."
+msgstr "ROMI Web UI还提供了一种方法，在使用机器人代码之前校准陀螺仪和测量它的零偏移量。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:49
+msgid "LEDs and Push Buttons"
+msgstr "LED和按钮"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:51
+msgid ""
+"The Romi 32U4 control board has 3 push buttons and 3 LEDs that are exposed "
+"as Digital IO channels to robot code. The section on GPIO Mapping has more "
+"information on how to use the built in LEDs and buttons in robot code."
+msgstr ""
+"ROMI "
+"32U4控制板有3个按钮和3个led灯作为数字IO通道暴露给机器人代码。GPIO映射部分有更多关于如何在机器人代码中使用内置led和按钮的信息。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:54
+msgid "Configurable GPIO Channels"
+msgstr "可配置的GPIO渠道"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:56
+msgid ""
+"The control board has 5 configurable GPIO channels (named EXT0 through EXT4)"
+" that allow a user to connect external sensors and actuators to the Romi."
+msgstr "控制板有5个可配置的GPIO通道(命名为EXT0到EXT4)，允许用户连接外部传感器和执行器到ROMI。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:61
+msgid ""
+"All 5 channels support the following modes: Digital IO, Analog In, PWM (with"
+" the exception of EXT 0, which only supports Digital IO and PWM)."
+msgstr "所有5通道支持以下模式:数字IO，模拟In, PWM(除了EXT 0，它只支持数字IO和PWM)。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:63
+msgid ""
+"The GPIO channels are exposed via a 3-pin, servo style interface, with "
+"connections for Ground, Power and Signal (with the Ground connection being "
+"closest to the edge of the board, and the signal being closest to the inside"
+" of the board)."
+msgstr ""
+"GPIO通道通过一个3-pin, servo style "
+"interface暴露，有接地、电源和信号的连接(接地距离单板边缘最近，信号距离单板内部最近)。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:65
+msgid ""
+"The power connections for the GPIO channels are initially left unconnected, "
+"but can be hooked into the Romi's on-board 5V supply by using a jumper to "
+"connect the 5V pin to the power bus (as seen in the image above). "
+"Additionally, if more power than the Romi can provide is needed, the user "
+"can provide their own 5V power supply and connect it directly to power bus "
+"and ground pins."
+msgstr ""
+"GPIO通道的电源连接最初是不连接的，但可以通过使用跳线将5V引脚连接到电源总线(如上图所示)连接到ROMI "
+"s板上的5V电源。此外，如果需要超过ROMI所能提供的功率，用户可以提供自己的5V电源，并直接连接到电源总线和接地引脚。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:68
+msgid "GPIO Mapping"
+msgstr "GPIO映射"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:70
+msgid ""
+"To support all the built in peripherals on the Romi, we have provided a "
+"hard-coded mapping of WPILib channels/devices to the Romi hardware."
+msgstr "为了支持Romi上的所有内置外设，我们提供了WPILib通道/设备到Romi硬件的硬编码映射。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:73
+msgid "Digital IO"
+msgstr "Digital IO"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:76
+msgid "DIO Channel"
+msgstr "DIO通道"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:76
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:99
+msgid "Romi Hardware Component"
+msgstr "Romi硬件组件"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:78
+msgid "DIO 0"
+msgstr "DIO 0"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:78
+msgid "Button A (input only)"
+msgstr "按钮A(只输入）"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:80
+msgid "DIO 1"
+msgstr "DIO 1"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:80
+msgid "Button B (input), Green LED (output)"
+msgstr "按钮B（输入），绿色LED（输出）"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:82
+msgid "DIO 2"
+msgstr "DIO 2"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:82
+msgid "Button C (input), Red LED (output)"
+msgstr "按钮C（输入），红色LED（输出）"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:84
+msgid "DIO 3"
+msgstr "DIO 3"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:84
+msgid "Yellow LED (output only)"
+msgstr "黄色LED（仅输出）"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:86
+msgid "DIO 4"
+msgstr "DIO 4"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:86
+msgid "Left Encoder Quadrature Channel A"
+msgstr "左编码器正交通道A"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:88
+msgid "DIO 5"
+msgstr "DIO 5"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:88
+msgid "Left Encoder Quadrature Channel B"
+msgstr "左编码器正交信道B"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:90
+msgid "DIO 6"
+msgstr "DIO 6"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:90
+msgid "Right Encoder Quadrature Channel A"
+msgstr "右编码器正交通道A"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:92
+msgid "DIO 7"
+msgstr "DIO 7"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:92
+msgid "Right Encoder Quadrature Channel B"
+msgstr "右编码器正交信道B"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:96
+msgid "PWM Output"
+msgstr "PWM输出"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:99
+msgid "PWM Channel"
+msgstr "PWM通道"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:101
+msgid "PWM 0"
+msgstr "PWM0 "
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:101
+msgid "Left Motor"
+msgstr "左电机"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:103
+msgid "PWM 1"
+msgstr "PWM1"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:103
+msgid "Right Motor"
+msgstr "右电机"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:106
+msgid ""
+"The right motor is hardwired to spin in a forward direction when forward "
+"stick movement is applied on a joystick. Thus there is no need to invert the"
+" corresponding motor controller in robot code."
+msgstr "注意：当手柄上的前向摇杆应用时，右边的电机是硬接线在向前旋转的方向。这样就不需要在机器人代码中对相应的电机控制器进行倒置。"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:109
+msgid "GPIO Channels"
+msgstr "GPIO通道"
+
+#: ../../frc-docs/source/docs/romi-robot/getting-to-know-romi.rst:111
+msgid ""
+"The Romi Web UI allows the user to customize the functions of the 5 "
+"configurable GPIO channels. The UI will also provide the appropriate WPILib "
+"channel/device mappings on screen once the IO configuration is complete. "
+"More information on this can be found in the next section."
+msgstr ""
+"ROMI Web "
+"UI允许用户定制5个可配置的GPIO通道的功能。一旦IO配置完成，UI还将在屏幕上提供适当的WPILib通道/设备映射。关于这方面的更多信息可以在下一节中找到。"

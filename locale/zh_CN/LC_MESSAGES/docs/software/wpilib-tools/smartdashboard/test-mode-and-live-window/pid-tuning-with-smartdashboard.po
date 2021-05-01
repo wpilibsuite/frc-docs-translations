@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Team 5308 <team5308@163.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"POT-Creation-Date: 2021-05-01 04:18+0000\n"
 "PO-Revision-Date: 2020-04-25 02:08+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -47,7 +48,7 @@ msgstr ""
 msgid "Finding the setpoint values with LiveWindow"
 msgstr "使用 \"LiveWindow\" 查找设定值"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:10
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:12
 msgid ""
 "Create a PID Subsystem for each mechanism with feedback. The PID Subsystems "
 "contain the actuator (motor) and the feedback sensor (potentiometer in this "
@@ -59,11 +60,11 @@ msgstr ""
 "为每个带有反馈系统的机械结构创建一个PID子系统。 "
 "PID子系统包含执行器（电机）和反馈传感器（在这种情况下为电位计）。您可以使用“测试”模式显示子系统传感器和执行器。使用滑块手动将执行器调整到每个所需位置。注意每个所需位置的传感器值（2）。这些将成为PID控制器的设定值。"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:13
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:15
 msgid "Viewing the PIDController in LiveWindow"
 msgstr "在 \"LiveWindow\" 中查看PID控制器"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:16
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:20
 msgid ""
 "In Test mode, the PID Subsystems display their P, I, and D parameters that "
 "are set in the code. The P, I, and D values are the weights applied to the "
@@ -77,11 +78,25 @@ msgstr ""
 "在测试模式下，PID子系统显示其在代码中设置的P，I和D参数。 "
 "P，I和D值将被应用于计算计算误差（P）的权重，随时间变化的误差之和（I）和误差的变化率（D）。这些项中的每一项都乘以权重，然后相加在一起即可得出电动机值。选择最佳的P，I和D值可能很困难，并且需要进行大量的实验。机械手的“测试”模式允许修改值，并观察机械结构的响应状况。"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:21
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:22
+msgid ""
+"The enable option does not affect the `PIDController "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__"
+" introduced in 2020, as the controller is updated every robot loop. See the "
+"example :ref:`here <docs/software/wpilib-tools/shuffleboard/advanced-usage"
+"/shuffleboard-tuning-pid:Enable Functionality in the New PIDController>` on "
+"how to retain this fuctionality."
+msgstr ""
+"启用选项不会影响2020年引入的`PIDController "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/controller/PIDController.html>`__，因为控制器会在每个机器人循环中进行更新。有关如何保留此功能的信息，请参见示例：此处<docs/software"
+"/wpilib-tools/shuffleboard/advanced-usage/shuffleboard-tuning-pid:Enable "
+"Functionality in the New PIDController>。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:25
 msgid "Tuning the PIDController"
 msgstr "调整PID控制器"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:24
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:30
 msgid ""
 "Tuning the PID controller can be difficult and there are many articles that "
 "describe techniques that can be used. It is best to start with the P value "
@@ -99,7 +114,7 @@ msgstr ""
 " \"/docs/software/advanced-controls/introduction/tuning-pid-"
 "controller`文档中\"。"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:26
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:32
 msgid ""
 "Once you have determined P, I, and D values they can be inserted into the "
 "program. You'll find them either in the properties for the PIDSubsystem in "
@@ -108,13 +123,13 @@ msgstr ""
 "一旦确定了P，I和D值，就可以将它们插入程序中。你可以在 \"RobotBuilder\" 的 \"PIDSubsystem\" "
 "的属性中或代码中的PID子系统的构造函数中找到它们。"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:28
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:34
 msgid ""
 "The F (feedforward) term is used for controlling velocity with a PID "
 "controller."
 msgstr "F (feedforward) 项被在PID控制器中被用于控制其速度。"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:30
+#: ../../frc-docs/source/docs/software/wpilib-tools/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:36
 msgid ""
 "More information can be found at :ref:`docs/software/advanced-"
 "controls/controllers/pidcontroller:PID Control in WPILib`."

@@ -5,18 +5,59 @@
 # 
 # Translators:
 # 怡静 陆 <2238710874@qq.com>, 2021
+# eric sun <eric.szh@hotmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 16:15+0000\n"
+"POT-Creation-Date: 2021-05-06 16:23+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: eric sun <eric.szh@hotmail.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:2
+msgid "How To Toggle Between Two Camera Modes"
+msgstr "如何切换两种相机模式"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:6
+msgid ""
+"This code shows how to use a button to toggle between two distinct camera "
+"modes. The code consists of four stages."
+msgstr "此代码展示了如何使用按钮在两种不同的相机模式之间切换。该代码包括四个部分。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:8
+msgid "In the first stage, the value of a button on the joystick is read."
+msgstr "在第一部分，读取手柄上按键的值。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:10
+msgid ""
+"Next, the current reading is compared to the previous reading using a "
+"**Feedback Node** and some Boolean arithmetic. Together, these ensure that "
+"the camera mode is only toggled when the button is initially pressed rather "
+"than toggling back and forth multiple times while the button is held down."
+msgstr ""
+"接下来，使用一个**反馈节点**和一些布尔算法将当前读数与先前读数进行比较。这些共同确保了仅在最初按下按钮的一瞬间才切换相机模式，而不是在按住按钮时来回切换多次。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:12
+msgid ""
+"After that, the camera mode is toggled by masking the result of the second "
+"stage over the current camera mode value. This is called bit masking and by "
+"doing it with the **XOR** function the code will toggle the camera mode when"
+" the second stage returns true and do nothing otherwise."
+msgstr ""
+"之后，第二阶段的结果将用来掩盖掉当前相机模式的值，以切换相机模式。这称为位屏蔽，通过使用 **XOR** 函数，代码将在第二阶段返回 true "
+"时切换相机模式，否则不执行任何操作。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-toggle-between-two-camera-modes.rst:14
+msgid ""
+"Finally, you can insert the code for each camera mode in the case structure "
+"at the end. Each time the code is run, this section will run the code for "
+"the current camera mode."
+msgstr "最后，您可以在条件结构的最后插入每种相机模式的代码。每次运行代码时，这一部分将运行当前相机模式的代码。"

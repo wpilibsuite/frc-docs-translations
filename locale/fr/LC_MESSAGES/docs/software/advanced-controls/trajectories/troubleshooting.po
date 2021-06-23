@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-11 04:05+0000\n"
+"POT-Creation-Date: 2021-06-23 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -221,19 +221,6 @@ msgstr ""
 "afin de pouvoir isoler les effets des différentes étapes les unes des "
 "autres."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:53
-msgid ""
-"The below examples put diagnostic values onto :term:`NetworkTables`. The "
-"easiest way to graph these values is to :ref:`use Shuffleboard's graphing "
-"capabilities <docs/software/wpilib-tools/shuffleboard/getting-started"
-"/shuffleboard-graphs:Working With Graphs>`."
-msgstr ""
-"Les exemples ci-dessous mettent des valeurs de diagnostic sur les "
-":term:`NetworkTables`. La façon la plus simple de représenter graphiquement "
-"ces valeurs est d'utiliser les capacités graphiques de :ref:`Shuffleboard "
-"<docs/software/wpilib-tools/shuffleboard/getting-started/shuffleboard-"
-"graphs:Working With Graphs>`."
-
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:56
 msgid "Verify Odometry"
 msgstr "Vérifier l'odométrie"
@@ -248,14 +235,14 @@ msgstr ""
 "de façon erronée, car il modifie les vitesses cibles de votre robot en "
 "fonction de l'endroit où votre odométrie pense que le robot se trouve."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:59
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:61
 msgid ""
 "Set up your code to record your robot's position after each odometry update:"
 msgstr ""
 "Configurez votre code pour enregistrer la position de votre robot après "
 "chaque mise à jour de l'odométrie:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:95
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:97
 msgid ""
 "Lay out a tape measure parallel to your robot and push your robot out about "
 "one meter along the tape measure. Lay out a tape measure along the Y axis "
@@ -267,41 +254,11 @@ msgstr ""
 "le long de l'axe Y et recommencez, en poussant votre robot d'un mètre le "
 "long de l'axe X et d'un mètre le long de l'axe Y en arc de cercle."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:96
-msgid ""
-"Compare X and Y reported by the robot to actual X and Y. If X is off by more"
-" than 5 centimeters in the first test then you should check that you "
-"measured your wheel diameter correctly, and that your wheels are not worn "
-"down. If the second test is off by more than 5 centimeters in either X or Y "
-"then your track width (distance from the center of the left wheel to the "
-"center of the right wheel) may be incorrect; if you're sure that you "
-"measured the track width correctly with a tape measure then your robot's "
-"wheels may be slipping in a way that is not accounted for by track width--if"
-" this is the case then you should :ref:`run the track width characterization"
-" <docs/software/wpilib-tools/robot-characterization/characterization-"
-"routine:Running Tests>` and use that track width instead of the one from "
-"your tape measure."
-msgstr ""
-"Comparez les X et Y enregistrés par le robot à ceux des mesures X et Y "
-"réels. Si X dévie de la valeur réelle par de plus de 5 centimètres lors du "
-"premier test, vous devez vérifier que vous avez correctement mesuré le "
-"diamètre de vos roues et que vos roues ne sont pas usées. Si le deuxième "
-"test est décalé de plus de 5 centimètres en X ou Y, alors la largeur de "
-"votre robot (la distance du centre de la roue gauche au centre de la roue "
-"droite) peut être incorrecte; si vous êtes sûr d'avoir correctement mesuré "
-"la largeur entre les roues avec un ruban à mesurer, les roues de votre robot"
-" peuvent avoir glissé d'une manière qui n'est pas prise en compte par le "
-"paramètre qui représente la largeur du robot - si tel est le cas, vous devez"
-" :ref:`exécuter la caractérisation de la largeur du robot <docs/software"
-"/wpilib-tools/robot-characterization/characterization-routine:Running "
-"Tests>` et utilisez cette largeur de robot plutôt que celle obtenue par "
-"votre ruban à mesurer."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:102
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:104
 msgid "Verify Feedforward"
 msgstr "Vérifier la fonction Feedforward"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:103
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:105
 msgid ""
 "If your feedforwards are bad then the P controllers for each side of the "
 "robot will not track as well, and your "
@@ -315,7 +272,7 @@ msgstr ""
 "votre robot avec précision. Nous voulons surtout désactiver les contrôleurs "
 "P de la roue afin de pouvoir isoler et tester les feedforwards."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:105
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:107
 msgid ""
 "First, we must set disable the P controller for each wheel. Set the ``P`` "
 "gain to 0 for every controller. In the ``RamseteCommand`` example, you would"
@@ -325,20 +282,7 @@ msgstr ""
 "pour chaque roue. Réglez le gain ``P`` à 0 ​​pour chaque contrôleur. Dans "
 "l'exemple ``RamseteCommand``, vous définiriez ``kPDriveVel`` à 0:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:125
-msgid ""
-"(Java only) Next, we want to disable the Ramsete controller to make it "
-"easier to isolate our problematic behavior. This is a bit more involved, "
-"because we can't just set the gains (b and zeta) to 0. Pass the following "
-"into your ``RamseteCommand``:"
-msgstr ""
-"(Java uniquement) Ensuite, nous voulons désactiver le contrôleur Ramsete "
-"pour faciliter l'isolement de notre comportement problématique. C'est un peu"
-" plus compliqué, car nous ne pouvons pas simplement mettre les gains (b et "
-"zeta) à 0. Insérer les valeurs suivantes par l'entremise de "
-"``RamseteCommand``:"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:148
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:157
 msgid ""
 "Finally, we need to log desired wheel velocity and actual wheel velocity "
 "(you should put actual and desired velocities on the same graph if you're "
@@ -349,7 +293,7 @@ msgstr ""
 "même graphique si vous utilisez Shuffleboard, ou si votre logiciel graphique"
 " a cette capacité):"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:220
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:229
 msgid ""
 "Run the robot on a variety of trajectories (curved and straight line), and "
 "check to see if the actual velocity tracks the desired velocity by looking "
@@ -359,7 +303,7 @@ msgstr ""
 "et vérifiez si la vitesse réelle suit la vitesse souhaitée en regardant les "
 "graphiques de NetworkTables."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:221
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:230
 msgid ""
 "If the desired and actual are off by *a lot* then you should check if the "
 "wheel diameter and ``encoderEPR`` you used for characterization were "
@@ -374,11 +318,11 @@ msgstr ""
 "recaractériser sur le même type de tapis de sol que celui utilisé lors des "
 "compétitions, et vérifier si vous pouvez obtenir de meilleures données."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:224
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:233
 msgid "Verify P Gain"
 msgstr "Vérifiez le gain proportionnel P"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:225
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:234
 msgid ""
 "If you completed the previous step and the problem went away then your "
 "problem can probably be found in one of the next steps. In this step we're "
@@ -393,7 +337,7 @@ msgstr ""
 "Ramsete afin que nous puissions simplement visualiser nos contrôleurs PF par"
 " eux-mêmes."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:227
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:236
 msgid ""
 "You must re-use all the code from the previous step that logs actual vs. "
 "desired velocity (and the code that disables Ramsete, if you're using Java),"
@@ -404,7 +348,7 @@ msgstr ""
 "Ramsete, si vous utilisez Java), sauf que **le gain P doit être ramené à sa "
 "valeur initiale**"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:228
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:237
 msgid ""
 "Run the robot again on a variety of trajectories, and check that your actual"
 " vs. desired graphs look good."
@@ -412,7 +356,7 @@ msgstr ""
 "Exécutez à nouveau le robot sur une variété de trajectoires et vérifiez que "
 "vos graphiques réels et souhaités semblent bons"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:229
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:238
 msgid ""
 "If the graphs do not look good (i.e. the actual velocity is very different "
 "from the desired) then you should try tuning your P gain and rerunning your "
@@ -422,11 +366,11 @@ msgstr ""
 "est très différente de celle souhaitée), vous devriez essayer de régler "
 "votre gain P et de réexécuter vos trajectoires de test."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:232
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:241
 msgid "Check Constraints"
 msgstr "Vérifier les contraintes"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:233
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:242
 msgid ""
 "Make sure that your P gain is nonzero for this step and that you still have "
 "the logging code added in the previous steps. If you're using Java then you "
@@ -437,7 +381,7 @@ msgstr ""
 "précédentes. Si vous utilisez Java, vous devez supprimer le code pour "
 "désactiver Ramsete."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:235
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:244
 msgid ""
 "If your accuracy issue persisted through all of the previous steps then you "
 "might have an issue with your constraints. Below are a list of symptoms that"
@@ -448,7 +392,7 @@ msgstr ""
 "trouverez ci-dessous une liste des symptômes que les différentes contraintes"
 " disponibles présenteront lorsqu'elles sont mal réglées."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:237
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:246
 msgid ""
 "Test one constraint at a time! Remove the other constraints, tune your one "
 "remaining constraint, and repeat that process for each constraint you want "
@@ -460,11 +404,11 @@ msgstr ""
 "contrainte que vous souhaitez vérifier. La liste de contrôle ci-dessous "
 "suppose que vous n'utilisez qu'une seule contrainte à la fois."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:239
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:248
 msgid "``DifferentialDriveVoltageConstraint``:"
 msgstr "``DifferentialDriveVoltageConstraint``:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:241
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:250
 msgid ""
 "If your robot accelerates very slowly then it's possible that the max "
 "voltage for this constraint is too low."
@@ -472,7 +416,7 @@ msgstr ""
 "Si votre robot accélère très lentement, il est possible que la tension "
 "maximale (voltage) pour cette contrainte soit trop faible."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:242
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:251
 msgid ""
 "If your robot doesn't reach the end of the path then your characterization "
 "data may problematic."
@@ -480,11 +424,11 @@ msgstr ""
 "Si votre robot n'atteint pas la fin de son cheminement, vos données de "
 "caractérisation peuvent être problèmatiques."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:244
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:253
 msgid "``DifferentialDriveKinematicsConstraint``:"
 msgstr "``DifferentialDriveKinematicsConstraint``:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:246
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:255
 msgid ""
 "If your robot ends up at the wrong heading then it's possible that the max "
 "drivetrain side speed is too low, or that it's too high. The only way to "
@@ -495,11 +439,11 @@ msgstr ""
 "trop élevée. La seule façon de vérifier cela est d'ajuster la vitesse "
 "maximale à une valeur différente et de voir ce qui se passe."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:248
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:257
 msgid "``CentripetalAccelerationConstraint``:"
 msgstr "``CentripetalAccelerationConstraint``:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:250
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:259
 msgid ""
 "If your robot ends up at the wrong heading then this could be the culprit. "
 "If your robot doesn't seem to turn enough then you should increase the max "
@@ -512,11 +456,11 @@ msgstr ""
 "s'il semble faire des virages serrés trop rapidement, vous devez diminuer "
 "l'accélération centripète maximale."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:253
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:262
 msgid "Check Trajectory Waypoints"
 msgstr "Vérifier les points de cheminement de la trajectoire"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:254
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:263
 msgid ""
 "It is possible that your trajectory itself is not very driveable. Try moving"
 " waypoints (and headings at the waypoints, if applicable) to reduce sharp "

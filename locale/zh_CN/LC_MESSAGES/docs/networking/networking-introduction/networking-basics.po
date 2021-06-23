@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 04:06+0000\n"
+"POT-Creation-Date: 2021-06-23 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -350,11 +350,11 @@ msgstr ""
 "通过USB连接到roboRIO时，需要配置:ref:`docs/networking/networking-"
 "utilities/portforwarding:Port Forwarding` 来连接OpenMesh路由器设备（在上面显示的绿色网络上）。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:94
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:99
 msgid "mDNS"
 msgstr "mDNS"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:96
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:101
 msgid ""
 "mDNS, or multicast Domain Name System is a protocol that allows us to "
 "benefit from the features of DNS, without having a DNS server on the "
@@ -363,11 +363,11 @@ msgid ""
 msgstr ""
 "mDNS或多播域名系统是一种协议，它使我们可以从DNS的功能中受益，而无需在网络上安装DNS服务器。为了更清楚地说明这一点，让我们退后一步，谈谈什么是DNS。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:99
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:104
 msgid "What is DNS?"
 msgstr "什么是DNS？"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:101
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:106
 msgid ""
 "DNS (Domain Name System) can become a complex topic, but for the scope of "
 "this paper, we are going to just look at the high level overview of DNS. In "
@@ -377,7 +377,7 @@ msgid ""
 msgstr ""
 "DNS（域名系统）可能会成为一个复杂的话题，但是在本文的范围内，我们将仅对DNS进行简要介绍。在最基本的解释中，DNS使我们能够将网络设备的人性化名称与IP地址相关联，并在这些IP地址发生更改时对其进行跟踪。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:103
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:108
 msgid ""
 "Example 1: Let’s look at the site ``www.google.com``. The IP address for "
 "this site is ``172.217.164.132``, however that is not very user friendly to "
@@ -385,7 +385,7 @@ msgid ""
 msgstr ""
 "示例1：让我们看一下“ www.google.com”网站。该站点的IP地址是``172.217.164.132''，但是记住它不是非常用户友好！"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:105
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:110
 msgid ""
 "Whenever a user types ``www.google.com`` into their computer, the computer "
 "contacts the DNS server (a setting provided by DHCP!) and asks what is the "
@@ -396,7 +396,7 @@ msgstr ""
 "每当用户在计算机上键入“ www.google.com”时，计算机都会与DNS服务器联系（DHCP提供的设置！），并询问“ "
 "www.google.com”文件上的IP地址是什么。 DNS服务器返回IP地址，然后计算机可以使用该IP地址连接到Google网站。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:107
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:112
 msgid ""
 "Example 2: On your home network, you have a server named ``MYCOMPUTER`` that"
 " you want to connect to from your laptop. Your network uses DHCP so you "
@@ -412,7 +412,7 @@ msgstr ""
 "MYCOMPUTER”可能会以不同的地址结尾，但是由于您是通过使用“ "
 "MYCOMPUTER”名称而不是特定的IP地址进行连接的，因此DNS记录已更新，您仍然能够连接。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:109
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:114
 msgid ""
 "This is the second benefit to DNS, and the most relevant for FRC. With DNS, "
 "if we reference devices by their friendly name instead of IP Address, we "
@@ -423,11 +423,11 @@ msgstr ""
 "这是DNS的第二个好处，与FRC最为相关。使用DNS时，如果我们通过设备的友好名称而不是IP地址来引用设备，则IP地址发生变化时，我们无需在程序中进行任何更改。"
 " DNS将跟踪更改，并在更改后返回新地址。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:112
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:117
 msgid "DNS for FRC"
 msgstr "FRC的DNS"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:114
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:119
 msgid ""
 "On the field and in the pits, there is no DNS server that allows us to "
 "perform the lookups like we do for the Google web site, but we’d still like "
@@ -437,7 +437,7 @@ msgid ""
 msgstr ""
 "在场地和Pits区内，没有DNS服务器可以像对Google网站那样执行查找，但是我们仍然希望拥有不记住每个IP地址，而不必记住每个IP地址的好处。如果DHCP分配的地址与我们期望的地址不同，则猜测每个设备的地址。这就是mDNS出现的地方。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:116
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:121
 msgid ""
 "mDNS provides us the same benefits as traditional DNS, but is just "
 "implemented in a way that does not require a server. Whenever a user asks to"
@@ -451,7 +451,7 @@ msgstr ""
 "mDNS为我们提供了与传统DNS相同的优势，但是仅以不需要服务器的方式实现。每当用户要求使用友好名称连接到设备时，mDNS都会发出一条消息，要求具有该名称的设备标识自己。然后，具有该名称的设备将发送包括其IP地址的返回消息，以便网络上的所有设备都可以更新其信息。"
 " mDNS使我们可以将roboRIO称为``roboRIO-TEAM-FRC.local''并将其连接到DHCP网络上。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:119
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:124
 msgid ""
 "If a device used for FRC does not support mDNS, then it will be assigned an "
 "IP Address in the 10.TE.AM.20 - 10.TE.AM.255 range, but we won’t know the "
@@ -460,11 +460,11 @@ msgid ""
 msgstr ""
 "如果用于FRC的设备不支持mDNS，则会为该设备分配10.TE.AM.20-10.TE.AM.255范围内的IP地址，但我们不知道要连接的确切地址，我们将无法像以前一样使用友好名称。在这种情况下，设备将需要具有静态IP地址。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:122
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:127
 msgid "mDNS - Principles"
 msgstr "mDNS-原理"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:124
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:129
 msgid ""
 "Multicast Domain Name System (mDNS) is a system which allows for resolution "
 "of host names to IP addresses on small networks with no dedicated name "
@@ -476,41 +476,41 @@ msgid ""
 msgstr ""
 "组播域名系统（mDNS）是一种在没有专用名称服务器的小型网络上允许将主机名解析为IP地址的系统。为了解析主机名，设备向网络发送多播消息以查询该设备。然后，设备以包含其IP的多播消息作为响应。网络上的设备可以将此信息存储在缓存中，因此可以从缓存中解决对该地址的后续请求，而无需重复网络查询。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:127
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:132
 msgid "mDNS - Providers"
 msgstr "mDNS-提供者"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:129
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:134
 msgid ""
 "To use mDNS, an mDNS implementation is required to be installed on your PC. "
 "Here are some common mDNS implementations for each major platform:"
 msgstr "要使用mDNS，必须在您的PC上安装mDNS工具。以下是每个主要平台的一些常见mDNS工具："
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:131
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:136
 msgid "Windows:"
 msgstr "Windows:"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:133
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:138
 msgid "**NI mDNS Responder:** Installed with the NI FRC Game Tools"
 msgstr "**NI mDNS Responder:** 用NI FRC Game Tools安装。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:134
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:139
 msgid "**Apple Bonjour:** Installed with iTunes"
 msgstr "**Apple Bonjour:** iTunes内安装"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:136
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:141
 msgid "OSX:"
 msgstr "OSX:"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:138
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:143
 msgid "**Apple Bonjour:** Installed by default"
 msgstr "**Apple Bonjour:** 默认安装"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:140
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:145
 msgid "Linux:"
 msgstr "Linux:"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:142
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:147
 msgid ""
 "**nss-mDNS/Avahi/Zeroconf:** Installed and enabled by default on some Linux "
 "variants (such as Ubuntu or Mint). May need to be installed or enabled on "
@@ -519,17 +519,17 @@ msgstr ""
 "**nss-mDNS/Avahi/Zeroconf:** "
 "默认在某些Linux变体（例如Ubuntu或Mint）上安装并启用。可能需要在其他产品（例如Arch）上安装或启用"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:145
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:150
 msgid "mDNS - Firewalls"
 msgstr "mDNS - 防火墙"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:147
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:152
 msgid ""
 "Depending on your PC configuration, no changes may be required, this section"
 " is provided to assist with troubleshooting."
 msgstr "根据您的PC配置，可能不需要进行任何更改，此部分用于帮助进行故障排除。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:149
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:154
 msgid ""
 "To work properly mDNS must be allowed to pass through your firewall. Because"
 " the network traffic comes from the mDNS implementation and not directly "
@@ -539,7 +539,7 @@ msgstr ""
 "为了正常工作，必须允许mDNS穿过防火墙。因为网络流量来自mDNS实施，而不是直接来自Driver "
 "Station或IDE，所以仅允许那些应用程序通过是不够的。解决mDNS防火墙问题的主要方法有两种："
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:151
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:156
 msgid ""
 "Add an application/service exception for the mDNS implementation (NI mDNS "
 "Responder is ``C:\\Program Files\\National Instruments\\Shared\\mDNS "
@@ -548,35 +548,35 @@ msgstr ""
 "为mDNS实施添加应用程序/服务例外（NI mDNS Responder为 ``C:\\Program Files\\National "
 "Instruments\\Shared\\mDNS Responder\\nimdnsResponder.exe``）"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:152
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:157
 msgid "Add a port exception for traffic to/from UDP 5353. IP Ranges:"
 msgstr "为往返于UDP 5353的流量添加端口例外。IP范围："
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:154
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:159
 msgid "``10.0.0.0 - 10.255.255.255``"
 msgstr "``10.0.0.0 - 10.255.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:155
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:160
 msgid "``172.16.0.0 - 172.31.255.255``"
 msgstr "``172.16.0.0 - 172.31.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:156
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:161
 msgid "``192.168.0.0 - 192.168.255.255``"
 msgstr "``192.168.0.0 - 192.168.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:157
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:162
 msgid "``169.254.0.0 - 169.254.255.255``"
 msgstr "``169.254.0.0 - 169.254.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:158
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:163
 msgid "``224.0.0.251``"
 msgstr "``224.0.0.251``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:161
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:166
 msgid "mDNS - Browser support"
 msgstr "mDNS-浏览器支持"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:163
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:168
 msgid ""
 "Most web-browsers should be able to utilize the mDNS address to access the "
 "roboRIO web server as long as an mDNS provider is installed. These browsers "
@@ -585,11 +585,11 @@ msgstr ""
 "只要安装了mDNS提供程序，大多数Web浏览器就应该能够使用mDNS地址访问roboRIO Web服务器。这些浏览器包括Microsoft "
 "Edge，Firefox和Google Chrome。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:166
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:171
 msgid "USB"
 msgstr "USB"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:168
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:173
 msgid ""
 "If using the USB interface, no network setup is required (you do need the "
 ":ref:`docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game "
@@ -602,11 +602,11 @@ msgstr ""
 "tools:Installing the FRC Game Tools`以提供roboRIO USB驱动）。 "
 "roboRIO驱动程序将自动配置主机（您的计算机）的IP地址，并且roboRIO和上面列出的软件应该能够找到并利用您的roboRIO。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:171
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:176
 msgid "Ethernet/Wireless"
 msgstr "以太网/无线"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:173
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:178
 msgid ""
 "The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your "
 "Radio` will enable the DHCP server on the OpenMesh radio in the home use "
@@ -620,11 +620,11 @@ msgstr ""
 "在家中使用的情况下（AP模式），将在OpenMesh路由器上启用DHCP服务器。如果将OpenMesh置于桥接模式并使用路由器，则可以在路由器上启用DHCP寻址。该网桥设置为与以前相同的基于团队的IP地址（``10.TE.AM.1''），并将DHCP地址从``10.TE.AM.20''分发给``10.TE"
 " .AM.199''。当连接到场地时，FMS还将分发相同IP范围内的地址。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:176
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:181
 msgid "Summary"
 msgstr "总结"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:178
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:183
 msgid ""
 "IP Addresses are what allow us to communicate with devices on a network. For"
 " FRC, these addresses are going to be in the 10.TE.AM.xx range if we are "
@@ -638,7 +638,7 @@ msgstr ""
 " `this <https://support.microsoft.com/en-us/help/164015/understanding-tcp-"
 "ip-addressing-and-subnetting-basics>`__"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:180
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:185
 msgid ""
 "If all devices on the network support mDNS, then all devices can be set to "
 "DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-"
@@ -648,7 +648,7 @@ msgstr ""
 "如果网络上的所有设备均支持mDNS，则可以将所有设备设置为DHCP并使用其友好名称进行引用（例如``roboRIO-TEAM-"
 "FRC.local''）。如果某些设备不支持mDNS，则需要将其设置为使用静态地址。"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:182
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:187
 msgid ""
 "If all devices are set to use DHCP or Static IP assignments (with correct "
 "static settings), the communication should work in both the pit and on the "

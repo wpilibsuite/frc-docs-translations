@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-01-12 16:41+0000\n"
+"POT-Creation-Date: 2021-06-23 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -72,11 +72,11 @@ msgstr ""
 "aucun argument à ``RamseteController`` aura ses gains réglés par défaut à "
 "ces valeurs."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:12
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:33
 msgid "Getting Adjusted Velocities"
 msgstr "Obtention de vitesses ajustées"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:13
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:34
 msgid ""
 "The Ramsete controller returns \"adjusted velocities\" so that the when the "
 "robot tracks these velocities, it accurately reaches the goal point. The "
@@ -97,7 +97,7 @@ msgstr ""
 "utilisateurs doivent commander leur robot à ces vitesses linéaires et "
 "angulaires pour obtenir un suivi de trajectoire optimal."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:15
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:36
 msgid ""
 "The \"goal pose\" represents the position that the robot should be at at a "
 "particular timestep when tracking the trajectory. It does NOT represent the "
@@ -107,7 +107,7 @@ msgstr ""
 "robot doit se trouver à un moment particulier lors du suivi de la "
 "trajectoire. Il ne représente PAS le point final de la trajectoire."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:17
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:38
 msgid ""
 "The controller can be updated using the ``Calculate`` (C++) / ``calculate`` "
 "(Java) method. There are two overloads for this method. Both of these "
@@ -128,7 +128,7 @@ msgstr ""
 "l'objectif. Comme elle est plus facile d'utilisation, nous recommendons "
 "cette dernière méthode lors du suivi des trajectoires."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:32
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:53
 msgid ""
 "These calculations should be performed at every loop iteration, with an "
 "updated robot position and goal."
@@ -136,11 +136,11 @@ msgstr ""
 "Ces calculs doivent être effectués à chaque itération de boucle, avec une "
 "position et un objectif du robot mis à jour."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:35
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:56
 msgid "Using the Adjusted Velocities"
 msgstr "Utilisation des vitesses ajustées"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:36
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:57
 msgid ""
 "The adjusted velocities are of type ``ChassisSpeeds``, which contains a "
 "``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity"
@@ -156,7 +156,7 @@ msgstr ""
 "contrôleur pour les robots non holonomiques (robots qui ne peuvent pas se "
 "déplacer latéralement), l'objet à vitesses ajustées a un ``vy`` de zéro."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:38
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:59
 msgid ""
 "The returned adjusted speeds can be converted to usable speeds using the "
 "kinematics classes for your drivetrain type. For example, the adjusted "
@@ -169,7 +169,7 @@ msgstr ""
 "vitesses gauche et droite pour un entraînement différentiel à l'aide d'un "
 "objet ``DifferentialDriveKinematics``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:55
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:76
 msgid ""
 "Because these new left and right velocities are still speeds and not "
 "voltages, two PID Controllers, one for each side may be used to track these "
@@ -190,21 +190,8 @@ msgstr ""
 " de la WPILIb, ou alors la fonction Velocity PID définie sur les contrôleurs"
 " de moteurs intelligents tels que le TalonSRX et le SPARK MAX."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:58
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:79
 msgid "Ramsete in the Command-Based Framework"
 msgstr ""
 "Ramsete dans un environnement basé sur les commandes (Command -based "
 "Framework)"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:59
-msgid ""
-"For the sake of ease for users, a ``RamseteCommand`` class is built in to "
-"WPILib. For a full tutorial on implementing a path-following autonomous "
-"using RamseteCommand, see :ref:`docs/software/examples-tutorials/trajectory-"
-"tutorial/index:Trajectory Tutorial`."
-msgstr ""
-"Par souci de facilité pour les utilisateurs, une classe ``RamseteCommand`` "
-"est intégrée à WPILib. Pour un didacticiel complet sur la mise en œuvre d'un"
-" mode autonome qui suit une trajectoire précise à l'aide de RamseteCommand, "
-"voir :ref:`docs/software/examples-tutorials/trajectory-"
-"tutorial/index:Trajectory Tutorial`."

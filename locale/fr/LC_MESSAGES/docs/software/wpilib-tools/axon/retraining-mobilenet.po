@@ -3,16 +3,302 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-06-29 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:09+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:2
+msgid "Retraining Mobilenet V2"
+msgstr "Ré-entraîner Mobilenet V2"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:5
+msgid "Upload a Dataset"
+msgstr "Télécharger un ensemble de données"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:7
+msgid ""
+"To retrain the mobilenet object detection model using Axon, first upload the"
+" dataset you would like to retrain with."
+msgstr ""
+"Pour réentraîner le modèle de détection d'objets mobilenet à l'aide d'Axon, "
+"téléchargez d'abord l'ensemble de données avec lequel vous souhaitez "
+"réentraîner."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:11
+msgid ""
+"Once you have uploaded a dataset, you should see it in the tree above this "
+"button."
+msgstr ""
+"Une fois que vous avez téléchargé un ensemble de données, vous devriez le "
+"voir dans l'arborescence au-dessus de ce bouton."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:14
+msgid "Create a Project"
+msgstr "Créer un projet"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:16
+msgid ""
+"Next, you must create a project. A project will hold the data from the "
+"retraining, and any TFLite exports or tests you create with the retrained "
+"model."
+msgstr ""
+"Ensuite, vous devez créer un projet. Un projet contiendra les données du "
+"réentraînement et toutes les exportations ou tests TFLite que vous créez "
+"avec le modèle."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:18
+msgid "To create a project, click the :guilabel:`Add Project` button."
+msgstr "Pour créer un projet, cliquez sur le bouton :guilabel:`Add Project`"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:22
+msgid ""
+"A dialog will appear, asking you to name the project. Pick a name and click "
+":guilabel:`Create`. When you create your project, you will see it above the "
+"button to the left."
+msgstr ""
+"Une boîte de dialogue apparaîtra, vous demandant de nommer le projet. "
+"Choisissez un nom et cliquez sur :guilabel:`Create`. Lorsque vous créez "
+"votre projet, vous le verrez au-dessus du bouton à gauche."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:24
+msgid "Click on the project, and you will be taken to its page."
+msgstr "Cliquez sur le projet et vous serez redirigé vers sa page."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:27
+msgid "Start Retraining"
+msgstr "Commencer la reconversion"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:29
+msgid ""
+"At the top of the project window, there are several parameters to specify "
+"how you want the model to be retrained."
+msgstr ""
+"En haut de la fenêtre du projet, il y a plusieurs paramètres pour spécifier "
+"comment vous voulez que le modèle soit réentraîné."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:31
+msgid ""
+"**Epochs**: The number of times the dataset will be passed through the model"
+" during training. Generally more epochs are better, and a model should "
+"continue to be trained until the performance increase becomes very small or "
+"it stops improving."
+msgstr ""
+"**Époques** : nombre de fois que l'ensemble de données sera transmis au "
+"modèle pendant l'entraînement. En général, plus qu'il y a d'époques, mieux "
+"c'est.  Un modèle doit continuer à être entraîné jusqu'à ce que "
+"l'augmentation des performances devienne très faible ou qu'elle cesse de "
+"s'améliorer."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:33
+msgid ""
+"**Batch Size**: The amount of images to use in each training iteration. A "
+"larger batch size will make epochs train faster as there will be less "
+"batches, but it will require more memory to load all of the images. "
+"Generally we recommend leaving this value at default."
+msgstr ""
+"**Taille du lot** : La quantité d'images à utiliser dans chaque itération "
+"d'entraînement. Une taille de lot plus grande accélérera l'entraînement des "
+"époques car il y aura moins de lots, mais cela nécessitera plus de mémoire "
+"pour charger toutes les images. En général, nous vous recommandons de "
+"laisser cette valeur par défaut."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:35
+msgid ""
+"**Evaluation Frequency**: The amount of epochs to run before each evaluation"
+" of the models precision. Each evaluation will be viewable so you can check "
+"the progress of your model."
+msgstr ""
+"**Fréquence d'évaluation** : le nombre d'époques à exécuter avant chaque "
+"évaluation de la précision des modèles. Chaque évaluation sera visible afin "
+"que vous puissiez vérifier la progression de votre modèle."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:37
+msgid ""
+"**Percent Evaluation**: The percent of the dataset to be reserved "
+"exclusively for evaluation of the models precision during training. A higher"
+" percent evaluation means that more images are used to test the model. Those"
+" images will not be used to train the model so there will be less training "
+"data. Generally we recommend leaving this value at default."
+msgstr ""
+"**Evaluation en pourcentage** : le pourcentage de l'ensemble de données à "
+"réserver exclusivement à l'évaluation de la précision des modèles pendant "
+"l'entraînement. Un pourcentage d'évaluation plus élevé signifie que "
+"davantage d'images sont utilisées pour tester le modèle. Ces images ne "
+"seront pas utilisées pour entraîner le modèle, il y aura donc moins de "
+"données d'entraînement. En général, nous vous recommandons de laisser cette "
+"valeur par défaut."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:39
+msgid ""
+"**Datasets**: The datasets you would wish to retrain with. Edit these input "
+"parameters to fit your needs, and tick the checkboxes of the desired "
+"datasets from the dropdown."
+msgstr ""
+"**Ensembles de données** : les ensembles de données avec lesquels vous "
+"souhaitez vous entraîner. Modifiez ces paramètres d'entrée en fonction de "
+"vos besoins et cochez les cases des ensembles de données souhaités dans la "
+"liste déroulante."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:44
+msgid ""
+"When you are ready to start the retraining, click the play button to the "
+"right of the dataset dropdown."
+msgstr ""
+"Lorsque vous êtes prêt à commencer l'entraînement, cliquez sur le bouton de "
+"lecture à droite de la liste déroulante de l'ensemble de données."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:46
+msgid ""
+"When an evaluation happens, a checkpoint is produced. This is a copy of the "
+"model at a particular point in the training. While the model trains, you "
+"will see checkpoints appear as points on the graph."
+msgstr ""
+"Lorsqu'une évaluation se produit, un point de contrôle est produit. Il "
+"s'agit d'une copie du modèle à un moment particulier de la formation. "
+"Pendant que le modèle s'entraîne, vous verrez des points de contrôle "
+"apparaître sous forme de points sur le graphique."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:49
+msgid "Exporting a Checkpoint in TFLite Format"
+msgstr "Exportation d'un point de contrôle au format TFLite"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:51
+msgid ""
+"To export a checkpoint as a TFLite model for use, select the desired "
+"checkpoint by clicking the point on the graph."
+msgstr ""
+"Pour exporter un point de contrôle en tant que modèle TFLite à utiliser, "
+"sélectionnez le point de contrôle souhaité en cliquant sur le point sur le "
+"graphique."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:55
+msgid ""
+"This will select the checkpoint. Export this checkpoint by clicking the "
+"export button below the graph."
+msgstr ""
+"Cela sélectionnera le point de contrôle. Exportez ce point de contrôle en "
+"cliquant sur le bouton d'exportation sous le graphique."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:59
+msgid "You will soon see an export appear below the button."
+msgstr "Vous verrez bientôt une exportation apparaître sous le bouton."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:63
+msgid ""
+"When the export has completed, you may click the menu to the right of an "
+"exported model, providing options to rename, delete, download, and test the "
+"export."
+msgstr ""
+"Une fois l'exportation terminée, vous pouvez cliquer sur le menu à droite "
+"d'un modèle exporté, offrant des options pour renommer, supprimer, "
+"télécharger et tester l'exportation."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:67
+msgid ""
+"Click the download button, and your browser will download a tarfile "
+"containing two TFLite models, one of which is optimized for the Coral TPU. "
+"There is also a label map file, for use when converting the model's output "
+"to a human-readable format."
+msgstr ""
+"Cliquez sur le bouton de téléchargement et votre navigateur téléchargera un "
+"fichier tar contenant deux modèles TFLite, dont l'un est optimisé pour le "
+"Coral TPU. Il existe également un fichier de mappage d'étiquettes, à "
+"utiliser lors de la conversion de la sortie du modèle dans un format "
+"humainement lisible ."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:72
+msgid "Testing an Exported Model"
+msgstr "Test d'un modèle exporté"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:74
+msgid ""
+"To test an exported model, open the testing dialog by clicking the "
+":guilabel:`Test` button in the menu of the export you would like to test."
+msgstr ""
+"Pour tester un modèle exporté, ouvrez la boîte de dialogue de test en "
+"cliquant sur le bouton :guilabel:`Test` dans le menu de l'export que vous "
+"souhaitez tester."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:80
+msgid ""
+"First, click the :guilabel:`Select Video` box, and click the :guilabel:`+` "
+"that will appear to upload a video."
+msgstr ""
+"Tout d'abord, cliquez sur la case :guilabel:`Select Video`, puis cliquez sur"
+" :guilabel:`+` qui apparaîtra pour télécharger une vidéo."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:84
+msgid "This will open a window that allows you to upload a ``.mp4`` file."
+msgstr ""
+"Cela ouvrira une fenêtre qui vous permettra de télécharger un fichier "
+"``.mp4``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:88
+msgid ""
+"Drop a ``.mp4`` in the dropzone, or click to select the file. Once the file "
+"is in the dropzone, click :guilabel:`Save`."
+msgstr ""
+"Déposez un ``.mp4`` dans la zone de dépôt, ou cliquez pour sélectionner le "
+"fichier. Une fois le fichier dans la dropzone, cliquez sur :guilabel:`Save`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:90
+msgid ""
+"When uploaded, you will see the video in the dropdown menu, allowing you to "
+"select it for the test."
+msgstr ""
+"Une fois téléchargée, vous verrez la vidéo dans le menu déroulant, vous "
+"permettant de la sélectionner pour le test."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:92
+msgid ""
+"You have the option to change the name of the annotated output video "
+"produced by the test."
+msgstr ""
+"Vous avez la possibilité de modifier le nom de la vidéo de sortie annotée "
+"produite par le test."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:96
+msgid "Click the :guilabel:`Test` button, and you will see the test begin."
+msgstr ""
+"Cliquez sur le bouton :guilabel:`Test`, et vous verrez le test commencer."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:100
+msgid ""
+"The test uses your model to annotate the video, creating a stream for you to"
+" watch as it happens. Click the :guilabel:`View` button, and the stream will"
+" open in a separate tab."
+msgstr ""
+"Le test utilise votre modèle pour annoter la vidéo, créant un flux que vous "
+"pouvez regarder au fur et à mesure. Cliquez sur le bouton :guilabel:`View`, "
+"et le flux s'ouvrira dans un onglet séparé."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:102
+msgid ""
+"When the test completes, you will see it at the bottom of the test dialog."
+msgstr ""
+"Une fois le test terminé, vous le verrez en bas de la boîte de dialogue de "
+"test."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/retraining-mobilenet.rst:106
+msgid ""
+"You can download the annotated video. Click the download icon next to the "
+"test’s name, and your browser will begin the download. The video is "
+"currently a ``.mp4`` within a ``.zip``."
+msgstr ""
+"Vous pouvez télécharger la vidéo annotée. Cliquez sur l'icône de "
+"téléchargement à côté du nom du test et votre navigateur commencera le "
+"téléchargement. La vidéo est actuellement un ``.mp4`` dans un ``.zip``."

@@ -3,16 +3,194 @@
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-06-29 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:09+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:2
+msgid "Labeling a Dataset with Supervisely"
+msgstr "Étiqueter un ensemble de données avec Supervisely"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:4
+msgid ""
+"The quality of a neural network is fully dependent on the quality of the "
+"dataset used to train it. To create a custom dataset, perhaps to train a "
+"neural network to recognize the new game piece, Axon supports datasets "
+"created using `Supervisely <https://supervise.ly>`__. This page describes "
+"how to create label, and export a dataset made with Supervisely."
+msgstr ""
+"La qualité d'un réseau de neurones dépend entièrement de la qualité de "
+"l'ensemble de données utilisé pour l'entraîner. Pour créer un ensemble de "
+"données personnalisé, peut-être pour entraîner un réseau de neurones à "
+"reconnaître la nouvelle pièce de jeu, Axon prend en charge les ensembles de "
+"données créés à l'aide de `Supervisely <https://supervise.ly>`__. Cette page"
+" décrit comment créer une étiquette et exporter un ensemble de données créé "
+"avec Supervisely."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:7
+msgid "Record a Video"
+msgstr "Enregistrer une vidéo"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:9
+msgid ""
+"The first step to creating a dataset is getting images. A dataset should "
+"have several thousand images. To get this many images, the easiest way is to"
+" record a short video, roughly 1 to 5 minutes long. The video should clearly"
+" display the object(s) you wish to detect in several angles. Below is an "
+"example clip of a video used to teach a neural network to recognize a video "
+"game controller."
+msgstr ""
+"La première étape pour créer un jeu de données consiste à obtenir des "
+"images. Un jeu de données doit contenir plusieurs milliers d'images. Pour "
+"obtenir autant d'images, le moyen le plus simple est d'enregistrer une "
+"courte vidéo, d'environ 1 à 5 minutes. La vidéo doit afficher clairement le "
+"ou les objets que vous souhaitez détecter sous plusieurs angles. Vous "
+"trouverez ci-dessous un exemple de clip vidéo utilisé pour apprendre à un "
+"réseau neuronal à reconnaître une manette de jeu vidéo."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:19
+msgid "Import Video to Supervisely"
+msgstr "Importer la vidéo dans Superviser"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:21
+msgid ""
+"Now that the images for the dataset are gathered, they can be labeled. To do"
+" this, Axon supports the use of `https://supervise.ly "
+"<https://supervise.ly>`__ . An account is required to use the site."
+msgstr ""
+"Maintenant que les images de l'ensemble de données sont rassemblées, elles "
+"peuvent être étiquetées. Pour ce faire, Axon prend en charge l'utilisation "
+"de `https://supervise.ly <https://supervise.ly>`__ . Un compte est "
+"nécessaire pour utiliser le site."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:23
+msgid ""
+"The workflow is organized in Workspaces, and Projects. A Workspace can have "
+"multiple users, so one FRC team can share a workspace. A Workspace also can "
+"contain multiple projects."
+msgstr ""
+"Le workflow est organisé en espaces de travail et projets. Un espace de "
+"travail peut avoir plusieurs utilisateurs, donc une équipe FRC peut partager"
+" un espace de travail. Un espace de travail peut également contenir "
+"plusieurs projets."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:28
+msgid ""
+"Inside of a Workspace, the video recorded in the previous step can be "
+"imported."
+msgstr ""
+"À l'intérieur d'un espace de travail, la vidéo enregistrée à l'étape "
+"précédente peut être importée."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:33
+msgid ""
+"In the import page, the most important step is choosing the correct "
+":guilabel:`Import plugin`. The correct plugin is \"Videos (split into "
+"frames).\" The setting configurations do not need to be changed."
+msgstr ""
+"Dans la page d'importation, l'étape la plus importante est de choisir le bon"
+" :guilabel:`Import plugin`. Le plugin correct est \"Vidéos (divisées en "
+"images)\". Les configurations de réglage n'ont pas besoin d'être modifiées."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:38
+msgid ""
+"With the correct plugin selected, the video can be dragged in to the upload "
+"box. This will upload the video to Supervisely, and move to a different "
+"screen (shown below). Here, the project should be given a name, and the "
+"import should be started, which will convert the video into several thousand"
+" individual images."
+msgstr ""
+"Avec le bon plugin sélectionné, la vidéo peut être glissée dans la boîte de "
+"téléchargement. Cela téléchargera la vidéo sur Supervisely et passera à un "
+"autre écran (illustré ci-dessous). Ici, le projet doit recevoir un nom et "
+"l'importation doit être lancée, ce qui convertira la vidéo en plusieurs "
+"milliers d'images individuelles."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:44
+msgid "Labeling the Images"
+msgstr "Étiquetage des images"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:46
+msgid ""
+"With the project now set up, the data can be labeled. Labeling data means "
+"drawing boxes around the objects a neural network would want to detect, so "
+"the neural network knows when it is right and when it is wrong when it tries"
+" to detect where an object is. The boxes drawn should tightly wrap the "
+"entire visible object within each image."
+msgstr ""
+"Une fois le projet configuré, les données peuvent être étiquetées. Étiqueter"
+" les données signifie dessiner des boîtes autour des objets qu'un réseau de "
+"neurones voudrait détecter, afin que le réseau de neurones sache quand il a "
+"raison et quand il a tort lorsqu'il essaie de détecter où se trouve un "
+"objet. Les cases dessinées doivent envelopper étroitement l'ensemble de "
+"l'objet visible dans chaque image."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:48
+msgid ""
+"Within the Project, select the :guilabel:`Rectangle` tool. Supervisely will "
+"prompt you to create a class, i.e. define what kind of object you are about "
+"to label. More classes can be made later. Then, click twice in opposite "
+"corners around the object you wish to label. An example of a good label is "
+"below."
+msgstr ""
+"Dans le projet, sélectionnez l'outil :guilabel:`Rectangle`. Supervisely vous"
+" demandera de créer une classe, c'est-à-dire de définir le type d'objet que "
+"vous êtes sur le point d'étiqueter. D'autres cours peuvent être créés plus "
+"tard. Ensuite, cliquez deux fois dans les coins opposés autour de l'objet "
+"que vous souhaitez étiqueter. Un exemple d'une bonne étiquette est ci-"
+"dessous."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:53
+msgid ""
+"Click the :guilabel:`Rectangle` tool to label another object within the same"
+" image, if there is one. If there is a misclick, the corners of the "
+"rectangle can be dragged to better label the object. Otherwise, move on to "
+"the next image. It is important to label every single visible object that "
+"one wishes to detect, else the neural network will pick up bad habits. The "
+"job of labeling data can be tedious, but it can also be shared between "
+"members of an FRC team through the Workspace."
+msgstr ""
+"Cliquez sur l'outil :guilabel:`Rectangle` pour étiqueter un autre objet dans"
+" la même image, s'il y en a un. S'il y a un faux clic, les coins du "
+"rectangle peuvent être déplacés pour mieux étiqueter l'objet. Sinon, passez "
+"à l'image suivante. Il est important d'étiqueter chaque objet visible que "
+"l'on souhaite détecter, sinon le réseau neuronal prendra de mauvaises "
+"habitudes. Le travail d'étiquetage des données peut être fastidieux, mais il"
+" peut également être partagé entre les membres d'une équipe FRC via l'espace"
+" de travail."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:56
+msgid "Downloading the Dataset"
+msgstr "Téléchargement de l'ensemble de données"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:58
+msgid ""
+"With all the images labeled, the dataset can be downloaded off of "
+"Supervisely for use in Axon. Within the Workspace, click on the triple-dot "
+"icon of the project you wish to download. Select the :guilabel:`.json and "
+"images` download option."
+msgstr ""
+"Avec toutes les images étiquetées, l'ensemble de données peut être "
+"téléchargé à partir de Supervisely pour être utilisé dans Axon. Dans "
+"l'espace de travail, cliquez sur l'icône à trois points du projet que vous "
+"souhaitez télécharger. Sélectionnez l'option de téléchargement "
+":guilabel:`.json and images`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/labeling-a-dataset-with-supervisely.rst:63
+msgid "You are now ready to begin training a neural network."
+msgstr ""
+"Vous êtes maintenant prêt à commencer à entraîner votre réseau de neurones."

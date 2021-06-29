@@ -6,15 +6,16 @@
 # Translators:
 # Tianrui Wu <tw2789@columbia.edu>, 2021
 # 怡静 陆 <2238710874@qq.com>, 2021
+# 堂晋 徐 <tangjinx@buffalo.edu>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-13 16:05+0000\n"
+"POT-Creation-Date: 2021-06-29 16:03+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: 堂晋 徐 <tangjinx@buffalo.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +27,18 @@ msgstr ""
 msgid "2020 Game Data Details"
 msgstr "2020 赛季 Game Data (赛场信息包) 相关细节"
 
+#: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:6
+msgid ""
+"In the 2020 *FIRST*\\ |reg| Robotics Competition game, the Position Control "
+"objective requires alliances to select a specific color transmitted to them "
+"when specific pre-requisites have been met. The field will transmit the "
+"selected color to teams using Game Data. This page details the timing and "
+"structure of the sent data and provides examples of how to access it in the "
+"three supported programming languages."
+msgstr ""
+"2020年*FIRST*\\ |reg| "
+"机器人竞赛，位置控制目标要求团队在满足特定先决条件时选择一种特定的颜色传输给他们。场地将使用游戏数据将选定的颜色传输给团队。本页详细说明了发送数据的时间和结构，并提供了用三种受支持的编程语言访问这些数据的方法示例。"
+
 #: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:9
 msgid "The Data"
 msgstr "2020赛季赛场信息包"
@@ -34,9 +47,35 @@ msgstr "2020赛季赛场信息包"
 msgid "Timing"
 msgstr "发送时间"
 
+#: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:14
+msgid ""
+"Color assignment data is sent to both alliances simultaneously once the "
+"first alliance in a match has reached Capacity on Stage 3 of the Shield "
+"Generator (see the Game Manual for more complete details). Between the "
+"beginning of the match and this point, the Game Data will be an empty "
+"string."
+msgstr ""
+"当一场比赛中的第一个团队在Shield "
+"Generator的第3阶段达到容量时，颜色分配数据会同时发送给两个团队（更多完整的细节请参阅比赛手册）。在比赛开始到这一刻，比赛数据将是一个空字符串。"
+
 #: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:17
 msgid "Data format"
 msgstr "信息格式"
+
+#: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:19
+msgid ""
+"The selected color for an alliance will be provided as a single character "
+"representing the color (i.e. 'R' = red, 'G' = green, 'B' = blue, 'Y' = "
+"yellow). This color indicates the color that must be placed underneath the "
+"Control Panel's color sensor in order to complete the Position Control "
+"objective (see the Game Manual for information about the location of the "
+"Control Panel sensor)."
+msgstr ""
+"为团队选择的颜色将以代表颜色的单个字符提供（即“R”=红色，“G”=绿色，“B”=蓝色，“Y”=黄色）。此颜色表示必须置于控制面板颜色传感器下方的颜色，只有这样才能完成位置控制目标（有关控制面板传感器位置的信息，请参阅游戏手册）。"
+
+#: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:22
+msgid "Accessing the Data"
+msgstr "访问数据"
 
 #: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:27
 msgid "C++/Java"
@@ -45,6 +84,25 @@ msgstr "C++/Java"
 #: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:94
 msgid "LabVIEW"
 msgstr "LabVIEW"
+
+#: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:96
+msgid ""
+"The Game Data in LabVIEW is accessed from the Game Specific Data VI. This VI"
+" can be found in the WPI Robotics Library -> Driver Station palette."
+msgstr ""
+"LabVIEW中的比赛数据是从比赛专用数据VI访问的。这个VI可以在WPI Robotics Library -> Driver Station "
+"palette中找到。"
+
+#: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:98
+msgid ""
+"LabVIEW teams will likely want to query the data in the Teleop or "
+"PeriodicTasks VIs and may choose to gate the query behind a button press or "
+"other action. The code below reads the data and then uses a case structure "
+"to react differently to each of the 5 possible cases (empty, or any of the 4"
+" letters)."
+msgstr ""
+"LabVIEW团队可能希望在Teleop或PeriodicTasks "
+"VIs中查询数据，并可能选择在按下按钮或其他操作之后进行查询。下面的代码读取数据然后使用case结构对5个可能的情况（空的，或4个字母中的任何一个）做出不同的反应。"
 
 #: ../../frc-docs/source/docs/yearly-overview/2020-Game-Data.rst:104
 msgid "Testing Game Specific Data"

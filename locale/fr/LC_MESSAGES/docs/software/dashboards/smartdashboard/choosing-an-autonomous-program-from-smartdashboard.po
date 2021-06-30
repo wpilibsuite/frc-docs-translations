@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-06-30 04:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:06+0000\n"
 "Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -21,3 +21,161 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:2
+msgid "Choosing an Autonomous Program"
+msgstr "Choisir un programme autonome"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:4
+msgid ""
+"Often teams have more than one autonomous program, either for competitive "
+"reasons or for testing new software. Programs often vary by adding things "
+"like time delays, different strategies, etc. The methods to choose the "
+"strategy to run usually involves switches, joystick buttons, knobs or other "
+"hardware based inputs."
+msgstr ""
+"Souvent, les équipes ont plus d'un programme autonome, soit pour des raisons"
+" de concurrence, soit pour tester de nouveaux logiciels. Les programmes "
+"varient souvent en ajoutant des éléments tels que des délais, des stratégies"
+" différentes, etc. Les méthodes pour choisir la stratégie à exécuter "
+"impliquent généralement des commutateurs, des boutons de joystick, des "
+"boutons ou d'autres entrées matérielles."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:6
+msgid ""
+"With the SmartDashboard you can simply display a widget on the screen to "
+"choose the autonomous program that you would like to run. And with command "
+"based programs, that program is encapsulated in one of several commands. "
+"This article shows how to select an autonomous program with only a few lines"
+" of code and a nice looking user interface."
+msgstr ""
+"Avec le SmartDashboard, vous pouvez simplement afficher un widget à l'écran "
+"pour choisir le programme autonome que vous souhaitez exécuter. Et avec les "
+"programmes basés sur des commandes, ce programme est encapsulé dans l'une "
+"des nombreuses commandes. Cet article montre comment sélectionner un "
+"programme autonome avec seulement quelques lignes de code et une belle "
+"interface utilisateur."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:8
+msgid ""
+"The code snippets shown below are part of the HatchbotTraditional example "
+"project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):"
+msgstr ""
+"Les extraits de code indiqués ci-dessous font partie du projet "
+"HatchbotTraditional (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:11
+msgid "Creating the SendableChooser Object"
+msgstr "Création de l'objet SendableChooser"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:13
+msgid ""
+"In ``RobotContainer``, create a variable to hold a reference to a "
+"``SendableChooser`` object. Two or more commands can be created and stored "
+"in new variables. Using the ``SendableChooser``, one can choose between "
+"them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as "
+"options."
+msgstr ""
+"Dans ``RobotContainer``, créez une variable pour contenir une référence à un"
+" objet ``SendableChooser``. Deux commandes ou plus peuvent être créées et "
+"stockées dans de nouvelles variables. En utilisant le ``SendableChooser``, "
+"on peut choisir l'une ou l'autres des deux variables. Dans cet exemple, "
+"``SimpleAuto`` et ``ComplexAuto`` sont affichés comme des options."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:30
+msgid "Setting up SendableChooser"
+msgstr "Configurer SendableChooser"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:32
+msgid ""
+"Imagine that you have two autonomous programs to choose between and they are"
+" encapsulated in commands ``SimpleAuto`` and ``ComplexAuto``. To choose "
+"between them:"
+msgstr ""
+"Imaginez que vous ayez le choix entre deux programmes autonomes et qu'ils "
+"soient encapsulés dans les commandes ``SimpleAuto`` et ``ComplexAuto``. Pour"
+" choisir entre eux:"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:34
+msgid ""
+"In ``RobotContainer``, create a ``SendableChooser`` object and add instances"
+" of the two commands to it. There can be any number of commands, and the one"
+" added as a default (``setDefaultOption``), becomes the one that is "
+"initially selected. Notice that each command is included in an "
+"``setDefaultOption()`` or ``addOption()`` method call on the "
+"``SendableChooser`` instance."
+msgstr ""
+"Dans ``RobotContainer``, créez un objet ``SendableChooser`` et ajoutez-y des"
+" instances des deux commandes. Il peut y avoir n'importe quel nombre de "
+"commandes, et celle ajoutée par défaut (``setDefaultOption``), devient celle"
+" qui est initialement sélectionnée. Notez que chaque commande est incluse "
+"dans un appel de méthode ``setDefaultOption()`` ou ``addOption()`` sur "
+"l'instance ``SendableChooser``."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:57
+msgid "Starting an Autonomous Command"
+msgstr "Démarrer une commande autonome"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:59
+msgid ""
+"In ``Robot.java``, when the autonomous period starts, the "
+"``SendableChooser`` object is polled to get the selected command and that "
+"command must be scheduled."
+msgstr ""
+"Dans ``Robot.java``, lorsque la période autonome démarre, l'objet "
+"``SendableChooser`` est interrogé pour obtenir la commande sélectionnée et "
+"cette commande doit être planifiée."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:84
+msgid "Running the Scheduler during Autonomous"
+msgstr "Exécution du planificateur en mode autonome"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:86
+msgid ""
+"In ``Robot.java``, this will run the scheduler every driver station update "
+"period (about every 20ms) and cause the selected autonomous command to run."
+msgstr ""
+"Dans ``Robot.java``, cela exécutera le planificateur à chaque période de "
+"mise à jour (environ toutes les 20 ms) et provoquera l'exécution de la "
+"commande autonome sélectionnée."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:88
+msgid ""
+"Running the scheduler can occur in the ``autonomousPeriodic()`` function or "
+"``robotPeriodic()``, both will function similarly in autonomous mode."
+msgstr ""
+"L'exécution du planificateur peut se produire dans la fonction "
+"``autonomousPeriodic()`` ou ``robotPeriodic()``, les deux fonctionneront de "
+"la même manière en mode autonome."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:105
+msgid "Canceling the Autonomous Command"
+msgstr "Annulation de la commande autonome"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:107
+msgid ""
+"In ``Robot.java``, when the teleop period begins, the autonomous command "
+"will be canceled."
+msgstr ""
+"Dans ``Robot.java``, lorsque la période téléop commence, la commande "
+"autonome sera annulée."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:124
+msgid "SmartDashboard Display"
+msgstr "Affichage du tableau de bord intelligent"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:129
+msgid ""
+"When the SmartDashboard is run, the choices from the ``SendableChooser`` are"
+" automatically displayed. You can simply pick an option before the "
+"autonomous period begins and the corresponding command will run."
+msgstr ""
+"Lorsque le SmartDashboard est exécuté, les choix du ``SendableChooser`` sont"
+" automatiquement affichés. Vous pouvez simplement choisir une option avant "
+"le début de la période autonome et la commande correspondante s'exécutera."

@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-06-30 04:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
 "Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -22,3 +22,500 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:4
+msgid "Introduction to Robot Characterization"
+msgstr "Introduction à la caractérisation des robots"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:6
+msgid ""
+"The characterization tools consist of a python application that runs on the "
+"user's PC and matching robot code that runs on the user's robot. The PC "
+"application will send control signals to the robot over "
+":term:`NetworkTables`, while the robot sends data back to the application. "
+"The application then processes the data and determines characterization "
+"parameters for the user's robot mechanism, as well as producing diagnostic "
+"plots. Data can be saved (in JSON format) for future use, if desired."
+msgstr ""
+"Les outils de caractérisation se composent d'une application python qui "
+"s'exécute sur le PC de l'utilisateur et d'un code de robot correspondant qui"
+" s'exécute sur le robot de l'utilisateur. L'application PC enverra des "
+"signaux de commande au robot via les :term:`NetworkTables`, tandis que le "
+"robot renvoie les données à l'application. L'application traite ensuite les "
+"données et détermine les paramètres de caractérisation du mécanisme du robot"
+" de l'utilisateur, ainsi que la production de tracés de diagnostic. Les "
+"données peuvent être enregistrées (au format JSON) pour une utilisation "
+"future, si vous le souhaitez."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:9
+msgid "What is \"Characterization?\""
+msgstr "En quoi consiste la caractérisation?"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:11
+msgid ""
+"\"Characterization\" - or, more formally, `system identification "
+"<https://en.wikipedia.org/wiki/System_identification>`__ - is the process of"
+" determining a mathematical model for the behavior of a system through "
+"statistical analysis of its inputs and outputs."
+msgstr ""
+"\"La caractérisation\" - ou, de façon plus formelle, `l'identification de "
+"système <https://fr.wikipedia.org/wiki/Identification_de_syst%C3%A8me>`__ "
+"-est le processus de détermination d’un modèle mathématique pour le "
+"comportement d’un système par l’analyse statistique de ses entrées et "
+"sorties."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:13
+msgid ""
+"In FRC, the most common system that we're interested in characterizing is "
+"the `permanent-magnet DC motor "
+"<https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-"
+"magnet_motors>`__.  In particular, we're interested in figuring out which "
+"motor *input* (i.e. voltage from the motor controller) is required to "
+"achieve our desired *outputs* (i.e. velocity and acceleration of the motor)."
+msgstr ""
+"En FRC, le système le plus commun que nous sommes intéressés à caractériser "
+"est le `moteur DC à aimant permanent "
+"<https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-"
+"magnet_motors>`__. En particulier, nous sommes intéressés à déterminer "
+"quelle *entrée* du moteur (c.-à-d. tension du contrôleur de moteur) est "
+"nécessaire pour produire nos *sorties* souhaitées (c.-à-d. vitesse et "
+"accélération du moteur)."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:15
+msgid ""
+"Fortunately, it is not so difficult to do this.  A permanent-magnet DC motor"
+" (with no load other than friction and inertia) will obey the following "
+"\"voltage-balance equation\" (for more information, see `this paper "
+"<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
+msgstr ""
+"Heureusement, il n’est pas si difficile de le faire. Un moteur DC à aimant "
+"permanent (sans charge autre que la friction et l’inertie) obéira à "
+"l’équation \"tension-équilibrée\" suivante (pour plus d’informations, voir "
+"`cet article "
+"<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:17
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:50
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:59
+msgid ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:19
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the motor, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration (the \"overdot\" notation "
+"traditionally denotes the `derivative "
+"<https://en.wikipedia.org/wiki/Derivative>`__ with respect to time)."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) du moteur, :math:`\\dot{d}` est la vitesse, et :math:`\\ddot{d}` "
+"est son accélération (dans cette notation le \"point\" représente "
+"traditionnellement la `dérivée <https://en.wikipedia.org/wiki/Derivative>`__"
+" par rapport au temps)."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:21
+msgid ""
+"Heuristically, we can interpret the coefficients in the above equation as "
+"follows:"
+msgstr ""
+"Heuristiquement, nous pouvons interpréter les coefficients dans l'équation "
+"ci-dessus comme suit:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:23
+msgid ""
+"``kS`` is the voltage needed to overcome the motor's static friction, or in "
+"other words to just barely get it moving; it turns out that this static "
+"friction (because it’s, well, static) has the same effect regardless of "
+"velocity or acceleration. That is, no matter what speed you’re going or how "
+"fast you're accelerating, some constant portion of the voltage you've "
+"applied to your motor (depending on the specific mechanism assembly) will be"
+" going towards overcoming the static friction in your gears, bearings, etc; "
+"this value is your kS.  Note the presence of the `signum function "
+"<https://en.wikipedia.org/wiki/Sign_function>`__, because friction force "
+"always opposes the direction-of-motion."
+msgstr ""
+"``kS`` est la tension nécessaire pour surmonter la friction statique du "
+"moteur, ou en d’autres termes pour à peine le faire bouger; il s’avère que "
+"cette friction statique (parce qu’elle est, bel et bien, statique) a le même"
+" effet indépendamment de la vitesse ou de l’accélération. Autrement dit, "
+"quelle que soit votre vitesse de fonctionnement ou avec quelle rapidité vous"
+" accélérez, une partie constante de la tension que vous avez appliquée à "
+"votre moteur (selon l’assemblage du mécanisme spécifique à caractériser) "
+"servira à surmonter la friction statique dans vos engrenages, roulements, "
+"etc; cette valeur est votre kS. Notez la présence de la `fonction signe "
+"<https://fr.wikipedia.org/wiki/Fonction_signe>`__, parce que la force de "
+"friction s’oppose toujours à la direction de mouvement."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:25
+msgid ""
+"``kV`` describes how much voltage is needed to hold (or \"cruise\") at a "
+"given constant velocity while overcoming the `electromagnetic resistance in "
+"the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and"
+" any additional friction that increases with speed (known as `viscous drag "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" The relationship between speed and voltage (at constant acceleration) is "
+"almost entirely linear (with FRC\\ |reg| components, anyway) because of how "
+"permanent-magnet DC motors work."
+msgstr ""
+"``kV`` décrit la quantité de tension nécessaire pour se maintenir (ou "
+"\"croisière\") à une vitesse constante donnée tout en surmontant la "
+"`résistance électromagnétique dans le moteur <https://en.wikipedia.org/wiki"
+"/Counter-electromotive_force>`__ et toute friction supplémentaire qui "
+"augmente avec la vitesse (connu sous le nom de `traînée visqueuse "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" La relation entre la vitesse et la tension (à une accélération constante) "
+"est presque entièrement linéaire (avec les composants FRC\\ |reg|, de toute "
+"façon) en raison de la manière dont fonctionnent les moteurs DC à aimant "
+"permanent."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:27
+msgid ""
+"``kA`` describes the voltage needed to induce a given acceleration in the "
+"motor shaft. As with ``kV``, the relationship between voltage and "
+"acceleration (at constant velocity) is almost perfectly linear for FRC "
+"components."
+msgstr ""
+"``kA`` décrit la tension nécessaire pour induire une accélération donnée "
+"dans l’arbre moteur. Comme pour ``kV``, la relation entre la tension et "
+"l'accélération (à vitesse constante) est quasiment parfaitement linéaire "
+"pour les composants FRC."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:29
+msgid ""
+"Once these coefficients have been determined (here accomplished by a "
+"`multiple linear regression "
+"<https://en.wikipedia.org/wiki/Linear_regression>`__), we can then take a "
+"given  desired velocity and acceleration for the motor and calculate the "
+"voltage that should be applied to achieve it.  This is very useful - not "
+"only for, say, following motion profiles, but also for making mechanisms "
+"more controllable in open-loop control, because your joystick inputs will "
+"more closely match the actual mechanism motion."
+msgstr ""
+"Une fois que ces coefficients ont été déterminés (accompli in par une "
+"`régression linéaire multiple "
+"<https://en.wikipedia.org/wiki/Linear_regression>`__), nous pouvons alors "
+"prendre une vitesse et une accélération souhaitées pour le moteur et "
+"calculer la tension qui doit être appliquée pour les produire. Ceci est très"
+" utile - non seulement pour, disons, suivre les profils de mouvement, mais "
+"aussi pour rendre les mécanismes plus contrôlables dans le contrôle en "
+"boucle ouverte, parce que vos entrées joystick correspondront plus "
+"étroitement au mouvement du mécanisme réel."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:31
+msgid ""
+"Some of the tools in this toolsuite introduce additional terms into the "
+"above equation to account for known differences from the simple case "
+"described above - details for each tool can be found below:"
+msgstr ""
+"Certains des outils de cette suite logicielle introduisent des termes "
+"supplémentaires dans l’équation ci-dessus pour tenir compte des différences "
+"connues par rapport au cas simple décrit ci-dessus - les détails pour chaque"
+" outil peuvent être trouvés ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:34
+msgid "Included Characterization Tools"
+msgstr "Outils de caractérisation inclus"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:36
+msgid ""
+"Many other types of mechanisms can be characterized by simply adapting the "
+"existing code in this library."
+msgstr ""
+"De nombreux autres types de mécanismes peuvent être caractérisés par "
+"l’adaptation du code existant dans cette logithèque."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:38
+msgid ""
+"The robot characterization toolsuite currently supports characterization "
+"for:"
+msgstr ""
+"La suite logicielle de caractérisation de robot prend actuellement en charge"
+" la caractérisation pour:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:40
+msgid "Simple Motor Setups"
+msgstr "Configurations de simples moteurs "
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:41
+msgid "Drivetrains"
+msgstr "Bases pilotables"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:42
+msgid "Arms"
+msgstr "Bras"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:43
+msgid "Elevators"
+msgstr "Élevateurs"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:46
+msgid "Simple Motor Characterization"
+msgstr "Caractérisation d'un simple moteur"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:48
+msgid ""
+"The simple motor characterization tool determines the best-fit parameters "
+"for the equation:"
+msgstr ""
+"L’outil de caractérisation d'un simple moteur détermine les paramètres les "
+"mieux adaptés à l’équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:52
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the model for a permanent-"
+"magnet dc motor with no loading other than friction and inertia, as "
+"mentioned above, and is an accurate model for flywheels, turrets, and "
+"horizontal linear sliders."
+msgstr ""
+"où::math:`V` est la tension appliquée,: :math:`d` est le déplacement "
+"(position) du variateur, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Il s'agit du modèle pour un moteur à"
+" courant continu à aimant permanent sans charge autre que le frottement et "
+"l'inertie, comme mentionné ci-dessus, et ceci est un modèle précis pour les "
+"volants d'inertie, les tourelles et les curseurs linéaires horizontaux."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:55
+msgid "Drivetrain Characterization"
+msgstr "Caractérisation de la base pilotable"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:57
+msgid ""
+"The drivetrain characterization tool determines the best-fit parameters for "
+"the equation:"
+msgstr ""
+"L’outil de caractérisation de la base pilotable détermine les paramètres les"
+" mieux adaptés à l’équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:61
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the same modeling equation "
+"as is used in the simple motor characterization - however, the drivetrain "
+"characterizer is specifically set up to run on differential drives, and will"
+" characterize each side of the drive independently if desired."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) de l'entraînement, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Il s’agit de la même équation de "
+"modélisation que celle utilisée dans la caractérisation du moteur simple - "
+"cependant, l'outil de caractérisation de la base pilotable est conçu "
+"spécifiquement  pour fonctionner sur les entraînements différentiels, et "
+"caractérisera indépendamment chaque côté de l'entraînement  au besoin."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:63
+msgid ""
+"The drivetrain characterizer can also determine the effective trackwidth of "
+"your robot using a gyro. More information on how to run the characterization"
+" is available in the :ref:`track width characterization "
+"<docs/software/pathplanning/robot-characterization/characterization-"
+"routine:Running Tests>` article."
+msgstr ""
+"Le dispositif de caractérisation de la transmission peut également "
+"déterminer la largeur de voie effective de votre robot à l'aide d'un "
+"gyroscope. Plus d'informations sur la façon d'exécuter la caractérisation "
+"sont disponibles dans l'article :ref:`track width characterization "
+"<docs/software/pathplanning/robot-characterization/characterization-"
+"routine:Running Tests>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:66
+msgid "Arm Characterization"
+msgstr "Caractérisation du bras"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:68
+msgid ""
+"The arm characterization tool determines the best-fit parameters for the "
+"equation:"
+msgstr ""
+"L’outil de caractérisation du bras détermine les paramètres les mieux "
+"adaptés à l’équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:70
+msgid ""
+"V = kS \\cdot sgn(\\dot{\\theta}) + kCos \\cdot cos(\\theta) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
+"\n"
+msgstr ""
+"V = kS \\cdot sgn(\\dot{\\theta}) + kCos \\cdot cos(\\theta) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:72
+msgid ""
+"where :math:`V` is the applied voltage, :math:`\\theta` is the angular "
+"displacement (position) of the arm, :math:`\\dot{\\theta}` is its angular "
+"velocity, and :math:`\\ddot{\\theta}` is its angular acceleration.  The "
+"cosine term (:math:`kCos`) is added to correctly account for the effect of "
+"gravity."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`\\theta` est le déplacement "
+"angulaire (position) du bras, :math:`\\dot{\\theta}` est la vitesse "
+"angulaire, et :math:`\\ddot{\\theta}` est son accélération angulaire. Le "
+"terme en cosinus (:math:`kCos`) est ajouté pour parfaitement tenir compte de"
+" l'effet de la gravité."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:75
+msgid "Elevator Characterization"
+msgstr "Caractérisation de l'élevateur"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:77
+msgid ""
+"The elevator characterization tool determines the best-fit parameters for "
+"the equation:"
+msgstr ""
+"L’outil de caractérisation de l'élevateur détermine les paramètres les mieux"
+" adaptés à l’équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:79
+msgid ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:81
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is "
+"added to correctly account for the effect of gravity."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) de l'entraînement, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Le terme constant (:math:`kG`) est "
+"ajouté pour parfaitement tenir compte de l’effet de la gravité."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:84
+msgid "Prerequisites"
+msgstr "Pré-requis"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:86
+msgid ""
+"To use the Robot Characterization Toolsuite, you must have Python 3.7 "
+"installed on your computer, as well as the standard WPILib programming "
+"toolsuite."
+msgstr ""
+"Pour utiliser la suite logicielle de caractérisation de robot, vous devez "
+"avoir Python 3.7 installé sur votre ordinateur, ainsi que les outils "
+"logiciels de programmation WPILib standard."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:88
+msgid "`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__"
+msgstr "`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:90
+msgid ""
+"Do not install Python from the Microsoft Store. Please use the link above to"
+" download and install Python."
+msgstr ""
+"N’installez pas Python à partir du Microsoft Store. S’il vous plaît, "
+"utilisez plutôt le lien ci-dessus pour télécharger et installer Python."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:93
+msgid "Installing and Launching the Toolsuite"
+msgstr "Installation et lancement de la suite logicielle"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:95
+msgid ""
+"To install the Robot Characterization Toolsuite, open a console and enter "
+"the following command"
+msgstr ""
+"Pour installer la suite logicielle Robot Characterization, ouvrez une "
+"console et entrez la commande suivante"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:101
+msgid ""
+"The toolsuite, and all of its dependencies, should be automatically "
+"downloaded and installed. If you are using a Windows machine and the command"
+" pip is not recognized, ensure that your python scripts folder `has been "
+"added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__."
+msgstr ""
+"La suite logicielle, et toutes ses dépendances, devraient être "
+"automatiquement téléchargées et installées. Si vous utilisez une machine "
+"Windows et que la commande pip n’est pas reconnue, assurez-vous que votre "
+"dossier de scripts Python `a été ajouté à la variable d'environnement PATH "
+"<https://datatofish.com/add-python-to-windows-path/>`__."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:103
+msgid ""
+"If you are on Ubuntu, you will have to manually install tkinter with ``sudo "
+"apt-get install python3-tk``. You will also have to use the ``pip3`` command"
+" instead of ``pip`` as ``pip`` refers to Python 2 on Ubuntu distributions."
+msgstr ""
+"Si vous êtes sous Ubuntu, vous devrez manuellement installer tkinter avec "
+"``sudo apt-get install python3-tk``. Vous devrez également utiliser la "
+"commande ``pip3`` au lieu de ``pip`` puisque ``pip`` se réfère à Python 2 "
+"sous les distributions Ubuntu."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:105
+msgid ""
+"If you already have the toolsuite installed, be sure to update it regularly "
+"to benefit from bugfixes and new features additions:"
+msgstr ""
+"Si vous avez déjà la suite logicielle installée, assurez-vous de la mettre à"
+" jour régulièrement pour tier profit des corrections d'erreurs et de l'ajout"
+" de nouvelles fonctionnalités:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:111
+msgid ""
+"If you would like to use the beta version of this tool, you must type ``pip "
+"install --pre --upgrade frc-characterization`` instead."
+msgstr ""
+"Si vous souhaitez utiliser la version bêta de cet outil, vous devez, à la "
+"place, taper ``pip install --pre --upgrade frc-characterization``"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:113
+msgid ""
+"Once the toolsuite has been installed, launch a new drive characterization "
+"project to ensure that it works by running the following command from "
+"powershell or a terminal window."
+msgstr ""
+"Une fois que la suite logicielle a été installée, lancez un nouveau projet "
+"de caractérisation de l'entraînement pour vous assurer qu’elle fonctionne en"
+" exécutant la commande suivante à partir de powershell ou d’une fenêtre du "
+"terminal."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:119
+msgid ""
+"The new project GUI should open momentarily. To launch other "
+"characterization projects, simply replace ``drive`` with the desired "
+"characterization type (``arm``, ``elevator``, ``simple-motor``)."
+msgstr ""
+"Le nouveau projet GUI devrait s'ouvrir momentanément. Pour lancer d’autres "
+"projets de caractérisation, il suffit de remplacer ``drive`` par le type de "
+"caractérisation souhaité (``arm``, ``elevator``, ``simple-motor``)."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:121
+msgid ""
+"While the new project GUI has buttons for launching both the logging tool "
+"and the analyzer tool, these can also be launched directly from the CLI by "
+"replacing ``new`` with ``logger`` or ``analyzer``."
+msgstr ""
+"Bien que la nouvelle interface utilisateur graphique du projet dispose de "
+"boutons pour lancer à la fois l’outil de journalisation et l’outil "
+"d’analyse, ceux-ci peuvent également être lancés directement à partir de "
+"l'Interface de Ligne de Commande remplaçant ``new`` par ``logger`` ou "
+"``analyzer``."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:123
+msgid ""
+"It is highly recommended that you utilize the new project GUI to launch the "
+"logger and analyzer tools for more effective unit conversions rather than "
+"launching the logger and analyzer from the CLI."
+msgstr ""
+"Il est fortement recommandé d’utiliser le nouveau projet GUI pour lancer les"
+" outils d’enregistrement et d’analyse pour des conversions d'unités plus "
+"efficaces plutôt que de lancer l’enregistreur et l’analyseur à partir de "
+"l’Interface ligne de commande."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:125
+msgid "For more information on CLI usage, enter ``frc-characterization -h``."
+msgstr ""
+"Pour plus d’informations sur l’utilisation de l'Interface de Ligne de "
+"Commande , entrez ``frc-characterization -h``."

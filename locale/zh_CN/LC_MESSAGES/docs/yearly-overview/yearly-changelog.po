@@ -7,15 +7,16 @@
 # Team 5308 <team5308@163.com>, 2021
 # Tianrui Wu <tw2789@columbia.edu>, 2021
 # 怡静 陆 <2238710874@qq.com>, 2021
+# 堂晋 徐 <tangjinx@buffalo.edu>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-29 16:03+0000\n"
+"POT-Creation-Date: 2021-07-02 16:03+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: 堂晋 徐 <tangjinx@buffalo.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -40,9 +41,72 @@ msgstr ""
 "WPILib的变更的更完整的日志。本文档只包含与终端用户最相关的更改，可以在各种 `WPILib "
 "<https://github.com/wpilibsuite/>`__  GitHub存储库中找到完整的变更明细。"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:8
+msgid ""
+"Due to internal GradleRIO changes, it is necessary to update previous years "
+"projects. After :doc:`Installing WPILib for 2021 </docs/zero-to-robot/step-2"
+"/wpilib-setup>`, any 2020 projects must be :doc:`imported </docs/software"
+"/vscode-overview/importing-gradle-project>` to be compatible."
+msgstr ""
+"由于GradleRIO内部的变化，必须更新前几年的项目。:doc:`安装2021 WPILib </docs/zero-to-robot/step-2"
+"/wpilib-setup>`后，任何2020年项目都必须:doc:`导入 </docs/software/vscode-overview"
+"/importing-gradle-project>`以兼容。"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:11
 msgid "Major Features"
 msgstr "主要特点"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:13
+msgid ""
+"A hardware-level `WebSocket interface "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`__"
+" has been added to allow remote access to robot code being simulated in a "
+"desktop environment."
+msgstr ""
+"硬件级别`WebSocket 接口 "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2021.1.1/simulation/halsim_ws_core/doc/hardware_ws_api.md>`__"
+" 已添加，以允许远程访问桌面环境中模拟的机器人代码。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:15
+msgid ""
+"Support for the :doc:`Romi </docs/romi-robot/index>` robot platform. Romi "
+"robot code runs in the desktop simulator environment and talks to the Romi "
+"via the new WebSocket interface."
+msgstr ""
+"支持:doc:`Romi </docs/romi-"
+"robot/index>`机器人平台。Romi机器人代码在桌面模拟器环境中运行，并通过新的WebSocket接口与Romi对话。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
+msgid ""
+"The WPILib installer has been rewritten to support macOS and Linux and to "
+"improve ease of use."
+msgstr "WPILib安装程序已经过重写，以支持macOS和Linux系统并提高易用性。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:21
+msgid ""
+"The macOS installer is notarized, eliminating the need for Gatekeeper "
+"bypass."
+msgstr "macOS安装程序经过公证，无需使用Gatekeeper绕过。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:22
+msgid ""
+"Please see the :ref:`installation instructions <docs/zero-to-robot/step-2"
+"/wpilib-setup:WPILib Installation Guide>` as it differs from previous years."
+msgstr ""
+"请参阅:ref:`安装说明 <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation "
+"Guide>` ，因为它与往年有所不同。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:24
+msgid ""
+"Added support for model-based control with Kalman filters, extended Kalman "
+"filters, unscented Kalman filters, and linear-quadratic regulators. See "
+":ref:`Introduction to State-Space Control <docs/software/advanced-controls"
+"/state-space/state-space-intro:Introduction to State-Space Control>` for "
+"more information."
+msgstr ""
+"增加了对基于模型的控制的支持，包括Kalman滤波法、扩展Kalman滤波法、U-Kalman滤波法和一次二次调节器。至:ref:`Introduction"
+" to State-Space Control <docs/software/advanced-controls/state-space/state-"
+"space-intro:Introduction to State-Space Control>`了解更多信息。"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:27
 msgid "WPILib"
@@ -55,6 +119,63 @@ msgstr "重大变化"
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:32
 msgid "``curvature_t`` moved from ``frc`` to ``units`` namespace (C++)"
 msgstr "curvature_t的命名空间从frc移至units（C ++）"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:34
+msgid ""
+"Trajectory constraint methods are now ``const`` in C++. Teams defining their"
+" own custom constraints should mark the ``MaxVelocity()`` and "
+"``MinMaxAcceleration()`` methods as ``const``."
+msgstr ""
+"轨迹约束方法现在在C++中是const。定义自己的自定义约束的团队应该标记MaxVelocity()和MinMaxAcceleration()方法为const。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:38
+msgid ""
+"PWM Speed Controllers ``get()`` method has been modified to return the same "
+"value as was ``set()`` regardless of inversion. The value that still stakes "
+"into account the inversion can be retrieved with the ``getSpeed()`` method. "
+"This affects the following classes ``DMC60``, ``Jaguar``, ``PWMSparkMax``, "
+"``PWMTalonFX``, ``PWMTalonSRX``, ``PWMVenom``, ``PWMVictorSPX``, ``SD540``, "
+"``Spark``, ``Talon``, ``Victor``, and ``VictorSP`` classes."
+msgstr ""
+"PWM速度控制器get()方法已修改为返回与set()相同的值而不管反转。仍然需要考虑反转的值可以用getSpeed()方法。这会影响以下类：：``DMC60''，``Jaguar''，``PWMSparkMax''，``PWMTalonFX''，``PWMTalonSRX''，``PWMVenom''，``PWMVictorSPX''，``SD540''"
+" ''，``Spark''，``Talon''，``Victor''和``VictorSP''。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:41
+msgid "New Command-Based Library"
+msgstr "新的基于命令的库"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:43
+msgid ""
+"Watchdog and epoch reporting has been added to the command scheduler. This "
+"will let teams know exactly which command or subsystem is responsible for a "
+"loop overrun if one occurs."
+msgstr "Watchdog和epoch报告已添加到命令调度程序中。这将使团队确切地知道在发生循环溢出时哪个命令或子系统出现问题。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:45
+msgid ""
+"Added a ``withName()`` command decorator for Java teams. This lets teams set"
+" the name of a particular command using the :ref:`decorator pattern "
+"<docs/software/commandbased/convenience-features:withName (Java only)>`."
+msgstr ""
+"为Java团队添加了一个withName()命令装饰器。这使得团队可以用一个名字命名特定的指令。使用 :ref:`decorator pattern "
+"<docs/software/commandbased/convenience-features:withName (Java only)>`."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:47
+msgid ""
+"Added a ``NetworkButton`` class, allowing users to use a boolean "
+"``NetworkTableEntry`` as a button to trigger commands."
+msgstr "添加了一个NetworkButton类，允许用户使用布尔值NetworkTableEntry作为触发命令的按钮。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:49
+msgid ""
+"Added a ``simulationPeriodic()`` method to Subsystem. This method runs "
+"periodically during simulation, in addition to the regular ``periodic()`` "
+"method."
+msgstr "添加了一个simulationPeriodic()方法到子系统。除了常规的periodic()方法，此方法在模拟中周期性运行。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:52
+msgid "General Library"
+msgstr "综合库"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:109
 msgid "Shuffleboard"

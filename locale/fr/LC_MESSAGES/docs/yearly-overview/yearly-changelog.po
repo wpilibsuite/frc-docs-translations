@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # Dalton Smith <daltzsmith@gmail.com>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-07-04 04:03+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: Dalton Smith <daltzsmith@gmail.com>, 2021\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -84,6 +84,20 @@ msgstr ""
 " Le code robot de Romi fonctionne dans l’environnement simulateur de bureau "
 "et communique avec Romi via la nouvelle interface WebSocket."
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:17
+msgid ""
+"A new robot data visualizer -- :ref:`Glass "
+"<docs/software/dashboards/glass/index:Glass>` -- has been added. Glass has a"
+" similar UI to the simulator GUI and supports much of the same features; "
+"however, Glass can be used as a standalone dashboard and is not tied in to "
+"the robot program."
+msgstr ""
+"Un nouveau visualiseur de données de robot -- :ref:`Glass "
+"<docs/software/dashboards/glass/index:Glass>` -- a été ajouté. Glass a une "
+"interface utilisateur similaire à celle du simulateur et prend en charge la "
+"plupart des mêmes fonctionnalités ; cependant, Glass peut être utilisé comme"
+" un tableau de bord autonome et n'est pas lié au programme du robot."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
 msgid ""
 "The WPILib installer has been rewritten to support macOS and Linux and to "
@@ -147,6 +161,33 @@ msgstr ""
 "Les équipes définissant leurs propres contraintes personnalisées doivent "
 "marquer les méthodes ``MaxVelocity()`` and ``MinMaxAcceleration()`` comme "
 "``const``."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:36
+msgid ""
+"The ``Field2d`` class (added midway through the 2020 season) was moved from "
+"the simulation package (``edu.wpi.first.wpilibj.simulation`` / "
+"``frc/simulation/``) to the SmartDashboard package "
+"(``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This "
+"allows teams to send their robot position over NetworkTables to be viewed in"
+" Glass. The Field2d instance can be sent using "
+"``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` or by using one of "
+"the :ref:`Shuffleboard methods <docs/software/dashboards/shuffleboard"
+"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be"
+" done in order to see the Field2d in the Simulator GUI."
+msgstr ""
+"La classe ``Field2d`` (ajoutée au milieu de la saison 2020) a été déplacée "
+"du package de simulation (``edu.wpi.first.wpilibj.simulation`` / "
+"``frc/simulation/``) vers le package SmartDashboard ( "
+"``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). Cela "
+"permet aux équipes d'envoyer la position de leur robot sur NetworkTables "
+"pour être visualisée dans Glass. L'instance Field2d peut être envoyée en "
+"utilisant ``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` ou en utilisant l'un"
+" des :ref:` Méthodes Shuffleboard <docs/software/dashboards/shuffleboard"
+"/layouts-with-code/sending-data:Envoi de capteurs, moteurs, etc.>`. Cela "
+"doit être fait pour voir le Field2d dans l'interface graphique du "
+"simulateur."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:38
 msgid ""
@@ -512,6 +553,18 @@ msgstr "PathWeaver"
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:125
 msgid "Added support for reversed splines"
 msgstr "Ajout de la prise en charge des splines inversées"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:126
+msgid ""
+"The coordinate system in the exported JSON has changed to be compatible with"
+" the simulator GUI. See :ref:`Importing a PathWeaver JSON "
+"<docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a"
+" PathWeaver JSON>` for more information."
+msgstr ""
+"Le système de coordonnées dans le JSON exporté a changé pour être compatible"
+" avec l'interface graphique du simulateur. Voir :ref:`Importer un JSON "
+"PathWeaver <docs/software/pathplanning/pathweaver/integrating-robot-"
+"program:Importing a PathWeaver JSON>` pour plus d'informations."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:129
 msgid "GradleRIO"

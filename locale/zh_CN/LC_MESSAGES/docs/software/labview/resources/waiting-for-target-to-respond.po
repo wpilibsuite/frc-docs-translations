@@ -5,18 +5,122 @@
 # 
 # Translators:
 # 怡静 陆 <2238710874@qq.com>, 2021
+# 智翔 杨 <2532498540@qq.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-03 16:18+0000\n"
+"POT-Creation-Date: 2021-07-04 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
+"Last-Translator: 智翔 杨 <2532498540@qq.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:2
+msgid "Waiting for Target to Respond - Recovering from bad loops"
+msgstr "等待目标响应-从错误循环中恢复"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:6
+msgid ""
+"If you download LabVIEW code which contains an unconstrained loop (a loop "
+"with no delay) it is possible to get the roboRIO into a state where LabVIEW "
+"is unable to connect to download new code. This document explains the "
+"process required to load new, fixed, code to recover from this state"
+".waiting-for-target-to-respond/"
+msgstr ""
+"如果您上传的LabVIEW代码中包含不受限制的循环（无延迟的循环），则roboRIO可能会进入一个无法连接LabVIEW并上传新代码的状态。此文档说明了加载新的代码以从此状态-“等待目标响应"
+"”（waiting-for-target-to-respond）-下恢复所需的操作."
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:9
+msgid "The Symptom"
+msgstr "错误特征"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:13
+msgid ""
+"The primary symptom of this issue is attempts to download new robot code "
+"hang at the \"Waiting for the target (Target) to respond\" step as shown "
+"above. Note that there are other possible causes of this symptom (such as "
+"switching from a C++\\Java program to LabVIEW program) but the steps "
+"described here should resolve most or all of them."
+msgstr ""
+"此问题出现时的主要特征是在“等待目标响应”一步时尝试上传新的机器人代码，如上图所示。请注意，还有其他可能的原因导致这种现象（例如，从C ++ "
+"、Java程序切换到LabVIEW程序），但是此处描述的步骤应该可以解决大多数或全部问题。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:15
+msgid "Click ``Cancel`` to close the download dialog."
+msgstr "单击“取消”以关闭上传对话框。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:18
+msgid "The Problem"
+msgstr "问题"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:22
+msgid ""
+"One common source of this issue is unconstrained loops in your LabVIEW code."
+" An unconstrained loop is a loop which does not contain any delay element "
+"(such as the one on the left). If you are unsure where to begin looking, "
+"Disabled.VI, Periodic Tasks.VI and Vision Processing.VI are the common "
+"locations for this type of loop. To fix the issue with the code, add a delay"
+" element such as the Wait (ms) VI from the Timing palette, found in the "
+"right loop."
+msgstr ""
+"这个问题的一个常见原因是LabVIEW代码中存在无限制循环。无限制循环是不包含任何延迟元素（例如左侧的延迟元素）的循环。如果不确定从哪里开始找，Disabled.VI，Periodic"
+" Tasks.VI和Vision "
+"Processing.VI是此类循环的常见位置。要解决代码问题，请在右侧循环中添加一个延迟元素，如“定时”选板中的“等待（ms）” VI。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:25
+msgid "Set No App"
+msgstr "设置禁用程序"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:29
+msgid ""
+"Using the roboRIO webserver (see the article on the :ref:`roboRIO Web "
+"Dashboard Startup Settings <docs/software/roborio-info/roborio-web-"
+"dashboard:Startup Settings>` for more details). **Check** the box to "
+"\"Disable RT Startup App\"."
+msgstr ""
+"使用roboRIO Web服务器（有关更多详细信息，请参见“roboRIO Web Dashboard Startup "
+"Settings”上的文章）。选中“禁用RT启动应用程序”。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:32
+msgid "Reboot"
+msgstr "重启"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:34
+msgid ""
+"Reboot the roboRIO, either using the Reset button on the device or by click "
+"Restart in the top right corner of the webpage."
+msgstr "使用设备上的“重置”按钮或单击网页右上角的“重新启动”以重新启动roboRIO。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:37
+msgid "Clear No App"
+msgstr "取消禁用程序"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:41
+msgid ""
+"Using the roboRIO webserver (see the article on the :ref:`roboRIO Web "
+"Dashboard Startup Settings <docs/software/roborio-info/roborio-web-"
+"dashboard:Startup Settings>` for more details). **Uncheck** the box to "
+"\"Disable RT Startup App\"."
+msgstr ""
+"使用roboRIO Web服务器 (有关更多详细信息，请参见:ref:`roboRIO Web Dashboard Startup Settings "
+"<docs/software/roborio-info/roborio-web-dashboard:Startup Settings>` 上的文章). "
+"取消选中“禁用RT启动应用程序”。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:44
+msgid "Load LabVIEW Code"
+msgstr "加载LabVIEW代码"
+
+#: ../../frc-docs/source/docs/software/labview/resources/waiting-for-target-to-respond.rst:46
+msgid ""
+"Load LabVIEW code (either using the Run button or Run as Startup). Make sure"
+" to set LabVIEW code to Run as Startup before rebooting the roboRIO or you "
+"will need to follow the instructions above again."
+msgstr ""
+"加载LabVIEW代码（使用“运行”按钮或“以启动方式运行”）。在重启roboRIO之前，请确保将LabVIEW代码设置为“以启动方式运行”，否则您将需要再次按照上述说明进行操作。"

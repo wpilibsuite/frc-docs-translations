@@ -4,20 +4,218 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-07-05 04:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:2
+msgid "The Field2d Widget"
+msgstr "Le widget Field2d"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:4
+msgid ""
+"Glass supports displaying your robot's position on the field using the "
+":guilabel:`Field2d` widget. An instance of the ``Field2d`` class should be "
+"created, sent over NetworkTables, and updated periodically with the latest "
+"robot pose in your robot code."
+msgstr ""
+"Glass prend en charge l'affichage de la position de votre robot sur le "
+"terrain à l'aide du widget :guilabel:`Field2d`. Une instance de la classe "
+"``Field2d`` doit être créée, envoyée via NetworkTables et mise à jour "
+"périodiquement avec la dernière pose de robot dans votre code."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:7
+msgid "Sending Robot Pose from User Code"
+msgstr "Envoi de la pose du robot à partir du code utilisateur"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:9
+msgid ""
+"To send your robot's position (usually obtained by :ref:`odometry "
+"<docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is "
+"odometry?>` or a pose estimator), a ``Field2d`` instance must be created in "
+"robot code and sent over NetworkTables. The instance must then be updated "
+"periodically with the latest robot pose."
+msgstr ""
+"Pour envoyer la position de votre robot (généralement obtenue par "
+":ref:`odométrie <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>` ou un estimateur de pose), une instance "
+"``Field2d`` doit être créée dans le code du robot et envoyée via "
+"NetworkTables. L'instance doit ensuite être mise à jour périodiquement avec "
+"la dernière pose du robot."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:47
+msgid ""
+"The ``Field2d`` instance can also be sent using a lower-level NetworkTables "
+"API or using the :ref:`Shuffleboard API "
+"<docs/software/dashboards/shuffleboard/getting-started/shuffleboard-"
+"displaying-data:Displaying data from your robot>`. In this case, the "
+"``SmartDashboard`` API was used, meaning that the :guilabel:`Field2d` widget"
+" will appear under the ``SmartDashboard`` table name."
+msgstr ""
+"L'instance ``Field2d`` peut également être envoyée en utilisant une API "
+"NetworkTables de niveau inférieur ou en utilisant :ref:`Shuffleboard API "
+"<docs/software/dashboards/shuffleboard/getting-started/shuffleboard-"
+"displaying-data:Displaying data from your robot>`. Dans ce cas, l'API "
+"``SmartDashboard`` a été utilisée, ce qui signifie que le widget "
+":guilabel:`Field2d` apparaîtra sous le nom de la table ``SmartDashboard``."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:50
+msgid "Sending Trajectories to Field2d"
+msgstr "Envoi de trajectoires à Field2d"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:52
+msgid ""
+"Visualizing your trajectory is a great debugging step for verifying that "
+"your trajectories are created as intended. Trajectories can be easily "
+"visualized in :ref:`Field2d <docs/software/dashboards/glass/field2d-"
+"widget:The Field2d Widget>` using the "
+"``setTrajectory()``/``SetTrajectory()`` functions."
+msgstr ""
+"La visualisation de votre trajectoire est une excellente étape de débogage "
+"pour vérifier que vos trajectoires ont été créées comme prévu. Les "
+"trajectoires peuvent être facilement visualisées dans :ref:`Field2d "
+"<docs/software/dashboards/glass/field2d-widget:The Field2d Widget>` en "
+"faisant usage des fonctions ``setTrajectory()``/``SetTrajectory()``."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:73
+msgid "Viewing Trajectories with Glass"
+msgstr "Affichage des trajectoires à l'aide de Glass"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:75
+msgid ""
+"The sent trajectory can be viewed with :ref:`Glass "
+"<docs/software/dashboards/glass/index:Glass>` through the dropdown "
+":guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> "
+":guilabel:`Field2d`."
+msgstr ""
+"La trajectoire envoyée peut être visualisée avec :ref:`Glass "
+"<docs/software/dashboards/glass/index:Glass>` via la liste déroulante "
+":guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> "
+":guilabel:`Field2d`."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:80
+msgid ""
+"The above example which uses the `RamseteController (Java) "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__/`RamseteController"
+" (C++) "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__"
+" will not show the sent trajectory until autonomous is enabled at least "
+"once."
+msgstr ""
+"L’exemple ci-dessus qui utilise le contrôleur `RamseteController (Java) "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__/`RamseteController"
+" (C++) "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__"
+" n’affichera pas la trajectoire envoyée tant que le mode autonome n’a pas "
+"été activé au moins une fois."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:83
+msgid "Viewing the Robot Pose in Glass"
+msgstr "Affichage de la pose du robot dans Glass"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:85
+msgid ""
+"After sending the ``Field2d`` instance over NetworkTables, the "
+":guilabel:`Field2d` widget can be added to Glass by selecting "
+":guilabel:`NetworkTables` in the menu bar, choosing the table name that the "
+"instance was sent over, and then clicking on the :guilabel:`Field` button."
+msgstr ""
+"Après avoir envoyé l'instance ``Field2d`` sur NetworkTables, le widget "
+":guilabel:`Field2d` peut être ajouté à Glass en sélectionnant "
+":guilabel:`NetworkTables` dans la barre de menu, en choisissant le nom de la"
+" table sur laquelle l'instance a été envoyée, et puis en cliquant sur le "
+"bouton :guilabel:`Field`."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:89
+msgid ""
+"Once the widget appears, you can resize and place it on the Glass workspace "
+"as you desire. Right-clicking the top of the widget will allow you to "
+"customize the name of the widget, select a custom field image, select a "
+"custom robot image, and choose the dimensions of the field and robot."
+msgstr ""
+"Une fois que le widget apparaît, vous pouvez le redimensionner et le placer "
+"sur l'espace de travail Glass comme vous le souhaitez. Un clic droit en haut"
+" du widget vous permettra de personnaliser le nom du widget, de sélectionner"
+" une image de champ personnalisée, de sélectionner une image de robot "
+"personnalisée et de choisir les dimensions du champ et du robot."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:91
+msgid ""
+"When selecting :guilabel:`Choose image...` you can choose to either select "
+"an image file or a PathWeaver JSON file as long as the image file is in the "
+"same directory.  Choosing the JSON file will automatically import the "
+"correct location of the field in the image and the correct size of the "
+"field."
+msgstr ""
+"Lors de la sélection :guilabel:`Choose image...` vous pouvez choisir soit de"
+" sélectionner un fichier de type image, soit un fichier PathWeaver JSON tant"
+" que le fichier de type image est dans le même répertoire. Le choix du "
+"fichier JSON importera automatiquement l’emplacement adéquate de l'image du "
+"terrain de jeu et la taille exacte dudit terrain."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:93
+msgid ""
+"You can retrieve the latest field image and JSON files from `here "
+"<https://github.com/wpilibsuite/PathWeaver/tree/main/src/main/resources/edu/wpi/first/pathweaver>`__."
+" This is the same image and JSON that are used when generating paths using "
+":ref:`PathWeaver "
+"<docs/software/pathplanning/pathweaver/introduction:Introduction to "
+"PathWeaver>`."
+msgstr ""
+"Vous pouvez récupérer la dernière image du terrain et les fichiers JSON à "
+"partir `d’ici "
+"<https://github.com/wpilibsuite/PathWeaver/tree/main/src/main/resources/edu/wpi/first/pathweaver>`__."
+" Il s’agit de la même image et du même fichier JSON que ceux utilisés lors "
+"de la génération de trajectoires à l’aide de :ref:`PathWeaver "
+"<docs/software/pathplanning/pathweaver/introduction:Introduction to "
+"PathWeaver>`."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:98
+msgid "Modifying Pose Style"
+msgstr "Modification du style de pose"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:100
+msgid ""
+"Poses can be customized in a plethora of ways by right clicking on the "
+"Field2d menu bar. Examples of customization are: line width, line weight, "
+"style, arrow width, arrow weight, color, etc."
+msgstr ""
+"Les Poses peuvent être personnalisées de nombreuses façons en cliquant avec "
+"le bouton droit de la souris sur la barre de menus Field2d. Exemples de "
+"personnalisation : largeur de la ligne, épaisseur de la ligne, style, "
+"largeur de la flèche, épaisseur de la flèche, couleur, etc."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:105
+msgid ""
+"One usage of customizing the pose style is converting the previously shown "
+"``traj`` pose object to a line, rather than a list of poses. Click on the "
+":guilabel:`Style` dropdown box and select :guilabel:`Line`. You should "
+"notice an immediate change in how the trajectory looks."
+msgstr ""
+"Une utilisation de la personnalisation du style de Pose consiste à convertir"
+" l’objet de Pose ''traj'' précédemment affiché en une ligne, plutôt qu’une "
+"liste de Poses. Cliquez sur la liste déroulante :guilabel:`Style` et "
+"sélectionnez :guilabel:`Line`. Vous devriez remarquer un changement immédiat"
+" dans l’apparence de la trajectoire."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:110
+msgid ""
+"Now, uncheck the :guilabel:`Arrows` checkbox. This will cause cause our "
+"trajectory to look like a nice and fluid line!"
+msgstr ""
+"Maintenant, décochez la case :guilabel:`Arrows`. Cela donnera à notre "
+"trajectoire l'apparence d'une ligne agréable et fluide!"

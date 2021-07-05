@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
 # Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-07-05 16:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -221,6 +221,19 @@ msgstr ""
 "afin de pouvoir isoler les effets des différentes étapes les unes des "
 "autres."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:53
+msgid ""
+"The below examples put diagnostic values onto :term:`NetworkTables`. The "
+"easiest way to graph these values is to :ref:`use Shuffleboard's graphing "
+"capabilities <docs/software/dashboards/shuffleboard/getting-started"
+"/shuffleboard-graphs:Working With Graphs>`."
+msgstr ""
+"Les exemples ci-dessous mettent des valeurs de diagnostic sur les "
+":term:`NetworkTables`. La façon la plus simple de représenter graphiquement "
+"ces valeurs est d'utiliser les capacités graphiques de :ref:`Shuffleboard "
+"<docs/software/dashboards/shuffleboard/getting-started/shuffleboard-"
+"graphs:Working With Graphs>`."
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:56
 msgid "Verify Odometry"
 msgstr "Vérifier l'odométrie"
@@ -234,6 +247,16 @@ msgstr ""
 "Si votre odométrie est mauvaise, votre contrôleur Ramsete peut se comporter "
 "de façon erronée, car il modifie les vitesses cibles de votre robot en "
 "fonction de l'endroit où votre odométrie pense que le robot se trouve."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:59
+msgid ""
+":doc:`Sending your robot pose and trajectory to field2d "
+"</docs/software/dashboards/glass/field2d-widget>` can help verify that your "
+"robot is driving correctly relative to the robot trajectory."
+msgstr ""
+":doc:`Envoi de la pose et de la trajectoire de votre robot à field2d "
+"</docs/software/dashboards/glass/field2d-widget>` peut aider à vérifier que "
+"votre robot se déplace correctement par rapport à sa trajectoire."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:61
 msgid ""
@@ -253,6 +276,36 @@ msgstr ""
 "d'environ un mètre le long du ruban à mesurer. Disposez un ruban à mesurer "
 "le long de l'axe Y et recommencez, en poussant votre robot d'un mètre le "
 "long de l'axe X et d'un mètre le long de l'axe Y en arc de cercle."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:98
+msgid ""
+"Compare X and Y reported by the robot to actual X and Y. If X is off by more"
+" than 5 centimeters in the first test then you should check that you "
+"measured your wheel diameter correctly, and that your wheels are not worn "
+"down. If the second test is off by more than 5 centimeters in either X or Y "
+"then your track width (distance from the center of the left wheel to the "
+"center of the right wheel) may be incorrect; if you're sure that you "
+"measured the track width correctly with a tape measure then your robot's "
+"wheels may be slipping in a way that is not accounted for by track width--if"
+" this is the case then you should :ref:`run the track width characterization"
+" <docs/software/pathplanning/robot-characterization/characterization-"
+"routine:Running Tests>` and use that track width instead of the one from "
+"your tape measure."
+msgstr ""
+"Comparez les X et Y enregistrés par le robot à ceux des mesures X et Y "
+"réels. Si X dévie de la valeur réelle par plus de 5 centimètres lors du "
+"premier test, vous devez vérifier que vous avez correctement mesuré le "
+"diamètre de vos roues et que vos roues ne sont pas usées. Si le deuxième "
+"test est décalé de plus de 5 centimètres en X ou Y, alors la largeur de "
+"votre robot (la distance du centre de la roue gauche au centre de la roue "
+"droite) peut être incorrecte; si vous êtes sûr d'avoir correctement mesuré "
+"la largeur entre les roues avec un ruban à mesurer, les roues de votre robot"
+" peuvent avoir glissé d'une manière qui n'est pas prise en compte par le "
+"paramètre qui représente la largeur du robot - si tel est le cas, vous devez"
+" :ref:`exécuter la caractérisation de la largeur du robot "
+"<docs/software/pathplanning/robot-characterization/characterization-"
+"routine:Running Tests>`  et utilisez cette largeur de robot plutôt que celle"
+" obtenue par votre ruban à mesurer."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:104
 msgid "Verify Feedforward"
@@ -281,6 +334,17 @@ msgstr ""
 "Tout d'abord, nous devons désactiver le paramètre P pour neutraliser le PID "
 "pour chaque roue. Réglez le gain ``P`` à 0 ​​pour chaque contrôleur. Dans "
 "l'exemple ``RamseteCommand``, vous définiriez ``kPDriveVel`` à 0:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:127
+msgid ""
+"Next, we want to disable the Ramsete controller to make it easier to isolate"
+" our problematic behavior. To do so, simply call ``setEnabled(false)`` on "
+"the ``RamseteController`` passed into your ``RamseteCommand``:"
+msgstr ""
+"Ensuite, nous voulons désactiver le contrôleur Ramsete pour faciliter "
+"l'isolement de notre comportement problématique. Pour ce faire, invoquer "
+"simplement la méthode ``setEnabled(false)`` sur ``RamseteController`` passé "
+"à votre ``RamseteCommand``:"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:157
 msgid ""

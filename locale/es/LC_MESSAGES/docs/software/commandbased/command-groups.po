@@ -9,15 +9,17 @@
 # heriberto gutierrez <herigtzt04@yahoo.com>, 2021
 # Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2021
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2021
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Fernando Soltero <fersg806@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-24 04:11+0000\n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Sofia Fernandez <sofiafdz.val@gmail.com>, 2021\n"
+"Last-Translator: Fernando Soltero <fersg806@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -315,7 +317,7 @@ msgstr ""
 " los usuarios construir acciones de robot muy complejas a partir de piezas "
 "simples. Por ejemplo, considere el siguiente código:"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:114
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:119
 msgid ""
 "This creates a sequential command group that *contains* a parallel command "
 "group. The resulting control flow looks something like this:"
@@ -323,7 +325,7 @@ msgstr ""
 "Esto crea un grupo de comando secuencial que *contiene* un grupo de comando "
 "paralelo. El flujo de control resultante se parece a esto:"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:119
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:124
 msgid ""
 "Notice how the recursive composition allows the embedding of a parallel "
 "control structure within a sequential one. Notice also that this entire, "
@@ -337,11 +339,11 @@ msgstr ""
 "otra estructura. La composición es una herramienta extremadamente poderosa, "
 "y los usuarios deben asegurarse de usar ampliamente."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:122
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:127
 msgid "Command Groups and Requirements"
 msgstr "Grupos de comandos y requisitos"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:124
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:129
 msgid ""
 "As command groups are commands, they also must declare their requirements. "
 "However, users are not required to specify requirements manually for command"
@@ -360,7 +362,7 @@ msgstr ""
 "anteriormente requerirá tanto el subsistema de drive como el subsistema "
 "hatch del robot."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:126
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:131
 msgid ""
 "Additionally, requirements are enforced within all three types of parallel "
 "groups - a parallel group may *not* contain multiple commands that require "
@@ -370,7 +372,7 @@ msgstr ""
 "paralelos: un grupo paralelo puede *no* contener varios comandos que "
 "requieren el mismo subsistema."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:128
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:133
 msgid ""
 "Some advanced users may find this overly-restrictive - for said users, the "
 "library offers a ``ScheduleCommand`` class (`Java "
@@ -389,11 +391,11 @@ msgstr ""
 "grupos de comandos para proporcionar una granularidad más fina en la gestión"
 " de requisitos."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:131
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:136
 msgid "Restrictions on Command Group Components"
 msgstr "Restricciones en componentes del grupo de comandos"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:133
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:138
 msgid ""
 "The following is only relevant for the Java command-based library; the C++ "
 "library's ownership model naturally prevents users from making this category"
@@ -403,7 +405,7 @@ msgstr ""
 "Java; El modelo de propiedad de la biblioteca C ++ naturalmente evita que "
 "los usuarios cometan esta categoría de error."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:135
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:140
 msgid ""
 "Since command group components are run through their encapsulating command "
 "groups, errors could occur if those same command instances were "
@@ -419,7 +421,7 @@ msgstr ""
 "lo tanto, podría terminar siendo inconsistente estado interno, lo que "
 "provoca un comportamiento inesperado y difícil de diagnosticar."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:137
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:142
 msgid ""
 "For this reason, command instances that have been added to a command group "
 "cannot be independently scheduled or added to a second command group. "
@@ -430,7 +432,7 @@ msgstr ""
 "segundo grupo de comando. Si lo intenta, se producirá una excepción y se "
 "bloqueará el programa de usuario."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:139
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:144
 msgid ""
 "Advanced users who wish to re-use a command instance and are *certain* that "
 "it is safe to do so may bypass this restriction with the "

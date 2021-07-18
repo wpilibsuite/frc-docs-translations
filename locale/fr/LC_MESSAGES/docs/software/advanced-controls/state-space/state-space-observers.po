@@ -1,20 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2020, FIRST
+# Copyright (C) 2021, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Austin Shalit <austinshalit@gmail.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-10-15 04:13+0000\n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -62,11 +63,11 @@ msgstr ""
 "trouverez plus d'informations sur les filtres dans la :ref:` section filtres"
 " <docs/software/advanced-controls/filters/index:Filters>`\\."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:11
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:12
 msgid "Gaussian Functions"
 msgstr "Les fonctions gaussiennes"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:13
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:14
 msgid ""
 "Kalman filters utilize `Gaussian distributions "
 "<https://en.wikipedia.org/wiki/Gaussian_function>`__ (or bell curves) to "
@@ -87,7 +88,7 @@ msgstr ""
 "moyenne, tandis que la variance est une mesure du degré de certitude (ou "
 "d'incertitude) du filtre par rapport à :term:`l’état` réel."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:18
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:19
 msgid ""
 "The idea of variance and covariance is central to the function of a Kalman "
 "filter. Covariance is a measurement of how two random variables are "
@@ -117,11 +118,11 @@ msgstr ""
 "base utilisée - par exemple, si :math:`\\mathbf{x_1}` a été mesurée en "
 "mètres, :math:`\\mathbf{\\text{cov}(x_1, x_1)}` serait en mètres carrés."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:20
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:21
 msgid "Covariance matrices are written in the following form:"
 msgstr "Les matrices de covariance sont écrites sous la forme suivante:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:22
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:23
 msgid ""
 "\\mathbf{\\Sigma} &= \\begin{bmatrix}\n"
 "  \\text{cov}(x_1, x_1) & \\text{cov}(x_1, x_2) & \\ldots & \\text{cov}(x_1, x_n) \\\\\n"
@@ -138,11 +139,11 @@ msgstr ""
 "\\text{cov}(x_n, x_1) & \\text{cov}(x_n, x_2) & \\ldots & \\text{cov}(x_n, x_n) \\\\\n"
 "\\end{bmatrix}\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:31
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:32
 msgid "Kalman Filters"
 msgstr "Les filtres de Kalman"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:33
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:34
 msgid ""
 "It is important to develop an intuition for what a Kalman filter is actually"
 " doing. The book `Kalman and Bayesian Filters in Python by Roger Labbe "
@@ -161,7 +162,7 @@ msgstr ""
 "similaires au cas unidimensionnel. Nous vous suggérons de lire le chapitre 4"
 " pour avoir une idée de ce que font ces filtres."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:35
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:36
 msgid ""
 "To summarize, Kalman filters (and all Bayesian filters) have two parts: "
 "prediction and correction. Prediction projects our state estimate forward in"
@@ -181,12 +182,12 @@ msgstr ""
 "nouvelles données de mesure sont disponibles (par exemple, à partir d'un "
 "système de vision à faible fréquence d'images)."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:37
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:38
 msgid "The following shows the equations of a discrete-time Kalman filter:"
 msgstr ""
 "Ce qui suit montre les équations d'un filtre de Kalman à temps discret:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:39
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:40
 msgid ""
 "\\text{Predict step} \\nonumber \\\\\n"
 "\\hat{\\mathbf{x}}_{k+1}^- &= \\mathbf{A}\\hat{\\mathbf{x}}_k + \\mathbf{B} \\mathbf{u}_k \\\\\n"
@@ -215,7 +216,7 @@ msgstr ""
 "\\mathbf{C} \\hat{\\mathbf{x}}_{k+1}^- - \\mathbf{D}\\mathbf{u}_{k+1}) \\\\\n"
 "\\mathbf{P}_{k+1}^+ &= (\\mathbf{I} - \\mathbf{K}_{k+1}\\mathbf{C})\\mathbf{P}_{k+1}^-\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:53
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:54
 msgid ""
 "\\begin{array}{llll}\n"
 "  \\mathbf{A} & \\text{system matrix} & \\hat{\\mathbf{x}} & \\text{state estimate vector} \\\\\n"
@@ -236,7 +237,7 @@ msgstr ""
 "\\mathbf{K} & \\text{Kalman gain matrix} & \\mathbf{R} & \\text{measurement noise covariance matrix}\n"
 "\\end{array}\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:63
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:64
 msgid ""
 "The state estimate :math:`\\mathbf{x}`, together with :math:`\\mathbf{P}`, "
 "describe the mean and covariance of the Gaussian function that describes our"
@@ -246,11 +247,11 @@ msgstr ""
 " la moyenne et la covariance de la fonction gaussienne qui décrit "
 "l'estimation par notre filtre de l'état réel du système."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:66
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:67
 msgid "Process and Measurement Noise Covariance Matrices"
 msgstr "Les matrices de covariance du bruit de processus et de mesure"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:68
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:69
 msgid ""
 "The process and measurement noise covariance matrices :math:`\\mathbf{Q}` "
 "and :math:`\\mathbf{R}` describe the variance of each of our states and "
@@ -278,7 +279,7 @@ msgstr ""
 ":math:`\\begin{bmatrix}0.01\\end{bmatrix}` aurait les matrices suivantes "
 ":math:`\\mathbf{Q}` et :math:`\\mathbf{R}` :"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:70
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:71
 msgid ""
 "Q = \\begin{bmatrix}0.01 & 0 \\\\ 0 & 1.0\\end{bmatrix},\n"
 "R = \\begin{bmatrix}0.0001\\end{bmatrix}\n"
@@ -287,11 +288,11 @@ msgstr ""
 "Q = \\begin{bmatrix}0.01 & 0 \\\\ 0 & 1.0\\end{bmatrix},\n"
 "R = \\begin{bmatrix}0.0001\\end{bmatrix}\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:75
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:76
 msgid "Error Covariance Matrix"
 msgstr "Matrice de covariance d'erreur"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:77
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:78
 msgid ""
 "The error covariance matrix :math:`\\mathbf{P}` describes the covariance of "
 "the state estimate :math:`\\mathbf{\\hat{x}}`. Informally, "
@@ -307,7 +308,7 @@ msgstr ""
 "grande. Inversement, un :math:`\\mathbf{P}` avec des éléments plus petits "
 "impliquerait moins d'incertitude sur notre véritable état."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:79
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:80
 msgid ""
 "As we project the model forward, :math:`\\mathbf{P}` increases as our "
 "certainty about the system's true state decreases."
@@ -316,11 +317,11 @@ msgstr ""
 ":math:`\\mathbf{P}` augmente à mesure que notre certitude sur l'état réel du"
 " système diminue."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:82
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:83
 msgid "Predict step"
 msgstr "L'étape de prédiction"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:84
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:85
 msgid ""
 "In prediction, our state estimate is updated according to the linear system "
 "dynamics :math:`\\mathbf{\\dot{x} = Ax + Bu}`. Furthermore, our error "
@@ -338,11 +339,11 @@ msgstr ""
 ":math:`\\mathbf{P}`  plus rapidement. Ceci :math:`\\mathbf{P}` est utilisé "
 "dans l'étape de correction pour pondérer le modèle et les mesures."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:87
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:88
 msgid "Correct step"
 msgstr "L'étape correcte"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:89
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:90
 msgid ""
 "In the correct step, our state estimate is updated to include new "
 "measurement information. This new information is weighted against the state "
@@ -368,7 +369,7 @@ msgstr ""
 "élevée de :math:`\\mathbf{P}` pondérerait fortement les nouvelles "
 "informations."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:91
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:92
 msgid ""
 "Finally, the error covariance :math:`\\mathbf{P}` decreases to increase our "
 "confidence in the state estimate."
@@ -376,11 +377,11 @@ msgstr ""
 "Enfin, la covariance d'erreur :math:`\\mathbf{P}` diminue pour augmenter "
 "notre confiance dans l'estimation de l'état."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:94
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:95
 msgid "Tuning Kalman Filters"
 msgstr "Le réglage des filtres Kalman"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:96
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-observers.rst:97
 msgid ""
 "WPILib's Kalman Filter classes' constructors take a linear system, a vector "
 "of process noise standard deviations and measurement noise standard "

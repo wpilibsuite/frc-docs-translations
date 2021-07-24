@@ -6,17 +6,17 @@
 # Translators:
 # Tianrui Wu <tw2789@columbia.edu>, 2021
 # 怡静 陆 <2238710874@qq.com>, 2021
-# 堂晋 徐 <tangjinx@buffalo.edu>, 2021
 # Team 5308 <team5308@163.com>, 2021
+# 堂晋 徐 <tangjinx@buffalo.edu>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-24 04:04+0000\n"
+"POT-Creation-Date: 2021-07-24 16:04+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
+"Last-Translator: 堂晋 徐 <tangjinx@buffalo.edu>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -76,6 +76,17 @@ msgstr ""
 "支持:doc:`Romi </docs/romi-"
 "robot/index>`机器人平台。Romi机器人代码在桌面模拟器环境中运行，并通过新的WebSocket接口与Romi对话。"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:17
+msgid ""
+"A new robot data visualizer -- :ref:`Glass "
+"<docs/software/dashboards/glass/index:Glass>` -- has been added. Glass has a"
+" similar UI to the simulator GUI and supports much of the same features; "
+"however, Glass can be used as a standalone dashboard and is not tied in to "
+"the robot program."
+msgstr ""
+"添加了新的机器人数据可视化工具 -- :ref:`Glass <docs/software/dashboards/glass/index:Glass>`"
+" -- 。 Glass 具有与模拟器 GUI 相似的 UI，并支持许多相同的功能；但是，Glass 可以用作独立的仪表板，并且与机器人程序无关。"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:19
 msgid ""
 "The WPILib installer has been rewritten to support macOS and Linux and to "
@@ -128,6 +139,29 @@ msgid ""
 msgstr ""
 "轨迹约束方法现在在C++中是const。定义自己的自定义约束的团队应该标记MaxVelocity()和MinMaxAcceleration()方法为const。"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:36
+msgid ""
+"The ``Field2d`` class (added midway through the 2020 season) was moved from "
+"the simulation package (``edu.wpi.first.wpilibj.simulation`` / "
+"``frc/simulation/``) to the SmartDashboard package "
+"(``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``). This "
+"allows teams to send their robot position over NetworkTables to be viewed in"
+" Glass. The Field2d instance can be sent using "
+"``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` or by using one of "
+"the :ref:`Shuffleboard methods <docs/software/dashboards/shuffleboard"
+"/layouts-with-code/sending-data:Sending sensors, motors, etc>`. This must be"
+" done in order to see the Field2d in the Simulator GUI."
+msgstr ""
+"``Field2d`` 类（在 2020 赛季中期添加）已从模拟包（``edu.wpi.first.wpilibj.simulation`` / "
+"``frc/simulation/``）移至 SmartDashboard 包（ "
+"``edu.wpi.first.wpilibj.smartdashboard`` / ``frc/SmartDashboard/``)。这允许团队通过 "
+"NetworkTables 发送他们的机器人位置，以便在 Glass 中查看。 Field2d "
+"实例可以使用``SmartDashboard.putData(\"Field\", m_field2d)`` / "
+"``frc::SmartDashboard::PutData(\"Field\", &m_field2d)`` 或使用 :ref:` "
+"之一发送Shuffleboard 方法 <docs/software/dashboards/shuffleboard/layouts-with-code"
+"/sending-data:Sending sensor, motor, etc>`。必须这样做才能在模拟器 GUI 中看到 Field2d。"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:38
 msgid ""
 "PWM Speed Controllers ``get()`` method has been modified to return the same "
@@ -177,21 +211,358 @@ msgstr "添加了一个simulationPeriodic()方法到子系统。除了常规的p
 msgid "General Library"
 msgstr "综合库"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:54
+msgid ""
+"Holonomic Drive Controller - A controller that teams with holonomic "
+"drivetrains (i.e. swerve and mecanum) can use to follow trajectories. This "
+"also supports custom ``Rotation2d`` heading inputs that are separate from "
+"the trajectory because heading dynamics are decoupled from translational "
+"movement in holonomic drivetrains."
+msgstr ""
+"l  完整驱动控制器 "
+"-一种与完整传动系统（即转向和机械手）配合使用的控制器，可用于跟踪轨迹。这也支持自定义在完整传动系统中与轨迹分离的航向输入Rotation2d，由于航向动力学与平动运动解耦。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:57
+msgid ""
+"Added support for scheduling functions more often than the robot loop via "
+"``addPeriodic()`` in TimedRobot. Previously, teams had to make a Notifier to"
+" run feedback controllers more often than the TimedRobot loop period of 20ms"
+" (running TimedRobot more often than this is not advised). Now, users can "
+"run feedback controllers more often than the main robot loop, but "
+"synchronously with the TimedRobot periodic functions so there aren't any "
+"thread safety issues. See an example :ref:`here <docs/software/convenience-"
+"features/scheduling-functions:Scheduling Functions at Custom Frequencies>`."
+msgstr ""
+"增加了对调度功能的支持，比循环机器人via更常见addPeriodic()在TimedRobot中。以前，团队必须制作一个通知程序，以运行反馈控制器的频率超过20ms的TimedRobot循环周期（运行TimedRobot的频率高于不建议的次数）。现在，用户可以比主机器人循环更频繁地运行反馈控制器，但与TimedRobot周期函数同步，因此没有任何线程安全问题。"
+" :ref:`这里 <docs/software/convenience-features/scheduling-"
+"functions:Scheduling Functions at Custom Frequencies>`有一个例子。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:59
+msgid "Added a ``toggle()`` function to Solenoid and DoubleSolenoid."
+msgstr "为单双螺线管添加了一个 toggle() 功能。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:61
+msgid ""
+"Added a ``SpeedControllerGroup`` constructor that takes a ``std::vector<>`` "
+"(C++) / ``SpeedController[]`` (Java), allowing the list to be constructed "
+"dynamically. (Teams shouldn't use this directly. This is only intended for "
+"bindings in languages like Python.)"
+msgstr ""
+"添加了一个SpeedControllerGroup构造std::vector<> (C++) / SpeedController[] "
+"(Java)，允许动态构造列表。（团队不应该直接使用。这只适用于Python等语言的绑定。）"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:63
+msgid ""
+"Added methods (``isOperatorControlEnabled()`` and ``isAutonomousEnabled()``)"
+" to check game and enabled state together."
+msgstr ""
+"添加方法（isOperatorControlEnabled() and isAutonomousEnabled()）一起检查比赛和启用状态。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:65
+msgid ""
+"Added a ``ScopedTracer`` class for C++ teams to be able to time pieces of "
+"code. Simply instantiate the ``ScopedTracer`` at the top of a block of code "
+"and the time will be printed to the console when the instance goes out of "
+"scope."
+msgstr ""
+"添加了一个ScopedTracer类，使C++团队能够对代码段进行计时。只需实例化ScopedTracer在代码块的顶部，当实例超出范围时，时间将打印到控制台。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:67
+msgid ""
+"Added a static method ``fromHSV(int h, int s, int v)`` to create a ``Color``"
+" instance from HSV values."
+msgstr "添加了静态方法fromHSV(int h, int s, int v)从HSV值实例创建Color。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:69
+msgid ""
+"Added RT priority constructor to ``Notifier`` in C++. This makes the thread "
+"backing the Notifier run at real-time priority, reducing timing jitter."
+msgstr "在C++中，已将RT优先级构造函数添加到Notifier。这使得支持通知程序的线程以实时优先级运行，减少了时间抖动。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:71
+msgid ""
+"Added a ``DriverStation.getInstance().isJoystickConnected(int)`` method to "
+"check if a joystick is connected to the Driver Station."
+msgstr ""
+"添加了一个DriverStation.getInstance().isJoystickConnected(int) "
+"方法，以检查操纵杆是否连接到Driver Station。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:73
+msgid ""
+"Added a "
+"``DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)`` "
+"method to silence the warning when a joystick is not connected. This setting"
+" has no effect (i.e. warnings will continue to be printed) when the robot is"
+" connected to a real FMS."
+msgstr ""
+"添加了DriverStation.getInstance().silenceJoystickConnectionWarning(boolean)方法，在未连接操纵杆时使警告静音。当机器人连接到实际的FMS时，此设置无效（即警告将继续出现）。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:75
+msgid ""
+"Added a constructor to ``Translation2d`` that takes in a distance and angle."
+" This is effectively converting from polar coordinates to Cartesian "
+"coordinates."
+msgstr "已将构造函数添加到Translation2d，这需要距离和角度的输入。这是从极坐标到笛卡尔坐标的有效转换。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:77
+msgid ""
+"Added ``EllipticalRegionConstraint``, ``RectangularRegionConstraint``, and "
+"``MaxVelocityConstraint`` to allow constraining trajectory velocity in a "
+"certain region of the field."
+msgstr ""
+"补充EllipticalRegionConstraint, RectangularRegionConstraint,  "
+"MaxVelocityConstraint允许在某一区域约束轨道速度。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:79
+msgid ""
+"Added equals() operator to the ``Trajectory`` class to compare two or more "
+"trajectories."
+msgstr "运算符equals（）添加到Trajectory类中以比较两个或多个轨迹。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:81
+msgid ""
+"Added zero-arg constructor to the ``Trajectory`` class in Java that creates "
+"an empty trajectory."
+msgstr "将零参数构造函数 在 Java中添加到Trajectory类以创建一个空轨迹。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:83
+msgid ""
+"Added a special exception to catch trajectory constraint misbehavior. This "
+"notifies users when user-defined constraints are misbehaving (i.e. min "
+"acceleration is greater than max acceleration)."
+msgstr "添加了一个特殊的异常提示来捕获轨迹约束错误行为。当用户定义的约束行为不正常（即最小加速度大于最大加速度）时，它会通知用户。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:85
+msgid ""
+"Added a ``getRotation2d()`` method to the ``Gyro`` interface. This method "
+"automatically takes care of converting from gyro conventions to geometry "
+"conventions."
+msgstr "向Gyro接口添加了getRotation2d()方法。这种方法自动地处理从陀螺仪惯例到几何惯例的转换。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:87
+msgid ""
+"Added angular acceleration units for C++ teams. These are available in the "
+"``<units/angular_acceleration.h>`` header."
+msgstr "为C++团队增加了角加速度单位。这些在<units/angular_acceleration.h>标头。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:89
+msgid ""
+"Added X and Y component getters in ``Pose2d`` - ``getX()`` and ``getY()`` in"
+" Java, ``X()`` and ``Y()`` in C++."
+msgstr "添加了X和Y部件获取，在Java中为Pose2d - getX() 和 getY()，在C++中为X() 和 Y()。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:91
+msgid ""
+"Added implicit conversion from ``degree_t`` to ``Rotation2d`` in C++. This "
+"allows teams to use a degree value (i.e. ``47_deg``) wherever a "
+"``Rotation2d`` is required."
+msgstr "在C++中将隐式转换从degree_t移至Rotation2d。这允许团队使用角度值（例47_deg）无论Rotation2d是否被要求。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:93
+msgid ""
+"Fixed bug in path following examples where odometry was not being reset to "
+"the starting pose of the trajectory."
+msgstr "修正了路径跟踪中的错误，例如里程表没有重置为轨迹的起始状态。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:95
+msgid ""
+"Fixed some spline generation bugs for advanced users who were using control "
+"vectors directly."
+msgstr "修正了直接使用控制向量的高级用户的一些样条线生成错误。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:97
+msgid ""
+"Fixed theta controller continuous input in swerve examples. This fixes the "
+"behavior where the shortest path is not used during drivetrain rotation."
+msgstr "修正了转弯中θ控制器的连续输入。这改正了传动系旋转期间不使用最短路径的行为。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:99
+msgid ""
+"Deprecated ``units.h``, use individual :ref:`units headers <docs/software"
+"/basic-programming/cpp-units:Using the Units Library>` instead which speeds "
+"compile times."
+msgstr "已弃用units.h，使用个人单位标头替代它，可加快编译时间。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:102
+msgid "Simulation"
+msgstr "模拟"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:104
+msgid "Added keyboard virtual joystick simulation support."
+msgstr "增加了键盘虚拟操纵杆模拟支持。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:105
+msgid "Added Mechanism2D for visualizing mechanisms in simulation."
+msgstr "添加了Mechanism2D，用于在模拟中可视化机构。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:106
+msgid ""
+"Added simulation physics classes for common robot mechanisms (DrivetrainSim,"
+" ElevatorSim, SingleJointedArmSim, and FlywheelSim)"
+msgstr ""
+"增加了通用机器人机构（DrivetrainSim、ElevatorSim、SingleJoinedArmSim和FlywheelSim）的模拟物理类。"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:109
 msgid "Shuffleboard"
 msgstr "Shuffleboard"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:111
+msgid "Number Slider now displays the text value"
+msgstr "数字滑块现在显示文本值。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:112
+msgid "Graphing Widget now uses ChartFX, a high performance graphing library"
+msgstr "图形小部件现在使用ChartFX，一个高性能的图形库。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:113
+msgid "Fixed decimal digit formatting with large numbers"
+msgstr "大数使用固定的十进制数字格式。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:114
+msgid "Size and position can now be set separately in the Shuffleboard API"
+msgstr "大小和位置现在可以在Shuffleboard API中单独设置。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:115
+msgid "Analog Input can now be viewed with a Text Widget"
+msgstr "现在可以用文本小部件查看模拟输入。"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:118
 msgid "SmartDashboard"
 msgstr "SmartDashboard"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:120
+msgid "Host IP can be specified in configuration."
+msgstr "可以在配置中指定主机IP。"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:123
 msgid "PathWeaver"
 msgstr "PathWeaver"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:125
+msgid "Added support for reversed splines"
+msgstr "增加了对反向样条曲线的支持"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:126
+msgid ""
+"The coordinate system in the exported JSON has changed to be compatible with"
+" the simulator GUI. See :ref:`Importing a PathWeaver JSON "
+"<docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a"
+" PathWeaver JSON>` for more information."
+msgstr ""
+"导出的 JSON 中的坐标系已更改为与模拟器 GUI 兼容。有关更多信息，请参阅:ref:`导入 PathWeaver JSON "
+"<docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a"
+" PathWeaver JSON>`。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:129
+msgid "GradleRIO"
+msgstr "GradleRIO"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:131
+msgid ""
+"Added a ``vendordep`` task for downloading vendor JSONs or fetching them "
+"from the user `wpilib` folder"
+msgstr "添加了vendordep任务用于下载供应商JSONs或从用户wpilib文件夹获取它们。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:132
+msgid ""
+"Added a ``gradlerio.vendordep.folder.path`` property to set a non-default "
+"location for the vendor JSON folder"
+msgstr "添加了gradlerio.vendordep.folder.path属性以设置供应商JSON文件夹的非默认位置。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:133
+msgid ""
+"Renamed the ``wpi`` task (that prints current versions of WPILib and tools) "
+"to `wpiVersions`"
+msgstr "重命名wpi任务（用于打印WPILib和工具的当前版本）为wpiVersions。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:134
+msgid "Added the ability to set environment variables during simulation"
+msgstr "增加了在模拟过程中设置环境变量的功能"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:136
+msgid "To set the environment variable ``HALSIMWS_HOST`` use:"
+msgstr "要设置用于HALSIMWS_HOST的环境变量："
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:145
+msgid "CSCore"
+msgstr "CSCore"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:147
+msgid "Now only lists streamable devices on Linux platforms."
+msgstr "现在仅列出Linux平台上的流式设备。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:150
+msgid "Visual Studio Code Extension"
+msgstr "Visual Studio Code扩展"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:152
+msgid "Visual Studio Code has been updated to 1.52.1"
+msgstr "Visual Studio Code已更新为1.52.1。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:153
+msgid "Updated Java and C++ language extensions"
+msgstr "更新了Java和C++语言扩展。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:154
+msgid "Driverstation sim extension is now enabled by default"
+msgstr "Driverstation sim扩展现在默认启用。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:155
+msgid ""
+"Project importer now retains the commands version used in the original "
+"project"
+msgstr "项目导入器现在保留原始项目中使用的命令版本。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:156
+msgid "Clarified the text on the new project and project importer screens"
+msgstr "规整了新项目和项目导入程序页面上的文本。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:157
+msgid "Fixed import corrupting binary files"
+msgstr "修复了导入损坏二进制文件的问题。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:158
+msgid "Fixed link order in C++ ``build.gradle`` projects"
+msgstr "修复了C++中的build.gradle项目的链接顺序。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:159
+msgid ""
+"Updated \"Change Select Default Simulate Extension Setting\" command to work"
+" with multiple sim extensions"
+msgstr "更新了“更改选择默认模拟分机设置”命令以使用多个sim分机。"
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:162
 msgid "RobotBuilder"
 msgstr "RobotBuilder"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:164
+msgid ""
+"Updated to be compatible with the new command based framework and PID "
+"Controller."
+msgstr "更新后与新的基于命令的框架和PID控制器兼容。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:166
+msgid ""
+"Due to the major changes in templates, RobotBuilder will not accept a save "
+"file from a previous year. You must regenerate the yaml save file and export"
+" to a new directory."
+msgstr "由于模板中的重大更改，RobotBuilder将不接受上一年的存档文件。必须重新生成yaml文件并导出到新目录。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:167
+msgid ""
+"A version of RobotBuilder that still exports to the old command based "
+"framework has included with the installer and is called RobotBuilder-Old"
+msgstr "安装程序中包含了一个仍然导出到旧的基于命令的框架的RobotBuilder版本，名称为RobotBuilder-Old"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:169
+msgid "C++: use uniform initialization of objects in header"
+msgstr "C++：标头中对象使用统一初始化。"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:170
+msgid ""
+"C++: fixed case of includes so that code compiles on case-sensitive "
+"filesystems"
+msgstr "C++：修复了includes的大小写，以便在区分大小写的文件系统上编译代码。"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:171
 msgid "Use project name as default for save file"

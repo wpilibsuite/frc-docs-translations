@@ -6,18 +6,206 @@
 # Translators:
 # Yitong Zhao <lucius300er@outlook.com>, 2021
 # Team 5308 <team5308@163.com>, 2021
+# Ran Xin <xinryanryan@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-25 16:03+0000\n"
+"POT-Creation-Date: 2021-08-01 16:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
+"Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:2
+msgid "Generating a Project"
+msgstr "生成一个项目"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:4
+msgid "To use the toolsuite, we first need to generate a robot project."
+msgstr "要使用工具套件，我们首先需要生成一个机器人项目。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:7
+msgid "Select Project Location"
+msgstr "然后选择项目位置"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:9
+msgid "First, select the desired project location on the new project GUI:"
+msgstr "首先，在“新项目”界面上选择你想要的的项目位置："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Selecting the project location in the robot characterization GUI"
+msgstr "在机器人表征GUI中选择项目位置"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:14
+msgid ""
+"The project type dropdown now chooses between the different types of "
+"characterization tests as the previous motor setups have been integrated "
+"into the :guilabel:`Control Type` field."
+msgstr "由于先前的电动机设置已集成到“控制类型”字段中，因此项目类型下拉列表现在可以在不同类型的特性测试之间进行选择。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:17
+msgid "Configure Project Parameters"
+msgstr "配置项目参数"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:19
+msgid ""
+"In order to run on your robot, the tool must know some parameters about how "
+"your robot is set up."
+msgstr "为了在机器人上运行，该工具必须知道一些有关如何设置机器人的参数。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:21
+msgid ""
+"First, you need to use the :guilabel:`Control Type` field to select the "
+"appropriate project config template. ``Simple`` is for PWM Based motor "
+"controllers, ``CTRE`` is for CAN connected CTRE Motor Controllers (e.g. "
+"Talon SRX), and ``SparkMax`` is for the Spark Max Motor Controller. This "
+"allows you to fill out the parameters specific to the type of controllers "
+"you are using."
+msgstr ""
+"首先，您需要使用“控件类型”字段来选择适当的项目配置模板。 "
+"``Simple''用于基于PWM的电机控制器，``CTRE''用于CAN连接的CTRE电机控制器（例如Talon "
+"SRX），``SparkMax''用于Spark Max电机控制器。这使您可以填写特定于所使用控制器类型的参数。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Selecting the appropriate control type."
+msgstr "选择适当的控件类型。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:26
+msgid ""
+"Project config settings are formatted as a `Python dictionary literal "
+"<https://docs.python.org/3/library/stdtypes.html#mapping-types-dict>`__. "
+"These can be modified via the in-window config editor:"
+msgstr ""
+"项目配置设置的格式为Python字典文字<https://docs.python.org/3/library/stdtypes.html"
+"#mapping-types-dict>`__。这些可以通过窗口内配置编辑器进行修改："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Using the robot characterization configuration editor"
+msgstr "使用机器人特性配置编辑器"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:31
+msgid ""
+"Take care of the following caveats when entering your robot specifications:"
+msgstr "输入机器人规格的时候，请注意以下注意事项："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:33
+msgid ""
+"The key names must *not be changed*, as they are hard-coded for each project"
+" type. Only the values (i.e. the things on the right-hand side of the "
+"colons) should be modified."
+msgstr "键名*必不能*被更改，因为它们是每种项目类型的硬编码。只有数据值可以被修改（即冒号右侧的内容）。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:34
+msgid ""
+"``True`` and ``False`` *must* be capitalized, as they are evaluated as "
+"native Python."
+msgstr "True 和 False *必须*大写，因为它们被视为本机的Python。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:35
+msgid ""
+"All string values (e.g. controller names and unit types) *must* be wrapped "
+"in quotes and *must* correspond exactly to one of the options described."
+msgstr "所有字符串值（例如控制器名称和单位类型）必须用引号引起来，并且必须完全对应于所描述的选项之一。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:37
+msgid "Read the comments provided in the config file carefully."
+msgstr "仔细阅读配置文件中提供的注释。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:39
+msgid ""
+"Once your robot configuration is set, you may save it to a location/name of "
+"your choice:"
+msgstr "设置机器人配置后，您可以将其保存到您选择的位置/名称："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Saving the configuration file"
+msgstr "保存配置文件"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:44
+msgid ""
+"Accordingly, you can also load an existing config file (config files are "
+"project-type-specific):"
+msgstr "因此，您还可以加载现有的配置文件(配置文件是特定于项目类型的)："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Loading a saved configuration file"
+msgstr "加载已保存的配置文件"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:50
+msgid "Setting Units"
+msgstr "设定单位"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:52
+msgid ""
+"Now is also a good time to set the Team Number box and modify the units and "
+"units per rotation if necessary (units per rotation is NOT equivalent to the"
+" wheel diameter from last year's tool)."
+msgstr "现在也是设置“团队编号”框和在需要时修改每转单位和单位的好时机（每转单位不等于去年工具的轮径）。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:54
+msgid ""
+"The :guilabel:`Unit Type` field lets you choose between various rotational "
+"and translational units (rotations, radians, degrees, feet, meters, and "
+"inches). You should choose a unit that facilitates a rough validation of the"
+" recorded measurements. For example, you could choose rotations when testing"
+" a flywheel to see if the tool's recorded rotations seem reasonable, or you "
+"could choose feet when testing a drive base to see if the recorded distance "
+"seems reasonable."
+msgstr ""
+"单位类型字段可让您在各种旋转和平移单位（旋转，弧度，度，英尺，米和英寸）之间进行选择。您应该选择一个有助于粗略验证所记录测量值的单位。例如，您可以在测试飞轮时选择旋转，以查看工具记录的旋转是否合理，或者在测试驱动器基座时可以选择支脚，以查看记录的距离是否合理。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Setting the units of the data collection"
+msgstr "设置数据采集的单位"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:60
+msgid ""
+"On the other hand, the :guilabel:`Units per Rotation` entry is how many of "
+"the previously specified units are recorded per rotation of the shaft. Do "
+"note that rotational units (rotations, radians, and degrees) have "
+"predefined/unmutable units per rotations. In contrast, translational units "
+"(meters, feet, inches) require that you specify the conversion, such as a "
+"wheel with a 3-inch diameter can be converted to 9.42 inches per rotation "
+"(:math:`\\pi * 3`)."
+msgstr ""
+"另一方面，“每转单位”条目是每转轴记录多少个先前指定的单位。值得注意的是，旋转单位（旋转，弧度和度）每旋转一圈具有预定单位/不变的单位。相反，平移单位（米，英尺，英寸）需要您指定转换方式，例如，直径为3英寸的车轮每转可以转换为9.42英寸（：math：`\\"
+" pi * 3`）。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Settings the units per rotation of the data collection"
+msgstr "设置每次数据采集旋转的单位"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:67
+msgid "Generate Project"
+msgstr "生成项目"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:69
+msgid ""
+"Once your project has been configured, it's time to generate a deployable "
+"robot project to run the characterization:"
+msgstr "一当配置完项目后，就需要生成一个可部署的机器人项目来运行表征了："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rstNone
+msgid "Generating the robot project button"
+msgstr "生成机器人项目按钮"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:74
+msgid ""
+"A generated robot project will be placed in a subfolder (named "
+"characterization-project) of your specified project location."
+msgstr "生成的机器人项目将放置在您指定项目位置的子文件夹(名为 characterization-project )中。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/generating-project.rst:76
+msgid ""
+"The generated robot code will be in Java, and will reflect the settings "
+"specified in your config file. Advanced users are free to modify the "
+"generated code to their liking, if the existing configuration options do not"
+" suffice."
+msgstr "生成的机器人代码将使用 Java，并将反映您的配置文件中指定的设置。如果现有的配置选项不足，高级用户可以随意修改生成的代码。"

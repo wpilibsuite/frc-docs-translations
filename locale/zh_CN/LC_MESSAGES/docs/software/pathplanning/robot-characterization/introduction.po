@@ -6,18 +6,355 @@
 # Translators:
 # Tianrui Wu <tw2789@columbia.edu>, 2021
 # Team 5308 <team5308@163.com>, 2021
+# Ran Xin <xinryanryan@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-08-03 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
+"Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:4
+msgid "Introduction to Robot Characterization"
+msgstr "机械表征介绍<br>"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:9
+msgid "What is \"Characterization?\""
+msgstr "什么是“表征”？"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:11
+msgid ""
+"\"Characterization\" - or, more formally, `system identification "
+"<https://en.wikipedia.org/wiki/System_identification>`__ - is the process of"
+" determining a mathematical model for the behavior of a system through "
+"statistical analysis of its inputs and outputs."
+msgstr ""
+"\"表征\" ， "
+"或者更正式地说，\"系统识别”<https://en.wikipedia.org/wiki/System_identification>`__ - "
+"是通过对系统的投入和输出进行统计分析来确定系统行为的过程。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:13
+msgid ""
+"In FRC, the most common system that we're interested in characterizing is "
+"the `permanent-magnet DC motor "
+"<https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-"
+"magnet_motors>`__.  In particular, we're interested in figuring out which "
+"motor *input* (i.e. voltage from the motor controller) is required to "
+"achieve our desired *outputs* (i.e. velocity and acceleration of the motor)."
+msgstr ""
+"在FRC比赛中，我们想表征化的最常见的系统是'永磁直流电机<https://en.wikipedia.org/wiki/Brushed_DC_electric_motor"
+"#Permanent-magnet_motors>`__. "
+"具体来说，我们想要找出需要哪个电机“输入”（即电机控制器的电压）来实现我们所需的“输出”（即电机的速度和加速度）。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:15
+msgid ""
+"Fortunately, it is not so difficult to do this.  A permanent-magnet DC motor"
+" (with no load other than friction and inertia) will obey the following "
+"\"voltage-balance equation\" (for more information, see `this paper "
+"<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
+msgstr ""
+"幸运的是，这样做并不是那么困难。永磁直流电动机（除摩擦和惯性外无负载）将遵循以下“电压平衡方程式”（有关更多信息，请参见本文<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:17
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:50
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:59
+msgid ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kS \\ cdot sgn（\\ dot {d}）+ kV \\ cdot \\ dot {d} + kA \\ cdot \\ ddot {d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:19
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the motor, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration (the \"overdot\" notation "
+"traditionally denotes the `derivative "
+"<https://en.wikipedia.org/wiki/Derivative>`__ with respect to time)."
+msgstr ""
+"其中：V是施加的电压，D是电动机的位移（位置），\\ dot {d}是其速度，而\\ ddot{d}是它的加速度（传统上，“ "
+"过点”符号表示相对于时间的导数”<https://en.wikipedia.org/wiki/Derivative>`__ ）。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:21
+msgid ""
+"Heuristically, we can interpret the coefficients in the above equation as "
+"follows:"
+msgstr "试探性地，我们可以将上式中的系数解释如下："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:23
+msgid ""
+"``kS`` is the voltage needed to overcome the motor's static friction, or in "
+"other words to just barely get it moving; it turns out that this static "
+"friction (because it’s, well, static) has the same effect regardless of "
+"velocity or acceleration. That is, no matter what speed you’re going or how "
+"fast you're accelerating, some constant portion of the voltage you've "
+"applied to your motor (depending on the specific mechanism assembly) will be"
+" going towards overcoming the static friction in your gears, bearings, etc; "
+"this value is your kS.  Note the presence of the `signum function "
+"<https://en.wikipedia.org/wiki/Sign_function>`__, because friction force "
+"always opposes the direction-of-motion."
+msgstr ""
+"``kS''是克服电动机静摩擦，或换句话说，就是使电动机运动所需的最小电压。事实证明，无论速度还是加速度，这种静摩擦都具有相同的效果。也就是说，无论您以多大的速度或多大的速度加速，施加在电机上的电压的恒定部分（取决于特定的机构组件）都将克服您齿轮，轴承上的静摩擦。这个值就是您的kS。一定要注意到信号功能”<https://en.wikipedia.org/wiki/Sign_function>`__,"
+" 的存在，因为摩擦力始终与运动方向相反。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:27
+msgid ""
+"``kA`` describes the voltage needed to induce a given acceleration in the "
+"motor shaft. As with ``kV``, the relationship between voltage and "
+"acceleration (at constant velocity) is almost perfectly linear for FRC "
+"components."
+msgstr ""
+"``kA''描述了在电机轴中感应给定加速度所需的电压。与``kV''一样，对于FRC组件，电压和加速度（在恒定速度下）之间的关系几乎完全呈线性关系。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:29
+msgid ""
+"Once these coefficients have been determined (here accomplished by a "
+"`multiple linear regression "
+"<https://en.wikipedia.org/wiki/Linear_regression>`__), we can then take a "
+"given  desired velocity and acceleration for the motor and calculate the "
+"voltage that should be applied to achieve it.  This is very useful - not "
+"only for, say, following motion profiles, but also for making mechanisms "
+"more controllable in open-loop control, because your joystick inputs will "
+"more closely match the actual mechanism motion."
+msgstr ""
+"一旦确定了这些系数（此处通过“多次线性回归<https://en.wikipedia.org/wiki/Linear_regression>”完成），我们就可以为电动机获取给定的所需速度和加速度，并计算为达到该速度而应施加的电压。这非常有用：不仅用于跟随运动曲线，而且还可以使机械装置在开环控制中更可控，因为操纵杆输入将更接近实际机械装置的运动。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:31
+msgid ""
+"Some of the tools in this toolsuite introduce additional terms into the "
+"above equation to account for known differences from the simple case "
+"described above - details for each tool can be found below:"
+msgstr "该工具套件中的某些工具在上述方程式中引入了其他术语，以说明与上述简单情况的已知差异-每个工具的详细信息如下："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:34
+msgid "Included Characterization Tools"
+msgstr "随附的表征工具"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:36
+msgid ""
+"Many other types of mechanisms can be characterized by simply adapting the "
+"existing code in this library."
+msgstr "很多其他类型的机制可以通过简单地修改该库中的现有代码来表征"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:38
+msgid ""
+"The robot characterization toolsuite currently supports characterization "
+"for:"
+msgstr "机器人特征化工具套件目前支持以下特征化："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:40
+msgid "Simple Motor Setups"
+msgstr "简单的电机设置"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:41
+msgid "Drivetrains"
+msgstr "动力总成"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:42
+msgid "Arms"
+msgstr "臂"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:43
+msgid "Elevators"
+msgstr "电梯"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:46
+msgid "Simple Motor Characterization"
+msgstr "简单的电机表征"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:48
+msgid ""
+"The simple motor characterization tool determines the best-fit parameters "
+"for the equation:"
+msgstr "这个简单的电机表征工具确定方程的最佳拟合参数："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:52
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the model for a permanent-"
+"magnet dc motor with no loading other than friction and inertia, as "
+"mentioned above, and is an accurate model for flywheels, turrets, and "
+"horizontal linear sliders."
+msgstr ""
+"其中math：`V`是施加的电压，math：`d`是驱动器的位移（位置），math：`\\ ddot {d}`是其速度，而math：`\\ ddot {"
+" d}`是它的加速度。如上所述，该模型是除摩擦和惯性外没有负载的永磁直流电动机的模型，并且是飞轮，转塔和水平线性滑块的精确模型。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:55
+msgid "Drivetrain Characterization"
+msgstr "传动系统表征"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:57
+msgid ""
+"The drivetrain characterization tool determines the best-fit parameters for "
+"the equation:"
+msgstr "传动系统表征工具确定方程的最佳拟合参数："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:61
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the same modeling equation "
+"as is used in the simple motor characterization - however, the drivetrain "
+"characterizer is specifically set up to run on differential drives, and will"
+" characterize each side of the drive independently if desired."
+msgstr ""
+"其中:math:`V`是施加的电压， :math:`d` "
+"是驱动器的位移（位置），:math:`\\dot{d}`是其速度，而:math:`\\ddot{d}`是它的加速度。这与简单的电动机表征描述中使用的建模方程式相同。但是，传动系统表征器专门设置为在差动驱动器上运行，并且在需要时将独立地描述驱动器的每一侧。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:66
+msgid "Arm Characterization"
+msgstr "臂表征化"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:68
+msgid ""
+"The arm characterization tool determines the best-fit parameters for the "
+"equation:"
+msgstr "臂表征工具确定方程的最佳拟合参数："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:70
+msgid ""
+"V = kS \\cdot sgn(\\dot{\\theta}) + kCos \\cdot cos(\\theta) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
+"\n"
+msgstr ""
+"V = kS \\ cdot sgn（\\ dot {\\ theta}）+ kCos \\ cdot cos（\\ theta）+ kV \\ cdot \\ dot {\\ theta} + kA \\ cdot \\ ddot {\\ theta}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:72
+msgid ""
+"where :math:`V` is the applied voltage, :math:`\\theta` is the angular "
+"displacement (position) of the arm, :math:`\\dot{\\theta}` is its angular "
+"velocity, and :math:`\\ddot{\\theta}` is its angular acceleration.  The "
+"cosine term (:math:`kCos`) is added to correctly account for the effect of "
+"gravity."
+msgstr ""
+"其中 :math:`V`是施加的电压， :math:`\\ theta`是手臂的角位移（位置）， :math:`\\ dot {\\ "
+"theta}`是其角速度，而 :math: \\ ddot {\\ theta}是它的角加速度。添加了余弦项（ "
+":math:`kCos`）以正确说明重力的影响。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:75
+msgid "Elevator Characterization"
+msgstr "提升器表征"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:77
+msgid ""
+"The elevator characterization tool determines the best-fit parameters for "
+"the equation:"
+msgstr "提升器表征工具确定方程的最佳拟合参数："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:79
+msgid ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kG + kS \\ cdot sgn（\\ dot {d}）+ kV \\ cdot \\ dot {d} + kA \\ cdot \\ ddot {d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:81
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is "
+"added to correctly account for the effect of gravity."
+msgstr ""
+"其中：math：`V`是施加的电压，：math：`d`是驱动器的位移（位置），：math：`\\ dot {d}`是其速度，而：math：`\\ "
+"ddot { d}`是它的加速度。添加常数项（：math：`kG`）可以正确说明重力的影响。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:84
+msgid "Prerequisites"
+msgstr "先行准备"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:86
+msgid ""
+"To use the Robot Characterization Toolsuite, you must have Python 3.7 "
+"installed on your computer, as well as the standard WPILib programming "
+"toolsuite."
+msgstr ""
+"要使用Robot Characterization Toolsuite，您必须在计算机上安装Python 3.7以及标准的WPILib编程工具。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:90
+msgid ""
+"Do not install Python from the Microsoft Store. Please use the link above to"
+" download and install Python."
+msgstr "不要从Microsoft Store安装Python。请使用上面的链接下载并安装Python。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:93
+msgid "Installing and Launching the Toolsuite"
+msgstr "安装和启动Toolsuite"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:95
+msgid ""
+"To install the Robot Characterization Toolsuite, open a console and enter "
+"the following command"
+msgstr "要安装Robot Characterization Toolsuite，请打开控制台并输入以下命令"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:101
+msgid ""
+"The toolsuite, and all of its dependencies, should be automatically "
+"downloaded and installed. If you are using a Windows machine and the command"
+" pip is not recognized, ensure that your python scripts folder `has been "
+"added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__."
+msgstr ""
+"工具套件及其所有依赖项均应自动下载并安装。如果您使用的是Windows计算机，并且无法识别命令pip，请确保将python脚本文件夹已添加到PATH  "
+"https://datatofish.com/add-python-to-windows-path/"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:103
+msgid ""
+"If you are on Ubuntu, you will have to manually install tkinter with ``sudo "
+"apt-get install python3-tk``. You will also have to use the ``pip3`` command"
+" instead of ``pip`` as ``pip`` refers to Python 2 on Ubuntu distributions."
+msgstr ""
+"如果您使用的是Ubuntu，则必须使用`` sudo apt-get install python3-tk "
+"''手动安装tkinter。您还必须使用pip3命令而不是pip，因为pip指的是Ubuntu发行版上的Python 2。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:105
+msgid ""
+"If you already have the toolsuite installed, be sure to update it regularly "
+"to benefit from bugfixes and new features additions:"
+msgstr "如果您已经安装了工具套件，请确保定期进行更新以从错误修正和新增功能中受益："
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:111
+msgid ""
+"If you would like to use the beta version of this tool, you must type ``pip "
+"install --pre --upgrade frc-characterization`` instead."
+msgstr ""
+"如果您想使用该工具的beta版本，则必须键入“  pip install --pre --upgrade frc-characterization ”。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:113
+msgid ""
+"Once the toolsuite has been installed, launch a new drive characterization "
+"project to ensure that it works by running the following command from "
+"powershell or a terminal window."
+msgstr "安装工具套件后，请从Powershell或终端窗口运行以下命令，启动一个新的驱动器表征项目，以确保其工作。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:119
+msgid ""
+"The new project GUI should open momentarily. To launch other "
+"characterization projects, simply replace ``drive`` with the desired "
+"characterization type (``arm``, ``elevator``, ``simple-motor``)."
+msgstr ""
+"新的项目GUI应该会立即打开。要启动其他表征项目，只需用所需的表征类型（“  arm ”，“  elevator ”，“ simple-motor "
+"”）替换“ drive ”。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:121
+msgid ""
+"While the new project GUI has buttons for launching both the logging tool "
+"and the analyzer tool, these can also be launched directly from the CLI by "
+"replacing ``new`` with ``logger`` or ``analyzer``."
+msgstr ""
+"尽管新的项目GUI具有用于启动日志记录工具和分析器工具的按钮，但是也可以通过将`` new ''替换为`` logger ''或`` analyzer "
+"''来直接从CLI启动这些按钮。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:125
+msgid "For more information on CLI usage, enter ``frc-characterization -h``."
+msgstr "有关CLI使用的更多信息，请输入“ frc-characterization -h ”。"

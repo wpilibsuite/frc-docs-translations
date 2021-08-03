@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2021-08-03 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,92 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:2
+msgid "Creating Custom Data Types"
+msgstr "创建自定义数据类型"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:3
+msgid ""
+"Widgets allow us to control and visualize different types of data. This data"
+" could be integers and doubles or even Java Objects. In order to display "
+"these types of data using widgets, it is helpful to create a container class"
+" for them. It is not necessary to create your own Data Class if the widget "
+"will handle single fielded data types such as doubles, arrays, or strings."
+msgstr ""
+"小部件使我们能够控制和可视化不同类型的数据。 该数据可以是整数或双精度甚至Java对象。 为这些类型的数据创建一个容器类会帮助小部件显示它们。 "
+"如果窗口小部件将处理单个字段数据类型（例如，双精度，数组或字符串），则无需创建自己的数据类。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:6
+msgid "Creating The Data Class"
+msgstr "创建数据类"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:59
+msgid ""
+"Other methods can be added to retrieve or edit fields and instance "
+"variables, however, it is good practice to make these classes immutable to "
+"prevent changing the source data objects. Instead, you can make a new copy "
+"object instead of manipulating the existing object. For example, if we "
+"wanted to change the y coordinate of our point, we can define the following "
+"method:"
+msgstr ""
+"可以添加其他方法来检索或编辑字段和实例变量，但是，优良作法是使这些类不可变以防止更改源数据对象。 相反，您可以创建一个新的副本对象，而不是操纵现有对象。"
+" 例如，如果要更改点的y坐标，则可以定义以下方法："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:67
+msgid ""
+"This creates a new ``MyPoint2D`` object and returns it with the new "
+"y-coordinate. Same can be done for changing the x coordinate."
+msgstr "这将创建一个新的MyPoint2D对象，并以新的y坐标返回它。 更改x坐标时也可以这样做。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:70
+msgid "Creating a Data Type"
+msgstr "创建数据类型"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:71
+msgid ""
+"There are two different data types that can be made: Simple data types that "
+"have only one field (ie. a single number or string), and Complex data types "
+"that have multiple data fields (ie. multiple strings, multiple numbers)."
+msgstr ""
+"可以创建两种不同的数据类型：仅具有一个字段（即单个数字或字符串）的简单数据类型，以及具有多个数据字段（即多个字符串，多个数字）的复杂数据类型。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:73
+msgid ""
+"In order to define a simple data type, the class must extend the "
+"``SimpleDataType<DataType>`` class with the data type needed and implement "
+"the ``getDefaultValue()`` method. In this example, we will use a double as "
+"our simple data type."
+msgstr ""
+"为了定义一个简单的数据类型，该类必须用所需的数据类型扩展“ SimpleDataType<DataType>”类，并使用“ "
+"getDefaultValue（）”方法。 在此示例中，我们将使用double作为我们的简单数据类型。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:92
+msgid ""
+"The class constructor is set to private to ensure that only a single "
+"instance of the data type will exist."
+msgstr "将类构造函数设置为私密，以确保仅存在数据类型的单个实例。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:94
+msgid ""
+"In order to define a complex data type, the class must extend the "
+"``ComplexDataType`` class and override the ``fromMap()`` and "
+"``getDefaultValue()`` methods. We will use our MyPoint2D class as an example"
+" to see what a complex data type class would look like."
+msgstr ""
+"为了定义复杂的数据类型，该类必须扩展“ComplexDataType”类，并覆盖“fromMap（）”和“getDefaultValue（）”方法。 "
+"我们将以MyPoint2D类为例，以了解复杂数据类型类的外观。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:123
+msgid "The following code above works as noted:"
+msgstr "上面的以下代码按规定工作："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:129
+msgid "Exporting Data Type To Plugin"
+msgstr "将数据类型导出到插件"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:130
+msgid ""
+"In order to have the data type be recognized by Shuffleboard, the plugin "
+"must export them by overriding the ``getDataTypes`` method. For example,"
+msgstr "为了让Shuffleboard能够识别数据类型，插件必须通过覆盖“getDataTypes”的方法来导出它们。 例如，"

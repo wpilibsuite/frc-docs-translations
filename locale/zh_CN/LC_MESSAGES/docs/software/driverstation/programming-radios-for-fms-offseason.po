@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2021-08-03 16:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -20,3 +20,278 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:4
+msgid "Programming Radios for FMS Offseason"
+msgstr "给季后赛场控系统的路由器编程"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:6
+msgid ""
+"When using the FMS Offseason software, the typical networking setup is to "
+"use a single access point with a single SSID and WPA key. This means that "
+"the radios should all be programmed to connect to this network, but with "
+"different IPs for each team. The Team version of the FRC\\ |reg| Bridge "
+"Configuration Utility has an FMS-Lite mode that can be used to do this "
+"configuration."
+msgstr ""
+"使用 FMS Offseason 软件时，典型的网络设置是使用具有单个 SSID 和 WPA "
+"密钥的单个访问点。这意味着应该对所有路由器进行编程以连接到该网络，但是每个队伍的 IP 地址都不同。 FRC的团队版本 ® 网桥配置实用程序具有 "
+"FMS-Lite 模式，可用于执行此配置。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:8
+msgid "Before you begin using the software:"
+msgstr "在开始使用该软件之前："
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:10
+msgid ""
+"Disable WiFi connections on your computer, as it may prevent the "
+"configuration utility from properly communicating with the bridge"
+msgstr "禁用计算机上的 WiFi 连接，因为这可能会阻止配置使用与网桥正确通信"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:11
+msgid ""
+"Make sure no devices are connected to your computer via ethernet, other than"
+" the wireless bridge."
+msgstr "确保除无线网桥外，没有其他设备通过以太网连接到您的计算机。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:14
+msgid "Pre-Requisites"
+msgstr "前提条件"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:16
+msgid ""
+"Even though WPILib uses Java 11, the FRC Radio Configuration Utility "
+"requires Java 8."
+msgstr "即使 WPILib 使用 Java 11，FRC 路由器配置实用程序也需要 Java 8。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:18
+msgid ""
+"The FRC Radio Configuration Utility requires the Java Runtime Engine (JRE). "
+"If you do not have Java installed, you can download the JRE from `here "
+"<https://www.java.com/en/download/>`__."
+msgstr ""
+"FRC 路由器配置实用程序需要 Java 运行时引擎（JRE）。如果未安装 Java，则可以从“此处 "
+"https://www.java.com/en/download/ 下载 JRE。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:20
+msgid ""
+"The FRC Radio Configuration Utility requires Administrator privileges to "
+"configure the network settings on your machine. The program should request "
+"the necessary privileges automatically (may require a password if run from a"
+" non-Administrator account), but if you are having trouble try running it "
+"from an Administrator account."
+msgstr ""
+"FRC "
+"路由器配置实用程序需要管理员权限，才能配置计算机上的网络设置。该程序应自动请求必要的权限（如果从非管理员帐户运行，则可能需要密码），但是如果遇到问题，请尝试从管理员帐户运行。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:23
+msgid "Application Notes"
+msgstr "应用须知"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:25
+msgid ""
+"The Radio Kiosk will program the radio to enforce the 4 Mbps bandwidth limit"
+" on traffic exiting the radio over the wireless interface. In the home "
+"configuration (AP mode) this is a total, not a per client limit. This means "
+"that streaming video to multiple clients is not recommended."
+msgstr ""
+"Radio Kiosk 将对路由器进行编程，以强制通过无线接口离开路由器的流量达到4 "
+"Mbps带宽限制。在家庭配置（AP模式）下，这是总带宽，而不是每个客户端的限制。这意味着不建议将视频流传输到多个客户端。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:27
+msgid ""
+"The Kiosk has been tested on Windows 7, 8, and 10. It may work on other "
+"operating systems, but has not been tested."
+msgstr "Kiosk 已在Windows 7、8和10上进行了测试。它也许可以在其他操作系统上运行，但尚未经过测试。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:30
+msgid "Programmed Configuration"
+msgstr "程序配置"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:32
+msgid ""
+"The Radio Configuration Utility programs a number of configuration settings "
+"into the radio when run. These settings apply to the radio in all modes "
+"(including at events). These include:"
+msgstr "运行时，“路由器配置实用程序”会将许多配置设置编程到无线电中。这些设置适用于所有模式下的路由器（包括在事件时）。这些包括："
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:34
+msgid "Set a static IP of 10.TE.AM.1"
+msgstr "将静态 IP 设置为 10.TE.AM.1"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:35
+msgid ""
+"Set an alternate IP on the wired side of 192.168.1.1 for future programming"
+msgstr "在 192.168.1.1 的有线侧设置备用 IP 以供将来编程"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:36
+msgid "Bridge the wired ports so they may be used interchangeably"
+msgstr "桥接有线端口，以便可以互换使用"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:37
+msgid "The LED configuration noted in the graphic above"
+msgstr "上图中指出的LED配置"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:38
+msgid "4Mb/s bandwidth limit on the outbound side of the wireless interface"
+msgstr "无线接口传输的带宽限制为4Mb / s"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:41
+msgid ""
+"See the :ref:`Status Light Reference <docs/hardware/hardware-basics/status-"
+"lights-ref:OpenMesh Radio>` for details on the behavior of the radio status "
+"lights when configured."
+msgstr "有关配置后路由器状态灯的详细信息，请参见“状态灯参考”：34.3.3 OpenMesh Radio"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:43
+msgid ""
+"When programmed with the team version of the Radio Configuration - Utility, "
+"the user accounts will be left at (or set to) the firmware - defaults **for "
+"the DAPs only**:"
+msgstr "使用“路由器配置-实用程序”的团队版本进行编程时，用户帐户将保留（或设置为）固件-默认“仅适用于 DAP”："
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:45
+msgid "Username: root"
+msgstr "用户名：root"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:46
+msgid "Password: root"
+msgstr "密码：root"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:48
+msgid "It is not recommended to modify the configuration manually"
+msgstr "不建议手动修改配置"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:51
+msgid "Download the software"
+msgstr "下载软件"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:56
+msgid ""
+"Download the latest FRC Radio Configuration Utility Installer from the "
+"`WPILib project File Releases "
+"<https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility>`__."
+msgstr ""
+"从 “WPILib "
+"项目发行文件”https://usfirst.collab.net/sf/frs/do/listReleases/projects.wpilib/frs.frc_radio_configuration_utility"
+" 下载最新的 “FRC 路由器配置实用程序”的安装包。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:59
+msgid "Install the software"
+msgstr "安装软件"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:64
+msgid ""
+"Double click on FRC_Radio_Configuration_MM_DD_YY.exe to launch the "
+"installer. Follow the prompts to complete the installation."
+msgstr "双击 FRC_Radio_Configuration_MM_DD_YY.exe 以启动安装程序。按照提示完成安装。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:66
+msgid ""
+"Part of the installation prompts will include installing WinPCap if it is "
+"not already present. The WinPCap installer contains a checkbox (checked by "
+"default) to start the WinPCap driver on boot. You should leave this box "
+"checked."
+msgstr ""
+"如果尚未安装 WinPCap，则一部分的安装提示将包括安装WinPCap。 "
+"WinPCap安装程序包含一个勾选框（默认情况下已选中），用于在启动时启动WinPCap驱动程序。您应该选中此框。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:69
+msgid "Launch the software"
+msgstr "启动软件"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:74
+msgid "Use the Start menu or desktop shortcut to launch the program."
+msgstr "使用“开始”菜单或桌面快捷方式启动程序。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:76
+msgid ""
+"If you need to locate the program it is installed to ``C:/Program Files "
+"(x86)/FRC Radio Configuration Utility``. For 32-bit machines the path is "
+"``C:/Program Files/FRC Radio Configuration Utility/``"
+msgstr ""
+"如果需要找到该程序，则将其安装到``C：/ Program Files（x86）/ FRC Radio Configuration "
+"Utility''。对于32位计算机，路径为``C：/ Program Files / FRC Radio Configuration Utility "
+"/''"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:79
+msgid "Allow the program to make changes, if prompted"
+msgstr "如果出现提示，请允许程序进行更改"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:84
+msgid ""
+"If the your computer is running Windows Vista or Windows 7, a prompt may "
+"appear about allowing the configuration utility to make changes to the "
+"computer.  Click \"Yes\" if the prompt appears."
+msgstr ""
+"如果您的计算机运行的是 Windows Vista 或 Windows "
+"7，则可能会出现提示，提示允许配置实用程序对计算机进行更改。如果出现提示，请单击“是”。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:87
+msgid "Enter FMS-Lite Mode"
+msgstr "进入 FMS-Lite 模式"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:92
+msgid "Click ``Tools`` -> ``FMS-Lite Mode`` to enter FMS-Lite Mode."
+msgstr "单击``工具'' -> “FMS-Lite 模式'' 以进入 FMS-Lite 模式。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:95
+msgid "Enter SSID"
+msgstr "输入 SSID"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:100
+msgid ""
+"Enter the SSID (name) of your wireless network in the box and click OK."
+msgstr "在框中输入您的无线网络的 SSID（名称），然后单击“确定”。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:103
+msgid "Enter WPA Key"
+msgstr "输入 WPA 密钥"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:108
+msgid ""
+"Enter the WPA key for your network in the box and click OK. Leave the box "
+"blank if you are using an unsecured network."
+msgstr "在框中输入网络的 WPA 密钥，然后单击“确定”。如果使用的是不安全的网络，请将该框保留为空白。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:111
+msgid "Program Radios"
+msgstr "路由器程序"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:116
+msgid ""
+"The Kiosk is now ready to program any number of radios to connect to the "
+"network entered. To program each radio, connect the radio to the Kiosk, set "
+"the Team Number in the box, and click Configure."
+msgstr ""
+"现在，Kiosk 已准备好对任意数量的路由器进行编程，以连接到所输入的网络。要为每个路由器编程，请将路由器连接到 "
+"Kiosk，在框中设置队伍编号，然后单击配置。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:118
+msgid ""
+"The kiosk will program OpenMesh, D-Link Rev A or D-Link Rev B radios to work"
+" on an offseason FMS network by selecting the appropriate option from the "
+"\"Radio\" dropdown."
+msgstr ""
+"通过从“路由qi1”下拉列表中选择适当的选项，Kiosk 将对 OpenMesh，D-Link Rev A 或 D-Link Rev "
+"B无线电进行编程，使其能够在季后赛场控网络上工作。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:120
+msgid ""
+"Bandwidth limitations and QoS will not be configured on the D-Link radios in"
+" this mode."
+msgstr "在此模式下，不会在 D-Link 路由器上配置带宽限制和 QoS。"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:123
+msgid "Changing SSID or Key"
+msgstr "更改 SSID 或密钥"
+
+#: ../../frc-docs/source/docs/software/driverstation/programming-radios-for-fms-offseason.rst:125
+msgid ""
+"If you enter something incorrectly or need to change the SSID or WPA Key, go"
+" to the Tools menu and click FMS-Lite Mode to take the kiosk out of FMS-Lite"
+" Mode. When you click again to put the Kiosk back in FMS-Lite Mode, you will"
+" be re-prompted for the SSID and Key."
+msgstr ""
+"如果您输入的内容有误或需要更改 SSID 或 WPA 密钥，请转到“工具”菜单，然后单击“ FMS-Lite模式”以使 Kiosk 退出 FMS-"
+"Lite 模式。当您再次单击以使 Kiosk 处于 FMS-Lite 模式时，将再次提示您输入SSID 和密钥。"

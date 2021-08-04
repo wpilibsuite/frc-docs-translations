@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Team 5308 <team5308@163.com>, 2021
+# Ran Xin <xinryanryan@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-03 16:03+0000\n"
+"POT-Creation-Date: 2021-08-04 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
+"Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -39,6 +40,34 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:6
 msgid "Creating The Data Class"
 msgstr "创建数据类"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:7
+msgid ""
+"In this example, we will create a custom data type for a 2D Point and its x "
+"and y coordinates. In order to create a custom data type class, it must "
+"extend the abstract class `ComplexData "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`_."
+" Your custom data class must also implement the ``asMap()`` method that "
+"returns the represented data as a simple map as noted below with the "
+"``@Override`` annotation:"
+msgstr ""
+"在此示例中，我们将为 2D 点及其 x 和 y 坐标创建自定义数据类型。为了创建自定义数据类型类，它必须扩展抽象类`ComplexData "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard"
+" /api/data/ComplexData.java>`_.您的自定义数据类还必须实现 ``asMap()`` "
+"方法，该方法将表示的数据作为简单地图返回，如下所述，带有 ``@Override`` 批注："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:33
+msgid ""
+"It is also good practice to override the default ``equals`` and ``hashcode``"
+" methods to ensure that different objects are considered equivalent when "
+"their fields are the same. The ``asMap()`` method should return the data "
+"represented in a simple Map object as it will be mapped to the NetworkTables"
+" entry it corresponds to. In this case, we can represent the point as its X "
+"and Y coordinates and return a ``Map`` containing them."
+msgstr ""
+"覆盖默认的“equals”和“hashcode”方法也是一种很好的做法，以确保不同的对象在其字段相同时被认为是等效的。 ``asMap()`` "
+"方法应该返回以简单 Map 对象表示的数据，因为它将被映射到它对应的 NetworkTables 条目。在这种情况下，我们可以将点表示为其 X 和 Y "
+"坐标，并返回一个包含它们的“地图”。"
 
 #: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:59
 msgid ""
@@ -99,6 +128,17 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:123
 msgid "The following code above works as noted:"
 msgstr "上面的以下代码按规定工作："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:125
+msgid ""
+"The ``fromMap()`` method creates a new MyPoint2D using the values in the "
+"NetworkTables entry it is bound to. The ``getOrDefault`` method will return "
+"0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a"
+" new ``MyPoint2D`` object if no source is present."
+msgstr ""
+"``fromMap()`` 方法使用它绑定到的 NetworkTables 条目中的值创建一个新的 "
+"MyPoint2D。如果无法获取条目值，``getOrDefault`` 方法将返回 0.0。如果不存在源，``getDefaultValue`` "
+"将返回一个新的``MyPoint2D`` 对象。"
 
 #: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:129
 msgid "Exporting Data Type To Plugin"

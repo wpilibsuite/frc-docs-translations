@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-03 16:03+0000\n"
+"POT-Creation-Date: 2021-08-05 16:08+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
 "Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -26,6 +26,20 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:4
 msgid "Introduction to Robot Characterization"
 msgstr "机械表征介绍<br>"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:6
+msgid ""
+"The characterization tools consist of a python application that runs on the "
+"user's PC and matching robot code that runs on the user's robot. The PC "
+"application will send control signals to the robot over "
+":term:`NetworkTables`, while the robot sends data back to the application. "
+"The application then processes the data and determines characterization "
+"parameters for the user's robot mechanism, as well as producing diagnostic "
+"plots. Data can be saved (in JSON format) for future use, if desired."
+msgstr ""
+"表征工具包括在用户 PC 上运行的 Python 应用程序和在用户机器人上运行的匹配机器人代码。 PC 应用程序将通过 NetworkTables "
+"向机器人发送控制信号，而机器人将数据发送回应用程序。然后，应用程序处理数据并确定用户机器人机构的特征参数，并生成诊断图。如果需要，可以保存数据（以 "
+"JSON 格式）以备将来使用。"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:9
 msgid "What is \"Characterization?\""
@@ -106,6 +120,23 @@ msgid ""
 msgstr ""
 "``kS''是克服电动机静摩擦，或换句话说，就是使电动机运动所需的最小电压。事实证明，无论速度还是加速度，这种静摩擦都具有相同的效果。也就是说，无论您以多大的速度或多大的速度加速，施加在电机上的电压的恒定部分（取决于特定的机构组件）都将克服您齿轮，轴承上的静摩擦。这个值就是您的kS。一定要注意到信号功能”<https://en.wikipedia.org/wiki/Sign_function>`__,"
 " 的存在，因为摩擦力始终与运动方向相反。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:25
+msgid ""
+"``kV`` describes how much voltage is needed to hold (or \"cruise\") at a "
+"given constant velocity while overcoming the `electromagnetic resistance in "
+"the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and"
+" any additional friction that increases with speed (known as `viscous drag "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" The relationship between speed and voltage (at constant acceleration) is "
+"almost entirely linear (with FRC\\ |reg| components, anyway) because of how "
+"permanent-magnet DC motors work."
+msgstr ""
+"``kV`` 描述了在克服电机中的“电磁阻力”的同时，在给定的恒定速度下保持（或“巡航”）需要多少电压 "
+"<https://en.wikipedia.org/wiki/Counter-electromotive_force> `__ "
+"和任何随速度增加的额外摩擦（称为`粘性阻力 "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__）。由于永磁直流电机的工作方式，速度和电压（在恒定加速度下）之间的关系几乎完全是线性的（无论如何都带有"
+" FRC\\ |reg| 组件）。"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:27
 msgid ""
@@ -212,6 +243,18 @@ msgstr ""
 "其中:math:`V`是施加的电压， :math:`d` "
 "是驱动器的位移（位置），:math:`\\dot{d}`是其速度，而:math:`\\ddot{d}`是它的加速度。这与简单的电动机表征描述中使用的建模方程式相同。但是，传动系统表征器专门设置为在差动驱动器上运行，并且在需要时将独立地描述驱动器的每一侧。"
 
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:63
+msgid ""
+"The drivetrain characterizer can also determine the effective trackwidth of "
+"your robot using a gyro. More information on how to run the characterization"
+" is available in the :ref:`track width characterization "
+"<docs/software/pathplanning/robot-characterization/characterization-"
+"routine:Running Tests>` article."
+msgstr ""
+"传动系统表征器还可以使用陀螺仪确定机器人的有效轨道宽度。有关如何运行表征的更多信息，请参见 :ref:`轨道宽度表征 "
+"<docs/software/pathplanning/robot-characteristic/characterization-"
+"routine:Running Tests>` 文章。"
+
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:66
 msgid "Arm Characterization"
 msgstr "臂表征化"
@@ -281,6 +324,10 @@ msgid ""
 "toolsuite."
 msgstr ""
 "要使用Robot Characterization Toolsuite，您必须在计算机上安装Python 3.7以及标准的WPILib编程工具。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:88
+msgid "`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__"
+msgstr "`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:90
 msgid ""
@@ -354,6 +401,13 @@ msgid ""
 msgstr ""
 "尽管新的项目GUI具有用于启动日志记录工具和分析器工具的按钮，但是也可以通过将`` new ''替换为`` logger ''或`` analyzer "
 "''来直接从CLI启动这些按钮。"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:123
+msgid ""
+"It is highly recommended that you utilize the new project GUI to launch the "
+"logger and analyzer tools for more effective unit conversions rather than "
+"launching the logger and analyzer from the CLI."
+msgstr "强烈建议您使用新的项目 GUI 来启动记录器和分析器工具以实现更有效的单位转换，而不是从 CLI 启动记录器和分析器。"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:125
 msgid "For more information on CLI usage, enter ``frc-characterization -h``."

@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-30 16:05+0000\n"
+"POT-Creation-Date: 2021-08-14 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -229,28 +229,11 @@ msgstr ""
 " :ref:`feedforward <docs/software/advanced-"
 "controls/controllers/feedforward:Feedforward Control in WPILib>`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:111
-msgid ""
-"A typical problem encountered when using integral feedback is excessive "
-"\"wind-up\" causing the system to wildly overshoot the setpoint.  This can "
-"be alleviated in a number of ways - the WPILib ``PIDController`` offers an "
-"integrator range limiter to help teams overcome this issue."
-msgstr ""
-"使用积分反馈时遇到的典型问题是过度的“缠绕”，从而导致系统大大超出设定值。\n"
-"这可以通过多种方式缓解-WPILib``PIDController''提供了一个积分器范围限制器，以帮助团队克服这一问题。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:113
-msgid ""
-"Enabling this setting with the ``setIntegratorRange()`` method will prevent "
-"the total output contribution from the integral gain from exceeding the "
-"user-specified bounds."
-msgstr "使用 ``setIntegratorRange() `` 方法启用此设置将防止积分增益的总输出超出用户指定的范围。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:130
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:132
 msgid "Setting Continuous Input"
 msgstr "设置连续输入"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:132
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:134
 msgid ""
 "If your mechanism is not capable of fully continuous rotational motion (e.g."
 " a turret without a slip ring, whose wires twist as it rotates), *do not* "
@@ -259,14 +242,14 @@ msgid ""
 msgstr ""
 "如果你的机械装置不能完全连续旋转运动(例如，一个没有滑环的炮塔，它的电线在旋转时扭曲)，*不要*开启连续输入，除非你安装了额外的安全装置，以防止机械装置移动超过其限制!"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:134
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:136
 msgid ""
 "The continuous input function does *not* automatically wrap your input "
 "values - be sure that your input values, when using this feature, are never "
 "outside of the specified range!"
 msgstr "连续输入函数*不会*自动包装您的输入值-请确保您的输入值，在使用此功能时，永远不会超出指定的范围!"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:136
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:138
 msgid ""
 "Some process variables (such as the angle of a turret) are measured on a "
 "circular scale, rather than a linear one - that is, each \"end\" of the "
@@ -277,17 +260,17 @@ msgid ""
 msgstr ""
 "有些过程变量(比如炮塔的角度)是用圆形尺度而不是线性尺度来测量的——也就是说，过程变量范围的每一个“末端”都对应于现实中的同一点(例如360度和0度)。在这种结构中，任何给定的误差都有两个可能的值，对应于测量误差在圆内的位置。通常最好使用较小的错误。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:138
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:140
 msgid ""
 "To configure a ``PIDController`` to automatically do this, use the "
 "``enableContinuousInput()`` method:"
 msgstr "要配置一个`` PIDController ``来自动执行此操作，请使用``enableContinuousInput() ``方法:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:153
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:155
 msgid "Clamping Controller Output"
 msgstr "钳位控制器输出"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:155
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:157
 msgid ""
 "Unlike the old ``PIDController``, the new controller does not offer any "
 "output clamping features, as the user is expected to use the loop output "

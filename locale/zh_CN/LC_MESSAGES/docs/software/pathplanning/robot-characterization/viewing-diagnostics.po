@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-05 16:08+0000\n"
+"POT-Creation-Date: 2021-08-22 04:06+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
 "Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -33,40 +33,11 @@ msgid ""
 "problem with your characterization data."
 msgstr "首先要看的诊断是r²：它应该在〜.9以北的某个地方。如果它远低于此值，则特征数据可能存在问题。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:6
-msgid ""
-"To investigate further, you can generate a number of diagnostic plots with "
-"the buttons on the left-hand side:"
-msgstr "要进一步调查，您可以使用左侧的按钮生成许多诊断图："
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
-msgid "Picture of the diagnostic plot buttons"
-msgstr "诊断图按钮的图片"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:12
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:14
 msgid "Time-Domain Diagnostics"
 msgstr "时域诊断"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:14
-msgid ""
-"The Time-Domain Diagnostics plots display velocity and acceleration versus "
-"time over the course of the analyzed tests. For a typical drive "
-"characterization, these should look something like this (other mechanisms "
-"will be highly similar):"
-msgstr "“时域诊断”图显示了经过分析的测试过程中速度和加速度与时间的关系。对于典型的驱动器表征，这些应该看起来像这样（其他机制将非常相似）："
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
-msgid "Picture of the time domain plots"
-msgstr "时域图的图片"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:19
-msgid ""
-"The vertical \"mirroring\" visible here is normal, and is simply the result "
-"of the left- and right-side encoders having different signs - this does not "
-"cause any trouble for the characterization tool."
-msgstr "此处可见的垂直“镜像”是正常现象，并且仅仅是具有不同符号的左侧和右侧编码器的结果-这不会对特征化工具造成任何麻烦。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:21
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:28
 msgid ""
 "The quasistatic test ought to have nearly linear velocity, and nearly-zero "
 "acceleration (hense \"quasistatic\"). The dynamic test ought to have "
@@ -77,7 +48,7 @@ msgid ""
 msgstr ""
 "准静态测试应具有接近线性的速度和接近零的加速度（即“准静态”）。这个动态测试应该具有渐近接近稳态速度的速度（实际上，曲线的形状应该是指数形式的），并且加速度，相应地，迅速下降到零（也是指数函数，因为指数函数的导数仍为指数函数）。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:23
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:30
 msgid ""
 "Deviation from this behavior is a sign of an :ref:`error "
 "<docs/software/pathplanning/robot-characterization/viewing-"
@@ -87,37 +58,15 @@ msgstr ""
 "偏离此行为是机器人设置、分析设置或测试程序中出现错误 <docs/software/pathplanning/robot-characteristic"
 "/viewing-diagnostics:Common Failure Modes>` 的标志。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:26
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:33
 msgid "Voltage-Domain Diagnostics"
 msgstr "电压域诊断"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:28
-msgid ""
-"The :guilabel:`Voltage-Domain` Diagnostics button plots velocity and "
-"acceleration versus voltage. Velocity is ploted for the quasistatic test, "
-"and acceleration is plotted for the dynamic test. For a typical drive "
-"characterization, the plots should resemble this (again, other mechanisms "
-"will be similar)"
-msgstr ""
-":guilabel:`Voltage-Domain` "
-"诊断按钮绘制速度和加速度与电压的关系图。准静态测试绘制速度，动态测试绘制加速度。对于典型的驱动器特性，图应该与此类似（同样，其他机制将类似）"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
 msgid "Voltage domain plots picture"
 msgstr "电压域图"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:33
-msgid ""
-"Both plots should be linear, however the dynamic plot will almost certainly "
-"have substantially-more noise. The noise on the dynamic plot may be reduced "
-"by increasing the ``Accel Window Size`` setting."
-msgstr "两个图都应该是线性的，但是动态图一般会具有更多的噪声。动态图上的噪声可以通过增加设置中的``加速窗口大小''参数来减少。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
-msgid "Picture of the accel window size selector"
-msgstr "加速窗口大小选择器的图片"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:38
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:45
 msgid ""
 "However, if your robot or mechanism has low mass compared to the motor "
 "power, this may \"eat\" what little meaningful acceleration data you have "
@@ -127,7 +76,7 @@ msgstr ""
 "但是，如果您的机器人或机械装置与电机功率相比，质量相对较小，这可能\"吃掉\"您本拥有的几乎没有意义的加速度数据（然而，在这些情况下，\"kA\"将趋于零，而且通常可以忽略，"
 " 所以并不会产生大的影响）。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:40
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:47
 msgid ""
 "The x-axis corresponds to ``velocity-portion voltage`` and ``acceleration-"
 "portion voltage``, respectively - as the governing voltage-balance equations"
@@ -136,46 +85,11 @@ msgid ""
 msgstr ""
 "x轴分别对应于``速度部分电压''和``加速度部分电压''：由于控制电压平衡方程是多维的，因此相对于原始电压的绘图并不像人们期望的那样有用。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:43
-msgid "3D Diagnostics"
-msgstr "3D诊断"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:45
-msgid ""
-"The :guilabel:`3D Diagnostics` button will generate a 3d plot of voltage "
-"over the entire velocity-acceleration plane (this may be an adjusted voltage"
-" to remove the nonlinearity in mechanisms with nonlinear equations, such as "
-"arms)."
-msgstr ""
-":guilabel:`3D Diagnostics` 按钮将在整个速度-加速度平面上生成一个 3d "
-"电压图（这可能是一个经过调整的电压，以消除具有非线性方程的机制中的非线性，例如手臂）。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
-msgid "Picture of the 3D diagnostic plot"
-msgstr "3D 诊断图的图片"
-
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:50
-msgid ""
-"This plot is interactive, and may be rotated by clicking-and-dragging. The "
-"quasistatic and dynamic tests should both be clearly visible as streaks of "
-"data, and the best fit-plane should pass through all the data points. The "
-"data from both the quasistatic and dynamic tests should appear as straight "
-"lines (the reason for this is left as an exercise for the reader)."
-msgstr ""
-"此图是交互式的，并可以通过单击并拖动鼠标来旋转。准静态测试和动态测试都应因作为数据体条纹而清晰可见，并且最佳拟合平面应穿过所有数据点。准静态和动态测试的数据均应显示为直线（其原因留给读者练习）。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:52
-msgid ""
-"The discontinuity corresponds to ``kS``, which always opposes the direction "
-"of motion and thus changes direction as the plot crosses the 0 velocity "
-"mark."
-msgstr "不连续性对应于``kS''，它始终与运动方向相反，因此在绘图穿过0速度标记时会改变方向。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:55
 msgid "Common Failure Modes"
 msgstr "常见故障模式"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:57
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:52
 msgid ""
 "When something has gone wrong with the characterization, diagnostic plots "
 "and console output provide crucial clues as to *what* has gone wrong.  This "
@@ -185,11 +99,11 @@ msgid ""
 msgstr ""
 "当特征出现问题时，诊断图和控制台输出会提供关于*什么*出了问题的关键线索。本节描述了在运行表征工具时遇到的一些常见故障、其诊断图的识别特征以及可以采取的修复步骤。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:60
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:55
 msgid "Improperly Set Motion Threshold"
 msgstr "动作阈值设置不正确"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:62
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:57
 msgid ""
 "One of the most-common errors is an inappropriate value for the motion "
 "threshold."
@@ -199,52 +113,40 @@ msgstr "最常见的错误之一是运动阈值不合适。"
 msgid "Motion threshold selector"
 msgstr "运动阈值选择器"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:68
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:63
 msgid "Motion Threshold Too Low"
 msgstr "运动阈值太低"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
-msgid "Time domain plot with threshold too low"
-msgstr "阈值过低的时域图"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
 msgid "Voltage domain plot with threshold too low"
 msgstr "阈值过低的电压域图"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:76
-msgid ""
-"The presence of a \"leading tail\" (emphasized by added red circle) on the "
-"time-domain and voltage-domain plots indicates that the :guilabel:`Motion "
-"Threshold` setting is too low, and thus data points from before the robot "
-"begins to move are being included."
-msgstr ""
-"时域和电压域图上存在“前导尾部”（通过添加的红色圆圈强调）表明 :guilabel:`Motion Threshold` "
-"设置太低，因此机器人开始之前的数据点移动被包括在内。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:78
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:70
 msgid "To solve this, increase the setting and re-analyze the data."
 msgstr "要解决此问题，请增加设置并重新分析数据。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:81
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:73
 msgid "Motion Threshold Too High"
 msgstr "运动阈值过高"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
 msgid "Voltage domain plot with threshold too high"
 msgstr "阈值过高的电压域图"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:86
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:78
 msgid ""
 "While not nearly as problematic as a too-low threshold, a motion threshold "
 "that is too high will result in a large \"gap\" in the voltage domain "
 "quasistatic plot."
 msgstr "虽然运动阈值过高不像过低的阈值那样有问题，但过高的运动阈值会在电压域准静态图中导致较大的“间隙”。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:88
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:80
 msgid "To solve this, decrease the setting and re-analyze the data."
 msgstr "要解决此问题，请降低设置并重新分析数据。"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:91
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:94
 msgid "Magnetic Encoders Velocity Noise"
 msgstr "电磁编码器速度噪声"
 
@@ -256,7 +158,7 @@ msgstr "具有磁编码器 EMI 的时域图"
 msgid "Voltage domain plot with mag encoder EMI"
 msgstr "带磁编码器 EMI 的电压域图"
 
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:99
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:102
 msgid ""
 "Magnetic encoders such as the `CTRE Mag Encoder <http://www.ctr-"
 "electronics.com/srx-magnetic-encoder.html>`__ and the `AndyMark magnetic "
@@ -274,36 +176,3 @@ msgstr ""
 "在FRC中非常流行。但是，将这些编码器用于机器人驱动器时，会观察到特定的噪声模式，其具体原因尚不清楚。这种噪声模式通过与电动机速度成比例的明显的速度噪声而得到独特的区分，并且在零件套件“"
 " Toughbox mini  https://www.andymark.com/products/toughbox-mini-options” "
 "变速箱上特别常见。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:101
-msgid ""
-"Characterization constants can sometimes be accurately determined even from "
-"data polluted this noise by increasing the accel window size setting.  "
-"However, this sort of encoder noise is problematic for robot code much the "
-"same way it is problematic for the characterization tool.  As the root cause"
-" of the noise is not known, it is recommended to try a different encoder "
-"setup if this is observed, either by moving the encoders to a different "
-"shaft or replacing them with a different type of encoder."
-msgstr ""
-"有时甚至可以通过增加加速窗口大小设置，甚至从被该噪声污染的数据中准确确定特征常数。但是，这种编码器噪声对机器人代码来说是有问题的，与对特征化工具来说是有问题的方式非常相似。由于不知道产生噪声的根本原因，因此建议您尝试使用不同的编码器设置，方法是将编码器移至不同的轴上，或将其替换为其他类型的编码器。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:104
-msgid "Template Lag"
-msgstr "模板滞后"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:106
-msgid ""
-"With the new characterization tool, the logging code might not be able to "
-"keep up with its 5 ms refresh rate thus causing faulty data to be collected."
-msgstr "使用新的表征工具，记录代码可能无法跟上其 5 毫秒的刷新率，从而导致收集到错误数据。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:108
-msgid ""
-"To see if this is the case, enable print statements on the Driver Station "
-"whenever running the data logger. When Autonomous mode is exited, the "
-"console will output ``Collected : n in t seconds`` where ``n`` is the number"
-" of samples and ``t`` is the time elapsed. If the sampling was successful, "
-"``n`` should equal ``200t`` (rounded)."
-msgstr ""
-"要查看是否是这种情况，请在运行数据记录器时在机器操控台上启用打印语句。退出自动阶段时，控制台将输出“Collected : n in t "
-"seconds”，其中“n”是样本数，“t”是经过的时间。如果采样成功，“n”应该等于“200t”（四舍五入）。"

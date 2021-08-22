@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Tianrui Wu <tw2789@columbia.edu>, 2021
 # Team 5308 <team5308@163.com>, 2021
 # Ran Xin <xinryanryan@outlook.com>, 2021
 # 
@@ -13,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-08-05 16:08+0000\n"
+"POT-Creation-Date: 2021-08-22 04:06+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
 "Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -26,20 +25,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:4
 msgid "Introduction to Robot Characterization"
 msgstr "机械表征介绍<br>"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:6
-msgid ""
-"The characterization tools consist of a python application that runs on the "
-"user's PC and matching robot code that runs on the user's robot. The PC "
-"application will send control signals to the robot over "
-":term:`NetworkTables`, while the robot sends data back to the application. "
-"The application then processes the data and determines characterization "
-"parameters for the user's robot mechanism, as well as producing diagnostic "
-"plots. Data can be saved (in JSON format) for future use, if desired."
-msgstr ""
-"表征工具包括在用户 PC 上运行的 Python 应用程序和在用户机器人上运行的匹配机器人代码。 PC 应用程序将通过 NetworkTables "
-"向机器人发送控制信号，而机器人将数据发送回应用程序。然后，应用程序处理数据并确定用户机器人机构的特征参数，并生成诊断图。如果需要，可以保存数据（以 "
-"JSON 格式）以备将来使用。"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:9
 msgid "What is \"Characterization?\""
@@ -312,103 +297,3 @@ msgid ""
 msgstr ""
 "其中：math：`V`是施加的电压，：math：`d`是驱动器的位移（位置），：math：`\\ dot {d}`是其速度，而：math：`\\ "
 "ddot { d}`是它的加速度。添加常数项（：math：`kG`）可以正确说明重力的影响。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:84
-msgid "Prerequisites"
-msgstr "先行准备"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:86
-msgid ""
-"To use the Robot Characterization Toolsuite, you must have Python 3.7 "
-"installed on your computer, as well as the standard WPILib programming "
-"toolsuite."
-msgstr ""
-"要使用Robot Characterization Toolsuite，您必须在计算机上安装Python 3.7以及标准的WPILib编程工具。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:88
-msgid "`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__"
-msgstr "`Python 3.7 <https://www.python.org/downloads/release/python-379/>`__"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:90
-msgid ""
-"Do not install Python from the Microsoft Store. Please use the link above to"
-" download and install Python."
-msgstr "不要从Microsoft Store安装Python。请使用上面的链接下载并安装Python。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:93
-msgid "Installing and Launching the Toolsuite"
-msgstr "安装和启动Toolsuite"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:95
-msgid ""
-"To install the Robot Characterization Toolsuite, open a console and enter "
-"the following command"
-msgstr "要安装Robot Characterization Toolsuite，请打开控制台并输入以下命令"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:101
-msgid ""
-"The toolsuite, and all of its dependencies, should be automatically "
-"downloaded and installed. If you are using a Windows machine and the command"
-" pip is not recognized, ensure that your python scripts folder `has been "
-"added to the PATH <https://datatofish.com/add-python-to-windows-path/>`__."
-msgstr ""
-"工具套件及其所有依赖项均应自动下载并安装。如果您使用的是Windows计算机，并且无法识别命令pip，请确保将python脚本文件夹已添加到PATH  "
-"https://datatofish.com/add-python-to-windows-path/"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:103
-msgid ""
-"If you are on Ubuntu, you will have to manually install tkinter with ``sudo "
-"apt-get install python3-tk``. You will also have to use the ``pip3`` command"
-" instead of ``pip`` as ``pip`` refers to Python 2 on Ubuntu distributions."
-msgstr ""
-"如果您使用的是Ubuntu，则必须使用`` sudo apt-get install python3-tk "
-"''手动安装tkinter。您还必须使用pip3命令而不是pip，因为pip指的是Ubuntu发行版上的Python 2。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:105
-msgid ""
-"If you already have the toolsuite installed, be sure to update it regularly "
-"to benefit from bugfixes and new features additions:"
-msgstr "如果您已经安装了工具套件，请确保定期进行更新以从错误修正和新增功能中受益："
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:111
-msgid ""
-"If you would like to use the beta version of this tool, you must type ``pip "
-"install --pre --upgrade frc-characterization`` instead."
-msgstr ""
-"如果您想使用该工具的beta版本，则必须键入“  pip install --pre --upgrade frc-characterization ”。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:113
-msgid ""
-"Once the toolsuite has been installed, launch a new drive characterization "
-"project to ensure that it works by running the following command from "
-"powershell or a terminal window."
-msgstr "安装工具套件后，请从Powershell或终端窗口运行以下命令，启动一个新的驱动器表征项目，以确保其工作。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:119
-msgid ""
-"The new project GUI should open momentarily. To launch other "
-"characterization projects, simply replace ``drive`` with the desired "
-"characterization type (``arm``, ``elevator``, ``simple-motor``)."
-msgstr ""
-"新的项目GUI应该会立即打开。要启动其他表征项目，只需用所需的表征类型（“  arm ”，“  elevator ”，“ simple-motor "
-"”）替换“ drive ”。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:121
-msgid ""
-"While the new project GUI has buttons for launching both the logging tool "
-"and the analyzer tool, these can also be launched directly from the CLI by "
-"replacing ``new`` with ``logger`` or ``analyzer``."
-msgstr ""
-"尽管新的项目GUI具有用于启动日志记录工具和分析器工具的按钮，但是也可以通过将`` new ''替换为`` logger ''或`` analyzer "
-"''来直接从CLI启动这些按钮。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:123
-msgid ""
-"It is highly recommended that you utilize the new project GUI to launch the "
-"logger and analyzer tools for more effective unit conversions rather than "
-"launching the logger and analyzer from the CLI."
-msgstr "强烈建议您使用新的项目 GUI 来启动记录器和分析器工具以实现更有效的单位转换，而不是从 CLI 启动记录器和分析器。"
-
-#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/introduction.rst:125
-msgid "For more information on CLI usage, enter ``frc-characterization -h``."
-msgstr "有关CLI使用的更多信息，请输入“ frc-characterization -h ”。"

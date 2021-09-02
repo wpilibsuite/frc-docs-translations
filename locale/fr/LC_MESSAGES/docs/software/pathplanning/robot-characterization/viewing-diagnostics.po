@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-01 16:04+0000\n"
+"POT-Creation-Date: 2021-09-02 04:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -37,6 +37,26 @@ msgstr ""
 "significative, il y a probablement un problème avec vos données de "
 "caractérisation."
 
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:6
+msgid ""
+"The next diagnostic to look at is the RMSE to make sure that the error is "
+"reasonable and within your desired constraints."
+msgstr ""
+"Le diagnostic suivant à examiner est le RMSE qui permet de s’assurer que "
+"l’erreur est raisonnable et dans les limites souhaitées."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:8
+msgid ""
+"To investigate further, you can look at several diagnostic plots on the "
+"side."
+msgstr ""
+"Pour approfondir votre investigation, vous pouvez examiner quelques courbes "
+"de diagnostic sur le côté:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
+msgid "Diagnostic plot location"
+msgstr "Emplacement de la courbe de diagnostic"
+
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:14
 msgid "Time-Domain Diagnostics"
 msgstr "Diagnostics dans le domaine temporel"
@@ -59,6 +79,37 @@ msgstr "Image des tracés quasistatiques dans le domaine temporel"
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
 msgid "Picture of the dynamic time domain plots"
 msgstr "Image des tracés dynamiques dans le domaine temporel"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:24
+msgid ""
+"There may be mirroring across the x axis for the drivetrain test. That is "
+"normal and is simply the result of the left- and right-side encoders having "
+"different signs - this does not cause any trouble for the characterization "
+"tool."
+msgstr ""
+"Il pourrait avoir une \"symétrie\" le long de l'axe x pour le test relatif à"
+" sous-système de déplacement normale. Cette symétrie est normale et est "
+"simplement le résultat des encodeurs des côtés gauche et droit qui ayant des"
+" signes différents - cela ne cause aucun problème pour ce qui est de l’outil"
+" de caractérisation."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:26
+msgid ""
+"The velocity time domain plots contain three sets of data: Raw Data, "
+"Filtered Data, and Simulation. The Raw Data is the recorded data from your "
+"robot, the Filtered Data is the data after a median filter has been applied "
+"to the data, and the Simulation represents the velocity predictions of a "
+"model based off of the feedforward gains from the tool. The acceleration "
+"graphs only contain the Raw Data and Filtered Data."
+msgstr ""
+"Les courbes de la vitesse dans le domaine temporel contiennent trois "
+"ensembles de données : Données brutes, Données filtrées et Simulation. Les "
+"données brutes sont les données enregistrées relatives à votre robot, les "
+"données filtrées sont les données obtenues après qu’un filtre médian a été "
+"appliqué aux données brutes, et la simulation représente les prédictions de "
+"vitesse d’un modèle basées sur les gains de la commande prédictive de "
+"l’outil. Les courbes de l'accélération contiennent uniquement les données "
+"brutes et les données filtrées."
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:28
 msgid ""
@@ -93,9 +144,38 @@ msgstr ""
 msgid "Voltage-Domain Diagnostics"
 msgstr "Diagnostics dans le domaine du voltage"
 
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:35
+msgid ""
+"The Voltage-Domain Diagnostics plots velocity and acceleration versus "
+"voltage. Velocity is ploted for the quasistatic test, and acceleration is "
+"plotted for the dynamic test. For a typical drive characterization, the "
+"plots should resemble this (again, other mechanisms will be similar)"
+msgstr ""
+"Les courbes de diagnostics dans le domaine de tension représentent la "
+"variation de la vitesse et l’accélération par rapport à la tension. La "
+"vitesse est tracée pour le test quasistatique et l’accélération est tracée "
+"pour le test dynamique. Pour une caractérisation typique de l’entraînement, "
+"les courbes doivent ressembler à ceci (encore une fois, pour d’autres "
+"mécanismes ces tracés seront semblables)"
+
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
 msgid "Voltage domain plots picture"
 msgstr "Image des tracés dans le domaine de tension"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:40
+msgid ""
+"Both plots should be linear, however the dynamic plot will almost certainly "
+"have substantially-more noise. The noise on the dynamic plot may be reduced "
+"by increasing the :guilabel:`Window Size` setting."
+msgstr ""
+"Les deux courbes doivent être linéaires, mais la courbe dynamique aura "
+"presque certainement beaucoup plus de bruit. Le bruit sur la courbe "
+"dynamique peut être réduit en augmentant la valeur du paramètre "
+":guilabel:`Window Size`. "
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rstNone
+msgid "Picture of the window size selector"
+msgstr "Image du sélecteur de taille de fenêtre"
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:45
 msgid ""
@@ -165,6 +245,19 @@ msgstr "Seuil de mouvement trop bas"
 msgid "Voltage domain plot with threshold too low"
 msgstr "Diagramme dans le domaine de tension avec seuil trop bas"
 
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:68
+msgid ""
+"The presence of a \"leading tail\" (emphasized by added red circle) on the "
+"voltage-domain plots indicates that the :guilabel:`Motion Threshold` setting"
+" is too low, and thus data points from before the robot begins to move are "
+"being included."
+msgstr ""
+"La présence d’une \"queue de tête\" (soulignée par un cercle rouge ajouté) "
+"des courbes dans le domaine de la tension indique que la valeur configurée "
+"pour le paramètre :guilabel:`Motion Threshold` est trop faible, et donc les "
+"points correspondant aux données présentes avant que le robot ne commence à "
+"se déplacer sont inclus."
+
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:70
 msgid "To solve this, increase the setting and re-analyze the data."
 msgstr ""
@@ -196,6 +289,24 @@ msgid "To solve this, decrease the setting and re-analyze the data."
 msgstr ""
 "Pour résoudre ce problème, réduire la valeur du paramètre et relancer "
 "l'analyse des données. "
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:83
+msgid "Too Long of a Dynamic Test"
+msgstr "Test dynamique trop long"
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:88
+msgid ""
+"If the dynamic test is run too long, it tends to accumulate data that will "
+"only skew the kA fit. This is noticeable with a large concentration of "
+"points towards the middle of the Voltage Domain Acceleration plot. This "
+"issue can be assisted by decreasing the :guilabel:`Test Duration` slider."
+msgstr ""
+"Si le test dynamique est exécuté trop longtemps, il a tendance à accumuler "
+"des données qui ne feront que fausser l’ajustement du paramètre kA. Ceci est"
+" perceptible par la présence d'une grande concentration de points vers le "
+"milieu de la courbe d’accélération dans le domaine de tension. Ce problème "
+"peut être réglé diminuant du durée du test à l'aide du curseur "
+":guilabel:`Test Duration`."
 
 #: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:94
 msgid "Magnetic Encoders Velocity Noise"
@@ -232,3 +343,25 @@ msgstr ""
 "particulièrement courant dans les réducteurs `toughbox mini "
 "<https://www.andymark.com/products/toughbox-mini-options>`__ du kit-de-"
 "pièces."
+
+#: ../../frc-docs/source/docs/software/pathplanning/robot-characterization/viewing-diagnostics.rst:104
+msgid ""
+"Characterization constants can sometimes be accurately determined even from "
+"data polluted this noise by increasing the window size setting.  However, "
+"this sort of encoder noise is problematic for robot code much the same way "
+"it is problematic for the characterization tool.  As the root cause of the "
+"noise is not known, it is recommended to try a different encoder setup if "
+"this is observed, either by moving the encoders to a different shaft, "
+"replacing them with a different type of encoder, or increasing the sample "
+"per average in project generation (adds an additional layer of filtering)."
+msgstr ""
+"Les constantes de caractérisation peuvent parfois être déterminées avec "
+"précision même à partir de données affectées par ce bruit en augmentant le "
+"réglage de la taille de la fenêtre. Cependant, ce type de bruit d’encodeur "
+"est problématique pour le code robot de la même manière qu’il est "
+"problématique pour l’outil de caractérisation. Comme la cause première du "
+"bruit n’est pas connu, il est recommandé d’essayer une configuration "
+"d’encodeur différente si cela est observé, soit en déplaçant les encodeurs "
+"vers un autre shaft, soit en les remplaçant par un autre type d’encodeur, "
+"soit en augmentant l’échantillon par moyenne dans la génération du projet "
+"(ajout d'une couche supplémentaire de filtrage)."

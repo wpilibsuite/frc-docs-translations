@@ -21,7 +21,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2021-10-02 04:06+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Fernando Soltero <fersg806@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -144,6 +144,21 @@ msgstr ""
 msgid "Lambda Expressions (C++)"
 msgstr "Expresiones Lambda (C++)"
 
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:29
+msgid ""
+"Due to complications in C++ semantics, capturing ``this`` in a C++ lambda "
+"can cause a null pointer exception if done from a component command of a "
+"command group.  Whenever possible, C++ users should capture relevant command"
+" members explicitly and by value.  For more details, see `here "
+"<https://github.com/wpilibsuite/allwpilib/issues/3109>`__."
+msgstr ""
+"Debido a complicaciones en la semántica de C++, capturar ``this`` en una "
+"lambda de C++ puede causar una excepción de puntero nulo si se hace desde un"
+" comando componente de un grupo de comandos. Siempre que sea posible, los "
+"usuarios de C++ deberían capturar los miembros relevantes del comando "
+"explícitamente y por valor. Para más detalles, véase `aquí "
+"<https://github.com/wpilibsuite/allwpilib/issues/3109>`__."
+
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:31
 msgid ""
 "C++ lacks a close equivalent to Java method references - pointers to member "
@@ -186,6 +201,20 @@ msgstr ""
 "<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__,"
 " `C++ "
 "<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:42
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:101
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:50
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:109
+msgid "C++ (Header)"
+msgstr "C++ (Encabezado)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:58
+msgid "C++ (Source)"
+msgstr "C++ (Fuente)"
 
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:66
 msgid ""
@@ -678,6 +707,20 @@ msgstr ""
 "usuarios simplemente deberían construir un grupo de comandos paralelo de la "
 "forma habitual."
 
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:429
+msgid ""
+"The ``alongWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel command group <docs/software/commandbased/command-"
+"groups:ParallelCommandGroup>`. All commands will execute at the same time "
+"and each will end independently of each other:"
+msgstr ""
+"El decorador ``alongWith()`` "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#alongWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" devuelve un grupo de comandos :ref:`paralelo <docs/software/commandbased"
+"/command-groups:ParallelCommandGroup>`. Todos los comandos se ejecutarán al "
+"mismo tiempo y cada uno terminará independientemente de los demás:"
+
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:437
 msgid "raceWith (Java only)"
 msgstr "raceWith (solo Java)"
@@ -691,6 +734,22 @@ msgstr ""
 "usuarios simplemente deberían construir un grupo de carreras paralelas de la"
 " forma habitual."
 
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:441
+msgid ""
+"The ``raceWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel race group <docs/software/commandbased/command-"
+"groups:ParallelRaceGroup>` that ends as soon as the first command ends.  At "
+"this point all others are interrupted.  It doesn't matter which command is "
+"the calling command:"
+msgstr ""
+"El ``raceWith()`` decorador "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#raceWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" devuelve un :ref:`grupo de carreras paralelas <docs/software/commandbased"
+"/command-groups:ParallelRaceGroup>` que finaliza en cuanto termina el primer"
+" comando. En ese momento se interrumpen todos los demás. No importa qué "
+"comando es el que llama:"
+
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:449
 msgid "deadlineWith (Java only)"
 msgstr "deadlineWith (solo Java)"
@@ -703,6 +762,22 @@ msgstr ""
 "Este decorador no es compatible con C++ debido a limitaciones técnicas; los "
 "usuarios simplemente deberían construir un grupo de fecha límite paralelo de"
 " la forma habitual."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:453
+msgid ""
+"The ``deadlineWith()`` `decorator "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`__"
+" returns a :ref:`parallel deadline group <docs/software/commandbased"
+"/command-groups:ParallelDeadlineGroup>` with the calling command being the "
+"deadline.  When this deadline command ends it will interrupt any others that"
+" are not finished:"
+msgstr ""
+"El ``deadlineWith()`` decorador "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Command.html#deadlineWith(edu.wpi.first.wpilibj2.command.Command...)>`"
+" devuelve un :ref:`grupo de fechas límite paralelas "
+"<docs/software/commandbased/command-groups:ParallelDeadlineGroup>` con el "
+"comando que lo llama como fecha límite. Cuando este comando de fecha límite "
+"termina, interrumpirá cualquier otro que no haya terminado:"
 
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:461
 msgid "withName (Java only)"

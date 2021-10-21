@@ -7,8 +7,6 @@
 # Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
 # Diana Ramos <dianaracasas@gmail.com>, 2020
 # Paulina Maynez <paump22@hotmail.com>, 2021
-# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
-# Miguel Angel de León Adame <miguelangeldla14@gmail.com>, 2021
 # Austin Shalit <austinshalit@gmail.com>, 2021
 # Fernando Soltero <fersg806@gmail.com>, 2021
 # 
@@ -17,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2021-10-21 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Fernando Soltero <fersg806@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -30,28 +28,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
 msgid "The Command Scheduler"
 msgstr "El planificador de comandos"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:4
-msgid ""
-"The ``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__)"
-" is the class responsible for actually running commands.  Each iteration "
-"(ordinarily once per 20ms), the scheduler polls all registered buttons, "
-"schedules commands for execution accordingly, runs the command bodies of all"
-" scheduled commands, and ends those commands that have finished or are "
-"interrupted."
-msgstr ""
-"El ``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__)"
-" es la clase responsable de correr los comandos. Cada repetición "
-"(normalmente una vez cada 20ms) el scheduler sondea todos los botones "
-"registrados, programa los comandos para su ejecución en consecuencia, "
-"ejecuta los cuerpos de comando de todos los comandos programados y finaliza "
-"los comandos que han finalizado o están interrumpidos"
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
 msgid ""
@@ -106,29 +82,6 @@ msgstr ""
 msgid "The ``schedule()`` Method"
 msgstr "El método ``schedule()``"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:23
-msgid ""
-"To schedule a command, users call the ``schedule()`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
-"  This method takes a command (and, optionally, a specification as to "
-"whether that command is interruptible), and attempts to add it to list of "
-"currently-running commands, pending whether it is already running or whether"
-" its requirements are available.  If it is added, its ``initialize()`` "
-"method is called."
-msgstr ""
-"Para programar un comando, los usuarios llaman al metodo ``schedule()`` "
-"(`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
-" Este metodo toma un comando (y opcionalmente, una especificación de si el "
-"comando es interrupible), e intenta añadirlo a la lista de comandos que se "
-"están corriendo en este momento, pendiente de si ya se está ejecutando o si "
-"sus requisitos están disponibles. si es añadido, su método ``initialize()`` "
-"es llamado."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
 msgid "The Scheduler Run Sequence"
 msgstr "La secuencia de ejecución del programador"
@@ -142,23 +95,6 @@ msgstr ""
 "El método ``initialize()`` de cada ``Comando`` es llamado cuando el comando "
 "es programado, lo cual no es necesariamente cuando un programador este "
 "ejecutándose (a menos que ese comando este atado a un botón)."
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:33
-msgid ""
-"What does a single iteration of the scheduler's ``run()`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
-" actually do?  The following section walks through the logic of a scheduler "
-"iteration."
-msgstr ""
-"¿Qué hace en realidad una sola iteración del método ``run()`` del "
-"planificador (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)?"
-" La siguiente sección aborda sobre la lógica de la iteración del "
-"programador."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
 msgid "Step 1: Run Subsystem Periodic Methods"
@@ -282,79 +218,17 @@ msgstr ""
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:74
-msgid ""
-"The ``onCommandInitialize`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
-" runs a specified action whenever a command is initialized."
-msgstr ""
-"El método ``onCommandInitialize`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
-" ejecuta una acción específica cuando un comando es inicializado."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
 msgid "onCommandExecute"
 msgstr "onCommandExecute"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:79
-msgid ""
-"The ``onCommandExecute`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
-" runs a specified action whenever a command is executed."
-msgstr ""
-"El método ``onCommandExecute``  (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
-" ejecuta una acción específica cuando un comando es ejecutado."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
 msgid "onCommandFinish"
 msgstr "onCommandFinish"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:84
-msgid ""
-"The ``onCommandFinish`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
-" runs a specified action whenever a command finishes normally (i.e. the "
-"``isFinished()`` method returned true)."
-msgstr ""
-"El método ``onCommandFinish`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
-" ejecuta una acción especificada cada vez que un comando termina normalmente"
-" (es decir, el método ``isFinished()`` devuelve true)."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
 msgid "onCommandInterrupt"
 msgstr "onCommandInterrupt"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:89
-msgid ""
-"The ``onCommandInterrupt`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
-" runs a specified action whenever a command is interrupted (i.e. by being "
-"explicitly canceled or by another command that shares one of its "
-"requirements)."
-msgstr ""
-"El método ``onCommandInterrupt`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
-" ejecuta una acción especificada cada vez que un comando se interrumpe (es "
-"decir, al ser cancelado explícitamente o por otro comando que comparte uno "
-"de sus requisitos)."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
 msgid ""

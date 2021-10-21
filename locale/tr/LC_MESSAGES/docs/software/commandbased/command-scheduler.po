@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # ceren oktemer <ceren.oktemer@gmail.com>, 2021
 # 
@@ -13,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2021-10-21 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -26,27 +25,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
 msgid "The Command Scheduler"
 msgstr "Komut Zamanlayıcı - Command Scheduler"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:4
-msgid ""
-"The ``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__)"
-" is the class responsible for actually running commands.  Each iteration "
-"(ordinarily once per 20ms), the scheduler polls all registered buttons, "
-"schedules commands for execution accordingly, runs the command bodies of all"
-" scheduled commands, and ends those commands that have finished or are "
-"interrupted."
-msgstr ""
-"``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-"  `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`"
-" __), komutları gerçekten çalıştırmaktan sorumlu sınıftır. Her yineleme "
-"(normalde 20 ms'de bir kez), programlayıcı tüm kayıtlı düğmeleri yoklar, "
-"buna göre yürütme için komutları planlar, programlanan tüm komutların komut "
-"gövdelerini çalıştırır ve biten veya kesilen komutları sonlandırır."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
 msgid ""
@@ -101,29 +79,6 @@ msgstr ""
 msgid "The ``schedule()`` Method"
 msgstr "``schedule()`` Methodu"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:23
-msgid ""
-"To schedule a command, users call the ``schedule()`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
-"  This method takes a command (and, optionally, a specification as to "
-"whether that command is interruptible), and attempts to add it to list of "
-"currently-running commands, pending whether it is already running or whether"
-" its requirements are available.  If it is added, its ``initialize()`` "
-"method is called."
-msgstr ""
-"Bir komutu planlamak için kullanıcılar ``program ()`` yöntemini çağırır "
-"(`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`"
-" __, `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`"
-" __. Bu yöntem bir komut alır (ve isteğe bağlı olarak, bu komutun "
-"kesilebilir olup olmadığına dair bir belirtim), ve halihazırda çalışıp "
-"çalışmadığını ya da gereksinimlerinin mevcut olup olmadığını bekleyerek onu "
-"şu anda çalışan komutlar listesine eklemeye çalışır.Eklenirse, "
-"``initialize()`` yöntemi çağrılır."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
 msgid "The Scheduler Run Sequence"
 msgstr "Schedukler-Zamanlayıcı Çalıştırma Sırası"
@@ -137,22 +92,6 @@ msgstr ""
 "Her bir ``Command`` ``initialize()`` yöntemi, komut zamanlandığında "
 "çağrılır, bu, zamanlayıcı çalıştığında zorunlu değildir (bu komut bir "
 "düğmeye bağlı değilse)."
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:33
-msgid ""
-"What does a single iteration of the scheduler's ``run()`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
-" actually do?  The following section walks through the logic of a scheduler "
-"iteration."
-msgstr ""
-"Zamanlayıcının ``run()`` yönteminin (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`"
-" __, `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`"
-" __) tek bir yinelemesi aslında ne yapar? Aşağıdaki bölüm, bir zamanlayıcı "
-"yinelemesinin mantığını açıklamaktadır."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
 msgid "Step 1: Run Subsystem Periodic Methods"
@@ -273,79 +212,17 @@ msgstr ""
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:74
-msgid ""
-"The ``onCommandInitialize`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
-" runs a specified action whenever a command is initialized."
-msgstr ""
-"``onCommandInitialize`` yöntemi (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`"
-" __, `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`"
-" __), bir komut her başlatıldığında belirli bir eylemi çalıştırır."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
 msgid "onCommandExecute"
 msgstr "onCommandExecute"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:79
-msgid ""
-"The ``onCommandExecute`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
-" runs a specified action whenever a command is executed."
-msgstr ""
-"``onCommandExecute`` yöntemi (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`"
-" __, `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`"
-" __), bir komut çalıştırıldığında belirli bir eylemi çalıştırır."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
 msgid "onCommandFinish"
 msgstr "onCommandFinish"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:84
-msgid ""
-"The ``onCommandFinish`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
-" runs a specified action whenever a command finishes normally (i.e. the "
-"``isFinished()`` method returned true)."
-msgstr ""
-"``onCommandFinish`` yöntemi (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`"
-" __, `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`"
-" __), bir komut normal olarak bittiğinde belirli bir eylemi çalıştırır "
-"(yani, ``isFinished()`` yöntemi true döndürülür)."
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
 msgid "onCommandInterrupt"
 msgstr "onCommandInterrupt"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:89
-msgid ""
-"The ``onCommandInterrupt`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
-" runs a specified action whenever a command is interrupted (i.e. by being "
-"explicitly canceled or by another command that shares one of its "
-"requirements)."
-msgstr ""
-"``onCommandInterrupt`` yöntemi (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`"
-" __, `C ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`"
-" __), bir komut her kesintiye uğradığında (yani açıkça iptal edilerek veya "
-"gereksinimlerinden birini paylaşan başka bir komut tarafından) belirtilen "
-"bir eylemi çalıştırır."
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
 msgid ""

@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2021\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-24 04:04+0000\n"
+"POT-Creation-Date: 2021-10-21 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -27,23 +27,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
 msgid "The Command Scheduler"
 msgstr "命令调度程序"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:4
-msgid ""
-"The ``CommandScheduler`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__)"
-" is the class responsible for actually running commands.  Each iteration "
-"(ordinarily once per 20ms), the scheduler polls all registered buttons, "
-"schedules commands for execution accordingly, runs the command bodies of all"
-" scheduled commands, and ends those commands that have finished or are "
-"interrupted."
-msgstr ""
-"``CommandScheduler''（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html>`__）是负责实际运行命令的类。每次迭代（通常每20毫秒一次），调度程序都会轮询所有已注册的按钮，调度要执行的命令，运行所有已调度命令的命令主体，并结束已完成或被中断的命令。"
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
 msgid ""
@@ -87,24 +70,6 @@ msgstr ""
 msgid "The ``schedule()`` Method"
 msgstr "“schedule()”方法"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:23
-msgid ""
-"To schedule a command, users call the ``schedule()`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
-"  This method takes a command (and, optionally, a specification as to "
-"whether that command is interruptible), and attempts to add it to list of "
-"currently-running commands, pending whether it is already running or whether"
-" its requirements are available.  If it is added, its ``initialize()`` "
-"method is called."
-msgstr ""
-"为了安排命令，用户调用schedule（）方法（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__。该方法接受命令（以及可选的关于该命令是否可中断的规范），并尝试将其添加到当前正在运行的命令列表中，等待它是否已在运行或是否满足要求（如果已添加），将调用其“"
-" initialize（）”方法。"
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
 msgid "The Scheduler Run Sequence"
 msgstr "调度程序运行顺序"
@@ -115,20 +80,6 @@ msgid ""
 "is scheduled, which is not necessarily when the scheduler runs (unless that "
 "command is bound to a button)."
 msgstr "每个“Command”的“initialize()”方法都是在调度命令时调用的，而不必在调度程序运行时调用（除非该命令已绑定到按钮）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:33
-msgid ""
-"What does a single iteration of the scheduler's ``run()`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
-" actually do?  The following section walks through the logic of a scheduler "
-"iteration."
-msgstr ""
-"调度程序的run（）方法（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__）的单次迭代实际上是做什么的？下一节将介绍调度程序迭代的逻辑。"
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
 msgid "Step 1: Run Subsystem Periodic Methods"
@@ -226,72 +177,17 @@ msgstr "有时，希望调度程序在发生某些命令事件（初始化，执
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:74
-msgid ""
-"The ``onCommandInitialize`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
-" runs a specified action whenever a command is initialized."
-msgstr ""
-"每当初始化命令时，onCommandInitialize方法（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__）都会运行指定的操作。"
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
 msgid "onCommandExecute"
 msgstr "onCommandExecute"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:79
-msgid ""
-"The ``onCommandExecute`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
-" runs a specified action whenever a command is executed."
-msgstr ""
-"每当执行命令时，onCommandExecute方法（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__）都会运行指定的操作。"
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
 msgid "onCommandFinish"
 msgstr "onCommandFinish"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:84
-msgid ""
-"The ``onCommandFinish`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
-" runs a specified action whenever a command finishes normally (i.e. the "
-"``isFinished()`` method returned true)."
-msgstr ""
-"onCommandFinish方法（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__）只要命令正常完成（即isFinished（）方法返回true），就会运行指定的操作。"
-
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
 msgid "onCommandInterrupt"
 msgstr "onCommandInterrupt"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:89
-msgid ""
-"The ``onCommandInterrupt`` method (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
-" runs a specified action whenever a command is interrupted (i.e. by being "
-"explicitly canceled or by another command that shares one of its "
-"requirements)."
-msgstr ""
-"onCommandInterrupt``方法（Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__，`C"
-" ++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1CommandScheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__）每当命令被中断时（即通过显式取消或由另一条共享其要求之一的命令）运行指定的操作。"
 
 #: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
 msgid ""

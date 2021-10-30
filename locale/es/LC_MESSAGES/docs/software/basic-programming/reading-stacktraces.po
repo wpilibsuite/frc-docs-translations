@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-15 04:04+0000\n"
+"POT-Creation-Date: 2021-10-30 04:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:04+0000\n"
 "Last-Translator: Miguel Angel de León Adame <miguelangeldla14@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -82,6 +82,63 @@ msgstr ""
 "<https://en.wikipedia.org/wiki/Call_stack>`_  se utiliza para almacenar "
 "información sobre qué función o método se está ejecutando actualmente."
 
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:19
+msgid ""
+"A *stack trace* prints information about what was on this stack when the "
+"unhandled exception occurred. This points you to the lines of code which "
+"were running just before the problem happened. While it doesn't always point"
+" you to the exact *root cause* of your issue, it's usually the best place to"
+" start looking."
+msgstr ""
+"Un *stack trace* imprime información acerca de lo que estaba sucediendo en "
+"el programa cuando la excepción sin manejar ocurrió. Esto apunto a las "
+"lineas de código que estaban ejecutándose justo antes de que el problema "
+"pasara. Mientras que no siempre apunta a los puntos exactos que son la "
+"*causa principal* de su problema, normalmente es el mejor lugar para empezar"
+" a buscar."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:22
+msgid "What's an \"Unhandled Exception\"?"
+msgstr "¿Qué es una \"Unhandled Exception\"?"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:24
+msgid ""
+"An unrecoverable error is any condition which arises where the processor "
+"cannot continue executing code. It almost always implies that, even though "
+"the code compiled and started running, it no longer makes sense for "
+"execution to continue."
+msgstr ""
+"Un error irrecuperable es cualquier condición que se manifieste donde el "
+"procesador no puede continuar ejecutando código. Casi siempre implica que, a"
+" pesar de que el código haya sido compilado y se está ejecutando, no hace "
+"sentido que la ejecución continúe."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:26
+msgid ""
+"In almost all cases, the root cause of an unhandled exception is code that "
+"isn't correctly implemented. It almost never implies that any hardware has "
+"malfunctioned."
+msgstr ""
+"En casi todos los casos, la raíz de la excepción no manejada es que el "
+"código no está correctamente implementado. Casi nunca implica que cualquier "
+"parte del hardware no esté funcionando."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:29
+msgid "So How Do I Fix My Issue?"
+msgstr "¿Cómo resuelvo mi problema?"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:32
+msgid "Read the Stack Trace"
+msgstr "Leyendo el Stack Trace"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:34
+msgid ""
+"To start, search above the ``unexpected error has occurred`` for the stack "
+"trace."
+msgstr ""
+"Para empezar, busque arriba de ``unexpected error has occurred`` para el "
+"stack trace."
+
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:38
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:171
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:204
@@ -94,6 +151,48 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:567
 msgid "Java"
 msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:41
+msgid "In Java, it should look something like this:"
+msgstr "En Java, debería verse como algo así:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:52
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:100
+msgid "There's a few important things to pick out of here:"
+msgstr "Hay algunas cosas importantes que entender de aquí:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:54
+msgid "There was an ``Error``"
+msgstr "Hubo un ``Error``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:56
+msgid "The error was due to an ``Unhandled exception``"
+msgstr "El error se provocó por una ``Excepción no manejada``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:58
+msgid "The exception was a ``java.lang.NullPointerException``"
+msgstr "La excepción fue un ``java.lang.NullPointerException``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:60
+msgid "The error happened while running line ``24`` inside of ``Robot.java``"
+msgstr ""
+"El error ocurrió mientras se ejecutaba la línea ``24`` adentro de "
+"``Robot.java``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:62
+msgid ""
+"``robotInit`` was the name of the method executing when the error happened."
+msgstr ""
+"``robotInit`` era el nombre de el método que se estaba ejecutando cuando el "
+"error sucedió."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:64
+msgid ""
+"``robotInit`` is a function in the ``frc.robot.Robot`` package (AKA, your "
+"team's code)"
+msgstr ""
+"``robotInit`` es una función en el paquete de ``frc.robot.Robot`` (AKA, el "
+"código de su equipo)"
 
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:86
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:183

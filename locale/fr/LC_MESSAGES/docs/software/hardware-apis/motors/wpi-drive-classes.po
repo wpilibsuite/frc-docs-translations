@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2021
 # Austin Shalit <austinshalit@gmail.com>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-20 04:03+0000\n"
+"POT-Creation-Date: 2021-12-14 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -317,6 +317,40 @@ msgstr ""
 "Montrez l’axe du robot avec X + en se dirigeant vers l'avant. Y+ à droite et"
 " Z+ vers le bas."
 
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:107
+msgid ""
+"The drive classes use the NED axes convention (North-East-Down as external "
+"reference in the world frame). The positive X axis points ahead, the "
+"positive Y axis points right, and the positive Z axis points down. The rest "
+"of the library, and math in general, uses NWU axes convention (North-West-"
+"Up). We use NED here because joysticks use NED, and they use NED because the"
+" aviation industry does."
+msgstr ""
+"Les classes d'entraînement utilisent la convention d'axes NED (Nord-Est-Bas "
+"comme référence externe dans le référentiel mondial). L'axe X positif pointe"
+" vers l'avant, l'axe Y positif pointe vers la droite et l'axe Z positif "
+"pointe vers le bas. Le reste de la librairie, et les mathématiques en "
+"général, utilisent la convention des axes NWU (Nord-Ouest-Up). Nous "
+"utilisons NED ici parce que les joysticks utilisent NED, et ils utilisent "
+"NED parce que l'industrie aéronautique le fait."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:109
+msgid ""
+"Joysticks follow NED convention, but it's important to note that axes values"
+" are rotations around the respective axes, not translations. When viewed "
+"with each axis pointing toward you, CCW is a positive value and CW is a "
+"negative value. Pushing forward on the joystick is a CW rotation around the "
+"Y axis, so you get a negative value. Pushing to the right is a CCW rotation "
+"around the X axis, so you get a positive value."
+msgstr ""
+"Les joysticks suivent la convention NED, mais il est important de noter que "
+"les valeurs des axes sont des rotations autour des axes respectifs, pas des "
+"translations. Vu avec chaque axe pointant vers vous, CCW (sens anti-horaire)"
+" est une valeur positive et CW (sens horaire) est une valeur négative. "
+"Pousser vers l'avant sur le joystick est une rotation CW autour de l'axe Y, "
+"vous obtenez donc une valeur négative. Pousser vers la droite est une "
+"rotation CCW autour de l'axe X, vous obtenez donc une valeur positive."
+
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:112
 msgid "Using the DifferentialDrive class to control Differential Drive robots"
 msgstr ""
@@ -371,6 +405,29 @@ msgstr "C++ (Header ou en-tête)"
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:194
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:154
+msgid "Multi-Motor DifferentialDrive with MotorControllerGroups"
+msgstr "DifferentialDrive multimoteur avec MotorControllerGroups"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:156
+msgid ""
+"Many FRC\\ |reg| drivetrains have more than 1 motor on each side. In order "
+"to use these with DifferentialDrive, the motors on each side have to be "
+"collected into a single MotorController, using the MotorControllerGroup "
+"class. The examples below show a 4 motor (2 per side) drivetrain. To extend "
+"to more motors, simply create the additional controllers and pass them all "
+"into the MotorController group constructor (it takes an arbitrary number of "
+"inputs)."
+msgstr ""
+"Beaucoup de FRC\\ |reg| les transmissions ont plus d'un moteur de chaque "
+"côté. Afin de les utiliser avec DifferentialDrive, les moteurs de chaque "
+"côté doivent être regroupés dans un seul MotorController, en utilisant la "
+"classe MotorControllerGroup. Les exemples ci-dessous montrent une "
+"transmission à 4 moteurs (2 par côté). Pour étendre à plus de moteurs, créez"
+" simplement les contrôleurs supplémentaires et transmettez-les tous dans le "
+"constructeur de groupe MotorController (cela prend un nombre arbitraire "
+"d'entrées)."
 
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:206
 msgid "Drive Modes"

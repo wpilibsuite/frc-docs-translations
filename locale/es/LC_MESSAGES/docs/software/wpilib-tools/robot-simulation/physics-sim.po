@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2021-12-30 04:05+0000\n"
 "PO-Revision-Date: 2020-10-04 04:20+0000\n"
 "Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -38,14 +38,14 @@ msgid ""
 " robot mechanisms without modifying existing non-simulation user code. The "
 "basic flow of such simulators is as follows:"
 msgstr ""
-"Debido a que la :ref: `notación de espacio de estado <docs/software"
-"/advanced-controls/state-space/state-space-intro:What is State-Space "
-"Notation?>` nos permite representar de manera compacta el :term:`dinámica "
-"<dynamics>` de :term:`sistemas <system>`, podemos aprovecharlo para "
-"proporcionar un backend para simular sistemas físicos en robots. El objetivo"
-" de estos simuladores es simular el movimiento de los mecanismos del robot "
-"sin modificar el código de usuario existente que no sea de simulación. El "
-"flujo básico de dichos simuladores es el siguiente:"
+"Debido a que la :ref: `notación de espacio de estado "
+"<docs/software/advanced-controls/state-space/state-space-intro:What is "
+"State-Space Notation?>` nos permite representar de manera compacta el "
+":term:`dinámica <dynamics>` de :term:`sistemas <system>`, podemos "
+"aprovecharlo para proporcionar un backend para simular sistemas físicos en "
+"robots. El objetivo de estos simuladores es simular el movimiento de los "
+"mecanismos del robot sin modificar el código de usuario existente que no sea"
+" de simulación. El flujo básico de dichos simuladores es el siguiente:"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:6
 msgid "In normal user code:"
@@ -136,11 +136,11 @@ msgstr ""
 "el método :code:`UpdateX(x, u, dt)` para proporcionar dinámicas "
 "personalizadas y no lineales, como simular la gravedad."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:30
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:32
 msgid "Usage in User Code"
 msgstr "Uso en el código de usuario"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:32
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:34
 msgid ""
 "The following is available from the WPILib :code:`elevatorsimulation` "
 "`example project "
@@ -150,7 +150,7 @@ msgstr ""
 "`proyecto de ejemplo "
 "<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation>`__."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:34
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:36
 msgid ""
 "In addition to standard objects such as motors and encoders, we instantiate "
 "our elevator simulator using known constants such as carriage mass and "
@@ -163,7 +163,7 @@ msgstr ""
 ":code:`EncoderSim`, que establece la distancia y velocidad leídas por "
 "nuestro :code:`Encoder`."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:36
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:38
 msgid ""
 "In the following example, we simulate an elevator given the mass of the "
 "moving carriage (in kilograms), the radius of the drum driving the elevator "
@@ -178,7 +178,7 @@ msgstr ""
 "mínima y máxima del ascensor (en metros), y algún ruido aleatorio para "
 "agregar a nuestra estimación de posición."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:38
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:40
 msgid ""
 "The elevator and arm simulators will prevent the simulated position from "
 "exceeding given minimum or maximum heights or angles. If you wish to "
@@ -190,7 +190,7 @@ msgstr ""
 "mecanismo con rotación o movimiento infinito, :code:`LinearSystemSim` puede "
 "ser una mejor opción."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:58
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:60
 msgid ""
 "Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple"
 " PID control loop to drive our elevator to a setpoint 30 inches off the "
@@ -200,7 +200,7 @@ msgstr ""
 "utiliza un circuito de control PID simple para conducir nuestro elevador a "
 "un punto de ajuste de 30 pulgadas sobre el suelo."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:78
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:80
 msgid ""
 "Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses "
 "the voltage applied to the motor to update the simulated position of the "
@@ -214,7 +214,7 @@ msgstr ""
 " periódicamente solo para robots simulados. Esto significa que nuestro "
 "código de simulación no se ejecutará en un robot real."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:80
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:82
 msgid ""
 "Finally, the simulated encoder's distance reading is set using the simulated"
 " elevator's position, and the robot's battery voltage is set using the "

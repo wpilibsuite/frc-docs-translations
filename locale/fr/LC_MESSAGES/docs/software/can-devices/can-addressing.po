@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-31 04:04+0000\n"
+"POT-Creation-Date: 2021-12-31 16:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -632,6 +632,60 @@ msgstr ""
 msgid "Universal Heartbeat"
 msgstr "Battement de cœur universel"
 
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:192
+msgid ""
+"The roboRIO provides a universal CAN heartbeat that any device on the bus "
+"can listen and react to. This heartbeat is sent every 20ms. The heartbeat "
+"has a full CAN ID of ``0x01011840`` (which is the NI Manufacturer ID, "
+"RobotController type, Device ID 0 and API ID ``0x062``). It is an 8 byte CAN"
+" packet. The important byte in here is byte 5 (index 4). The layout is the "
+"following bitfield."
+msgstr ""
+"Le roboRIO fournit un signal composite qui est une sorte de battement de "
+"cœur CAN universel que tout appareil sur le réseau peut écouter et auquel il"
+" peut réagir. Ce signal est envoyé tous les 20 ms. Ce signal a un ID CAN "
+"complet de ``0x01011840`` (qui est l’ID du fabricant NI, le type de "
+"RobotController, l’ID de périphérique 0 et l’ID d’API ``0x062``). Il s’agit "
+"d’un paquet CAN de 8 octets. L’octet important ici est l’octet 5 (index 4). "
+"La structure est le champ de bits suivant."
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:195
+msgid "Width"
+msgstr "Width"
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:197
+msgid "RedAlliance"
+msgstr "RedAlliance"
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:199
+msgid "Enabled"
+msgstr "Enabled"
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:201
+msgid "Autonomous"
+msgstr "Autonomous"
+
 #: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:203
 msgid "Test"
 msgstr "Test"
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:205
+msgid "WatchdogEnabled"
+msgstr "WatchdogEnabled"
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:210
+msgid ""
+"The flag to watch for is ``WatchdogEnabled``. If that flag is set, that "
+"means motor controllers are enabled."
+msgstr ""
+"L’indicateur à surveiller est ``WatchdogEnabled``. Si cet indicateur est "
+"défini, cela signifie que les contrôleurs de moteur sont activés."
+
+#: ../../frc-docs/source/docs/software/can-devices/can-addressing.rst:212
+msgid ""
+"If 100ms has passed since this packet was received, the robot program can be"
+" considered hung, and devices should act as if the robot has been disabled."
+msgstr ""
+"Si 100 ms se sont écoulés depuis la réception de ce paquet, le programme du "
+"robot peut être considéré comme bloqué et les composants doivent agir comme "
+"si le robot avait été désactivé."

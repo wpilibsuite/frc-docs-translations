@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-18 04:04+0000\n"
+"POT-Creation-Date: 2021-12-31 04:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,6 +34,23 @@ msgstr ""
 "Cette section couvre le logiciel associé aux gyroscopes. Pour un guide sur "
 "le branchement électrique des gyroscopes, consulter  "
 ":ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:8
+msgid ""
+"A gyroscope, or \"gyro,\" is an angular rate sensor typically used in "
+"robotics to measure and/or stabilize robot headings.  WPILib natively "
+"provides specific support for the ADXRS450 gyro available in the kit of "
+"parts, as well as more general support for a wider variety of analog gyros "
+"through the `AnalogGyro`_ class. Most common 3rd party gyros inherit from "
+"the :code:`Gyro` interface making them easily usable too!"
+msgstr ""
+"Un gyroscope, ou \"gyro\" , est un capteur de vitesse angulaire généralement"
+" utilisé en robotique pour mesurer et/ou stabiliser les caps des robots. "
+"WPILib fournit nativement un support spécifique pour le gyroscope ADXRS450 "
+"disponible dans le kit de pièces, ainsi qu’un support plus général pour une "
+"plus grande variété de gyroscopes analogiques via la classe `AnalogGyro`_. "
+"Les gyroscopes tiers partie les plus courants héritent de l’interface "
+":code:`Gyro`, ce qui les rend également facilement utilisables!"
 
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:11
 msgid "The Gyro interface"
@@ -63,6 +80,38 @@ msgid ""
 msgstr ""
 "Il est primordial que le robot reste immobile pendant l'étalonnage d'un "
 "gyroscope."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:18
+msgid "ADIS16448"
+msgstr "ADIS16448"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:20
+msgid ""
+"The ADIS16448 uses the :code:`ADIS16448_IMU` class and implements the "
+":code:`Gyro` interface.  See the `ADIS16448 documentation "
+"<https://wiki.analog.com/first/adis16448_imu_frc>`__ for additional "
+"information and examples."
+msgstr ""
+"L’ADIS16448 utilise la classe :code:`ADIS16448_IMU` et implémente "
+"l’interface :code:`Gyro`. Consultez la documentation `ADIS16448 "
+"<https://wiki.analog.com/first/adis16448_imu_frc>`__ pour plus "
+"d’informations et d’exemples."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:35
+msgid "ADIS16470"
+msgstr "ADIS16470"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:37
+msgid ""
+"The ADIS16470 uses the :code:`ADIS16470_IMU` class and implements the "
+":code:`Gyro` interface.  See the `ADIS16470 documentation "
+"<https://wiki.analog.com/first/adis16470_imu_frc>`__ for additional "
+"information and examples."
+msgstr ""
+"L’ADIS16470 utilise la classe :code:`ADIS16470_IMU` et implémente "
+"l’interface :code:`Gyro`. Consultez la documentation `ADIS16470 "
+"<https://wiki.analog.com/first/adis16470_imu_frc>`__ pour plus "
+"d’informations et d’exemples."
 
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:52
 msgid "ADXRS450_Gyro"
@@ -120,6 +169,40 @@ msgstr ""
 "L'accumulation des données du gyroscope est gérée par des circuits spéciaux "
 "dans le FPGA; en conséquence, :code:`AnalogGyro`\\`s ne peut être utilisé "
 "que sur les ports analogiques 0 et 1."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:90
+msgid "navX"
+msgstr "navX"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:92
+msgid ""
+"The navX uses the :code:`AHRS` class and implements the :code:`Gyro` "
+"interface.  See the `navX documentation <https://pdocs.kauailabs.com/navx-"
+"mxp/guidance/selecting-an-interface/>`__ for additional connection types."
+msgstr ""
+"Le navX utilise la classe :code:`AHRS`  et implémente l’interface "
+":code:`Gyro`. Consultez la documentation `navX "
+"<https://pdocs.kauailabs.com/navx-mxp/guidance/selecting-an-interface/>`__  "
+"pour d’autres types de connexion."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:107
+msgid "Pigeon"
+msgstr "Pigeon"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:109
+msgid ""
+"The Pigeon should use the :code:`WPI_PigeonIMU` class that implements "
+":code:`Gyro`.  The Pigeon can either be connected with CAN or by data cable "
+"to a TalonSRX.  The `Pigeon IMU User's Guide <https://www.ctr-"
+"electronics.com/downloads/pdf/Pigeon%20IMU%20User%27s%20Guide.pdf>`__ "
+"contains full details on using the Pigeon."
+msgstr ""
+"Le Pigeon doit utiliser la classe :code:`WPI_PigeonIMU` qui implémente "
+":code:`Gyro`. Le Pigeon peut être connecté avec le réseau CAN ou par câble "
+"de données à un TalonSRX. Le `Guide de l’utilisateur de Pigeon IMU "
+"<https://www.ctr-"
+"electronics.com/downloads/pdf/Pigeon%20IMU%20User%27s%20Guide.pdf>`__  "
+"contient tous les détails sur l’utilisation du Pigeon."
 
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:128
 msgid "Using gyros in code"
@@ -179,11 +262,11 @@ msgstr ""
 "Cela peut être utile pour visualiser le cap du robot lorsque les lignes de "
 "vue vers le robot sont obscurcies :"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:161
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:160
 msgid "Stabilizing heading while driving"
 msgstr "Stabilisation du cap pendant la conduite"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:163
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:162
 msgid ""
 "A very common use for a gyro is to stabilize robot heading while driving, so"
 " that the robot drives straight.  This is especially important for holonomic"
@@ -196,7 +279,7 @@ msgstr ""
 "  Mécanum et Swerve, mais aussi utile pour les entraînements différentiels, "
 "style \"char d'assaut\"."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:165
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:164
 msgid ""
 "This is typically achieved by closing a PID controller on either the turn "
 "rate or the heading, and piping the output of the loop to one's turning "
@@ -210,7 +293,7 @@ msgstr ""
 "(gauche et droite) afin de corriger le cap du robot.  Pour les robots avec "
 "Mécanum ou Swerve, cette correction de cap est gérée de façon différente."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:167
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:166
 msgid ""
 "Like with all control loops, users should be careful to ensure that the "
 "sensor direction and the turning direction are consistent.  If they are not,"
@@ -221,13 +304,13 @@ msgstr ""
 "cohérentes. Si ce n'est pas le cas, la boucle sera instable et le robot "
 "pivotera autour de son axe central de manière incontrôlée."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:170
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:169
 msgid "Example: Tank drive stabilization using turn rate"
 msgstr ""
 "Exemple: stabilisation de l'entraînement de type différentiel à l'aide du "
 "taux de rotation"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:172
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:171
 msgid ""
 "The following example shows how to stabilize heading using a simple P loop "
 "closed on the turn rate.  Since a robot that is not turning should have a "
@@ -240,7 +323,7 @@ msgstr ""
 "consigne pour la boucle est implicitement nul, ce qui rend cette méthode "
 "très simple."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:230
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:229
 msgid ""
 "More-advanced implementations can use a more-complicated control loop.  When"
 " closing the loop on the turn rate for heading stabilization, PI loops are "
@@ -250,11 +333,11 @@ msgstr ""
 "contrôle plus complexe. Les boucles PI sont particulièrement efficaces pour "
 "l'autorégulation de la direction basée sur le taux de rotation angulaire."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:233
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:232
 msgid "Example: Tank drive stabilization using heading"
 msgstr "Exemple: stabilisation de l'entraînement du réservoir à l'aide du cap"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:235
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:234
 msgid ""
 "The following example shows how to stabilize heading using a simple P loop "
 "closed on the heading.  Unlike in the turn rate example, we will need to set"
@@ -266,7 +349,7 @@ msgstr ""
 "régler le point de consigne sur le cap actuel du robot avant de commencer le"
 " mouvement, ce qui rend cette méthode légèrement plus compliquée."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:308
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:307
 msgid ""
 "More-advanced implementations can use a more-complicated control loop.  When"
 " closing the loop on the heading for heading stabilization, PD loops are "
@@ -276,11 +359,11 @@ msgstr ""
 "plus complexe. Les boucles PD sont particulièrement efficaces pour "
 "l'autorégulation de la direction basée sur le cap."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:311
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:310
 msgid "Turning to a set heading"
 msgstr "Rotation vers un cap défini"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:313
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:312
 msgid ""
 "Another common and highly-useful application for a gyro is turning a robot "
 "to face a specified direction.  This can be a component of an autonomous "
@@ -293,7 +376,7 @@ msgstr ""
 "le contrôle téléopéré pour aider à aligner le robot avec un élément du "
 "terrain de jeu."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:315
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:314
 msgid ""
 "Much like with heading stabilization, this is often accomplished with a PID "
 "loop - unlike with stabilization, however, the loop can only be closed on "
@@ -305,7 +388,7 @@ msgstr ""
 "uniquement. L'exemple de code suivant fera tourner le robot de 90 degrés "
 "avec une simple boucle P:"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:373
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:372
 msgid ""
 "As before, more-advanced implementations can use more-complicated control "
 "loops."
@@ -313,7 +396,7 @@ msgstr ""
 "Comme précédemment, les implémentations plus avancées peuvent utiliser des "
 "boucles de contrôle plus compliquées."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:375
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/gyros-software.rst:374
 msgid ""
 "Turn-to-angle loops can be tricky to tune correctly due to static friction "
 "in the drivetrain, especially if a simple P loop is used.  There are a "

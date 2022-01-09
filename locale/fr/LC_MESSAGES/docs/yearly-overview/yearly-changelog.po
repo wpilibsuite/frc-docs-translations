@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-09 04:04+0000\n"
+"POT-Creation-Date: 2022-01-09 16:03+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -159,6 +159,22 @@ msgstr "Ajout de la classe de contrôleur ``PS4Controller``"
 msgid "Added better message for when an I2C port is out of range"
 msgstr "Ajout d'un meilleur message lorsqu'un port I2C est hors de portée"
 
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:34
+msgid ""
+"Added ``Debouncer`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/Debouncer.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_debouncer.html>`__)"
+" class. This helps with filtering rising and falling edges when dealing with"
+" boolean values"
+msgstr ""
+"Ajout de la classe ``Debouncer`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/filter/Debouncer.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_debouncer.html>`__)"
+" class. Celle-ci aide à filtrer les fronts montantes et descendantes "
+"lorsqu’on traite des valeurs booléennes."
+
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:35
 msgid "Added ``PneumaticHub`` class for use with the REV Pneumatic Hub"
 msgstr ""
@@ -172,6 +188,29 @@ msgid ""
 msgstr ""
 "GenericHID a été mis à jour avec des fonctions statiques à utiliser pour les"
 " types de contrôleurs non définis."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:37
+msgid ""
+"``XboxController`` has migrated away from taking arguments in functions and "
+"instead has functions with no arguments. An example conversion is below:"
+msgstr ""
+"``XboxController`` n'a plus d'arguments dans des fonctions et donc présente "
+"désormais des fonctions sans arguments. Voici un exemple de cette conversion"
+" :"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:39
+msgid ""
+"``controller.getTriggerAxis(GenericHID.Hand.kLeft)`` -> "
+"``controller.getLeftTriggerAxis()``"
+msgstr ""
+"``controller.getTriggerAxis(GenericHID.Hand.kLeft)`` -> "
+"``controller.getLeftTriggerAxis()``"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:40
+msgid ""
+"``controller.getX(GenericHID.Hand.kLeft)`` -> ``controller.getLeftX()``"
+msgstr ""
+"``controller.getX(GenericHID.Hand.kLeft)`` -> ``controller.getLeftX()``"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:42
 msgid ""
@@ -190,6 +229,36 @@ msgid ""
 msgstr ""
 "``Timer::HasPeriodPassed()`` et ``Timer.hasPeriodPassed()`` ont été "
 "dépréciés. Utilisez ``AdvanceIfElapsed()`` à la place"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:44
+msgid ""
+"Several new classes have been added to enable simpler access to ``Counter``:"
+" ``ExternalDirectionCounter`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_external_direction_counter.html>`__),"
+" ``Tachometer`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_tachometer.html>`__),"
+" and ``UpDownCounter`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_up_down_counter.html>`__)"
+msgstr ""
+"Plusieurs nouvelles classes ont été ajoutées pour permettre un accès plus "
+"simple à ``Counter``: ``ExternalDirectionCounter`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/ExternalDirectionCounter.html>`__/"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_external_direction_counter.html>`__),"
+" ``Tachometer`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/Tachometer.html>`__/"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_tachometer.html>`__),"
+" et ``UpDownCounter`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/counter/UpDownCounter.html>`__/"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_up_down_counter.html>`__)"
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:45
 msgid "``DutyCycleEncoder``: add support for setting duty cycle range"
@@ -261,6 +330,19 @@ msgstr ""
 "été supprimés. Utilisez ``FRC_ReportError`` dans l'en-tête "
 "``frc\\Errors.h``. L'état de ``frc::err::Error`` peut être utilisé pour les "
 "erreurs et ``frc::warn::Warning`` peut être utilisé pour les avertissements."
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:56
+msgid "``SpeedController`` has been renamed to ``MotorController``"
+msgstr "``SpeedController`` a été renommé ``MotorController``"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:58
+msgid ""
+"Various portions of the API still refers to ``SpeedController`` for "
+"backwards compatibility. Users should pass ``MotorController`` instead"
+msgstr ""
+"Diverses parties de l'API font encore référence à ``SpeedController`` pour "
+"une compatibilité avec la version précédente. À la place, les utilisateurs "
+"doivent désormais invoquer ``MotorController``."
 
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:60
 msgid ""
@@ -802,3 +884,19 @@ msgstr ""
 #: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:187
 msgid "frc-characterization is discontinued and is no longer supported!"
 msgstr "frc-characterization est interrompu et n'est plus pris en charge !"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:190
+msgid "Romi"
+msgstr "Romi"
+
+#: ../../frc-docs/source/docs/yearly-overview/yearly-changelog.rst:192
+msgid ""
+"A Romi Library has been created to contain several helper classes that are a"
+" part of the ``RomiReference`` example. `Romi Vendordep "
+"<https://raw.githubusercontent.com/wpilibsuite/romi-"
+"vendordep/main/RomiVendordep.json>`__."
+msgstr ""
+"Une librairie Romi a été créée pour contenir plusieurs classes d’assistance "
+"qui font partie de l’exemple `RomiReference``. `Romi Vendordep "
+"<https://raw.githubusercontent.com/wpilibsuite/romi-"
+"vendordep/main/RomiVendordep.json>`__."

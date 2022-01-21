@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-17 16:03+0000\n"
+"POT-Creation-Date: 2022-01-21 04:05+0000\n"
 "PO-Revision-Date: 2021-09-13 04:13+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,9 +26,53 @@ msgstr ""
 msgid "Power Distribution Module"
 msgstr "Module de distribution d'alimentation (PDP)"
 
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:4
+msgid ""
+"The CTRE Power Distribution Panel (PDP) and Rev Power Distribution Hub (PDH)"
+" can use their CAN connectivity to communicate a wealth of status "
+"information regarding the robot's power use to the roboRIO, for use in user "
+"code.  This has the capability to report current temperature, the bus "
+"voltage, the total robot current draw, the total robot energy use, and the "
+"individual current draw of each device power channel.  This data can be used"
+" for a number of advanced control techniques, such as motor torque limiting "
+"and brownout avoidance."
+msgstr ""
+"Le panneau de distribution d'alimentation CTRE (PDP) et le concentrateur de "
+"distribution d'alimentation Rev (PDH) peuvent utiliser leur connectivité CAN"
+" pour communiquer une multitude d'informations d'état concernant la "
+"consommation d'énergie du robot au roboRIO, pour une utilisation dans le "
+"code utilisateur. Ceux-ci ont la capacité de signaler la température "
+"actuelle, la tension du bus, la consommation totale de courant du robot, la "
+"consommation totale d'énergie du robot et la consommation de courant "
+"individuelle de chaque canal d'alimentation pour chacun des composants. Ces "
+"données peuvent être utilisées dans un certain nombre de techniques de "
+"contrôle avancées, telles que la limitation du couple moteur et l'évitement "
+"des baisses de tension."
+
 #: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:7
 msgid "Creating a Power Distribution Object"
 msgstr "Création d'un objet PowerDistribution"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:9
+msgid ""
+"To use the either Power Distribution module, create an instance of the "
+":code:`PowerDistribution` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistribution.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_power_distribution.html>`__)."
+" With no arguments, the Power Distribution object will be detected, and must"
+" use CAN ID of 0 for CTRE or 1 for REV. If the CAN ID is non-default, "
+"additional constructors are available to specify the CAN ID and type."
+msgstr ""
+"Pour utiliser l’un ou l’autre module de distribution de puissance, créez une"
+" instance de la classe :code:`PowerDistribution` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/PowerDistribution.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_power_distribution.html>`__)."
+" Sans arguments, l’objet  :code:`PowerDistribution` sera détecté et doit "
+"utiliser l’ID CAN de 0 pour CTRE ou 1 pour REV. Si l’ID CAN n’est pas défini"
+" par défaut, des constructeurs supplémentaires sont disponibles pour "
+"spécifier l’ID et le type de CAN."
 
 #: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:25
 msgid ""
@@ -38,6 +83,17 @@ msgstr ""
 "Remarque : il n'est pas nécessaire de créer un objet PowerDistribution, sauf"
 " si vous avez besoin d'en lire des valeurs. La carte fonctionnera et "
 "alimentera tous les canaux même si l'objet n'est jamais créé."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:27
+msgid ""
+"To enable voltage and current logging in the Driver Station, the CAN ID for "
+"the CTRE Power Distribution Panel *must* be 0, and for the REV Power "
+"Distribution Hub it *must* be 1."
+msgstr ""
+"Pour activer l’enregistrement de la tension et du courant dans l'application"
+" Driver Station, l’ID CAN du panneau de distribution d’alimentation CTRE "
+"*doit* être configuré avec la valeur 0, et pour le concentrateur de "
+"distribution d’alimentation REV, il *doit* être configuré avec la valeur 1."
 
 #: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:30
 msgid "Reading the Bus Voltage"
@@ -73,9 +129,42 @@ msgstr ""
 "temps, ou encore, s'il y a un court-circuit ou un autre problème de câblage "
 "qui crée un surchauffement."
 
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:60
+msgid "Reading the Total Current, Power, and Energy"
+msgstr "Lecture du courant total, de la puissance et de l'énergie"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:76
+msgid ""
+"Monitoring the total current, power and energy can be useful for controlling"
+" how much power is being drawn from the battery, both for preventing "
+"brownouts and ensuring that mechanisms have sufficient power available to "
+"perform the actions required. Power is the bus voltage multiplied by the "
+"current with the units Watts. Energy is the power summed over time with "
+"units Joules."
+msgstr ""
+"La surveillance du courant total, de la puissance et de l’énergie peut être "
+"utile pour contrôler la quantité d’énergie tirée de la batterie, à la fois "
+"pour prévenir les pannes de courant et pour s’assurer que les mécanismes "
+"disposent d’une puissance suffisante pour effectuer les actions requises. La"
+" puissance est obtenue en multipliant la tension du bus par le courant et "
+"pour unité le Watt. L’énergie est la puissance additionnée dans le temps et "
+"a pour unité le Joule."
+
 #: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:79
 msgid "Reading Individual Channel Currents"
 msgstr "Lecture des courants des canaux individuels"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:81
+msgid ""
+"The PDP/PDH also allows users to monitor the current drawn by the individual"
+" device power channels.  You can read the current on any of the 16 PDP "
+"channels (0-15) or 24 PDH channels (0-23). For example, to read the current "
+"on channel 0:"
+msgstr ""
+"Le  PDP/PDH permet également aux utilisateurs de lire le courant consommé "
+"par les canaux d'alimentation de chaque composant.  Vous pouvez lire le "
+"courant de n'importe lequel des 16 canaux du PDP (0-15) ou des 24 canaux du "
+"PDH (0-23). Par exemple, pour lire le courant sur le canal 0:"
 
 #: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:93
 msgid ""
@@ -84,3 +173,15 @@ msgid ""
 msgstr ""
 "La surveillance de la consommation de courant de chaque dispositif peut être"
 " utile pour détecter les courts-circuits ou les moteurs bloqués."
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:96
+msgid "Using the Switchable Channel (PDH)"
+msgstr "Utilisation du canal commutable (PDH)"
+
+#: ../../frc-docs/source/docs/software/can-devices/power-distribution-module.rst:98
+msgid ""
+"The REV PDH has one channel that can be switched on or off to control custom"
+" circuits."
+msgstr ""
+"Le REV PDH est pourvu d’un canal qui peut être activé ou désactivé pour "
+"contrôler des circuits personnalisés."

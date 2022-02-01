@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-31 04:04+0000\n"
+"POT-Creation-Date: 2022-02-01 04:07+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -87,26 +87,6 @@ msgstr ""
 " des ressources, peuvent être trouvées au Chapitre 4 du livre `Controls "
 "Engineering in FRC <https://file.tavsys.net/control/controls-engineering-in-"
 "frc.pdf>`__."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:15
-msgid ""
-"If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` "
-"or its sister classes, or used FRC-Characterization to pick PID :term:`gains"
-" <gain>` for you, you're already familiar with model-based control! The "
-"``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor "
-"(or arm, or drivetrain) will react to voltage. We can put these constants "
-"into standard state-space notation using WPILib's ``LinearSystem``, "
-"something we will do in a later article."
-msgstr ""
-"Si vous avez utilisé les classes ``feedforward`` de la  WPILib pour "
-"``SimpleMotorFeedForward`` ou ses classes soeurs, ou si vous avez utilisé "
-"l'outil de caractérisation FRC pour régler des :term:`gains <gain>` PID à "
-"votre place, vous êtes déjà familier avec le contrôle à base de modèle! Les "
-":term:`gains <gain>` ``kv`` et ``ka`` peuvent être utilisé pour décrire "
-"comment un moteur (ou un bras, un entraînement) vont réagir à une tension. "
-"Nous pouvons mettre ces constantes en notation standard dans l'espace-état "
-"en utilisant la classe ``LinearSystem`` de WPILib, quelque chose que nous "
-"allons faire dans un prochain article."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:18
 msgid "Vocabulary"
@@ -420,17 +400,6 @@ msgid ""
 msgstr ""
 "\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} "
 "\\mathbf{x} + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} \\mathbf{u}\n"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:89
-msgid ""
-"That's it! That's the state-space model of a system for which we have the kV"
-" and kA constants. This same math is use in FRC-Characterization to model "
-"flywheels and drivetrain velocity systems."
-msgstr ""
-"C'est tout! C'est le modèle d'espace d'état d'un système pour lequel nous "
-"avons les constantes kV et kA. Ce même calcul est utilisé dans la "
-"caractérisation FRC pour modéliser les volants d'inertie et les systèmes de "
-"vitesse de transmission."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:92
 msgid "Visualizing State-Space Responses: Phase Portrait"
@@ -957,21 +926,6 @@ msgstr ""
 "commandes de tension basées sur des estimations d'état du passé. Cela a "
 "souvent pour effet d'introduire de l'instabilité et des oscillations dans "
 "notre système, comme le montre le graphique ci-dessous."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:223
-msgid ""
-"However, we can model our controller to control where the system's "
-":term:`state` is delayed into the future. This will reduce the LQR's "
-":term:`gain` matrix :math:`\\mathbf{K}`, trading off controller performance "
-"for stability. The below formula, which adjusts the :term:`gain` matrix to "
-"account for delay, is also used in frc-characterization."
-msgstr ""
-"Cependant, nous pouvons modéliser notre contrôleur pour contrôler où "
-"l’:term:`état` du système est retardé dans le futur. Cela réduira la matrice"
-" de :term:`gain` :math:`\\mathbf{K}` du modèle LQR, échangeant les "
-"performances du contrôleur contre la stabilité. La formule ci-dessous, qui "
-"ajuste la matrice de :term:`gain` pour tenir compte du retard, est également"
-" utilisée dans l'outilitaire de caractérisation FRC."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:225
 msgid ""

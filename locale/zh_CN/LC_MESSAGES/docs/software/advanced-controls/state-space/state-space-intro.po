@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-17 04:03+0000\n"
+"POT-Creation-Date: 2022-02-01 04:07+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -77,20 +77,6 @@ msgid ""
 msgstr ""
 "状态空间控制广泛使用线性代数。更多关于现代控制理论中的线性代数，包括线性代数的介绍和资源，可以在`Controls Engineering in FRC"
 " <https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`的第4章中找到。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:15
-msgid ""
-"If you've used WPILib's feedforward classes for ``SimpleMotorFeedforward`` "
-"or its sister classes, or used FRC-Characterization to pick PID :term:`gains"
-" <gain>` for you, you're already familiar with model-based control! The "
-"``kv`` and ``ka`` :term:`gains <gain>` can be used to describe how a motor "
-"(or arm, or drivetrain) will react to voltage. We can put these constants "
-"into standard state-space notation using WPILib's ``LinearSystem``, "
-"something we will do in a later article."
-msgstr ""
-"如果您为SimpleMotorFeedforward或它的姐妹类使用过WPILib的前馈类，或者使用frc特性为您选择PID:term:`gains "
-"1` ，那么您已经熟悉基于模型的控制了。 kv和ka :term:`gains "
-"2`可用于描述电机(或手臂，或传动系统)对电压的反应。我们可以使用WPILib的线性系统将这些常数放入标准状态空间符号中，我们将在后面的文章中做一些事情。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:18
 msgid "Vocabulary"
@@ -337,13 +323,6 @@ msgid ""
 msgstr ""
 "\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} "
 "\\mathbf{x} + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} \\mathbf{u}\n"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:89
-msgid ""
-"That's it! That's the state-space model of a system for which we have the kV"
-" and kA constants. This same math is use in FRC-Characterization to model "
-"flywheels and drivetrain velocity systems."
-msgstr "就是这样！那就是我们具有kV和kA常数的系统的状态空间模型。在FRC特征化中使用相同的数学模型对飞轮和传动系统速度系统进行建模。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:92
 msgid "Visualizing State-Space Responses: Phase Portrait"
@@ -718,18 +697,6 @@ msgid ""
 "of introducing instability and oscillations into our system, as shown in the"
 " graph below."
 msgstr "这种滞后现象意味着我们的反馈控制器将基于过去的状态估计来生成电压命令。如下图所示，这通常会给我们的系统带来不稳定性和振荡。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:223
-msgid ""
-"However, we can model our controller to control where the system's "
-":term:`state` is delayed into the future. This will reduce the LQR's "
-":term:`gain` matrix :math:`\\mathbf{K}`, trading off controller performance "
-"for stability. The below formula, which adjusts the :term:`gain` matrix to "
-"account for delay, is also used in frc-characterization."
-msgstr ""
-"但是，我们可以对控制器进行建模，以控制 :term:`state`延迟到未来的时间。 这将减少LQR的 "
-":term:`gain`矩阵:math:`\\mathbf{K}`，以牺牲控制器性能为代价。下面的公式用于调整 "
-":term:`gain矩阵以解决延迟问题，该公式也用于frc表征。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:225
 msgid ""

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2022-02-01 04:07+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -150,16 +150,6 @@ msgstr ""
 ":term:`state`的变化率，:math:`\\mathbf{x}`是系统当前状态，:math:`\\mathbf{u}` 是系统的 "
 ":term:`input` ， :math:`\\mathbf{y}` 是系统的 :term:`output`。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:34
-msgid ""
-"Let's use this system of equations to model our flywheel in two different "
-"ways. We'll first model it using :term:`system identification` using the "
-"frc-characterization toolsuite, and then model it based on the motor and "
-"flywheel's :term:`moment of inertia`."
-msgstr ""
-"让我们使用此方程组以两种不同方式为飞轮建模。我们将首先使用frc特征化工具套件使用:term:`system identification` "
-"对它进行建模，然后根据电动机和飞轮的:term:`moment of inertia`对其进行建模。"
-
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:36
 msgid ""
 "The first step of building up our state-space system is picking our system's"
@@ -218,9 +208,9 @@ msgid ""
 "space/state-space-intro:What is State-Space Notation?>` for more on "
 "continuous-time and discrete-time systems."
 msgstr ""
-"接下来，我们将把飞轮建模为一个连续时间状态空间系统。WPILib的线性系统将在内部将其转换为离散时间。回顾更多关于连续时间和离散时间系统的:ref"
-":`state-space notation <docs/software/advanced-controls/state-space/state-"
-"space-intro:What is State-Space Notation?>` 。"
+"接下来，我们将把飞轮建模为一个连续时间状态空间系统。WPILib的线性系统将在内部将其转换为离散时间。回顾更多关于连续时间和离散时间系统的:ref:`state-"
+"space notation <docs/software/advanced-controls/state-space/state-space-"
+"intro:What is State-Space Notation?>` 。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:47
 msgid "Modeling with System Identification"
@@ -234,9 +224,10 @@ msgid ""
 "Notation Example: Flywheel from kV and kA>`, where we rewrote the following "
 "equation in terms of :math:`\\mathbf{a}`."
 msgstr ""
-"为了使用系统标识将其重写为状态空间符号，我们从  :ref:`state-space notation example <docs/software"
-"/advanced-controls/state-space/state-space-intro:State-space Notation "
-"Example: Flywheel from kV and kA>`示例中进行回顾，其中我们用 :math:`\\mathbf{a}`重写了以下等式。"
+"为了使用系统标识将其重写为状态空间符号，我们从  :ref:`state-space notation example "
+"<docs/software/advanced-controls/state-space/state-space-intro:State-space "
+"Notation Example: Flywheel from kV and kA>`示例中进行回顾，其中我们用 "
+":math:`\\mathbf{a}`重写了以下等式。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:51
 msgid ""
@@ -343,9 +334,9 @@ msgstr "对于WPILib的状态空间类，齿轮传动被写为输入的输出-�
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:101
 msgid ""
-"The C++ LinearSystem class uses :ref:`the C++ Units Library <docs/software"
-"/basic-programming/cpp-units:The C++ Units Library>` to prevent unit mixups "
-"and assert dimensionality."
+"The C++ LinearSystem class uses :ref:`the C++ Units Library "
+"<docs/software/basic-programming/cpp-units:The C++ Units Library>` to "
+"prevent unit mixups and assert dimensionality."
 msgstr ""
 "线性系统类使用 :ref:`the C++ Units Library <docs/software/basic-programming/cpp-"
 "units:The C++ Units Library>`来防止单元混淆和断言维数。"
@@ -385,18 +376,18 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:137
 msgid ""
 "The above graph shows two differently tuned Kalman filters, as well as a "
-":ref:`single-pole IIR filter <docs/software/advanced-controls/filters"
-"/linear-filter:Linear Filters>` and a :ref:`docs/software/advanced-"
-"controls/filters/median-filter:Median Filter`. This data was collected with "
-"a shooter over ~5 seconds, and four balls were run through the shooter (as "
-"seen in the four dips in velocity). While there are no hard rules on "
-"choosing good state and measurement standard deviations, they should in "
-"general be tuned to trust the model enough to reject noise while reacting "
-"quickly to external disturbances."
+":ref:`single-pole IIR filter <docs/software/advanced-"
+"controls/filters/linear-filter:Linear Filters>` and a "
+":ref:`docs/software/advanced-controls/filters/median-filter:Median Filter`. "
+"This data was collected with a shooter over ~5 seconds, and four balls were "
+"run through the shooter (as seen in the four dips in velocity). While there "
+"are no hard rules on choosing good state and measurement standard "
+"deviations, they should in general be tuned to trust the model enough to "
+"reject noise while reacting quickly to external disturbances."
 msgstr ""
 "上图显示了两个不同调谐的卡尔曼滤波器，以及一个:ref:`single-pole IIR filter <docs/software/advanced-"
-"controls/filters/linear-filter:Linear Filters>` 和 一个:ref:`docs/software"
-"/advanced-controls/filters/median-filter:Median "
+"controls/filters/linear-filter:Linear Filters>` 和 "
+"一个:ref:`docs/software/advanced-controls/filters/median-filter:Median "
 "Filter`。用射手在约5秒钟内收集了此数据，并且有四个球穿过射手（从四个速度下降中可以看出）。尽管没有关于选择良好状态和测量标准偏差的硬性规则，但通常应该对其进行调整以使模型具有足够的信任度，从而在对外部干扰做出快速反应的同时抑制噪声。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:139
@@ -414,13 +405,14 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:165
 msgid ""
-"Because Kalman filters use our state-space model in the :ref:`docs/software"
-"/advanced-controls/state-space/state-space-observers:Predict step`, it is "
-"important that our model is as accurate as possible. One way to verify this "
-"is to record a flywheel's input voltage and velocity over time, and replay "
-"this data by calling only ``predict`` on the Kalman filter. Then, the kV and"
-" kA gains (or moment of inertia and other constants) can be adjusted until "
-"the model closely matches the recorded data."
+"Because Kalman filters use our state-space model in the "
+":ref:`docs/software/advanced-controls/state-space/state-space-"
+"observers:Predict step`, it is important that our model is as accurate as "
+"possible. One way to verify this is to record a flywheel's input voltage and"
+" velocity over time, and replay this data by calling only ``predict`` on the"
+" Kalman filter. Then, the kV and kA gains (or moment of inertia and other "
+"constants) can be adjusted until the model closely matches the recorded "
+"data."
 msgstr ""
 "由于卡尔曼滤波器在 :ref:`docs/software/advanced-controls/state-space/state-space-"
 "observers:Predict "
@@ -457,8 +449,8 @@ msgstr ""
 "驱动到:term:`reference`。因为我们的飞轮只有一个状态，所以我们的LQR选择的控制律将采用:math:`\\mathbf{u = K (r"
 " - x)}` "
 "的形式，其中:math:`\\mathbf{K}`是一个1x1矩阵；换句话说，由LQR选择的控制律只是比例控制器，或仅具有P增益的PID控制器。该增益由我们的LQR根据我们通过它的状态偏移和控制努力来选择。更多有关LQR控制器调优的信息可在"
-" :ref:`LQR application example <docs/software/advanced-controls/state-space"
-"/state-space-intro:LQR: example application>`.中找到。"
+" :ref:`LQR application example <docs/software/advanced-controls/state-"
+"space/state-space-intro:LQR: example application>`.中找到。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:174
 msgid ""

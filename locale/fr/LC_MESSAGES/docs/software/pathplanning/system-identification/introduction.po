@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2022
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
 # 
 #, fuzzy
@@ -12,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-04 04:04+0000\n"
+"POT-Creation-Date: 2022-02-07 16:04+0000\n"
 "PO-Revision-Date: 2022-02-01 04:15+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -21,3 +20,184 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:15
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:55
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:64
+msgid ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:17
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the motor, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration (the \"overdot\" notation "
+"traditionally denotes the `derivative "
+"<https://en.wikipedia.org/wiki/Derivative>`__ with respect to time)."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) du moteur, :math:`\\dot{d}` est la vitesse, et :math:`\\ddot{d}` "
+"est son accélération (dans cette notation le \"point\" représente "
+"traditionnellement la `dérivée <https://en.wikipedia.org/wiki/Derivative>`__"
+" par rapport au temps)."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:21
+msgid ""
+"``kS`` is the voltage needed to overcome the motor's static friction, or in "
+"other words to just barely get it moving; it turns out that this static "
+"friction (because it’s, well, static) has the same effect regardless of "
+"velocity or acceleration. That is, no matter what speed you’re going or how "
+"fast you're accelerating, some constant portion of the voltage you've "
+"applied to your motor (depending on the specific mechanism assembly) will be"
+" going towards overcoming the static friction in your gears, bearings, etc; "
+"this value is your kS.  Note the presence of the `signum function "
+"<https://en.wikipedia.org/wiki/Sign_function>`__, because friction force "
+"always opposes the direction-of-motion."
+msgstr ""
+"``kS`` est la tension nécessaire pour surmonter la friction statique du "
+"moteur, ou en d’autres termes pour à peine le faire bouger; il s’avère que "
+"cette friction statique (parce qu’elle est, bel et bien, statique) a le même"
+" effet indépendamment de la vitesse ou de l’accélération. Autrement dit, "
+"quelle que soit votre vitesse de fonctionnement ou avec quelle rapidité vous"
+" accélérez, une partie constante de la tension que vous avez appliquée à "
+"votre moteur (selon l’assemblage du mécanisme spécifique à caractériser) "
+"servira à surmonter la friction statique dans vos engrenages, roulements, "
+"etc; cette valeur est votre kS. Notez la présence de la `fonction signe "
+"<https://fr.wikipedia.org/wiki/Fonction_signe>`__, parce que la force de "
+"friction s’oppose toujours à la direction de mouvement."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:23
+msgid ""
+"``kV`` describes how much voltage is needed to hold (or \"cruise\") at a "
+"given constant velocity while overcoming the `electromagnetic resistance in "
+"the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and"
+" any additional friction that increases with speed (known as `viscous drag "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" The relationship between speed and voltage (at constant acceleration) is "
+"almost entirely linear (with FRC\\ |reg| components, anyway) because of how "
+"permanent-magnet DC motors work."
+msgstr ""
+"``kV`` décrit la quantité de tension nécessaire pour se maintenir (ou "
+"\"croisière\") à une vitesse constante donnée tout en surmontant la "
+"`résistance électromagnétique dans le moteur "
+"<https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ et toute "
+"friction supplémentaire qui augmente avec la vitesse (connu sous le nom de "
+"`traînée visqueuse "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" La relation entre la vitesse et la tension (à une accélération constante) "
+"est presque entièrement linéaire (avec les composants FRC\\ |reg|, de toute "
+"façon) en raison de la manière dont fonctionnent les moteurs DC à aimant "
+"permanent."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:25
+msgid ""
+"``kA`` describes the voltage needed to induce a given acceleration in the "
+"motor shaft. As with ``kV``, the relationship between voltage and "
+"acceleration (at constant velocity) is almost perfectly linear for FRC "
+"components."
+msgstr ""
+"``kA`` décrit la tension nécessaire pour induire une accélération donnée "
+"dans l’arbre moteur. Comme pour ``kV``, la relation entre la tension et "
+"l'accélération (à vitesse constante) est quasiment parfaitement linéaire "
+"pour les composants FRC."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:29
+msgid ""
+"Some of the tools in this toolsuite introduce additional terms into the "
+"above equation to account for known differences from the simple case "
+"described above - details for each tool can be found below:"
+msgstr ""
+"Certains des outils de cette suite logicielle introduisent des termes "
+"supplémentaires dans l’équation ci-dessus pour tenir compte des différences "
+"connues par rapport au cas simple décrit ci-dessus - les détails pour chaque"
+" outil peuvent être trouvés ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:43
+msgid "Simple Motor Setups"
+msgstr "Configurations de simples moteurs "
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:44
+msgid "Drivetrains"
+msgstr "Bases pilotables"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:45
+msgid "Elevators"
+msgstr "Élevateurs"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:46
+msgid "Arms"
+msgstr "Bras"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:57
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the model for a permanent-"
+"magnet dc motor with no loading other than friction and inertia, as "
+"mentioned above, and is an accurate model for flywheels, turrets, and "
+"horizontal linear sliders."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) du variateur, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Il s'agit du modèle pour un moteur à"
+" courant continu à aimant permanent sans charge autre que le frottement et "
+"l'inertie, comme mentionné ci-dessus, et ceci est un modèle précis pour les "
+"volants d'inertie, les tourelles et les curseurs linéaires horizontaux."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:75
+msgid ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:77
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is "
+"added to correctly account for the effect of gravity."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) de l'entraînement, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Le terme constant (:math:`kG`) est "
+"ajouté pour parfaitement tenir compte de l’effet de la gravité."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:89
+msgid "Installing the System Identification Tool"
+msgstr "Installation de l’outil d’identification du système"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:91
+msgid ""
+"The system identification tool (also referred to as ``sysid``) is included "
+"with the WPILib Installer."
+msgstr ""
+"L’outil d’identification du système (également appelé ``sysid``) est inclus "
+"avec le programme d’installation de la WPILib."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:93
+msgid ""
+"The old Python characterization tool from previous years is no longer "
+"supported."
+msgstr ""
+"L’ancien outil de caractérisation programmé en Python des années précédentes"
+" n’est plus pris en charge."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:96
+msgid "Launching the System Identification Tool"
+msgstr "Lancement de l’outil d’identification du système"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:98
+msgid ""
+"The system identification tool can be opened from the ``Start Tool`` option "
+"in VS Code or by using the shortcut inside the WPILib Tools desktop folder "
+"(Windows)."
+msgstr ""
+"L’outil d’identification du système peut être ouvert à partir de l’option "
+"``Start Tool`` dans VS Code ou en utilisant le raccourci à l’intérieur du "
+"dossier de bureau WPILib Tools (Windows)."

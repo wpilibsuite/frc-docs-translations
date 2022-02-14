@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-06 04:04+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2020-11-03 16:30+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -80,6 +80,60 @@ msgstr ""
 "de répondre et ne sera pas accessible via le DS, la page Web ou le SSH. Si "
 "vous arrivez à accéder à votre roboRIO via l’une de ces méthodes, vous "
 "rencontrez probablement un problème différent."
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:19
+msgid "ADIS16448 not reading values in Java"
+msgstr "ADIS16448 ne lit pas les valeurs en Java"
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:21
+msgid ""
+"**Issue:** In WPILib 2022.3.1, using the no-args constructor for the "
+"ADIS16448 IMU in Java results in an divide by zero exception in a separate "
+"thread and no IMU data updates."
+msgstr ""
+"**Problème :** Dans WPILib 2022.3.1, l'utilisation du constructeur sans "
+"argument pour l'IMU ADIS16448 dans Java entraîne une exception de division "
+"par zéro dans un thread séparé et aucune mise à jour des données de l'IMU."
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:23
+msgid ""
+"**Workaround:** Instead of the no-args constructor, use ``new "
+"ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, "
+"ADIS16448_IMU.CalibrationTime._1s);``."
+msgstr ""
+"**Solution :** au lieu du constructeur sans argument, utilisez ``new "
+"ADIS16448_IMU(ADIS16448_IMU.IMUAxis.kZ, SPI.Port.kMXP, "
+"ADIS16448_IMU.CalibrationTime._1s);``."
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:26
+msgid "CAN bus utilization is noisy"
+msgstr "L'utilisation du bus CAN est bruyante"
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:28
+msgid ""
+"**Issue:** CAN bus utilization as reported live by the DS or as shown in the"
+" DS log has significant variation or \"spikes\" in the data. This is due to "
+"the RoboRIO occasionally counting CAN packets in the incorrect time period, "
+"so one period will have a much lower utilization than reality and the next a"
+" much higher utilization than reality."
+msgstr ""
+"**Problème :** L'utilisation du bus CAN, telle que rapportée en direct par "
+"le DS ou indiquée dans le journal DS, présente des variations importantes ou"
+" des \"pics\" dans les données. Cela est dû au fait que le RoboRIO compte "
+"parfois les paquets CAN dans la période incorrecte, de sorte qu'une période "
+"aura une utilisation beaucoup plus faible que la réalité et la suivante une "
+"utilisation beaucoup plus élevée que la réalité."
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:30
+msgid ""
+"**Workaround:** Zoom in on the DS log plot and look for time periods when "
+"the utilization is stable (the spikes will be both above and below this "
+"average). The average utilization is the true utilization."
+msgstr ""
+"**Solution :** effectuez un zoom avant sur le tracé du journal DS et "
+"recherchez les périodes pendant lesquelles l'utilisation est stable (les "
+"pics seront à la fois supérieurs et inférieurs à cette moyenne). "
+"L'utilisation moyenne est l'utilisation réelle."
 
 #: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:33
 msgid "Updating Properties on roboRIO 2.0 may be slow or hang"
@@ -326,6 +380,25 @@ msgstr ""
 "souhaitez afficher sur un tableau de bord, vous pouvez écrire du code sur le"
 " robot pour lire la clé et la réécrire sur une clé comme ``targetXDash``."
 
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:113
+msgid "LabVIEW Autorun graphics say 2020"
+msgstr "Les graphiques LabVIEW Autorun disent 2020"
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rstNone
+msgid "LabVIEW autorun screen showing mismatched versions"
+msgstr ""
+"Écran d'exécution automatique de LabVIEW affichant des versions "
+"incompatibles"
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:118
+msgid ""
+"**Issue:** If you launch the LabVIEW installer by using the Autorun file, "
+"the menu item correctly says 2022, but the graphic says 2020."
+msgstr ""
+"**Problème :** Si vous lancez le programme d'installation de LabVIEW à "
+"l'aide du fichier d'exécution automatique, l'élément de menu indique "
+"correctement 2022, mais le graphique indique 2020."
+
 #: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:120
 msgid ""
 "**Workaround:** This can be safely ignored, if the menu item says 2022, you "
@@ -333,6 +406,10 @@ msgid ""
 msgstr ""
 "**Solution:** Ce problème peut être ignoré sans incidence particulière; si "
 "l’élément de menu indique 2022, c'est que vous installez le bon logiciel."
+
+#: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:124
+msgid "Fixed in Image 2022_v4.0 (Game Tools 2022 f1 and WPILib 2022.3.1)"
+msgstr "Corrigé dans Image 2022_v4.0 (Game Tools 2022 f1 et WPILib 2022.3.1)"
 
 #: ../../frc-docs/source/docs/yearly-overview/known-issues.rst:127
 msgid "Analog Devices Gyros don't work properly"

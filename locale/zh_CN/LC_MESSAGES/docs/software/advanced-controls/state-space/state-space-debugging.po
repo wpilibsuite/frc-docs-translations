@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: 楚涵 张 <zhangchuhan1210@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -44,17 +44,6 @@ msgid ""
 msgstr ""
 "状态空间控制器错误的最常见原因之一是信号被翻转。例如，WPILib中包含的模型期望正电压会导致正加速度，反之亦然。如果施加正电压不能使该机构向前加速，或者如果“向前”移动会使编码器（或其他传感器读数）减小，则应将其反转，以使正电压输入导致编码器读数为正。例如，如果我对差速器传动系统应用：math：`[12，12]"
 " ^ T`（左右电动机的全速前进）的：term：`input`，则我的车轮应将机器人“向前”推进（沿+ X轴局部），并使我的编码器读取正速度。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:10
-msgid ""
-"The WPILib DifferentialDrive by default inverts the right motors. This "
-"behavior can be changed by calling "
-"``setRightSideInverted(false)``/``SetRightSideInverted(false)`` (Java/C++) "
-"on the DifferentialDrive object."
-msgstr ""
-"WPILib "
-"DifferentialDrive默认情况下会反转正确的电动机。可以通过在DifferentialDrive对象上调用``setRightSideInverted(false)``/``SetRightSideInverted(false)``（Java"
-" / C ++）来更改此行为。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:13
 msgid "The Importance of Graphs"
@@ -89,9 +78,9 @@ msgid ""
 "delay on the order of tens of milliseconds can cause instability. To combat "
 "this, the LQR's K gain can be reduced, trading off performance for "
 "stability. A code example for how to compensate for this latency in a "
-"mathematically rigorous manner is available :ref:`here <docs/software"
-"/advanced-controls/state-space/state-space-intro:LQR and Measurement Latency"
-" Compensation>`."
+"mathematically rigorous manner is available :ref:`here "
+"<docs/software/advanced-controls/state-space/state-space-intro:LQR and "
+"Measurement Latency Compensation>`."
 msgstr ""
 "通常，某些传感器输入数据（即速度读数）可能会由于智能电机控制器倾向于执行的车载过滤而被延迟。默认情况下，LQR的K增益不假定输入延迟，因此引入数十毫秒量级的显着延迟可能会导致不稳定。为了解决这个问题，可以降低LQR的K增益，以牺牲性能为代价。有关如何以数学上严格的方式补偿此延迟的代码示例，请参见"
 " :ref:`here <docs/software/advanced-controls/state-space/state-space-"

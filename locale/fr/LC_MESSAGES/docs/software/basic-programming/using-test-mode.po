@@ -6,15 +6,16 @@
 # Translators:
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
 # Austin Shalit <austinshalit@gmail.com>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 16:04+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2022-01-24 04:14+0000\n"
-"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2022\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,6 +27,17 @@ msgstr ""
 msgid "Using Test Mode"
 msgstr "Utilisation du Mode Test"
 
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:4
+msgid ""
+"Test mode is designed to enable programmers to have a place to put code to "
+"verify that all systems on the robot are functioning. In each of the robot "
+"program templates there is a place to add test code to the robot."
+msgstr ""
+"Le mode test est conçu pour permettre aux programmeurs d'avoir un endroit où"
+" mettre du code pour vérifier que tous les systèmes du robot fonctionnent. "
+"Dans chacun des modèles de programme de robot, il y a un endroit pour "
+"ajouter du code de test au robot."
+
 #: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:7
 msgid "Enabling Test Mode"
 msgstr "Activation du Mode Test"
@@ -34,6 +46,73 @@ msgstr "Activation du Mode Test"
 msgid "Selecting the \"Test\" button on the Driver Station and then \"Enable\"."
 msgstr "En sélectionnant le bouton \"Test\" sur Driver Station, puis \"Enable\"."
 
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:12
+msgid ""
+"Test mode on the robot can be enabled from the Driver Station just like "
+"autonomous or teleop. To enable test mode in the Driver Station, select the "
+"\"Test\" button and enable the robot. The test mode code will then run."
+msgstr ""
+"Le mode test est conçu pour permettre aux programmeurs d'avoir un endroit où"
+" mettre du code pour vérifier que tous les systèmes du robot fonctionnent. "
+"Dans chacun des modèles de programme de robot, il y a un endroit pour "
+"ajouter du code de test au robot."
+
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:15
+msgid "LiveWindow in Test Mode"
+msgstr "LiveWindow en mode test"
+
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:17
+msgid ""
+"With LiveWindow, all actuator's outputs can be controlled on the Dashboard "
+"and all sensor values can be seen. PID Controllers can also be tuned. The "
+"sensors and actuators are added automatically, no code is necessary. See "
+":doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-"
+"window/index` for more details."
+msgstr ""
+"Avec LiveWindow, toutes les sorties de l'actionneur peuvent être contrôlées "
+"sur le tableau de bord et toutes les valeurs des capteurs peuvent être vues."
+" Les contrôleurs PID peuvent également être réglés. Les capteurs et "
+"actionneurs sont ajoutés automatiquement, aucun code n'est nécessaire. Voir "
+":doc:`/docs/software/dashboards/smartdashboard/test-mode-and-live-"
+"window/index` pour plus de détails."
+
 #: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:20
 msgid "Adding Test mode code to your robot code"
 msgstr "Ajout du code du Mode Test à votre code robot"
+
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:22
+msgid ""
+"When in test mode, the ``testInit`` method is run once, and the testPeriodic"
+" method is run once per tick, in addition to ``robotPeriodic``, similar to "
+"teleop and autonomous control modes."
+msgstr ""
+"En mode test, la méthode ``testInit`` est exécutée une fois, et la méthode "
+"testPeriodic est exécutée une fois par tick, en plus de ``robotPeriodic``, "
+"similaire aux modes de contrôle téléop et autonome."
+
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:24
+msgid ""
+"Adding test mode can be as painless as calling your already written Teleop "
+"methods from Test. Or you can write special code to try out a new feature "
+"that is only run in Test mode, before integrating it into your teleop or "
+"autonomous code. You could even write code to move all motors and check all "
+"sensors to help the pit crew!"
+msgstr ""
+"L'ajout du mode test peut être aussi simple que d'appeler vos méthodes "
+"Teleop déjà écrites à partir de Test. Ou vous pouvez écrire un code spécial "
+"pour essayer une nouvelle fonctionnalité qui ne s'exécute qu'en mode test, "
+"avant de l'intégrer dans votre code téléop ou autonome. Vous pouvez même "
+"écrire du code pour déplacer tous les moteurs et vérifier tous les capteurs "
+"pour aider l'équipe du stand !"
+
+#: ../../frc-docs/source/docs/software/basic-programming/using-test-mode.rst:26
+msgid ""
+"If you write your own test code, it may interfere with the LiveWindow code "
+"that can control actuators and is enabled automatically. You may need to "
+"call ``LiveWindow.setEnabled(false)`` in your testInit method to avoid this."
+msgstr ""
+"Si vous écrivez votre propre code de test, il peut interférer avec le code "
+"LiveWindow qui peut contrôler les actionneurs et qui est activé "
+"automatiquement. Vous devrez peut-être appeler "
+"``LiveWindow.setEnabled(false)`` dans votre méthode testInit pour éviter "
+"cela."

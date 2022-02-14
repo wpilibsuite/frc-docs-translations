@@ -5,15 +5,16 @@
 # 
 # Translators:
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-07 16:04+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2022-02-01 04:15+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -25,21 +26,242 @@ msgstr ""
 msgid "Viewing Diagnostics"
 msgstr "Affichage des diagnostics"
 
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:5
+msgid "Goodness-of-Fit Metrics"
+msgstr "Mesures de qualité d'ajustement"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:7
+msgid ""
+"There are three numerical accuracy metrics that are computed with this tool:"
+" acceleration r-squared, simulated velocity r-squared, and standard "
+"deviation of the simulated velocity error."
+msgstr ""
+"Trois métriques de précision numérique sont calculées avec cet outil : "
+"l'accélération r au carré, la vitesse simulée au carré r et l'écart type de "
+"l'erreur de vitesse simulée."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
+msgid "Analysis accuracy metrics"
+msgstr "Mesures de la précision de l’analyse"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:12
+msgid ""
+"The `r-squared "
+"<https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ metric "
+"refers to the goodness of fit of the tool's `OLS (Ordinary Least Squares) "
+"fit <https://en.wikipedia.org/wiki/Ordinary_least_squares>`__.  The `RMSE "
+"(Root Mean Squared Error) <https://en.wikipedia.org/wiki/Root-mean-"
+"square_deviation>`__ is the error (in the measured units) between the "
+"collected velocities and the predicted velocities from a simulation based on"
+" the feedforward gains."
+msgstr ""
+"La métrique `r-squared "
+"<https://en.wikipedia.org/wiki/Coefficient_of_determination>`__ fait "
+"référence à la qualité de l'ajustement de l'outil `OLS (Ordinary Least "
+"Squares) fit <https://en.wikipedia.org /wiki/Ordinary_least_squares>`__. Le "
+"`RMSE (Root Mean Squared Error) <https://en.wikipedia.org/wiki/Root-mean-"
+"square_deviation>`__ est l'erreur (dans les unités mesurées) entre les "
+"vitesses collectées et les vitesses prédites à partir d'une simulation sur "
+"la base des gains anticipés."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:14
+msgid ""
+"The acceleration r-squared is the fraction of the variance in measured "
+"acceleration (used as the independent variable in the SysId regression) "
+"explained by the linear model.  This can be quite variable variable, because"
+" acceleration is very susceptible to system noise.  Assuming the other fit "
+"metrics are acceptable, values near ``1`` indicate an \"ideal\" mechanism "
+"with few disturbances, while values near ``0`` indicate a noisy mechanism "
+"with substantial physical vibrations/losses."
+msgstr ""
+"L'accélération r au carré est la fraction de la variance de l'accélération "
+"mesurée (utilisée comme variable indépendante dans la régression SysId) "
+"expliquée par le modèle linéaire. Cela peut être assez variable, car "
+"l'accélération est très sensible au bruit du système. En supposant que les "
+"autres mesures d'ajustement sont acceptables, les valeurs proches de ``1`` "
+"indiquent un mécanisme \"idéal\" avec peu de perturbations, tandis que les "
+"valeurs proches de ``0`` indiquent un mécanisme bruyant avec des "
+"vibrations/pertes physiques substantielles."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:16
+msgid ""
+"The simulated velocity r-squared is the fraction of the variance in measured"
+" velocity explained by a noiseless simulation of the motor movement stepped "
+"forward with the constants determined from the regression.  A value north of"
+" ``.9`` indicates a good fit."
+msgstr ""
+"La vitesse simulée r au carré est la fraction de la variance de la vitesse "
+"mesurée expliquée par une simulation sans bruit du mouvement du moteur "
+"avancé avec les constantes déterminées à partir de la régression. Une valeur"
+" au nord de ``.9`` indique un bon ajustement."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:18
+msgid ""
+"The simulated velocity RMSE is the standard deviation of the velocity error "
+"from the simulated model.  This is a good estimation of the amount of "
+"process noise present during the test routine, and can be used as a low-end "
+"estimate for the model noise term in :ref:`state-space control "
+"<docs/software/advanced-controls/state-space/state-space-intro:Introduction "
+"to State-Space Control>`."
+msgstr ""
+"La vitesse simulée RMSE est l'écart type de l'erreur de vitesse du modèle "
+"simulé. Il s'agit d'une bonne estimation de la quantité de bruit de "
+"processus présent pendant la routine de test, et peut être utilisée comme "
+"estimation basse pour le terme de bruit du modèle dans :ref:`state-space "
+"control <docs/software/advanced-controls/ state-space/state-space-"
+"intro:Introduction au contrôle de l'espace d'état>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:21
+msgid "Diagnostic Plots"
+msgstr "Parcelles diagnostiques"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:23
+msgid ""
+"SysId also produces several diagnostic plots to help users evaluate the "
+"quality of their model fit."
+msgstr ""
+"SysId produit également plusieurs diagrammes de diagnostic pour aider les "
+"utilisateurs à évaluer la qualité de l'ajustement de leur modèle."
+
 #: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
 msgid "Diagnostic plot location"
 msgstr "Emplacement de la courbe de diagnostic"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:29
+msgid "Time-Domain Plots"
+msgstr "Tracés temporels"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:31
+msgid ""
+"To improve plot quality, the diagnostic plots are separated by direction.  "
+"Be sure to view both the forward *and* backward plots when troubleshooting!"
+msgstr ""
+"Pour améliorer la qualité des tracés, les tracés de diagnostic sont séparés "
+"par direction. Assurez-vous de visualiser à la fois les tracés avant * et * "
+"arrière lors du dépannage !"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:33
+msgid ""
+"The Time-Domain Diagnostics plots display velocity versus time over the "
+"course of the analyzed tests. These should look something like this:"
+msgstr ""
+"Les diagrammes de diagnostic dans le domaine temporel affichent la vitesse "
+"en fonction du temps au cours des tests analysés. Ceux-ci devraient "
+"ressembler à ceci :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
+msgid "Picture of the time domain plots"
+msgstr "Image des tracés dans le domaine temporel"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:38
+msgid ""
+"The velocity time domain plots contain three sets of data: Raw Data, "
+"Filtered Data, and Simulation. The Raw Data is the recorded data from your "
+"robot, the Filtered Data is the data after a median filter has been applied "
+"to the data, and the Simulation represents the velocity predictions of a "
+"model based off of the feedforward gains from the tool (these are used to "
+"calculate the \"sim\" error metrics mentioned above)."
+msgstr ""
+"Les tracés du domaine temporel de vitesse contiennent trois ensembles de "
+"données : données brutes, données filtrées et simulation. Les données brutes"
+" sont les données enregistrées de votre robot, les données filtrées sont les"
+" données après qu'un filtre médian a été appliqué aux données, et la "
+"simulation représente les prédictions de vitesse d'un modèle basées sur les "
+"gains anticipés de l'outil (ce sont utilisé pour calculer les métriques "
+"d'erreur \"sim\" mentionnées ci-dessus)."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:40
+msgid ""
+"A successful quasistatic graph will be very nearly linear, while a "
+"successful dynamic graph will be an approximately exponential approach of "
+"the steady-speed."
+msgstr ""
+"Un graphe quasistatique réussi sera presque linéaire, tandis qu'un graphe "
+"dynamique réussi sera une approche approximativement exponentielle de la "
+"vitesse constante."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:42
+msgid ""
+"Deviation from this behavior is a sign of an :ref:`error "
+"<docs/software/pathplanning/system-identification/viewing-diagnostics:Common"
+" Failure Modes>`, either in your robot setup, analysis settings, or your "
+"test procedure."
+msgstr ""
+"Un écart par rapport à ce comportement est le signe d'une :ref:`erreur "
+"<docs/software/pathplanning/system-identification/viewing-diagnostics:Common"
+" Failure Modes>`, soit dans la configuration de votre robot, les paramètres "
+"d'analyse ou votre procédure de test."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:45
+msgid "Acceleration-Velocity Plot"
+msgstr "Graphique Accélération-Vitesse"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:47
+msgid ""
+"The acceleration-versus-velocity plot displays the mechanism velocity versus"
+" the portion of acceleration corresponding to factors other than friction "
+"(ideally, this would leave only back-EMF) and applied voltage across *all* "
+"of the tests."
+msgstr ""
+"Le tracé de l'accélération par rapport à la vitesse affiche la vitesse du "
+"mécanisme par rapport à la partie de l'accélération correspondant à des "
+"facteurs autres que le frottement (idéalement, cela ne laisserait que la "
+"force contre-électromotrice) et la tension appliquée sur * tous * les tests."
 
 #: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
 msgid "Voltage domain plots picture"
 msgstr "Image des tracés dans le domaine de tension"
 
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:52
+msgid ""
+"This plot should be quite linear, with patches of relatively noiseless "
+"quasistatic data intermixed with quite-noisy dynamic data. The noise on the "
+"dynamic sections of the plot may be reduced by increasing the "
+":guilabel:`Window Size` setting."
+msgstr ""
+"Ce tracé devrait être assez linéaire, avec des patchs de données quasi-"
+"statiques relativement silencieuses mélangées à des données dynamiques assez"
+" bruyantes. Le bruit sur les sections dynamiques du tracé peut être réduit "
+"en augmentant le paramètre :guilabel:`Taille de la fenêtre`."
+
 #: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
 msgid "Picture of the window size selector"
 msgstr "Image du sélecteur de taille de fenêtre"
 
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:57
+msgid ""
+"However, if your robot or mechanism has low mass compared to the motor "
+"power, this may \"eat\" what little meaningful acceleration data you have.  "
+"In these cases ``kA`` will tend towards zero and can be ignored for "
+"feedforward purposes.  However, if ``kA`` cannot be accurately measured, the"
+" calculated feedback gains are likely to be inaccurate, and manual tuning "
+"may be required."
+msgstr ""
+"Cependant, si votre robot ou mécanisme a une masse faible par rapport à la "
+"puissance du moteur, cela peut \"entamer\" le peu de données d'accélération "
+"significatives dont vous disposez. Dans ces cas, ``kA`` tendra vers zéro et "
+"peut être ignoré à des fins d'anticipation. Cependant, si ``kA`` ne peut pas"
+" être mesuré avec précision, les gains de rétroaction calculés sont "
+"susceptibles d'être inexacts et un réglage manuel peut être nécessaire."
+
 #: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:60
 msgid "Common Failure Modes"
 msgstr "Modes de défaillances courantes"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:62
+msgid ""
+"When something has gone wrong with the identification, diagnostic plots and "
+"console output provide crucial clues as to *what* has gone wrong.  This "
+"section describes some common failures encountered while running the system "
+"identification tool, the identifying features of their diagnostic plots, and"
+" the steps that can be taken to fix them."
+msgstr ""
+"Lorsque quelque chose s'est mal passé avec l'identification, les tracés de "
+"diagnostic et la sortie de la console fournissent des indices cruciaux sur *"
+" ce qui * s'est mal passé. Cette section décrit certains échecs courants "
+"rencontrés lors de l'exécution de l'outil d'identification du système, les "
+"caractéristiques d'identification de leurs tracés de diagnostic et les "
+"étapes qui peuvent être prises pour les résoudre."
 
 #: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:65
 msgid "Improperly Set Motion Threshold"
@@ -57,6 +279,123 @@ msgstr ""
 msgid "Motion threshold selector"
 msgstr "Sélecteur de seuil de mouvement"
 
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:73
+msgid "Velocity Threshold Too Low"
+msgstr "Seuil de vitesse trop bas"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
+msgid "Quasistatic time-domain plot with velocity threshold too low"
+msgstr ""
+"Tracé quasi statique dans le domaine temporel avec un seuil de vitesse trop "
+"bas"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:78
+msgid ""
+"The presence of a \"leading tail\" (emphasized by added red circle) in the "
+"quasistatic time-domain plot indicates that the :guilabel:`Velocity "
+"Threshold` setting is too low, and thus data points from before the robot "
+"begins to move are being included."
+msgstr ""
+"La présence d'une \"queue avant\" (accentuée par un cercle rouge ajouté) "
+"dans le tracé quasistatique du domaine temporel indique que le "
+"paramètre :guilabel:`Velocity Threshold` est trop bas, et donc les points de"
+" données avant que le robot ne commence à se déplacer sont en train d'être "
+"inclus."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:80
+msgid ""
+"To solve this, increase the velocity threshold and re-analyze the data."
+msgstr ""
+"Pour résoudre ce problème, augmentez le seuil de vitesse et réanalysez les "
+"données."
+
 #: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:83
 msgid "Motion Threshold Too High"
 msgstr "Seuil de mouvement trop élevé"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rstNone
+msgid "Quasistatic time-domain plot with velocity threshold too high"
+msgstr ""
+"Tracé quasi statique dans le domaine temporel avec un seuil de vitesse trop "
+"élevé"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:88
+msgid ""
+"While not nearly as problematic as a too-low threshold, a velocity threshold"
+" that is too high will result in a large \"gap\" in the acceleration-versus-"
+"velocity plot."
+msgstr ""
+"Bien qu'il ne soit pas aussi problématique qu'un seuil trop bas, un seuil de"
+" vitesse trop élevé entraînera un grand \"écart\" dans le tracé de "
+"l'accélération par rapport à la vitesse."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:90
+msgid ""
+"To solve this, decrease the velocity threshold and re-analyze the data."
+msgstr ""
+"Pour résoudre ce problème, diminuez le seuil de vitesse et réanalysez les "
+"données."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:93
+msgid "Noisy Velocity Signals"
+msgstr "Signaux de vitesse bruyants"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:95
+msgid ""
+"There are two types of noise that affect mechanical systems - signal noise "
+"and system noise.  Signal noise corresponds to measurement error, while "
+"system noise corresponds to actual physical motion that is unaccounted-for "
+"by your model (e.g. vibration).  If SysId suggests that your system is "
+"noisy, you must figure out which of the two types of noise is at play - "
+"signal noise is often easier to eliminate than system noise."
+msgstr ""
+"Il existe deux types de bruit qui affectent les systèmes mécaniques : le "
+"bruit du signal et le bruit du système. Le bruit du signal correspond à une "
+"erreur de mesure, tandis que le bruit du système correspond à un mouvement "
+"physique réel qui n'est pas pris en compte par votre modèle (par exemple, "
+"des vibrations). Si SysId suggère que votre système est bruyant, vous devez "
+"déterminer lequel des deux types de bruit est en jeu - le bruit du signal "
+"est souvent plus facile à éliminer que le bruit du système."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:99
+msgid ""
+"Many FRC setups suffer from poorly-installed encoders - errors in shaft "
+"concentricity (for optical encoders) and magnet location (For magnetic "
+"encoders) can both contribute to noisy velocity signals, as can "
+"inappropriate filtering settings.  Encoder noise will be immediately visible"
+" in your diagnostic plots, as can be seen above.  Encoder noise is "
+"especially common on the `toughbox mini "
+"<https://www.andymark.com/products/toughbox-mini-options>`__ gearboxes "
+"provided in the kit of parts."
+msgstr ""
+"De nombreuses configurations FRC souffrent d'encodeurs mal installés - des "
+"erreurs de concentricité de l'arbre (pour les encodeurs optiques) et "
+"d'emplacement de l'aimant (pour les encodeurs magnétiques) peuvent toutes "
+"deux contribuer à des signaux de vitesse bruyants, tout comme des paramètres"
+" de filtrage inappropriés. Le bruit de l'encodeur sera immédiatement visible"
+" dans vos tracés de diagnostic, comme on peut le voir ci-dessus. Le bruit de"
+" l'encodeur est particulièrement courant sur les boîtes de vitesses "
+"`toughbox mini <https://www.andymark.com/products/toughbox-mini-options>`__ "
+"fournies dans le kit de pièces."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/viewing-diagnostics.rst:101
+msgid ""
+"System parameters can sometimes be accurately determined even from data "
+"polluted by encoder noise by increasing the window size setting.  However, "
+"this sort of encoder noise is problematic for robot code much the same way "
+"it is problematic for the system identification tool.  As the root cause of "
+"the noise is not known, it is recommended to try a different encoder setup "
+"if this is observed, either by moving the encoders to a different shaft, "
+"replacing them with a different type of encoder, or increasing the sample "
+"per average in project generation (adds an additional layer of filtering)."
+msgstr ""
+"Les paramètres système peuvent parfois être déterminés avec précision même à"
+" partir de données polluées par le bruit du codeur en augmentant le "
+"paramètre de taille de fenêtre. Cependant, ce type de bruit d'encodeur est "
+"problématique pour le code du robot de la même manière qu'il l'est pour "
+"l'outil d'identification du système. Comme la cause profonde du bruit n'est "
+"pas connue, il est recommandé d'essayer une configuration d'encodeur "
+"différente si cela est observé, soit en déplaçant les encodeurs sur un arbre"
+" différent, en les remplaçant par un type d'encodeur différent, ou en "
+"augmentant l'échantillon par moyenne dans la génération de projet (ajoute "
+"une couche supplémentaire de filtrage)."

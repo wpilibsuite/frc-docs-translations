@@ -5,20 +5,236 @@
 # 
 # Translators:
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
-# Andre Theberge <atheberge2@videotron.ca>, 2022
 # Austin Shalit <austinshalit@gmail.com>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-08 04:03+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2022-02-08 04:10+0000\n"
-"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2022\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:2
+msgid "Setting Robot Preferences"
+msgstr "Définition des préférences du robot"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:4
+msgid ""
+"The Robot Preferences (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Preferences.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_preferences.html>`__)"
+" class is used to store values in the flash memory on the roboRIO. The "
+"values might be for remembering preferences on the robot such as calibration"
+" settings for potentiometers, PID values, setpoints, etc. that you would "
+"like to change without having to rebuild the program. The values can be "
+"viewed on SmartDashboard or Shuffleboard and read and written by the robot "
+"program."
+msgstr ""
+"La classe Robot Preferences (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Preferences.html>`__,"
+" `C++ <https://first  "
+".wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_preferences.html>`__)"
+" est utilisée pour stocker des valeurs dans la mémoire flash du roboRIO. Les"
+" valeurs peuvent servir à mémoriser les préférences sur le robot telles que "
+"les paramètres d'étalonnage des potentiomètres, les valeurs PID, les points "
+"de consigne, etc. que vous souhaitez modifier sans avoir à reconstruire le "
+"programme. Les valeurs peuvent être visualisées sur SmartDashboard ou "
+"Shuffleboard et lues et écrites par le programme du robot."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:6
+msgid ""
+"This example shows how to utilize Preferences to change the setpoint of a "
+"PID controller and the P constant. The code examples are adapted from the "
+"Arm Simulation example (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp>`__)."
+" You can run the Arm Simulation example in the Robot Simulator to see how to"
+" use the preference class and interact with it using the dashboards without "
+"needing a robot."
+msgstr ""
+"Cet exemple montre comment utiliser les Préférences pour modifier le point "
+"de consigne d'un régulateur PID et la constante P. Les exemples de code sont"
+" adaptés de l'exemple Arm Simulation (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/"
+" Robot.java>`__, `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp>`__)."
+" Vous pouvez exécuter l'exemple de simulation de bras dans le simulateur de "
+"robot pour voir comment utiliser la classe de préférences et interagir avec "
+"elle à l'aide des tableaux de bord sans avoir besoin d'un robot."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:10
+msgid "Initializing Preferences"
+msgstr "Initialisation des préférences"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:14
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:37
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:55
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:20
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:43
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:61
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:26
+msgid ""
+"Preferences are stored using a name, the key. It's helpful to store the key "
+"in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above "
+"to avoid typing it multiple times and avoid typos. We also declare "
+"variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from"
+" preferences."
+msgstr ""
+"Les préférences sont stockées sous un nom, la clé. Il est utile de stocker "
+"la clé dans une constante, comme ``kArmPositionKey`` et ``kArmPKey`` dans le"
+" code ci-dessus pour éviter de la taper plusieurs fois et d'éviter les "
+"fautes de frappe. Nous déclarons également des variables, ``kArmKp`` et "
+"``armPositionDeg`` pour contenir les données récupérées à partir des "
+"préférences."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:28
+msgid ""
+"In ``robotInit``, each key is checked to see if it already exists in the "
+"Preferences database. The ``containsKey`` method takes one parameter, the "
+"key to check if data for that key already exists in the preferences "
+"database. If it doesn't exist, a default value is written. The ``setDouble``"
+" method takes two parameters, the key to write and the data to write. There "
+"are similar methods for other data types like booleans, ints, and strings."
+msgstr ""
+"Dans ``robotInit``, chaque clé est vérifiée pour voir si elle existe déjà "
+"dans la base de données des Préférences. La méthode ``containsKey`` prend un"
+" paramètre, la clé pour vérifier si les données pour cette clé existent déjà"
+" dans la base de données des préférences. S'il n'existe pas, une valeur par "
+"défaut est écrite. La méthode ``setDouble`` prend deux paramètres, la clé à "
+"écrire et les données à écrire. Il existe des méthodes similaires pour "
+"d'autres types de données comme les booléens, les entiers et les chaînes."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:30
+msgid ""
+"If using the Command Framework, this type of code could be placed in the "
+"constructor of a Subsystem or Command."
+msgstr ""
+"Si vous utilisez Command Framework, ce type de code peut être placé dans le "
+"constructeur d'un sous-système ou d'une commande."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:33
+msgid "Reading Preferences"
+msgstr "Préférences de lecture"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:49
+msgid ""
+"Reading a preference is easy. The ``GetDouble`` method takes two parameters,"
+" the key to read, and a default value to use in case the preference doesn't "
+"exist. There are similar methods for other data types like booleans, ints, "
+"and strings."
+msgstr ""
+"Lire une préférence est facile. La méthode ``GetDouble`` prend deux "
+"paramètres, la clé à lire et une valeur par défaut à utiliser au cas où la "
+"préférence n'existerait pas. Il existe des méthodes similaires pour d'autres"
+" types de données comme les booléens, les entiers et les chaînes de "
+"caractères."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:51
+msgid ""
+"Depending on the data that is stored in preferences, you can use it when you"
+" read it, such as the proportional constant above. Or you can store it in a "
+"variable and use it later, such as the setpoint, which is used in "
+"``telopPeriodic`` below."
+msgstr ""
+"Selon les données stockées dans les préférences, vous pouvez les utiliser "
+"lorsque vous les lisez, comme la constante proportionnelle ci-dessus. Ou "
+"vous pouvez le stocker dans une variable et l'utiliser plus tard, comme le "
+"point de consigne, qui est utilisé dans ``telopPeriodic`` ci-dessous."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:68
+msgid "Using Preferences in SmartDashboard"
+msgstr "Utilisation des préférences dans SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:71
+msgid "Displaying Preferences in SmartDashboard"
+msgstr "Affichage des préférences dans SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rstNone
+msgid "Adding preferences from the Smartdashboard menu"
+msgstr "Ajout de préférences depuis le menu Smartdashboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:76
+msgid ""
+"In the SmartDashboard, the Preferences display can be added to the display "
+"by selecting :guilabel:`View` then :guilabel:`Add...` then :guilabel:`Robot "
+"Preferences`. This reveals the contents of the preferences file stored in "
+"the roboRIO flash memory."
+msgstr ""
+"Dans le SmartDashboard, l'affichage des Préférences peut être ajouté à "
+"l'affichage en sélectionnant :guilabel:`View` puis :guilabel:`Add...` puis "
+":guilabel:`Robot Preferences`. Cela révèle le contenu du fichier de "
+"préférences stocké dans la mémoire flash du roboRIO."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:79
+msgid "Editing Preferences in SmartDashboard"
+msgstr "Modification des préférences dans SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rstNone
+msgid "Editing the robot preferences via the SmartDashboard widget."
+msgstr "Modification des préférences du robot via le widget SmartDashboard."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:84
+msgid ""
+"The values are shown here with the default values from the code. If the "
+"values need to be adjusted they can be edited here and saved."
+msgstr ""
+"Les valeurs sont affichées ici avec les valeurs par défaut du code. Si les "
+"valeurs doivent être ajustées, elles peuvent être modifiées ici et "
+"enregistrées."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:87
+msgid "Using Preferences in Shuffleboard"
+msgstr "Utilisation des préférences dans Shuffleboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:90
+msgid "Displaying Preferences in Shuffleboard"
+msgstr "Affichage des préférences dans Shuffleboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rstNone
+msgid "Adding preferences from the sources window in Shuffleboard"
+msgstr ""
+"Ajout de préférences à partir de la fenêtre des sources dans Shuffleboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:95
+msgid ""
+"In Shuffleboard, the Preferences display can be added to the display by "
+"dragging the preferences field from the sources window. This reveals the "
+"contents of the preferences file stored in the roboRIO flash memory."
+msgstr ""
+"Dans Shuffleboard, l'affichage des Préférences peut être ajouté à "
+"l'affichage en faisant glisser le champ des préférences depuis la fenêtre "
+"des sources. Cela révèle le contenu du fichier de préférences stocké dans la"
+" mémoire flash du roboRIO."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:98
+msgid "Editing Preferences in Shuffleboard"
+msgstr "Modification des préférences dans Shuffleboard"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rstNone
+msgid "Editing the robot preferences via the Shuffleboard widget."
+msgstr "Modification des préférences du robot via le widget Shuffleboard."
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:103
+msgid ""
+"The values are shown here with the default values from the code. If the "
+"values need to be adjusted they can be edited here."
+msgstr ""
+"Les valeurs sont affichées ici avec les valeurs par défaut du code. Si les "
+"valeurs doivent être ajustées, elles peuvent être modifiées ici."

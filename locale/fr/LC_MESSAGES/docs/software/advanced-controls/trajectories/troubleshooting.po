@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # Austin Shalit <austinshalit@gmail.com>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-01 04:07+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2021\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -278,6 +278,39 @@ msgstr ""
 "le long de l'axe Y et recommencez, en poussant votre robot d'un mètre le "
 "long de l'axe X et d'un mètre le long de l'axe Y en arc de cercle."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:98
+msgid ""
+"Compare X and Y reported by the robot to actual X and Y. If X is off by more"
+" than 5 centimeters in the first test then you should check that you "
+"measured your wheel diameter correctly, and that your wheels are not worn "
+"down. If the second test is off by more than 5 centimeters in either X or Y "
+"then your track width (distance from the center of the left wheel to the "
+"center of the right wheel) may be incorrect; if you're sure that you "
+"measured the track width correctly with a tape measure then your robot's "
+"wheels may be slipping in a way that is not accounted for by track width--if"
+" this is the case then you should :ref:`run the track width identification "
+"<docs/software/pathplanning/system-identification/identification-"
+"routine:Running Tests>` and use that track width instead of the one from "
+"your tape measure."
+msgstr ""
+"Comparez X et Y signalés par le robot à X et Y réels. Si X est décalé de "
+"plus de 5 centimètres lors du premier test, vous devez vérifier que vous "
+"avez correctement mesuré le diamètre de votre roue et que vos roues ne sont "
+"pas usées. Si le deuxième test est décalé de plus de 5 centimètres en X ou "
+"en Y, la largeur de votre piste (distance entre le centre de la roue gauche "
+"et le centre de la roue droite) peut être incorrecte ; si vous êtes sûr "
+"d'avoir correctement mesuré la largeur de la piste avec un ruban à mesurer, "
+"les roues de votre robot peuvent glisser d'une manière qui n'est pas prise "
+"en compte par la largeur de la piste - si tel est le cas, vous devez "
+":ref:`exécuter le identification de la largeur de piste "
+"<docs/software/pathplanning/system-identification/identification-"
+"routine:Running Tests>` et utilisez cette largeur de piste au lieu de celle "
+"de votre ruban à mesurer."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rstNone
+msgid "Highlights the trackwidth section of identification."
+msgstr "Met en surbrillance la section largeur de piste de l'identification."
+
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:104
 msgid "Verify Feedforward"
 msgstr "Vérifier la fonction Feedforward"
@@ -345,6 +378,21 @@ msgstr ""
 "Exécutez le robot sur une variété de trajectoires (courbe et ligne droite) "
 "et vérifiez si la vitesse réelle suit la vitesse souhaitée en regardant les "
 "graphiques de NetworkTables."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:230
+msgid ""
+"If the desired and actual are off by *a lot* then you should check if the "
+"wheel diameter and ``encoderEPR`` you used for system identification were "
+"correct. If you've verified that your units and conversions are correct, "
+"then you should try recharacterizing on the same floor that you're testing "
+"on to see if you can get better data."
+msgstr ""
+"Si les valeurs souhaitées et réelles sont *beaucoup* différentes, vous devez"
+" vérifier si le diamètre de la roue et l'``encoderEPR`` que vous avez "
+"utilisés pour l'identification du système étaient corrects. Si vous avez "
+"vérifié que vos unités et vos conversions sont correctes, vous devriez "
+"essayer de requalifier au même étage que celui sur lequel vous testez pour "
+"voir si vous pouvez obtenir de meilleures données."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:233
 msgid "Verify P Gain"
@@ -443,6 +491,14 @@ msgid ""
 msgstr ""
 "Si votre robot accélère très lentement, il est possible que la tension "
 "maximale (voltage) pour cette contrainte soit trop faible."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:251
+msgid ""
+"If your robot doesn't reach the end of the path then your system "
+"identification data may problematic."
+msgstr ""
+"Si votre robot n'atteint pas la fin du chemin, les données d'identification "
+"de votre système peuvent être problématiques."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:253
 msgid "``DifferentialDriveKinematicsConstraint``:"

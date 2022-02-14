@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-03 16:03+0000\n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,6 +82,10 @@ msgstr ""
 "contrôleurs de rétroaction plus simples. Nous couvrirons plusieurs exemples "
 "ci-dessous."
 
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:13
+msgid "The WPILib Feedforward Classes"
+msgstr "Les classes FeedForward WPILib"
+
 #: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:15
 msgid ""
 "WPILib provides a number of classes to help users implement accurate "
@@ -98,6 +102,32 @@ msgstr ""
 "|reg| obéissent étroitement aux équations bien comprises du système, en "
 "commençant par un feedforward précis est à la fois facile et extrêmement "
 "bénéfique pour le contrôle précis et robuste du mécanisme"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:17
+msgid ""
+"The WPILib feedforward classes closely match the available mechanism "
+"characterization tools available in the :ref:`SysId toolsuite "
+"<docs/software/pathplanning/system-identification/introduction:Introduction "
+"to System Identification>`.  The system identification toolsuite can be used"
+" to quickly and effectively determine the correct gains for each type of "
+"feedforward.  If you are unable to empirically characterize your mechanism "
+"(due to space and/or time constraints), reasonable estimates of ``kG``, "
+"``kV``, and ``kA`` can be obtained by fairly simple computation, and are "
+"also available from `ReCalc <https://www.reca.lc/>`__.  ``kS`` is nearly "
+"impossible to model, and must be measured empirically."
+msgstr ""
+"Les classes d'anticipation WPILib correspondent étroitement aux outils de "
+"caractérisation des mécanismes disponibles dans la suite d'outils "
+":ref:`SysId <docs/software/pathplanning/system-"
+"identification/introduction:Introduction to System Identification>`. La "
+"suite d'outils d'identification du système peut être utilisée pour "
+"déterminer rapidement et efficacement les gains corrects pour chaque type "
+"d'anticipation. Si vous n'êtes pas en mesure de caractériser empiriquement "
+"votre mécanisme (en raison de contraintes d'espace et/ou de temps), des "
+"estimations raisonnables de ``kG``, ``kV`` et ``kA`` peuvent être obtenues "
+"par un calcul assez simple, et sont également disponibles sur `ReCalc "
+"<https://www.reca.lc/>`__. ``kS`` est presque impossible à modéliser et doit"
+" être mesuré de manière empirique."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:19
 msgid ""
@@ -236,6 +266,25 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:70
 msgid "ArmFeedforward"
 msgstr "La classe ArmFeedforward"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:72
+msgid ""
+"In C++, the ``ArmFeedforward`` class assumes distances are angular, not "
+"linear.  The passed-in gains *must* have units consistent with the angular "
+"unit, or a compile-time error will be thrown.  ``kS`` and ``kG`` should have"
+" units of ``volts``, ``kV`` should have units of ``volts * seconds / "
+"radians``, and ``kA`` should have units of ``volts * seconds^2 / radians``."
+"  For more information on C++ units, see :ref:`docs/software/basic-"
+"programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"En C++, la classe ``ArmFeedforward`` suppose que les distances sont "
+"angulaires et non linéaires. Les gains transmis *doivent* avoir des unités "
+"cohérentes avec l'unité angulaire, sinon une erreur de compilation sera "
+"générée. ``kS`` et ``kG`` doivent avoir des unités de ``volts``, ``kV`` "
+"doivent avoir des unités de ``volts * secondes / radians``, et ``kA`` "
+"doivent avoir des unités de ``volts * secondes^2 / radians``. Pour plus "
+"d'informations sur les unités C++, consultez :ref:`docs/software/basic-"
+"programming/cpp-units:The C++ Units Library`."
 
 #: ../../frc-docs/source/docs/software/advanced-controls/controllers/feedforward.rst:76
 msgid ""

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-04-03 16:03+0000\n"
+"POT-Creation-Date: 2022-07-17 04:14+0000\n"
 "PO-Revision-Date: 2021-06-22 22:04+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:2
 msgid "Reading Stacktraces"
@@ -376,14 +376,6 @@ msgstr ""
 "Une stratégie clé pour analyser le code consiste à poser les questions "
 "suivantes :"
 
-#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:132
-msgid ""
-"When was the last time the code \"worked\" (IE, didn't have this particular "
-"error)?"
-msgstr ""
-"À quand remonte la dernière fois que le code \"a fonctionné\" (i.e, n'a pas "
-"eu cette erreur particulière)?"
-
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:133
 msgid ""
 "What has changed in the code between the last working version, and now?"
@@ -662,17 +654,6 @@ msgstr ""
 msgid "Fixing Divide By Zero Issues"
 msgstr "Résoudre les problèmes de division par zéro"
 
-#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:378
-msgid ""
-"Divide By Zero issues can be fixed in a number of ways. It's important to "
-"start by thinking about what a zero in the denominator of your calculation "
-"_means_. Is it plausible? Why did it happen in the particular case you saw?"
-msgstr ""
-"Les problèmes Diviser par zéro peuvent être résolus de plusieurs manières. "
-"Il est important de commencer par réfléchir à ce que signifie un zéro dans "
-"le dénominateur de votre calcul. Est-ce plausible ? Pourquoi est-ce arrivé "
-"dans le cas particulier que vous avez vu?"
-
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:380
 msgid "Sometimes, you just need to use a different number other than 0."
 msgstr "Parfois, il vous suffit d'utiliser un nombre différent de 0."
@@ -705,15 +686,6 @@ msgstr ""
 msgid "HAL Resource Already Allocated"
 msgstr "Ressource HAL déjà allouée"
 
-#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:429
-msgid ""
-"A very common FRC-specific error occurs when the code attempts to put two "
-"hardware-related on the same HAL resource (usually, roboRIO IO pin.)"
-msgstr ""
-"Une erreur spécifique à FRC très courante se produit lorsque le code tente "
-"de mettre deux ressources matérielles sur la même ressource HAL "
-"(généralement, une broche IO du roboRIO.)"
-
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:502
 msgid ""
 "This stack trace shows that a ``edu.wpi.first.hal.util.AllocationException``"
@@ -724,25 +696,6 @@ msgstr ""
 "``edu.wpi.first.hal.util.AllocationException`` s’est produite. Il donne "
 "également le message utile: ``PWM or DIO 0 previously allocated.`` ou ``PWM "
 "ou DIO préalablement alloué``."
-
-#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:506
-msgid ""
-"Taking a peek at the code, we see line 24 is where the first motor "
-"controller is declared and line 25 is where the second motor controller is "
-"declared. We can also note that *both* motor controllers are assigned to PWM"
-" output ``0``. This doesn't make logical sense, and isn't physically "
-"possible. Therefore, WPILib purposefully generates a custom error message "
-"and exception to alert the software developers of a non-achievable hardware "
-"configuration."
-msgstr ""
-"En jetant un coup d’œil au code, nous voyons que la ligne 24 est l’endroit "
-"où le premier contrôleur de moteur est déclaré et la ligne 25 est l’endroit "
-"où le deuxième contrôleur de moteur est déclaré. Nous pouvons également "
-"noter que *les deux* contrôleurs de moteur sont affectés à la sortie PWM "
-"``0``. Cela n’a logiquement pas de sens et n’est pas physiquement possible. "
-"Par conséquent, WPILib génère délibérément un message d’erreur personnalisé "
-"et une exception pour alerter les développeurs de logiciels d’une "
-"configuration matérielle non réalisable."
 
 #: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:510
 msgid ""

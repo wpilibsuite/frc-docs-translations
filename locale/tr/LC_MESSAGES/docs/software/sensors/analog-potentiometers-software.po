@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-17 16:43+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:2
+msgid "Analog Potentiometers - Software"
+msgstr "Analog Potentiometers - Yazılım"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:4
+msgid ""
+"This section covers analog potentiometers in software.  For a hardware guide"
+" to analog potentiometers, see :ref:`docs/hardware/sensors/analog-"
+"potentiometers-hardware:Analog Potentiometers - Hardware`."
+msgstr ""
+"Bu bölüm, yazılımdaki analog potansiyometreleri kapsar. Analog "
+"potansiyometreler için bir donanım kılavuzu için bkz "
+":ref:`docs/hardware/sensors/analog-potentiometers-hardware:Analog "
+"Potentiometers - Hardware`."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:6
+msgid ""
+"Potentiometers are variable resistors that allow information about position "
+"to be converted into an analog voltage signal.  This signal can be read by "
+"the roboRIO to control whatever device is attached to the potentiometer."
+msgstr ""
+"Potansiyometreler, konum hakkındaki bilgilerin analog voltaj sinyaline "
+"dönüştürülmesini sağlayan değişken dirençlerdir. Bu sinyal, potansiyometreye"
+" bağlı olan cihazı kontrol etmek için roboRIO tarafından okunabilir."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:8
+msgid ""
+"While it is possible to read information from a potentiometer directly with "
+"an :doc:`analog-inputs-software`, WPILib provides an "
+":code:`AnalogPotentiometer` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogPotentiometer.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogPotentiometer.html>`__)"
+" that handles re-scaling the values into meaningful units for the user.  It "
+"is strongly encouraged to use this class."
+msgstr ""
+"Bir potansiyometreden bilgileri doğrudan bir :doc:`analog-inputs-software` "
+"ile okumak mümkün olsa da, WPILib bir :code:`AnalogPotentiometer` sınıfı  "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogPotentiometer.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogPotentiometer.html>`__)"
+"  Değerlerin kullanıcı için anlamlı birimlere yeniden ölçeklendirilmesini "
+"sağlayan bu sınıfı kullanmanız şiddetle tavsiye edilir."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:10
+msgid ""
+"In fact, the :code:`AnalogPotentiometer` name is something of a misnomer - "
+"this class should be used for the vast majority of sensors that return their"
+" signal as a simple, linearly-scaled analog voltage."
+msgstr ""
+"Aslında :code:`AnalogPotentiometer` adı yanlış bir isimdir - bu sınıf, "
+"sinyallerini basit, doğrusal ölçeklendirilmiş bir analog voltaj olarak "
+"döndüren sensörlerin büyük çoğunluğu için kullanılmalıdır."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:13
+msgid "The AnalogPotentiometer class"
+msgstr "AnalogPotentiometer class-sınıfı"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:15
+msgid ""
+"The \"full range\" or \"scale\" parameters in the "
+":code:`AnalogPotentiometer` constructor are scale factors from a range of "
+"0-1 to the actual range, *not* from 0-5.  That is, they represent a native "
+"fractional scale, rather than a voltage scale."
+msgstr ""
+":code:`AnalogPotentiometer` yapıcısındaki \"full range\" veya \"scale\" "
+"parametreleri, 0-5 arası *değil*, 0-1 aralığından gerçek aralığa kadar ölçek"
+" faktörleridir. Yani, bir voltaj ölçeği yerine yerel bir kesirli ölçeği "
+"temsil ederler."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:17
+msgid "An AnalogPotentiometer can be initialized as follows:"
+msgstr "Bir Analog Potansiyometre aşağıdaki şekilde başlatılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:38
+msgid "Customizing the underlying AnalogInput"
+msgstr "Temeldeki AnalogInput'u özelleştirme"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:40
+msgid ""
+"If the user changes the scaling of the :code:`AnalogInput` with "
+"oversampling, this must be reflected in the scale setting passed to the "
+":code:`AnalogPotentiometer`."
+msgstr ""
+"Kullanıcı: code:`AnalogInput\" 'un ölçeklendirmesini yüksek hızda örnekleme "
+"ile değiştirirse, bu,: code:`AnalogPotentiometer\" e iletilen ölçek ayarına "
+"yansıtılmalıdır."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:42
+msgid ""
+"If the user would like to apply custom settings to the underlying "
+":code:`AnalogInput` used by the :code:`AnalogPotentiometer`, an alternative "
+"constructor may be used in which the :code:`AnalogInput` is injected:"
+msgstr ""
+"Kullanıcı, :code:`AnalogPotentiometer` tarafından kullanılan temel "
+":code:`AnalogInput` öğesine özel ayarlar uygulamak isterse, içinde "
+":code:`AnalogInput` öğesinin enjekte edildiği alternatif bir constrtuctor "
+"kullanılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:71
+msgid "Reading values from the AnalogPotentiometer"
+msgstr "AnalogPotentiometer den değerleri okuma"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:73
+msgid "The scaled value can be read by simply calling the :code:`get` method:"
+msgstr ""
+"Ölçeklenmiş değer, basitçe: code: `get` yöntemi çağrılarak okunabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:86
+msgid "Using AnalogPotentiometers in code"
+msgstr "Using AnalogPotentiometers in code"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:88
+msgid ""
+"Analog sensors can be used in code much in the way other sensors that "
+"measure the same thing can be.  If the analog sensor is a potentiometer "
+"measuring an arm angle, it can be used similarly to an :doc:`encoder "
+"<encoders-software>`.  If it is an ultrasonic sensor, it can be used "
+"similarly to other :doc:`ultrasonics <ultrasonics-software>`."
+msgstr ""
+"Analog sensörler, aynı şeyi ölçen diğer sensörlerin olabileceği şekilde "
+"kodda kullanılabilir. Analog sensör bir kol açısını ölçen bir potansiyometre"
+" ise, bir  :doc:`encoder <encoders-software>`'e benzer şekilde "
+"kullanılabilir. Ultrasonik bir sensör ise, diğerine benzer şekilde "
+"kullanılabilir  :doc:`ultrasonics <ultrasonics-software>`."
+
+#: ../../frc-docs/source/docs/software/sensors/analog-potentiometers-software.rst:90
+msgid ""
+"It is very important to keep in mind that actual, physical potentiometers "
+"generally have a limited range of motion.  Safeguards should be present in "
+"both the physical mechanism and the code to ensure that the mechanism does "
+"not break the sensor by traveling past its maximum throw."
+msgstr ""
+"Gerçek, fiziksel potansiyometrelerin genellikle sınırlı bir hareket "
+"aralığına sahip olduğunu akılda tutmak çok önemlidir. Korumalar, "
+"mekanizmanın maksimum atışını geçerek sensörü kırmamasını sağlamak için hem "
+"fiziksel mekanizmada hem de kodda mevcut olmalıdır."

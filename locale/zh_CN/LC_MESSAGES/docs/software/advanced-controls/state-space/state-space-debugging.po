@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
+"PO-Revision-Date: 2020-10-04 04:16+0000\n"
+"Last-Translator: 楚涵 张 <zhangchuhan1210@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:2
+msgid "Debugging State-Space Models and Controllers"
+msgstr "调试状态空间模型和控制器"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:5
+msgid "Checking Signs"
+msgstr "检查标志"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:7
+msgid ""
+"One of the most common causes of bugs with state-space controllers is signs "
+"being flipped. For example, models included in WPILib expect positive "
+"voltage to result in a positive acceleration, and vice versa. If applying a "
+"positive voltage does not make the mechanism accelerate forwards, or if "
+"moving \"forwards\" makes encoder (or other sensor readings) decrease, they "
+"should be inverted so that positive voltage input results in a positive "
+"encoder reading. For example, if I apply an :term:`input` of :math:`[12, "
+"12]^T` (full forwards for the left and right motors) to my differential "
+"drivetrain, my wheels should propel my robot \"forwards\" (along the +X axis"
+" locally), and for my encoders to read a positive velocity."
+msgstr ""
+"状态空间控制器错误的最常见原因之一是信号被翻转。例如，WPILib中包含的模型期望正电压会导致正加速度，反之亦然。如果施加正电压不能使该机构向前加速，或者如果“向前”移动会使编码器（或其他传感器读数）减小，则应将其反转，以使正电压输入导致编码器读数为正。例如，如果我对差速器传动系统应用：math：`[12，12]"
+" ^ T`（左右电动机的全速前进）的：term：`input`，则我的车轮应将机器人“向前”推进（沿+ X轴局部），并使我的编码器读取正速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:13
+msgid "The Importance of Graphs"
+msgstr "图的重要性"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:17
+msgid ""
+"By default, NetworkTables is limited to a 10hz update rate. For testing, "
+"this can be bypassed with the following code snippet to submit data at up to"
+" 100hz. This code should be run periodically to forcibly publish new data."
+msgstr ""
+"默认情况下，NetworkTables的更新速率限制为10hz。为了进行测试，可以使用以下代码段绕过它，以最高100hz的速度提交数据。该代码应定期运行以强制发布新数据。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:19
+msgid ""
+"This will send extra data (at up to 100hz) over NetworkTables, which can "
+"cause lag with both user code and robot dashboards. This will also increase "
+"network utilization. It is often a good idea to disable this during "
+"competitions."
+msgstr ""
+"这将通过NetworkTables发送额外的数据（最高100hz），这可能导致用户代码和机械手仪表板的滞后。这也将提高网络利用率。在比赛中禁用此功能通常是个好主意。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:37
+msgid "Compensating for Input Lag"
+msgstr "补偿输入滞后"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:38
+msgid ""
+"Often times, some sensor input data (i.e. velocity readings) may be delayed "
+"due to onboard filtering that smart motor controllers tend to perform. By "
+"default, LQR's K gain assumes no input delay, so introducing significant "
+"delay on the order of tens of milliseconds can cause instability. To combat "
+"this, the LQR's K gain can be reduced, trading off performance for "
+"stability. A code example for how to compensate for this latency in a "
+"mathematically rigorous manner is available :ref:`here "
+"<docs/software/advanced-controls/state-space/state-space-intro:LQR and "
+"Measurement Latency Compensation>`."
+msgstr ""
+"通常，某些传感器输入数据（即速度读数）可能会由于智能电机控制器倾向于执行的车载过滤而被延迟。默认情况下，LQR的K增益不假定输入延迟，因此引入数十毫秒量级的显着延迟可能会导致不稳定。为了解决这个问题，可以降低LQR的K增益，以牺牲性能为代价。有关如何以数学上严格的方式补偿此延迟的代码示例，请参见"
+" :ref:`here <docs/software/advanced-controls/state-space/state-space-"
+"intro:LQR and Measurement Latency Compensation>`。"

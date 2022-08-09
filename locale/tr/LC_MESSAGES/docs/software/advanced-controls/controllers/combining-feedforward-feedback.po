@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# nesrin serra köşkeroğlu <nsk-2004@hotmail.com>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:4
+msgid "Combining Feedforward and PID Control"
+msgstr "Feedforward - ileribesleme  ve PID Kontrolünü Birleştirme"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:6
+msgid "Todo"
+msgstr "Yapılacaklar"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:6
+msgid "link to conceptual article when available"
+msgstr "mevcut olduğunda kavramsal makaleye bağlantı"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:8
+msgid ""
+"This article covers the in-code implementation of combined feedforward/PID "
+"control with WPILib's provided library classes.  Documentation describing "
+"the involved concepts in more detail is forthcoming."
+msgstr ""
+"Bu makale, WPILib'in sağladığı kütüphane sınıfları ile birlikte "
+"feedforward/PID kontrolünün kod içi uygulamasını kapsar. İlgili kavramları "
+"daha ayrıntılı olarak açıklayan belgeler yakında çıkacaktır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:10
+msgid ""
+"Feedforward and feedback controllers can each be used in isolation, but are "
+"most effective when combined together.  Thankfully, combining these two "
+"control methods is *exceedingly* straightforward - one simply adds their "
+"outputs together."
+msgstr ""
+"Feedforward ve geri bildirim denetleyicilerinin her biri ayrı ayrı "
+"kullanılabilir, ancak birlikte kullanıldığında en etkilidir. Neyse ki, bu "
+"iki kontrol yöntemini birleştirmek *son derece* basittir - basitçe "
+"çıktılarını bir araya getirir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:13
+msgid "Using Feedforward with a PIDController"
+msgstr "Feedforward'ı bir PIDController ile kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:15
+msgid ""
+"Users familiar with the old ``PIDController`` class may notice the lack of "
+"any feedforward gain in the new controller.  As users are expected to use "
+"the controller output themselves, there is no longer any need for the "
+"``PIDController`` to implement feedforward - users may simply add any "
+"feedforward they like to the output of the controller before sending it to "
+"their motors:"
+msgstr ""
+"Eski ``PIDController`` sınıfına aşina olan kullanıcılar, yeni denetleyicide "
+"herhangi bir feedforward kazancının eksikliğini fark edebilir. "
+"Kullanıcıların kontrolör çıkışını kendilerinin kullanması beklendiğinden, "
+"feedforward' ı uygulamak için artık ``PIDController`` e ihtiyaç yoktur - "
+"kullanıcılar, kontrolör çıkışına istedikleri herhangi bir feedforward' ı "
+"motorlarına göndermeden önce ekleyebilirler:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:29
+msgid ""
+"Moreover, feedforward is a separate feature entirely from feedback, and thus"
+" has no reason to be handled in the same controller object, as this violates"
+" separation of concerns.  WPILib comes with several helper classes to "
+"compute accurate feedforward voltages for common FRC\\ |reg| mechanisms - "
+"for more information, see :ref:`docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib`."
+msgstr ""
+"Dahası, ileri besleme, tamamen geri bildirimden ayrı bir özelliktir ve bu "
+"nedenle, endişelerin ayrılmasını ihlal ettiği için aynı denetleyici "
+"nesnesinde ele alınması için bir neden yoktur. WPILib, ortak FRC \\ |reg| "
+"için doğru ileri besleme voltajlarını hesaplamak üzere birkaç yardımcı "
+"sınıfla birlikte gelir. mekanizmalar - daha fazla bilgi için bkz : ref: "
+"`docs / software / advanced-controls / controller / feedforward: Feedforward"
+" Control in WPILib`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:32
+msgid "Using Feedforward Components with PID"
+msgstr "PID ile Feedforward Bileşenlerini Kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:36
+msgid ""
+"What might a more complete example of combined feedforward/PID control look "
+"like?  Consider the :ref:`drive example <docs/software/advanced-"
+"controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` "
+"from the feedforward page.  We can easily modify this to include feedback "
+"control (with a ``SimpleMotorFeedforward`` component):"
+msgstr ""
+"Feedforward / PID kontrolünün daha eksiksiz bir örneği neye benzeyebilir? "
+"Feedforward sayfasından :ref:`sürüş örneği <docs/software/advanced-"
+"controls/controllers/feedforward:Using Feedforward to Control Mechanisms>` "
+"dikkate alınız. Geri bildirim kontrolünü dahil etmek için bunu kolayca "
+"değiştirebiliriz ( ``SimpleMotorFeedforward`` bileşeni ile)"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/combining-feedforward-feedback.rst:59
+msgid "Other mechanism types can be handled similarly."
+msgstr "Diğer mekanizma türleri de benzer şekilde ele alınabilir."

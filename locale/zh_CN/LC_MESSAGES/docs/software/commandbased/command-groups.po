@@ -1,0 +1,240 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Jiangshan Gong <jiangshan_gong@163.com>, 2020
+# Team 5308 <team5308@163.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2022\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:2
+msgid "Command Groups"
+msgstr "指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:4
+msgid ""
+"Individual commands are capable of accomplishing a large variety of robot "
+"tasks, but the simple three-state format can quickly become cumbersome when "
+"more advanced functionality requiring extended sequences of robot tasks or "
+"coordination of multiple robot subsystems is required. In order to "
+"accomplish this, users are encouraged to use the powerful command group "
+"functionality included in the command-based library."
+msgstr ""
+"单个指令能够完成各种各样的机器人任务，但是当需要更高级的功能例如需要扩展机器人任务序列或协调多个机器人子系统时，简单的三态格式可能会变得很麻烦。为了做到这一点，鼓励用户使用基于命令的库中包含的强大指令组功能。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:6
+msgid ""
+"As the name suggests, command groups are combinations of multiple commands. "
+"The act of combining multiple objects (such as commands) into a bigger "
+"object is known as `composition "
+"<https://en.wikipedia.org/wiki/Object_composition>`__. Command groups "
+"*compose* multiple commands into a *composite* command. This allows code to "
+"be kept much cleaner and simpler, as the individual *component* commands may"
+" be written independently of the code that combines them, greatly reducing "
+"the amount of complexity at any given step of the process."
+msgstr ""
+"顾名思义，指令组是多个指令的组合。将多个对象（例如指令）组合成更大的对象的动作称为`composition "
+"<https://en.wikipedia.org/wiki/Object_composition>`__.命令组将多个指令组成*复合*指令。这可以使代码保持更加简洁明了，因为各个*component"
+" *指令可以独立于将它们组合在一起的代码编写，从而大大减少了过程中任何给定步骤的复杂性。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:8
+msgid ""
+"Most importantly, however, command groups *are themselves commands* - they "
+"implement the ``Command`` interface. This allows command groups to be "
+"`recursively composed "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ "
+"- that is, a command group may contain *other command groups* as components."
+msgstr ""
+"但是，最重要的是，指令组*本身就是指令*——它们实现了“Command”接口。这允许指令组`recursively composed "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__——也就是说，一个指令组可以包含*其他指令组*作为组件。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:11
+msgid "Types of Command Groups"
+msgstr "指令组的类型"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:13
+msgid ""
+"In the C++ command-based library, command groups *own* their component "
+"commands.  This means that commands passed to command groups will be either "
+"moved or copied depending on whether they are rvalues or lvalues "
+"(`rvalue/lvalue explanation "
+"<http://thbecker.net/articles/rvalue_references/section_01.html>`__).  Due "
+"to certain technical concerns, command groups themselves are not copyable, "
+"and so recursive composition *must* use move semantics."
+msgstr ""
+"在基于C ++命令的库中，指令组“拥有”它们的组件指令。这意味着传递给指令组的指令将根据是右值还是左值（`rvalue/lvalue "
+"explanation "
+"<http://thbecker.net/articles/rvalue_references/section_01.html>`__）而移动或复制。由于某些技术问题，指令组本身是不可复制的，因此递归组合必须使用移动语义。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:15
+msgid ""
+"The command-based library supports four basic types of command groups: "
+"``SequentialCommandGroup``, ``ParallelCommandGroup``, ``ParallelRaceGroup``,"
+" and ``ParallelDeadlineGroup``. Each of these command groups combines "
+"multiple commands into a composite command - however, they do so in "
+"different ways:"
+msgstr ""
+"基于命令的库支持四种基本类型的指令组：“SequentialCommandGroup”，“ParallelCommandGroup”，“ParallelRaceGroup”和“ParallelDeadlineGroup”。这些指令组中的每一个将多个指令组合为一个复合指令——但是，它们以不同的方式进行操作："
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:18
+msgid "SequentialCommandGroup"
+msgstr "顺序指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:23
+msgid "ParallelCommandGroup"
+msgstr "并行指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:28
+msgid "ParallelRaceGroup"
+msgstr "平行属组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:33
+msgid "ParallelDeadlineGroup"
+msgstr "平行结束指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:38
+msgid "Creating Command Groups"
+msgstr "创建指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:40
+msgid ""
+"Users have several options for creating command groups. One way - similar to"
+" the previous implementation of the command-based library - is to subclass "
+"one of the command group classes. Consider the following from the Hatch Bot "
+"example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):"
+msgstr ""
+"用户可以使用多个选项来创建命令组。一种方法（类似于以前基于命令的库的实现）是将命令组类之一子类化。考虑一下Hatch "
+"Bot示例项目中的以下内容（`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__，`C"
+" ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__）："
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:68
+msgid ""
+"The ``addCommands()`` method adds commands to the group, and is present in "
+"all four types of command group."
+msgstr "“addCommands()”方法将指令添加到该组，并且在所有四种类型的指令组中都存在。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:71
+msgid "Inline Command Groups"
+msgstr "内联指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:75
+msgid ""
+"Command groups can be used without subclassing at all: one can simply pass "
+"in the desired commands through the constructor:"
+msgstr "指令组可以完全不用子类使用：一个人可以简单地通过构造函数传递所需的指令："
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:87
+msgid ""
+"This is called an :ref:`inline <docs/software/commandbased/convenience-"
+"features:Inline Command Definitions>` command definition, and is very handy "
+"for circumstances where command groups are not likely to be reused, and "
+"writing an entire class for them would be wasteful."
+msgstr ""
+"这称为:ref:`inline <docs/software/commandbased/convenience-features:Inline "
+"Command Definitions>`指令定义，在不太可能重用指令组的情况下非常方便，并且为它们编写整个类将很浪费。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:90
+msgid "Recursive Composition of Command Groups"
+msgstr "指令组的递归组合"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:92
+msgid ""
+"As mentioned earlier, command groups are `recursively composable "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ "
+"- since command groups are themselves commands, they may be included as "
+"components of other command groups. This is an extremely powerful feature of"
+" command groups, and allows users to build very complex robot actions from "
+"simple pieces. For example, consider the following code:"
+msgstr ""
+"如前所述，指令组是`recursively composable "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ "
+"——由指令组本身就是命令，因此它们可以作为其他指令组的组成部分包含在内。这是指令组的一项极其强大的功能，它允许用户从简单的片段构建非常复杂的机器人动作。例如，参考以下代码："
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:119
+msgid ""
+"This creates a sequential command group that *contains* a parallel command "
+"group. The resulting control flow looks something like this:"
+msgstr "这将创建一个顺序指令组，该指令组“包含”一个并行指令组。产生的控制流如下所示："
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:124
+msgid ""
+"Notice how the recursive composition allows the embedding of a parallel "
+"control structure within a sequential one. Notice also that this entire, "
+"more-complex structure, could be again embedded in another structure. "
+"Composition is an extremely powerful tool, and one that users should be sure"
+" to use extensively."
+msgstr ""
+"注意递归组合如何允许将并行控制结构嵌入顺序结构中。还请注意，可以将整个，更复杂的结构再次嵌入另一个结构中。合成是一种非常强大的工具，用户应确保广泛使用该工具。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:127
+msgid "Command Groups and Requirements"
+msgstr "指令组和要求"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:129
+msgid ""
+"As command groups are commands, they also must declare their requirements. "
+"However, users are not required to specify requirements manually for command"
+" groups - requirements are automatically inferred from the commands "
+"included. As a rule, *command groups include the union of all of the "
+"subsystems required by their component commands.* Thus, the ``ComplexAuto`` "
+"shown previously will require both the drive subsystem and the hatch "
+"subsystem of the robot."
+msgstr ""
+"由于指令组是指令，因此它们还必须声明其要求。但是，不需要用户手动为指令组指定需求——需求是从包含的指令中自动推断出来的。通常，*命令组包括其组件命令所需的所有子系统的并集。*因此，前面显示的“ComplexAuto”将需要机器人的驱动子系统和舱口盖子系统。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:131
+msgid ""
+"Additionally, requirements are enforced within all three types of parallel "
+"groups - a parallel group may *not* contain multiple commands that require "
+"the same subsystem."
+msgstr "此外，在所有三种类型的并行组中强制执行要求——并行组可能*不*包含需要同一子系统的多个指令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:136
+msgid "Restrictions on Command Group Components"
+msgstr "对指令组组件的限制"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:138
+msgid ""
+"The following is only relevant for the Java command-based library; the C++ "
+"library's ownership model naturally prevents users from making this category"
+" of mistake."
+msgstr "以下仅与基于Java命令的库有关； C ++库的所有权模型自然可以防止用户犯此类错误。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:140
+msgid ""
+"Since command group components are run through their encapsulating command "
+"groups, errors could occur if those same command instances were "
+"independently scheduled at the same time as the group - the command would be"
+" being run from multiple places at once, and thus could end up with "
+"inconsistent internal state, causing unexpected and hard-to-diagnose "
+"behavior."
+msgstr ""
+"由于指令组组件是通过其封装的指令组运行的，因此，如果与这些指令组同时调度相同的指令实例，则可能会发生错误——该指令将同时从多个位置运行，因此可能导致不一致内部状态，从而导致意外和难以诊断的行为。"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:142
+msgid ""
+"For this reason, command instances that have been added to a command group "
+"cannot be independently scheduled or added to a second command group. "
+"Attempting to do so will throw an exception and crash the user program."
+msgstr "出于这个原因，已经添加到指令组的指令实例无法独立调度或添加到第二个指令组。尝试这样做将引发异常并使用户程序崩溃。"

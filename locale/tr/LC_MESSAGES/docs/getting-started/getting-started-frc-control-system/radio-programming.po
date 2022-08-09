@@ -1,0 +1,658 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Melis Aldeniz <aldenizmelis@gmail.com>, 2020
+# Esra özemre <esra.ozemre@tfo.k12.tr>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-23 16:11+0000\n"
+"PO-Revision-Date: 2020-04-25 01:59+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:2
+msgid "Programming your Radio"
+msgstr "Radio - Erişim Noktası Programlama"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:4
+msgid ""
+"This guide will show you how to use the FRC Radio Configuration Utility "
+"software to configure your robot's wireless bridge for use outside of FRC "
+"events."
+msgstr ""
+"Bu kılavuz, robotunuzun kablosuz ağ cihazını FRC etkinlikleri dışında "
+"kullanmak üzere yapılandırmak için FRC Radio Configuration Utility "
+"programını nasıl kullanacağınızı gösterecektir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:6
+msgid "Before you begin using the software:"
+msgstr "Yazılımı kullanmaya başlamadan önce:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:8
+msgid ""
+"Disable WiFi connections on your computer, as it may prevent the "
+"configuration utility from properly communicating with the bridge"
+msgstr ""
+"Yapılandırma programının Erişim noktası cihazı ile düzgün bir şekilde "
+"iletişim kurmasını engelleyebileceğinden bilgisayarınızdaki WiFi "
+"bağlantılarını devre dışı bırakın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:9
+msgid ""
+"Make sure no devices are connected to your computer via ethernet, other than"
+" the wireless bridge."
+msgstr ""
+"Bilgisayarınıza ethernet kablosuyla kablosuz bağlantı cihazı dışında hiçbir "
+"aygıtın bağlı olmadığından emin olun."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:11
+msgid ""
+"The OM5P-AN and AC use the same power plug as the D-Link DAP1522, however "
+"they are 12V radios. Wire the radio to the 12V 2A terminals on the VRM "
+"(center-pin positive)."
+msgstr ""
+"OM5P-AN ve AC, D-Link DAP1522 ile aynı elektrik fişini kullanır, ancak MO5P "
+"serisi 12V cihazlardır.  Radyoyu VRM üzerindeki 12V 2A terminallerine "
+"bağlayın (orta-pin pozitif)."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:14
+msgid "Pre-Requisites"
+msgstr "Önkoşullar"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:16
+msgid ""
+"The FRC Radio Configuration Utility requires the Java Runtime Engine (JRE). "
+"If you do not have Java installed, you can download the JRE from here: "
+"https://www.java.com/en/download/"
+msgstr ""
+"FRC Radio Configuration Utility Programı, Java Runtime Engine (JRE) "
+"gerektirir. Java kurulu değilse, JRE'yi buradan indirebilirsiniz: "
+"https://www.java.com/en/download/"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:18
+msgid ""
+"The FRC Radio Configuration Utility requires Administrator privileges to "
+"configure the network settings on your machine. The program should request "
+"the necessary privileges automatically (may require a password if run from a"
+" non-Administrator account), but if you are having trouble, try running it "
+"from an Administrator account."
+msgstr ""
+"FRC FRC Radio Configuration Utility Programı, makinenizdeki ağ ayarlarını "
+"yapılandırmak için Yönetici ayrıcalıkları gerektirir. Program gerekli "
+"ayrıcalıkları otomatik olarak istemelidir (Yönetici olmayan bir hesaptan "
+"çalıştırılırsa bir parola gerektirebilir), ancak sorun yaşıyorsanız, bir "
+"Yönetici hesabından çalıştırmayı deneyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:21
+msgid "Application Notes"
+msgstr "Uygulama Notları"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:23
+msgid ""
+"By default, the Radio Configuration Utility will program the radio to "
+"enforce the 4Mbps bandwidth limit on traffic exiting the radio over the "
+"wireless interface. In the home configuration (AP mode) this is a total, not"
+" a per client limit. This means that streaming video to multiple clients is "
+"not recommended."
+msgstr ""
+"Varsayılan olarak, Radio Configuration Utility Programı, radio'yu kablosuz "
+"bağlantısı üzerinden çıkan trafiği 4Mbps bant genişliği sınırını uygulayacak"
+" şekilde programlayacaktır. Ev yapılandırmasında (AP modu) bu, istemci "
+"başına bir sınır değil, toplamdır. Bu, birden fazla istemciye video akışının"
+" gönderilmesinin tavsiye edilmediği anlamına gelir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:25
+msgid ""
+"The Utility has been tested on Windows 7, 8 and 10. It may work on other "
+"operating systems, but has not been tested."
+msgstr ""
+"Bu program Windows 7, 8 ve 10'da test edilmiştir. Diğer işletim "
+"sistemlerinde çalışabilir, ancak test edilmemiştir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:28
+msgid "Programmed Configuration"
+msgstr "Programlanmış Konfigürasyon"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:33
+msgid ""
+"The Radio Configuration Utility programs a number of configuration settings "
+"into the radio when run. These settings apply to the radio in all modes "
+"(including at events). These include:"
+msgstr ""
+"Radio Configuration Utility Programı, çalıştırıldığında radyoya bir dizi "
+"yapılandırma ayarı programlar. Bu ayarlar tüm modlarda (etkinliklerde dahil)"
+" telsiz için geçerlidir. Bunlar şunları içerir:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:35
+msgid "Set a static IP of 10.TE.AM.1"
+msgstr "10.TE.AM.1 statik IP'si ayarlamak"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:36
+msgid ""
+"Set an alternate IP on the wired side of 192.168.1.1 for future programming"
+msgstr ""
+"Gelecekteki programlama ihtiyaçları için 192.168.1.1'in kablolu tarafında "
+"alternatif bir IP ayarı."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:37
+msgid "Bridge the wired ports so they may be used interchangeably"
+msgstr ""
+"Kablolu bağlantı noktalarını köprülemek, böylece birbirlerinin yerine "
+"kullanılabilirler."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:38
+msgid "The LED configuration noted in the graphic above."
+msgstr "Yukarıdaki grafikte belirtilen LED konfigürasyonu."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:39
+msgid ""
+"4Mb/s bandwidth limit on the outbound side of the wireless interface (may be"
+" disabled for home use)"
+msgstr ""
+"Kablosuz arayüzün giden tarafında 4Mb/s bant genişliği sınırı (evde kullanım"
+" için devre dışı bırakılabilir)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:40
+msgid ""
+"QoS rules for internal packet prioritization (affects internal buffer and "
+"which packets to discard if bandwidth limit is reached). These rules are:"
+msgstr ""
+"İç paket önceliklendirme için QoS kuralları (dahili arabelleği ve bant "
+"genişliği sınırına ulaşıldığında hangi paketlerin dikkate alınmayacağını "
+"etkiler). Bu kurallar:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:42
+msgid "Robot Control and Status (UDP 1110, 1115, 1150)"
+msgstr "Robot Kontrolü ve Durumu (UDP 1110, 1115, 1150)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:43
+msgid "Robot TCP & Network Tables (TCP 1735, 1740)"
+msgstr "Robot TCP ve Ağ Tabloları (TCP 1735, 1740)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:44
+msgid "Bulk (All other traffic). (disabled if BW limit is disabled)"
+msgstr "Bulk (Diğer tüm trafik). (BW sınırı devre dışıysa geçerli değil)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:46
+msgid "DHCP server enabled. Serves out:"
+msgstr "DHCP sunucusu etkinleştirilme. Verilen Hizmet:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:48
+msgid "10.TE.AM.11 - 10.TE.AM.111 on the wired side"
+msgstr "10.TE.AM.11 - 10.TE.AM.111 kablolu tarafta"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:49
+msgid "10.TE.AM.138 - 10.TE.AM.237 on the wireless side"
+msgstr "10.TE.AM.138 - 10.TE.AM.237 kablosuz tarafta"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:50
+msgid "Subnet mask of 255.255.255.0"
+msgstr "255.255.255.0 alt ağ maskesi"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:51
+msgid "Broadcast address 10.TE.AM.255"
+msgstr "Yayın adresi 10.TE.AM.255"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:53
+msgid ""
+"DNS server enabled. DNS server IP and domain suffix (.lan) are served as "
+"part of the DHCP."
+msgstr ""
+"DNS sunucusu etkinleştirme. DNS sunucusu IP'si ve etki alanı soneki (.lan) "
+"DHCP'nin bir parçası olarak sunulur."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:55
+msgid "At home only:"
+msgstr "Yalnızca evde:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:57
+msgid ""
+"SSID may have a \"Robot Name\" appended to the team number to distinguish "
+"multiple networks."
+msgstr ""
+"SSID, birden fazla ağı ayırt etmek için ekip numarasına eklenmiş bir \"Robot"
+" Adı\" içerebilir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:58
+msgid ""
+"Firewall option may be enabled to mimic the field firewall rules (open ports"
+" may be found in the Game Manual)"
+msgstr ""
+"Güvenlik duvarı seçeneği, saha güvenlik duvarı kurallarını taklit etmek için"
+" etkinleştirilebilir (açık bağlantı noktaları Oyun Kılavuzunda bulunabilir)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:60
+msgid "It is not possible to modify the configuration manually"
+msgstr "Yapılandırmayı manuel olarak değiştirmek mümkün değildir"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:62
+msgid ""
+"Download the software Download the latest FRC Radio Configuration Utility "
+"Installer from the following links:"
+msgstr ""
+"Yazılımı indirin aşağıdaki bağlantılardan en son FRC Radio Configuration "
+"Utility Programı Yükleyicisini indirin:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:65
+msgid ""
+"`FRC Radio Configuration 20.0.0 "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_"
+msgstr ""
+"`FRC Radio Configuration 20.0.0 "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0.zip>`_"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:67
+msgid ""
+"`FRC Radio Configuration 20.0.0 Israel Version "
+"<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_"
+msgstr ""
+"`FRC Radio Configuration 20.0.0 Israil "
+"versiyonu<https://firstfrc.blob.core.windows.net/frc2020/Radio/FRC_Radio_Configuration_20_0_0_IL.zip>`_"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:69
+msgid ""
+"The _IL version is for Israel teams and contains a version of the OM5PAC "
+"firmware with restricted channels for use in Israel."
+msgstr ""
+"_IL sürümü İsrail ekipleri içindir ve İsrail'de kullanım için kısıtlanmış "
+"kanallara sahip OM5PAC ürün yazılımının bir sürümünü içerir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:72
+msgid "Install the software"
+msgstr "Yazılımı kurun"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:76
+msgid ""
+"Double click on FRC_Radio_Configuration_VERSION.exe to launch the installer."
+" Follow the prompts to complete the installation."
+msgstr ""
+"Yükleyiciyi başlatmak için FRC_Radio_Configuration_VERSION.exe üzerine çift "
+"tıklayın. Kurulumu tamamlamak için talimatları izleyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:78
+msgid ""
+"Part of the installation prompts will include installing Npcap if it is not "
+"already present. The Npcap installer contains a number of checkboxes to "
+"configure the install. You should leave the options as the defaults."
+msgstr ""
+"Kurulum sırasında eğer zaten mevcut değilse Npcap kurulumunu içerecektir. "
+"Npcap yükleyici, yüklemeyi yapılandırmak için bir dizi onay kutusu içerir. "
+"Seçenekleri varsayılanlar olarak bırakmalısınız."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:81
+msgid "Launch the software"
+msgstr "Yazılımı başlatın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:85
+msgid "Use the Start menu or desktop shortcut to launch the program."
+msgstr ""
+"Programı başlatmak için Başlat menüsünü veya masaüstü kısayolunu kullanın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:87
+msgid ""
+"Note: If you need to locate the program it is installed to C:\\Program Files"
+" (x86)\\FRC Radio Configuration Utility. For 32-bit machines the path is "
+"C:\\Program Files\\FRC Radio Configuration Utility\\"
+msgstr ""
+"Not: Programı bulmanız gerekirse, C:\\Program Files (x86)\\FRC Radio "
+"Configuration Utility klasörü altına yüklenir. 32 bit makineler için yol "
+"C:\\Program Files\\FRC Radio Configuration Utility\\ 'dır."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:90
+msgid "Allow the program to make changes, if prompted"
+msgstr "Eğer sorulursa programın değişiklik yapmasına izin verin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:94
+msgid ""
+"If the your computer is running Windows Vista or Windows 7, a prompt may "
+"appear about allowing the configuration utility to make changes to the "
+"computer. Click \"Yes\" if the prompt appears."
+msgstr ""
+"Bilgisayarınız Windows Vista veya Windows 7 çalıştırıyorsa, yapılandırma "
+"yardımcı programının bilgisayarda değişiklik yapmasına izin verilmesi "
+"hakkında bir istem görünebilir. İstem görünürse \"Yes\" i tıklayın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:97
+msgid "Select the network interface"
+msgstr "Ağ arayüzünü seçin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:101
+msgid ""
+"Use the pop-up window to select the which ethernet interface the "
+"configuration utility will use to communicate with the wireless bridge. On "
+"Windows machines, ethernet interfaces are typically named \"Local Area "
+"Connection\". The configuration utility can not program a bridge over a "
+"wireless connection."
+msgstr ""
+"Yapılandırma yardımcı programının kablosuz cihaz ile iletişim kurmak için "
+"kullanacağı ethernet arayüzünü seçmek için açılır pencereyi kullanın. "
+"Windows makinelerde, ethernet arayüzleri tipik olarak \"Yerel Alan "
+"Bağlantısı\" olarak adlandırılır. Yapılandırma programı kablosuz bağlantı "
+"üzerinden bir köprü programlayamaz."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:103
+msgid ""
+"If no ethernet interfaces are listed, click \"Refresh\" to re-scan for "
+"available interfaces"
+msgstr ""
+"Hiçbir ethernet arabirimi listelenmemişse, mevcut arabirimleri yeniden "
+"taramak için  \"Refresh\" düğmesine tıklayın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:104
+msgid "Select the interface you want to use from the drop-down list"
+msgstr "Açılır listeden kullanmak istediğiniz arayüzü seçin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:105
+msgid "Click \"OK\""
+msgstr "\"OK\" ı tıklayın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:108
+msgid "Open Mesh Firmware Note"
+msgstr "Open Mesh Firmware Notu"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:110
+msgid ""
+"For the FRC Radio Configuration Utility to program the OM5P-AN and OM5P-AC "
+"radio, the radio must be running an FRC specific build of the OpenWRT "
+"firmware. OM5P-AC radios in the 2019 KoP should not need an update."
+msgstr ""
+"FRC Radio Configuration Utility Programının OM5P-AN ve OM5P-AC radyoyu "
+"programlaması için, cihazın OpenWRT sisteminin FRC'ye özgü bir yapısını "
+"çalıştırması gerekir. 2019 KoP'deki OM5P-AC radyolarının bir güncellemeye "
+"ihtiyacı olmayabilir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:112
+msgid ""
+"If you do not need to update or re-load the firmware, skip the next step."
+msgstr ""
+"Ürün yazılımını güncellemeniz veya yeniden yüklemeniz gerekmiyorsa, sonraki "
+"adımı atlayın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:114
+msgid ""
+"Note: Radios used in 2019 **do not** need to be updated before configuring, "
+"the 2020 tool uses the same 2019 firmware."
+msgstr ""
+"Not: 2019'da kullanılan radyoların **yapılandırmadan önce güncellenmesi "
+"gerekmez**, 2020 aracı aynı 2019 ürün yazılımını kullanır."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:117
+msgid "Loading FRC Firmware to OpenMesh radio"
+msgstr "OpenMesh radyoya FRC Donanım Yazılımını Yükleme"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:121
+msgid ""
+"If you need to load the FRC firmware (or reset the radio), you can do so "
+"using the FRC Radio Configuration Utility."
+msgstr ""
+"FRC aygıt yazılımını yüklemeniz (veya cihazı sıfırlamanız) gerekirse, bunu "
+"FFRC Radio Configuration Utility Programını kullanarak yapabilirsiniz."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:123
+msgid ""
+"Follow the instructions above to install the software, launch the program "
+"and select the Ethernet interface."
+msgstr ""
+"Yazılımı kurmak, programı başlatmak ve Ethernet arayüzünü seçmek için "
+"yukarıdaki talimatları izleyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:124
+msgid "Make sure the OpenMesh radio is selected in the Radio dropdown."
+msgstr "Radio açılır menüsünde OpenMesh radyosunun seçildiğinden emin olun."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:125
+msgid "Make sure the radio is connected to the PC via Ethernet."
+msgstr "Radyonun bilgisayara Ethernet üzerinden bağlı olduğundan emin olun."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:126
+msgid ""
+"Unplug the power from the radio. (If using a PoE cable, this will also be "
+"unplugging the Ethernet to the PC, this is fine)"
+msgstr ""
+"Radyodan gücü kesin. (Bir PoE kablosu kullanıyorsanız, bu aynı zamanda PC'ye"
+" giden kabloyu çıkarabilirisiniz, buda doğru bir yönetimdir)"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:127
+msgid "Press the Load Firmware button"
+msgstr "Load Firmware düğmesine basın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:128
+msgid ""
+"When prompted, plug in the radio power. The software should detect the "
+"radio, load the firmware and prompt you when complete."
+msgstr ""
+"İstendiğinde, radyo gücünü bağlayın. Yazılım radyoyu algılamalı, aygıt "
+"yazılımını yüklemeli ve tamamlandığında sizi uyarmalıdır."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:130
+msgid ""
+"If you see an error about NPF name, try disabling all adapters other than "
+"the one being used to program the radio. If only one adapter is found, the "
+"tool should attempt to use that one. See the steps in \"`Troubleshooting: "
+"Disabling Network Adapters`_\" for more info."
+msgstr ""
+"NPF adı ile ilgili bir hata görürseniz, radyoyu programlamak için kullanılan"
+" adaptör dışındaki tüm adaptörleri devre dışı bırakmayı deneyin. Yalnızca "
+"bir adaptör bulunursa, araç bunu kullanmaya çalışmalıdır. Daha fazla bilgi "
+"için \"Sorun Giderme: Ağ Adaptörlerini Devre Dışı Bırakma`_\" bölümündeki "
+"adımlara bakın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:132
+msgid ""
+"Teams may also see this error with foreign language Operating Systems. If "
+"you experience issues loading firmware or programming on a foreign language "
+"OS, try using an English OS, such as on the KOP provided PC or setting the "
+"Locale setting to \"en_us\" as described on `this page "
+"<https://www.java.com/en/download/help/locale.xml>`_."
+msgstr ""
+"Takımlar bu hatayı yabancı dil İşletim Sistemlerinde de görebilir. Yabancı "
+"dilli bir işletim sisteminde aygıt yazılımı veya programlama yüklemeyle "
+"ilgili sorunlar yaşıyorsanız, KOP tarafından sağlanan bilgisayarda olduğu "
+"gibi İngilizce bir işletim sistemi kullanmayı veya `bu sayfada "
+"<https://www.java.com/en/download/help/locale.xml>`_ 'da açıklandığı gibi "
+"bölgesel ayarları \"en_us\" olarak ayarlamayı deneyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:135
+msgid "Select a bridge model and operating mode"
+msgstr "Bir model ve çalışma modu seçin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:139
+msgid "Select which radio you are configuring using the drop-down list."
+msgstr "Açılır listeyi kullanarak yapılandırmakta olduğunuz radyoyu seçin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:140
+msgid ""
+"Select which operating mode you want to configure. For most cases, the "
+"default selection of 2.4GHz Access Point will be sufficient. If your "
+"computers support it, the 5GHz AP mode is recommended, as 5GHz is less "
+"congested in many environments."
+msgstr ""
+"Yapılandırmak istediğiniz çalışma modunu seçin. Çoğu durumda, varsayılan "
+"olarak 2.4GHz Erişim Noktası seçimi yeterli olacaktır. Bilgisayarlarınız "
+"destekliyorsa, 5GHz birçok ortamda daha az yoğun olduğu için 5GHz AP modu "
+"önerilir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:143
+msgid "Select Options"
+msgstr "Seçenekler'i belirleyin"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:147
+msgid ""
+"The default values of the options have been selected to match the use case "
+"of most teams, however, you may wish to customize these options to your "
+"specific scenario:"
+msgstr ""
+"Seçeneklerin varsayılan değerleri, çoğu takımın kullanım durumuyla eşleşecek"
+" şekilde seçilmiştir, ancak bu seçenekleri kendi senaryonuza göre "
+"özelleştirmek isteyebilirsiniz:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:149
+msgid ""
+"Robot Name: This is a string that gets appended to the SSID used by the "
+"radio. This allows you to have multiple networks with the same team number "
+"and still be able to distinguish them."
+msgstr ""
+"Robot Name: Bu, radyo tarafından kullanılan SSID'ye eklenen bir dizedir. Bu,"
+" aynı takım numarasına sahip birden çok ağa sahip olmanıza ve bunları yine "
+"de ayırt edebilmenize olanak tanır."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:150
+msgid ""
+"Firewall: If this box is checked, the radio firewall will be configured to "
+"attempt to mimic the port blocking behavior of the firewall present on the "
+"FRC field. For a list of open ports, please see the FRC Game Manual."
+msgstr ""
+"Firewall: Bu kutu işaretlenirse, radyo güvenlik duvarı, FRC alanında bulunan"
+" güvenlik duvarının bağlantı noktası engelleme davranışını taklit etmeye "
+"çalışacak şekilde yapılandırılacaktır. Açık bağlantı noktalarının listesi "
+"için lütfen FRC Oyun Kılavuzuna bakın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:151
+msgid ""
+"BW Limit: If this box is checked, the radio enforces a 4 Mbps bandwidth "
+"limit like it does when programmed at events. Note that in AP mode, this is "
+"a total limit, not per client, so streaming video to multiple clients "
+"simultaneously may cause undesired behavior."
+msgstr ""
+"BW Limit: Bu kutucuk işaretlenirse, radyo etkinliklerde programlandığında "
+"olduğu gibi 4 Mbps'lik bir bant genişliği limiti uygular. AP modunda, bunun "
+"istemci başına değil toplam bir sınır olduğunu ve bu nedenle birden çok "
+"istemciye aynı anda video akışının gönderilmesinin istenmeyen davranışlara "
+"neden olabileceğini unutmayın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:153
+msgid ""
+"Firewall and BW Limit only apply to the OpenMesh radios. These options have "
+"no effect on D-Link radios."
+msgstr ""
+"Firewall ve BW Limit sınırı yalnızca OpenMesh radyolar için geçerlidir. Bu "
+"seçeneklerin D-Link radyoları üzerinde hiçbir etkisi yoktur."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:155
+msgid ""
+"The \"Firewall\" option configures the radio to emulate the field firewall. "
+"This means that you will not be able to deploy code wirelessly with this "
+"option enabled."
+msgstr ""
+"\"Firewall\" seçeneği, radyonun saha güvenlik duvarını taklit edecek şekilde"
+" yapılandırır. Bu seçenek etkinleştirildiğinde yazılım kodunu kablosuz "
+"olarak dağıtamayacağınız anlamına gelir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:158
+msgid "Prepare and start the configuration process"
+msgstr "Yapılandırma sürecini hazırlayın ve başlatın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:162
+msgid ""
+"Follow the on-screen instructions for preparing your wireless bridge, "
+"entering the settings the bridge will be configured with, and starting the "
+"configuration process. These on-screen instructions update to match the "
+"bridge model and operating mode chosen."
+msgstr ""
+"Kablosuz cihazınızı hazırlamak, cihazın yapılandırılacağı ayarları girmek ve"
+" yapılandırma sürecini başlatmak için ekrandaki talimatları izleyin. Bu "
+"ekran talimatları, seçilen cihaz modeli ve işletim moduna uyacak şekilde "
+"güncellenir."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:165
+msgid "Configuration Progress"
+msgstr "Yapılandırma İlerlemesi"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:169
+msgid "Throughout the configuration process, the window will indicate:"
+msgstr "Yapılandırma işlemi boyunca pencere şunları gösterecektir:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:171
+msgid "The step currently being executed"
+msgstr "Şu anda yürütülen adım"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:172
+msgid "The overall progress of the configuration process"
+msgstr "Yapılandırma sürecinin genel ilerlemesi"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:173
+msgid "All steps executed so far"
+msgstr "Şimdiye kadar gerçekleştirilen tüm adımlar"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:176
+msgid "Configuration completed"
+msgstr "Yapılandırma tamamlandı"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:180
+msgid "Once the configuration is complete:"
+msgstr "Yapılandırma tamamlandığında:"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:182
+msgid "Press \"OK\" on the dialog window"
+msgstr "İletişim penceresinde \"OK\" a basın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:183
+msgid "Press \"OK\" on the main window to return to the settings screen"
+msgstr "Ayarlar ekranına dönmek için ana pencerede \"OK\" a basın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:186
+msgid "Configuration errors"
+msgstr "Yapılandırma hataları"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:190
+msgid ""
+"If an error occurs during the configuration process, follow the instructions"
+" in the error message to correct the problem."
+msgstr ""
+"Yapılandırma işlemi sırasında bir hata oluşursa, sorunu gidermek için hata "
+"mesajındaki talimatları izleyin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:193
+msgid "Troubleshooting: Disabling Network Adapters"
+msgstr "Sorun Giderme: Ağ Adaptörlerini Devre Dışı Bırakma"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:195
+msgid ""
+"If you get an error message about \"NPF adapter\" when attempting to load "
+"firmware, you need to disable all other adapters. This is not always the "
+"same as turning the adapters off with a physical button or putting the PC "
+"into airplane mode. The following steps provide more detail on how to "
+"disable adapters."
+msgstr ""
+"Cihaz yazılımını yüklemeye çalışırken \"NPF adaptörü\" ile ilgili bir hata "
+"mesajı alırsanız, diğer tüm adaptörleri devre dışı bırakmanız gerekir. Bu, "
+"adaptörleri fiziksel bir düğme ile kapatmak veya bilgisayarı uçak moduna "
+"almakla her zaman aynı değildir. Aşağıdaki adımlar, adaptörlerin nasıl devre"
+" dışı bırakılacağı hakkında daha fazla ayrıntı sağlar."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:199
+msgid "Open the Control Panel by going to Start->Control Panel"
+msgstr "Başlat-> Denetim Masası'na giderek Denetim Masası'nı açın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:203
+msgid "Choose the Network and Internet category."
+msgstr "Ağ ve İnternet kategorisini seçin."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:207
+msgid "Click Network and Sharing Center"
+msgstr "Ağ ve Paylaşım Merkezi'ne tıklayın"
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:211
+msgid "On the left pane, click Change Adapter Settings"
+msgstr "Sol bölmede, Bağdaştırıcı Ayarlarını Değiştir'i tıklayın."
+
+#: ../../frc-docs/source/docs/getting-started/getting-started-frc-control-system/radio-programming.rst:215
+msgid ""
+"For each adapter other than the one connected to the radio, right click on "
+"the adapter and select Disable from the menu."
+msgstr ""
+"Radyoya bağlı olanın dışındaki her bir adaptör için, adaptöre sağ tıklayın "
+"ve menüden Devre Dışı Bırak'ı seçin."

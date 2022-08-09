@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-25 16:03+0000\n"
+"PO-Revision-Date: 2021-06-22 22:09+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:2
+msgid "Using Inference Output on a Robot"
+msgstr "Utilisation de la sortie d'inférence sur un robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:4
+msgid ""
+"The provided script for running inference on a coprocessor outputs all "
+"inference data over NetworkTables for ease of access."
+msgstr ""
+"Le script fourni pour exécuter l'inférence sur un coprocesseur génère toutes"
+" les données d'inférence sur NetworkTables pour faciliter l'accès."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:7
+msgid "Output Format"
+msgstr "Format de sortie"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:9
+msgid ""
+"Because there can be any number of detected objects in a given image, the "
+"inference data is sent in a JSON string to the ``ML/detections`` "
+"NetworkTables entry. By compiling all data into a single entry, it is "
+"certain that the labels match with the bounding boxes, which may not be true"
+" if these items were separate entries."
+msgstr ""
+"Comme il peut y avoir n'importe quel nombre d'objets détectés dans une image"
+" donnée, les données d'inférence sont envoyées dans une chaîne JSON à "
+"l'entrée NetworkTables ``ML/detections``. En compilant toutes les données en"
+" une seule entrée, il est certain que les étiquettes correspondent aux "
+"cadres de délimitation, ce qui peut ne pas être vrai si ces éléments étaient"
+" des entrées distinctes."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:11
+msgid "The JSON string has the following format:"
+msgstr "La chaîne JSON a le format suivant :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:38
+msgid ""
+"The example above shows the value of the ``ML/detections`` entry if two "
+"objects are detected. It is a list of objects, where the ``label`` attribute"
+" means the kind of object that was detected. The ``box`` attribute describes"
+" the bottom left and top right corners of the bounding box, i.e. the box "
+"that completely surrounds the detected object within the image. There will "
+"be an empty list if no objects are detected. The ``confidence`` attribute is"
+" how confident the model is that the given object is correctly detected."
+msgstr ""
+"L'exemple ci-dessus montre la valeur de l'entrée ``ML/detections`` si deux "
+"objets sont détectés. C'est une liste d'objets, où l'attribut ``label`` "
+"désigne le type d'objet qui a été détecté. L'attribut ``box`` décrit les "
+"coins inférieur gauche et supérieur droit de la boîte englobante, "
+"c'est-à-dire la boîte qui entoure complètement l'objet détecté dans l'image."
+" Il y aura une liste vide si aucun objet n'est détecté. L'attribut "
+"``confidence`` est le degré de confiance du modèle que l'objet donné est "
+"correctement détecté."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:40
+msgid ""
+"There are three more NetworkTables entries that the provided script uses to "
+"help the programmer. The first is ``ML/fps``, which tells the programmer how"
+" many frames their model is processing per second. Another is ``ML/coral``, "
+"which tells the programmer is a Google Coral USB accelerator is currently "
+"being used. This is included in case someone removes the Coral from the "
+"robot and forgets to put it back, or a similar scenario. The final "
+"NetworkTables entry is ``ML/resolution``, which is the string ``WIDTH, "
+"HEIGHT``, telling the programmer the size of the processed image, for use "
+"with calculations."
+msgstr ""
+"Il existe trois autres entrées NetworkTables que le script fourni utilise "
+"pour aider le programmeur. Le premier est ``ML/fps``, qui indique au "
+"programmeur combien d'images son modèle traite par seconde. Un autre est "
+"``ML/coral``, qui indique au programmeur qu'un accélérateur USB Google Coral"
+" est actuellement utilisé. Ceci est inclus dans le cas où quelqu'un retire "
+"le corail du robot et oublie de le remettre, ou dans un scénario similaire. "
+"L'entrée finale de NetworkTables est ``ML/resolution``, qui est la chaîne "
+"``WIDTH, HEIGHT``, indiquant au programmeur la taille de l'image traitée, à "
+"utiliser avec les calculs."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:43
+msgid "Applications of Inference"
+msgstr "Applications de l'inférence"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:45
+msgid ""
+"Machine learning is applicable to the FIRST Robotics Competition when non-"
+"uniform objects need to be detected, i.e. a hatch panel from the 2019 game."
+msgstr ""
+"L'apprentissage automatique est applicable à la compétition de robotique "
+"FIRST lorsque des objets non uniformes doivent être détectés, c'est-à-dire "
+"une écoutille du jeu 2019."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rstNone
+msgid "hatch panels being inferenced."
+msgstr "panneaux d’hachures en cours d’inférence."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/axon/using-on-a-robot.rst:50
+msgid ""
+"A model could also be trained to recognize other robots, if a collision-"
+"avoidance system were wanted to be implemented. The WPILib team has found "
+"that uniform objects, such as the 2020 Power Cells, are also easily detected"
+" by neural networks, but other algorithms may be more appropriate."
+msgstr ""
+"Un modèle pourrait également être entraîné à reconnaître d'autres robots, si"
+" un système d'évitement des collisions devait être mis en œuvre. L'équipe "
+"WPILib a découvert que les objets uniformes, tels que les cellules d'énergie"
+" 2020, sont également facilement détectés par les réseaux de neurones, mais "
+"d'autres algorithmes peuvent être plus appropriés."

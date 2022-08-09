@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Gibrán Verástegui <Gibranbasket1526@gmail.com>, 2020
+# Karina Torres <karina.torres0399@gmail.com>, 2020
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-12 16:05+0000\n"
+"PO-Revision-Date: 2020-06-12 20:56+0000\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:2
+msgid "Using Multiple Cameras"
+msgstr "Usando varias cámaras"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:5
+msgid "Switching the Driver Views"
+msgstr "Cambio de vistas del Driver"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:7
+msgid ""
+"If you're interested in just switching what the driver sees, and are using "
+"SmartDashboard, the SmartDashboard CameraServer Stream Viewer has an option "
+"(\"Selected Camera Path\") that reads the given :term:`NetworkTables` key "
+"and changes the \"Camera Choice\" to that value (displaying that camera). "
+"The robot code then just needs to set the :term:`NetworkTables` key to the "
+"correct camera name. Assuming \"Selected Camera Path\" is set to "
+"\"CameraSelection\", the following code uses the joystick 1 trigger button "
+"state to show camera1 and camera2."
+msgstr ""
+"Si está interesado en cambiar lo que ve el controlador, y está utilizando "
+"SmartDashboard, el visor de flujos del SmartDashboard CameraServer tiene una"
+" opción (\"Ruta de la cámara seleccionada\") que lee la clave "
+":term:`NetworkTables` dada y cambia la \"Elección de la cámara\" a ese valor"
+" (mostrando esa cámara). El código del robot sólo tiene que establecer la "
+"clave :term:`NetworkTables` con el nombre correcto de la cámara. Asumiendo "
+"que la \"Ruta de la Cámara Seleccionada\" se establece en \"Selección de "
+"Cámara\", el siguiente código utiliza el estado del botón de disparo del "
+"joystick 1 para mostrar la cámara1 y la cámara2."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:62
+msgid ""
+"If you're using some other dashboard, you can change the camera used by the "
+"camera server dynamically. If you open a stream viewer nominally to camera1,"
+" the robot code will change the stream contents to either camera1 or camera2"
+" based on the joystick trigger."
+msgstr ""
+"Si está utilizando algún otro dashboard, puede cambiar la cámara que utiliza"
+" el servidor de la cámara de forma dinámica. Si abre un visor de transmisión"
+" nominalmente a camera1, el código del robot cambiará el contenido de la "
+"transmisión a camera1 o camera2 según el gatillo del control."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:117
+msgid "Keeping Streams Open"
+msgstr "Mantener las transmisiones abiertas"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:119
+msgid ""
+"By default, the cscore library is pretty aggressive in turning off cameras "
+"not in use. What this means is that when you switch cameras, it may "
+"disconnect from the camera not in use, so switching back will have some "
+"delay as it reconnects to the camera. To keep both camera connections open, "
+"use the ``SetConnectionStrategy()`` method to tell the library to keep the "
+"streams open, even if you aren't using them."
+msgstr ""
+"De forma predeterminada, la biblioteca cscore es bastante agresiva al apagar"
+" las cámaras que no están en uso. Esto significa que cuando cambie de "
+"cámara, es posible que se desconecte de la cámara que no está en uso, por lo"
+" que volver a cambiar tendrá cierta demora cuando se reconecte a la cámara. "
+"Para mantener abiertas las conexiones de ambas cámaras, use el método `` "
+"SetConnectionStrategy() '' para decirle a la biblioteca que mantenga las "
+"transmisiones abiertas, incluso si no las está usando."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:178
+msgid ""
+"If both cameras are USB, you may run into USB bandwidth limitations with "
+"higher resolutions, as in all of these cases the roboRIO is going to be "
+"streaming data from both cameras to the roboRIO simultaneously (for a short "
+"period in options 1 and 2, and continuously in option 3). It is "
+"theoretically possible for the library to avoid this simultaneity in the "
+"option 2 case (only), but this is not currently implemented."
+msgstr ""
+"Si ambas cámaras son USB, puede encontrarse con limitaciones de ancho de "
+"banda USB con resoluciones más altas, ya que en todos estos casos la roboRIO"
+" transmitirá datos de ambas cámaras a la roboRIO simultáneamente (por un "
+"período corto en las opciones 1 y 2, y continuamente en la opción 3). "
+"Teóricamente es posible que la biblioteca evite esta simultaneidad en el "
+"caso de la opción 2 (solamente), pero esto no está implementado actualmente."
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:180
+msgid ""
+"Different cameras report bandwidth usage differently. The library will tell "
+"you if you're hitting the limit; you'll get this error message:"
+msgstr ""
+"Las diferentes cámaras informan el uso de ancho de banda de manera "
+"diferente. La biblioteca le dirá si está llegando al límite; obtendrá este "
+"mensaje de error:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/roborio/using-multiple-cameras.rst:188
+msgid ""
+"If you're using Option 3 it will give you this error during ``RobotInit()``."
+" Thus you should just try your desired resolution and adjusting as necessary"
+" until you both don't get that error and don't exceed the radio bandwidth "
+"limitations."
+msgstr ""
+"Si está utilizando la Opción 3, le dará este error durante ``RobotInit()``. "
+"Por lo tanto, debe probar la resolución deseada y ajustar según sea "
+"necesario hasta que ambos no obtengan ese error y no excedan las "
+"limitaciones de ancho de banda de radio."

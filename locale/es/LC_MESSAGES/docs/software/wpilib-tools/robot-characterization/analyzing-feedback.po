@@ -1,0 +1,350 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Fernando Soltero <fersg806@gmail.com>, 2020
+# Miguel Angel de León Adame <miguelangeldla14@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2020
+# Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# Pierre Cote <persini24@outlook.com>, 2021
+# heriberto gutierrez <herigtzt04@yahoo.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-12 04:13+0000\n"
+"PO-Revision-Date: 2020-04-25 02:06+0000\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:4
+msgid "Feedback Analysis"
+msgstr "Análisis de retroalimentación "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:6
+msgid ""
+"These gains are, in effect, \"educated guesses\" - they are not guaranteed "
+"to be perfect, and should be viewed as a \"starting point\" for further "
+"tuning."
+msgstr ""
+"Estas ganancias son, en efecto, \"conjeturas educadas\" - no se garantiza "
+"que sean perfectas, y debe ser visto como un \"punto de inicio\" para una "
+"mayor sintonía."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:8
+msgid ""
+"The feedback gain calculation assumes that there is no mechanical backlash, "
+"sensor noise, or phase lag in the sensor measurement.  While these are "
+"reasonable assumptions in many situations, none of them are strictly true in"
+" practice.  In particular, many \"smart motor controllers\" (such as the "
+"``Talon SRX``, ``Talon FX``, and ``SPARK MAX``) have default settings that "
+"apply substantial :ref:`low-pass filtering <docs/software/advanced-"
+"controls/filters/introduction:Introduction to Filters>` to their encoder "
+"velocity measurements, which introduces a significant amount of phase lag.  "
+"This can cause the calculated gains for velocity loops to be unstable.  To "
+"rectify this, either decrease the amount of filtering through the "
+"controller's API, or reduce the magnitude of the PID gains - it has been "
+"found that shrinking gains by about a factor of 10 works well for most "
+"default filtering settings."
+msgstr ""
+"La retroalimentación de la ganancia asume que no hay retroceso mecánico, el "
+"ruido en sensor, o el desfase en la medición del sensor. Aunque son "
+"suposiciones razonables en muchas situaciones, ninguna de ellas es "
+"estrictamente cierta en la práctica. En particular, muchos \"controladores "
+"de motor inteligentes\" (como el Talon SRX, Talon FX y SparkMax) tienen "
+"configuraciones predeterminadas que aplican un filtrado sustancial :ref: `de"
+" paso bajo docs/software/advanced-controls/filters/introduction:Introduction"
+" to Filters>` a sus mediciones de velocidad del codificador, lo que "
+"introduce una cantidad significativa de desfase. Esto puede causar que la "
+"ganancia calculada para que los bucles de velocidad sean inestables. Para "
+"rectificar esto, o bien se reduce la cantidad de filtrado a través de la API"
+" del controlador, o se reduce la magnitud de las ganancias del PID – se ha "
+"encontrado que reducir las ganancias por un factor de 10 funciona bien para "
+"la mayoría de los filtros predeterminados de configuración"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:10
+msgid ""
+"Once the feedforward coefficients have been computed, the controls on the "
+":guilabel:`Feedback Analysis` pane become available."
+msgstr ""
+"Una vez que los coeficientes de feedforward han sido calculados, los "
+"controles en el panel :guilabel:`Feedback Analysis` se vuelven disponibles."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:15
+msgid ""
+"These can be used to calculate optimal feedback gains for a PD or P "
+"controller for your mechanism (via `LQR "
+"<https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__)."
+msgstr ""
+"Estos pueden ser usados para calcular las ganancias de retroalimentación "
+"óptimas para un controlador PD o P para su mecanismo  (via `LQR "
+"<https://en.wikipedia.org/wiki/Linear%E2%80%93quadratic_regulator>`__)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:18
+msgid "Enter Controller Parameters"
+msgstr "Escribir controles de parámetro "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:20
+msgid ""
+"The \"Spark Max\" preset assumes that the user has configured the controller"
+" to operate in the units of analysis with the SPARK MAX API's "
+"position/velocity scaling factor feature."
+msgstr ""
+"El  \"Spark Max\" preestablecido asume que el usuario ha configurado el "
+"controlador para operar en las unidades de análisis con la función de escala"
+" posición / velocidad."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:22
+msgid ""
+"The calculated feedforward gains are *dimensioned quantities*. "
+"Unfortunately, not much attention is often paid to the units of PID gains in"
+" FRC\\ |reg| controls, and so the various typical options for PID controller"
+" implementations differ in their unit conventions (which are often not made "
+"clear to the user)."
+msgstr ""
+"Las ganancias de feedforward calculadas son *cantidades dimensionadas*. "
+"Desafortunadamente, no se presta mucha atención a las unidades de ganancias "
+"PID en los controles de FRC\\ |reg|, por lo que las diversas opciones "
+"típicas para las implementaciones de controladores PID difieren en sus "
+"convenciones de unidad (que a menudo no se hacen claro para el usuario)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:24
+msgid ""
+"To specify the correct settings for your PID controller, use the following "
+"options."
+msgstr ""
+"Para especificar la configuración correcta para su controlador PID, utilice "
+"las siguientes opciones"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:29
+msgid ""
+"**Gain Settings Preset:** This drop-down menu will auto-populate the "
+"remaining fields with likely settings for one of a number of common FRC "
+"controller setups. Note that some settings, such as post-encoder gearing, "
+"PPR, and the presence of a follower motor must still be manually specified "
+"(as the analyzer has no way of knowing these without user input), and that "
+"others may vary from the given defaults depending on user setup."
+msgstr ""
+"**Ajustes de ganancia preestablecidos:** Este menú desplegable rellenará "
+"automáticamente los campos restantes con configuraciones probables para una "
+"de las configuraciones comunes de controladores FRC. Tenga en cuenta que "
+"algunos ajustes, como el engranaje post-encoder, Pulsos Por Revolución, y la"
+" presencia de un motor esclavo debe ser especificado manualmente (ya que el "
+"analizador no tiene forma de saber esto sin entrada del usuario), y que "
+"otros pueden variar de los valores predeterminados dados dependiendo de la "
+"configuración del usuario."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:30
+msgid ""
+"**Controller Period:** This is the execution period of the control loop, in "
+"seconds. The default RIO loop rate is 50Hz, corresponding to a period of "
+"0.02s. The onboard controllers on most \"smart controllers\" run at 1Khz, or"
+" a period of 0.001s."
+msgstr ""
+"**Periodo de controlador**: Este es el período de ejecución del bucle de "
+"control, en segundos. La velocidad del bucle de la RIO por defecto es de "
+"50Hz, lo que corresponde a un período de 0,02s. Los controladores a bordo en"
+" la mayoría de los \"controladores inteligentes\" funcionan a 1Khz, o un "
+"período de 0.001s."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:31
+msgid ""
+"**Max Controller Output:** This is the maximum value of the controller "
+"output, with respect to the PID calculation. Most controllers calculate "
+"outputs with a maximum value of 1, but Talon controllers have a maximum "
+"output of 1023."
+msgstr ""
+"**Salida máxima del controlador**: Este es el valor máximo de la salida del "
+"controlador, con respecto al cálculo del PID. La mayoría de los "
+"controladores calculan las salidas con un valor máximo de 1, pero los "
+"controladores del Talon tienen una salida máxima de 1023."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:32
+msgid ""
+"**Time-Normalized Controller:** This specifies whether the PID calculation "
+"is normalized to the period of execution, which affects the scaling of the D"
+" gain."
+msgstr ""
+"**Controlador de tiempo normalizado:** Esto especifica si el cálculo del PID"
+" está normalizado al período de ejecución, lo que afecta a la escala de la "
+"ganancia de D."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:33
+msgid ""
+"**Controller Type:** This specifies whether the controller is an onboard RIO"
+" loop, or is running on a smart motor controller such as a Talon or a SPARK "
+"MAX."
+msgstr ""
+"**Tipo de controlador:** Esto especifica si el controlador es un bucle RIO "
+"integrado, o esta funcionando en un controlador de motor inteligente como "
+"los Talon o Spark MAX."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:34
+msgid ""
+"**Post-Encoder Gearing:** This specifies the gearing between the encoder and"
+" the mechanism itself. This is necessary for control loops that do not allow"
+" user-specified unit scaling in their PID computations (e.g. those running "
+"on Talons). This will be disabled if not relevant."
+msgstr ""
+"**Engranaje del post-encoder:** Esto especifica el engranaje entre el "
+"encoder y el propio mecanismo. Esto es necesario para los bucles de control "
+"que no permiten la unidad especificada por el usuario en sus cálculos de PID"
+" (por ejemplo, los que se ejecutan en Talons). Esto se desactivará si no es "
+"relevante."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:35
+msgid ""
+"**Encoder EPR:** This specifies the edges-per-revolution (not cycles per "
+"revolution) of the encoder used, which is needed in the same cases as Post-"
+"Encoder Gearing."
+msgstr ""
+"**EPR del Encoder**: Esto especifica los bordes por revolución (no los "
+"ciclos por revolución) del codificador utilizado, que se necesita en los "
+"mismos casos que el Engranaje Post-Encoder."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:36
+msgid ""
+"**Has Follower:** Whether there is a motor controller following the "
+"controller running the control loop, if the control loop is being run on a "
+"peripheral device. This changes the effective loop period."
+msgstr ""
+"**Tiene Seguidor:** Si hay un controlador de motor siguiendo al controlador "
+"que ejecuta el bucle de control, si el bucle de control se ejecuta en un "
+"dispositivo periférico. Esto cambia el período de bucle efectivo."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:37
+msgid ""
+"**Follower Update Period:** The rate at which the follower (if present) is "
+"updated. By default, this is 100Hz (every 0.01s) for the Talon SRX, Talon "
+"FX, and the SPARK MAX, but can be changed."
+msgstr ""
+"**Follower Update Period:** La velocidad a la que se actualiza el seguidor "
+"(si está presente). De forma predeterminada, es 100 Hz (cada 0,01 s) para "
+"Talon SRX, Talon FX y SPARK MAX, pero se puede cambiar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:39
+msgid ""
+"If you select a smart motor controller as the preset (e.g. TalonSRX, SPARK "
+"MAX, etc.) the :guilabel:`Convert Gains` checkbox will be automatically "
+"checked. This means the tool will convert your gains so that they can be "
+"used through the smart motor controller's PID methods. Therefore, if you "
+"would like to use WPILib's PID Loops, you must uncheck that box."
+msgstr ""
+"Si selecciono un controlador de motor inteligente como preestablecido (ej. "
+"TalonSRX, SPARK MAX, etc.) la casilla :guilabel:`Convert Gains` se marcará "
+"automáticamente. Esto significa que la herramienta convertirá tus ganancias "
+"para que puedan ser usadas a través de los métodos de PID de un controlador "
+"de motor inteligente. Entonces, si le gustaría usar los bucles de WPILib de "
+"PID, debe de desmarcar la casilla."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:42
+msgid "Specify Optimality Criteria"
+msgstr "Especificar los criterios de optimización"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:44
+msgid ""
+"Finally, the user must specify what will be considered an \"optimal\" "
+"controller.  This takes the form of desired tolerances for the system error "
+"and control effort - note that it is *not* guaranteed that the system will "
+"obey these tolerances at all times."
+msgstr ""
+"Finalmente el usuario deberá especificar lo que se considerará un "
+"controlador \"óptimo\". Esto toma la forma de las tolerancias deseadas para "
+"el error del sistema y el esfuerzo de control - note que no está garantizado"
+" que el sistema obedecerá estas tolerancias en todo momento."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:49
+msgid ""
+"As a rule, smaller values for the :guilabel:`Max Acceptable Error` and "
+"larger values for the :guilabel:`Max Acceptable Control Effort` will result "
+"in larger gains - this will result in larger control efforts, which can "
+"grant better setpoint-tracking but may cause more violent behavior and "
+"greater wear on components."
+msgstr ""
+"Por regla general, los valores más pequeños para la :guilabel:`Error Máximo "
+"Aceptable` y los valores más grandes para la :guilabel:`Esfuerzo de Control "
+"Máximo Aceptable` darán lugar a mayores ganancias - esto dará lugar a "
+"mayores esfuerzos de control, lo que puede garantizar un mejor seguimiento "
+"del punto de ajuste, pero puede causar un comportamiento más violento y un "
+"mayor desgaste de los componentes."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:51
+msgid ""
+"The :guilabel:`Max Acceptable Control Effort` should never exceed 12V, as "
+"that corresponds to full battery voltage, and ideally should be somewhat "
+"lower than this."
+msgstr ""
+"La etiqueta :guilabel:`Esfuerzo de Control Máximo Aceptable` nunca debe "
+"exceder los 12V, ya que eso corresponde al voltaje total de la batería, e "
+"idealmente debería ser algo menor que esto."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:54
+msgid "Select Loop Type"
+msgstr "Seleccione el tipo de bucle"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:56
+msgid ""
+"It is typical to control mechanisms with both position and velocity PIDs, "
+"depending on application. Either can be selected using the drop-down "
+":guilabel:`Loop Type` menu."
+msgstr ""
+"Es típico controlar mecanismos con PIDs de posición y de velocidad, "
+"dependiendo de la aplicación. Cualquiera de ellos puede seleccionarse "
+"mediante el menú desplegable :guilabel:`Tipo de lazo`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:62
+msgid "Enter Known Velocity/Acceleration"
+msgstr "Introduzca la velocidad/aceleración conocida"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:64
+msgid ""
+"Sometimes, with an exceptionally light mechanism/robot and/or exceptionally-"
+"noisy data, it is possible for the ``kA`` value to be exceedingly small (or "
+"even slightly negative).  In this case, the user should set ``kA`` to zero."
+"  The computed feedback gains in this case may also be zero - this is "
+"because such a mechanism should not require feedback to accurately track the"
+" setpoint under the assumptions of LQR.  These assumptions may not be "
+"perfectly accurate, and users may need to add feedback regardless - in this "
+"case, the loop must be tuned manually."
+msgstr ""
+"A veces, con un mecanismo/robot excepcionalmente ligero y/o datos "
+"especialmente ruidosos es posible que el valor kA sea excesivamente pequeño "
+"(o incluso ligeramente negativo). En caso de que el usuario deba poner el kA"
+" a cero. Las ganancias de retroalimentación calculadas en este caso también "
+"pueden ser cero - esto es porque tal mecanismo no debería requerir de "
+"retroalimentación para rastrear con precisión el punto de ajuste bajo los "
+"supuestos del LQR. Estos supuestos pueden no ser perfectamente exactos, y "
+"los usuarios pueden necesitar agregar retroalimentación de todos modos - en "
+"este caso, el bucle debe ser configurado manualmente."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:66
+msgid ""
+"If one wishes to use the :guilabel:`Feedback Analysis` pane without running "
+"a full analysis on a set of data, or otherwise view the effect of modifying "
+"the ``kV`` and ``kA`` values, this can be done here."
+msgstr ""
+"Si se desea utilizar el panel :guilabel:`Análisis de retroalimentación` sin "
+"ejecutar un análisis completo en un conjunto de datos, o bien ver el efecto "
+"de la modificación de los valores ``kV`` y ``kA``, se puede hacer aquí."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:72
+msgid "Calculate Gains"
+msgstr "Calcular las ganancias"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/analyzing-feedback.rst:74
+msgid ""
+"Finally, press the :guilabel:`Calculate Optimal Controller Gains` to "
+"determine the feedback gains."
+msgstr ""
+"Por último, pulse :guilabel:`Calcular ganancias óptimas del controlador` "
+"para determinar las ganancias de retroalimentación."

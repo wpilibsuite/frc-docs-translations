@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Michael Zhao <haitong1110@126.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Michael Zhao <haitong1110@126.com>, 2020\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:2
+msgid "Introduction to Kinematics and The Chassis Speeds Class"
+msgstr "运动学和底盘速度类简介"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:5
+msgid "What is kinematics?"
+msgstr "什么是运动学？"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:6
+msgid ""
+"The brand new kinematics suite contains classes for differential drive, "
+"swerve drive, and mecanum drive kinematics and odometry. The kinematics "
+"classes help convert between a universal ``ChassisSpeeds`` object, "
+"containing linear and angular velocities for a robot to usable speeds for "
+"each individual type of drivetrain i.e. left and right wheel speeds for a "
+"differential drive, four wheel speeds for a mecanum drive, or individual "
+"module states (speed and angle) for a swerve drive."
+msgstr ""
+"全新的运动学套件包含了差速驱动、转向驱动和麦轮驱动运动学和测距法。运动学类有助于将包含机器人线性和角速度的通用 \"ChassisSpeeds "
+"\"对象转换为每个单独类型的传动系统的可用速度，即差速驱动的左轮和右轮速度，麦轮驱动的四轮速度，或转向驱动的单个模块状态（速度和角度）。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:9
+msgid "What is odometry?"
+msgstr "什么是测距法？"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:10
+msgid ""
+"Odometry involves using sensors on the robot to create an estimate of the "
+"position of the robot on the field. In FRC, these sensors are typically "
+"several encoders (the exact number depends on the drive type) and a "
+"gyroscope to measure robot angle. The odometry classes utilize the "
+"kinematics classes along with periodic user inputs about speeds (and angles "
+"in the case of swerve) to create an estimate of the robot's location on the "
+"field."
+msgstr ""
+"测距法涉及使用机器人上的传感器来估计机器人在场上的位置。在FRC中，这些传感器通常是几个编码器（具体数量取决于驱动类型）和一个陀螺仪来测量机器人的角度。运动学类利用运动学类和用户定期输入的速度（和转弯时的角度）来估计机器人在场上的位置。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:13
+msgid "The Chassis Speeds Class"
+msgstr "底盘速度类"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:14
+msgid ""
+"The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and "
+"odometry suite. The ``ChassisSpeeds`` object represents the speeds of a "
+"robot chassis. This struct has three components:"
+msgstr ""
+"``ChassisSpeeds``对象对新的WPILib运动学和里程测量套件至关重要。``ChassisSpeeds``对象表示机器人底盘的速度。该结构有三个组成部分："
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:16
+msgid "``vx``: The velocity of the robot in the x (forward) direction."
+msgstr "``vx``：机器人在x(前进)方向的速度。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:17
+msgid ""
+"``vy``: The velocity of the robot in the y (sideways) direction. (Positive "
+"values mean the robot is moving to the left)."
+msgstr "``vy``：机器人在y（横向）方向的速度。(正值表示机器人向左移动)。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:18
+msgid "``omega``: The angular velocity of the robot in radians per second."
+msgstr "``omega``：机器人的角速度，单位为每秒弧度。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:20
+msgid ""
+"A non-holonomic drivetrain (i.e. a drivetrain that cannot move sideways, ex:"
+" a differential drive) will have a ``vy`` component of zero because of its "
+"inability to move sideways."
+msgstr "非整体性传动系统(即不能横向移动的传动系统，例如：差速驱动)由于不能横向移动，其 \"vy \"分量为零。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:23
+msgid "Constructing a ChassisSpeeds object"
+msgstr "构造一个ChassisSpeeds对象"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:24
+msgid ""
+"The constructor for the ``ChassisSpeeds`` object is very straightforward, "
+"accepting three arguments for ``vx``, ``vy``, and ``omega``. In Java, ``vx``"
+" and ``vy`` must be in meters per second. In C++, the units library may be "
+"used to provide a linear velocity using any linear velocity unit."
+msgstr ""
+"``ChassisSpeeds``对象的构造函数非常简单，接受三个参数``vx``、``vy``和``omega``。在Java中，``vx``和``vy``必须以米/秒为单位。在C++中，单位库可用于提供使用任何线性速度单位的线性速度。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:45
+msgid "Creating a ChassisSpeeds Object from Field-Relative Speeds"
+msgstr "从相对场地速度创建ChassisSpeeds对象"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:46
+msgid ""
+"A ``ChassisSpeeds`` object can also be created from a set of field-relative "
+"speeds when the robot angle is given. This converts a set of desired "
+"velocities relative to the field (for example, toward the opposite alliance "
+"station and toward the right field boundary) to a ``ChassisSpeeds`` object "
+"which represents speeds that are relative to the robot frame. This is useful"
+" for implementing field-oriented controls for a swerve or mecanum drive "
+"robot."
+msgstr ""
+"当机器人角度给定时，还可以用一组场内相对速度创建一个``底盘速度``对象。这将一组相对于场域的期望速度（例如，朝向对面联盟站和朝向右场边界）转换为``ChassisSpeeds``对象，它表示相对于机器人框架的速度。这对于实现面向场地的控制，对转向或麦轮驱动机器人是有用的。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:48
+msgid ""
+"The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / "
+"``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++) method can be used to "
+"generate the ``ChassisSpeeds`` object from field-relative speeds. This "
+"method accepts the ``vx`` (relative to the field), ``vy`` (relative to the "
+"field), ``omega``, and the robot angle."
+msgstr ""
+"静态的``ChassisSpeeds.fromFieldRelativeSpeeds``(Java)/``ChassisSpeeds::FromFieldRelativeSpeeds``(C++)方法可用于从场相对速度生成``ChassisSpeeds``对象。该方法接受``vx``（相对于场）、``vy``（相对于场）、``omega``和机器人角度。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:72
+msgid ""
+"The angular velocity is not explicitly stated to be \"relative to the "
+"field\" because the angular velocity is the same as measured from a field "
+"perspective or a robot perspective."
+msgstr "角速度没有明确说是 \"相对于场\"，因为从场角度或机器人角度测量的角速度是一样的。"

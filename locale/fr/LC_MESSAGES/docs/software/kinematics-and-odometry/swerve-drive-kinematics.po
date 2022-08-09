@@ -1,0 +1,275 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-13 16:48+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:2
+msgid "Swerve Drive Kinematics"
+msgstr "La cinématique de l'entraînement de type \"à embardée\" (Swerve)"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:3
+msgid ""
+"The ``SwerveDriveKinematics`` class is a useful tool that converts between a"
+" ``ChassisSpeeds`` object and several ``SwerveModuleState`` objects, which "
+"contains velocities and angles for each swerve module of a swerve drive "
+"robot."
+msgstr ""
+"N.D.T. (le mot \"Swerve\" sera utilisé tout le long de cette page, afin "
+"d'alléger le texte).   La classe ``SwerveDriveKinematics`` est un outil "
+"utile qui convertit entre un objet ``ChassisSpeeds``  et plusieurs objets "
+"``SwerveModuleState``, qui contient les vitesses et les angles pour chaque "
+"module Swerve d'un robot avec entraînement de ce type.  "
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:6
+msgid "The swerve module state class"
+msgstr "La classe d'état du module swerve"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:7
+msgid ""
+"The ``SwerveModuleState`` class contains information about the velocity and "
+"angle of a singular module of a swerve drive. The constructor for a "
+"``SwerveModuleState`` takes in two arguments, the velocity of the wheel on "
+"the module, and the angle of the module."
+msgstr ""
+"La classe ``SwerveModuleState`` contient des informations sur la vitesse et "
+"l'angle d'un seul module Swerve. Le constructeur d'un ``SwerveModuleState`` "
+"prend deux arguments, la vitesse de la roue sur le module et l'angle du "
+"module."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:9
+msgid ""
+"In Java, the velocity of the wheel must be in meters per second. In C++, the"
+" units library can be used to provide the velocity using any linear velocity"
+" unit."
+msgstr ""
+"En Java, la vitesse de la roue doit être en mètres par seconde. En C ++, la "
+"librairie d'unités peut être utilisée pour fournir la vitesse en utilisant "
+"n'importe quelle unité de vitesse linéaire."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:10
+msgid "An angle of 0 corresponds to the modules facing forward."
+msgstr "Un angle de 0 correspond aux modules tournés vers l'avant."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:13
+msgid "Constructing the kinematics object"
+msgstr "Construction de l'objet cinématique"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:14
+msgid ""
+"The ``SwerveDriveKinematics`` class accepts a variable number of constructor"
+" arguments, with each argument being the location of a swerve module "
+"relative to the robot center (as a ``Translation2d``. The number of "
+"constructor arguments corresponds to the number of swerve modules."
+msgstr ""
+"La classe ``SwerveDriveKinematics`` accepte un nombre variable d'arguments "
+"constructeur, chaque argument étant l'emplacement d'un module swerve par "
+"rapport au centre du robot (sous la forme d'un ``Translation2d``. Le nombre "
+"d'arguments constructeur correspond au nombre de modules Swerve."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:16
+msgid "A swerve drive must have 2 or more modules."
+msgstr "Un robot doit avoir au moins 2 modules Swerve."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:18
+msgid ""
+"In C++, the class is templated on the number of modules. Therefore, when "
+"constructing a ``SwerveDriveKinematics`` object as a member variable of a "
+"class, the number of modules must be passed in as a template argument. For "
+"example, for a typical swerve drive with four modules, the kinematics object"
+" must be constructed as follows: ``frc::SwerveDriveKinematics<4> "
+"m_kinematics{...}``."
+msgstr ""
+"En C ++, la classe est basée sur le nombre de modules. Par conséquent, lors "
+"de la construction d'un objet ``SwerveDriveKinematics`` en tant que variable"
+" membre d'une classe, le nombre de modules doit être transmis en tant "
+"qu'argument. Par exemple, pour un entraînement Swerve typique avec quatre "
+"modules, l'objet cinématique doit être construit comme suit: "
+"``frc::SwerveDriveKinematics<4> m_kinematics{...}``."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:20
+msgid ""
+"The locations for the modules must be relative to the center of the robot. "
+"Positive x values represent moving toward the front of the robot whereas "
+"positive y values represent moving toward the left of the robot."
+msgstr ""
+"Les emplacements des modules doivent être relatifs au centre du robot. Les "
+"valeurs x positives représentent le déplacement vers l'avant du robot tandis"
+" que les valeurs y positives représentent le déplacement vers la gauche du "
+"robot."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:51
+msgid "Converting chassis speeds to module states"
+msgstr "Conversion des vitesses de châssis en états de module"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:52
+msgid ""
+"The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java) / "
+"``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) method should be used "
+"to convert a ``ChassisSpeeds`` object to a an array of ``SwerveModuleState``"
+" objects. This is useful in situations where you have to convert a forward "
+"velocity, sideways velocity, and an angular velocity into individual module "
+"states."
+msgstr ""
+"La méthode ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java) / "
+"``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) doit être utilisée pour"
+" convertir un objet ``ChassisSpeeds`` en un tableau d'objets "
+"``SwerveModuleState`` . Ceci est utile dans les situations où vous devez "
+"convertir une vitesse avant, une vitesse latérale et une vitesse angulaire "
+"en états de module individuels."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:54
+msgid ""
+"The elements in the array that is returned by this method are the same order"
+" in which the kinematics object was constructed. For example, if the "
+"kinematics object was constructed with the front left module location, front"
+" right module location, back left module location, and the back right module"
+" location in that order, the elements in the array would be the front left "
+"module state, front right module state, back left module state, and back "
+"right module state in that order."
+msgstr ""
+"Les éléments du tableau renvoyé par cette méthode sont du même ordre dans "
+"lequel l'objet cinématique a été construit. Par exemple, si l'objet "
+"cinématique a été construit avec l'emplacement du module avant-gauche, "
+"l'emplacement du module avant-droit, l'emplacement du module arrière-gauche "
+"et l'emplacement du module arrière-droit dans cet ordre, les éléments du "
+"tableau seront:  état du module avant-gauche, état du module avant-droit, "
+"état du module arrière-gauche et état du module arrière-droit (en respectant"
+" cet ordre)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:93
+msgid "Module angle optimization"
+msgstr "Module d'optimisation de l’angle"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:94
+msgid ""
+"The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / "
+"``Optimize()`` (C++) method that is used to \"optimize\" the speed and angle"
+" setpoint of a given ``SwerveModuleState`` to minimize the change in "
+"heading. For example, if the angular setpoint of a certain module from "
+"inverse kinematics is 90 degrees, but your current angle is -89 degrees, "
+"this method will automatically negate the speed of the module setpoint and "
+"make the angular setpoint -90 degrees to reduce the distance the module has "
+"to travel."
+msgstr ""
+"La classe ``SwerveModuleState`` contient une méthode statique ``optimize()``"
+" (Java) / ``Optimize()`` (C++) qui est utilisée pour \"optimiser\" les "
+"points de consigne de vitesse et d’angle pour un  ``SwerveModuleState`` "
+"donné afin de minimiser le changement d'orientation angulaire. Par exemple, "
+"si le point de consigne angulaire d’un certain module de cinématique inverse"
+" est de 90 degrés, mais que votre angle actuel est de -89 degrés, cette "
+"méthode annulera automatiquement la vitesse du point de consigne du module "
+"et fournira le point de consigne angulaire -90 degrés pour réduire la "
+"distance parcourue par le module."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:96
+msgid ""
+"This method takes two parameters: the desired state (usually from the "
+"``toSwerveModuleStates`` method) and the current angle. It will return the "
+"new optimized state which you can use as the setpoint in your feedback "
+"control loop."
+msgstr ""
+"Cette méthode prend deux paramètres : l’état désiré (généralement par "
+"l'intermédiaire de la méthode ``toSwerveModuleStates``) et l’angle actuel. "
+"Il retournera le nouvel état optimisé que vous pouvez utiliser comme point "
+"de consigne dans votre boucle de contrôle de rétroaction."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:110
+msgid "Field-oriented drive"
+msgstr "Entraînement orienté terrain"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:111
+msgid ""
+":ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a "
+"``ChassisSpeeds`` object can be created from a set of desired field-oriented"
+" speeds. This feature can be used to get module states from a set of desired"
+" field-oriented speeds."
+msgstr ""
+":ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:Creating a ChassisSpeeds object from field-relative speeds>`  peut "
+"être créé à partir d'un ensemble de vitesses orientées en fonction du "
+"terrain de jeu. Cette fonction peut être utilisée également pour obtenir les"
+" vitesses de roue à partir du même ensemble (de vitesses orientées en "
+"fonction du terrain de jeu)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:142
+msgid "Using custom centers of rotation"
+msgstr "Utilisation de centres de rotation personnalisés"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:143
+msgid ""
+"Sometimes, rotating around one specific corner might be desirable for "
+"certain evasive maneuvers. This type of behavior is also supported by the "
+"WPILib classes. The same ``ToSwerveModuleStates()`` method accepts a second "
+"parameter for the center of rotation (as a ``Translation2d``). Just like the"
+" wheel locations, the ``Translation2d`` representing the center of rotation "
+"should be relative to the robot center."
+msgstr ""
+"Parfois, la rotation autour d'un point spécifique peut être souhaitable pour"
+" certaines manœuvres d'évitement. Ce type de comportement est également pris"
+" en charge par les classes WPILib. La même méthode "
+"``ToSwerveModuleStates()`` accepte un deuxième paramètre pour le centre de "
+"rotation (comme un ``Translation2d``). Tout comme les emplacements des "
+"roues, le ``Translation2d`` représentant le centre de rotation doit être "
+"relatif au centre du robot."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:145
+msgid ""
+"Because all robots are a rigid frame, the provided ``vx`` and ``vy`` "
+"velocities from the ``ChassisSpeeds`` object will still apply for the "
+"entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` "
+"object will be measured from the center of rotation."
+msgstr ""
+"Étant donné que tous les robots ont un châssis rigide, les vitesses ``vx`` "
+"et ``vy`` fournies par l'objet ``ChassisSpeeds`` s'appliqueront toujours à "
+"l'intégralité du robot. Cependant, ``omega`` de l'objet ``ChassisSpeeds``  "
+"sera mesuré à partir du centre de rotation."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:147
+msgid ""
+"For example, one can set the center of rotation on a certain module and if "
+"the provided ``ChassisSpeeds`` object has a ``vx`` and ``vy`` of zero and a "
+"non-zero ``omega``, the robot will appear to rotate around that particular "
+"swerve module."
+msgstr ""
+"Par exemple, on peut définir le centre de rotation sur un certain module et "
+"si l'objet ```ChassisSpeeds`` fourni a un ``vx`` et un ``vy`` de zéro et un "
+"``omega`` différent de zéro, le robot tournerar autour de ce module Swerve "
+"spécifique."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:150
+msgid "Converting module states to chassis speeds"
+msgstr "Conversion des états des modules en vitesses de châssis"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:151
+msgid ""
+"One can also use the kinematics object to convert an array of "
+"``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The "
+"``toChassisSpeeds(SwerveModuleState... states)`` (Java) / "
+"``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to"
+" achieve this."
+msgstr ""
+"On peut également utiliser l'objet cinématique pour convertir un tableau "
+"d'objets  ``SwerveModuleState``  en un objet ``ChassisSpeeds`` unique. La "
+"méthode ``toChassisSpeeds(SwerveModuleState... states)`` (Java) / "
+"``ToChassisSpeeds(SwerveModuleState... states)`` (C++)  peut être utilisée "
+"pour y parvenir."

@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Duru Ünlü <aodunlu@gmail.com>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
+# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
+"PO-Revision-Date: 2020-10-04 04:16+0000\n"
+"Last-Translator: Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:2
+msgid "Debugging State-Space Models and Controllers"
+msgstr "Durum Uzayı Modellerinde ve Denetleyicilerinde Hata Ayıklama"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:5
+msgid "Checking Signs"
+msgstr "İşaretleri Kontrol Etmek"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:7
+msgid ""
+"One of the most common causes of bugs with state-space controllers is signs "
+"being flipped. For example, models included in WPILib expect positive "
+"voltage to result in a positive acceleration, and vice versa. If applying a "
+"positive voltage does not make the mechanism accelerate forwards, or if "
+"moving \"forwards\" makes encoder (or other sensor readings) decrease, they "
+"should be inverted so that positive voltage input results in a positive "
+"encoder reading. For example, if I apply an :term:`input` of :math:`[12, "
+"12]^T` (full forwards for the left and right motors) to my differential "
+"drivetrain, my wheels should propel my robot \"forwards\" (along the +X axis"
+" locally), and for my encoders to read a positive velocity."
+msgstr ""
+"Durum alanı denetleyicilerindeki hataların en yaygın nedenlerinden biri, "
+"işaretlerin ters çevrilmesidir. Örneğin, WPILib'e dahil olan modeller, "
+"pozitif voltajın pozitif bir ivmeyle sonuçlanmasını bekler ve bunun tersi de"
+" geçerlidir. Pozitif voltaj uygulanması mekanizmanın ileriye doğru "
+"hızlanmasına neden olmazsa veya \"ileri\" hareket etmek kodlayıcıyı (veya "
+"diğer sensör okumalarını) düşürürse, pozitif voltaj girişinin pozitif "
+"kodlayıcı okumasıyla sonuçlanması için ters çevrilmelidirler. Örneğin, "
+"kodlayıcılarımın pozitif bir hız okuması için diferansiyel aktarma sistemime"
+" bir :term:`input` of :math:`[12, 12]^T`  (sol ve sağ motorlar için tam "
+"ileri) uygularsam, tekerleklerim robotumu \"ileri\" (yerel olarak + X ekseni"
+" boyunca) itmelidir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:13
+msgid "The Importance of Graphs"
+msgstr "Grafiklerin Önemi"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:17
+msgid ""
+"By default, NetworkTables is limited to a 10hz update rate. For testing, "
+"this can be bypassed with the following code snippet to submit data at up to"
+" 100hz. This code should be run periodically to forcibly publish new data."
+msgstr ""
+"Varsayılan olarak, NetworkTables 10 hz güncelleme hızıyla sınırlıdır. Test "
+"için, 100 hz'ye kadar veri göndermek için aşağıdaki kod parçacığı ile bu "
+"atlanabilir. Yeni verileri zorla yayınlamak için bu kod periyodik olarak "
+"çalıştırılmalıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:19
+msgid ""
+"This will send extra data (at up to 100hz) over NetworkTables, which can "
+"cause lag with both user code and robot dashboards. This will also increase "
+"network utilization. It is often a good idea to disable this during "
+"competitions."
+msgstr ""
+"Bu, NetworkTables üzerinden fazladan veri (100 hz'ye kadar) gönderecek ve "
+"bu, hem kullanıcı kodu hem de robot gösterge tablolarında gecikmeye neden "
+"olabilir. Bu aynı zamanda ağ kullanımını da artıracaktır. Yarışmalar "
+"sırasında bunu devre dışı bırakmak genellikle iyi bir fikirdir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:37
+msgid "Compensating for Input Lag"
+msgstr "Giriş Gecikmesini Telafi Etme"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:38
+msgid ""
+"Often times, some sensor input data (i.e. velocity readings) may be delayed "
+"due to onboard filtering that smart motor controllers tend to perform. By "
+"default, LQR's K gain assumes no input delay, so introducing significant "
+"delay on the order of tens of milliseconds can cause instability. To combat "
+"this, the LQR's K gain can be reduced, trading off performance for "
+"stability. A code example for how to compensate for this latency in a "
+"mathematically rigorous manner is available :ref:`here "
+"<docs/software/advanced-controls/state-space/state-space-intro:LQR and "
+"Measurement Latency Compensation>`."
+msgstr ""
+"Çoğu zaman, bazı sensör giriş verileri (yani hız okumaları), akıllı motor "
+"kontrol cihazlarının gerçekleştirme eğiliminde olduğu dahili filtreleme "
+"nedeniyle gecikebilir. Varsayılan olarak, LQR'nin K kazancı herhangi bir "
+"giriş gecikmesi olmadığını varsayar, bu nedenle onlarca milisaniye düzeyinde"
+" önemli bir gecikme uygulamak istikrarsızlığa neden olabilir. Bununla "
+"mücadele etmek için, LQR'nin K kazancı, istikrar için performansın takas "
+"edilmesi suretiyle azaltılabilir. Bu gecikmenin matematiksel olarak titiz "
+"bir şekilde nasıl telafi edileceğine dair bir kod örneği mevcuttur:ref:`here"
+" <docs/software/advanced-controls/state-space/state-space-intro:LQR and "
+"Measurement Latency Compensation>`."

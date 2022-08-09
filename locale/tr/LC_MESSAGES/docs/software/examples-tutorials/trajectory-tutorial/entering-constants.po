@@ -1,0 +1,139 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-28 16:18+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:2
+msgid "Step 2: Entering the Calculated Constants"
+msgstr "2. Adım : Hesaplanan Sabitleri Girme"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:4
+msgid ""
+"In C++, it is important that the feedforward constants be entered as the "
+"correct unit type.  For more information on C++ units, see "
+":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"C++ 'da, ileri besleme sabitlerinin doğru birim türü olarak girilmesi "
+"önemlidir. C++ birimleri hakkında daha fazla bilgi için bakınız: "
+":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:6
+msgid ""
+"Now that we have our characterization constants, it is time to place them in"
+" our code.  The recommended place for this is the ``Constants`` file of the "
+":ref:`standard command-based project structure <docs/software/commandbased"
+"/structuring-command-based-project:Constants>`."
+msgstr ""
+"Artık karakterizasyon sabitlerimize sahip olduğumuza göre, bunları kodumuza "
+"yerleştirmenin zamanı geldi. Bunun için önerilen yer :ref:`standard command-"
+"based  komut-tabanlı proje yapısı structure <docs/software/commandbased"
+"/structuring-command-based-project:Constants>` ın ``Constants`` dosyasıdır."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:8
+msgid ""
+"The relevant parts of the constants file from the RamseteCommand Example "
+"Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below."
+msgstr ""
+"RamseteCommand Örnek Projesindeki sabitler dosyasının ilgili kısımları "
+"(`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`"
+" __) aşağıda görülebilir."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:11
+msgid "Feedforward/Feedback Gains"
+msgstr "Feedforward / İleri Bildirim Kazançları"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:13
+msgid ""
+"Firstly, we must enter the feedforward and feedback gains which we obtained "
+"from the characterization tool."
+msgstr ""
+"Öncelikle, karakterizasyon aracından elde ettiğimiz ileri besleme ve geri "
+"bildirim kazanımlarını girmeliyiz."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:15
+msgid ""
+"Feedforward and feedback gains do *not*, in general, transfer across robots."
+"  Do *not* use the gains from this tutorial for your own robot."
+msgstr ""
+"Feedforward ve feedback kazançları genel olarak robotlar arasında transfer "
+"*edilemez*. Bu eğitimden elde edilen kazançları kendi robotunuz için "
+"*kullanmayın*."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:36
+msgid "DifferentialDriveKinematics"
+msgstr "DifferentialDriveKinematics"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:38
+msgid ""
+"Additionally, we must create an instance of the "
+"``DifferentialDriveKinematics`` class, which allows us to use the trackwidth"
+" (i.e. horizontal distance between the wheels) of the robot to convert from "
+"chassis speeds to wheel speeds.  As elsewhere, we keep our units in meters."
+msgstr ""
+"Ek olarak, şasi hızlarından tekerlek hızlarına dönüştürmek için robotun iz "
+"genişliğini (yani tekerlekler arasındaki yatay mesafe) kullanmamıza izin "
+"veren ``DifferentialDriveKinematics`` sınıfının bir örneğini oluşturmalıyız."
+" Diğer yerlerde olduğu gibi, birimlerimizi metre cinsinden tutuyoruz."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:59
+msgid "Max Trajectory Velocity/Acceleration"
+msgstr "Maksimum Yörünge Hızı / İvme"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:61
+msgid ""
+"We must also decide on a nominal max acceleration and max velocity for the "
+"robot during path-following.  The maximum velocity value should be set "
+"somewhat below the nominal free-speed of the robot.  Due to the later use of"
+" the ``DifferentialDriveVoltageConstraint``, the maximum acceleration value "
+"is not extremely crucial."
+msgstr ""
+"Ayrıca yol izleme sırasında robot için nominal bir maksimum ivme ve maksimum"
+" hıza da karar vermeliyiz. Maksimum hız değeri, robotun nominal serbest "
+"hızının biraz altında ayarlanmalıdır. Daha sonra  "
+"``DifferentialDriveVoltageConstraint`` kullanımı nedeniyle, maksimum "
+"hızlanma değeri çok önemli değildir."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:82
+msgid "Ramsete Parameters"
+msgstr "Ramsete Parametreleri"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/entering-constants.rst:84
+msgid ""
+"Finally, we must include a pair of parameters for the RAMSETE controller.  "
+"The values shown below should work well for most robots, provided distances "
+"have been correctly measured in meters - for more information on tuning "
+"these values (if it is required), see :ref:`docs/software/advanced-"
+"controls/trajectories/ramsete:Constructing the Ramsete Controller Object`."
+msgstr ""
+"Son olarak, RAMSETE denetleyicisi için bir çift parametre eklemeliyiz. "
+"Aşağıda gösterilen değerler, mesafelerin metre cinsinden doğru bir şekilde "
+"ölçülmüş olması koşuluyla çoğu robot için iyi çalışmalıdır - bu değerlerin "
+"ayarlanması hakkında daha fazla bilgi için (gerekliyse), bakınız "
+":ref:`docs/software/advanced-controls/trajectories/ramsete:Constructing the "
+"Ramsete Controller Object`."

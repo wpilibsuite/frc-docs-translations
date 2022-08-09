@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Michael Zhao <haitong1110@126.com>, 2020
+# Epsilon Mao <704856115@qq.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-04-30 16:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:4
+msgid "roboRIO Network Troubleshooting"
+msgstr "roboRIO网络故障排除"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:6
+msgid ""
+"The roboRIO and FRC\\ |reg| tools use dynamic IP addresses (DHCP) for "
+"network connectivity. This article describes steps for troubleshooting "
+"networking connectivity between your PC and your roboRIO"
+msgstr ""
+"roboRIO和FRC \\ | reg "
+"|工具使用动态IP地址（DHCP）进行网络连接。本文介绍了对PC和roboRIO之间的网络连接进行故障排除的步骤"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:9
+msgid "Ping the roboRIO using mDNS"
+msgstr "使用mDNS 检查 roboRIO"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:11
+msgid ""
+"The first step to identifying roboRIO networking issues is to isolate if it "
+"is an application issue or a general network issue. To do this, click "
+"**Start -> type cmd -> press Enter** to open the command prompt. Type ``ping"
+" roboRIO-####-FRC.local`` where #### is your team number (with no leading "
+"zeroes) and press enter. If the ping succeeds, the issue is likely with the "
+"specific application, verify your team number configuration in the "
+"application, and check your firewall configuration."
+msgstr ""
+"识别roboRIO网络问题的第一步是隔离如果其是应用程序问题或常规网络问题的话。为此，请单击**开始->输入cmd->按Enter "
+"**以打开命令提示符。输入``ping "
+"roboRIO-####-FRC.local``，其中####是您的团队编号（没有前导零），然后按Enter键。如果ping操作成功，则可能是特定应用程序出现了问题，请在应用程序中验证您的团队编号配置，然后检查防火墙配置。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:14
+msgid "Ping the roboRIO IP Address"
+msgstr "ping roboRIO IP的地址"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:16
+msgid ""
+"If there is no response, try pinging ``10.TE.AM.2`` (:ref:`TE.AM IP Notation"
+" <docs/networking/networking-introduction/ip-configurations:TE.AM IP "
+"Notation>`) using the command prompt as described above. If this works, you "
+"have an issue resolving the mDNS address on your PC. The two most common "
+"causes are not having an mDNS resolver installed on the system and a DNS "
+"server on the network that is trying to resolve the .local address using "
+"regular DNS."
+msgstr ""
+"如果没有响应，请尝试使用上述命令提示符对``10.TE.AM.2''（：ref：`TE.AM "
+"IP符号<docs/networking/networking-introduction/ip-configurations:TE.AM IP "
+"Notation>`）进行ping操作。如果这行得通，则说明您在PC上解析mDNS地址时遇到问题。两种最常见的原因是系统上没有安装mDNS解析器，而网络上没有试图使用常规DNS解析.local地址的DNS服务器。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:19
+msgid ""
+"Disconnect your computer from any other networks and make sure you have the "
+"OM5P-AN configured as an access point, using the :ref:`FRC Radio "
+"Configuration Utility <docs/zero-to-robot/step-3/radio-"
+"programming:Programming your Radio>`. Removing any other routers from the "
+"system will help verify that there is not a DNS server causing the issue."
+msgstr ""
+"使用：ref：`FRC无线电配置实用程序<docs/zero-to-robot/step-3/radio-programming:Programming"
+" your "
+"Radio>`，将您的计算机与其他任何网络断开连接，并确保已将OM5P-AN配置为访问点。从系统中删除任何其他路由器将有助于验证是否没有DNS服务器引起此问题。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:22
+msgid "Ping Fails"
+msgstr "平失败"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:27
+msgid ""
+"If pinging the IP address directly fails, you may have an issue with the "
+"network configuration of the PC. The PC should be configured to "
+"**Automatic**. To check this, click :guilabel:`Start` -> "
+":guilabel:`Settings` -> :guilabel:`Network & Internet`. Depending on your "
+"network, select :guilabel:`Wifi` or :guilabel:`Ethernet`. Then click on your"
+" connected network. Scroll down to **IP settings** and click "
+":guilabel:`Edit` and ensure the :guilabel:`Automatic (DHCP)` option is "
+"selected."
+msgstr ""
+"如果直接ping IP地址失败，则PC的网络配置可能有问题。 "
+"PC应该配置为“自动”。要检查这一点，请单击“开始”->“设置”->“网络和Internet”。根据您的网络，选择“ "
+"Wifi”或“以太网”。然后单击您所连接的网络。向下滚动到“ IP设置”，然后单击“编辑”，并确保选择了“自动（DHCP）”选项。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:30
+msgid "USB Connection Troubleshooting"
+msgstr "USB连接故障排除"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:32
+msgid ""
+"If you are attempting to troubleshoot the USB connection, try pinging the "
+"roboRIO's IP address. As long as there is only one roboRIO connected to the "
+"PC, it should be configured as 172.22.11.2. If this ping fails, make sure "
+"you have the roboRIO connected and powered, and that you have installed the "
+"NI FRC Game Tools. The game tools installs the roboRIO drivers needed for "
+"the USB connection."
+msgstr ""
+"如果您尝试对USB连接进行故障排除，请尝试ping "
+"roboRIO的IP地址。只要仅将一个roboRIO连接到PC，就应将其配置为172.22.11.2。如果无法ping通，请确保已连接roboRIO并为其供电，并且已安装NI"
+" FRC游戏工具。游戏工具会安装USB连接所需的roboRIO驱动程序。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:34
+msgid ""
+"If this ping succeeds, but the .local ping fails, it is likely that either "
+"the roboRIO hostname is configured incorrectly, or you are connected to a "
+"DNS server which is attempting to resolve the .local address."
+msgstr ""
+"如果此ping成功，但.local ping失败，则可能是roboRIO主机名配置错误，或者您已连接到尝试解析.local地址的DNS服务器。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:36
+msgid ""
+"Verify that your roboRIO has been :ref:`imaged for your team number "
+"<docs/zero-to-robot/step-3/imaging-your-roborio:Imaging your roboRIO>`. This"
+" sets the hostname used by mDNS."
+msgstr ""
+"验证您的roboRIO已针对团队编号<docs/zero-to-robot/step-3/imaging-your-roborio:Imaging "
+"your roboRIO>进行了映像。这将设置mDNS使用的主机名。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:37
+msgid ""
+":ref:`Disable all other network adapters <docs/networking/networking-"
+"introduction/roborio-network-troubleshooting:Disabling Network Adapters>`"
+msgstr ""
+"：ref：`禁用所有其他网络适配器<docs/networking/networking-introduction/roborio-network-"
+"troubleshooting:Disabling Network Adapters>`"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:40
+msgid "Ethernet Connection"
+msgstr "以太网连接"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:45
+msgid ""
+"If you are troubleshooting an Ethernet connection, it may be helpful to "
+"first make sure that you can connect to the roboRIO using the USB "
+"connection. Using the USB connection, open the :ref:`roboRIO webdashboard "
+"<docs/software/roborio-info/roborio-web-dashboard:roboRIO Web Dashboard>` "
+"and verify that the roboRIO has an IP address on the ethernet interface. If "
+"you are tethering to the roboRIO directly this should be a self-assigned "
+"``169.*.*.*`` address, if you are connected to the OM5P-AN radio, it should "
+"be an address of the form ``10.TE.AM.XX`` where TEAM is your four digit FRC "
+"team number. If the only IP address here is the USB address, verify the "
+"physical roboRIO ethernet connection."
+msgstr ""
+"如果要对以太网连接进行故障排除，首先确保你可以使用USB连接连接到roboRIO可能会有所帮助。使用USB连接，打开roboRIO "
+"Web面板<docs/software/roborio-info/roborio-web-dashboard:roboRIO Web "
+"Dashboard>，并验证roboRIO在以太网接口上是否具有IP地址。如果要直接绑定到roboRIO，则应为自定义的``169。*。*。*''地址，如果已连接到OM5P-AN无线电，则应为``10''形式的地址.TE.AM.XX``，其中TEAM是您的四位数FRC团队编号。如果此处唯一的IP地址是USB地址，请验证物理roboRIO以太网连接。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:48
+msgid "Disabling Network Adapters"
+msgstr "禁用网络适配器"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:50
+msgid ""
+"This is not always the same as turning the adapters off with a physical "
+"button or putting the PC into airplane mode. The following steps provide "
+"more detail on how to disable adapters."
+msgstr "这与通过物理按钮关闭适配器或使PC进入飞行模式并不总是相同。以下步骤提供有关如何禁用适配器的更多详细信息。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:55
+msgid "Open the Settings application by clicking on the settings icon."
+msgstr "通过单击设置图标打开设置应用程序。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:60
+msgid "Choose the :guilabel:`Network & Internet` category."
+msgstr "选择“网络和Internet”类别。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:65
+msgid "Click on :guilabel:`Change adapter options`."
+msgstr "单击“更改适配器选项”。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:70
+msgid "On the left pane, click :guilabel:`Change Adapter Settings`."
+msgstr "在左窗格上，单击“更改适配器设置”。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:75
+msgid ""
+"For each adapter other than the one connected to the radio, right click on "
+"the adapter and select :guilabel:`Disable` from the menu."
+msgstr "对于除与无线电连接的适配器以外的每个适配器，请右键单击适配器，然后从菜单中选择“禁用”。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:78
+msgid "Proxies"
+msgstr "代理"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/roborio-network-troubleshooting.rst:80
+msgid ""
+"Proxies. Having a proxy enabled may cause issues with the roboRIO "
+"networking."
+msgstr "代理。启用代理可能会导致roboRIO网络出现问题。"

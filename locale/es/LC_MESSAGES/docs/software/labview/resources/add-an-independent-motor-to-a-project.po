@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hugo Espino <hugo-daniel7@hotmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-27 04:11+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:2
+msgid "Add an Independent Motor to a Project"
+msgstr "Agregar un Motor Independiente a un Proyecto"
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:6
+msgid ""
+"Once your drive that controls the wheels is all set, you might need to add "
+"an additional motor to control something completely independent of the "
+"wheels, such as an arm. Since this motor will not be part of your tank, "
+"arcade, or mecanum drive, you'll definitely want independent control of it."
+msgstr ""
+"Una vez que la unidad que controla las ruedas esté configurada, es posible "
+"que deba agregar un motor adicional para controlar algo completamente "
+"independiente de las ruedas, como un brazo. Dado que este motor no será "
+"parte de su tanque, arcade o unidad mecanum, definitivamente querrá un "
+"control independiente del mismo."
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:8
+msgid ""
+"These VI Snippets show how to set up a single motor in a project that may "
+"already contain a multi-motor drive. If you see the HAND>ARROW>LABVIEW "
+"symbol, just drag the image into your block diagram, and voila: code! Ok, "
+"here's how you do it."
+msgstr ""
+"Estos VI Snippets muestran cómo configurar un solo motor en un proyecto que "
+"ya puede contener un drive de múltiples motores. Si ve el símbolo "
+"HAND>ARROW>LABVIEW, simplemente arrastre la imagen a su diagrama de bloques "
+"y listo: ¡código! Ok, así es como lo haces."
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:10
+msgid ""
+"FIRST, create a motor reference in the\\ **Begin.vi**, using the \\ **Motor "
+"Control Open VI** and \\ **Motor Control Refnum Registry Set VI**. These can"
+" be found by right-clicking in the block diagram and going to **WPI Robotics"
+" Library>>RobotDrive>>Motor Control**. Choose your PWM line and name your "
+"motor. I named mine \"Lift Motor\" and connected it to PWM 7. (I also "
+"included and enabled the Motor Control Safety Config VI, which automatically"
+" turns off the motor if it loses connection.)"
+msgstr ""
+"PRIMERO, cree una referencia de motor en\\ **Begin.vi**, usando \\ **Motor "
+"Control Open VI**  y  \\ **Motor Control Refnum Registry Set VI**. Estos se "
+"pueden encontrar haciendo clic con el botón derecho en el diagrama de "
+"bloques y yendo a **WPI Robotics Library>>RobotDrive>>Motor Control**. Elija"
+" su línea PWM y nombre su motor. Llamé al mío \"Lift Motor\" o motor de "
+"elevación y conéctelo a PWM 7. (También incluí y habilité el Motor Control "
+"Safety Config VI, que apaga automáticamente el motor si pierde la conexión)."
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:14
+msgid ""
+"Now, reference your motor (the name has to be exact) in the **Teleop.vi** "
+"using the **Motor Control Refnum Registry Get VI** and tell it what to do "
+"with the **Motor Control Set Output VI**. These are in the same place as the"
+" above VIs."
+msgstr ""
+"Ahora, haga referencia a su motor (el nombre debe ser exacto) en "
+"**Teleop.vi** usando el **Motor Control Refnum Registry Get VI** y dígale "
+"qué hacer con el **Motor Control Set Output VI**. Estos se encuentran en el "
+"mismo lugar que los VI anteriores."
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:18
+msgid ""
+"For example, the next snippet tells the Lift Motor to move forward if button"
+" 4 is pressed on Joystick 0 and to remain motionless otherwise. For me, "
+"button 4 is the left bumper on my Xbox style controller (\"Joystick 0\"). "
+"For much more in-depth joystick button options, check out :ref:`How to Use "
+"Joystick Buttons to Control Motors or Solenoids "
+"<docs/software/labview/resources/how-to-use-joystick-buttons-to-control-"
+"motors-or-solenoids:How to Use Joystick Buttons to Control Motors or "
+"Solenoids>`."
+msgstr ""
+"Por ejemplo, el siguiente snippet le dice al motor de elevación que se mueva"
+" hacia adelante si se presiona el botón 4 en el joystick 0 y que permanezca "
+"inmóvil en caso contrario. Para mí, el botón 4 es el bumper izquierdo de mi "
+"controlador estilo Xbox (\"Joystick 0\"). Para opciones de botones de "
+"joystick mucho más detalladas, consulte :ref:`Cómo usar los botones de "
+"joystick para controlar motores o solenoides "
+"<docs/software/labview/resources/how-to-use-joystick-buttons-to-control-"
+"motors-or-solenoids:How to Use Joystick Buttons to Control Motors or "
+"Solenoids>`."
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:22
+msgid ""
+"Finally, we need to close the references in the **Finish.vi** (just like we "
+"do with the drive and joystick), using the **Motor Control Refnum Registry "
+"Get VI** and **Motor Control Close VI**. While this picture shows the Close "
+"VI in a flat sequence structure by itself, we really want all of the Close "
+"VIs in the same frame. You can just put these two VIs below the other Get "
+"VIs and Close VIs (for the joystick and drive)."
+msgstr ""
+"Finalmente, necesitamos cerrar las referencias en **Finish.vi** (al igual "
+"que hacemos con el drive y el joystick), usando **Motor Control Refnum "
+"Registry Get VI** y **Motor Control Close VI** . Si bien esta imagen muestra"
+" el Close VI en una estructura de secuencia plana por sí mismo, realmente "
+"queremos todos los Close VI en el mismo cuadro. Puede colocar estos dos VIs "
+"debajo de los otros Get VIs y Close VIs (para el joystick y el drive)."
+
+#: ../../frc-docs/source/docs/software/labview/resources/add-an-independent-motor-to-a-project.rst:26
+msgid "I hope this helps you program the best robot ever! Good luck!"
+msgstr ""
+"¡Espero que esto te ayude a programar el mejor robot de todos los tiempos! "
+"¡Buena suerte!"

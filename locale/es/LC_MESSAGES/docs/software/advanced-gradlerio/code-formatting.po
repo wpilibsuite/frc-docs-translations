@@ -1,0 +1,355 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Miguel Angel de León Adame <miguelangeldla14@gmail.com>, 2021
+# Pierre Cote <persini24@outlook.com>, 2021
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-01 16:03+0000\n"
+"PO-Revision-Date: 2021-03-17 04:18+0000\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:2
+msgid "Using a Code Formatter"
+msgstr "Uso de un formateador de código"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:4
+msgid ""
+"Code formatters exist to ensure that the style of code written is consistent"
+" throughout the entire codebase. This is used in many major projects; from "
+"Android to OpenCV. Teams may wish to add a formatter throughout their robot "
+"code to ensure that the codebase maintains readability and consistency "
+"throughout."
+msgstr ""
+"Los formateadores de código existen para asegurar que el estilo del código "
+"escrito sea consistente en toda la base de código. Esto se utiliza en muchos"
+" proyectos importantes, desde Android hasta OpenCV. Los equipos pueden "
+"querer añadir un formateador en todo el código de su robot para asegurarse "
+"de que el código base mantiene la legibilidad y la coherencia en todo "
+"momento."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:6
+msgid ""
+"For this article, we will highlight using `Spotless "
+"<https://github.com/diffplug/spotless>`__ for Java teams and `wpiformat "
+"<https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__"
+" for C++ teams."
+msgstr ""
+"Para este artículo, destacaremos el uso de `Spotless "
+"<https://github.com/diffplug/spotless>`__ para equipos Java y `wpiformat "
+"<https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__"
+" para equipos C++."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:9
+msgid "Spotless"
+msgstr "Spotless"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:12
+msgid "Configuration"
+msgstr "Configuración"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:14
+msgid ""
+"Necessary ``build.gradle`` changes are required to get Spotless functional. "
+"In the ``plugins {}`` block of your ``build.gradle``, add the Spotless "
+"plugin so it appears similar to the below."
+msgstr ""
+"Es necesario realizar los cambios necesarios en ``build.gradle`` para que "
+"Spotless sea funcional. En el bloque ``plugins {}`` de tu ``build.gradle``, "
+"añade el plugin Spotless para que aparezca de forma similar a la siguiente."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:24
+msgid ""
+"Then ensure you add a required ``spotless {}`` block to correctly configure "
+"spotless. This can just get placed at the end of your ``build.gradle``."
+msgstr ""
+"A continuación, asegúrese de añadir un bloque requerido ``spotless {}`` para"
+" configurar correctamente spotless. Esto puede colocarse al final de tu "
+"``build.gradle``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:72
+msgid "Running Spotless"
+msgstr "Ejecutar Spotless"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:74
+msgid ""
+"Spotless can be ran using ``./gradlew spotlessApply`` which will apply all "
+"formatting options. You can also specify a specific task by just adding the "
+"name of formatter. An example is ``./gradlew spotlessmiscApply``."
+msgstr ""
+"Spotless puede ser ejecutado usando ``./gradlew spotlessApply`` que aplicará"
+" todas las opciones de formato. También se puede especificar una tarea "
+"concreta añadiendo simplemente el nombre del formateador. Un ejemplo es "
+"``./gradlew spotlessmiscApply``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:76
+msgid ""
+"Spotless can also be used as a :doc:`CI check <robot-code-ci>`. The check is"
+" ran with ``./gradlew spotlessCheck``."
+msgstr ""
+"Spotless también puede utilizarse como una comprobación :doc:`CI<robot-code-"
+"ci>`. La comprobación se ejecuta con ``./gradlew spotlessCheck``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:79
+msgid "Explanation of Options"
+msgstr "Explicación de las opciones"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:81
+msgid ""
+"Each ``format`` section highlights formatting of custom files in the "
+"project. The ``java`` and ``groovyGradle`` are natively supported by "
+"spotless, so they are defined differently."
+msgstr ""
+"Cada sección ``format`` destaca el formato de los archivos personalizados en"
+" el proyecto. Las secciones ``java`` y ``groovyGradle`` son soportadas "
+"nativamente por spotless, por lo que se definen de forma diferente."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:83
+msgid "Breaking this down, we can split this into multiple parts."
+msgstr "Desglosando esto, podemos dividirlo en varias partes."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:85
+msgid "Formatting Java"
+msgstr "Formateo de Java"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:86
+msgid "Formatting Gradle files"
+msgstr "Formateo de archivos Gradle"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:87
+msgid "Formatting XML files"
+msgstr "Formateo de archivos XML"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:88
+msgid "Formatting Miscellaneous files"
+msgstr "Formateo de archivos varios"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:90
+msgid ""
+"They are all similar, except for some small differences that will be "
+"explained. The below example will highlight the ``java {}`` block."
+msgstr ""
+"Todos son similares, excepto por algunas pequeñas diferencias que se "
+"explicarán. El siguiente ejemplo destacará el bloque ``java {}``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:106
+msgid "Let's explain what each of the options mean."
+msgstr "Vamos a explicar qué significa cada una de las opciones."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:115
+msgid ""
+"The above example tells spotless where our Java classes are and to exclude "
+"the ``build`` directory. The rest of the options are fairly self-"
+"explanatory."
+msgstr ""
+"El ejemplo anterior le dice a spotless dónde están nuestras clases Java y "
+"que excluya el directorio ``build``. El resto de las opciones se explican "
+"por sí mismas."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:117
+msgid ""
+"``toggleOffOn()`` adds the ability to have spotless ignore specific portions"
+" of a project. The usage looks like the following"
+msgstr ""
+"``toggleOffOn()`` añade la posibilidad de que spotless ignore partes "
+"específicas de un proyecto. El uso es como el siguiente"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:129
+msgid ""
+"``googleJavaFormat()`` tells spotless to format according to the `Google "
+"Style Guide <https://google.github.io/styleguide/javaguide.html>`__"
+msgstr ""
+"``googleJavaFormat()`` le dice a spotless que formatee según la `Guía de "
+"Estilo de Google <https://google.github.io/styleguide/javaguide.html>`__"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:130
+msgid ""
+"``removeUnusedImports()`` will remove any unused imports from any of your "
+"java classes"
+msgstr ""
+"``removeUnusedImports()`` eliminará cualquier importación no utilizada de "
+"cualquiera de tus clases java"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:131
+msgid ""
+"``trimTrailingWhitespace()`` will remove any extra whitespace at the end of "
+"your lines"
+msgstr ""
+"``trimTrailingWhitespace()`` eliminará cualquier espacio en blanco extra al "
+"final de las líneas"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:132
+msgid ""
+"``endWithNewline()`` will add a newline character to the end of your classes"
+msgstr ""
+"``endWithNewline()`` añadirá un carácter de nueva línea al final de tus "
+"clases"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:134
+msgid ""
+"In the ``groovyGradle`` block, there is a ``greclipse`` option. This is the "
+"formatter that spotless uses to format gradle files."
+msgstr ""
+"En el bloque ``groovyGradle``, hay una opción ``greclipse``. Este es el "
+"formateador que spotless utiliza para formatear los archivos gradle."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:136
+msgid ""
+"Additionally, there is a ``eclipseWtp`` option in the ``xml`` block. This "
+"stands for \"Gradle Web Tools Platform\" and is the formatter to format "
+"``xml`` files. Teams not using any XML files may wish to not include this "
+"configuration."
+msgstr ""
+"Además, hay una opción ``eclipseWtp`` en el bloque ``xml``. Esto significa "
+"\"Gradle Web Tools Platform\" y es el formateador para formatear archivos "
+"``xml``. Los equipos que no utilicen ningún archivo XML pueden desear no "
+"incluir esta configuración."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:138
+msgid ""
+"A full list of configurations is available on the `Spotless README "
+"<https://github.com/diffplug/spotless>`__"
+msgstr ""
+"Una lista completa de configuraciones está disponible en el `Spotless README"
+" <https://github.com/diffplug/spotless>`__"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:141
+msgid "Issues with Line Endings"
+msgstr "Problemas con los finales de línea"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:143
+msgid ""
+"Spotless will attempt to apply line endings per-OS, which means Git diffs "
+"will be constantly changing if two users are on different OSes (Unix vs "
+"Windows). It's recommended that teams who contribute to the same repository "
+"from multiple OSes utilize a ``.gitattributes`` file. The following should "
+"suffice for handling line endings."
+msgstr ""
+"Spotless intentará aplicar finales de línea por SO, lo que significa que los"
+" diffs de Git cambiarán constantemente si dos usuarios están en diferentes "
+"SOs (Unix vs Windows). Se recomienda que los equipos que contribuyen al "
+"mismo repositorio desde múltiples sistemas operativos utilicen un archivo "
+"``.gitattributes``. Lo siguiente debería ser suficiente para manejar los "
+"finales de línea."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:153
+msgid "wpiformat"
+msgstr "wpiformat"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:156
+msgid "Requirements"
+msgstr "Requerimientos: "
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:158
+msgid "`Python 3.6 or higher <https://www.python.org/>`__"
+msgstr "`Python 3.6 o superior <https://www.python.org/>`__"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:159
+msgid ""
+"clang-format (included with `LLVM "
+"<https://releases.llvm.org/download.html>`__)"
+msgstr ""
+"clang-format (incluido en `LLVM "
+"<https://releases.llvm.org/download.html>`__)"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:161
+msgid ""
+"Windows is not currently supported at this time! Installing LLVM with Clang "
+"**will** break normal robot builds if installed on Windows."
+msgstr ""
+"Windows no está soportado en este momento. La instalación de LLVM con Clang "
+"**interrumpirá las compilaciones normales del robot si se instala en "
+"Windows."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:163
+msgid ""
+"You can install `wpiformat "
+"<https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__"
+" by typing ``pip3 install wpiformat`` into a terminal or command prompt."
+msgstr ""
+"Puede instalar `wpiformat "
+"<https://github.com/wpilibsuite/styleguide/blob/main/wpiformat/README.rst>`__"
+" escribiendo ``pip3 install wpiformat`` en un terminal o en la línea de "
+"comandos."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:166
+msgid "Usage"
+msgstr "Uso"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:168
+msgid ""
+"wpiformat can be ran by typing ``wpiformat`` in a console. This will format "
+"with ``clang-format``. Three configuration files are required (``.clang-"
+"format``, ``.styleguide``, ``.styleguide-license``). These must exist in the"
+" project root."
+msgstr ""
+"wpiformat se puede ejecutar escribiendo ``wpiformat`` en una consola. Esto "
+"formateará con ``clang-format``. Se necesitan tres archivos de configuración"
+" (``.clang-format``, ``.styleguide``, ``.styleguide-license``). Estos deben "
+"existir en la raíz del proyecto."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:170
+msgid ""
+"``.clang-format``: :download:`Download "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.clang-"
+"format>`"
+msgstr ""
+"``.clang-format``: :download:`Download "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.clang-"
+"format>`"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:171
+msgid ""
+"``.styleguide-license``: :download:`Download "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.styleguide-"
+"license>`"
+msgstr ""
+"``.styleguide-license``: :download:`Download "
+"<https://raw.githubusercontent.com/wpilibsuite/allwpilib/main/.styleguide-"
+"license>`"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:173
+msgid "An example styleguide is shown below:"
+msgstr "A continuación se muestra un ejemplo de guía de estilo:"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:192
+msgid ""
+"Teams can adapt ``.styleguide`` and ``.styleguide-license`` however they "
+"wish. It's important that these are not deleted, as they are required to run"
+" wpiformat!"
+msgstr ""
+"Los equipos pueden adaptar ``.styleguide`` y ``.styleguide-license`` como "
+"quieran. ¡Es importante que no se eliminen, ya que son necesarios para "
+"ejecutar wpiformat!"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:194
+msgid ""
+"You can turn this into a :doc:`CI check <robot-code-ci>` by running ``git "
+"--no-pager diff --exit-code HEAD``. It can be configured with a ``.clang-"
+"format`` configuration file. An example configuration file is provided "
+"below."
+msgstr ""
+"Puedes convertir esto en una comprobación :doc:`CI <robot-code-"
+"ci>`ejecutando ``git --no-pager diff --exit-code HEAD``. Se puede configurar"
+" con un archivo de configuración ``.clang-format``. A continuación se "
+"proporciona un archivo de configuración de ejemplo."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/code-formatting.rst:196
+msgid "Below is an example GitHub Actions check that uses wpiformat"
+msgstr ""
+"A continuación se muestra un ejemplo de comprobación de acciones de GitHub "
+"que utiliza wpiformat"

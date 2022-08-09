@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# 8192 DHC <hehehehehehe886@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-26 04:09+0000\n"
+"PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: 8192 DHC <hehehehehehe886@gmail.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:2
+msgid "Manipulating Trajectories"
+msgstr "操纵轨迹"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:3
+msgid ""
+"Once a trajectory has been generated, you can retrieve information from it "
+"using certain methods. These methods will be useful when writing code to "
+"follow these trajectories."
+msgstr "生成轨迹后，您可以使用某些方法从中检索信息。在编写代码以追踪这些轨迹时，这些方法将非常有用。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:6
+msgid "Getting the total duration of the trajectory"
+msgstr "获取轨迹的总持续时间"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:7
+msgid ""
+"Because all trajectories have timestamps at each point, the amount of time "
+"it should take for a robot to traverse the entire trajectory is pre-"
+"determined. The ``TotalTime()`` (C++) / ``getTotalTimeSeconds()`` (Java) "
+"method can be used to determine the time it takes to traverse the "
+"trajectory."
+msgstr ""
+"因为所有轨迹在每个点上都有时间戳，所以预先确定了机器人穿越整个轨迹所需要的时间已被预先确定了。 TotalTime() (C++) / "
+"getTotalTimeSeconds() (Java) 方法可用于确定追踪轨迹所需的时间"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:23
+msgid "Sampling the trajectory"
+msgstr "轨迹采样"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:24
+msgid ""
+"The trajectory can be sampled at various timesteps to get the pose, "
+"velocity, and acceleration at that point. The ``Sample(units::second_t "
+"time)`` (C++) / ``sample(double timeSeconds)`` (Java) method can be used to "
+"sample the trajectory at any timestep. The parameter refers to the amount of"
+" time passed since 0 seconds (the starting point of the trajectory). This "
+"method returns a ``Trajectory::Sample`` with information about that sample "
+"point."
+msgstr ""
+"可以在各个时间步长采样轨迹，以获取该点的姿态，速度和加速度。(units::second_t time) (C++) / sample(double "
+"timeSeconds) "
+"(Java)方法可用于在任何时间步采样轨迹。该参数指的是自0秒（轨迹的起点）以来经过的时间量。此方法返回一个Trajectory :: "
+"Sample，包含关该采样点的信息。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:40
+msgid ""
+"The ``Trajectory::Sample`` struct has several pieces of information about "
+"the sample point:"
+msgstr "Trajectory::Sample结构包含有关采样点的几条信息："
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:42
+msgid ""
+"``t``: The time elapsed from the beginning of the trajectory up to the "
+"sample point."
+msgstr "t：从轨迹开始到采样点为止的时间。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:43
+msgid "``velocity``: The velocity at the sample point."
+msgstr "velocity：采样点的速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:44
+msgid "``acceleration``: The acceleration at the sample point."
+msgstr "acceleration: 采样点的加速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:45
+msgid "``pose``: The pose (x, y, heading) at the sample point."
+msgstr "pose：采样点的姿态 (x, y, heading)"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:46
+msgid ""
+"``curvature``: The curvature (rate of change of heading with respect to "
+"distance along the trajectory) at the sample point."
+msgstr "“曲率”：采样点的曲率（航向的变化率，相对于沿着轨迹的距离）。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:48
+msgid ""
+"Note: The angular velocity at the sample point can be calculated by "
+"multiplying the velocity by the curvature."
+msgstr "注意：可以通过将速度乘以曲率来计算采样点的角速度。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:51
+msgid "Getting all states of the trajectory (advanced)"
+msgstr "获取轨迹的所有状态（高级）"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/manipulating-trajectories.rst:52
+msgid ""
+"A more advanced user can get a list of all states of the trajectory by "
+"calling the ``States()`` (C++) / ``getStates()`` (Java) method. Each state "
+"represents a point on the trajectory. :ref:`When the trajectory is created "
+"<docs/software/advanced-controls/trajectories/trajectory-"
+"generation:Generating the trajectory>` using the "
+"``TrajectoryGenerator::GenerateTrajectory(...)`` method, a list of "
+"trajectory points / states are created. When the user samples the trajectory"
+" at a particular timestep, a new sample point is interpolated between two "
+"existing points / states in the list."
+msgstr ""
+"更高级的用户可以通过调用States() (C++) / getStates() "
+"(Java)方法获得轨迹的所有状态列表。每个状态代表轨迹上的一个点。当轨迹被通过TrajectoryGenerator::GenerateTrajectory(...)方法创建时，轨迹点和状态的列表也被创建了。当用户在一个特定的时间步长采样轨迹时，一个新的采样点被插入到列表中两个现有的点/状态之间。"

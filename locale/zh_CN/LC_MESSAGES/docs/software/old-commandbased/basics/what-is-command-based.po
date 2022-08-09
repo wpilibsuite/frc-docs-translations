@@ -1,0 +1,220 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Michael Zhao <haitong1110@126.com>, 2020
+# 智翔 杨 <2532498540@qq.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-09 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: 智翔 杨 <2532498540@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:2
+msgid "What is Command-Based Programming?"
+msgstr "什么是基于指令的编程？"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"本文档描述了旧式基于指令的库的用法。尽管保留了该文档以帮助尚未这样做的团队，但强烈建议团队迁移到新的基于指令的库<docs/software/commandbased/index"
+":Command-Based Programming>。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:6
+msgid ""
+"WPILib supports a method of writing programs called \"Command-based "
+"programming\". Command-based programming is a design pattern to help you "
+"organize your robot programs. Some of the characteristics of robot programs "
+"that might be different from other desktop programs are:"
+msgstr ""
+"WPILib支持一种称为“基于命令编程”的编写程序的方法。基于命令的编程是一种设计模式，可帮助您编写机器人程序。与其他桌面程序可能不同的此程序的一些特征是："
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:8
+msgid ""
+"Activities happen over time, for example a sequence of steps to shoot a "
+"Frisbee or raise an elevator and place a tube on a goal."
+msgstr "动作会按照顺序发生，例如射击飞盘或举起升降架并将管子放在球门上的一系列步骤。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:9
+msgid ""
+"These activities occur concurrently, that is it might be desirable for an "
+"elevator, wrist and gripper to all be moving into a pickup position at the "
+"same time to increase robot performance."
+msgstr "这些动作同时进行，这可能是因为让升降机、腕部和抓手都同时移动到拾取位置是提高机器人的性能的一种好方式。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:10
+msgid ""
+"It is desirable to test the robot mechanisms and activities each "
+"individually to help debug your robot."
+msgstr "可取的是分别测试机器人的机制和动作，以帮助调试机器人。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:11
+msgid ""
+"Often the program needs to be augmented with additional autonomous programs "
+"at the last minute, perhaps at competitions, so easily extendable code is "
+"important."
+msgstr "通常，比赛的最后一刻程序中也可能需要添加其他自动程序，因此易于扩展的代码很重要。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:13
+msgid ""
+"Command-based programming supports all these goals easily to make the robot "
+"program much simpler than using some less structured technique."
+msgstr "基于指令的编程可以轻松支持所有这些目标，从而使机器人程序比其他一些结构较松散的技术方式更加简单。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:16
+msgid "Commands and Subsystems"
+msgstr "指令和子系统"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:21
+msgid ""
+"Programs based on the WPILib Command Template are organized around two "
+"fundamental concepts: **Subsystems** and **Commands**."
+msgstr "基于WPILib指令模板的程序是围绕两个基本概念组织的：子系统和指令。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:23
+msgid ""
+"**Subsystems** - define the capabilities of each part of the robot and are "
+"subclasses of Subsystem."
+msgstr "**子系统**-定义机器人各个部分的功能，并且是Subsystem的子类。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:25
+msgid ""
+"**Commands** - define the operation of the robot incorporating the "
+"capabilities defined in the subsystems. Commands are subclasses of Command "
+"or CommandGroup. Commands run when scheduled or in response to buttons being"
+" pressed or virtual buttons from the SmartDashboard."
+msgstr ""
+"**指令**-结合子系统中定义的功能来定义机器人的操作。指令是Command或CommandGroup的子类。指令在计划时或响应于被按下的按钮与SmartDashboard中的虚拟按钮而运行。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:29
+msgid "How Commands Work"
+msgstr "指令如何工作"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:34
+msgid ""
+"Commands let you break up the tasks of operating the robot into small "
+"chunks. Each command has an execute() method that does some work and an "
+"isFinished() method that tells if it is done. This happens on every update "
+"from the driver station or about every 20ms. Commands can be grouped "
+"together and executed sequentially, starting the next one in the group as "
+"the previous one finishes."
+msgstr ""
+"指令使您可以将操作机器人的任务分解成小块。每个指令都有一个执行某些工作的execute（）方法和一个告诉它是否完成的isFinished（）方法。这在驱动程序站的每次更新中或大约每20ms发生一次。可以将指令组合在一起并顺序执行，在上一个指令完成时从该组中的下一个指令开始。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:37
+msgid "Concurrency"
+msgstr "并发"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:42
+msgid ""
+"Sometimes it is desirable to have several operations happening concurrently."
+" In the previous example you might want to set the wrist position while the "
+"elevator is moving up. In this case, a command group can start a parallel "
+"command (or command group) running."
+msgstr "有时希望同时执行多个操作。在上一个示例中，您可能想在升降机向上移动时设置手腕位置。在这种情况下，命令组可以启动并行命令（或命令组）的运行。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:45
+msgid "How It Works - Scheduling Commands"
+msgstr "工作原理-调度指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:50
+msgid "There are three main ways commands are scheduled:"
+msgstr "有三种主要的指令调度方式："
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:52
+msgid ""
+"Manually, by calling the ``start()`` method on the command (:doc:`used for "
+"autonomous <../commands/running-commands-autonomous>`)"
+msgstr ""
+"通过在指令（：doc：`用于自主<../commands/running-commands-autonomous>`）上手动调用start（）方法"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:53
+msgid ""
+"Automatically by the scheduler based on :doc:`button/trigger actions "
+"<../commands/running-commands-joystick-input>` specified in the code "
+"(typically defined in the OI class but checked by the Scheduler)."
+msgstr ""
+"由调度程序根据代码中指定的按钮/触发动作<../commands/running-commands-joystick-"
+"input>自动进行（通常在OI类中定义，但由调度程序检查）。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:54
+msgid ""
+"Automatically when a previous command completes (:doc:`default commands "
+"<../commands/default-commands>` and :doc:`command groups  <../commands"
+"/creating-groups-commands>`)."
+msgstr ""
+"上一条指令完成时自动完成（：doc：`default指令<../commands/default-"
+"commands>`和：doc：`指令组<../commands/creating-groups-commands>`）。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:56
+msgid ""
+"Each time the driver station gets new data, the periodic method of your "
+"robot program is called. It runs a Scheduler that checks the trigger "
+"conditions to see if any commands need to be scheduled or canceled."
+msgstr "每次驾驶员站获取新数据时，都会调用机器人程序的定期方法。它运行计划程序，该程序检查触发条件以查看是否需要计划或取消任何指令。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:58
+msgid ""
+"When a command is scheduled, the Scheduler checks to make sure that no other"
+" commands are using the same subsystems that the new command requires. If "
+"one or more of the subsystems is currently in use, and the current command "
+"is interruptible, it will be interrupted and the new command will be "
+"scheduled. If the current command is not interruptible, the new command will"
+" fail to be scheduled."
+msgstr ""
+"计划命令后，计划程序会检查以确保没有其他命令正在使用新命令所需的子系统。如果正在使用一个或多个子系统的命令是可中断的，其将被中断并计划新命令。如果当前命令不可中断，则新命令将无法计划。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:61
+msgid "How It Works - Running Commands"
+msgstr "工作原理-运行指令"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:63
+msgid ""
+"After checking for new commands, the scheduler proceeds through the list of "
+"active commands and calls the ``execute()`` and ``isFinished()`` methods on "
+"each command. Notice that the apparent concurrent execution is done without "
+"the use of threads or tasks which would add complexity to the program. Each "
+"command simply has some code to execute (execute method) to move it further "
+"along towards its goal and a method (isFinished) that determines if the "
+"command has reached the goal. The execute and isFinished methods are just "
+"called repeatedly."
+msgstr ""
+"在检查了新指令之后，计划程序会继续浏览活动指令列表，并在每个指令上调用execute（）和isFinished（）方法。注意，明显的并发执行是在不使用线程或任务的情况下完成的，而线程或任务会增加程序的复杂性。每个指令仅包含一些要执行的代码（execute方法）以向其目标更进一步，还有一个确定该指令是否已达到目标的方法（isFinished）。execute和isFinished方法会这样重复调用。"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:66
+msgid "Command Groups"
+msgstr "指令组"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/what-is-command-based.rst:68
+msgid ""
+"More complex commands can be built up from simpler commands. For example, "
+"shooting a disc may be a long sequence of commands that are executed one "
+"after another. Maybe some of these commands in the sequence can be executed "
+"concurrently. Command groups are commands, but instead of having an "
+"isFinished and execute method, they have a list of other commands to "
+"execute. This allows more complex operations to be built up out of simpler "
+"operations, a basic principle in programming. Each of the individual smaller"
+" commands can be easily tested first, then the group can be tested. More "
+"information on command groups can be found in the :doc:`Creating groups of "
+"commands article <../commands/creating-groups-commands>`."
+msgstr ""
+"可以从更简单的指令构建更复杂的指令。例如，发射飞盘可能是一段很长的、顺序执行的指令序列。也许序列中的某些指令可以同时执行。指令组是一种指令，但是除了具有isFinished和execute方法外，它们还有一个其他要执行的指令列表"
+"。这样可以从简单的操作中构建更复杂的操作-"
+"一条编程的基本原则。每个较小的指令中都可以首先轻松地进行测试，然后再对该组进行测试。有关指令组的更多信息，请参见：创建指令组文章<../commands"
+"/creating-groups-commands>。"

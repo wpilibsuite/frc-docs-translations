@@ -1,0 +1,210 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Fernando Soltero <fersg806@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-01 04:07+0000\n"
+"PO-Revision-Date: 2021-06-22 22:08+0000\n"
+"Last-Translator: Fernando Soltero <fersg806@gmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:2
+msgid "Step 4: Creating and Following a Trajectory"
+msgstr "Paso 4: Creando y Siguiendo una trayectoria"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:4
+msgid ""
+"With our drive subsystem written, it is now time to generate a trajectory "
+"and write an autonomous command to follow it."
+msgstr ""
+"Con nuestro subsistema de accionamiento escrito, es hora de generar una "
+"trayectoria y escribir un comando autónomo para seguirla."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:6
+msgid ""
+"As per the :ref:`standard command-based project structure "
+"<docs/software/commandbased/structuring-command-based-project:Structuring a "
+"Command-Based Robot Project>`, we will do this in the "
+"``getAutonomousCommand`` method of the ``RobotContainer`` class.  The full "
+"method from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will break down the different "
+"parts of the method in more detail."
+msgstr ""
+"Según la :ref:` estructura estandar de un proyecto a base de comandos "
+"<docs/software/commandbased/structuring-command-based-project:Structuring a "
+"Command-Based Robot Project>`, haremos esto en el método de la clase "
+"``RobotContainer``. El método completo del proyecto RamseteCommand Example "
+"(`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+"  puede verse debajo. El resto del articulo se separará en diferentes partes"
+" del método en más detalle."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:10
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:38
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:63
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:86
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:111
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:134
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:18
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:46
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:71
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:94
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:119
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:142
+msgid "C++ (Source)"
+msgstr "C++ (Fuente)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:27
+msgid "Configuring the Trajectory Constraints"
+msgstr "Configurando las Restricciones de Trayectoria"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:29
+msgid ""
+"First, we must set some configuration parameters for the trajectory which "
+"will ensure that the generated trajectory is followable."
+msgstr ""
+"Primero, debemos establecer algunos parámetros de configuración para la "
+"trayectoria que aseguren que la trayectoria generada sea seguible."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:32
+msgid "Creating a Voltage Constraint"
+msgstr "Creando una Restricción de Voltaje"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:34
+msgid ""
+"The first piece of configuration we will need is a voltage constraint.  This"
+" will ensure that the generated trajectory never commands the robot to go "
+"faster than it is capable of achieving with the given voltage supply:"
+msgstr ""
+"La primera pieza de configuración que necesitaremos es una restricción de "
+"voltaje. Esto asegurará que la trayectoria generada nunca ordene al robot ir"
+" más rápido de lo que es capaz de lograr con el suministro de voltaje dado:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:54
+msgid ""
+"Notice that we set the maximum voltage to 10V, rather than the nominal "
+"battery voltage of 12V.  This gives us some \"headroom\" to deal with "
+"\"voltage sag\" during operation."
+msgstr ""
+"Nótese que fijamos el votaje máximo a 10V, en lugar del voltaje nominal de "
+"la batería de 12V. Esto nos da un poco de \"margen\" para lidiar con la "
+"\"caída de voltaje\" durante la operación."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:57
+msgid "Creating the Configuration"
+msgstr "Creando la Configuración"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:59
+msgid ""
+"Now that we have our voltage constraint, we can create our "
+"``TrajectoryConfig`` instance, which wraps together all of our path "
+"constraints:"
+msgstr ""
+"Ahora que tenemos nuestra restricción de voltaje, podemos crear nuestra "
+"instancia ``TrajectoryConfig``, que envuelve todas nuestras restricciones de"
+" camino:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:80
+msgid "Generating the Trajectory"
+msgstr "Generando la Trayectoria"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:82
+msgid ""
+"With our trajectory configuration in hand, we are now ready to generate our "
+"trajectory.  For this example, we will be generating a \"clamped cubic\" "
+"trajectory - this means we will specify full robot poses at the endpoints, "
+"and positions only for interior waypoints (also known as \"knot points\").  "
+"As elsewhere, all distances are in meters."
+msgstr ""
+"Con la configuración de nuestra trayectoria en mano, estamos listos para "
+"generar nuestra trayectoria. Para este ejemplo, generaremos una trayectoria "
+"\"clamped cubic\" - esto significa que especificaremos las posiciones "
+"completas del robot en los puntos finales, y las posiciones sólo para los "
+"waypoints interiores (también conocidos como \"knot points\"). Como en "
+"cualquier otro lugar, todas las distancias están en metros."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:105
+msgid "Creating the RamseteCommand"
+msgstr "Creando el RamseteCommand"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:107
+msgid ""
+"We will first reset our robot's pose to the starting pose of the trajectory."
+" This ensures that the robot's location on the coordinate system and the "
+"trajectory's starting position are the same."
+msgstr ""
+"Primero reajustaremos la posición de nuestro robot a la posición inicial de "
+"la trayectoria. Esto asegura que la posición del robot en el sistema de "
+"coordenadas y la posición inicial de la trayectoria sean las mismas."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:150
+msgid ""
+"This declaration is fairly substantial, so we'll go through it argument-by-"
+"argument:"
+msgstr ""
+"Esta declaración es bastante sustancial, así que la revisaremos argumento "
+"por argumento:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:152
+msgid ""
+"The trajectory: This is the trajectory to be followed; accordingly, we pass "
+"the command the trajectory we just constructed in our earlier steps."
+msgstr ""
+"La trayectoria: Esta es la trayectoria a seguir; en consecuencia, pasamos el"
+" comando de la trayectoria que acabamos de construir en nuestros pasos "
+"anteriores."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:161
+msgid ""
+"The robot drive: This is the drive subsystem itself, included to ensure the "
+"command does not operate on the drive at the same time as any other command "
+"that uses the drive."
+msgstr ""
+"El impulso del robot: Este es el subsistema de accionamiento en sí, incluido"
+" para asegurar que el comando no funcione en el accionamiento al mismo "
+"tiempo que cualquier otro comando que utilice el accionamiento."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:163
+msgid ""
+"Finally, note that we append a final \"stop\" command in sequence after the "
+"path-following command, to ensure that the robot stops moving at the end of "
+"the trajectory."
+msgstr ""
+"Finalmente, note que añadimos un comando final de \"stop\" en secuencia "
+"después del comando de seguimiento de la trayectoria, para asegurar que el "
+"robot deje de moverse al final de la trayectoria."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:166
+msgid "Video"
+msgstr "Video"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:168
+msgid ""
+"If all has gone well, your robot's autonomous routine should look something "
+"like this:"
+msgstr ""
+"Si todo ha ido bien, la rutina autónoma de tu robot debería ser algo así:"

@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Arhan Ünay <arhanyo@gmail.com>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-08 04:14+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:2
+msgid "Introduction to Kinematics and The Chassis Speeds Class"
+msgstr "Kinematik ve Şasi Hızları Sınıfına Giriş"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:5
+msgid "What is kinematics?"
+msgstr "Kinematik nedir?"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:6
+msgid ""
+"The brand new kinematics suite contains classes for differential drive, "
+"swerve drive, and mecanum drive kinematics and odometry. The kinematics "
+"classes help convert between a universal ``ChassisSpeeds`` object, "
+"containing linear and angular velocities for a robot to usable speeds for "
+"each individual type of drivetrain i.e. left and right wheel speeds for a "
+"differential drive, four wheel speeds for a mecanum drive, or individual "
+"module states (speed and angle) for a swerve drive."
+msgstr ""
+"Yepyeni kinematik paketi, diferansiyel tahrik, dönüş tahriki ve mekânum "
+"tahrik kinematiği ve odometri için sınıfları içerir. Kinematik sınıfları, "
+"bir robot için doğrusal ve açısal hızları içeren evrensel bir "
+"``ChassisSpeeds`` nesnesi arasında, her bir aktarma organı türü için "
+"kullanılabilir hızlara, yani diferansiyel tahrik için sol ve sağ tekerlek "
+"hızlarına, bir mecanum sürücü için dört tekerlek hızına dönüştürülmesine "
+"yardımcı olur  veya bir swerve sürücü için ayrı modül durumlarıne yardımcı "
+"olur (hız ve açı)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:9
+msgid "What is odometry?"
+msgstr "Odometri nedir?"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:10
+msgid ""
+"Odometry involves using sensors on the robot to create an estimate of the "
+"position of the robot on the field. In FRC, these sensors are typically "
+"several encoders (the exact number depends on the drive type) and a "
+"gyroscope to measure robot angle. The odometry classes utilize the "
+"kinematics classes along with periodic user inputs about speeds (and angles "
+"in the case of swerve) to create an estimate of the robot's location on the "
+"field."
+msgstr ""
+"Odometri, robotun sahadaki konumunun bir tahminini oluşturmak için robot "
+"üzerindeki sensörlerin kullanılmasını içerir. FRC'de bu sensörler tipik "
+"olarak birkaç kodlayıcıdır (tam sayı sürücü tipine bağlıdır) ve robot "
+"açısını ölçmek için bir jiroskoptur. Odometri sınıfları, robotun sahadaki "
+"konumunun bir tahminini oluşturmak için hızlarla (ve sapma durumunda açılar)"
+" ilgili periyodik kullanıcı girdileriyle birlikte kinematik sınıflarını "
+"kullanır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:13
+msgid "The Chassis Speeds Class"
+msgstr "The Chassis Speeds Sınıfları"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:14
+msgid ""
+"The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and "
+"odometry suite. The ``ChassisSpeeds`` object represents the speeds of a "
+"robot chassis. This struct has three components:"
+msgstr ""
+"``ChassisSpeeds`` nesnesi, yeni WPILib kinematik ve odometri takımı için çok"
+" önemlidir. ``ChassisSpeeds`` nesnesi, bir robot kasasının hızlarını temsil "
+"eder. Bu yapının üç bileşeni vardır:"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:16
+msgid "``vx``: The velocity of the robot in the x (forward) direction."
+msgstr "`` vx`` : Robotun x (ileri) yönündeki hızı."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:17
+msgid ""
+"``vy``: The velocity of the robot in the y (sideways) direction. (Positive "
+"values mean the robot is moving to the left)."
+msgstr ""
+"``vy`` : Robotun y (yana doğru) yönündeki hızı. (Pozitif değerler, robotun "
+"sola hareket ettiği anlamına gelir)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:18
+msgid "``omega``: The angular velocity of the robot in radians per second."
+msgstr "``omega`` : Robotun saniyede radyan cinsinden açısal hızı."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:20
+msgid ""
+"A non-holonomic drivetrain (i.e. a drivetrain that cannot move sideways, ex:"
+" a differential drive) will have a ``vy`` component of zero because of its "
+"inability to move sideways."
+msgstr ""
+"Holonomik olmayan bir aktarma organı (yani, yana doğru hareket edemeyen bir "
+"aktarma organı, örneğin bir diferansiyel tahrik), yanlara doğru hareket "
+"edememesi nedeniyle sıfır ``vy`` bileşenine sahip olacaktır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:23
+msgid "Constructing a ChassisSpeeds object"
+msgstr "ChassisSpeeds nesnesi oluşturma"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:24
+msgid ""
+"The constructor for the ``ChassisSpeeds`` object is very straightforward, "
+"accepting three arguments for ``vx``, ``vy``, and ``omega``. In Java, ``vx``"
+" and ``vy`` must be in meters per second. In C++, the units library may be "
+"used to provide a linear velocity using any linear velocity unit."
+msgstr ""
+"``ChassisSpeeds`` nesnesinin kurucusu çok basittir ve ``vx``, ``vy`` ve "
+"``omega`` için üç argüman kabul eder. Java'da, ``vx``' ve ``vy`` saniyede "
+"metre cinsinden olmalıdır. C++ 'da, birimler kitaplığı herhangi bir doğrusal"
+" hız birimi kullanılarak doğrusal bir hız sağlamak için kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:45
+msgid "Creating a ChassisSpeeds Object from Field-Relative Speeds"
+msgstr "Saha-bağıl hızlardan ChassisSpeeds Nesnesi Oluşturma"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:46
+msgid ""
+"A ``ChassisSpeeds`` object can also be created from a set of field-relative "
+"speeds when the robot angle is given. This converts a set of desired "
+"velocities relative to the field (for example, toward the opposite alliance "
+"station and toward the right field boundary) to a ``ChassisSpeeds`` object "
+"which represents speeds that are relative to the robot frame. This is useful"
+" for implementing field-oriented controls for a swerve or mecanum drive "
+"robot."
+msgstr ""
+"Robot açısı verildiğinde, bir dizi alana bağlı hızdan bir ``ChassisSpeeds`` "
+"nesnesi de oluşturulabilir. Bu, alana göre bir dizi istenen hızı (örneğin, "
+"karşı ittifak istasyonuna doğru ve sağ alan sınırına doğru) robot "
+"çerçevesine göre hızları temsil eden bir ``ChassisSpeeds`` nesnesine "
+"dönüştürür. Bu, bir sapma veya mecanum tahrik robotu için saha odaklı "
+"kontrolleri uygulamak için kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:48
+msgid ""
+"The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / "
+"``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++) method can be used to "
+"generate the ``ChassisSpeeds`` object from field-relative speeds. This "
+"method accepts the ``vx`` (relative to the field), ``vy`` (relative to the "
+"field), ``omega``, and the robot angle."
+msgstr ""
+"Statik ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / "
+"``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++) yöntemi, saha-bağıl "
+"hızlardan ``ChassisSpeeds`` nesnesini oluşturmak için kullanılabilir. Bu "
+"yöntem, ``vx`` (sahaya göre), ``vy`` (sahaya göre), ``omega`` ve robot "
+"açısını kabul eder."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:72
+msgid ""
+"The angular velocity is not explicitly stated to be \"relative to the "
+"field\" because the angular velocity is the same as measured from a field "
+"perspective or a robot perspective."
+msgstr ""
+"Açısal hız, açık bir şekilde \"sahaya göre\" olarak belirtilmemiştir çünkü "
+"açısal hız, bir alan perspektifinden veya bir robot perspektifinden ölçülen "
+"ile aynıdır."

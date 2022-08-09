@@ -1,0 +1,216 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# tianshuang Zhang <2948026254@qq.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: tianshuang Zhang <2948026254@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:4
+msgid "Trajectory Tutorial Overview"
+msgstr "轨迹教程概述"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:6
+msgid "Todo"
+msgstr "待完成工作"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:6
+msgid "add pathweaver stuff once it is available"
+msgstr "添加可用的pathweaver内容"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:8
+msgid ""
+"Before following this tutorial, it is helpful (but not strictly necessary) "
+"to have a baseline familiarity with WPILib's :ref:`PID control "
+"<docs/software/advanced-controls/controllers/pidcontroller:PID Control in "
+"WPILib>`, :ref:`feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`, and "
+":ref:`trajectory <docs/software/advanced-"
+"controls/trajectories/index:Trajectory Generation and Following with "
+"WPILib>` features."
+msgstr ""
+"在学习本教程之前，对WPILib的:ref:`PID control <docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib>`, "
+":ref:`feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`, 和 "
+":ref:`trajectory <docs/software/advanced-"
+"controls/trajectories/index:Trajectory Generation and Following with "
+"WPILib>`特性有一个基本的了解是有帮助的(但不是严格必要的)。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:10
+msgid ""
+"The robot code in this tutorial uses the :ref:`command-based "
+"<docs/software/commandbased/what-is-command-based:What Is \"Command-Based\" "
+"Programming?>` framework.  The command-based framework is strongly "
+"recommended for beginning and intermediate teams."
+msgstr ""
+"本教程中的机器人代码使用 :ref:`command-based <docs/software/commandbased/what-is-"
+"command-based:What Is \"Command-Based\" "
+"Programming?>`的框架。强烈建议初级和中级团队使用基于指令的框架。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:12
+msgid ""
+"The goal of this tutorial is to provide \"end-to-end\" instruction on "
+"implementing a trajectory-following autonomous routine for a differential-"
+"drive robot.  By following this tutorial, readers will learn how to:"
+msgstr "本教程的目标是提供“端到端”的指令来实现差动机器人的轨迹跟踪自主程序。通过学习本教程，读者将学习如何:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:14
+msgid ""
+"Accurately characterize their robot's drivetrain to obtain accurate "
+"feedforward calculations and approximate feedback gains."
+msgstr "精确地描述机器人的传动系统以获得精确的前馈计算和近似反馈增益。。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:15
+msgid ""
+"Configure a drive subsystem to track the robot's pose using WPILib's "
+"odometry library."
+msgstr "使用WPILib的里程表库，配置驱动器子系统以跟踪机器人的位置。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:16
+msgid ""
+"Generate a simple trajectory through a set of waypoints using WPILib's "
+"``TrajectoryGenerator`` class."
+msgstr "使用WPILib的‘轨迹生成器’类通过一组路径点生成一个简单的轨迹。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:17
+msgid ""
+"Follow the generated trajectory in an autonomous routine using WPILib's "
+"``RamseteCommand`` class with the calculated feedforward/feedback gains and "
+"pose."
+msgstr "使用WPILib的“RamseteCommand”类与计算的前馈/反馈增益和姿态在一个自主程序中跟踪生成的轨迹。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:19
+msgid ""
+"This tutorial is intended to be approachable for teams without a great deal "
+"of programming expertise.  While the WPILib library offers significant "
+"flexibility in the manner in which its trajectory-following features are "
+"implemented, closely following the implementation outlined in this tutorial "
+"should provide teams with a relatively-simple, clean, and repeatable "
+"solution for autonomous movement."
+msgstr ""
+"本教程的目的是让不具备大量编程专业知识的团队能够使用。虽然WPILib库在其轨迹跟踪特性的实现方式上提供了很大的灵活性，但密切遵循本教程中概述的实现应该能为团队提供一个相对简单、干净和可重复的自主移动解决方案。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:21
+msgid ""
+"The full robot code for this tutorial can be found in the RamseteCommand "
+"Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)."
+msgstr ""
+"本教程的完整机器人代码可以在RamseteCommand示例项目（Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__，`C"
+" ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__）中找到。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:24
+msgid "Why Trajectory Following?"
+msgstr "为什么需要轨迹跟踪？"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:26
+msgid ""
+"FRC\\ |reg| games often feature autonomous tasks that require a robot to "
+"effectively and accurately move from a known starting location to a known "
+"scoring location.  Historically, the most common solution for this sort of "
+"task in FRC has been a \"drive-turn-drive\" approach - that is, drive "
+"forward by a known distance, turn by a known angle, and drive forward by "
+"another known distance."
+msgstr ""
+"FRC\\ |reg| "
+"游戏通常以自主任务为特色，要求机器人有效且准确地从已知的起始位置移动到已知的得分位置。从历史上看，FRC中这类任务最常见的解决方案是“drive-"
+"turn-drive”方法——也就是说，以已知的距离向前行驶，以已知的角度转弯，再以已知的距离向前行驶。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:28
+msgid ""
+"While the \"drive-turn-drive\" approach is certainly functional, in recent "
+"years teams have begun tracking smooth trajectories which require the robot "
+"to drive and turn at the same time.  While this is a fundamentally more-"
+"complicated technical task, it offers significant benefits: in particular, "
+"since the robot no longer has to stop to change directions, the paths can be"
+" driven much faster, allowing a robot to score more game pieces during the "
+"autonomous period."
+msgstr ""
+"虽然“驾驶-转弯-"
+"驱动”的方法确实有效，但近年来，研究团队已经开始跟踪要求机器人同时驾驶和转弯的平滑轨迹。虽然这是一个更加复杂的技术任务，但它提供了显著的好处:特别是，由于机器人不再需要停下来改变方向，路径可以更快地驱动，让机器人在自动阶段获得更多的游戏得分。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:30
+msgid ""
+"Beginning in 2020, WPILib now supplies teams with working, advanced code "
+"solutions for trajectory generation and tracking, significantly lowering the"
+" \"barrier-to-entry\" for this kind of advanced and effective autonomous "
+"motion."
+msgstr "从2020年开始，WPILib现在为团队提供可行的、先进的轨迹生成和跟踪代码解决方案，大大降低了这种先进、有效的自动阶段“进入障碍”。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:33
+msgid "Required Equipment"
+msgstr "所需设备"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:35
+msgid ""
+"To follow this tutorial, you will need ready access to the following "
+"materials:"
+msgstr "要遵循本教程，您需要立即访问以下材料："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:37
+msgid ""
+"A differential-drive robot (such as the `AndyMark AM14U4 "
+"<https://www.andymark.com/products/am14u4-kit-of-parts-chassis>`__), "
+"equipped with:"
+msgstr ""
+"差动驱动机器人（例如， `AndyMark AM14U4 <https://www.andymark.com/products/am14u4-kit-"
+"of-parts-chassis>`__），配备："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:39
+msgid ""
+"Quadrature encoders for measuring the wheel rotation of each side of the "
+"drive."
+msgstr "正交编码器测量车轮旋转的每一边的驱动器。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:40
+msgid "A gyroscope for measuring robot heading."
+msgstr "用于测量机器人航向的陀螺仪。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:42
+msgid "A driver-station computer configured with:"
+msgstr " 操控站计算机配置为:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:44
+msgid ""
+":ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-"
+"tools:Installing the FRC Game Tools>`."
+msgstr ""
+":ref:`FRC Driver Station <docs/zero-to-robot/step-2/frc-game-"
+"tools:Installing the FRC Game Tools>`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:45
+msgid ""
+":ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation "
+"Guide>`."
+msgstr ""
+":ref:`WPILib <docs/zero-to-robot/step-2/wpilib-setup:WPILib Installation "
+"Guide>`."
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/trajectory-tutorial-overview.rst:46
+msgid ""
+":ref:`The FRC-Characterization Toolsuite <docs/software/wpilib-tools/robot-"
+"characterization/introduction:Installing and Launching the Toolsuite>`."
+msgstr ""
+":ref:`The FRC-Characterization Toolsuite <docs/software/wpilib-tools/robot-"
+"characterization/introduction:Installing and Launching the Toolsuite>`."

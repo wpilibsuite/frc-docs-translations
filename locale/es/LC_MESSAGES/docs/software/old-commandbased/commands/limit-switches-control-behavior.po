@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Iván Samaniego Becerril <ivan.samaniego.b@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-08 04:10+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:2
+msgid "Using Limit Switches to Control Behavior"
+msgstr "Uso de interruptores de límite para controlar el comportamiento"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Esta documentación describe el uso de la biblioteca basada en comandos. Si "
+"bien esta documentación se ha conservado para ayudar a los equipos que aún "
+"no lo han hecho, se recomienda encarecidamente a los equipos que migren a: "
+"ref: `nueva biblioteca basada en comandos <docs/software/commandbased/index"
+":Command-Based Programming>`"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:6
+msgid ""
+"Limit switches are often used to control mechanisms on robots. While limit "
+"switches are simple to use, they only can sense a single position of a "
+"moving part. This makes them ideal for ensuring that movement doesn't exceed"
+" some limit but not so good at controlling the speed of the movement as it "
+"approaches the limit. For example, a rotational shoulder joint on a robot "
+"arm would best be controlled using a potentiometer or an absolute encoder, "
+"the limit switch could make sure that if the potentiometer ever failed, the "
+"limit switch would stop the robot from going to far and causing damage."
+msgstr ""
+"Los interruptores de Límite normalmente son usados para controlar el "
+"mecanismo de los robot. Mientras que los interruptores de Límite son fáciles"
+" de usar estos sólo pueden tener sentido a una simple posición para mover "
+"una parte. Este los vuelve ideales para asegurar que el movimiento no exceda"
+" algún límite pero no tan buenos al controlar la velocidad de algo en "
+"movimiento aproximado al límite. Ejemplo en el brazo del robot el hombro "
+"rotador será mejor controlado usando un potencializador o un codificador "
+"absoluto el interruptor de Límite puede puede asegurar que si él "
+"potencializador llega a fallar el interruptor de Límite detendrá al robot de"
+" ir más allá y causar algún daño"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:9
+msgid "Values Provided"
+msgstr "Valores proporcionados"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:13
+msgid ""
+"Limit switches can have \"normally opened\" or \"normally closed\" outputs. "
+"The usual way of wiring the switch is between a digital input signal "
+"connection and ground. The digital input has pull-up resistors that will "
+"make the input be high (1 value) when the switch is open, but when the "
+"switch closes the value goes to 0 since the input is now connected to "
+"ground. The switch shown here has both normally open and normally closed "
+"outputs."
+msgstr ""
+"Los interruptores de límite pueden tener salidas \"normalmente abiertas\" o "
+"\"normalmente cerradas\". La forma habitual del cableado del interruptor "
+"está entre una conexión de señal de entrada digital y tierra. La entrada "
+"digital tiene resistencias a levantarse que harán que la entrada sea alta (1"
+" valor) cuando el interruptor esté abierto, pero cuando el interruptor se "
+"cierra, el valor va a 0 ya que la entrada ahora está conectada a tierra. El "
+"interruptor que se muestra aquí tiene salidas normalmente abiertas y "
+"normalmente cerradas."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:16
+msgid "Polling - Waiting for a Switch to Close"
+msgstr "Encuestar - en espera de un cambio para cerrar"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:65
+msgid ""
+"You can write a very simple piece of code that just reads the limit switch "
+"over and over again waiting until it detects that its value transitions from"
+" 1 (opened) to 0 (closed). While this works, it's usually impractical for "
+"the program to be able to just wait for the switch to operate and not be "
+"doing anything else, like responding to joystick input. This example shows "
+"the fundamental use of the switch, but while the program is waiting, nothing"
+" else is happening."
+msgstr ""
+"Puede escribir un código muy simple que solo lea el interruptor de límite "
+"una y otra vez esperando hasta que detecte que su valor pasa de 1 (abierto) "
+"a 0 (cerrado). Mientras esto funciona, por lo general no es práctico que el "
+"programa pueda esperar a que el switch funcione y no estar haciendo nada "
+"más, cómo responder a la entrada del joystick. Este ejemplo muestra el uso "
+"fundamental del interruptor, pero mientras el programa está esperando, no "
+"sucede nada más."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:68
+msgid "Operating until Limit Closed"
+msgstr "Operando hasta el límite cerrado"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:133
+msgid ""
+"Commands call their ``execute()`` and ``isFinished()`` methods about 50 "
+"times per second, or at a rate of every 20ms. A command that will operate a "
+"motor until the limit switch is closed can read the digital input value in "
+"the ``isFinished()`` method and return true when the switch changes to the "
+"correct state. Then the command can stop the motor."
+msgstr ""
+"Los comandos llaman a sus métodos ``execute()`` y el ``isFinished()`` unas "
+"50 veces por segundo, o a una velocidad de cada 20 ms. Un comando operará un"
+" motor hasta que se cierre el interruptor de límite, puede leer el valor de "
+"entrada digital en el método ``isFinished()`` y devolver a verdadero cuando "
+"el interruptor cambia al estado correcto. Entonces el comando puede detener "
+"el motor."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:135
+msgid ""
+"Remember, the mechanism (an Arm in this case) has some inertia and won't "
+"stop immediately so it's important to make sure things don't break while the"
+" arm is slowing."
+msgstr ""
+"Importante: Recuerde, el mecanismo (un Brazo en este caso) tiene algo de "
+"inercia y no podra detenerse de inmediato, así que es importante asegurarse "
+"de que las cosas no se rompan mientras el brazo se desacelera"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:138
+msgid "Counter to detect Switch Close"
+msgstr "Contador para detectar el Switch Close"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:227
+msgid ""
+"It's possible that a limit switch might close then open again as a mechanism"
+" moves past the switch. If the closure is fast enough the program might not "
+"notice that the switch closed. An alternative method of catching the switch "
+"closing is use a Counter object. Since counters are implemented in hardware,"
+" it will be able to capture the closing of the fastest switches and "
+"increment it's count. Then the program can simply notice that the count has "
+"increased and take whatever steps are needed to do the operation."
+msgstr ""
+"Es posible que un interruptor de límite se cierre y luego se abra nuevamente"
+" a medida que un mecanismo pasa del switch. Si el cierre es lo "
+"suficientemente rápido, el programa podría no notar que el interruptor se "
+"cerró. Un método alternativo para atrapar el cierre del interruptor es usar "
+"un objeto Counter. Como los counters son implementados en hardware, podrá "
+"capturar el cierre de los interruptores más rápidos y el incremento cuenta. "
+"Entonces el programa simplemente puede notar que la cuenta ha aumentado y "
+"tome los pasos necesarios para realizar la operación. Arriba hay un "
+"subsistema que usa un counter para mirar el interruptor de límite y esperar "
+"a que el valor cambie. Cuando lo hace, el counter se incrementará y eso se "
+"puede ver en un comando."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:229
+msgid ""
+"Above is a subsystem that uses a counter to watch the limit switch and wait "
+"for the value to change. When it does, the counter will increment and that "
+"can be watched in a command."
+msgstr ""
+"Arriba hay un subsistema que usa un contador para observar el interruptor de"
+" límite y esperar a que cambie el valor. Cuando lo hace, el contador se "
+"incrementará y eso se puede ver en un comando."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:232
+msgid "Using a Command with a Counter to detect Limit Switch Close"
+msgstr ""
+"Uso de un comando con un contador para detectar el interruptor de límite "
+"Cerrado"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/limit-switches-control-behavior.rst:299
+msgid ""
+"This command initializes the counter in the above subsystem then starts the "
+"motor moving. It then tests the counter value in the isFinished() method "
+"waiting for it to count the limit switch changing. When it does, the arm is "
+"stopped. By using a hardware counter, a switch that might close then open "
+"very quickly can still be caught by the program."
+msgstr ""
+"Este comando inicializa el contador en el subsistema anterior y luego inicia"
+" el movimiento del motor. Luego prueba el valor del contador en el método "
+"isFinished() esperando que cuente el interruptor de límite cambiando. Cuando"
+" lo hace, el brazo se detiene. Al usar un contador de hardware, un "
+"interruptor que podría cerrar y abrir muy rápido aún puede ser detectado por"
+" el programa."

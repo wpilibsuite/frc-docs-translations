@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Gibrán Verástegui <Gibranbasket1526@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-10-02 16:12+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:2
+msgid "Mecanum Drive Kinematics"
+msgstr "Cinemática de accionamiento Mecanum"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:3
+msgid ""
+"The ``MecanumDriveKinematics`` class is a useful tool that converts between "
+"a ``ChassisSpeeds`` object and a ``MecanumDriveWheelSpeeds`` object, which "
+"contains velocities for each of the four wheels on a mecanum drive."
+msgstr ""
+"La clase ``MecanumDriveKinematics`` es una herramienta útil que convierte "
+"entre un objeto ``ChassisSpeeds`` y un objeto ``MecanumDriveWheelSpeeds``, "
+"que contiene las velocidades de cada una de las cuatro ruedas de un "
+"mecanismo mecanum."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:6
+msgid "Constructing the Kinematics Object"
+msgstr "Construyendo el objeto cinemático"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:7
+msgid ""
+"The ``MecanumDriveKinematics`` class accepts four constructor arguments, "
+"with each argument being the location of a wheel relative to the robot "
+"center (as a ``Translation2d``). The order for the arguments is front left, "
+"front right, back left, and back right. The locations for the wheels must be"
+" relative to the center of the robot. Positive x values represent moving "
+"toward the front of the robot whereas positive y values represent moving "
+"toward the left of the robot."
+msgstr ""
+"La clase ``MecanumDriveKinematics`` acepta cuatro argumentos de constructor,"
+" y cada argumento es la ubicación de una rueda en relación con el centro del"
+" robot (como un ``Translation2d``). El orden de los argumentos es frontal "
+"izquierdo, frontal derecho, posterior izquierdo y posterior derecho. Las "
+"ubicaciones de las ruedas deben ser relativas al centro del robot. Los "
+"valores x positivos representan un movimiento hacia la parte delantera del "
+"robot, mientras que los valores y positivos representan un movimiento hacia "
+"la izquierda del robot."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:39
+msgid "Converting Chassis Speeds to Wheel Speeds"
+msgstr "Conversión de velocidades del chasis a velocidades de las ruedas"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:40
+msgid ""
+"The ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / "
+"``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) method should be used to "
+"convert a ``ChassisSpeeds`` object to a ``MecanumDriveWheelSpeeds`` object. "
+"This is useful in situations where you have to convert a forward velocity, "
+"sideways velocity, and an angular velocity into individual wheel speeds."
+msgstr ""
+"El método ``toWheelSpeeds(ChassisSpeeds speeds)`` (Java) / "
+"``ToWheelSpeeds(ChassisSpeeds speeds)`` (C++) debe usarse para convertir un "
+"objeto ``ChassisSpeeds`` en un objeto ``MecanumDriveWheelSpeeds``. Esto es "
+"útil en situaciones en las que tiene que convertir una velocidad de avance, "
+"una velocidad lateral y una velocidad angular en velocidades de rueda "
+"individuales."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:73
+msgid "Field-oriented drive"
+msgstr "Accionamiento orientado al campo"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:74
+msgid ""
+":ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a "
+"``ChassisSpeeds`` object can be created from a set of desired field-oriented"
+" speeds. This feature can be used to get wheel speeds from a set of desired "
+"field-oriented speeds."
+msgstr ""
+":ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:Creating a ChassisSpeeds object from field-relative speeds>` que un "
+"objeto ``ChassisSpeeds`` se puede crear a partir de un conjunto de "
+"velocidades deseadas orientadas al campo. Esta función se puede utilizar "
+"para obtener velocidades de rueda a partir de un conjunto de velocidades "
+"deseadas orientadas al campo."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:105
+msgid "Using custom centers of rotation"
+msgstr "Usar centros de rotación personalizados"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:106
+msgid ""
+"Sometimes, rotating around one specific corner might be desirable for "
+"certain evasive maneuvers. This type of behavior is also supported by the "
+"WPILib classes. The same ``ToWheelSpeeds()`` method accepts a second "
+"parameter for the center of rotation (as a ``Translation2d``). Just like the"
+" wheel locations, the ``Translation2d`` representing the center of rotation "
+"should be relative to the robot center."
+msgstr ""
+"A veces, girar alrededor de una esquina específica puede ser deseable para "
+"ciertas maniobras evasivas. Este tipo de comportamiento también es "
+"compatible con las clases WPILib. El mismo método ``ToWheelSpeeds()`` acepta"
+" un segundo parámetro para el centro de rotación (como un "
+"``Translation2d``). Al igual que las ubicaciones de las ruedas, la "
+"``Translation2d`` que representa el centro de rotación debe ser relativa al "
+"centro del robot."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:108
+msgid ""
+"Because all robots are a rigid frame, the provided ``vx`` and ``vy`` "
+"velocities from the ``ChassisSpeeds`` object will still apply for the "
+"entirety of the robot. However, the ``omega`` from the ``ChassisSpeeds`` "
+"object will be measured from the center of rotation."
+msgstr ""
+"Debido a que todos los robots son un marco rígido, las velocidades ``vx`` y "
+"``vy`` proporcionadas del objeto ``ChassisSpeeds`` aún se aplicarán a la "
+"totalidad del robot. Sin embargo, el ``omega`` del objeto ``ChassisSpeeds`` "
+"se medirá desde el centro de rotación."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:110
+msgid ""
+"For example, one can set the center of rotation on a certain wheel and if "
+"the provided ``ChassisSpeeds`` object has a ``vx`` and ``vy`` of zero and a "
+"non-zero ``omega``, the robot will appear to rotate around that particular "
+"wheel."
+msgstr ""
+"Por ejemplo, se puede establecer el centro de rotación en una determinada "
+"rueda y si el objeto ``ChassisSpeeds`` proporcionado tiene un ``vx`` y un "
+"``vy`` de cero y un ``omega`` distinto de cero, el robot parecerá girar "
+"alrededor de esa rueda en particular."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:113
+msgid "Converting wheel speeds to chassis speeds"
+msgstr "Conversión de velocidades de rueda a velocidades de chasis"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/mecanum-drive-kinematics.rst:114
+msgid ""
+"One can also use the kinematics object to convert a "
+"``MecanumDriveWheelSpeeds`` object to a singular ``ChassisSpeeds`` object. "
+"The ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java) / "
+"``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) method can be used"
+" to achieve this."
+msgstr ""
+"También se puede usar el objeto cinemático para convertir un objeto "
+"``MecanumDriveWheelSpeeds`` en un objeto singular ``ChassisSpeeds``. El "
+"método ``toChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (Java) / "
+"``ToChassisSpeeds(MecanumDriveWheelSpeeds speeds)`` (C++) se puede utilizar "
+"para lograr esto."

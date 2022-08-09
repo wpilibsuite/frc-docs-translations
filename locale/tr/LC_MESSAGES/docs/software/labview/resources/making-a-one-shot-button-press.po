@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-17 04:14+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:2
+msgid "Making a One-Shot Button Press"
+msgstr "One-Shot Buton yapmak"
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:6
+msgid ""
+"When using the Joystick Get Values function, pushing a joystick button will "
+"cause the button to read TRUE until the button is released. This means that "
+"you will most likely read multiple TRUE values for each press. What if you "
+"want to read only one TRUE value each time the button is pressed? This is "
+"often called a \"One-Shot Button\". The following tutorial will show you how"
+" to create a subVI that you can drop into your Teleop.vi to do this."
+msgstr ""
+"Joystick Get Values işlevini kullanırken, bir joystick düğmesine basmak, "
+"düğme bırakılana kadar düğmenin TRUE okumasına neden olur. Bu, büyük "
+"olasılıkla her basışta birden çok DOĞRU değeri okuyacağınız anlamına gelir. "
+"Ya düğmeye her basıldığında yalnızca bir DOĞRU değeri okumak isterseniz? Bu "
+"genellikle \"One-shot Button\" olarak adlandırılır. Aşağıdaki eğitim, bunu "
+"yapmak için Teleop.vi'nize bırakabileceğiniz bir subVI'yı nasıl "
+"oluşturacağınızı gösterecektir."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:8
+msgid "First, create a new VI in the Support Code folder of your project."
+msgstr "Öncelikle, projenizin Support Code klasöründe yeni bir VI oluşturun."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:12
+msgid ""
+"Now on the block diagram of the new VI, drop in the following code snippet."
+msgstr ""
+"Şimdi yeni VI'nın blok diyagramında, aşağıdaki kod parçacığını bırakın."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:16
+msgid ""
+"This code uses a function called the Feedback Node. We have wired the "
+"current value of the button into the left side of the feedback node. The "
+"wire coming out of the arrow of the feedback node represents the previous "
+"value of the button. If the arrow on your feedback node is going the "
+"opposite direction as shown here, right click to find the option to reverse "
+"the direction."
+msgstr ""
+"Bu kod, Feedback Node adı verilen bir işlevi kullanır. Düğmenin mevcut "
+"değerini feedack node düğümünün sol tarafına bağladık. Feedback node "
+"düğümünün okundan çıkan tel, düğmenin önceki değerini temsil eder. Geri "
+"bildirim düğümünüzdeki ok burada gösterildiği gibi ters yöne gidiyorsa, yönü"
+" tersine çevirme seçeneğini bulmak için sağ tıklayın."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:18
+msgid ""
+"When a button is pressed, the value of the button goes from FALSE to TRUE. "
+"We want the output of this VI to be TRUE only when the current value of the "
+"button is TRUE, and the previous value of the button is FALSE."
+msgstr ""
+"Bir düğmeye basıldığında, düğmenin değeri FALSE'dan TRUE'ya gider. Bu VI'nın"
+" çıktısının yalnızca düğmenin mevcut değeri TRUE ve düğmenin önceki değeri "
+"FALSE olduğunda TRUE olmasını istiyoruz."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:20
+msgid ""
+"Next we need to connect the boolean control and indicator to the inputs and "
+"outputs of the VI. To do this, first click the block on the connector pane, "
+"then click the button to connect the two (see the diagram below). Repeat "
+"this for the indicator."
+msgstr ""
+"Daha sonra boolen kontrolünü ve göstergesini VI'nın giriş ve çıkışlarına "
+"bağlamamız gerekir. Bunu yapmak için, önce bağlayıcı bölmesindeki bloğa "
+"tıklayın, ardından ikisini bağlamak için düğmeye tıklayın (aşağıdaki şemaya "
+"bakın). Gösterge için bunu tekrarlayın."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:24
+msgid ""
+"Next, we need to change the properties of this VI so that we can use "
+"multiples of this VI in our TeleOp.vi. Right click the VI Icon and go to VI "
+"Properties. Then select the category \"Execution\" and select \"Preallocated"
+" clone reentrant execution\"."
+msgstr ""
+"Daha sonra, bu VI'nın özelliklerini TeleOp.vi'mizde bu VI'nın katlarını "
+"kullanabilmemiz için değiştirmemiz gerekiyor. VI Simgesine sağ tıklayın ve "
+"VI Özellikleri'ne gidin. Ardından \"Execution\" kategorisini seçin ve "
+"\"Preallocated clone reentrant execution\" yı seçin."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:30
+msgid ""
+"Lastly, we should change the VI Icon to be more descriptive of the VI's "
+"function. Right click the Icon and go to Edit Icon. Create a new Icon."
+msgstr ""
+"Son olarak, VI Simgesini VI'nın işlevini daha açıklayıcı olacak şekilde "
+"değiştirmeliyiz. Simgeye sağ tıklayın ve Edit Icon'a gidin. Create a new "
+"Icon-Yeni bir Simge oluşturun."
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:34
+msgid ""
+"Finally, save the VI with a descriptive name. You can now drag and drop this"
+" VI from the Support Files folder into your TeleOp.vi. Here is a copy of the"
+" completed VI: :download:`Button_Press.vi <files/Button_Press.vi>`"
+msgstr ""
+"Son olarak, VI'yı açıklayıcı bir adla kaydedin. Artık bu VI'yı Support Files"
+"  klasöründen TeleOp.vi'nize sürükleyip bırakabilirsiniz. İşte tamamlanan "
+"VI'nın bir kopyası: :download:`Button_Press.vi <files/Button_Press.vi>`"
+
+#: ../../frc-docs/source/docs/software/labview/resources/making-a-one-shot-button-press.rst:36
+msgid "Here's an example of how you could use this VI."
+msgstr "İşte bu VI'yı nasıl kullanabileceğinize dair bir örnek."

@@ -1,0 +1,161 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# Sofia Fernandez <sofiafdz.val@gmail.com>, 2021
+# Diana Ramos <dianaracasas@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2021-06-22 22:06+0000\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:2
+msgid "PID Tuning with SmartDashboard"
+msgstr "Sintonizar un PID con SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:4
+msgid ""
+"The PID (Proportional, Integral, Differential) is an algorithm for "
+"determining the motor speed based on sensor feedback to reach a setpoint as "
+"quickly as possible. For example, a robot with an elevator that moves to a "
+"predetermined position should move there as fast as possible then stop "
+"without excessive overshoot leading to oscillation. Getting the PID "
+"controller to behave this way is called \"tuning\". The idea is  to compute "
+"an error value that is the difference between the current value of the "
+"mechanism feedback element and the desired (setpoint) value. In the case of "
+"the arm, there might be a potentiometer connected to an analog channel that "
+"provides a voltage that is proportional to the position of the arm. The "
+"desired value is the voltage that is predetermined for the position the arm "
+"should move to, and the current value is the voltage for the actual position"
+" of the arm."
+msgstr ""
+"Un PID (Proporcional, Integral, Diferencial) es un algoritmo para determinar"
+" la velocidad de un motor basado en la retroalimentación de sensores, para "
+"alcanzar el punto de control lo más rápido posible. Por ejemplo, un robot "
+"con un elevador que se mueve a una determinada posición debería moverse lo "
+"más rápido posible y luego detenerse sin excederse, para no generar "
+"oscilaciones. Conseguir que el controlador PID se comporte de esta forma se "
+"llama “sintonizar”. La idea es calcular un valor de error que sea la "
+"diferencia entre el valor actual del elemento del mecanismo de "
+"retroalimentación y el valor deseado (punto de control). En caso de ser un "
+"brazo, puede que exista un potenciómetro conectado al canal análogo que "
+"provea de un voltaje proporcional a la posición del brazo. El valor deseado "
+"es el voltaje predeterminado a la posición a la que se moverá el brazo, y el"
+" valor actual es el voltaje para la posición actual del brazo."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:7
+msgid "Finding the setpoint values with LiveWindow"
+msgstr "Encontrar los valores de los puntos de control con LiveWindow"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:12
+msgid ""
+"Create a PID Subsystem for each mechanism with feedback. The PID Subsystems "
+"contain the actuator (motor) and the feedback sensor (potentiometer in this "
+"case). You can use Test mode to display the subsystem sensors and actuators."
+" Using the slider manually adjust the actuator to each desired position. "
+"Note the sensor values (2) for each of the desired positions. These will "
+"become the setpoints for the PID controller."
+msgstr ""
+"Cree un subsistema PID por cada mecanismo con retroalimentación. Los "
+"subsistemas PID contienen el actuador (motor) y el sensor de "
+"retroalimentación (potenciómetro, en este caso). Puede usar el modo de "
+"prueba para visualizar los sensores y actuadores del subsistema. Utilice "
+"manualmente el intensificador para ajustar el actuador a la posición que "
+"desee. Note que los valores del sensor (2) para cada posición deseada. Estos"
+" valores se convertirán en los puntos de control de los controladores PID."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:15
+msgid "Viewing the PIDController in LiveWindow"
+msgstr "Visualizar el controlador PID en LiveWindow"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:20
+msgid ""
+"In Test mode, the PID Subsystems display their P, I, and D parameters that "
+"are set in the code. The P, I, and D values are the weights applied to the "
+"computed error (P), sum of errors over time (I), and the rate of change of "
+"errors (D). Each of those terms is multiplied by the weights and added "
+"together to form the motor value. Choosing the optimal P, I, and D values "
+"can be difficult and requires some amount of experimentation. The Test mode "
+"on the robot allows the values to be modified, and the mechanism response "
+"observed."
+msgstr ""
+"En el modo de prueba, los subsistemas PID se muestran con sus parámetros P, "
+"I, y D por separado. Los valores P, I y D son los pesos aplicados al error "
+"calculado (P), la suma de los errores en razón al tiempo (I), y la tasa de "
+"cambio de los errores (D). Cada uno de estos términos es multiplicado por "
+"los pesos y se añaden juntos para formar el valor del motor. Escoger los "
+"valores óptimos para P, I y D puede ser una tarea difícil y requiere cierta "
+"experiencia. El modo de prueba permite modificar estos valores, y observar "
+"el mecanismo de respuesta."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:25
+msgid "Tuning the PIDController"
+msgstr "Sintonizar el controlador PID"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:30
+msgid ""
+"Tuning the PID controller can be difficult and there are many articles that "
+"describe techniques that can be used. It is best to start with the P value "
+"first. To try different values fill in a low number for P, enter a setpoint "
+"determined earlier in this document, and note how fast the mechanism "
+"responds. If it responds too slowly, perhaps never reaching the setpoint, "
+"increase P. If it responds too quickly, perhaps oscillating, reduce the P "
+"value. Repeat this process until you get a response that is as fast as "
+"possible without oscillation. It's possible that having a P term is all "
+"that's needed to achieve adequate control of your mechanism. Further "
+"information is located in the :doc:`/docs/software/advanced-"
+"controls/introduction/tuning-pid-controller` document."
+msgstr ""
+"Sincronizar el controlador PID puede resultar complicado y existen muchos "
+"artículos que describen técnicas útiles para dicha tarea. Lo mejor es "
+"comenzar con el valor de P. Para probar diferentes valores, comience con "
+"números pequeños para P, registre el punto de control establecido "
+"anteriormente en este documento y preste atención a qué tan rápida es la "
+"respuesta del mecanismo. Si tarda mucho tiempo en responder, tal vez nunca "
+"alcance a llegar al punto de control, y es necesario aumentar el valor de P."
+" Si responde demasiado pronto, puede generarse oscilaciones y es "
+"recomendable reducir el valor de P. Repita este proceso hasta que consiga "
+"una respuesta rápida y sin oscilaciones. Es posible que el mecanismo sólo "
+"necesite del término P para tener un control adecuado de su mecanismo. Puede"
+" encontrar más información en el documento :doc:`/docs/software/advanced-"
+"controls/introduction/tuning-pid-controller` ."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:32
+msgid ""
+"Once you have determined P, I, and D values they can be inserted into the "
+"program. You'll find them either in the properties for the PIDSubsystem in "
+"RobotBuilder or in the constructor for the PID Subsystem in your code."
+msgstr ""
+"Una vez que ha determinado  los valores de P, I y D estos pueden añadirse a "
+"su código. Puede encontrarlos en las propiedades de sus subsistemas PID en "
+"RobotBuilder o en el constructor del subsistema PID dentro de su código."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:34
+msgid ""
+"The F (feedforward) term is used for controlling velocity with a PID "
+"controller."
+msgstr ""
+"El término F (avance) es utilizado para controlar la velocidad con el "
+"controlador PID."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/test-mode-and-live-window/pid-tuning-with-smartdashboard.rst:36
+msgid ""
+"More information can be found at :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`."
+msgstr ""
+"Para más información, consulte :ref:`docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib`."

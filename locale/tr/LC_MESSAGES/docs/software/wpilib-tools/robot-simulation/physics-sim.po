@@ -1,0 +1,212 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-09 04:10+0000\n"
+"PO-Revision-Date: 2020-10-04 04:20+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:2
+msgid "Physics Simulation with WPILib"
+msgstr "WPILib ile Fizik Simülasyonu"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:4
+msgid ""
+"Because :ref:`state-space notation <docs/software/advanced-controls/state-"
+"space/state-space-intro:What is State-Space Notation?>` allows us to "
+"compactly represent the :term:`dynamics <dynamics>` of :term:`systems "
+"<system>`, we can leverage it to provide a backend for simulating physical "
+"systems on robots. The goal of these simulators is to simulate the motion of"
+" robot mechanisms without modifying existing non-simulation user code. The "
+"basic flow of such simulators is as follows:"
+msgstr ""
+"Çünkü  :ref:`durum-uzay gösterimi <docs/software/advanced-controls/state-"
+"space/state-space-intro:What is State-Space Notation?>`  , ::term:`systems "
+"<system>` 'in :term:`dynamics <dinamikleri>` kompakt bir şekilde temsil "
+"etmemize olanak tanır, robotlarda fiziksel sistemleri simüle etmek için onu "
+"kullanabiliriz. Bu simülatörlerin amacı, mevcut simülasyon dışı kullanıcı "
+"kodunu değiştirmeden robot mekanizmalarının hareketini simüle etmektir. Bu "
+"tür simülatörlerin temel akışı aşağıdaki gibidir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:6
+msgid "In normal user code:"
+msgstr "Normal kullanıcı kodunda:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:8
+msgid ""
+"PID or similar control algorithms generate voltage commands from encoder (or"
+" other sensor) readings"
+msgstr ""
+"PID veya benzer kontrol algoritmaları, kodlayıcı (veya diğer sensör) "
+"okumalarından voltaj komutları üretir"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:9
+msgid "Motor outputs are set"
+msgstr "Motor çıkışları ayarlandı"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:10
+msgid "In simulation periodic code:"
+msgstr "Simülasyon periyodik kodunda:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:12
+msgid ""
+"The simulation's :term:`state` is updated using :term:`inputs <input>`, "
+"usually voltages from motors set from a PID loop"
+msgstr ""
+"Simülasyonun :term:`state`i, :term:`inputs <input>` genellikle bir PID "
+"döngüsünden ayarlanmış motorlardan gelen voltajlar kullanılarak güncellenir."
+" "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:13
+msgid ""
+"Simulated encoder (or other sensor) readings are set for user code to use in"
+" the next timestep"
+msgstr ""
+"Simüle edilmiş kodlayıcı (veya diğer sensör) okumaları, sonraki zaman "
+"adımında kullanıcı kodunun kullanılması için ayarlanır"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:16
+msgid "WPILib's Simulation Classes"
+msgstr "WPILib'in Simülasyon Sınıfları"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:18
+msgid "The following physics simulation classes are available in WPILib:"
+msgstr "WPILib'de aşağıdaki fizik simülasyon sınıfları mevcuttur:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:20
+msgid "LinearSystemSim, for modeling systems with linear dynamics"
+msgstr "Doğrusal dinamikli sistemleri modellemek için LinearSystemSim, "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:21
+msgid "FlywheelSim"
+msgstr "FlywheelSim - Volan Sim"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:22
+msgid "DifferentialDrivetrainSim"
+msgstr "DiferansiyelDrivetrainSim"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:25
+msgid ""
+"BatterySim, which simply estimates battery voltage sag based on drawn "
+"currents"
+msgstr "Akü voltajı düşüşünü çekilen akımlara göre tahmin eden BatterySim"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:27
+msgid ""
+"All simulation classes (with the exception of the differential drive "
+"simulator) inherit from the :code:`LinearSystemSim` class. By default, the "
+"dynamics are the linear system dynamics :math:`\\mathbf{x}_{k+1} = "
+"\\mathbf{A}\\mathbf{x}_k + \\mathbf{B}\\mathbf{u}_k`. Subclasses override "
+"the :code:`UpdateX(x, u, dt)` method to provide custom, nonlinear dynamics, "
+"such as modeling gravity."
+msgstr ""
+"Tüm simülasyon sınıfları (diferansiyel sürücü simülatörü haricinde) "
+":code:`LinearSystemSim` sınıfından miras alır. Varsayılan olarak, dinamikler"
+" doğrusal sistem dinamikleridir  :math:`\\mathbf{x}_{k+1} = "
+"\\mathbf{A}\\mathbf{x}_k + \\mathbf{B}\\mathbf{u}_k` . Alt sınıflar  "
+":code:`UpdateX(x, u, dt)` gibi methorları, yerçekimi modelleme, özel  ve "
+"doğrusal olmayan dinamikler sağlamak için yöntemini geçersiz kılar."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:32
+msgid "Usage in User Code"
+msgstr "Kullanıcı Kodunda Kullanım"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:34
+msgid ""
+"The following is available from the WPILib :code:`elevatorsimulation` "
+"`example project "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation>`__."
+msgstr ""
+"Aşağıdakiler WPILib'den edinilebilir :code:`elevatorsimulation` `example "
+"project "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatorsimulation>`__."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:36
+msgid ""
+"In addition to standard objects such as motors and encoders, we instantiate "
+"our elevator simulator using known constants such as carriage mass and "
+"gearing reduction. We also instantiate an :code:`EncoderSim`, which sets the"
+" distance and rate read by our our :code:`Encoder`."
+msgstr ""
+"Motorlar ve kodlayıcılar gibi standart nesnelere ek olarak, asansör "
+"simülatörümüzü taşıma kütlesi ve dişli azaltma gibi bilinen sabitleri "
+"kullanarak somutlaştırıyoruz. Ayrıca: code: `Encoder` tarafından okunan "
+"mesafeyi ve oranı ayarlayan bir :code:`Encoder` oluşturuyoruz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:38
+msgid ""
+"In the following example, we simulate an elevator given the mass of the "
+"moving carriage (in kilograms), the radius of the drum driving the elevator "
+"(in meters), the gearing reduction between motor and drum as output over "
+"input (so usually greater than one), the minimum and maximum height of the "
+"elevator (in meters), and some random noise to add to our position estimate."
+msgstr ""
+"Aşağıdaki örnekte, hareketli taşıyıcının kütlesi (kilogram cinsinden), "
+"asansörü tahrik eden tamburun yarıçapı (metre cinsinden), giriş üzerinden "
+"çıkış olarak motor ve tambur arasındaki dişli azalması (genellikle birden "
+"daha büyüktür) ile verilen bir asansörü simüle ediyoruz, asansörün minimum "
+"ve maksimum yüksekliği (metre cinsinden) ve konum tahminimize eklenecek bazı"
+" rastgele gürültü."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:40
+msgid ""
+"The elevator and arm simulators will prevent the simulated position from "
+"exceeding given minimum or maximum heights or angles. If you wish to "
+"simulate a mechanism with infinite rotation or motion, "
+":code:`LinearSystemSim` may be a better option."
+msgstr ""
+"Asansör ve kol simülatörleri, simüle edilmiş konumun verilen minimum veya "
+"maksimum yükseklik veya açıları aşmasını önleyecektir. Sonsuz dönme veya "
+"harekete sahip bir mekanizmayı simüle etmek istiyorsanız, "
+":code:`LinearSystemSim`  daha iyi bir seçenek olabilir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:60
+msgid ""
+"Next, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++) uses a simple"
+" PID control loop to drive our elevator to a setpoint 30 inches off the "
+"ground."
+msgstr ""
+"Daha sonra, :code:`teleopPeriodic`/:code:`TeleopPeriodic` (Java/C++), "
+"asansörümüzü yerden 30 inç yükseklikte bir ayar noktasına götürmek için "
+"basit bir PID kontrol döngüsü kullanır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:80
+msgid ""
+"Next, :code:`simulationPeriodic`/:code:`SimulationPeriodic` (Java/C++) uses "
+"the voltage applied to the motor to update the simulated position of the "
+"elevator. We use :code:`SimulationPeriodic` because it runs periodically "
+"only for simulated robots. This means that our simulation code will not be "
+"run on a real robot."
+msgstr ""
+"Daha sonra, :code:`simulationPeriodic`/:code:`SimulationPeriodic` "
+"(Java/C++), asansörün simüle edilmiş konumunu güncellemek için motora "
+"uygulanan gerilimi kullanır. Sadece simüle edilmiş robotlar için periyodik "
+"olarak çalıştığı için :code:`SimulationPeriodic` kullanıyoruz. Bu, "
+"simülasyon kodumuzun gerçek bir robot üzerinde çalıştırılmayacağı anlamına "
+"gelir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/physics-sim.rst:82
+msgid ""
+"Finally, the simulated encoder's distance reading is set using the simulated"
+" elevator's position, and the robot's battery voltage is set using the "
+"estimated current drawn by the elevator."
+msgstr ""
+"Son olarak, simüle edilmiş kodlayıcının mesafe okuması, simüle edilmiş "
+"asansörün konumu kullanılarak ayarlanır ve robotun pil voltajı, asansör "
+"tarafından çekilen tahmini akımı kullanılarak ayarlanır."

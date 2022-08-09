@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-28 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2022\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:2
+msgid "Convenience Features"
+msgstr "Kullanışlı Özellikler"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:4
+msgid ""
+"While the previously-described methodologies will work fine for writing "
+"command-based robot code, the command-based libraries contain several "
+"convenience features for more-advanced users that can greatly reduce the "
+"verbosity/complexity of command-based code. It is highly recommended that "
+"users familiarize themselves with these features to maximize the value they "
+"get out of the command-based libraries."
+msgstr ""
+"Önceden açıklanan metodolojiler, komut tabanlı robot kodu yazmak için iyi "
+"çalışacak olsa da, komut tabanlı kitaplıklar, komut tabanlı kodun ayrıntı/ "
+"karmaşıklığını büyük ölçüde azaltabilen daha gelişmiş kullanıcılar için "
+"çeşitli kolaylık özellikleri içerir. Kullanıcıların, komut tabanlı "
+"kitaplıklardan elde ettikleri değeri en üst düzeye çıkarmak için bu "
+"özelliklere aşina olmaları şiddetle tavsiye edilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:7
+msgid "Inline Command Definitions"
+msgstr "Inline-Satır İçi Komut Tanımları"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:9
+msgid ""
+"While users are able to create commands by explicitly writing command "
+"classes (either by subclassing ``CommandBase`` or implementing ``Command``),"
+" for many commands (such as those that simply call a single subsystem "
+"method) this involves a lot of wasteful boilerplate code. To help alleviate "
+"this, many of the prewritten commands included in the command-based library "
+"may be *inlined* - that is, the command body can be defined in a single line"
+" of code at command construction."
+msgstr ""
+"Kullanıcılar açıkça komut sınıfları yazarak (``CommandBase`` alt sınıfını "
+"oluşturarak veya ``Command`` uygulayarak) komutlar oluşturabilirken, birçok "
+"komut için (tek bir alt sistem yöntemini çağıranlar gibi) bu, çok sayıda "
+"gereksiz standart kod gerektirir. Bunu hafifletmeye yardımcı olmak için, "
+"komut tabanlı kitaplıkta bulunan önceden yazılmış komutların çoğu *satır "
+"içi-inline* olabilir - yani komut gövdesi, komut oluşturma sırasında tek bir"
+" kod satırında tanımlanabilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:12
+msgid "Passing Subroutines As Parameters"
+msgstr "Alt Yordamları-Subroutines Parametre Olarak Aktarma"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:14
+msgid ""
+"In order to inline a command definition, users require some way to specify "
+"what code the commands will run as constructor parameters. Fortunately, both"
+" Java and C++ offer users the ability to pass subroutines as parameters."
+msgstr ""
+"Bir komut tanımını satır içi yapmak için, kullanıcılar komutların yapıcı "
+"parametreleri olarak hangi kodu çalıştıracağını belirtmek için bir yol "
+"gerektirir. Neyse ki, hem Java hem de C++, kullanıcılara alt rutinleri "
+"parametre olarak geçirme yeteneği sunar."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:17
+msgid "Method References (Java)"
+msgstr "Method Referansları (Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:19
+msgid ""
+"In Java, a reference to a subroutine that can be passed as a parameter is "
+"called a method reference. The general syntax for a method reference is "
+"``object::method``. Note that no method parameters are included, since the "
+"method *itself* is the parameter. The method is not being called - it is "
+"being passed to another piece of code (in this case, a command) so that "
+"*that* code can call it when needed. For further information on method "
+"references, see `the official Oracle documentation "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__."
+msgstr ""
+"Java'da, parametre olarak aktarılabilen bir alt yordama yapılan başvuruya "
+"yöntem başvurusu denir. Bir yöntem başvurusunun genel sözdizimi "
+"``object::method`` dir. Yöntemin *kendisi* parametre olduğu için hiçbir "
+"yöntem parametresinin dahil edilmediğine dikkat edin. Yöntem çağrılmıyor - "
+"başka bir kod parçasına (bu durumda, bir komut) aktarılıyor, böylece * o * "
+"kod gerektiğinde onu çağırabilir. Yöntem referansları hakkında daha fazla "
+"bilgi için, bkz. `\"Resmi Oracle dokümantasyonu "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:22
+msgid "Lambda Expressions (Java)"
+msgstr "Lambda İfadeleri (Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:27
+msgid "Lambda Expressions (C++)"
+msgstr "Lambda İfadeleri (C++)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:31
+msgid ""
+"C++ lacks a close equivalent to Java method references - pointers to member "
+"functions are generally not directly useable as parameters due to the "
+"presence of the implicit ``this`` parameter.  However, C++ does offer lambda"
+" expressions - in addition, the lambda expressions offered by C++ are in "
+"many ways more powerful than those in Java.  For specifics on how to write "
+"C++ lambda expressions, see `cppreference "
+"<https://en.cppreference.com/w/cpp/language/lambda>`__."
+msgstr ""
+"C++, Java yöntemi referanslarına yakın bir eşdeğerden yoksundur - üye "
+"işlevlere işaretçiler, örtük ``this`` parametresinin varlığı nedeniyle "
+"genellikle doğrudan parametre olarak kullanılamaz. Bununla birlikte, C++ "
+"lambda ifadeleri sunar - ek olarak, C++ tarafından sunulan lambda ifadeleri "
+"Java'dakilerden birçok yönden daha güçlüdür. C++ lambda ifadelerinin nasıl "
+"yazılacağına ilişkin ayrıntılar için bkz. `Cppreference "
+"<https://en.cppreference.com/w/cpp/language/lambda>`__."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:34
+msgid "Inlined Command Example"
+msgstr "Satır İçi - inline Komut Örneği"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:36
+msgid "So, what does an inlined command definition look like in practice?"
+msgstr "Öyleyse, satır içi bir komut tanımı pratikte nasıl görünür?"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:38
+msgid ""
+"The ``InstantCommand`` class provides an example of a type of command that "
+"benefits greatly from inlining. Consider the following from the "
+"HatchBotInlined example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):"
+msgstr ""
+"``InstantCommand`` sınıfı, satır içi işlemden büyük ölçüde yararlanan bir "
+"komut türü örneği sağlar. HatchBotInlined örnek projesinden (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`"
+" __) aşağıdakileri göz önünde bulundurun:"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:66
+msgid ""
+"Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` "
+"commands which call only one method before ending, both can be accomplished "
+"with a simple inline definition by passing appropriate subsystem method."
+msgstr ""
+"Bitmeden önce yalnızca bir yöntemi çağıran ayrı ``GrabHatch`` ve "
+"``ReleaseHatch`` komutlarını savurgan bir şekilde yazmak yerine, her ikisi "
+"de uygun alt sistem yöntemini geçerek basit bir satır içi tanımlamayla "
+"gerçekleştirilebilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:69
+msgid "Included Command Types"
+msgstr "Dahil Edilen Komut Türleri"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:74
+msgid "ConditionalCommand"
+msgstr "ConditionalCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:91
+msgid "SelectCommand"
+msgstr "SelectCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:93
+msgid ""
+"While the Java version of SelectCommand simply uses an ``Object`` as a key, "
+"the C++ version is templated on the key type."
+msgstr ""
+"SelectCommand'ın Java sürümü basitçe bir ``Object`` kullanırken, C++ sürümü "
+"anahtar türüne göre şablonlanmıştır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:95
+msgid ""
+"An alternate version of SelectCommand simply takes a method that supplies "
+"the command to be run - this can be very succinct, but makes inferring the "
+"command's requirements impossible, and so leaves the user responsible for "
+"manually adding the requirements to the SelectCommand."
+msgstr ""
+"SelectCommand'ın alternatif bir sürümü, çalıştırılacak komutu sağlayan bir "
+"yöntemi kullanır - bu çok kısa olabilir, ancak komutun gereksinimlerini "
+"anlamayı imkansız hale getirir ve bu nedenle, gereksinimleri manuel olarak "
+"SelectCommand'e eklemekten kullanıcıyı sorumlu bırakır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:118
+msgid "InstantCommand"
+msgstr "InstantCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:135
+msgid "RunCommand"
+msgstr "RunCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:163
+msgid "StartEndCommand"
+msgstr "StartEndCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:192
+msgid "FunctionalCommand"
+msgstr "FunctionalCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:229
+msgid "PrintCommand"
+msgstr "PrintCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:244
+msgid "ScheduleCommand"
+msgstr "ScheduleCommand - Program Komutu"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:260
+msgid ""
+"This is often useful for \"forking off\" from command groups: by default, "
+"commands in command groups are run *through* the command group, and are "
+"never themselves seen by the scheduler.  Accordingly, their requirements are"
+" added to the group's requirements.  While this is usually fine, sometimes "
+"it is undesirable for the entire command group to gain the requirements of a"
+" single command - a good solution is to \"fork off\" from the command group "
+"and schedule that command separately."
+msgstr ""
+"Bu genellikle komut gruplarından \"forking off-çatallanma\" için "
+"kullanışlıdır: varsayılan olarak, komut gruplarındaki komutlar, komut grubu "
+"boyunca *çalıştırılır* ve scheduler-zamanlayıcı tarafından asla görülmez. "
+"Buna göre, gereksinimleri grubun gereksinimlerine eklenir. Bu genellikle iyi"
+" olsa da, bazen tüm komut grubunun tek bir komutun gereksinimlerini "
+"karşılaması istenmeyen bir durumdur - iyi bir çözüm, komut grubundan \"fork "
+"off - çatal atmak\" ve bu komutu ayrı ayrı programlamaktır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:263
+msgid "ProxyScheduleCommand"
+msgstr "ProxyScheduleCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:279
+msgid ""
+"This is often useful for \"forking off\" from command groups: by default, "
+"commands in command groups are run *through* the command group, and are "
+"never themselves seen by the scheduler.  Accordingly, their requirements are"
+" added to the group's requirements.  While this is usually fine, sometimes "
+"it is undesirable for the entire command group to gain the requirements of a"
+" single command - a good solution is to \"fork off\" from the command group "
+"and schedule the command separately."
+msgstr ""
+"Bu genellikle komut gruplarından \"forking off - çatallama\" için "
+"kullanışlıdır: varsayılan olarak, komut gruplarındaki komutlar komut grubu "
+"*boyunca* çalıştırılır ve zamanlayıcı tarafından asla kendileri görülmez. "
+"Buna göre, gereksinimleri grubun gereksinimlerine eklenir. Bu genellikle iyi"
+" olsa da, bazen tüm komut grubunun tek bir komutun gereksinimlerini "
+"karşılaması istenmeyen bir durumdur - iyi bir çözüm, komut grubundan \"fork "
+"off\" ve komutu ayrı ayrı programlamaktır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:282
+msgid "WaitCommand"
+msgstr "WaitCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:298
+msgid "This is often useful as a component of a command group."
+msgstr "Bu genellikle bir komut grubunun bir bileşeni olarak kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:300
+msgid ""
+"``WaitCommand`` can also be subclassed to create a more complicated command "
+"that runs for a period of time. If ``WaitCommand`` is used in this method, "
+"the user must ensure that the ``WaitCommand``'s ``Initialize``, ``End``, and"
+" ``IsFinished`` methods are still called in order for the WaitCommand's "
+"timer to work."
+msgstr ""
+"``WaitCommand``, belirli bir süre boyunca çalışan daha karmaşık bir komut "
+"oluşturmak için de alt sınıflara ayrılabilir. Bu yöntemde WaitCommand'ın "
+"zamanlayıcısının çalışması için ``WaitCommand`` kullanılıyorsa, kullanıcı "
+"``WaitCommand`` ın ``Initialize``, ``End`` ve ``IsFinished`` yöntemlerinin "
+"hala çağrıldığından emin olmalıdır. "
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:303
+msgid "WaitUntilCommand"
+msgstr "WaitUntilCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:305
+msgid ""
+"The match timer used by WaitUntilCommand does *not* provide an official "
+"match time!  While it is fairly accurate, use of this timer can *not* "
+"guarantee the legality of your robot's actions."
+msgstr ""
+"WaitUntilCommand tarafından kullanılan maç sayacı resmi bir maç saati "
+"*sağlamaz*!  Oldukça doğru olsa da, bu zamanlayıcının kullanılması "
+"robotunuzun eylemlerinin yasallığını *garanti edemez*."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:328
+msgid "PerpetualCommand"
+msgstr "PerpetualCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:345
+msgid "Command Decorator Methods"
+msgstr "Command Dekoratör Yöntemleri"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:356
+msgid "withTimeout"
+msgstr "withTimeout"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:393
+msgid "andThen"
+msgstr "ve sonra"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:410
+msgid "beforeStarting"
+msgstr "beforeStarting"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:427
+msgid "alongWith (Java only)"
+msgstr "alongWith (yalnızca Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:429
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel command group the ordinary way instead."
+msgstr ""
+"Bu dekoratör, teknik kısıtlamalar nedeniyle C++ 'da desteklenmez - "
+"kullanıcılar bunun yerine basit bir şekilde paralel bir komut grubu "
+"oluşturmalıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:439
+msgid "raceWith (Java only)"
+msgstr "raceWith (Sadece Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:441
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel race group the ordinary way instead."
+msgstr ""
+"Bu dekoratör, teknik kısıtlamalar nedeniyle C++ 'da desteklenmez - "
+"kullanıcılar bunun yerine basit bir şekilde paralel bir yarış grubu "
+"oluşturmalıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:451
+msgid "deadlineWith (Java only)"
+msgstr "deadlineWith (Sadece Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:453
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel deadline group the ordinary way instead."
+msgstr ""
+"Bu dekoratör, teknik kısıtlamalar nedeniyle C++ 'da desteklenmez - "
+"kullanıcılar bunun yerine basit bir şekilde paralel bir deadline grubu "
+"oluşturmalıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:463
+msgid "withName (Java only)"
+msgstr "withName (yalnızca Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:465
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should set the name of the command inside their command class instead."
+msgstr ""
+"Bu dekoratör, teknik kısıtlamalar nedeniyle C ++ 'da desteklenmez - "
+"kullanıcılar bunun yerine komutun adını kendi komut sınıfları içinde "
+"ayarlamalıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:475
+msgid "perpetually"
+msgstr "perpetually-sürekli"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:492
+msgid "Composing Decorators"
+msgstr "Decorators-Dekoratörleri Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:494
+msgid ""
+"Remember that decorators, like all command groups, can be composed! This "
+"allows very powerful and concise inline expressions:"
+msgstr ""
+"Tüm komut grupları gibi dekoratörlerin de oluşturulabileceğini unutmayın! "
+"Bu, çok güçlü ve kısa satır içi-inline ifadelere izin verir:"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:502
+msgid "Static Factory Methods for Command Groups (Java only)"
+msgstr "Komut Grupları için Statik Üretim Yöntemleri (yalnızca Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:504
+msgid ""
+"These factory methods are not included in the C++ command library, as the "
+"reduction in verbosity would be minimal - C++ commands should be stack-"
+"allocated, removing the need for the ``new`` keyword."
+msgstr ""
+"Bu üretim yöntemleri, ayrıntıdaki azalma minimum düzeyde olacağından C++ "
+"komut kitaplığına dahil edilmemiştir - C++ komutları, ``new`` anahtar "
+"sözcüğüne duyulan ihtiyacı ortadan kaldırarak yığın olarak tahsis "
+"edilmelidir."

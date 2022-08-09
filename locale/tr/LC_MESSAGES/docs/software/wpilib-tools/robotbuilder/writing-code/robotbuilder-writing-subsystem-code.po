@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:07+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:2
+msgid "Writing the Code for a Subsystem"
+msgstr "Subsystem-Alt Sistem için Kod Yazma"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:4
+msgid ""
+"Adding code to create an actual working subsystem is very straightforward. "
+"For simple subsystems that don't use feedback it turns out to be extremely "
+"simple. In this section we will look at an example of a `Claw` subsystem. "
+"The `Claw` subsystem also has a limit switch to determine if an object is in"
+" the grip."
+msgstr ""
+"Gerçek bir çalışan alt sistem oluşturmak için kod eklemek çok basittir. Geri"
+" bildirim kullanmayan basit alt sistemler için son derece basit olduğu "
+"ortaya çıkıyor. Bu bölümde bir `Claw` alt sistemi örneğine bakacağız. `Claw`"
+" alt sistemi ayrıca bir nesnenin kavramada olup olmadığını belirlemek için "
+"bir limit anahtarına sahiptir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:7
+msgid "RobotBuilder Representation of the Claw Subsystem"
+msgstr "Claw Subsystem-Pençe Alt Sisteminin RobotBuilder Temsili"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:11
+msgid ""
+"The claw at the end of a robot arm is a subsystem operated by a single "
+"VictorSPX Motor Controller. There are three things we want the motor to do, "
+"start opening, start closing, and stop moving. This is the responsibility of"
+" the subsystem. The timing for opening and closing will be handled by a "
+"command later in this tutorial. We will also define a method to get if the "
+"claw is gripping an object."
+msgstr ""
+"Bir robot kolunun ucundaki pençe, tek bir VictorSPX Motor Kontrol Cihazı "
+"tarafından çalıştırılan bir alt sistemdir. Motorun yapmasını istediğimiz üç "
+"şey var, açmaya başlaması, kapanmaya başlaması ve hareket etmeyi bırakması. "
+"Bu, alt sistemin sorumluluğundadır. Açma ve kapama zamanlaması, bu eğitimin "
+"ilerleyen bölümlerinde bir komutla ele alınacaktır. Pençenin bir nesneyi "
+"tutup tutmadığını anlamak için bir yöntem de tanımlayacağız."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:14
+msgid "Adding Subsystem Capabilities"
+msgstr "Subsystem-Alt Sistem Yetenekleri Ekleme"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:132
+msgid ""
+"Add methods to the ``claw.java`` or ``claw.cpp`` that will open, close, and "
+"stop the claw from moving and get the claw limit switch. Those will be used "
+"by commands that actually operate the claw."
+msgstr ""
+"``claw.java`` veya ``claw.cpp`` ye pençe hareketini açacak, kapatacak ve "
+"durduracak ve pençe sınır anahtarını alacak yöntemler ekleyin. Bunlar "
+"pençeyi gerçekten çalıştıran komutlar tarafından kullanılacak."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:134
+msgid ""
+"The comments have been removed from this file to make it easier to see the "
+"changes for this document."
+msgstr ""
+"Bu belgedeki değişiklikleri görmeyi kolaylaştırmak için yorumlar bu dosyadan"
+" kaldırılmıştır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:136
+msgid ""
+"Notice that member variable called ``motor`` and ``limitswitch`` are created"
+" by RobotBuilder so it can be used throughout the subsystem. Each of your "
+"dragged-in palette items will have a member variable with the name given in "
+"RobotBuilder."
+msgstr ""
+"``motor``  ve ``limitswitch`` adlı üye değişkeninin RobotBuilder tarafından "
+"yaratıldığına dikkat edin, böylece alt sistem genelinde kullanılabilir. "
+"Sürüklenen palet öğelerinizin her biri, RobotBuilder'da verilen ada sahip "
+"bir üye değişkenine sahip olacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:139
+msgid "Adding the Method Declarations to the Header File (C++ Only)"
+msgstr "Üstbilgi Dosyasına Yöntem Bildirimleri Ekleme (Yalnızca C ++)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:178
+msgid ""
+"In addition to adding the methods to the class implementation file, "
+"``Claw.cpp``, the declarations for the methods need to be added to the "
+"header file, ``Claw.h``. Those declarations that must be added are shown "
+"here."
+msgstr ""
+"Yöntemleri sınıf uygulama dosyasına ``Claw.cpp`` eklemeye ek olarak, "
+"yöntemlerin bildirimlerinin ``Claw.h`` başlık dosyasına eklenmesi gerekir. "
+"Eklenmesi gereken beyanlar burada gösterilmektedir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:180
+msgid ""
+"To add the behavior to the claw subsystem to handle opening and closing you "
+"need to :doc:`define commands <../introduction/robotbuilder-creating-"
+"command>`."
+msgstr ""
+"Açma ve kapama davranışını pençe alt sistemine eklemek için şunları yapmanız"
+" gerekir :doc:`<../introduction/robotbuilder-creating-command> komutlarını "
+"tanımlayın`."

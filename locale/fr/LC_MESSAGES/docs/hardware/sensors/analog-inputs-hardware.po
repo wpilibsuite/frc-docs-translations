@@ -1,0 +1,226 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-25 16:03+0000\n"
+"PO-Revision-Date: 2020-04-25 01:59+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:2
+msgid "Analog Inputs - Hardware"
+msgstr "Entrées analogiques"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:4
+msgid ""
+"This section covers analog input hardware.  For a software guide to analog "
+"inputs, see :ref:`docs/software/hardware-apis/sensors/analog-inputs-"
+"software:Analog Inputs - Software`."
+msgstr ""
+"Cette section traite du matériel d'entrée analogique. Pour un guide logiciel"
+" sur les entrées analogiques, voir :ref:`docs/software/hardware-apis/sensors"
+"/analog-inputs-software:Analog Inputs - Software`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:6
+msgid ""
+"An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a "
+"signal whose value can lie anywhere in a continuous interval.  This lies in "
+"stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which "
+"can take only one of several discrete values.  The roboRIO's analog input "
+"ports allow the measurement of analog signals with values from 0V to 5V."
+msgstr ""
+"Un `signal analogique <https://en.wikipedia.org/wiki/Analog_signal>`__ est "
+"un signal dont la valeur peut se situer n'importe où dans un intervalle "
+"continu. Cela diffère d'un :doc:`signal numérique<digital-inputs-hardware>`,"
+" qui ne peut prendre qu'une seule valeur discrète parmi plusieurs. Les ports"
+" d'entrée analogique du roboRIO permettent la mesure de signaux analogiques "
+"qui ont des valeurs entre 0 et 5 Volts."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:8
+msgid ""
+"In practice, there is no way to measure a \"true\" analog signal with a "
+"digital device such as a computer (like the roboRIO).  Accordingly, the "
+"analog inputs are actually measured as a 12-bit digital signal - however, "
+"this is quite a high resolution [1]_."
+msgstr ""
+"En pratique, il n'y a aucun moyen de mesurer un \"vrai\" signal analogique "
+"avec un appareil numérique tel qu'un ordinateur (comme le roboRIO). Par "
+"conséquent, les entrées analogiques sont réellement mesurées comme un signal"
+" numérique à 12 bits - qui est une résolution assez élevée [1]_."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:10
+msgid ""
+"Analog inputs are typically (but not always!) used for sensors whose "
+"measurements vary continuously over a range, such as :doc:`ultrasonic "
+"rangefinders <ultrasonics-hardware>` and :doc:`potentiometers <analog-"
+"potentiometers-hardware>`, as they can communicate by outputting a voltage "
+"proportional to their measurements."
+msgstr ""
+"Les entrées analogiques sont généralement (mais pas toujours!) utilisées "
+"pour les capteurs dont les mesures varient en continu sur une plage, tels "
+"que :doc:`capteurs ultrasoniques<ultrasonics-hardware>` et "
+":doc:`potentiomètres<analog-potentiometers-hardware>`, car ils fournissent "
+"une tension proportionnelle à leurs mesures."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:13
+msgid "Connecting to roboRIO analog input ports"
+msgstr "Connexion aux ports d'entrée analogiques roboRIO"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:15
+msgid ""
+"An additional four analog inputs are available via the \"MXP\" expansion "
+"port.  To use these, a breakout board of some sort that connects to the MXP "
+"is needed."
+msgstr ""
+"Quatre entrées analogiques supplémentaires sont disponibles via le port "
+"d'extension \"MXP\". Pour les utiliser, une carte supplémentaire qui se "
+"connecte au MXP est nécessaire."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:17
+msgid ""
+"Always consult the technical specifications of the sensor you are using "
+"*before* wiring the sensor, to ensure that the correct wire is being "
+"connected to each pin.  Failure to do so can result in damage to the sensor "
+"or the RIO."
+msgstr ""
+"Consultez toujours les spécifications techniques du capteur que vous "
+"utilisez *avant* de le câbler au roboRIO, afin de vous assurer que le bon "
+"fil est connecté à la bonne broche. Ne pas le faire peut endommager le "
+"capteur ou le roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:19
+msgid ""
+"**Never** directly connect the power pin to the ground pin on any port on "
+"the roboRIO!  This will trigger protection features on the roboRIO and may "
+"result in unexpected behavior."
+msgstr ""
+"Ne **Jamais** connecter directement la broche d'alimentation à la broche de "
+"mise à la terre sur n'importe quel port du roboRIO! Ce court-circuit  "
+"déclenchera des fonctions de protection sur le roboRIO et générer "
+"comportement inattendu."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rstNone
+msgid "The roboRIO, with the location of the Analog Inputs highlighted."
+msgstr ""
+"Le roboRIO, avec l’emplacement des entrées analogiques mis en évidence."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:24
+msgid ""
+"The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the"
+" image above.  Each port has three pins - signal (\"S\"), power (\"V\"), and"
+" ground (\"|ground|\").  The \"power\" and \"ground\" pins are used to power"
+" the peripheral sensors that connect to the analog input ports - there is a "
+"constant 5V potential difference between the \"power\" and the \"ground\" "
+"pins [2]_.  The signal pin is the pin on which the signal is actually "
+"measured."
+msgstr ""
+"Le roboRIO dispose de 4 ports d'entrée analogique intégrés (numérotés 0-3), "
+"comme le montre l'image ci-dessus. Chaque port a trois broches - signal "
+"(\"S\"), alimentation (\"V\") et masse (\"|ground|\"). Les broches "
+"\"alimentation\" et \"masse\" sont utilisées pour alimenter les capteurs "
+"périphériques qui se connectent aux ports d'entrée analogique - il existe "
+"une différence de potentiel constante de 5 V entre les broches "
+"\"alimentation\" et \"masse\" [2]_. La broche de signal est la broche sur "
+"laquelle le signal est réellement mesuré."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:27
+msgid "Connecting a sensor to a single analog input port"
+msgstr "Connexion d'un capteur à un seul port d'entrée analogique"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:29
+msgid ""
+"Some sensors (such as :doc:`potentiometers <analog-potentiometers-"
+"hardware>`) may have interchangeable power and ground connections."
+msgstr ""
+"Certains capteurs (tels que :doc:`potentiomètres<analog-potentiometers-"
+"hardware>`) peuvent avoir des connexions d'alimentation et de masse "
+"interchangeables."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:31
+msgid ""
+"Most sensors that connect to analog input ports will have three wires - "
+"signal, power, and ground - corresponding precisely to the three pins of the"
+" analog input ports. They should be connected accordingly."
+msgstr ""
+"La plupart des capteurs qui se connectent aux ports d'entrée analogiques "
+"auront trois fils - signal, alimentation et masse - correspondant "
+"précisément aux trois broches des ports d'entrée analogiques. Ils doivent "
+"être connectés en conséquence."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rstNone
+msgid "Hooking a MB1013 distance sensor to an analog input on the roboRIO."
+msgstr ""
+"Branchement d’un capteur de distance MB1013 à une entrée analogique du "
+"roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:37
+msgid "Connecting a sensor to multiple analog input ports"
+msgstr "Connexion d'un capteur à plusieurs ports d'entrée analogique"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:39
+msgid ""
+"Some sensors may need to connect to multiple analog input ports in order to "
+"function.  In general, these sensors will only ever require a single power "
+"and a single ground pin - only the signal pin of the additional port(s) will"
+" be needed. The image below is shows an analog accelerometer that requires "
+"three digital input ports, but similar wiring can be used for analog sensors"
+" requiring two analog input ports."
+msgstr ""
+"Certains capteurs peuvent avoir besoin de se connecter à plusieurs ports "
+"d'entrée analogique pour fonctionner. En général, ces capteurs ne "
+"nécessiteront qu'une seule alimentation et une seule broche de masse - et "
+"les broches identifiées comme signaux iront se brancher dans les entrées "
+"analogiques correspondantes. L'image ci-dessous montre un accéléromètre qui "
+"nécessite trois ports d'entrée analogique, mais un câblage similaire peut "
+"être utilisé pour les capteurs nécessitant deux ports d'entrée analogiques."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rstNone
+msgid ""
+"Hooking a triple axis accelerometer to three different analog input channels"
+" of the roboRIO."
+msgstr ""
+"Branchement d’un accéléromètre à trois ports d’entrée analogiques différents"
+" du roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:47
+msgid "Footnotes"
+msgstr "Notes de bas de page"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:49
+msgid ""
+"A 12-bit resolution yields :math:`2^{12}`, or 4096 different values.  For a "
+"5V range, that's an effective resolution of approximately 1.2 mV, or .0012V."
+"  The actual accuracy specification is plus-or-minus 50mV, so the "
+"discretization is not the limiting factor in the measurement accuracy."
+msgstr ""
+"Une résolution de 12 bits donne  :math:`2^{12}`, soit 4096 valeurs "
+"différentes. Pour une plage de 5 V, c'est une résolution effective d'environ"
+" 1,2 mV ou 0,0012 V. L'accéléromètre étant précis à plus ou moins 50 mV "
+"(dans ses spécifications techniques), donc cette résolution n'est pas le "
+"facteur limitant la précision de la mesure."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:50
+msgid ""
+"All power pins are actually connected to a single rail, as are all ground "
+"pins - there is no need to use the power/ground pins corresponding to a "
+"given signal pin."
+msgstr ""
+"Toutes les broches d'alimentation sont en fait connectées à un seul rail, "
+"comme toutes les broches de masse - il n'est pas nécessaire d'utiliser les "
+"broches d'alimentation / de masse correspondant à une broche de signal "
+"donnée"

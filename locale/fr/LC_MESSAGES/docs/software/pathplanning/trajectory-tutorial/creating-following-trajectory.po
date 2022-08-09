@@ -1,0 +1,401 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-14 04:06+0000\n"
+"PO-Revision-Date: 2021-06-22 22:08+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:2
+msgid "Step 4: Creating and Following a Trajectory"
+msgstr "Étape 4 : Création et suivi d’une trajectoire"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:4
+msgid ""
+"With our drive subsystem written, it is now time to generate a trajectory "
+"and write an autonomous command to follow it."
+msgstr ""
+"Avec notre sous-système de déplacement écrit, il est maintenant temps de "
+"générer une trajectoire et d’écrire une commande autonome pour la suivre."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:6
+msgid ""
+"As per the :ref:`standard command-based project structure "
+"<docs/software/commandbased/structuring-command-based-project:Structuring a "
+"Command-Based Robot Project>`, we will do this in the "
+"``getAutonomousCommand`` method of the ``RobotContainer`` class.  The full "
+"method from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will break down the different "
+"parts of the method in more detail."
+msgstr ""
+"Selon le projet :ref:`structure standard d'un projet orienté commande "
+"<docs/software/commandbased/structuring-command-based-project:Structuring a "
+"Command-Based Robot Project>`, nous le ferons dans la méthode "
+"``getAutonomousCommand`` de la classe ``RobotContainer``. La méthode "
+"complète du projet d’exemple RamseteCommand (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+"  peut être vue ci-dessous. Le reste de l’article décomposera plus en détail"
+" les différentes parties de la méthode."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:10
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:38
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:63
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:86
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:111
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:134
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:18
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:46
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:71
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:94
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:119
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:142
+msgid "C++ (Source)"
+msgstr "C++ (Source)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:27
+msgid "Configuring the Trajectory Constraints"
+msgstr "Configuration des contraintes de la trajectoire"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:29
+msgid ""
+"First, we must set some configuration parameters for the trajectory which "
+"will ensure that the generated trajectory is followable."
+msgstr ""
+"Tout d’abord, nous devons définir certains paramètres de configuration pour "
+"la trajectoire qui garantiront que la trajectoire ainsi générée peut "
+"effectivement être suivie."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:32
+msgid "Creating a Voltage Constraint"
+msgstr "Création d’une contrainte de tension"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:34
+msgid ""
+"The first piece of configuration we will need is a voltage constraint.  This"
+" will ensure that the generated trajectory never commands the robot to go "
+"faster than it is capable of achieving with the given voltage supply:"
+msgstr ""
+"La première pièce de configuration dont nous aurons besoin est une "
+"contrainte de tension. Cela permettra de s’assurer que la trajectoire "
+"générée ne contraigne jamais le robot d’aller plus vite qu’il n’est capable "
+"d’atteindre avec l’alimentation de tension disponible:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:54
+msgid ""
+"Notice that we set the maximum voltage to 10V, rather than the nominal "
+"battery voltage of 12V.  This gives us some \"headroom\" to deal with "
+"\"voltage sag\" during operation."
+msgstr ""
+"Notez que nous avons fixé la tension maximale à 10V, plutôt qu'à la tension "
+"nominale de la batterie de 12V. Cela nous laisse une certaine \"marge\" pour"
+" faire face à un éventuel \"creux de tension\" pendant le suivi de la "
+"trajectoire."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:57
+msgid "Creating the Configuration"
+msgstr "Création de la configuration"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:59
+msgid ""
+"Now that we have our voltage constraint, we can create our "
+"``TrajectoryConfig`` instance, which wraps together all of our path "
+"constraints:"
+msgstr ""
+"Maintenant que nous avons notre contrainte de tension, nous pouvons créer "
+"notre instance ``TrajectoryConfig``, qui englobe toutes nos contraintes de "
+"trajectoire :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:80
+msgid "Generating the Trajectory"
+msgstr "Génération de la trajectoire"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:82
+msgid ""
+"With our trajectory configuration in hand, we are now ready to generate our "
+"trajectory.  For this example, we will be generating a \"clamped cubic\" "
+"trajectory - this means we will specify full robot poses at the endpoints, "
+"and positions only for interior waypoints (also known as \"knot points\").  "
+"As elsewhere, all distances are in meters."
+msgstr ""
+"Avec notre configuration de trajectoire en main, nous sommes maintenant "
+"prêts à générer notre trajectoire. Pour cet exemple, nous allons générer une"
+" trajectoire \"clamped cubic\"  - cela signifie que nous allons spécifier au"
+" complet les poses de robots aux extrémités, et spécifier des positions "
+"uniquement pour les points de passage intérieurs (également connu sous le "
+"nom \"points noeuds\"). Comme ailleurs, toutes les distances sont en mètres."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:102
+msgid ""
+"Instead of generating the trajectory on the roboRIO as outlined above, one "
+"can also :ref:`import a PathWeaver JSON "
+"<docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a"
+" PathWeaver JSON>`."
+msgstr ""
+"Au lieu de générer la trajectoire sur le roboRIO comme indiqué ci-dessus, on"
+" peut également :ref:`importer un PathWeaver JSON "
+"<docs/software/pathplanning/pathweaver/integrating-robot-program:Importing a"
+" PathWeaver JSON>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:105
+msgid "Creating the RamseteCommand"
+msgstr "Création de la commande Ramsete ou RamseteCommand"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:107
+msgid ""
+"We will first reset our robot's pose to the starting pose of the trajectory."
+" This ensures that the robot's location on the coordinate system and the "
+"trajectory's starting position are the same."
+msgstr ""
+"Nous allons d'abord réinitialiser la pose de notre robot à la pose de départ"
+" de la trajectoire. Cela garantit que l'emplacement du robot sur le système "
+"de coordonnées et la position de départ de la trajectoire sont identiques."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:128
+msgid ""
+"It is very important that the initial robot pose match the first pose in the"
+" trajectory.  For the purposes of our example, the robot will be reliably "
+"starting at a position of ``(0,0)`` with a heading of ``0``.  In actual use,"
+" however, it is probably not desirable to base your coordinate system on the"
+" robot position, and so the starting position for both the robot and the "
+"trajectory should be set to some other value.  If you wish to use a "
+"trajectory that has been defined in robot-centric coordinates in such a "
+"situation, you can transform it to be relative to the robot's current pose "
+"using the ``transformBy`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)>`_,"
+"  `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_)."
+"  For more information about transforming trajectories, see "
+":ref:`docs/software/advanced-controls/trajectories/transforming-"
+"trajectories:Transforming Trajectories`."
+msgstr ""
+"Il est très important que la pose initiale du robot corresponde à la "
+"première pose de la trajectoire. Pour les besoins de notre exemple, le robot"
+" commencera de manière fiable à une position de ``(0,0)`` avec un cap ou une"
+" orientation de ``0``. En utilisation réelle, cependant, il n’est "
+"probablement pas souhaitable de baser votre système de coordonnées sur la "
+"position du robot, et donc la position de départ du robot et la trajectoire "
+"doivent être réglées sur une autre valeur. Si vous souhaitez utiliser une "
+"trajectoire qui a été définie en coordonnées centrées sur le robot dans une "
+"telle situation, vous pouvez la transformer pour qu’elle soit relative à la "
+"pose actuelle du robot en utilisant la méthode `transformBy`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/Trajectory.html#transformBy(edu.wpi.first.math.geometry.Transform2d)>`_,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_trajectory.html#a8edfbd82347bbf32ddfb092679336cd8>`_)."
+" Pour plus d’informations sur la transformation des trajectoires, consulter "
+":ref:`docs/software/advanced-controls/trajectories/transforming-"
+"trajectories:Transforming Trajectories`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:130
+msgid ""
+"Now that we have a trajectory, we can create a command that, when executed, "
+"will follow that trajectory.  To do this, we use the ``RamseteCommand`` "
+"class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html>`__)"
+msgstr ""
+"Maintenant que nous avons une trajectoire, nous pouvons créer une commande "
+"qui, une fois exécutée, suivra cette trajectoire. Pour ce faire, nous nous "
+"servons de la classe ``RamseteCommand`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/RamseteCommand.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_ramsete_command.html>`__)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:150
+msgid ""
+"This declaration is fairly substantial, so we'll go through it argument-by-"
+"argument:"
+msgstr ""
+"Cette déclaration est assez substantielle, nous allons donc la scruter "
+"paramètre par paramètre:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:152
+msgid ""
+"The trajectory: This is the trajectory to be followed; accordingly, we pass "
+"the command the trajectory we just constructed in our earlier steps."
+msgstr ""
+"La trajectoire : C’est la trajectoire à suivre; en conséquence, nous passons"
+" à la commande la trajectoire que nous venons de construire dans nos étapes "
+"antérieures."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:153
+msgid ""
+"The pose supplier: This is a method reference (or lambda) to the :ref:`drive"
+" subsystem method that returns the pose "
+"<docs/software/pathplanning/trajectory-tutorial/creating-drive-"
+"subsystem:Odometry Accessor Method>`.  The RAMSETE controller needs the "
+"current pose measurement to determine the required wheel outputs."
+msgstr ""
+"Le fournisseur de pose : il s'agit d'une référence de méthode (ou lambda) à "
+"la méthode du sous-système :ref:`drive qui renvoie la pose "
+"<docs/software/pathplanning/trajectory-tutorial/creating-drive-"
+"subsystem:Odometry Accessor Method>`. Le contrôleur RAMSETE a besoin de la "
+"mesure de pose actuelle pour déterminer les sorties de roue requises."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:154
+msgid ""
+"The RAMSETE controller: This is the ``RamseteController`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/RamseteController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_ramsete_controller.html>`__)"
+" that will perform the path-following computation that translates the "
+"current measured pose and trajectory state into a chassis speed setpoint."
+msgstr ""
+"Le contrôleur RAMSETE : Il s'agit de l'objet ``RamseteController`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/RamseteController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_ramsete_controller.html>`__)"
+" qui effectuera les calculs relatifs au suivi de la trajectoire qui "
+"traduisent la pose actuelle mesurée et l’état de la trajectoire en un point "
+"de consigne de vitesse du châssis."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:155
+msgid ""
+"The drive feedforward: This is a ``SimpleMotorFeedforward`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html>`__)"
+" that will automatically perform the correct feedforward calculation with "
+"the feedforward gains (``kS``, ``kV``, and ``kA``) that we obtained from the"
+" drive identification tool."
+msgstr ""
+"Le feedforward du lecteur : il s'agit d'un objet ``SimpleMotorFeedforward`` "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/SimpleMotorFeedforward.html"
+" >`__, `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_simple_motor_feedforward.html>`__)"
+" qui effectuera automatiquement le calcul d'anticipation correct avec les "
+"gains d'anticipation (``kS ``, ``kV`` et ``kA``) que nous avons obtenus à "
+"partir de l'outil d'identification du lecteur."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:156
+msgid ""
+"The drive kinematics: This is the ``DifferentialDriveKinematics`` object "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/DifferentialDriveKinematics.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_differential_drive_kinematics.html>`__)"
+" that we constructed earlier in our constants file, and will be used to "
+"convert chassis speeds to wheel speeds."
+msgstr ""
+"Le paramètre drive kinematics : Il s’agit de l’objet "
+"``DifferentialDriveKinematics``  (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/kinematics/DifferentialDriveKinematics.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_differential_drive_kinematics.html>`__)"
+"  que nous avons construit plus tôt dans notre fichier de constantes, et qui"
+" sera utilisé pour convertir les vitesses du châssis en vitesses des roues."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:157
+msgid ""
+"The wheel speed supplier: This is a method reference (or lambda) to the "
+":ref:`drive subsystem method that returns the wheel speeds "
+"<docs/software/pathplanning/trajectory-tutorial/creating-drive-"
+"subsystem:Encoder Accessor Method>`"
+msgstr ""
+"Le fournisseur de vitesse de roue : il s'agit d'une référence de méthode (ou"
+" lambda) à la méthode du sous-système :ref:`drive qui renvoie les vitesses "
+"de roue <docs/software/pathplanning/trajectory-tutorial/creating-drive-"
+"subsystem:Encoder Accessor Method>`"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:158
+msgid ""
+"The left-side PIDController: This is the ``PIDController`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__)"
+" that will track the left-side wheel speed setpoint, using the P gain that "
+"we obtained from the drive identification tool."
+msgstr ""
+"Le PIDController de gauche : Il s'agit de l'objet ``PIDController`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController"
+" .html>`__, `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__)"
+" qui suivra la consigne de vitesse de la roue gauche, en utilisant le P gain"
+" que nous avons obtenu à partir de l'outil d'identification du lecteur."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:159
+msgid ""
+"The right-side PIDController: This is the ``PIDController`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__)"
+" that will track the right-side wheel speed setpoint, using the P gain that "
+"we obtained from the drive identification tool."
+msgstr ""
+"Le PIDController de droite : il s'agit de l'objet ``PIDController`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController"
+" .html>`__, `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_p_i_d_controller.html>`__)"
+" qui suivra la consigne de vitesse de la roue droite, en utilisant le P gain"
+" que nous avons obtenu à partir de l'outil d'identification du lecteur."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:160
+msgid ""
+"The output consumer: This is a method reference (or lambda) to the "
+":ref:`drive subsystem method that passes the voltage outputs to the drive "
+"motors <docs/software/pathplanning/trajectory-tutorial/creating-drive-"
+"subsystem:Voltage-Based Drive Method>`."
+msgstr ""
+"Le consommateur de sortie : il s'agit d'une référence de méthode (ou lambda)"
+" à la méthode du sous-système :ref:`drive qui transmet les sorties de "
+"tension aux moteurs d'entraînement <docs/software/pathplanning/trajectory-"
+"tutorial/creating-drive-subsystem:Voltage- Méthode de lecteur basée>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:161
+msgid ""
+"The robot drive: This is the drive subsystem itself, included to ensure the "
+"command does not operate on the drive at the same time as any other command "
+"that uses the drive."
+msgstr ""
+"Le sous-système d'entraînement du robot : Il s’agit du sous-système de "
+"déplacement lui-même, inclus ici pour s’assurer que la commande ne "
+"fonctionne pas sur la base pilotable en même temps que toute autre commande "
+"qui utilise cette même base pilotable."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:163
+msgid ""
+"Finally, note that we append a final \"stop\" command in sequence after the "
+"path-following command, to ensure that the robot stops moving at the end of "
+"the trajectory."
+msgstr ""
+"Enfin, notez que nous ajoutons une commande finale \"stop\" dans l’ordre "
+"après la commande de suivi de la trajectoire, pour s’assurer que le robot "
+"s'immobilise à la fin de la trajectoire."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:166
+msgid "Video"
+msgstr "Vidéo"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-following-trajectory.rst:168
+msgid ""
+"If all has gone well, your robot's autonomous routine should look something "
+"like this:"
+msgstr ""
+"Si tout s’est bien passé, la routine autonome de votre robot devrait "
+"ressembler à ceci :"

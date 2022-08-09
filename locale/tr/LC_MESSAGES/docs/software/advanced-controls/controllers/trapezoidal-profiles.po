@@ -1,0 +1,224 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:2
+msgid "Trapezoidal Motion Profiles in WPILib"
+msgstr "WPILib'de Trapezoid Hareket Profilleri"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:4
+msgid "Todo"
+msgstr "Yapılacaklar"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:4
+msgid "link to conceptual motion profiling article"
+msgstr "kavramsal hareket profili oluşturma makalesine bağlantı"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:6
+msgid ""
+"This article covers the in-code generation of trapezoidal motion profiles.  "
+"Documentation describing the involved concepts in more detail is "
+"forthcoming."
+msgstr ""
+"Bu makale, trapezoidal hareket profillerinin kod içi üretimini kapsar. "
+"İlgili kavramları daha ayrıntılı olarak açıklayan belgeler yakında "
+"çıkacaktır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:8
+msgid ""
+"For a guide on implementing the ``TrapezoidProfile`` class in the "
+":ref:`command-based framework <docs/software/commandbased/what-is-command-"
+"based:What Is \"Command-Based\" Programming?>` framework, see "
+":ref:`docs/software/commandbased/profile-subsystems-commands:Motion "
+"Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands`."
+msgstr ""
+"``TrapezoidProfile`` sınıfının :ref:`komut tabanlı framework "
+"<docs/software/commandbased/what-is-command-based:What Is \"Command-Based\" "
+"Programming?>` çerçevesinde uygulanmasına ilişkin bir kılavuz için bkz "
+":ref:`docs/software/commandbased/profile-subsystems-commands:Motion "
+"Profiling through TrapezoidProfileSubsystems and TrapezoidProfileCommands` ."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:10
+msgid ""
+"The ``TrapezoidProfile`` class, used on its own, is most useful when "
+"composed with a custom controller (such as a \"smart\" motor controller with"
+" a built-in PID functionality).  To integrate it with a WPILib "
+"``PIDController``, see :doc:`profiled-pidcontroller`."
+msgstr ""
+"Kendi başına kullanılan ``TrapezoidProfile`` sınıfı, özel bir kontrolörle "
+"(yerleşik PID işlevselliğine sahip \"akıllı\" bir motor kontrolörü gibi) "
+"oluşturulduğunda çok kullanışlıdır. Bir WPILib ``PIDController`` ile entegre"
+" etmek için, bakınız :doc:`profiled-pidcontroller`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:12
+msgid ""
+"While feedforward and feedback control offer convenient ways to achieve a "
+"given setpoint, we are often still faced with the problem of generating "
+"setpoints for our mechanisms.  While the naive approach of immediately "
+"commanding a mechanism to its desired state may work, it is often "
+"suboptimal.  To improve the handling of our mechanisms, we often wish to "
+"command mechanisms to a *sequence* of setpoints that smoothly interpolate "
+"between its current state, and its desired goal state."
+msgstr ""
+"İleri besleme ve geri bildirim kontrolü, belirli bir ayar noktasına ulaşmak "
+"için uygun yollar sunsa da, çoğu zaman mekanizmalarımız için ayar noktaları "
+"oluşturma sorunuyla karşı karşıyayız. Bir mekanizmaya derhal istenen duruma "
+"getirme komutu yaklaşımı işe yarayabilirken, çoğu zaman yetersizdir. "
+"Mekanizmalarımızın işlevini iyileştirmek için, mekanizmalara, mevcut durumu "
+"ile istenen hedef durumu arasında sorunsuz bir şekilde geçiş yapan bir *dizi"
+" ayar noktasına* komut vermek isteriz."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:17
+msgid "Creating a TrapezoidProfile"
+msgstr "Trapezoidal Profil Oluşturma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:19
+msgid ""
+"In C++, the ``TrapezoidProfile`` class is templated on the unit type used "
+"for distance measurements, which may be angular or linear.  The passed-in "
+"values *must* have units consistent with the distance units, or a compile-"
+"time error will be thrown.  For more information on C++ units, see "
+":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"C ++ 'da, ``TrapezoidProfile`` 'sınıfı, açısal veya doğrusal olabilen mesafe"
+" ölçümleri için kullanılan birim tipine göre şablonlanır. İletilen değerler "
+"zorunlu mesafe birimleriyle tutarlı birimlere sahip *olmalıdır*; aksi "
+"takdirde derleme zamanı hatası atılır. C ++ birimleri hakkında daha fazla "
+"bilgi için bkz . :ref:`docs/software/basic-programming/cpp-units:The C++ "
+"Units Library`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:22
+msgid "Constraints"
+msgstr "Kısıtlamalar"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:24
+msgid ""
+"The various :ref:`feedforward helper classes <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>` provide "
+"methods for calculating the maximum simultaneously-achievable velocity and "
+"acceleration of a mechanism.  These can be very useful for calculating "
+"appropriate motion constraints for your ``TrapezoidProfile``."
+msgstr ""
+"Çeşitli :ref:`ileribesleme yardımcı sınıfları <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>`, bir "
+"mekanizmanın aynı anda elde edilebilen maksimum hızını ve ivmesini "
+"hesaplamak için yöntemler sağlar. Bunlar, ``TrapezoidProfile`` için uygun "
+"hareket kısıtlamalarını hesaplamak için çok yararlı olabilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:45
+msgid "Start and End States"
+msgstr "Başlangıç ve Bitiş Durumları"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:64
+msgid "Putting It All Together"
+msgstr "Hepsini bir araya koymak"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:66
+msgid ""
+"C++ is often able to infer the type of the inner classes, and thus a simple "
+"initializer list (without the class name) can be sent as a parameter.  The "
+"full class names are included in the example below for clarity."
+msgstr ""
+"C++ genellikle iç sınıfların türünü çıkarabilir ve bu nedenle basit bir "
+"başlatıcı listesi (sınıf adı olmadan) parametre olarak gönderilebilir. Tam "
+"sınıf adları, netlik açısından aşağıdaki örnekte verilmiştir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:68
+msgid ""
+"Now that we know how to create a set of constraints and the desired "
+"start/end states, we are ready to create our motion profile.  The "
+"``TrapezoidProfile`` constructor takes 3 parameters, in order: the "
+"constraints, the goal state, and the initial state."
+msgstr ""
+"Artık bir dizi kısıtlamayı ve istenen başlangıç / bitiş durumlarını nasıl "
+"oluşturacağımızı bildiğimize göre, hareket profilimizi oluşturmaya hazırız. "
+"``TrapezoidProfile`` yapıcısı sırayla 3 parametre alır: kısıtlamalar-"
+"constraints, hedef durumu-goal state ve başlangıç durumu-initial state."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:96
+msgid "Using a ``TrapezoidProfile``"
+msgstr "Bir ``TrapezoidProfile`` Kullanmak"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:99
+msgid "Sampling the Profile"
+msgstr "Profili Örnekleme"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:101
+msgid ""
+"Once we've created a ``TrapezoidProfile``, using it is very simple: to get "
+"the profile state at the given time after the profile has started, call the "
+"``calculate()`` method:"
+msgstr ""
+"Bir ``TrapezoidProfile`` oluşturduktan sonra, onu kullanmak çok basittir: "
+"profil başladıktan sonra verilen zamanda profil durumunu elde etmek için "
+"``calculate()`` yöntemini çağırın:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:116
+msgid "Using the State"
+msgstr "Profil Durumunun Kullanılması"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:118
+msgid ""
+"The ``calculate`` method returns a ``TrapezoidProfile.State`` class (the "
+"same one that was used to specify the initial/end states when constructing "
+"the profile).  To use this for actual control, simply pass the contained "
+"position and velocity values to whatever controller you wish (for example, a"
+" PIDController):"
+msgstr ""
+"``calculate`` yöntemi, bir ``TrapezoidProfile.State`` sınıfını döndürür "
+"(profili oluştururken başlangıç / bitiş durumlarını belirtmek için "
+"kullanılanla aynı). Bunu gerçek kontrol için kullanmak için, içerilen konum "
+"ve hız değerlerini dilediğiniz kontrolöre (örneğin, bir PIDController) "
+"aktarmanız yeterlidir:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:133
+msgid "Complete Usage Example"
+msgstr "Tam Kullanım Örneği"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:135
+msgid ""
+"In this example, the profile is re-computed every timestep.  This is a "
+"somewhat different usage technique than is detailed above, but works "
+"according to the same principles - the profile is sampled at at a time "
+"corresponding to the loop period to get the setpoint for the next loop "
+"iteration."
+msgstr ""
+"Bu örnekte, profil her seferinde yeniden hesaplanmaktadır. Bu, yukarıda "
+"detaylandırılandan biraz farklı bir kullanım tekniğidir, ancak aynı ilkelere"
+" göre çalışır - profil, bir sonraki döngü yinelemesi için ayar noktasını "
+"elde etmek için döngü periyoduna karşılık gelen bir zamanda örneklenir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:137
+msgid ""
+"A more complete example of ``TrapezoidProfile`` usage is provided in the "
+"ElevatorTrapezoidProfile example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`__):"
+msgstr ""
+"ElevatorTrapezoidProfile örnek projesinde ``TrapezoidProfile``  kullanımının"
+" daha eksiksiz bir örneği verilmiştir (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/elevatortrapezoidprofile>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/ElevatorTrapezoidProfile/cpp>`"
+" __):"

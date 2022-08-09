@@ -1,0 +1,870 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Lian Eng <lianengc@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2020
+# heriberto gutierrez <herigtzt04@yahoo.com>, 2020
+# Pierre Cote <persini24@outlook.com>, 2020
+# Jeremy Venegas <jeremy04ven@hotmail.com>, 2020
+# Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# Fernando Soltero <fersg806@gmail.com>, 2020
+# Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2020
+# Rodrigo Acosta <raar7366@gmail.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-24 04:11+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:4
+msgid "Command and Control Tutorial"
+msgstr "Tutorial de comando y control"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:9
+msgid "Introduction"
+msgstr "Introducción"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:11
+msgid ""
+"Command and Control is a new LabVIEW template added for the 2016 season "
+"which organizes robot code into commands and controllers for a collection of"
+" robot-specific subsystems. Each subsystem has an independent control loop "
+"or state machine running at the appropriate rate for the mechanism and high-"
+"level commands that update desired operations and set points. This makes it "
+"very easy for autonomous code to build synchronous sequences of commands. "
+"Meanwhile, TeleOp benefits because it can use the same commands without "
+"needing to wait for completion, allowing for easy cancellation and "
+"initiation of new commands according to the drive team input. Each subsystem"
+" has a panel displaying its sensor and control values over time, and command"
+" tracing to aid in debugging."
+msgstr ""
+"*Command and Control* es una nueva plantilla de LabVIEW agregada para la "
+"temporada 2016 que organiza el código del robot en comandos y controladores "
+"para una colección de subsistemas específicos del robot. Cada subsistema "
+"tiene un bucle de control independiente o una máquina de estado que se "
+"ejecuta a la velocidad adecuada para el mecanismo y los comandos de alto "
+"nivel que actualizan las operaciones y los puntos de ajuste deseados. Esto "
+"hace que sea muy fácil para el código autónomo construir secuencias "
+"síncronas de comandos. Mientras tanto, TeleOp se beneficia porque puede usar"
+" los mismos comandos sin necesidad de esperar a que se completen, lo que "
+"permite una fácil cancelación e inicio de nuevos comandos de acuerdo con la "
+"entrada del equipo de manejo. Cada subsistema tiene un panel que muestra sus"
+" valores de sensor y control a lo largo del tiempo, y seguimiento de "
+"comandos para ayudar en la depuración."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:14
+msgid "What is Command and Control?"
+msgstr "¿Qué es Command and Control?"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:16
+msgid ""
+"Command and Control recognizes that FRC\\ |reg| robots tend to be built up "
+"of relatively independent mechanisms such as Drive, Shooter, Arm, etc. Each "
+"of these is referred to as a subsystem and needs code that will coordinate "
+"the various sensors and actuators of the subsystem in order to complete "
+"requested commands, or actions, such as \"Close Gripper\" or \"Lower Arm\". "
+"One of the key principles of this framework is that subsystems will each "
+"have an independent controller loop that is solely responsible for updating "
+"motors and other actuators. Code outside of the subsystem controller can "
+"issue commands which may change the robot’s output, but should not directly "
+"change any outputs. The difference is very subtle but this means that "
+"outputs can only possibly be updated from one location in the project. This "
+"speeds up debugging a robot behaving unexpectedly by giving you the ability "
+"to look through a list of commands sent to the subsystem rather than "
+"searching your project for where an output may have been modified. It also "
+"becomes easier to add an additional sensor, change gearing, or disable a "
+"mechanism without needing to modify code outside of the controller."
+msgstr ""
+"Command and Control reconoce que los robots FRC\\ |reg|  tienden a estar "
+"formados por mecanismos relativamente independientes como Drive, Shooter, "
+"Arm, etc. Cada uno de estos se conoce como un subsistema y necesita un "
+"código que coordine los diversos sensores y actuadores del subsistema para "
+"completar los comandos solicitados. o acciones, como \"Cerrar pinza\" o "
+"\"Brazo inferior\". Uno de los principios clave de este marco es que los "
+"subsistemas tendrán cada uno un circuito de controlador independiente que es"
+" el único responsable de actualizar los motores y otros actuadores. El "
+"código fuera del controlador del subsistema puede emitir comandos que pueden"
+" cambiar la salida del robot, pero no deben cambiar directamente ninguna "
+"salida. La diferencia es muy sutil, pero esto significa que los resultados "
+"solo pueden actualizarse desde una ubicación en el proyecto. Esto acelera la"
+" depuración de un robot que se comporta de manera inesperada al brindarle la"
+" capacidad de revisar una lista de comandos enviados al subsistema en lugar "
+"de buscar en su proyecto donde se haya modificado una salida. También se "
+"vuelve más fácil agregar un sensor adicional, cambiar de marcha o "
+"deshabilitar un mecanismo sin necesidad de modificar el código fuera del "
+"controlador."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:18
+msgid ""
+"Game code, primarily consisting of Autonomous and TeleOp, will typically "
+"need to update set points and react to the state of certain mechanisms. For "
+"Autonomous, it is very common to define the robot’s operation as a  sequence"
+" of operations – drive here, pick that up, carry it there, shoot it, etc. "
+"Commands can be wired sequentially with additional logic to quickly build "
+"complex routines. For teleOp, the same commands can execute asynchronously, "
+"allowing the robot to always process the latest driver inputs, and if "
+"implemented properly, new commands will interrupt, allowing the drive team "
+"to quickly respond to field conditions while also taking advantage of "
+"automated commands and command sequences."
+msgstr ""
+"El código del juego, principalmente consiste en el Autónomo y Teleoperado, "
+"va a necesitar actualizar los puntos de ajuste y reaccionar al estado de "
+"ciertos mecanismos. Para el Autónomo, es muy común definir la operación del "
+"robot como una secuencia de operaciones – maneja aquí, recoge eso, llévalo "
+"allá, dispara, etc. Los comandos se pueden conectar secuencialmente con "
+"lógica adicional para construir rápido rutinas complejas. Para Teleoperado, "
+"los mismos comandos pueden operar de manera síncrona, dejando que el robot "
+"siempre procese las últimas entradas del driver, y si lo implementa "
+"apropiadamente, nuevos comandos van a interrumpir, dejando que el drive team"
+" responda rápido en las condiciones de la cancha mientras también toma "
+"ventaja de comandos automatizados y secuencias de comandos."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:21
+msgid "Why should I use Command and Control?"
+msgstr "¿Por qué debemos usar Command and Control?"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:23
+msgid ""
+"Command and Control adds functionality to the existing LabVIEW project "
+"templates, allowing code to scale better with more sophisticated robots and "
+"robot code. Subsystems are used to abstract the details of the "
+"implementation, and game code is built from sequences of high level command "
+"VIs. The commands themselves are VIs that can update set points, perform "
+"numerical scaling/mapping between engineering units and mechanism units, and"
+" offer synchronization options. If physical changes are made to the robot, "
+"such as changing a gearing ratio, changes can be made to just a few command "
+"Vis to reflect this change across the entire code base."
+msgstr ""
+"Command and Control añade funcionalidad a las plantillas de proyecto "
+"existentes en LabVIEW, permitiendo que el código se escale mejor con robots "
+"y códigos de robot mas sofisticados. Se usan subsistemas para abstraer los "
+"detalles de la implementación, y el código de juego es creado a partir de "
+"secuencias de VIs de comando de alto nivel. Los comandos por si mismos son "
+"VIS que pueden actualizar puntos fijos, realizar mapeo/escalado numérico "
+"entre unidades de ingeniería y unidades del mecanismo y pueden ofrecer "
+"opciones de sincronización. Si se realizan cambios físicos al robot, como "
+"modificar un a relaciona de engranes, se pueden realizar los cambios a solo "
+"un poco de VIs de comando para reflejar este cambio a través de todo el "
+"código fuente."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:25
+msgid ""
+"I/O encapsulation makes for more predictable operation and quicker debugging"
+" when resource conflicts do occur. Because each command is a VI, you are "
+"able to single step through commands or use the built in Trace functionality"
+" to view a list of all commands sent to each subsystem.The framework uses "
+"asynchronous notification and consistent data propagation making it easy to "
+"program a sequence of commands or add in simple logic to determine the "
+"correct command to run."
+msgstr ""
+"La encapsulación I/O ayuda a tener una operación mas predecible y una "
+"depuración mas rápida en caso de que ocurran conflictos entre los recursos. "
+"Debido a que cada comando es un VI, puede realizar un solo paso a través de "
+"los comandos o utilizar la funcionalidad Trace incorporada para ver una "
+"lista de todos los comandos enviados a cada subsistema. de comandos o "
+"agregue una lógica simple para determinar el comando correcto para ejecutar."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:28
+msgid "Part 1: Project Explorer"
+msgstr "Parte 1: Explorador de proyectos"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:30
+msgid ""
+"The Project Explorer provides organization for all of the Vis and files you "
+"will use for your robot system.  Below is a description of the major "
+"components in the Project Explorer to help with the expansion of our system."
+"  The most frequently used items have been marked in bold."
+msgstr ""
+"El Explorador de proyectos proporciona organización para todos los Vis y "
+"archivos que usted usará para su sistema de robot. A continuación se muestra"
+" una descripción de los componentes principales del Explorador de proyectos "
+"para ayudar con la expansión de nuestro sistema. Los elementos utilizados "
+"con más frecuencia se han marcado en negrita."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:35
+msgid "My Computer"
+msgstr "Mi computadora"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:35
+msgid ""
+"The items that define operation on the computer that the project was loaded "
+"on. For a robot project, this is used as a simulation target and is "
+"populated with simulation files."
+msgstr ""
+"Los elementos que definen la operación en la computadora en la que se cargó "
+"el proyecto. Para un proyecto de robot, esto se utiliza como un objetivo de "
+"simulación y se completa con archivos de simulación."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:38
+msgid "Sim Support Files"
+msgstr "Archivos de soporte de Sim"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:38
+msgid ""
+"The folder containing 3D CAD models and description files for the simulated "
+"robot."
+msgstr ""
+"La carpeta que contiene modelos CAD en 3D y archivos de descripción del "
+"robot simulado."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:41
+msgid "Robot Simulation Readme.html"
+msgstr "Simulación del robot Readme.html"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:41
+msgid ""
+"Documents the PWM channels and robot info you will need in order to write "
+"robot code that matches the wiring of the simulated robot."
+msgstr ""
+"Documente los canales PWM y la información del robot que necesitará para "
+"escribir un código de robot que coincida con el cableado del robot simulado."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:44
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:96
+msgid "Dependencies"
+msgstr "Posesiones"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:44
+msgid ""
+"Shows the files used by the simulated robot’s code. This will populate when "
+"you designate the code for the simulated robot target."
+msgstr ""
+"Muestra los archivos usados en la simulación del código del robot. Esto se "
+"completará cuando designe el código para el objetivo del robot simulado. "
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:47
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:99
+msgid "Build Specifications"
+msgstr "Especificaciones de construcción"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:47
+msgid ""
+"This will contain the files that define how to build and deploy code for the"
+" simulated robot target."
+msgstr ""
+"Esto contendrá los archivos que definen cómo construir y desplegar el código"
+" para el objetivo de robot simulado."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:50
+msgid "Target (roboRIO-TEAM-FRC.local)"
+msgstr "Objetivo (roboRIO-TEAM-FRC.local)"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:50
+msgid "The items that define operation on the roboRIO located at (address)."
+msgstr ""
+"Los elementos que definen la operación en el roboRIO ubicado en (dirección)."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:53
+msgid "Drive"
+msgstr "Unidad"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:53
+msgid ""
+"The subsystem implementation and commands for the robot drive base. This "
+"serves as a custom replacement for the WPILib RobotDrive VIs."
+msgstr ""
+"La implementación del subsistema y los comandos para la base de "
+"accionamiento del robot. Esto sirve como un reemplazo personalizado para los"
+" VIs de WPILib RobotDrive."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:72
+msgid "Framework"
+msgstr "Marco de trabajo"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:56
+msgid ""
+"VIs used for robot code that is not part of a subsystem that are not used "
+"very often."
+msgstr ""
+"VI utilizados para código de robot que no forma parte de un subsistema que "
+"no se utilizan con mucha frecuencia."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:59
+msgid "Begin"
+msgstr "Comienzo"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:59
+msgid ""
+"Called once when robot code first starts. This is useful for initialization "
+"code that doesn’t belong to a particular subsystem."
+msgstr ""
+"Se manda a llamar una vez cuando el código del robot comienza. Esto es útil "
+"para códigos de iniciación que no pertenecen a un subsistema en particular."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:62
+msgid "Disabled"
+msgstr "Deshabilitado"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:62
+msgid ""
+"Called once for each disabled packet and can be used to debug sensors when "
+"you don’t want the robot to move."
+msgstr ""
+"Se llama una vez por cada paquete deshabilitado y se puede usar para depurar"
+" sensores cuando no desea que el robot se mueva."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:65
+msgid "Finish"
+msgstr "Terminar"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:65
+msgid ""
+"During development, this may be called when robot code finishes. Not called "
+"on abort or when power is turned off."
+msgstr ""
+"Durante el desarrollo, esto puede ser llamado cuando el código del robot "
+"termine. No se llama \"abortar\" o cuando se apaga la energía."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:68
+msgid "Periodic Tasks"
+msgstr "Tareas periódicas"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:68
+msgid "A good place for ad hoc periodic loops for debugging or monitoring"
+msgstr ""
+"Un buen lugar para los bucles periódicos ad hoc para la depuración o la "
+"vigilancia"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:72
+msgid "Robot Global Data"
+msgstr "Datos globales del robot"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:71
+msgid ""
+"Useful for sharing robot information that doesn’t belong to a subsystem."
+msgstr ""
+"Útil para compartir información de los robots que no pertenece a un "
+"subsistema."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:75
+msgid "Support Code"
+msgstr "Código de apoyo"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:75
+msgid "Debugging and code development aids."
+msgstr "Ayudas para la depuración y el desarrollo de códigos."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:78
+msgid "Vision"
+msgstr "Visión"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:78
+msgid "Subsystem and commands for the camera and image processing."
+msgstr "Subsistema y comandos para la cámara y el procesamiento de imágenes."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:81
+msgid "Robot Main.vi"
+msgstr "Robot Main.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:81
+msgid "Top level VI that you will run while developing code."
+msgstr "El máximo nivel VI que se ejecutará mientras se desarrolla el código."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:84
+msgid "Autonomous.vi"
+msgstr "Autonomous.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:84
+msgid "VI that runs during autonomous period."
+msgstr "VI que se desarrolla durante el período autónomo."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:87
+msgid "Teleop.vi"
+msgstr "Teleop.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:87
+msgid "VI that is called for each TeleOp packet."
+msgstr "VI que se llama para cada paquete de TeleOp."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:90
+msgid "Test.vi"
+msgstr "Test.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:90
+msgid "VI that runs when driver station is in test mode."
+msgstr "VI que se ejecuta cuando la \"driver station\" está en modo de prueba."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:93
+msgid "SubSystems.vi"
+msgstr "SubSystems.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:93
+msgid "VI that contains and starts all subsystems."
+msgstr "VI que contiene y pone en marcha todos los subsistemas."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:96
+msgid "Shows the files used by the robot code."
+msgstr "Muestra los archivos usados por el código del robot."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:99
+msgid ""
+"Used to build and run the code as a startup application once code works "
+"correctly."
+msgstr ""
+"Se usa para construir y ejecutar el código como una aplicación de inicio una"
+" vez que el código funciona correctamente."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:104
+msgid "Drive Subsystem Project Explorer"
+msgstr "Explorador del proyecto del subsistema de conducción"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:108
+msgid "Commands:"
+msgstr "Comandos:"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:108
+msgid ""
+"This folder contains the command VIs that request the controller carry out "
+"an operation. It also contains templates for creating additional drive "
+"commands."
+msgstr ""
+"Esta carpeta contiene el comando VIs que solicita al controlador realizar "
+"una operación. Además contiene plantillas para crear comandos de unidad "
+"adicionales."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:110
+msgid ""
+"After creating a new command, you may need to edit ``Drive Setpoints.ctl`` "
+"to add or update fields that controller uses to define the new operation. "
+"You also need to go into the Drive Controller.vi and modify the case "
+"structure to add a case for every value."
+msgstr ""
+"Después de crear un nuevo comando, podría necesitar editar ``Drive "
+"Setpoints.ctl`` para añadir o actualizar campos que el controlador usa para "
+"definir la nueva operación. También podría necesitar ir dentro del Drive "
+"Controller.vi y modificar la estructura del caso para añadir un caso para "
+"cada valor."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:113
+msgid "Implementation"
+msgstr "Implementación"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:115
+msgid "These are the VIs and Controls used to build the subsystem."
+msgstr "Estos son los VIs y Controles usados para construir el subsistema."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:120
+msgid "Infrastructure VIs"
+msgstr "Infraestructura VIs"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:118
+msgid ""
+"Drive Check for New Command: It is called each iteration of the controller "
+"loop. It checks for new commands, updates timing data, and upon completion "
+"notifies a waiting command."
+msgstr ""
+"Comprobación de conducción para el Nuevo Comando: Se llama cada iteración "
+"del bucle controlador. Comprueba si hay nuevos comandos, actualiza los datos"
+" de tiempo, y al terminar notifica un comando de espera."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:119
+msgid ""
+"Drive Command Helper.vi: Commands call this VI to notify the controller that"
+" a new command has been issued."
+msgstr ""
+"Conduzca el Ayudante de Comando.vi: Los comandos llaman a este VI para "
+"notificar al controlador que se ha emitido un nuevo comando."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:120
+msgid ""
+"Drive Controller Initialization.vi: It allocates the notifier and combines "
+"the timing, default command, and other information into a single data wire."
+msgstr ""
+"Drive Controller Initialization.vi: Asigna el notificador y combina el "
+"tiempo, el comando predeterminado y otra información en un solo cable de "
+"datos."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:122
+msgid ""
+"Drive Controller.vi: This VI contains the control/state machine loop. The "
+"panel may also contain displays useful for debugging."
+msgstr ""
+"Drive Controller.vi: Este VI contiene el bucle de la máquina de "
+"control/estado. El panel también puede contener pantallas útiles para la "
+"depuración."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:123
+msgid ""
+"Drive Operation.ctl: This typedef defines the operational modes of the "
+"controller. Many commands can share an operation."
+msgstr ""
+"Drive Operation.ctl: Este tipedef define los modos de funcionamiento del "
+"controlador. Muchos comandos pueden compartir una operación."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:124
+msgid ""
+"Drive Setpoint.ctl: It contains the data fields used by all operating modes "
+"of the Drive subsystem."
+msgstr ""
+"Drive Setpoint.ctl: Contiene los archivos de datos usados por todos los "
+"modos de funcionamiento del subsistema Drive."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:125
+msgid ""
+"Drive Published Globals.vi: A useful place for publishing global information"
+" about the drive subsystem."
+msgstr ""
+"Drive Published Globals.vi:: Un lugar útil para publicar información global "
+"sobre el subsitema drive."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:128
+msgid "Part 2: Initializing the Drive Subsystem"
+msgstr "Parte 2: Iniciando el subsistema de accionamiento"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:130
+msgid ""
+"There are green comments on the controller’s block diagram that point out "
+"key areas that you will want to know how to edit."
+msgstr ""
+"Hay comentarios en verde en el diagrama de bloques del controlador que "
+"señalan áreas clave que querrás saber cómo editar."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:132
+msgid ""
+"The area to the left of the control loop will execute once when the "
+"subsystem starts up. This is where you will typically allocate and "
+"initialize all I/O and state data. You may publish the I/O refnums, or you "
+"may register them for Test Mode Only to keep them private so that other code"
+" cannot update motors without using a command."
+msgstr ""
+"El área a la izquierda del bucle de control se ejecutará una vez cuando el "
+"subsistema se ponga en marcha. Aquí es donde normalmente se asignarán e "
+"inicializarán todos los datos de E/S y de estado. Puedes publicar los "
+"refnums de E/S, o puedes registrarlos en el modo de prueba sólo para "
+"mantenerlos privados de modo que otros códigos no puedan actualizar los "
+"motores sin usar un comando."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:136
+msgid ""
+"Initializing the resources for each subsystem in their respective "
+"Controller.vi rather than in Begin.vi improves I/O encapsulation, reducing "
+"potential resource conflicts and simplifies debugging."
+msgstr ""
+"La inicialización de los recursos de cada subsistema en su respectivo "
+"Controller.vi en lugar de en Begin.vi mejora la encapsulación de E/S, "
+"reduciendo los posibles conflictos de recursos y simplifica la depuración."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:140
+msgid ""
+"Part of the initialization is to select the default operation and set point "
+"values when no other operation is being processed."
+msgstr ""
+"Parte de la inicialización consiste en seleccionar la operación "
+"predeterminada y los valores de punto de ajuste cuando no se está procesando"
+" ninguna otra operación."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:144
+msgid ""
+"Inside the control loop is a case statement where operations are actually "
+"implemented. Set point values, iteration delay, iteration count, and sensors"
+" can all have influence on how the subsystem operates.  This case structure "
+"has a value for each operation state of the subsystem."
+msgstr ""
+"Dentro del bucle de control hay una declaración de caso donde las "
+"operaciones se llevan a cabo realmente. Los valores del punto de ajuste, el "
+"retardo de iteración, el recuento de iteración y los sensores pueden influir"
+" en el funcionamiento del subsistema. Esta estructura de caso tiene un valor"
+" para cada estado de operación del subsistema."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:148
+msgid ""
+"Each iteration of the controller loop will optionally update the Trace VI. "
+"The framework already incorporates the subsystem name, operation, and "
+"description, and you may find it helpful to format additional set point "
+"values into the trace information. Open the Trace VI and click Enable while "
+"the robot code is running to current setpoints and commands sent to each "
+"subsystem."
+msgstr ""
+"Cada iteración del bucle controlador actualizará opcionalmente el Trace VI. "
+"El marco ya incorpora el nombre del subsistema, la operación y la "
+"descripción, y puede resultar útil dar formato a valores de puntos de ajuste"
+" adicionales en la información de la traza. Abra el Trace VI y haga clic en "
+"Activar mientras el código del robot se ejecuta a los puntos de ajuste "
+"actuales y a los comandos enviados a cada subsistema."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:150
+msgid ""
+"The primary goal of the controller is to update actuators for the subsystem."
+" This can occur within the case structure, but many times, it is beneficial "
+"to do it downstream of the structure to ensure that values are always "
+"updated with the correct value and in only one location in the code."
+msgstr ""
+"El objetivo principal del controlador es actualizar los actuadores del "
+"subsistema. Esto puede ocurrir dentro de la estructura de la caja, pero "
+"muchas veces, es beneficioso hacerlo aguas abajo de la estructura para "
+"asegurar que los valores se actualizan siempre con el valor correcto y en "
+"una sola ubicación en el código."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:155
+msgid "Part 3: Drive Subsystem Shipped Commands"
+msgstr "Parte 3: Comandos enviados por el subsistema de conducción"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:157
+msgid "There are 3 shipped example commands for each new subsystem:"
+msgstr "Hay 3 comandos de ejemplo enviados para cada nuevo subsistema:"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:160
+msgid "Drive For Time.vi"
+msgstr "Conduzca por el tiempo.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:164
+msgid ""
+"This VI sets the motors to run for a given number of seconds. It optionally "
+"synchronizes with the completion of the command."
+msgstr ""
+"Este VI pone los motores en marcha durante un número determinado de "
+"segundos. Opcionalmente se sincroniza con la finalización del comando."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:166
+msgid ""
+"The Drive for Time case will operate the motors at the set point until the "
+"timer elapses or a new command is issued. If the motors have the safety "
+"timeout enabled, it is necessary to update the motors at least once every "
+"100ms. This is why the code waits for the smaller of the remaining time and "
+"50ms."
+msgstr ""
+"El caso Drive for Time hará funcionar los motores en el punto de ajuste "
+"hasta que el temporizador transcurra o se emita un nuevo comando. Si los "
+"motores tienen el tiempo de seguridad habilitado, es necesario actualizar "
+"los motores al menos una vez cada 100ms. Por eso el código espera el menor "
+"de los tiempos restantes y 50ms."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:171
+msgid "Drive Immediate.vi"
+msgstr "Conduzca inmediatamente.vi"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:175
+msgid ""
+"Gets the desired left and right speeds for the motors and will set the "
+"motors immediately to those set points."
+msgstr ""
+"Consigue las velocidades izquierda y derecha deseadas para los motores y "
+"ajustará los motores inmediatamente a esos puntos de ajuste."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:177
+msgid ""
+"The Immediate case updates the motors to the set point defined by the "
+"command. The command is not considered finished since you want the motors to"
+" maintain this value until a new command comes in or until a timeout value. "
+"The timeout is useful anytime a command includes a dead band. Small values "
+"will not be requested if smaller than the dead band, and will result in "
+"growling or creeping unless the command times out."
+msgstr ""
+"El caso inmediato actualiza los motores al punto de ajuste definido por el "
+"comando. El comando no se considera terminado ya que se quiere que los "
+"motores mantengan este valor hasta que llegue un nuevo comando o hasta un "
+"valor de tiempo de espera. El tiempo de espera es útil siempre que un "
+"comando incluye una banda muerta. No se solicitarán valores pequeños si son "
+"menores que la banda muerta, y resultarán en gruñidos o arrastramientos a "
+"menos que el comando se agote."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:182
+msgid "Stop Driving.vi"
+msgstr "Stop Driving.vl "
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:186
+msgid "Zero the drive motors, making the robot stationary."
+msgstr "Detiene los motores, haciendo que el robot permanezca estacionario."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:188
+msgid ""
+"The Reserve command turns off the motors and waits for a new command. When "
+"used with a named command sequence, reserve identifies that the drive "
+"subsystem is part of a sequence, even if not currently moving the robot. "
+"This helps to arbitrate subsystem resource between simultaneously running "
+"commands."
+msgstr ""
+"El comando de reserva apaga los motores y espera un nuevo comando. Cuando se"
+" utiliza con una secuencia de comandos con nombre, reserva identifica que el"
+" subsistema de accionamiento forma parte de una secuencia, incluso si no "
+"está moviendo el robot en ese momento. Esto ayuda a arbitrar el recurso del "
+"subsistema entre los comandos que se ejecutan simultáneamente."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:193
+msgid "Part 4: Creating New Commands"
+msgstr "Parte 4: Creando Comandos Nuevos "
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:195
+msgid ""
+"The Command and Control framework allows users to easily create new commands"
+" for a subsystem. To Create a new command open the subsystem folder/Commands"
+" In the project explorer window, choose one of the VI Templates to use as "
+"the starting point of your new command, right click, and select New From "
+"Template."
+msgstr ""
+"El comando y el Control framework permite a los usuarios crear fácilmente "
+"nuevos comandos para un subsistema. Para crear un nuevo comando abra la "
+"carpeta del subsistema/Comandos en la ventana del explorador de proyectos, "
+"seleccione una de las plantillas de VI para usar como partida inicial de su "
+"nuevo comando, clic derecho, y seleccione Nuevo Desde Plantilla."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:197
+msgid "**Immediate**: This VI notifies the subsystem about the new setpoint."
+msgstr ""
+"**Inmediato**: Este VI notifica al subsistema sobre el nuevo punto de "
+"ajuste."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:198
+msgid ""
+"**Immediate with deadband**: This VI compares the input value to the "
+"deadband and optionally notifies the subsystem about the new setpoint. This "
+"is very useful when joystick continuous values are being used."
+msgstr ""
+"**Inmediatamente con la banda muerta**: Este VI compara el valor de entrada "
+"con la banda muerta y opcionalmente notifica al subsistema sobre el nuevo "
+"punto de ajuste. Esto es muy útil cuando se utilizan valores continuos de "
+"joystick."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:199
+msgid ""
+"**With duration**: This VI notifies the subsystem to perform this command "
+"for the given duration, and then return to the default state. "
+"Synchronization determines whether this VI Starts the operation and returns "
+"immediately, or waits for the operation to complete. The first option is "
+"commonly used for TeleOp, and the second for Autonomous sequencing."
+msgstr ""
+"**Con la duración**: Este VI notifica al subsistema para que realice este "
+"comando durante la duración dada, y luego volver al estado por defecto. La "
+"sincronización determina si este VI inicia la operación y regresa "
+"inmediatamente, o espera a que la operación se complete. La primera opción "
+"se usa comúnmente para TeleOp, y la segunda para Secuenciación Autónoma."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:201
+msgid "In this example we will add the new command \"Drive for Distance\"."
+msgstr "En este ejemplo, agregaremos el nuevo comando \"Conducir por distancia\"."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:205
+msgid ""
+"First, save the new VI with a descriptive name such as \"Drive for "
+"Distance\". Next, determine whether the new command needs a new value added "
+"the Drive Operations enum typedef. The initial project code already has an "
+"enum value of Drive for Distance, but the following image shows how you "
+"would add one if needed."
+msgstr ""
+"Primero, guarde el nuevo VI con un nombre descriptivo como \"Drive for "
+"Distance\". A continuación, determine si el nuevo comando necesita un nuevo "
+"valor agregado en Drive Operations enum typedef. El código del proyecto "
+"inicial ya tiene un valor de enumeración de Drive for Distance, pero la "
+"siguiente imagen muestra cómo agregaría uno si fuera necesario."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:209
+msgid ""
+"If a command needs additional information to execute, add it to the "
+"setpoints control. By default, the Drive subsystem has fields for the Left "
+"Setpoint, Right Setpoint, and Duration along with the operation to be "
+"executed. The Drive for Distance command could reuse Duration as distance, "
+"but let’s go ahead and add a numeric control to the Drive Setpoints.ctl "
+"called Distance (feet)."
+msgstr ""
+"Si un comando necesita información adicional para ejecutarse, añádalo al "
+"control de puntos de ajuste. Por defecto, el subsistema Drive tiene campos "
+"para el Left Setpoint, Right Setpoint y Duration junto con la operación que "
+"se va a ejecutar. El comando Drive for Distance podría reutilizar la "
+"duración como distancia, pero sigamos adelante y agreguemos un control "
+"numérico a  Drive Setpoints.ctl llamdo Distance (pies)."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:213
+msgid ""
+"Once that we have all of the fields needed to specify our command, we can "
+"modify the newly created Drive for Distance.vi. As shown below, select Drive"
+" for Distance from the enum’s drop down menu and add a VI parameters to "
+"specify distance, speeds, etc. If the units do not match, the command VI is "
+"a great place to map between units."
+msgstr ""
+"Una vez que tenemos todos los campos necesarios para especificar nuestro "
+"comando, podemos modificar el recién creado Drive for Distance.vi. Como se "
+"muestra a continuación, seleccione Drive for Distance en el menú desplegable"
+" del enum y añada un parámetro VI para especificar la distancia, las "
+"velocidades, etc. Si las unidades no coinciden, el comando VI es un gran "
+"lugar para mapear entre unidades."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:217
+msgid ""
+"Next, add code to the Drive Controller to define what happens when the Drive"
+" for Distance command executes. Right click on the Case Structure and "
+"Duplicate or Add Case for Every Value. This will create a new \"Drive for "
+"Distance\" case."
+msgstr ""
+"A continuación, agregue código al controlador de unidad para definir qué "
+"sucede cuando se ejecuta el comando de unidad para distancia. Haga clic "
+"derecho en la estructura del caso y duplique o agregue caso para cada valor."
+" Esto creará un nuevo caso \"Drive for Distance\"."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:221
+msgid ""
+"In order to access new setpoint fields, grow the \"Access Cmd setpoints\" "
+"unbundle node. Open your encoder(s) on the outside, to the left of the loop."
+" In the new diagram of the case structure, we added a call to reset the "
+"encoder on the first loop iteration and read it otherwise. There is also "
+"some simple code that compares encoder values and updates the motor power. "
+"If new controls are added to the setpoints cluster, you should also consider"
+" adding them to the Trace. The necessary changes are shown in the image "
+"below."
+msgstr ""
+"Para acceder a nuevos campos de puntos de ajuste, haga crecer el nodo de "
+"deshacer \"Puntos de ajuste de Cmd de acceso\". Abra su codificador (o "
+"codificadores) en el exterior, a la izquierda del bucle. En el nuevo "
+"diagrama de la estructura del caso, agregamos una llamada para restablecer "
+"el codificador en la primera iteración del bucle y leerlo de otra manera. "
+"También hay un código simple que compara los valores del codificador y "
+"actualiza la potencia del motor. Si se agregan nuevos controles al grupo de "
+"puntos de ajuste, también debe considerar agregarlos al Trace. Los cambios "
+"necesarios se muestran en la imagen a continuación."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:226
+msgid "Part 5: Creating a Subsystem"
+msgstr "Parte 5: Creando un Subsistema"
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:228
+msgid ""
+"In order to create a new subsystem, right click on the roboRIO target and "
+"select New» Subsystem. In the pop up dialog box, enter the name of the "
+"subsystem, list the operational modes, and specify the color of the icon."
+msgstr ""
+"Para crear un nuevo subsistema, haga clic con el botón derecho del ratón en "
+"el objetivo de roboRIO y seleccione New» Subsystem. En el cuadro de diálogo "
+"emergente, introduzca el nombre del subsistema, enumere los modos de "
+"funcionamiento y especifique el color del icono."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:232
+msgid ""
+"When you click OK, the subsystem folder will be generated and added to the "
+"project disk folder and tree. It will contain a base implementation of the "
+"VIs and controls that make up a subsystem. A call to the new controller will"
+" be inserted into the Subsystems VI. The controller VI will open, ready for "
+"you to add I/O and implement state machine or control code. Generated VI "
+"icons will use the color and name provided in the dialog. The generated code"
+" will use typedefs for set point fields and operations."
+msgstr ""
+"Cuando haga clic en OK, la carpeta del subsistema se generará y se añadirá a"
+" la carpeta y al árbol del disco del proyecto. Contendrá una implementación "
+"base de los VIs y controles que componen un subsistema. Una llamada al nuevo"
+" controlador se insertará en los VI de los subsistemas. El controlador VI se"
+" abrirá, listo para que usted añada  I/O e implemente el código de estado de"
+" la máquina o del control. Los iconos de los VI generados utilizarán el "
+"color y el nombre proporcionados en el diálogo. El código generado usará "
+"typedefs para los campos de puntos de ajuste y operaciones."
+
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:236
+msgid ""
+"Below is the block diagram of the newly created subsystem. This code will be"
+" generated automatically when you create the subsystem."
+msgstr ""
+"A continuación se muestra el diagrama de bloques del subsistema recién "
+"creado. Este código se generará automáticamente cuando se cree el "
+"subsistema."

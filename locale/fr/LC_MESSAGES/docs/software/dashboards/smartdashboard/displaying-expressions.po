@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# MARTIN REGIMBALD <MRegimbald@robotiquefirstquebec.org>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-05 04:04+0000\n"
+"PO-Revision-Date: 2021-06-22 22:06+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:2
+msgid "Displaying Expressions from a Robot Program"
+msgstr "Affichage des expressions à partir du programme du robot"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:4
+msgid ""
+"Often debugging or monitoring the status of a robot involves writing a "
+"number of values to the console and watching them stream by. With "
+"SmartDashboard you can put values to a GUI that is automatically constructed"
+" based on your program. As values are updated, the corresponding GUI element"
+" changes value - there is no need to try to catch numbers streaming by on "
+"the screen."
+msgstr ""
+"Souvent, le débogage ou la surveillance de l’état du robot implique d’écrire"
+" un certain nombre de valeurs à la console et de les visionner par "
+"streaming. Grâce à SmartDashboard, vous pouvez afficher des valeurs dans un "
+"GUI qui est automatiquement généré par votre programme. Au fur et à mesure "
+"que les valeurs sont mises à jour, les éléments correspondants du GUI "
+"changent de valeurs - il n’est pas nécessaire d'intercepter ces valeurs en "
+"streaming à la console."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:7
+msgid "Writing Values to SmartDashboard"
+msgstr "Écriture de valeurs sur SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:37
+msgid ""
+"You can write Boolean, Numeric, or String values to the SmartDashboard by "
+"simply calling the correct method for the type and including the name and "
+"the value of the data, no additional code is required. Any time in your "
+"program that you write another value with the same name, it appears in the "
+"same UI element on the screen on the driver station or development computer."
+" As you can imagine this is a great way of debugging and getting status of "
+"your robot as it is operating."
+msgstr ""
+"Vous pouvez écrire des valeurs booléennes, numériques ou des chaînes de "
+"caractères sur SmartDashboard en appelant simplement la méthode "
+"correspondant au type de la donnée appelée et en incluant le nom et la "
+"valeur de cette donnée, aucun code supplémentaire n’est requis. Dès que "
+"votre programme écrit une valeur pour un nom déclaré, cette variable "
+"apparaîtra dans le même élément de la station de pilotage ou sur la console "
+"de l’ordinateur de développement. Comme vous pouvez l’imaginer c’est un "
+"excellent moyen de débogage et d’obtenir l’état de votre robot pendant qu'il"
+" est en opération."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:40
+msgid "Creating Widgets on SmartDashboard"
+msgstr "Création de widgets sur SmartDashboard"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:42
+msgid ""
+"Widgets are populated on the SmartDashboard automatically, no user "
+"intervention is required. Note that the widgets are only populated when the "
+"value is first written, you may need to enable your robot in a particular "
+"mode or trigger a particular code routine for an item to appear. To alter "
+"the appearance of the widget, see the next two sections :doc:`Changing the "
+"Display Properties of a Value <changing-display-properties>` and "
+":doc:`Changing the Display Widget Type for a Value <changing-display-widget-"
+"type>`."
+msgstr ""
+"Les widgets sont automatiquement remplis sur le SmartDashboard, aucune "
+"intervention de l'utilisateur n'est requise. Notez que les widgets ne sont "
+"remplis que lorsque la valeur est écrite pour la première fois, vous devrez "
+"peut-être activer votre robot dans un mode particulier ou déclencher une "
+"routine de code particulière pour qu'un élément apparaisse. Pour modifier "
+"l'apparence du widget, voir les deux sections suivantes :doc:`Changer les "
+"propriétés d'affichage <changing-display-properties>` et :doc:`Changer le "
+"type de widget pour une valeur <changing-display-widget-type>`."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:45
+msgid "Stale Data"
+msgstr "Données obsolètes"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:46
+msgid ""
+"SmartDashboard uses :term:`NetworkTables` for communicating values between "
+"the robot and the driver station laptop. NetworkTables acts as a distributed"
+" table of name and value pairs. If a name/value pair is added to either the "
+"client (laptop) or server (robot) it is replicated to the other. If a "
+"name/value pair is deleted from, say, the robot but the SmartDashboard or "
+"OutlineViewer are still running, then when the robot is restarted, the old "
+"values will still appear in the SmartDashboard and OutlineViewer because "
+"they never stopped running and continue to have those values in their "
+"tables. When the robot restarts, those old values will be replicated to the "
+"robot."
+msgstr ""
+"SmartDashboard utilise les :term:`NetworkTables` pour communiquer des "
+"valeurs entre le robot et l'ordinateur portable de la station de conduite. "
+"NetworkTables agit comme une table distribuée de paires de noms et de "
+"valeurs. Si une paire nom / valeur est ajoutée au client (ordinateur "
+"portable) ou au serveur (robot), elle est répliquée sur l'autre. Si une "
+"paire nom/valeur est supprimée, par exemple, du robot mais que le "
+"SmartDashboard ou OutlineViewer est toujours en cours d'exécution, alors "
+"lorsque le robot est redémarré, les anciennes valeurs apparaîtront toujours "
+"dans SmartDashboard et OutlineViewer car elles n'ont jamais cessé de "
+"fonctionner et continuent à ces valeurs dans leurs tableaux. Lorsque le "
+"robot redémarre, ces anciennes valeurs seront répliquées sur le robot."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:48
+msgid ""
+"To ensure that the SmartDashboard and OutlineViewer are showing current "
+"values, it is necessary to restart the NetworkTables clients and robot at "
+"the same time. That way, old values that one is holding won't get replicated"
+" to the others."
+msgstr ""
+"Pour garantir que SmartDashboard et OutlineViewer affichent les valeurs "
+"actuelles, il est nécessaire de redémarrer les clients et le robot "
+"NetworkTables en même temps. De cette façon, les anciennes valeurs que l'on "
+"détient ne seront pas répliquées aux autres."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/displaying-expressions.rst:50
+msgid ""
+"This usually isn't a problem if the program isn't constantly changing, but "
+"if the program is in development and the set of keys being added to "
+"NetworkTables is constantly changing, then it might be necessary to do the "
+"restart of everything to accurately see what is current."
+msgstr ""
+"Ce n’est généralement pas un problème si le programme ne change pas "
+"constamment, mais si le programme est phase de développement et l’ensemble "
+"de clés ajoutées à NetworkTables changent constamment, il peut alors "
+"s'avérer nécessaire de tout redémarrer afin de voir  précisément ce qui est "
+"à jour."

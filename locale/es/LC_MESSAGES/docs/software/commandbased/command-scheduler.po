@@ -1,0 +1,236 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Sofia Fernandez <sofiafdz.val@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Fernando Soltero <fersg806@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Fernando Soltero <fersg806@gmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
+msgid "The Command Scheduler"
+msgstr "El planificador de comandos"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
+msgid ""
+"The ``CommandScheduler`` also runs the ``periodic()`` method of each "
+"registered ``Subsystem``."
+msgstr ""
+"El ``CommandScheduler`` también ejecuta el método ``periodic()`` de cada `` "
+"Subsistema`` registrado."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:9
+msgid "Using the Command Scheduler"
+msgstr "Uso del programador de comandos"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:11
+msgid ""
+"The ``CommandScheduler`` is a *singleton*, meaning that it is a globally-"
+"accessible class with only one instance.  Accordingly, in order to access "
+"the scheduler, users must call the ``CommandScheduler.getInstance()`` "
+"command."
+msgstr ""
+"El ``CommandScheduler`` es un *singleton*, lo que significa que es una clase"
+" accesible globalmente con una sola instancia. En consecuencia, para acceder"
+" al programador, los usuarios deben llamar al comando "
+"``CommandScheduler.getInstance()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:13
+msgid ""
+"For the most part, users do not have to call scheduler methods directly - "
+"almost all important scheduler methods have convenience wrappers elsewhere "
+"(e.g. in the ``Command`` and ``Subsystem`` interfaces)."
+msgstr ""
+"En su mayor parte, los usuarios no tienen que llamar directamente a los "
+"métodos del planificador; casi todos los métodos importantes del "
+"planificador tienen envoltorios de conveniencia en otros lugares. (ej. en "
+"las interfaces de los comandos ``Command`` y ``Subsystem`` )."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:15
+msgid ""
+"However, there is one exception: users *must* call "
+"``CommandScheduler.getInstance().run()`` from the ``robotPeriodic()`` method"
+" of their ``Robot`` class.  If this is not done, the scheduler will never "
+"run, and the command framework will not work.  The provided command-based "
+"project template has this call already included."
+msgstr ""
+"Sin embargo, hay una excepción: los usuarios *deben* llamar a "
+"``CommandScheduler.getInstance().run()`` del método ``robotPeriodic()`` de "
+"su clase ``Robot`` . Si no se hace esto, el programador nunca se ejecutará y"
+" el marco de comandos no funcionará. La plantilla de proyecto a base de "
+"comandos proporcionada ya tiene esta llamada incluida."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:18
+msgid "The ``schedule()`` Method"
+msgstr "El método ``schedule()``"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
+msgid "The Scheduler Run Sequence"
+msgstr "La secuencia de ejecución del programador"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:28
+msgid ""
+"The ``initialize()`` method of each ``Command`` is called when the command "
+"is scheduled, which is not necessarily when the scheduler runs (unless that "
+"command is bound to a button)."
+msgstr ""
+"El método ``initialize()`` de cada ``Comando`` es llamado cuando el comando "
+"es programado, lo cual no es necesariamente cuando un programador este "
+"ejecutándose (a menos que ese comando este atado a un botón)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
+msgid "Step 1: Run Subsystem Periodic Methods"
+msgstr "Paso 1: ejecutar los métodos periódicos del subsistema"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:38
+msgid ""
+"First, the scheduler runs the ``periodic()`` method of each registered "
+"``Subsystem``."
+msgstr ""
+"Primero, el programador ejecuta el método ``periodic()`` de cada "
+"``Subsistema`` registrado."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:41
+msgid "Step 2: Poll Command Scheduling Triggers"
+msgstr "Paso 2: Activadores de programación de comandos"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:43
+msgid ""
+"For more information on how trigger bindings work, see :doc:`binding-"
+"commands-to-triggers`"
+msgstr ""
+"Para obtener más información sobre cómo funcionan los enlaces de "
+"activadores, consulte :doc:`binding-commands-to-triggers`"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:45
+msgid ""
+"Secondly, the scheduler polls the state of all registered triggers to see if"
+" any new commands that have been bound to those triggers should be "
+"scheduled.  If the conditions for scheduling a bound command are met, the "
+"command is scheduled and its ``Initialize()`` method is run."
+msgstr ""
+"En segundo lugar, el programador sondea el estado de todos los "
+"desencadenantes registrados para ver si se debe programar algún comando "
+"nuevo que se haya vinculado a esos desencadenantes. Si se cumplen las "
+"condiciones para programar un comando vinculado, se programa el comando y se"
+" ejecuta su método ``Initialize()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:48
+msgid "Step 3: Run/Finish Scheduled Commands"
+msgstr "Paso 3: ejecutar/finalizar comandos programados"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:50
+msgid ""
+"Thirdly, the scheduler calls the ``execute()`` method of each currently-"
+"scheduled command, and then checks whether the command has finished by "
+"calling the ``isFinished()`` method.  If the command has finished, the "
+"``end()`` method is also called, and the command is de-scheduled and its "
+"required subsystems are freed."
+msgstr ""
+"En tercer lugar, el planificador llama al método ``execute()`` de cada "
+"comando programado actualmente, y luego verifica si el comando ha terminado "
+"llamando al método ``isFinished()``. Si el comando ha finalizado, también se"
+" llama al método ``end()``, y el comando se desprograma y se liberan los "
+"subsistemas necesarios."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:52
+msgid ""
+"Note that this sequence of calls is done in order for each command - thus, "
+"one command may have its ``end()`` method called before another has its "
+"``execute()`` method called.  Commands are handled in the order they were "
+"scheduled."
+msgstr ""
+"Tenga en cuenta que esta secuencia de llamadas se realiza en orden para cada"
+" comando; por lo tanto, un comando puede tener su método ``end()`` llamado "
+"antes de que otro tenga su método ``execute()`` llamado. Los comandos se "
+"manejan en el orden en que fueron programados."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:55
+msgid "Step 4: Schedule Default Commands"
+msgstr "Paso 4: Programar comandos predeterminados"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:57
+msgid ""
+"Finally, any registered ``Subsystem`` has its default command scheduled (if "
+"it has one).  Note that the ``initialize()`` method of the default command "
+"will be called at this time."
+msgstr ""
+"Finalmente, cualquier ``Subsistema`` registrado tiene su comando "
+"predeterminado programado (si lo tiene). Tenga en cuenta que en este momento"
+" se llamará al método ``initialize()`` del comando predeterminado."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:60
+msgid "Disabling the Scheduler"
+msgstr "Deshabilitar el programador"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:62
+msgid ""
+"The scheduler can be disabled by calling "
+"``CommandScheduler.getInstance().disable()``.  When disabled, the "
+"scheduler's ``schedule()`` and ``run()`` commands will not do anything."
+msgstr ""
+"El planificador se puede desactivar llamando a "
+"``CommandScheduler.getInstance().disable()``. Cuando está deshabilitado, los"
+" comandos ``schedule()`` y ``run()`` del programador no harán nada."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:64
+msgid ""
+"The scheduler may be re-enabled by calling "
+"``CommandScheduler.getInstance().enable()``."
+msgstr ""
+"El programador se puede volver a habilitar al llamar a "
+"``CommandScheduler.getInstance().enable()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:67
+msgid "Command Event Methods"
+msgstr "Métodos de eventos de comando"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:72
+msgid "onCommandInitialize"
+msgstr "onCommandInitialize"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
+msgid "onCommandExecute"
+msgstr "onCommandExecute"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
+msgid "onCommandFinish"
+msgstr "onCommandFinish"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
+msgid "onCommandInterrupt"
+msgstr "onCommandInterrupt"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
+msgid ""
+"A typical use-case for these methods is adding markers in an event log "
+"whenever a command scheduling event takes place, as demonstrated in the "
+"SchedulerEventLogging example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):"
+msgstr ""
+"Un caso de uso típico para estos métodos es añadir marcadores en un registro"
+" de eventos cada vez que se produce un evento de programación de comandos, "
+"como se demuestra en el proyecto de ejemplo SchedulerEventLogging (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):"

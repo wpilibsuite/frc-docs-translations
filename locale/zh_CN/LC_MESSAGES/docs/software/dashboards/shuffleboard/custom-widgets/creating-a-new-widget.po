@@ -1,0 +1,297 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-03 16:03+0000\n"
+"PO-Revision-Date: 2021-06-22 22:05+0000\n"
+"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:2
+msgid "Creating A Widget"
+msgstr "创建一个 小部件"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:3
+msgid ""
+"Widgets allow us to view, change, and interact with data published through "
+"different data sources. The CameraServer, NetworkTables, and Base plugins "
+"provide the widgets to control basic data types (including FRC-specific data"
+" types). However, custom widgets allow us to control our custom data types "
+"we made in the previous sections or Java Objects."
+msgstr ""
+"小部件使我们能够查看，更改和与通过不同数据源发布的数据进行交互。 CameraServer，NetworkTables 和 Base "
+"插件提供了用于控制基本数据类型（包括特定于 FRC 的数据类型）的小部件。但是，自定义小部件允许我们控制在上一节或 Java "
+"对象中创建的自定义数据类型。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:5
+msgid ""
+"The basic ``Widget`` interface inherits from the ``Component`` and "
+"``Sourced`` interfaces. ``Component`` is the most basic building block of "
+"components that be displayed in Shuffleboard. ``Sourced`` is an interface "
+"for things that can handle and interface with data sources to display or "
+"modify data. Widgets that don't support data bindings but simply have child "
+"nodes would not use the ``Sourced`` interface but simply the ``Component`` "
+"interface. Both are basic building blocks towards making widgets and allows "
+"us to modify and display data."
+msgstr ""
+"基本的 “Widget”  接口继承自 “Component” 和 “Sourced” 接口。“组件” 是在 Shuffleboard "
+"中显示的最基本的组件构建块。Sourced 是用于处理和显示数据源或修改数据源的接口。不支持数据绑定但仅具有子节点的小部件将不使用 Sourced "
+"接口，而仅使用 Component 接口。两者都是制作小部件的基本构建块，并允许我们修改和显示数据。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:7
+msgid ""
+"A good widget allows the end-user to customize the widget to suit their "
+"needs. An example could be to allow the user to control the range of the "
+"number slider, that is, its maximum and minimum or the orientation of the "
+"slider itself. The view of the widget or how it looks is defined using FXML."
+" ``FXML`` is an XML based language that is useful for defining the static "
+"layout of the widget (Panes, Labels and Controls)."
+msgstr ""
+"一个好的小部件可以让用户自定义窗口小部件以适应他们的需求。一个示例可能是允许用户控制数字滑块的范围，即其最大和最小值或滑块本身的方向。小部件的视图或其外观是使用"
+" FXML 定义的。FXML 是一种基于 XML 的语言，可用于定义小部件（面板，标签和控件）的静态布局。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:9
+msgid ""
+"More about FXML can be found `here "
+"<https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-"
+"files/introduction_to_fxml.html>`_."
+msgstr ""
+"有关 FXML 的更多信息，请参见此处 https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml"
+"/doc-files/introduction_to_fxml.html。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:12
+msgid "Defining a Widget's FXML"
+msgstr "定义小组件的 FXML"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:13
+msgid ""
+"In this example, we will create two sliders to help us control the X and Y "
+"coordinates of our Point2D data type we created in previous sections. It is "
+"helpful to place the FXML file in the same package as the Java class."
+msgstr ""
+"在此示例中，我们将创建两个滑块，以帮助我们控制在上一节中创建的 Point2D 数据类型的 X 和 Y 坐标。将 FXML 文件与 Java Class"
+" 放在同一包中会很有帮助。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:15
+msgid ""
+"In order to create an empty, blank window for our widget, we need to create "
+"a ``Pane``. A Pane is a parent node that contains other child nodes, in this"
+" case, 2 sliders. There are many different types of Pane, they are as noted:"
+msgstr ""
+"为了给我们的小部件创建一个空的空白窗口，我们需要创建一个 “Pane”。Pane "
+"窗格是一个父节点，其中包含其他子节点，在本例中为2个滑块。有许多不同类型的窗格，如下所示："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:18
+msgid "Stack Pane"
+msgstr "堆栈窗格"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:20
+msgid ""
+"Stack Panes allow elements to be overlaid. Also, StackPanes by default "
+"center child nodes."
+msgstr "堆栈窗格允许叠加的元素。另外，默认情况下，堆栈窗格默认为中心子节点。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:22
+msgid "Grid Pane"
+msgstr "网格窗格"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:24
+msgid ""
+"Grid Panes are extremely useful defining child elements using a coordinate "
+"system by creating a flexible grid of rows and columns on the pane."
+msgstr "”网格窗格“通过在窗格上创建行和列的灵活网格来使用坐标系，在定义子元素非常有用。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:26
+msgid "Flow Pane"
+msgstr "流窗格"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:28
+msgid ""
+"Flow Panes wrap all child nodes at a boundary set. Child nodes can flow "
+"vertically (wrapped at the height boundary for the pane) or horizontally "
+"(wrapped at the width boundary of the pane)."
+msgstr "流窗格将所有子节点都包装在边界集中。子节点可以垂直流动（包裹在窗格的高度边界处）或水平流动（包裹在窗格的宽度边界处）。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:30
+msgid "Anchor Pane"
+msgstr "锚定窗格"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:32
+msgid ""
+"Anchor Panes allow child elements to be placed in the top, bottom, left "
+"side, right side, or center of the pane."
+msgstr "锚定窗格允许把子元素放在上方、下方、左侧、右侧和窗格的中心"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:34
+msgid ""
+"Layout panes are also extremely useful for placing child nodes in one "
+"horizontal row using a `HBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`_"
+" or one vertical column using a `VBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`_."
+msgstr ""
+"布局窗格在用 "
+"HBox（https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html）把子元素放在一行，或用"
+" "
+"VBox（https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html）把子元素放在一列时，会非常有用。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:36
+msgid ""
+"The basic syntax for defining a Pane using FXML would be as the following:"
+msgstr "使用 FXML 定义窗格的基本语法如下："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:45
+msgid ""
+"The ``fx:controller`` attribute contains the name of the widget class. An "
+"instance of this class is created when the FXML file is loaded. For this to "
+"work, the controller class must have a no-argument constructor."
+msgstr ""
+"fx：controller 属性会包含小组件的类的名称。加载 FXML 文件时，将创建此类的实例。 为此，“控制器”类必须没有实际参数的构造函数。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:48
+msgid "Creating A Widget Class"
+msgstr "创建一个小组件类"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:50
+msgid ""
+"Now that we have a Pane, we can now add child elements to that pane. In this"
+" example, we can add two slider objects. Remember to add an ``fx:id`` to "
+"each element so they can be referenced in our Java class we will make later "
+"on. We will use a ``VBox`` to position our slider on top of each other."
+msgstr ""
+"现在我们有了一个“窗格”，我们可以将子元素添加到该窗格中。在此示例中，我们可以添加两个滑块对象。记住要在每个元素上添加一个“ "
+"fx：id”，以便可以在我们稍后将要创建的Java类中引用。 我们将使用 “VBox” 将滑块放·置在彼此的顶部。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:64
+msgid ""
+"Now that we have finished creating our FXML file, we can now create a widget"
+" class. The widget class should include a ``@Description`` annotation that "
+"states the supported data types of the widget and the name of the widget. If"
+" a ``@Description`` annotation is not present, the plugin class must "
+"implement the ``get()`` method to return its widgets."
+msgstr ""
+"现在我们已经完成了 FXML 文件的创建，现在可以创建一个小部件类了。小部件类应包含一个@Description "
+"注释，该注释说明小部件支持的数据类型和小部件名称。如果不存在@Description 注解，则插件类必须实现 get（）方法以返回其小部件。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:66
+msgid ""
+"It also must include a ``@ParametrizedController`` annotation that points to"
+" the FXML file containing the layout of the widget. If the class that only "
+"supports one data source it must extend the ``SimpleAnnotatedWidget`` class."
+" If the class supports multiple data sources, it must extend the "
+"``ComplexAnnotatedWidget`` class. For more information, see :doc:`widget-"
+"types`."
+msgstr ""
+"它还必须包含一个 @ParametrizedController 注释，该注释指向包含小部件布局的 FXML 文件。 "
+"如果该类仅支持一个数据源，则必须扩展 SimpleAnnotatedWidget 类。如果该类支持多个数据源，则它必须扩展 "
+"ComplexAnnotatedWidget 类。 有关更多信息，请参见：widget-types。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:86
+msgid ""
+"If you are not using a custom data type, you can reference any Java data "
+"type (ie. ``Double.class``), or if the widget does not need data binding you"
+" can pass ``NoneType.class``."
+msgstr ""
+"如果您没有使用自定义数据类型，则可以引用任何 Java 数据类型（即 Double.class），或者如果小部件不需要数据绑定，则可以传递 "
+"NoneType.class。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:88
+msgid ""
+"Now that we have created our class we can create fields for the widgets we "
+"declared in our FXML file using the ``@FXML`` annotation. For our two "
+"sliders, an example would be:"
+msgstr "现在我们已经创建了类，我们可以使用 @FXML 批注为在 FXML 文件中声明的小部件创建字段。 对于我们的两个滑块，一个示例是："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:111
+msgid ""
+"In order to display our pane on our custom widget we need to override the "
+"``getView()`` method and return our ``StackPane``."
+msgstr "为了在我们的自定义窗口小部件上显示我们的窗格，我们需要重写getView（）方法并返回我们的 Stack Pane。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:141
+msgid "Binding Elements and Adding Listeners"
+msgstr "绑定元素和添加侦听器"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:142
+msgid ""
+"Binding is a mechanism that allows JavaFX widgets to express direct "
+"relationships with the data source. For example, changing a widget will "
+"change its related NetworkTableEntry and vise versa."
+msgstr ""
+"Binding 是一种机制，它允许 JavaFX 小部件直接表达与数据源的关系。例如，更改窗口小部件将更改其相关的 "
+"NetworkTableEntry，反之亦然。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:144
+msgid ""
+"An example, in this case, would be changing the X and Y coordinate of our 2D"
+" point by changing the values of xSlider and ySlider respectively."
+msgstr "在这种情况下，示例将通过分别更改 xSlider 和 ySlider 的值来更改 2D 点的 X 和 Y 坐标。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:146
+msgid ""
+"A good practice is to set bindings in the ``initialize()`` method tagged "
+"with the ``@FXML`` annotation which is required to call the method from FXML"
+" if the method is not ``public``."
+msgstr ""
+"一个好的做法是在带有@FXML批注的“ initialize（）”方法中设置绑定，如果该方法不是“ public”，则必须从 FXML 调用该方法。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:181
+msgid ""
+"The above ``initialize`` method binds the slider's value property to the "
+"``MyPoint2D`` data class' corresponding X and Y value. Meaning, changing the"
+" slider will change the coordinate and vise versa. The "
+"``dataOrDefault.map()`` method will get the data source's value, or, if no "
+"source is present, will return the default value."
+msgstr ""
+"上面的 “initialize” 方法将滑块的 value 属性绑定到对应的 X 和 Y 值的 “MyPoint2D” "
+"数据类。这意味着，更改滑块将更改坐标，反之亦然。dataOrDefault.map（）方法将获取数据源的值，或者，如果不存在数据源，则将返回默认值。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:184
+msgid ""
+"Using a listener is another way to change values when the slider or data "
+"source has changed. For example a listener for our slider would be:"
+msgstr "当滑块或数据源已更改时，使用侦听器是另一种更改值的方法。例如，滑块的侦听器为："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:190
+msgid ""
+"In this case, the ``setData()`` method sets the value in the data source of "
+"the widget to the ``newValue``."
+msgstr "在这种情况下，setData（）方法会将小部件的数据源中的值设置为 newValue。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:193
+msgid "Exploring Custom Components"
+msgstr "探索自定义组件"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:194
+msgid ""
+"Widgets are not automatically discovered when loading plugins; the defining "
+"plugin must explicitly export it for it to be usable. This approach is taken"
+" to allow multiple plugins to be defined in the same JAR."
+msgstr "加载插件时不会自动发现窗口小部件；定义插件必须导出它才能使用。采用这种方法可以在同一个 JAR 中定义多个插件。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:204
+msgid "Set Default Widget For Data type"
+msgstr "设置默认小组件数据类型"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:205
+msgid ""
+"In order to set your widget as default for your custom data type, you can "
+"override the ``getDefaultComponents()`` in your plugin class that stores a "
+"Map for all default widgets as noted below:"
+msgstr ""
+"为了将小部件设置为自定义数据类型的默认值，您可以覆盖插件类中的 getDefaultComponents（），该类存储所有默认小部件的 "
+"Map，如下所示："

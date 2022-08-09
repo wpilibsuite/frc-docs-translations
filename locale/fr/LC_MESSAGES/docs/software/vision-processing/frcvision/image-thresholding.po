@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# Andy Chang, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-30 04:05+0000\n"
+"PO-Revision-Date: 2020-06-12 20:55+0000\n"
+"Last-Translator: Andy Chang, 2020\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:2
+msgid "Thresholding an Image"
+msgstr "Trouver le seuil d'une image (Thresholding)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:4
+msgid ""
+"In order to turn a colored image, such as the one captured by your camera, "
+"into a binary image, with the target as the \"foreground\", we need to "
+"threshold the image using the hue, saturation, and value of each pixel."
+msgstr ""
+"Afin de transformer une image colorée, telle que celle capturée par votre "
+"caméra, en une image binaire, avec la cible en \"premier plan\", nous devons"
+" seuiller l'image en utilisant la teinte, la saturation et la valeur de "
+"chaque pixel."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:7
+msgid "The HSV Model"
+msgstr "L'espace de couleur HSV (teinte, saturation et luminosité)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:9
+msgid ""
+"Unlike RGB, HSV allows you to not only filter based on the colors of the "
+"pixels, but also by the intensity of color and the brightness."
+msgstr ""
+"Il existe plusieurs façon de définir une même couleur: l'espace RGB (rouge, "
+"vert, bleu) et l'espace HSV. Ils ont chacun leur utilité selon le traitement"
+" désiré. Contrairement à l'espace RGB, l'espace HSV vous permet d'isoler le "
+"vert par exemple, peu importe son intensité sa luminosité."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:11
+msgid "Hue: Measures the color of the pixel."
+msgstr "Teinte: mesure la tonalité d'une couleur dans le spectre lumineux."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:12
+msgid "Saturation: Measures the intensity of color of the pixel."
+msgstr "Saturation: mesure l'intensité de la couleur du pixel."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:13
+msgid "Value: Measures the brighness of the pixel."
+msgstr "Valeur: mesure la luminosité du pixel."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:17
+msgid "You can use OpenCV to convert a BGR image matrix to HSV."
+msgstr ""
+"Vous pouvez utiliser OpenCV pour convertir une matrice d'images BGR (bleu, "
+"vert, rouge) en HSV. En OpenCV, l'ordre des couleurs primaires, communément "
+"appelée l'espace RGB, est différente (BGR)."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:25
+msgid ""
+"OpenCV's hue range is from 1° to 180° instead of the common 1° to 360°. In "
+"order to convert a common hue value to OpenCV, divide by 2."
+msgstr ""
+"La gamme de teintes d'OpenCV est de 1° à 180° au lieu des 1° à 360° "
+"habituels. Afin de convertir une valeur de teinte commune en OpenCV, divisez"
+" par 2."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:28
+msgid "Thresholding"
+msgstr "Seuillage"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:30
+msgid ""
+"We will use this field image as an example for the whole process of image "
+"processing."
+msgstr ""
+"Nous utiliserons cette image du terrain de jeu comme exemple pour l'ensemble"
+" du processus de traitement d'image."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:34
+msgid ""
+"By thresholding the image using HSV, you can separate the image into the "
+"vision target (foreground), and the other things that the camera sees "
+"(background). The following code example converts a HSV image into a binary "
+"image by thresholding with HSV values."
+msgstr ""
+"En limitant l'image à l'aide de HSV, vous pouvez séparer l'image en la cible"
+" de vision (premier plan) et les autres éléments que la caméra voit "
+"(arrière-plan). L'exemple de code suivant convertit une image HSV en image "
+"binaire par seuillage avec des valeurs HSV."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:42
+msgid ""
+"These values may have to be tuned on an per-venue basis, as ambient lighting"
+" may differ across venues. It is recommended to allow editing of these "
+"values through NetworkTables in order to facilitate on-the-fly editing."
+msgstr ""
+"Ces valeurs peuvent devoir être ajustées sur le terrain, car l'éclairage "
+"ambiant peut différer d'un site à l'autre. Il est recommandé d'autoriser la "
+"modification de ces valeurs via NetworkTables afin de faciliter les "
+"changements rapides de valeurs."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:44
+msgid "After thresholding, your image should look like this."
+msgstr "Après le seuillage, votre image devrait ressembler à ceci."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/image-thresholding.rst:48
+msgid ""
+"As you can see, the thresholding process may not be 100% clean. You can use "
+"morphological operations to deal with the noise."
+msgstr ""
+"Comme vous pouvez le voir, le processus de seuillage peut ne pas être 100% "
+"efficace. Vous pouvez utiliser des opérations morphologiques pour amenuiser "
+"le bruit."

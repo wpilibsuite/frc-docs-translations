@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Rodrigo Acosta <raar7366@gmail.com>, 2020
+# Max Cuevas <max.cuevas@cervantestorreon.edu.mx>, 2020
+# Miguel Angel de León Adame <miguelangeldla14@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 16:10+0000\n"
+"PO-Revision-Date: 2020-08-20 04:11+0000\n"
+"Last-Translator: Miguel Angel de León Adame <miguelangeldla14@gmail.com>, 2020\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:4
+msgid "2020 Game Data Details"
+msgstr "Detalles de los datos del juego 2020"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:6
+msgid ""
+"In the 2020 *FIRST*\\ |reg| Robotics Competition game, the Position Control "
+"objective requires alliances to select a specific color transmitted to them "
+"when specific pre-requisites have been met. The field will transmit the "
+"selected color to teams using Game Data. This page details the timing and "
+"structure of the sent data and provides examples of how to access it in the "
+"three supported programming languages."
+msgstr ""
+"En el juego de 2020 de *FIRST*\\ |reg| Competición de robótica, el objetivo "
+"de Control de posición requiere que las alianzas seleccionen un color "
+"específico que se les transmite cuando se cumplen los requisitos previos "
+"específicos. El campo transmitirá el color seleccionado a los equipos por "
+"medio de los datos del juego. Esta página detalla el tiempo y la estructura "
+"de los datos enviados y proporciona ejemplos de cómo acceder a ellos en los "
+"tres lenguajes de programación permitidos."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:9
+msgid "The Data"
+msgstr "Los datos"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:12
+msgid "Timing"
+msgstr "Sincronización"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:13
+msgid ""
+"Color assignment data is sent to both alliances simultaneously once the "
+"first alliance in a match has reached Capacity on Stage 3 of the Shield "
+"Generator (see the Game Manual for more complete details). Between the "
+"beginning of the match and this point, the Game Data will be an empty "
+"string."
+msgstr ""
+"Los datos de asignación de color se envían a ambas alianzas simultáneamente "
+"una vez que la primera alianza en una partida ha alcanzado la Capacidad en "
+"la Etapa 3 del Generador de escudo (consulte el manual del juego para "
+"obtener detalles más completos). Entre el comienzo del partido y este punto,"
+" los datos del juego serán una cadena vacía."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:16
+msgid "Data format"
+msgstr "Formato de los datos"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:17
+msgid ""
+"The selected color for an alliance will be provided as a single character "
+"representing the color (i.e. 'R' = red, 'G' = green, 'B' = blue, 'Y' = "
+"yellow). This color indicates the color that must be placed underneath the "
+"Control Panel's color sensor in order to complete the Position Control "
+"objective (see the Game Manual for information about the location of the "
+"Control Panel sensor)."
+msgstr ""
+"El color seleccionado para una alianza se proporcionará como un solo "
+"carácter que representa el color (es decir, 'R' = rojo, 'G' = verde, 'B' = "
+"azul, 'Y' = amarillo). Este color indica el color que debe colocarse debajo "
+"del sensor de color del panel de control para completar el objetivo de "
+"control de posición (consulte el manual del juego para obtener información "
+"sobre la ubicación del sensor del panel de control)."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:20
+msgid "Accessing the Data"
+msgstr "Accediendo a los datos"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:21
+msgid ""
+"The data is accessed using the Game Data methods or VIs in each language. "
+"Below are descriptions and examples of how to access the data from each of "
+"the three languages. As the data is provided to the Robot during the Teleop "
+"period, teams will likely want to query the data in Teleop periodic code, or"
+" trigger reading it off a button press or other action after they have "
+"reached Stage 3 capacity."
+msgstr ""
+"Se accede a los datos utilizando los métodos de Game Data o VIs en cada "
+"lenguaje. A continuación, se muestran descripciones y ejemplos de cómo "
+"acceder a los datos en cada uno de los tres idiomas. Dado que los datos se "
+"proporcionan al Robot durante el período de Teleop, los equipos "
+"probablemente deseen consultar los datos en el código periódico de Teleop, o"
+" activar la lectura al presionar un botón u otra acción después de haber "
+"alcanzado la capacidad de la Etapa 3."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:24
+msgid "C++/Java"
+msgstr "C++/Java"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:25
+msgid ""
+"In C++ and Java the Game Data is accessed by using the "
+"GetGameSpecificMessage method of the DriverStation class. Teams likely want "
+"to query the data in a Teleop method such as Teleop Periodic in order to "
+"receive the data after it is sent during the match. Make sure to handle the "
+"case where the data is an empty string as this is what the data will be "
+"until the criteria are reached to enable Position Control for either "
+"alliance."
+msgstr ""
+"En C++ y Java, se accede a la Game Data mediante el método "
+"GetGameSpecificMessage de la clase DriverStation. Es probable que los "
+"equipos quieran consultar los datos en un método Teleop como Teleop Periodic"
+" para recibir los datos después de que se envíen durante el partido. "
+"Asegúrese de manejar el caso en el que los datos sean un string vacío, ya "
+"que estos serán los datos hasta que se alcancen los criterios para habilitar"
+" el Control de posición para cualquiera de las alianzas."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:90
+msgid "LabVIEW"
+msgstr "LabVIEW"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:91
+msgid ""
+"The Game Data in LabVIEW is accessed from the Game Specific Data VI. This VI"
+" can be found in the WPI Robotics Library -> Driver Station palette."
+msgstr ""
+"Se accede a la Game Data en LabVIEW desde el VI de datos específicos del "
+"juego. Este VI se puede encontrar en la biblioteca de WPI Robotics -> Driver"
+" Station palette."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:93
+msgid ""
+"LabVIEW teams will likely want to query the data in the Teleop or "
+"PeriodicTasks VIs and may choose to gate the query behind a button press or "
+"other action. The code below reads the data and then uses a case structure "
+"to react differently to each of the 5 possible cases (empty, or any of the 4"
+" letters)."
+msgstr ""
+"Los equipos de LabVIEW probablemente querrán consultar los datos en Teleop o"
+" en los VIs de PeriodicTasks y pueden optar por colocar la consulta por "
+"medio de presionar un botón u otra acción. El siguiente código lee los datos"
+" y luego usa una estructura tipo case para reaccionar de manera diferente a "
+"cada uno de los 5 casos posibles (vacío o cualquiera de las 4 letras)."
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:98
+msgid "Testing Game Specific Data"
+msgstr "Prueba de datos específicos del juego"
+
+#: ../../frc-docs/source/docs/2020-overview/2020-Game-Data.rst:99
+msgid ""
+"You can test your Game Specific Data code without FMS by using the Driver "
+"Station. Click on the Setup tab of the Driver Station, then enter the "
+"desired test string into the Game Data text field. The data will be "
+"transmitted to the robot in one of two conditions: Enable the robot in "
+"Teleop mode, or when the DS reaches the End Game time in a Practice Match "
+"(times are configurable on the Setup tab). It is recommended to run at least"
+" one match using the Practice functionality to verify that your code works "
+"correctly in a full match flow."
+msgstr ""
+"Puede probar el código de datos específicos del juego sin FMS mediante la "
+"Driver Station. Haga clic en la pestaña Configuración de la Driver Station, "
+"luego ingrese la cadena de prueba deseada en el campo de texto Datos del "
+"juego. Los datos se transmitirán al robot en una de estas dos condiciones: "
+"El Robot habilitado en modo Teleop, o cuando el DS llegue al tiempo de Fin "
+"del Juego en un Partido de Práctica (los tiempos se pueden configurar en la "
+"pestaña Configuración). Se recomienda ejecutar al menos un partido "
+"utilizando la funcionalidad de práctica para verificar que su código "
+"funcione correctamente durante un partido completo."

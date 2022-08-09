@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:07+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:2
+msgid "Writing the Code for a Command"
+msgstr "Bir Komutun Kodunu Yazmak"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:4
+msgid ""
+"Subsystem classes get the mechanisms on your robot moving, but to get it to "
+"stop at the right time and sequence through more complex operations you "
+"write Commands. Previously in :doc:`writing the code for a subsystem "
+"<robotbuilder-writing-subsystem-code>` we developed the code for the `Claw` "
+"subsystem on a robot to start the claw opening, closing, or to stop moving. "
+"Now we will write the code for a command that will actually run the claw "
+"motor for the right time to get the claw to open and close. Our claw example"
+" is a very simple mechanism where we run the motor for 1 second to open it "
+"or until the limit switch is tripped to close it."
+msgstr ""
+"Subsystem sınıfları, robotunuzdaki mekanizmaları hareket ettirir, ancak "
+"doğru zamanda durmasını ve daha karmaşık işlemlerle sıralanmasını sağlamak "
+"için Komutlar yazarsınız. Daha önce :doc:`writing the code for a subsystem "
+"<robotbuilder-writing-subsystem-code>` pençe açılmasını, kapanmasını "
+"başlatmak veya hareket etmeyi durdurmak için bir robot üzerindeki `Claw` alt"
+" sisteminin kodunu geliştirdik. Şimdi pençe motorunu doğru zamanda "
+"çalıştıracak bir komutun kodunu yazarak pençenin açılıp kapanmasını "
+"sağlayacağız. Pençe örneğimiz, motoru 1 saniye süreyle çalıştırdığımız veya "
+"kapatmak için limit anahtarı açılıncaya kadar çalıştırdığımız çok basit bir "
+"mekanizmadır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:7
+msgid "Close Claw Command in RobotBuilder"
+msgstr "RobotBuilder'da Pençe Komutunu Kapat"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:11
+msgid ""
+"This is the definition of the `CloseClaw` command in RobotBuilder. Notice "
+"that it requires the `Claw` subsystem. This is explained in the next step."
+msgstr ""
+"Bu, RobotBuilder'daki `CloseClaw` komutunun tanımıdır. `Claw` alt sistemini "
+"gerektirdiğine dikkat edin. Bu, sonraki adımda açıklanmaktadır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:14
+msgid "Generated CloseClaw Class"
+msgstr "CloseClaw Sınıfı oluşturuldu"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:132
+msgid ""
+"RobotBuilder will generate the class files for the `CloseClaw` command. The "
+"command represents the behavior of the claw, that is the operation over "
+"time. To operate this very simple claw mechanism the motor needs to operate "
+"in the close direction,. The `Claw` subsystem has methods to start the motor"
+" running in the right direction and to stop it. The commands responsibility "
+"is to run the motor for the correct time. The lines of code that are shown "
+"in the boxes are added to add this behavior."
+msgstr ""
+"RobotBuilder, `CloseClaw` komutu için sınıf dosyalarını oluşturacaktır. "
+"Komut, pençe davranışını, yani zaman içindeki işlemi temsil eder. Bu çok "
+"basit pençe mekanizmasını çalıştırmak için motorun yakın yönde çalışması "
+"gerekir. `Claw` alt sistemi, motoru doğru yönde çalıştırma ve durdurma "
+"yöntemlerine sahiptir. Komutların sorumluluğu, motoru doğru zamanda "
+"çalıştırmaktır. Kutularda gösterilen kod satırları, bu davranışı eklemek "
+"için eklenir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:134
+msgid ""
+"Start the claw motor moving in the closing direction by calling the "
+"``Close()`` method that was added to the `Claw` subsystem in the `CloseClaw`"
+" Initialize method."
+msgstr ""
+"`CloseClaw`  Initialize yönteminde `Claw` alt sistemine eklenen ``Close()`` "
+"yöntemini çağırarak pençe motorunu kapanma yönünde hareket ettirin."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:135
+msgid ""
+"This command is finished when the the limit switch in the `Claw` subsystem "
+"is tripped."
+msgstr ""
+"Bu komut, `Claw` alt sistemindeki limit anahtarı açıldığında tamamlanır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-command-code.rst:136
+msgid ""
+"The ``End()`` method is called when the command is finished and is a place "
+"to clean up. In this case, the motor is stopped since the time has run out."
+msgstr ""
+"``End()``  yöntemi, komut bittiğinde çağrılır ve temizlenecek bir yerdir. Bu"
+" durumda motor, süre dolduğu için durdurulur."

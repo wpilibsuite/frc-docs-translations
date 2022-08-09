@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"PO-Revision-Date: 2020-04-25 01:59+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:2
+msgid "Analog Inputs - Hardware"
+msgstr "Analog Girişler - Donanım"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:6
+msgid ""
+"An `analog signal <https://en.wikipedia.org/wiki/Analog_signal>`__ is a "
+"signal whose value can lie anywhere in a continuous interval.  This lies in "
+"stark contrast to a :doc:`digital signal <digital-inputs-hardware>`, which "
+"can take only one of several discrete values.  The roboRIO's analog input "
+"ports allow the measurement of analog signals with values from 0V to 5V."
+msgstr ""
+"Bir `analog sinyal <https://en.wikipedia.org/wiki/Analog_signal> `__, değeri"
+" herhangi bir aralıkta herhangi bir yerde bulunabilen bir sinyaldir. Bu, "
+"birkaç ayrık değerden yalnızca birini alabilen :doc:`digital sinyal<digital-"
+"inputs-hardware>`,  ile tam bir tezat oluşturuyor. RoboRIO'nun analog giriş "
+"portları, 0V ile 5V arasındaki değerlere sahip analog sinyallerin "
+"ölçülmesine izin verir"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:8
+msgid ""
+"In practice, there is no way to measure a \"true\" analog signal with a "
+"digital device such as a computer (like the roboRIO).  Accordingly, the "
+"analog inputs are actually measured as a 12-bit digital signal - however, "
+"this is quite a high resolution [1]_."
+msgstr ""
+"Pratikte, bilgisayar gibi dijital bir cihazla (roboRIO gibi) \"gerçek\" bir "
+"analog sinyali ölçmenin bir yolu yoktur. Buna göre, analog girişler aslında "
+"12 bitlik dijital sinyal olarak ölçülür - ancak bu oldukça yüksek bir "
+"çözünürlüktür [1] _."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:10
+msgid ""
+"Analog inputs are typically (but not always!) used for sensors whose "
+"measurements vary continuously over a range, such as :doc:`ultrasonic "
+"rangefinders <ultrasonics-hardware>` and :doc:`potentiometers <analog-"
+"potentiometers-hardware>`, as they can communicate by outputting a voltage "
+"proportional to their measurements."
+msgstr ""
+"Analog girişler tipik olarak (ancak her zaman değil!), aşağıdaki gibi "
+"ölçümleri bir aralıkta sürekli değişen sensörler için kullanılır: "
+":doc:`ultrasonic mesafe ölçer<ultrasonics-hardware>` ve :doc:`potansiyometre"
+"<analog-potentiometers-hardware>` ölçümleriyle orantılı bir voltaj çıkararak"
+" iletişim kurabilirler. ."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:13
+msgid "Connecting to roboRIO analog input ports"
+msgstr "RoboRIO analog giriş bağlantı noktalarına bağlanma"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:15
+msgid ""
+"An additional four analog inputs are available via the \"MXP\" expansion "
+"port.  To use these, a breakout board of some sort that connects to the MXP "
+"is needed."
+msgstr ""
+"\"MXP\" genişletme portu üzerinden ek dört analog giriş mümkündür. Bunları "
+"kullanmak için, MXP'ye bağlanan bir çeşit ara devre panosu gereklidir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:17
+msgid ""
+"Always consult the technical specifications of the sensor you are using "
+"*before* wiring the sensor, to ensure that the correct wire is being "
+"connected to each pin.  Failure to do so can result in damage to the sensor "
+"or the RIO."
+msgstr ""
+"Her bir pime doğru kablonun bağlandığından emin olmak için, sensörü "
+"kablolamadan *önce* kullandığınız sensörün teknik özellik dökümanlarına "
+"daima başvurun. Bunun yapılmaması sensör veya RIO'nun zarar görmesine neden "
+"olabilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:19
+msgid ""
+"**Never** directly connect the power pin to the ground pin on any port on "
+"the roboRIO!  This will trigger protection features on the roboRIO and may "
+"result in unexpected behavior."
+msgstr ""
+"**Hiçbir zaman** güç pinini roboRIO üzerindeki herhangi bir bağlantı "
+"noktasındaki topraklama pinine doğrudan bağlamayın! Bu, roboRIO'daki koruma "
+"özelliklerini tetikleyecek ve beklenmeyen davranışlara neden olabilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:24
+msgid ""
+"The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the"
+" image above.  Each port has three pins - signal (\"S\"), power (\"V\"), and"
+" ground (\"|ground|\").  The \"power\" and \"ground\" pins are used to power"
+" the peripheral sensors that connect to the analog input ports - there is a "
+"constant 5V potential difference between the \"power\" and the \"ground\" "
+"pins [2]_.  The signal pin is the pin on which the signal is actually "
+"measured."
+msgstr ""
+"RoboRIO, yukarıdaki resimde görüldüğü gibi 4 dahili analog giriş bağlantı "
+"noktasına (0-3 numaralı) sahiptir. Her bağlantı noktasının üç pini vardır - "
+"sinyal (\"S\"), güç (\"V\") ve toprak (\"|toprak|\"). \"Güç\" ve \"toprak\" "
+"pinleri, analog giriş bağlantı noktalarına bağlanan dış sensörlere güç "
+"sağlamak için kullanılır - \"güç\" ve \"toprak\" pinleri [2] _ arasında "
+"sabit bir 5V potansiyel farkı vardır. Sinyal pini, sinyalin gerçekte "
+"ölçüldüğü pindir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:27
+msgid "Connecting a sensor to a single analog input port"
+msgstr "Bir sensörü tek bir analog giriş bağlantı noktasına bağlama"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:29
+msgid ""
+"Some sensors (such as :doc:`potentiometers <analog-potentiometers-"
+"hardware>`) may have interchangeable power and ground connections."
+msgstr ""
+"Bazı sensörler (örneğin :doc:`potansiyometreler<analog-potentiometers-"
+"hardware>`), değiştirilebilir güç ve toprak bağlantılarına sahip olabilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:31
+msgid ""
+"Most sensors that connect to analog input ports will have three wires - "
+"signal, power, and ground - corresponding precisely to the three pins of the"
+" analog input ports. They should be connected accordingly."
+msgstr ""
+"Analog giriş bağlantı noktalarına bağlanan çoğu sensörde, analog giriş "
+"bağlantı noktalarının üç pinine tam olarak karşılık gelen üç kablo-sinyal, "
+"güç ve toprak-olacaktır. Buna göre bağlanmaları gerekir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:37
+msgid "Connecting a sensor to multiple analog input ports"
+msgstr "Bir sensörü birden çok analog giriş bağlantı noktasına bağlama"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:39
+msgid ""
+"Some sensors may need to connect to multiple analog input ports in order to "
+"function.  In general, these sensors will only ever require a single power "
+"and a single ground pin - only the signal pin of the additional port(s) will"
+" be needed. The image below is shows an analog accelerometer that requires "
+"three digital input ports, but similar wiring can be used for analog sensors"
+" requiring two analog input ports."
+msgstr ""
+"Bazı sensörlerin çalışması için birden çok analog giriş bağlantı noktasına "
+"bağlanması gerekebilir. Genel olarak, bu sensörler yalnızca tek bir güç ve "
+"tek bir toprak pini gerektirecektir - yalnızca ek bağlantı noktalarının "
+"sinyal pin(lerine) ihtiyaç duyulacaktır. Aşağıdaki resim, üç dijital giriş "
+"portu gerektiren bir analog ivmeölçeri göstermektedir, ancak benzer "
+"kablolama, iki analog giriş portu gerektiren analog sensörler için de "
+"kullanılabilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:47
+msgid "Footnotes"
+msgstr "Dipnotlar"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:49
+msgid ""
+"A 12-bit resolution yields :math:`2^{12}`, or 4096 different values.  For a "
+"5V range, that's an effective resolution of approximately 1.2 mV, or .0012V."
+"  The actual accuracy specification is plus-or-minus 50mV, so the "
+"discretization is not the limiting factor in the measurement accuracy."
+msgstr ""
+"12 bitlik bir çözünürlük şunu verir :math:`2^{12}` veya 4096 farklı değer. "
+"5V aralığı için, bu yaklaşık 1,2 mV veya 0,0012V hassasiyetli bir "
+"çözünürlüktür. Gerçek doğruluk özelliği artı veya eksi 50mV'dir, bu nedenle "
+"ayrıklaştırma, ölçüm doğruluğunu sınırlayıcı faktör değildir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:50
+msgid ""
+"All power pins are actually connected to a single rail, as are all ground "
+"pins - there is no need to use the power/ground pins corresponding to a "
+"given signal pin."
+msgstr ""
+"Tüm güç pinleri, tüm toprak pinleri gibi aslında tek bir raya bağlıdır - "
+"belirli bir sinyal pinine karşılık gelen güç / toprak pinlerini kullanmaya "
+"gerek yoktur."

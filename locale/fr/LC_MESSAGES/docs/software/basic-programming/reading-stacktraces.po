@@ -1,0 +1,828 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-26 04:30+0000\n"
+"PO-Revision-Date: 2021-06-22 22:04+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:2
+msgid "Reading Stacktraces"
+msgstr "Lecture des traces de pile (StackTraces)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:4
+msgid "``An unexpected error has occurred.``"
+msgstr "``Une erreur inattendue s'est produite.``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:6
+msgid ""
+"When your robot code hits an unexpected error, you will see this message "
+"show up in some console output (Driver Station or RioLog). You'll probably "
+"also notice your robot abruptly stop, or possibly never move. These "
+"unexpected errors are called *unhandled exceptions*."
+msgstr ""
+"Lorsque le code de votre robot rencontre une erreur inattendue, vous verrez "
+"ce message s'afficher dans certaines sorties de la console (Driver Station "
+"ou RioLog). Vous remarquerez probablement aussi que votre robot s'arrête "
+"brusquement, ou ne bouge peut-être jamais. Ces erreurs inattendues sont "
+"appelées *exceptions non gérées*."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:8
+msgid ""
+"When an unhandled exception occurs, it means that your code has one or more "
+"bugs which need to be fixed."
+msgstr ""
+"Lorsqu'une exception non gérée se produit, cela signifie que votre code "
+"contient un ou plusieurs bogues qui doivent être corrigés."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:10
+msgid ""
+"This article will explore some of the tools and techniques involved in "
+"finding and fixing those bugs."
+msgstr ""
+"Cet article explorera certains des outils et techniques impliqués dans la "
+"recherche et la correction de ces bogues."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:13
+msgid "What's a \"Stack Trace\"?"
+msgstr "Qu'est-ce qu'une «trace de pile»?"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:15
+msgid ""
+"The ``unexpected error has occurred`` message is a signal that a *stack "
+"trace* has been printed out."
+msgstr ""
+"Le message ``une erreur inattendue s'est produite`` est un signal qu'une "
+"*trace de pile* a été imprimée."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:17
+msgid ""
+"In Java and C++, a `stack <https://en.wikipedia.org/wiki/Call_stack>`_ data "
+"structure is used to store information about which function or method is "
+"currently being executed."
+msgstr ""
+"En Java et C++, une structure de données `stack "
+"<https://en.wikipedia.org/wiki/Call_stack>`_ est utilisée pour stocker des "
+"informations sur la fonction ou la méthode en cours d'exécution."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:19
+msgid ""
+"A *stack trace* prints information about what was on this stack when the "
+"unhandled exception occurred. This points you to the lines of code which "
+"were running just before the problem happened. While it doesn't always point"
+" you to the exact *root cause* of your issue, it's usually the best place to"
+" start looking."
+msgstr ""
+"Une *trace de pile* imprime des informations sur ce qui se trouvait sur "
+"cette pile lorsque l'exception non gérée s'est produite. Cela vous indique "
+"les lignes de code qui s'exécutaient juste avant que le problème ne se "
+"produise. Bien que cela ne vous indique pas toujours la *cause principale* "
+"exacte de votre problème, c'est généralement le meilleur endroit pour "
+"commencer à chercher."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:22
+msgid "What's an \"Unhandled Exception\"?"
+msgstr "Qu'est-ce qu'une «exception non gérée»?"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:24
+msgid ""
+"An unrecoverable error is any condition which arises where the processor "
+"cannot continue executing code. It almost always implies that, even though "
+"the code compiled and started running, it no longer makes sense for "
+"execution to continue."
+msgstr ""
+"Une erreur irrécupérable est une condition qui survient dans laquelle le "
+"processeur ne peut pas continuer à exécuter du code. Cela implique presque "
+"toujours que, même si le code a été compilé et a commencé à s'exécuter, il "
+"n'est plus logique que l'exécution se poursuive."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:26
+msgid ""
+"In almost all cases, the root cause of an unhandled exception is code that "
+"isn't correctly implemented. It almost never implies that any hardware has "
+"malfunctioned."
+msgstr ""
+"Dans presque tous les cas, la cause première d'une exception non gérée est "
+"un code qui n'est pas correctement implémenté. Cela n'implique presque "
+"jamais qu'un matériel a mal fonctionné."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:29
+msgid "So How Do I Fix My Issue?"
+msgstr "Alors, comment puis-je résoudre mon problème ?"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:32
+msgid "Read the Stack Trace"
+msgstr "Lire la trace de la pile"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:34
+msgid ""
+"To start, search above the ``unexpected error has occurred`` for the stack "
+"trace."
+msgstr ""
+"Pour commencer, recherchez au-dessus de ``unexpected error has occurred`` la"
+" trace de la pile."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:38
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:171
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:204
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:256
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:297
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:333
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:386
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:435
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:472
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:567
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:41
+msgid "In Java, it should look something like this:"
+msgstr "En Java, cela devrait ressembler à ceci :"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:52
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:100
+msgid "There's a few important things to pick out of here:"
+msgstr "Il y a quelques éléments importants à retenir ici :"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:54
+msgid "There was an ``Error``"
+msgstr "Il y a eu une ``Erreur``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:56
+msgid "The error was due to an ``Unhandled exception``"
+msgstr ""
+"L'erreur était due à une ``Exception non gérée`` (Unhandled Exception)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:58
+msgid "The exception was a ``java.lang.NullPointerException``"
+msgstr "L'exception était une ``java.lang.NullPointerException``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:60
+msgid "The error happened while running line ``24`` inside of ``Robot.java``"
+msgstr ""
+"L'erreur s'est produite lors de l'exécution de la ligne ``24`` à l'intérieur"
+" de ``Robot.java``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:62
+msgid ""
+"``robotInit`` was the name of the method executing when the error happened."
+msgstr ""
+"``robotInit`` était le nom de la méthode en cours d'exécution lorsque "
+"l'erreur s'est produite."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:64
+msgid ""
+"``robotInit`` is a function in the ``frc.robot.Robot`` package (AKA, your "
+"team's code)"
+msgstr ""
+"``robotInit`` est une fonction du package ``frc.robot.Robot`` (AKA, le code "
+"de votre équipe)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:66
+msgid ""
+"``robotInit`` was called from a number of functions from the "
+"``edu.wpi.first.wpilibj`` package (AKA, the WPILib libraries)"
+msgstr ""
+"``robotInit`` a été appelé à partir d'un certain nombre de fonctions du "
+"package ``edu.wpi.first.wpilibj`` (AKA, les bibliothèques WPILib)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:68
+msgid ""
+"The list of indented lines starting with the word ``at`` represent the state"
+" of the *stack* at the time the error happened. Each line represents one "
+"method, which was *called by* the method right below it."
+msgstr ""
+"La liste des lignes en retrait commençant par le mot ``at`` représente "
+"l'état de la *pile* au moment où l'erreur s'est produite. Chaque ligne "
+"représente une méthode, qui a été *appelée par* la méthode juste en dessous."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:70
+msgid ""
+"For example, If the error happened deep inside your codebase, you might see "
+"more entries on the stack:"
+msgstr ""
+"Par exemple, si l'erreur s'est produite profondément dans votre base de "
+"code, vous pourriez voir plus d'entrées sur la pile:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:84
+msgid ""
+"In this case: ``robotInit`` called ``fooInit``, which in turn called "
+"``barInit``, which in turn called ``buggyMethod``. Then, during the "
+"execution of ``buggyMethod``, the ``NullPointerException`` occurred."
+msgstr ""
+"Dans ce cas : ``robotInit`` appelé ``fooInit``, qui à son tour appelé "
+"``barInit``, qui à son tour appelé ``buggyMethod``. Ensuite, lors de "
+"l'exécution de ``buggyMethod``, l'``NullPointerException`` s'est produite."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:86
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:183
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:228
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:269
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:311
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:354
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:403
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:449
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:508
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:583
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:88
+msgid ""
+"Java will usually produce stack traces automatically when programs run into "
+"issues. C++ will require more digging to extract the same info. Usually, a "
+"single-step debugger will need to be hooked up to the executing robot "
+"program."
+msgstr ""
+"Java produira généralement des traces de pile automatiquement lorsque les "
+"programmes rencontrent des problèmes. C++ nécessitera plus de fouilles pour "
+"extraire les mêmes informations. Habituellement, un débogueur en une seule "
+"étape devra être connecté au programme du robot en cours d'exécution."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:90
+msgid "Stack traces can be found in the debugger tab of VS Code:"
+msgstr ""
+"Les traces de pile peuvent être trouvées dans l'onglet du débogueur de VS "
+"Code:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:0
+msgid "VS Code Stack Trace location"
+msgstr "Emplacement de trace de la pile VS Code"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:95
+msgid "Stack traces in C++ will generally look similar to this:"
+msgstr "Les traces de pile en C++ ressembleront généralement à ceci:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:0
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:0
+msgid "Stack Trace associated with a null-related error"
+msgstr "Trace de pile associée à une erreur liée à la valeur NULL"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:103
+msgid "The code execution is currently paused."
+msgstr "L'exécution du code est actuellement en pause."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:105
+msgid "The reason it paused was one thread having an ``exception``"
+msgstr ""
+"La raison pour laquelle il s'est arrêté était un thread ayant une "
+"``exception``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:107
+msgid "The error happened while running line ``20`` inside of ``Robot.cpp``"
+msgstr ""
+"L'erreur s'est produite lors de l'exécution de la ligne ``20`` à l'intérieur"
+" de ``Robot.cpp``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:109
+msgid ""
+"``RobotInit`` was the name of the method executing when the error happened."
+msgstr ""
+"``RobotInit`` était le nom de la méthode en cours d'exécution lorsque "
+"l'erreur s'est produite."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:111
+msgid ""
+"``RobotInit`` is a function in the ``Robot::`` namespace (AKA, your team's "
+"code)"
+msgstr ""
+"``RobotInit`` est une fonction dans l'espace de noms ``Robot ::`` (AKA, le "
+"code de votre équipe)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:113
+msgid ""
+"``RobotInit`` was called from a number of functions from the ``frc::`` "
+"namespace (AKA, the WPILib libraries)"
+msgstr ""
+"``RobotInit`` a été appelé à partir d'un certain nombre de fonctions de "
+"l'espace de noms ``frc::`` (AKA, les bibliothèques WPILib)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:116
+msgid ""
+"This \"call stack\" window represents the state of the *stack* at the time "
+"the error happened. Each line represents one method, which was *called by* "
+"the method right below it."
+msgstr ""
+"Cette fenêtre \"call stack\" représente l'état de la *pile* au moment où "
+"l'erreur s'est produite. Chaque ligne représente une méthode, qui a été "
+"*appelée par* la méthode juste en dessous."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:118
+msgid ""
+"The examples in this page assume you are running code examples in "
+"simulation, with the debugger connected and watching for unexpected errors. "
+"Similar techniques should apply while running on a real robot."
+msgstr ""
+"Les exemples de cette page supposent que vous exécutez des exemples de code "
+"en simulation, avec le débogueur connecté et surveillant les erreurs "
+"inattendues. Des techniques similaires devraient s'appliquer lors de "
+"l'exécution sur un vrai robot."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:122
+msgid "Perform Code Analysis"
+msgstr "Effectuer une analyse de code"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:124
+msgid ""
+"Once you've found the stack trace, and found the lines of code which are "
+"triggering the unhandled exception, you can start the process of determining"
+" root cause."
+msgstr ""
+"Une fois que vous avez trouvé la trace de la pile et trouvé les lignes de "
+"code qui déclenchent l'exception non gérée, vous pouvez commencer le "
+"processus de détermination de la cause première."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:126
+msgid ""
+"Often, just looking in (or near) the problematic location in code will be "
+"fruitful. You may notice things you forgot, or lines which don't match an "
+"example you're referencing."
+msgstr ""
+"Souvent, le simple fait de regarder dans (ou à proximité) l'emplacement "
+"problématique dans le code sera fructueux. Vous remarquerez peut-être des "
+"choses que vous avez oubliées ou des lignes qui ne correspondent pas à un "
+"exemple auquel vous faites référence."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:128
+msgid ""
+"Developers who have lots of experience working with code will often have "
+"more luck looking at code than newer folks. That's ok, don't be discouraged!"
+" The experience will come with time."
+msgstr ""
+"Les développeurs qui ont beaucoup d'expérience avec le code auront souvent "
+"plus de chance d'examiner le code que les nouveaux. C'est bon, ne vous "
+"découragez pas ! L'expérience viendra avec le temps."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:130
+msgid "A key strategy for analyzing code is to ask the following questions:"
+msgstr ""
+"Une stratégie clé pour analyser le code consiste à poser les questions "
+"suivantes :"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:133
+msgid ""
+"What has changed in the code between the last working version, and now?"
+msgstr ""
+"Qu'est-ce qui a changé dans le code entre la dernière version de travail et "
+"maintenant?"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:135
+msgid ""
+"Frequent testing and careful code changes help make this particular strategy"
+" more effective."
+msgstr ""
+"Des tests fréquents et des modifications minutieuses du code contribuent à "
+"rendre cette stratégie particulière plus efficace."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:138
+msgid "Run the Single Step Debugger"
+msgstr "Exécuter le débogueur en une seule étape"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:140
+msgid ""
+"Sometimes, just looking at code isn't enough to spot the issue. The "
+":ref:`single-step debugger <docs/software/vscode-overview/debugging-robot-"
+"program:Debugging a Robot Program>` is a great option in this case - it "
+"allows you to inspect the series of events leading up to the unhandled "
+"exception."
+msgstr ""
+"Parfois, il ne suffit pas de regarder le code pour détecter le problème. Le "
+":ref:`débogueur en une seule étape <docs/software/vscode-overview/debugging-"
+"robot-program:Debugging a Robot Program>` est une excellente option dans ce "
+"cas - il vous permet d'inspecter la série d'événements menant à l'exception "
+"non gérée."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:143
+msgid "Search for More Information"
+msgstr "Rechercher plus d'informations"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:148
+msgid "Seeking Outside Help"
+msgstr "Chercher de l'aide extérieure"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:150
+msgid ""
+"If all else fails, you can seek out advice and help from others (both in-"
+"person and online). When working with folks who aren't familiar with your "
+"codebase, it's very important to provide the following information:"
+msgstr ""
+"Si tout le reste échoue, vous pouvez demander des conseils et de l'aide aux "
+"autres (en personne et en ligne). Lorsque vous travaillez avec des personnes"
+" qui ne connaissent pas votre base de code, il est très important de fournir"
+" les informations suivantes:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:152
+msgid ""
+"Access to your source code, (EX: :ref:`on github.com <docs/software/basic-"
+"programming/git-getting-started:Git Version Control Introduction>`)"
+msgstr ""
+"Accès à votre code source, (Ex: :ref:`on github.com <docs/software/basic-"
+"programming/git-getting-started:Git Version Control Introduction>`)"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:153
+msgid "The **full text** of the error, including the full stack trace."
+msgstr ""
+"Le **texte complet** de l'erreur, y compris la trace de la pile complète."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:156
+msgid "Common Examples & Patterns"
+msgstr "Exemples et modèles courants"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:158
+msgid ""
+"There are a number of common issues which result in runtime exceptions."
+msgstr ""
+"Il existe un certain nombre de problèmes courants qui entraînent des "
+"exceptions d'exécution."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:161
+msgid "Null Pointers and References"
+msgstr "Pointeurs nuls et références"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:163
+msgid ""
+"Both C++ and Java have the concept of \"null\" - they use it to indicate "
+"something which has not yet been initialized, and does not refer to anything"
+" meaningful."
+msgstr ""
+"C++ et Java ont tous deux le concept de \"null\" - ils l'utilisent pour "
+"indiquer quelque chose qui n'a pas encore été initialisé, et ne fait "
+"référence à rien de significatif."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:165
+msgid "Manipulating a \"null\" reference will produce a runtime error."
+msgstr "La manipulation d'une référence \"null\" produira une erreur d'exécution."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:167
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:293
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:431
+msgid "For example, consider the following code:"
+msgstr "Par exemple, considérons le code suivant:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:200
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:329
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:468
+msgid "When run, you'll see output that looks like this:"
+msgstr "Lors de l'exécution, vous verrez une sortie qui ressemble à ceci:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:222
+msgid ""
+"Reading the stack trace, you can see that the issue happened inside of the "
+"``robotInit()`` function, on line 23, and the exception involved \"Null "
+"Pointer\"."
+msgstr ""
+"En lisant la trace de la pile, vous pouvez voir que le problème s'est "
+"produit à l'intérieur de la fonction ``robotInit()``, à la ligne 23, et que "
+"l'exception impliquait \"Null Pointer\"."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:224
+msgid ""
+"By going to line 23, you can see there is only one thing which could be null"
+" - ``armMotorCtrl``. Looking further up, you can see that the "
+"``armMotorCtrl`` object is declared, but never instantiated."
+msgstr ""
+"En allant à la ligne 23, vous pouvez voir qu'il n'y a qu'une seule chose qui"
+" pourrait être nulle - ``armMotorCtrl``. En regardant plus haut, vous pouvez"
+" voir que l'objet ``armMotorCtrl`` est déclaré, mais jamais instancié."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:226
+msgid ""
+"Alternatively, you can step through lines of code with the single step "
+"debugger, and stop when you hit line 23. Inspecting the ``armMotorCtrl`` "
+"object at that point would show that it is null."
+msgstr ""
+"Alternativement, vous pouvez parcourir les lignes de code avec le débogueur "
+"en une seule étape et vous arrêter lorsque vous atteignez la ligne 23. "
+"L'inspection de l'objet ``armMotorCtrl`` à ce stade montrerait qu'il est "
+"nul."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:236
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:362
+msgid ""
+"In Simulation, this will show up in a debugger window that points to line 20"
+" in the above buggy code."
+msgstr ""
+"Dans Simulation, cela apparaîtra dans une fenêtre de débogueur qui pointe "
+"vers la ligne 20 dans le code bogué ci-dessus."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:238
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:364
+msgid ""
+"You can view the full stack trace by clicking the debugger tab in VS Code:"
+msgstr ""
+"Vous pouvez afficher la trace complète de la pile en cliquant sur l'onglet "
+"du débogueur dans VS Code:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:243
+msgid ""
+"The error is specific - our member variable ``motorRef`` was declared, but "
+"never assigned a value. Therefore, when we attempt to use it to call a "
+"method using the ``->`` operator, the exception occurs."
+msgstr ""
+"L'erreur est spécifique - notre variable membre ``motorRef`` a été déclarée,"
+" mais n'a jamais été affectée à une valeur. Par conséquent, lorsque nous "
+"essayons de l'utiliser pour appeler une méthode à l'aide de l'opérateur "
+"``->``, l'exception se produit."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:245
+msgid "The exception states its type was ``nullptr``."
+msgstr "L'exception indique que son type était ``nullptr``."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:248
+msgid "Fixing Null Object Issues"
+msgstr "Résoudre les problèmes d'objets nuls"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:250
+msgid ""
+"Generally, you will want to ensure each reference has been initialized "
+"before using it. In this case, there is a missing line of code to "
+"instantiate the ``armMotorCtrl`` before calling the ``setInverted()`` "
+"method."
+msgstr ""
+"En règle générale, vous voudrez vous assurer que chaque référence a été "
+"initialisée avant de l'utiliser. Dans ce cas, il manque une ligne de code "
+"pour instancier le ``armMotorCtrl`` avant d'appeler la méthode "
+"``setInverted()``."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:252
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:382
+msgid "A functional implementation could look like this:"
+msgstr "Une implémentation fonctionnelle pourrait ressembler à ceci:"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:289
+msgid "Divide by Zero"
+msgstr "Division par zéro"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:291
+msgid ""
+"It is not generally possible to divide an integer by zero, and expect "
+"reasonable results. Most processors (including the roboRIO) will raise an "
+"Unhandled Exception."
+msgstr ""
+"Il n'est généralement pas possible de diviser un nombre entier par zéro et "
+"d'attendre des résultats raisonnables. La plupart des processeurs (y compris"
+" le roboRIO) lèveront une exception non gérée."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:350
+msgid ""
+"Looking at the stack trace, we can see a ``java.lang.ArithmeticException: / "
+"by zero`` exception has occurred on line 24. If you look at the two "
+"variables which are used on the right-hand side of the ``=`` operator, you "
+"might notice one of them has been initialized to zero. Looks like someone "
+"forgot to update it! Furthermore, the zero-value variable is used in the "
+"denominator of a division operation. Hence, the divide by zero error "
+"happens."
+msgstr ""
+"En regardant la trace de la pile, nous pouvons voir une exception "
+"``java.lang.ArithmeticException: / by zero`` s'est produite à la ligne 24. "
+"Si vous regardez les deux variables qui sont utilisées à droite du `` =``, "
+"vous remarquerez peut-être que l'un d'entre eux a été initialisé à zéro. On "
+"dirait que quelqu'un a oublié de le mettre à jour ! De plus, la variable de "
+"valeur nulle est utilisée dans le dénominateur d'une opération de division. "
+"Par conséquent, l'erreur de division par zéro se produit."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:352
+msgid ""
+"Alternatively, by running the single-step debugger and stopping on line 24, "
+"you could inspect the value of all variables to discover "
+"``shoulderToElbow_in`` has a value of ``0``."
+msgstr ""
+"Alternativement, en exécutant le débogueur en une seule étape et en vous "
+"arrêtant à la ligne 24, vous pouvez inspecter la valeur de toutes les "
+"variables pour découvrir que ``shoulderToElbow_in`` a une valeur de ``0``."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:0
+msgid "Stack Trace associated with a divide by zero error"
+msgstr "Trace de pile associée à une erreur de division par zéro"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:369
+msgid ""
+"Looking at the message, we see the error is described as ``Integer division "
+"by zero``. If you look at the two variables which are used on the right-hand"
+" side of the ``=`` operator on line 20, you might notice one of them has "
+"been initialized to zero. Looks like someone forgot to update it! "
+"Furthermore,  the zero-value variable is used in the denominator of a "
+"division operation. Hence, the divide by zero error happens."
+msgstr ""
+"En regardant le message, nous voyons que l'erreur est décrite comme "
+"``Integer division by zero``. Si vous regardez les deux variables qui sont "
+"utilisées à droite de l'opérateur ``=`` à la ligne 20, vous remarquerez "
+"peut-être que l'une d'entre elles a été initialisée à zéro. On dirait que "
+"quelqu'un a oublié de la mettre à jour! De plus, la variable de valeur nulle"
+" est utilisée dans le dénominateur d'une opération de division. Par "
+"conséquent, l'erreur de division par zéro se produit."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:371
+msgid ""
+"Note that the error messages might look slightly different on the roboRIO, "
+"or on an operating system other than windows."
+msgstr ""
+"Notez que les messages d'erreur peuvent être légèrement différents sur le "
+"roboRIO ou sur un système d'exploitation autre que Windows."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:376
+msgid "Fixing Divide By Zero Issues"
+msgstr "Résoudre les problèmes de division par zéro"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:380
+msgid "Sometimes, you just need to use a different number other than 0."
+msgstr "Parfois, il vous suffit d'utiliser un nombre différent de 0."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:421
+msgid ""
+"Alternatively, if zero *is* a valid value, adding ``if/else`` statements "
+"around the calculation can help you define alternate behavior to avoid "
+"making the processor perform a division by zero."
+msgstr ""
+"Alternativement, si zéro *est* une valeur valide, l'ajout d'instructions "
+"``if/else`` autour du calcul peut vous aider à définir un comportement "
+"alternatif pour éviter que le processeur effectue une division par zéro."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:423
+msgid ""
+"Finally, changing variable types to be ``float`` or ``double`` can help you "
+"get around the issue - floating-point numbers have special values like "
+"``NaN`` to represent the results of a divide-by-zero operation. However, you"
+" may still have to handle this in code which consumes that calculation's "
+"value."
+msgstr ""
+"Enfin, changer les types de variables en ``float`` ou ``double`` peut vous "
+"aider à contourner le problème - les nombres à virgule flottante ont des "
+"valeurs spéciales comme ``NaN`` pour représenter les résultats d'une "
+"division par zéro opération. Cependant, vous devrez peut-être toujours gérer"
+" cela dans le code qui utilise la valeur de ce calcul."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:427
+msgid "HAL Resource Already Allocated"
+msgstr "Ressource HAL déjà allouée"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:502
+msgid ""
+"This stack trace shows that a ``edu.wpi.first.hal.util.AllocationException``"
+" has occurred. It also gives the helpful message: ``PWM or DIO 0 previously "
+"allocated.``."
+msgstr ""
+"Cette trace de pile montre qu’une "
+"``edu.wpi.first.hal.util.AllocationException`` s’est produite. Il donne "
+"également le message utile: ``PWM or DIO 0 previously allocated.`` ou ``PWM "
+"ou DIO préalablement alloué``."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:510
+msgid ""
+"In C++, you won't specifically see a stacktrace from this issue. Instead, "
+"you'll get messages which look like the following:"
+msgstr ""
+"En C++, vous ne verrez pas spécifiquement de trace de pile de ce problème. "
+"Au lieu de cela, vous recevrez des messages qui ressemblent à ce qui suit :"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:553
+msgid ""
+"The key thing to notice here is the string, ``PWM or DIO 0 previously "
+"allocated.``. That string is your primary clue that something in code has "
+"incorrectly \"doubled up\" on pin 0 usage."
+msgstr ""
+"La chose clé à noter ici est la chaîne de caractères,``PWM or DIO 0 "
+"previously allocated.``. Cette chaîne est votre principal indice que quelque"
+" chose dans le code a incorrectement \"doublement assigné\" l’utilisation de"
+" la broche 0."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:555
+msgid ""
+"The message example above was generated on a roboRIO. If you are running in "
+"simulation, it might look different."
+msgstr ""
+"L’exemple de message ci-dessus a été généré sur un roboRIO. Si vous "
+"l'exécutez en simulation, cela peut sembler différent."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:559
+msgid "Fixing HAL Resource Already Allocated Issues"
+msgstr "Résoudre les problèmes de ressources HAL déjà allouées"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:561
+msgid ""
+"``HAL: Resource already allocated`` are some of the most straightforward "
+"errors to fix. Just spend a bit of time looking at the electrical wiring on "
+"the robot, and compare that to what's in code."
+msgstr ""
+"``HAL : Resource already allocated`` sont quelques-unes des erreurs les plus"
+" simples à corriger. Passez juste un peu de temps à regarder le câblage "
+"électrique du robot et comparez-le à ce qui est dans le code."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:563
+msgid ""
+"In the example, the left motor controllers are plugged into PWM ports ``0`` "
+"and ``1``. Therefore, corrected code would look like this:"
+msgstr ""
+"Dans l'exemple, les contrôleurs de moteur gauche sont branchés sur les ports"
+" PWM ``0`` et ``1``. Par conséquent, le code corrigé ressemblerait à ceci :"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:603
+msgid "gradlew is not recognized..."
+msgstr "gradlew n'est pas reconnu..."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:605
+msgid ""
+"``gradlew is not recognized as an internal or external command`` is a common"
+" error that can occur when the project or directory that you are currently "
+"in does not contain a ``gradlew`` file. This usually occurs when you open "
+"the wrong directory."
+msgstr ""
+"``gradlew n'est pas reconnu comme une commande interne ou externe`` est une "
+"erreur courante qui peut se produire lorsque le projet ou le répertoire dans"
+" lequel vous vous trouvez actuellement ne contient pas de fichier "
+"``gradlew``. Cela se produit généralement lorsque vous ouvrez le mauvais "
+"répertoire."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rstNone
+msgid ""
+"Image containing that the left-hand VS Code sidebar does not contain gradlew"
+msgstr ""
+"Image indiquant que la barre latérale gauche de VS Code ne contient pas "
+"gradlew"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:610
+msgid ""
+"In the above screenshot, you can see that the left-hand sidebar does not "
+"contain many files. At a minimum, VS Code needs a couple of files to "
+"properly build and deploy your project."
+msgstr ""
+"Dans la capture d'écran ci-dessus, vous pouvez voir que la barre latérale de"
+" gauche ne contient pas beaucoup de fichiers. Au minimum, VS Code a besoin "
+"de quelques fichiers pour créer et déployer correctement votre projet."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:612
+msgid "``gradlew``"
+msgstr "``gradlew``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:613
+msgid "``build.gradle``"
+msgstr "``build.gradle``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:614
+msgid "``gradlew.bat``"
+msgstr "``gradlew.bat``"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:616
+msgid ""
+"If you do not see any one of the above files in your project directory, then"
+" you have two possible causes."
+msgstr ""
+"Si vous ne voyez aucun des fichiers ci-dessus dans votre répertoire de "
+"projet, alors vous avez deux causes possibles."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:618
+msgid "A corrupt or bad project."
+msgstr "Un projet corrompu ou mauvais."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:619
+msgid "You are in the wrong directory."
+msgstr "Vous êtes dans le mauvais répertoire."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:622
+msgid "Fixing gradlew is not recognized..."
+msgstr "La correction de gradlew n'est pas reconnue..."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:624
+msgid ""
+"``gradlew is not recognized...`` is a fairly easy problem to fix. First "
+"identify the problem source:"
+msgstr ""
+"``gradlew n'est pas reconnu...`` est un problème assez facile à résoudre. "
+"Identifiez d'abord la source du problème :"
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:626
+msgid ""
+"**Are you in the wrong directory?** - Verify that the project directory is "
+"the correct directory and open this."
+msgstr ""
+"**Êtes-vous dans le mauvais répertoire ?** - Vérifiez que le répertoire du "
+"projet est le bon répertoire et ouvrez-le."
+
+#: ../../frc-docs/source/docs/software/basic-programming/reading-stacktraces.rst:629
+msgid ""
+"**Is your project missing essential files?** - This issue is more complex to"
+" solve. The recommended solution is to :ref:`recreate your project "
+"<docs/software/vscode-overview/creating-robot-program:Creating a Robot "
+"Program>` and manually copy necessary code in."
+msgstr ""
+"**Votre projet manque-t-il des fichiers essentiels ?** - Ce problème est "
+"plus complexe à résoudre. La solution recommandée est de :ref:`recréer votre"
+" projet <docs/software/vscode-overview/creating-robot-program:Creating a "
+"Robot Program>` et de copier manuellement le code nécessaire."

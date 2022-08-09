@@ -1,0 +1,381 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA_3390 <mufit.alkaya@tfo.k12.tr>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-06 04:14+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Müfit ALKAYA_3390 <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:2
+msgid "Counters"
+msgstr "Counters-Sayıcılar"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:7
+msgid ""
+"The :code:`Counter` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__)"
+" is a versatile class that allows the counting of pulse edges on a digital "
+"input.  :code:`Counter` is used as a component in several more-complicated "
+"WPILib classes (such as :ref:`Encoder <docs/software/sensors/encoders-"
+"software:Encoders - Software>` and :ref:`Ultrasonic <docs/software/sensors"
+"/ultrasonics-software:Ultrasonics - Software>`), but is also quite useful on"
+" its own."
+msgstr ""
+"The :code: `Counter` sınıfı (` Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>"
+" `__,` C ++ < "
+"https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Counter.html>`__),"
+" dijital bir girişte darbe kenarlarının sayılmasına izin veren çok yönlü bir"
+" sınıftır. :code:`Counter` is used as a component in several more-"
+"complicated WPILib classes (such as :ref:`Encoder <docs/software/sensors"
+"/encoders-software:Encoders - Software>` and :ref:`Ultrasonic "
+"<docs/software/sensors/ultrasonics-software:Ultrasonics - Software>`),  "
+"ancak kendi başına da oldukça kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:9
+msgid ""
+"There are a total of 8 counter units in the roboRIO FPGA, meaning no more "
+"than 8 :code:`Counter` objects may be instantiated at any one time, "
+"including those contained as resources in other WPILib objects.  For "
+"detailed information on when a :code:`Counter` may be used by another "
+"object, refer to the official API documentation."
+msgstr ""
+"RoboRIO FPGA'da toplam 8 counter birimi vardır, yani 8'den fazla olamaz "
+":code:`Counter` nesneleri, diğer WPILib nesnelerinde kaynaklar olarak "
+"bulunanlar da dahil olmak üzere herhangi bir zamanda başlatılabilir. A "
+":code:`Counter` ın başka bir nesne tarafından ne zaman kullanılabileceğine "
+"ilişkin ayrıntılı bilgi için, resmi API belgelerine bakın."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:12
+msgid "Configuring a counter"
+msgstr "Sayıcıyı Yapılandırma"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:14
+msgid ""
+"The :code:`Counter` class can be configured in a number of ways to provide "
+"differing functionalities."
+msgstr ""
+":code:`Counter` sınıfı, farklı işlevler sağlamak için çeşitli şekillerde "
+"yapılandırılabilir."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:17
+msgid "Counter Modes"
+msgstr "Counter-Sayıcı Modları"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:19
+msgid ""
+"The :code:`Counter` object may be configured to operate in one of four "
+"different modes:"
+msgstr ""
+":code:`Counter` nesnesi, dört farklı moddan birinde çalışacak şekilde "
+"yapılandırılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:21
+msgid ""
+"`Two-pulse mode`_: Counts up and down based on the edges of two different "
+"channels."
+msgstr ""
+"`Two-pulse mode`_: İki farklı kanalın kenarlarına göre yukarı ve aşağı "
+"sayar."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:22
+msgid ""
+"`Semi-period mode`_: Measures the duration of a pulse on a single channel."
+msgstr "`Semi-period mode`_: Tek bir kanaldaki bir darbenin süresini ölçer."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:23
+msgid ""
+"`Pulse-length mode`_: Counts up and down based on the edges of one channel, "
+"with the direction determined by the duration of the pulse on that channel."
+msgstr ""
+"`Pulse-length mode`_ Yön, kanaldaki darbenin süresine göre belirlenen "
+"kanalın kenarlarına göre yukarı ve aşağı sayar."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:24
+msgid ""
+"`External direction mode`_: Counts up and down based on the edges of one "
+"channel, with a separate channel specifying the direction."
+msgstr ""
+"`External direction mode`_: Yönü ayrı bir kanal belirleyerek, bir kanalın "
+"kenarlarına göre yukarı ve aşağı sayar."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:26
+msgid ""
+"In all modes except semi-period mode, the counter can be configured to "
+"increment either once per edge (2X decoding), or once per pulse (1X "
+"decoding).  By default, counters are set to two-pulse mode, if only one "
+"channel is specified, the counter will only count up."
+msgstr ""
+"Yarı dönem modu dışındaki tüm modlarda, sayaç, kenar başına bir kez (2X kod "
+"çözme) veya darbe başına bir kez (1X kod çözme) artacak şekilde "
+"yapılandırılabilir. Varsayılan olarak, sayaçlar iki darbeli moda "
+"ayarlanmıştır, yalnızca bir kanal belirtilirse, sayaç yalnızca sayar."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:29
+msgid "Two-pulse mode"
+msgstr "Two-pulse İki darbeli mod"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:31
+msgid ""
+"In two-pulse mode, the :code:`Counter` will count up for every edge/pulse on"
+" the specified \"up channel,\" and down for every edge/pulse on the "
+"specified \"down channel.\"  A counter can be initialized in two-pulse with "
+"the following code:"
+msgstr ""
+"İki darbeli modda, :code:`Counter` belirtilen \"up channel\" üzerindeki her "
+"kenar / darbe için ve belirtilen \"down channel\" üzerindeki her kenar/darbe"
+" için aşağı doğru sayacaktır. Bir sayaç, aşağıdaki kodla iki darbeli olarak "
+"başlatılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:66
+msgid "Semi-period mode"
+msgstr "Semi-period Yarı dönem modu"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:68
+msgid ""
+"In semi-period mode, the :code:`Counter` will count the duration of the "
+"pulses on a channel, either from a rising edge to the next falling edge, or "
+"from a falling edge to the next rising edge.  A counter can be initialized "
+"in semi-period mode with the following code:"
+msgstr ""
+"Yarı dönem modunda :code:`Counter\", bir kanaldaki darbelerin süresini "
+"yükselen kenardan bir sonraki düşen kenara veya düşen kenardan bir sonraki "
+"yükselen kenara sayacaktır. Bir sayaç, aşağıdaki kodla semi-period - yarı "
+"dönem modunda başlatılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:98
+msgid "To get the pulse width, call the :code:`getPeriod()` method:"
+msgstr ""
+"Darbe genişliğini elde etmek için :code:`getPeriod()` yöntemini çağırın:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:113
+msgid "Pulse-length mode"
+msgstr "Pulse uzunluğu - Pulse-length modu"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:115
+msgid ""
+"In pulse-length mode, the counter will count either up or down depending on "
+"the length of the pulse. A pulse below the specified threshold time will be "
+"interpreted as a forward count and a pulse above the threshold is a reverse "
+"count. This is useful for some gear tooth sensors which encode direction in "
+"this manner.  A counter can be initialized in this mode as follows:"
+msgstr ""
+"Darbe uzunluğu modunda, sayaç darbenin uzunluğuna bağlı olarak yukarı veya "
+"aşağı sayacaktır. Belirtilen eşik süresinin altındaki bir darbe ileri bir "
+"sayı olarak yorumlanacaktır ve eşiğin üzerindeki bir darbe bir ters "
+"sayımdır. Bu, yönü bu şekilde kodlayan bazı dişli dişi sensörleri için "
+"kullanışlıdır. Bu modda bir sayaç aşağıdaki şekilde başlatılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:152
+msgid "External direction mode"
+msgstr "Dış yön modu"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:154
+msgid ""
+"In external direction mode, the counter counts either up or down depending "
+"on the level on the second channel. If the direction source is low, the "
+"counter will increase, if the direction source is high, the counter will "
+"decrease (to reverse this, see the next section). A counter can be "
+"initialized in this mode as follows:"
+msgstr ""
+"Harici yön modunda, ikinci kanaldaki seviyeye bağlı olarak sayaç yukarı veya"
+" aşağı sayar. Yön kaynağı düşükse sayaç artacaktır, yön kaynağı yüksekse "
+"sayaç azalacaktır (bunu tersine çevirmek için sonraki bölüme bakın). Bu "
+"modda bir sayaç aşağıdaki şekilde başlatılabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:187
+msgid "Configuring counter parameters"
+msgstr "Sayaç-counter parametrelerini yapılandırma"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:189
+msgid ""
+"The :code:`Counter` class does not make any assumptions about units of "
+"distance; it will return values in whatever units were used to calculate the"
+" distance-per-pulse value.  Users thus have complete control over the "
+"distance units used.  However, units of time are *always* in seconds."
+msgstr ""
+":code:`Counter` sınıfı, mesafe birimleri hakkında herhangi bir varsayımda "
+"bulunmaz; darbe başına mesafe değerini hesaplamak için kullanılan "
+"birimlerdeki değerleri döndürür. Kullanıcılar böylece kullanılan mesafe "
+"birimleri üzerinde tam kontrole sahip olur. Ancak, zaman birimleri * her "
+"zaman * saniye cinsindendir."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:191
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does *not* "
+"depend on the decoding type - each \"pulse\" should always be considered to "
+"be a full cycle (rising and falling)."
+msgstr ""
+"Darbe başına mesafe hesaplamasında kullanılan darbe sayısı, kod çözme türüne"
+" bağlı * değildir * - her \"darbe\" her zaman tam bir döngü (yükselen ve "
+"düşen) olarak düşünülmelidir."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:193
+msgid ""
+"Apart from the mode-specific configurations, the :code:`Counter` class "
+"offers a number of additional configuration methods:"
+msgstr ""
+"Moda özgü konfigürasyonların yanı sıra :code:`Counter` sınıfı bir dizi ek "
+"yapılandırma yöntemi sunar:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:236
+msgid "Reading information from counters"
+msgstr "Sayaçlardan bilgi okuma"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:238
+msgid ""
+"Regardless of mode, there is some information that the :code:`Counter` class"
+" always exposes to users:"
+msgstr ""
+"Moddan bağımsız olarak, :code:`Counter` sınıfının her zaman kullanıcılara "
+"sunduğu bazı bilgiler vardır:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:241
+msgid "Count"
+msgstr "Count - Sayım"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:243
+msgid "Users can obtain the current count with the :code:`get()` method:"
+msgstr "Kullanıcılar şu anki sayımı :code:`get()` yöntemiyle alabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:258
+msgid "Distance"
+msgstr "Distance-Distance"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:260
+msgid ""
+"Counters measure *relative* distance, not absolute; the distance value "
+"returned will depend on the position of the encoder when the robot was "
+"turned on or the encoder value was last :ref:`reset "
+"<docs/software/sensors/counters:Resetting a Counter>`."
+msgstr ""
+"Sayaçlar *relative-göreli* mesafeyi ölçer, mutlak değil; döndürülen mesafe "
+"değeri, robot açıldığında veya kodlayıcı değeri en son olduğunda "
+"kodlayıcının konumuna bağlı olacaktır "
+":ref:`reset<docs/software/sensors/counters:Resetting a Counter>`."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:262
+msgid ""
+"If the :ref:`distance per pulse <docs/software/sensors/counters:Configuring "
+"counter parameters>` has been configured, users can obtain the total "
+"distance traveled by the counted sensor with the :code:`getDistance()` "
+"method:"
+msgstr ""
+" :ref:`darbe başına mesafe <docs/software/sensors/counters:Configuring "
+"counter parameters>` yapılandırılmışsa, kullanıcılar sayılan sensörün kat "
+"ettiği toplam mesafeyi :code:`getDistance()`  yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:277
+msgid "Rate"
+msgstr "Rate-Oran"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:279
+msgid "Units of time for the :code:`Counter` class are *always* in seconds."
+msgstr ""
+":code:`Counter` sınıfı için zaman birimleri saniye cinsinden *her zaman* "
+"şeklindedir."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:281
+msgid ""
+"Users can obtain the current rate of change of the counter with the "
+":code:`getRate()` method:"
+msgstr ""
+"Kullanıcılar şu anki sayacın değişim oranını :code:`getRate()` yöntemi ile "
+"elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:296
+msgid "Stopped"
+msgstr "Stopped-Durdurulmuş"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:298
+msgid ""
+"Users can obtain whether the counter is stationary with the "
+":code:`getStopped()` method:"
+msgstr ""
+"Kullanıcılar, sayacın sabit olup olmadığını :code:`getStopped()` yöntemiyle "
+"öğrenebilirler:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:313
+msgid "Direction"
+msgstr "Direction - Yön"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:315
+msgid ""
+"Users can obtain the direction in which the counter last moved with the "
+":code:`getDirection()` method:"
+msgstr ""
+"Kullanıcılar, sayıcının en son hareket ettiği yönü :code:`getDirection()' "
+"yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:330
+msgid "Period"
+msgstr "Period"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:332
+msgid ""
+"In :ref:`semi-period mode <docs/software/sensors/counters:Semi-period "
+"mode>`, this method returns the duration of the pulse, not of the period."
+msgstr ""
+" :ref:`semi-period modu<docs/software/sensors/counters:Semi-period mode>`, "
+"bu yöntem peryodu değil, darbenin süresini döndürür."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:334
+msgid ""
+"Users can obtain the duration (in seconds) of the most-recent period with "
+"the :code:`getPeriod()` method:"
+msgstr ""
+"Kullanıcılar, en son dönemin süresini (saniye cinsinden ):code:`getPeriod()`"
+" yöntemiyle elde edebilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:349
+msgid "Resetting a counter"
+msgstr "Sayıcıyı sıfırlama"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:351
+msgid ""
+"To reset a counter to a distance reading of zero, call the :code:`reset()` "
+"method.  This is useful for ensuring that the measured distance corresponds "
+"to the actual desired physical measurement."
+msgstr ""
+"Bir sayacı sıfır mesafeli okumaya sıfırlamak için :code:`reset()` yöntemini "
+"çağırın. Bu, ölçülen mesafenin gerçek istenen fiziksel ölçüme karşılık "
+"gelmesini sağlamak için kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:366
+msgid "Using counters in code"
+msgstr "Counter-Sayıcı ları kodda kullanma"
+
+#: ../../frc-docs/source/docs/software/sensors/counters.rst:368
+msgid ""
+"Counters are useful for a wide variety of robot applications - but since the"
+" :code:`Counter` class is so varied, it is difficult to provide a good "
+"summary of them here.  Many of these applications overlap with the "
+":code:`Encoder` class - a simple counter is often a cheaper alternative to a"
+" quadrature encoder.  For a summary of potential uses for encoders in code, "
+"see :ref:`docs/software/sensors/encoders-software:Encoders - Software`."
+msgstr ""
+"Sayaçlar çok çeşitli robot uygulamaları için kullanışlıdır - ancak "
+":code:`Counter` sınıfı çok çeşitli olduğundan burada bunların iyi bir "
+"özetini vermek zordur. Bu uygulamaların çoğu :code:`Encoder` sınıfı ile "
+"örtüşmektedir - basit bir sayaç, genellikle bir quadrature kodlayıcıya göre "
+"daha ucuz bir alternatiftir. Koddaki kodlayıcıların potansiyel "
+"kullanımlarının bir özeti için bkz . :ref:`docs/software/sensors/encoders-"
+"software:Encoders - Software`."

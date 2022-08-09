@@ -1,0 +1,343 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Kaitlyn Kenwell <redrield@gmail.com>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-07-25 04:21+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:4
+msgid "Serial Buses"
+msgstr "Bus Séries"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:6
+msgid ""
+"In addition to the :doc:`digital <digital-inputs-hardware>` and :doc:`analog"
+" <analog-inputs-hardware>` inputs, the roboRIO also offers several methods "
+"of serial communication with peripheral devices."
+msgstr ""
+"En plus des entrées :doc:`numériques <digital-inputs-hardware>` et "
+":doc:`analogiques <analog-inputs-hardware>`, le roboRIO fournit aussi "
+"plusieurs méthodes de communication série avec des appareils périphérique."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:8
+msgid ""
+"Both the digital and analog inputs are highly limited in the amount of data "
+"that can be send over them.  Serial buses allow users to make use of far "
+"more-robust and higher-bandwidth communications protocols with sensors that "
+"collect large amounts of data, such as inertial measurement units (IMUs) or "
+"2D LIDAR sensors."
+msgstr ""
+"Les entrées numériques et analogiques sont très limitées avec la quantité de"
+" données qu'elles peuvent transmettre. Les bus série permettent l'usage de "
+"protocoles de communication beaucoup plus robustes et à plus large bande "
+"passante avec des senseurs qui collectent un grand nombre de données, commes"
+" des Unités de Mesure Inertielle (IMUs) ou des détecteurs LiDAR 2D."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:11
+msgid "Types of supported serial buses"
+msgstr "Types de bus série supportés."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:13
+msgid "The roboRIO supports many basic types of serial communications:"
+msgstr "Le roboRIO supporte plusieurs protocoles de communications série:"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:15
+msgid "`I2C`_"
+msgstr "`I2C`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:16
+msgid "`SPI`_"
+msgstr "`SPI`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:17
+msgid "`RS-232`_"
+msgstr "`RS-232`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:18
+msgid "`USB Host`_"
+msgstr "`USB Host`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:19
+msgid "`CAN Bus`_"
+msgstr "`Bus CAN`_"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:21
+msgid ""
+"Additionally, the roboRIO supports communications with peripheral devices "
+"over the CAN bus.  However, as the FRC\\ |reg| CAN protocol is quite "
+"idiosyncratic, relatively few peripheral sensors support it (though it is "
+"heavily used for motor controllers)."
+msgstr ""
+"De plus, le roboRIO prend en charge les communications avec les "
+"périphériques à travers le CAN bus. Toutefois, comme en FRC\\ |reg| le "
+"protocole CAN est assez idiosyncrasique, relativement peu de capteurs "
+"périphériques le supportent (bien qu’il soit fortement utilisé pour les "
+"contrôleurs de moteurs)."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:24
+msgid "I2C"
+msgstr "I2C"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "The I2C port on the roboRIO."
+msgstr "Le port I2C sur le roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "I2C roboRIO port pin specifcations."
+msgstr "Spécifications de la broche I2C du roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:32
+msgid ""
+"To communicate to peripheral devices over I2C, each pin should be wired to "
+"its corresponding pin on the device.  I2C allows users to wire a \"chain\" "
+"of slave devices to a single port, so long as those devices have separate "
+"IDs set."
+msgstr ""
+"Pour communiquer aux dispositifs périphériques via I2C, chaque broche doit "
+"être câblé à sa broche correspondante (SDA et SCL, respectivement). I2C "
+"permet aux utilisateurs de câbler une chaîne de dispositifs \"esclaves\" "
+"(Slave)  vers un seul port, en autant que chaque dispositif ait un "
+"identifiant unique."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:34
+msgid ""
+"The I2C bus can also be used through the `MXP expansion port`_. The I2C bus "
+"on the MXP is independent. For example, a device on the main bus can have "
+"the same ID as a device on the MXP bus."
+msgstr ""
+"Le bus I2C peut aussi être utilisé via le `port d'expansion MXP`_. Le bus "
+"I2C sur le MXP est indépendant. Par exemple, un dispositif sur le bus "
+"principal peut avoir le même identifiant qu'un dispositif sur le bus MXP."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:39
+msgid "SPI"
+msgstr "SPI"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "Show the SPI port on the roboRIO."
+msgstr "Affiche le port SPI du roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "SPI roboRIO port pin specifcations."
+msgstr "Spécifications de la broche SPI du roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:47
+msgid ""
+"To communicate to peripheral devices over SPI, each pin should be wired to "
+"its corresponding pin on the device.  The SPI port supports communications "
+"to up to four devices (corresponding to the Chip Select (CS) 0-3 pins on the"
+" diagram above)."
+msgstr ""
+"Pour communiquer aux dispositifs périphériques via SPI, chaque broche doit "
+"être câbler à la broche correspondante (soit CS, MOSI, MISO et CLK). Le port"
+" SPI supporte jusqu'à quatre dispositifs (qui correspondent aux broches Chip"
+" Select (CS) 0-3 dans le diagramme ci-dessus)."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:49
+msgid ""
+"The SPI bus can also be used through the `MXP expansion port`_. The MXP port"
+" provides independent clock, and input/output lines and an additional CS."
+msgstr ""
+"Le bus SPI peut aussi être utilisé via le `port d'expansion MXP`_. Le port "
+"MXP fournit une horloge indépendante (CLK), et des lignes d'entrée/sortie "
+"(MISO et MOSI) et un CS supplémentaire."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:52
+msgid "RS-232"
+msgstr "RS-232"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "Location of the RS-232 port on the roboRIO."
+msgstr "Emplacement du port RS-232 sur le roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "roboRIO RS-232 port pin specifcations."
+msgstr "Spécifications de la broche RS-232 du roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:60
+msgid ""
+"To communicate to peripheral devices over RS-232, each pin should be wired "
+"to its corresponding pin on the device."
+msgstr ""
+"Pour communiquer aux dispositifs périphériques via RS-232, chaque broche "
+"doit être reliée à la broche correspondante sur le dispositif.  Faire "
+"attention au sens de la transmission, quelquefois le signal RX doit être "
+"relié au TX et vice-versa."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:62
+msgid "The RS-232 bus can also be used through the `MXP expansion port`_."
+msgstr "Le bus RS-232 peut aussi être utilisé via le `port d'expansion MXP`_."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:66
+msgid ""
+"By default, the onboard RS-232 port is utilized by the roboRIO's serial "
+"console. In order to use it for an external device, the serial console must "
+"be disabled using the :ref:`Imaging Tool <docs/zero-to-robot/step-3/imaging-"
+"your-roborio:Imaging your roboRIO>` or :ref:`docs/software/roborio-"
+"info/roborio-web-dashboard:roboRIO Web Dashboard`."
+msgstr ""
+"Par défaut, le port RS-232 intégré est utilisé par la console série du "
+"roboRIO. Afin de l'utiliser pour un périphérique externe, la console série "
+"doit être désactivée et pour ce faire consultez la section "
+":ref:`Installation de l’image dans votre roboRIO <docs/zero-to-"
+"robot/step-3/imaging-your-roborio:Imaging your roboRIO>` ou la section "
+":ref:`docs/software/roborio-info/roborio-web-dashboard:roboRIO Web "
+"Dashboard`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:69
+msgid "USB Client"
+msgstr "Client USB"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:71
+msgid ""
+"One of the USB ports on the roboRIO is a USB-B, or USB client port.  This "
+"can be connected to devices, such as a Driver Station computer, with a "
+"standard USB cable."
+msgstr ""
+"L'un des ports USB du roboRIO est un port client USB-B ou USB. Celui-ci peut"
+" être connecté à des appareils, tels qu'un ordinateur Driver Station, avec "
+"un câble USB standard."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:74
+msgid "USB Host"
+msgstr "USB Host"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "Location of the two USB ports on the roboRIO at top center."
+msgstr "Emplacement des deux ports USB sur le roboRIO en haut au centre."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:79
+msgid ""
+"Two of the USB ports on the roboRIO is a USB-A, or USB host port.  These can"
+" be connected to devices, such as cameras or sensors, with a standard USB "
+"cable."
+msgstr ""
+"Deux des ports USB du roboRIO sont un port hôte USB-A ou USB. Ceux-ci "
+"peuvent être connectés à des dispositifs, tels que des caméras ou des "
+"capteurs, avec un câble USB standard."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:83
+msgid "MXP Expansion Port"
+msgstr "Port d'extension MXP"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "Location of the MXP port on the roboRIO directly above the NI logo."
+msgstr ""
+"Emplacement du port MXP sur le roboRIO directement au-dessus du logo NI."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "MXP pinout."
+msgstr "Brochage MXP"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:91
+msgid ""
+"Several of the serial buses are also available for use through the roboRIO's"
+" MXP Expansion Port.  This port allows users to make use of many additional "
+":doc:`digital <digital-inputs-hardware>` and :doc:`analog <analog-inputs-"
+"hardware>` inputs, as well as the various serial buses."
+msgstr ""
+"Plusieurs des bus série sont également disponibles pour une utilisation via "
+"le port d'extension MXP du roboRIO. Ce port permet aux utilisateurs "
+"d'utiliser de nombreuses entrées supplémentaires :doc:`digitales<digital-"
+"inputs-hardware>` et :doc:`analogues<analog-inputs-hardware>`, ainsi que les"
+" différents bus série."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:93
+msgid ""
+"Many peripheral devices attach directly to the MXP port for convenience, "
+"requiring no wiring on the part of the user."
+msgstr ""
+"De nombreux périphériques se connectent directement au port MXP pour plus de"
+" commodité, ne nécessitant aucun câblage de la part de l'utilisateur."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:96
+msgid "CAN Bus"
+msgstr "Bus CAN"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid ""
+"Show the location of the CAN bus terminals in the top left corner of the "
+"roboRIO."
+msgstr ""
+"Indique l’emplacement des terminaux bus CAN dans le coin supérieur gauche du"
+" roboRIO."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:101
+msgid ""
+"Additionally, the roboRIO supports communications with peripheral devices "
+"over the CAN bus.  However, as the FRC CAN protocol is quite idiosyncratic, "
+"relatively few peripheral sensors support it (though it is heavily used for "
+"motor controllers). One of the advantages of using the CAN bus protocol is "
+"that devices can be daisy-chained, as shown below. If power is removed from "
+"any device in the chain, data signals will still be able to reach all "
+"devices in the chain."
+msgstr ""
+"De plus, le roboRIO prend en charge les communications avec les "
+"périphériques via le bus CAN. Cependant, comme le protocole FRC CAN est "
+"assez particulier, relativement peu de capteurs périphériques le prennent en"
+" charge (bien qu'il soit largement utilisé pour les contrôleurs de moteur). "
+"L'un des avantages de l'utilisation du protocole de bus CAN est que les "
+"périphériques peuvent être connectés en \"guirlande\", ou \"daisy-chain\", "
+"comme illustré ci-dessous. Si l'alimentation est coupée de n'importe quel "
+"dispositif situé sur la chaîne, les signaux de données pourront toujours "
+"continuer de circuler sur la chaîne."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rstNone
+msgid "A CAN bus topology between motor controllers."
+msgstr "Topologie du bus CAN entre les différents contrôleurs de moteur."
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:106
+msgid "Several sensors primarily use the CAN bus. Some examples include:"
+msgstr ""
+"Plusieurs capteurs utilisent principalement le bus CAN. Quelques exemples:"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:108
+msgid ""
+"`CAN Based Time-of-Flight Range/Distance Sensor from playingwithfusion.com "
+"<https://www.playingwithfusion.com/productview.php?pdid=96&catid=1009>`__"
+msgstr ""
+"`Capteur de distance/distance basé sur le temps de vol CAN de "
+"playwithfusion.com "
+"<https://www.playingwithfusion.com/productview.php?pdid=96&catid=1009>`__"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:111
+msgid ""
+"Power monitoring sensors built into the :ref:`CTRE Power Distribution Panel "
+"(PDP) <docs/controls-overviews/control-system-hardware:CTRE Power "
+"Distribution Panel>` and the :ref:`REV Power Distribution Hub (PDH) "
+"<docs/controls-overviews/control-system-hardware:REV Power Distribution "
+"Hub>`"
+msgstr ""
+"Capteurs de surveillance de puissance intégrés dans le :ref:`Panneau de "
+"distribution de puissance CTRE (PDP) <docs/controls-overviews/control-"
+"system-hardware:CTRE Power Distribution Panel>` et le :ref:`Concentrateur de"
+" distribution de puissance REV (PDH) <docs/controls-overviews/control-"
+"system-hardware:REV Power Distribution Hub>`"
+
+#: ../../frc-docs/source/docs/hardware/sensors/serial-buses.rst:113
+msgid ""
+"More information about using devices connected to the CAN bus can be found "
+"in the article about :ref:`using can devices <docs/software/can-"
+"devices/using-can-devices:Using CAN Devices>`."
+msgstr ""
+"Pour plus d'informations sur l'utilisation des périphériques connectés au "
+"bus CAN, référez-vous à l'article sur l'utilisation des :ref:`dispositifs "
+"CAN <docs/software/can-devices/using-can-devices:Using CAN Devices>`. "

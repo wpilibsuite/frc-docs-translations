@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# Atlus Zhang <atluslan@yahoo.co.jp>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-30 16:05+0000\n"
+"PO-Revision-Date: 2020-10-04 04:16+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:2
+msgid "WPILib Pose Estimators"
+msgstr "WPILib姿势估算器"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:4
+msgid ""
+"WPILib includes pose estimators for differential, swerve and mecanum "
+"drivetrains. These estimators are designed to be drop-in replacements for "
+"the existing :ref:`odometry <docs/software/kinematics-and-"
+"odometry/index:Kinematics and Odometry>` classes, with added features that "
+"utilize an Unscented :ref:`Kalman Filter <docs/software/advanced-controls"
+"/state-space/state-space-observers:Kalman Filters>` to fuse latency-"
+"compensated robot pose estimates with encoder and gyro measurements. These "
+"estimators can account for encoder drift and noisy vision data. These "
+"estimators can behave identically to their corresponding odometry classes if"
+" only ``update`` is called on these estimators."
+msgstr ""
+"WPILib包括位姿和微分状态估计，转向和麦卡纳姆传动系统。这些估算器是设计为替代现有的:ref:`odometry <docs/software"
+"/kinematics-and-odometry/index:Kinematics and Odometry>` 类, "
+"增加了利用扩展:ref:`Kalman Filter <docs/software/advanced-controls/state-space"
+"/state-space-observers:Kalman Filters>` "
+"来融合编码器和陀螺测量的延迟补偿机器人姿态估计的功能。这些估计器可以考虑编码器漂移和有噪声的视觉数据。如果仅在这些估算器上调用``update''，则这些估算器的行为与其相应的里程表类相同。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:6
+msgid ""
+"Pose estimators estimate robot position using a state-space system with the "
+"states :math:`\\begin{bmatrix}x & y & \\theta \\end{bmatrix}^T`, which can "
+"represent robot position as a ``Pose2d``. WPILib includes "
+"``DifferentialDrivePoseEstimator``, ``SwerveDrivePoseEstimator`` and "
+"``MecanumDrivePoseEstimator`` to estimate robot position. In these, users "
+"call ``update`` periodically with encoder and gyro measurements (same as the"
+" odometry classes) to update the robot's estimated position. When the robot "
+"receives measurements of its field-relative position (encoded as a "
+"``Pose2d``) from sensors such as computer vision or V-SLAM, the pose "
+"estimator latency-compensates the measurement to accurately estimate robot "
+"position."
+msgstr ""
+"位姿估计器利用状态空间系统:math:`\\begin{bmatrix}x & y & \\theta "
+"\\end{bmatrix}^T`估计机器人的位置，可以将机器人的位置表示为“Pose2d”。WPILib包括``DifferentialDrivePoseEstimator''，``SwerveDrivePoseEstimator''和``MecanumDrivePoseEstimator''来估计机器人的位置。在这些系统中，用户使用编码器和陀螺仪测量值（与里程表类相同）定期调用``更新''以更新机器人的估计位置"
+"。当机器人从计算机视觉或V-SLAM等传感器接收到其场相对位置的测量值(编码为“Pose2d” "
+")时，位姿估计器对测量值进行延迟补偿，以准确估计机器人的位置。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:8
+msgid ""
+"The pose estimators perform latency compensation by storing a list of past "
+"observer states, including estimated state :math:`\\mathbf{\\hat{x}}`, error"
+" covariance :math:`\\mathbf{P}`, inputs and local measurements. When new "
+"measurements are applied, the state of the estimator is first rolled back to"
+" the measurement's timestamp. Then, the filter corrects its state estimate "
+"with the new measurement and applies the inputs between the measurement "
+"timestamp and the present time to incorporate the new measurement. This "
+"allows for vision solutions with framerates which might otherwise make them "
+"unusable be a viable solution for robot localization."
+msgstr ""
+"位姿估算器通过存储过去的观察者状态的列表来执行等待时间补偿，该列表包括估计状态 :math:`\\mathbf{\\hat{x}}`，误差协方差 "
+":math:`\\mathbf{P}`，输入和局部测量值。进行新的测量后，估算器的状态会先回滚到测量的时间戳记。然后，过滤器使用新的测量值校正其状态估计值，并在测量时间戳和当前时间之间应用输入以合并新的测量值。这允许具有帧速率的视觉解决方案，否则可能使其无法使用，这是机器人定位的可行解决方案。"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:10
+msgid ""
+"The following example shows the use of the "
+"``DifferentialDrivePoseEstimator``:"
+msgstr "下面的例子展示了“differaldriveposeestimator”的使用:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:33
+msgid "Tuning Pose Estimators"
+msgstr "调试位姿估算器"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-pose_state-estimators.rst:35
+msgid ""
+"All pose estimators offer user-customizable standard deviations for model "
+"and measurements. These standard deviations determine how much the filter "
+"\"trusts\" each of these states. For example, increasing the standard "
+"deviation for measurements (as one might do for a noisy signal) would lead "
+"to the estimator trusting its state estimate more than the incoming "
+"measurements. On the field, this might mean that the filter can reject noisy"
+" vision data well, at the cost of being slow to correct for model "
+"deviations. While these values can be estimated beforehand, they very much "
+"depend on the unique setup of each robot and global measurement method."
+msgstr ""
+"所有位姿估计器都可以为模型和测量提供用户可定制的标准偏差。这些标准偏差决定了过滤器“信任”这些状态中的每个状态的程度。例如，增加测量的标准偏差（就像对有噪信号所做的那样）将导致估算器比输入的测量值更信任其状态估算值。在现场，这可能意味着滤波器可以很好地拒绝嘈杂的视觉数据，但代价是校正模型偏差的速度很慢。尽管可以预先估算这些值，但它们在很大程度上取决于每个机器人的独特设置和全局测量方法。"

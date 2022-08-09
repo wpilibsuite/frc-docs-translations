@@ -1,0 +1,244 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 怡静 陆 <2238710874@qq.com>, 2021
+# eric sun <eric.szh@hotmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-06 16:23+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: eric sun <eric.szh@hotmail.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:2
+msgid "How to Use Joystick Buttons to Control Motors or Solenoids"
+msgstr "如何使用操纵杆按钮控制电机或电磁阀"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:6
+msgid ""
+"As we all get our drive systems working, we are moving on to connecting our "
+"auxiliary devices such as motors and solenoids.  With this, we will "
+"generally use joystick buttons to control these devices.  To get started "
+"with this, we'll go through several ways to control devices with joystick "
+"buttons."
+msgstr ""
+"随着驱动系统的正常工作，我们可以开始连接辅助设备，例如电动机和电磁阀。对此，我们通常将使用操纵杆按钮来控制这些设备。首先，我们将介绍几种通过操纵杆按钮控制设备的方法。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:8
+msgid ""
+"Did you know that you can click and drag a VI Snippet from a document like "
+"this right into your LabVIEW code?  Try it with the snippets in this "
+"document."
+msgstr "您是否知道可以从这样的文档中单击VI片段并将其拖放到您的LabVIEW代码中？用这个文档的VI片段先试试看吧"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:11
+msgid "Setup:"
+msgstr "初始设置:"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:13
+msgid ""
+"No matter what the configuration, you'll need to add one, two, or more (if "
+"you're really excited) joysticks to the \"Begin.vi\".  The first example "
+"uses 2 joysticks and the others only use one.  Give each one a unique name "
+"so we can use it in other places, like the snippet below.  I named them "
+"\"LeftStick\" and \"RightStick\" because they are on the left and right "
+"sides of my desk.  If your joysticks are already configured, great! You can "
+"skip this step."
+msgstr ""
+"无论配置如何，您都需要在 “Begin.vi” "
+"中添加一个，两个或更多（如果您真的很兴奋）手柄。第一个示例使2个手柄，而其他示例仅使用一个。给每个手柄起一个唯一的名称，这样我们就可以在其他地方使用它，例如下面的代码段。我将它们命名为"
+" “LeftStick”和 “RightStick”，因为它们位于我桌子的左右两侧。如果你的手柄已经配置好了，那太好了，你可以跳过此步骤。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:17
+msgid ""
+"The rest of the code in this document will be placed in the \"Teleop.VI\" "
+"This is where we will be programming our joystick buttons to control "
+"different aspects of our motors or solenoids."
+msgstr "本文档中的其余代码将置于Teleop.VI中。在此处，我们将对操纵杆按钮进行编程，以控制电动机或电磁阀的不同功能。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:20
+msgid "Scenario 1"
+msgstr "场景1"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:22
+msgid ""
+"**\"I want a motor to move one way when I press one button and the other way"
+" when I press a different button.\"**"
+msgstr "**“当我按下一个按钮时，我希望电机以一种方式移动，而当按下另一按钮时，我希望电机以另一种方式移动。”**"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:24
+msgid ""
+"This code uses button 0 on two different joysticks to control the same "
+"motor.  If button 0 on LeftStick is pressed, the motor moves backward, and "
+"if button 0 on RightStick is pressed, the motor moves forward.  If both "
+"buttons are pressed or neither button is pressed, the motor doesn't move.  "
+"Here I named my motor reference \"Motor5\", but you can name your motor "
+"whatever you want in the \"Begin.vi\""
+msgstr ""
+"该代码使用两个不同手柄上的按钮0来控制同一电机。如果按下 LeftStick 上的按钮0，则电机向后移动，如果按下 RightStick "
+"上的按钮0，则电机向前移动。如果同时按下两个按钮或两个按钮均未按下，则电机不会移动。在这里，我将电机参考命名为 “ Motor5” ，但是您可以在 "
+"“Begin.vi” 中随意命名电机。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:28
+msgid ""
+"You may want to use multiple buttons from the same joystick for control.  "
+"For an example of this, look at the following VI snippet or the VI snippet "
+"in Scenario 2."
+msgstr "您可能需要使用同一手柄上的多个按钮进行控制。有关此示例，请查看以下VI片段或场景2中的VI片段。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:32
+msgid ""
+"Here I used joystick buttons 0 and 2, but feel free to use whatever buttons "
+"you need."
+msgstr "在这里，我使用了操纵杆按钮0和2，但您可以随意使用所需的任何按钮。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:35
+msgid "Scenario 2"
+msgstr "场景2"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:37
+msgid "**\"I want different joystick buttons move at various speeds.\"**"
+msgstr "“我希望使用不同的手柄按钮令机器以不同的速度移动。”"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:39
+msgid ""
+"This example could be helpful if you need to have one motor do different "
+"things based on the buttons you press.  For instance, let's say my joystick "
+"has a trigger (button 0) and 4 buttons on top (buttons 1 through 4).  In "
+"this case, the following buttons should have the following functions:"
+msgstr ""
+"如果您需要让一个电机根据所按的按钮执行不同的操作，则此示例可能会有所帮助。例如，假设我的手柄有一个扳机（按钮0）和顶部的4个按钮（按钮1至4）。在这种情况下，以下按钮应具有以下功能："
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:41
+msgid "button 1 - move backward at half speed"
+msgstr "按钮1-以一半速度向后移动"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:42
+msgid "button 2 - move forward at half speed"
+msgstr "按钮2-以半速前进"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:43
+msgid "button 3 - move backward at 1/4 speed"
+msgstr "按钮3-以1/4速度向后移动"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:44
+msgid "button 4 - move forward at 1/4 speed"
+msgstr "按钮4-以1/4速度向前移动"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:45
+msgid "trigger - full speed ahead! (forward at full speed)"
+msgstr "扳机-全速前进！（以满速向前移动）"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:47
+msgid ""
+"We would then take the boolean array from the \"JoystickGetValues.vi\" and "
+"wire it to a \"Boolean Array to Number\" node (Numeric Palette-Conversion "
+"Palette).  This converts the boolean array to a number that we can use.  "
+"Wire this numeric to a case structure."
+msgstr ""
+"然后，我们将从 JoystickGetValues.vi "
+"中获取布尔数组，并将其连接到“布尔数组到数字”节点（数值选板转换选板）。这会将布尔数组转换为我们可以使用的数字。将此数字连接到条件结构。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:49
+msgid ""
+"Each case corresponds to a binary representation of the values in the array."
+"  In this example, each case corresponds to a one-button combination.  We "
+"added six cases: 0 (all buttons off), 1 (button 0 on), 2 (button 1 on), 4 "
+"(button 2 on), 8 (button 3 on), and 16 (button 4 on).  Notice we skipped "
+"value 3.  3 would correspond to buttons 0 and 1 pressed at the same time.  "
+"We did not define this in our requirements so we'll let the default case "
+"handle it."
+msgstr ""
+"每种情况都对应于数组中值的二进制表示形式。在此示例中，每种情况都对应一个按钮组合。我们添加了六种情况：0（关闭所有按钮），1（打开按钮0），2（打开按钮1），4（打开按钮2），8（打开按钮3）和16（打开按钮4）。请注意，我们跳过了值3。3将对应于同时按下的按钮0和1。我们没有在需求中定义它，所以我们以默认情况处理。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:51
+msgid ""
+"It might be helpful to review the LabVIEW 2014 Case Structure Help document "
+"here:"
+msgstr "在以下位置查看 LabVIEW 2014 条件结构帮助文档可能会有所帮助："
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:53
+msgid ""
+"https://zone.ni.com/reference/en-XX/help/371361L-01/glang/case_structure/"
+msgstr ""
+"https://zone.ni.com/reference/en-XX/help/371361L-01/glang/case_structure/"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:55
+msgid "There are also 3 Community Tutorials on case structures here:"
+msgstr "这里还有关于条件结构的3个社区教程："
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:57
+msgid ""
+"https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-"
+"Lesson-1/ta-p/3505945?profile.language=en"
+msgstr ""
+"https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-"
+"Lesson-1/ta-p/3505945?profile.language=en"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:59
+msgid ""
+"https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-"
+"Lesson-2/ta-p/3505933?profile.language=en"
+msgstr ""
+"https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-"
+"Lesson-2/ta-p/3505933?profile.language=en"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:61
+msgid ""
+"https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-"
+"Lesson-3/ta-p/3505979?profile.language=en"
+msgstr ""
+"https://forums.ni.com/t5/Curriculum-and-Labs-for/Unit-3-Case-Structures-"
+"Lesson-3/ta-p/3505979?profile.language=en"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:65
+msgid ""
+"Since our requirements were simple, we only need a single constant in each "
+"case.  For case 1 (full ahead) we use a 1, for case 2 (half back) we use a "
+"-0.5, etc.  We can use any constant value between 1 and -1.  I left case 0 "
+"as the default so if multiple buttons are pressed (any undefined state was "
+"reached) the motor will stop.  You of course are free to customize these "
+"states however you want."
+msgstr ""
+"由于我们的要求很简单，因此在每种情况下我们只需要一个常数。我们可以使用1到-"
+"1之间的任何常量值。对于情况1（全力向前），我们使用1，对于情况2（半速向后），我们使用-0.5，依此类推。我将情况0保留为默认值，因此如果按下多个按钮（达到任何未定义状态），电动机将停止。当然，您可以随意自定义这些状态。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:68
+msgid "Scenario 3"
+msgstr "场景3"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:70
+msgid "**\"I want to control a solenoid with my joystick buttons.\"**"
+msgstr "“我想用手柄按钮控制电磁阀。”"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:72
+msgid ""
+"By now, we are familiar with how the joystick outputs the buttons in an "
+"array of booleans.  We need to index this array to get the button we are "
+"interested in, and wire this boolean to a select node.  Since the \"Solenoid"
+" Set.vi\" requires a Enum as an input, the easiest way to get the enum is to"
+" right click the \"Value\" input of the \"Solenoid Set.vi\" and select "
+"\"Create Constant\".  Duplicate this constant and wire one copy to the True "
+"terminal and one to the False terminal of the select node.  Then wire the "
+"output of the select node to the \"Value\" input of the solenoid VI."
+msgstr ""
+"到目前为止，我们已经熟悉手柄如何以布尔数组的形式输出按钮。我们需要索引该数组以获得我们感兴趣的按钮数值，并将此布尔值连接到一个选择节点。由于 "
+"Solenoid Set.vi 需要一个枚举类作为输入，因此获取枚举的最简单方法是右键单击 Solenoid Set.vi 的 “ Value” "
+"输入，然后选择“创建常量”。复制此常量，然后将一个副本连接到这个选择节点的 True 端口，将一个副本连接到选择节点的False "
+"端口。然后将该选择节点的输出连接到电磁阀VI的 “Value” 输入。"
+
+#: ../../frc-docs/source/docs/software/labview/resources/how-to-use-joystick-buttons-to-control-motors-or-solenoids.rst:76
+msgid "Happy Roboting!"
+msgstr "祝您编程愉快！"

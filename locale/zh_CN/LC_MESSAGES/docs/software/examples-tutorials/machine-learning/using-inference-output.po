@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-07 04:06+0000\n"
+"PO-Revision-Date: 2020-05-10 22:36+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:4
+msgid "Using Inference Output"
+msgstr "使用推断输出"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:6
+msgid ""
+"Unfortunately, this documentation is outdated and the methods described here"
+" are no longer functional. We are currently working on an a successor "
+"project and advise teams to research into a `tensorflow "
+"<https://coral.ai/docs/edgetpu/retrain-detection/>`__ solution in the "
+"meantime."
+msgstr ""
+"不幸的是，该文档已过时，此处描述的方法不再起作用。我们目前正在进行一个后续项目，并建议团队同时研究`tensorflow "
+"<https://coral.ai/docs/edgetpu/retrain-detection/>`__解决方案。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:8
+msgid ""
+"The Raspberry Pi writes all detection information to NetworkTables, which "
+"can be used by your robot code. Below is a Java example for parsing and "
+"using this data."
+msgstr ""
+"Raspberry Pi将所有检测信息写入NetworkTables，您的机器人代码可以使用该信息。以下是用于解析和使用此数据的Java示例。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:10
+msgid "**NetworkTables Format**"
+msgstr "** NetworkTables格式**"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:12
+msgid "``ML`` – The table containing all inference data."
+msgstr "ML –包含所有推断数据的表。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:14
+msgid ""
+"``nb_objects`` – the number (double) of detected objects in the current "
+"frame."
+msgstr "``nb_objects`` –当前帧中检测到的对象的数量（双精度）。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:15
+msgid ""
+"``object_classes`` – a string array of the class names of each object. These"
+" are in the same order as the coordinates."
+msgstr "``object_classes`` –每个对象的类名的字符串数组。这些与坐标的顺序相同。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:16
+msgid ""
+"``boxes`` – a double array containing the coordinates of every detected "
+"object. The coordinates are in the following format: [top_left__x1, "
+"top_left_y1, bottom_right_x1, bottom_right_y1, top_left_x2, top_left_y2, ..."
+" ]. There are four coordinates per box. A way to parse this array in Java is"
+" shown below."
+msgstr ""
+"“ boxes” "
+"–包含每个检测到的对象的坐标的双精度数组。坐标采用以下格式：[top_left__x1，top_left_y1，bottom_right_x1，bottom_right_y1，top_left_x2，top_left_y2，...]。每个框有四个坐标。下面显示了一种使用Java解析此数组的方法。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:18
+msgid ""
+"The below ``VisionSubsystem`` Java class parses the data from NetworkTables "
+"and stores it in a usable way."
+msgstr "下面的VisionSubsystem Java类解析NetworkTables中的数据并以可用的方式存储它。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:20
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:26
+msgid "Example code coming soon!"
+msgstr "示例代码即将推出！"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:22
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:28
+msgid "Todo"
+msgstr "待办事项"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:22
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:28
+msgid "Code example should be in allwpilib"
+msgstr "代码示例应该在allwpilib中"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/machine-learning/using-inference-output.rst:24
+msgid ""
+"Using the arrays created by the ``VisionSubsystem``, one can make a simple "
+"command to turn to face a game piece. In this example, a hatch is used. One "
+"thing to note is the ~15fps of inference attained by a Google Coral is not "
+"fast enough for PID input directly, however calculating the relative heading"
+" of a game piece and then turning to that heading works accurately."
+msgstr ""
+"使用``VisionSubsystem''创建的数组，可以做出一个简单的指令来面对游戏作品。在此示例中，使用阴影线。需要注意的一件事是，Google "
+"Coral所获得的〜15fps推理速度不足以直接进行PID输入，但是要计算游戏棋子的相对航向，然后准确转向该航向即可。"

@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# tianshuang Zhang <2948026254@qq.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-06 16:06+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: tianshuang Zhang <2948026254@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:2
+msgid "Step 3: Creating a Drive Subsystem"
+msgstr "步骤3：创建驱动器子系统"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:4
+msgid ""
+"Now that our drive is characterized, it is time to start writing our robot "
+"code *proper*.  As mentioned before, we will use the :ref:`command-based "
+"<docs/software/commandbased/what-is-command-based:What Is \"Command-Based\" "
+"Programming?>` framework for our robot code.  Accordingly, our first step is"
+" to write a suitable drive :ref:`subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>` class."
+msgstr ""
+"既然我们的驱动器已经有了特征，是时候开始编写适当的机器人代码了。如前所述，我们将使用:ref:`command-based "
+"<docs/software/commandbased/what-is-command-based:What Is \"Command-Based\" "
+"Programming?>`的框架来编写我们的机器人代码。因此，我们的第一步是编写一个合适的驱动器 :ref:`subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>` 类。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:6
+msgid ""
+"The full drive class from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will describe the steps "
+"involved in writing this class."
+msgstr ""
+"可以在下面看到RamseteCommand示例项目的完整驱动器类（Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>"
+" __，C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>"
+" __）。本文的其余部分将描述编写此类的步骤。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:35
+msgid "Configuring the Drive Encoders"
+msgstr "配置驱动器编码器"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:37
+msgid ""
+"The drive encoders measure the rotation of the wheels on each side of the "
+"drive.  To properly configure the encoders, we need to specify two things: "
+"the ports the encoders are plugged into, and the distance per encoder pulse."
+"  Then, we need to write methods allowing access to the encoder values from "
+"code that uses the subsystem."
+msgstr ""
+"驱动器编码器测量驱动器两侧的车轮旋转。为了正确配置编码器，我们需要指定两件事：编码器插入的端口以及每个编码器脉冲的距离。然后，我们需要编写允许从使用子系统的代码访问编码器值的方法。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:40
+msgid "Encoder Ports"
+msgstr "编码器端口"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:42
+msgid "The encoder ports are specified in the encoder's constructor, like so:"
+msgstr "编码器端口在编码器的构造函数中指定，如下所示："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:63
+msgid "Encoder Distance per Pulse"
+msgstr "每个脉冲的编码器距离"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:65
+msgid ""
+"The distance per pulse is specified by calling the encoder's "
+"``setDistancePerPulse`` method.  Note that for the WPILib Encoder class, "
+"\"pulse\" refers to a full encoder cycle (i.e. four edges), and thus will be"
+" 1/4 the value that was specified in the FRC-Characterization config.  "
+"Remember, as well, that the distance should be measured in meters!"
+msgstr ""
+"通过调用编码器的setDistancePerPulse方法指定每个脉冲的距离。请注意，对于WPILib编码器类，“脉冲”是指完整的编码器周期（即四个边沿），因此将是FRC字符配置中指定的值的1/4。还要记住，距离应以米为单位！"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:86
+msgid "Encoder Accessor Method"
+msgstr "编码器访问器方法"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:88
+msgid ""
+"To access the values measured by the encoders, we include the following "
+"method:"
+msgstr "要访问编码器测量的值，我们包括以下方法："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:90
+msgid ""
+"The returned velocities **must** be in meters! Because we configured the "
+"distance per pulse on the encoders above, calling ``getRate()`` will "
+"automatically apply the conversion factor from encoder units to meters. If "
+"you are not using WPILib's ``Encoder`` class, you must perform this "
+"conversion either through the respective vendor's API or by manually "
+"multiplying by a conversion factor."
+msgstr ""
+"返回速度**必须**用米!因为我们在上面的编码器上配置了每个脉冲的距离，调用' ' getRate() ' "
+"'将自动应用从编码器单位到米的转换因子。如果你没有使用WPILib的' ' Encoder ' "
+"'类，你必须通过相应供应商的API或者手动乘以一个转换因子来执行这个转换。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:110
+msgid ""
+"We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` "
+"object for easier integration with the ``RamseteCommand`` class later on."
+msgstr ""
+"我们将测量的编码器值包装在“ DifferentialDriveWheelSpeeds”对象中，以便稍后与“ "
+"RamseteCommand”类更轻松地集成。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:113
+msgid "Configuring the Gyroscope"
+msgstr "配置陀螺仪"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:115
+msgid ""
+"The gyroscope measures the rate of change of the robot's heading (which can "
+"then be integrated to provide a measurement of the robot's heading relative "
+"to when it first turned on).  In our example, we use the `Analog Devices "
+"ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-"
+"pages/001/first.html>`__, which has been included in the kit of parts for "
+"several years:"
+msgstr ""
+"陀螺仪测量机器人的航向变化率（然后可以将其集成以提供相对于机器人首次开启时的机器人航向的测量值）。在我们的示例中，我们使用了`Analog "
+"Devices ADXRS450 FRC陀螺仪板<https://www.analog.com/en/landing-"
+"pages/001/first.html>`__，它已包含在零件套件中已有多年了："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:136
+msgid "Gyroscope Accessor Method"
+msgstr "陀螺仪访问器方法"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:138
+msgid ""
+"To access the current heading measured by the gyroscope, we include the "
+"following method:"
+msgstr "要访问由陀螺仪测量的当前航向，我们包括以下方法："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:159
+msgid "Configuring the Odometry"
+msgstr "配置里程表"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:161
+msgid ""
+"Now that we have our encoders and gyroscope configured, it is time to set up"
+" our drive subsystem to automatically compute its position from the encoder "
+"and gyroscope readings."
+msgstr "现在我们已经配置了编码器和陀螺仪，是时候设置驱动子系统以根据编码器和陀螺仪的读数自动计算其位置了。"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:163
+msgid ""
+"First, we create a member instance of the ``DifferentialDriveOdometry`` "
+"class:"
+msgstr "首先，我们创建“DifferentialDriveOdometry”类的成员实例："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:184
+msgid "Updating the Odometry"
+msgstr "更新里程表"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:186
+msgid ""
+"The odometry class must be regularly updated to incorporate new readings "
+"from the encoder and gyroscope.  We accomplish this inside the subsystem's "
+"``periodic`` method, which is automatically called once per main loop "
+"iteration:"
+msgstr "必须定期更新测距类，以结合来自编码器和陀螺仪的新读数。我们在子系统的“定期”方法中完成此操作，该方法在每次主循环迭代时自动调用一次："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:207
+msgid "Odometry Accessor Method"
+msgstr "测程法访问器方法"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:209
+msgid ""
+"To access the robot's current computed pose, we include the following "
+"method:"
+msgstr "为了访问机器人当前计算的位置，我们包括以下方法:"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:230
+msgid "Voltage-Based Drive Method"
+msgstr "基于电压的驱动方法"
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:232
+msgid ""
+"Finally, we must include one additional method - a method that allows us to "
+"set the voltage to each side of the drive using the ``setVoltage()`` method "
+"of the ``SpeedController`` interface.  The default WPILib drive class does "
+"not include this functionality, so we must write it ourselves:"
+msgstr ""
+"最后，我们必须包括一个附加方法-"
+"一种方法，该方法允许我们使用SpeedController接口的setVoltage（）方法设置驱动器两侧的电压。缺省的WPILib驱动器类不包含此功能，因此我们必须自己编写："
+
+#: ../../frc-docs/source/docs/software/examples-tutorials/trajectory-tutorial/creating-drive-subsystem.rst:252
+msgid ""
+"It is very important to use the ``setVoltage()`` method rather than the "
+"ordinary ``set()`` method, as this will automatically compensate for battery"
+" \"voltage sag\" during operation.  Since our feedforward voltages are "
+"physically-meaningful (as they are based on measured characterization data),"
+" this is essential to ensuring their accuracy."
+msgstr ""
+"使用setVoltage（）方法而不是普通的set（）方法非常重要，因为这将在运行期间自动补偿电池的“电压骤降”。由于我们的前馈电压在物理上有意义（因为它们基于测得的特性数据），因此对于确保其准确性至关重要。"

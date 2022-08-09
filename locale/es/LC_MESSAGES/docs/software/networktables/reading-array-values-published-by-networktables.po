@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Ranferi Lozano <ranferilozano@hotmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-02 04:06+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:2
+msgid "Reading array values published by NetworkTables"
+msgstr "Lectura de valores de matriz escritos por Tablas de Enrutamiento"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:3
+msgid ""
+"This article describes how to read values published by :term:`NetworkTables`"
+" using a program running on the robot. This is useful when using computer "
+"vision where the images are processed on your driver station laptop and the "
+"results stored into NetworkTables possibly using a separate vision processor"
+" like a raspberry pi, or a tool on the robot like GRIP, or a python program "
+"to do the image processing."
+msgstr ""
+"Este artículo describe cómo leer los valores publicados por "
+":term:`NetworkTables` utilizando un programa que se ejecuta en el robot. "
+"Esto es útil cuando se utiliza la visión por ordenador, donde las imágenes "
+"se procesan en la Driver Station y los resultados se almacenan en "
+"NetworkTables, posiblemente utilizando un procesador de visión independiente"
+" como una frambuesa pi, o una herramienta en el robot como GRIP, o un "
+"programa de python para hacer el procesamiento de imágenes. "
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:8
+msgid ""
+"Very often the values are for one or more areas of interest such as goals or"
+" game pieces and multiple instances are returned. In the example below, "
+"several x, y, width, height, and areas are returned by the image processor "
+"and the robot program can sort out which of the returned values are "
+"interesting through further processing."
+msgstr ""
+"Comúnmente los valores son para una o más áreas de interés tales como "
+"objetivos o piezas de juego y son regresadas múltiples instancias. En el "
+"ejemplo a continuación, varios valores x, y, ancho, altura, y áreas son "
+"entregados por el procesamiento de imagen y el programa del robot puede "
+"decidir cuál de los valores entregados son de interés para los siguientes "
+"procesamientos."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:13
+msgid "Verify the NetworkTables keys being published"
+msgstr "Verifica las claves de NetworkTables que se publican"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:17
+msgid ""
+"You can verify the names of the NetworkTables keys used for publishing the "
+"values by using the Outline Viewer application. It is a Java program in your"
+" user directory in the wpilib/<YEAR>/tools folder. The application is "
+"started by selecting the \"WPILib\" menu in Visual Studio Code then Start "
+"Tool then \"OutlineViewer\". In this example, with the image processing "
+"program running (GRIP) you can see the values being put into NetworkTables."
+msgstr ""
+"Puede verificar los nombres de las claves de NetworkTables utilizadas para "
+"publicar los valores utilizando la aplicación Outline Viewer. Es un programa"
+" Java que se encuentra en su directorio de usuario en la carpeta "
+"wpilib/<YEAR>/tools. La aplicación se inicia seleccionando el menú "
+"\"WPILib\" en Visual Studio Code y luego Start Tool y luego "
+"\"OutlineViewer\". En este ejemplo, con el programa de procesamiento de "
+"imágenes en marcha (GRIP) puede ver los valores que se introducen en "
+"NetworkTables."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:22
+msgid ""
+"In this case the values are stored in a table called GRIP and a sub-table "
+"called myContoursReport. You can see that the values are in brackets and "
+"there are 2 values in this case for each key. The NetworkTables key names "
+"are centerX, centerY, area, height and width."
+msgstr ""
+"En este caso los valores se almacenan en una tabla llamada GRIP y una "
+"subtabla llamada myContoursReport. Puede ver que los valores están entre "
+"paréntesis y que hay 2 valores en este caso para cada clave. Los nombres de "
+"las claves de NetworkTables son centerX, centerY, area, height y width."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:26
+msgid ""
+"Both of the following examples are extremely simplified programs that just "
+"illustrate the use of NetworkTables. All the code is in the robotInit() "
+"method so it's only run when the program starts up. In your programs, you "
+"would more likely get the values in code that is evaluating which direction "
+"to aim the robot in a command or a control loop during the autonomous or "
+"teleop periods."
+msgstr ""
+"Los dos ejemplos siguientes son programas extremadamente simplificados que "
+"solamente ilustran el uso de las Tablas de Enrutamiento. Todo el código se "
+"encuentra en el método robotInit() que solo se ejecuta cuando el programa "
+"inicia. En sus programas, usted buscará obtener los valores del código que "
+"evalúen en que dirección apuntar el robot en un comando o un bucle de "
+"control durante los periodos de autónomo o teleoperado."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:31
+msgid "Writing a program to access the keys"
+msgstr "Escritura de un programa para acceder a los índices"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:76
+msgid ""
+"The steps to getting the values and, in this program, printing them are:"
+msgstr ""
+"Los pasos para obtener los valores y, en este programa, escribirlos son:"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:78
+msgid ""
+"Declare the table variable that will hold the instance of the subtable that "
+"have the values."
+msgstr ""
+"Declarar la tabla variable que guardará la instancia de la subtabla que "
+"tendrá los valores."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:79
+msgid ""
+"Initialize the subtable instance so that it can be used later for retrieving"
+" the values."
+msgstr ""
+"Inicializar la instancia de la subtabla para que pueda ser usada después "
+"para recuperar los valores."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:80
+msgid ""
+"Read the array of values from NetworkTables. In the case of a communicating "
+"programs, it's possible that the program producing the output being read "
+"here might not yet be available when the robot program starts up. To avoid "
+"issues of the data not being ready, a default array of values is supplied. "
+"This default value will be returned if the NetworkTables key hasn't yet been"
+" published. This code will loop over the value of areas every 20ms."
+msgstr ""
+"Lea la matriz de valores de NetworkTables. En el caso de los programas en "
+"comunicación, es posible que el programa que produce la salida que se lee "
+"aquí no esté todavía disponible cuando el programa del robot se inicia. Para"
+" evitar problemas de que los datos no estén listos, se suministra un array "
+"de valores por defecto. Este valor por defecto será devuelto si la clave "
+"NetworkTables aún no ha sido publicada. Este código hará un bucle sobre el "
+"valor de las áreas cada 20ms."
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:86
+msgid "Program output"
+msgstr "Salidas del Programa"
+
+#: ../../frc-docs/source/docs/software/networktables/reading-array-values-published-by-networktables.rst:90
+msgid ""
+"In this case the program is only looking at the array of areas, but in a "
+"real example all the values would more likely be used. Using the Riolog in "
+"VS Code or the Driver Station log you can see the values as they are "
+"retrieved. This program is using a sample static image so they areas don't "
+"change, but you can imagine with a camera on your robot, the values would be"
+" changing constantly."
+msgstr ""
+"En este caso el programa solamente está buscando en la matriz de las areas, "
+"pero en un ejemplo real sería más probable usar todos los valores. Usando el"
+" Riolog en VS Code o la Driver Station Log puede ver los valores así como "
+"son enviados. Este programa está usando de muestra una imagen estática así "
+"que las areas no cambian, pero puede imaginar que con la cámara en el robot,"
+" los valores estarían constantemente cambiando."

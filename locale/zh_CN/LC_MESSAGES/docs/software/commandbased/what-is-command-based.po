@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Jiangshan Gong <jiangshan_gong@163.com>, 2020
+# Emma Yuan <emmayyw@gmail.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-09 04:10+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:2
+msgid "What Is \"Command-Based\" Programming?"
+msgstr "什么是 \"Command-Based\" 编程？"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:4
+msgid ""
+"WPILib supports a robot programming methodology called \"command-based\" "
+"programming. In general, \"command-based\" can refer both the general "
+"programming paradigm, and to the set of WPILib library resources included to"
+" facilitate it."
+msgstr ""
+"WPILib支持一种称为“基于命令”编程的机器人编程方法。通常，“基于命令的”既可以引用一般的编程范例，也可以引用为方便起见而包括的WPILib库资源集。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:6
+msgid ""
+"\"Command-based\" programming is an example of what is known as a `design "
+"pattern. <https://en.wikipedia.org/wiki/Design_pattern>`__ It is a general "
+"way of organizing one’s robot code that is well-suited to a particular "
+"problem-space. It is not the only way to write a robot program, but it is a "
+"very effective one; command-based robot code tends to be clean, extensible, "
+"and (with some tricks) easy to re-use from year to year."
+msgstr ""
+"“基于命令”编程是所谓的“设计模式”的一个示例。 "
+"<https://en.wikipedia.org/wiki/Design_pattern>`__这是一种组织机器人代码的通用方法，该代码非常适合特定的问题空间。这不是编写机器人程序的唯一方法，但它是一种非常有效的方法。基于命令的机器人代码趋向于干净，可扩展，并且（具有一些技巧）易于年复一年地重复使用。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:8
+msgid ""
+"The command-based paradigm is also an example of what is known as "
+"`declarative <https://en.wikipedia.org/wiki/Declarative_programming>`__ "
+"programming. In declarative programming, the emphasis is placed on *what* "
+"the program ought to do, rather than *how* the program ought to do it. Thus,"
+" the command-based libraries allow users to define desired robot behaviors "
+"while minimizing the amount of iteration-by-iteration robot logic that they "
+"must write. For example, in a command-based program, a user can specify that"
+" \"the robot should perform an action when a button is pressed\" (note the "
+"use of a :ref:`lambda <docs/software/commandbased/convenience-"
+"features:Lambda Expressions (Java)>`):"
+msgstr ""
+"基于命令的范例也是所谓的“声明性<https://en.wikipedia.org/wiki/Declarative_programming>” "
+"__编程的示例。在声明式编程中，重点放在程序应该做什么，而不是程序应该如何做。因此，基于命令的库允许用户定义所需的机器人行为，同时将他们必须编写的逐次迭代的机器人逻辑的数量减至最少。例如，在基于命令的程序中，用户可以指定“按下按钮时机器人应执行操作”（请注意使用：ref：`lambda"
+" <docs/software/commandbased/convenience-features:Lambda Expressions "
+"(Java)>`）："
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:20
+msgid ""
+"In contrast, in an ordinary `imperative "
+"<https://en.wikipedia.org/wiki/Imperative_programming>`__ program, the user "
+"would need to check the button state every iteration, and perform the "
+"appropriate action based on the state of the button."
+msgstr ""
+"相反，在普通的`imperative "
+"<https://en.wikipedia.org/wiki/Imperative_programming>`__程序中，用户将需要在每次迭代时检查按钮状态，并根据按钮的状态执行适当的操作。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:47
+msgid "Subsystems and Commands"
+msgstr "子系统和指令"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:52
+msgid ""
+"The command-based pattern is based around two core abstractions: "
+"**commands**, and **subsystems.**"
+msgstr "基于命令的编程模式基于两个核心抽象类：**指令**和**子系统。**"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:54
+msgid ""
+"**Subsystems** are the basic unit of robot organization in the design-based "
+"paradigm. Subsystems `encapsulate "
+"<https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>`__ "
+"lower-level robot hardware (such as motor controllers, sensors, and/or "
+"pneumatic actuators), and define the interfaces through which that hardware "
+"can be accessed by the rest of the robot code. Subsystems allow users to "
+"\"hide\" the internal complexity of their actual hardware from the rest of "
+"their code - this both simplifies the rest of the robot code, and allows "
+"changes to the internal details of a subsystem without also changing the "
+"rest of the robot code. Subsystems implement the ``Subsystem`` interface."
+msgstr ""
+"**子系统**是基于设计的范式中机器人组织的基本单元。子系统“封装<https://en.wikipedia.org/wiki/Encapsulation_(computer_programming)>”"
+" "
+"__下层机器人硬件（例如电机控制器，传感器和/或气动执行器），并定义接口，其余的机器人代码可通过该接口访问硬件。子系统允许用户从其余代码中“隐藏”其实际硬件的内部复杂性-"
+"这不仅简化了其余的机器人代码，而且允许更改子系统的内部细节，而无需同时更改其余的机器人代码。 。子系统实现``子系统''接口。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:56
+msgid ""
+"**Commands** define high-level robot actions or behaviors that utilize the "
+"methods defined by the subsystems. A command is a simple `state machine "
+"<https://en.wikipedia.org/wiki/Finite-state_machine>`__ that is either "
+"initializing, executing, ending, or idle. Users write code specifying which "
+"action should be taken in each state. Simple commands can be composed into "
+"\"command groups\" to accomplish more-complicated tasks. Commands, including"
+" command groups, implement the ``Command`` interface."
+msgstr ""
+"**命令**定义利用子系统定义的方法的高级机器人动作或行为。命令是一个简单的“状态机<https://en.wikipedia.org/wiki/Finite-"
+"state_machine>” "
+"__，它正在初始化，执行，结束或空闲。用户编写代码，指定在每种状态下应采取的操作。简单的命令可以组成“命令组”以完成更复杂的任务。命令（包括命令组）实现“命令”界面。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:59
+msgid "How Commands Are Run"
+msgstr "指令如何运行"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:61
+msgid "For a more detailed explanation, see :doc:`command-scheduler`."
+msgstr "有关更详细的说明，请参考:doc:`command-scheduler`.。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:65
+msgid ""
+"Multiple commands can run concurrently, as long as they do not require the "
+"same resources on the robot. Resource management is handled on a per-"
+"subsystem basis: commands may specify which subsystems they interact with, "
+"and the scheduler will never schedule more than one command requiring a "
+"given subsystem at a time. This ensures that, for example, users will not "
+"end up with two different pieces of code attempting to set the same motor "
+"controller to different output values. If a new command is scheduled that "
+"requires a subsystem that is already in use, it will either interrupt the "
+"currently-running command that requires that subsystem (if the command has "
+"been scheduled as interruptible), or else it will not be scheduled."
+msgstr ""
+"只要这些指令不需要“Robot”类中的相同资源，就可以同时运行多个指令。资源管理是在每个子系统的基础上进行的：指令可以指定与之交互的子系统，并且调度程序每一次运行都只会调度一个需要一个特定子类的指令。这样可以确保一种情况，例如，用户不会以试图将同一电动机控制器设置为不同输出值的两个不同的代码结尾。如果调度了一个需要已在使用的子系统的新指令，则它将中断需要该子系统的当前正在运行的指令（如果该指令已被安排为可中断），否则前者将不会被调度。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:67
+msgid ""
+"Subsystems also can be associated with \"default commands\" that will be "
+"automatically scheduled when no other command is currently using the "
+"subsystem. This is useful for continuous \"background\" actions such as "
+"controlling the robot drive, or keeping an arm held at a setpoint."
+msgstr ""
+"子系统还可以与“默认命令”相关联，当当前没有其他命令正在使用子系统时，将自动计划这些子系统。这对于连续的“后台”操作（例如控制机器人驱动器或将手臂保持在设定点）很有用。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:69
+msgid ""
+"When a command is scheduled, its ``initialize()`` method is called once. Its"
+" ``execute()`` method is then called once per call to "
+"``CommandScheduler.getInstance().run()``. A command is un-scheduled and has "
+"its ``end(boolean interrupted)`` method called when either its "
+"``isFinished()`` method returns true, or else it is interrupted (either by "
+"another command with which it shares a required subsystem, or by being "
+"canceled)."
+msgstr ""
+"调度一个指令后，其“initialize()”方法将被调用一次。然后，每次调用“CommandScheduler.getInstance.run()”时都会调用其“execute()”方法。当指令的“isFinished()”方法返回true或该指令被打断（被另一个使用相同子系统的指令打断或被取消）时，该指令将取消调度并调用其“end(boolean"
+" interrupted)”方法。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:72
+msgid "Command Groups"
+msgstr "指令组"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:74
+msgid ""
+"It is often desirable to build complex commands from simple pieces. This is "
+"achievable by `composing "
+"<https://en.wikipedia.org/wiki/Object_composition>`__ commands into "
+"\"command groups.\" A :doc:`command group <command-groups>` is a command "
+"that contains multiple commands within it, which run either in parallel or "
+"in sequence. The command-based library provides several types of command "
+"groups for teams to use, and users are encouraged to write their own, if "
+"desired. As command groups themselves implement the ``Command`` interface, "
+"they are `recursively composable "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ "
+"- one can include command groups *within* other command groups. This "
+"provides an extremely powerful way of building complex robot actions with a "
+"simple library."
+msgstr ""
+"通常需要从简单的片段构建复杂的命令。这可以通过将__命令组成“命令组”来实现。命令组<command-"
+"groups>是一个命令，其中包含多个命令，这些命令可以并行或顺序运行。基于命令的库提供了几种类型的命令组供团队使用，如果需要，鼓励用户编写自己的命令组。当命令组本身实现``Command''接口时，它们是可递归组合的<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__-"
+"一个命令组可以*在*其他命令组中。这为使用简单的库构建复杂的机器人动作提供了一种非常强大的方法。"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:77
+msgid "Creating a Robot Project"
+msgstr "创建一个机器人项目"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:79
+msgid ""
+"Creating a project is detailed in :ref:`docs/software/vscode-"
+"overview/creating-robot-program:Creating a Robot Program`. Select "
+"\"Template\" then your programming language then \"New Command Robot\" to "
+"create a basic Command-Based Robot program."
+msgstr ""
+"在:ref:`docs/software/vscode-overview/creating-robot-program:Creating a Robot"
+" Program`中详细介绍了创建项目。选择“模板”，然后选择您的编程语言，然后选择“新指令机器人”，以创建一个基于命令的基本机器人程序。"

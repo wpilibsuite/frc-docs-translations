@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# Ran Xin <xinryanryan@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-20 04:03+0000\n"
+"PO-Revision-Date: 2021-01-05 04:38+0000\n"
+"Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:2
+msgid "Driving the Robot with Tank Drive and Joysticks"
+msgstr "用 Tank Drive 和 Joystick 操控机器人"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:4
+msgid ""
+"A common use case is to have a joystick that should drive some actuators "
+"that are part of a subsystem. The problem is that the joystick is created in"
+" the RobotContainer class and the motors to be controlled are in the "
+"subsystem. The idea is to create a command that, when scheduled, reads input"
+" from the joystick and calls a method that is created on the subsystem that "
+"drives the motors."
+msgstr ""
+"一个常见的用例是有一个操纵杆来驱动作为子系统一部分的一些执行器。问题是操纵杆是在 RobotContainer "
+"类中创建的，要控制的电机在子系统中。这个想法是创建一个指令，在调度时从操纵杆读取输入并调用在驱动电机的子系统上创建的方法。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:6
+msgid ""
+"In this example a drive base subsystem is shown that is operated in tank "
+"drive using a pair of joysticks."
+msgstr "在这个例子中，一个底盘子系统在一个用一对操纵杆的 tank drive 被运行。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:9
+msgid "Create a Drive Train Subsystem"
+msgstr "建造一个 Drive Train Subsystem 。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:13
+msgid ""
+"Create a subsystem called Drive Train. Its responsibility will be to handle "
+"the driving for the robot base."
+msgstr "创建一个名为 Drive Train 的子系统。它的职责是处理机器人基地的驱动。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:17
+msgid ""
+"Inside the Drive Train create a Differential Drive object for a two motor "
+"drive. There is a left motor and right motor as part of the Differential "
+"Drive class."
+msgstr "在 Drive Train 内部，为两个电机驱动器创建一个差分驱动器对象。作为差动驱动类的一部分，有一个左电机和右电机。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:28
+msgid "Add the Joysticks to the Operator Interface"
+msgstr "将 Joystick 添加到  Operator Interface。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:32
+msgid ""
+"Add two joysticks to the Operator Interface, one is the left stick and the "
+"other is the right stick. The y-axis on the two joysticks are used to drive "
+"the robots left and right sides."
+msgstr "将两个操纵杆添加到 Operator Interface。其中一个为左杆，另一个为右杆。两个操纵杆的y轴是用来让机器人左右移动的。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:34
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:183
+msgid ""
+"Be sure to export your program to C++ or Java before continuing to the next "
+"step."
+msgstr "注意在继续下一步前用 C++ 或 Java 输出程序。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:37
+msgid "Create a Method to Write the Motors on the Subsystem"
+msgstr "建造一个 Method 来在 Subsystem 中 Write the Motor。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:41
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:190
+msgid "java"
+msgstr "java"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:102
+msgid "C++ (Header)"
+msgstr "C++ (Header)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:130
+msgid "C++ (Source)"
+msgstr "C++ (Source)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:172
+msgid ""
+"Create a method that takes the joystick inputs, in this case the the left "
+"and right driver joystick. The values are passed to the DifferentialDrive "
+"object that in turn does tank steering using the joystick values. Also "
+"create a method called stop() that stops the robot from driving, this might "
+"come in handy later."
+msgstr ""
+"创建一个接受操纵杆输入的方法，在本例中为左右驱动操纵杆。这些值被传递给DifferentialDrive "
+"对象，该对象反过来使用操纵杆值进行坦克转向。还要创建一个名为 stop() 的方法来阻止机器人驾驶，这可能会在以后派上用场。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:174
+msgid "Some RobotBuilder output has been removed for this example for clarity"
+msgstr "为清楚起见，此示例中删除了一些 RobotBuilder 输出"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:177
+msgid "Read Joystick Values and Call the Subsystem Methods"
+msgstr "读取 Joystick Values 和 Call the Subsystem Methods 。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:181
+msgid ""
+"Create a command, in this case called Tank Drive. Its purpose will be to "
+"read the joystick values and send them to the Drive Base subsystem. Notice "
+"that this command Requires the Drive Train subsystem. This will cause it to "
+"stop running whenever anything else tries to use the Drive Train."
+msgstr ""
+"创建一个指令，在本例中称为 Tank Drive。它的目的是读取操纵杆值并将它们发送到 Drive Base 子系统。请注意，此指令需要 Drive "
+"Train 子系统。这将导致它在任何其他尝试使用 Drive Train 时停止运行。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:186
+msgid "Add the Code to do the Driving"
+msgstr "把这个代码加入到 Driving 中。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:255
+msgid ""
+"Add code to the execute method to do the actual driving. All that is needed "
+"is to get the Joystick objects for the left and right drive joysticks and "
+"pass them to the Drive Train subsystem. The subsystem just uses them for the"
+" tank steering method on its DifferentialDrive object. And we get tank "
+"steering."
+msgstr ""
+"将代码添加到执行方法中以进行实际驱动。所需要做的就是获取左右驱动操纵杆的 Joystick 对象并将它们传递给 Drive Train "
+"子系统。子系统仅将它们用于其 DifferentialDrive 对象上的底盘转向方法。我们得到底盘转向。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:257
+msgid ""
+"We also filled in the ``end()`` method so that when this command is "
+"interrupted or stopped, the motors will be stopped as a safety precaution."
+msgstr "我们还填写了 ``end()`` 方法，以便当此指令被中断或停止时，电机将停止作为安全预防措施。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:260
+msgid "Make Default Command"
+msgstr "创建 Default Command 。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:264
+msgid ""
+"The last step is to make the Tank Drive command be the \"Default Command\" "
+"for the Drive Train subsystem. This means that whenever no other command is "
+"using the Drive Train, the Joysticks will be in control. This is probably "
+"the desirable behavior. When the autonomous code is running, it will also "
+"require the drive train and interrupt the Tank Drive command. When the "
+"autonomous code is finished, the DriveWithJoysticks command will restart "
+"automatically (because it is the default command), and the operators will be"
+" back in control. If you write any code that does teleop automatic driving, "
+"those commands should also \"require\" the DriveTrain so that they too will "
+"interrupt the Tank Drive command and have full control."
+msgstr ""
+"最后一步是使 Tank Drive 指令成为 Drive Train 子系统的“默认指令”。这意味着只要没有其他指令使用 Drive "
+"Train，操纵杆将处于控制之中。这可能是理想的行为。当自动阶段代码运行时，它还需要传动系统并中断 Tank Drive "
+"指令。自动阶段代码完成后，DriveWithJoysticks "
+"指令将自动重新启动（因为它是默认命令），操作员将重新获得控制权。如果您编写任何执行遥控自动驾驶的代码，这些指令也应该“需要”DriveTrain，以便它们也会中断"
+" Tank Drive 指令并拥有完全控制权。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:266
+msgid "Be sure to export your program to C++ or Java before continuing."
+msgstr "确保在继续前把你的程序导出到 C++ 或 Java。"

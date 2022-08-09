@@ -1,0 +1,263 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:4
+msgid "Strategies for Vision Programming"
+msgstr "Görüntü Programlama Stratejileri"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:6
+msgid ""
+"Using computer vision is a great way of making your robot be responsive to "
+"the elements on the field and make it much more autonomous. Often in FRC\\ "
+"|reg| games there are bonus points for autonomously shooting balls or other "
+"game pieces into goals or navigating to locations on the field. Computer "
+"vision is a great way of solving many of these problems. And if you have "
+"autonomous code that can do the challenge, then it can be used during the "
+"teleop period as well to help the human drivers."
+msgstr ""
+"Bilgisayarla görmeyi kullanmak, robotunuzun sahadaki unsurlara duyarlı "
+"olmasını ve çok daha otonom olmasını sağlamanın harika bir yoludur. "
+"Genellikle FRC \\|reg| oyunlar, topları veya diğer oyun parçalarını kendi "
+"kendine hedefe atmak veya sahadaki yerlere gitmek için bonus puanlar vardır."
+" Bilgisayarla görme, bu sorunların çoğunu çözmenin harika bir yoludur. Ve "
+"eğer meydan okumayı gerçekleştirebilecek özerk bir kodunuz varsa, o zaman "
+"insan sürücülere yardımcı olmak için teleop döneminde de kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:8
+msgid ""
+"There are many options for choosing the components for vision processing and"
+" where the vision program should run. WPILib and associated tools support a "
+"number of options and give teams a lot of flexibility to decide what to do. "
+"This article will attempt to give you some insight into many of the choices "
+"and tradeoffs that are available."
+msgstr ""
+"Görüntü işleme için bileşenleri ve görsel denetim programının nerede "
+"çalışması gerektiğini seçmek için bir çok seçenek vardır. WPILib ve ilgili "
+"araçlar bir dizi seçeneği destekler ve ekiplere ne yapacaklarına karar "
+"vermeleri için büyük bir esneklik sağlar. Bu makale, mevcut birçok seçenek "
+"ve değiş tokuş hakkında size fikir vermeye çalışacaktır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:14
+msgid "OpenCV Computer Vision Library"
+msgstr "OpenCV Computer Vision Kitaplığı"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:16
+msgid ""
+"**OpenCV** is an open source computer vision library that is widely used "
+"throughout academia and industry. It has support from hardware manufactures "
+"providing GPU accelerated processing, it has bindings for a number of "
+"languages including C++, Java, and Python. It is also well documented with "
+"many web sites, books, videos, and training courses so there are lots of "
+"resources available to help learn how to use it. The C++ and Java versions "
+"of WPILib include the OpenCV libraries, there is support in the library for "
+"capturing, processing and viewing video, and tools to help you create your "
+"vision algorithms. For more information about OpenCV see https://opencv.org."
+msgstr ""
+"** OpenCV **, akademi ve endüstri genelinde yaygın olarak kullanılan açık "
+"kaynaklı bir bilgisayar görüntü kitaplığıdır. GPU hızlandırmalı işleme "
+"sağlayan donanım üreticilerinden destek alır, C ++, Java ve Python dahil "
+"olmak üzere bir dizi dil için bağlantıları vardır. Ayrıca birçok web sitesi,"
+" kitap, video ve eğitim kursları ile iyi bir şekilde belgelenmiştir, bu "
+"nedenle nasıl kullanılacağını öğrenmenize yardımcı olacak birçok kaynak "
+"vardır. WPILib'in C ++ ve Java sürümleri OpenCV kitaplıklarını içerir, "
+"kitaplıkta video yakalama, işleme ve görüntüleme desteği ve vizyon "
+"algoritmalarınızı oluşturmanıza yardımcı olacak araçlar vardır. OpenCV "
+"hakkında daha fazla bilgi için bkz. https://opencv.org."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:19
+msgid "Vision Code on roboRIO"
+msgstr "RoboRIO'da Görüntü Kodu"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:24
+msgid ""
+"Vision code can be embedded into the main robot program on the roboRIO. "
+"Building and running the vision code is straightforward because it is built "
+"and deployed along with the robot program. The vision code can be written by"
+" hand or generated by GRIP in either C++ or Java. The disadvantage of this "
+"approach is that having vision code running on the same processor as the "
+"robot program can cause performance issues. This is something you will have "
+"to evaluate depending on the requirements for your robot and vision program."
+msgstr ""
+"Görüntü kodu, roboRIO'daki ana robot programına yerleştirilebilir. Görüntü  "
+"kodu oluşturmak ve çalıştırmak basittir çünkü robot programıyla birlikte "
+"oluşturulup devreye alınır. Görüntü kodu elle yazılabilir veya GRIP "
+"tarafından C ++ veya Java'da oluşturulabilir. Bu yaklaşımın dezavantajı, "
+"robot programıyla aynı işlemci üzerinde çalışan görüntü kodunun performans "
+"sorunlarına neden olabilmesidir. Bu, robotunuzun ve görsel denetim "
+"programınızın gereksinimlerine bağlı olarak değerlendirmeniz gereken bir "
+"şeydir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:26
+msgid ""
+"In this approach, the vision code simply produces results that the robot "
+"code directly uses. Be careful about synchronization issues when writing "
+"robot code that is getting values from a vision thread. The GRIP generated "
+"code and the VisionRunner class in WPILib make this easier."
+msgstr ""
+"Bu yaklaşımda, görüş kodu basitçe robot kodunun doğrudan kullandığı "
+"sonuçları üretir. Bir vizyon dizisinden değerler alan robot kodunu yazarken "
+"senkronizasyon sorunlarına dikkat edin. GRIP tarafından üretilen kod ve "
+"WPILib'deki VisionRunner sınıfı bunu kolaylaştırır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:28
+msgid ""
+"Using functions provided by the CameraServer class, the video stream can be "
+"sent to dashboards such as Shuffleboard so operators can see what the camera"
+" sees. In addition, annotations can be added to the images using OpenCV "
+"commands so targets or other interesting objects can be identified in the "
+"dashboard view."
+msgstr ""
+"CameraServer sınıfı tarafından sağlanan işlevleri kullanarak, video akışı "
+"Shuffleboard gibi gösterge tablolarına gönderilebilir, böylece operatörler "
+"kameranın gördüklerini görebilir. Ek olarak, OpenCV komutları bilgi "
+"görüntülere eklenebilir, böylece hedefler veya diğer ilginç nesneler "
+"gösterge tablosu görünümünde tanımlanabilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:31
+msgid "Vision Code on DS Computer"
+msgstr "DS Bilgisayarda Görüntü Kodu"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:36
+msgid ""
+"When vision code is running on the DS computer, the video is streamed back "
+"to the Driver Station laptop for processing. Even the older Classmate "
+"laptops are substantially faster at vision processing than the roboRIO. GRIP"
+" can be run on the Driver Station laptop directly with the results sent back"
+" to the robot using NetworkTables. Alternatively you can write your own "
+"vision program using a language of your choosing. Python makes a good choice"
+" since there is a native NetworkTables implementation and the OpenCV "
+"bindings are very good."
+msgstr ""
+"DS bilgisayarında görüntü kodu çalışırken, video işlenmek üzere Driver "
+"Station dizüstü bilgisayarına geri gönderilir. Daha eski Classmate dizüstü "
+"bilgisayarlar bile görüntü işlemede roboRIO'dan önemli ölçüde daha hızlıdır."
+" GRIP, sonuçların NetworkTables kullanılarak robota geri gönderilmesiyle "
+"doğrudan Driver Station dizüstü bilgisayarında çalıştırılabilir. Alternatif "
+"olarak, seçtiğiniz bir dili kullanarak kendi vizyon programınızı "
+"yazabilirsiniz. Python, yerel bir NetworkTables uygulaması olduğu ve OpenCV "
+"bağları çok iyi olduğu için iyi bir seçim yapar."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:38
+msgid ""
+"After the images are processed, the key values such as the target position, "
+"distance or anything else you need can be sent back to the robot with "
+"NetworkTables. This approach generally has higher latency, as delay is added"
+" due to the images needing to be sent to the laptop. Bandwidth limitations "
+"also limit the maximum resolution and FPS of the images used for processing."
+msgstr ""
+"Görüntüler işlendikten sonra, hedef konum, mesafe veya ihtiyacınız olan "
+"herhangi bir şey gibi anahtar değerler, NetworkTables ile robota geri "
+"gönderilebilir. Görüntülerin dizüstü bilgisayara gönderilmesi gerektiğinden "
+"gecikme eklendiğinden, bu yaklaşım genellikle daha yüksek gecikmeye "
+"sahiptir. Bant genişliği sınırlamaları ayrıca işleme için kullanılan "
+"görüntülerin maksimum çözünürlüğünü ve FPS'sini de sınırlar."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:40
+msgid "The video stream can be displayed on Shuffleboard or in GRIP."
+msgstr "Video akışı Shuffleboard'da veya GRIP'te görüntülenebilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:43
+msgid "Vision Code on Coprocessor"
+msgstr "Yardımcı İşlemcide Görüntü Kodu"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:48
+msgid ""
+"Coprocessors such as the Raspberry Pi are ideal for supporting vision code "
+"(see :ref:`docs/software/vision-processing/wpilibpi/using-the-raspberry-pi-"
+"for-frc:Using the Raspberry Pi for FRC`). The advantage is that they can run"
+" full speed and not interfere with the robot program. In this case, the "
+"camera is probably connected to the coprocessor or (in the case of Ethernet "
+"cameras) an Ethernet switch on the robot. The program can be written in any "
+"language; Python is a good choice because of its simple bindings to OpenCV "
+"and NetworkTables. Some teams have used high performance vision coprocessors"
+" such as the Nvidia Jetson for fastest speed and highest resolution, "
+"although this approach generally requires advanced Linux and programming "
+"knowledge."
+msgstr ""
+"Raspberry Pi gibi yardımcı işlemciler, görüntü kodunu desteklemek için "
+"idealdir (bkz: ref: `docs / software / vision-processing / wpilibpi / using-"
+"the-raspberry-pi-for-frc: Raspberry Pi for FRC`). Avantajı, tam hızda "
+"çalışabilmeleri ve robot programına müdahale etmemeleridir. Bu durumda, "
+"kamera muhtemelen yardımcı işlemciye veya (Ethernet kameraları olması "
+"durumunda) robot üzerindeki bir Ethernet anahtarına bağlıdır. Program "
+"herhangi bir dilde yazılabilir; Python, OpenCV ve NetworkTables'a olan basit"
+" bağlantıları nedeniyle iyi bir seçimdir. Bazı ekipler, en yüksek hız ve en "
+"yüksek çözünürlük için Nvidia Jetson gibi yüksek performanslı görüntü "
+"yardımcı işlemcileri kullandı, ancak bu yaklaşım genellikle gelişmiş Linux "
+"ve programlama bilgisi gerektiriyor."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:50
+msgid ""
+"This approach takes a bit more programming expertise as well as a small "
+"amount of additional weight, but otherwise it brings the best of both worlds"
+" compared to the other two approaches, as coprocessors are much faster than "
+"the roboRIO and the image processing can be performed with minimal latency "
+"or bandwidth use."
+msgstr ""
+"Bu yaklaşım, biraz daha fazla programlama uzmanlığı ve az miktarda ek "
+"ağırlık gerektirir, ancak aksi takdirde, yardımcı işlemciler roboRIO'dan çok"
+" daha hızlı olduğundan ve görüntü işleme ile gerçekleştirilebildiğinden, "
+"diğer iki yaklaşıma kıyasla her iki yerin en iyisini minimum gecikme veya "
+"bant genişliği kullanımı ile getirir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:52
+msgid ""
+"Data can be sent from the vision program on the coprocessor to the robot "
+"using NetworkTables or a private protocol over a network or serial "
+"connection."
+msgstr ""
+"Veriler, yardımcı işlemcideki görüntü programından robota NetworkTables veya"
+" bir ağ veya seri bağlantı üzerinden özel bir protokol kullanılarak "
+"gönderilebilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:55
+msgid "Camera Options"
+msgstr "Kamera Seçenekleri"
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:57
+msgid ""
+"There are a number of camera options supported by WPILib. Cameras have a "
+"number of parameters that affect operation; for example, frame rate and "
+"image resolution affect the quality of the received images, but when set too"
+" high impact processing time and, if sent to the driver station, may exceed "
+"the available bandwidth on the field."
+msgstr ""
+"WPILib tarafından desteklenen bir dizi kamera seçeneği vardır. Kameraların "
+"çalışmayı etkileyen bir dizi parametresi vardır; örneğin, kare hızı ve "
+"görüntü çözünürlüğü alınan görüntülerin kalitesini etkiler, ancak çok yüksek"
+" etkili işleme süresi ayarlandığında ve sürücü istasyonuna gönderilirse, "
+"sahadaki mevcut bant genişliğini aşabilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/strategies-for-vision-programming.rst:59
+msgid ""
+"The CameraServer class in C++ and Java is used to interface with cameras "
+"connected to the robot. It retrieve frames for local processing through a "
+"Source object and sends the stream to your driver station for viewing or "
+"processing there."
+msgstr ""
+"C ++ ve Java'daki CameraServer sınıfı, robota bağlı kameralarla arayüz "
+"oluşturmak için kullanılır. Bir Kaynak nesnesi aracılığıyla yerel işleme "
+"için çerçeveleri alır ve akışı orada görüntülemek veya işlemek için sürücü "
+"istasyonunuza gönderir."

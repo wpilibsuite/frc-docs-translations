@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:2
+msgid "Swerve Drive Odometry"
+msgstr "Odometría para un Swerve Drive"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:3
+msgid ""
+"A user can use the swerve drive kinematics classes in order to perform "
+":ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>`. WPILib contains a ``SwerveDriveOdometry`` class "
+"that can be used to track the position of a swerve drive robot on the field."
+msgstr ""
+"Un usuario puede usar las clases cinemáticas del swerve drive para ejecutar"
+"  :ref:`odometría <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>`. WPILib contiene una clase "
+"``SwerveDriveOdometry`` que puede ser utilizada para rastrear la posicion de"
+" un robot con swerve drive en el campo."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:5
+msgid ""
+"Because this method only uses encoders and a gyro, the estimate of the "
+"robot's position on the field will drift over time, especially as your robot"
+" comes into contact with other robots during gameplay. However, odometry is "
+"usually very accurate during the autonomous period."
+msgstr ""
+"Dado a que este método utiliza solamente encoders y un giroscopio, el "
+"estimado de la posición del robot en el campo variará con el tiempo, "
+"especialmente cuando el robot tenga contacto con otros robots durante el "
+"juego. Sin embargo, la odometría es usualmente muy  acertada para el periodo"
+" autónomo."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:8
+msgid "Creating the odometry object"
+msgstr "Creando el objeto odométrico"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:9
+msgid ""
+"The ``SwerveDriveOdometry<int NumModules>`` class requires one template "
+"argument (only C++), two mandatory arguments, and one optional argument. The"
+" template argument (only C++) is an integer representing the number of "
+"swerve modules. The mandatory arguments are the kinematics object that "
+"represents your swerve drive (in the form of a ``SwerveDriveKinematics`` "
+"class) and the angle reported by your gyroscope (as a Rotation2d). The third"
+" optional argument is the starting pose of your robot on the field (as a "
+"``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = "
+"0``."
+msgstr ""
+"La clase ``SwerveDriveOdometry<int NumModules>``  requiere un argumento de "
+"plantilla (solo en C++), dos argumentos obligatorios y un argumento "
+"opcional. El argumento de plantilla (solo en C++) es un entero que "
+"representa el número de módulos swerve. Los argumentos obligatorios son el "
+"objeto cinématico que representa tu swerve drive (en la forma de una clase "
+"``SwerveDriveKinematics`` ) y el ángulo reportado por tu giroscopio (como "
+"Rotation2d). El tercer argumento opcional es la posición inicial de tu robot"
+" en el campo (como ``Pose2d``). De forma predeterminada, el robot empezará "
+"en ``x = 0, y = 0, theta = 0``."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:11
+msgid ""
+"0 degrees / radians represents the robot angle when the robot is facing "
+"directly toward your opponent's alliance station. As your robot turns to the"
+" left, your gyroscope angle should increase. By default, WPILib gyros "
+"exhibit the opposite behavior, so you should negate the gyro angle."
+msgstr ""
+"0 grados / radianes representa el ángulo del robot cuando este se encuentra "
+"de frente hacia la estación del oponente. Si el robot empieza a girar a la "
+"izquierda, el ángulo del giroscopio debe aumentar. De forma predeterminada, "
+"los giroscopios de WPILib muestras un comportamiento opuesto, así que debes "
+"anular el ángulo del giroscopio."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:55
+msgid "Updating the robot pose"
+msgstr "Actualizando la posición del robot"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:56
+msgid ""
+"The ``update`` method of the odometry class updates the robot position on "
+"the field. The update method takes in the gyro angle of the robot, along "
+"with a series of module states (speeds and angles) in the form of a "
+"``SwerveModuleState`` each. It is important that the order in which you pass"
+" the ``SwerveModuleState`` objects is the same as the order in which you "
+"created the kinematics object."
+msgstr ""
+"El método ``update`` de la clase de odometría actualiza la posición del "
+"robot en el campo. Este método recibe el ángulo del robot del giroscopio, "
+"así como una serie de estados modulares (velocidades y ángulos) en forma de "
+"``SwerveModuleState``. Es importante que el orden en el que pasas los "
+"objetos ``SwerveModuleState`` es el mismo orden en el que creaste el objeto "
+"cinemático."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:58
+msgid ""
+"This ``update`` method must be called periodically, preferably in the "
+"``periodic()`` method of a :ref:`Subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method "
+"returns the new updated pose of the robot."
+msgstr ""
+"Este método ``update`` debe ser llamado periódicamente, de preferencia en el"
+" método ``periodic()`` de un :ref:`Subsistema "
+"<docs/software/commandbased/subsystems:Subsystems>`. El método ``update`` "
+"regresa la nueva posición actualizada del robot."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:90
+msgid "Resetting the Robot Pose"
+msgstr "Restableciendo la posición del robot"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:91
+msgid ""
+"The robot pose can be reset via the ``resetPose`` method. This method "
+"accepts two arguments -- the new field-relative pose and the current gyro "
+"angle."
+msgstr ""
+"La posición del robot puede restablecerse por medio del método "
+"``resetPose``. Este método acepta dos argumentos -- la nueva posición "
+"relativa al campo y el ángulo del giroscopio actual. "
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:93
+msgid ""
+"If at any time, you decide to reset your gyroscope, the ``resetPose`` method"
+" MUST be called with the new gyro angle."
+msgstr ""
+"Si en algún momento, decides reiniciar tu giroscopio, el método "
+"``resetPose`` DEBE ser llamado con el nuevo ángulo del giroscopio."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:95
+msgid ""
+"The implementation of ``getState() / GetState()`` above is left to the user."
+" The idea is to get the module state (speed and angle) from each module. For"
+" a full example, see here: `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_"
+" / `Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_."
+msgstr ""
+"La implementación de ``getState() / GetState()``  anterior se deja al "
+"usuario. La idea es obtener el estado del módulo (velocidad y ángulo) de "
+"cada módulo. Para un ejemplo completo, vea aquí: "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_"
+" / `Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:97
+msgid ""
+"In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be"
+" used to retrieve the current robot pose without an update."
+msgstr ""
+"Además, los métodos ``GetPose`` (C++) / ``getPoseMeters`` (Java) pueden ser "
+"utilizado para recuperar la posición actual del robot sin la necesidad de "
+"actualizar."

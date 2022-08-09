@@ -1,0 +1,244 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Pierre Cote <persini24@outlook.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-08-25 16:09+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:2
+msgid "Converting a Simple Autonomous Program to Command-Based"
+msgstr "Convertir un programa autónomo simple a uno basado en comandos"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Esta documentación describe el uso de la biblioteca dejada basada en "
+"comandos. Si bien esta documentación se ha conservado para ayudar a los "
+"equipos que aún no lo han hecho, se recomienda encarecidamente a los equipos"
+" que migren a la nueva biblioteca basada en comandos."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:6
+msgid ""
+"This document describes how to rewrite a simple autonomous into a command "
+"based autonomous. Hopefully, going through this process will help those more"
+" familiar with the older simple autonomous method understand the command "
+"based method better. By re-writing it as a command based program, there are "
+"several benefits in terms of testing and reuse. For this example, all of the"
+" logic is abstracted out into functions primarily so that the focus of this "
+"example can be on the structure."
+msgstr ""
+"Este documento describe cómo reescribir un autónomo simple en un autónomo "
+"basado en comandos. Con suerte, pasar por este proceso ayudará a aquellos "
+"más familiarizados con el método autónomo simple más antiguo a comprender "
+"mejor el método basado en comandos. Al volver a escribirlo como un programa "
+"basado en comandos, hay varios beneficios en términos de prueba y "
+"reutilización. Para este ejemplo, toda la lógica se abstrae en funciones "
+"principalmente para que el enfoque de este ejemplo pueda estar en la "
+"estructura."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:9
+msgid "Initial Autonomous Code"
+msgstr "Inicializar el código autónomo"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:63
+msgid ""
+"The code above aims a shooter, then it spins up a wheel and, finally, once "
+"the wheel is running at the desired speed, it shoots the frisbee. The code "
+"consists of three distinct actions: aim, spin up to speed and shoot the "
+"Frisbee. The first two actions follow a command pattern that consists of "
+"four parts:"
+msgstr ""
+"El código anterior apunta a un disparador, luego hace girar una rueda y, "
+"finalmente, una vez que la rueda funciona a la velocidad deseada, dispara al"
+" frisbee. El código consta de tres acciones distintas: apuntar, girar a toda"
+" velocidad y disparar al Frisbee. Las dos primeras acciones siguen un patrón"
+" de comando que consta de cuatro partes:"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:65
+msgid "Initialization: prepares for the action to be performed."
+msgstr "Inicialización: se prepara para la acción a realizar."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:66
+msgid "Condition: keeps the loop going while it is satisfied."
+msgstr "Condición: mantiene el ciclo en marcha mientras está satisfecho."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:67
+msgid ""
+"Execution: repeatedly updates the code to try to make the condition false."
+msgstr ""
+"Ejecución: actualiza repetidamente el código para intentar que la condición "
+"sea falsa."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:68
+msgid ""
+"End: performs any cleanup and final task before moving on to the next "
+"action."
+msgstr ""
+"Fin: realiza cualquier tarea de limpieza y final antes de pasar a la "
+"siguiente acción."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:70
+msgid ""
+"The last action only has an explicit initialize, though depending on how you"
+" read it, it can implicitly end under a number of conditions. The most "
+"obvious one two in this case are when it's done shooting or when autonomous "
+"has ended."
+msgstr ""
+"La última acción solo tiene una inicialización explícita, aunque dependiendo"
+" de cómo la lea, puede terminar implícitamente bajo una serie de "
+"condiciones. Los dos más obvios en este caso son cuando termina de disparar "
+"o cuando finaliza el periodo del autónomo"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:73
+msgid "Rewriting it as Commands"
+msgstr "Reescribiendo a comando"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:99
+msgid ""
+"The same code can be rewritten as a ``CommandGroup`` that groups the three "
+"actions, where each action is written as it's own command. First, the "
+"command group will be written, then the commands will be written to "
+"accomplish the three actions. This code is pretty straightforward. It does "
+"the three actions sequentially, that is one after the other. Line 3 aims the"
+" robot, then line 4 spins the shooter up and, finally, line 5 actually "
+"shoots the frisbee. The ``addSequential()`` method sets it so that these "
+"commands run one after the other."
+msgstr ""
+"El mismo código se puede reescribir como un ``CommandGroup`` que agrupa las "
+"tres acciones, donde cada acción se escribe como su propio comando. Primero,"
+" se escribirá el grupo de comandos, luego los comandos se escribirán para "
+"cumplir con estas tres acciones. Éste código es sencillo y directo. Realiza "
+"las tres acciones secuencialmente, una tras otra. La línea 3 apunta al "
+"robot, luego la linea 4 hace girar el disparador, y finalmente, la linea 5 "
+"dispara el frisbee. El método ``addSequential()`` lo establece para que "
+"estos comandos se ejecuten uno tras otro."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:102
+msgid "The Aim Command"
+msgstr "El comando de apuntar"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:180
+msgid ""
+"As you can see, the command reflects the four parts of the action we "
+"discussed earlier. It also has the ``interrupted()`` method which will be "
+"discussed below. The other significant difference is that the condition in "
+"the ``isFinished()`` is the opposite of what you would put as the condition "
+"of the while loop, it returns true when you want to stop running the execute"
+" method as opposed to false. Initializing, executing and ending are exactly "
+"the same, they just go within their respective method to indicate what they "
+"do."
+msgstr ""
+"Como puede ver, el comando refleja las cuatro partes de la acción que "
+"discutimos anteriormente. También tiene el método ``interrupted()`` que se "
+"discutirá a continuación. La otra diferencia significativa es que la "
+"condición  ``isFinished()`` es lo contrario de lo que pondría como condición"
+" del ciclo while, devuelve verdadero cuando desea detener la ejecución del "
+"método de ejecución en lugar de falso. La inicialización, la ejecución y el "
+"final son exactamente lo mismo, solo van dentro de su método respectivo para"
+" indicar lo que hacen."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:183
+msgid "SpinUpShooter Command"
+msgstr "Comando SpinUpShooter"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:262
+msgid ""
+"The spin up shooter command is very similar to the Aim command, it's the "
+"same basic idea."
+msgstr ""
+"El comando spin up shooter es muy similar al comando Aim command, es la "
+"misma idea básica."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:265
+msgid "Shoot Command"
+msgstr "Comando shoot"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:341
+msgid ""
+"The shoot command is the same basic transformation yet again, however it is "
+"set to end immediately. In CommandBased programming, it is better to have "
+"it's isFinished method return true when the act of shooting is finished, but"
+" this is a more direct translation of the original code."
+msgstr ""
+"El comando de disparo es la misma transformación básica una vez más, sin "
+"embargo, está configurado para finalizar de inmediato. En la programación "
+"basada en comandos, es mejor que su método IsFinished vuelva verdadero "
+"cuando finalice el acto de disparo, pero esta es una traducción más directa "
+"del código original."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:344
+msgid "Benefits of Command-Based"
+msgstr "Beneficios de los comandos"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:346
+msgid ""
+"Why bother re-writing the code as CommandBased? Writing the code in the "
+"CommandBased style offers a number of benefits:"
+msgstr ""
+"¿Por qué molestarse en volver a escribir el código como CommandBased? "
+"Escribir el código en el estilo CommandBased ofrece una serie de beneficios:"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:348
+msgid ""
+"**Re-Usability** - You can reuse the same command in teleop and multiple "
+"autonomous modes. They all reference the same code, so if you need to tweak "
+"it to tune it or fix it, you can do it in one place without having to make "
+"the same edits in multiple places."
+msgstr ""
+" **Reutilización**- puede reutilizar el mismo comando en teleop y múltiples "
+"modos autónomos. Todos hacen referencia al mismo código, por lo que si "
+"necesita ajustarlo para ajustarlo o arreglarlo, puede hacerlo en un lugar "
+"sin tener que hacer las mismas ediciones en varios lugares."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:349
+msgid ""
+"**Testability** - You can test each part using tools such as the "
+"ShuffleBoard to test parts of the autonomous. Once you put them together, "
+"you'll have more confidence that each piece works as desired."
+msgstr ""
+"**Capacidad de prueba**- puede probar cada parte utilizando herramientas "
+"como el ShuffleBoard para probar partes del autónomo. Una vez que los haya "
+"reunido, tendrá más confianza en que cada pieza funciona según lo deseado."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:350
+msgid ""
+"**Parallelization** - If you wanted this code to aim and spin up the shooter"
+" at the same time, it's trivial with CommandBased programming. Just use "
+"``AddParallel()`` instead of ``AddSequential()`` when adding the Aim command"
+" and now aiming and spinning up will happen simultaneously."
+msgstr ""
+"**Paralelización**- si desea que este código apunte y haga girar el tirador "
+"al mismo tiempo, es trivial con la programación CommandBased. Simplemente "
+"use ``AddParallel()`` en lugar de ``AddSequential()`` cuando agregue el "
+"comando Apuntar y ahora apuntará y girará simultáneamente."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/basics/convert-simple-auto-command-auto.rst:351
+msgid ""
+"**Interruptibility** - Commands are interruptible, this provides the ability"
+" to exit a command early, a task that is much harder in the equivalent while"
+" loop based code."
+msgstr ""
+"**Interrumpibilidad**- los comandos son interrumpibles, esto proporciona la "
+"capacidad de salir de un comando antes, una tarea que es mucho más difícil "
+"en el equivalente mientras que el código basado en bucle."

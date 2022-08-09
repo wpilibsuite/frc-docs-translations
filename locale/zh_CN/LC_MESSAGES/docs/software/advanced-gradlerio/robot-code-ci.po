@@ -1,0 +1,165 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"PO-Revision-Date: 2021-03-17 04:18+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:2
+msgid "Setting up CI for Robot Code using GitHub Actions"
+msgstr "使用GitHub Actions为机器人代码设置CI"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:4
+msgid ""
+"An important aspect of working in a team environment is being able to test "
+"code that is pushed to a central repository such as GitHub. For example, a "
+"project manager or lead developer might want to run a set of unit tests "
+"before merging a pull request or might want to ensure that all code on the "
+"main branch of a repository is in working order."
+msgstr ""
+"在团队环境中工作的一个重要方面是能够测试推送到像 GitHub "
+"一样的中央存储库的代码。例如，项目经理或首席开发人员可能希望在合并拉取请求之前运行一组单元测试，或者可能想要确保存储库主分支上的所有代码都处于正常工作状态。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:6
+msgid ""
+"`GitHub Actions <https://github.com/features/actions>`_ is a service that "
+"allows for teams and individuals to build and run unit tests on code on "
+"various branches and on pull requests. These types of services are more "
+"commonly known as \"Continuous Integration\" services. This tutorial will "
+"show you how to setup GitHub Actions on robot code projects."
+msgstr ""
+"GitHub Actions <https://github.com/features/actions> _ "
+"是一项服务，它允许团队和个人在各个分支上的代码以及请求请求上构建和运行单元测试。这些类型的服务通常称为“连续集成”服务。本教程将向你展示如何在机器人代码项目上设置"
+" GitHub Actions 。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:8
+msgid ""
+"This tutorial assumes that your team's robot code is being hosted on GitHub."
+" For an introduction to Git and GitHub, please see this :doc:`introduction "
+"guide </docs/software/basic-programming/git-getting-started>`."
+msgstr ""
+"本教程假定您团队的机器人代码托管在GitHub上。有关Git和GitHub的简介，请参见：doc：`入门指南</docs/software/basic-"
+"programming/git-getting-started>`。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:11
+msgid "Creating the Action"
+msgstr "创建动作"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:12
+msgid ""
+"The instructions for carrying out the CI process are stored in a YAML file. "
+"To create this, click on the \"Actions\" tab at the top of your repository. "
+"Then click on the \"set up a workflow yourself\" hyperlink."
+msgstr ""
+"进行 CI 处理的指令存储在 YAML 文件中。为了创建动作，请单击存储库顶部的 “操作” 选项卡。然后单击 “自行设置工作流程” 超链接。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:17
+msgid ""
+"You will now be greeted with a text editor. Replace all the default text "
+"with the following:"
+msgstr "你现在会看到一个文本编辑器。将所有默认文本替换为以下内容："
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:56
+msgid ""
+"Then, save changes by clicking the \"Start commit\" button on the top-right "
+"corner of the screen. You can amend the default commit message if you wish "
+"to do so. Then, click the green \"Commit new file\" button."
+msgstr "然后，通过单击屏幕右上角的 “开始提交” 按钮来保存更改。如果愿意，您可以修改默认提交消息。然后，单击绿色的 “提交新文件” 按钮。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:62
+msgid ""
+"GitHub will now automatically run a build whenever a commit is pushed to "
+"main or a pull request is opened. To monitor the status of any build, you "
+"can click on the \"Actions\" tab on the top of the screen."
+msgstr ""
+"现在，无论何时将提交推送到 main 或打开 pull 请求，GitHub 都会自动运行构建。要监视任何构建的状态，你可以单击屏幕顶部的 “操作” "
+"选项卡。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:68
+msgid "A Breakdown of the Actions YAML File"
+msgstr "Actions YAML 文件的细分"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:69
+msgid ""
+"Here is a breakdown of the YAML file above. Although a strict understanding "
+"of each line is not required, some level of understanding will help you add "
+"more features and debug potential issues that may arise."
+msgstr "以下是 YAML 文件的细分。尽管不需要对每一行都有严格的了解，但是一定程度的了解将帮助您添加更多功能并调试可能出现的潜在问题。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:81
+msgid ""
+"This block of code dictates when the Action will run. Currently, the action "
+"will run when commits are pushed to main or when pull requests are opened "
+"against main."
+msgstr "此代码块指示操作将在何时运行。当前，该操作将在将提交推送到 main 或针对 main 打开拉取请求时运行。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:95
+msgid ""
+"Each Action workflow is made of a one or more jobs that run either "
+"sequentially (one after another) or in parallel (at the same time). In our "
+"workflow, there is only one \"build\" job."
+msgstr ""
+"每个 Action 工作流程都由一个或多个作业组成，这些作业 (依次一个接一个) 运行或并行 (同时) 运行。在我们的工作流程中，只有一项 “构建” "
+"工作。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:97
+msgid ""
+"We specify that we want the job to run on an Ubuntu virtual machine and in a"
+" virtualized `Docker container <https://www.docker.com/resources/what-"
+"container>`_ that contains the JDK, C++ compiler and roboRIO toolchains."
+msgstr ""
+"我们指定希望工作在 Ubuntu 虚拟机上和虚拟化的 Docker 容器<https://www.docker.com/resources/what-"
+"container> _中运行，该容器包含 JDK ，C ++ 编译器和 roboRIO 工具链。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:114
+msgid ""
+"Each job has certain steps that will be executed. This job has three steps. "
+"The first step involves checking out the repository to access the robot "
+"code. The second step involves giving the virtual machine permission to "
+"execute gradle tasks using ``./gradlew``. The final step runs ``./gradlew "
+"build`` to compile robot code and run any unit tests."
+msgstr ""
+"每个工作都有某些将要执行的步骤。这项工作分为三个步骤。第一步涉及检出存储库以访问机器人代码。第二步涉及授予虚拟机使用 ``./ gradlew`` 执行"
+" gradle 任务的权限。最后一步运行 ``./gradlew build`` 来编译机器人代码并运行任何单元测试。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:117
+msgid "Adding a Build Status Badge to a README.md File"
+msgstr "将构建状态标志添加到 README.md 文件"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:118
+msgid ""
+"It is helpful to add a CI status badge to the top of your repository's "
+"README file to quickly check the status of the latest build on main. To do "
+"this, click on the \"Actions\" tab at the top of the screen and select the "
+"\"CI\" tab on the left side of the screen. Then, click on the \"Create "
+"status badge\" button on the top right and copy the status badge Markdown "
+"code."
+msgstr ""
+"将 CI 状态标记添加到存储库的 README 文件的顶部非常有帮助，以快速检查 main 上最新版本的状态。为此，请单击屏幕顶部的 “操作” "
+"选项卡，然后选择屏幕左侧的 “ CI” 选项卡。然后，点击右上角的“创建状态标记”按钮，然后复制状态徽章 Markdown 代码。"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:123
+msgid ""
+"Finally, paste the Markdown code you copied at the top of your README file, "
+"commit, and push your changes. Now, you should see the GitHub Actions status"
+" badge on your main repository page."
+msgstr ""
+"最后，将复制的 Markdown 代码粘贴到 README 文件的顶部，提交并推送更改。现在，你应该在主存储库页面上看到 GitHub Actions "
+"状态标记。"

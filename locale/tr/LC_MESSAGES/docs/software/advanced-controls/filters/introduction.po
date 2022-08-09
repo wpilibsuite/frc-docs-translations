@@ -1,0 +1,168 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-17 16:15+0000\n"
+"PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:2
+msgid "Introduction to Filters"
+msgstr "Filtrelere Giriş"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:4
+msgid ""
+"Filters are some of the most common tools used in modern technology, and "
+"find numerous applications in robotics in both signal processing and "
+"controls.  Understanding the notion of a filter is crucial to understanding "
+"the utility of the various types of filters provided by WPILib."
+msgstr ""
+"Filtreler, modern teknolojide kullanılan en yaygın araçlardan bazılarıdır ve"
+" hem sinyal işlemede hem de kontrollerde robotikte çok sayıda uygulama "
+"bulur. Bir filtre kavramını anlamak, WPILib tarafından sağlanan çeşitli "
+"filtre türlerinin faydasını anlamak için çok önemlidir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:7
+msgid "What Is a Filter?"
+msgstr "Filtre Nedir?"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:9
+msgid ""
+"For the sake of this article, we will assume all data are single-dimensional"
+" time-series data.  Obviously, the concepts involved are more general than "
+"this - but a full/rigorous discussion of signals and filtering is out of the"
+" scope of this documentation."
+msgstr ""
+"Bu makalenin iyiliği için, tüm verilerin tek boyutlu zaman serisi verileri "
+"olduğunu varsayacağız. Açıkçası, ilgili kavramlar bundan daha geneldir - "
+"ancak sinyallerin ve filtrelemenin tam / titiz bir tartışması bu belgenin "
+"kapsamı dışındadır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:11
+msgid ""
+"So, what exactly *is* a filter, then?  Simply put, a filter is a mapping "
+"from a stream of inputs to a stream of outputs.  That is to say, the value "
+"output by a filter (in principle) can depend not only on the *current* value"
+" of the input, but on *the entire set of past and future values* (of course,"
+" in practice, the filters provided by WPILib are implementable in real-time "
+"on streaming data; accordingly, they can only depend on the *past* values of"
+" the input, and not on future values).  This is an important concept, "
+"because generally we use filters to remove/mitigate unwanted *dynamics* from"
+" a signal.  When we filter a signal, we're interested in modifying *how the "
+"signal changes over time*."
+msgstr ""
+"Öyleyse, tam olarak filtre *nedir* ? Basitçe ifade etmek gerekirse, bir "
+"filtre, bir giriş akışından bir çıkış akışına eşlemedir. Diğer bir deyişle, "
+"bir filtreden (prensip olarak) çıkan değer, yalnızca girdinin *mevcut* "
+"değerine değil, aynı zamanda *tüm geçmiş ve gelecekteki değerler kümesine* "
+"(tabii ki pratikte filtreler, WPILib tarafından sağlananlar gerçek zamanlı "
+"olarak akış verilerinde uygulanabilir; buna göre, bunlar yalnızca girdinin "
+"*geçmiş* değerlerine bağlı olabilir ve gelecekteki değerlere bağlı değildir)"
+" bağlı olabilir. Bu önemli bir kavramdır, çünkü genellikle bir sinyalden "
+"istenmeyen *dinamikleri* kaldırmak / azaltmak için filtreler kullanırız. Bir"
+" sinyali filtrelediğimizde, *sinyalin zaman içinde nasıl değiştiğini* "
+"kontrol etmekle ilgileniyoruz."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:14
+msgid "Effects of Using a Filter"
+msgstr "Filtre Kullanmanın Etkileri"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:17
+msgid "Noise Reduction"
+msgstr "Gürültü Azaltma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:19
+msgid ""
+"One of the most typical uses of a filter is for noise reduction.  A filter "
+"that reduces noise is called a *low-pass* filter (because it allows low "
+"frequencies to \"pass through,\" while blocking high-frequencies).  Most of "
+"the filters currently included in WPILib are effectively low-pass filters."
+msgstr ""
+"Bir filtrenin en tipik kullanımlarından biri gürültüyü azaltmaktır. "
+"Gürültüyü azaltan bir filtreye *alçak-geçiren* filtre denir (çünkü yüksek "
+"frekansları bloke ederken düşük frekansların \"geçmesine\" izin verir). Şu "
+"anda WPILib'de bulunan filtrelerin çoğu, etkili bir şekilde alçak geçiren "
+"filtrelerdir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:22
+msgid "Rate Limiting"
+msgstr "Oran Sınırlama"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:24
+msgid ""
+"Filters are also commonly used to reduce the rate at which a signal can "
+"change.  This is closely related to noise reduction, and filters that reduce"
+" noise also tend to limit the rate of change of their output."
+msgstr ""
+"Filtreler ayrıca bir sinyalin değişme hızını azaltmak için de yaygın olarak "
+"kullanılır. Bu, gürültünün azaltılmasıyla yakından ilgilidir ve gürültüyü "
+"azaltan filtreler de çıktılarının değişim oranını sınırlama eğilimindedir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:27
+msgid "Edge Detection"
+msgstr "Kenar algılama"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:29
+msgid ""
+"The counterpart to the low-pass filter is the high-pass filter, which only "
+"permits high frequencies to pass through to the output.  High-pass filters "
+"can be somewhat tricky to build intuition for, but a common usage for a "
+"high-pass filter is edge-detection - since high-pass filters will reflect "
+"sudden changes in the input while ignoring slower changes, they are useful "
+"for determining the location of sharp discontinuities in the signal."
+msgstr ""
+"Alçak geçiren filtrenin karşılığı, yalnızca yüksek frekansların çıkışa "
+"geçmesine izin veren yüksek geçiren filtredir. Yüksek geçiren filtrelerin "
+"sezgileri oluşturmak için biraz zor olabilir, ancak yüksek geçiren bir "
+"filtrenin yaygın bir kullanımı kenar algılamadır - yüksek geçiren filtreler,"
+" daha yavaş değişiklikleri göz ardı ederken girdideki ani değişiklikleri "
+"yansıtacağından, sinyaldeki keskin süreksizliklerin yerini belirlemek için "
+"yararlıdırlar."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:32
+msgid "Phase Lag"
+msgstr "Faz gecikmesi"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:34
+msgid ""
+"An unavoidable negative effect of a real-time low-pass filter is the "
+"introduction of \"phase lag.\"  Since, as mentioned earlier, a real-time "
+"filter can only depend on past values of the signal (we cannot time-travel "
+"to obtain the future values), the filtered value takes some time to \"catch "
+"up\" when the input starts changing.  The greater the noise-reduction, the "
+"greater the introduced delay.  This is, in many ways, *the* fundamental "
+"trade-off of real-time filtering, and should be the primary driving factor "
+"of your filter design."
+msgstr ""
+"Gerçek zamanlı bir düşük geçiş filtresinin kaçınılmaz bir olumsuz etkisi, "
+"\"faz gecikmesi\" nin ortaya çıkmasıdır. Daha önce belirtildiği gibi, gerçek"
+" zamanlı bir filtre yalnızca sinyalin geçmiş değerlerine bağlı "
+"olabileceğinden (gelecekteki değerleri elde etmek için zamanda yolculuk "
+"yapamayız), filtrelenen değerin giriş değişmeye başladığında \"yakalanması\""
+" biraz zaman alır. Gürültü azaltma ne kadar büyükse, eklenen gecikme o kadar"
+" büyük olur. Bu, birçok yönden, gerçek zamanlı filtrelemenin *temel* tan "
+"etkisidir ve filtre tasarımınızın birincil itici faktörü olmalıdır."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/introduction.rst:36
+msgid ""
+"Interestingly, high-pass filters introduce a phase *lead*, as opposed to a "
+"phase lag, as they exacerbate local changes to the value of the input."
+msgstr ""
+"İlginç bir şekilde, yüksek geçişli filtreler, giriş değerindeki yerel "
+"değişiklikleri şiddetlendirdiklerinden, bir faz gecikmesinin aksine bir faz "
+"*öncüsü* sunar."

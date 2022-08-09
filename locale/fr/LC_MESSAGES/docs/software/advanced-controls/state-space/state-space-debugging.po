@@ -1,0 +1,143 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 04:03+0000\n"
+"PO-Revision-Date: 2020-10-04 04:16+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:2
+msgid "Debugging State-Space Models and Controllers"
+msgstr "Débogage des modèles et contrôleurs d'espace d'état"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:5
+msgid "Checking Signs"
+msgstr "Vérification des signes"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:7
+msgid ""
+"One of the most common causes of bugs with state-space controllers is signs "
+"being flipped. For example, models included in WPILib expect positive "
+"voltage to result in a positive acceleration, and vice versa. If applying a "
+"positive voltage does not make the mechanism accelerate forwards, or if "
+"moving \"forwards\" makes encoder (or other sensor readings) decrease, they "
+"should be inverted so that positive voltage input results in a positive "
+"encoder reading. For example, if I apply an :term:`input` of :math:`[12, "
+"12]^T` (full forwards for the left and right motors) to my differential "
+"drivetrain, my wheels should propel my robot \"forwards\" (along the +X axis"
+" locally), and for my encoders to read a positive velocity."
+msgstr ""
+"L'une des causes les plus courantes de bogues avec les contrôleurs d'espace "
+"d'état est le mauvais agencement des signes (+ ou -). Par exemple, les "
+"modèles inclus dans WPILib s'attendent à ce qu'une tension positive entraîne"
+" une accélération positive, et vice versa. Si l'application d'une tension "
+"positive ne fait pas accélérer le mécanisme vers l'avant, ou si le "
+"déplacement «vers l'avant» fait diminuer le codeur (ou d'autres lectures de "
+"capteur), ils doivent être inversés de sorte qu'une entrée de tension "
+"positive entraîne une lecture de codeur positive. Par exemple, si j'applique"
+" une :term:`entrée` de :math:`[12, 12]^T` (vitesse maximale vers l'avant "
+"pour les moteurs gauche et droit) à ma base pilotable de type "
+"différentielle, mes roues devraient propulser mon robot \"vers l'avant \" "
+"(le long de l'axe + X), et pour mes encodeurs de lire une vitesse positive."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:10
+msgid ""
+"The WPILib ``DifferentialDrive``, by default, does not invert any motors. "
+"You may need to call the ``setInverted(true)`` method on the motor "
+"controller object to invert so that positive input creates forward motion."
+msgstr ""
+"Le WPILib ``DifferentialDrive``, par défaut, n'inverse aucun moteur. Vous "
+"devrez peut-être appeler la méthode ``setInverted(true)`` sur l'objet "
+"contrôleur de moteur pour inverser afin que l'entrée positive crée un "
+"mouvement vers l'avant."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:13
+msgid "The Importance of Graphs"
+msgstr "L'importance des graphiques"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:15
+msgid ""
+"Reliable data of the :term:`system's <system>` :term:`state`\\s, "
+":term:`input`\\s and :term:`output`\\s over time is important when debugging"
+" state-space controllers and observers. One common approach is to send this "
+"data over NetworkTables and use tools such as :ref:`Shuffleboard "
+"<docs/software/dashboards/shuffleboard/index:Shuffleboard>`, which allow us "
+"to both graph the data in real-time as well as save it to a CSV file for "
+"plotting later with tools such as Google Sheets, Excel or Python."
+msgstr ""
+"Des données fiables de :term:`l’état` du :term:`système<system>`, "
+":term:`entrée`\\s et :term:`sortie`\\s  en fonction du temps sont "
+"importantes lors du débogage des contrôleurs et des observateurs d'espace-"
+"état. Une approche courante consiste à envoyer ces données sur les "
+"NetworkTables et à utiliser des outils tels que le :ref:`Shuffleboard "
+"<docs/software/dashboards/shuffleboard/index:Shuffleboard>`, qui nous "
+"permettent à la fois de représenter graphiquement les données en temps réel "
+"et aussi bien que les enregistrer dans un fichier CSV pour un traçage "
+"ultérieur avec des outils tels que Google Sheets, Excel ou Python."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:17
+msgid ""
+"By default, NetworkTables is limited to a 10hz update rate. For testing, "
+"this can be bypassed with the following code snippet to submit data at up to"
+" 100hz. This code should be run periodically to forcibly publish new data."
+msgstr ""
+"Par défaut, les NetworkTables sont limités à un taux de rafraîchissement de "
+"10 hz. Pour les tests, cette limitation  peut être contournée avec l’extrait"
+" de code suivant pour soumettre des données jusqu’à 100hz. Ce code doit être"
+" exécuté périodiquement pour forcer la publication de nouvelles données."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:19
+msgid ""
+"This will send extra data (at up to 100hz) over NetworkTables, which can "
+"cause lag with both user code and robot dashboards. This will also increase "
+"network utilization. It is often a good idea to disable this during "
+"competitions."
+msgstr ""
+"Cette opération enverra des données supplémentaires (jusqu’à 100hz) sur "
+"NetworkTables, pouvant ainsi causer des retards avec le code utilisateur et "
+"les dashboards des robots. Ce qui augmentera également l’utilisation du "
+"réseau. C’est souvent une bonne idée de désactiver cette fonctionnalité "
+"pendant les compétitions."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:37
+msgid "Compensating for Input Lag"
+msgstr "Compensation du retard d'entrée"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-debugging.rst:38
+msgid ""
+"Often times, some sensor input data (i.e. velocity readings) may be delayed "
+"due to onboard filtering that smart motor controllers tend to perform. By "
+"default, LQR's K gain assumes no input delay, so introducing significant "
+"delay on the order of tens of milliseconds can cause instability. To combat "
+"this, the LQR's K gain can be reduced, trading off performance for "
+"stability. A code example for how to compensate for this latency in a "
+"mathematically rigorous manner is available :ref:`here "
+"<docs/software/advanced-controls/state-space/state-space-intro:LQR and "
+"Measurement Latency Compensation>`."
+msgstr ""
+"Souvent, certaines données d'entrée du capteur (c'est-à-dire les lectures de"
+" vitesse) peuvent être retardées en raison du filtrage intégré que les "
+"contrôleurs de moteur intelligents ont tendance à effectuer. Par défaut, le "
+"gain K du LQR ne suppose aucun retard d'entrée, donc l'introduction d'un "
+"retard significatif de l'ordre de dizaines de millisecondes peut provoquer "
+"une instabilité. Pour lutter contre cela, le gain K du LQR peut être réduit,"
+" échangeant les performances contre la stabilité. Un exemple de code "
+"permettant de compenser cette latence de manière mathématiquement rigoureuse"
+" est disponible :ref: `ici <docs / software / advanced-controls / state-"
+"space / state-space-intro: LQR and Measurement Latency Compensation>`."

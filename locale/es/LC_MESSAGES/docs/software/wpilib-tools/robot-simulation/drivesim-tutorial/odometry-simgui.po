@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# Pierre Cote <persini24@outlook.com>, 2021
+# Diana Ramos <dianaracasas@gmail.com>, 2021
+# Heber Sepúlveda <heber.sepulveda.m@gmail.com>, 2021
+# Luis  Hernández, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-06 04:04+0000\n"
+"PO-Revision-Date: 2021-06-22 22:10+0000\n"
+"Last-Translator: Luis  Hernández, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:2
+msgid "Step 4: Updating Odometry and Visualizing Robot Position"
+msgstr ""
+"Paso 4: Actualización de la odometría y visualización de la posición del "
+"robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:3
+msgid ""
+"Now that the simulated encoder positions, velocities, and gyro angles are "
+"being updated with accurate information periodically, this data can be used "
+"to update the pose of the robot in a periodic loop (such as the "
+"``periodic()`` method in a ``Subsystem``). In simulation, the periodic loop "
+"will use simulated encoder and gyro readings to update odometry whereas on "
+"the real robot, the same code will use real readings from physical hardware."
+msgstr ""
+"Ahora que las posiciones simuladas del codificador, las velocidades y los "
+"ángulos del giroscopio se actualizan con información precisa periódicamente,"
+" estos datos pueden utilizarse para actualizar la posición del robot en un "
+"bucle periódico (como el método ``periodic()`` en un ``Subsistema``). En la "
+"simulación, el bucle periódico utilizará lecturas simuladas del codificador "
+"y del giroscopio para actualizar la odometría, mientras que en el robot "
+"real, el mismo código utilizará lecturas reales del hardware físico."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:5
+msgid ""
+"For more information on using odometry, see :ref:`this document "
+"<docs/software/kinematics-and-odometry/differential-drive-"
+"odometry:Differential Drive Odometry>`."
+msgstr ""
+"Para más información sobre el uso de la odometría, ver :ref:`este documento "
+"<docs/software/kinematics-and-odometry/differential-drive-"
+"odometry:Differential Drive Odometry>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:8
+msgid "Robot Pose Visualization"
+msgstr "Visualización de la postura del robot"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:9
+msgid ""
+"The robot pose can be visualized on the Simulator GUI (during simulation) or"
+" on a dashboard such as Glass (on a real robot) by sending the odometry pose"
+" over a ``Field2d`` object. A ``Field2d`` can be trivially constructed "
+"without any constructor arguments:"
+msgstr ""
+"La pose del robot puede ser visualizada en el GUI del simulador (durante la "
+"simulación) o en un dashboard como Glass (en un robot real) enviando la pose"
+" de odometría sobre un objeto \"Field2d\". Un ``Campo2d`` puede ser "
+"construido trivialmente sin ningún argumento constructivo:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:24
+msgid ""
+"This ``Field2d`` instance must then be sent over NetworkTables. The best "
+"place to do this is in the constructor of your subsystem."
+msgstr ""
+"Esta instancia de ``Field2d`` debe enviarse a través de NetworkTables. El "
+"mejor lugar para hacer esto es en el constructor de su subsistema."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:45
+msgid ""
+"Finally, the pose from your odometry must be updated periodically into the "
+"``Field2d`` object. Remember that this should be in a general ``periodic()``"
+" method i.e. one that runs both during simulation and during real robot "
+"operation."
+msgstr ""
+"Finalmente, la posición de su odometría debe actualizarse periódicamente en "
+"el objeto ``Field2d``. Recuerde que esto debe ser en un método general "
+"``periodic()``, es decir, uno que se ejecute tanto durante la simulación "
+"como durante la operación real del robot."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:74
+msgid ""
+"It is important that this code is placed in a regular ``periodic()`` method "
+"-- one that is called periodically regardless of mode of operation. If you "
+"are using the command-based library, this method already exists. If not, you"
+" are responsible for calling this method periodically from the main "
+"``Robot`` class."
+msgstr ""
+"Es importante que este código se coloque en un método ``periodic()`` regular"
+" - uno que se llame periódicamente independientemente del modo de operación."
+" Si está usando la biblioteca basada en comandos, este método ya existe. Si "
+"no, eres responsable de llamar a este método periódicamente desde la clase "
+"principal ``Robot``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/odometry-simgui.rst:76
+msgid ""
+"At this point we have covered all of the code changes required to run your "
+"code.  You should head to the :ref:`Simulation User Interface page "
+"<docs/software/wpilib-tools/robot-simulation/simulation-gui:Simulation "
+"Specific User Interface Elements>` for more info on how to run the "
+"simulation and add the field that your simulated robot will run on to the "
+"GUI."
+msgstr ""
+"En este punto hemos cubierto todos los cambios de código necesarios para "
+"ejecutar su código. Deberías dirigirte a la página :ref:`Interfaz de usuario"
+" de la simulación <docs/software/wpilib-tools/robot-simulation/simulation-"
+"gui:Simulation Specific User Interface Elements>` para obtener más "
+"información sobre cómo ejecutar la simulación y añadir el campo en el que se"
+" ejecutará tu robot simulado a la GUI. "

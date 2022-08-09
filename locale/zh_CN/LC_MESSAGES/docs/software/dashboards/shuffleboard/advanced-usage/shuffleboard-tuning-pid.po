@@ -1,0 +1,186 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# 8192 DHC <hehehehehehe886@gmail.com>, 2021
+# Ran Xin <xinryanryan@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2021-06-22 22:05+0000\n"
+"Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:2
+msgid "Testing and Tuning PID Loops"
+msgstr "测试和调整 PID 循环"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:4
+msgid ""
+"One challenge in using sensors to control mechanisms is to have a good "
+"algorithm to drive the motors to the proper position or speed. The most "
+"commonly used control algorithm is called PID control.  There is a `good set"
+" of videos <https://wp.wpi.edu/wpilib/robotics-videos/>`__ (look for the "
+"robot controls playlist) that explain the control algorithms described here "
+"The PID algorithm converts sensor values into motor speeds by:"
+msgstr ""
+"使用传感器控制机构的一个挑战是要有一个好的算法来将电动机驱动到适当的位置或速度。最常用的控制算法称为 PID 控制。有一组很好的视频在 "
+"<https://wp.wpi.edu/wpilib/robotics-videos/>`__（查找 robot controls playlist "
+"），解释了此处介绍的控制算法。PID 算法通过以下方式将传感器值转换为电动机速度："
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:6
+msgid ""
+"Reading sensor values to determine how far the robot or mechanism from the "
+"desired setpoint. The setpoint is the sensor value that corresponds to the "
+"expected goal. For example, a robot arm with a wrist joint should be able to"
+" move to a specified angle very quickly and stop at that angle as indicated "
+"by a sensor. A potentiometer is a sensor that can measure. rotational angle."
+" By connecting it to an analog input, the program can get a voltage "
+"measurement that is directly proportional to the angle."
+msgstr ""
+"读取传感器值以确定机器人或机械装置距所需设定值的距离。设定值是与预期目标相对应的传感器值。例如，带有腕关节的机械臂应该能够非常快速地移动到指定角度并停止在传感器指示的那个角度。电位计是可以测量的旋转角度的传感器，通过将其连接到模拟输入，程序可以获得与角度成正比的电压值。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:7
+msgid ""
+"Compute an error (the difference between the sensor value and the desired "
+"value). The sign of the error value indicates which side of the setpoint the"
+" wrist is on. For example negative values might indicate that the measured "
+"wrist angle is larger than the desired wrist angle. The magnitude of the "
+"error is how far the measured wrist angle is from the actual wrist angle. If"
+" the error is zero, then the measured angle exactly matches the desired "
+"angle. The error can be used as an input to the PID algorithm to compute a "
+"motor speed."
+msgstr ""
+"计算误差（传感器值与所需值之差）。错误值的符号指示腕关节位于设定点的哪一侧。例如，负值可能表示所测量的腕部角度大于所需的腕部角度。误差的大小是所测得的手腕角度与实际手腕角度之间的距离。如果误差为零，则测量角度与所需角度完全匹配。该误差可用作PID算法的输入，以计算电动机速度。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:8
+msgid ""
+"The resultant motor speed is them used to drive the motor in the correct "
+"direction and a speed that hopefully will reach the setpoint as quickly as "
+"possible without overshooting (moving past the setpoint)."
+msgstr "最终的电动机速度用于驱动电动机以正确的方向运行，并且该速度有望尽快达到设定点而不会超调（超过设定点）。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:10
+msgid ""
+"WPILib has a PIDController class that implements the PID algorithm and "
+"accepts constants that correspond to the Kp, Ki, and Kd values. The PID "
+"algorithm has three components that contribute to computing the motor speed "
+"from the error."
+msgstr ""
+"WPILib 具有一个 PIDController 类，该类实现PID算法并接受与 Kp，Ki 和 Kd 值相对应的常量。 PID "
+"算法具有三个部分，这些部分有助于根据误差计算电动机速度。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:12
+msgid ""
+"P (proportional) - this is a term that when multiplied by a constant (Kp) "
+"will generate a motor speed that will help move the motor in the correct "
+"direction and speed."
+msgstr "P（Proportional）- 这是一个术语，当某个值乘以常数（Kp）时将产生的电动机速度，从而有助于沿正确的方向和速度移动马达。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:13
+msgid ""
+"I (integral) - this term is the sum of successive errors. The longer the "
+"error exists the larger the integral contribution will be. It is simply a "
+"sum of all the errors over time. If the wrist isn't quite getting to the "
+"setpoint because of a large load it is trying to move, the integral term "
+"will continue to increase (sum of the errors) until it contributes enough to"
+" the motor speed to get it to move to the setpoint. The sum of the errors is"
+" multiplied by a constant (Ki) to scale the integral term for the system."
+msgstr ""
+"I（Integral）- "
+"此术语所指的是连续错误的总和。错误存在的时间越长，积分贡献将越大。这只是一段时间内所有错误的总和。如果手腕由于要移动的负载而不能完全达到设定点，则积分项将继续增加（误差之和），直到它对电动机速度做出足够的贡献以使其移动至设定点。我们使用误差的总和乘以常数（Ki），以缩放系统的积分项。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:14
+msgid ""
+"D (differential) - this value is the rate of change of the errors. It is "
+"used to slow down the motor speed if it's moving too fast. It's computed by "
+"taking the difference between the current error value and the previous error"
+" value. It is also multiplied by a constant (kd) to scale it to match the "
+"rest of the system."
+msgstr ""
+"D（Differential）- "
+"此值是误差的变化率。如果电动机速度太快，则可以用其减慢电动机速度。我们通过计算当前误差值和先前误差值之间的差来得到此值。我们用其乘以常数（kd）来缩放它以匹配系统的其余部分。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:17
+msgid "Tuning the PID Controller"
+msgstr "调整PID控制器"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:19
+msgid ""
+"Tuning the PID controller consists of picking constants that will give good "
+"performance. Shuffleboard helps this process by displaying the details of a "
+"PID subsystem with a user interface for setting constant values and testing "
+"how well it operates. This is displayed while the robot is operating in test"
+" mode (done by setting \"Test\" in the driver station)."
+msgstr ""
+"调整 PID 控制器包括选提供良好的性能的常数。 Shuffleboard 通过使用用户界面显示 PID "
+"子系统的详细信息来帮助完成此过程，该用户界面用于设置常数值并测试其运行状况。当机器人在测试模式下运行时这会被显示（通过在 driver station "
+"中设置“Test”完成）。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rstNone
+msgid "Covers each section of the PIDController Subsystem widget."
+msgstr "涵盖 PIDController 子系统小部件的每个部分。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:24
+msgid ""
+"This is the test mode picture of a wrist subsystem that has a potentiometer "
+"as the sensor (pot) and a motor controller connected to the motor. It has a "
+"number of areas that correspond to the PIDSubsystem."
+msgstr "这是腕部子系统的测试模式图片，腕部子系统具有一个电位计作为传感器，以及一个与电机连接的电机控制器。它具有许多与PID子系统对应的子系统。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:26
+msgid ""
+"The analog input voltage value from the potentiometer. This is the sensor "
+"input value."
+msgstr "电位计的模拟输入电压值。这是传感器输入值。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:27
+msgid ""
+"A slider that moves the wrist motor in either direction with 0 as stopped. "
+"The positive and negative values correspond to moving up or down."
+msgstr "一个滑动器以0为停止方向沿任一方向移动手腕马达。正值和负值将对应于向上或向下移动。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:28
+msgid ""
+"The PID constants as described above (F is a feedforward value that is used "
+"for speed PID loops)"
+msgstr "如上所述的PID常数（F是用于速度PID回路的前馈值）"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:29
+msgid ""
+"The setpoint value that corresponds the to the pot value when the wrist has "
+"reached the desired value"
+msgstr "当手腕达到所需值时，对应于电位计值的设定值"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:30
+msgid "Enables the PID controller - No longer working, see below."
+msgstr "启用PID控制器-如果不起作用，请参见下文。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:32
+msgid ""
+"Try various PID gains to get the desired motor performance. You can look at "
+"the video linked to at the beginning of this article or other sources on the"
+" internet to get the desired performance."
+msgstr "尝试各种PID增益以获得所需的电动机性能。您可以查看本文开头链接的视频或互联网上的其他资料来源，以获得所需的效果。"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:37
+msgid "Enable Functionality in the New PIDController"
+msgstr "在新的 PIDController 中启用功能"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:39
+msgid ""
+"The following example demonstrates how to create a button on your dashboard "
+"that will enable/disable the PIDController."
+msgstr "以下示例演示了如何在仪表板上创建一个按钮，该按钮将启用/禁用PIDController。"

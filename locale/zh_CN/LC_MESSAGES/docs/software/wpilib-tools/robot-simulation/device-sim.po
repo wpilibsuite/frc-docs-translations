@@ -1,0 +1,190 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-18 04:05+0000\n"
+"PO-Revision-Date: 2021-03-19 04:25+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:2
+msgid "Device Simulation"
+msgstr "设备仿真"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:4
+msgid ""
+"WPILib provides a way to manage simulation device data in the form of the "
+"SimDevice API."
+msgstr "WPILib提供了一种以SimDevice API形式管理仿真设备数据的方法。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:7
+msgid "Simulating Core WPILib Device Classes"
+msgstr "模拟核心WPILib设备类"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:9
+msgid ""
+"Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have "
+"simulation classes named ``EncoderSim``, ``UltrasonicSim``, and so on. These"
+" classes allow interactions with the device data that wouldn't be possible "
+"or valid outside of simulation. Constructing them outside of simulation "
+"likely won't interfere with your code, but calling their functions and the "
+"like is undefined behavior - in the best case they will do nothing, worse "
+"cases might crash your code! Place functional simulation code in simulation-"
+"only functions (such as ``simulationPeriodic()``) or wrap them with "
+"``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (which are "
+"``constexpr`` in C++)."
+msgstr ""
+"核心WPILib设备类（即``Encoder''，``Ultrasonic''等）具有名为``EncoderSim''，``UltrasonicSim''等的仿真类。这些类允许与设备数据进行交互，而这些交互在模拟之外是不可能的或无效的。在模拟之外构造它们可能不会干扰您的代码"
+"，但是调用它们的函数等是未定义的行为-"
+"最好的情况下，它们什么都不做，更糟的情况可能会使您的代码崩溃！将功能仿真代码放在仅仿真功能中（例如simulationPeriodic（））或用RobotBase.isReal（）/"
+" RobotBase :: IsReal（）检查将它们包装起来（即constexpr``在C ++中）。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:11
+msgid ""
+"This example will use the ``EncoderSim`` class as an example. Use of other "
+"simulation classes will be almost identical."
+msgstr "本示例将使用EncoderSim类作为示例。其他模拟类的使用几乎是相同的。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:14
+msgid "Creating Simulation Device objects"
+msgstr "创建模拟设备对象"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:16
+msgid "Simulation device object can be constructed in two ways:"
+msgstr "可以通过两种方式构造仿真设备对象："
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:18
+msgid "a constructor that accepts the regular hardware object."
+msgstr "接受常规硬件对象的构造函数。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:19
+msgid ""
+"a constructor or factory method that accepts the port/index/channel number "
+"that the device is connected to. These would be the same number that was "
+"used to construct the regular hardware object. This is especially useful for"
+" :doc:`unit testing <unit-testing>`."
+msgstr ""
+"接受设备连接到的端口/索引/通道号的构造函数或工厂方法。这些数字将与用于构造常规硬件对象的数字相同。这对于单元测试<unit-testing>尤其有用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:37
+msgid "Reading and Writing Device Data"
+msgstr "读写设备数据"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:39
+msgid ""
+"Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter "
+"(``setXxx(value)``/``SetXxx(value)``) functions for each field ``Xxx``. The "
+"getter functions will return the same as the getter of the regular device "
+"class."
+msgstr ""
+"每个模拟类对于每个字段``Xxx''都有getter（``getXxx（）/''GetXxx（）``）和setter（``setXxx（value）``/``SetXxx（value）``）函数``。"
+" getter函数将返回与常规设备类的getter相同的函数。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:55
+msgid "Registering Callbacks"
+msgstr "注册回调"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:57
+msgid ""
+"In addition to the getters and setters, each field also has a "
+"``registerXxxCallback()`` function that registers a callback to be run "
+"whenever the field value changes and returns a ``CallbackStore`` object. The"
+" callbacks accept a string parameter of the name of the field and a "
+"``HALValue`` object containing the new value. Before retrieving values from "
+"a ``HALValue``, check the type of value contained. Possible types are "
+"``HALValue.kBoolean``/``HAL_BOOL``, ``HALValue.kDouble``/``HAL_DOUBLE``, "
+"``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, "
+"``HALValue.kLong``/``HAL_LONG``."
+msgstr ""
+"除了getter和setter之外，每个字段还具有一个registerXxxCallback（）函数，该函数注册一个回调函数，只要该字段值发生更改并返回CallbackStore对象，该回调函数便会运行。回调接受字段名称的字符串参数和包含新值的“"
+" "
+"HALValue”对象。从``HALValue''中获取值之前，请检查包含的值的类型。可能的类型是``HALValue.kBoolean''/``HAL_BOOL''，``HALValue.kDouble''/``HAL_DOUBLE''，``HALValue.kEnum''/``HAL_ENUM''，``HALValue.kInt"
+" ``/``HAL_INT``，``HALValue.kLong`` /``HAL_LONG``。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:59
+msgid ""
+"In Java, call ``close()`` on the ``CallbackStore`` object to cancel the "
+"callback. Keep a reference to the object so it doesn't get garbage-collected"
+" - otherwise the callback will be canceled by GC. To provide arbitrary data "
+"to the callback, capture it in the lambda or use a method reference."
+msgstr ""
+"在Java中，对CallbackStore对象调用close（）取消回调。保留对对象的引用，以免垃圾被回收-"
+"否则回调将被GC取消。要向回调提供任意数据，请在lambda中捕获它或使用方法引用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:61
+msgid ""
+"In C++, save the ``CallbackStore`` object in the right scope - the callback "
+"will be canceled when the object goes out of scope and is destroyed. "
+"Arbitrary data can be passed to the callbacks via the ``param`` parameter."
+msgstr ""
+"在C ++中，将“ CallbackStore”对象保存在正确的范围内-"
+"当对象超出范围并被销毁时，回调将被取消。可以通过param参数将任意数据传递给回调。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:63
+msgid ""
+"Attempting to retrieve a value of a type from a ``HALValue`` containing a "
+"different type is undefined behavior."
+msgstr "尝试从包含其他类型的HALValue中检索类型的值是未定义的行为。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:88
+msgid "Simulating Other Devices - The SimDeviceSim Class"
+msgstr "模拟其他设备-SimDeviceSim类"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:90
+msgid ""
+"Vendors might implement their connection to the SimDevice API slightly "
+"different than described here. They might also provide a simulation class "
+"specific for their device class. See your vendor's documentation for more "
+"information as to what they support and how."
+msgstr ""
+"供应商可能会实现与SimDevice "
+"API的连接，与此处所述稍有不同。他们可能还会提供特定于其设备类的仿真类。有关他们支持什么以及如何获得更多信息，请参阅供应商的文档。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:94
+msgid ""
+"The ``SimDeviceSim`` object is created using a string key identical to the "
+"key the vendor used to construct the underlying ``SimDevice`` in their "
+"device class. This key is the one that the device shows up with in the "
+":guilabel:`Other Devices` tab, and is typically of the form ``Prefix:Device "
+"Name[index]``. If the key contains ports/index/channel numbers, they can be "
+"passed as separate arguments to the ``SimDeviceSim`` constructor. The key "
+"contains a prefix that is hidden by default in the SimGUI, it can be shown "
+"by selecting the :guilabel:`Show prefix` option. Not including this prefix "
+"in the key passed to ``SimDeviceSim`` will not match the device!"
+msgstr ""
+"使用与厂商用来在其设备类中构造基础``SimDevice''的键相同的字符串键创建``SimDeviceSim''对象。该密钥是设备在``其他设备''选项卡中显示的密钥，通常为``前缀：设备名称[索引]''的形式。如果键包含端口/索引/通道号，则可以将它们作为单独的参数传递给“"
+" SimDeviceSim”构造函数。该密钥包含一个默认情况下在SimGUI中隐藏的前缀，可以通过选择：guilabel：`Show "
+"prefix`选项来显示。在传递给``SimDeviceSim``的密钥中不包含此前缀将与设备不匹配！"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:105
+msgid ""
+"Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects "
+"representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, "
+"``SimLong``, ``SimBoolean``, and ``SimEnum`` subclasses also exist, and "
+"should be used instead of the type-unsafe ``SimValue`` class. These are "
+"constructed from the ``SimDeviceSim`` using a string key identical to the "
+"one the vendor used to define the field. This key is the one the field "
+"appears as in the SimGUI. Attempting to retrieve a ``SimValue`` object "
+"outside of simulation or when either the device or field keys are unmatched "
+"will return ``null`` - this can cause ``NullPointerException`` in Java or "
+"undefined behavior in C++."
+msgstr ""
+"一旦有了“ SimDeviceSim”，就可以获取代表设备字段的“ "
+"SimValue”对象。特定类型的``SimDouble''，``SimInt''，``SimLong''，``SimBoolean''和``SimEnum``子类也存在，并且应该使用它们来代替类型不安全的``SimValue"
+" ``课。这些是使用与供应商用来定义该字段的字符串相同的字符串键从“ "
+"SimDeviceSim”构造的。该键是该字段在SimGUI中显示的键。尝试在模拟之外或设备或字段键不匹配时检索“ SimValue”对象将返回“ "
+"null”-这可能会导致Java中出现“ NullPointerException”或C ++中出现未定义的行为。"

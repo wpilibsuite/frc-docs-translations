@@ -1,0 +1,157 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-11 04:03+0000\n"
+"PO-Revision-Date: 2022-01-10 04:09+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:2
+msgid "Bang-Bang Control with BangBangController"
+msgstr "Commande Tout ou Rien en abrégé TOR avec contrôleur BangBang"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:4
+msgid ""
+"`\"Bang-bang\" control "
+"<https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control>`__ is a control "
+"strategy that employs only two states: on (when the measurement is below the"
+" setpoint) and off (otherwise).  This is roughly equivalent to a "
+"proportional loop with infinite gain."
+msgstr ""
+"`La commande \"Bang-bang\" ou \"Tout ou rien\" "
+"<https://en.wikipedia.org/wiki/Bang%E2%80%93bang_control>`__ est une "
+"stratégie de contrôle qui n’utilise que deux états: activé (lorsque la "
+"mesure est inférieure au point de consigne) et désactivé (dans le cas "
+"contraire). Ceci est à peu près équivalent à une boucle proportionnelle avec"
+" un gain infini."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:6
+msgid ""
+"This may initially seem like a poor control strategy, as PID loops are known"
+" to become unstable as the gains become large - and indeed, it is a *very "
+"bad idea to use a bang-bang controller on anything other than velocity "
+"control of a high-inertia mechanism*."
+msgstr ""
+"Cette approche peut sembler au départ être une mauvaise stratégie de "
+"contrôle, car les boucles PID ont la réputation de devenir instables à "
+"mesure que les gains deviennent importants - et en effet, c’est une *très "
+"mauvaise idée d’utiliser un contrôleur bang-bang sur tout système autre que "
+"le contrôle de la vitesse d’un mécanisme à haute inertie*."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:8
+msgid ""
+"However, when controlling the velocity of high-inertia mechanisms under "
+"varying loads (like a shooter flywheel), a bang-bang controller can yield "
+"faster recovery time and thus better/more consistent performance than a "
+"proportional controller.  Unlike an ordinary P loop, a bang-bang controller "
+"is *asymmetric* - that is, the controller turns on when the process variable"
+" is below the setpoint, and does nothing otherwise.  This allows the control"
+" effort in the forward direction to be made as large as possible without "
+"risking destructive oscillations as the control loop tries to correct a "
+"resulting overshoot."
+msgstr ""
+"Cependant, lors du contrôle de la vitesse des mécanismes à haute inertie "
+"sous des charges variables (comme le volant d’inertie d'un tireur), un "
+"contrôleur bang-bang peut offrir un temps de récupération plus rapide et "
+"donc de meilleures performances/plus cohérentes qu’un contrôleur "
+"proportionnel. Contrairement à une boucle P ordinaire, un contrôleur bang-"
+"bang est *asymétrique* - c’est-à-dire que le contrôleur est activé lorsque "
+"la variable du procédé est en dessous du point de consigne et ne fait rien "
+"d’autre. Cela permet de rendre l’effort du contrôle anticipé aussi important"
+" que possible sans risque de produire des oscillations destructrices lorsque"
+" la boucle de contrôle tenterait de corriger un dépassement résultant."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:10
+msgid ""
+"Asymmetric bang-bang control is provided in WPILib by the BangBangController"
+" class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__)."
+msgstr ""
+"Le contrôle asymétrique bang-bang est pris en charge dans la librairie "
+"WPILib par la classe BangBangController (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/controller/BangBangController.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_bang_bang_controller.html>`__)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:13
+msgid "Constructing a BangBangController"
+msgstr "Construction d’un objet BangBangController"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:15
+msgid ""
+"Since a bang-bang controller does not have any gains, it does not need any "
+"constructor arguments (one can optionally specify the controller tolerance "
+"used by ``atSetpoint``, but it is not required)."
+msgstr ""
+"Étant donné qu’un contrôleur bang-bang n’a aucun gain, il n’a pas besoin de "
+"constructeur avec argument (on peut éventuellement spécifier la tolérance du"
+" contrôleur utilisé par le paramètre ``atSetpoint``, mais ce n’est pas "
+"obligatoire)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:30
+msgid "Using a BangBangController"
+msgstr "Utilisation d'un objet BangBangController"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:32
+msgid ""
+"Bang-bang control is an extremely aggressive algorithm that relies on "
+"response asymmetry to remain stable.  Be *absolutely certain* that your "
+"motor controllers have been set to \"coast mode\" before attempting to "
+"control them with a bang-bang controller, or else the braking action will "
+"fight the controller and cause potentially destructive oscillation."
+msgstr ""
+"La commande Bang-bang utilise un algorithme extrêmement agressif qui repose "
+"sur l’asymétrie de réponse pour assurer la stabilité du système. *Assurez-"
+"vous* que vos contrôleurs de moteurs ont été configurés en \"coast mode\" "
+"avant d’essayer de les commander avec un contrôleur bang-bang, sinon le "
+"freinage résultant du mode \"break\" combattra le contrôleur et provoquera "
+"une oscillation potentiellement destructrice pour le système."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:34
+msgid "Using a bang-bang controller is easy:"
+msgstr "L’utilisation d’un contrôleur bang-bang est facile:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:49
+msgid "Combining Bang Bang Control with Feedforward"
+msgstr ""
+"Combinaison de la commande Bang Bang et de la commande par anticipation"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:51
+msgid ""
+"Like a PID controller, best results are obtained in conjunction with a "
+":ref:`feedforward <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>` controller "
+"that provides the necessary voltage to sustain the system output at the "
+"desired speed, so that the bang-bang controller is only responsible for "
+"rejecting disturbances.  Since the bang-bang controller can *only* correct "
+"in the forward direction, however, it may be preferable to use a slightly "
+"conservative feedforward estimate to ensure that the shooter does not over-"
+"speed."
+msgstr ""
+"Comme dans le cas d'un commande PID, les meilleurs résultats sont obtenus en"
+" conjonction avec une commande :ref:`prédictive <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>` qui fournit"
+" la tension nécessaire pour maintenir la sortie du système à la vitesse "
+"souhaitée, de sorte que le contrôleur bang-bang n’est responsable que de "
+"l'élimination des perturbations. Étant donné que le contrôleur bang-bang ne "
+"peut *que* corriger dans la commande prédictive, il serait sûrement "
+"préférable d’utiliser une estimation légèrement conservatrice de la commande"
+" prédictive pour s’assurer que le tireur ne dépasse pas la vitesse "
+"souhaitée."

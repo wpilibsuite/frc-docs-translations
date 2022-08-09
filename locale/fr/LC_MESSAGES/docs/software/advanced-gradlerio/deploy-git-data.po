@@ -1,0 +1,228 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 04:03+0000\n"
+"PO-Revision-Date: 2021-12-11 04:11+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:2
+msgid "Including Git Data in Deploy"
+msgstr "Inclure les données Git dans Deploy"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:4
+msgid ""
+"This article will go over how to include information from Git, such as "
+"branch name or commit hash, into the robot code. This is necessary for using"
+" such information in robot code, such as printing out commit hash and branch"
+" name when the robot starts."
+msgstr ""
+"Cet article expliquera comment inclure des informations de Git, telles que "
+"le nom de la branche ou le hachage de validation, dans le code du robot. "
+"Cela est nécessaire pour utiliser de telles informations dans le code du "
+"robot, telles que l'impression du hachage de validation et du nom de la "
+"branche lorsque le robot démarre."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:6
+msgid ""
+"Git must be in the path for this to work. This should be enabled by default "
+"when `installing Git <https://git-scm.com/downloads>`__."
+msgstr ""
+"Git doit être dans le path pour que cela fonctionne. Cela devrait être "
+"activé par défaut lors de l'installation de Git <https://git-"
+"scm.com/downloads>`__."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:9
+msgid "Deploying Branch Name"
+msgstr "Nom de la branche de déploiement"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:11
+msgid ""
+"This example uses `git rev-parse <https://git-scm.com/docs/git-rev-parse>`__"
+" to extract data the name of the current branch. The Git command used for "
+"this is:"
+msgstr ""
+"Cet exemple utilise `git rev-parse <https://git-scm.com/docs/git-rev-"
+"parse>`__ pour extraire les données du nom de la branche actuelle. La "
+"commande Git utilisée pour cela est :"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:17
+msgid ""
+"The ``--abbrev-ref`` flag tells Git to use a short version of the name for "
+"the current commit that ``rev-parse`` is acting on. When HEAD is the most "
+"recent commit on a branch, this will return the name of that branch."
+msgstr ""
+"Le drapeau ``--abbrev-ref`` indique à Git d'utiliser une version abrégée du "
+"nom du commit actuel sur lequel ``rev-parse`` agit. Lorsque HEAD est le "
+"commit le plus récent sur une branche, cela renverra le nom de cette "
+"branche."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:19
+msgid ""
+"Next, create a new task in the ``build.gradle`` file that will run the above"
+" Git command and write it to a file in the ``src/main/deploy`` directory. "
+"For example, the following is an example task named ``writeBranchName`` that"
+" will write the branch name to a file named ``branch.txt``."
+msgstr ""
+"Ensuite, créez une nouvelle tâche dans le fichier ``build.gradle`` qui "
+"exécutera la commande Git ci-dessus et écrivez-la dans un fichier du "
+"répertoire ``src/main/deploy``. Par exemple, ce qui suit est un exemple de "
+"tâche nommé ``writeBranchName`` qui écrira le nom de la branche dans un "
+"fichier nommé ``branch.txt``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:46
+msgid ""
+"This registers a `Gradle task "
+"<https://docs.gradle.org/current/userguide/tutorial_using_tasks.html>`__ "
+"that uses the above Git command, saves the output to a variable, and then "
+"writes it to a file. Since it was written to the ``src/main/deploy`` "
+"directory, it will be included in the jar file deployed to the robot and "
+"accessible in code."
+msgstr ""
+"Cela enregistre une `tâche Gradle "
+"<https://docs.gradle.org/current/userguide/tutorial_using_tasks.html>`__ qui"
+" utilise la commande Git ci-dessus, enregistre la sortie dans une variable, "
+"puis l'écrit dans un fichier. Comme il a été écrit dans le répertoire "
+"``src/main/deploy``, il sera inclus dans le fichier jar déployé sur le robot"
+" et accessible dans le code."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:48
+msgid ""
+"The next step is to make the deploy task depend on the task you created, so "
+"that it will automatically run before the code is deployed. This example "
+"uses the task name ``writeBranchName`` from the previous example, but it "
+"should be replaced with the name of the task in your ``build.gradle``."
+msgstr ""
+"L'étape suivante consiste à faire dépendre la tâche de déploiement de la "
+"tâche que vous avez créée, afin qu'elle s'exécute automatiquement avant le "
+"déploiement du code. Cet exemple utilise le nom de tâche ``writeBranchName``"
+" de l'exemple précédent, mais il doit être remplacé par le nom de la tâche "
+"dans votre ``build.gradle``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:55
+msgid "Deploying Commit Hash"
+msgstr "Déployer le hachage de validation"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:57
+msgid ""
+"Similar to the previous example, ``git rev-parse`` will be used to parse the"
+" current commit hash. The Git command used for this is:"
+msgstr ""
+"Semblable à l'exemple précédent, ``git rev-parse`` sera utilisé pour "
+"analyser le hachage de validation actuel. La commande Git utilisée pour cela"
+" est :"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:63
+msgid ""
+"Similar to the previous Git command, ``rev-parse`` is used to find "
+"information about the commit at HEAD. However, instead of using ``--abbrev-"
+"ref`` to find the branch name associated with that commit, ``--short`` is "
+"used to find the 7-character commit hash."
+msgstr ""
+"Semblable à la commande Git précédente, ``rev-parse`` est utilisé pour "
+"trouver des informations sur le commit à HEAD. Cependant, au lieu d'utiliser"
+" ``--abbrev-ref`` pour trouver le nom de branche associé à ce commit, "
+"``--short`` est utilisé pour trouver le hachage de commit à 7 caractères."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:65
+msgid ""
+"If you wish to use the full commit hash instead of the 7-character version, "
+"you can leave out the ``--short`` flag."
+msgstr ""
+"Si vous souhaitez utiliser le hachage de commit complet au lieu de la "
+"version à 7 caractères, vous pouvez omettre le drapeau ``--short``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:67
+msgid ""
+"Next is to create a task in ``build.gradle`` that runs this command and "
+"writes the output to a file. This is largely the same as the first example, "
+"except the task is named ``writeCommitHash``, the new Git command is used, "
+"and it is written to ``commit.txt`` instead of ``branch.txt``."
+msgstr ""
+"Ensuite, créez une tâche dans ``build.gradle`` qui exécute cette commande et"
+" écrit la sortie dans un fichier. C'est en grande partie le même que le "
+"premier exemple, sauf que la tâche est nommée ``writeCommitHash``, la "
+"nouvelle commande Git est utilisée et elle est écrite dans ``commit.txt`` au"
+" lieu de ``branch.txt``."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:90
+msgid "Ignoring Generated Files with Git"
+msgstr "Ignorer les fichiers générés avec Git"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:92
+msgid ""
+"Since these files include data that is already tracked by Git and are "
+"regenerated every time code is deployed, it is recommended to not track "
+"these changes with Git by using the `gitignore <https://git-"
+"scm.com/docs/gitignore>`__ file. This file should exist by default in any "
+"project generated by the WPILib VS Code extension. Below is an example that "
+"continues to use the ``branch.txt`` and ``commit.txt`` file names:"
+msgstr ""
+"Étant donné que ces fichiers incluent des données déjà suivies par Git et "
+"sont régénérées à chaque déploiement de code, il est recommandé de ne pas "
+"suivre ces modifications avec Git en utilisant le `gitignore <https://git-"
+"scm.com/docs/gitignore> `__ fichier. Ce fichier doit exister par défaut dans"
+" tout projet généré par l'extension WPILib VS Code. Vous trouverez ci-"
+"dessous un exemple qui continue d'utiliser les noms de fichiers "
+"``branch.txt`` et ``commit.txt`` :"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:101
+msgid "Using Deployed Files"
+msgstr "Utilisation des fichiers déployés"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:103
+msgid ""
+"In order to access files that were written to the deploy directory in code, "
+"you have to use the ``getDeployDirectory()`` method of the `Filesystem "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Filesystem.html>`__"
+" class in Java, or the ``GetDeployDirectory()`` function of the "
+"`frc::filesystem "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/namespacefrc_1_1filesystem.html>`__"
+" namespace in C++. Below is an example of opening both files from the "
+"previous examples:"
+msgstr ""
+"Afin d'accéder aux fichiers qui ont été écrits dans le répertoire de "
+"déploiement dans le code, vous devez utiliser la méthode "
+"``getDeployDirectory()`` du `Filesystem "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release "
+"/java/edu/wpi/first/wpilibj/Filesystem.html>`__ classe en Java, ou la "
+"fonction ``GetDeployDirectory()`` du `frc::filesystem "
+"<https://first.wpi.edu/wpilib "
+"/allwpilib/docs/release/cpp/namespacefrc_1_1filesystem.html>`__ namespace en"
+" C++. Voici un exemple d'ouverture des deux fichiers des exemples "
+"précédents :"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:105
+msgid ""
+"Opening and reading the files is slow and should not be performed during any"
+" periodic methods. Since the file will only change on deploy, it only needs "
+"to be read once."
+msgstr ""
+"L'ouverture et la lecture des fichiers sont lents et ne doivent pas être "
+"effectuées pendant des méthodes périodiques. Étant donné que le fichier ne "
+"changera qu'au déploiement, il n'a besoin d'être lu qu'une seule fois."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/deploy-git-data.rst:113
+msgid ""
+"For more information on how to interact with the file objects, see the "
+"documentation of the `File "
+"<https://docs.oracle.com/javase/7/docs/api/java/io/File.html>`__ class."
+msgstr ""
+"Pour plus d'informations sur la façon d'interagir avec les objets fichier, "
+"consultez la documentation de la classe `File "
+"<https://docs.oracle.com/javase/7/docs/api/java/io/File.html>`__."

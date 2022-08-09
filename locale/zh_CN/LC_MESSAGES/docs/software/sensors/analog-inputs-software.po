@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 怡静 陆 <2238710874@qq.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-05 16:05+0000\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:2
+msgid "Analog Inputs - Software"
+msgstr "模拟输入-软件"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:4
+msgid ""
+"This section covers analog inputs in software.  For a hardware guide to "
+"analog inputs, see :ref:`docs/hardware/sensors/analog-inputs-hardware:Analog"
+" Inputs - Hardware`."
+msgstr ""
+"本节介绍软件中的模拟输入。有关模拟输入的硬件指南，请参见:ref:`docs/hardware/sensors/analog-inputs-"
+"hardware:Analog Inputs - Hardware`。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:6
+msgid ""
+"The roboRIO's FPGA supports up to 8 analog input channels that can be used "
+"to read the value of an analog voltage from a sensor.  Analog inputs may be "
+"used for any sensor that outputs a simple voltage."
+msgstr "roboRIO的FPGA支持多达8个模拟输入通道，可用于从传感器读取模拟电压值。模拟输入可用于任何输出简单电压的传感器。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:8
+msgid ""
+"Analog inputs from the FPGA by default return a 12-bit integer proportional "
+"to the voltage, from 0 to 5 volts."
+msgstr "默认情况下，来自FPGA的模拟输入返回一个与电压成正比的12bit整数，范围为0至5伏。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:11
+msgid "The AnalogInput class"
+msgstr "AnalogInput类"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:13
+msgid ""
+"It is often more convenient to use the :doc:`Analog Potentiometers <analog-"
+"potentiometers-software>` wrapper class than to use :code:`AnalogInput` "
+"directly, as it supports scaling to meaningful units."
+msgstr "与直接使用AnalogInput相比，使用Analog Potentiometers 包装器类通常更方便，因为它支持缩放至有意义的单位。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:15
+msgid ""
+"Support for reading the voltages on the FPGA analog inputs is provided "
+"through the :code:`AnalogInput` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogInput.html>`__)."
+msgstr ""
+"通过AnalogInput类（`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogInput.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogInput.html>`__）提供了读取FPGA模拟输入上的电压的支持。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:18
+msgid "Initializing an AnalogInput"
+msgstr "初始化模拟输入"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:20
+msgid "An :code:`AnalogInput` may be initialized as follows:"
+msgstr "AnalogInput可如下初始化："
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:35
+msgid "Oversampling and Averaging"
+msgstr "过采样和平均"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:40
+msgid ""
+"The FPGA's analog input modules supports both oversampling and averaging.  "
+"These behaviors are highly similar, but differ in a few important ways.  "
+"Both may be used at the same time."
+msgstr "FPGA的模拟输入模块支持过采样和平均。两者非常相似，但在一些重要方面有所不同。两者可以同时使用。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:43
+msgid "Oversampling"
+msgstr "过采样"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:45
+msgid ""
+"When oversampling is enabled, the FPGA will add multiple consecutive samples"
+" together, and return the accumulated value.  Users may specify the number "
+"of *bits* of oversampling - for :math:`n` bits of oversampling, the number "
+"of samples added together is :math:`2~{n}`:"
+msgstr ""
+"使能过采样后，FPGA将把多个连续采样加在一起，并返回累加值。用户可以指定过采样的*位数量-对于过采样的n位，相加的采样数量为2〜{n}`："
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:64
+msgid "Averaging"
+msgstr "平均"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:66
+msgid ""
+"Averaging behaves much like oversampling, except the accumulated values are "
+"divided by the number of samples so that the scaling of the returned values "
+"does not change.  This is often more-convenient, but occasionally the "
+"additional roundoff error introduced by the rounding is undesirable."
+msgstr ""
+"平均的行为与过采样非常相似，不同之处在于，将累积值除以样本数，以使返回值的缩放比例不变。这通常更方便，但是有时舍入所导致的附加舍入误差是不希望看到的。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:82
+msgid ""
+"When oversampling and averaging are used at the same time, the oversampling "
+"is applied *first,* and then the oversampled values are averaged.  Thus, "
+"2-bit oversampling and 2-bit averaging used at the same time will increase "
+"the scale of the returned values by approximately a factor of 2, and "
+"decrease the update rate by approximately a factor of 4."
+msgstr ""
+"当同时使用过采样和平均时，将首先应用过采样，然后对过采样的值进行平均。因此，同时使用2位过采样和2位平均将使返回值的小数位数增加大约2倍，而更新率降低大约4倍。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:85
+msgid "Reading values from an AnalogInput"
+msgstr "从AnalogInput读取值"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:87
+msgid ""
+"Values can be read from an AnalogInput with one of four different methods:"
+msgstr " 可以使用以下四种方法之一从AnalogInput读取值："
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:90
+msgid "getValue"
+msgstr "getValue"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:92
+msgid ""
+"The :code:`getValue` method returns the raw instantaneous measured value "
+"from the analog input, without applying any calibration and ignoring "
+"oversampling and averaging settings.  The returned value is an integer."
+msgstr "该getValue方法从模拟输入返回原始瞬时测量值，而无需进行任何校准，也无需忽略过采样"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:105
+msgid "getVoltage"
+msgstr "getVoltage"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:107
+msgid ""
+"The :code:`getVoltage` method returns the instantaneous measured voltage "
+"from the analog input.  Oversampling and averaging settings are ignored, but"
+" the value is rescaled to represent a voltage.  The returned value is a "
+"double."
+msgstr "该getVoltage方法从模拟输入返回瞬时测量电压。过采样和平均设置将被忽略，但该值将重新缩放以代表电压。返回值是双精度浮点数。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:120
+msgid "getAverageValue"
+msgstr "getAverageValue"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:122
+msgid ""
+"The :code:`getAverageValue` method returns the averaged value from the "
+"analog input.  The value is not rescaled, but oversampling and averaging are"
+" both applied.  The returned value is an integer."
+msgstr "该getAverageValue方法从模拟输入返回平均值。该值不会重新定标，但是会同时应用过采样和平均。返回值是一个整数。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:135
+msgid "getAverageVoltage"
+msgstr "getAverageVoltage"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:137
+msgid ""
+"The :code:`getAverageVoltage` method returns the averaged voltage from the "
+"analog input.  Rescaling, oversampling, and averaging are all applied.  The "
+"returned value is a double."
+msgstr "该getAverageVoltage方法从模拟输入返回平均电压。重新缩放，过采样和平均均适用。返回值是双精度浮点数。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:150
+msgid "Accumulator"
+msgstr "累加器"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:152
+msgid ""
+"The accumulator methods do not currently support returning a value in units "
+"of volts - the returned value will always be an integer (specifically, a "
+":code:`long`)."
+msgstr "累加器方法当前不支持以伏特为单位返回值-返回的值将始终是整数（特殊时是 long）。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:154
+msgid ""
+"Analog input channels 0 and 1 additionally support an accumulator, which "
+"integrates (adds up) the signal indefinitely, so that the returned value is "
+"the sum of all past measured values.  Oversampling and averaging are applied"
+" prior to accumulation."
+msgstr "模拟输入通道0和1额外支持一个累加器，该累加器可无限期地积分（累加）信号，因此返回值是所有过去测量值的总和。在累加之前进行过采样和平均。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:197
+msgid "Obtaining synchronized count and value"
+msgstr "获得同步的计数和值"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:199
+msgid ""
+"Sometimes, it is necessarily to obtain matched measurements of the count and"
+" the value.  This can be done using the :code:`getAccumulatorOutput` method:"
+msgstr "有时，必须获得匹配的计数和值。可以使用以下getAccumulatorOutput方法完成此操作："
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:225
+msgid "Using analog inputs in code"
+msgstr "在代码中使用模拟输入"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:227
+msgid ""
+"The :code:`AnalogInput` class can be used to write code for a wide variety "
+"of sensors (including potentiometers, accelerometers, gyroscopes, "
+"ultrasonics, and more) that return their data as an analog voltage.  "
+"However, if possible it is almost always more convenient to use one of the "
+"other existing WPILib classes that handles the lower-level code (reading the"
+" analog voltages and converting them to meaningful units) for you.  Users "
+"should only directly use :code:`AnalogInput` as a \"last resort.\""
+msgstr ""
+"AnalogInput类可用给各种传感器（包括电位计，加速度计，陀螺仪，超声波，等等）返回它们的模拟电压数据。但是，如果可能的话，使用其他现有的WPILib类中的一个总是更方便，该类可为您处理较低级别的代码（读取模拟电压并将其转换为有意义的单位）。用户应将直接使用AnalogInput用作“最后的手段”。"
+
+#: ../../frc-docs/source/docs/software/sensors/analog-inputs-software.rst:229
+msgid ""
+"Accordingly, for examples of how to effectively use analog sensors in code, "
+"users should refer to the other pages of this chapter that deal with more-"
+"specific classes."
+msgstr "因此，有关如何有效地在代码中使用模拟传感器的示例，用户应参考本章的其他页面，这些页面涉及更具体的类。"

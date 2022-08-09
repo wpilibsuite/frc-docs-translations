@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Michael Zhao <haitong1110@126.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-21 04:41+0000\n"
+"PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:2
+msgid "Generating Code from GRIP"
+msgstr "从GRIP生成代码"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:4
+msgid "GRIP Code Generation"
+msgstr "GRIP代码生成"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:5
+msgid ""
+"When running your vision algorithm on a small processor such as a roboRIO or"
+" Raspberry PI it is encouraged to run OpenCV directly on the processor "
+"without the overhead of GRIP. To facilitate this, GRIP can generate code in "
+"C++, Java, and Python for the pipeline that you have created. This generated"
+" code can be added to your robot project and called directly from your "
+"existing robot code."
+msgstr ""
+"在像roboRIO或Raspberry "
+"PI这样的小型处理器上运行视觉算法时，建议直接在处理器上运行OpenCV，而无需GRIP开销。为此，GRIP可以使用C "
+"++，Java和Python为您创建的管道生成代码。可以将生成的代码添加到您的机器人项目中，并直接从您现有的机器人代码中调用。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:9
+msgid ""
+"Input sources such as cameras or image directories and output steps such as "
+"NetworkTables are not generated. Your code must supply images as OpenCV "
+"mats. On the roboRIO, the CameraServer class supplies images in that format."
+" For getting results you can just use generated getter methods for "
+"retrieving the resultant values such as contour x and y values."
+msgstr ""
+"不会生成输入源（例如摄像机或图像目录）和输出步骤（例如NetworkTables）。您的代码必须提供图像作为OpenCV垫。在roboRIO上，CameraServer类提供该格式的图像。为了获得结果，您可以仅使用生成的吸气剂方法来检索结果值，例如轮廓x和y值。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:14
+msgid "Generating Code"
+msgstr "生成代码"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:15
+msgid ""
+"To generate code, go to ``Tools > Generate Code``. This will bring up a save"
+" dialog that lets you create a C++, Java, or Python class that performs the "
+"steps in the GRIP pipeline."
+msgstr ""
+"要生成代码，请转到``工具>生成代码''。这将打开一个保存对话框，使您可以创建执行GRIP线程中的步骤的C ++，Java或Python类。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:20
+msgid ""
+"If generating code to be used in a pre-existing project, choose a relevant "
+"directory to save the pipeline to."
+msgstr "如果生成要在现有项目中使用的代码，请选择一个相关目录以将线程保存到该目录。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:22
+msgid ""
+"**C++ Users**: the pipeline class is split into a header and implementation "
+"file"
+msgstr "** C ++用户**：线程类分为头文件和实现文件"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:23
+msgid ""
+"**Java Users**: the generated class lacks a package declaration, so a "
+"declaration should be added to match the directory where the file was saved."
+msgstr "** Java用户**：生成的类缺少包声明，因此应添加一个声明以匹配保存文件的目录。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:25
+msgid ""
+"**Python Users**: the module name will be identical to the class, so the "
+"import statement will be something like ``from Pipeline import Pipeline``"
+msgstr ""
+"** Python Users **：模块名称将与该类相同，因此import语句将类似于``from Pipeline import "
+"Pipeline``"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:29
+msgid "Structure of the Generated Code"
+msgstr "生成代码的结构"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:43
+msgid "Running the Pipeline"
+msgstr "运行线程"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:44
+msgid ""
+"To run the Pipeline, call the process method with the sources (webcams, IP "
+"camera, image file, etc) as arguments. This will expose the outputs of every"
+" operation in the pipeline with the ``getFooOutput`` methods."
+msgstr ""
+"要运行线程，请使用源（网络摄像机，IP摄像机，图像文件等）作为参数来调用处理方法。这将使用getFooOutput方法公开线程中每个操作的输出。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:48
+msgid "Getting the Results"
+msgstr "得到结果"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:49
+msgid ""
+"Users are able to the outputs of every step in the pipeline. The outputs of "
+"these operations would be accessible through their respective accessors.  "
+"For example:"
+msgstr "用户能够获得线程中每个步骤的输出。这些操作的输出可以通过它们各自的访问器访问。例如："
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:53
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:65
+msgid "Operation"
+msgstr "运作方式"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:53
+msgid "Java/C++ getter"
+msgstr "Java / C ++ getter"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:53
+msgid "Python variable"
+msgstr "Python变量"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:55
+msgid "RGB Threshold"
+msgstr "RGB阈值"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:55
+msgid "``getRgbThresholdOutput``"
+msgstr "``getRgbThresholdOutput``"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:55
+msgid "``rgb_threshold_output``"
+msgstr "``rgb_threshold_output''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:56
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:67
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:68
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:69
+msgid "Blur"
+msgstr "模糊"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:56
+msgid "``getBlurOutput``"
+msgstr "``getBlurOutput``"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:56
+msgid "``blur_output``"
+msgstr "``blur_output``"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:57
+msgid "CV Erode"
+msgstr "CV侵蚀"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:57
+msgid "``getCvErodeOutput``"
+msgstr "``getCvErodeOutput``"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:57
+msgid "``mcv_erode_output``"
+msgstr "``mcv_erode_output''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:58
+msgid "Find Contours"
+msgstr "查找轮廓"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:58
+msgid "``getFindContoursOutput``"
+msgstr "``getFindContoursOutput''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:58
+msgid "``find_contours_output``"
+msgstr "``find_contours_output''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:59
+msgid "Filter Contours"
+msgstr "过滤轮廓"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:59
+msgid "``getFilterContoursOutput``"
+msgstr "``getFilterContoursOutput''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:59
+msgid "``filter_contours_output``"
+msgstr "``filter_contours_output''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:62
+msgid ""
+"If an operation appears multiple times in the pipeline, the accessors for "
+"those operations have the number of that operation:"
+msgstr "如果一个操作在线程中多次出现，则这些操作的访问器具有该操作的编号："
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:65
+msgid "Which appearance"
+msgstr "哪个外观"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:65
+msgid "Accessor"
+msgstr "存取器"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:67
+msgid "First"
+msgstr "第一"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:67
+msgid "``getBlur0Output``"
+msgstr "``getBlur0Output''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:68
+msgid "Second"
+msgstr "第二"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:68
+msgid "``getBlur1Output``"
+msgstr "``getBlur1Output''"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:69
+msgid "Third"
+msgstr "第三"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/generating-code-from-grip.rst:69
+msgid "``getBlur2Output``"
+msgstr "``getBlur2Output''"

@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 怡静 陆 <2238710874@qq.com>, 2021
+# Tianrui Wu <tw2789@columbia.edu>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-20 04:13+0000\n"
+"PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Tianrui Wu <tw2789@columbia.edu>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:4
+msgid "PWM Motor Controllers in Depth"
+msgstr "深度解析PWM速度控制器"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:6
+msgid ""
+"WPILib has extensive support for motor control. There are a number of "
+"classes that represent different types of motor controllers and servos.  "
+"There are currently two classes of motor controllers, PWM based motor "
+"controllers and CAN based motor controllers. WPILib also contains composite "
+"classes (like DifferentialDrive) which allow you to control multiple motors "
+"with a single object. This article will cover the details of PWM motor "
+"controllers; CAN controllers and composite classes will be covered in "
+"separate articles."
+msgstr ""
+"WPILib 为电机控制提供了广泛的适配。有很多不同类型的速度控制器和伺服器类。目前有两种速度控制器，基于 PWM 的电机控制器和基于 CAN "
+"的电机控制器。WPILib还包含复合类 (如DifferentialDrive) ，使你可以只构造一个对象而控制多个电机。本文将介绍 PWM "
+"电机控制器的详细信息。CAN 控制器和复合类将在单独的文章中介绍。"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:9
+msgid "PWM Controllers, brief theory of operation"
+msgstr "PWM控制器操作原理简述"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:11
+msgid ""
+"The acronym PWM stands for Pulse Width Modulation. For motor controllers, "
+"PWM can refer to both the input signal and the method the controller uses to"
+" control motor speed. To control the speed of the motor the controller must "
+"vary the perceived input voltage of the motor. To do this the controller "
+"switches the full input voltage on and off very quickly, varying the amount "
+"of time it is on based on the control signal. Because of the mechanical and "
+"electrical time constants of the types of motors used in FRC\\ |reg| this "
+"rapid switching produces an effect equivalent to that of applying a fixed "
+"lower voltage (50% switching produces the same effect as applying ~6V)."
+msgstr ""
+"缩写 PWM 指脉冲宽度调制。作为电机控制器，PWM "
+"可以同时参考输入信号和控制器控制方法来控制电机速度。控制器通过改变电机的输入电压控制电机的速度。为此，控制器非常快速地切换开启和关闭输入电压，并根据控制信号改变其开启时间。由于FRC中使用的电机的机电时间常数，这种快速切换产生的效果等同于施加固定的较低电压"
+" (50％切换产生的效果与施加〜6V相同) 。"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:13
+msgid ""
+"The PWM signal the controllers use for an input is a little bit different. "
+"Even at the bounds of the signal range (max forward or max reverse) the "
+"signal never approaches a duty cycle of 0% or 100%. Instead the controllers "
+"use a signal with a period of either 5ms or 10ms and a midpoint pulse width "
+"of 1.5ms. Many of the controllers use the typical hobby RC controller timing"
+" of 1ms to 2ms."
+msgstr ""
+"控制器输入的 PWM 信号略有不同。即使在信号范围的边界 (最大正向或最大反向) ，信号也永远不会达到0％或100％的占空比。控制器使用周期为 5ms "
+"或 10ms 且中点脉冲宽度为 1.5ms 的信号。许多控制器使用 1ms 至 2ms 的典型 RC 控制器时序。"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:16
+msgid "Raw vs Scaled output values"
+msgstr "原始与定标输出值"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:18
+msgid ""
+"In general, all of the motor controller classes in WPILib take a scaled -1.0"
+" to 1.0 value as the output to an actuator. The PWM module in the FPGA on "
+"the roboRIO is capable of generating PWM signals with periods of 5, 10, or "
+"20ms and can vary the pulse width in 2000 steps of ~.001ms each around the "
+"midpoint (1000 steps in each direction around the midpoint). The raw values "
+"sent to this module are in this 0-2000 range with 0 being a special case "
+"which holds the signal low (disabled). The class for each motor controller "
+"contains information about what the typical bound values (min, max and each "
+"side of the deadband) are as well as the typical midpoint. WPILib can then "
+"use these values to map the scaled value into the proper range for the motor"
+" controller. This allows for the code to switch seamlessly between different"
+" types of controllers and abstracts out the details of the specific "
+"signaling."
+msgstr ""
+"通常来说，WPILib 中的所有电机控制器类均采用 -1.0 到 1.0 的值作为执行器的输出。roboRIO 上 FPGA 中的 PWM "
+"模块能够生成周期为 5、10 或 20ms 的 PWM 信号，并且可以在中点附近每个 ~0.001ms 的 2000 步中改变脉冲宽度 "
+"(在中点附近每个方向上的1000步) 。发送到该模块的原始值在这 0-2000 范围内，其中0是特殊情况，它将保持低信号 (禁用) "
+"。每个电机控制器的类都包含典型界限值 (最小，最大值和死区的每一侧) 以及典型界限值中点的信息。WPILib "
+"可以使用这些值并将缩放后的值映射到电机控制器的适当范围内。这使得这代码可以在不同类型的控制器之间无缝切换，并抽象出特定信号的细节。"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:21
+msgid "Calibrating Motor Controllers"
+msgstr "校准速度控制器"
+
+#: ../../frc-docs/source/docs/software/actuators/pwm-controllers.rst:23
+msgid ""
+"So if WPILib handles all this scaling, why would you ever need to calibrate "
+"your motor controller? The values WPILib uses for scaling are approximate "
+"based on measurement of a number of samples of each controller type. Due to "
+"a variety of factors, the timing of an individual motor controller may vary "
+"slightly. In order to definitively eliminate \"humming\" (midpoint signal "
+"interpreted as slight movement in one direction) and drive the controller "
+"all the way to each extreme, calibrating the controllers is still "
+"recommended. In general, the calibration procedure for each controller "
+"involves putting the controller into calibration mode then driving the input"
+" signal to each extreme, then back to the midpoint. For examples on how to "
+"use these motor controllers in your code, see :doc:`Using Motor Controllers "
+"in Code/Using PWM Motor Controllers <using-motor-controllers>`"
+msgstr ""
+"如果 WPILib 能处理所有这些缩放，为什么还要校准速度控制器？WPILib "
+"用于缩放的值是基于每种控制器类型的大量样本的测量值得出的近似值。由于各种因素，单个速度控制器的时间可能会略有变化。为了准确地消除“哼哼声” "
+"(中点信号被解释为在一个方向上的轻微移动) "
+"并一直将控制器驱动到各个极限，仍然建议对控制器进行校准。通常，每个控制器的校准过程包括将控制器置于校准模式，然后将输入信号驱动到每个极限，然后回归中点。有关如何在代码中使用这些速度控制器的示例，请参见"
+" :doc:`Using Motor Controllers in Code/Using PWM Motor Controllers <using-"
+"motor-controllers>`"

@@ -1,0 +1,367 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-12 16:41+0000\n"
+"PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:4
+msgid "Gyroscopes - Software"
+msgstr "Gyroscopes - Partie logicielle"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:6
+msgid ""
+"This section covers gyros in software.  For a hardware guide to gyros, see "
+":ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`."
+msgstr ""
+"Cette section couvre le logiciel associé aux gyroscopes. Pour un guide sur "
+"le branchement électrique des gyroscopes, consulter  "
+":ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:8
+msgid ""
+"A gyroscope, or \"gyro,\" is an angular rate sensor typically used in "
+"robotics to measure and/or stabilize robot headings.  WPILib natively "
+"provides specific support for the ADXRS450 gyro available in the kit of "
+"parts, as well as more general support for a wider variety of analog gyros "
+"through the `AnalogGyro`_ class."
+msgstr ""
+"Un gyroscope, ou «gyro», est un capteur de vitesse angulaire généralement "
+"utilisé en robotique pour mesurer et/ou stabiliser le cap (direction "
+"angulaire souhaitée) d'un robot. WPILib fournit un support spécifique pour "
+"le gyroscope ADXRS450 disponible dans le kit de pièces, ainsi qu'un support "
+"plus général pour une plus grande variété de gyroscopes analogiques via la "
+"classe `AnalogGyro`_."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:11
+msgid "The Gyro interface"
+msgstr "L'interface Gyro"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:13
+msgid ""
+"All natively-supported gyro objects in WPILib implement the :code:`Gyro` "
+"interface (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Gyro.html>`__)."
+"  This interface provides methods for getting the current angular rate and "
+"heading, zeroing the current heading, and calibrating the gyro."
+msgstr ""
+"Tous les objets gyro nativement pris en charge par WPILib implémentent "
+"l’interface :code:`Gyro` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Gyro.html>`__)."
+" Cette interface fournit des méthodes pour obtenir le taux angulaire actuel "
+"et la position angulaire, la mise à zéro de la position angulaire actuelle, "
+"et le calibrage du gyro."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:15
+msgid ""
+"It is crucial that the robot remain stationary while calibrating a gyro."
+msgstr ""
+"Il est primordial que le robot reste immobile pendant l'étalonnage d'un "
+"gyroscope."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:18
+msgid "ADXRS450_Gyro"
+msgstr "ADXRS450_Gyro"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:20
+msgid ""
+"The :code:`ADXRS450_Gyro` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1ADXRS450__Gyro.html>`__)"
+" provides support for the Analog Devices ADXRS450 gyro available in the kit "
+"of parts, which connects over the SPI bus."
+msgstr ""
+"La classe :code:`ADXRS450_Gyro` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1ADXRS450__Gyro.html>`__)"
+" fournit une prise en charge pour le gyroscope Analog Devices ADXRS450 "
+"disponible dans le kit de pièces, qui se connecte sur le bus SPI."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:22
+msgid ""
+"ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA;"
+" accordingly only a single instance of :code:`ADXRS450_Gyro` may be used."
+msgstr ""
+"L'accumulation des données du gyroscope ADXRS450 est gérée par des circuits "
+"spéciaux dans le FPGA; en conséquence, une seule instance de "
+":code:`ADXRS450_Gyro` peut être utilisée."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:37
+msgid "AnalogGyro"
+msgstr "AnalogGyro"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:39
+msgid ""
+"The :code:`AnalogGyro` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogGyro.html>`__)"
+" provides support for any single-axis gyro with an analog output."
+msgstr ""
+"La classe :code:`AnalogGyro` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogGyro.html>`__)"
+" fournit un support pour tout gyroscope à axe unique pourvue d’une sortie "
+"analogique."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:41
+msgid ""
+"Gyro accumulation is handled through special circuitry in the FPGA; "
+"accordingly, :code:`AnalogGyro`\\`s may only be used on analog ports 0 and "
+"1."
+msgstr ""
+"L'accumulation des données du gyroscope est gérée par des circuits spéciaux "
+"dans le FPGA; en conséquence, :code:`AnalogGyro`\\`s ne peut être utilisé "
+"que sur les ports analogiques 0 et 1."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:56
+msgid "Third-party gyros"
+msgstr "Gyroscopes tiers"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:58
+msgid ""
+"While WPILib provides native support for a the ADXRS450 gyro available in "
+"the kit of parts and for any analog gyro, there are a few popular AHRS "
+"(Attitude and Heading Reference System) devices commonly used in FRC\\ |reg|"
+" that include accelerometers and require more complicated communications.  "
+"These are generally controlled through vendor libraries."
+msgstr ""
+"Alors que WPILib fournit un support natif pour un gyroscope ADXRS450 "
+"disponible dans le kit de pièces et pour tout gyroscope analogique, il "
+"existe quelques dispositifs AHRS (Attitude and Heading Reference System) "
+"couramment utilisés dans FRC \\ | reg | qui comprennent des accéléromètres "
+"et nécessitent des communications plus complexes. Ceux-ci sont généralement "
+"contrôlés par les bibliothèques des fournisseurs."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:61
+msgid "Using gyros in code"
+msgstr "Utilisation de gyroscopes dans le code"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:63
+msgid ""
+"As gyros measure rate rather than position, position is inferred by "
+"integrating (adding up) the rate signal to get the total change in angle.  "
+"Thus, gyro angle measurements are always relative to some arbitrary zero "
+"angle (determined by the angle of the gyro when either the robot was turned "
+"on or a zeroing method was called), and are also subject to accumulated "
+"errors (called \"drift\") that increase in magnitude the longer the gyro is "
+"used.  The amount of drift varies with the type of gyro."
+msgstr ""
+"Comme les gyroscopes mesurent le taux (variation) plutôt que la position "
+"angulaire, la position est calculée en intégrant (additionnant) les taux "
+"pour obtenir la valeur d'angle actuel. Par conséquant, les mesures d'angle "
+"gyroscopique sont toujours relatives à un angle zéro arbitraire (déterminé "
+"par l'angle du gyroscope lorsque le robot est mis en marche ou lorsqu'une "
+"méthode de mise à zéro a été appelée).  Ces mesures sont également sujettes "
+"à des erreurs accumulées (appelées \"dérives\") qui vont en s'augmentant, au"
+" fur et à mesure que le gyroscope est utilisé. La quantité de dérive varie "
+"selon le type de gyroscope."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:65
+msgid ""
+"Gyros are extremely useful in FRC for both measuring and controlling robot "
+"heading.  Since FRC matches are generally short, total gyro drift over the "
+"course of an FRC match tends to be manageably small (on the order of a "
+"couple of degrees for a good-quality gyro).  Moreover, not all useful gyro "
+"applications require the absolute heading measurement to remain accurate "
+"over the course of the entire match."
+msgstr ""
+"Les gyroscopes sont extrêmement utiles en FRC pour mesurer et contrôler le "
+"cap du robot. Étant donné que les jeux FRC sont de courte durée (moins de 3 "
+"minutes), la dérive totale du gyroscope au cours d'un jeu FRC a tendance à "
+"être gérable (de l'ordre de quelques degrés pour un gyroscope de bonne "
+"qualité). De plus, ce ne sont pas toutes les applications gyroscopiques qui "
+"nécessitent que la mesure du cap reste précise tout au long du jeu."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:68
+msgid "Displaying the robot heading on the dashboard"
+msgstr "Affichage du cap du robot sur le tableau de bord"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:70
+msgid ""
+":ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started"
+"/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying "
+"heading data from a :code:`Gyro` in the form of a compass.  This can be "
+"helpful for viewing the robot heading when sight lines to the robot are "
+"obscured:"
+msgstr ""
+":ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started"
+"/shuffleboard-tour:Tour of Shuffleboard>` inclut un widget pour afficher les"
+" données de cap à partir d'un :code:`Gyro` sous la forme d'une boussole. "
+"Cela peut être utile pour visualiser le cap du robot lorsque le champ de "
+"vision du pilote est gêné par des objets sur le terrain:"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:94
+msgid "Stabilizing heading while driving"
+msgstr "Stabilisation du cap pendant la conduite"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:96
+msgid ""
+"A very common use for a gyro is to stabilize robot heading while driving, so"
+" that the robot drives straight.  This is especially important for holonomic"
+" drives such as mecanum and swerve, but is extremely useful for tank drives "
+"as well."
+msgstr ""
+"Une utilisation très courante d'un gyroscope est de stabiliser le cap du "
+"robot pendant la conduite, de sorte que le robot roule en ligne droite. Ceci"
+" est particulièrement important pour les entraînements holonomiques tels que"
+"  Mécanum et Swerve, mais aussi utile pour les entraînements différentiels, "
+"style \"char d'assaut\"."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:98
+msgid ""
+"This is typically achieved by closing a PID controller on either the turn "
+"rate or the heading, and piping the output of the loop to one's turning "
+"control (for a tank drive, this would be a speed differential between the "
+"two sides of the drive)."
+msgstr ""
+"Ceci est généralement réalisé en utilisant une boucle de contrôle PID axée "
+"sur la vitesse de rotation angulaire ou le cap du robot.  La sortie de cette"
+" boucle est dirigée vers les contrôleurs de moteurs, et le code génère alors"
+" un léger différentiel de vitesse entre les deux côtés de l'entraînement "
+"(gauche et droite) afin de corriger le cap du robot.  Pour les robots avec "
+"Mécanum ou Swerve, cette correction de cap est gérée de façon différente."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:100
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are not,"
+" the loop will be unstable and the robot will turn wildly."
+msgstr ""
+"Comme pour toutes les boucles de contrôle, les utilisateurs doivent veiller "
+"à ce que la direction du capteur et la direction de rotation soient "
+"cohérentes. Si ce n'est pas le cas, la boucle sera instable et le robot "
+"pivotera autour de son axe central de manière incontrôlée."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:103
+msgid "Example: Tank drive stabilization using turn rate"
+msgstr ""
+"Exemple: stabilisation de l'entraînement de type différentiel à l'aide du "
+"taux de rotation"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:105
+msgid ""
+"The following example shows how to stabilize heading using a simple P loop "
+"closed on the turn rate.  Since a robot that is not turning should have a "
+"turn rate of zero, the setpoint for the loop is implicitly zero, making this"
+" method very simple."
+msgstr ""
+"L'exemple suivant montre comment stabiliser le cap à l'aide d'une simple "
+"boucle P axée sur le taux de rotation angulaire. Étant donné qu'un robot qui"
+" ne tourne pas devrait avoir un taux de rotation égal à zéro, le point de "
+"consigne pour la boucle est implicitement nul, ce qui rend cette méthode "
+"très simple."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:163
+msgid ""
+"More-advanced implementations can use a more-complicated control loop.  When"
+" closing the loop on the turn rate for heading stabilization, PI loops are "
+"particularly effective."
+msgstr ""
+"D'autres implémentations plus avancées peuvent utiliser une boucle de "
+"contrôle plus complexe. Les boucles PI sont particulièrement efficaces pour "
+"l'autorégulation de la direction basée sur le taux de rotation angulaire."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:166
+msgid "Example: Tank drive stabilization using heading"
+msgstr "Exemple: stabilisation de l'entraînement du réservoir à l'aide du cap"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:168
+msgid ""
+"The following example shows how to stabilize heading using a simple P loop "
+"closed on the heading.  Unlike in the turn rate example, we will need to set"
+" the setpoint to the current heading before starting motion, making this "
+"method slightly more-complicated."
+msgstr ""
+"L'exemple suivant montre comment stabiliser le cap à l'aide d'une simple "
+"boucle P axée sur le cap. Contrairement à l'exemple précédent, nous devrons "
+"régler le point de consigne sur le cap actuel du robot avant de commencer le"
+" mouvement, ce qui rend cette méthode légèrement plus compliquée."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:241
+msgid ""
+"More-advanced implementations can use a more-complicated control loop.  When"
+" closing the loop on the heading for heading stabilization, PD loops are "
+"particularly effective."
+msgstr ""
+"Les implémentations plus avancées peuvent utiliser une boucle de contrôle "
+"plus complexe. Les boucles PD sont particulièrement efficaces pour "
+"l'autorégulation de la direction basée sur le cap."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:244
+msgid "Turning to a set heading"
+msgstr "Rotation vers un cap défini"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:246
+msgid ""
+"Another common and highly-useful application for a gyro is turning a robot "
+"to face a specified direction.  This can be a component of an autonomous "
+"driving routine, or can be used during teleoperated control to help align a "
+"robot with field elements."
+msgstr ""
+"Une autre application courante et très utile pour un gyroscope consiste à "
+"faire tourner le robot pour qu'il pointe vers une direction spécifiée. Cela "
+"peut être utile lors de la période de conduite autonome, ou encore, pendant "
+"le contrôle téléopéré pour aider à aligner le robot avec un élément du "
+"terrain de jeu."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:248
+msgid ""
+"Much like with heading stabilization, this is often accomplished with a PID "
+"loop - unlike with stabilization, however, the loop can only be closed on "
+"the heading.  The following example code will turn the robot to face 90 "
+"degrees with a simple P loop:"
+msgstr ""
+"Tout comme avec la stabilisation de cap, ceci est accompli avec une boucle "
+"PID - contrairement à la stabilisation, la boucle doit être axée sur le cap "
+"uniquement. L'exemple de code suivant fera tourner le robot de 90 degrés "
+"avec une simple boucle P:"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:306
+msgid ""
+"As before, more-advanced implementations can use more-complicated control "
+"loops."
+msgstr ""
+"Comme précédemment, les implémentations plus avancées peuvent utiliser des "
+"boucles de contrôle plus compliquées."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:308
+msgid ""
+"Turn-to-angle loops can be tricky to tune correctly due to static friction "
+"in the drivetrain, especially if a simple P loop is used.  There are a "
+"number of ways to account for this; one of the most common/effective is to "
+"add a \"minimum output\" to the output of the control loop.  Another "
+"effective strategy is to cascade to well-tuned velocity controllers on each "
+"side of the drive."
+msgstr ""
+"Les boucles de rotation à angle peuvent être difficiles à régler "
+"correctement en raison de la force de friction existante dans la "
+"transmission, surtout si une simple boucle P est utilisée. Il existe "
+"plusieurs façons de contrebalancer cela; l'une des plus courantes/efficaces "
+"consiste à ajouter une valeur de \"sortie minimale\" à la sortie de la "
+"boucle de contrôle. Une autre stratégie efficace consiste à pré-régler les "
+"contrôleurs de vitesse pour chaque moteur, sur chaque côté du robot."

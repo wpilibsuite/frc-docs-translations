@@ -1,0 +1,111 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-08-03 16:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:07+0000\n"
+"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:2
+msgid "Writing the Code for a Subsystem"
+msgstr "为子系统编写代码"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:4
+msgid ""
+"Adding code to create an actual working subsystem is very straightforward. "
+"For simple subsystems that don't use feedback it turns out to be extremely "
+"simple. In this section we will look at an example of a `Claw` subsystem. "
+"The `Claw` subsystem also has a limit switch to determine if an object is in"
+" the grip."
+msgstr ""
+"添加代码以创建实际工作子系统非常简单。对于不使用反馈的简单子系统，结果证明非常简单。在本节中，我们将看一个 `Claw` 子系统的示例。 `Claw` "
+"子系统还有一个限位开关来确定物体是否在抓地力中。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:7
+msgid "RobotBuilder Representation of the Claw Subsystem"
+msgstr "爪子系统的RobotBuilder表示"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:11
+msgid ""
+"The claw at the end of a robot arm is a subsystem operated by a single "
+"VictorSPX Motor Controller. There are three things we want the motor to do, "
+"start opening, start closing, and stop moving. This is the responsibility of"
+" the subsystem. The timing for opening and closing will be handled by a "
+"command later in this tutorial. We will also define a method to get if the "
+"claw is gripping an object."
+msgstr ""
+"机械臂末端的爪子是一个由单个 VictorSPX "
+"电机控制器控制的子系统。我们希望电机做三件事，打开，关闭和停止移动。这是子系统的责任。打开和关闭的时间将在本教程后面的指令处讨论到。我们还将定义一个方法来判断爪子是否正在抓取物体。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:14
+msgid "Adding Subsystem Capabilities"
+msgstr "添加子系统功能"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:18
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:82
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:143
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:132
+msgid ""
+"Add methods to the ``claw.java`` or ``claw.cpp`` that will open, close, and "
+"stop the claw from moving and get the claw limit switch. Those will be used "
+"by commands that actually operate the claw."
+msgstr ""
+"将方法添加到 ``claw.java`` 或 ``claw.cpp`` 将打开，关闭和停止爪子移动并获取爪子限位开关。这些将由实际操作爪子的命令使用。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:134
+msgid ""
+"The comments have been removed from this file to make it easier to see the "
+"changes for this document."
+msgstr "注释已从此文件中删除，以便更轻松地查看此文档的更改。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:136
+msgid ""
+"Notice that member variable called ``motor`` and ``limitswitch`` are created"
+" by RobotBuilder so it can be used throughout the subsystem. Each of your "
+"dragged-in palette items will have a member variable with the name given in "
+"RobotBuilder."
+msgstr ""
+"请注意，名为“motor”和“limitswitch”的成员变量是由 RobotBuilder "
+"创建的，因此可以在整个子系统中使用。每个拖入的调色板项目都有一个成员变量，其名称在 RobotBuilder 中给出。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:139
+msgid "Adding the Method Declarations to the Header File (C++ Only)"
+msgstr "将方法声明添加到头文件（仅C ++）"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:178
+msgid ""
+"In addition to adding the methods to the class implementation file, "
+"``Claw.cpp``, the declarations for the methods need to be added to the "
+"header file, ``Claw.h``. Those declarations that must be added are shown "
+"here."
+msgstr "除了将方法添加到类实现文件“Claw.cpp”之外，还需要将方法的声明添加到头文件“Claw.h”中。必须添加的那些声明显示在此处。"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-writing-subsystem-code.rst:180
+msgid ""
+"To add the behavior to the claw subsystem to handle opening and closing you "
+"need to :doc:`define commands <../introduction/robotbuilder-creating-"
+"command>`."
+msgstr ""
+"要将行为添加到爪子子系统以处理打开和关闭，您需要 :doc:`define commands <../introduction"
+"/robotbuilder-creating-command>`。"

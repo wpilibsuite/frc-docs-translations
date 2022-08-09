@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2021
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Fernando Soltero <fersg806@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-10-02 04:06+0000\n"
+"PO-Revision-Date: 2020-11-02 16:21+0000\n"
+"Last-Translator: Fernando Soltero <fersg806@gmail.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:2
+msgid "Scheduling Functions at Custom Frequencies"
+msgstr "Funciones de Programación en Frecuencias Personalizadas"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:3
+msgid ""
+"``TimedRobot``'s ``addPeriodic()`` method allows one to run custom methods "
+"at a rate faster than the default ``TimedRobot`` periodic update rate (20 "
+"ms). Previously, teams had to make a ``Notifier`` to run feedback "
+"controllers more often than the ``TimedRobot`` loop period of 20 ms (running"
+" ``TimedRobot`` more often than this is not advised). Now, users can run "
+"feedback controllers more often than the main robot loop, but synchronously "
+"with the ``TimedRobot`` periodic functions, eliminating potential thread "
+"safety issues."
+msgstr ""
+"El método ``TimedRobot`` de ``addPeriodic()`` permite ejecutar métodos "
+"personalizados a una velocidad mayor que la actualización predeterminada "
+"``TimedRobot`` (20 ms). Previamente, los equipos tenían que hacer un "
+"``Notifier`` para ejecutar los controles de retroalimentación más seguido "
+"que con el periodo de bucle ``TimedRobot`` de 20 ms (Ejecutar ``TimedRobot``"
+" más seguido no se recomienda). Ahora, los usuarios pueden ejecutar "
+"controladores de retroalimentación más a menudo que el bucle principal del "
+"robot, pero sincronizado con las funciones periódicas ``TimedRobot`` "
+"eliminando posibles problemas de seguridad."
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:5
+msgid ""
+"The ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) method takes in a "
+"lambda (the function to run), along with the requested period and an "
+"optional offset from the common starting time. The optional third argument "
+"is useful for scheduling a function in a different timeslot relative to the "
+"other ``TimedRobot`` periodic methods."
+msgstr ""
+"El método ``addPeriodic()`` (Java) / ``AddPeriodic()`` (C++) toma una lambda"
+" (la función a ejecutar), junto con el periodo solicitado y un "
+"desplazamiento opcional de la hora común de inicio. El tercer argumento "
+"opcional es útil para programar una función en una timeslot diferente en "
+"relación con los otros métodos periódicos ``TimedRobot``."
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:7
+msgid ""
+"The units for the period and offset are seconds in Java. In C++, the "
+":ref:`units library <docs/software/basic-programming/cpp-units:The C++ Units"
+" Library>` can be used to specify a period and offset in any time unit."
+msgstr ""
+"Las unidades para el período y el desplazamiento son segundos en Java. En C "
+"++, la :ref:`biblioteca de unidades <docs/software/basic-programming/cpp-"
+"units:The C++ Units Library>` se puede usar para especificar un período y un"
+" desplazamiento en cualquier unidad de tiempo."
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:11
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:39
+msgid "C++ (Header)"
+msgstr "C++ (Encabezado)"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:55
+msgid "C++ (Source)"
+msgstr "C++ (Fuente)"
+
+#: ../../frc-docs/source/docs/software/convenience-features/scheduling-functions.rst:75
+msgid ""
+"The ``teleopPeriodic()`` method in this example runs every 20 ms, and the "
+"controller update is run every 10 ms with an offset of 5 ms from when "
+"``teleopPeriodic()`` runs so that their timeslots don't conflict (e.g., "
+"``teleopPeriodic()`` runs at 0 ms, 20 ms, 40 ms, etc.; the controller runs "
+"at 5 ms, 15 ms, 25 ms, etc.)."
+msgstr ""
+"El método ``teleopPeriodic()`` en este ejemplo se ejecuta cada 20 ms, y la "
+"actualización del controlador se ejecuta cada 10 ms con un desfase de 5 ms "
+"desde que se ejecuta ``teleopPeriodic()`` para que sus franjas horarias no "
+"entren en conflicto (por ejemplo, ``teleopPeriodic()`` se ejecuta a 0 ms, 20"
+" ms, 40 ms, etc.; el controlador se ejecuta a 5 ms, 15 ms, 25 ms, etc.)."

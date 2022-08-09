@@ -1,0 +1,146 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-12-10 04:14+0000\n"
+"PO-Revision-Date: 2020-06-12 20:55+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2020\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:4
+msgid "Using a Coprocessor for vision processing"
+msgstr "Utilisation d'un coprocesseur pour le traitement de la vision"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:5
+msgid ""
+"Vision processing using libraries like OpenCV for recognizing field targets "
+"or game pieces can often be a CPU intensive process. Often the load isn't "
+"too significant and the processing can easily be handled by the roboRIO. In "
+"cases where there are more camera streams or the image processing is "
+"complex, it is desirable to off-load the roboRIO by putting the code and the"
+" camera connection on a different processor. There are a number of choices "
+"of processors that are popular in FRC\\ |reg| such as the Raspberry PI, the "
+"intel-based Kangaroo, the LimeLight for the ultimate in simplicity, or for "
+"more complex vision code a graphics accelerator such as one of the nVidia "
+"Jetson models."
+msgstr ""
+"Le traitement de la vision à l'aide de bibliothèques comme OpenCV pour "
+"reconnaître des cibles de terrain ou des pièces de jeu peut souvent être un "
+"processus gourmand en ressources processeur. Souvent, la charge n'est pas "
+"trop importante et le traitement peut être facilement géré par le roboRIO. "
+"Dans les cas où il y a plus de flux de caméra ou où le traitement de l'image"
+" est complexe, il est souhaitable de décharger le roboRIO en plaçant le code"
+" et la connexion de la caméra sur un processeur différent. Il existe un "
+"certain nombre de choix de processeurs qui sont populaires dans FRC \\ | reg"
+" | comme le Raspberry PI, le Kangaroo basé sur Intel, le LimeLight pour le "
+"summum de la simplicité, ou pour le code de vision plus complexe un "
+"accélérateur graphique tel que l'un des modèles nVidia Jetson."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:13
+msgid "Strategy"
+msgstr "Stratégie"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:14
+msgid ""
+"Generally the idea is to set up the coprocessor with the required software "
+"that generally includes:"
+msgstr ""
+"Généralement, l'idée est de configurer le coprocesseur avec le logiciel "
+"requis qui comprend généralement:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:16
+msgid "OpenCV - the open source computer vision library"
+msgstr "OpenCV - la librairie de vision par ordinateur "
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:17
+msgid ""
+"Network tables - to commute the results of the image processing to the "
+"roboRIO program"
+msgstr ""
+"Network Tables - pour échanger les résultats du traitement d'image vers le "
+"programme roboRIO"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:18
+msgid ""
+"Camera server library - to handle the camera connections and publish streams"
+" that can be viewed on a dashboard"
+msgstr ""
+"Bibliothèque de serveurs de caméras - pour gérer les connexions de caméras "
+"et publier des flux pouvant être affichés sur un tableau de bord"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:19
+msgid ""
+"The language library for whatever computer language is used for the vision "
+"program"
+msgstr ""
+"Les librairies associés au langage informatique utilisé pour le programme de"
+" vision"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:20
+msgid "The actual vision program that does the object detection"
+msgstr "Le programme spécifique de vision qui fait la détection d'objet"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:22
+msgid ""
+"The coprocessor is connected to the roboRIO network by plugging it into the "
+"extra ethernet port on the network router or, for more connections, adding a"
+" small network switch to the robot. The cameras are plugged into the "
+"coprocessor, it acquires the images, processes them, and publishes the "
+"results, usually target location information, to network tables so it is can"
+" be consumed by the robot program for steering and aiming."
+msgstr ""
+"Le coprocesseur est connecté au réseau roboRIO en le branchant sur le port "
+"Ethernet supplémentaire, ou si l'on veut avoir d'autres connexions, on pêut "
+"ajouter un petit commutateur réseau (Network Switch) au robot. Les caméras "
+"sont connectées au coprocesseur, qui acquiert les images, les traite et "
+"publie les résultats, généralement des informations de localisation de "
+"cible, sur des Network Tables afin qu'elles puissent être utilisées par le "
+"programme du robot pour la direction et la visée."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:30
+msgid "Streaming camera data to the dashboard"
+msgstr "Diffuser des données de la caméra vers le tableau de bord"
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:31
+msgid ""
+"It is often desirable to simply stream the camera data to the dashboard over"
+" the robot network. In this case one or more camera connections can be sent "
+"to the network and viewed on a dashboard such as Shuffleboard or a web "
+"browser. Using Shuffleboard has the advantage of having easy controls to set"
+" the camera resolution and bit rate as well as integrating the camera "
+"streams with other data sent from the robot."
+msgstr ""
+"Il est souvent souhaitable de simplement diffuser les données de la caméra "
+"sur le tableau de bord via le réseau du robot. Dans ce cas, une ou plusieurs"
+" connexions de caméra peuvent être envoyées au réseau et affichées sur un "
+"tableau de bord tel que Shuffleboard ou un navigateur Web. L'utilisation de "
+"Shuffleboard donne l'avantage d'avoir accès à des commandes faciles pour "
+"régler la résolution de la caméra et le débit binaire ainsi que d'intégrer "
+"les flux de caméra avec d'autres données envoyées par le robot."
+
+#: ../../frc-docs/source/docs/software/vision-processing/frcvision/using-a-coprocessor-for-vision-processing.rst:36
+msgid ""
+"It is also possible to process images and add annotation to the image, such "
+"as target lines or boxes showing what the image processing code has detected"
+" then send it forward to the dashboard to make it easier for operators to "
+"see a clear picture of what's around the robot."
+msgstr ""
+"Il est également possible de traiter des images et d'ajouter des annotations"
+" à l'image, telles que des lignes ou des boîtes cibles montrant ce que le "
+"code de traitement d'image a détecté, puis de l'envoyer vers le tableau de "
+"bord pour permettre aux opérateurs de voir plus clairement ce qui se trouve "
+"autour du robot."

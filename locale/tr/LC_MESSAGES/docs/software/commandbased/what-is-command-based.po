@@ -1,0 +1,120 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-05-09 04:10+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:2
+msgid "What Is \"Command-Based\" Programming?"
+msgstr "Komut Tabanlı Programlama nedir?"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:20
+msgid ""
+"In contrast, in an ordinary `imperative "
+"<https://en.wikipedia.org/wiki/Imperative_programming>`__ program, the user "
+"would need to check the button state every iteration, and perform the "
+"appropriate action based on the state of the button."
+msgstr ""
+"Bunun aksine, sıradan bir "
+"`zorunlu<https://en.wikipedia.org/wiki/Imperative_programming>`__ "
+"programında, kullanıcının her yinelemede düğme durumunu kontrol etmesi ve "
+"düğmenin durumuna bağlı olarak uygun eylemi gerçekleştirmesi gerekir."
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:47
+msgid "Subsystems and Commands"
+msgstr "Subsystems ve Commands"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:52
+msgid ""
+"The command-based pattern is based around two core abstractions: "
+"**commands**, and **subsystems.**"
+msgstr ""
+"Komut tabanlı model, iki temel betimlemeye dayanmaktadır: **komutlar-"
+"commands** ve **alt sistemler-subsystems**.  "
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:59
+msgid "How Commands Are Run"
+msgstr "Komutlar Nasıl Çalıştırılır ?"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:61
+msgid "For a more detailed explanation, see :doc:`command-scheduler`."
+msgstr "Daha fazla bilgi için, bakınız :doc:`command-scheduler`."
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:65
+msgid ""
+"Multiple commands can run concurrently, as long as they do not require the "
+"same resources on the robot. Resource management is handled on a per-"
+"subsystem basis: commands may specify which subsystems they interact with, "
+"and the scheduler will never schedule more than one command requiring a "
+"given subsystem at a time. This ensures that, for example, users will not "
+"end up with two different pieces of code attempting to set the same motor "
+"controller to different output values. If a new command is scheduled that "
+"requires a subsystem that is already in use, it will either interrupt the "
+"currently-running command that requires that subsystem (if the command has "
+"been scheduled as interruptible), or else it will not be scheduled."
+msgstr ""
+"Robotta aynı kaynakları gerektirmedikleri sürece birden çok komut aynı anda "
+"çalışabilir. Kaynak yönetimi, alt sistem bazında ele alınır: komutlar, hangi"
+" alt sistemlerle etkileşime girdiklerini belirleyebilir ve scheduler-"
+"programlayıcı, bir seferde belirli bir alt sistemi gerektiren birden fazla "
+"komutu asla programlamaz. Bu, örneğin kullanıcıların aynı motor kontrol "
+"cihazını farklı çıkış değerlerine ayarlamaya çalışan iki farklı kod parçası "
+"ile sonuçlanmamasını sağlar. Halihazırda kullanımda olan bir alt sistemi "
+"gerektiren yeni bir komut programlanırsa, ya o alt sistemi gerektiren şu "
+"anda çalışan komutu keser (komut kesintiye uğrayabilir olarak "
+"programlandıysa) ya da programlanmaz."
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:69
+msgid ""
+"When a command is scheduled, its ``initialize()`` method is called once. Its"
+" ``execute()`` method is then called once per call to "
+"``CommandScheduler.getInstance().run()``. A command is un-scheduled and has "
+"its ``end(boolean interrupted)`` method called when either its "
+"``isFinished()`` method returns true, or else it is interrupted (either by "
+"another command with which it shares a required subsystem, or by being "
+"canceled)."
+msgstr ""
+"Bir komut zamanlandığında, ``initialize()`` yöntemi bir kez çağrılır. Daha "
+"sonra ``execute()`` yöntemi, ``CommandScheduler.getInstance().Run()`` "
+"çağrısı başına bir kez çağrılır. Bir komut programlanmamış ve ``end (boolean"
+" interrupted)`` yöntemi çağrıldığında ``isFinished()`` yöntemi true "
+"döndürdüğünde veya kesildiğinde (kaynağı paylaştığı başka bir komutla veya "
+"iptal edilerek)."
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:72
+msgid "Command Groups"
+msgstr "Komut Grupları - Command Groups"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:77
+msgid "Creating a Robot Project"
+msgstr "Bir Robot Projesi Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:79
+msgid ""
+"Creating a project is detailed in :ref:`docs/software/vscode-"
+"overview/creating-robot-program:Creating a Robot Program`. Select "
+"\"Template\" then your programming language then \"New Command Robot\" to "
+"create a basic Command-Based Robot program."
+msgstr ""
+"Bir proje oluşturmanın ayrıntıları : ref: `docs/software/vscode-genel bakış "
+"/ create-robot-program : Creating a Robot Program`. Temel bir Komut Tabanlı "
+"Robot programı oluşturmak için \"Template\" u ve ardından programlama "
+"dilinizi ve ardından \"New Command Robot\"  seçin."

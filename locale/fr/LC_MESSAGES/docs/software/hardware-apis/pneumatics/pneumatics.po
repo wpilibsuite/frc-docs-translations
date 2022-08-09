@@ -1,0 +1,344 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2022
+# Austin Shalit <austinshalit@gmail.com>, 2022
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-20 16:03+0000\n"
+"PO-Revision-Date: 2021-06-22 22:07+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:4
+msgid "Operating pneumatic cylinders"
+msgstr "Utilisation des vérins pneumatiques"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:7
+msgid "Using the FRC Control System to control Pneumatics"
+msgstr "Utilisation du système de contrôle FRC pour contrôler la pneumatique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:9
+msgid ""
+"There are two options for operating solenoids to control pneumatic "
+"cylinders, the CTRE Pneumatics Control Module and the REV Robotics "
+"Pneumatics Hub."
+msgstr ""
+"Il existe deux options pour activer les solénoïdes afin de contrôler les "
+"cylindres pneumatiques, le module de commande pneumatique de CTRE et le "
+"concentrateur pneumatique de REV Robotics."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rstNone
+msgid "The Pneumatics Control Module (PCM)"
+msgstr "Le module de commande pneumatique (PCM)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:15
+msgid ""
+"The CTRE Pneumatics Control Module (PCM) is a CAN-based device that provides"
+" control over the compressor and up to 8 solenoids per module."
+msgstr ""
+"Le module de commande pneumatique CTRE (PCM) est un composant qui se branche"
+" sur le réseau CAN et qui permet de contrôler le compresseur et jusqu’à 8 "
+"solénoïdes par module."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rstNone
+msgid "The Pneumatic Hub (PH)"
+msgstr "Concentrateur pneumatique en anglais (PH)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:21
+msgid ""
+"The REV Pneumatic Hub (PH) is a CAN-based device that provides control over "
+"the compressor and up to 16 solenoids per module."
+msgstr ""
+"Le concentrateur pneumatique de REV (PH) est un composant qui se branche sur"
+" le réseau CAN et qui permet de contrôler le compresseur et jusqu’à 16 "
+"solénoïdes par module."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:23
+msgid ""
+"These devices are integrated into WPILib through a series of classes that "
+"make them simple to use. The closed loop control of the Compressor and "
+"Pressure switch is handled by the PCM hardware and the Solenoids are handled"
+" by the ``Solenoid`` class that controls the solenoid channels. These "
+"modules are responsible for regulating the robot's pressure using a pressure"
+" switch and a compressor and switching solenoids on and off. They "
+"communicate with the roboRIO over CAN. For more information, see "
+":doc:`/docs/controls-overviews/control-system-hardware`"
+msgstr ""
+"Ces composants sont pris en charge par la WPILib grâce à une série de "
+"classes qui les rendent simples à utiliser. Le contrôle en boucle fermée du "
+"compresseur et du pressostat est géré par le matériel PCM et les solénoïdes "
+"sont gérés par la classe ``Solenoid`` qui contrôle les canaux solénoïdes. "
+"Ces modules sont chargés de réguler la pression du robot à l’aide d’un "
+"pressostat et d’un compresseur et d’allumer et éteindre les solénoïdes. Ils "
+"communiquent avec le roboRIO via le réseau CAN. Pour plus d’informations, "
+"voir  :doc:`/docs/controls-overviews/control-system-hardware`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:27
+msgid "Module Numbers"
+msgstr "Numéros de module "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:29
+msgid ""
+"CAN Devices are identified by their Node ID. The default Node ID for PCMs is"
+" 0. The default Node ID for PHs is 1. If using a single module on the bus it"
+" is recommended to leave it at the default Node ID. Additional modules can "
+"be used where the modules corresponding solenoids are differentiated by the "
+"module number in the constructors of the ``Solenoid`` and ``Compressor`` "
+"classes."
+msgstr ""
+"Les composants CAN sont identifiés par leur numéro d'identifacation ou ID de"
+" nœud. L’ID de nœud par défaut pour les PCM est 0. L’ID de nœud par défaut "
+"pour les concentrateurs pneumatiques ou PH est 1. Si vous utilisez un seul "
+"module sur le bus CAN, il est recommandé de le laisser à l’ID de nœud par "
+"défaut. Des modules supplémentaires peuvent être utilisés lorsque les "
+"modules solénoïdes correspondants sont différenciés par le numéro de module "
+"dans les constructeurs des classes ``Solenoid`` et ``Compressor``."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:33
+msgid "Generating and Storing Pressure"
+msgstr "Génération et stockage de la pression"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:35
+msgid ""
+"Pressure is created using a pneumatic compressor and stored in pneumatic "
+"tanks. The compressor doesn't necessarily have to be on the robot, but must "
+"be powered by the robot's pneumatics module. The \"Closed Loop\" mode on the"
+" Compressor is enabled by default, and it is *not* recommended that teams "
+"change this setting. When closed loop control is enabled the pneumatic "
+"module will automatically turn the compressor on when the digital pressure "
+"switch is closed (below the pressure threshold) and turn it off when the "
+"pressure switch is open (~120PSI). When closed loop control is disabled the "
+"compressor will not be turned on. Using the ``Compressor`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__"
+" / `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__)"
+" class, users can query the status of the compressor. The state (currently "
+"on or off), pressure switch state, and compressor current can all be queried"
+" from the Compressor object."
+msgstr ""
+"La pression est créée à l'aide d'un compresseur pneumatique et stockée dans "
+"un ou des réservoirs pneumatiques. Il n'y a pas d'obligation à installer le "
+"compresseur sur le robot, mais il doit être alimenté par les modules "
+"pneumatiques du robot. Le mode \"Boucle fermée\" sur le compresseur est "
+"activé par défaut, et il n'est *pas* recommandé aux équipes de modifier "
+"cette configuration. Lorsque le contrôle en boucle fermée est activé, le "
+"module pneumatique allume automatiquement le compresseur lorsque le "
+"pressostat est fermé (en dessous du seuil de pression) et l'éteint lorsque "
+"le pressostat est ouvert (~ 120PSI). Lorsque le contrôle en boucle fermée "
+"est désactivé, le compresseur n'est pas activé. À l'aide de la classe "
+"``Compressor`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Compressor.html>`__"
+" / `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_compressor.html>`__),"
+" les utilisateurs peuvent vérifier l'état du compresseur. L'état (activé ou "
+"désactivé), l'état du pressostat et le courant (Ampères) qui va au "
+"compresseur peuvent tous être obtenus à l'aide d'un objet de la classe "
+"``Compressor``."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:37
+msgid ""
+"The Compressor object is only needed if you want the ability to turn off the"
+" compressor, change the pressure sensor (PH only), or query compressor "
+"status."
+msgstr ""
+"L’objet Compressor n’est nécessaire que si vous souhaitez éteindre le "
+"compresseur, modifier le capteur de pression (PH uniquement) ou vérifier "
+"l’état du compresseur."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:66
+msgid ""
+"The Pneumatic Hub also has methods for enabling compressor control using the"
+" REV Analog Pressure Sensor (``enableAnalog`` method)."
+msgstr ""
+"Le concentrateur pneumatique dispose également de méthodes permettant le "
+"contrôle du compresseur à l’aide du capteur de pression analogique REV "
+"(méthode ``enableAnalog``)."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:69
+msgid "Solenoid control"
+msgstr "Contrôle solénoïde"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:71
+msgid ""
+"FRC teams use solenoids to perform a variety of tasks, from shifting "
+"gearboxes to operating robot mechanisms. A solenoid is a valve used to "
+"electronically switch a pressurized air line \"on\" or \"off\". For more "
+"information on solenoids, see `this wikipedia article "
+"<https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled "
+"by a robot's Pneumatics Control Module, or Pneumatic Hub, which is in turn "
+"connected to the robot's roboRIO via CAN. The easiest way to see a "
+"solenoid's state is via the LEDs on the PCM or PH (which indicates if the "
+"valve is \"on\" or not). When un-powered, solenoids can be manually actuated"
+" with the small button on the solenoid."
+msgstr ""
+"Les équipes FRC utilisent des solénoïdes pour effectuer une variété de "
+"tâches, allant du changement des vitesses à travers les systèmes d'engrenage"
+" à l'utilisation de mécanismes de robot. Un solénoïde est une vanne utilisée"
+" pour \"activer\" ou \"désactiver\" électroniquement une conduite d'air sous"
+" pression. Pour plus d'informations sur les solénoïdes, voir `cet article "
+"wikipedia <https://en.wikipedia.org/wiki/Solenoid_valve>`__. Les solénoïdes "
+"sont contrôlés par le module de commande pneumatique du robot, ou PCM, ou "
+"par le concentrateur pneumatique ou PH, qui est à son tour connecté au "
+"roboRIO du robot via CAN. La façon la plus simple de vérifier l'état d'un "
+"solénoïde est via la petite LED rouge (qui indique si la vanne est "
+"\"allumée\" ou non) sur le PCM ou PH. Les solénoïdes peuvent être actionnés "
+"manuellement lorsqu'ils ne sont pas alimentés avec le petit bouton adjacent "
+"sur le solénoïde."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:73
+msgid ""
+"Single acting solenoids apply or vent pressure from a single output port. "
+"They are typically used either when an external force will provide the "
+"return action of the cylinder (spring, gravity, separate mechanism) or in "
+"pairs to act as a double solenoid. A double solenoid switches air flow "
+"between two output ports (many also have a center position where neither "
+"output is vented or connected to the input). Double solenoid valves are "
+"commonly used when you wish to control both the extend and retract actions "
+"of a cylinder using air pressure. Double solenoid valves have two electrical"
+" inputs which connect back to two separate channels on the solenoid "
+"breakout."
+msgstr ""
+"Les solénoïdes à simple effet appliquent ou purgent la pression à partir "
+"d'un seul orifice de sortie. Ils sont généralement utilisés soit lorsqu'une "
+"force externe fournira l'action de retour du cylindre (ressort, gravité, "
+"mécanisme séparé) ou lorsque utilisés en paires pour agir comme un double "
+"solénoïde. Un double solénoïde commute le flux d'air entre deux ports de "
+"sortie (beaucoup ont également une position centrale où aucune sortie n'est "
+"ventilée ou connectée à l'entrée). Les doubles solénoïdes sont couramment "
+"utilisées lorsque vous souhaitez contrôler les actions d'extension et de "
+"rétraction d'un vérin à l'aide de la pression d'air. Les doubles solénoïdes "
+"ont deux entrées électriques qui se connectent à deux canaux séparés sur le "
+"PCM."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:76
+msgid "Single Solenoids in WPILib"
+msgstr "Solénoïdes simples dans WPILib"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:78
+msgid ""
+"Single solenoids in WPILib are controlled using the ``Solenoid`` class "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Solenoid.html>`__"
+" / `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_solenoid.html>`__)."
+" To construct a Solenoid object, simply pass the desired port number "
+"(assumes default CAN ID) and pneumatics module type or CAN ID, pneumatics "
+"module type, and port number to the constructor. To set the value of the "
+"solenoid call set(true) to enable or set(false) to disable the solenoid "
+"output."
+msgstr ""
+"Les solénoïdes simples dans la librairie WPILib sont contrôlés à l'aide de "
+"la classe ``Solenoid`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Solenoid.html>`__"
+" / `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_solenoid.html>`__)."
+" Pour construire un objet Solenoid, il suffit de transmettre le numéro de "
+"port souhaité (en supposant CAN ID par défaut du module pneumatique) et le "
+"type du module de pneumatique ou CAN ID, le type du module de pneumatique, "
+"et le numéro de port au constructeur. Pour configurer la valeur d'un "
+"solénoïde, faites un appel à la méthode  set(true) pour activer ou "
+"set(false) pour désactiver la sortie du solénoïde."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:101
+msgid "Double Solenoids in WPILib"
+msgstr "Solénoïdes doubles dans WPILib"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:103
+msgid ""
+"Double solenoids are controlled by the ``DoubleSolenoid`` class in WPILib "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__"
+" / `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__."
+" These are constructed similarly to the single solenoid but there are now "
+"two port numbers to pass to the constructor, a forward channel (first) and a"
+" reverse channel (second). The state of the valve can then be set to `kOff` "
+"(neither output activated), `kForward` (forward channel enabled) or "
+"`kReverse` (reverse channel enabled). Additionally, the CAN ID can be passed"
+" to the DoubleSolenoid if teams have a non-standard CAN ID."
+msgstr ""
+"Les solénoïdes doubles sont contrôlés dans la librairie WPILIb par la classe"
+" ``DoubleSolenoid`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DoubleSolenoid.html>`__"
+" / `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_double_solenoid.html>`__."
+" Ceux-ci sont construits de manière similaire aux simples solénoïdes, mais "
+"il y a maintenant deux numéros de port à transmettre au constructeur, un "
+"canal direct (premier) et un canal inverse (second). L'état de la vanne peut"
+" ensuite être configuré à la valeur `kOff` (aucune sortie activée), "
+"`kForward`  (canal direct activé) ou `kReverse` (canal inverse activé). De "
+"plus, l'ID CAN peut être transmis au DoubleSolenoid s'il les équipes "
+"disposent de d'ID CAN non standard."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:132
+msgid "Toggling Solenoids"
+msgstr "Basculement de Solénoïdes"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:134
+msgid ""
+"Solenoids can be switched from one output to the other (known as toggling) "
+"by using the `.toggle()` method."
+msgstr ""
+"Les solénoïdes (électrovannes) peuvent voir leur sortie basculer d’un état à"
+" l’autre (connue sous le nom de basculement) en utilisant la méthode "
+"`.toggle()` de la classe qui les définit."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:137
+msgid ""
+"Since a DoubleSolenoid defaults to off, you will have to set it before it "
+"can be toggled."
+msgstr ""
+"Étant donné qu’un DoubleSolenoid (double électrovanne) est par défaut "
+"désactivé, vous devrez le configurer avant qu’il ne puisse être basculé."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:168
+msgid "Pressure Transducers"
+msgstr "Capteurs de pression"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:170
+msgid ""
+"A pressure transducer is a sensor where analog voltage is proportial to the "
+"measured pressure."
+msgstr ""
+"Un transducteur de pression est un capteur dans lequel la tension analogique"
+" est proportionnelle à la pression mesurée."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:173
+msgid "Pneumatic Hub"
+msgstr "Concentrateur pneumatique "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:175
+msgid ""
+"The Pneumatic Hub has analog inputs that may be used to read a pressure "
+"transducer using the Compressor class."
+msgstr ""
+"Le concentrateur pneumatique dispose d’entrées analogiques qui peuvent être "
+"utilisées pour lire un capteur de pression à l’aide de la classe Compressor."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:195
+msgid "roboRIO"
+msgstr "roboRIO"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/pneumatics.rst:197
+msgid ""
+"A pressure transducer can be connected to the Analog Input ports on the "
+"roboRIO, and can be read by the ``AnalogInput`` or ``AnalogPotentiometer`` "
+"classes in WPILib."
+msgstr ""
+"On peut connecter un capteur de pression aux ports d’entrée analogiques du "
+"roboRIO et il peut être lu par les classes ``AnalogInput`` ou "
+"``AnalogPotentiometer`` de la  WPILib."

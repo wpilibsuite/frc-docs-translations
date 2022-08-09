@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-11 04:05+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:4
+msgid "Creating a client-side program"
+msgstr "Création d'un programme côté client"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:6
+msgid ""
+"If all you need to do is have your robot program communicate with GRIP or a "
+"dashboard running on the Driver Station laptop, then the previous examples "
+"of writing robot programs are sufficient. But if you would like to write "
+"some custom client code that would run on the drivers station or on a "
+"coprocessor then you need to know how to build :term:`NetworkTables` "
+"programs for those (non-roboRIO) platforms."
+msgstr ""
+"Si tout ce que vous avez à faire est de faire communiquer votre programme de"
+" robot avec GRIP ou un tableau de bord fonctionnant sur l'ordinateur "
+"portable de Driver Station, les exemples précédents d'écriture de programmes"
+" de robot sont suffisants. Mais si vous souhaitez écrire un code client "
+"personnalisé qui s'exécuterait sur la station de pilotes ou sur un "
+"coprocesseur, vous devez savoir comment construire des programmes avec des "
+":term:`NetworkTables` pour ces plates-formes (non roboRIO)."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:8
+msgid "A basic client program looks like the following example."
+msgstr "Un programme client de base ressemble à l'exemple suivant."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:46
+msgid ""
+"In this example an instance of NetworkTables is created and a "
+"NetworkTableEntry if created to reference the values of \"x\" and \"y\" from"
+" a table called \"datatable\"."
+msgstr ""
+"Dans cet exemple, une instance de NetworkTables est créée et un "
+"NetworkTableEntry s'il est créé pour référencer les valeurs de \"x\" et "
+"\"y\" à partir d'une table appelée \"datatable\"."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:48
+msgid ""
+"Then this instance is started as a NetworkTables client with the team number"
+" (the roboRIO is always the server). Additionally, if the program is running"
+" on the Driver Station computer, by using the startDSClient() method, "
+"NetworkTables will get the robot IP address from the Driver Station."
+msgstr ""
+"Ensuite, cette instance est démarrée en tant que client NetworkTables avec "
+"le numéro d'équipe (le roboRIO est toujours le serveur). De plus, si le "
+"programme est en cours d'exécution sur l'ordinateur de Driver Station, en "
+"utilisant la méthode startDSClient (), NetworkTables obtiendra l'adresse IP "
+"du robot à partir de Driver Station."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:50
+msgid ""
+"Then this sample program simply loops once a second and gets the values for "
+"x and y and prints them on the console. In a more realistic program, the "
+"client might be processing or generating values for the robot to consume."
+msgstr ""
+"Ensuite, ce programme boucle simplement une fois par seconde et obtient les "
+"valeurs de x et y et les imprime sur la console. Dans un programme plus "
+"réaliste, le client pourrait traiter ou générer des valeurs calculés de ces "
+"lectures et les retourner au robot."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:53
+msgid "Building the program"
+msgstr "La construction du programme"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:54
+msgid ""
+"When building and running the program you will need some additional "
+"libraries to include with your client-side program. These are:"
+msgstr ""
+"Lors de la création et de l'exécution du programme, vous aurez besoin de "
+"bibliothèques supplémentaires à inclure dans votre programme côté client. "
+"Ceux-ci sont:"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:56
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"java/ (ntcore Java files)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"java/ (ntcore Java files)"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:58
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"jni/ (ntcore native libs for all desktop platforms)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"jni/ (bibliothèques natives ntcore pour toutes les plates-formes de bureau)"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:60
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-"
+"java/ (wpiutil Java files)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-"
+"java/ (wpiutil Java files)"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:62
+msgid "The desktop platform jar is for Windows, macOS, and Linux."
+msgstr "Le fichier JAR fonctionne sous Windows, macOS et Linux."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:65
+msgid "Building using Gradle"
+msgstr "Construire avec Gradle"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:67
+msgid ""
+"The dependencies above can be added to the ``dependencies`` block in a "
+"``build.gradle`` file. The ``ntcore-java`` and ``wpiutil-java`` libraries "
+"are required at compile-time and the JNI dependencies are required at "
+"runtime. The JNI dependencies for all supported platforms should be added to"
+" the ``build.gradle`` if cross-platform support for the application is "
+"desired."
+msgstr ""
+"Les dépendances ci-dessus peuvent être ajoutées au bloc ``dependencies`` "
+"dans un fichier ``build.gradle``. Les librairies ``ntcore-java`` et "
+"``wpiutil-java`` sont requises au moment de la compilation et les "
+"dépendances JNI sont requises au moment de l'exécution. Les dépendances JNI "
+"pour toutes les plates-formes prises en charge doivent être rajoutées au "
+"``build.gradle`` si une prise en charge multiplateforme de l'application est"
+" souhaitée."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:69
+msgid ""
+"First, the FRC\\ |reg| Maven repository should be added to the "
+"``repositories`` block. Note that this is not required if you are using the "
+"GradleRIO plugin with your application."
+msgstr ""
+"Tout d’abord, le repertoire Maven FRC\\ |reg| doit être ajouté au bloc "
+"``repositories``. Notez que cela n’est pas nécessaire si vous utilisez le "
+"plugin GradleRIO avec votre application."
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:77
+msgid ""
+"Then, the dependencies can be added to the ``dependencies`` block. Here, "
+"``VERSION`` should be replaced with the latest version number of the "
+"following dependencies. This usually corresponds to the version number of "
+"the latest WPILib release."
+msgstr ""
+"Ensuite, les dépendances peuvent être ajoutées au bloc ``dependencies``. "
+"Ici, ``VERSION`` doit être remplacé par le dernier numéro de version des "
+"dépendances suivantes. Cela correspond généralement au numéro de version de "
+"la dernière version de WPILib."

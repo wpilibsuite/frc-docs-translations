@@ -1,0 +1,249 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2022\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:2
+msgid "Binding Commands to Triggers"
+msgstr "Komutları Trigger-Tetikleyicilere Bağlama"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:4
+msgid ""
+"Apart from autonomous commands, which are scheduled at the start of the "
+"autonomous period, and default commands, which are automatically scheduled "
+"whenever their subsystem is not currently in-use, the most common way to run"
+" a command is by binding it to a triggering event, such as a button being "
+"pressed by a human operator. The command-based paradigm makes this extremely"
+" easy to do."
+msgstr ""
+"Otonom dönemin başlangıcında programlanan otonom komutlar ve alt sistemleri "
+"halihazırda kullanımda olmadığında otomatik olarak programlanan varsayılan "
+"komutlar dışında, bir komutu çalıştırmanın en yaygın yolu onu tetikleyici "
+"bir olaya bağlamaktır. Bir insan operatörün bir düğmeye basması gibi. Komut "
+"tabanlı paradigma, bunu yapmayı son derece kolaylaştırır."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:11
+msgid "Trigger/Button Bindings"
+msgstr "Tetik/Düğme Bağlamaları"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:15
+msgid ""
+"There are a number of bindings available for the ``Trigger`` class. All of "
+"these bindings will automatically schedule a command when a certain trigger "
+"activation event occurs - however, each binding has different specific "
+"behavior. ``Button`` and its subclasses have bindings with identical "
+"behaviors, but slightly different names that better-match a button rather "
+"than an arbitrary triggering event."
+msgstr ""
+"``Trigger`` sınıfı için mevcut olan bir dizi bağlama vardır. Bu bağlamaların"
+" tümü, belirli bir tetikleyici etkinleştirme olayı gerçekleştiğinde otomatik"
+" olarak bir komut zamanlayacaktır - ancak, her bağlamanın farklı belirli "
+"davranışları vardır. ``Button`` ve alt sınıfları, aynı davranışlara sahip "
+"bağlamalara sahiptir, ancak keyfi bir tetikleyici olay yerine bir düğmeyle "
+"daha iyi eşleşen farklı adlara sahiptir."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:18
+msgid "whenActive/whenPressed"
+msgstr "whenActive/whenPressed"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:20
+msgid ""
+"This binding schedules a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button changes is initially pressed). The "
+"command will be scheduled on the iteration when the state changes, and will "
+"not be scheduled again unless the trigger becomes inactive and then active "
+"again (or the button is released and then re-pressed)."
+msgstr ""
+"Bu bağlama, bir tetikleyici inaktif durumdan aktif duruma geçtiğinde (veya "
+"buna göre, bir düğmeye ilk basıldığında) bir komut zamanlar. Komut, durum "
+"değiştiğinde yinelemeye programlanacak ve tetik devre dışı bırakılıp "
+"ardından tekrar etkin hale gelmedikçe (veya düğme bırakılıp ardından yeniden"
+" basılmadıkça) tekrar programlanmayacaktır."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:23
+msgid "whileActiveContinuous/whileHeld"
+msgstr "whileActiveContinuous/whileHeld"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:25
+msgid ""
+"This binding schedules a command repeatedly while a trigger is active (or, "
+"accordingly, while a button is held), and cancels it when the trigger "
+"becomes inactive (or when the button is released). Note that scheduling an "
+"already-running command has no effect; but if the command finishes while the"
+" trigger is still active, it will be re-scheduled."
+msgstr ""
+"Bu bağlama, bir tetikleme etkinken (veya buna göre bir düğme basılıyken) bir"
+" komutu tekrar tekrar zamanlar ve tetik etkin olmadığında (veya düğme "
+"bırakıldığında) bunu iptal eder. Zaten çalışan bir komutun zamanlanmasının "
+"hiçbir etkisi olmadığını unutmayın; ancak komut tetikleyici hala etkinken "
+"biterse, yeniden zamanalanacaktır."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:28
+msgid "whileActiveOnce/whenHeld"
+msgstr "whileActiveOnce/whenHeld"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:30
+msgid ""
+"This binding schedules a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button is initially pressed) and cancels it "
+"when the trigger becomes inactive again (or the button is released). The "
+"command will *not* be re-scheduled if it finishes while the trigger is still"
+" active."
+msgstr ""
+"Bu bağlama, bir tetikleyici devre dışı durumdan etkin duruma geçtiğinde "
+"(veya buna göre, bir düğmeye ilk basıldığında) bir komut programlar ve tetik"
+" tekrar devre dışı kaldığında (veya düğme bırakıldığında) bunu iptal eder. "
+"Tetikleyici hala etkinken tamamlanırsa komut *yeniden programlanmayacaktır*."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:33
+msgid "whenInactive/whenReleased"
+msgstr "whenInactive/whenReleased"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:35
+msgid ""
+"This binding schedules a command when a trigger changes from active to "
+"inactive (or, accordingly, when a button is initially released). The command"
+" will be scheduled on the iteration when the state changes, and will not be "
+"re-scheduled unless the trigger becomes active and then inactive again (or "
+"the button is pressed and then re-released)."
+msgstr ""
+"Bu bağlanma, bir tetikleyici aktif durumdan pasif duruma geçtiğinde (veya "
+"buna göre, bir buton ilk bırakıldığında) bir komutu zamanlar. Komut, durum "
+"değiştiğinde yinelemeye programlanacak ve tetik etkinleşene ve ardından "
+"tekrar devre dışı kalmadıkça (veya düğmeye basıp ardından yeniden "
+"bırakılmadıkça) yeniden programlanmayacaktır."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:38
+msgid "toggleWhenActive/toggleWhenPressed"
+msgstr "toggleWhenActive/toggleWhenPressed"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:57
+msgid "cancelWhenActive/cancelWhenPressed"
+msgstr "cancelWhenActive/cancelWhenPressed"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:59
+msgid ""
+"This binding cancels a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button is initially pressed). the command is"
+" canceled on the iteration when the state changes, and will not be canceled "
+"again unless the trigger becomes inactive and then active again (or the "
+"button is released and re-pressed). Note that canceling a command that is "
+"not currently running has no effect."
+msgstr ""
+"Bu bağlama, bir tetikleyici inaktif durumdan aktif duruma geçtiğinde (veya "
+"buna göre bir düğmeye ilk basıldığında) bir komutu iptal eder. durum "
+"değiştiğinde komut yinelemede iptal edilir ve tetik devre dışı kalmadıkça ve"
+" ardından tekrar etkinleşmedikçe (veya düğme bırakılıp yeniden basılmadıkça)"
+" tekrar iptal edilmeyecektir. Şu anda çalışmayan bir komutu iptal etmenin "
+"hiçbir etkisi olmadığını unutmayın."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:62
+msgid "Binding a command to a joystick button"
+msgstr "Bir komutun bir oyun çubuğu düğmesine bağlanması"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:64
+msgid ""
+"The most-common way to trigger a command is to bind a command to a button on"
+" a joystick or other HID (human interface device). To do this, users should "
+"use the ``JoystickButton`` class."
+msgstr ""
+"Bir komutu tetiklemenin en yaygın yolu, bir komutu bir kumanda kolundaki "
+"veya başka bir HID'deki (insan arayüz cihazı) bir düğmeye bağlamaktır. Bunu "
+"yapmak için kullanıcılar ``JoystickButton`` sınıfını kullanmalıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:67
+msgid "Creating a JoystickButton"
+msgstr "Bir JoystickButton Oluşturma"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:98
+msgid "Binding a Command to a JoystickButton"
+msgstr "Bir Joystick butonuna Command Bağlama"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:100
+msgid ""
+"In the C++ command-based library, button objects *do not need to survive "
+"past the call to a binding method*, and so the binding methods may be simply"
+" called on a temp."
+msgstr ""
+"C++ komut tabanlı kitaplıkta, düğme nesnelerinin *bir bağlama yöntemine* "
+"çağrıldıktan sonra devam etmesi gerekmez ve bu nedenle bağlama yöntemleri "
+"geçici olarak çağrılabilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:102
+msgid ""
+"Putting it all together, it is very simple to bind a button to a "
+"JoystickButton:"
+msgstr ""
+"Hepsini bir araya getirirsek, bir düğmeyi bir JoystickButton'a bağlamak çok "
+"kolaydır:"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:116
+msgid ""
+"It is useful to note that the command binding methods all return the "
+"trigger/button that they were initially called on, and thus can be chained "
+"to bind multiple commands to different states of the same button. For "
+"example:"
+msgstr ""
+"Komut bağlama yöntemlerinin hepsinin başlangıçta çağrıldıkları tetiği / "
+"düğmeyi döndürdüğünü ve bu nedenle birden fazla komutu aynı düğmenin farklı "
+"durumlarına bağlamak için zincirlenebileceğini not etmek yararlıdır. "
+"Örneğin:"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:136
+msgid ""
+"Remember that button binding is *declarative*: bindings only need to be "
+"declared once, ideally some time during robot initialization. The library "
+"handles everything else."
+msgstr ""
+"Düğme bağlamanın *declarative - bildirime dayalı* olduğunu unutmayın: "
+"bağlamaların yalnızca bir kez, ideal olarak robot başlatma sırasında bir "
+"süre bildirilmesi gerekir. Kütüphane diğer her şeyi halleder."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:139
+msgid "Composing Triggers"
+msgstr "Tetikleyicileri Oluşturma"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:141
+msgid ""
+"The ``Trigger`` class (including its ``Button`` subclasses) can be composed "
+"to create composite triggers through the ``and()``, ``or()``, and "
+"``negate()`` methods (or, in C++, the ``&&``, ``||``, and ``!`` operators). "
+"For example:"
+msgstr ""
+"``Trigger`` sınıfı (``Button`` alt sınıfları dahil), ``and()``, ``or()`` ve "
+"``negate()`` yöntemleri aracılığıyla bileşik tetikleyiciler oluşturmak için "
+"kullanılabilir (veya C++ 'da ``&&``, ``||``, ve ``!`` operatörleri). "
+"Örneğin:"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:159
+msgid ""
+"Note that these methods return a ``Trigger``, not a ``Button``, so the "
+"``Trigger`` binding method names must be used even when buttons are "
+"composed."
+msgstr ""
+"Bu yöntemlerin bir ``Button`` değil, bir ``Trigger`` döndürdüğüne dikkat "
+"edin, bu nedenle ``Trigger`` bağlama yöntemi adlarının düğmeler oluşturulsa "
+"bile kullanılması gerekir."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:185
+msgid "Creating Your Own Custom Trigger"
+msgstr "Kendi Özel Tetikleyicinizi Oluşturma"

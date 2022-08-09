@@ -1,0 +1,173 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Arhan Ünay <arhanyo@gmail.com>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# Müfit ALKAYA_3390 <mufit.alkaya@tfo.k12.tr>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-28 16:18+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Müfit ALKAYA_3390 <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:2
+msgid "Differential Drive Odometry"
+msgstr "Differential Drive Odometrisi"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:3
+msgid ""
+"A user can use the differential drive kinematics classes in order to perform"
+" :ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>`. WPILib contains a ``DifferentialDriveOdometry`` "
+"class that can be used to track the position of a differential drive robot "
+"on the field."
+msgstr ""
+"Bir kullanıcı, :ref:`odometry <docs/software/kinematics-and-odometry/intro-"
+"and-chassis-speeds:What is odometry?>` gerçekleştirmek için diferansiyel "
+"sürücü kinematik sınıflarını kullanabilir . WPILib, sahada diferansiyel "
+"tahrik robotunun konumunu izlemek için kullanılabilecek bir "
+"``DifferentialDriveOdometry`` sınıfı içerir."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:5
+msgid ""
+"Because this method only uses encoders and a gyro, the estimate of the "
+"robot's position on the field will drift over time, especially as your robot"
+" comes into contact with other robots during gameplay. However, odometry is "
+"usually very accurate during the autonomous period."
+msgstr ""
+"Bu yöntemde yalnızca kodlayıcılar ve bir jiroskop kullanıldığı için, robotun"
+" sahadaki konumunun tahmini, özellikle oyun sırasında diğer robotlarla temas"
+" kurduğunda zamanla kayacaktır. Bununla birlikte, odometri genellikle "
+"bağımsız dönemde çok doğrudur."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:8
+msgid "Creating the Odometry Object"
+msgstr "Odometri Nesnesini Oluşturma"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:9
+msgid ""
+"The ``DifferentialDriveOdometry`` class requires one mandatory argument and "
+"one optional argument. The mandatory argument is the angle reported by your "
+"gyroscope (as a Rotation2d). The optional argument is the starting pose of "
+"your robot on the field (as a ``Pose2d``). By default, the robot will start "
+"at ``x = 0, y = 0, theta = 0``."
+msgstr ""
+"``DifferentialDriveOdometry`` sınıfı, bir zorunlu bağımsız değişken ve bir "
+"isteğe bağlı bağımsız değişken gerektirir. Zorunlu argüman jiroskopunuz "
+"tarafından bildirilen açıdır (Rotation2d olarak). İsteğe bağlı argüman, "
+"robotunuzun sahadaki başlangıç pozudur (``Pose2d`` olarak). Varsayılan "
+"olarak, robot ``x = 0, y = 0, theta = 0`` ile başlayacaktır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:11
+msgid ""
+"0 degrees / radians represents the robot angle when the robot is facing "
+"directly toward your opponent's alliance station. As your robot turns to the"
+" left, your gyroscope angle should increase. By default, WPILib gyros "
+"exhibit the opposite behavior, so you should negate the gyro angle."
+msgstr ""
+"0 derece / radyan, robot doğrudan rakibinizin ittifak istasyonuna bakarken "
+"robot açısını temsil eder. Robotunuz sola döndükçe jiroskop açınız "
+"artmalıdır. Varsayılan olarak, WPILib jiroskopları zıt davranış sergiler, bu"
+" nedenle jiroskop açısını geçersiz kılmalısınız."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:13
+msgid ""
+"The encoder positions must be reset to zero before constructing the "
+"``DifferentialDriveOdometry`` class."
+msgstr ""
+"``DifferentialDriveOdometry`` sınıfını oluşturmadan önce enkoder konumları "
+"sıfırlanmalıdır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:35
+msgid "Updating the Robot Pose"
+msgstr "Robot Duruşunu Güncelleme"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:36
+msgid ""
+"The ``update`` method can be used to update the robot's position on the "
+"field. This method must be called periodically, preferably in the "
+"``periodic()`` method of a :ref:`Subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method "
+"returns the new updated pose of the robot. This method takes in the gyro "
+"angle of the robot, along with the left encoder distance and right encoder "
+"distance."
+msgstr ""
+"Robotun sahadaki konumunu güncellemek için ``update`` yöntemi "
+"kullanılabilir. Bu yöntem periyodik olarak, tercihen ``periodic()`` "
+"yönteminde :ref:`Subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>` ile çağrılmalıdır. "
+"``update`` yöntemi, robotun yeni güncellenmiş konumunu döndürür. Bu yöntem, "
+"sol kodlayıcı mesafesi ve sağ kodlayıcı mesafesi ile birlikte robotun cayro "
+"açısını alır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:38
+msgid ""
+"The encoder distances in Java must be in meters. In C++, the units library "
+"can be used to represent the distance using any linear distance unit. If the"
+" robot is moving forward in a straight line, **both** distances (left and "
+"right) must be positive."
+msgstr ""
+"Java'daki kodlayıcı mesafeleri metre cinsinden olmalıdır. C++ 'da, units "
+"kitaplığı, herhangi bir doğrusal uzaklık birimi kullanılarak mesafeyi temsil"
+" etmek için kullanılabilir. Robot düz bir çizgide ilerliyorsa, **her iki** "
+"mesafe (sol ve sağ) pozitif olmalıdır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:67
+msgid "Resetting the Robot Pose"
+msgstr "Robot Duruşunu Sıfırlama"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:68
+msgid ""
+"The robot pose can be reset via the ``resetPose`` method. This method "
+"accepts two arguments -- the new field-relative pose and the current gyro "
+"angle."
+msgstr ""
+"Robot konumu, ``resetPose`` yöntemiyle sıfırlanabilir. Bu yöntem iki "
+"bağımsız değişkeni kabul eder - yeni alana bağlı konum ve mevcut jiroskop "
+"açısı."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:70
+msgid ""
+"If at any time, you decide to reset your gyroscope, the ``resetPose`` method"
+" MUST be called with the new gyro angle. Furthermore, the encoders must also"
+" be reset to zero when resetting the pose."
+msgstr ""
+"Herhangi bir zamanda jiroskopunuzu sıfırlamaya karar verirseniz, yeni "
+"jiroskop açısıyla ``resetPose`` yöntemi ÇAĞIRILMALIDIR. Ayrıca konum "
+"sıfırlanırken kodlayıcılar da sıfırlanmalıdır."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:72
+msgid ""
+"A full example of a differential drive robot with odometry is available "
+"here: `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot>`_"
+" / `Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`_."
+msgstr ""
+"Odometriye sahip bir diferansiyel sürüş robotunun tam bir örneğini burada "
+"bulabilirsiniz: `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/DifferentialDriveBot>`"
+" _ / `Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`"
+" _."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:74
+msgid ""
+"In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be"
+" used to retrieve the current robot pose without an update."
+msgstr ""
+"Ek olarak, mevcut robot pozunu güncelleme olmadan almak için ``GetPose`` (C "
+"++) / ``getPoseMeters`` (Java) yöntemleri kullanılabilir."

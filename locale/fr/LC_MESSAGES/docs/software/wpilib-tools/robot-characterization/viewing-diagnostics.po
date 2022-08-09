@@ -1,0 +1,348 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-27 16:23+0000\n"
+"PO-Revision-Date: 2020-04-25 02:06+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:2
+msgid "Viewing Diagnostics"
+msgstr "Affichage des diagnostics"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:4
+msgid ""
+"The first diagnostic to look at is the r-squared - it should be somewhere "
+"north of ~.9. If it is significantly lower than this, there is likely a "
+"problem with your characterization data."
+msgstr ""
+"Le premier diagnostic à regarder est le r-carré - il devrait être quelque "
+"part au-dessus de ~.9. Si elle est inférieure à cette valeur de manière "
+"significative, il y a probablement un problème avec vos données de "
+"caractérisation."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:6
+msgid ""
+"To investigate further, you can generate a number of diagnostic plots with "
+"the buttons on the left-hand side:"
+msgstr ""
+"Pour approfondir votre investigation, vous pouvez générer un certain nombre "
+"de parcelles de diagnostic avec les boutons situés sur le côté gauche :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:12
+msgid "Time-Domain Diagnostics"
+msgstr "Diagnostics dans le domaine temporel"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:14
+msgid ""
+"The Time-Domain Diagnostics plots display velocity and acceleration versus "
+"time over the course of the analyzed tests. For a typical drive "
+"characterization, these should look something like this (other mechanisms "
+"will be highly similar):"
+msgstr ""
+"Les graphiques des diagnostics dans le domaine temporel affichent la vitesse"
+" et l’accélération par rapport au temps au cours des tests analysés. Pour "
+"une caractérisation d’entraînement typique, ceux-ci devraient ressembler à "
+"quelque chose comme ceci (d’autres mécanismes seront très semblables) :"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:19
+msgid ""
+"The vertical \"mirroring\" visible here is normal, and is simply the result "
+"of the left- and right-side encoders having different signs - this does not "
+"cause any trouble for the characterization tool."
+msgstr ""
+"La \"symétrie\" verticale visible ici est normale, et est simplement le "
+"résultat des encodeurs gauche et droit ayant des signes différents - cela ne"
+" cause aucun problème pour l’outil de caractérisation."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:21
+msgid ""
+"The quasistatic test ought to have nearly linear velocity, and nearly-zero "
+"acceleration (hense \"quasistatic\"). The dynamic test ought to have "
+"velocity that asymptotically approaches a steady-state speed (the shape of "
+"the curve should be exponential, in fact), and acceleration that, "
+"accordingly, rapidly falls to zero (also exponentially, as the derivative of"
+" an exponential function is also an exponential function)."
+msgstr ""
+"Le test quasistatique devrait avoir une vitesse presque linéaire et une "
+"accélération presque nulle (de ce fait \"quasistatic »). Le test dynamique "
+"devrait avoir une vitesse qui approche asymptotiquement une vitesse en "
+"régime permanent (la forme de la courbe devrait être exponentielle, en "
+"fait), et l’accélération qui, par conséquent, tombe rapidement à zéro "
+"(également exponentiellement, comme la dérivée d’une fonction exponentielle "
+"est également une fonction exponentielle)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:23
+msgid ""
+"Deviation from this behavior is a sign of an :ref:`error <docs/software"
+"/wpilib-tools/robot-characterization/viewing-diagnostics:Common Failure "
+"Modes>`, either in your robot setup, analysis settings, or your test "
+"procedure."
+msgstr ""
+"Un écart par rapport à ce comportement est le signe d’une :ref:`erreur "
+"<docs/software/wpilib-tools/robot-characterization/viewing-"
+"diagnostics:Diagnostics Plots for Common Failure Modes>`, soit dans la "
+"configuration de votre robot, les paramètres d’analyse, ou votre procédure "
+"de test."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:26
+msgid "Voltage-Domain Diagnostics"
+msgstr "Diagnostics dans le domaine du voltage"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:28
+msgid ""
+"The :guilabel:`Voltage-Domain` Diagnostics button plots velocity and "
+"acceleration versus voltage. Velocity is ploted for the quasistatic test, "
+"and acceleration is plotted for the dynamic test. For a typical drive "
+"characterization, the plots should resemble this (again, other mechanisms "
+"will be similar)"
+msgstr ""
+"Le bouton Diagnostics :guilabel:`Voltage-Domain` permet de tracer la vitesse"
+" et l’accélération par rapport à la tension. La vitesse est tracée pour le "
+"test quasistatique, et l’accélération est tracée pour le test dynamique. "
+"Pour une caractérisation typique du système d'entraînement, les tracés "
+"devraient ressembler à ceci (encore une fois, d’autres mécanismes seront "
+"similaires)"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:33
+msgid ""
+"Both plots should be linear, however the dynamic plot will almost certainly "
+"have substantially-more noise. The noise on the dynamic plot may be reduced "
+"by increasing the ``Accel Window Size`` setting."
+msgstr ""
+"Les deux graphiques doivent être linéaires, mais le graphique correspondant "
+"au test  dynamique aura presque certainement beaucoup plus de bruit. Ce "
+"bruit peut être réduit en augmentant la valeur du paramètre ``Accel Window "
+"Size``."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:38
+msgid ""
+"However, if your robot or mechanism has low mass compared to the motor "
+"power, this may \"eat\" what little meaningful acceleration data you have "
+"(however, in these cases ``kA`` will tend towards zero and can usually be "
+"ignored, anyway)."
+msgstr ""
+"Toutefois, si votre robot ou mécanisme a une faible masse par rapport à la "
+"puissance du moteur, cela peut \"manger\" le peu de données d’accélération "
+"significatives que vous avez (cependant, dans ces cas  ``kA`` tendra vers "
+"zéro et peut généralement être ignoré, de toute façon)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:40
+msgid ""
+"The x-axis corresponds to ``velocity-portion voltage`` and ``acceleration-"
+"portion voltage``, respectively - as the governing voltage-balance equations"
+" are multi-dimensional, plots against raw voltage are not as useful as one "
+"might expect."
+msgstr ""
+"L’axe x correspond à la ``portion vitesse du voltage`` et à la ``portion "
+"accélération du voltage``, respectivement - comme les équations régissant "
+"l'équilibre des tensions sont multidimensionnelles, les graphiques obtenues "
+"en fonction de la tension brute ne sont pas aussi utiles qu’on pourrait s’y "
+"attendre."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:43
+msgid "3D Diagnostics"
+msgstr "Diagnostics en 3D"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:45
+msgid ""
+"The :guilabel:`3D Diagnostics` button will generate a 3d plot of voltage "
+"over the entire velocity-acceleration plane (this may be an adjusted voltage"
+" to remove the nonlinearity in mechanisms with nonlinear equations, such as "
+"arms)."
+msgstr ""
+"Le bouton :guilabel:`3D Diagnostics` permet de générer une représentation 3D"
+" de la tension sur l’ensemble du plan vitesse-accélération (il peut s’agir "
+"d’une tension ajustée pour supprimer la non-lignearité dans les mécanismes "
+"ayant des équations non linéaires, comme les bras)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:50
+msgid ""
+"This plot is interactive, and may be rotated by clicking-and-dragging. The "
+"quasistatic and dynamic tests should both be clearly visible as streaks of "
+"data, and the best fit-plane should pass through all the data points. The "
+"data from both the quasistatic and dynamic tests should appear as straight "
+"lines (the reason for this is left as an exercise for the reader)."
+msgstr ""
+"Ce graphique est intéractif et peut être tourné en cliquant dessus et en le "
+"faisant glisser. Les tests quasistatiques et dynamiques doivent être "
+"clairement visibles en tant que séries de données, et le meilleur plan "
+"d’ajustement devrait passer à travers tous les points de données. Les "
+"données des tests quasistatiques et dynamiques doivent apparaître comme des "
+"lignes droites (la raison est laissée comme exercice au lecteur)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:52
+msgid ""
+"The discontinuity corresponds to ``kS``, which always opposes the direction "
+"of motion and thus changes direction as the plot crosses the 0 velocity "
+"mark."
+msgstr ""
+"La discontinuité correspond à ``kS``, qui s’oppose toujours à la direction "
+"du mouvement et change ainsi de direction lorsque la courbe franchit le "
+"point de vitesse 0."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:55
+msgid "Common Failure Modes"
+msgstr "Modes de défaillances courantes"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:57
+msgid ""
+"When something has gone wrong with the characterization, diagnostic plots "
+"and console output provide crucial clues as to *what* has gone wrong.  This "
+"section describes some common failures encountered while running the "
+"characterization tool, the identifying features of their diagnostic plots, "
+"and the steps that can be taken to fix them."
+msgstr ""
+"Lorsque quelque chose a mal tourné avec la caractérisation, les graphiques "
+"de diagnostic fournissent des indices cruciaux quant à *ce* qui a mal "
+"tourné. Cette section décrit certaines défaillances couramment rencontrées "
+"lors de l’exécution de l’outil de caractérisation, les caractéristiques "
+"d’identification de leurs graphiques de diagnostic et les mesures qui "
+"peuvent être prises pour les corriger."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:60
+msgid "Improperly Set Motion Threshold"
+msgstr "Seuil de mouvement mal défini"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:62
+msgid ""
+"One of the most-common errors is an inappropriate value for the motion "
+"threshold."
+msgstr ""
+"L’une des erreurs les plus courantes est le choix d'une valeur inappropriée "
+"pour le seuil de mouvement."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:68
+msgid "Motion Threshold Too Low"
+msgstr "Seuil de mouvement trop bas"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:76
+msgid ""
+"The presence of a \"leading tail\" (emphasized by added red circle) on the "
+"time-domain and voltage-domain plots indicates that the :guilabel:`Motion "
+"Threshold` setting is too low, and thus data points from before the robot "
+"begins to move are being included."
+msgstr ""
+"La présence d’une \"queue de tête\" (soulignée par un cercle rouge ajouté) "
+"de tracés dans le domaine du temps et dans le domaine de la tension indique "
+"que la valeur configurée pour le paramètre :guilabel:`Motion Threshold` est "
+"trop faible, et donc les points correspondant aux données présentes avant "
+"que le robot ne commence à se déplacer sont inclus."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:78
+msgid "To solve this, increase the setting and re-analyze the data."
+msgstr ""
+"Pour résoudre ce problème, augmenter la valeur du paramètre ``Motion "
+"Threshold`` et relancer l'analyse des données."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:81
+msgid "Motion Threshold Too High"
+msgstr "Seuil de mouvement trop élevé"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:86
+msgid ""
+"While not nearly as problematic as a too-low threshold, a motion threshold "
+"that is too high will result in a large \"gap\" in the voltage domain "
+"quasistatic plot."
+msgstr ""
+"Bien qu’il ne soit pas aussi problématique qu’un seuil trop bas, un seuil de"
+" mouvement trop élevé se traduira par un grand \"écart\" dans le graphique "
+"quasistatique du domaine de la tension."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:88
+msgid "To solve this, decrease the setting and re-analyze the data."
+msgstr ""
+"Pour résoudre ce problème, réduire la valeur du paramètre et relancer "
+"l'analyse des données. "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:91
+msgid "Magnetic Encoders Velocity Noise"
+msgstr "Bruit de vitesse des encodeurs magnétiques"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:99
+msgid ""
+"Magnetic encoders such as the `CTRE Mag Encoder <http://www.ctr-"
+"electronics.com/srx-magnetic-encoder.html>`__ and the `AndyMark magnetic "
+"encoder <https://www.andymark.com/products/am-mag-encoder>`__ are extremely "
+"popular in FRC.  However, a particular noise pattern has been observed when "
+"these encoders are used on robot drives, whose particular cause is not yet "
+"known.  This noise pattern is uniquely distinguished by significant velocity"
+" noise proportional to motor velocity, and is particularly common on the "
+"kit-of-parts `toughbox mini <https://www.andymark.com/products/toughbox-"
+"mini-options>`__ gearboxes."
+msgstr ""
+"Les encodeurs magnétiques tels que le `CTRE Mag Encoder <http://www.ctr-"
+"electronics.com/srx-magnetic-encoder.html>`__ et `l'encodeur magnétique "
+"AndyMark <https://www.andymark.com/products/am-mag-encoder>`__ sont "
+"extrêmement populaires en FRC. Toutefois, un bruit particulier, dont la "
+"cause précise n’est pas encore connue, a été observé lorsque ces encodeurs "
+"sont utilisés dans les entraînements des robots. Ce bruit particulier se "
+"distingue par une lecture erratique de la vitesse (bruit) qui est "
+"proportionnelle à la vitesse de rotation du moteur.  Ce bruit est "
+"particulièrement courant dans les réducteurs `toughbox mini "
+"<https://www.andymark.com/products/toughbox-mini-options>`__ du kit-de-"
+"pièces."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:101
+msgid ""
+"Characterization constants can sometimes be accurately determined even from "
+"data polluted this noise by increasing the accel window size setting.  "
+"However, this sort of encoder noise is problematic for robot code much the "
+"same way it is problematic for the characterization tool.  As the root cause"
+" of the noise is not known, it is recommended to try a different encoder "
+"setup if this is observed, either by moving the encoders to a different "
+"shaft or replacing them with a different type of encoder."
+msgstr ""
+"Les constantes de caractérisation peuvent parfois être déterminées avec "
+"précision, même à partir de données altérées par ce bruit, en augmentant la "
+"valeur du paramètre ``Accel Window Size``. Cependant, ce genre de bruit "
+"d’encodeur est problématique pour le code robot de la même manière qu’il est"
+" problématique pour l’outil de caractérisation. Comme la cause principale du"
+" bruit n’est pas connue et, dans le cas où ce bruit est présent, il est "
+"recommandé d’essayer une configuration d’encodeurs différente: soit en "
+"déplaçant les encodeurs sur un autre arbre ou en les remplaçant par un autre"
+" type d’encodeurs."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:104
+msgid "Template Lag"
+msgstr "Décalage du modèle"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:106
+msgid ""
+"With the new characterization tool, the logging code might not be able to "
+"keep up with its 5 ms refresh rate thus causing faulty data to be collected."
+msgstr ""
+"Avec le nouvel outil de caractérisation, le code effectuant l'historisation "
+"pourrait ne pas être en mesure de suivre son taux de rafraîchissement de 5 "
+"ms, ce qui entraîne la collecte de données erronées."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-characterization/viewing-diagnostics.rst:108
+msgid ""
+"To see if this is the case, enable print statements on the Driver Station "
+"whenever running the data logger. When Autonomous mode is exited, the "
+"console will output ``Collected : n in t seconds`` where ``n`` is the number"
+" of samples and ``t`` is the time elapsed. If the sampling was successful, "
+"``n`` should equal ``200t`` (rounded)."
+msgstr ""
+"Pour voir si c’est le cas, programmez des instructions d'affichage sur la "
+"Driver Station  chaque fois que vous lancez le enregistreur de données. "
+"Lorsqu'on sort du mode autonome, la console affiche ``Collected : n in t "
+"seconds`` où ``n`` est le nombre d’échantillons et ``t`` est le temps "
+"écoulé. Si l’échantillonnage a été réussi, ``n`` devrait être égal à "
+"``200t`` (arrondi)."

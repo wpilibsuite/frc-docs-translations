@@ -1,0 +1,126 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: 2020-04-25 02:04+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:2
+msgid "Creating Groups of Commands"
+msgstr "Création de groupes de commandes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:4
+msgid ""
+"This documentation describes the use of the legacy command-based library. "
+"While this documentation has been preserved to help teams that have yet to "
+"do so, teams are strongly encouraged to migrate to the :ref:`new command-"
+"based library <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"Cette documentation décrit l’utilisation de la bibliothèque patromoniale "
+"orientée de commande. Bien que cette documentation ait été conservée pour "
+"aider les équipes qui ne l’ont pas encore fait, les équipes sont fortement "
+"encouragées à migrer vers la :ref:`nouvelle bibliothèque orientée commande "
+"<docs/software/commandbased/index:Command-Based Programming>`."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:6
+msgid ""
+"Once you have created commands to operate the mechanisms in your robot, they"
+" can be grouped together to get more complex operations. These groupings of "
+"commands are called CommandGroups and are easily defined as shown in this "
+"article."
+msgstr ""
+"Une fois que vous avez créé des commandes pour faire fonctionner les "
+"mécanismes de votre robot, elles peuvent être regroupées pour obtenir des "
+"opérations plus complexes. Ces groupes de commandes sont appelés "
+"CommandGroups et sont facilement définis comme indiqué dans cet article."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:9
+msgid "Complex Operations"
+msgstr "Opérations complexes"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:37
+msgid ""
+"This is an example of a command group that places a soda can on a table. To "
+"accomplish this, (1) the robot elevator must move to the ``TABLE_HEIGHT``, "
+"then (2) set the wrist angle, then (3) open the claw. All of these tasks "
+"must run sequentially to make sure that the soda can isn't dropped. The "
+"``addSequential()`` method takes a command (or a command group) as a "
+"parameter and will execute them one after another when this command is "
+"scheduled."
+msgstr ""
+"Il s’agit d’un exemple d’un groupe de commandes qui place une canette de "
+"soda sur une table. Pour ce faire, (1) l’élevateur du robot doit se déplacer"
+" vers le ``TABLE_HEIGHT``, puis (2) définir l’angle du poignet, puis (3) "
+"ouvrir la pince. Toutes ces tâches doivent s’exécuter séquentiellement pour "
+"s’assurer que la canette de soda ne tombe pas. La méthode "
+"``addSequential()``  prend une commande (ou un groupe de commandes) comme "
+"paramètre et les exécutera l’une après l’autre lorsque cette commande est "
+"planifiée."
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:40
+msgid "Running Commands in Parallel"
+msgstr "Exécution de commandes en parallèle"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:68
+msgid ""
+"To make the program more efficient, often it is desirable to run multiple "
+"commands at the same time. In this example, the robot is getting ready to "
+"grab a soda can. Since the robot isn't holding anything, all the joints can "
+"move at the same time without worrying about dropping anything. Here all the"
+" commands are run in parallel so all the motors are running at the same time"
+" and each completes whenever the ``isFinished()`` method is called. The "
+"commands may complete out of order. The steps are: (1) move the wrist to the"
+" pickup setpoint, then (2) move the elevator to the floor pickup position, "
+"and (3) open the claw"
+msgstr ""
+"Pour rendre le programme plus efficace, il est souvent souhaitable "
+"d’exécuter plusieurs commandes en même temps. Dans cet exemple, le robot se "
+"prépare à prendre une canette de soda. Comme le robot ne tient rien, toutes "
+"les articulations peuvent se déplacer en même temps sans se soucier de "
+"laisser tomber quoi que ce soit. Ici, toutes les commandes sont exécutées en"
+" parallèle de sorte que tous les moteurs fonctionnent en même temps et "
+"chacun s'arrête chaque fois que la méthode  ``isFinished()``  est appelée. "
+"Les commandes peuvent être terminées dans un ordre quelconque. Les étapes "
+"sont les suivantes : (1) déplacer le poignet vers le point de consigne du "
+"pick-up, puis (2) déplacer l’élevateur à la position de ramassage au sol, et"
+" (3) ouvrir la pince"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:71
+msgid "Mixing Parallel and Sequential Commands"
+msgstr "Mélange de commandes parallèles et séquentielles"
+
+#: ../../frc-docs/source/docs/software/old-commandbased/commands/creating-groups-commands.rst:99
+msgid ""
+"Often there are some parts of a command group that must complete before "
+"other parts run. In this example, a soda can is grabbed, then the elevator "
+"and wrist can move to their stowed positions. In this case, the wrist and "
+"elevator have to wait until the can is grabbed, then they can operate "
+"independently. The first command (1) ``CloseClaw`` grabs the soda and "
+"nothing else runs until it is finished since it is sequential, then the (2) "
+"elevator and (3) wrist move at the same time."
+msgstr ""
+"Souvent, il y a certaines parties d’un groupe de commandes qui doivent être "
+"terminées avant que d’autres parties ne s’exécutent. Dans cet exemple, une "
+"canette de soda est saisie, puis l’élevateur et le poignet peuvent se "
+"déplacer à leurs positions rabattues. Dans ce cas, le poignet et l’élevateur"
+" doivent attendre jusqu’à ce que la boîte soit saisie, puis ils peuvent "
+"fonctionner indépendamment. La première commande (1)  ``CloseClaw`` saisit "
+"le soda et rien d’autre ne fonctionne jusqu’à ce qu’elle soit terminée car "
+"elle est séquentielle, puis l’élevateur (2) et (3) poignet se déplacent en "
+"même temps."

@@ -1,0 +1,393 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Kaitlyn Kenwell <redrield@gmail.com>, 2020
+# Sami G.-D., 2020
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-09 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:2
+msgid "The Command Scheduler"
+msgstr "Le planificateur de commandes"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:4
+msgid ""
+"The ``CommandScheduler`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html>`__)"
+" is the class responsible for actually running commands.  Each iteration "
+"(ordinarily once per 20ms), the scheduler polls all registered buttons, "
+"schedules commands for execution accordingly, runs the command bodies of all"
+" scheduled commands, and ends those commands that have finished or are "
+"interrupted."
+msgstr ""
+"La classe ``CommandScheduler`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html>`__)"
+" est la classe responsable de l’exécution des commandes. Chaque itération "
+"(habituellement une toutes les 20ms), le planificateur sonde tous les "
+"boutons enregistrés, planifie les commandes pour l’exécution en conséquence,"
+" exécute les corps des commandes de toutes les commandes sur la liste des "
+"commandes à exécuter, et met fin aux commandes dont l'exécution normale a "
+"pris fin ou sont interrompues."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:6
+msgid ""
+"The ``CommandScheduler`` also runs the ``periodic()`` method of each "
+"registered ``Subsystem``."
+msgstr ""
+"Le ``CommandScheduler`` exécute aussi la méthode ``periodic()`` de chaque "
+"``Subsystem`` enrégistré."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:9
+msgid "Using the Command Scheduler"
+msgstr "Utiliser le planificateur de commandes"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:11
+msgid ""
+"The ``CommandScheduler`` is a *singleton*, meaning that it is a globally-"
+"accessible class with only one instance.  Accordingly, in order to access "
+"the scheduler, users must call the ``CommandScheduler.getInstance()`` "
+"command."
+msgstr ""
+"Le ``CommandScheduler`` est un *singleton*, ce qui veux dire qu'il est une "
+"classe accessible globalement avec une seule instance. Donc, pour accéder au"
+" planificateur, l'utilisateur devra appeler la commande "
+"``CommandScheduler.getInstance()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:13
+msgid ""
+"For the most part, users do not have to call scheduler methods directly - "
+"almost all important scheduler methods have convenience wrappers elsewhere "
+"(e.g. in the ``Command`` and ``Subsystem`` interfaces)."
+msgstr ""
+"En général, l'utilisateur ne doit pas appeler les méthodes du planificateur "
+"directement - presque tout les méthodes importantes du planificateur ont des"
+" enveloppe de commodité ailleurs (p. ex. dans les interfaces ``Command`` et "
+"``Subsystem``)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:15
+msgid ""
+"However, there is one exception: users *must* call "
+"``CommandScheduler.getInstance().run()`` from the ``robotPeriodic()`` method"
+" of their ``Robot`` class.  If this is not done, the scheduler will never "
+"run, and the command framework will not work.  The provided command-based "
+"project template has this call already included."
+msgstr ""
+"Cependant, il y a une exception: l'utilisateur *doit* appeler "
+"``CommandScheduler.getInstance().run()`` de la méthode ``robotPeriodic()`` "
+"de la classe ``Robot``. Si ce n'est pas effectué, le planificateur ne "
+"s'exécutera jamais et le cadre d'application des commandes ne fonctionnera "
+"pas. Le modèle de projet orienté commande fourni inclus déjà cet appel."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:18
+msgid "The ``schedule()`` Method"
+msgstr "La méthode ``schedule()``"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rstNone
+msgid "Flow diagram showing how a scheduled command is evaluated to be run."
+msgstr ""
+"Organigramme montrant comment une commande planifiée est évaluée pour être "
+"exécutée."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:23
+msgid ""
+"To schedule a command, users call the ``schedule()`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
+"  This method takes a command (and, optionally, a specification as to "
+"whether that command is interruptible), and attempts to add it to list of "
+"currently-running commands, pending whether it is already running or whether"
+" its requirements are available.  If it is added, its ``initialize()`` "
+"method is called."
+msgstr ""
+"Pour planifier une commande, les utilisateurs appellent la méthode "
+"``schedule()`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#schedule(boolean,edu.wpi.first.wpilibj2.command.Command...)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a26c120054ec626806d740f2c42d9dc4f>`__."
+"  Cette méthode prend une commande (et, en option, une spécification quant à"
+" savoir si cette commande est interrompable), et tente de l’ajouter à la "
+"liste des commandes actuellement en cours d’exécution, en attendant si elle "
+"est déjà en cours d’exécution ou si les ressources qu'elle requiert sont "
+"disponibles. Si elle est ajoutée, sa méthode ``initialize()`` est appelée."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
+msgid "The Scheduler Run Sequence"
+msgstr "La séquence d'exécution du planificateur"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:28
+msgid ""
+"The ``initialize()`` method of each ``Command`` is called when the command "
+"is scheduled, which is not necessarily when the scheduler runs (unless that "
+"command is bound to a button)."
+msgstr ""
+"La méthode ``initialize()`` de chaque ``Command`` est appelée lorsque la "
+"commande est programmée, ce qui n'est pas forcément quand le planificateur "
+"s'exécute (sauf si cette commande est liée à un bouton)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rstNone
+msgid "Flow diagram that show the sequence of each individual command."
+msgstr "Organigramme qui montre la séquence de chaque commande individuelle."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:33
+msgid ""
+"What does a single iteration of the scheduler's ``run()`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
+" actually do?  The following section walks through the logic of a scheduler "
+"iteration."
+msgstr ""
+"Que fait réellement une seule itération de la méthode ``run()`` du "
+"planificateur de commandes (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#run()>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#aa5000fa52e320da7ba72c196f34aa0f5>`__)"
+" ? La section suivante passe en revue la logique d’une itération du "
+"planificateur de commandes."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
+msgid "Step 1: Run Subsystem Periodic Methods"
+msgstr "Étape 1: exécuter les méthodes périodique des sous-systèmes"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:38
+msgid ""
+"First, the scheduler runs the ``periodic()`` method of each registered "
+"``Subsystem``."
+msgstr ""
+"Premièrement, le planificateur exécute la méthode ``periodic()`` de chaque "
+"``Subsystem`` enregistré."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:41
+msgid "Step 2: Poll Command Scheduling Triggers"
+msgstr "Étape 2: sonder les déclencheurs de planification de commande"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:43
+msgid ""
+"For more information on how trigger bindings work, see :doc:`binding-"
+"commands-to-triggers`"
+msgstr ""
+"Pour plus d'informations sur le fonctionnement des liens de déclencheurs, "
+"voir :doc:`binding-commands-to-triggers`"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:45
+msgid ""
+"Secondly, the scheduler polls the state of all registered triggers to see if"
+" any new commands that have been bound to those triggers should be "
+"scheduled.  If the conditions for scheduling a bound command are met, the "
+"command is scheduled and its ``Initialize()`` method is run."
+msgstr ""
+"Deuxièmement, le planificateur sonde l'état de tous les déclencheurs "
+"enregistres pour voir si des nouvelles commandes qui ont été liées à ces "
+"déclencheurs devraient être planifiées. Si les conditions pour planifier une"
+" commande liée sont remplies, la commande est planifié et sa méthode "
+"``initialize()`` est exécutée."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:48
+msgid "Step 3: Run/Finish Scheduled Commands"
+msgstr "Étape 3: exécuter/terminer les commandes planifiées "
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:50
+msgid ""
+"Thirdly, the scheduler calls the ``execute()`` method of each currently-"
+"scheduled command, and then checks whether the command has finished by "
+"calling the ``isFinished()`` method.  If the command has finished, the "
+"``end()`` method is also called, and the command is de-scheduled and its "
+"required subsystems are freed."
+msgstr ""
+"Troisièmement, le planificateur appelle la méthode ``execute()`` de chaque "
+"commande en cours d'exécution après avoir vérifié si la commande est terminé"
+" en appelant la méthode ``isFinished()``. Si la commande est terminé, la "
+"méthode ``end()`` est appelée aussi, et la commande est dé-planifiée et ses "
+"sous-systèmes requis sont libérés."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:52
+msgid ""
+"Note that this sequence of calls is done in order for each command - thus, "
+"one command may have its ``end()`` method called before another has its "
+"``execute()`` method called.  Commands are handled in the order they were "
+"scheduled."
+msgstr ""
+"Notez qui cette séquence d'appels est faite en ordre pour chaque commande - "
+"ainsi, une commande peut avoir sa méthode ``end()`` appelée avant qu'une "
+"autre ait sa méthode ``execute()`` appelée. Les commandes sont manipulées "
+"dans l'ordre dont elles ont été planifiées."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:55
+msgid "Step 4: Schedule Default Commands"
+msgstr "Étape 4: planifier les commandes par défaut"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:57
+msgid ""
+"Finally, any registered ``Subsystem`` has its default command scheduled (if "
+"it has one).  Note that the ``initialize()`` method of the default command "
+"will be called at this time."
+msgstr ""
+"Finalement, chaque ``Subsystem`` enrégistré a sa commande par défaut "
+"planifiée (si elle existe). Notez que la méthode ``initialize()`` de la "
+"commande de défaut sera appelée à ce moment."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:60
+msgid "Disabling the Scheduler"
+msgstr "Désactiver le Planificateur"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:62
+msgid ""
+"The scheduler can be disabled by calling "
+"``CommandScheduler.getInstance().disable()``.  When disabled, the "
+"scheduler's ``schedule()`` and ``run()`` commands will not do anything."
+msgstr ""
+"Le planificateur peut être désactiver en appelant "
+"``CommandScheduler.getInstance().disable()``. Quand il est désactivé, les "
+"commandes ``schedule()`` et ``run()`` du planificateur ne font rien."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:64
+msgid ""
+"The scheduler may be re-enabled by calling "
+"``CommandScheduler.getInstance().enable()``."
+msgstr ""
+"Le planificateur peut être ré-activé en appelant "
+"``CommandScheduler.getInstance().enable()``."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:67
+msgid "Command Event Methods"
+msgstr "Méthodes d’évènement de commande"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:69
+msgid ""
+"Occasionally, it is desirable to have the scheduler execute a custom action "
+"whenever a certain command event (initialization, execution, or ending) "
+"occurs.  This can be done with the following methods:"
+msgstr ""
+"Parfois, il est souhaitable que le planificateur exécute une action "
+"personnalisée chaque fois qu'un certain événement de commande "
+"(initialisation, exécution ou fin) se produit. Cela peut être fait avec les "
+"méthodes suivantes :"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:72
+msgid "onCommandInitialize"
+msgstr "onCommandInitialize"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:74
+msgid ""
+"The ``onCommandInitialize`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
+" runs a specified action whenever a command is initialized."
+msgstr ""
+"La méthode ``onCommandInitialize``  (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInitialize(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a5f983f0e45b0500c96eebe52780324d4>`__)"
+" exécute une action spécifiée chaque fois qu’une commande est initialisée."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
+msgid "onCommandExecute"
+msgstr "onCommandExecute"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:79
+msgid ""
+"The ``onCommandExecute`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
+" runs a specified action whenever a command is executed."
+msgstr ""
+"La méthode ``onCommandExecute`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandExecute(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a58c538f4b8dd95e266e4a99167aa7f99>`__)"
+" exécute une action spécifiée chaque fois qu’une commande est exécutée."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
+msgid "onCommandFinish"
+msgstr "onCommandFinish"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:84
+msgid ""
+"The ``onCommandFinish`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
+" runs a specified action whenever a command finishes normally (i.e. the "
+"``isFinished()`` method returned true)."
+msgstr ""
+"La méthode ``onCommandFinish`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandFinish(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#a068e61446afe2341cc0651f0dfd2a55f>`__)"
+" exécute une action spécifiée chaque fois qu’une commande se termine "
+"normalement (c’est-à-dire que la méthode ``isFinished()`` retourne la valeur"
+" logique true)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
+msgid "onCommandInterrupt"
+msgstr "onCommandInterrupt"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:89
+msgid ""
+"The ``onCommandInterrupt`` method (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
+" runs a specified action whenever a command is interrupted (i.e. by being "
+"explicitly canceled or by another command that shares one of its "
+"requirements)."
+msgstr ""
+"La méthode ``onCommandInterrupt`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/CommandScheduler.html#onCommandInterrupt(java.util.function.Consumer)>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_command_scheduler.html#ab5ba99a542aa778a76726d7c68461bf0>`__)"
+" exécute une action spécifiée chaque fois qu’une commande est interrompue "
+"(c’est-à-dire en étant explicitement annulée ou par une autre commande qui "
+"partage l’une des ressources qu'elle requiert pour son exécution)."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
+msgid ""
+"A typical use-case for these methods is adding markers in an event log "
+"whenever a command scheduling event takes place, as demonstrated in the "
+"SchedulerEventLogging example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):"
+msgstr ""
+" Un cas d’utilisation typique pour ces méthodes est l’ajout de marqueurs "
+"dans un journal d’événements chaque fois qu’un événement défini dans le "
+"planificateur de commandes se produit, comme démontré dans le projet "
+"d’exemple SchedulerEventLogging (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/schedulereventlogging>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):"
+" "
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:95
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:103
+msgid "C++ (Source)"
+msgstr "C++ (Source)"

@@ -1,0 +1,77 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# KeseterG <zhiwan13579@126.com>, 2021
+# Michael Zhang <zhang040426zyc@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-02 16:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Michael Zhang <zhang040426zyc@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:2
+msgid "Creating multiple instances of NetworkTables"
+msgstr "创建网络表的多个实例"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:4
+msgid ""
+"This feature is mainly useful for coprocessors and unit testing. It allows a"
+" single program to be a member of two completely independent "
+":term:`NetworkTables` \"networks\" that contain completely different (and "
+"unrelated) sets of tables. For most general usage, you should use tables "
+"within the single instance, as all current dashboard programs can only "
+"connect to a single NetworkTables server at a time."
+msgstr ""
+"此功能主要对协处理器和单元测试有用。它允许一个程序成为两个完全独立的网络表“网络”的成员，该“网络”中包含完全不同（且不相关）的表集。对于大多数的常规用途，由于当前所有仪表板程序一次只能连接到一个网络表服务器，您应该在单个网络表实例中使用表。"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:6
+msgid ""
+"Normally the \"default\" instance is set up on the robot as a server, and "
+"used for communication with the dashboard program running on your driver "
+"station computer. This is what the SmartDashboard and LiveWindow classes "
+"use."
+msgstr ""
+"通常，“默认”实例在机器人上作为服务器设置，并用于与在Driver "
+"Station计算机上运行的仪表板程序进行通信。这就是SmartDashboard和LiveWindow类的用途。"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:8
+msgid ""
+"If you had a coprocessor and wanted to have a set of tables that's shared "
+"only between the coprocessor and the robot, you could set up a separate "
+"instance in the robot code that acts as a client (or a server) and connect "
+"the coprocessor to it, and those tables will NOT be sent to the dashboard."
+msgstr ""
+"如果您有一个协处理器，并且希望有一组仅在协处理器和机器人之间共享的表，则可以在机器人代码中设置一个单独的实例来充当客户端（或服务器）并将协处理器连接到该实例。这些表将不会发送到仪表盘程序。"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:10
+msgid ""
+"Similarly, if you wanted to do unit testing of your robot program's "
+"NetworkTables communications, you could set up your unit tests such that "
+"they create a separate client instance (still within the same program) and "
+"have it connect to the server instance that the main robot code is running."
+msgstr ""
+"同样，如果您要对机器人程序的网络表通信进行单元测试，则可以设置单元测试，以使它们创建一个单独的客户端实例（仍在同一程序内）并将其连接到运行在主机器人代码上的服务器实例。"
+
+#: ../../frc-docs/source/docs/software/networktables/multiple-instances.rst:12
+msgid ""
+"Another example might be having two completely separate dashboard programs. "
+"You could set up two NetworkTables server instances in your robot program "
+"(on different TCP ports of course), set up different tables on each one, and"
+" have each dashboard connect to a different server instance. Each dashboard "
+"would only see the tables on its instance."
+msgstr ""
+"另一个示例是关于具有两个完全独立的仪表板程序的情况。您可以在机器人程序中设置两个网络表服务器实例（当然在不同的TCP端口上），在每个实例上设置不同的表，并使每个仪表板连接到不同的服务器实例。每个仪表板只能看到其实例上的表。"

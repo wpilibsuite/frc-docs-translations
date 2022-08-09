@@ -1,0 +1,178 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Rodrigo Acosta <raar7366@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# Fernanda Reveles <fernanda.reveles.b@gmail.com>, 2020
+# Javier Torres Castañeda, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-11-27 04:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Javier Torres Castañeda, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:4
+msgid "Analog Potentiometers - Hardware"
+msgstr "Potenciómetros análogos - Hardware"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:8
+msgid ""
+"Potentiometers generally have a mechanically-limited travel range.  Users "
+"should be careful that their mechanisms do not turn their potentiometers "
+"past their maximum travel, as this will damage or destroy the potentiometer."
+msgstr ""
+"Los potenciómetros generalmente tienen un rango de recorrido limitado "
+"mecánicamente. Los usuarios deben tener cuidado de que sus mecanismos no "
+"giren sus potenciómetros más allá de su recorrido máximo, ya que esto dañará"
+" o destruirá el potenciómetro."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:10
+msgid ""
+"Apart from :doc:`quadrature encoders <encoders-hardware>`, another common "
+"way of measuring rotation on FRC\\ |reg| robots is with analog "
+"potentiometers.  A potentiometer is simply a variable resistor - as the "
+"shaft of the potentiometer turns, the resistance changes (usually linearly)."
+"  Placing this resistor in a `voltage divider "
+"<https://en.wikipedia.org/wiki/Voltage_divider>`__ allows the user to easily"
+" measure the resistance by measuring the voltage across the potentiometer, "
+"which can then be used to calculate the rotational position of the shaft."
+msgstr ""
+"Aparte de :doc:`quadrature encoders<encoders-hardware>`, otra forma común de"
+" medir la rotación en los robots FRC\\ |reg| es con potenciómetros "
+"analógicos. Un potenciómetro es simplemente una resistencia variable: a "
+"medida que gira el eje del potenciómetro, la resistencia cambia "
+"(generalmente de forma lineal). Colocando esta resistencia en un `divisor de"
+" voltaje <https://en.wikipedia.org/wiki/Voltage_divider>`__ permite al "
+"usuario medir fácilmente la resistencia midiendo el voltaje a través del "
+"potenciómetro, que luego se puede usar para calcular la posición de rotación"
+" del eje."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:13
+msgid "Wiring an analog potentiometer"
+msgstr "Cableado de un potenciómetro analógico"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:15
+msgid ""
+"As suggested by the names, analog potentiometers connect to the roboRIO's "
+":doc:`analog input <analog-inputs-hardware>` ports.  To understand how "
+"exactly to wire potentiometers, however, it is important to understand their"
+" internal circuitry."
+msgstr ""
+"Como lo sugieren los nombres, los potenciómetros analógicos se conectan a "
+"los puertos :doc:`analog input <analog-inputs-hardware>` de la roboRIO. Sin "
+"embargo, para entender exactamente cómo cablear potenciómetros, es "
+"importante entender sus circuitos internos."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:20
+msgid ""
+"The picture above on the left shows a typical potentiometer.  There are "
+"three pins, just as there are on the RIO's analog inputs.  The middle pin is"
+" the signal pin, while the outer pins can both be *either* power or ground."
+msgstr ""
+"La imagen de arriba a la izquierda muestra un potenciómetro típico. Hay tres"
+" pines, al igual que en las entradas analógicas de RIO. El pin del medio es "
+"el pin de señal, mientras que los pines exteriores pueden ser *el que sea* "
+"de alimentación o de tierra."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:22
+msgid ""
+"As mentioned before, a potentiometer is a voltage divider, as shown in the "
+"circuit diagram on the right.  As the potentiometer shaft turns, the "
+"resistances R1 and R2 change; however, their sum remains constant [1]_.  "
+"Thus, the voltage across the entire potentiometer remains constant (for the "
+"roboRIO, this would be 5 volts), but the voltage between the signal pin and "
+"either the voltage or ground pin varies linearly as the shaft turns."
+msgstr ""
+"Como se mencionó anteriormente, un potenciómetro es un divisor de voltaje, "
+"como se muestra en el diagrama de circuito de la derecha. A medida que gira "
+"el eje del potenciómetro, las resistencias R1 y R2 cambian; sin embargo, su "
+"suma permanece constante [1] _. Por lo tanto, el voltaje en todo el "
+"potenciómetro permanece constante (para el roboRIO, esto sería 5 voltios), "
+"pero el voltaje entre el pin de señal y el pin de voltaje o tierra varía "
+"linealmente a medida que gira el eje."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:24
+msgid ""
+"Since the circuit is symmetric, it is reversible - this allows the user to "
+"choose at which end of the travel the measured voltage is zero, and at which"
+" end it is 5 volts.  To reverse the directionality of the sensor, it can "
+"simply be wired backwards!  Be sure to check the directionality of your "
+"potentiometer with a multimeter to be sure it is in the desired orientation "
+"before soldering your wires to the contacts."
+msgstr ""
+"Dado que el circuito es simétrico, es reversible; esto permite al usuario "
+"elegir en qué extremo del recorrido el voltaje medido es cero y en qué "
+"extremo es de 5 voltios. Para invertir la direccionalidad del sensor, "
+"¡simplemente se puede conectar al revés! Asegúrese de verificar la "
+"direccionalidad de su potenciómetro con un multímetro para asegurarse de que"
+" esté en la orientación deseada antes de soldar los cables a los contactos."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:27
+msgid "Absolute encoders"
+msgstr "Encoders absolutos"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:32
+msgid ""
+"An \"absolute encoder\" is an encoder that measures the absolute position of"
+" the encoder shaft, rather than the incremental movement (as a "
+":doc:`quadrature encoder <encoders-hardware>`) does.  In this respect, "
+"absolute encoders are more similar to potentiometers than to incremental "
+"encoders.  Many absolute encoders offer a simple analog output - these can "
+"be used exactly in the same way as a potentiometer, except their wiring is "
+"not generally reversible.  Absolute encoders have the advantage of lacking a"
+" hard travel limit - the signal will simply reset when the shaft crosses the"
+" zero point. The analog potentiometer pictured above can be found at "
+"`AndyMark <https://www.andymark.com/products/absolute-encoder-with-"
+"cable>`__."
+msgstr ""
+"Un \"codificador absoluto\" es un codificador que mide la posición absoluta "
+"del eje del codificador, en lugar de como lo hace el movimiento incremental "
+"(como :doc:`quadrature encoder <encoders-hardware>`). En este sentido, los "
+"codificadores absolutos son más similares a los potenciómetros que a los "
+"codificadores incrementales. Muchos codificadores absolutos ofrecen una "
+"salida analógica simple; estos se pueden usar exactamente de la misma manera"
+" que un potenciómetro, excepto que su cableado no es generalmente "
+"reversible. Los codificadores absolutos tienen la ventaja de carecer de un "
+"límite de recorrido estricto: la señal simplemente se restablecerá cuando el"
+" eje cruce el punto cero. El potenciómetro analógico que se muestra arriba "
+"se puede encontrar en `AndyMark <https://www.andymark.com/products/absolute-"
+"encoder-with-cable>`__."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:34
+msgid ""
+"Absolute encoders that do not offer a simple analog output require "
+":doc:`more complicated communications with the RIO <serial-buses>`."
+msgstr ""
+"Los codificadores absolutos que no ofrecen una salida analógica simple "
+"requieren  :doc:`more complicated communications with the RIO <serial-"
+"buses>`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:38
+msgid "Footnotes"
+msgstr "Pie de nota"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:40
+msgid ""
+"The way this actually works is generally by having the shaft control the "
+"position of a contact along a resistive \"wiper\" of fixed length along "
+"which the current flows - the resistance is proportional to the length of "
+"wiper between the contact and the end of the wiper."
+msgstr ""
+"La forma en que esto realmente funciona es generalmente haciendo que el eje "
+"controle la posición de un contacto a lo largo de un \"limpiador\" "
+"resistente de longitud fija a lo largo del cual fluye la corriente; la "
+"resistencia es proporcional a la longitud del limpiador entre el contacto y "
+"el extremo del limpiador."

@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# heriberto gutierrez <herigtzt04@yahoo.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-07 16:04+0000\n"
+"PO-Revision-Date: 2021-06-22 22:08+0000\n"
+"Last-Translator: heriberto gutierrez <herigtzt04@yahoo.com>, 2021\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:2
+msgid "Step 1: Characterizing Your Robot Drive"
+msgstr "Paso 1: Caracterización de la conducción del robot"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:13
+msgid "Gathering the Data"
+msgstr "Recopilación de los datos"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:21
+msgid "Analyzing the Data"
+msgstr "Análisis de los datos"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:26
+msgid "Checking Diagnostics"
+msgstr "Chequeo de Diagnósticos"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:36
+msgid "Record Feedforward Gains"
+msgstr "Registro de ganancias de compensación"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:38
+msgid ""
+"Feedforward gains do *not*, in general, transfer across robots.  Do *not* "
+"use the gains from this tutorial for your own robot."
+msgstr ""
+"Las ganancias de compensación no se transfieren, en general, a través de los"
+" robots. No uses las ganancias de este tutorial para tu propio robot."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:40
+msgid "We now record the feedforward gains calculated by the tool:"
+msgstr ""
+"Ahora registramos las ganancias de compensación calculadas por la "
+"herramienta:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:45
+msgid ""
+"Since our wheel diameter was specified in meters, our feedforward gains are "
+"in the following units:"
+msgstr ""
+"Como el diámetro de nuestra rueda se especificó en metros, nuestras "
+"ganancias de compensación están en las siguientes unidades:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:47
+msgid "``kS``: Volts"
+msgstr "``kS``: Volts"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:48
+msgid "``kV``: Volts * Seconds / Meters"
+msgstr "``kV``: Volts * Segundos / Metros"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:49
+msgid "``kA``: Volts * Seconds^2 / Meters"
+msgstr "``kV``: Volts * Segundos^2 / Metros"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:51
+msgid ""
+"If you have specified your units correctly, your feedforward gains will "
+"likely be within an order of magnitude of the ones reported here (a possible"
+" exception exists for ``kA``, which may be vanishingly small if your robot "
+"is light).  If they are not, it is possible you specified one of your drive "
+"parameters incorrectly when generating your robot project.  A good test for "
+"this is to calculate the \"theoretical\" value of ``kV``, which is 12 volts "
+"divided by the theoretical free speed of your drivetrain (which is, in turn,"
+" the free speed of the motor times the wheel circumference divided by the "
+"gear reduction).  This value should agree very closely with the ``kV`` "
+"measured by the tool - if it does not, you have likely made an error "
+"somewhere."
+msgstr ""
+"Si ha especificado sus unidades correctamente, sus ganancias de compensación"
+" estarán probablemente dentro de un orden de magnitud de las reportadas aquí"
+" (existe una posible excepción para ``kA``, que puede ser muy pequeña si su "
+"robot es liviano). Si no lo son, es posible que haya especificado uno de sus"
+" parámetros de conducción de forma incorrecta al generar su proyecto de "
+"robot. Una buena prueba para esto es calcular el valor \"teórico\" de "
+"``kV``, que es 12 voltios dividido por la velocidad libre teórica de su "
+"transmisión (que es, a su vez, la velocidad libre del motor multiplicada por"
+" la circunferencia de la rueda dividida por la reducción del engranaje). "
+"Este valor debe coincidir muy estrechamente con el ``kV`` medido por la "
+"herramienta - si no es así, es probable que hayas cometido un error en algún"
+" lugar."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:54
+msgid "Calculate Feedback Gains"
+msgstr "Cálculo de las ganancias de la retroalimentación"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:56
+msgid ""
+"Feedback gains do *not*, in general, transfer across robots.  Do *not* use "
+"the gains from this tutorial for your own robot."
+msgstr ""
+"Las ganancias de la retroalimentación no se transfieren, en general, a "
+"través de los robots. No uses las ganancias de este tutorial para tu propio "
+"robot."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:63
+msgid ""
+"Since we will be using the WPILib PIDController for our velocity loop, we "
+"furthermore select the ``WPILib (2020-)`` option from the drop-down "
+"\"presets\" menu.  This is *very* important, as the feedback gains will not "
+"be in the correct units if we do not select the correct preset:"
+msgstr ""
+"Como usaremos el controlador PID WPILib para nuestro bucle de velocidad, "
+"seleccionaremos además la opción \"WPILib (2020-)`` del menú desplegable "
+"\"preestablecidos\". Esto es *muy* importante, ya que las ganancias de "
+"retroalimentación no estarán en las unidades correctas si no seleccionamos "
+"el preestablecido correcto:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/characterizing-drive.rst:68
+msgid ""
+"Finally, we calculate and record the feedback gains for our control loop.  "
+"Since it is a velocity controller, only a P gain is required:"
+msgstr ""
+"Finalmente, calculamos y registramos las ganancias de retroalimentación para"
+" nuestro bucle de control. Como es un controlador de velocidad, sólo se "
+"requiere una ganancia P:"

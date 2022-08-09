@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2022\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:2
+msgid "Command Groups"
+msgstr "Komut Grupları-Command Groups"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:4
+msgid ""
+"Individual commands are capable of accomplishing a large variety of robot "
+"tasks, but the simple three-state format can quickly become cumbersome when "
+"more advanced functionality requiring extended sequences of robot tasks or "
+"coordination of multiple robot subsystems is required. In order to "
+"accomplish this, users are encouraged to use the powerful command group "
+"functionality included in the command-based library."
+msgstr ""
+"Tek tek komutlar çok çeşitli robot görevlerini yerine getirme yeteneğine "
+"sahiptir, ancak basit üç durumlu format, genişletilmiş robot görevleri "
+"dizilerini veya birden fazla robot alt sisteminin koordinasyonunu gerektiren"
+" daha gelişmiş işlevsellik gerektiğinde hızla hantal hale gelebilir. Bunu "
+"başarmak için, kullanıcıların komut tabanlı kitaplıkta bulunan güçlü komut "
+"grubu işlevini kullanmaları önerilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:6
+msgid ""
+"As the name suggests, command groups are combinations of multiple commands. "
+"The act of combining multiple objects (such as commands) into a bigger "
+"object is known as `composition "
+"<https://en.wikipedia.org/wiki/Object_composition>`__. Command groups "
+"*compose* multiple commands into a *composite* command. This allows code to "
+"be kept much cleaner and simpler, as the individual *component* commands may"
+" be written independently of the code that combines them, greatly reducing "
+"the amount of complexity at any given step of the process."
+msgstr ""
+"Adından da anlaşılacağı gibi, komut grupları birden çok komutun "
+"birleşimidir. Birden çok nesneyi (komutlar gibi) daha büyük bir nesnede "
+"birleştirme eylemi, "
+"``kompozisyon<https://en.wikipedia.org/wiki/Object_composition>`__ olarak "
+"bilinir. Komut grupları birden çok komutu *birleşik-composite* komuta "
+"dönüştürür. Bu, kodun çok daha temiz ve daha basit tutulmasına izin verir, "
+"çünkü ayrı *component* komutları onları birleştiren koddan bağımsız olarak "
+"yazılabilir ve işlemin herhangi bir adımında karmaşıklık miktarını büyük "
+"ölçüde azaltır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:8
+msgid ""
+"Most importantly, however, command groups *are themselves commands* - they "
+"implement the ``Command`` interface. This allows command groups to be "
+"`recursively composed "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ "
+"- that is, a command group may contain *other command groups* as components."
+msgstr ""
+"Ancak en önemlisi, komut grupları *kendileri komutlardır* - ``Command`` "
+"arayüzünü uygularlar. Bu, komut gruplarının `özyinelemeli olarak "
+"oluşturulmasına izin "
+"verir<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__"
+" - yani, bir komut grubu bileşen olarak *diğer komut gruplarını* içerebilir."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:11
+msgid "Types of Command Groups"
+msgstr "Komut Gruplarının Türleri"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:13
+msgid ""
+"In the C++ command-based library, command groups *own* their component "
+"commands.  This means that commands passed to command groups will be either "
+"moved or copied depending on whether they are rvalues or lvalues "
+"(`rvalue/lvalue explanation "
+"<http://thbecker.net/articles/rvalue_references/section_01.html>`__).  Due "
+"to certain technical concerns, command groups themselves are not copyable, "
+"and so recursive composition *must* use move semantics."
+msgstr ""
+"C++ komut tabanlı kitaplıkta, komut grupları kendi bileşen komutlarına "
+"*sahiptirler*. Bu, komut gruplarına aktarılan komutların rvalue veya lvalue "
+"olmalarına bağlı olarak taşınacağı veya kopyalanacağı anlamına gelir "
+"(`rvalue/lvalue "
+"açıklaması<http://thbecker.net/articles/rvalue_references/section_01.html>`__)."
+" Belirli teknik kaygılardan dolayı, komut gruplarının kendileri kopyalanamaz"
+" ve bu nedenle yinelemeli kompozisyon *hareket semantiğini kullanmalıdır*."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:15
+msgid ""
+"The command-based library supports four basic types of command groups: "
+"``SequentialCommandGroup``, ``ParallelCommandGroup``, ``ParallelRaceGroup``,"
+" and ``ParallelDeadlineGroup``. Each of these command groups combines "
+"multiple commands into a composite command - however, they do so in "
+"different ways:"
+msgstr ""
+"Komut tabanlı kütüphane, dört temel komut grubu türünü destekler: "
+"``SequentialCommandGroup``, ``ParallelCommandGroup``, ``ParallelRaceGroup`` "
+"ve ``ParallelDeadlineGroup``. Bu komut gruplarının her biri birden çok "
+"komutu birleşik bir komutta birleştirir - ancak bunu farklı şekillerde "
+"yaparlar:"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:18
+msgid "SequentialCommandGroup"
+msgstr "SequentialCommandGroup"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:23
+msgid "ParallelCommandGroup"
+msgstr "ParallelCommandGroup"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:28
+msgid "ParallelRaceGroup"
+msgstr "ParallelRaceGroup"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:33
+msgid "ParallelDeadlineGroup"
+msgstr "ParallelDeadlineGroup"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:38
+msgid "Creating Command Groups"
+msgstr "Komut Grupları Oluşturma"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:40
+msgid ""
+"Users have several options for creating command groups. One way - similar to"
+" the previous implementation of the command-based library - is to subclass "
+"one of the command group classes. Consider the following from the Hatch Bot "
+"example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):"
+msgstr ""
+"Kullanıcıların komut grupları oluşturmak için çeşitli seçenekleri vardır. "
+"Komut tabanlı kitaplığın önceki uygulamasına benzer bir yol, komut grubu "
+"sınıflarından birini alt sınıflara ayırmaktır. Hatch Bot örnek projesinden "
+"(`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`"
+" __, `C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`"
+" __) aşağıdakileri göz önünde bulundurun:"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:68
+msgid ""
+"The ``addCommands()`` method adds commands to the group, and is present in "
+"all four types of command group."
+msgstr ""
+"``addCommands()`` yöntemi, gruba komutlar ekler ve dört tür komut grubunun "
+"hepsinde mevcuttur."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:71
+msgid "Inline Command Groups"
+msgstr "Satır İçi Komut Grupları"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:75
+msgid ""
+"Command groups can be used without subclassing at all: one can simply pass "
+"in the desired commands through the constructor:"
+msgstr ""
+"Komut grupları, alt sınıflandırma olmadan kullanılabilir: biri, istenen "
+"komutları consturctor aracılığıyla kolayca geçirebilir:"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:87
+msgid ""
+"This is called an :ref:`inline <docs/software/commandbased/convenience-"
+"features:Inline Command Definitions>` command definition, and is very handy "
+"for circumstances where command groups are not likely to be reused, and "
+"writing an entire class for them would be wasteful."
+msgstr ""
+"Buna :ref:`satır içi - inline <docs/software/commandbased/convenience-"
+"features:Inline Command Definitions>`  komut tanımı denir ve komut "
+"gruplarının yeniden kullanılmasının muhtemel olmadığı ve onlar için bütün "
+"bir sınıf yazmak gereksiz olacağı durumlar için çok kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:90
+msgid "Recursive Composition of Command Groups"
+msgstr "Komut Gruplarının Yinelemeli Kompozisyonu"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:92
+msgid ""
+"As mentioned earlier, command groups are `recursively composable "
+"<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__ "
+"- since command groups are themselves commands, they may be included as "
+"components of other command groups. This is an extremely powerful feature of"
+" command groups, and allows users to build very complex robot actions from "
+"simple pieces. For example, consider the following code:"
+msgstr ""
+"Daha önce bahsedildiği gibi, komut grupları `özyinelemeli olarak "
+"oluşturulabilir<https://en.wikipedia.org/wiki/Object_composition#Recursive_composition>`__"
+" - komut gruplarının kendileri komutlar olduğundan, diğer komut gruplarının "
+"bileşenleri olarak dahil edilebilirler. Bu, komut gruplarının son derece "
+"güçlü bir özelliğidir ve kullanıcıların basit parçalardan çok karmaşık robot"
+" eylemleri oluşturmasına olanak tanır. Örneğin, aşağıdaki kodu göz önünde "
+"bulundurun:"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:119
+msgid ""
+"This creates a sequential command group that *contains* a parallel command "
+"group. The resulting control flow looks something like this:"
+msgstr ""
+"Bu, paralel bir komut grubu *içeren* sıralı bir komut grubu oluşturur. "
+"Ortaya çıkan kontrol akışı şuna benzer:"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:124
+msgid ""
+"Notice how the recursive composition allows the embedding of a parallel "
+"control structure within a sequential one. Notice also that this entire, "
+"more-complex structure, could be again embedded in another structure. "
+"Composition is an extremely powerful tool, and one that users should be sure"
+" to use extensively."
+msgstr ""
+"Yinelemeli kompozisyonun, sıralı bir kontrol yapısının içine paralel bir "
+"kontrol yapısının gömülmesine nasıl izin verdiğine dikkat edin. Ayrıca, bu "
+"daha karmaşık yapının tamamının başka bir yapıya gömülebileceğine de dikkat "
+"edin. Kompozisyon, son derece güçlü bir araçtır ve kullanıcıların yoğun "
+"şekilde kullanacağından emin olmalıdır."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:127
+msgid "Command Groups and Requirements"
+msgstr "Komut Grupları ve Gereksinimler"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:129
+msgid ""
+"As command groups are commands, they also must declare their requirements. "
+"However, users are not required to specify requirements manually for command"
+" groups - requirements are automatically inferred from the commands "
+"included. As a rule, *command groups include the union of all of the "
+"subsystems required by their component commands.* Thus, the ``ComplexAuto`` "
+"shown previously will require both the drive subsystem and the hatch "
+"subsystem of the robot."
+msgstr ""
+"Komut grupları-Command groups komutlar olduğundan, gereksinimlerini de "
+"bildirmeleri gerekir. Ancak, kullanıcıların komut grupları için "
+"gereksinimleri manuel olarak belirtmeleri gerekmez - gereksinimler, içerilen"
+" komutlardan otomatik olarak çıkarılır. kural olarak, *komut grupları, "
+"bileşen komutlarının gerektirdiği tüm alt sistemlerin birleşimini içerir * "
+"Bu nedenle, daha önce gösterilen ``ComplexAuto``, hem sürücü alt sistemini "
+"hem de robotun kapak alt sistemini gerektirecektir."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:131
+msgid ""
+"Additionally, requirements are enforced within all three types of parallel "
+"groups - a parallel group may *not* contain multiple commands that require "
+"the same subsystem."
+msgstr ""
+"Ek olarak, gereksinimler üç paralel grup türünde de uygulanır - bir paralel "
+"grup, aynı alt sistemi gerektiren birden fazla komut *içermeyebilir*."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:136
+msgid "Restrictions on Command Group Components"
+msgstr ""
+"Komut Grubu Bileşenleriyle-Command Group Components İlgili Kısıtlamalar"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:138
+msgid ""
+"The following is only relevant for the Java command-based library; the C++ "
+"library's ownership model naturally prevents users from making this category"
+" of mistake."
+msgstr ""
+"Aşağıdakiler yalnızca Java komut tabanlı kitaplıkla ilgilidir; C++ "
+"kitaplığının sahiplik modeli doğal olarak kullanıcıların bu kategoride hata "
+"yapmasını engeller."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:140
+msgid ""
+"Since command group components are run through their encapsulating command "
+"groups, errors could occur if those same command instances were "
+"independently scheduled at the same time as the group - the command would be"
+" being run from multiple places at once, and thus could end up with "
+"inconsistent internal state, causing unexpected and hard-to-diagnose "
+"behavior."
+msgstr ""
+"Komut grubu bileşenleri, kapsayıcı komut grupları aracılığıyla "
+"çalıştırıldıklarından, aynı komut örnekleri grupla aynı anda bağımsız olarak"
+" planlandıysa hatalar meydana gelebilir - komut aynı anda birden fazla "
+"yerden çalıştırılır ve bu nedenle tutarsızlıkla sonuçlanabilir. Dahili "
+"durum, beklenmedik ve teşhis edilmesi zor davranışlara neden olur."
+
+#: ../../frc-docs/source/docs/software/commandbased/command-groups.rst:142
+msgid ""
+"For this reason, command instances that have been added to a command group "
+"cannot be independently scheduled or added to a second command group. "
+"Attempting to do so will throw an exception and crash the user program."
+msgstr ""
+"Bu nedenle, bir komut grubuna eklenen komut örnekleri bağımsız olarak "
+"planlanamaz veya ikinci bir komut grubuna eklenemez. Bunu yapmaya çalışmak "
+"bir istisna atacak ve kullanıcı programını çökertecektir."

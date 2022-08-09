@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Michael Zhao <haitong1110@126.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 海宇 鲍 <arlicbao@163.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-27 16:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: 海宇 鲍 <arlicbao@163.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:4
+msgid "Using Generated Code in a Robot Program"
+msgstr "在机器人程序中使用生成的代码"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:6
+msgid ""
+"GRIP generates a class that can be added to an FRC\\ |reg| program that runs"
+" on a roboRIO and without a lot of additional code, drive the robot based on"
+" the output."
+msgstr "GRIP生成可添加到FRC \\ | reg |的类。在roboRIO上运行且没有大量其他代码的程序，根据输出结果驱动机器人。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:9
+msgid ""
+"Included here is a complete sample program that uses a GRIP pipeline that "
+"drives a robot towards a piece of retroreflective material."
+msgstr "这里包括一个完整的示例程序，该程序使用GRIP线程将机器人驱动到一块逆向反射材料上。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:12
+msgid ""
+"This program is designed to illustrate how the vision code works and does "
+"not necessarily represent the best technique for writing your robot program."
+" When writing your own program be aware of the following considerations:"
+msgstr "该程序旨在说明视觉代码的工作原理，并不一定代表编写机器人程序的最佳技术。在编写自己的程序时，请注意以下注意事项："
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:15
+msgid ""
+"**Using the camera output for steering the robot could be problematic**. The"
+" camera code in this example that captures and processes images runs at a "
+"much slower rate that is desirable for a control loop for steering the "
+"robot. A better, and only slightly more complex solution, is to get headings"
+" from the camera and it's processing rate, then have a much faster control "
+"loop steering to those headings using a gyro sensor."
+msgstr ""
+"**使用相机输出来操纵机器人可能会出现问题**。在此示例中，捕获和处理图像的相机代码以慢得多的速率运行，这对于操纵机器人的控制回路是理想的。一个更好的，只是稍微复杂一点的解决方案是从摄像机获取航向及其处理速率，然后使用陀螺仪传感器将控制环转向这些航向的速度更快。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:19
+msgid ""
+"**Keep the vision code in the class that wraps the pipeline**. A better way "
+"of writing object oriented code is to subclass or instantiate the generated "
+"pipeline class and process the OpenCV results there rather than in the robot"
+" program. In this example, the robot code extracts the direction to drive by"
+" manipulating the resultant OpenCV contours. By having the OpenCV code "
+"exposed throughout the robot program it makes it difficult to change the "
+"vision algorithm should you have a better one."
+msgstr ""
+"**将视觉代码保留在包装线程的类中**。编写面向对象代码的一种更好的方法是子类化或实例化生成的线程类，然后在其中处理OpenCV结果，而不是在机器人程序中进行处理。在此示例中，机器人代码通过操纵所得的OpenCV轮廓来提取行驶方向。通过在整个机器人程序中公开OpenCV代码，如果您拥有更好的视觉算法，则很难更改视觉算法。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:25
+msgid "Iterative program definitions"
+msgstr "迭代程序定义"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:58
+msgid ""
+"In this first part of the program you can see all the import statements for "
+"the WPILib classes used for this program."
+msgstr "在程序的第一部分，您可以看到用于该程序的WPILib类的所有import语句。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:60
+msgid "The **image width and height** are defined as 320x240 pixels."
+msgstr "图像宽度和高度**定义为320x240像素。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:61
+msgid ""
+"The **VisionThread** is a WPILib class makes it easy to do your camera "
+"processing in a separate thread from the rest of the robot program."
+msgstr "** VisionThread **是WPILib类，可轻松在与机器人程序其余部分不同的线程中进行相机处理。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:63
+msgid ""
+"**centerX** value will be the computed center X value of the detected "
+"target."
+msgstr "“ centerX ”值将是检测到的目标的计算出的中心X值。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:64
+msgid ""
+"**DifferentialDrive** encapsulates the drive motors on this robot and allows"
+" simplified driving."
+msgstr "**DifferentialDrive**将驱动电机封装在这个机器人上，并简化了驱动。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:65
+msgid ""
+"**imgLock** is a variable to synchronize access to the data being "
+"simultaneously updated with each image acquisition pass and the code that's "
+"processing the coordinates and steering the robot."
+msgstr "** imgLock **是一个变量，用于同步访问每次图像获取过程中同时更新的数据以及处理坐标和操纵机器人的代码。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:92
+msgid ""
+"The **robotInit()** method is called once when the program starts up. It "
+"creates a **CameraServer** instance that begins capturing images at the "
+"requested resolution (IMG_WIDTH by IMG_HEIGHT)."
+msgstr ""
+"程序启动时，** robotInit（）**方法将被调用一次。它创建一个“ "
+"CameraServer”实例，该实例开始以请求的分辨率（IMG_HEIGHT的IMG_WIDTH）捕获图像。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:95
+msgid ""
+"Next an instance of the class **VisionThread** is created. VisionThread "
+"begins capturing images from the camera asynchronously in a separate thread."
+" After processing each image, the pipeline computed **bounding box** around "
+"the target is retrieved and it's **center X** value is computed. This "
+"centerX value will be the x pixel value of the center of the rectangle in "
+"the image."
+msgstr ""
+"接下来，将创建** VisionThread **类的实例。 "
+"VisionThread开始在单独的线程中异步捕获来自相机的图像。处理完每张图像后，将检索流水线在目标周围的“边界框”，并计算其“中心X”值。这个centerX值将是图像中矩形中心的x像素值。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:99
+msgid ""
+"The VisionThread also takes a **VisionPipeline** instance (here, we have a "
+"subclass **MyVisionPipeline** generated by GRIP) as well as a callback that "
+"we use to handle the output of the pipeline. In this example, the pipeline "
+"outputs a list of contours (outlines of areas in an image) that mark goals "
+"or targets of some kind. The callback finds the bounding box of the first "
+"contour in order to find its center, then saves that value in the variable "
+"centerX. Note the synchronized block around the assignment: this makes sure "
+"the main robot thread will always have the most up-to-date value of the "
+"variable, as long as it also uses **synchronized** blocks to read the "
+"variable."
+msgstr ""
+"VisionThread还带有** VisionPipeline **实例（在这里，我们有一个由GRIP生成的子类** MyVisionPipeline"
+" "
+"**），以及一个用于处理线程输出的回调。在此示例中，线程输出标记了某种目的或目标的轮廓列表（图像中区域的轮廓）。回调会找到第一个轮廓的边界框以找到其中心，然后将该值保存在变量centerX中。请注意分配周围的同步块：确保主机器人线程始终具有变量的最新值，只要它还使用**同步**块读取变量即可。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:120
+msgid ""
+"This, the final part of the program, is called repeatedly during the "
+"**autonomous period** of the match. It gets the **centerX** pixel value of "
+"the target and **subtracts half the image width** to change it to a value "
+"that is **zero when the rectangle is centered** in the image and **positive "
+"or negative when the target center is on the left or right side of the "
+"frame.** That value is used to steer the robot towards the target."
+msgstr ""
+"这是程序的最后部分，在比赛的“自动阶段”中被重复调用。它获得目标的** centerX "
+"**像素值，并**减去图像宽度的一半**，以将其更改为**当矩形在图像中居中时为零且为正或负的值。当目标中心位于框架的左侧或右侧时。**该值用于将机器人导向目标。"
+
+#: ../../frc-docs/source/docs/software/vision-processing/grip/using-generated-code-in-a-robot-program.rst:125
+msgid ""
+"Note the **synchronized** block at the beginning. This takes a snapshot of "
+"the most recent centerX value found by the VisionThread."
+msgstr "请注意开头的“同步”块。这将捕获VisionThread发现的最新centerX值的快照。"

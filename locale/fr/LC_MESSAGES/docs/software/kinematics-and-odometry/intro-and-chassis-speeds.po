@@ -1,0 +1,182 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-26 00:48-0700\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:2
+msgid "Introduction to Kinematics and The Chassis Speeds Class"
+msgstr "Introduction à la cinématique et à la classe Chassis Speeds"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:5
+msgid "What is kinematics?"
+msgstr "Qu'est-ce que la cinématique?"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:6
+msgid ""
+"The brand new kinematics suite contains classes for differential drive, "
+"swerve drive, and mecanum drive kinematics and odometry. The kinematics "
+"classes help convert between a universal ``ChassisSpeeds`` object, "
+"containing linear and angular velocities for a robot to usable speeds for "
+"each individual type of drivetrain i.e. left and right wheel speeds for a "
+"differential drive, four wheel speeds for a mecanum drive, or individual "
+"module states (speed and angle) for a swerve drive."
+msgstr ""
+"La toute nouvelle suite logicielle cinématique contient des classes pour la "
+"cinématique et l'odométrie pour des mécanismes avec entraînement "
+"différentiel, de type \"à embardée\" (Swerve) et Mécanum. Les classes "
+"cinématiques aident à convertir un objet universel ``ChassisSpeeds``, "
+"contenant des vitesses linéaires et angulaires en paramètres  utilisables "
+"pour chaque type de transmission pré-citées.  Dans le cas d'un entraînement "
+"différentiel, ce sont les vitesses de roue gauche et droite.  Pour un "
+"entraînement par embardée, ce sont les paramètres d'angle et de vitesse pour"
+" chacune des 4 roues, et pour le Mécanum, ce sont les vitesses pour chacune "
+"des roues."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:9
+msgid "What is odometry?"
+msgstr "Qu'est-ce que l'odométrie?"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:10
+msgid ""
+"Odometry involves using sensors on the robot to create an estimate of the "
+"position of the robot on the field. In FRC, these sensors are typically "
+"several encoders (the exact number depends on the drive type) and a "
+"gyroscope to measure robot angle. The odometry classes utilize the "
+"kinematics classes along with periodic user inputs about speeds (and angles "
+"in the case of swerve) to create an estimate of the robot's location on the "
+"field."
+msgstr ""
+"L'odométrie consiste à utiliser des capteurs sur le robot pour créer une "
+"estimation de la position du robot sur le terrain de jeu. En FRC, ces "
+"capteurs sont généralement composés de plusieurs encodeurs (le nombre exact "
+"dépend du type d'entraînement) et d'un gyroscope pour mesurer l'angle du "
+"robot. Les classes d'odométrie utilisent les classes cinématiques ainsi que "
+"les entrées périodiques de l'utilisateur sur les vitesses (et les angles en "
+"cas de déviation) pour créer une estimation de l'emplacement du robot sur le"
+" terrain."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:13
+msgid "The Chassis Speeds Class"
+msgstr "La classe Chassis Speeds"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:14
+msgid ""
+"The ``ChassisSpeeds`` object is essential to the new WPILib kinematics and "
+"odometry suite. The ``ChassisSpeeds`` object represents the speeds of a "
+"robot chassis. This struct has three components:"
+msgstr ""
+"L'objet ``ChassisSpeeds`` est essentiel à la nouvelle suite cinématique et "
+"odométrique WPILib. L'objet ``ChassisSpeeds`` représente les vitesses d'un "
+"châssis de robot. Cette structure a trois composants:"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:16
+msgid "``vx``: The velocity of the robot in the x (forward) direction."
+msgstr "``vx``: La vitesse du robot dans la direction x (avant)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:17
+msgid ""
+"``vy``: The velocity of the robot in the y (sideways) direction. (Positive "
+"values mean the robot is moving to the left)."
+msgstr ""
+"``vy``:  La vitesse du robot dans la direction y (latérale). (Les valeurs "
+"positives signifient que le robot se déplace vers la gauche)."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:18
+msgid "``omega``: The angular velocity of the robot in radians per second."
+msgstr "``omega``:  La vitesse angulaire du robot en radians par seconde."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:20
+msgid ""
+"A non-holonomic drivetrain (i.e. a drivetrain that cannot move sideways, ex:"
+" a differential drive) will have a ``vy`` component of zero because of its "
+"inability to move sideways."
+msgstr ""
+"Une transmission non holonomique (c'est-à-dire une transmission qui ne peut "
+"pas se déplacer latéralement, ex: un entraînement différentiel) aura une "
+"composante ``vy``  de zéro en raison de son incapacité à se déplacer "
+"latéralement."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:23
+msgid "Constructing a ChassisSpeeds object"
+msgstr "Construction d'un objet ChassisSpeeds"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:24
+msgid ""
+"The constructor for the ``ChassisSpeeds`` object is very straightforward, "
+"accepting three arguments for ``vx``, ``vy``, and ``omega``. In Java, ``vx``"
+" and ``vy`` must be in meters per second. In C++, the units library may be "
+"used to provide a linear velocity using any linear velocity unit."
+msgstr ""
+"Le constructeur de l'objet ``ChassisSpeeds`` est très simple, acceptant "
+"trois arguments pour ``vx``, ``vy``, et ``omega``. En Java, ``vx`` et ``vy``"
+" doivent être en mètres par seconde. En C++, la librairie d'unités peut être"
+" utilisée pour fournir une vitesse linéaire en utilisant n'importe quelle "
+"unité de vitesse linéaire."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:45
+msgid "Creating a ChassisSpeeds Object from Field-Relative Speeds"
+msgstr ""
+"Création d'un objet ChassisSpeeds à partir de vitesses relatives au terrain "
+"de jeu"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:46
+msgid ""
+"A ``ChassisSpeeds`` object can also be created from a set of field-relative "
+"speeds when the robot angle is given. This converts a set of desired "
+"velocities relative to the field (for example, toward the opposite alliance "
+"station and toward the right field boundary) to a ``ChassisSpeeds`` object "
+"which represents speeds that are relative to the robot frame. This is useful"
+" for implementing field-oriented controls for a swerve or mecanum drive "
+"robot."
+msgstr ""
+"Un objet ``ChassisSpeeds`` peut également être créé à partir d'un ensemble "
+"de vitesses relatives au terrain lorsque l'angle du robot est connu. L'objet"
+" utilise un ensemble de vitesses souhaitées par rapport au terrain (par "
+"exemple, vers la station d'alliance opposée, à droite sur le terrain) et "
+"calcule et génère un objet ``ChassisSpeeds`` qui représente des vitesses "
+"relatives au châssis du robot. Ceci est utile pour mettre en œuvre des "
+"contrôles orientés sur le terrain pour un robot avec un mécanisme de type "
+"\"à embardée\" ou Mécanum."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:48
+msgid ""
+"The static ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / "
+"``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++) method can be used to "
+"generate the ``ChassisSpeeds`` object from field-relative speeds. This "
+"method accepts the ``vx`` (relative to the field), ``vy`` (relative to the "
+"field), ``omega``, and the robot angle."
+msgstr ""
+"La méthode statique ``ChassisSpeeds.fromFieldRelativeSpeeds`` (Java) / "
+"``ChassisSpeeds::FromFieldRelativeSpeeds`` (C++)  peut être utilisée pour "
+"générer l'objet ``ChassisSpeeds`` à partir de vitesses relatives au terrain."
+" Cette méthode accepte les ``vx`` (par rapport au terrain), ``vy`` (par "
+"rapport au terrain), ``omega`` et l'angle du robot."
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/intro-and-chassis-speeds.rst:72
+msgid ""
+"The angular velocity is not explicitly stated to be \"relative to the "
+"field\" because the angular velocity is the same as measured from a field "
+"perspective or a robot perspective."
+msgstr ""
+"La vitesse angulaire n'est pas explicitement indiquée comme étant \"relative"
+" au terrain\" car la vitesse angulaire est la même que celle mesurée du "
+"point de vue du terrain ou du robot."

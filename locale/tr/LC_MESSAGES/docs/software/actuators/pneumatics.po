@@ -1,0 +1,279 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-24 16:46+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:4
+msgid "Operating pneumatic cylinders"
+msgstr "Pnömatik silindirlerin çalıştırılması"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:7
+msgid "Using the FRC Control System to control Pneumatics"
+msgstr "Pnömatiği kontrol etmek için FRC Kontrol Sistemini kullanma"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:9
+msgid ""
+"The Pneumatics Control Module (PCM) is a CAN-based device that provides "
+"complete control over the compressor and up to 8 solenoids per module. The "
+"PCM is integrated into WPILib through a series of classes that make it "
+"simple to use. The closed loop control of the Compressor and Pressure switch"
+" is handled by the PCM hardware and the Solenoids are handled by the "
+"upgraded Solenoid class that now controls the solenoid channels on the PCM. "
+"An additional PCM module can be used where the modules corresponding "
+"solenoids are differentiated by the module number in the constructors of the"
+" Solenoid and Compressor classes."
+msgstr ""
+"Pnömatik Kontrol Modülü (PCM), kompresör ve modül başına 8 adede kadar "
+"solenoid üzerinde tam kontrol sağlayan CAN tabanlı bir cihazdır. PCM, "
+"kullanımını kolaylaştıran bir dizi class aracılığıyla WPILib'e entegre "
+"edilmiştir. Kompresör ve Basınç anahtarının kapalı döngü kontrolü PCM "
+"donanımı tarafından gerçekleştirilir ve Solenoidler, artık PCM'deki solenoid"
+" kanallarını kontrol eden yükseltilmiş Solenoid sınıfı tarafından yönetilir."
+" Solenoidlere karşılık gelen modüllerin Solenoid ve Kompresör sınıflarının "
+"üreticilerindeki modül numarasıyla farklılaştığı durumlarda ek bir PCM "
+"modülü kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:14
+msgid ""
+"The Pneumatics Control Module from CTR Electronics is responsible for "
+"regulating the robot's pressure using a pressure switch and a compressor and"
+" switching solenoids on and off. The PCM communicates with the roboRIO over "
+"CAN. For more information, see `FRC Control System Hardware Overview`"
+msgstr ""
+"CTR Electronics'in Pneumatics Control Module, bir basınç anahtarı ve bir "
+"kompresör kullanarak robotun basıncını düzenlemekten ve solenoidleri açıp "
+"kapatmaktan sorumludur. PCM, CAN üzerinden roboRIO ile iletişim kurar. Daha "
+"fazla bilgi için, bkz. `FRC Control System Hardware Overview`"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:17
+msgid "PCM Module Numbers"
+msgstr "PCM Modül Numaraları"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:19
+msgid ""
+"PCM Modules are identified by their Node ID. The default Node ID for PCMs is"
+" 0. If using a single PCM on the bus it is recommended to leave it at the "
+"default Node ID."
+msgstr ""
+"PCM Modülleri, Node ID-Bağlantı Kimlikleri ile tanımlanır. PCM'ler için "
+"varsayılan Node ID 0'dır. Veri yolunda tek bir PCM kullanıyorsanız, bunu "
+"varsayılan Düğüm Kimliğinde bırakmanız önerilir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:22
+msgid "Generating and Storing Pressure"
+msgstr "Basınç Oluşturma ve Saklama"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:24
+msgid ""
+"In FRC\\ |reg|, pressure is created using a pneumatic compressor and stored "
+"in pneumatic tanks. The compressor doesn't necessarily have to be on the "
+"robot, but must be powered by the robot's PCM(s). The \"Closed Loop\" mode "
+"on the Compressor is enabled by default, and it is *not* recommended that "
+"teams change this setting. When closed loop control is enabled the PCM will "
+"automatically turn the compressor on when the pressure switch is closed "
+"(below the pressure threshold) and turn it off when the pressure switch is "
+"open (~120PSI). When closed loop control is disabled the compressor will not"
+" be turned on. Using a Compressor, users can query the status of the "
+"compressor. The state (currently on or off), pressure switch state, and "
+"compressor current can all be queried from the Compressor object."
+msgstr ""
+"FRC \\ |reg| 'te, basınç pnömatik kompresör kullanılarak oluşturulur ve "
+"pnömatik tanklarda depolanır. Kompresörün mutlaka robot üzerinde olması "
+"gerekmez, ancak robotun PCM (ler) i tarafından çalıştırılmalıdır. "
+"Kompresördeki \"Closed Loop-Kapalı Döngü\" modu varsayılan olarak etkindir "
+"ve ekiplerin bu ayarı değiştirmesi *not-önerilmez*. Kapalı döngü kontrolü "
+"etkinleştirildiğinde, PCM, basınç anahtarı kapatıldığında (basınç eşiğinin "
+"altında) kompresörü otomatik olarak açar ve basınç anahtarı açıkken (~ "
+"120PSI) kapatır. Kapalı döngü kontrolü devre dışı bırakıldığında, kompresör "
+"açılmayacaktır. Kullanıcılar bir Kompresör kullanarak kompresörün durumunu "
+"sorgulayabilir. Durum (şu anda açık veya kapalı), basınç anahtarı durumu ve "
+"kompresör akımının tümü Kompresör nesnesinden sorgulanabilir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:26
+msgid ""
+"The Pneumatics Control Module from Cross the Road Electronics allows for "
+"integrated closed loop control of a compressor. Creating any instance of a "
+"Solenoid or Double Solenoid object will enable the Compressor control on the"
+" corresponding PCM. The Compressor object is only needed if you want the "
+"ability to turn off the compressor or query compressor status."
+msgstr ""
+"Cross the Road Electronics'in Pneumatics Control Modulü, bir kompresörün "
+"entegre kapalı döngü kontrolüne izin verir. Solenoid veya Double Solenoid "
+"nesnesinin herhangi bir örneğini oluşturmak, karşılık gelen PCM'de Kompresör"
+" kontrolünü etkinleştirecektir. Compressor objesi yalnızca, kompresörü "
+"kapatma veya kompresör durumunu sorgulama yeteneğini istiyorsanız "
+"gereklidir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:56
+msgid "Solenoid control"
+msgstr "Solenoid kontrolü"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:58
+msgid ""
+"FRC teams use solenoids to preform a variety of tasks, from shifting "
+"gearboxes to operating robot mechanisms. A solenoid is a valve used to "
+"electronically switch a pressurized air line \"on\" or \"off\". For more "
+"information on solenoids, see `this wikipedia article "
+"<https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoids are controlled "
+"by a robot's Pneumatics Control Module, or PCM, which is in turn connected "
+"to the robot's roboRIO via CAN. The easiest way to see a solenoid's state is"
+" via the small red LED (which indicates if the valve is \"on\" or not), and "
+"solenoids can be manually actuated when un-powered with the small button "
+"adjacent to the LED."
+msgstr ""
+"FRC takımları, vites değiştirmeden robot mekanizmalarının çalıştırılmasına "
+"kadar çeşitli görevleri gerçekleştirmek için solenoidleri kullanır. "
+"Solenoid, basınçlı bir hava hattını elektronik olarak \"açmak-on\" veya "
+"\"kapatmak-off\" için kullanılan bir valftir. Solenoidler hakkında daha "
+"fazla bilgi için, şu `wikipedia makalesine bakın "
+"<https://en.wikipedia.org/wiki/Solenoid_valve>`__. Solenoidler, robotun "
+"roboRIO'suna CAN aracılığıyla bağlanan bir robotun Pneumatics Control Module"
+" veya PCM tarafından kontrol edilir. Bir solenoidin durumunu görmenin en "
+"kolay yolu, küçük kırmızı LED'dir (bu, valfin \"açık\" olup olmadığını "
+"gösterir) ve solenoidler, LED'in yanındaki küçük düğme ile güç kesildiğinde "
+"manuel olarak çalıştırılabilir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:60
+msgid ""
+"Single acting solenoids apply or vent pressure from a single output port. "
+"They are typically used either when an external force will provide the "
+"return action of the cylinder (spring, gravity, separate mechanism) or in "
+"pairs to act as a double solenoid. A double solenoid switches air flow "
+"between two output ports (many also have a center position where neither "
+"output is vented or connected to the input). Double solenoid valves are "
+"commonly used when you wish to control both the extend and retract actions "
+"of a cylinder using air pressure. Double solenoid valves have two electrical"
+" inputs which connect back to two separate channels on the solenoid "
+"breakout."
+msgstr ""
+"Tek etkili solenoidler, tek bir çıkış portundan basınç uygular veya tahliye "
+"eder. Tipik olarak, bir dış kuvvetin silindirin geri dönüş hareketini "
+"sağlaması durumunda (yay, yerçekimi, ayrı mekanizma) veya çiftler halinde "
+"bir double solenoid olarak hareket etmek için kullanılırlar. Double "
+"solenoid, iki çıkış portu arasındaki hava akışını değiştirir (çoğu aynı "
+"zamanda, iki çıkışında havalandırılmadığı veya girişe bağlı olmadığı bir "
+"merkez konuma sahiptir). Double solenoid valfler, hava basıncını kullanarak "
+"bir silindirin hem uzatma hem de geri çekme hareketlerini kontrol etmek "
+"istediğinizde yaygın olarak kullanılır. Double solenoid valfler, solenoid "
+"devresi üzerindeki iki ayrı kanala bağlanan iki elektrik girişine sahiptir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:62
+msgid ""
+"PCM Modules are identified by their CAN Device ID. The default CAN ID for "
+"PCMs is 0. If using a single PCM on the bus it is recommended to leave it at"
+" the default CAN ID. This ID can be changed with the Phoenix Tuner "
+"application, in addition to other debug information. Instructions to "
+"download Phoenix Tuner can be found `here "
+"<https://github.com/CrossTheRoadElec/Phoenix-"
+"Releases/blob/master/README.md>`__ and the installer files can be found "
+"`here <https://github.com/CrossTheRoadElec/Phoenix-"
+"Releases/releases/latest>`__. For more information about setting PCM CAN ID "
+"see this important :ref:`notice <docs/zero-to-robot/step-2/index:Step 2: "
+"Installing Software>`."
+msgstr ""
+"PCM Modülleri, CAN Cihaz Kimlikleri ile tanımlanır. PCM'ler için varsayılan "
+"CAN ID'si 0'dır. Veriyolunda tek bir PCM kullanılıyorsa, bunu varsayılan CAN"
+" ID'de bırakmanız önerilir. Bu kimlik, diğer hata ayıklama yazılımlarına ek "
+"olarak Phoenix Tuner uygulamasıyla değiştirilebilir. Phoenix Tuner'ı indirme"
+" talimatları `buradadır <https://github.com/CrossTheRoadElec/Phoenix-"
+"Releases/blob/master/README.md>`__ ve yükleme dosyaları `burada "
+"<https://github.com/CrossTheRoadElec/Phoenix-Releases/releases/latest>`__ "
+"bulunabilir. PCM CAN Kimliği ayarlama hakkında daha fazla bilgi için şu "
+"önemli noktaya bakın :ref:`not<docs/zero-to-robot/step-2/index:Step 2: "
+"Installing Software>`."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:65
+msgid "Single Solenoids in WPILib"
+msgstr "WPILib'de Tekli Solenoidler"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:67
+msgid ""
+"Single solenoids in WPILib are controlled using the Solenoid class. To "
+"construct a Solenoid object, simply pass the desired port number (assumes "
+"CAN ID 0) or CAN ID and port number to the constructor. To set the value of "
+"the solenoid call set(true) to enable or set(false) to disable the solenoid "
+"output."
+msgstr ""
+"WPILib'deki tekli solenoidler Solenoid sınıfı kullanılarak kontrol edilir. "
+"Bir Solenoid nesnesi oluşturmak için, yapıcıya istenen port numarasını (CAN "
+"ID 0 varsayılır) veya CAN ID ve port numarasını iletmeniz yeterlidir. "
+"Solenoid çağrı setinin değerini (true) etkinleştirmek veya devre dışı "
+"bırakmak için (false) ayarlamak için."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:88
+msgid "Double Solenoids in WPILib"
+msgstr "WPILib'de Double Solenoidler"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:90
+msgid ""
+"Double solenoids are controlled by the DoubleSolenoid class in WPILib. These"
+" are constructed similarly to the single solenoid but there are now two port"
+" numbers to pass to the constructor, a forward channel (first) and a reverse"
+" channel (second). The state of the valve can then be set to kOff (neither "
+"output activated), kForward (forward channel enabled) or kReverse (reverse "
+"channel enabled). Additionally, the PCM CAN ID can be passed to the "
+"DoubleSolenoid if teams have a non-standard PCM CAN ID."
+msgstr ""
+"Çift solenoidler, WPILib'de DoubleSolenoid sınıfı tarafından kontrol edilir."
+" Bunlar, tekli solenoide benzer şekilde yapılandırılır, ancak şimdi devreye "
+"geçecek iki port numarası vardır, bir ileri kanal (first) ve bir ters kanal "
+"(second). Valf durumu daha sonra kOff (hiçbir çıkış etkinleştirilmedi), "
+"kForward (ileri kanal etkin) veya kReverse (ters kanal etkin) olarak "
+"ayarlanabilir. Ek olarak, ekiplerin standart olmayan bir PCM CAN ID'si varsa"
+" PCM CAN ID, DoubleSolenoid'e geçirilebilir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:119
+msgid "Toggling Solenoids"
+msgstr "Solenoidlerin Değiştirilmesi"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:121
+msgid ""
+"Solenoids can be switched from one output to the other (known as toggling) "
+"by using the `.toggle()` method."
+msgstr ""
+"Solenoidler, \".toggle ()\" metodu kullanılarak bir çıkıştan diğerine (geçiş"
+" olarak bilinir) değiştirilebilir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:124
+msgid ""
+"Since a DoubleSolenoid defaults to off you will have to set it before it can"
+" be toggled."
+msgstr ""
+"Bir DoubleSolenoid varsayılan olarak kapalı olduğundan, değiştirilmeden önce"
+" onu ayarlamanız gerekecektir."
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:155
+msgid "Pressure Transducers"
+msgstr "Basınç Dönüştürücüler"
+
+#: ../../frc-docs/source/docs/software/actuators/pneumatics.rst:157
+msgid ""
+"One can connect a pressure transducer to measure the pressure stored in a "
+"pneumatic system. These transducers connect to the Analog Input ports on the"
+" roboRIO, and can be read by the AnalogInput or AnalogPotentiometer classes "
+"in WPILib."
+msgstr ""
+"Pnömatik bir sistemde depolanan basıncı ölçmek için bir basınç dönüştürücü "
+"bağlanabilir. Bu dönüştürücüler roboRIO'daki Analog Giriş bağlantı "
+"noktalarına bağlanır ve WPILib'deki AnalogInput veya AnalogPotentiometer "
+"sınıfları tarafından okunabilir."

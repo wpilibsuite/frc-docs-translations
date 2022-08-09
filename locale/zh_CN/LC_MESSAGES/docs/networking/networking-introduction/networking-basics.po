@@ -1,0 +1,661 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Team 5308 <team5308@163.com>, 2021
+# Yuhao Li <yuhao_li@hotmail.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-10 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:4
+msgid "Networking Basics"
+msgstr "网络基础"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:7
+msgid "What is an IP Address?"
+msgstr "什么是IP地址？"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:9
+msgid ""
+"An IP address is a unique string of numbers, separated by periods that "
+"identifies each device on a network. Each IP address is divided up into 4 "
+"sections (octets) ranging from 0-255."
+msgstr "IP地址是一串唯一的数字字符串，由英文句点分隔标识网络上的每个设备。每个IP地址分为4个部分（八位字节），范围从0-255。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:14
+msgid ""
+"As shown above, this means that each IP address is a 32-bit address meaning "
+"there are 2\\ :sup:`32` addresses, or nearly 4,300,000,000 addresses "
+"possible. However, most of these are used publicly for things like web "
+"servers."
+msgstr ""
+"如上所示，这意味着每个IP地址都是32位地址，这意味着有2\\ "
+":sup:`32`个地址，或者可能有近4300000000个地址。然而，其中大多数都公开用于web服务器之类的东西。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:16
+msgid ""
+"This brings up our **first key point** of IP Addressing: Each device on the "
+"network must have a unique IP address. No two devices can have the same IP "
+"address, otherwise collisions will occur."
+msgstr "这带来了我们IP寻址的“第一个关键点”：网络上的每个设备都必须具有唯一的IP地址。两个设备不能具有相同的IP地址，否则会发生冲突。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:18
+msgid ""
+"Since there are only 4-billion addresses, and there are more than 4-billion "
+"computers connected to the internet, we need to be as efficient as possible "
+"with giving out IP addresses. This brings us to public vs. private "
+"addresses."
+msgstr ""
+"由于只有40亿个地址，并且有超过40亿台计算机连接到互联网，因此我们需要在提供IP地址的同时尽可能地提高效率。这将我们带到了公共地址与私有地址之间。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:21
+msgid "Public vs Private IP Addresses"
+msgstr "公有IP地址与私有IP地址"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:23
+msgid ""
+"To be efficient with using IP Addresses, the idea of \"Reserved IP Ranges\" "
+"was implemented. In short, this means that there are ranges of IP Addresses "
+"that will never be assigned to web servers, and will only be used for local "
+"networks, such as those in your house."
+msgstr ""
+"为了有效使用IP地址，实施了“保留IP范围”的想法。简而言之，这意味着有些IP地址范围永远不会分配给Web服务器，而只会用于本地网络，例如您家中的那些。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:25
+msgid ""
+"**Key point #2**: Unless you a directly connecting to your internet "
+"provider’s basic modem (no router function), your device will have an IP "
+"Address in one of these ranges. This means that at any local network, such "
+"as: your school, work office, home, etc., your device will 99% of the time "
+"have an IP address in a range listed below:"
+msgstr ""
+"**关键点2 "
+"**：除非您直接连接到互联网提供商的基本调制解调器（没有路由器功能），否则您的设备将具有以下范围之一的IP地址。这意味着在任何本地网络（例如您的学校，办公室，家庭等）中，您的设备将有99％的时间拥有以下所列范围内的IP地址："
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:28
+msgid "Class"
+msgstr "类"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:28
+msgid "Bits"
+msgstr "位元"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:28
+msgid "Start Address"
+msgstr "起始地址"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:28
+msgid "End Address"
+msgstr "结束地址"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:28
+msgid "Number of Addresses"
+msgstr "地址数"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:30
+msgid "A"
+msgstr "A"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:30
+msgid "24"
+msgstr "24"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:30
+msgid "10.0.0.0"
+msgstr "10.0.0.0"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:30
+msgid "10.255.255.255"
+msgstr "10.255.255.255"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:30
+msgid "16,777,216"
+msgstr "16,777,216"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:32
+msgid "B"
+msgstr "B"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:32
+msgid "20"
+msgstr "20"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:32
+msgid "172.16.0.0"
+msgstr "172.16.0.0"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:32
+msgid "172.31.255.255"
+msgstr "172.31.255.255"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:32
+msgid "1,048,576"
+msgstr "1,048,576"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:34
+msgid "C"
+msgstr "C"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:34
+msgid "16"
+msgstr "16"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:34
+msgid "192.168.0.0"
+msgstr "192.168.0.0"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:34
+msgid "192.168.255.255"
+msgstr "192.168.255.255"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:34
+msgid "65,536"
+msgstr "65,536"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:37
+msgid ""
+"These reserved ranges let us assign one \"unreserved IP Address\" to an "
+"entire house, and then use multiple addresses in a reserved range to connect"
+" more than one computer to the internet. A process on the home’s internet "
+"router known as **NAT** (Network Address Translation), handles the process "
+"of keeping track which private IP is requesting data, using the public IP to"
+" request that data from the internet, and then passing the returned data "
+"back to the private IP that requested it. This allows us to use the same "
+"reserved IP addresses for many local networks, without causing any "
+"conflicts. An image of this process is presented below."
+msgstr ""
+"这些保留范围使我们可以为整个房屋分配一个“未保留的IP地址”，然后使用保留范围内的多个地址将多台计算机连接到Internet。家庭互联网路由器上的一个称为NAT（网络地址转换）的过程负责处理以下过程：跟踪哪个私有IP正在请求数据，使用公共IP从Internet请求该数据，然后传递返回的数据。数据返回到请求它的专用IP。这使我们可以为许多本地网络使用相同的保留IP地址，而不会引起任何冲突。下面显示了此过程的图像。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:44
+msgid ""
+"For the FRC\\ |reg| networks, we will use the ``10.0.0.0`` range. This range"
+" allows us to use the ``10.TE.AM.xx`` format for IP addresses, whereas using"
+" the Class B or C networks would only allow a subset of teams to follow the "
+"format. An example of this formatting would be ``10.17.50.1`` for FRC Team "
+"1750."
+msgstr ""
+"对于FRC \\ | reg |网络，我们将使用“ 10.0.0.0”范围。此范围允许我们对IP地址使用“ "
+"10.TE.AM.xx”格式，而使用B级或C级网络将仅允许一部分团队遵循该格式。对于FRC Team "
+"1750，这种格式的示例为``10.17.50.1''。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:48
+msgid "How are these addresses assigned?"
+msgstr "这些地址如何分配？"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:50
+msgid ""
+"We’ve covered the basics of what IP addresses are, and which IP addresses we"
+" will use for the FRC competition,so now we need to discuss how these "
+"addresses will get assigned to the devices on our network. We already stated"
+" above that we can’t have two devices on the same network with the same IP "
+"Address, so we need a way to be sure that every device receives an address "
+"without overlapping. This can be done Dynamically (automatic), or Statically"
+" (manual)."
+msgstr ""
+"我们已经介绍了什么是IP地址，以及我们将在FRC竞赛中使用的IP地址的基础知识，因此现在我们需要讨论如何将这些地址分配给我们网络上的设备。上面我们已经说过，我们不能在同一网络上的两个设备具有相同的IP地址，因此我们需要一种方法来确保每个设备都收到一个不重叠的地址。这可以动态（自动）或静态（手动）完成。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:53
+msgid "Dynamically"
+msgstr "动态地"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:55
+msgid ""
+"Dynamically assigning IP addresses means that we are letting a device on the"
+" network manage the IP address assignments. This is done through the Dynamic"
+" Host Configuration Protocol (DHCP). DHCP has many components to it, but for"
+" the scope of this document, we will think of it as a service that "
+"automatically manages the network. Whenever you plug in a new device to the "
+"network, the DHCP service sees the new device, then provides it with an "
+"available IP address and the other network settings required for the device "
+"to communicate. This can mean that there are times we do not know the exact "
+"IP address of each device."
+msgstr ""
+"动态分配IP地址意味着我们让网络上的设备管理IP地址分配。这是通过动态主机配置协议（DHCP）完成的。 "
+"DHCP具有许多组件，但是在本文档的范围内，我们会将其视为自动管理网络的服务。每当您将新设备插入网络时，DHCP服务都会看到该新设备，然后为其提供可用的IP地址以及该设备进行通信所需的其他网络设置。这可能意味着有时我们不知道每个设备的确切IP地址。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:58
+msgid "What is a DHCP server?"
+msgstr "啥是DHCP服务器?"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:60
+msgid ""
+"A DHCP server is a device that runs the DHCP service to monitor the network "
+"for new devices to configure. In larger businesses, this could be a "
+"dedicated computer running the DHCP service and that computer would be the "
+"DHCP server. For home networks, FRC networks, and other smaller networks, "
+"the DHCP service is usually running on the router; in this case, the router "
+"is the DHCP server."
+msgstr ""
+"DHCP服务器是运行DHCP服务以监视网络中要配置的新设备的设备。在大型企业中，这可能是运行DHCP服务的专用计算机，而该计算机将是DHCP服务器。对于家庭网络，FRC网络和其他较小的网络，DHCP服务通常在路由器上运行。在这种情况下，路由器就是DHCP服务器。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:62
+msgid ""
+"This means that if you ever run into a situation where you need to have a "
+"DHCP server assigning IP addresses to your network devices, it’s as simple "
+"as finding the closest home router, and plugging it in."
+msgstr "这意味着，如果遇到需要DHCP服务器为网络设备分配IP地址的情况，这就像找到最近的家用路由器并将其插入一样简单。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:65
+msgid "Statically"
+msgstr "静态"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:67
+msgid ""
+"Statically assigning IP addresses means that we are manually telling each "
+"device on the network which IP address we want it to have. This "
+"configuration happens through a setting on each device. By disabling DHCP on"
+" the network and assigning the addresses manually, we get the benefit of "
+"knowing the exact IP address of each device on the network, but because we "
+"set each one manually and there is no service keeping track of the used IP "
+"addresses, we have to keep track of this ourselves. While statically setting"
+" IP addresses, we must be careful not to assign duplicate addresses, and "
+"must be sure we are setting the other network settings (such as subnet mask "
+"and default gateway) correctly on each device."
+msgstr ""
+"静态分配IP地址意味着我们正在手动告诉网络上的每个设备我们希望它拥有哪个IP地址。通过每个设备上的设置进行此配置。通过禁用网络上的DHCP并手动分配地址，我们的好处是可以知道网络上每个设备的确切IP地址，但是由于我们手动设置了每个设备，并且没有服务跟踪使用的IP地址，因此必须自己对此进行跟踪。在静态设置IP地址时，我们必须注意不要分配重复的地址，并且必须确保我们在每个设备上正确设置了其他网络设置（例如子网掩码和默认网关）。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:70
+msgid "What is link-local?"
+msgstr "什么是本地链接？"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:72
+msgid ""
+"If a device does not have an IP address, then it cannot communicate on a "
+"network. This can become an issue if we have a device that is set to "
+"dynamically acquire its address from a DHCP server, but there is no DHCP "
+"server on the network. An example of this would be when you have a laptop "
+"directly connected to a roboRIO and both are set to dynamically acquire an "
+"IP address. Neither device is a DHCP server, and since they are the only two"
+" devices on the network, they will not be assigned IP addresses "
+"automatically."
+msgstr ""
+"如果设备没有IP地址，则无法在网络上通信。如果我们拥有一台设置为从DHCP服务器动态获取其地址的设备，但是网络上没有DHCP服务器，这可能会成为一个问题。例如，当您将一台笔记本电脑直接连接到roboRIO且两者都设置为动态获取IP地址时。这两个设备都不是DHCP服务器，并且由于它们是网络上仅有的两个设备，因此不会自动为它们分配IP地址。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:74
+msgid ""
+"Link-local addresses give us a standard set of addresses that we can \"fall-"
+"back\" to if a device set to acquire dynamically is not able to acquire an "
+"address. If this happens, the device will assign itself an IP address in the"
+" ``169.254.xx.yy`` address range; this is a link-local address. In our "
+"roboRIO and computer example above, both devices will realize they haven’t "
+"been assigned an IP address and assign themselves a link-local address. Once"
+" they are both assigned addresses in the ``169.254.xx.yy`` range, they will "
+"be in the same network and will be able to communicate, even though they "
+"were set to dynamic and a DHCP server did not assign addresses."
+msgstr ""
+"本地链接地址为我们提供了一组标准地址，如果设置为动态获取的设备无法获取地址，则可以“回退”到这些地址。如果发生这种情况，设备将在“ "
+"169.254.xx.yy”地址范围内为自己分配一个IP地址；这是本地链接地址。在上面的roboRIO和计算机示例中，两台设备都将意识到尚​​未为其分配IP地址，而是为自己分配了本地链接地址。一旦为它们都分配了“"
+" 169.254.xx.yy”范围内的地址，即使它们设置为动态并且DHCP服务器未分配地址，它们也将位于同一网络中并且能够通信。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:77
+msgid "IP Addressing for FRC"
+msgstr "FRC的IP寻址"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:79
+msgid ""
+"See the :doc:`IP Networking Article <ip-configurations>` for more "
+"information."
+msgstr "查阅:doc:`IP Networking Article <ip-configurations>`获取更多资讯。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:82
+msgid "Mixing Dynamic and Static Configurations"
+msgstr "混合动态配置和静态配置"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:84
+msgid ""
+"While on the field, the team should not notice any issues with having "
+"devices set statically in the ``10.TE.AM.xx`` range, and having the field "
+"assign DHCP addresses as long as there are no IP address conflicts as "
+"referred to in the section above."
+msgstr ""
+"在场上，只要设备没有静态设置在“ "
+"10.TE.AM.xx”范围内，并且只要没有IP地址冲突，该字段就分配DHCP地址，团队就不会在以上部分中发现任何问题。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:86
+msgid ""
+"In the pits, a team may encounter issues with mixing Static and DHCP devices"
+" for the following reason. As mentioned above, DHCP devices will fall back "
+"to a link-local address (``169.254.xx.yy``) if a server isn’t present. For "
+"static devices, the IP address will always be the same. If the DHCP server "
+"is not present and the roboRIO, driver station, and laptop fall back to "
+"link-local addresses, the statically set devices in the 10.TE.AM.xx range "
+"will be in a different network and not visible to those with link-local "
+"addresses. A visual description of this is provided below:"
+msgstr ""
+"在Pits区中，出于以下原因，团队可能会遇到混合使用静态和DHCP设备的问题。如上所述，如果没有服务器，DHCP设备将回退到本地链接地址（``169.254.xx.yy''）。对于静态设备，IP地址将始终相同。如果不存在DHCP服务器，并且roboRIO，驱动程序站和便携式计算机回退到链接本地地址，则位于10.TE.AM.xx范围内的静态设置的设备将位于不同的网络中，并且对于使用链接本地地址。下面提供了对此的直观描述："
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:91
+msgid ""
+"When connected via USB to the roboRIO, a :ref:`docs/networking/networking-"
+"utilities/portforwarding:Port Forwarding` configuration is required to "
+"access devices connected to the OpenMesh radio (on the green network shown "
+"above)."
+msgstr ""
+"通过USB连接到roboRIO时，需要配置:ref:`docs/networking/networking-"
+"utilities/portforwarding:Port Forwarding` 来连接OpenMesh路由器设备（在上面显示的绿色网络上）。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:99
+msgid "mDNS"
+msgstr "mDNS"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:101
+msgid ""
+"mDNS, or multicast Domain Name System is a protocol that allows us to "
+"benefit from the features of DNS, without having a DNS server on the "
+"network. To make this clearer, let’s take a step back and talk about what "
+"DNS is."
+msgstr ""
+"mDNS或多播域名系统是一种协议，它使我们可以从DNS的功能中受益，而无需在网络上安装DNS服务器。为了更清楚地说明这一点，让我们退后一步，谈谈什么是DNS。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:104
+msgid "What is DNS?"
+msgstr "什么是DNS？"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:106
+msgid ""
+"DNS (Domain Name System) can become a complex topic, but for the scope of "
+"this paper, we are going to just look at the high level overview of DNS. In "
+"the most basic explanation, DNS is what allows us to relate human-friendly "
+"names for network devices to IP Addresses, and keep track of those IP "
+"addresses if they change."
+msgstr ""
+"DNS（域名系统）可能会成为一个复杂的话题，但是在本文的范围内，我们将仅对DNS进行简要介绍。在最基本的解释中，DNS使我们能够将网络设备的人性化名称与IP地址相关联，并在这些IP地址发生更改时对其进行跟踪。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:108
+msgid ""
+"Example 1: Let’s look at the site ``www.google.com``. The IP address for "
+"this site is ``172.217.164.132``, however that is not very user friendly to "
+"remember!"
+msgstr ""
+"示例1：让我们看一下“ www.google.com”网站。该站点的IP地址是``172.217.164.132''，但是记住它不是非常用户友好！"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:110
+msgid ""
+"Whenever a user types ``www.google.com`` into their computer, the computer "
+"contacts the DNS server (a setting provided by DHCP!) and asks what is the "
+"IP address on file for ``www.google.com``. The DNS server returns the IP "
+"address and then the computer is able to use that to connect to the Google "
+"web site."
+msgstr ""
+"每当用户在计算机上键入“ www.google.com”时，计算机都会与DNS服务器联系（DHCP提供的设置！），并询问“ "
+"www.google.com”文件上的IP地址是什么。 DNS服务器返回IP地址，然后计算机可以使用该IP地址连接到Google网站。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:112
+msgid ""
+"Example 2: On your home network, you have a server named ``MYCOMPUTER`` that"
+" you want to connect to from your laptop. Your network uses DHCP so you "
+"don’t know the IP Address of ``MYCOMPUTER``, but DNS allows you to connect "
+"just by using the ``MYCOMPUTER`` name. Additionally, whenever the DHCP "
+"assignments refresh, ``MYCOMPUTER`` may end up with a different address, but"
+" because you’re connecting by using the ``MYCOMPUTER`` name instead of a "
+"specific IP address, the DNS record was updated and you’re still able to "
+"connect."
+msgstr ""
+"示例2：在您的家庭网络上，您有一个要从笔记本电脑连接到的名为``MYCOMPUTER''的服务器。您的网络使用DHCP，因此您不知道“ "
+"MYCOMPUTER”的IP地址，但是DNS允许您仅使用“ MYCOMPUTER”名称进行连接。此外，每当DHCP分配刷新时，“ "
+"MYCOMPUTER”可能会以不同的地址结尾，但是由于您是通过使用“ "
+"MYCOMPUTER”名称而不是特定的IP地址进行连接的，因此DNS记录已更新，您仍然能够连接。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:114
+msgid ""
+"This is the second benefit to DNS, and the most relevant for FRC. With DNS, "
+"if we reference devices by their friendly name instead of IP Address, we "
+"don’t have to change anything in our program if the IP Address changes. DNS "
+"will keep track of the changes and return the new address if it ever "
+"changes."
+msgstr ""
+"这是DNS的第二个好处，与FRC最为相关。使用DNS时，如果我们通过设备的友好名称而不是IP地址来引用设备，则IP地址发生变化时，我们无需在程序中进行任何更改。"
+" DNS将跟踪更改，并在更改后返回新地址。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:117
+msgid "DNS for FRC"
+msgstr "FRC的DNS"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:119
+msgid ""
+"On the field and in the pits, there is no DNS server that allows us to "
+"perform the lookups like we do for the Google web site, but we’d still like "
+"to have the benefits of not remembering every IP Address, and not having to "
+"guess at every device’s address if DHCP assigns a different address than we "
+"expect. This is where mDNS comes into the picture."
+msgstr ""
+"在场地和Pits区内，没有DNS服务器可以像对Google网站那样执行查找，但是我们仍然希望拥有不记住每个IP地址，而不必记住每个IP地址的好处。如果DHCP分配的地址与我们期望的地址不同，则猜测每个设备的地址。这就是mDNS出现的地方。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:121
+msgid ""
+"mDNS provides us the same benefits as traditional DNS, but is just "
+"implemented in a way that does not require a server. Whenever a user asks to"
+" connect to a device using a friendly name, mDNS sends out a message asking "
+"the device with that name to identify itself. The device with the name then "
+"sends a return message including its IP address so all devices on the "
+"network can update their information. mDNS is what allows us to refer to our"
+" roboRIO as ``roboRIO-TEAM-FRC.local`` and have it connect on a DHCP "
+"network."
+msgstr ""
+"mDNS为我们提供了与传统DNS相同的优势，但是仅以不需要服务器的方式实现。每当用户要求使用友好名称连接到设备时，mDNS都会发出一条消息，要求具有该名称的设备标识自己。然后，具有该名称的设备将发送包括其IP地址的返回消息，以便网络上的所有设备都可以更新其信息。"
+" mDNS使我们可以将roboRIO称为``roboRIO-TEAM-FRC.local''并将其连接到DHCP网络上。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:124
+msgid ""
+"If a device used for FRC does not support mDNS, then it will be assigned an "
+"IP Address in the 10.TE.AM.20 - 10.TE.AM.255 range, but we won’t know the "
+"exact address to connect and we won’t be able to use the friendly name like "
+"before. In this case, the device would need to have a static IP Address."
+msgstr ""
+"如果用于FRC的设备不支持mDNS，则会为该设备分配10.TE.AM.20-10.TE.AM.255范围内的IP地址，但我们不知道要连接的确切地址，我们将无法像以前一样使用友好名称。在这种情况下，设备将需要具有静态IP地址。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:127
+msgid "mDNS - Principles"
+msgstr "mDNS-原理"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:129
+msgid ""
+"Multicast Domain Name System (mDNS) is a system which allows for resolution "
+"of host names to IP addresses on small networks with no dedicated name "
+"server. To resolve a host name a device sends out a multicast message to the"
+" network querying for the device. The device then responds with a multicast "
+"message containing it's IP. Devices on the network can store this "
+"information in a cache so subsequent requests for this address can be "
+"resolved from the cache without repeating the network query."
+msgstr ""
+"组播域名系统（mDNS）是一种在没有专用名称服务器的小型网络上允许将主机名解析为IP地址的系统。为了解析主机名，设备向网络发送多播消息以查询该设备。然后，设备以包含其IP的多播消息作为响应。网络上的设备可以将此信息存储在缓存中，因此可以从缓存中解决对该地址的后续请求，而无需重复网络查询。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:132
+msgid "mDNS - Providers"
+msgstr "mDNS-提供者"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:134
+msgid ""
+"To use mDNS, an mDNS implementation is required to be installed on your PC. "
+"Here are some common mDNS implementations for each major platform:"
+msgstr "要使用mDNS，必须在您的PC上安装mDNS工具。以下是每个主要平台的一些常见mDNS工具："
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:136
+msgid "Windows:"
+msgstr "Windows:"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:138
+msgid "**NI mDNS Responder:** Installed with the NI FRC Game Tools"
+msgstr "**NI mDNS Responder:** 用NI FRC Game Tools安装。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:139
+msgid "**Apple Bonjour:** Installed with iTunes"
+msgstr "**Apple Bonjour:** iTunes内安装"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:141
+msgid "OSX:"
+msgstr "OSX:"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:143
+msgid "**Apple Bonjour:** Installed by default"
+msgstr "**Apple Bonjour:** 默认安装"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:145
+msgid "Linux:"
+msgstr "Linux:"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:147
+msgid ""
+"**nss-mDNS/Avahi/Zeroconf:** Installed and enabled by default on some Linux "
+"variants (such as Ubuntu or Mint). May need to be installed or enabled on "
+"others (such as Arch)"
+msgstr ""
+"**nss-mDNS/Avahi/Zeroconf:** "
+"默认在某些Linux变体（例如Ubuntu或Mint）上安装并启用。可能需要在其他产品（例如Arch）上安装或启用"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:150
+msgid "mDNS - Firewalls"
+msgstr "mDNS - 防火墙"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:152
+msgid ""
+"Depending on your PC configuration, no changes may be required, this section"
+" is provided to assist with troubleshooting."
+msgstr "根据您的PC配置，可能不需要进行任何更改，此部分用于帮助进行故障排除。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:154
+msgid ""
+"To work properly mDNS must be allowed to pass through your firewall. Because"
+" the network traffic comes from the mDNS implementation and not directly "
+"from the Driver Station or IDE, allowing those applications through may not "
+"be sufficient. There are two main ways to resolve mDNS firewall issues:"
+msgstr ""
+"为了正常工作，必须允许mDNS穿过防火墙。因为网络流量来自mDNS实施，而不是直接来自Driver "
+"Station或IDE，所以仅允许那些应用程序通过是不够的。解决mDNS防火墙问题的主要方法有两种："
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:156
+msgid ""
+"Add an application/service exception for the mDNS implementation (NI mDNS "
+"Responder is ``C:\\Program Files\\National Instruments\\Shared\\mDNS "
+"Responder\\nimdnsResponder.exe``)"
+msgstr ""
+"为mDNS实施添加应用程序/服务例外（NI mDNS Responder为 ``C:\\Program Files\\National "
+"Instruments\\Shared\\mDNS Responder\\nimdnsResponder.exe``）"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:157
+msgid "Add a port exception for traffic to/from UDP 5353. IP Ranges:"
+msgstr "为往返于UDP 5353的流量添加端口例外。IP范围："
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:159
+msgid "``10.0.0.0 - 10.255.255.255``"
+msgstr "``10.0.0.0 - 10.255.255.255``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:160
+msgid "``172.16.0.0 - 172.31.255.255``"
+msgstr "``172.16.0.0 - 172.31.255.255``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:161
+msgid "``192.168.0.0 - 192.168.255.255``"
+msgstr "``192.168.0.0 - 192.168.255.255``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:162
+msgid "``169.254.0.0 - 169.254.255.255``"
+msgstr "``169.254.0.0 - 169.254.255.255``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:163
+msgid "``224.0.0.251``"
+msgstr "``224.0.0.251``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:166
+msgid "mDNS - Browser support"
+msgstr "mDNS-浏览器支持"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:168
+msgid ""
+"Most web-browsers should be able to utilize the mDNS address to access the "
+"roboRIO web server as long as an mDNS provider is installed. These browsers "
+"include Microsoft Edge, Firefox, and Google Chrome."
+msgstr ""
+"只要安装了mDNS提供程序，大多数Web浏览器就应该能够使用mDNS地址访问roboRIO Web服务器。这些浏览器包括Microsoft "
+"Edge，Firefox和Google Chrome。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:171
+msgid "USB"
+msgstr "USB"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:173
+msgid ""
+"If using the USB interface, no network setup is required (you do need the "
+":ref:`docs/zero-to-robot/step-2/frc-game-tools:Installing the FRC Game "
+"Tools` installed to provide the roboRIO USB Driver). The roboRIO driver will"
+" automatically configure the IP address of the host (your computer) and "
+"roboRIO and the software listed above should be able to locate and utilize "
+"your roboRIO."
+msgstr ""
+"如果使用USB接口，则无需进行网络设置（您将需要ref:`docs/zero-to-robot/step-2/frc-game-"
+"tools:Installing the FRC Game Tools`以提供roboRIO USB驱动）。 "
+"roboRIO驱动程序将自动配置主机（您的计算机）的IP地址，并且roboRIO和上面列出的软件应该能够找到并利用您的roboRIO。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:176
+msgid "Ethernet/Wireless"
+msgstr "以太网/无线"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:178
+msgid ""
+"The :ref:`docs/zero-to-robot/step-3/radio-programming:Programming your "
+"Radio` will enable the DHCP server on the OpenMesh radio in the home use "
+"case (AP mode), if you are putting the OpenMesh in bridge mode and using a "
+"router, you can enable DHCP addressing on the router. The bridge is set to "
+"the same team based IP address as before (``10.TE.AM.1``) and will hand out "
+"DHCP address from ``10.TE.AM.20`` to ``10.TE.AM.199``. When connected to the"
+" field, FMS will also hand out addresses in the same IP range."
+msgstr ""
+":ref:`docs/zero-to-robot/step-3/radio-programming:Programming your Radio` "
+"在家中使用的情况下（AP模式），将在OpenMesh路由器上启用DHCP服务器。如果将OpenMesh置于桥接模式并使用路由器，则可以在路由器上启用DHCP寻址。该网桥设置为与以前相同的基于团队的IP地址（``10.TE.AM.1''），并将DHCP地址从``10.TE.AM.20''分发给``10.TE"
+" .AM.199''。当连接到场地时，FMS还将分发相同IP范围内的地址。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:181
+msgid "Summary"
+msgstr "总结"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:183
+msgid ""
+"IP Addresses are what allow us to communicate with devices on a network. For"
+" FRC, these addresses are going to be in the 10.TE.AM.xx range if we are "
+"connected to a DHCP server or if they are assigned statically, or in the "
+"link-local ``169.254.xx.yy`` range if the devices are set to DHCP, but there"
+" is no server present. For more information on how IP Addresses work, see "
+"`this <https://support.microsoft.com/en-us/help/164015/understanding-tcp-ip-"
+"addressing-and-subnetting-basics>`__ article by Microsoft."
+msgstr ""
+"IP地址使我们能够与网络上的设备进行通信。对于FRC，如果我们连接到DHCP服务器或静态分配了这些地址，则这些地址将在10.TE.AM.xx范围内，或者在本地链接的``169.254.xx.yy''范围内如果设备设置为DHCP，但是不存在服务器。有关IP地址如何工作的更多信息，请参见微软的这篇文章"
+" `this <https://support.microsoft.com/en-us/help/164015/understanding-tcp-"
+"ip-addressing-and-subnetting-basics>`__"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:185
+msgid ""
+"If all devices on the network support mDNS, then all devices can be set to "
+"DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-"
+"FRC.local``). If some devices do not support mDNS, they will need to be set "
+"to use static addresses."
+msgstr ""
+"如果网络上的所有设备均支持mDNS，则可以将所有设备设置为DHCP并使用其友好名称进行引用（例如``roboRIO-TEAM-"
+"FRC.local''）。如果某些设备不支持mDNS，则需要将其设置为使用静态地址。"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:187
+msgid ""
+"If all devices are set to use DHCP or Static IP assignments (with correct "
+"static settings), the communication should work in both the pit and on the "
+"field without any changes needed. If there are a mix of some Static and some"
+" DHCP devices, then the Static devices will connect on the field, but will "
+"not connect in the pit. This can be resolved by either setting all devices "
+"to static settings, or leaving the current settings and providing a DHCP "
+"server in the pit."
+msgstr ""
+"如果将所有设备都设置为使用DHCP或静态IP分配（具有正确的静态设置），则通讯应在Pits区和场地内均可进行，而无需进行任何更改。如果混合使用某些静态设备和某些DHCP设备，则静态设备将在场地内进行连接，但不会在Pits区中进行连接。可以通过以下方式解决此问题：将所有设备设置为静态设置，或者保留当前设置并在Pits区中提供DHCP服务器。"

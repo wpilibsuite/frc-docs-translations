@@ -1,0 +1,292 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Austin Shalit <austinshalit@gmail.com>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-03-01 04:03+0000\n"
+"PO-Revision-Date: 2021-06-22 22:08+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:2
+msgid "Step 3: Creating a Drive Subsystem"
+msgstr "Étape 3 : Création d’un sous-système de déplacement"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:4
+msgid ""
+"Now that our drive is characterized, it is time to start writing our robot "
+"code *proper*.  As mentioned before, we will use the :ref:`command-based "
+"<docs/software/commandbased/what-is-command-based:What Is \"Command-Based\" "
+"Programming?>` framework for our robot code.  Accordingly, our first step is"
+" to write a suitable drive :ref:`subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>` class."
+msgstr ""
+"Maintenant que la base pilotable est caractérisée, c'est le moment de "
+"commencer à écrire notre code robot *proprement dit*. Comme mentionné "
+"précédemment, nous utiliserons le cadre de développement   :ref:`command-"
+"based <docs/software/commandbased/what-is-command-based:What Is \"Command-"
+"Based\" Programming?>`, pour ce faire. Aussi, notre première étape consiste "
+"à créer une classe sous-système de déplacement appropriée  :ref:`subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:6
+msgid ""
+"The full drive class from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will describe the steps "
+"involved in writing this class."
+msgstr ""
+"La classe de déplacement complète du projet d’exemple RamseteCommand (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+"  peut être vu ci-dessous. Le reste de l’article décrira les étapes "
+"nécessaires dans l’écriture de cette classe."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:10
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:46
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:69
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:94
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:119
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:142
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:167
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:190
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:213
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:236
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:18
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:127
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:175
+msgid "C++ (Header)"
+msgstr "C++ (Header ou en-tête)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:26
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:54
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:77
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:102
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:150
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:198
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:221
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:244
+msgid "C++ (Source)"
+msgstr "C++ (Source)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:35
+msgid "Configuring the Drive Encoders"
+msgstr "Configuration des encodeurs du sous-système de déplacement"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:37
+msgid ""
+"The drive encoders measure the rotation of the wheels on each side of the "
+"drive.  To properly configure the encoders, we need to specify two things: "
+"the ports the encoders are plugged into, and the distance per encoder pulse."
+"  Then, we need to write methods allowing access to the encoder values from "
+"code that uses the subsystem."
+msgstr ""
+"Les encodeurs du sous-système de déplacement mesurent la rotation des roues "
+"de chaque côté de la base pilotable. Pour configurer correctement ces "
+"encodeurs, nous devons spécifier deux choses : les ports dans lesquels les "
+"encodeurs sont branchés et la distance par impulsion d’encodeur. Ensuite, "
+"nous devons écrire des méthodes permettant d'obtention de valeurs d’encodeur"
+" à partir du code qui utilise le sous-système."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:40
+msgid "Encoder Ports"
+msgstr "Ports des encodeurs"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:42
+msgid "The encoder ports are specified in the encoder's constructor, like so:"
+msgstr ""
+"Les ports d'encodeur sont spécifiés dans le constructeur de l’encodeur de la"
+" manière suivante :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:63
+msgid "Encoder Distance per Pulse"
+msgstr "Distance par impulsion d'encodeur"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:65
+msgid ""
+"The distance per pulse is specified by calling the encoder's "
+"``setDistancePerPulse`` method.  Note that for the WPILib Encoder class, "
+"\"pulse\" refers to a full encoder cycle (i.e. four edges), and thus will be"
+" 1/4 the value that was specified in the SysId config.  Remember, as well, "
+"that the distance should be measured in meters!"
+msgstr ""
+"La distance par impulsion est spécifiée en appelant la méthode "
+"``setDistancePerPulse`` de l'encodeur. Notez que pour la classe WPILib "
+"Encoder, \"impulsion\" fait référence à un cycle d'encodeur complet (c'est-"
+"à-dire quatre fronts), et sera donc 1/4 de la valeur qui a été spécifiée "
+"dans la configuration SysId. N'oubliez pas non plus que la distance doit "
+"être mesurée en mètres !"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:86
+msgid "Encoder Accessor Method"
+msgstr "Méthode d'obtention d'encodeur"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:88
+msgid ""
+"To access the values measured by the encoders, we include the following "
+"method:"
+msgstr ""
+"Pour accéder aux valeurs mesurées par les encodeurs, nous incluons la "
+"méthode suivante :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:90
+msgid ""
+"The returned velocities **must** be in meters! Because we configured the "
+"distance per pulse on the encoders above, calling ``getRate()`` will "
+"automatically apply the conversion factor from encoder units to meters. If "
+"you are not using WPILib's ``Encoder`` class, you must perform this "
+"conversion either through the respective vendor's API or by manually "
+"multiplying by a conversion factor."
+msgstr ""
+"Les vitesses renvoyées ** doivent ** être en mètres! Parce que nous avons "
+"configuré la distance par impulsion sur les encodeurs ci-dessus, l'appel de "
+"``getRate()``  appliquera automatiquement le facteur de conversion des "
+"unités d'encodeur aux mètres. Si vous n'utilisez pas la classe ``Encoder`` "
+"de WPILib, vous devez effectuer cette conversion soit via l'API du "
+"fournisseur respectif, soit en multipliant manuellement par un facteur de "
+"conversion."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:110
+msgid ""
+"We wrap the measured encoder values in a ``DifferentialDriveWheelSpeeds`` "
+"object for easier integration with the ``RamseteCommand`` class later on."
+msgstr ""
+"Nous enveloppons les valeurs d’encodeur mesurées dans un objet "
+"``DifferentialDriveWheelSpeeds`` pour faciliter l’intégration, plus tard, "
+"avec la classe ``RamseteCommand``."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:113
+msgid "Configuring the Gyroscope"
+msgstr "Configuration du Gyroscope"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:115
+msgid ""
+"The gyroscope measures the rate of change of the robot's heading (which can "
+"then be integrated to provide a measurement of the robot's heading relative "
+"to when it first turned on).  In our example, we use the `Analog Devices "
+"ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-"
+"pages/001/first.html>`__, which has been included in the kit of parts for "
+"several years:"
+msgstr ""
+"Le gyroscope mesure le taux de changement de position angulaire du robot "
+"(qui peut ensuite être intégré pour fournir une mesure de l'angle du robot "
+"par rapport au moment où il s’est allumé pour la première fois). Dans notre "
+"exemple, nous utilisons le `Gyro Analog Devices ADXRS450 de board FRC "
+"<https://www.analog.com/en/landing-pages/001/first.html>`__, qui est inclus "
+"dans le kit de pièces depuis plusieurs années :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:136
+msgid "Gyroscope Accessor Method"
+msgstr "Méthode d'obtention du gyroscope"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:138
+msgid ""
+"To access the current heading measured by the gyroscope, we include the "
+"following method:"
+msgstr ""
+"Pour accéder à l'orientation actuelle mesurée par le gyroscope, nous "
+"incluons la méthode suivante :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:159
+msgid "Configuring the Odometry"
+msgstr "Configuration de l’odométrie"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:161
+msgid ""
+"Now that we have our encoders and gyroscope configured, it is time to set up"
+" our drive subsystem to automatically compute its position from the encoder "
+"and gyroscope readings."
+msgstr ""
+"Maintenant que nous avons nos encodeurs et gyroscope configurés, nous "
+"pouvons mettre en place notre sous-système de déplacement pour calculer "
+"automatiquement sa position à partir des lectures obtenues des encodeurs et "
+"de gyroscope."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:163
+msgid ""
+"First, we create a member instance of the ``DifferentialDriveOdometry`` "
+"class:"
+msgstr ""
+"Tout d’abord, nous créons une instance membre de la classe "
+"``DifferentialDriveOdometry``:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:184
+msgid "Updating the Odometry"
+msgstr "Mise à jour de l’odométrie"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:186
+msgid ""
+"The odometry class must be regularly updated to incorporate new readings "
+"from the encoder and gyroscope.  We accomplish this inside the subsystem's "
+"``periodic`` method, which is automatically called once per main loop "
+"iteration:"
+msgstr ""
+"La classe d’odométrie doit être régulièrement mise à jour pour incorporer de"
+" nouvelles lectures de l’encodeur et du gyroscope. Nous accomplissons cela à"
+" l’intérieur de la méthode ``periodic`` du sous-système, qui est "
+"automatiquement appelée une fois à chaque itération de boucle principale :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:207
+msgid "Odometry Accessor Method"
+msgstr "Méthode d'obtention de l'odométrie"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:209
+msgid ""
+"To access the robot's current computed pose, we include the following "
+"method:"
+msgstr ""
+"Pour accéder à la pose actuelle calculée du robot, nous incluons la méthode "
+"suivante :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:230
+msgid "Voltage-Based Drive Method"
+msgstr "Méthode du sous-système de déplacement en charge de la tension"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:232
+msgid ""
+"Finally, we must include one additional method - a method that allows us to "
+"set the voltage to each side of the drive using the ``setVoltage()`` method "
+"of the ``MotorController`` interface.  The default WPILib drive class does "
+"not include this functionality, so we must write it ourselves:"
+msgstr ""
+"Enfin, nous devons inclure une méthode supplémentaire - une méthode qui nous"
+" permet de régler la tension de chaque côté de la base pilotable en "
+"utilisant la méthode ``setVoltage()`` de l’interface ``MotorController``. La"
+" classe du système d'entraînement WPILib par défaut n’inclut pas cette "
+"fonctionnalité, nous devons donc l’écrire nous-mêmes:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:252
+msgid ""
+"It is very important to use the ``setVoltage()`` method rather than the "
+"ordinary ``set()`` method, as this will automatically compensate for battery"
+" \"voltage sag\" during operation.  Since our feedforward voltages are "
+"physically-meaningful (as they are based on measured identification data), "
+"this is essential to ensuring their accuracy."
+msgstr ""
+"Il est très important d'utiliser la méthode ``setVoltage()`` plutôt que la "
+"méthode ordinaire ``set()``, car cela compensera automatiquement la \"baisse"
+" de tension\" de la batterie pendant le fonctionnement. Étant donné que nos "
+"tensions d'anticipation ont une signification physique (car elles sont "
+"basées sur des données d'identification mesurées), cela est essentiel pour "
+"garantir leur exactitude."

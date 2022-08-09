@@ -1,0 +1,395 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Demet T <dtumkaya19@ku.edu.tr>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-18 16:14+0000\n"
+"PO-Revision-Date: 2020-09-04 16:14+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:2
+msgid "A Technical Discussion on C++ Commands"
+msgstr "C++ Komutları Üzerine Teknik Bir Tartışma"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:3
+msgid ""
+"This article serves as a technical discussion on some of the design "
+"decisions that were made when designing the new command-based framework in "
+"C++. You do not need to understand the information within this article to "
+"use the command-based framework in your robot code."
+msgstr ""
+"Bu makale, C++ 'da yeni komut tabanlı framework tasarlanırken alınan bazı "
+"tasarım kararları hakkında teknik bir tartışma görevi görür. Robot kodunuzda"
+" komut tabanlı framework'ü kullanmak için bu makaledeki bilgileri anlamanıza"
+" gerek yoktur."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:5
+msgid ""
+"This article assumes that you have a fair understanding of advanced C++ "
+"concepts, including templates, smart pointers, inheritance, rvalue "
+"references, copy semantics, move semantics, and CRTP."
+msgstr ""
+"Bu makale, şablonlar, akıllı işaretçiler, inheritance -kalıtım, rvalue "
+"referansları, semantik kopyalama, semantik taşıma ve CRTP dahil olmak üzere "
+"gelişmiş C++ kavramları hakkında net bir bilgiye sahip olduğunuzu varsayar."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:7
+msgid ""
+"This article will help you understand the reasoning behind some of the "
+"decisions made in the new command-based framework (such as the use of "
+"``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, "
+"the lack of more advanced decorators that are available in Java, etc.)"
+msgstr ""
+"Bu makale, yeni komut tabanlı framework'te verilen bazı kararların "
+"arkasındaki mantığı anlamanıza yardımcı olacaktır (``std::unique_ptr`` "
+"kullanımı, ``CommandHelper<Base, Derived>`` şeklinde CRTP, Java'da bulunan "
+"daha gelişmiş araçların eksikliği vb. gibi)."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:10
+msgid "Ownership Model"
+msgstr "Sahiplik Modeli"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:11
+msgid ""
+"The old command-based framework employed the use of raw pointers, meaning "
+"that users had to use ``new`` (resulting in manual heap allocations) in "
+"their robot code. Since there was no clear indication on who owned the "
+"commands (the scheduler, the command groups, or the user themselves), it was"
+" not apparent who was supposed to take care of freeing the memory."
+msgstr ""
+"Eski komut tabanlı framework, ham işaretçilerin kullanımını kullanıyordu, bu"
+" da kullanıcıların robot kodlarında ``new -yeni``  (manuel öbek ayrımlarıyla"
+" sonuçlanan) kullanmaları gerektiği anlamına geliyordu. Komutların kime ait "
+"olduğuna dair net bir gösterge olmadığından (zamanlayıcı, komut grupları "
+"veya kullanıcının kendisi), hafızayı boşaltmakla kimin ilgileneceği belli "
+"değildi."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:13
+msgid ""
+"Several examples in the old command-based framework involved code like this:"
+msgstr ""
+"Eski komut tabanlı framework'teki birkaç örnek şu şekilde kod içeriyordu:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:27
+msgid ""
+"In the command-group above, the component commands of the command group were"
+" being heap allocated and passed into ``AddSequential`` all in the same "
+"line. This meant that that user had no reference to that object in memory "
+"and therefore had no means of freeing the allocated memory once the command "
+"group ended. The command group itself never freed the memory and neither did"
+" the command scheduler. This led to memory leaks in robot programs (i.e. "
+"memory was allocated on the heap but never freed)."
+msgstr ""
+"Yukarıdaki komut grubunda, komut grubunun bileşen komutlarının hepsi aynı "
+"satırda öbek ayrılıyor ve ``AddSequential -Sıralı Ekle`` ye aktarılıyordu. "
+"Bu, kullanıcının bellekteki bu nesneye referansının olmadığı ve bu nedenle "
+"komut grubu sona erdiğinde tahsis edilen belleği boşaltmanın hiçbir yolu "
+"olmadığı anlamına geliyordu. Komut grubunun kendisi ve komut zamanlayıcı da "
+"hiçbir zaman belleği boşaltmadı. Bu, robot programlarında bellek "
+"sızıntılarına yol açtı (yani bellek öbek üzerine ayrıldı, ancak asla "
+"boşaltılmadı)."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:29
+msgid ""
+"This glaring problem was one of the reasons for the rewrite of the "
+"framework. A comprehensive ownership model was introduced with this rewrite,"
+" along with the usage of smart pointers which will automatically free memory"
+" when they go out of scope."
+msgstr ""
+"Bu göze batan sorun, framework-çerçevenin yeniden yazılmasının nedenlerinden"
+" biriydi. Bu yeniden yazma ile birlikte kapsamlı bir sahiplik modeli ve "
+"kapsam dışına çıktıklarında hafızayı otomatik olarak boşaltacak akıllı "
+"işaretçilerin kullanımıyla birlikte tanıtıldı."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:31
+msgid ""
+"Default commands are owned by the command scheduler whereas component "
+"commands of command groups are owned by the command group. Other commands "
+"are owned by whatever the user decides they should be owned by (e.g. a "
+"subsystem instance or a ``RobotContainer`` instance). This means that the "
+"ownership of the memory allocated by any commands or command groups is "
+"clearly defined."
+msgstr ""
+"Varsayılan komutlar, komut zamanlayıcıya aitken komut gruplarının bileşen "
+"komutları, komut grubuna aittir. Diğer komutlar, kullanıcının sahip olması "
+"gerektiğine karar verdiği herhangi bir şeye aittir (örneğin bir alt sistem "
+"örneği veya bir ``RobotContainer`` örneği). Bu, herhangi bir komut veya "
+"komut grubu tarafından ayrılan belleğin sahipliğinin açıkça tanımlandığı "
+"anlamına gelir. "
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:34
+msgid "``std::unique_ptr`` vs. ``std::shared_ptr``"
+msgstr "``std::unique_ptr`` vs. ``std::shared_ptr``"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:35
+msgid ""
+"Using ``std::unique_ptr`` allows us to clearly determine who owns the "
+"object. Because an ``std::unique_ptr`` cannot be copied, there will never be"
+" more than one instance of a ``std::unique_ptr`` that points to the same "
+"block of memory on the heap. For example, a constructor for "
+"``SequentialCommandGroup`` takes in a "
+"``std::vector<std::unique_ptr<Command>>&&``. This means that it requires an "
+"rvalue reference to a vector of ``std::unique_ptr<Command>``. Let's go "
+"through some example code step-by-step to understand this better:"
+msgstr ""
+"``std::unique_ptr`` kullanmak, nesneye kimin sahip olduğunu açıkça "
+"belirlememizi sağlar. Bir ``std::unique_ptr`` kopyalanamadığı için, öbek "
+"üzerinde aynı bellek bloğunu işaret eden bir ``std::unique_ptr`` nin birden "
+"fazla örneği olmayacaktır. Örneğin, ``SequentialCommandGroup`` için bir "
+"constructor -yapıcı, bir ``std::vector<std::unique_ptr<Command>>&&`` alır. "
+"Bu, ``std::unique_ptr<Command>`` vektörüne bir rvalue referansı gerektirdiği"
+" anlamına gelir. Bunu daha iyi anlamak için bazı örnek kodları adım adım "
+"inceleyelim:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:61
+msgid ""
+"With ``std::shared_ptr``, there is no clear ownership model because there "
+"can be multiple instances of a ``std::shared_ptr`` that point to the same "
+"block of memory. If commands were in ``std::shared_ptr`` instances, a "
+"command group or the command scheduler cannot take ownership and free the "
+"memory once the command has finished executing because the user might still "
+"unknowingly still have a ``std::shared_ptr`` instance pointing to that block"
+" of memory somewhere in scope."
+msgstr ""
+"``std::shared_ptr`` ile, açık bir sahiplik modeli yoktur çünkü aynı bellek "
+"bloğunu işaret eden bir ``std::shared_ptr`` nin birden fazla örneği "
+"olabilir. Komutlar ``std::shared_ptr`` örneklerinde olsaydı, bir komut grubu"
+" veya komut zamanlayıcı, komutun yürütülmesi bittikten sonra sahipliği "
+"alamaz ve belleği boşaltamaz çünkü kullanıcı hala kapsamı içinde bir yerdeki"
+" bellek bloğuna işaret eden örnek ``std::shared_ptr`` ye sahip olabilir. "
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:64
+msgid "Use of CRTP"
+msgstr "CRTP kullanımı"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:65
+msgid ""
+"You may have noticed that in order to create a new command, you must extend "
+"``CommandHelper``, providing the base class (usually ``frc2::Command``) and "
+"the class that you just created. Let's take a look at the reasoning behind "
+"this:"
+msgstr ""
+"Yeni bir komut oluşturmak için, temel sınıfı (genellikle ``frc2::Command`) "
+"ve yeni oluşturduğunuz sınıfı sağlayarak ``CommandHelper`` ı genişletmeniz "
+"gerektiğini fark etmiş olabilirsiniz. Bunun arkasındaki nedene bir göz "
+"atalım:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:68
+msgid "Command Decorators"
+msgstr "Komut Dekoratörleri"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:69
+msgid ""
+"The new command-based framework includes a feature known as \"command "
+"decorators\", which allows the user to something like this:"
+msgstr ""
+"Yeni komut tabanlı framework, kullanıcının aşağıdaki gibi bir şey yapmasına "
+"olanak tanıyan \"komut dekoratörleri\" olarak bilinen bir özelliği içerir:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:76
+msgid ""
+"When ``task`` is scheduled, it will first execute ``MyCommand()`` and once "
+"that command has finished executing, it will print the message to the "
+"console. The way this is achieved internally is by using a sequential "
+"command group."
+msgstr ""
+"``task -görev`` zamanlandığında, ilk önce ``MyCommand()`` çalıştıracak ve bu"
+" komutun yürütülmesi bittiğinde, mesajı konsola yazdıracaktır. Bunun dahili "
+"olarak elde etmenin yolu, sıralı bir komut grubu kullanmaktır."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:78
+msgid ""
+"Recall from the previous section that in order to construct a sequential "
+"command group, we need a vector of unique pointers to each command. Creating"
+" the unique pointer for the print function is pretty trivial:"
+msgstr ""
+"Bir önceki bölümden, sıralı bir komut grubu oluşturmak için her komuta "
+"benzersiz bir işaretçi vektörüne ihtiyacımız olduğunu hatırlayın. Yazdırma "
+"işlevi için benzersiz bir işaretçi oluşturmak oldukça basittir:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:85
+msgid ""
+"Here ``temp`` is storing the vector of commands that we need to pass into "
+"the ``SequentialCommandGroup`` constructor. But before we add that "
+"``InstantCommand``, we need to add ``MyCommand()`` to the "
+"``SequentialCommandGroup``. How do we do that?"
+msgstr ""
+"Burada ``temp`` , ``SequentialCommandGroup`` yapıcısına iletmemiz gereken "
+"komut vektörünü depoluyor. Ancak ``InstantCommand``i eklemeden önce, "
+"``SequentialCommandGroup`` a, ``MyCommand()`` eklememiz gerekiyor. Bunu "
+"nasıl yaparız?"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:91
+msgid ""
+"You might think it would be this straightforward, but that is not the case. "
+"Because this decorator code is in the ``Command`` interface, ``*this`` "
+"refers to the ``Command`` in the subclass that you are calling the decorator"
+" from and has the type of ``Command``. Effectively, you will be trying to "
+"move a ``Command`` instead of ``MyCommand``. We could cast the ``this`` "
+"pointer to a ``MyCommand*`` and then dereference it but we have no "
+"information about the subclass to cast to at compile-time."
+msgstr ""
+"Bunun bu kadar basit olacağını düşünebilirsiniz, ancak durum bu değil. Bu "
+"dekoratör kodu ``Command`` arayüzünde olduğu için, ``*this``, dekoratörü "
+"çağırdığınız alt sınıfta aynı zamanda ``Command`` türüne sahip bulunan "
+"``Command`` anlamına gelir. Etkili bir şekilde, ``MyCommand`` yerine bir "
+"``Command`` taşımaya çalışacaksınız. ``this`` işaretçisini bir "
+"``MyCommand*``e çevirebilir ve sonra referansını kaldırabiliriz, ancak "
+"derleme sırasında kullanılacak alt sınıf hakkında hiçbir bilgimiz yoktur."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:94
+msgid "Solutions to the Problem"
+msgstr "Soruna Yönelik Çözümler"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:96
+msgid ""
+"Our initial solution to this was to create a virtual method in ``Command`` "
+"called ``TransferOwnership()`` that every subclass of ``Command`` had to "
+"override. Such an override would have looked like this:"
+msgstr ""
+"Buna ilk çözümümüz, ``Command`` içinde ``TransferOwnership()`` adlı, "
+"``Command`` in her alt sınıfının geçersiz kılmak zorunda olduğu sanal bir "
+"yöntem oluşturmaktı. Böyle bir geçersiz kılma şuna benzerdi:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:104
+msgid ""
+"Because the code would be in the derived subclass, ``*this`` would actually "
+"point to the desired subclass instance and the user has the type info of the"
+" derived class to make the unique pointer."
+msgstr ""
+"Kod türetilmiş alt sınıfta olacağından, ``*this`` aslında istenen alt sınıf "
+"örneğini işaret eder ve kullanıcı, benzersiz işaretçiyi yapmak için "
+"türetilmiş sınıfın tür bilgisine sahiptir."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:106
+msgid ""
+"After a few days of deliberation, a CRTP method was proposed. Here, an "
+"intermediary derived class of ``Command`` called ``CommandHelper`` would "
+"exist. ``CommandHelper`` would have two template arguments, the original "
+"base class and the desired derived subclass. Let's take a look at a basic "
+"implementation of ``CommandHelper`` to understand this:"
+msgstr ""
+"Birkaç günlük değerlendirmeden sonra, bir CRTP yöntemi önerildi. Burada, "
+"``CommandHelper`` adı verilen, aracı olarak türetilmiş bir ``Command`` "
+"sınıfı mevcut olacaktır. ``CommandHelper`` iki şablon argümanına sahip "
+"olacaktır, orijinal temel sınıf ve istenen türetilmiş alt sınıf. Bunu "
+"anlamak için ``CommandHelper``' ın temel uygulamasına bir göz atalım:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:126
+msgid ""
+"Thus, making your custom commands extend ``CommandHelper`` instead of "
+"``Command`` will automatically implement this boilerplate for you and this "
+"is the reasoning behind asking teams to use what may seem to be a rather "
+"obscure way of doing things."
+msgstr ""
+"Bu nedenle, özel komutlarınızı ``Command`` yerine ``CommandHelper`` "
+"kapsamında yapmak, bu standart levhayı -boilerplate sizin için otomatik "
+"olarak uygulayacaktır ve ekiplerden işleri yapmak için oldukça belirsiz gibi"
+" görünen bir yöntemi kullanmalarını istemenin arkasındaki sebep budur."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:128
+msgid "Going back to our ``AndThen()`` example, we can now do the following:"
+msgstr ""
+"``AndThen()`` örneğimize geri dönersek, şimdi aşağıdakileri yapabiliriz:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:138
+msgid "Lack of Advanced Decorators"
+msgstr "Gelişmiş Dekoratörlerin Eksikliği"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:139
+msgid ""
+"Most of the C++ decorators take in ``std::function<void()>`` instead of "
+"actual commands themselves. The idea of taking in actual commands in "
+"decorators such as ``AndThen()``, ``BeforeStarting()``, etc. was considered "
+"but then abandoned due to a variety of reasons."
+msgstr ""
+"C++ dekoratörlerinin çoğu, gerçek komutların kendileri yerine "
+"``std::function<void()>`` alır. Dekoratörlerde ``AndThen()``, "
+"``BeforeStarting()`` vb. gibi gerçek komutları alma fikri düşünüldü, ancak "
+"daha sonra çeşitli nedenlerle terk edildi."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:142
+msgid "Templating Decorators"
+msgstr "Dekoratörleri Şablonlama"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:143
+msgid ""
+"Because we need to know the types of the commands that we are adding to a "
+"command group at compile-time, we will need to use templates (variadic for "
+"multiple commands). However, this might not seem like a big deal. The "
+"constructors for command groups do this anyway:"
+msgstr ""
+"Derleme zamanında, bir komut grubuna eklediğimiz komutların türlerini "
+"bilmemiz gerektiğinden, şablonları  (çoklu komutlar için değişken) "
+"kullanmamız gerekecek. Ancak, bu büyük bir uğraş gibi görünmeyebilir. Komut "
+"grupları için yapıcılar bunu yine de yapar:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:165
+msgid ""
+"This is a secondary constructor for ``SequentialCommandGroup`` in addition "
+"to the vector constructor that we described above."
+msgstr ""
+"Bu, yukarıda tanımladığımız vektör yapıcısına ek olarak "
+"``SequentialCommandGroup`` için ikincil bir kurucudur."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:167
+msgid ""
+"However, when we make a templated function, its definition must be declared "
+"inline. This means that we will need to instantiate the "
+"``SequentialCommandGroup`` in the ``Command.h`` header, which poses a "
+"problem. ``SequentialCommandGroup.h`` includes ``Command.h``. If we include "
+"``SequentialCommandGroup.h`` inside of ``Command.h``, we have a circular "
+"dependency. How do we do it now then?"
+msgstr ""
+"Bununla birlikte, şablonlanmış bir fonksiyon yaptığımızda, tanımı satır içi-"
+"inline olarak bildirilmelidir. Bu, bir sorun oluşturan ``Command.h`` "
+"başlığındaki ``SequentialCommandGroup`` örneğini oluşturmamız gerektiği "
+"anlamına gelir. ``SequentialCommandGroup.h``, ``Command.h`` içerir.  "
+"``Command.h`` içerisine ``SequentialCommandGroup.h`` eklersek, döngüsel bir "
+"bağımlılığımız olur. Şimdi nasıl yapacağız peki?"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:169
+msgid "We use a forward declaration at the top of ``Command.h``:"
+msgstr ""
+"`Command.h`` başlığının üstünde ileriye dönük bir bildirim kullanıyoruz:"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:177
+msgid ""
+"And then we include ``SequentialCommandGroup.h`` in ``Command.cpp``. If "
+"these decorator functions were templated however, we cannot write "
+"definitions in the ``.cpp`` files, resulting in a circular dependency."
+msgstr ""
+"Ve sonra ``SequentialCommandGroup.h`` yi ``Command.cpp`` içine dahil "
+"ediyoruz. Bu dekoratör işlevleri şablon haline getirildiyse, ``.cpp`` "
+"dosyalarına tanım yazamayız ve bu da döngüsel bir bağımlılıkla sonuçlanır."
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:180
+msgid "Java vs C++ Syntax"
+msgstr "Java vs. C++ Sözdizimi Kuralları"
+
+#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:181
+msgid ""
+"These decorators usually save more verbosity in Java (because Java requires "
+"raw ``new`` calls) than in C++, so in general, it does not make much of a "
+"syntanctic difference in C++ if you create the command group manually in "
+"user code."
+msgstr ""
+"Bu dekoratörler genellikle Java'da C++'dan daha fazla ayrıntıyı kaydeder "
+"(çünkü Java,  ham ``new -yeni`` çağrılar gerektirir), bu nedenle genel "
+"olarak; komut grubunu, kullanıcı kodunda manuel olarak oluşturursanız, C++' "
+"da söz dizimsel bir fark yaratmaz."

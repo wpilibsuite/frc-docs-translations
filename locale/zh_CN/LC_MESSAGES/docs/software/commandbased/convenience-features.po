@@ -1,0 +1,370 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Jiangshan Gong <jiangshan_gong@163.com>, 2020
+# Tianrui Wu <tw2789@columbia.edu>, 2020
+# 8192 DHC <hehehehehehe886@gmail.com>, 2021
+# Team 5308 <team5308@163.com>, 2021
+# Atlus Zhang <atluslan@yahoo.co.jp>, 2022
+# tianshuang Zhang <2948026254@qq.com>, 2022
+# Yitong Zhao <lucius300er@outlook.com>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-28 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2022\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:2
+msgid "Convenience Features"
+msgstr "便捷功能"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:4
+msgid ""
+"While the previously-described methodologies will work fine for writing "
+"command-based robot code, the command-based libraries contain several "
+"convenience features for more-advanced users that can greatly reduce the "
+"verbosity/complexity of command-based code. It is highly recommended that "
+"users familiarize themselves with these features to maximize the value they "
+"get out of the command-based libraries."
+msgstr ""
+"虽然先前描述的方法对于编写基于命令的机器人代码将很好地工作，但是基于命令的库包含一些高级功能，可帮助高级用户大大减少基于命令的代码的冗长/复杂性。强烈建议用户熟悉这些功能，以最大化从基于命令的库中获得的价值。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:7
+msgid "Inline Command Definitions"
+msgstr "内联命令定义"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:9
+msgid ""
+"While users are able to create commands by explicitly writing command "
+"classes (either by subclassing ``CommandBase`` or implementing ``Command``),"
+" for many commands (such as those that simply call a single subsystem "
+"method) this involves a lot of wasteful boilerplate code. To help alleviate "
+"this, many of the prewritten commands included in the command-based library "
+"may be *inlined* - that is, the command body can be defined in a single line"
+" of code at command construction."
+msgstr ""
+"尽管用户可以通过显式编写命令类（通过子类化“CommandBase”或实现“Command”）来创建命令，但是对于许多命令（例如那些仅调用单个子系统方法的命令）而言，这涉及很多浪费的样板代码。为了缓解这种情况，可以*内嵌*基于命令的库中包含的许多预写命令-即，可以在命令构造时以单行代码定义命令主体。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:12
+msgid "Passing Subroutines As Parameters"
+msgstr "将子例程作为参数传递"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:14
+msgid ""
+"In order to inline a command definition, users require some way to specify "
+"what code the commands will run as constructor parameters. Fortunately, both"
+" Java and C++ offer users the ability to pass subroutines as parameters."
+msgstr ""
+"为了内联命令定义，用户需要某种方式来指定命令将作为构造函数参数运行的代码。幸运的是，Java和C ++都为用户提供了将子例程作为参数传递的功能。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:17
+msgid "Method References (Java)"
+msgstr "方法参考（Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:19
+msgid ""
+"In Java, a reference to a subroutine that can be passed as a parameter is "
+"called a method reference. The general syntax for a method reference is "
+"``object::method``. Note that no method parameters are included, since the "
+"method *itself* is the parameter. The method is not being called - it is "
+"being passed to another piece of code (in this case, a command) so that "
+"*that* code can call it when needed. For further information on method "
+"references, see `the official Oracle documentation "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__."
+msgstr ""
+"在Java中，对可以作为参数传递的子例程的引用称为方法引用。方法参考的一般语法是“object::method”。请注意，由于方法*itself*是参数，因此不包括方法参数。该方法没有被调用-"
+"它被传递给另一段代码（在本例中为命令），以便*那个*代码可以在需要时调用它。有关方法引用的更多信息，请参见`the official Oracle "
+"documentation "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html>`__。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:22
+msgid "Lambda Expressions (Java)"
+msgstr "Lambda表达式（Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:24
+msgid ""
+"While method references work well for passing a subroutine that has already "
+"been written, often it is inconvenient/wasteful to write a subroutine solely"
+" for the purpose of sending as a method reference, if that subroutine will "
+"never be used elsewhere. To avoid this, Java also supports a feature called "
+"\"lambda expressions.\" A lambda expression is an inline method definition -"
+" it allows a subroutine to be defined *inside of a parameter list*. For "
+"specifics on how to write Java lambda expressions, see `this tutorial "
+"<https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__."
+msgstr ""
+"尽管方法引用可以很好地传递已编写的子例程，但是如果子例程永远不会在其他地方使用，则仅出于发送方法引用的目的而编写子例程通常是不便/浪费的。为避免这种情况，Java还支持称为“"
+" lambda表达式”的功能。 Lambda表达式是一个内联方法定义-它允许在*参数列表*内定义子例程。有关如何编写Java "
+"lambda表达式的详细信息，请参见本教程<https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html#syntax>`__.。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:27
+msgid "Lambda Expressions (C++)"
+msgstr "Lambda表达式（C ++）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:29
+msgid ""
+"Due to complications in C++ semantics, capturing ``this`` in a C++ lambda "
+"can cause a null pointer exception if done from a component command of a "
+"command group.  Whenever possible, C++ users should capture relevant command"
+" members explicitly and by value.  For more details, see `here "
+"<https://github.com/wpilibsuite/allwpilib/issues/3109>`__."
+msgstr ""
+"由于C ++语义的复杂性，如果从命令组的组件命令执行此操作，则在C ++ lambda中捕获``this''会导致空指针异常。 C "
+"++用户应尽可能明确并按值捕获相关的命令成员。有关更多详细信息，请参见`here "
+"<https://github.com/wpilibsuite/allwpilib/issues/3109>`__。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:31
+msgid ""
+"C++ lacks a close equivalent to Java method references - pointers to member "
+"functions are generally not directly useable as parameters due to the "
+"presence of the implicit ``this`` parameter.  However, C++ does offer lambda"
+" expressions - in addition, the lambda expressions offered by C++ are in "
+"many ways more powerful than those in Java.  For specifics on how to write "
+"C++ lambda expressions, see `cppreference "
+"<https://en.cppreference.com/w/cpp/language/lambda>`__."
+msgstr ""
+"C ++缺少与Java方法引用几乎相同的功能-成员函数的指针由于存在隐式的“this”参数而通常不能直接用作参数。但是，C "
+"++确实提供了lambda表达式——此外，C ++提供的lambda表达式在许多方面都比Java语言更强大。有关如何编写C ++ "
+"lambda表达式的详细信息，请参见`cppreference "
+"<https://en.cppreference.com/w/cpp/language/lambda>`__。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:34
+msgid "Inlined Command Example"
+msgstr "内联命令示例"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:36
+msgid "So, what does an inlined command definition look like in practice?"
+msgstr "那么，内联命令定义实际上是什么样的？"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:38
+msgid ""
+"The ``InstantCommand`` class provides an example of a type of command that "
+"benefits greatly from inlining. Consider the following from the "
+"HatchBotInlined example project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>`__):"
+msgstr ""
+"InstantCommand类提供了一个受益于内联的命令类型的示例。考虑一下HatchBotInlined示例项目中的以下内容（Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbotinlined>"
+" __，C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotInlined>"
+" __）："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:66
+msgid ""
+"Instead of wastefully writing separate ``GrabHatch`` and ``ReleaseHatch`` "
+"commands which call only one method before ending, both can be accomplished "
+"with a simple inline definition by passing appropriate subsystem method."
+msgstr ""
+"不必浪费时间编写单独的“GrabHatch”和“ReleaseHatch”命令，这些命令在结束前仅调用一个方法，而可以通过传递适当的子系统方法，通过简单的内联定义来完成这两个命令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:69
+msgid "Included Command Types"
+msgstr "包含的命令类型"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:74
+msgid "ConditionalCommand"
+msgstr "条件命令"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:91
+msgid "SelectCommand"
+msgstr "SelectCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:93
+msgid ""
+"While the Java version of SelectCommand simply uses an ``Object`` as a key, "
+"the C++ version is templated on the key type."
+msgstr "Java版本的SelectCommand仅使用“Object”作为键，而C ++版本则以键类型为模板。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:95
+msgid ""
+"An alternate version of SelectCommand simply takes a method that supplies "
+"the command to be run - this can be very succinct, but makes inferring the "
+"command's requirements impossible, and so leaves the user responsible for "
+"manually adding the requirements to the SelectCommand."
+msgstr ""
+"SelectCommand的替代版本仅采用一种提供要运行的命令的方法——这可能非常简洁，但是使推断命令的需求成为不可能，因此，用户需要手动将需求添加到SelectCommand。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:118
+msgid "InstantCommand"
+msgstr "InstantCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:135
+msgid "RunCommand"
+msgstr "RunCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:163
+msgid "StartEndCommand"
+msgstr "StartEndCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:192
+msgid "FunctionalCommand"
+msgstr "FunctionalCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:229
+msgid "PrintCommand"
+msgstr "PrintCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:244
+msgid "ScheduleCommand"
+msgstr "ScheduleCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:260
+msgid ""
+"This is often useful for \"forking off\" from command groups: by default, "
+"commands in command groups are run *through* the command group, and are "
+"never themselves seen by the scheduler.  Accordingly, their requirements are"
+" added to the group's requirements.  While this is usually fine, sometimes "
+"it is undesirable for the entire command group to gain the requirements of a"
+" single command - a good solution is to \"fork off\" from the command group "
+"and schedule that command separately."
+msgstr ""
+"这通常对于从命令组“forking "
+"off”很有用：默认情况下，命令组中的命令是*通过*命令组运行的，而调度程序永远不会看到它们。因此，他们的要求被添加到组的要求中。尽管这通常很好，但有时整个命令组都不希望获得单个命令的要求——一个好的解决方案是从命令组“fork"
+" off”并单独计划该命令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:263
+msgid "ProxyScheduleCommand"
+msgstr "ProxyScheduleCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:279
+msgid ""
+"This is often useful for \"forking off\" from command groups: by default, "
+"commands in command groups are run *through* the command group, and are "
+"never themselves seen by the scheduler.  Accordingly, their requirements are"
+" added to the group's requirements.  While this is usually fine, sometimes "
+"it is undesirable for the entire command group to gain the requirements of a"
+" single command - a good solution is to \"fork off\" from the command group "
+"and schedule the command separately."
+msgstr ""
+"这通常对于从命令组“forking "
+"off”很有用：默认情况下，命令组中的命令是通过命令组运行的，而调度程序永远不会看到它们。因此，他们的要求被添加到组的要求中。虽然这通常很好，但是有时整个命令组都不希望获得单个命令的要求——一个好的解决方案是从命令组“fork"
+" iff”并单独计划命令。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:282
+msgid "WaitCommand"
+msgstr "WaitCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:298
+msgid "This is often useful as a component of a command group."
+msgstr "这通常作为命令组的组成部分很有用。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:300
+msgid ""
+"``WaitCommand`` can also be subclassed to create a more complicated command "
+"that runs for a period of time. If ``WaitCommand`` is used in this method, "
+"the user must ensure that the ``WaitCommand``'s ``Initialize``, ``End``, and"
+" ``IsFinished`` methods are still called in order for the WaitCommand's "
+"timer to work."
+msgstr ""
+"也可以将``WaitCommand``子类化以创建运行一段时间的更复杂的命令。如果在此方法中使用了“ WaitCommand”，则用户必须确保仍然调用“"
+" WaitCommand”的“ Initialize”，“ End”和“ IsFinished”方法，以便WaitCommand的计时器起作用。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:303
+msgid "WaitUntilCommand"
+msgstr "WaitUnitilCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:305
+msgid ""
+"The match timer used by WaitUntilCommand does *not* provide an official "
+"match time!  While it is fairly accurate, use of this timer can *not* "
+"guarantee the legality of your robot's actions."
+msgstr "WaitUntilCommand使用的比赛计时器*不*提供官方比赛时间！虽然非常准确，但是使用此计时器*不能*保证机器人动作的合法性。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:328
+msgid "PerpetualCommand"
+msgstr "PerpetualCommand"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:345
+msgid "Command Decorator Methods"
+msgstr "命令装饰器的方法"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:356
+msgid "withTimeout"
+msgstr "withTimeout"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:393
+msgid "andThen"
+msgstr "andThen"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:410
+msgid "beforeStarting"
+msgstr "beforeStarting"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:427
+msgid "alongWith (Java only)"
+msgstr "alongWith（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:429
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel command group the ordinary way instead."
+msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行命令组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:439
+msgid "raceWith (Java only)"
+msgstr "raceWith（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:441
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel race group the ordinary way instead."
+msgstr "由于技术限制，C ++不支持该装饰器——用户应该简单地以常规方式构造一个并行竞争组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:451
+msgid "deadlineWith (Java only)"
+msgstr "deadlineWith（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:453
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should simply construct a parallel deadline group the ordinary way instead."
+msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行的截止时间组。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:463
+msgid "withName (Java only)"
+msgstr "withName（仅Java）"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:465
+msgid ""
+"This decorator is not supported in C++ due to technical constraints - users "
+"should set the name of the command inside their command class instead."
+msgstr "由于技术限制，C ++不支持此装饰器——用户应在其命令类中设置命令名称。"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:475
+msgid "perpetually"
+msgstr "perpetually"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:492
+msgid "Composing Decorators"
+msgstr "组成装饰器"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:494
+msgid ""
+"Remember that decorators, like all command groups, can be composed! This "
+"allows very powerful and concise inline expressions:"
+msgstr "请记住，装饰器和所有命令组一样都可以组成！这允许非常强大而简洁的内联表达式："
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:502
+msgid "Static Factory Methods for Command Groups (Java only)"
+msgstr "命令组的静态工厂方法 (仅Java)"
+
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:504
+msgid ""
+"These factory methods are not included in the C++ command library, as the "
+"reduction in verbosity would be minimal - C++ commands should be stack-"
+"allocated, removing the need for the ``new`` keyword."
+msgstr "这些工厂方法未包含在C ++命令库中，因为冗长程度的降低极小——C ++命令应进行堆栈分配，而无需使用“new”关键字。"

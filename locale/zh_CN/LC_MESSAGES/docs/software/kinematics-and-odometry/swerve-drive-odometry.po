@@ -1,0 +1,141 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Michael Zhao <haitong1110@126.com>, 2020
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-04 16:18+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:2
+msgid "Swerve Drive Odometry"
+msgstr "转向驱动测距法"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:3
+msgid ""
+"A user can use the swerve drive kinematics classes in order to perform "
+":ref:`odometry <docs/software/kinematics-and-odometry/intro-and-chassis-"
+"speeds:What is odometry?>`. WPILib contains a ``SwerveDriveOdometry`` class "
+"that can be used to track the position of a swerve drive robot on the field."
+msgstr ""
+"用户可以使用转向驱动器运动学类来执行:ref: odometry <docs/software/kinematics-and-odometry"
+"/intro-and-chassis-speeds:What is odometry?>`。 "
+"WPILib包含一个``SwerveDriveOdometry''类，该类可用于追踪场上的转向驱动机器人的位置。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:5
+msgid ""
+"Because this method only uses encoders and a gyro, the estimate of the "
+"robot's position on the field will drift over time, especially as your robot"
+" comes into contact with other robots during gameplay. However, odometry is "
+"usually very accurate during the autonomous period."
+msgstr ""
+"由于这种方法只使用编码器和陀螺仪，机器人在场上的位置估计会随着时间的推移而漂移，特别是当你的机器人在游戏过程中与其他机器人接触时。不过，在自主期，测距法通常非常准确。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:8
+msgid "Creating the odometry object"
+msgstr "创建测距法对象"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:9
+msgid ""
+"The ``SwerveDriveOdometry<int NumModules>`` class requires one template "
+"argument (only C++), two mandatory arguments, and one optional argument. The"
+" template argument (only C++) is an integer representing the number of "
+"swerve modules. The mandatory arguments are the kinematics object that "
+"represents your swerve drive (in the form of a ``SwerveDriveKinematics`` "
+"class) and the angle reported by your gyroscope (as a Rotation2d). The third"
+" optional argument is the starting pose of your robot on the field (as a "
+"``Pose2d``). By default, the robot will start at ``x = 0, y = 0, theta = "
+"0``."
+msgstr ""
+"``SwerveDriveOdometry <int NumModules>''类需要一个模板参数（仅C "
+"++），两个必需参数和一个可选参数。模板参数（仅C ++）是一个整数，表示转向模块的数量。必需参数是运动对象，它代表您的弧形驱动器（以“ "
+"SwerveDriveKinematics”类的形式）和陀螺仪报告的角度（作为Rotation2d）。第三个可选参数是机器人在场地上的起始姿势（称为“ "
+"Pose2d”）。默认情况下，机器人将从``x = 0，y = 0，theta = 0''开始。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:11
+msgid ""
+"0 degrees / radians represents the robot angle when the robot is facing "
+"directly toward your opponent's alliance station. As your robot turns to the"
+" left, your gyroscope angle should increase. By default, WPILib gyros "
+"exhibit the opposite behavior, so you should negate the gyro angle."
+msgstr ""
+"0度/弧度代表机器人角度，当机器人正对着你的对手的联盟站。当您的机器人向左转时，您的陀螺仪角度应该增加。默认情况下，WPILib陀螺仪表现出相反的行为，因此您应该对陀螺仪的角度加上负号。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:55
+msgid "Updating the robot pose"
+msgstr "更新机器人姿势"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:56
+msgid ""
+"The ``update`` method of the odometry class updates the robot position on "
+"the field. The update method takes in the gyro angle of the robot, along "
+"with a series of module states (speeds and angles) in the form of a "
+"``SwerveModuleState`` each. It is important that the order in which you pass"
+" the ``SwerveModuleState`` objects is the same as the order in which you "
+"created the kinematics object."
+msgstr ""
+"测距法类的``update''方法更新机器人在现场的位置。更新方法采用了机器人的陀螺仪角度以及一系列模块状态（速度和角度），每个状态均为``SwerveModuleState''形式。重要的是，传递“"
+" SwerveModuleState”对象的顺序与创建运动学对象的顺序相同。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:58
+msgid ""
+"This ``update`` method must be called periodically, preferably in the "
+"``periodic()`` method of a :ref:`Subsystem "
+"<docs/software/commandbased/subsystems:Subsystems>`. The ``update`` method "
+"returns the new updated pose of the robot."
+msgstr ""
+"调用此\"update\"方法必需为周期性，最好是在Subsystem<docs/software/commandbased/subsystems:Subsystems>的\"periodic()\"方法中调用。"
+" \"update\"方法将返回机器人的新的姿势。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:90
+msgid "Resetting the Robot Pose"
+msgstr "重置机器人姿势"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:91
+msgid ""
+"The robot pose can be reset via the ``resetPose`` method. This method "
+"accepts two arguments -- the new field-relative pose and the current gyro "
+"angle."
+msgstr "机器人姿势可以通过``resetPose``方法重新设定。该方法接受两个参数 -- -- 新的相关场位和当前陀螺仪角度。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:93
+msgid ""
+"If at any time, you decide to reset your gyroscope, the ``resetPose`` method"
+" MUST be called with the new gyro angle."
+msgstr "在任何时候如果您决定重置陀螺仪，必须使用新的陀螺仪角度调用``resetPose``方法。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:95
+msgid ""
+"The implementation of ``getState() / GetState()`` above is left to the user."
+" The idea is to get the module state (speed and angle) from each module. For"
+" a full example, see here: `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_"
+" / `Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_."
+msgstr ""
+"上面的``getState（）/ "
+"GetState（）``的实现留给用户使用。这个想法是从每个模块获取模块状态（速度和角度）。有关完整示例，请参见此处：`C ++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SwerveBot>`_"
+" /`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/swervebot>`_。"
+
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-odometry.rst:97
+msgid ""
+"In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be"
+" used to retrieve the current robot pose without an update."
+msgstr "此外，可以使用GetPose（C ++）/ getPoseMeters（Java）方法来检索当前的机器人姿态，而无需进行更新。"

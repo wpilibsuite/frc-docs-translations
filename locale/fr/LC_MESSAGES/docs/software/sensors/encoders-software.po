@@ -1,0 +1,400 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2020
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-03-06 04:14+0000\n"
+"PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:4
+msgid "Encoders - Software"
+msgstr "Encodeurs - Partie logicielle"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:6
+msgid ""
+"This section covers encoders in software.  For a hardware guide to encoders,"
+" see :ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`."
+msgstr ""
+"Cette section couvre le logiciel associé aux encodeurs. Pour un guide sur le"
+" branchement électrique des encodeurs, voir  :ref:`docs/hardware/sensors"
+"/encoders-hardware:Encoders - Hardware`."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:11
+msgid ""
+"Encoders are devices used to measure motion (usually, the rotation of a "
+"shaft).  The encoders used in FRC\\ |reg| are known as \"quadrature "
+"encoders.\"  These encoders produce square-wave signals on two channels that"
+" are a quarter-period out-of-phase (hence the term, \"quadrature\").  The "
+"pulses are used to measure the rotation, and the direction of motion can be "
+"determined from which channel \"leads\" the other."
+msgstr ""
+"Les encodeurs sont des dispositifs utilisés pour mesurer le mouvement "
+"(généralement, la rotation d'un arbre). Les encodeurs utilisés dans FRC \\ |"
+" reg | sont connus sous le nom «d'encodeurs en quadrature». Ces encodeurs "
+"produisent des signaux carrés sur deux canaux déphasés d'un quart de période"
+" (d'où le terme «quadrature»). Les impulsions sont utilisées pour mesurer la"
+" rotation, et la direction du mouvement peut être déterminée à partir de "
+"quel canal \"mène\" l'autre."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:16
+msgid ""
+"The FPGA handles encoders either through a counter module or an encoder "
+"module, depending on the :ref:`decoding type <docs/software/sensors"
+"/encoders-software:Decoding type>` - the choice is handled automatically by "
+"WPILib.  The FPGA contains 8 encoder modules."
+msgstr ""
+"Le FPGA du roboRIO gère les encodeurs via un module compteur ou un module "
+"encodeur, selon le :ref:`type de décodage <docs/software/sensors/encoders-"
+"software:Decoding type>` - le choix est géré automatiquement par WPILib. Le "
+"FPGA contient 8 modules \"encodeur\"."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:19
+msgid "The Encoder class"
+msgstr "La classe Encoder"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:21
+msgid ""
+"WPILib provides support for encoders through the :code:`Encoder` class "
+"(`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"encoders."
+msgstr ""
+"WPILib prend en charge les encodeurs via la classe :code:`Encoder` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Encoder.html>`__)."
+" Cette classe fournit une API simple pour configurer et lire les données des"
+" encodeurs."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:23
+msgid ""
+"The ``Encoder`` class is only used for encoders that are plugged directly "
+"into the roboRIO! Please reference the appropriate vendors' documentation "
+"for using encoders plugged into motor controllers."
+msgstr ""
+"La classe ``Encoder`` n’est utilisée que pour les encodeurs qui sont "
+"branchés directement sur le roboRIO ! Veuillez consulter la documentation "
+"appropriée des fournisseurs pour l’utilisation d’encodeurs branchés sur des "
+"contrôleurs de moteur."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:26
+msgid "Initializing an encoder"
+msgstr "Initialisation d'un encodeur"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:28
+msgid "An encoder can be instantiated as follows:"
+msgstr "Un encodeur peut être instancié comme suit:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:45
+msgid "Decoding type"
+msgstr "Type de décodage"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:47
+msgid ""
+"The WPILib :code:`Encoder` class can decode encoder signals in three "
+"different modes:"
+msgstr ""
+"La classe WPILib :code:`Encoder` peut décoder les signaux d'encodeur dans "
+"trois modes différents:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:49
+msgid ""
+"**1X Decoding**: Increments the distance for every complete period of the "
+"encoder signal (once per four edges)."
+msgstr ""
+"**Décodage 1X**: Augmente la distance pour chaque période complète du signal"
+" de l'encodeur (une fois par quatre fronts)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:50
+msgid ""
+"**2X Decoding**: Increments the distance for every half-period of the "
+"encoder signal (once per two edges)."
+msgstr ""
+"**Décodage 2X**: Augmente la distance pour chaque demi-période du signal de "
+"l'encodeur (une fois par deux fronts)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:51
+msgid ""
+"**4X Decoding**: Increments the distance for every edge of the encoder "
+"signal (four times per period)."
+msgstr ""
+"**Décodage 4X**: Incrémente la distance pour chaque front du signal de "
+"l'encodeur (quatre fois par période)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:53
+msgid ""
+"4X decoding offers the greatest precision, but at the potential cost of "
+"increased \"jitter\" in rate measurements.  To use a different decoding "
+"type, use the following constructor:"
+msgstr ""
+"Le décodage 4X offre la plus grande précision, mais au prix potentiel de "
+"\"fluctuations\" (jitter) accrue dans les mesures de débit. Pour utiliser un"
+" type de décodage différent, utilisez le constructeur suivant:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:70
+msgid "Configuring encoder parameters"
+msgstr "Configuration des paramètres de l'encodeur"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:72
+msgid ""
+"The :code:`Encoder` class does not make any assumptions about units of "
+"distance; it will return values in whatever units were used to calculate the"
+" distance-per-pulse value.  Users thus have complete control over the "
+"distance units used.  However, units of time are *always* in seconds."
+msgstr ""
+"La classe :code:`Encoder` ne fait aucune hypothèse sur les unités de "
+"distance; comme elle compte seulement les impulsions, elle retournera les "
+"valeurs dans le système d'unités utilisées pour calculer la distance.  Les "
+"utilisateurs ont ainsi un contrôle total sur les unités de distance "
+"utilisées. Cependant, les unités de temps sont *toujours* en secondes."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:74
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does *not* "
+"depend on the :ref:`decoding type <docs/software/sensors/encoders-"
+"software:Decoding type>` - each \"pulse\" should always be considered to be "
+"a full cycle (four edges)."
+msgstr ""
+"Le nombre d'impulsions utilisé dans le calcul de la distance par impulsion "
+"ne dépend *pas* du  :ref:`type de décodage <docs/software/sensors/encoders-"
+"software:Decoding type>` - chaque \"impulsion\" doit toujours être "
+"considérée être un cycle complet (quatre fronts)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:76
+msgid "The :code:`Encoder` class offers a number of configuration methods:"
+msgstr ""
+"La classe :code:`Encoder` propose plusieurs méthodes de configuration:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:119
+msgid "Reading information from encoders"
+msgstr "Lecture des informations des encodeurs"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:121
+msgid ""
+"The :code:`Encoder` class provides a wealth of information to the user about"
+" the motion of the encoder."
+msgstr ""
+"La classe :code:`Encoder` fournit une multitude d'informations à "
+"l'utilisateur sur le mouvement de l'encodeur."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:124
+msgid "Distance"
+msgstr "La distance"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:126
+msgid ""
+"Quadrature encoders measure *relative* distance, not absolute; the distance "
+"value returned will depend on the position of the encoder when the robot was"
+" turned on or the encoder value was last :ref:`reset <docs/software/sensors"
+"/encoders-software:Resetting an encoder>`."
+msgstr ""
+"Les codeurs en quadrature mesurent la distance *relative*, non absolue; la "
+"valeur de distance renvoyée dépendra de la position de l'encodeur lors de la"
+" mise sous tension du robot ou de la dernière valeur de l'encodeur "
+":ref:`reset <docs/software/sensors/encoders-software:Resetting an encoder>`."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:128
+msgid ""
+"Users can obtain the total distance traveled by the encoder with the "
+":code:`getDistance()` method:"
+msgstr ""
+"Les utilisateurs peuvent obtenir la distance totale parcourue par l'encodeur"
+" avec la méthode :code:`getDistance()`:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:143
+msgid "Rate"
+msgstr "Le taux"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:145
+msgid "Units of time for the :code:`Encoder` class are *always* in seconds."
+msgstr ""
+"Les unités de temps pour la classe :code:`Encoder` sont  *toujours* en "
+"secondes."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:147
+msgid ""
+"Users can obtain the current rate of change of the encoder with the "
+":code:`getRate()` method:"
+msgstr ""
+"Les utilisateurs peuvent obtenir le taux de changement actuel de l'encodeur "
+"avec la méthode :code:`getRate()`:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:162
+msgid "Stopped"
+msgstr "Mode arrêt"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:164
+msgid ""
+"Users can obtain whether the encoder is stationary with the "
+":code:`getStopped()` method:"
+msgstr ""
+"Les utilisateurs peuvent savoir si l'encodeur est stationnaire avec la "
+"méthode :code:`getStopped()`:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:179
+msgid "Direction"
+msgstr "La direction"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:181
+msgid ""
+"Users can obtain the direction in which the encoder last moved with the "
+":code:`getDirection()` method:"
+msgstr ""
+"Les utilisateurs peuvent obtenir la direction dans laquelle l'encodeur s'est"
+" déplacé pour la dernière fois avec la méthode :code:`getDirection()`:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:196
+msgid "Period"
+msgstr "La période"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:198
+msgid ""
+"Users can obtain the period of the encoder pulses (in seconds) with the "
+":code:`getPeriod()` method:"
+msgstr ""
+"Les utilisateurs peuvent obtenir la période des impulsions du codeur (en "
+"secondes) avec la méthode :code:`getPeriod()`:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:213
+msgid "Resetting an encoder"
+msgstr "La réinitialisation d'un encodeur"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:215
+msgid ""
+"To reset an encoder to a distance reading of zero, call the :code:`reset()` "
+"method.  This is useful for ensuring that the measured distance corresponds "
+"to the actual desired physical measurement, and is often called during a "
+":ref:`homing <docs/software/sensors/encoders-software:Homing a mechanism>` "
+"routine:"
+msgstr ""
+"Pour réinitialiser un encodeur à une distance de lecture de zéro, appelez la"
+" méthode: code: `reset ()`. Ceci est utile pour s'assurer que la distance "
+"mesurée correspond à la mesure physique réelle souhaitée, et est souvent "
+"appelée lors d'une routine de :ref:`mise à zéro <docs/software/sensors"
+"/encoders-software:Homing a mechanism>`"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:230
+msgid "Using encoders in code"
+msgstr "Utilisation des encodeurs dans le code"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:232
+msgid ""
+"Encoders are some of the most useful sensors in FRC; they are very nearly a "
+"requirement to make a robot capable of nontrivially-automated actuations and"
+" movement.  The potential applications of encoders in robot code are too "
+"numerous to summarize fully here, but a few basic examples are provided "
+"below:"
+msgstr ""
+"Les encodeurs sont parmi les capteurs les plus utiles de FRC; ils sont "
+"essentiels pour automatiser un mouvement de robot qui nécessite une certaine"
+" complexité. Les applications potentielles des encodeurs dans le code robot "
+"sont trop nombreuses pour être toutes énumérées ici, mais quelques exemples "
+"de base sont fournis ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:235
+msgid "Driving to a distance"
+msgstr "Parcourir une certaine distance"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:237
+msgid ""
+"Encoders can be used on a robot drive to create a simple \"drive to "
+"distance\" routine.  This is very useful for robot autonomy:"
+msgstr ""
+"Les encodeurs peuvent être utilisés sur un lecteur de robot pour créer une "
+"routine simple de «conduite afin de parcourir une distance spécifique». Ceci"
+" est très utile pour générer le code du robot pour la période \"autonome\" "
+"du jeu:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:309
+msgid "Stabilizing heading"
+msgstr "Gestion du Cap de stabilisation"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:311
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are not,"
+" the loop will be unstable and the robot will turn wildly."
+msgstr ""
+"Comme pour toutes les boucles de contrôle à rétroaction, les utilisateurs "
+"doivent veiller à ce que le cap du robot (mesuré par la différence de "
+"lecture entre l'encodeur de gauche et celui de droite) et la direction de "
+"rotation (contôleurs de moteurs) soient cohérents. Si ce n'est pas le cas, "
+"la boucle de rétroaction sera instable et le robot tournera autour de son "
+"axe central d'une manière incontrôlable."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:313
+msgid ""
+"Encoders can be used to ensure that a robot drives straight in a manner "
+"quite similar to :ref:`how it is done with a gyroscope "
+"<docs/software/sensors/gyros-software:Stabilizing heading while driving>`.  "
+"A simple implementation with a P loop is given below:"
+msgstr ""
+"Les encodeurs peuvent être utilisés pour s'assurer qu'un robot roule en "
+"ligne droite d'une manière assez similaire à :ref:`comment cela se fait avec"
+" un gyroscope <docs/software/sensors/gyros-software:Stabilizing heading "
+"while driving>`. Une implémentation simple avec une boucle P est donnée ci-"
+"dessous:"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:392
+msgid ""
+"More-advanced implementations can use more-complicated control loops.  "
+"Closing a control loop on the encoder difference is roughly analogous to "
+"closing it on the heading error, and so PD loops are particularly effective."
+msgstr ""
+"Les implémentations plus avancées peuvent utiliser des boucles de contrôle "
+"plus compliquées. La rétroaction basée sur la différence entre deux "
+"encodeurs est à peu près équivalente à celle qui mise sur l'erreur de cap "
+"(comme un gyroscope), et dans les deux cas, les boucles PD sont "
+"particulièrement efficaces."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:395
+msgid "PID Control"
+msgstr "Contrôle PID"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:397
+msgid ""
+"Encoders are particularly useful as inputs to PID controllers (the heading "
+"stabilization example above is a simple P loop)."
+msgstr ""
+"Les encodeurs sont particulièrement utiles comme entrées pour les "
+"contrôleurs PID (l'exemple de stabilisation de cap ci-dessus est une simple "
+"boucle P)."
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:400
+msgid "Homing a mechanism"
+msgstr "Mise à zéro d'un mécanisme"
+
+#: ../../frc-docs/source/docs/software/sensors/encoders-software.rst:402
+msgid ""
+"Since encoders measure *relative* distance, it is often important to ensure "
+"that their \"zero-point\" is in the right place.  A typical way to do this "
+"is a \"homing routine,\" in which a mechanism is moved until it hits a known"
+" position (usually accomplished with a limit switch), or \"home,\" and then "
+"the encoder is reset.  The following code provides a basic example:"
+msgstr ""
+"Comme les encodeurs mesurent la distance *relative*, il est souvent "
+"important de s'assurer que leur \"point zéro\" est au bon endroit. Une façon"
+" typique de le faire est une \"routine de référencement\", dans laquelle un "
+"mécanisme est déplacé jusqu'à ce qu'il atteigne une position connue "
+"(généralement accomplie avec un interrupteur de fin de course), ou \"point "
+"zéro\", puis l'encodeur est réinitialisé. Le code suivant fournit un exemple"
+" de base:"

@@ -1,0 +1,436 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-09 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:02+0000\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:2
+msgid "Binding Commands to Triggers"
+msgstr "Liaison de commandes à des déclencheurs"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:4
+msgid ""
+"Apart from autonomous commands, which are scheduled at the start of the "
+"autonomous period, and default commands, which are automatically scheduled "
+"whenever their subsystem is not currently in-use, the most common way to run"
+" a command is by binding it to a triggering event, such as a button being "
+"pressed by a human operator. The command-based paradigm makes this extremely"
+" easy to do."
+msgstr ""
+"Mis à part les commandes autonomes, qui sont planifiées au début de la "
+"période autonome, et les commandes par défaut, qui sont automatiquement "
+"planifiées chaque fois que leur sous-système n’est pas actuellement en cours"
+" d’utilisation, la façon la plus courante d’exécuter une commande est de la "
+"lier à un événement déclencheur, comme un bouton appuyé par un opérateur "
+"humain. Le paradigme orienté commande rend cela extrêmement facile à faire."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:6
+msgid ""
+"As mentioned earlier, command-based is a `declarative "
+"<https://en.wikipedia.org/wiki/Declarative_programming>`__ paradigm. "
+"Accordingly, binding buttons to commands is done declaratively; the "
+"association of a button and a command is \"declared\" once, during robot "
+"initialization. The library then does all the hard work of checking the "
+"button state and scheduling (or canceling) the command as needed, behind-"
+"the-scenes. Users only need to worry about designing their desired UI setup "
+"- not about implementing it!"
+msgstr ""
+"Comme mentionné précédemment, la commande est un paradigme `declaratif "
+"<https://en.wikipedia.org/wiki/Declarative_programming>`__. En conséquence, "
+"la liaison des boutons aux commandes se fait de manière déclarative; "
+"l'association d'un bouton et d'une commande est \"déclarée\" une fois, lors "
+"de l'initialisation du robot. La bibliothèque effectue ensuite tout le "
+"travail ardu de vérification de l'état du bouton et de planification (ou "
+"d'annulation) de la commande selon les besoins, en arrière-plan. Les usagers"
+" n'ont qu'à se soucier de la conception de l'interface utilisateur  - pas de"
+" sa mise en œuvre!"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:8
+msgid ""
+"Command binding is done through the ``Trigger`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trigger.html>`__)"
+" and its various ``Button`` subclasses (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_button.html>`__)."
+msgstr ""
+"La liaison de commande se fait à travers la classe ``Trigger`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Trigger.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trigger.html>`__)"
+" et sa variété de sous-classes ``Button`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/Button.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_button.html>`__)."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:11
+msgid "Trigger/Button Bindings"
+msgstr "Liaisons déclencheur/bouton"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:13
+msgid ""
+"The C++ command-based library offers two overloads of each button binding "
+"method - one that takes a forwarding reference, and one that takes a raw "
+"pointer.  The forwarding reference overload transfers ownership (by either "
+"moving or copying depending on if the command is an `rvalue or an lvalue "
+"<http://thbecker.net/articles/rvalue_references/section_01.html>`__) to the "
+"scheduler, while the raw pointer overload leaves the user responsible for "
+"the lifespan of the command object.  It is recommended that users "
+"preferentially use the forwarding reference overload unless there is a "
+"specific need to retain a handle to the command in the calling code."
+msgstr ""
+"La bibliothèque orientée commandes C++ offre deux surcharges (deux jeux de "
+"paramètres différents) de chaque méthode de liaison de boutons : l’une qui "
+"prend une référence de transfert et l’autre qui prend un pointeur brut. La "
+"surcharge de référence de transfert transfère la propriété (en déplaçant ou "
+"en copiant selon que la commande est une `rvalue ou une lvalue "
+"<http://thbecker.net/articles/rvalue_references/section_01.html>`__) au "
+"planificateur, tandis que la surcharge du pointeur brut laisse l’utilisateur"
+" responsable de la durée de vie de l’objet commande. Il est recommandé aux "
+"utilisateurs d’utiliser de préférence la surcharge de référence de "
+"transfert, sauf s’il est spécifiquement nécessaire de conserver un handle "
+"pour la commande dans le code appelant."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:15
+msgid ""
+"There are a number of bindings available for the ``Trigger`` class. All of "
+"these bindings will automatically schedule a command when a certain trigger "
+"activation event occurs - however, each binding has different specific "
+"behavior. ``Button`` and its subclasses have bindings with identical "
+"behaviors, but slightly different names that better-match a button rather "
+"than an arbitrary triggering event."
+msgstr ""
+"Il existe un certain nombre de liaisons disponibles pour la classe "
+"``Trigger``. Toutes ces liaisons planifient automatiquement une commande "
+"lorsqu’un événement d’activation de déclencheur se produit - cependant, "
+"chaque liaison a un comportement spécifique différent. ``Button`` et ses "
+"sous-classes ont des liaisons avec des comportements identiques, mais des "
+"noms légèrement différents qui correspondent mieux à un bouton plutôt qu’à "
+"un événement déclencheur arbitraire."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:18
+msgid "whenActive/whenPressed"
+msgstr "whenActive/whenPressed"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:20
+msgid ""
+"This binding schedules a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button changes is initially pressed). The "
+"command will be scheduled on the iteration when the state changes, and will "
+"not be scheduled again unless the trigger becomes inactive and then active "
+"again (or the button is released and then re-pressed)."
+msgstr ""
+"Cette liaison planifie une commande lorsqu’un déclencheur passe de l'état "
+"inactif à l'état actif (ou, en conséquence, lorsqu’un bouton déclencheur est"
+" initialement appuyé). La commande sera planifiée sur l’itération lorsque "
+"l’état change, et ne sera pas planifiée à nouveau à moins que le déclencheur"
+" ne devienne inactif, puis actif à nouveau (ou le bouton est libéré, puis "
+"appuyé à nouveau)."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:23
+msgid "whileActiveContinuous/whileHeld"
+msgstr "whileActiveContinuous/whileHeld"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:25
+msgid ""
+"This binding schedules a command repeatedly while a trigger is active (or, "
+"accordingly, while a button is held), and cancels it when the trigger "
+"becomes inactive (or when the button is released). Note that scheduling an "
+"already-running command has no effect; but if the command finishes while the"
+" trigger is still active, it will be re-scheduled."
+msgstr ""
+"Cette liaison planifie une commande à plusieurs reprises pendant qu’un "
+"déclencheur est actif (ou, en conséquence, pendant qu’un bouton est "
+"maintenu), et l’annule lorsque le déclencheur devient inactif (ou lorsque le"
+" bouton est libéré). Notez que la planification d’une commande déjà en cours"
+" d’exécution n’a aucun effet ; mais si la commande se termine pendant que le"
+" déclencheur est toujours actif, elle sera re-planifiée."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:28
+msgid "whileActiveOnce/whenHeld"
+msgstr "whileActiveOnce/whenHeld"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:30
+msgid ""
+"This binding schedules a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button is initially pressed) and cancels it "
+"when the trigger becomes inactive again (or the button is released). The "
+"command will *not* be re-scheduled if it finishes while the trigger is still"
+" active."
+msgstr ""
+"Cette liaison planifie une commande lorsqu’un déclencheur passe de l’état "
+"inactif à l'état actif (ou, en conséquence, lorsqu’un bouton est "
+"initialement appuyé) et l’annule lorsque le déclencheur redevient inactif "
+"(ou que le bouton est libéré). La commande *ne* sera *pas* re-planifiée si "
+"elle se termine pendant que le déclencheur est toujours actif."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:33
+msgid "whenInactive/whenReleased"
+msgstr "whenInactive/whenReleased"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:35
+msgid ""
+"This binding schedules a command when a trigger changes from active to "
+"inactive (or, accordingly, when a button is initially released). The command"
+" will be scheduled on the iteration when the state changes, and will not be "
+"re-scheduled unless the trigger becomes active and then inactive again (or "
+"the button is pressed and then re-released)."
+msgstr ""
+"Cette liaison planifie une commande lorsqu’un déclencheur passe de l'état "
+"actif à l'état inactif (ou, en conséquence, lorsqu’un bouton est "
+"initialement libéré). La commande sera planifiée sur l’itération lorsque "
+"l’état change, et ne sera pas re-planifiée à moins que le déclencheur ne "
+"devienne actif, puis inactif à nouveau (ou le bouton est appuyé, puis re-"
+"relâché)."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:38
+msgid "toggleWhenActive/toggleWhenPressed"
+msgstr "toggleWhenActive/toggleWhenPressed"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:40
+msgid ""
+"This binding toggles a command, scheduling it when a trigger changes from "
+"inactive to active (or a button is initially pressed), and canceling it "
+"under the same condition if the command is currently running. Note that "
+"while this functionality is supported, toggles are not a highly-recommended "
+"option for user control, as they require the driver to keep track of the "
+"robot state.  The preferred method is to use two buttons; one to turn on and"
+" another to turn off.  Using a `StartEndCommand "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__"
+" or a `ConditionalCommand "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__"
+" is a good way to specify the commands that you want to be want to be "
+"toggled between."
+msgstr ""
+"Cette liaison bascule une commande, la programmant lorsqu’un déclencheur "
+"passe de inactif à actif (ou un bouton est initialement appuyé), et "
+"l’annulant sous la même condition si la commande est actuellement en cours "
+"d’exécution. Notez que bien que cette fonctionnalité soit prise en charge, "
+"les basculements ne sont pas une option fortement recommandée pour le "
+"contrôle par l’utilisateur, car ils exigent que le pilote garde une trace de"
+" l’état du robot. La méthode préférée est d’utiliser deux boutons; l’un pour"
+" allumer et l’autre pour éteindre. L'usage d’une commande `StartEndCommand "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/StartEndCommand.html>`__"
+" ou d'une commande `ConditionalCommand "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/ConditionalCommand.html>`__"
+" constitue un bon moyen de spécifier les commandes entre lesquelles vous "
+"vous basculer."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:57
+msgid "cancelWhenActive/cancelWhenPressed"
+msgstr "cancelWhenActive/cancelWhenPressed"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:59
+msgid ""
+"This binding cancels a command when a trigger changes from inactive to "
+"active (or, accordingly, when a button is initially pressed). the command is"
+" canceled on the iteration when the state changes, and will not be canceled "
+"again unless the trigger becomes inactive and then active again (or the "
+"button is released and re-pressed). Note that canceling a command that is "
+"not currently running has no effect."
+msgstr ""
+"Cette liaison annule une commande lorsqu'un déclencheur passe d'inactif à "
+"actif (ou, par conséquent, lorsqu'un bouton est initialement enfoncé). la "
+"commande est alors annulée lorsque l'état change.  Elle ne sera pas annulée "
+"une seconde fois, sauf si le déclencheur devient inactif puis à nouveau "
+"actif (ou si le bouton est relâché et ré-enfoncé). Notez que l'annulation "
+"d'une commande qui n'est pas en cours d'exécution n'a aucun effet."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:62
+msgid "Binding a command to a joystick button"
+msgstr "Liaison d’une commande à un bouton joystick"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:64
+msgid ""
+"The most-common way to trigger a command is to bind a command to a button on"
+" a joystick or other HID (human interface device). To do this, users should "
+"use the ``JoystickButton`` class."
+msgstr ""
+"La façon la plus courante de déclencher une commande est de lier une "
+"commande à un bouton d’un joystick ou d’un autre HID (dispositif d’interface"
+" humaine). Pour ce faire, les utilisateurs doivent utiliser la classe "
+"``JoystickButton``."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:67
+msgid "Creating a JoystickButton"
+msgstr "Création d’un JoystickButton"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:69
+msgid ""
+"In order to create a ``JoystickButton``, we first need a Joystick.  All "
+"types of joysticks (including gamepads) are represented in code by the "
+"``GenericHID`` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/GenericHID.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_generic_h_i_d.html>`__),"
+" or one of its subclasses:"
+msgstr ""
+"Dans le but de créer un ``JoystickButton``, nous avons d'abord besoin d'un "
+"objet Joystick.  Tous les types de manettes (y compris les manettes de jeu) "
+"sont représentés sous forme de code par la classe ``GenericHID`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/GenericHID.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_generic_h_i_d.html>`__),"
+" ou une de ses classes filles:"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:83
+msgid ""
+"When creating a ``JoystickButton`` with an XboxController, it is usually a "
+"good idea to use the button enum (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/structfrc_1_1_xbox_controller_1_1_button.html>`__)"
+" to get the button number corresponding to a given button."
+msgstr ""
+"Lors de la création d’un ``JoystickButton`` avec un XboxController, il est "
+"généralement judicieux d’utiliser l’enum du bouton (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/XboxController.Button.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/structfrc_1_1_xbox_controller_1_1_button.html>`__)"
+" pour obtenir le numéro de bouton correspondant à un bouton donné."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:85
+msgid ""
+"After the joystick is instantiated, users can then pass it to a "
+"``JoystickButton`` object (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html>`__):"
+msgstr ""
+"Une fois le joystick est instancié, les utilisateurs peuvent ensuite le "
+"transmettre à un objet ``JoystickButton`` (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/button/JoystickButton.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_joystick_button.html>`__):"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:98
+msgid "Binding a Command to a JoystickButton"
+msgstr "Liaison d’une commande à un JoystickButton"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:100
+msgid ""
+"In the C++ command-based library, button objects *do not need to survive "
+"past the call to a binding method*, and so the binding methods may be simply"
+" called on a temp."
+msgstr ""
+"Dans la bibliothèque orientée commande C++, les objets button  *n’ont pas "
+"besoin de survivre après l’appel à une méthode de liaison*, de sorte que les"
+" méthodes de liaison peuvent être simplement appelées sur une temp."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:102
+msgid ""
+"Putting it all together, it is very simple to bind a button to a "
+"JoystickButton:"
+msgstr ""
+"En mettant tout cela ensemble, il est très simple de lier un bouton à un "
+"JoystickButton:"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:116
+msgid ""
+"It is useful to note that the command binding methods all return the "
+"trigger/button that they were initially called on, and thus can be chained "
+"to bind multiple commands to different states of the same button. For "
+"example:"
+msgstr ""
+"Il est utile de noter que les méthodes de liaison de commande renvoient "
+"toutes le déclencheur/bouton sur lequel elles ont été initialement appelées,"
+" et peuvent donc être enchaînées pour lier plusieurs commandes à différents "
+"états du même bouton. Par exemple:"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:136
+msgid ""
+"Remember that button binding is *declarative*: bindings only need to be "
+"declared once, ideally some time during robot initialization. The library "
+"handles everything else."
+msgstr ""
+"N’oubliez pas que la liaison des boutons est *déclarative*: les liaisons ne "
+"doivent être déclarées qu’une seule fois, idéalement pendant "
+"l’initialisation du robot. La bibliothèque gère tout le reste."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:139
+msgid "Composing Triggers"
+msgstr "Composition de déclencheurs"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:141
+msgid ""
+"The ``Trigger`` class (including its ``Button`` subclasses) can be composed "
+"to create composite triggers through the ``and()``, ``or()``, and "
+"``negate()`` methods (or, in C++, the ``&&``, ``||``, and ``!`` operators). "
+"For example:"
+msgstr ""
+"La classe ``Trigger`` (incluant ses sous-classes ``Button``) peut être "
+"composée pour créer des déclencheurs composites à travers les méthodes "
+"``and()``, ``or()``, et ``negate()`` (ou, en C++, les opérateurs ``&&``, "
+"``||``, et ``!`` ). Par exemple :"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:159
+msgid ""
+"Note that these methods return a ``Trigger``, not a ``Button``, so the "
+"``Trigger`` binding method names must be used even when buttons are "
+"composed."
+msgstr ""
+"Notez que ces méthodes renvoient un ``Trigger``, pas un ``Button``, de sorte"
+" que les noms de méthode de liaison  ``Trigger`` doivent être utilisés même "
+"lorsque les boutons sont composés."
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:162
+msgid "Debouncing Triggers"
+msgstr "Déclencheurs anti-rebonds"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:164
+msgid ""
+"To avoid rapid repeated activation, triggers (especially those originating "
+"from digital inputs) can be debounced with the :ref:`WPILib Debouncer class "
+"<docs/software/advanced-controls/filters/debouncer:Debouncer>` using the "
+"`debounce` method:"
+msgstr ""
+"Pour éviter une activation répétée rapide, les déclencheurs (en particulier "
+"ceux provenant d’entrées numériques) peuvent être traités par des filtres "
+"anti-rebonds à l'aide de la :ref:`classe Debouncer de la WPILIb "
+"<docs/software/advanced-controls/filters/debouncer:Debouncer>` par "
+"l'intérmédiaire de sa méthode `debounce` :"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:185
+msgid "Creating Your Own Custom Trigger"
+msgstr "Création de votre propre déclencheur personnalisé"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:187
+msgid ""
+"While binding to HID buttons is by far the most common use case, advanced "
+"users may occasionally want to bind commands to arbitrary triggering events."
+" This can be easily done by simply writing your own subclass of ``Trigger`` "
+"or ``Button``:"
+msgstr ""
+"Bien que la liaison aux boutons HID soit de loin le cas d'utilisation le "
+"plus courant, les utilisateurs avancés peuvent parfois vouloir lier des "
+"commandes à des événements déclencheurs arbitraires. Cela peut être "
+"facilement fait en écrivant simplement votre propre sous-classe de "
+"``Trigger`` ou ``Button`` :"
+
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:209
+msgid ""
+"Alternatively, this can also be done inline by passing a lambda to the "
+"constructor of ``trigger`` or ``button``:"
+msgstr ""
+"Alternativement, cela peut également être fait en ligne en passant un lambda"
+" au constructeur de ``trigger`` ou ``button``:"

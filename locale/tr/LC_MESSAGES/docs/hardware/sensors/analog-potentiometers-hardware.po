@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2020
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Demet Tumkaya <dtumkaya19@ku.edu.tr>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Demet Tumkaya <dtumkaya19@ku.edu.tr>, 2020\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:4
+msgid "Analog Potentiometers - Hardware"
+msgstr "Analog Potansiyometreler - Donanım"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:8
+msgid ""
+"Potentiometers generally have a mechanically-limited travel range.  Users "
+"should be careful that their mechanisms do not turn their potentiometers "
+"past their maximum travel, as this will damage or destroy the potentiometer."
+msgstr ""
+"Potansiyometreler genellikle mekanik olarak sınırlı bir hareket aralığına "
+"sahiptir. Kullanıcılar, mekanizmalarının potansiyometrelerini maksimum "
+"hareket mesafesini aşmamasına dikkat etmelidir çünkü bu, potansiyometreye "
+"zarar verir veya bozar."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:10
+msgid ""
+"Apart from :doc:`quadrature encoders <encoders-hardware>`, another common "
+"way of measuring rotation on FRC\\ |reg| robots is with analog "
+"potentiometers.  A potentiometer is simply a variable resistor - as the "
+"shaft of the potentiometer turns, the resistance changes (usually linearly)."
+"  Placing this resistor in a `voltage divider "
+"<https://en.wikipedia.org/wiki/Voltage_divider>`__ allows the user to easily"
+" measure the resistance by measuring the voltage across the potentiometer, "
+"which can then be used to calculate the rotational position of the shaft."
+msgstr ""
+":doc:`quadrature enkoderlerden <encoders-hardware>` ayrı olarak, FRC "
+"robotlarında dönüşü ölçmenin diğer bir yaygın yolu analog "
+"potansiyometrelerdir. Bir potansiyometre basitçe değişken bir dirençtir - "
+"potansiyometrenin şaftı döndükçe direnç değişir (genellikle doğrusal "
+"olarak). Bu direncin bir `voltaj bölücüye "
+"<https://en.wikipedia.org/wiki/Voltage_divider>`__ yerleştirilmesi, "
+"kullanıcının potansiyometre boyunca voltajı ölçerek direnci kolayca "
+"ölçmesine olanak tanır ve bu daha sonra şaftın dönüş konumunu hesaplamak "
+"için kullanılabilir. "
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:13
+msgid "Wiring an analog potentiometer"
+msgstr "Analog potansiyometre kablolama"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:15
+msgid ""
+"As suggested by the names, analog potentiometers connect to the roboRIO's "
+":doc:`analog input <analog-inputs-hardware>` ports.  To understand how "
+"exactly to wire potentiometers, however, it is important to understand their"
+" internal circuitry."
+msgstr ""
+"İsimlerin önerdiği gibi, analog potansiyometreler roboRIO'lara bağlanır "
+":doc:`analog giriş <analog-inputs-hardware>` portuna. Bununla birlikte, "
+"potansiyometrelerin tam olarak nasıl bağlanacağını anlamak için, iç "
+"devrelerini anlamak önemlidir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:20
+msgid ""
+"The picture above on the left shows a typical potentiometer.  There are "
+"three pins, just as there are on the RIO's analog inputs.  The middle pin is"
+" the signal pin, while the outer pins can both be *either* power or ground."
+msgstr ""
+"Soldaki resim tipik bir potansiyometreyi göstermektedir. RIO'nun analog "
+"girişlerinde olduğu gibi üç pin vardır. Ortadaki pin sinyal pini iken, dış "
+"pinler hem güç *hem de* toprak olabilir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:22
+msgid ""
+"As mentioned before, a potentiometer is a voltage divider, as shown in the "
+"circuit diagram on the right.  As the potentiometer shaft turns, the "
+"resistances R1 and R2 change; however, their sum remains constant [1]_.  "
+"Thus, the voltage across the entire potentiometer remains constant (for the "
+"roboRIO, this would be 5 volts), but the voltage between the signal pin and "
+"either the voltage or ground pin varies linearly as the shaft turns."
+msgstr ""
+"Daha önce belirtildiği gibi, bir potansiyometre, sağdaki devre şemasında "
+"gösterildiği gibi bir voltaj bölücüdür. Potansiyometre mili döndükçe, R1 ve "
+"R2 dirençleri değişir; ancak toplamları sabit kalır [1]_. Bu nedenle, tüm "
+"potansiyometre boyunca voltaj sabit kalır (roboRIO için bu 5 volt "
+"olacaktır), ancak sinyal pimi ile voltaj veya toprak pimi arasındaki voltaj,"
+" şaft döndükçe doğrusal olarak değişir."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:24
+msgid ""
+"Since the circuit is symmetric, it is reversible - this allows the user to "
+"choose at which end of the travel the measured voltage is zero, and at which"
+" end it is 5 volts.  To reverse the directionality of the sensor, it can "
+"simply be wired backwards!  Be sure to check the directionality of your "
+"potentiometer with a multimeter to be sure it is in the desired orientation "
+"before soldering your wires to the contacts."
+msgstr ""
+"Devre simetrik olduğu için tersine çevrilebilir - bu, kullanıcının dönüşün "
+"hangi ucunda ölçülen voltajın sıfır ve hangi uçta 5 volt olduğunu seçmesine "
+"izin verir. Sensörün yönünü tersine çevirmek için, basitçe geriye doğru "
+"kablolanabilir! Potansiyometrenizin yönünü bir multimetre ile kontrol "
+"ettiğinizden emin olun ve tellerinizi kontaklara lehimlemeden önce istenen "
+"yönde olduğundan emin olun."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:27
+msgid "Absolute encoders"
+msgstr "Mutlak kodlayıcılar"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:32
+msgid ""
+"An \"absolute encoder\" is an encoder that measures the absolute position of"
+" the encoder shaft, rather than the incremental movement (as a "
+":doc:`quadrature encoder <encoders-hardware>`) does.  In this respect, "
+"absolute encoders are more similar to potentiometers than to incremental "
+"encoders.  Many absolute encoders offer a simple analog output - these can "
+"be used exactly in the same way as a potentiometer, except their wiring is "
+"not generally reversible.  Absolute encoders have the advantage of lacking a"
+" hard travel limit - the signal will simply reset when the shaft crosses the"
+" zero point. The analog potentiometer pictured above can be found at "
+"`AndyMark <https://www.andymark.com/products/absolute-encoder-with-"
+"cable>`__."
+msgstr ""
+"\"Mutlak enkoder\", artan hareketten ziyade enkoder şaftının mutlak konumunu"
+" ölçen bir kodlayıcıdır (bir:doc:`quadrature encoder <encoders-hardware>`) "
+"gibi. Bu bakımdan mutlak kodlayıcılar, artımlı kodlayıcılardan çok "
+"potansiyometrelere benzer. Çoğu mutlak kodlayıcı, basit bir analog çıkış "
+"sunar - bunlar, kablolarının genel olarak  terlenebilir olmaması dışında, "
+"bir potansiyometre ile tamamen aynı şekilde kullanılabilir. Mutlak "
+"enkoderler, bir sabit hareket sınırının olmaması avantajına sahiptir - şaft "
+"sıfır noktasını geçtiğinde sinyal basitçe sıfırlanır. Yukarıda resmi verilen"
+" analog potansiyometre şu adreste bulunabilir `AndyMark "
+"<https://www.andymark.com/products/absolute-encoder-with-cable>`__."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:34
+msgid ""
+"Absolute encoders that do not offer a simple analog output require "
+":doc:`more complicated communications with the RIO <serial-buses>`."
+msgstr ""
+"Basit bir analog çıkış sunmayan mutlak kodlayıcılar şunları gerektirir "
+":doc:`Roborio ile daha karmaşık haberleşme<serial-buses>`."
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:38
+msgid "Footnotes"
+msgstr "Dipnotlar"
+
+#: ../../frc-docs/source/docs/hardware/sensors/analog-potentiometers-hardware.rst:40
+msgid ""
+"The way this actually works is generally by having the shaft control the "
+"position of a contact along a resistive \"wiper\" of fixed length along "
+"which the current flows - the resistance is proportional to the length of "
+"wiper between the contact and the end of the wiper."
+msgstr ""
+"Bunun gerçekte çalışma şekli, genellikle şaftın, akımın aktığı sabit "
+"uzunluktaki dirençli bir \"süpürücü\" boyunca bir kontağın konumunu kontrol "
+"etmesini sağlamaktır - direnç, kontak ve süpürücü ucu arasındaki süpürücü "
+"uzunluğu ile orantılıdır. ."

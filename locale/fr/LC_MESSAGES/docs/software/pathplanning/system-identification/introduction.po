@@ -1,0 +1,455 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# Andre Theberge <atheberge2@videotron.ca>, 2022
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 16:04+0000\n"
+"PO-Revision-Date: 2022-02-01 04:15+0000\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
+"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: fr_CA\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:4
+msgid "Introduction to System Identification"
+msgstr "Introduction à l'identification du système"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:7
+msgid "What is \"System Identification?\""
+msgstr "Qu'est-ce que \"l'identification du système ?\""
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:9
+msgid ""
+"`System identification "
+"<https://en.wikipedia.org/wiki/System_identification>`__ is the process of "
+"determining a mathematical model for the behavior of a system through "
+"statistical analysis of its inputs and outputs."
+msgstr ""
+"`Identification du système "
+"<https://en.wikipedia.org/wiki/System_identification>`__ est le processus de"
+" détermination d'un modèle mathématique pour le comportement d'un système "
+"par l'analyse statistique de ses entrées et de ses sorties."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:11
+msgid ""
+"This model is a rule describing how input voltage affects the way our "
+"measurements (typically encoder data) evolve in time.  A \"system "
+"identification\" routine takes such a model and a dataset and attempts to "
+"fit parameters which would make your model most closely-match the dataset.  "
+"Generally, the model is not perfect - the real-world data are polluted by "
+"both measurement noise (e.g. timing errors, encoder resolution limitations) "
+"and system noise (unmodeled forces acting on the system, e.g. vibrations).  "
+"However, even an imperfect model is usually \"good enough\" to give us "
+"accurate :ref:`feedforward control <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>` of the "
+"mechanism, and even to estimate  optimal gains for :ref:`feedback control "
+"<docs/software/advanced-controls/controllers/pidcontroller:PID Control in "
+"WPILib>`."
+msgstr ""
+"Ce modèle est une règle décrivant comment la tension d'entrée affecte la "
+"façon dont nos mesures (généralement les données du codeur) évoluent dans le"
+" temps. Une routine \"d'identification du système\" prend un tel modèle et "
+"un ensemble de données et tente d'ajuster les paramètres qui rendraient "
+"votre modèle le plus proche de l'ensemble de données. Généralement, le "
+"modèle n'est pas parfait - les données du monde réel sont polluées à la fois"
+" par le bruit de mesure (par exemple, les erreurs de synchronisation, les "
+"limitations de résolution de l'encodeur) et le bruit du système (forces non "
+"modélisées agissant sur le système, par exemple les vibrations). Cependant, "
+"même un modèle imparfait est généralement \"assez bon\" pour nous donner un "
+":ref:`contrôle anticipé <docs/software/advanced-"
+"controls/controllers/feedforward:Feedforward Control in WPILib>` précis du "
+"mécanisme, et même pour estimer le mécanisme optimal gains pour "
+":ref:`contrôle de retour <docs/software/advanced-"
+"controls/controllers/pidcontroller:PID Control in WPILib>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:13
+msgid ""
+"In FRC, the most common system that we're interested in characterizing is "
+"the `permanent-magnet DC motor "
+"<https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-"
+"magnet_motors>`__, which closely obeys the following \"voltage-balance "
+"equation\" (for more information, see `this paper "
+"<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
+msgstr ""
+"Dans FRC, le système le plus courant que nous souhaitons caractériser est le"
+" `moteur à courant continu à aimant permanent "
+"<https://en.wikipedia.org/wiki/Brushed_DC_electric_motor#Permanent-"
+"magnet_motors>`__, qui obéit étroitement à ce qui suit \" équation "
+"d'équilibre de tension\" (pour plus d'informations, voir `ce document "
+"<https://www.chiefdelphi.com/uploads/default/original/3X/f/7/f79d24101e6f1487e76099774e4ba60683e86cda.pdf>`__):"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:15
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:55
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:64
+msgid ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:17
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the motor, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration (the \"overdot\" notation "
+"traditionally denotes the `derivative "
+"<https://en.wikipedia.org/wiki/Derivative>`__ with respect to time)."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) du moteur, :math:`\\dot{d}` est la vitesse, et :math:`\\ddot{d}` "
+"est son accélération (dans cette notation le \"point\" représente "
+"traditionnellement la `dérivée <https://en.wikipedia.org/wiki/Derivative>`__"
+" par rapport au temps)."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:19
+msgid "We can interpret the coefficients in the above equation as follows:"
+msgstr ""
+"Nous pouvons interpréter les coefficients de l'équation ci-dessus comme "
+"suit :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:21
+msgid ""
+"``kS`` is the voltage needed to overcome the motor's static friction, or in "
+"other words to just barely get it moving; it turns out that this static "
+"friction (because it’s, well, static) has the same effect regardless of "
+"velocity or acceleration. That is, no matter what speed you’re going or how "
+"fast you're accelerating, some constant portion of the voltage you've "
+"applied to your motor (depending on the specific mechanism assembly) will be"
+" going towards overcoming the static friction in your gears, bearings, etc; "
+"this value is your kS.  Note the presence of the `signum function "
+"<https://en.wikipedia.org/wiki/Sign_function>`__, because friction force "
+"always opposes the direction-of-motion."
+msgstr ""
+"``kS`` est la tension nécessaire pour surmonter la friction statique du "
+"moteur, ou en d’autres termes pour à peine le faire bouger; il s’avère que "
+"cette friction statique (parce qu’elle est, bel et bien, statique) a le même"
+" effet indépendamment de la vitesse ou de l’accélération. Autrement dit, "
+"quelle que soit votre vitesse de fonctionnement ou avec quelle rapidité vous"
+" accélérez, une partie constante de la tension que vous avez appliquée à "
+"votre moteur (selon l’assemblage du mécanisme spécifique à caractériser) "
+"servira à surmonter la friction statique dans vos engrenages, roulements, "
+"etc; cette valeur est votre kS. Notez la présence de la `fonction signe "
+"<https://fr.wikipedia.org/wiki/Fonction_signe>`__, parce que la force de "
+"friction s’oppose toujours à la direction de mouvement."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:23
+msgid ""
+"``kV`` describes how much voltage is needed to hold (or \"cruise\") at a "
+"given constant velocity while overcoming the `electromagnetic resistance in "
+"the motor <https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ and"
+" any additional friction that increases with speed (known as `viscous drag "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" The relationship between speed and voltage (at constant acceleration) is "
+"almost entirely linear (with FRC\\ |reg| components, anyway) because of how "
+"permanent-magnet DC motors work."
+msgstr ""
+"``kV`` décrit la quantité de tension nécessaire pour se maintenir (ou "
+"\"croisière\") à une vitesse constante donnée tout en surmontant la "
+"`résistance électromagnétique dans le moteur "
+"<https://en.wikipedia.org/wiki/Counter-electromotive_force>`__ et toute "
+"friction supplémentaire qui augmente avec la vitesse (connu sous le nom de "
+"`traînée visqueuse "
+"<https://en.wikipedia.org/wiki/Drag_(physics)#Very_low_Reynolds_numbers:_Stokes'_drag>`__)."
+" La relation entre la vitesse et la tension (à une accélération constante) "
+"est presque entièrement linéaire (avec les composants FRC\\ |reg|, de toute "
+"façon) en raison de la manière dont fonctionnent les moteurs DC à aimant "
+"permanent."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:25
+msgid ""
+"``kA`` describes the voltage needed to induce a given acceleration in the "
+"motor shaft. As with ``kV``, the relationship between voltage and "
+"acceleration (at constant velocity) is almost perfectly linear for FRC "
+"components."
+msgstr ""
+"``kA`` décrit la tension nécessaire pour induire une accélération donnée "
+"dans l’arbre moteur. Comme pour ``kV``, la relation entre la tension et "
+"l'accélération (à vitesse constante) est quasiment parfaitement linéaire "
+"pour les composants FRC."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:27
+msgid ""
+"Once these coefficients have been determined (SysId uses an `ordinary least-"
+"squares regression <https://en.wikipedia.org/wiki/Linear_regression>`__), we"
+" can then take a given desired velocity and acceleration for the motor and "
+"calculate the voltage that should be applied to achieve it.  This is very "
+"useful - not only for, say, following motion profiles, but also for making "
+"mechanisms more controllable in open-loop control, because your joystick "
+"inputs will more closely match the actual mechanism motion."
+msgstr ""
+"Une fois ces coefficients déterminés (SysId utilise une `régression des "
+"moindres carrés ordinaire "
+"<https://en.wikipedia.org/wiki/Linear_regression>`__), nous pouvons alors "
+"prendre une vitesse et une accélération souhaitées pour le moteur et "
+"calculer la tension qui doit être appliquée pour y parvenir. Ceci est très "
+"utile - non seulement pour, par exemple, suivre des profils de mouvement, "
+"mais également pour rendre les mécanismes plus contrôlables en boucle "
+"ouverte, car les entrées de votre joystick correspondront plus étroitement "
+"au mouvement réel du mécanisme."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:29
+msgid ""
+"Some of the tools in this toolsuite introduce additional terms into the "
+"above equation to account for known differences from the simple case "
+"described above - details for each tool can be found below:"
+msgstr ""
+"Certains des outils de cette suite logicielle introduisent des termes "
+"supplémentaires dans l’équation ci-dessus pour tenir compte des différences "
+"connues par rapport au cas simple décrit ci-dessus - les détails pour chaque"
+" outil peuvent être trouvés ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:32
+msgid "The WPILib System Identification Tool (SysId)"
+msgstr "L'outil d'identification du système WPILib (SysId)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:34
+msgid ""
+"The WPILib system identification tool consists of an application that runs "
+"on the user's PC and matching robot code that runs on the user's robot. The "
+"PC application will send control signals to the robot over NetworkTables, "
+"while the robot sends data back to the application. The application then "
+"processes the data and determines model parameters for the user's robot "
+"mechanism, as well as producing diagnostic plots. Data can be saved (in JSON"
+" format) for future use, if desired."
+msgstr ""
+"L'outil d'identification du système WPILib se compose d'une application qui "
+"s'exécute sur le PC de l'utilisateur et d'un code robot correspondant qui "
+"s'exécute sur le robot de l'utilisateur. L'application PC enverra des "
+"signaux de contrôle au robot via NetworkTables, tandis que le robot renverra"
+" des données à l'application. L'application traite ensuite les données et "
+"détermine les paramètres du modèle pour le mécanisme du robot de "
+"l'utilisateur, ainsi que la production de tracés de diagnostic. Les données "
+"peuvent être enregistrées (au format JSON) pour une utilisation future, si "
+"vous le souhaitez."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:37
+msgid "Included Tools"
+msgstr "Outils inclus"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:39
+msgid ""
+"With a bit of ingenuity, these tools can be used to accurately characterize "
+"a surprisingly large variety of robot mechanisms.  Even if your mechanism "
+"does not seem to obviously match any of the tools, an understanding of the "
+"system equations often reveals that one of the included routines will do."
+msgstr ""
+"Avec un peu d'ingéniosité, ces outils peuvent être utilisés pour "
+"caractériser avec précision une variété étonnamment large de mécanismes de "
+"robots. Même si votre mécanisme ne semble évidemment correspondre à aucun "
+"des outils, une compréhension des équations du système révèle souvent que "
+"l'une des routines incluses fera l'affaire."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:41
+msgid "The System Identification toolsuite currently supports:"
+msgstr ""
+"La suite d'outils d'identification du système prend actuellement en charge :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:43
+msgid "Simple Motor Setups"
+msgstr "Configurations de simples moteurs "
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:44
+msgid "Drivetrains"
+msgstr "Bases pilotables"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:45
+msgid "Elevators"
+msgstr "Élevateurs"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:46
+msgid "Arms"
+msgstr "Bras"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:48
+msgid ""
+"Several of these options use identical robot-side code, and differ only in "
+"the analysis routine used to interpret the data."
+msgstr ""
+"Plusieurs de ces options utilisent un code côté robot identique et ne "
+"diffèrent que par la routine d'analyse utilisée pour interpréter les "
+"données."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:51
+msgid "Simple Motor Identification"
+msgstr "Identification simple du moteur"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:53
+msgid ""
+"The simple motor identification tool determines the best-fit parameters for "
+"the equation:"
+msgstr ""
+"L'outil d'identification de moteur simple détermine les paramètres les mieux"
+" adaptés à l'équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:57
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the model for a permanent-"
+"magnet dc motor with no loading other than friction and inertia, as "
+"mentioned above, and is an accurate model for flywheels, turrets, and "
+"horizontal linear sliders."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) du variateur, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Il s'agit du modèle pour un moteur à"
+" courant continu à aimant permanent sans charge autre que le frottement et "
+"l'inertie, comme mentionné ci-dessus, et ceci est un modèle précis pour les "
+"volants d'inertie, les tourelles et les curseurs linéaires horizontaux."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:60
+msgid "Drivetrain Identification"
+msgstr "Identification de la base pilotable"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:62
+msgid ""
+"The drivetrain identification tool determines the best-fit parameters for "
+"the equation:"
+msgstr ""
+"L'outil d'identification de la base pilotable détermine les paramètres les "
+"mieux adaptés à l'équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:66
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  This is the same modeling equation "
+"as is used in the simple motor identification - however, the drivetrain "
+"identification tool is specifically set up to run on differential drives, "
+"and will characterize each side of the drive independently if desired."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) du variateur, :math:`\\dot{d}` est sa vitesse et :math:`\\ddot{ "
+"d}` est son accélération. Il s'agit de la même équation de modélisation que "
+"celle utilisée dans l'identification simple du moteur - cependant, l'outil "
+"d'identification de la base pilotable est spécifiquement configuré pour "
+"fonctionner sur des entraînements différentiels et caractérisera chaque côté"
+" de l'entraînement indépendamment si vous le souhaitez."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:68
+msgid ""
+"The drivetrain identification tool can also determine the effective "
+"trackwidth of your robot using a gyro. More information on how to run the "
+"identification is available in the :ref:`track width identification "
+"<docs/software/pathplanning/system-identification/identification-"
+"routine:Running Tests>` article."
+msgstr ""
+"L'outil d'identification de la transmission peut également déterminer la "
+"largeur de voie effective de votre robot à l'aide d'un gyroscope. Plus "
+"d'informations sur la façon d'exécuter l'identification sont disponibles "
+"dans l'article :ref:`identification de la largeur de piste "
+"<docs/software/pathplanning/system-identification/identification-"
+"routine:Running Tests>`."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:71
+msgid "Elevator Identification"
+msgstr "Identification d'élévateur"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:73
+msgid ""
+"The elevator identification tool determines the best-fit parameters for the "
+"equation:"
+msgstr ""
+"L'outil d'identification d'élévateur détermine les paramètres les mieux "
+"adaptés à l'équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:75
+msgid ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+msgstr ""
+"V = kG + kS \\cdot sgn(\\dot{d}) + kV \\cdot \\dot{d} + kA \\cdot \\ddot{d}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:77
+msgid ""
+"where :math:`V` is the applied voltage, :math:`d` is the displacement "
+"(position) of the drive, :math:`\\dot{d}` is its velocity, and "
+":math:`\\ddot{d}` is its acceleration.  The constant term (:math:`kG`) is "
+"added to correctly account for the effect of gravity."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`d` est le déplacement "
+"(position) de l'entraînement, :math:`\\dot{d}` est sa vitesse, et "
+":math:`\\ddot{d}` est son accélération. Le terme constant (:math:`kG`) est "
+"ajouté pour parfaitement tenir compte de l’effet de la gravité."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:80
+msgid "Arm Identification"
+msgstr "Identification du bras"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:82
+msgid ""
+"The arm identification tool determines the best-fit parameters for the "
+"equation:"
+msgstr ""
+"L'outil d'identification de bras détermine les paramètres les mieux adaptés "
+"à l'équation :"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:84
+msgid ""
+"V = kG \\cdot cos(\\theta) + kS \\cdot sgn(\\dot{\\theta}) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
+"\n"
+msgstr ""
+"V = kG \\cdot cos(\\theta) + kS \\cdot sgn(\\dot{\\theta}) + kV \\cdot \\dot{\\theta} + kA \\cdot \\ddot{\\theta}\n"
+"\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:86
+msgid ""
+"where :math:`V` is the applied voltage, :math:`\\theta` is the angular "
+"displacement (position) of the arm, :math:`\\dot{\\theta}` is its angular "
+"velocity, and :math:`\\ddot{\\theta}` is its angular acceleration.  The "
+"cosine term (:math:`kG`) is added to correctly account for the effect of "
+"gravity."
+msgstr ""
+"où :math:`V` est la tension appliquée, :math:`\\theta` est le déplacement "
+"angulaire (position) du bras, :math:`\\dot{\\theta}` est sa vitesse "
+"angulaire et :math: `\\ddot{\\theta}` est son accélération angulaire. Le "
+"terme cosinus (:math:`kG`) est ajouté pour tenir compte correctement de "
+"l'effet de la gravité."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:89
+msgid "Installing the System Identification Tool"
+msgstr "Installation de l’outil d’identification du système"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:91
+msgid ""
+"The system identification tool (also referred to as ``sysid``) is included "
+"with the WPILib Installer."
+msgstr ""
+"L’outil d’identification du système (également appelé ``sysid``) est inclus "
+"avec le programme d’installation de la WPILib."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:93
+msgid ""
+"The old Python characterization tool from previous years is no longer "
+"supported."
+msgstr ""
+"L’ancien outil de caractérisation programmé en Python des années précédentes"
+" n’est plus pris en charge."
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:96
+msgid "Launching the System Identification Tool"
+msgstr "Lancement de l’outil d’identification du système"
+
+#: ../../frc-docs/source/docs/software/pathplanning/system-identification/introduction.rst:98
+msgid ""
+"The system identification tool can be opened from the ``Start Tool`` option "
+"in VS Code or by using the shortcut inside the WPILib Tools desktop folder "
+"(Windows)."
+msgstr ""
+"L’outil d’identification du système peut être ouvert à partir de l’option "
+"``Start Tool`` dans VS Code ou en utilisant le raccourci à l’intérieur du "
+"dossier de bureau WPILib Tools (Windows)."

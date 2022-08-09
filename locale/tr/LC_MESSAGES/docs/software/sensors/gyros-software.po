@@ -1,0 +1,352 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-01-23 04:40+0000\n"
+"PO-Revision-Date: 2020-04-25 02:05+0000\n"
+"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:4
+msgid "Gyroscopes - Software"
+msgstr "Gyroscopes - Yazılım"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:6
+msgid ""
+"This section covers gyros in software.  For a hardware guide to gyros, see "
+":ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - Hardware`."
+msgstr ""
+"Bu bölüm yazılımdaki jiroskopları kapsar. Jiroskoplarla ilgili bir donanım "
+"kılavuzu için bkz . :ref:`docs/hardware/sensors/gyros-hardware:Gyroscopes - "
+"Hardware`."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:8
+msgid ""
+"A gyroscope, or \"gyro,\" is an angular rate sensor typically used in "
+"robotics to measure and/or stabilize robot headings.  WPILib natively "
+"provides specific support for the ADXRS450 gyro available in the kit of "
+"parts, as well as more general support for a wider variety of analog gyros "
+"through the `AnalogGyro`_ class."
+msgstr ""
+"Bir jiroskop veya \"gyro\", genellikle robotikte robot yönlerini ölçmek "
+"ve/veya stabilize etmek için kullanılan bir açısal oran sensörüdür. WPILib, "
+"parça kitinde bulunan ADXRS450 jiroskopu için doğal olarak özel destek ve "
+"`AnalogGyro`_ sınıfı aracılığıyla daha geniş çeşitlilikteki analog "
+"jiroskoplar için daha genel destek sağlar."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:11
+msgid "The Gyro interface"
+msgstr "The Gyro interface-Arayüzü"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:13
+msgid ""
+"All natively-supported gyro objects in WPILib implement the :code:`Gyro` "
+"interface (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Gyro.html>`__)."
+"  This interface provides methods for getting the current angular rate and "
+"heading, zeroing the current heading, and calibrating the gyro."
+msgstr ""
+"WPILib'de yerel olarak desteklenen tüm gyro nesneleri :code:`Gyro` interface"
+" (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/interfaces/Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1Gyro.html>`__)"
+" uygular. Bu arayüz, mevcut açısal hızı ve istikameti elde etmek, mevcut "
+"istikameti sıfırlamak ve jiroskopu kalibre etmek için yöntemler sağlar."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:15
+msgid ""
+"It is crucial that the robot remain stationary while calibrating a gyro."
+msgstr "Bir jiroskopu kalibre ederken robotun sabit kalması çok önemlidir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:18
+msgid "ADXRS450_Gyro"
+msgstr "ADXRS450_Gyro"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:20
+msgid ""
+"The :code:`ADXRS450_Gyro` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1ADXRS450__Gyro.html>`__)"
+" provides support for the Analog Devices ADXRS450 gyro available in the kit "
+"of parts, which connects over the SPI bus."
+msgstr ""
+":code:`ADXRS450_Gyro` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/ADXRS450_Gyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1ADXRS450__Gyro.html>`__)"
+" SPI veriyolu üzerinden bağlanan parça setinde bulunan Analog Devices "
+"ADXRS450 gyro için destek sağlar."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:22
+msgid ""
+"ADXRS450 Gyro accumulation is handled through special circuitry in the FPGA;"
+" accordingly only a single instance of :code:`ADXRS450_Gyro` may be used."
+msgstr ""
+"ADXRS450 Gyro birikimi, FPGA'daki özel devre sistemi aracılığıyla "
+"gerçekleştirilir; buna göre :code:`ADXRS450_Gyro` nun yalnızca tek bir "
+"örneği kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:37
+msgid "AnalogGyro"
+msgstr "AnalogGyro"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:39
+msgid ""
+"The :code:`AnalogGyro` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogGyro.html>`__)"
+" provides support for any single-axis gyro with an analog output."
+msgstr ""
+":code:`AnalogGyro` class (`Java "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogGyro.html>`__,"
+" `C++ "
+"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1AnalogGyro.html>`__),"
+" analog çıkışlı herhangi bir tek eksenli gyro için destek sağlar."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:41
+msgid ""
+"Gyro accumulation is handled through special circuitry in the FPGA; "
+"accordingly, :code:`AnalogGyro`\\`s may only be used on analog ports 0 and "
+"1."
+msgstr ""
+"Gyro birikimi, FPGA'daki özel devreler aracılığıyla gerçekleştirilir; buna "
+"göre, :code:`AnalogGyro`\\`lar yalnızca 0 ve 1 analog bağlantı noktalarında "
+"kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:56
+msgid "Third-party gyros"
+msgstr "Üçüncü-parti gyros"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:58
+msgid ""
+"While WPILib provides native support for a the ADXRS450 gyro available in "
+"the kit of parts and for any analog gyro, there are a few popular AHRS "
+"(Attitude and Heading Reference System) devices commonly used in FRC\\ |reg|"
+" that include accelerometers and require more complicated communications.  "
+"These are generally controlled through vendor libraries."
+msgstr ""
+"WPILib, parça kitinde ve herhangi bir analog gyro için mevcut bir ADXRS450 "
+"gyro için yerel destek sağlarken, FRC \\ |reg| 'da yaygın olarak kullanılan "
+"birkaç popüler AHRS (Attitude and Heading Reference System-Tutum ve Yön "
+"Referans Sistemi) cihazı vardır. ivmeölçerler içeren ve daha karmaşık "
+"iletişim gerektiren. Bunlar genellikle satıcı kitaplıkları aracılığıyla "
+"kontrol edilir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:61
+msgid "Using gyros in code"
+msgstr "Using gyros in code"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:63
+msgid ""
+"As gyros measure rate rather than position, position is inferred by "
+"integrating (adding up) the rate signal to get the total change in angle.  "
+"Thus, gyro angle measurements are always relative to some arbitrary zero "
+"angle (determined by the angle of the gyro when either the robot was turned "
+"on or a zeroing method was called), and are also subject to accumulated "
+"errors (called \"drift\") that increase in magnitude the longer the gyro is "
+"used.  The amount of drift varies with the type of gyro."
+msgstr ""
+"Jiroskoplar konumdan ziyade hızı ölçtüğü için konum, açıdaki toplam "
+"değişikliği elde etmek için hız sinyalini entegre ederek (toplayarak) "
+"hesaplar. Bu nedenle, jiroskop açısı ölçümleri her zaman bazı gelişigüzel "
+"sıfır açılar ile ilişkilidir (robot açıldığında veya bir sıfırlama yöntemi "
+"çağrıldığında jiroskopun açısıyla belirlenir) ve aynı zamanda birikmiş "
+"hatalara (\"kayma-drift\" denir) tabidir. Cayro ne kadar uzun kullanılırsa "
+"büyüklükte artış olur. Sürüklenme miktarı jiroskopun türüne göre değişir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:65
+msgid ""
+"Gyros are extremely useful in FRC for both measuring and controlling robot "
+"heading.  Since FRC matches are generally short, total gyro drift over the "
+"course of an FRC match tends to be manageably small (on the order of a "
+"couple of degrees for a good-quality gyro).  Moreover, not all useful gyro "
+"applications require the absolute heading measurement to remain accurate "
+"over the course of the entire match."
+msgstr ""
+"Jiroskoplar, FRC'de robot yönünü hem ölçmek hem de kontrol etmek için son "
+"derece kullanışlıdır. FRC maçları genellikle kısa olduğundan, bir FRC maçı "
+"boyunca toplam jiroskop kayması idare edilebilir derecede küçük olma "
+"eğilimindedir (kaliteli bir jiroskop için birkaç derece düzeyinde). Dahası, "
+"tüm yararlı jiroskop uygulamaları, mutlak baş yönü ölçümünün tüm maç boyunca"
+" doğru kalmasını gerektirmez."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:68
+msgid "Displaying the robot heading on the dashboard"
+msgstr "Kontrol panelinde robot yönünün görüntülenmesi"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:70
+msgid ""
+":ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started"
+"/shuffleboard-tour:Tour of Shuffleboard>` includes a widget for displaying "
+"heading data from a :code:`Gyro` in the form of a compass.  This can be "
+"helpful for viewing the robot heading when sight lines to the robot are "
+"obscured:"
+msgstr ""
+":ref:`Shuffleboard <docs/software/wpilib-tools/shuffleboard/getting-started"
+"/shuffleboard-tour:Tour of Shuffleboard>`, a :code:`Gyro` dan yön verilerini"
+" pusula biçiminde görüntülemek için bir widget içerir . Bu, robota yönelik "
+"görüş çizgileri gizlendiğinde robotun yönünü görüntülemek için yararlı "
+"olabilir:"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:94
+msgid "Stabilizing heading while driving"
+msgstr "Sürerken yönü sabitlemek - kararlı hale getirmek"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:96
+msgid ""
+"A very common use for a gyro is to stabilize robot heading while driving, so"
+" that the robot drives straight.  This is especially important for holonomic"
+" drives such as mecanum and swerve, but is extremely useful for tank drives "
+"as well."
+msgstr ""
+"Bir jiroskop için çok yaygın bir kullanım, robotun düz hareket etmesi için "
+"sürüş sırasında robotun yönünü stabilize etmektir. Bu, özellikle mecanum ve "
+"swerve gibi holonomik sürücüler için önemlidir, ancak tank sürücüleri için "
+"de son derece kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:98
+msgid ""
+"This is typically achieved by closing a PID controller on either the turn "
+"rate or the heading, and piping the output of the loop to one's turning "
+"control (for a tank drive, this would be a speed differential between the "
+"two sides of the drive)."
+msgstr ""
+"Bu, tipik olarak, dönüş hızı veya yön üzerindeki bir PID kontrol cihazının "
+"kapatılması ve döngünün çıkışının bir kişinin dönüş kontrolüne "
+"aktarılmasıyla elde edilir (bir tank sürücüsü için, sürücünün iki tarafı "
+"arasında bir hız farkı olacaktır)."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:100
+msgid ""
+"Like with all control loops, users should be careful to ensure that the "
+"sensor direction and the turning direction are consistent.  If they are not,"
+" the loop will be unstable and the robot will turn wildly."
+msgstr ""
+"Tüm kontrol döngülerinde olduğu gibi, kullanıcılar sensör yönünün ve dönüş "
+"yönünün tutarlı olmasını sağlamak için dikkatli olmalıdır. Aksi takdirde, "
+"döngü dengesiz olacak ve robot çılgınca dönecektir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:103
+msgid "Example: Tank drive stabilization using turn rate"
+msgstr "Örnek: Dönüş oranı kullanarak tank sürüşü stabilizasyonu"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:105
+msgid ""
+"The following example shows how to stabilize heading using a simple P loop "
+"closed on the turn rate.  Since a robot that is not turning should have a "
+"turn rate of zero, the setpoint for the loop is implicitly zero, making this"
+" method very simple."
+msgstr ""
+"Aşağıdaki örnek, dönüş hızında kapatılan basit bir P döngüsü kullanılarak "
+"istikametin nasıl dengeleneceğini gösterir. Dönmeyen bir robotun dönüş "
+"oranının sıfır olması gerektiğinden, döngü için ayar noktası örtük olarak "
+"sıfırdır, bu da bu yöntemi çok basit hale getirir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:163
+msgid ""
+"More-advanced implementations can use a more-complicated control loop.  When"
+" closing the loop on the turn rate for heading stabilization, PI loops are "
+"particularly effective."
+msgstr ""
+"Daha gelişmiş uygulamalar, daha karmaşık bir kontrol döngüsü kullanabilir. "
+"Yön sabitlemesi için dönüş hızında döngüyü kapatırken, PI döngüleri "
+"özellikle etkilidir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:166
+msgid "Example: Tank drive stabilization using heading"
+msgstr "Örnek: Yön kullanarak tank sürüşü stabilizasyonu"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:168
+msgid ""
+"The following example shows how to stabilize heading using a simple P loop "
+"closed on the heading.  Unlike in the turn rate example, we will need to set"
+" the setpoint to the current heading before starting motion, making this "
+"method slightly more-complicated."
+msgstr ""
+"Aşağıdaki örnek, pruva yönü kapalı basit bir P döngüsü kullanılarak "
+"istikameti nasıl stabilize edeceğinizi gösterir. Dönüş oranı örneğinden "
+"farklı olarak, harekete başlamadan önce ayar noktasını mevcut rotaya "
+"ayarlamamız gerekecek ve bu da bu yöntemi biraz daha karmaşık hale "
+"getirecektir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:241
+msgid ""
+"More-advanced implementations can use a more-complicated control loop.  When"
+" closing the loop on the heading for heading stabilization, PD loops are "
+"particularly effective."
+msgstr ""
+"Daha gelişmiş uygulamalar, daha karmaşık bir kontrol döngüsü kullanabilir. "
+"Yön stabilizasyonu başlığındaki döngüyü kapatırken, PD döngüleri özellikle "
+"etkilidir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:244
+msgid "Turning to a set heading"
+msgstr "Belirli bir yöne dönmek"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:246
+msgid ""
+"Another common and highly-useful application for a gyro is turning a robot "
+"to face a specified direction.  This can be a component of an autonomous "
+"driving routine, or can be used during teleoperated control to help align a "
+"robot with field elements."
+msgstr ""
+"Bir jiroskop için diğer yaygın ve oldukça kullanışlı bir uygulama, bir "
+"robotu belirli bir yöne bakacak şekilde döndürmektir. Bu, otonom bir sürüş "
+"rutininin bir bileşeni olabilir veya bir robotu saha öğeleriyle hizalamaya "
+"yardımcı olmak için uzaktan kumanda sırasında kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:248
+msgid ""
+"Much like with heading stabilization, this is often accomplished with a PID "
+"loop - unlike with stabilization, however, the loop can only be closed on "
+"the heading.  The following example code will turn the robot to face 90 "
+"degrees with a simple P loop:"
+msgstr ""
+"Yön stabilizasyonunda olduğu gibi, bu genellikle bir PID döngüsü ile "
+"gerçekleştirilir - ancak stabilizasyonun aksine, döngü yalnızca yön üzerinde"
+" dönebilir. Aşağıdaki örnek kod, robotu basit bir P döngüsü ile 90 dereceye "
+"bakacak şekilde döndürecektir:"
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:306
+msgid ""
+"As before, more-advanced implementations can use more-complicated control "
+"loops."
+msgstr ""
+"Daha önce olduğu gibi, daha gelişmiş uygulamalar daha karmaşık kontrol "
+"döngüleri kullanabilir."
+
+#: ../../frc-docs/source/docs/software/sensors/gyros-software.rst:308
+msgid ""
+"Turn-to-angle loops can be tricky to tune correctly due to static friction "
+"in the drivetrain, especially if a simple P loop is used.  There are a "
+"number of ways to account for this; one of the most common/effective is to "
+"add a \"minimum output\" to the output of the control loop.  Another "
+"effective strategy is to cascade to well-tuned velocity controllers on each "
+"side of the drive."
+msgstr ""
+"Özellikle basit bir P döngüsü kullanılıyorsa, güç aktarma sistemindeki "
+"statik sürtünme nedeniyle açıya dönüş döngülerinin doğru şekilde ayarlanması"
+" zor olabilir. Bunu açıklamanın birkaç yolu vardır; en yaygın/etkili "
+"olanlardan biri, kontrol döngüsünün çıkışına bir \"minimum çıktı\" "
+"eklemektir. Diğer bir etkili strateji, sürücünün her iki tarafında iyi "
+"ayarlanmış hız kontrolörlerine kademeli olarak yerleştirmektir."

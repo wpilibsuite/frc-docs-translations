@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, FIRST
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Zara Moreno <Zara.moreno05@gmail.com>, 2020
+# Diana Ramos <dianaracasas@gmail.com>, 2020
+# Paulina Maynez <paump22@hotmail.com>, 2020
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2020\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-18 04:11+0000\n"
+"PO-Revision-Date: 2020-04-25 02:00+0000\n"
+"Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2020\n"
+"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: es_MX\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:2
+msgid "Addressable LEDs"
+msgstr "LED direccionables"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:4
+msgid ""
+"LED strips have been commonly used by teams for several years for a variety "
+"of reasons. They allow teams to debug robot functionality from the audience,"
+" provide a visual marker for their robot, and can simply add some visual "
+"appeal. WPILib has an API for controlling WS2812 LEDs with their data pin "
+"connected via PWM."
+msgstr ""
+"Las tiras de LED han sido utilizadas comúnmente por los equipos durante "
+"varios años por una variedad de razones. Permitir a los equipos depurar la "
+"funcionalidad del robot de la audiencia, proporcionar un marcador visual "
+"para su robot, y simplemente puede agregar un poco de atractivo visual. "
+"WPILib tiene una API para controlar WS2812 LED con su pin de datos conectado"
+" a través de PWM."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:7
+msgid "Instantiating the AddressableLED Object"
+msgstr "Crear instancias del objeto LED direccionable"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:9
+msgid ""
+"You first create an ``AddressableLED`` object that takes the PWM port as an "
+"argument. It *must* be a PWM header on the roboRIO. Then you set the number "
+"of LEDs located on your LED strip, with can be done with the ``setLength()``"
+" function."
+msgstr ""
+"Primero crea un objeto ``AddressableLED`` que toma el puerto PWM como "
+"argumento. Deberá ser un encabezado PWM a la roboRIO. Luego configura el "
+"número de LED ubicados en su LED strip, con se puede hacer con la función "
+"``setLength()``."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:11
+msgid ""
+"It is important to note that setting the length of the LED header is an "
+"expensive task and it's **not** recommended to run this periodically."
+msgstr ""
+"Es importante tener en cuenta que configurar la longitud del encabezado del "
+"LED es una tarea costosa y no se recomienda ejecutar esto periódicamente."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:13
+msgid ""
+"After the length of the strip has been set, you'll have to create an "
+"``AddressableLEDBuffer`` object that takes the number of LEDs as an input. "
+"You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set"
+" the led output data. Finally, you can call ``myAddressableLed.start()`` to "
+"write the output continuously. Below is a full example of the initialization"
+" process."
+msgstr ""
+"Después de que se haya establecido la longitud de la tira, tendrá que crear "
+"un objeto ``AddressableLEDBuffer`` que toma la cantidad de LED como entrada."
+" Entonces llamarás a ``myAddressableLed.setData(myAddressableLEDBuffer)`` "
+"para establecer los datos de salida del led. Finalmente puedes llamar "
+"``myAddressableLed.start()`` para escribir la salida continuamente. A "
+"continuación, se muestra un ejemplo completo del proceso de inicialización"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:15
+msgid "C++ does not have an AddressableLEDBuffer, and instead uses an Array."
+msgstr "C++ no tiene un AddressableLEDBuffer, y en su lugar usa una matriz."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:42
+msgid "Setting the Entire Strip to One Color"
+msgstr "Configuración de toda la tira a un color"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:44
+msgid ""
+"Color can be set to an individual led on the strip using two methods. "
+"``setRGB()`` which takes RGB values as an input and ``setHSV()`` which takes"
+" HSV values as an input."
+msgstr ""
+"El color se puede ajustar a un led individual en la tira usando dos métodos."
+" ``setRGB()`` el cual toma los valores RGB como entrada y ``setHSV()`` el "
+"cual toma los valores HSV como entrada."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:47
+msgid "Using RGB Values"
+msgstr "Usando valores RGB"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:49
+msgid ""
+"RGB stands for Red, Green, and Blue. This is a fairly common color model as "
+"it's quite easy to understand. LEDs can be set with the ``setRGB`` method "
+"that takes 4 arguments: index of the LED, amount of red, amount of green, "
+"amount of blue. The amount of Red, Green, and Blue are integer values "
+"between 0-255."
+msgstr ""
+"RGB significa rojo, verde y azul. Este es un modelo de color bastante común,"
+" ya que es bastante fácil comprender. Los LED se pueden configurar con el "
+"método ``setRGB`` que toma 4 argumentos: índice del LED, cantidad de rojo, "
+"cantidad de verde, cantidad de azul. La cantidad de rojo, verde y azul son "
+"valores enteros entre 0-255."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:75
+msgid "Using HSV Values"
+msgstr "Usando valores HSV"
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:77
+msgid ""
+"HSV stands for Hue, Saturation, and Value. Hue describes the color or tint, "
+"saturation being the amount of gray, and value being the brightness. In "
+"WPILib, Hue is an integer from 0 - 180. Saturation and Value are integers "
+"from 0 - 255. If you look at a color picker like `Google's "
+"<https://www.google.com/search?q=color+picker>`_, Hue will be 0 - 360 and "
+"Saturation and Value are from 0% to 100%. This is the same way that OpenCV "
+"handles HSV colors. Make sure the HSV values entered to WPILib are correct, "
+"or the color produced might not be the same as was expected."
+msgstr ""
+"HSV significa Hue, Saturación y Valor. El tono describe el color o tinte, "
+"siendo la saturación la cantidad de gris y el valor es el brillo. En WPILib,"
+" Hue es un número entero de 0 a 180. La saturación y el valor son enteros "
+"del 0 al 255. Si observa un selector de color como el de Google's "
+"<https://www.google.com/search?q=color+picker>`_, el tono será 0 - 360 y la "
+"saturación y el valor son del 0% al 100%. Esta es la misma manera que OpenCV"
+" maneja los colores HSV. Asegúrese de que los valores de HSV ingresados ​​en"
+" WPILib sean correctos, o el color producido podría no ser el mismo que se "
+"esperaba."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:82
+msgid ""
+"LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of "
+"the LED, hue, saturation, and value. An example is shown below for setting "
+"the color of an LED strip to red (hue of 0)."
+msgstr ""
+"Los LED se pueden configurar con el método setHSV que toma 4 argumentos: "
+"índice del LED, tono, saturación y valor. A continuación, se muestra un "
+"ejemplo para configurar el color de una tira de LED en rojo (matiz de 0)."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:108
+msgid "Creating a Rainbow Effect"
+msgstr "Crea un efecto arcoíris "
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:110
+msgid ""
+"The below method does a couple of important things. Inside of the *for* "
+"loop, it equally distributes the hue over the entire length of the strand "
+"and stores the individual LED hue to a variable called ``hue``. Then the for"
+" loop sets the HSV value of that specified pixel using the ``hue`` value."
+msgstr ""
+"El siguiente método hace un par de cosas importantes. Dentro del bucle "
+"*for*, distribuye equitativamente el tono en toda la longitud del hilo y "
+"almacena el tono LED individual en un variable llamada ``tonalidad``. Luego,"
+" el bucle for establece el valor HSV de ese píxel especificado utilizando el"
+" tono valor."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:112
+msgid ""
+"Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates"
+" the pixel that contains the \"initial\" hue creating the rainbow effect. "
+"``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside "
+"the hue boundaries of 180. This is because HSV hue is a value from 0-180."
+msgstr ""
+"Moviéndose fuera del bucle for, ``m_rainbowFirstPixelHue`` luego itera el "
+"píxel que contiene el tono \"inicial\" que crea el efecto arcoíris. "
+"``m_rainbowFirstPixelHue`` luego verifica para asegurarse de que el tono "
+"está dentro de los límites de tono de 180. Esto se debe a que el tono HSV es"
+" un valor de 0-180."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:114
+msgid ""
+"It's good robot practice to keep the ``robotPeriodic()`` method as clean as "
+"possible, so we'll create a method for handling setting our LED data. We'll "
+"call this method ``rainbow()`` and call it from ``robotPeriodic()``."
+msgstr ""
+"Es una buena práctica de robots mantener el método ``robotPeriodic()`` lo "
+"más limpio posible, así que crearemos un método para manejar la "
+"configuración de nuestros datos LED. Llamaremos a este método ``rainbow()`` "
+"y llamarlo desde ``robotPeriodic()``."
+
+#: ../../frc-docs/source/docs/software/actuators/addressable-leds.rst:134
+msgid ""
+"Now that we have our ``rainbow`` method created, we have to actually call "
+"the method and set the data of the LED."
+msgstr ""
+"Ahora que hemos creado nuestro método de arco iris, tenemos que llamar al "
+"método y establecer los datos del LED."

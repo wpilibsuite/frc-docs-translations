@@ -1,0 +1,138 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# 楚涵 张 <zhangchuhan1210@126.com>, 2020
+# KeseterG <zhiwan13579@126.com>, 2021
+# 智翔 杨 <2532498540@qq.com>, 2021
+# Yitong Zhao <lucius300er@outlook.com>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-04-16 16:05+0000\n"
+"PO-Revision-Date: 2020-04-25 02:03+0000\n"
+"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: zh_CN\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:4
+msgid "Creating a client-side program"
+msgstr "创建客户端程序"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:6
+msgid ""
+"If all you need to do is have your robot program communicate with GRIP or a "
+"dashboard running on the Driver Station laptop, then the previous examples "
+"of writing robot programs are sufficient. But if you would like to write "
+"some custom client code that would run on the drivers station or on a "
+"coprocessor then you need to know how to build :term:`NetworkTables` "
+"programs for those (non-roboRIO) platforms."
+msgstr ""
+"如果您要做的只是让机器人程序与GRIP或在机器操控台笔记本电脑上运行的仪表板通信，那么前面编写机器人程序的示例就足够了。但是，如果您想编写一些可在驱动程序站或协处理器上运行的自定义客户端代码，则需要知道如何为那些（非roRIO）平台构建NetworkTables程序。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:8
+msgid "A basic client program looks like the following example."
+msgstr "基本的客户端程序如下例所示。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:46
+msgid ""
+"In this example an instance of NetworkTables is created and a "
+"NetworkTableEntry if created to reference the values of \"x\" and \"y\" from"
+" a table called \"datatable\"."
+msgstr "在本例中，创建了网络表实例，并创建了网络表条目来引用名为“datatable”的表中的“x”和“y”值。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:48
+msgid ""
+"Then this instance is started as a NetworkTables client with the team number"
+" (the roboRIO is always the server). Additionally, if the program is running"
+" on the Driver Station computer, by using the startDSClient() method, "
+"NetworkTables will get the robot IP address from the Driver Station."
+msgstr ""
+"然后，该实例作为具有组号的NetworkTables客户端启动（roboRIO始终是服务器）。此外，如果程序在机器操控台计算机上运行，则使用startDSClient（）方法，NetworkTables将从机器操控台获取机械手IP地址。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:50
+msgid ""
+"Then this sample program simply loops once a second and gets the values for "
+"x and y and prints them on the console. In a more realistic program, the "
+"client might be processing or generating values for the robot to consume."
+msgstr "然后，此示例程序简单地每秒循环一次，获取x和y的值并将其打印在控制台上。在现实的程序中，客户端可能正在处理或生成供机器人使用的值。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:53
+msgid "Building the program"
+msgstr "构建程序"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:54
+msgid ""
+"When building and running the program you will need some additional "
+"libraries to include with your client-side program. These are:"
+msgstr "在构建和运行程序时，您的客户端程序需要包含一些额外的库。下面列出了这些库："
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:56
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"java/ (ntcore Java files)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"java/（ntcore Java文件）"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:58
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"jni/ (ntcore native libs for all desktop platforms)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/ntcore/ntcore-"
+"jni/（适用于所有台式机平台的ntcore原生库）"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:60
+msgid ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-"
+"java/ (wpiutil Java files)"
+msgstr ""
+"https://frcmaven.wpi.edu/artifactory/release/edu/wpi/first/wpiutil/wpiutil-"
+"java/（wpiutil Java文件）"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:62
+msgid "The desktop platform jar is for Windows, macOS, and Linux."
+msgstr "桌面平台的jar包适用于Windows，macOS和Linux。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:65
+msgid "Building using Gradle"
+msgstr "使用Gradle构建"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:67
+msgid ""
+"The dependencies above can be added to the ``dependencies`` block in a "
+"``build.gradle`` file. The ``ntcore-java`` and ``wpiutil-java`` libraries "
+"are required at compile-time and the JNI dependencies are required at "
+"runtime. The JNI dependencies for all supported platforms should be added to"
+" the ``build.gradle`` if cross-platform support for the application is "
+"desired."
+msgstr ""
+"以上依赖项可被添加到build.gradle文件中的dependencies块中。在编译时需要ntcore-java和wpiutil-"
+"java库，而在运行时则需要JNI依赖项。如果需要对应用程序的跨平台支持，则应将所有受支持平台的JNI依赖项添加到build.gradle中。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:69
+msgid ""
+"First, the FRC\\ |reg| Maven repository should be added to the "
+"``repositories`` block. Note that this is not required if you are using the "
+"GradleRIO plugin with your application."
+msgstr ""
+"首先，FRC® Maven存储库应被添加到repositories块中。请注意，如果您在应用程序中使用GradleRIO插件，则不必这样做。"
+
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:77
+msgid ""
+"Then, the dependencies can be added to the ``dependencies`` block. Here, "
+"``VERSION`` should be replaced with the latest version number of the "
+"following dependencies. This usually corresponds to the version number of "
+"the latest WPILib release."
+msgstr ""
+"然后，可以将依赖项添加到dependencies块中。每一个依赖项的“VERSION”应替换为该依赖项的最新版本号。这通常与最新的WPILib版本的版本号一致。"

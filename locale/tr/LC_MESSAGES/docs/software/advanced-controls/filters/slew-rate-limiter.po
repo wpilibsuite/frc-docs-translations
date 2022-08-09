@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2022, FIRST and other WPILib Contributors
+# This file is distributed under the same license as the FIRST Robotics Competition package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Duru Ünlü <aodunlu@gmail.com>, 2020
+# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# 
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"PO-Revision-Date: 2020-04-25 02:01+0000\n"
+"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
+"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: tr_TR\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:4
+msgid "Slew Rate Limiter"
+msgstr "Dönme Hızı Sınırlayıcı"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:6
+msgid ""
+"A common use for filters in FRC\\ |reg| is to soften the behavior of control"
+" inputs (for example, the joystick inputs from your driver controls).  "
+"Unfortunately, a simple low-pass filter is poorly-suited for this job; while"
+" a low-pass filter will soften the response of an input stream to sudden "
+"changes, it will also wash out fine control detail and introduce phase lag."
+"  A better solution is to limit the rate-of-change of the control input "
+"directly.  This is performed with a *slew rate limiter* - a filter that caps"
+" the maximum rate-of-change of the signal."
+msgstr ""
+"FRC \\ |reg| içindeki filtreler için yaygın bir kullanım kontrol "
+"girişlerinin davranışını yumuşatmak içindir (örneğin, sürücü "
+"kontrollerinizden joystick girişleri). Ne yazık ki, basit bir alçak geçiren "
+"filtre bu iş için pek uygun değildir; Düşük geçişli bir filtre, bir giriş "
+"akışının ani değişikliklere tepkisini yumuşatırken, aynı zamanda ince "
+"kontrol detayını temizler ve faz gecikmesine neden olur. Daha iyi bir çözüm,"
+" doğrudan kontrol girişinin değişim oranını sınırlamaktır. Bu, bir *slew "
+"rate limiter-dönüş hızı sınırlayıcı* - sinyalin maksimum değişim hızını "
+"sınırlayan bir filtre ile gerçekleştirilir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:8
+msgid ""
+"A slew rate limiter can be thought of as a sort of primitive motion profile."
+"  In fact, the slew rate limiter is the first-order equivalent of the "
+":ref:`Trapezoidal Motion Profile <docs/software/advanced-"
+"controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in "
+"WPILib>` supported by WPILib - it is precisely the limiting case of "
+"trapezoidal motion when the acceleration constraint is allowed to tend to "
+"infinity.  Accordingly, the slew rate limiter is a good choice for applying "
+"a de-facto motion profile to a stream of velocity setpoints (or voltages, "
+"which are usually approximately proportional to velocity).  For input "
+"streams that control positions, it is usually better to use a proper "
+"trapezoidal profile."
+msgstr ""
+"WPILibWPILibBir dönüş hızı sınırlayıcı, bir tür ilkel hareket profili olarak"
+" düşünülebilir. Aslında, dönüş hızı sınırlayıcı, WPILib tarafından "
+"desteklenen: :ref:`Trapezoidal Motion Profile <docs/software/advanced-"
+"controls/controllers/trapezoidal-profiles:Trapezoidal Motion Profiles in "
+"WPILib>` ın birinci dereceden eşdeğeridir - ivme kısıtlamasının sonsuza "
+"eğilimli olmasına izin verildiğinde, tam da yamuk hareketin sınırlayıcı "
+"durumudur. Buna göre, dönüş hızı sınırlayıcı, bir hız ayar noktası akımına "
+"(veya genellikle hız ile yaklaşık olarak orantılı olan voltajlara) fiili bir"
+" hareket profili uygulamak için iyi bir seçimdir. Konumları kontrol eden "
+"giriş akışları için uygun bir trapezoidal profil kullanmak genellikle daha "
+"iyidir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:13
+msgid "Creating a SlewRateLimiter"
+msgstr "Bir SlewRate Limiter oluşturma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:15
+msgid ""
+"The C++ ``SlewRateLimiter`` class is templated on the unit type of the "
+"input.  For more information on C++ units, see :ref:`docs/software/basic-"
+"programming/cpp-units:The C++ Units Library`."
+msgstr ""
+"C ++ `` SlewRateLimiter '' sınıfı, girdinin birim türüne göre şablonlanır. C"
+" ++ birimleri hakkında daha fazla bilgi için bkz: ref: `docs / software / "
+"basic-programlama / cpp-units: C ++ Units Library`."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:17
+msgid ""
+"Because filters have \"memory\", each input stream requires its own filter "
+"object.  Do *not* attempt to use the same filter object for multiple input "
+"streams."
+msgstr ""
+"Filtrelerin \"belleği\" olduğundan, her giriş akışı kendi filtre nesnesini "
+"gerektirir. Birden çok giriş akışı için aynı filtre nesnesini kullanmaya "
+"çalışmayın."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:19
+msgid "Creating a SlewRateLimiter is simple:"
+msgstr "Bir SlewRateLimiter oluşturmak basittir:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:34
+msgid "Using a SlewRateLimiter"
+msgstr "Bir SlewRateLimiter' ı kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/filters/slew-rate-limiter.rst:36
+msgid ""
+"Once your filter has been created, using it is easy - simply call the "
+"``calculate()`` method with the most recent input to obtain the filtered "
+"output:"
+msgstr ""
+"Filtreniz oluşturulduktan sonra kullanımı kolaydır - filtrelenmiş çıktıyı "
+"elde etmek için en son girdiyle `` hesapla ()`` yöntemini çağırmanız "
+"yeterlidir:"

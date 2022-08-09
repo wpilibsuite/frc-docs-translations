@@ -21,7 +21,7 @@ jobs:
           git submodule update --recursive --remote
       - name: Install Transifex CLI
         run: |
-          curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh
+          curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
           source ~/.bashrc
       - name: Set up Python
         uses: actions/setup-python@v2

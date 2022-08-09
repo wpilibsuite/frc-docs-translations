@@ -36,7 +36,7 @@ jobs:
           pip install -r ./requirements.txt
       - name: Update Translations
         run: |
-          sh scripts/update.sh
+          bash -l scripts/update.sh
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
       - name: Lock Unused Transifex Resources

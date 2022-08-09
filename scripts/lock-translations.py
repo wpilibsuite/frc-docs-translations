@@ -75,7 +75,7 @@ def get_local_resources(tx_config):
 
     resources = []
     for section in config.sections():
-        section = section.split("frc-docs.", 1)
+        section = section.split(":r:", 1)
 
         # Eliminate the main configuration, and remote project identifier
         if section[0] == "main":

@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-20 04:13+0000\n"
+"POT-Creation-Date: 2022-08-27 16:04+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -280,28 +280,6 @@ msgid ""
 "them internally to the discrete-time form where necessary."
 msgstr "WPILib的LinearSystem采用连续时间系统矩阵，并在必要时将其内部转换为离散时间形式。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:80
-msgid "State-space Notation Example: Flywheel from kV and kA"
-msgstr "状态空间符号示例：飞轮从kV和kA"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:82
-msgid ""
-":ref:`Recall <docs/software/advanced-"
-"controls/controllers/feedforward:SimpleMotorFeedforward>` that we can model "
-"the motion of a flywheel connected to a brushed DC motor with the equation "
-":math:`V = kV \\cdot v + kA \\cdot a`, where V is voltage output, v is the "
-"flywheel's angular velocity and a is its angular acceleration. This equation"
-" can be rewritten as :math:`a = \\frac{V - kV \\cdot v}{kA}`, or :math:`a = "
-"\\frac{-kV}{kA} \\cdot v + \\frac{1}{kA} \\cdot V`. Notice anything "
-"familiar? This equation relates the angular acceleration of the flywheel to "
-"its angular velocity and the voltage applied."
-msgstr ""
-":ref:`Recall <docs/software/advanced-"
-"controls/controllers/feedforward:SimpleMotorFeedforward>`，我们可以用这个方程来模拟与有刷直流电动机相连的飞轮的运动"
-" :math:`V = kV \\cdot v + kA \\cdot a`, 其中V是电压输出，v是飞轮的角速度，a是其角加速度。该等式可以重写为 "
-":math:`a = \\frac{V - kV \\cdot v}{kA}`, 或者:math:`a = \\frac{-kV}{kA} \\cdot"
-" v + \\frac{1}{kA} \\cdot V`。发现它是不是很熟悉?这个方程将飞轮的角加速度与飞轮的角速度和施加的电压联系起来。"
-
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:84
 msgid ""
 "We can convert this equation to state-space notation. We can create a system"
@@ -315,14 +293,6 @@ msgstr ""
 ":term:`output`（速度）的系统。回想一下速度的一阶导数是加速度，我们可以编写如下公式，用 :math:`\\mathbf{x}`代替速度，用"
 " :math:`\\mathbf{\\dot{x}}`代替加速度，并且用 "
 ":math:`\\mathbf{u}`代替电压:math:`\\mathbf{V}` :"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:86
-msgid ""
-"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} \\mathbf{x} + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} \\mathbf{u}\n"
-"\n"
-msgstr ""
-"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} "
-"\\mathbf{x} + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} \\mathbf{u}\n"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:92
 msgid "Visualizing State-Space Responses: Phase Portrait"
@@ -503,32 +473,6 @@ msgstr ""
 msgid "LQR: Definition"
 msgstr "LQR：定义"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:144
-msgid ""
-"Linear-Quadratic Regulators work by finding a :term:`control law` that "
-"minimizes the following cost function, which weights the sum of "
-":term:`error` and :term:`control effort` over time, subject to the linear "
-":term:`system` dynamics :math:`\\mathbf{\\dot{x} = Ax + Bu}`."
-msgstr ""
-"线性二次型调节器的工作原理是找到一种 :term:`control law`，使下列成本函数最小，该函数随时间加权求:term:`error` 和 "
-":term:`control effort` 的总和，服从线性系统:math:`\\mathbf{\\dot{x} = Ax + Bu}`。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:146
-msgid ""
-"J = \\int\\limits_0^\\infty \\left(\\mathbf{x}^T\\mathbf{Q}\\mathbf{x} + \\mathbf{u}^T\\mathbf{R}\\mathbf{u}\\right) dt\n"
-"\n"
-msgstr ""
-"J = \\int\\limits_0^\\infty \\left(\\mathbf{x}^T\\mathbf{Q}\\mathbf{x} + "
-"\\mathbf{u}^T\\mathbf{R}\\mathbf{u}\\right) dt\n"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:149
-msgid ""
-"The :term:`control law` that minimizes :math:`\\mathbf{J}` can be written as"
-" :math:`\\mathbf{u = K(r - x)}`, where :math:`r-x` is the :term:`error`."
-msgstr ""
-"最小化 :math:`\\mathbf{J}` 的:term:`control law` 可以写成 :math:`\\mathbf{u = K(r - "
-"x)}`, 其中 :math:`r-x` 是 :term:`error`。"
-
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:151
 msgid ""
 "LQR design's :math:`\\mathbf{Q}` and :math:`\\mathbf{R}` matrices don't need"
@@ -591,28 +535,6 @@ msgstr "例如，对于具有位置和速度状态的抬升系统，我们可以
 msgid "LQR: example application"
 msgstr "LQR：示例应用"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:202
-msgid ""
-"Let's apply a Linear-Quadratic Regulator to a real-world example. Say we "
-"have a flywheel velocity system determined through system identification to "
-"have :math:`kV = 1 \\frac{\\text{volts}}{\\text{radian per second}}` and "
-":math:`kA = 1.5 \\frac{\\text{volts}}{\\text{radian per second squared}}`. "
-"Using the flywheel example above, we have the following linear "
-":term:`system`:"
-msgstr ""
-"让我们将线性二次稳压器应用于实际示例。假设我们有一个通过系统标识确定为:math:`kV = 1 "
-"\\frac{\\text{volts}}{\\text{radian per second}}`和:math:`kA = 1.5 "
-"\\frac{\\text{volts}}{\\text{radian per second squared}}`的飞轮速度系统 "
-"。使用上面的飞轮示例，我们具有以下线性:term:`system`:"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:204
-msgid ""
-"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} v + \\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} V\n"
-"\n"
-msgstr ""
-"\\mathbf{\\dot{x}} = \\begin{bmatrix}\\frac{-kV}{kA}\\end{bmatrix} v + "
-"\\begin{bmatrix}\\frac{1}{kA}\\end{bmatrix} V\n"
-
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:207
 msgid ""
 "We arbitrarily choose a desired state excursion (maximum error) of :math:`q "
@@ -624,25 +546,6 @@ msgstr ""
 "我们任意选择所需的状态偏移(最大误差):math:`q = [0.1\\ \\text{rad/sec}]`，  :math:`[12\\ "
 "\\text{volts}]`的 :math:`\\mathbf{r}` 。在20ms的时间步长下离散化后，我们得到的:term:`gain`为   "
 ":math:`\\mathbf{K} = ~81`。这个:term:`gain` K作为PID回路对飞轮速度的比例分量。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:209
-msgid ""
-"Let's adjust :math:`\\mathbf{q}` and :math:`\\mathbf{r}`. We know that "
-"increasing the q elements or decreasing the :math:`\\mathbf{r}` elements we "
-"use to create :math:`\\mathbf{Q}` and :math:`\\mathbf{R}` would make our "
-"controller more heavily penalize :term:`control effort`, analogous to trying"
-" to driving a car more conservatively to improve fuel economy. In fact, if "
-"we increase our :term:`error` tolerance q from 0.1 to 1.0, our :term:`gain` "
-"matrix :math:`\\mathbf{K}` drops from ~81 to ~11. Similarly, decreasing our "
-"maximum voltage :math:`r` to 1.2 from 12.0 produces the same resultant "
-":math:`\\mathbf{K}`."
-msgstr ""
-"让我们调整 :math:`\\mathbf{q}`和 "
-":math:`\\mathbf{r}`。我们知道，增加用于创建:math:`\\mathbf{Q}` 和 :math:`\\mathbf{R}` "
-"的增加q元素或减少 :math:`\\mathbf{r}`元素将使控制器更严重地不利于:term:`control "
-"effort`，类似于尝试驾驶一辆汽车更保守地提高燃油经济性。事实上，如果我们把 "
-":term:`error`容忍度q从0.1增加到1.0，:term:`gain`矩阵:math:`\\mathbf{K}` "
-"从~81下降到~11。同样地，将最大电压 :math:`r` 从12.0降低到1.2也会产生相同的合成:math:`\\mathbf{K}`。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:211
 msgid ""

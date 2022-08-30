@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-11 04:03+0000\n"
+"POT-Creation-Date: 2022-08-30 16:04+0000\n"
 "PO-Revision-Date: 2022-01-10 04:14+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/telemetry/robot-telemetry-with-sendable.rst:2
 msgid "Robot Telemetry with Sendable"
@@ -37,25 +37,6 @@ msgstr ""
 " le dashboard, il est souvent fastidieux d’écrire manuellement du code pour "
 "publier des valeurs de télémesure à partir de la logique opérationnelle du "
 "code robot."
-
-#: ../../frc-docs/source/docs/software/telemetry/robot-telemetry-with-sendable.rst:6
-msgid ""
-"A cleaner approach is to leverage the existing object-oriented structure of "
-"user code to `declaratively "
-"<https://en.wikipedia.org/wiki/Declarative_programming>`__ mark important "
-"data fields for telemetry logging.  The WPILib framework can then handle the"
-" tedious/tricky part of correctly reading from (and, potentially, *writing "
-"to*) those fields for you, greatly reducing the total amount of code the "
-"user has to write and improving readability."
-msgstr ""
-"Une approche plus propre consiste à tirer parti de la structure orientée "
-"objet existante du code utilisateur pour `de façon déclarative "
-"<https://en.wikipedia.org/wiki/Declarative_programming>`__ marquer des "
-"champs de données importantes pour la consignation des données issues de la "
-"télémesure. Le framework WPILib peut alors, à votre place, gérer la partie "
-"fastidieuse / délicate de la lecture correcte de (et, potentiellement, *de "
-"l’écriture dans*) ces champs, réduisant ainsi considérablement la quantité "
-"totale de code que l’utilisateur doit écrire et en améliorant la lisibilité."
 
 #: ../../frc-docs/source/docs/software/telemetry/robot-telemetry-with-sendable.rst:8
 msgid ""
@@ -123,25 +104,6 @@ msgstr ""
 "modification de la part de l’utilisateur. Les utilisateurs peuvent également"
 " étendre facilement leurs propres classes pour implémenter l'interface "
 "``Sendable``."
-
-#: ../../frc-docs/source/docs/software/telemetry/robot-telemetry-with-sendable.rst:17
-msgid ""
-"The ``Sendable`` interface contains only one method: ``initSendable``.  "
-"Implementing classes override this method to perform the binding of in-code "
-"data values to structured `JSON <https://en.wikipedia.org/wiki/JSON>`__ "
-"data, which is then automatically sent to the robot dashboard via "
-"NetworkTables.  Implementation of the ``Sendable`` interface is discussed in"
-" the :ref:`next article<docs/software/telemetry/writing-sendable-"
-"classes:Writing Your Own Sendable Classes>`."
-msgstr ""
-"L’interface ``Sendable`` ne contient qu’une seule méthode: ``initSendable``."
-" Les classes implémentant l'interface ``Sendable`` remplacent cette méthode "
-"pour effectuer la correspondance des valeurs de données issues du code aux "
-"données structurées `JSON <https://en.wikipedia.org/wiki/JSON>`__ qui sont "
-"ensuite automatiquement envoyées au dashboard du robot via les "
-"NetworkTables. L’implémentation de l’interface ``Sendable`` est abordée dans"
-" le :ref:`prochain article<docs/software/telemetry/writing-sendable-"
-"classes:Writing Your Own Sendable Classes>`."
 
 #: ../../frc-docs/source/docs/software/telemetry/robot-telemetry-with-sendable.rst:20
 msgid "Sending a Sendable to the Dashboard"

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-31 04:04+0000\n"
+"POT-Creation-Date: 2022-09-14 04:34+0000\n"
 "PO-Revision-Date: 2021-01-05 04:38+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -20,7 +20,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:2
 msgid "Driving the Robot with Tank Drive and Joysticks"
@@ -54,7 +54,7 @@ msgstr ""
 msgid "Create a Drive Train Subsystem"
 msgstr "Créer un sous-système d'entraînement"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:13
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:14
 msgid ""
 "Create a subsystem called Drive Train. Its responsibility will be to handle "
 "the driving for the robot base."
@@ -62,7 +62,7 @@ msgstr ""
 "Créez un sous-système appelé Drive Train. Sa responsabilité sera de gérer la"
 " conduite de la base de robots."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:17
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:19
 msgid ""
 "Inside the Drive Train create a Differential Drive object for a two motor "
 "drive. There is a left motor and right motor as part of the Differential "
@@ -72,7 +72,7 @@ msgstr ""
 "entraînement à deux moteurs. Il y a un moteur gauche et un moteur droit dans"
 " le cadre de la classe Differential Drive."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:21
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:24
 msgid ""
 "Since we want to use more then two motors to drive the robot, inside the "
 "Differential Drive, create two Motor Controller Groups. These will group "
@@ -83,17 +83,17 @@ msgstr ""
 "contrôleurs de moteur. Ceux-ci regrouperont plusieurs contrôleurs de moteur "
 "afin qu’ils puissent être utilisés avec l'objet Differential Drive."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:25
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:29
 msgid "Finally, create two Motor Controllers in each Motor Controller Group."
 msgstr ""
 "Enfin, créez deux contrôleurs de moteur dans chaque groupe de contrôleurs de"
 " moteur."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:28
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:32
 msgid "Add the Joysticks to the Operator Interface"
 msgstr "Ajouter les joysticks à l'interface opérateur"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:32
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:37
 msgid ""
 "Add two joysticks to the Operator Interface, one is the left stick and the "
 "other is the right stick. The y-axis on the two joysticks are used to drive "
@@ -103,8 +103,8 @@ msgstr ""
 "et l'autre est le joystick droit. L'axe des y sur les deux joysticks est "
 "utilisé pour contrôler les moteurs gauche et droit du robot, respectivement."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:34
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:183
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:39
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:341
 msgid ""
 "Be sure to export your program to C++ or Java before continuing to the next "
 "step."
@@ -112,24 +112,26 @@ msgstr ""
 "Assurez-vous d'exporter votre programme en C++ ou Java avant de passer à "
 "l'étape suivante."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:37
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:42
 msgid "Create a Method to Write the Motors on the Subsystem"
 msgstr "Créer une méthode pour écrire aux moteurs dans le sous-système"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:41
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:190
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:46
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:348
 msgid "java"
 msgstr "java"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:102
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:176
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:426
 msgid "C++ (Header)"
 msgstr "C++ (Header ou en-tête)"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:130
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:238
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:478
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:172
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:319
 msgid ""
 "Create a method that takes the joystick inputs, in this case the the left "
 "and right driver joystick. The values are passed to the DifferentialDrive "
@@ -144,18 +146,18 @@ msgstr ""
 "appelée stop(), qui empêchera le robot de bouger, cela sera utile "
 "ultérieurement."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:174
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:321
 msgid "Some RobotBuilder output has been removed for this example for clarity"
 msgstr ""
 "Certaines sorties du RobotBuilder ont été supprimées dans cet exemple pour "
 "plus de clarté"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:177
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:324
 msgid "Read Joystick Values and Call the Subsystem Methods"
 msgstr ""
 "Lire les valeurs des joysticks et appeler les méthodes du sous-système"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:181
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:329
 msgid ""
 "Create a command, in this case called Tank Drive. Its purpose will be to "
 "read the joystick values and send them to the Drive Base subsystem. Notice "
@@ -168,25 +170,11 @@ msgstr ""
 " sorte que cette commande cessera de fonctionner chaque fois que quelque "
 "chose d'autre tentera d'utiliser le \"Drive Train\""
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:186
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:344
 msgid "Add the Code to do the Driving"
 msgstr "Ajoutez le code pour conduite le robot"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:255
-msgid ""
-"Add code to the execute method to do the actual driving. All that is needed "
-"is to get the Joystick objects for the left and right drive joysticks and "
-"pass them to the Drive Train subsystem. The subsystem just uses them for the"
-" tank steering method on its DifferentialDrive object. And we get tank "
-"steering."
-msgstr ""
-"Ajoutez du code à la méthode d'exécution pour effectuer la conduite réelle. "
-"Il suffit d'obtenir les objets Joystick pour les joysticks gauche et droit "
-"et de les transmettre au sous-système \"Drive Train\". Le sous-système les "
-"utilise uniquement pour la méthode de pilotage tank sur l'objet "
-"DifferentialDrive. Et nous obtenons une conduite en mode Tank."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:257
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:532
 msgid ""
 "We also filled in the ``end()`` method so that when this command is "
 "interrupted or stopped, the motors will be stopped as a safety precaution."
@@ -195,11 +183,11 @@ msgstr ""
 "commande est interrompue ou arrêtée, les moteurs soient arrêtés par mesure "
 "de sécurité."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:260
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:535
 msgid "Make Default Command"
 msgstr "Créer une commande par défaut"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:264
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:540
 msgid ""
 "The last step is to make the Tank Drive command be the \"Default Command\" "
 "for the Drive Train subsystem. This means that whenever no other command is "
@@ -226,7 +214,7 @@ msgstr ""
 "interrompre la commande Tank Drive pour et prendre le contrôle du "
 "déplacement."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:266
+#: ../../frc-docs/source/docs/software/wpilib-tools/robotbuilder/writing-code/robotbuilder-drive-tank.rst:547
 msgid "Be sure to export your program to C++ or Java before continuing."
 msgstr ""
 "Assurez-vous d'exporter votre programme en C++ ou Java avant de continuer."

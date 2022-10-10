@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,9 +7,8 @@
 # Jiangshan Gong <jiangshan_gong@163.com>, 2020
 # Tianrui Wu <tw2789@columbia.edu>, 2020
 # 8192 DHC <hehehehehehe886@gmail.com>, 2021
+# tianshuang Zhang <2948026254@qq.com>, 2021
 # Team 5308 <team5308@163.com>, 2021
-# Atlus Zhang <atluslan@yahoo.co.jp>, 2022
-# tianshuang Zhang <2948026254@qq.com>, 2022
 # Yitong Zhao <lucius300er@outlook.com>, 2022
 # 
 #, fuzzy
@@ -17,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 04:04+0000\n"
+"POT-Creation-Date: 2022-10-10 04:35+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2022\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -176,193 +175,14 @@ msgid "Included Command Types"
 msgstr "包含的命令类型"
 
 #: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:74
-msgid "ConditionalCommand"
-msgstr "条件命令"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:91
-msgid "SelectCommand"
-msgstr "SelectCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:93
-msgid ""
-"While the Java version of SelectCommand simply uses an ``Object`` as a key, "
-"the C++ version is templated on the key type."
-msgstr "Java版本的SelectCommand仅使用“Object”作为键，而C ++版本则以键类型为模板。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:95
-msgid ""
-"An alternate version of SelectCommand simply takes a method that supplies "
-"the command to be run - this can be very succinct, but makes inferring the "
-"command's requirements impossible, and so leaves the user responsible for "
-"manually adding the requirements to the SelectCommand."
-msgstr ""
-"SelectCommand的替代版本仅采用一种提供要运行的命令的方法——这可能非常简洁，但是使推断命令的需求成为不可能，因此，用户需要手动将需求添加到SelectCommand。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:118
-msgid "InstantCommand"
-msgstr "InstantCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:135
-msgid "RunCommand"
-msgstr "RunCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:163
-msgid "StartEndCommand"
-msgstr "StartEndCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:192
-msgid "FunctionalCommand"
-msgstr "FunctionalCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:229
-msgid "PrintCommand"
-msgstr "PrintCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:244
-msgid "ScheduleCommand"
-msgstr "ScheduleCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:260
-msgid ""
-"This is often useful for \"forking off\" from command groups: by default, "
-"commands in command groups are run *through* the command group, and are "
-"never themselves seen by the scheduler.  Accordingly, their requirements are"
-" added to the group's requirements.  While this is usually fine, sometimes "
-"it is undesirable for the entire command group to gain the requirements of a"
-" single command - a good solution is to \"fork off\" from the command group "
-"and schedule that command separately."
-msgstr ""
-"这通常对于从命令组“forking "
-"off”很有用：默认情况下，命令组中的命令是*通过*命令组运行的，而调度程序永远不会看到它们。因此，他们的要求被添加到组的要求中。尽管这通常很好，但有时整个命令组都不希望获得单个命令的要求——一个好的解决方案是从命令组“fork"
-" off”并单独计划该命令。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:263
-msgid "ProxyScheduleCommand"
-msgstr "ProxyScheduleCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:279
-msgid ""
-"This is often useful for \"forking off\" from command groups: by default, "
-"commands in command groups are run *through* the command group, and are "
-"never themselves seen by the scheduler.  Accordingly, their requirements are"
-" added to the group's requirements.  While this is usually fine, sometimes "
-"it is undesirable for the entire command group to gain the requirements of a"
-" single command - a good solution is to \"fork off\" from the command group "
-"and schedule the command separately."
-msgstr ""
-"这通常对于从命令组“forking "
-"off”很有用：默认情况下，命令组中的命令是通过命令组运行的，而调度程序永远不会看到它们。因此，他们的要求被添加到组的要求中。虽然这通常很好，但是有时整个命令组都不希望获得单个命令的要求——一个好的解决方案是从命令组“fork"
-" iff”并单独计划命令。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:282
-msgid "WaitCommand"
-msgstr "WaitCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:298
-msgid "This is often useful as a component of a command group."
-msgstr "这通常作为命令组的组成部分很有用。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:300
-msgid ""
-"``WaitCommand`` can also be subclassed to create a more complicated command "
-"that runs for a period of time. If ``WaitCommand`` is used in this method, "
-"the user must ensure that the ``WaitCommand``'s ``Initialize``, ``End``, and"
-" ``IsFinished`` methods are still called in order for the WaitCommand's "
-"timer to work."
-msgstr ""
-"也可以将``WaitCommand``子类化以创建运行一段时间的更复杂的命令。如果在此方法中使用了“ WaitCommand”，则用户必须确保仍然调用“"
-" WaitCommand”的“ Initialize”，“ End”和“ IsFinished”方法，以便WaitCommand的计时器起作用。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:303
-msgid "WaitUntilCommand"
-msgstr "WaitUnitilCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:305
-msgid ""
-"The match timer used by WaitUntilCommand does *not* provide an official "
-"match time!  While it is fairly accurate, use of this timer can *not* "
-"guarantee the legality of your robot's actions."
-msgstr "WaitUntilCommand使用的比赛计时器*不*提供官方比赛时间！虽然非常准确，但是使用此计时器*不能*保证机器人动作的合法性。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:328
-msgid "PerpetualCommand"
-msgstr "PerpetualCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:345
 msgid "Command Decorator Methods"
 msgstr "命令装饰器的方法"
 
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:356
-msgid "withTimeout"
-msgstr "withTimeout"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:393
-msgid "andThen"
-msgstr "andThen"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:410
-msgid "beforeStarting"
-msgstr "beforeStarting"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:427
-msgid "alongWith (Java only)"
-msgstr "alongWith（仅Java）"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:429
-msgid ""
-"This decorator is not supported in C++ due to technical constraints - users "
-"should simply construct a parallel command group the ordinary way instead."
-msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行命令组。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:439
-msgid "raceWith (Java only)"
-msgstr "raceWith（仅Java）"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:441
-msgid ""
-"This decorator is not supported in C++ due to technical constraints - users "
-"should simply construct a parallel race group the ordinary way instead."
-msgstr "由于技术限制，C ++不支持该装饰器——用户应该简单地以常规方式构造一个并行竞争组。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:451
-msgid "deadlineWith (Java only)"
-msgstr "deadlineWith（仅Java）"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:453
-msgid ""
-"This decorator is not supported in C++ due to technical constraints - users "
-"should simply construct a parallel deadline group the ordinary way instead."
-msgstr "由于技术限制，C ++不支持此装饰器——用户应简单地以常规方式构造并行的截止时间组。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:463
-msgid "withName (Java only)"
-msgstr "withName（仅Java）"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:465
-msgid ""
-"This decorator is not supported in C++ due to technical constraints - users "
-"should set the name of the command inside their command class instead."
-msgstr "由于技术限制，C ++不支持此装饰器——用户应在其命令类中设置命令名称。"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:475
-msgid "perpetually"
-msgstr "perpetually"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:492
-msgid "Composing Decorators"
-msgstr "组成装饰器"
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:494
-msgid ""
-"Remember that decorators, like all command groups, can be composed! This "
-"allows very powerful and concise inline expressions:"
-msgstr "请记住，装饰器和所有命令组一样都可以组成！这允许非常强大而简洁的内联表达式："
-
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:502
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:79
 msgid "Static Factory Methods for Command Groups (Java only)"
 msgstr "命令组的静态工厂方法 (仅Java)"
 
-#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:504
+#: ../../frc-docs/source/docs/software/commandbased/convenience-features.rst:81
 msgid ""
 "These factory methods are not included in the C++ command library, as the "
 "reduction in verbosity would be minimal - C++ commands should be stack-"

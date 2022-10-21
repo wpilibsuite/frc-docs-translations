@@ -26,4 +26,4 @@ if [ "$CI" = true ]
 then
     tx push --source --skip
 fi
-tx pull -l $LANG_TO_PULL --mode onlyreviewed --use-git-timestamps
+tx pull -l $LANG_TO_PULL -t --mode onlyreviewed --use-git-timestamps

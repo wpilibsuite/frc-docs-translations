@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-09 16:03+0000\n"
+"POT-Creation-Date: 2022-10-29 04:15+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:2
 msgid ""
@@ -54,24 +54,6 @@ msgstr ""
 "pour usage avec des contrôleurs personnalisés ou externes. Pour combiner le "
 "profilage de mouvement trapézoïdal avec le ``PIDController`` de WPILib, voir"
 " :doc:`profilepid-subsystems-commands`."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:8
-msgid ""
-"When controlling a mechanism, is often desirable to move it smoothly between"
-" two positions, rather than to abruptly change its setpoint.  This is called"
-" \"motion-profiling,\" and is supported in WPILib through the "
-"``TrapezoidProfile`` class (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html>`__)."
-msgstr ""
-"Lorsqu'on active un mécanisme, il est souvent souhaitable de le déplacer en "
-"douceur entre deux positions, plutôt que de changer brusquement son point de"
-" consigne. Ceci s'appelle \"motion-profiling\" et WPILib supporte plusieurs "
-"fonctionnalités via la classe ``TrapezoidProfile`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/math/trajectory/TrapezoidProfile.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc_1_1_trapezoid_profile.html>`__)."
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:10
 msgid ""
@@ -108,25 +90,6 @@ msgstr ""
 "les unités de distance, sinon une erreur de compilation sera indiquée. Pour "
 "plus d'informations sur les unités C ++, voir :ref:`docs/software/basic-"
 "programming/cpp-units:The C++ Units Library`."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:17
-msgid ""
-"The ``TrapezoidProfileSubsystem`` class (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_subsystem.html>`__)"
-" will automatically create and execute trapezoidal motion profiles to reach "
-"the user-provided goal state.  To use the ``TrapezoidProfileSubsystem`` "
-"class, users must create a subclass of it."
-msgstr ""
-"La classe ``TrapezoidProfileSubsystem`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileSubsystem.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_subsystem.html>`__)"
-"  créera et exécutera automatiquement des profils de mouvement trapézoïdal "
-"pour atteindre l'état du système souhaité. Pour utiliser la classe "
-"``TrapezoidProfileSubsystem``, les utilisateurs doivent en créer une sous-"
-"classe."
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:20
 msgid "Creating a TrapezoidProfileSubsystem"
@@ -326,24 +289,6 @@ msgstr ""
 " de distance, sinon une erreur de compilation sera indiquée. Pour plus "
 "d'informations sur les unités C++, voir  :ref:`docs/software/basic-"
 "programming/cpp-units:The C++ Units Library`."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:133
-msgid ""
-"The ``TrapezoidProfileCommand`` class (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_command.html>`__)"
-" allows users to create a command that will execute a single "
-"``TrapezoidProfile``, passing its current state at each iteration to a user-"
-"defined function."
-msgstr ""
-"La classe `` TrapezoidProfileCommand`` (`Java "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/TrapezoidProfileCommand.html>`__,"
-" `C++ "
-"<https://first.wpi.edu/wpilib/allwpilib/docs/release/cpp/classfrc2_1_1_trapezoid_profile_command.html>`__)"
-" permet aux utilisateurs de créer une commande qui exécutera un seul "
-"``TrapezoidProfile``, qui passe son état actuel à chaque itération à une "
-"fonction définie par l'utilisateur."
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:135
 msgid ""

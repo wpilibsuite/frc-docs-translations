@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-01 04:03+0000\n"
+"POT-Creation-Date: 2022-11-02 04:27+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
 "Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:4
 msgid "Using the WPILib Classes to Drive your Robot"
@@ -144,11 +144,11 @@ msgstr ""
 "moteurs en appelant ``setInverted()``/``SetInverted()`` sur leurs objets "
 "moteurs."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:58
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:64
 msgid "Squaring Inputs"
 msgstr "Squaring Inputs"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:60
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:66
 msgid ""
 "When driving robots, it is often desirable to manipulate the joystick inputs"
 " such that the robot has finer control at low speeds while still using the "
@@ -168,11 +168,11 @@ msgstr ""
 " des méthodes d'entraînement et initialiser le paramètre squaredInputs à "
 "False."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:63
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:69
 msgid "Input Deadband"
 msgstr "Input Deadband"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:65
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:71
 msgid ""
 "By default, the Differential Drive class applies an input deadband of 0.02. "
 "This means that input values with a magnitude below 0.02 (after any squaring"
@@ -192,11 +192,11 @@ msgstr ""
 " inutilement aux moteurs, lorsque le robot ne bouge pas. Pour modifier la "
 "zone morte, utilisez la méthode ``setDeadband()``."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:68
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:74
 msgid "Maximum Output"
 msgstr "Maximum Output"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:70
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:76
 msgid ""
 "Sometimes drivers feel that their drivetrain is driving too fast and want to"
 " limit the output.  This can be accomplished with the `setMaxOutput()` "
@@ -208,11 +208,11 @@ msgstr ""
 "``setMaxOutput()``. Cette sortie maximale est multipliée par le résultat des"
 " fonctions d’entraînement précédentes comme deadband et squared inputs."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:73
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:79
 msgid "Motor Safety"
 msgstr "La sécurité moteur (Motor Safety)"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:75
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:81
 msgid ""
 "Motor Safety is a mechanism in WPILib that takes the concept of a watchdog "
 "and breaks it out into one watchdog (Motor Safety timer) for each individual"
@@ -229,41 +229,7 @@ msgstr ""
 " du dispositif actionneur s'il ne reçoit pas de paquet de données valides "
 "pendant un délai de 125 ms."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:77
-msgid ""
-"The purpose of the Motor Safety mechanism is the same as the purpose of a "
-"watchdog timer, to disable mechanisms which may cause harm to themselves, "
-"people or property if the code locks up and does not properly update the "
-"actuator output. Motor Safety breaks this concept out on a per actuator "
-"basis so that you can appropriately determine where it is necessary and "
-"where it is not. Examples of mechanisms that should have motor safety "
-"enabled are systems like drive trains and arms. If these systems get latched"
-" on a particular value they could cause damage to their environment or "
-"themselves. An example of a mechanism that may not need motor safety is a "
-"spinning flywheel for a shooter. If this mechanism gets latched on a "
-"particular value it will simply continue spinning until the robot is "
-"disabled. By default Motor Safety is enabled for DifferentialDrive, "
-"KilloughDrive, and MecanumDrive objects and disabled for all other motor "
-"controllers and servos."
-msgstr ""
-"Le but du mécanisme de sécurité du moteur est le même que le but d'une "
-"minuterie de surveillance, pour désactiver les mécanismes qui peuvent causer"
-" des dommages à eux-mêmes, aux personnes ou aux biens si le code se bloque "
-"et ne met pas à jour correctement la sortie de l'actionneur. Motor Safety "
-"décompose ce concept actionneur par actionneur afin que vous puissiez "
-"déterminer de manière appropriée où il est nécessaire et où il ne l'est pas."
-" Des exemples de mécanismes pour lesquels la sécurité des moteurs devrait "
-"être activée sont des systèmes tels que les transmissions et les bras. Si "
-"ces systèmes sont verrouillés sur une valeur particulière, ils pourraient "
-"causer des dommages à leur environnement ou à eux-mêmes. Un exemple de "
-"mécanisme qui peut ne pas avoir besoin de sécurité moteur est un volant "
-"d'inertie en rotation pour un tireur. Si ce mécanisme est verrouillé sur une"
-" valeur particulière, il continuera simplement à tourner jusqu'à ce que le "
-"robot soit désactivé. Par défaut, la sécurité moteur est activée pour les "
-"objets DifferentialDrive, KilloughDrive et MecanumDrive et désactivée pour "
-"tous les autres contrôleurs de moteur et servomoteurs."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:79
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:85
 msgid ""
 "The Motor Safety feature operates by maintaining a timer that tracks how "
 "long it has been since the feed() method has been called for that actuator. "
@@ -283,7 +249,7 @@ msgstr ""
 "un appel à la méthode ``feed()`` pour indiquer que la sortie de l’actionneur"
 " a été mise à jour."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:81
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:87
 msgid ""
 "The Motor Safety interface of motor controllers can be interacted with by "
 "the user using the following methods:"
@@ -291,7 +257,7 @@ msgstr ""
 "L’interface Motor Safety des contrôleurs moteurs peut être en interaction "
 "avec l’utilisateur par l'intermédiaire des méthodes suivantes:"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:99
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:112
 msgid ""
 "By default all Drive objects enable Motor Safety. Depending on the mechanism"
 " and the structure of your program, you may wish to configure the timeout "
@@ -305,7 +271,7 @@ msgstr ""
 " durée du timeout est configurée par actionneur et n'est pas un paramètre "
 "global. La valeur par défaut (et minimale utile) est de 100 ms."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:102
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:115
 msgid "Axis Conventions"
 msgstr "Conventions des axes"
 
@@ -317,7 +283,7 @@ msgstr ""
 "Montrez l’axe du robot avec X + en se dirigeant vers l'avant. Y+ à droite et"
 " Z+ vers le bas."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:107
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:120
 msgid ""
 "The drive classes use the NED axes convention (North-East-Down as external "
 "reference in the world frame). The positive X axis points ahead, the "
@@ -334,7 +300,7 @@ msgstr ""
 "utilisons NED ici parce que les joysticks utilisent NED, et ils utilisent "
 "NED parce que l'industrie aéronautique le fait."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:109
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:122
 msgid ""
 "Joysticks follow NED convention, but it's important to note that axes values"
 " are rotations around the respective axes, not translations. When viewed "
@@ -351,7 +317,7 @@ msgstr ""
 "vous obtenez donc une valeur négative. Pousser vers la droite est une "
 "rotation CCW autour de l'axe X, vous obtenez donc une valeur positive."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:111
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:124
 msgid ""
 "The ``MecanumDrive`` class does not follow this convention. The positive Y "
 "axis points ahead, the positive X axis points right. This may change in a "
@@ -361,36 +327,13 @@ msgstr ""
 "pointe vers l'avant, l'axe X positif pointe vers la droite. Cela peut "
 "changer dans la version WPILib d'une année future."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:114
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:127
 msgid "Using the DifferentialDrive class to control Differential Drive robots"
 msgstr ""
 "Utilisation de la classe DifferentialDrive pour contrôler les robots à "
 "entraînement différentiel (WCD)"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:116
-msgid ""
-"WPILib provides separate Robot Drive classes for the most common drive train"
-" configurations (differential, mecanum, and Killough).  The "
-"DifferentialDrive class handles the differential drivetrain configuration. "
-"These drive bases typically have two or more in-line traction or omni wheels"
-" per side (e.g., 6WD or 8WD) and may also be known as \"skid-steer\", \"tank"
-" drive\", or \"West Coast Drive\" (WCD). The Kit of Parts drivetrain is an "
-"example of a differential drive. There are methods to control the drive with"
-" 3 different styles (\"Tank\", \"Arcade\", or \"Curvature\"), explained in "
-"the article below."
-msgstr ""
-"WPILib fournit des classes Robot Drive distinctes pour les configurations de"
-" trains d'entraînement les plus courantes (différentiel, Mécanum et "
-"Killough). La classe DifferentialDrive gère la configuration de la "
-"transmission différentielle. Ces bases d'entraînement ont généralement deux "
-"ou plusieurs roues motrices en ligne ou omnidirectionnelles par côté (par "
-"exemple, 6WD ou 8WD) et peuvent également être appelées \"skid-steer\", "
-"\"tank drive\" ou \"West Coast Drive\". La transmission du Kit de pièces est"
-" un exemple d'entraînement différentiel. Il existe des méthodes pour "
-"contrôler l'entrainement avec 3 styles différents (\"Tank\", \"Arcade\" ou "
-"\"Curvature\"), expliqués dans l'article ci-dessous."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:118
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:131
 msgid ""
 "DifferentialDrive is a method provided for the control of \"skid-steer\" or "
 "\"West Coast\" drivetrains, such as the Kit of Parts chassis. Instantiating "
@@ -400,27 +343,27 @@ msgstr ""
 " \"skid-steer\" ou \"West Coast\", comme le châssis du Kit de pièces. "
 "L'instanciation d'un DifferentialDrive est aussi simple que cela:"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:122
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:162
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:259
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:135
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:184
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:308
 msgid "Java"
 msgstr "Java"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:135
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:180
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:148
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:202
 msgid "C++ (Header)"
 msgstr "C++ (Header ou en-tête)"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:145
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:196
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:158
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:218
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:156
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:178
 msgid "Multi-Motor DifferentialDrive with MotorControllerGroups"
 msgstr "DifferentialDrive multimoteur avec MotorControllerGroups"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:158
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:180
 msgid ""
 "Many FRC\\ |reg| drivetrains have more than 1 motor on each side. In order "
 "to use these with DifferentialDrive, the motors on each side have to be "
@@ -439,11 +382,11 @@ msgstr ""
 "constructeur de groupe MotorController (qui prend un nombre arbitraire "
 "d'entrées)."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:208
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:245
 msgid "Drive Modes"
 msgstr "Modes de conduite"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:210
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:247
 msgid ""
 "The DifferentialDrive class contains three different default modes of "
 "driving your robot's motors."
@@ -451,17 +394,17 @@ msgstr ""
 "La classe DifferentialDrive contient trois différents modes de pilotage (par"
 " défaut)"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:212
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:249
 msgid "Tank Drive, which controls the left and right side independently"
 msgstr ""
 "Tank Drive, qui contrôle les côtés gauche et droit de façon indépendante"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:213
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:250
 msgid "Arcade Drive, which controls a forward and turn speed"
 msgstr ""
 "Arcade Drive, qui contrôle la vitesse vers l'avant/arrière et le virage"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:214
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:251
 msgid ""
 "Curvature Drive, a subset of Arcade Drive, which makes your robot handle "
 "like a car with constant-curvature turns."
@@ -469,7 +412,7 @@ msgstr ""
 "Curvature Drive, un sous-ensemble d'Arcade Drive, qui fait que votre robot "
 "se comporte comme une voiture avec des virages à courbure constante."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:216
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:253
 msgid ""
 "The DifferentialDrive class contains three default methods for controlling "
 "skid-steer or WCD robots. Note that you can create your own methods of "
@@ -481,7 +424,7 @@ msgstr ""
 "propres méthodes de contrôle de la conduite du robot et les faire appeler "
 "tankDrive() avec les entrées dérivées pour les moteurs gauche et droit."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:218
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:255
 msgid ""
 "The Tank Drive mode is used to control each side of the drivetrain "
 "independently (usually with an individual joystick axis controlling each). "
@@ -497,7 +440,7 @@ msgstr ""
 "ci-dessus pour la transmission et ci-dessous pour la construction du "
 "joystick."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:220
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:257
 msgid ""
 "The Arcade Drive mode is used to control the drivetrain using speed/throttle"
 " and rotation rate. This is typically used either with two axes from a "
@@ -516,7 +459,7 @@ msgstr ""
 " été omise, ci-dessus pour la transmission et c-dessous pour la construction"
 " du joystick."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:222
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:259
 msgid ""
 "Like Arcade Drive, the Curvature Drive mode is used to control the "
 "drivetrain using speed/throttle and rotation rate. The difference is that "
@@ -533,13 +476,13 @@ msgstr ""
 "activée lorsque le troisième paramètre :code:`boolean` est à l'état vrai "
 "(true)."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:253
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:302
 msgid "Using the MecanumDrive class to control Mecanum Drive robots"
 msgstr ""
 "Utilisation de la classe MecanumDrive pour contrôler les robots avec trains "
 "d'entraînement Mécanum"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:255
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:304
 msgid ""
 "MecanumDrive is a method provided for the control of holonomic drivetrains "
 "with Mecanum wheels, such as the Kit of Parts chassis with the mecanum drive"
@@ -551,15 +494,15 @@ msgstr ""
 "augmenté du kit Mécanum, comme illustré ci-dessus.  Instancier un "
 "MecanumDrive est aussi simple que ceci:"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:267
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:316
 msgid "C++"
 msgstr "C++"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:276
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:325
 msgid "Mecanum Drive Modes"
 msgstr "Modes d'entraînement Mécanum"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:278
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:327
 msgid ""
 "The drive axis conventions are different from common joystick axis "
 "conventions. See the `Axis Conventions`_ above for more information."
@@ -568,7 +511,7 @@ msgstr ""
 "de joystick courantes. Voir les `Conventions d'axe`_ ci-dessus pour plus "
 "d'informations."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:280
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:329
 msgid ""
 "The MecanumDrive class contains two different default modes of driving your "
 "robot's motors."
@@ -576,7 +519,7 @@ msgstr ""
 "La classe MecanumDrive contient deux différents modes de pilotage (par "
 "défaut)"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:282
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:331
 msgid ""
 "driveCartesian: Angles are measured clockwise from the positive X axis. The "
 "robot's speed is independent from its angle or rotation rate."
@@ -585,7 +528,7 @@ msgstr ""
 "l'axe X positif. La vitesse du robot est indépendante de son angle ou de sa "
 "vitesse de rotation."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:284
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:333
 msgid ""
 "drivePolar: Angles are measured counter-clockwise from straight ahead. The "
 "speed at which the robot drives (translation) is independent from its angle "
@@ -595,11 +538,11 @@ msgstr ""
 "ligne droite. La vitesse à laquelle le robot roule (translation) est "
 "indépendante de son angle ou de sa vitesse de rotation."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:303
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:358
 msgid "Field-Oriented Driving"
 msgstr "Conduite orientée sur le terrain"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:305
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:360
 msgid ""
 "A 4th parameter can be supplied to the ``driveCartesian(double ySpeed, "
 "double xSpeed, double zRotation, double gyroAngle)`` method, the angle "
@@ -622,7 +565,7 @@ msgstr ""
 "est tiré vers eux, quelle que soit la direction dans laquelle le robot fait "
 "face."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:307
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:362
 msgid ""
 "The use of field-oriented driving makes often makes the robot much easier to"
 " drive, especially compared to a \"robot-oriented\" drive system where the "
@@ -633,7 +576,7 @@ msgstr ""
 "d'entraînement \"orienté robot\" où les commandes sont inversées lorsque le "
 "robot fait face aux conducteurs."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:309
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:364
 msgid ""
 "Just remember to get the gyro angle each time ``driveCartesian()`` is "
 "called."
@@ -641,7 +584,7 @@ msgstr ""
 "N'oubliez pas d'obtenir l'angle gyroscopique chaque fois que la méthode "
 "``driveCartesian()`` est appelée."
 
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:311
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:366
 msgid ""
 "Many teams also like to ramp the joysticks inputs over time to promote a "
 "smooth acceleration and reduce jerk.  This can be accomplished with a "

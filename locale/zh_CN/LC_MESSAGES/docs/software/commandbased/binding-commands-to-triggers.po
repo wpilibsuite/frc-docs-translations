@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-02 04:27+0000\n"
+"POT-Creation-Date: 2022-11-14 04:16+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -37,89 +37,25 @@ msgid ""
 msgstr ""
 "除了在自动阶段开始时调度的自动阶段命令以及在当前不使用其子系统的情况下自动调度的缺省命令之外，运行命令的最常见方法是将其绑定到触发事件，例如人工操作员按下的按钮。基于命令的范例使此操作非常容易。"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:11
-msgid "Trigger/Button Bindings"
-msgstr "触发器/按钮绑定"
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:15
-msgid ""
-"There are a number of bindings available for the ``Trigger`` class. All of "
-"these bindings will automatically schedule a command when a certain trigger "
-"activation event occurs - however, each binding has different specific "
-"behavior. ``Button`` and its subclasses have bindings with identical "
-"behaviors, but slightly different names that better-match a button rather "
-"than an arbitrary triggering event."
-msgstr ""
-"“Trigger”类有许多可用的绑定。当发生某些触发器激活事件时，所有这些绑定将自动调度命令——但是，每个绑定具有不同的特定行为。“Button”及其子类的绑定具有相同的行为，但是名称稍有不同，可以更好地匹配按钮而不是任意触发事件。"
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:53
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:55
 msgid "Binding a command to a joystick button"
 msgstr "将命令绑定到操纵杆按钮"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:55
-msgid ""
-"The most-common way to trigger a command is to bind a command to a button on"
-" a joystick or other HID (human interface device). To do this, users should "
-"use the ``JoystickButton`` class."
-msgstr "触发命令的最常见方法是将命令绑定到操纵杆或其他HID（人机界面设备）上的按钮。为此，用户应使用“JoystickButton”类。"
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:58
-msgid "Creating a JoystickButton"
-msgstr "创建一个JoystickButton"
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:89
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:97
 msgid "Binding a Command to a JoystickButton"
 msgstr "将命令绑定到JoystickButton"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:91
-msgid ""
-"In the C++ command-based library, button objects *do not need to survive "
-"past the call to a binding method*, and so the binding methods may be simply"
-" called on a temp."
-msgstr "在基于C ++命令的库中，按钮对象*不需要在对绑定方法的调用之后存活*，因此可以简单地在临时对象上调用绑定方法。"
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:93
-msgid ""
-"Putting it all together, it is very simple to bind a button to a "
-"JoystickButton:"
-msgstr "放在一起，将按钮绑定到JoystickButton非常简单："
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:107
-msgid ""
-"It is useful to note that the command binding methods all return the "
-"trigger/button that they were initially called on, and thus can be chained "
-"to bind multiple commands to different states of the same button. For "
-"example:"
-msgstr "值得注意的是，命令绑定方法都返回最初被调用的触发器/按钮，因此可以链接起来将多个命令绑定到同一按钮的不同状态。例如："
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:127
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:135
 msgid ""
 "Remember that button binding is *declarative*: bindings only need to be "
 "declared once, ideally some time during robot initialization. The library "
 "handles everything else."
 msgstr "请记住，按钮绑定是“声明式”的：绑定只需要声明一次，理想情况下是在机器人初始化期间声明一次。该库处理其他所有事务。"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:130
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:138
 msgid "Composing Triggers"
 msgstr "构成触发器"
 
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:132
-msgid ""
-"The ``Trigger`` class (including its ``Button`` subclasses) can be composed "
-"to create composite triggers through the ``and()``, ``or()``, and "
-"``negate()`` methods (or, in C++, the ``&&``, ``||``, and ``!`` operators). "
-"For example:"
-msgstr ""
-"“Trigger”类（包括其“Button”子类）可以通过“and()”，“or()”和“negate()”组成复合触发器来创建方法（或在C "
-"++中为“&&”，“||”和“!”运算符）。例如："
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:150
-msgid ""
-"Note that these methods return a ``Trigger``, not a ``Button``, so the "
-"``Trigger`` binding method names must be used even when buttons are "
-"composed."
-msgstr "请注意，这些方法返回的是“Trigger”，而不是“Button”，因此即使组成按钮，也必须使用“Trigger”绑定方法名称。"
-
-#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:176
+#: ../../frc-docs/source/docs/software/commandbased/binding-commands-to-triggers.rst:182
 msgid "Creating Your Own Custom Trigger"
 msgstr "创建自己的自定义触发器"

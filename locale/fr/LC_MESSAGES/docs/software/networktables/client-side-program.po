@@ -4,17 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2020
 # Andre Theberge <atheberge2@videotron.ca>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
+# Austin Shalit <austinshalit@gmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-29 04:15+0000\n"
+"POT-Creation-Date: 2022-11-19 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
+"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,42 +23,11 @@ msgstr ""
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:4
-msgid "Creating a client-side program"
-msgstr "Création d'un programme côté client"
-
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:6
-msgid ""
-"If all you need to do is have your robot program communicate with GRIP or a "
-"dashboard running on the Driver Station laptop, then the previous examples "
-"of writing robot programs are sufficient. But if you would like to write "
-"some custom client code that would run on the drivers station or on a "
-"coprocessor then you need to know how to build :term:`NetworkTables` "
-"programs for those (non-roboRIO) platforms."
-msgstr ""
-"Si tout ce que vous avez à faire est de faire communiquer votre programme de"
-" robot avec GRIP ou un tableau de bord fonctionnant sur l'ordinateur "
-"portable de Driver Station, les exemples précédents d'écriture de programmes"
-" de robot sont suffisants. Mais si vous souhaitez écrire un code client "
-"personnalisé qui s'exécuterait sur la station de pilotes ou sur un "
-"coprocesseur, vous devez savoir comment construire des programmes avec des "
-":term:`NetworkTables` pour ces plates-formes (non roboRIO)."
-
 #: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:8
 msgid "A basic client program looks like the following example."
 msgstr "Un programme client de base ressemble à l'exemple suivant."
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:46
-msgid ""
-"In this example an instance of NetworkTables is created and a "
-"NetworkTableEntry if created to reference the values of \"x\" and \"y\" from"
-" a table called \"datatable\"."
-msgstr ""
-"Dans cet exemple, une instance de NetworkTables est créée et un "
-"NetworkTableEntry s'il est créé pour référencer les valeurs de \"x\" et "
-"\"y\" à partir d'une table appelée \"datatable\"."
-
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:48
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:133
 msgid ""
 "Then this instance is started as a NetworkTables client with the team number"
 " (the roboRIO is always the server). Additionally, if the program is running"
@@ -70,7 +40,7 @@ msgstr ""
 "utilisant la méthode startDSClient (), NetworkTables obtiendra l'adresse IP "
 "du robot à partir de Driver Station."
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:50
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:135
 msgid ""
 "Then this sample program simply loops once a second and gets the values for "
 "x and y and prints them on the console. In a more realistic program, the "
@@ -81,11 +51,11 @@ msgstr ""
 "réaliste, le client pourrait traiter ou générer des valeurs calculés de ces "
 "lectures et les retourner au robot."
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:53
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:138
 msgid "Building the program"
 msgstr "La construction du programme"
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:54
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:139
 msgid ""
 "When building and running the program you will need some additional "
 "libraries to include with your client-side program. These are:"
@@ -94,15 +64,15 @@ msgstr ""
 "bibliothèques supplémentaires à inclure dans votre programme côté client. "
 "Ceux-ci sont:"
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:62
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:147
 msgid "The desktop platform jar is for Windows, macOS, and Linux."
 msgstr "Le fichier JAR fonctionne sous Windows, macOS et Linux."
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:65
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:150
 msgid "Building using Gradle"
 msgstr "Construire avec Gradle"
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:67
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:152
 msgid ""
 "The dependencies above can be added to the ``dependencies`` block in a "
 "``build.gradle`` file. The ``ntcore-java`` and ``wpiutil-java`` libraries "
@@ -119,7 +89,7 @@ msgstr ""
 "``build.gradle`` si une prise en charge multiplateforme de l'application est"
 " souhaitée."
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:69
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:154
 msgid ""
 "First, the FRC\\ |reg| Maven repository should be added to the "
 "``repositories`` block. Note that this is not required if you are using the "
@@ -129,7 +99,7 @@ msgstr ""
 "``repositories``. Notez que cela n’est pas nécessaire si vous utilisez le "
 "plugin GradleRIO avec votre application."
 
-#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:77
+#: ../../frc-docs/source/docs/software/networktables/client-side-program.rst:162
 msgid ""
 "Then, the dependencies can be added to the ``dependencies`` block. Here, "
 "``VERSION`` should be replaced with the latest version number of the "

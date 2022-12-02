@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-29 04:15+0000\n"
+"POT-Creation-Date: 2022-12-02 04:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
 "Last-Translator: Ran Xin <xinryanryan@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -97,11 +97,7 @@ msgstr "请注意，需要@Description注释来告知插件加载程序自定义
 msgid "Building plugin"
 msgstr "建筑插件"
 
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:41
-msgid "For Gradle:"
-msgstr "对于Gradle："
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:56
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:48
 msgid ""
 "Plugins are allowed to have dependencies on other plugins and libraries, "
 "however, they must be included correctly in the maven or gradle build file. "
@@ -111,7 +107,7 @@ msgid ""
 msgstr ""
 "允许插件依赖于其他插件和库，但是，它们必须正确包含在maven或gradle构建文件中。当一个插件依赖于其他插件时，最好定义这些依赖项，以便在依赖项也未加载时不加载该插件。这可以使用@Requires注释完成，如下所示："
 
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:67
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:59
 msgid ""
 "The ``minVersion`` specifies the minimum allowable version of the plugin "
 "that can be loaded. For example, if the ``minVersion`` is 1.4.5, and the "
@@ -122,49 +118,11 @@ msgstr ""
 "minVersion指定可加载的插件的最低允许版本。例如，如果“ "
 "minVersion”为1.4.5，并且加载了版本为1.4.7的插件，则将允许这样做。但是，如果加载了版本1.2.4的插件，由于它小于``minVersion``，因此将不允许这样做。"
 
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:70
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:62
 msgid "Deploying Plugin To Shuffleboard"
 msgstr "将插件部署到沙狐球"
 
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:71
-msgid ""
-"In order to load a plugin in Shuffleboard, you will need to generate a jar "
-"file of the plugin and put it in the ``~/Shuffleboard/plugins`` folder. This"
-" can be done automatically from gradle as noted:"
-msgstr ""
-"为了在Shuffleboard中加载插件，您将需要生成插件的jar文件，并将其放置在〜/ Shuffleboard / "
-"plugins文件夹中。可以按照如下所述从gradle自动完成："
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:82
-msgid ""
-"The path to your Shuffleboard plugin folder will most likely be "
-"``~/Shuffleboard/plugins``."
-msgstr "Shuffleboard插件文件夹的路径很可能是``〜/ Shuffleboard / plugins''。"
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:84
-msgid ""
-"The ``deployPlugin`` task takes four parameters, the ``type: Copy`` "
-"parameter makes the task implement the `CopySpec "
-"<https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>`_"
-" interface specifying what to copy. The group and description parameters to "
-"specify what the Group ID of the plugin is and a short descriptive "
-"description to what the Plugin does."
-msgstr ""
-"任务“ deployPlugin”具有四个参数，“类型：复制”参数使该任务实现“ CopySpec "
-"<https://docs.gradle.org/current/javadoc/org/gradle/api/file/CopySpec.html>”"
-" _接口，指定要复制的内容。组和描述参数，用于指定插件的组ID是什么，以及对插件的简短描述。"
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:87
-msgid ""
-"In the body, the ``from`` field specifies from where the file is to be "
-"copied from, followed by the ``into`` field specifying the destination to "
-"where the file needs to be copied to. Finally, the ``include`` field ensures"
-" all files with the ``.jar`` extension is also copied."
-msgstr ""
-"在主体中，“ from”字段指定要从中复制文件的位置，然后是“ "
-"into”字段，该位置指定要将文件复制到的目标位置。最后，include字段确保所有扩展名为.jar的文件也被复制。"
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:90
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:66
 msgid ""
 "After deploying, Shuffleboard will cache the path of the plugin so it can be"
 " automatically loaded the next time Shuffleboard loads. It may be necessary "
@@ -173,30 +131,15 @@ msgid ""
 msgstr ""
 "部署后，Shuffleboard将缓存插件的路径，以便下次Shuffleboard加载时可以自动加载。可能需要单击插件菜单下的``清除缓存''以删除插件或将插件重新加载到Shuffleboard中。"
 
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:92
-msgid ""
-"By running ``gradle deployPlugin`` from the command line, the jar file will "
-"automatically placed into the Shuffleboard plugin folder."
-msgstr "通过从命令行运行gradle deployPlugin，jar文件将自动放置到Shuffleboard插件文件夹中。"
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:95
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:69
 msgid "Manually Adding Plugin"
 msgstr "手动添加插件"
-
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:96
-msgid ""
-"The other way to add a plugin to Shuffleboard is to compile it to a jar file"
-" and add it from Shuffleboard. First, compile your plugin into a ``.jar`` "
-"file using Maven or Gradle. Then, open Shuffleboard, click on the file tab "
-"in the top left, and choose Plugins from the drop down menu."
-msgstr ""
-"将插件添加到Shuffleboard的另一种方法是将其编译为jar文件，然后从Shuffleboard添加它。首先，使用Maven或Gradle将您的插件编译为.jar文件。然后，打开Shuffleboard，单击左上角的文件选项卡，然后从下拉菜单中选择插件。"
 
 #: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rstNone
 msgid "Manually adding custom plugins"
 msgstr "手动添加自定义插件"
 
-#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:102
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:76
 msgid ""
 "From the plugins window, choose the \"Load plugin\" button in the bottom "
 "right, and select your jar file."

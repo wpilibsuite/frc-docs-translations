@@ -6,15 +6,16 @@
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Lal Serdaroğlu, 2022
+# Zeynep Karagöz, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-09 04:20+0000\n"
+"POT-Creation-Date: 2022-12-08 04:03+0000\n"
 "PO-Revision-Date: 2021-03-16 04:19+0000\n"
-"Last-Translator: Lal Serdaroğlu, 2022\n"
+"Last-Translator: Zeynep Karagöz, 2022\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,10 +23,117 @@ msgstr ""
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:2
+msgid "Using External Libraries with Robot Code"
+msgstr "Robot Koduyla Harici Kitaplıklar Kullanma"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:4
+msgid ""
+"Using external libraries may have unintended behavior with your robot code! "
+"It is not recommended unless you are aware of what you are doing!"
+msgstr ""
+"Harici kitaplıkları kullanmak, robot kodunuzla istenmeyen davranışlara neden"
+" olabilir! Ne yaptığınızın farkında değilseniz tavsiye edilmez!"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:6
+msgid ""
+"Often a team might want to add external Java or C++ libraries for usage with"
+" their robot code. This article highlights adding Java libraries to your "
+"Gradle dependencies, or the options that C++ teams have."
+msgstr ""
+"Genellikle bir ekip, robot kodlarıyla kullanım için harici Java veya C++ "
+"kitaplıkları eklemek isteyebilir. Bu makale, Gradle bağımlılıklarınıza Java "
+"kitaplıkları eklemeyi veya C++ ekiplerinin sahip olduğu seçenekleri "
+"vurgulamaktadır."
+
 #: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:9
 msgid "Java"
 msgstr "Java"
 
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:11
+msgid ""
+"Any external dependencies that rely on native libraries (JNI) are likely not"
+" going to work."
+msgstr ""
+"Yerel kitaplıklara (JNI) dayanan herhangi bir dış bağımlılık muhtemelen "
+"çalışmayacaktır."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:13
+msgid ""
+"Java is quite simple to add external dependencies. You simply add the "
+"required ``repositories`` and ``dependencies``."
+msgstr ""
+"Java, harici bağımlılıklar eklemek için oldukça basittir. Sadece gerekli "
+"``depoları`` ve ``bağımlılıkları`` eklemeniz yeterlidir."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:24
+msgid ""
+"``mavenCentral()`` can be replaced with whatever repository the library you "
+"want to import is using. Now you have to add the dependency on the library "
+"itself. This is done by adding the necessary line to your ``dependencies "
+"{}`` block. The below example showcases adding Apache Commons to your Gradle"
+" project."
+msgstr ""
+"``mavenCentral()``, içe aktarmak istediğiniz kitaplığın kullandığı herhangi "
+"bir depoyla değiştirilebilir. Şimdi bağımlılığı kütüphanenin kendisine "
+"eklemelisiniz. Bu, ``dependencies {}`` bloğunuza gerekli satırı ekleyerek "
+"yapılır. Aşağıdaki örnek, Gradle projenize Apache Commons eklemeyi "
+"göstermektedir."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:33
+msgid ""
+"Now you run a build and ensure the dependencies are downloaded. Intellisense"
+" may not work properly until a build is ran!"
+msgstr ""
+"Şimdi bir yapı çalıştırıyorsunuz ve bağımlılıkların indirildiğinden emin "
+"oluyorsunuz. Bir yapı çalıştırılana kadar Intellisense düzgün "
+"çalışmayabilir!"
+
 #: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:36
 msgid "C++"
 msgstr "C ++"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:38
+msgid ""
+"Adding C++ dependencies to your robot project is non-trivial due to needing "
+"to compile for the roboRIO. You have a couple of options."
+msgstr ""
+"Robot projenize C++ bağımlılıkları eklemek, roboRIO için derlemeye ihtiyaç "
+"duyması nedeniyle önemsiz değildir. Birkaç seçeneğin var."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:40
+msgid "Copy the source code of the wanted library into your robot project."
+msgstr "İstediğiniz kitaplığın kaynak kodunu robot projenize kopyalayın."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:41
+msgid ""
+"Use the `vendordep template <https://github.com/wpilibsuite/vendor-"
+"template>`__ as an example and create a vendordep."
+msgstr ""
+"Örnek olarak `satıcı dep şablonunu <https://github.com/wpilibsuite/vendor-"
+"template>`__ kullanın ve bir satıcı departmanı oluşturun."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:44
+msgid "Copying Source Code"
+msgstr "Kaynak Kodu Kopyalama"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:46
+msgid ""
+"Simply copy the necessary source and/or headers into your robot project. You"
+" can then configure any necessary platform args like below:"
+msgstr ""
+"Gerekli kaynağı ve/veya başlıkları robot projenize kopyalamanız yeterlidir. "
+"Daha sonra aşağıdaki gibi gerekli platform argümanlarını "
+"yapılandırabilirsiniz:"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:55
+msgid "Creating a Vendordep"
+msgstr "Bir Satıcı Departmanı Oluşturma"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/external-libraries.rst:57
+msgid ""
+"Please follow the instructions in the `vendordep repository "
+"<https://github.com/wpilibsuite/vendor-template>`__."
+msgstr ""
+"Lütfen `vendordep deposu <https://github.com/wpilibsuite/vendor-template>`__"
+" içindeki talimatlara uyun."

@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Austin Shalit <austinshalit@gmail.com>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Austin Shalit <austinshalit@gmail.com>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-26 04:30+0000\n"
+"POT-Creation-Date: 2022-12-11 04:03+0000\n"
 "PO-Revision-Date: 2021-02-27 16:27+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Last-Translator: Austin Shalit <austinshalit@gmail.com>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -82,22 +82,23 @@ msgstr ""
 "prend en charge et comment."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:18
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:50
 msgid "Java"
 msgstr "Java"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:59
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:24
 msgid "C++ (Header)"
 msgstr "C++ (Header ou en-tête)"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:80
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:30
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:104
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:37
 msgid "Writing Tests"
 msgstr "Écriture des Tests"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:106
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:39
 msgid ""
 "Tests are placed inside the ``test`` source set: ``/src/test/java/`` and "
 "``/src/test/cpp/`` for Java and C++ tests, respectively. Files outside that "
@@ -110,32 +111,7 @@ msgstr ""
 "accès au cadre de test - cela fera échouer la compilation en raison de "
 "références non résolues."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:108
-msgid ""
-"In Java, each test class contains at least one test method marked with "
-"``@org.junit.Test``, each method representing a test case. Additional "
-"methods for opening resources (such as our ``Intake`` object) before each "
-"test and closing them after are respectively marked with "
-"``@org.junit.Before`` and ``@org.junit.After``. In C++, test fixture classes"
-" inheriting from ``testing::Test`` contain our subsystem and simulation "
-"hardware objects, and test methods are written using the "
-"``TEST_F(testfixture, testname)`` macro. The ``SetUp()`` and ``TearDown()`` "
-"methods can be overridden in the test fixture class and will be run "
-"respectively before and after each test."
-msgstr ""
-"En Java, chaque classe de test contient au moins une méthode de test marquée"
-" de ``@org.junit.Test``, chaque méthode représentant un cas de test. "
-"D’autres méthodes d’ouverture des ressources (telles que notre objet "
-"``Intake``) avant chaque test et leur fermeture après sont respectivement "
-"marquées de ``@org.junit.Before``  et ``@org.junit.After``. En C++, les "
-"classes de montage de test héritant de ``testing::Test`` contiennent nos "
-"objets matériels pour les sous-systèmes et la simulation, et les méthodes de"
-" test sont écrites à l’aide de la macro ``TEST_F(testfixture, testname)``. "
-"Les méthodes ``SetUp()`` et ``TearDown()`` peuvent être remplacées dans la "
-"classe de montage d’essai et seront exécutés respectivement avant et après "
-"chaque test."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:110
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:43
 msgid ""
 "Each test method should contain at least one *assertion* (``assert*()`` in "
 "Java or ``EXPECT_*()`` in C++). These assertions verify a condition at "
@@ -150,27 +126,7 @@ msgstr ""
 " assertion échouée plantera le test - l’exécution n’atteindra pas les "
 "assertions subséquentes."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:112
-msgid ""
-"Both JUnit and GoogleTest have multiple assertion types, but the most common"
-" is equality: ``assertEquals(expected, actual)``/``EXPECT_EQ(expected, "
-"actual)``. When comparing numbers, a third parameter - ``delta``, the "
-"acceptable error, can be given. In JUnit (Java), these assertions are static"
-" methods and can be used without qualification by adding the static star "
-"import ``import static org.junit.Asssert.*``. In Google Test (C++), "
-"assertions are macros from the ``<gtest/gtest.h>`` header."
-msgstr ""
-"JUnit et GoogleTest ont tous deux plusieurs types d’assertions, mais la plus"
-" commune est l’égalité : ``assertEquals(valeur attendue, valeur "
-"actuelle)``/``EXPECT_EQ(valeur attendue, valeur actuelle)``. Lors de la "
-"comparaison des nombres, un troisième paramètre - ``delta``, l’erreur "
-"acceptable, peut être donné. Dans JUnit (Java), ces assertions sont des "
-"méthodes statiques et peuvent être utilisées sans qualification en ajoutant "
-"l’importation statique étoile (star) ``import static org.junit.Asssert.*``. "
-"Dans Google Test (C++), les assertions sont des macros de l’en-tête "
-"``<gtest/gtest.h>``."
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:114
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:47
 msgid ""
 "Comparison of floating-point values isn't accurate, so comparing them should"
 " be done with an acceptable error parameter (``DELTA``)."
@@ -179,18 +135,18 @@ msgstr ""
 " leur comparaison doit être faite avec un paramètre d’erreur acceptable "
 "(``DELTA``)."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:214
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:62
 msgid ""
 "For more advanced usage of JUnit and Google Test, see the framework docs."
 msgstr ""
 "Pour une utilisation plus avancée de JUnit et Google Test, consultez les "
 "documents cadres."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:217
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:65
 msgid "Running Tests"
 msgstr "Exécution des tests"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:219
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:67
 msgid ""
 "Tests will always be run in simulation on your desktop. For prerequisites "
 "and more info, see :doc:`the simulation introduction <introduction>`."
@@ -199,7 +155,7 @@ msgstr ""
 "conditions préalables et plus d’informations, consultez :doc:`Introduction à"
 " la simulation <introduction>`."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:221
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:69
 msgid ""
 "For Java tests to run, make sure that your ``build.gradle`` file contains "
 "the following block:"
@@ -207,7 +163,7 @@ msgstr ""
 "Pour que les tests Java s’exécutent, assurez-vous que votre fichier "
 "``build.gradle`` contient le bloc suivant :"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:229
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:78
 msgid ""
 "Use :guilabel:`Test Robot Code` from the Command Palette to run the tests. "
 "Results will be reported in the terminal output, each test will have a "
@@ -225,7 +181,7 @@ msgstr ""
 "détaillée des résultats; s’il y a un test qui a échoué un lien pour rendre "
 "le document dans votre navigateur sera imprimé dans le terminal de sortie."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:231
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/unit-testing.rst:80
 msgid ""
 "By default, Gradle runs the tests whenever robot code is built, including "
 "deploys. This will increase deploy time, and failing tests will cause the "

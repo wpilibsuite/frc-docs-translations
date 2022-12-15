@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-05 16:03+0000\n"
+"POT-Creation-Date: 2022-12-15 16:04+0000\n"
 "PO-Revision-Date: 2022-11-19 04:05+0000\n"
 "Last-Translator: Sidney Lavoie, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -33,3 +33,686 @@ msgid ""
 msgstr ""
 "Une démonstration des cibles fiduciaires AprilTags attachées à des robots "
 "génériques."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:9
+msgid ""
+"AprilTags are a system of visual tags developed by researchers at the "
+"University of Michigan to provide low overhead, high accuracy localization "
+"for many different applications."
+msgstr ""
+"Les AprilTags sont un système d'étiquettes visuelles développé par des "
+"chercheurs de l'Université du Michigan visant à fournir une localisation "
+"d'emplacement à basse consommation de ressources et haute précision adaptée "
+"à plusieurs applications."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:11
+msgid ""
+"Additional information about the tag system and its creators `can be found "
+"on their website <https://april.eecs.umich.edu/software/apriltag>`__ This "
+"document attempts to summarize the content for FIRST robotics related "
+"purposes."
+msgstr ""
+"Des informations additionnelles à propos du système d'étiquettes et ses "
+"créateurs `se trouvent sur leur site "
+"<https://april.eecs.umich.edu/software/apriltag>`__  Ce document essaie de "
+"résumer le contenu pour les besoins de la Compétition de robotique FIRST."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:14
+msgid "Application to FRC"
+msgstr "Application en FRC"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:16
+msgid ""
+"In the context of FRC, AprilTags are useful for helping your robot know "
+"where it is at on the field, so it can align itself to some goal position."
+msgstr ""
+"Dans le contexte de la FRC, les AprilTags sont utiles pour aider votre robot"
+" à savoir où il se trouve sur le terrain, afin qu'Il puisse s'aligner avec "
+"les positions de buts."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:18
+msgid ""
+"AprilTags have been in development since 2011, and have been refined over "
+"the years to increase the robustness and speed of detection."
+msgstr ""
+"Les AprilTags sont développées depuis 2011 et se sont raffinées avec les "
+"années, afin d'augmenter leur robustesse et la vitesse de détection."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:20
+msgid ""
+"`Starting in 2023, FIRST is providing a number of tags, "
+"<https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-"
+"rules-preview-and-vision-target-update>`__ scattered throughout the field, "
+"each at a known :term:`pose`."
+msgstr ""
+"Débutant en 2023, FIRST fournit plusieurs étiquettes "
+"<https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-"
+"rules-preview-and-vision-target-update>`__  dispersées sur le terrain, "
+"connues sous le nom de :term:`pose`."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:22
+msgid "All of the tags are from the 16h5 family."
+msgstr "Toutes les étiquettes sont de la famille 16h5."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:24
+msgid ""
+"Many of the pictures in this documentation are from the 36h11 family, which "
+"are similar (but not identical) to the 16h5 actually in use for FRC. All the"
+" underlying concepts are the same."
+msgstr ""
+"Plusieurs images dans cette documentation sont de la famille 36h11, qui sont"
+" similaires (mais pas identiques) aux 16h5 utilisées pour la FRC. Tous les "
+"concepts fondamentaux sont les mêmes."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:28
+msgid ""
+"The AprilTag library implementation defines standards on how sets of tags "
+"should be designed. Some of the possible tag families `are described here "
+"<https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__."
+msgstr ""
+"L'implémentation de la bibliothèque AprilTag définit les standards sur la "
+"manières que les ensembles d'étiquettes devraient être conçues. Certaines "
+"des familles possibles `sont décrites ici "
+"<https://www.ssontech.com/docs/SynthEyesUM_files/Choosing_an_AprilTag.html>`__."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:30
+msgid ""
+"FIRST has chosen the 16h5 family for 2023. This family of tags is made of a "
+"4x4 grid of pixels, each representing one bit of information. An additional "
+"black and white border must be present around the outside of the bits."
+msgstr ""
+"FIRST a choisit la famille 16h5 pour 2023. Cette famille d'étiquettes est "
+"faite d'une grille de 4x4 pixels, chacun représentant un bit d'information. "
+"Une bordure additionnelle noire et blanche doit être présente sur le "
+"périmètre des bits."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:32
+msgid ""
+"While there are :math:`2^{16} = 65536` theoretical possible tags, only 30 "
+"are actually used. These are chosen to:"
+msgstr ""
+"Bien qu'il y ait :math:`2^{16} = 65536` étiquettes possibles, seulement 30 "
+"sont utilisées. Elles ont été choisies pour:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:34
+msgid ""
+"Be robust against some bit flips (IE, issues where a bit has its color "
+"incorrectly identified)."
+msgstr ""
+"Être robustes contre le basculement de bit (ex: problèmes où le bit a sa "
+"couleur identifiée incorrectement)."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:35
+msgid ""
+"Not involve \"simple\" geometric patterns likely to be found on things which"
+" are not tags. (IE, squares, stripes, etc.)"
+msgstr ""
+"Ne pas contenir de motifs géométriques \"simples\" qui pourraient se trouver"
+" sur des choses qui ne sont pas des cibles (ex: carrés, lignes, etc...)."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:36
+msgid ""
+"Ensure the geometric pattern is asymmetric enough that you can always figure"
+" out which way is up."
+msgstr ""
+"S'assurer que le motif géométrique est assez asymétrique que vous pouvez "
+"toujours savoir quel côté pointe vers le haut."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:40
+msgid ""
+"All tags will be printed such that the tag's main \"body\" is 6 inches in "
+"length."
+msgstr ""
+"Toutes les étiquettes seront imprimées afin que leur bordure extérieure "
+"mesure 6 pouces de longueur."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rstNone
+msgid "Diagram showing the dimensions of an FRC AprilTag fiducial target."
+msgstr "Diagramme montrant les dimensions d'un cible fiduciaire AprilTag FRC."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:46
+msgid ""
+"For home usage, tag files may be printed off and placed around your practice"
+" area. Mount them to a rigid backing material to ensure the tag stays flat, "
+"as the processing algorithm assumes the tags are flat."
+msgstr ""
+"Pour utilisation à la maison, les fichiers d'étiquette peuvent êtres "
+"imprimés et placés autour de votre aire de pratique. Fixez les sur un "
+"support rigide afin que les étiquettes restent plate, puisque l'algorithme "
+"de vision assume que l'étiquette est plate."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:49
+msgid "Software Support"
+msgstr "Support Logiciel"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:51
+msgid ""
+"The main repository for the source code that detects and decodes AprilTags "
+"`is located here <https://github.com/AprilRobotics/apriltag>`__."
+msgstr ""
+"La bibliothèque principale pour le code source qui détecte et décode les "
+"AprilTags `est située ici <https://github.com/AprilRobotics/apriltag>`__."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:53
+msgid ""
+"WPILib has forked the repository to add new features for FRC. These include:"
+msgstr ""
+"WPIlib a ramifié la bibliothèque afin d'ajouter des nouvelles "
+"fonctionnalités pour la FRC. Entre autres:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:55
+msgid ""
+"Building the source code for common FRC targets, including the roboRIO and "
+"Raspberry Pi."
+msgstr ""
+"Compiler le code source pour des cibles FRC courantes, incluant le roboRIO "
+"et Raspberry Pi."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:56
+msgid ""
+"Adding Java Native Interface (JNI) support to allow invoking its "
+"functionality from Java"
+msgstr ""
+"Ajouter un support Java Native Interface (JNI) pour permettre l'invocation "
+"de ses fonctionnalités depuis Java"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:57
+msgid "Gradle & Maven publishing support"
+msgstr "Support de publication Gradle et Maven"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:59
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:174
+msgid "Todo"
+msgstr "À faire"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:59
+msgid ""
+"Work in this library is still ongoing, this list may change in the future."
+msgstr ""
+"Le travail dans cette bibliothèque est toujours en cours, cette liste "
+"pourrait changer dans le futur."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:62
+msgid "Processing Technique"
+msgstr "Technique de calcul"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:64
+msgid ""
+"While most FRC teams should not have to implement their own code to identify"
+" AprilTags in a camera image, it is useful to know the basics of how the "
+"underlying libraries function."
+msgstr ""
+"Bien que la plupart des équipes FRC ne devraient pas avoir à implémenter "
+"leur propre code pour identifier les AprilTags dans une image de caméra, il "
+"est utile de connaître les bases du fonctionnement des bibliothèques sous-"
+"jacentes."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:68
+msgid "Original Image"
+msgstr "Image d'origine"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "Original, unprocessed image"
+msgstr "Original, image non calculée"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:73
+msgid ""
+"An image from a camera is simply an array of values, corresponding to the "
+"color and brightness of each pixel."
+msgstr ""
+"Une image d'une caméra est simplement une liste de valeurs correspondant à "
+"la couleur et la luminosité de chaque pixel."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:75
+msgid "Remove Colors"
+msgstr "Retirer les couleurs"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "Image converted to be grey-scale"
+msgstr "Images converties en échelles de gris."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:80
+msgid ""
+"The first step is to convert the image to a grey-scale (brightness-only) "
+"image. Color information is not needed to detect the black-and-white tags."
+msgstr ""
+"La première étape est de convertir l'image en tons de gris (luminosité "
+"seulement). L'information des couleurs n'est pas nécessaire pour détecter "
+"les étiquettes en noir et blanc."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:82
+msgid "Decimate"
+msgstr "Décimer"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "Image converted to a lower resolution"
+msgstr "Image convertie vers une résolution plus basse"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:87
+msgid ""
+"The next step is to convert the image to a lower resolution. Working with "
+"fewer pixels helps the algorithm work faster. The full-resolution image will"
+" be used later to refine early estimates."
+msgstr ""
+"La prochaine étape est de convertir l'image vers une résolution plus basse. "
+"Travailler avec moins de pixels aide l'algorithme à travailler plus vite. "
+"L'image en pleine résolution sera utilisée plus tard pour raffiner les "
+"estimations préliminaires."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:89
+msgid "Adaptive Threshold"
+msgstr "Seuil adaptatif"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "Image with adaptive threshold algorithm applied"
+msgstr "Image avec l'algorithme de seuil adaptatif appliqué"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:95
+msgid ""
+"An adaptive threshold algorithm is run to classify each pixel as "
+"\"definitely light\", \"definitely dark\", or \"not sure\"."
+msgstr ""
+"Un algorithme de seuil adaptatif est exécuté afin de classifier chacun des "
+"pixels en \"définitivement clair\", \"définitivement foncé\" ou "
+"\"incertain\". "
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:97
+msgid ""
+"The threshold is calculated by looking at the pixel's brightness, compared "
+"to a small neighborhood of pixels around it."
+msgstr ""
+"Le seuil est calculé en regardant la luminosité du pixel comparé à celle du "
+"voisinage des pixels."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:99
+msgid "Segmentation"
+msgstr "Segmentation"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid ""
+"Adaptive thresholded image, but with clusters of similar pixels grouped "
+"together"
+msgstr ""
+"Image avec seuil adaptatif, mais avec des pixels similaires regroupés "
+"ensemble"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:104
+msgid ""
+"Next, the known pixels are clumped together. Any clumps which are too small "
+"to reasonably be a meaningful part of a tag are discarded."
+msgstr ""
+"Ensuite, les pixels connus sont regroupés ensemble. Tout les groupes trop "
+"petits pour être une partie significative d'une étiquette sont supprimés."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:106
+msgid "Quad Detection"
+msgstr "Détection des quadrilatères"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "Image with quadrilateral areas identified and marked"
+msgstr "Image avec les aires quadrilatérales identifiées et marquées"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:111
+msgid "An algorithm for fitting a quadrilateral to each clump is now run:"
+msgstr ""
+"Un algorithme pour associer un quadrilatère à chaque groupe est maintenant "
+"exécuté:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:113
+msgid ""
+"Identify likely \"corner\" candidates by pixels which are outliers in both "
+"dimensions."
+msgstr ""
+"Identifier les \"coins\" probables par les pixels qui sont des valeurs "
+"aberrantes dans les deux dimensions."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:114
+msgid ""
+"Iterate through all possible combinations of corners, evaluating the fit "
+"each time"
+msgstr ""
+"Itérer au travers de toutes les combinaison possibles de coins, tout en "
+"évaluant l'appartenance à chaque fois."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:115
+msgid "Pick the best-fit quadrilateral"
+msgstr "Choisir le quadrilatère avec le meilleur ajustement"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:117
+msgid ""
+"Given the set of all quadralaterals, Identify a subset of quadrilaterals "
+"which is likely a tag."
+msgstr ""
+"Compte tenu de l'ensemble de tout les quadrilatères, identifier un sous-"
+"ensemble de quadrilatères qui est probablement une étiquette."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:119
+msgid ""
+"A single large exterior quadrilateral with many interior quadrilateral is "
+"likely a good candidate."
+msgstr ""
+"Un seul grand quadrilatère extérieur avec plusieurs quadrilatères intérieurs"
+" est sûrement un bon candidat."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:121
+msgid ""
+"If all has gone well so far, we are left with a four-sided region of pixels "
+"that is likely a valid tag."
+msgstr ""
+"Si tout s'est bien passé jusqu'ici, il nous reste une région de pixels à "
+"quatre côtés qui est sûrement une étiquette valide."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:123
+msgid "Decode ID"
+msgstr "Décoder l'identifiant"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "Image with AprilTag data decoded into a target identification number."
+msgstr ""
+"L'image avec des données AprilTag est décodée en un nombre d'identification "
+"cible."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:129
+msgid ""
+"Now that we have one or more regions of pixels which we believe to be a "
+"valid AprilTag, we need to identify which tag we are looking at. This is "
+"done by \"decoding\" the pattern of light and dark squares on the inside."
+msgstr ""
+"Maintenant que nous avons ai moins une région de pixels que nous croyons "
+"être un AprilTag valide, nous devons identifier l'étiquette que nous "
+"regardons. Cela est fait en \"décodant\" le motif de carrés clairs et foncés"
+" à l'intérieur."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:131
+msgid ""
+"Calculate the expected interior pixel coordinates where the center of each "
+"bit should be"
+msgstr ""
+"Calculer les coordonnées attendues des pixels intérieurs où le centre de "
+"chaque bit devrait être"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:132
+msgid ""
+"Mark each location as \"1\" or \"0\" by comparing the pixel intensity to a "
+"threshold"
+msgstr ""
+"Marquer chaque emplacement en tant que \"1\" ou \"0\" en comparant "
+"l'intensité des pixels à un seuil"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:133
+msgid ""
+"Find the tag ID which most closely matches what was seen in the image, "
+"allowing for one or two bit errors."
+msgstr ""
+"Trouver l'identifiant d'étiquette qui correspond de près avec ce qui a été "
+"vu dans l'image, en permettant une erreur d'un ou deux bits."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:135
+msgid ""
+"It is possible there is no valid tag ID which matches the suspect tag. In "
+"this case, the decoding process stops."
+msgstr ""
+"Il est qu'il n'y ait aucun identifiant d'étiquette valide qui correspond à "
+"l'étiquette suspectée. Dans ce cas, le processus de décodage s'arrête."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:137
+msgid "Fit External Quad"
+msgstr "Adapter le quadrilatère externe"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:0
+msgid "External quadrilateral fitting process applied to each target"
+msgstr ""
+"Processus d'adaptation du quadrilatère externe appliqué à chaque cible"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:142
+msgid ""
+"Now that we have a tag ID for the region of pixels, we need to do something "
+"useful with it."
+msgstr ""
+"Maintenant que nous avons un identifiant d'étiquette pour la région de "
+"pixels, nous devons faire quelque chose d'utile avec."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:144
+msgid ""
+"For most FRC applications, we care about knowing the precise location of the"
+" corners of the tag, or its center. In both cases, we expect the resolution-"
+"lowering operation we did at the beginning to have distorted the image, and "
+"we want to undo those effects."
+msgstr ""
+"Pour la plupart des applications en FRC, nous nous soucions de savoir la "
+"localisation précise des coins de l'étiquette, ou son centre. Dans les deux "
+"cas, nous nous attendons à ce que l'opération de diminution de la résolution"
+" que nous avons effectué au débit ait déformé l'image et nous voulons "
+"renverser ces effets."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:146
+msgid "The algorithm to do this is:"
+msgstr "L'algorithme pour faire cela est:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:148
+msgid ""
+"Use the detected tag location to define a region of interest in the "
+"original-resolution image"
+msgstr ""
+"Utiliser la position de l'étiquette détectée pour définir une région "
+"d'intérêt dans l'image de résolution originale"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:149
+msgid ""
+"Calculate the :term:`gradient` at pre-defined points in the region of "
+"interest to detect where the image most sharply transitions between black to"
+" white"
+msgstr ""
+"Calculer la :term:`pente` à des points prédéfinis dans la région d'intérêt "
+"pour détecter où l'image transitionne nettement entre le blanc et le noir"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:150
+msgid ""
+"Use these gradient measurements to rapidly re-fit an exterior quadrilateral "
+"at full resolution"
+msgstr ""
+"Utiliser ces mesures de pente pour rapidement réajuster un quadrilatère "
+"extérieur à la pleine résolution"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:151
+msgid "Use geometry to calculate the exact center of the re-fit quadrilateral"
+msgstr ""
+"Utiliser la géométrie pour calculer le centre exact du quadrilatère réajusté"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:153
+msgid ""
+"Note that this step is optional, and can be skipped for faster image "
+"processing. However, skipping it can induce significant errors into your "
+"robot's behavior, depending on how you are using the tag outputs."
+msgstr ""
+"Notez que cette étape est optionnelle et peut être ignorée pour un calcul "
+"plus rapide de l'image. Cependant, l'ignorer peut introduire des erreurs "
+"significative dans le comportement de votre robot, dépendamment de la "
+"manière que vous utilisez les sorties des étiquettes."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:157
+msgid "Usage"
+msgstr "Utilisation"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:160
+msgid "2D Alignment"
+msgstr "Alignement 2D"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:162
+msgid ""
+"A simple strategy for using targets is to move the robot until the target is"
+" centered in the image. Assuming the field and robot are constructed such "
+"that the gamepiece, scoring location, vision target, and camera are all "
+"aligned, this method should proved a straightforward method to automatically"
+" align the robot to the scoring position."
+msgstr ""
+"Une stratégie simple pour utiliser les cibles est de bouger le robot jusqu'à"
+" ce que la cible soit centrée dans l'image. Supposant que le terrain et le "
+"robot sont construits d'une manière que les pièces de jeu, la position du "
+"but, la cible de vision et la caméra sont alignés, cette méthode devrait "
+"être une méthode simple pour aligner le robot à la position de pointage."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:164
+msgid ""
+"Using a camera, identify the *centroid* of the AprilTags in view. If the "
+"tag's ID is correct, apply drivetrain commands to rotate the robot left or "
+"right until the tag is centered in the camera image."
+msgstr ""
+"En utilisant une caméra, identifiez le \"centroïde\" des AprilTags en vue. "
+"Si l'identifiant d'étiquette est correct, appliquez des commandes de "
+"conduite pour tourner le robot vers la gauche ou la droite jusqu'à ce que "
+"l'étiquette soit centrée dans l'image."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:166
+msgid ""
+"This method does not require calibrating the camera or performing the "
+"homography step."
+msgstr ""
+"Cette méthode ne requiert pas de calibration ou de performer l'étape "
+"d'homographie. "
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:170
+msgid "3D Alignment"
+msgstr "Alignement 3D"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:174
+msgid "Code examples coming soon!"
+msgstr "Les exemples de code arriveront bientôt!"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:176
+msgid ""
+"A more advanced usage of AprilTags is to use their corner locations to help "
+"perform on-field localization."
+msgstr ""
+"Une utilisation plus avancée des AprilTags est d'utiliser leur position de "
+"coins pour aider au positionement sur le terrain."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:178
+msgid ""
+"Each image is searched for AprilTags using the algorithm described on this "
+"page. Using assumptions about how the camera's lense distorts the 3d world "
+"onto the 2d array of pixels in the camera, an estimate of the camera's "
+"position relative to the tag is calculated. A good camera calibration is "
+"required for the assumptions about its lens behavior to be accurate."
+msgstr ""
+"Des AprilTags sont recherchés dans chaque image en utilisant l'algorithme "
+"décrit sur cette page. En utilisant des inférences sur la manière que la "
+"lentille de la caméra déforme le monde 3d en un tableau de pixels 2d dans la"
+" caméra, une estimation de la position de la caméra en relation avec "
+"l'étiquette est calculée. Une bonne calibration de la caméra est requise "
+"pour que les estimations sur le comportement de sa lentille soient précises."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:180
+msgid ""
+"The tag's ID is also decoded. from the image. Given each tag's ID, the "
+"position of the tag on the field can be looked up."
+msgstr ""
+"L'identifiant de l'étiquette est aussi décodé depuis l'image. Compte tenu de"
+" chaque identifiant d'étiquette, la position de l'étiquette sur le terrain "
+"peut être recherchée."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:182
+msgid ""
+"Knowing the position of the tag on the field, and the position of the camera"
+" relative to the tag, the 3D geometry classes can be used to estimate the "
+"position of the camera on the field."
+msgstr ""
+"Sachant la position de l'étiquette sur le terrain ainsi que la position de "
+"la caméra en relation avec l'étiquette, les classes de géométrie 3D peuvent "
+"être utilisées pour estimer la position de la caméra sur le terrain."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:184
+msgid ""
+"If the camera's position on the robot is known, the robot's position on the "
+"field can also be estimated."
+msgstr ""
+"Si la positon de la caméra sur le robot est connue, la position du robot sur"
+" le terrain peut aussi être estimée."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:186
+msgid ""
+"These estimates can be incorporated into the WPILib pose estimation classes."
+msgstr ""
+"Ces estimations peuvent être incorporées dans les classes d'estimation de "
+"pose de la WPILib."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:189
+msgid "2D to 3D Ambiguity"
+msgstr "Ambiguïté 2D vers 3D"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:191
+msgid ""
+"The process of translating the four known corners of the target in the image"
+" (two-dimensional) into a real-world position relative to the camera (three-"
+"dimensional) is inherently ambiguous. That is to say, there are multiple "
+"real-world positions that result in the target corners ending up in the same"
+" spot in the camera image."
+msgstr ""
+"Le processus de traduire les quatre coins connus de la cible dans l'image "
+"(en deux dimension) en une position réelle relative à la caméra (en trois "
+"dimensions) est intrinsèquement ambiguë. Cela est pour dire qu'il y a "
+"plusieurs positions réelles qui résultent en les coins cibles étant aux "
+"mêmes endroits dans l'image de la caméra."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:193
+msgid ""
+"Humans can often use lighting or background clues to understand how objects "
+"are oriented in space. However, computers do not have this benefit. They can"
+" be tricked by similar-looking targets:"
+msgstr ""
+"Les humains peuvent souvent utiliser l'éclairage ou les indices en arrière-"
+"plan pour comprendre comment les objets sont orientés dans l'espace. "
+"Cependant, les ordinateurs n'ont pas ce bienfait. Ils peuvent être confus "
+"par des cibles similaires:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rstNone
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rstNone
+msgid "First optical illusion example of planar ambiguity"
+msgstr "Premier exemple d'illusion d'optique d'ambiguïté planaire"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rstNone
+msgid "Second optical illusion example of planar ambiguity"
+msgstr "Deuxième exemple d'illusion d'optique d'ambiguïté planaire"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rstNone
+msgid "Third optical illusion example of planar ambiguity"
+msgstr "Troisième exemple d'illusion d'optique d'ambiguïté planaire"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:211
+msgid ""
+"Resolving which position is \"correct\" can be done in a few different ways:"
+msgstr ""
+"Résoudre quelle position est \"correcte\" peut être fait de quelques "
+"manières différentes:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:213
+msgid ""
+"Use your odometry history from all sensors to pick the pose closest to where"
+" you expect the robot to be."
+msgstr ""
+"Utilisez votre historique d'odométrie de tous les capteurs pour choisir la "
+"pose la plus proche d'où vous vous attendez que le robot soit."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:214
+msgid ""
+"Reject poses which are very unlikely (ex: outside the field perimiter, or up"
+" in the air)"
+msgstr ""
+"Rejetez les poses qui sont peu probables (ex: à l'extérieur du périmètre ou "
+"en l'air)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:215
+msgid ""
+"Ignore pose estimates which are very close together (and hard to "
+"differentiate)"
+msgstr ""
+"Ignorez les estimations de poses qui sont très proche l'une de l'autre (et "
+"difficile à différencier)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:216
+msgid ""
+"Use multiple cameras to look at the same target, such that at least one "
+"camera can generate a good pose estimate"
+msgstr ""
+"Utilisez plusieurs caméras pour regarder la même cible afin qu'au moins une "
+"caméra puisse générer une assez bonne estimation"

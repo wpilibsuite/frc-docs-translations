@@ -8,21 +8,21 @@
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2022
 # Ela Zeynep Baysal, 2022
 # Melis Uysal, 2022
-# Zeynep Karagöz, 2022
 # Uluc Ali Gazioglu, 2022
 # Mehmet Rauf Cinar, 2022
 # Arda Aksoy, 2022
 # Çağan Büyüker, 2022
 # Lal Serdaroğlu, 2022
+# Zeynep Karagöz, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-14 16:04+0000\n"
+"POT-Creation-Date: 2022-12-24 04:04+0000\n"
 "PO-Revision-Date: 2022-11-19 04:05+0000\n"
-"Last-Translator: Lal Serdaroğlu, 2022\n"
+"Last-Translator: Zeynep Karagöz, 2022\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -65,6 +65,15 @@ msgstr ""
 msgid "Application to FRC"
 msgstr "FRC uygulaması"
 
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:16
+msgid ""
+"In the context of FRC, AprilTags are useful for helping your robot know "
+"where it is at on the field, so it can align itself to some goal position."
+msgstr ""
+"FRC şartlarında, AprilTag'ler, robotunuzun sahada nerede olduğunu bilmesine "
+"yardımcı olmak için yararlıdır, böylece robotunuzu bir hedef konumuna "
+"hizalayabilir."
+
 #: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:18
 msgid ""
 "AprilTags have been in development since 2011, and have been refined over "
@@ -83,6 +92,19 @@ msgstr ""
 "2023'ten itibaren FIRST, bir dizi etiket sağlıyor.\n"
 "<https://www.firstinspires.org/robotics/frc/blog/2022-2023-approved-devices-rules-preview-and-vision-target-update>`__alana dağılmış, her biri bilinen bir :term`poz`da."
 
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:22
+msgid "All of the tags are from the 16h5 family."
+msgstr "Etiketlerin tamamı 16h5 ailesindendir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:24
+msgid ""
+"Many of the pictures in this documentation are from the 36h11 family, which "
+"are similar (but not identical) to the 16h5 actually in use for FRC. All the"
+" underlying concepts are the same."
+msgstr ""
+"Bu belgedeki resimlerin çoğu, aslında FRC için kullanılan 16h5'e benzeyen "
+"(ancak aynı olmayan) 36h11 ailesindendir. Tüm temel kavramlar aynıdır."
+
 #: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:32
 msgid ""
 "While there are :math:`2^{16} = 65536` theoretical possible tags, only 30 "
@@ -91,6 +113,14 @@ msgstr ""
 ":math:`2^{16} = 65536` teorik olası etiket varken aslında sadece 30 tanesi "
 "kullanılmaktadır. Bunlar şu sebepler için seçilir:"
 
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:34
+msgid ""
+"Be robust against some bit flips (IE, issues where a bit has its color "
+"incorrectly identified)."
+msgstr ""
+"Bazı bit çevirmelerine karşı dikkatli olun (IE, bir bitin renginin yanlış "
+"tanımlandığı sorunlar)."
+
 #: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:35
 msgid ""
 "Not involve \"simple\" geometric patterns likely to be found on things which"
@@ -98,3 +128,90 @@ msgid ""
 msgstr ""
 "Etiket olmayan şeylerde bulunması muhtemel \"basit\" geometrik desenleri "
 "içermez. (IE, kareler, çizgiler vb.)"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:36
+msgid ""
+"Ensure the geometric pattern is asymmetric enough that you can always figure"
+" out which way is up."
+msgstr ""
+"Geometrik desenin, hangi yolun yukarı olduğunu her zaman anlayabilmeniz için"
+" yeterince asimetrik olduğundan emin olun."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:40
+msgid ""
+"All tags will be printed such that the tag's main \"body\" is 6 inches in "
+"length."
+msgstr ""
+"Tüm etiketler, etiketin ana \"gövdesi\" 6 inç uzunluğunda olacak şekilde "
+"yazdırılacaktır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rstNone
+msgid "Diagram showing the dimensions of an FRC AprilTag fiducial target."
+msgstr "Bir FRC AprilTag referans hedefinin boyutlarını gösteren diyagram."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:46
+msgid ""
+"For home usage, tag files may be printed off and placed around your practice"
+" area. Mount them to a rigid backing material to ensure the tag stays flat, "
+"as the processing algorithm assumes the tags are flat."
+msgstr ""
+"Evde kullanım için, etiket dosyalarının çıktısı alınabilir ve çalışma "
+"alanınızın etrafına yerleştirilebilir. İşleme algoritması etiketlerin düz "
+"olduğunu varsaydığından, etiketin düz kalmasını sağlamak için bunları sert "
+"bir destek malzemesine monte edin."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:49
+msgid "Software Support"
+msgstr "Yazılım Desteği"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:53
+msgid ""
+"WPILib has forked the repository to add new features for FRC. These include:"
+msgstr ""
+"WPILib, FRC için yeni özellikler eklemek üzere depoyu ayırdı. Bunlar "
+"içerilir:"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:55
+msgid ""
+"Building the source code for common FRC targets, including the roboRIO and "
+"Raspberry Pi."
+msgstr ""
+"Raspberry Pi ve roboRIO dahil olmak üzere , yaygın FRC hedefleri için kaynak"
+" kodu oluşturmak"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:56
+msgid ""
+"Adding Java Native Interface (JNI) support to allow invoking its "
+"functionality from Java"
+msgstr ""
+"Java'dan işlevselliğini çağırmaya izin vermek için Java Yerel Arayüz (JNI) "
+"desteği ekleme"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:57
+msgid "Gradle & Maven publishing support"
+msgstr "Gradle & Maven yayınlama desteği"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:59
+msgid ""
+"Work in this library is still ongoing, this list may change in the future."
+msgstr ""
+"Bu kütüphanedeki çalışmalar hala devam ediyor , bu liste gelecekte "
+"değişebilir."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:62
+msgid "Processing Technique"
+msgstr "İşleme Tekniği"
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:64
+msgid ""
+"While most FRC teams should not have to implement their own code to identify"
+" AprilTags in a camera image, it is useful to know the basics of how the "
+"underlying libraries function."
+msgstr ""
+"Çoğu FRC ekibinin bir kamera görüntüsünde AprilTag'leri tanımlamak için "
+"kendi kodlarını uygulaması gerekmese de, temeldeki kitaplıkların nasıl "
+"çalıştığının temellerini bilmek yararlıdır."
+
+#: ../../frc-docs/source/docs/software/vision-processing/apriltag/apriltag-intro.rst:68
+msgid "Original Image"
+msgstr "Gerçek görüntü"

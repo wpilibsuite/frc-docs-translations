@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-01-08 04:04+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -79,11 +79,11 @@ msgstr ""
 msgid "The ``schedule()`` Method"
 msgstr "``schedule()`` Methodu"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:56
 msgid "The Scheduler Run Sequence"
 msgstr "Schedukler-Zamanlayıcı Çalıştırma Sırası"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:28
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:58
 msgid ""
 "The ``initialize()`` method of each ``Command`` is called when the command "
 "is scheduled, which is not necessarily when the scheduler runs (unless that "
@@ -93,23 +93,15 @@ msgstr ""
 "çağrılır, bu, zamanlayıcı çalıştığında zorunlu değildir (bu komut bir "
 "düğmeye bağlı değilse)."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:63
 msgid "Step 1: Run Subsystem Periodic Methods"
 msgstr "Adım 1: Alt Sistem Periyodik Yöntemlerini Çalıştırın"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:38
-msgid ""
-"First, the scheduler runs the ``periodic()`` method of each registered "
-"``Subsystem``."
-msgstr ""
-"İlk olarak, programlayıcı her kayıtlı ``Alt Sistemin-Subsystem`` "
-"``periodic()`` yöntemini çalıştırır."
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:41
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:86
 msgid "Step 2: Poll Command Scheduling Triggers"
 msgstr "Adım 2: Poll Command Scheduling Tetikleyicileri"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:43
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:88
 msgid ""
 "For more information on how trigger bindings work, see :doc:`binding-"
 "commands-to-triggers`"
@@ -117,7 +109,7 @@ msgstr ""
 "Tetikleyici bağlamalarının nasıl çalıştığı hakkında daha fazla bilgi için "
 "bkz. :doc:`binding-commands-to-triggers`"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:45
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:90
 msgid ""
 "Secondly, the scheduler polls the state of all registered triggers to see if"
 " any new commands that have been bound to those triggers should be "
@@ -129,11 +121,11 @@ msgstr ""
 "durumunu sorgular. Bağlı bir komutu zamanlama koşulları karşılanırsa, komut "
 "zamanlanır ve ``Initialize()`` yöntemi çalıştırılır."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:48
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:111
 msgid "Step 3: Run/Finish Scheduled Commands"
 msgstr "3. Adım: Zamanlanmış-Scheduled Komutları Run/Finish"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:50
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:113
 msgid ""
 "Thirdly, the scheduler calls the ``execute()`` method of each currently-"
 "scheduled command, and then checks whether the command has finished by "
@@ -147,7 +139,7 @@ msgstr ""
 "çağrılır ve komutun programı kaldırılır ve gerekli alt sistemleri serbest "
 "bırakılır."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:52
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:115
 msgid ""
 "Note that this sequence of calls is done in order for each command - thus, "
 "one command may have its ``end()`` method called before another has its "
@@ -158,11 +150,11 @@ msgstr ""
 "komutun ``end()`` yöntemi, diğerinin ``execute()`` yöntemi çağrılmadan önce "
 "çağrılmasına sahip olabilir. Komutlar planlandıkları sırayla işlenir."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:55
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:138
 msgid "Step 4: Schedule Default Commands"
 msgstr "4. Adım: Varsayılan Komutları Programlayın - Schedule"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:57
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:140
 msgid ""
 "Finally, any registered ``Subsystem`` has its default command scheduled (if "
 "it has one).  Note that the ``initialize()`` method of the default command "
@@ -172,11 +164,11 @@ msgstr ""
 "komutu planlanmıştır (eğer varsa). Varsayılan komutun ``initialize()`` "
 "yönteminin şu anda çağrılacağını unutmayın."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:60
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:161
 msgid "Disabling the Scheduler"
 msgstr "Scheduler - Devre Dışı Bırakma"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:62
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:163
 msgid ""
 "The scheduler can be disabled by calling "
 "``CommandScheduler.getInstance().disable()``.  When disabled, the "
@@ -186,7 +178,7 @@ msgstr ""
 "yapılarak devre dışı bırakılabilir. Devre dışı bırakıldığında, planlayıcının"
 " ``schedule()`` ve ``run()`` komutları hiçbir şey yapmaz."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:64
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:165
 msgid ""
 "The scheduler may be re-enabled by calling "
 "``CommandScheduler.getInstance().enable()``."
@@ -194,27 +186,15 @@ msgstr ""
 "Programlayıcı, ``CommandScheduler.getInstance().enable()`` çağrılarak "
 "yeniden etkinleştirilebilir."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:67
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:168
 msgid "Command Event Methods"
 msgstr "Komut Olay Yöntemleri"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:72
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:173
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
-msgid "onCommandExecute"
-msgstr "onCommandExecute"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
-msgid "onCommandFinish"
-msgstr "onCommandFinish"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
-msgid "onCommandInterrupt"
-msgstr "onCommandInterrupt"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:183
 msgid ""
 "A typical use-case for these methods is adding markers in an event log "
 "whenever a command scheduling event takes place, as demonstrated in the "

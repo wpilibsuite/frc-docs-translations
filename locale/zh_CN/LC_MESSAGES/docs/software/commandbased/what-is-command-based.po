@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-30 16:04+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -53,58 +53,3 @@ msgstr "指令如何运行"
 #: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:61
 msgid "For a more detailed explanation, see :doc:`command-scheduler`."
 msgstr "有关更详细的说明，请参考:doc:`command-scheduler`.。"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:65
-msgid ""
-"Multiple commands can run concurrently, as long as they do not require the "
-"same resources on the robot. Resource management is handled on a per-"
-"subsystem basis: commands may specify which subsystems they interact with, "
-"and the scheduler will never schedule more than one command requiring a "
-"given subsystem at a time. This ensures that, for example, users will not "
-"end up with two different pieces of code attempting to set the same motor "
-"controller to different output values. If a new command is scheduled that "
-"requires a subsystem that is already in use, it will either interrupt the "
-"currently-running command that requires that subsystem (if the command has "
-"been scheduled as interruptible), or else it will not be scheduled."
-msgstr ""
-"只要这些指令不需要“Robot”类中的相同资源，就可以同时运行多个指令。资源管理是在每个子系统的基础上进行的：指令可以指定与之交互的子系统，并且调度程序每一次运行都只会调度一个需要一个特定子类的指令。这样可以确保一种情况，例如，用户不会以试图将同一电动机控制器设置为不同输出值的两个不同的代码结尾。如果调度了一个需要已在使用的子系统的新指令，则它将中断需要该子系统的当前正在运行的指令（如果该指令已被安排为可中断），否则前者将不会被调度。"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:67
-msgid ""
-"Subsystems also can be associated with \"default commands\" that will be "
-"automatically scheduled when no other command is currently using the "
-"subsystem. This is useful for continuous \"background\" actions such as "
-"controlling the robot drive, or keeping an arm held at a setpoint."
-msgstr ""
-"子系统还可以与“默认命令”相关联，当当前没有其他命令正在使用子系统时，将自动计划这些子系统。这对于连续的“后台”操作（例如控制机器人驱动器或将手臂保持在设定点）很有用。"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:69
-msgid ""
-"When a command is scheduled, its ``initialize()`` method is called once. Its"
-" ``execute()`` method is then called once per call to "
-"``CommandScheduler.getInstance().run()``. A command is un-scheduled and has "
-"its ``end(boolean interrupted)`` method called when either its "
-"``isFinished()`` method returns true, or else it is interrupted (either by "
-"another command with which it shares a required subsystem, or by being "
-"canceled)."
-msgstr ""
-"调度一个指令后，其“initialize()”方法将被调用一次。然后，每次调用“CommandScheduler.getInstance.run()”时都会调用其“execute()”方法。当指令的“isFinished()”方法返回true或该指令被打断（被另一个使用相同子系统的指令打断或被取消）时，该指令将取消调度并调用其“end(boolean"
-" interrupted)”方法。"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:72
-msgid "Command Groups"
-msgstr "指令组"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:77
-msgid "Creating a Robot Project"
-msgstr "创建一个机器人项目"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:79
-msgid ""
-"Creating a project is detailed in :ref:`docs/software/vscode-"
-"overview/creating-robot-program:Creating a Robot Program`. Select "
-"\"Template\" then your programming language then \"New Command Robot\" to "
-"create a basic Command-Based Robot program."
-msgstr ""
-"在:ref:`docs/software/vscode-overview/creating-robot-program:Creating a Robot"
-" Program`中详细介绍了创建项目。选择“模板”，然后选择您的编程语言，然后选择“新指令机器人”，以创建一个基于命令的基本机器人程序。"

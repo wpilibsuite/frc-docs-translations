@@ -5,7 +5,6 @@
 # 
 # Translators:
 # Étienne Beaulac <etienne.beaulac@outlook.com>, 2020
-# Andre Theberge <atheberge2@videotron.ca>, 2020
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # 
 #, fuzzy
@@ -13,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-11-03 16:07+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -64,81 +63,3 @@ msgstr "L'exécution des commandes"
 msgid "For a more detailed explanation, see :doc:`command-scheduler`."
 msgstr ""
 "Pour une explication plus détaillée, consultez :doc:`command-scheduler`."
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:65
-msgid ""
-"Multiple commands can run concurrently, as long as they do not require the "
-"same resources on the robot. Resource management is handled on a per-"
-"subsystem basis: commands may specify which subsystems they interact with, "
-"and the scheduler will never schedule more than one command requiring a "
-"given subsystem at a time. This ensures that, for example, users will not "
-"end up with two different pieces of code attempting to set the same motor "
-"controller to different output values. If a new command is scheduled that "
-"requires a subsystem that is already in use, it will either interrupt the "
-"currently-running command that requires that subsystem (if the command has "
-"been scheduled as interruptible), or else it will not be scheduled."
-msgstr ""
-"Plusieurs commandes peuvent être exécutées simultanément, à condition "
-"qu'elles ne nécessitent pas les mêmes ressources. La gestion de ces "
-"ressources se fait par sous-système : les commandes peuvent spécifier les "
-"sous-systèmes avec lesquels elles interagissent Ainsi, le "
-"``CommandScheduler`` n'exécutera jamais en même temps plus d'une commande "
-"nécessitant le même sous-système. Cela permet d'éviter, par exemple, que les"
-" utilisateurs ne se retrouvent avec deux bouts de code différents essayant "
-"de modifier la valeur de sortie du même contrôleur de moteur. Si une "
-"nouvelle commande est démarrée et qu'elle a besoin d'un sous-système en "
-"cours d'utilisation, le ``CommandScheduler`` interrompra la commande en "
-"cours d'exécution qui utilise ce sous-système, si cette commande est "
-"interruptible. Si elle ne peut pas être interrompue, alors l'autre commande "
-"ne sera pas démarrée."
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:67
-msgid ""
-"Subsystems also can be associated with \"default commands\" that will be "
-"automatically scheduled when no other command is currently using the "
-"subsystem. This is useful for continuous \"background\" actions such as "
-"controlling the robot drive, or keeping an arm held at a setpoint."
-msgstr ""
-"Chaque sous-système peut également être associé à une \"commande par "
-"défaut\" qui est automatiquement démarrée lorsqu'aucune autre commande "
-"n'utilise ce sous-système. Cela est utile pour les actions qui s'exécutent "
-"continuellement en arrière-plan comme le contrôle de la base pilotable du "
-"robot ou le maintien d'un bras articulé à une position fixe."
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:69
-msgid ""
-"When a command is scheduled, its ``initialize()`` method is called once. Its"
-" ``execute()`` method is then called once per call to "
-"``CommandScheduler.getInstance().run()``. A command is un-scheduled and has "
-"its ``end(boolean interrupted)`` method called when either its "
-"``isFinished()`` method returns true, or else it is interrupted (either by "
-"another command with which it shares a required subsystem, or by being "
-"canceled)."
-msgstr ""
-"Lorsqu'une commande est démarrée, sa méthode ``initialize()`` est appelée "
-"une fois. Ensuite, sa méthode ``execute()`` est appelée à chaque fois que la"
-" méthode ``CommandScheduler.getInstance().run()`` est appelée. Lorsque la "
-"commande arrête de s'exécuter, sa méthode ``end(boolean interrupted)`` est "
-"appelée une fois. Cela se produit lorsque sa méthode ``isFinished()`` "
-"retourne ``true`` ou lorsqu'elle est interrompue (soit par une commande qui "
-"requiert un sous-système qu'elle utilise, soit en étant annulée)."
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:72
-msgid "Command Groups"
-msgstr "Groupes de commandes"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:77
-msgid "Creating a Robot Project"
-msgstr "Créer un projet robot"
-
-#: ../../frc-docs/source/docs/software/commandbased/what-is-command-based.rst:79
-msgid ""
-"Creating a project is detailed in :ref:`docs/software/vscode-"
-"overview/creating-robot-program:Creating a Robot Program`. Select "
-"\"Template\" then your programming language then \"New Command Robot\" to "
-"create a basic Command-Based Robot program."
-msgstr ""
-"La création d'un projet est détaillée dans  :ref:`docs/software/vscode-"
-"overview/creating-robot-program:Creating a Robot Program`. Sélectionnez "
-"\"Template\" puis votre langage de programmation puis \"New Command Robot\" "
-"pour créer un programme de base Command-Based Robot."

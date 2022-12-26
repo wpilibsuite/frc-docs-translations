@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-10 04:13+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -21,7 +21,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:2
 msgid "Differential Drive Odometry"
@@ -58,46 +58,11 @@ msgstr ""
 msgid "Creating the Odometry Object"
 msgstr "Creación del objeto de odometría"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:9
-msgid ""
-"The ``DifferentialDriveOdometry`` class requires one mandatory argument and "
-"one optional argument. The mandatory argument is the angle reported by your "
-"gyroscope (as a Rotation2d). The optional argument is the starting pose of "
-"your robot on the field (as a ``Pose2d``). By default, the robot will start "
-"at ``x = 0, y = 0, theta = 0``."
-msgstr ""
-"La clase ``DifferentialDriveOdometry`` requiere un argumento obligatorio y "
-"un argumento opcional. El argumento obligatorio es el ángulo informado por "
-"su giroscopio (como Rotation2d). El argumento opcional es la pose inicial de"
-" su robot en el campo (como una ``Pose2d``). De forma predeterminada, el "
-"robot comenzará en ``x = 0, y = 0, theta = 0``."
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:11
-msgid ""
-"0 degrees / radians represents the robot angle when the robot is facing "
-"directly toward your opponent's alliance station. As your robot turns to the"
-" left, your gyroscope angle should increase. By default, WPILib gyros "
-"exhibit the opposite behavior, so you should negate the gyro angle."
-msgstr ""
-"0 grados / radianes representa el ángulo del robot cuando el robot está "
-"mirando directamente hacia la estación de alianza de tu oponente. A medida "
-"que su robot gira hacia la izquierda, el ángulo de su giroscopio debería "
-"aumentar. Por defecto, los giroscopios WPILib exhiben el comportamiento "
-"opuesto, por lo que debe negar el ángulo del giroscopio."
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:13
-msgid ""
-"The encoder positions must be reset to zero before constructing the "
-"``DifferentialDriveOdometry`` class."
-msgstr ""
-"Las posiciones del codificador deben restablecerse a cero antes de construir"
-" la clase ``DifferentialDriveOdometry``."
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:35
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:43
 msgid "Updating the Robot Pose"
 msgstr "Actualización de la postura del robot"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:36
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:44
 msgid ""
 "The ``update`` method can be used to update the robot's position on the "
 "field. This method must be called periodically, preferably in the "
@@ -115,43 +80,11 @@ msgstr ""
 "tiene en cuenta el ángulo de giro del robot, junto con la distancia del "
 "codificador izquierdo y la distancia del codificador derecho."
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:38
-msgid ""
-"The encoder distances in Java must be in meters. In C++, the units library "
-"can be used to represent the distance using any linear distance unit. If the"
-" robot is moving forward in a straight line, **both** distances (left and "
-"right) must be positive."
-msgstr ""
-"Las distancias del codificador en Java deben estar en metros. En C++, la "
-"biblioteca de unidades se puede usar para representar la distancia usando "
-"cualquier unidad de distancia lineal. Si el robot avanza en línea recta, "
-"**ambas** distancias (izquierda y derecha) deben ser positivas."
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:67
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:76
 msgid "Resetting the Robot Pose"
 msgstr "Restablecer la postura del robot"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:68
-msgid ""
-"The robot pose can be reset via the ``resetPose`` method. This method "
-"accepts two arguments -- the new field-relative pose and the current gyro "
-"angle."
-msgstr ""
-"La pose del robot se puede restablecer mediante el método ``resetPose``. "
-"Este método acepta dos argumentos: la nueva pose relativa al campo y el "
-"ángulo de giro actual."
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:70
-msgid ""
-"If at any time, you decide to reset your gyroscope, the ``resetPose`` method"
-" MUST be called with the new gyro angle. Furthermore, the encoders must also"
-" be reset to zero when resetting the pose."
-msgstr ""
-"Si en algún momento, decide restablecer su giroscopio, se DEBE llamar al "
-"método ``resetPose`` con el nuevo ángulo de giro. Además, los codificadores "
-"también deben restablecerse a cero al restablecer la pose."
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:72
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:81
 msgid ""
 "A full example of a differential drive robot with odometry is available "
 "here: `C++ "
@@ -165,7 +98,7 @@ msgstr ""
 " / `Java "
 "<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/differentialdrivebot>`_."
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:74
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/differential-drive-odometry.rst:83
 msgid ""
 "In addition, the ``GetPose`` (C++) / ``getPoseMeters`` (Java) methods can be"
 " used to retrieve the current robot pose without an update."

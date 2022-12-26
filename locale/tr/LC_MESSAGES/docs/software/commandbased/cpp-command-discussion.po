@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 16:04+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-09-04 16:14+0000\n"
 "Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2020\n"
 "Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -25,40 +25,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:2
 msgid "A Technical Discussion on C++ Commands"
 msgstr "C++ Komutları Üzerine Teknik Bir Tartışma"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:3
-msgid ""
-"This article serves as a technical discussion on some of the design "
-"decisions that were made when designing the new command-based framework in "
-"C++. You do not need to understand the information within this article to "
-"use the command-based framework in your robot code."
-msgstr ""
-"Bu makale, C++ 'da yeni komut tabanlı framework tasarlanırken alınan bazı "
-"tasarım kararları hakkında teknik bir tartışma görevi görür. Robot kodunuzda"
-" komut tabanlı framework'ü kullanmak için bu makaledeki bilgileri anlamanıza"
-" gerek yoktur."
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:5
-msgid ""
-"This article assumes that you have a fair understanding of advanced C++ "
-"concepts, including templates, smart pointers, inheritance, rvalue "
-"references, copy semantics, move semantics, and CRTP."
-msgstr ""
-"Bu makale, şablonlar, akıllı işaretçiler, inheritance -kalıtım, rvalue "
-"referansları, semantik kopyalama, semantik taşıma ve CRTP dahil olmak üzere "
-"gelişmiş C++ kavramları hakkında net bir bilgiye sahip olduğunuzu varsayar."
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:7
-msgid ""
-"This article will help you understand the reasoning behind some of the "
-"decisions made in the new command-based framework (such as the use of "
-"``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, "
-"the lack of more advanced decorators that are available in Java, etc.)"
-msgstr ""
-"Bu makale, yeni komut tabanlı framework'te verilen bazı kararların "
-"arkasındaki mantığı anlamanıza yardımcı olacaktır (``std::unique_ptr`` "
-"kullanımı, ``CommandHelper<Base, Derived>`` şeklinde CRTP, Java'da bulunan "
-"daha gelişmiş araçların eksikliği vb. gibi)."
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:10
 msgid "Ownership Model"
@@ -96,22 +62,6 @@ msgstr ""
 " biriydi. Bu yeniden yazma ile birlikte kapsamlı bir sahiplik modeli ve "
 "kapsam dışına çıktıklarında hafızayı otomatik olarak boşaltacak akıllı "
 "işaretçilerin kullanımıyla birlikte tanıtıldı."
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:31
-msgid ""
-"Default commands are owned by the command scheduler whereas component "
-"commands of command groups are owned by the command group. Other commands "
-"are owned by whatever the user decides they should be owned by (e.g. a "
-"subsystem instance or a ``RobotContainer`` instance). This means that the "
-"ownership of the memory allocated by any commands or command groups is "
-"clearly defined."
-msgstr ""
-"Varsayılan komutlar, komut zamanlayıcıya aitken komut gruplarının bileşen "
-"komutları, komut grubuna aittir. Diğer komutlar, kullanıcının sahip olması "
-"gerektiğine karar verdiği herhangi bir şeye aittir (örneğin bir alt sistem "
-"örneği veya bir ``RobotContainer`` örneği). Bu, herhangi bir komut veya "
-"komut grubu tarafından ayrılan belleğin sahipliğinin açıkça tanımlandığı "
-"anlamına gelir. "
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:34
 msgid "``std::unique_ptr`` vs. ``std::shared_ptr``"
@@ -157,18 +107,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:64
 msgid "Use of CRTP"
 msgstr "CRTP kullanımı"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:65
-msgid ""
-"You may have noticed that in order to create a new command, you must extend "
-"``CommandHelper``, providing the base class (usually ``frc2::Command``) and "
-"the class that you just created. Let's take a look at the reasoning behind "
-"this:"
-msgstr ""
-"Yeni bir komut oluşturmak için, temel sınıfı (genellikle ``frc2::Command`) "
-"ve yeni oluşturduğunuz sınıfı sağlayarak ``CommandHelper`` ı genişletmeniz "
-"gerektiğini fark etmiş olabilirsiniz. Bunun arkasındaki nedene bir göz "
-"atalım:"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:68
 msgid "Command Decorators"

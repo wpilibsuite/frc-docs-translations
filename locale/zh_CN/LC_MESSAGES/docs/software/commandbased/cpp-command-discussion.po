@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 16:04+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-09-04 16:14+0000\n"
 "Last-Translator: Jiangshan Gong <jiangshan_gong@163.com>, 2020\n"
 "Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -24,31 +24,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:2
 msgid "A Technical Discussion on C++ Commands"
 msgstr "有关C ++指令的技术讨论"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:3
-msgid ""
-"This article serves as a technical discussion on some of the design "
-"decisions that were made when designing the new command-based framework in "
-"C++. You do not need to understand the information within this article to "
-"use the command-based framework in your robot code."
-msgstr "本文是对在C ++中设计基于指令的新框架时所做的一些设计决策的技术讨论。您无需了解本文中的信息即可在机器人代码中使用基于指令的框架。"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:5
-msgid ""
-"This article assumes that you have a fair understanding of advanced C++ "
-"concepts, including templates, smart pointers, inheritance, rvalue "
-"references, copy semantics, move semantics, and CRTP."
-msgstr "本文假定您对高级C ++概念有一定的了解，包括模板，智能指针，继承，右值引用，复制语义，移动语义和CRTP。"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:7
-msgid ""
-"This article will help you understand the reasoning behind some of the "
-"decisions made in the new command-based framework (such as the use of "
-"``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, "
-"the lack of more advanced decorators that are available in Java, etc.)"
-msgstr ""
-"本文将帮助您了解在基于指令的新框架中做出某些决策的原因（例如“std :: unique_ptr”的使用，CRTP以“CommandHelper "
-"<Base, Derived>”的形式存在，缺乏Java可用的更高级的装饰器等）"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:10
 msgid "Ownership Model"
@@ -76,17 +51,6 @@ msgid ""
 " along with the usage of smart pointers which will automatically free memory"
 " when they go out of scope."
 msgstr "这个明显的问题是重写框架的原因之一。这次重写引入了一个全面的所有权模型，以及智能指针的使用，这些智能指针将在超出范围时自动释放内存。"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:31
-msgid ""
-"Default commands are owned by the command scheduler whereas component "
-"commands of command groups are owned by the command group. Other commands "
-"are owned by whatever the user decides they should be owned by (e.g. a "
-"subsystem instance or a ``RobotContainer`` instance). This means that the "
-"ownership of the memory allocated by any commands or command groups is "
-"clearly defined."
-msgstr ""
-"默认指令归指令调度程序所有，而指令组的组件指令归指令组所有。其他指令归用户决定应归其所有的对象（例如子系统实例或“RobotContainer”实例）。这意味着可以清楚地定义任何指令或指令组分配的内存的所有权。"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:34
 msgid "``std::unique_ptr`` vs. ``std::shared_ptr``"
@@ -122,15 +86,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:64
 msgid "Use of CRTP"
 msgstr "CRTP的使用"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:65
-msgid ""
-"You may have noticed that in order to create a new command, you must extend "
-"``CommandHelper``, providing the base class (usually ``frc2::Command``) and "
-"the class that you just created. Let's take a look at the reasoning behind "
-"this:"
-msgstr ""
-"您可能已经注意到，为了创建新指令，必须扩展“CommandHelper”，提供基类（通常是“frc2::Command”）和刚创建的类。让我们看一下其背后的原因："
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:68
 msgid "Command Decorators"

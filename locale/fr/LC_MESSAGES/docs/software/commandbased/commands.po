@@ -8,15 +8,16 @@
 # Sami G.-D., 2020
 # Austin Shalit <austinshalit@gmail.com>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Andre Theberge <atheberge2@videotron.ca>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-29 04:15+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -29,125 +30,57 @@ msgid "Commands"
 msgstr "Commandes"
 
 #: ../../frc-docs/source/docs/software/commandbased/commands.rst:7
-msgid "Creating Commands"
-msgstr "Créer des commandes"
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:15
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:68
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:100
-msgid "Java"
-msgstr "Java"
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:23
-msgid "C++"
-msgstr "C++"
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:31
-msgid ""
-"As before, this contains several convenience features. It automatically "
-"overrides the ``getRequirements()`` method for users, returning a list of "
-"requirements that is empty by default, but can be added to with the "
-"``addRequirements()`` method. It also implements the ``Sendable`` interface,"
-" and so can be sent to the dashboard - this provides a handy way for "
-"scheduling commands for testing (via a button on the dashboard) without "
-"needing to bind them to buttons on a controller."
-msgstr ""
-"Comme avant, cela permet l'accès à des fonctionnalités pratiques. Il "
-"remplace automatiquement la méthode ``getRequirements()`` pour les "
-"utilisateurs, qui retourne une liste des exigences qui est vide par défaut; "
-"mais qui peut être ajoutée avec la méthode ``addRequirements()``. Il "
-"implémente aussi l'interface ``Sendable`` et peut donc être envoyée au "
-"Dashboard - cela permet de programmer facilement des commandes pour les "
-"tests (par un bouton sur le tableau de bord) sans avoir besoin de les lier à"
-" des boutons sur un contrôleur."
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:34
-msgid ""
-"Also as before, advanced users seeking more flexibility are free to simply "
-"create their own class implementing the ``Command`` interface."
-msgstr ""
-"Aussi comme avant, les utilisateurs avancées recherchant plus de flexibilité"
-" peuvent simplement créer leur propre classe qui implémente l'interface "
-"``Command``."
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:37
 msgid "The Structure of a Command"
 msgstr "La structure d'une commande"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:39
-msgid ""
-"While subsystems are fairly freeform, and may generally look like whatever "
-"the user wishes them to, commands are quite a bit more constrained. Command "
-"code must specify what the command will do in each of its possible states. "
-"This is done by overriding the ``initialize()``, ``execute()``, and "
-"``end()`` methods. Additionally, a command must be able to tell the "
-"scheduler when (if ever) it has finished execution - this is done by "
-"overriding the ``isFinished()`` method. All of these methods are defaulted "
-"to reduce clutter in user code: ``initialize()``, ``execute()``, and "
-"``end()`` are defaulted to simply do nothing, while ``isFinished()`` is "
-"defaulted to return false (resulting in a command that never ends)."
-msgstr ""
-"Tandis que les sous-systèmes, qui n'ont pas de structure définie et qui "
-"peuvent généralement ressembler à ce que l'utilisateur souhaite, les "
-"commandes sont beaucoup plus contraignantes. Le code des commandes doit "
-"spécifier qu'est-ce que la commande va faire dans chacun des états "
-"possibles. Cela se fait en remplacer les méthodes ``initialize()``, "
-"``execute()`` et ``end()``. De plus, une commande doit être capable de dire "
-"au planificateur quand elle a terminé son exécution (s'il y a lieu) - cela "
-"se fait par le remplacement de la méthode ``isFinished()``. Toutes ces "
-"méthodes sont vide par défaut pour réduire l'encombrement dans le code de "
-"l'utilisateur. ``initialize()``, ``execute()`` et ``end()`` sont vide par "
-"défaut, pour ne rien exécuter, et ``isFinished()`` retourne faux par défaut "
-"(résultant en une commande qui ne termine jamais)."
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:42
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:12
 msgid "Initialization"
 msgstr "Initialisation"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:47
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:17
 msgid "Execution"
 msgstr "Exécution"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:52
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:22
 msgid "Ending"
 msgstr "Terminaison"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:57
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:27
 msgid "Specifying end conditions"
 msgstr "Spécifier les conditions de terminaison"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:62
-msgid "Simple Command Example"
-msgstr "Exemple de commande de base"
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:111
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:283
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:308
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:340
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:368
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:388
+msgid "Java"
+msgstr "Java"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:64
-msgid ""
-"What might a functional command look like in practice? As before, below is a"
-" simple command from the HatchBot example project (`Java "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
-" `C++ "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__)"
-" that uses the ``HatchSubsystem`` introduced in the previous section:"
-msgstr ""
-"À quoi pourrait ressembler une commande fonctionnelle dans la pratique? "
-"Comme précedemment, voici une commande simple du projet hatchbot exemple  "
-"(`Java "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
-" `C++ "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__)"
-" qui utilise le ``HatchSubsystem`` introduit dans la section précédente:"
-
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:76
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:108
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:119
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:316
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:348
 msgid "C++ (Header)"
 msgstr "C++ (Header ou en-tête)"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:84
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:116
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:127
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:324
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:356
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
 
-#: ../../frc-docs/source/docs/software/commandbased/commands.rst:96
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:291
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:376
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:396
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:302
+msgid "Simple Command Example"
+msgstr "Exemple de commande de base"
+
+#: ../../frc-docs/source/docs/software/commandbased/commands.rst:336
 msgid ""
 "What about a more complicated case? Below is a drive command, from the same "
 "example project:"

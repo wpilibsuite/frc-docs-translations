@@ -6,16 +6,16 @@
 # Translators:
 # Étienne Beaulac <etienne.beaulac@outlook.com>, 2020
 # Austin Shalit <austinshalit@gmail.com>, 2021
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-29 04:15+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2022\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -27,32 +27,14 @@ msgstr ""
 msgid "Subsystems"
 msgstr "Les sous-systèmes"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:6
-msgid ""
-"Subsystems also serve as the backbone of the ``CommandScheduler``\\ ’s "
-"resource management system. Commands may declare resource requirements by "
-"specifying which subsystems they interact with; the scheduler will never "
-"concurrently schedule more than one command that requires a given subsystem."
-" An attempt to schedule a command that requires a subsystem that is already-"
-"in-use will either interrupt the currently-running command (if the command "
-"has been scheduled as interruptible), or else be ignored."
-msgstr ""
-"Les sous-systèmes sont la base du système de gestion des ressources du "
-"``CommandScheduler``. Les commandes peuvent déclarer les ressources dont "
-"elles ont besoin en spécifiant les sous-systèmes avec lesquels elles "
-"interagissent. Le planificateur ne démarrera jamais en même temps plus d'une"
-" commande qui nécessite le même sous-système. Tenter de planifier une "
-"commande qui nécessite un sous-système qui est déjà utilisé entraînera sont "
-"l'interruption de la commande en cours d'exécution (si la commande a été "
-"planifiée comme étant interruptible), ou la commande nouvellement planifiée "
-"sera ignorée."
-
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:11
 msgid "Creating a Subsystem"
 msgstr "Créer un sous-système"
 
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:17
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:44
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:74
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:109
 msgid "Java"
 msgstr "Java"
 
@@ -90,27 +72,15 @@ msgstr ""
 msgid "Simple Subsystem Example"
 msgstr "Exemple de sous-système simple"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:40
-msgid ""
-"What might a functional subsystem look like in practice? Below is a simple "
-"pneumatically-actuated hatch mechanism from the HatchBot example project "
-"(`Java "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
-" `C++ "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):"
-msgstr ""
-"À quoi pourrait ressembler un sous-système fonctionnel en pratique? Vous "
-"trouverez ci-dessous un mécanisme d'écoutille simple à actionnement "
-"pneumatique provenant du projet d'exemple *HatchBot* (`Java "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
-" `C++ "
-"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__):"
-
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:52
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:82
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:117
 msgid "C++ (Header)"
 msgstr "C++ (Header ou en-tête)"
 
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:60
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:90
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:125
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
 
@@ -137,38 +107,7 @@ msgstr ""
 "lieu d'un système pneumatique) sans qu'aucun code à l'extérieur du sous-"
 "système ne soit obligé d'être modifié avec lui. "
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:71
-msgid "Setting Default Commands"
-msgstr "Configurer les commandes par défaut"
-
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:73
-msgid ""
-"In the C++ command-based library, the CommandScheduler `owns` the default "
-"command objects - accordingly, the object passed to the "
-"``SetDefaultCommand()`` method will be either moved or copied, depending on "
-"whether it is an rvalue or an lvalue (`rvalue/lvalue explanation "
-"<http://thbecker.net/articles/rvalue_references/section_01.html>`__).  The "
-"examples here ensure that move semantics are used by casting to an rvalue "
-"with ``std::move()``."
-msgstr ""
-"Dans la bibliothèque orientée commande C++, le ``CommandScheduler`` "
-"`possède` les objets des commandes par défaut - par conséquent, l'objet "
-"passé à la méthode ``SetDefaultCommand()`` sera soit déplacé s'il s'agit "
-"d'une *rvalue*, ou bien copié s'il s'agit d'une *lvalue* (`explication sur "
-"les rvalues et les lvalues "
-"<http://thbecker.net/articles/rvalue_references/section_01.html>`__). Les "
-"exemples ci-dessous garantissent que la sémantique de déplacement est "
-"utilisée par conversion en *rvalue* avec ``std::move()``."
-
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:75
-msgid ""
-"\"Default commands\" are commands that run automatically whenever a "
-"subsystem is not being used by another command."
-msgstr ""
-"Les « commandes par défaut » sont des commandes exécutées automatiquement "
-"lorsqu'un sous-système n'est pas utilisé par une autre commande."
-
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:77
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:142
 msgid ""
 "Setting a default command for a subsystem is very easy; one simply calls "
 "``CommandScheduler.getInstance().setDefaultCommand()``, or, more simply, the"
@@ -180,7 +119,7 @@ msgstr ""
 " encore plus simple, appeler la méthode ``setDefaultCommand(Command)`` de "
 "l'interface ``Subsytem`` :"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:99
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:164
 msgid ""
 "A command that is assigned as the default command for a subsystem must "
 "require that subsystem."

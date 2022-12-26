@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 16:04+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-09-04 16:14+0000\n"
 "Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2020\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -28,40 +28,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:2
 msgid "A Technical Discussion on C++ Commands"
 msgstr "Una discusión técnica sobre los comandos de C ++"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:3
-msgid ""
-"This article serves as a technical discussion on some of the design "
-"decisions that were made when designing the new command-based framework in "
-"C++. You do not need to understand the information within this article to "
-"use the command-based framework in your robot code."
-msgstr ""
-"Este artículo sirve como una discusión técnica sobre algunas de las "
-"decisiones de diseño que se tomaron al diseñar el nuevo marco basado en "
-"comandos en C++. No es necesario que comprenda la información de este "
-"artículo para utilizar el marco basado en comandos en su código de robot."
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:5
-msgid ""
-"This article assumes that you have a fair understanding of advanced C++ "
-"concepts, including templates, smart pointers, inheritance, rvalue "
-"references, copy semantics, move semantics, and CRTP."
-msgstr ""
-"Este artículo asume que usted comprende los conceptos avanzados de C++, "
-"incluidas plantillas, punteros inteligentes, herencia, referencias de "
-"rvalue, semántica de copia, semántica de movimiento y CRTP."
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:7
-msgid ""
-"This article will help you understand the reasoning behind some of the "
-"decisions made in the new command-based framework (such as the use of "
-"``std::unique_ptr``, CRTP in the form of ``CommandHelper<Base, Derived>``, "
-"the lack of more advanced decorators that are available in Java, etc.)"
-msgstr ""
-"Este artículo lo ayudará a comprender el razonamiento detrás de algunas de "
-"las decisiones tomadas en el nuevo marco basado en comandos (como el uso de "
-"``std::unique_ptr``, CRTP en la forma de ``CommandHelper<Base, Derived>``, "
-"la falta de decoradores más avanzados que están disponibles en Java, etc.)"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:10
 msgid "Ownership Model"
@@ -100,23 +66,6 @@ msgstr ""
 "Se introdujo un modelo de propiedad integral con esta reescritura, junto con"
 " el uso de punteros inteligentes que liberarán memoria automáticamente "
 "cuando se salgan del alcance."
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:31
-msgid ""
-"Default commands are owned by the command scheduler whereas component "
-"commands of command groups are owned by the command group. Other commands "
-"are owned by whatever the user decides they should be owned by (e.g. a "
-"subsystem instance or a ``RobotContainer`` instance). This means that the "
-"ownership of the memory allocated by any commands or command groups is "
-"clearly defined."
-msgstr ""
-"Los comandos predeterminados son propiedad del programador de comandos, "
-"mientras que los comandos de componentes de los grupos de comandos "
-"pertenecen al grupo de comandos. Otros comandos son propiedad de lo que el "
-"usuario decida que debe pertenecer (por ejemplo, una instancia de subsistema"
-" o una instancia de ``RobotContainer``). Esto significa que la propiedad de "
-"la memoria asignada por cualquier comando o grupo de comando está claramente"
-" definida."
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:34
 msgid "``std::unique_ptr`` vs. ``std::shared_ptr``"
@@ -164,18 +113,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:64
 msgid "Use of CRTP"
 msgstr "Uso de CRTP"
-
-#: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:65
-msgid ""
-"You may have noticed that in order to create a new command, you must extend "
-"``CommandHelper``, providing the base class (usually ``frc2::Command``) and "
-"the class that you just created. Let's take a look at the reasoning behind "
-"this:"
-msgstr ""
-"Es posible que haya notado que para crear un nuevo comando, debe extender "
-"``std::shared_ptr`` , proporcionando la clase base (generalmente "
-"``frc2::Command`` ) y la clase que acaba de crear. Echemos un vistazo al "
-"razonamiento detrás de esto:"
 
 #: ../../frc-docs/source/docs/software/commandbased/cpp-command-discussion.rst:68
 msgid "Command Decorators"

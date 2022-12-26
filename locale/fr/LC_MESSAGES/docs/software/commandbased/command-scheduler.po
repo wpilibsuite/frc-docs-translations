@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-29 04:15+0000\n"
+"POT-Creation-Date: 2022-12-26 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2021\n"
 "Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -82,17 +82,29 @@ msgstr ""
 msgid "The ``schedule()`` Method"
 msgstr "La méthode ``schedule()``"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rstNone
-msgid "Flow diagram showing how a scheduled command is evaluated to be run."
-msgstr ""
-"Organigramme montrant comment une commande planifiée est évaluée pour être "
-"exécutée."
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:33
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:69
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:94
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:119
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:144
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:187
+msgid "Java"
+msgstr "Java"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:26
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:47
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:102
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:128
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:152
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:195
+msgid "C++ (Source)"
+msgstr "C++ (Source)"
+
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:56
 msgid "The Scheduler Run Sequence"
 msgstr "La séquence d'exécution du planificateur"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:28
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:58
 msgid ""
 "The ``initialize()`` method of each ``Command`` is called when the command "
 "is scheduled, which is not necessarily when the scheduler runs (unless that "
@@ -102,27 +114,15 @@ msgstr ""
 "commande est programmée, ce qui n'est pas forcément quand le planificateur "
 "s'exécute (sauf si cette commande est liée à un bouton)."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rstNone
-msgid "Flow diagram that show the sequence of each individual command."
-msgstr "Organigramme qui montre la séquence de chaque commande individuelle."
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:36
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:63
 msgid "Step 1: Run Subsystem Periodic Methods"
 msgstr "Étape 1: exécuter les méthodes périodique des sous-systèmes"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:38
-msgid ""
-"First, the scheduler runs the ``periodic()`` method of each registered "
-"``Subsystem``."
-msgstr ""
-"Premièrement, le planificateur exécute la méthode ``periodic()`` de chaque "
-"``Subsystem`` enregistré."
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:41
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:86
 msgid "Step 2: Poll Command Scheduling Triggers"
 msgstr "Étape 2: sonder les déclencheurs de planification de commande"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:43
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:88
 msgid ""
 "For more information on how trigger bindings work, see :doc:`binding-"
 "commands-to-triggers`"
@@ -130,7 +130,7 @@ msgstr ""
 "Pour plus d'informations sur le fonctionnement des liens de déclencheurs, "
 "voir :doc:`binding-commands-to-triggers`"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:45
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:90
 msgid ""
 "Secondly, the scheduler polls the state of all registered triggers to see if"
 " any new commands that have been bound to those triggers should be "
@@ -143,11 +143,11 @@ msgstr ""
 " commande liée sont remplies, la commande est planifié et sa méthode "
 "``initialize()`` est exécutée."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:48
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:111
 msgid "Step 3: Run/Finish Scheduled Commands"
 msgstr "Étape 3: exécuter/terminer les commandes planifiées "
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:50
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:113
 msgid ""
 "Thirdly, the scheduler calls the ``execute()`` method of each currently-"
 "scheduled command, and then checks whether the command has finished by "
@@ -161,7 +161,7 @@ msgstr ""
 "méthode ``end()`` est appelée aussi, et la commande est dé-planifiée et ses "
 "sous-systèmes requis sont libérés."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:52
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:115
 msgid ""
 "Note that this sequence of calls is done in order for each command - thus, "
 "one command may have its ``end()`` method called before another has its "
@@ -173,11 +173,11 @@ msgstr ""
 "autre ait sa méthode ``execute()`` appelée. Les commandes sont manipulées "
 "dans l'ordre dont elles ont été planifiées."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:55
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:138
 msgid "Step 4: Schedule Default Commands"
 msgstr "Étape 4: planifier les commandes par défaut"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:57
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:140
 msgid ""
 "Finally, any registered ``Subsystem`` has its default command scheduled (if "
 "it has one).  Note that the ``initialize()`` method of the default command "
@@ -187,11 +187,11 @@ msgstr ""
 "planifiée (si elle existe). Notez que la méthode ``initialize()`` de la "
 "commande de défaut sera appelée à ce moment."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:60
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:161
 msgid "Disabling the Scheduler"
 msgstr "Désactiver le Planificateur"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:62
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:163
 msgid ""
 "The scheduler can be disabled by calling "
 "``CommandScheduler.getInstance().disable()``.  When disabled, the "
@@ -201,7 +201,7 @@ msgstr ""
 "``CommandScheduler.getInstance().disable()``. Quand il est désactivé, les "
 "commandes ``schedule()`` et ``run()`` du planificateur ne font rien."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:64
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:165
 msgid ""
 "The scheduler may be re-enabled by calling "
 "``CommandScheduler.getInstance().enable()``."
@@ -209,11 +209,11 @@ msgstr ""
 "Le planificateur peut être ré-activé en appelant "
 "``CommandScheduler.getInstance().enable()``."
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:67
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:168
 msgid "Command Event Methods"
 msgstr "Méthodes d’évènement de commande"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:69
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:170
 msgid ""
 "Occasionally, it is desirable to have the scheduler execute a custom action "
 "whenever a certain command event (initialization, execution, or ending) "
@@ -224,23 +224,11 @@ msgstr ""
 "(initialisation, exécution ou fin) se produit. Cela peut être fait avec les "
 "méthodes suivantes :"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:72
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:173
 msgid "onCommandInitialize"
 msgstr "onCommandInitialize"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:77
-msgid "onCommandExecute"
-msgstr "onCommandExecute"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:82
-msgid "onCommandFinish"
-msgstr "onCommandFinish"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:87
-msgid "onCommandInterrupt"
-msgstr "onCommandInterrupt"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:91
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:183
 msgid ""
 "A typical use-case for these methods is adding markers in an event log "
 "whenever a command scheduling event takes place, as demonstrated in the "
@@ -257,11 +245,3 @@ msgstr ""
 " `C++ "
 "<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/SchedulerEventLogging>`__):"
 " "
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:95
-msgid "Java"
-msgstr "Java"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:103
-msgid "C++ (Source)"
-msgstr "C++ (Source)"

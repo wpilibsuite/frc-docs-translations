@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2022\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-01 16:03+0000\n"
+"POT-Creation-Date: 2022-12-26 04:04+0000\n"
 "PO-Revision-Date: 2021-03-17 04:18+0000\n"
 "Last-Translator: Paulina Maynez <paump22@hotmail.com>, 2021\n"
 "Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:2
 msgid "Setting up CI for Robot Code using GitHub Actions"
@@ -91,7 +91,7 @@ msgstr ""
 "Ahora será recibido con un editor de texto. Reemplace todo el texto "
 "predeterminado con lo siguiente:"
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:56
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:60
 msgid ""
 "Then, save changes by clicking the \"Start commit\" button on the top-right "
 "corner of the screen. You can amend the default commit message if you wish "
@@ -102,7 +102,7 @@ msgstr ""
 "predeterminado si lo desea. Después, de click en el botón verde de “Commit "
 "new file”."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:62
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:66
 msgid ""
 "GitHub will now automatically run a build whenever a commit is pushed to "
 "main or a pull request is opened. To monitor the status of any build, you "
@@ -113,11 +113,11 @@ msgstr ""
 "monitorear el estado de cualquier construcción, puedes hacer clic en la "
 "pestaña \"Acciones\" en la parte superior de la pantalla."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:68
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:72
 msgid "A Breakdown of the Actions YAML File"
 msgstr "Una descompostura del archivo Acciones YAML "
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:69
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:73
 msgid ""
 "Here is a breakdown of the YAML file above. Although a strict understanding "
 "of each line is not required, some level of understanding will help you add "
@@ -127,7 +127,7 @@ msgstr ""
 "comprensión estricta de cada línea, algún nivel de comprensión le ayudará a "
 "añadir más características y depurar posibles problemas que puedan surgir."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:81
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:85
 msgid ""
 "This block of code dictates when the Action will run. Currently, the action "
 "will run when commits are pushed to main or when pull requests are opened "
@@ -137,7 +137,7 @@ msgstr ""
 "acción se ejecutará cuando las confirmaciones se empujen al main o cuando se"
 " abran peticiones pull contra la del main."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:95
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:99
 msgid ""
 "Each Action workflow is made of a one or more jobs that run either "
 "sequentially (one after another) or in parallel (at the same time). In our "
@@ -147,7 +147,7 @@ msgstr ""
 "serán ejecutados (uno después de otro) o en paralelo (al mismo tiempo). En "
 "nuestro flujo de trabajo, solo hay un trabajo de “construcción”."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:97
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:101
 msgid ""
 "We specify that we want the job to run on an Ubuntu virtual machine and in a"
 " virtualized `Docker container <https://www.docker.com/resources/what-"
@@ -157,27 +157,12 @@ msgstr ""
 "Ubuntu y en un `contenedor Docker <https://www.docker.com/resources/what-"
 "container>`_ que contiene JDK, compilador C++ y roboRIO toolchains."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:114
-msgid ""
-"Each job has certain steps that will be executed. This job has three steps. "
-"The first step involves checking out the repository to access the robot "
-"code. The second step involves giving the virtual machine permission to "
-"execute gradle tasks using ``./gradlew``. The final step runs ``./gradlew "
-"build`` to compile robot code and run any unit tests."
-msgstr ""
-"Cada trabajo tiene ciertos pasos que serán ejecutados. Este trabajo tiene "
-"tres pasos. El primer paso involucra revisar el repositorio para accesar al "
-"código del robot. El segundo paso involucra darle permiso a la máquina "
-"virtual para ejecutar las tareas de Gradle usando ``./gradlew``. El paso "
-"final ejecuta ``./gradlew build`` para compilar el código y ejecutar "
-"cualquier unidad de prueba."
-
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:117
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:125
 msgid "Adding a Build Status Badge to a README.md File"
 msgstr ""
 "Agregando un Distintivo de estatus de construcción a un archivo README.md"
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:118
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:126
 msgid ""
 "It is helpful to add a CI status badge to the top of your repository's "
 "README file to quickly check the status of the latest build on main. To do "
@@ -194,7 +179,7 @@ msgstr ""
 "parte superior derecha y copie el código de Markdown de la etiqueta de "
 "estado."
 
-#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:123
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/robot-code-ci.rst:131
 msgid ""
 "Finally, paste the Markdown code you copied at the top of your README file, "
 "commit, and push your changes. Now, you should see the GitHub Actions status"

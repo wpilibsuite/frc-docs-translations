@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,17 +12,17 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2023\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-10-02 04:06+0000\n"
+"POT-Creation-Date: 2023-07-10 04:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
 "Last-Translator: Ricardo Rentería <richier_99@hotmail.com>, 2021\n"
-"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"Language-Team: Spanish (Mexico) (https://app.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: es_MX\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/pwm-controllers.rst:4
 msgid "PWM Motor Controllers in Depth"
@@ -95,37 +95,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/pwm-controllers.rst:16
 msgid "Raw vs Scaled output values"
 msgstr "Valores de salida Sin Procesar vs Escalados"
-
-#: ../../frc-docs/source/docs/software/hardware-apis/motors/pwm-controllers.rst:18
-msgid ""
-"In general, all of the motor controller classes in WPILib take a scaled -1.0"
-" to 1.0 value as the output to an actuator. The PWM module in the FPGA on "
-"the roboRIO is capable of generating PWM signals with periods of 5, 10, or "
-"20ms and can vary the pulse width in 2000 steps of ~.001ms each around the "
-"midpoint (1000 steps in each direction around the midpoint). The raw values "
-"sent to this module are in this 0-2000 range with 0 being a special case "
-"which holds the signal low (disabled). The class for each motor controller "
-"contains information about what the typical bound values (min, max and each "
-"side of the deadband) are as well as the typical midpoint. WPILib can then "
-"use these values to map the scaled value into the proper range for the motor"
-" controller. This allows for the code to switch seamlessly between different"
-" types of controllers and abstracts out the details of the specific "
-"signaling."
-msgstr ""
-"En general, todas las clases de controlador de motor en WPILib toman un "
-"valor escalado de -1.0 a 1.0 como salida a un operador. El módulo PWM en el "
-"FPGA en el roboRIO es capaz de generar Las señales PWM con períodos de 5, 10"
-" o 20 ms y pueden variar el ancho del pulso en 2000 pasos de ~ .001ms cada "
-"uno alrededor del punto medio (1000 pasos en cada dirección alrededor del "
-"punto medio). Los valores brutos enviados a este módulo están en este rango "
-"de 0-2000 con 0 siendo un caso especial que contiene la señal baja "
-"(deshabilitada). La clase para cada controlador de motor contiene "
-"información sobre qué los valores de enlace típicos (min, max y cada lado de"
-" la banda muerta) son así como los valores típicos punto medio. WPILib puede"
-" usar estos valores para mapear el valor escalado en el rango apropiado para"
-" el controlador del motor. Esto permite que el código cambie sin problemas "
-"entre diferentes tipos de controladores y resúmenes de los detalles de la "
-"señalización específica."
 
 #: ../../frc-docs/source/docs/software/hardware-apis/motors/pwm-controllers.rst:21
 msgid "Calibrating Motor Controllers"

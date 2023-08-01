@@ -6,18 +6,160 @@
 # Translators:
 # Eddie L Wright, 2023
 # Jacob Lubecki, 2023
+# Hirose Yuto, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2023\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-28 16:04+0000\n"
+"POT-Creation-Date: 2023-08-01 04:04+0000\n"
 "PO-Revision-Date: 2021-01-02 04:30+0000\n"
-"Last-Translator: Jacob Lubecki, 2023\n"
+"Last-Translator: Hirose Yuto, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:2
+msgid "Programming the Romi"
+msgstr "Romiのプログラミング"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:4
+msgid ""
+"Writing a program for the Romi is very similar to writing a program for a "
+"regular FRC robot. In fact, all the same tools (Visual Studio Code, Driver "
+"Station, SmartDashboard, etc) can be used with the Romi."
+msgstr ""
+"Romiのプログラムを書くのは、通常のFRCロボットのプログラムを書くのととても似ています。実際、同じツール（Visual Studio "
+"Code、Driver Station、SmartDashboardなど）がRomiでも使えます。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:7
+msgid "Creating a Romi Program"
+msgstr "Romiのプログラムの作成"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:9
+msgid ""
+"Creating a new program for a Romi is like creating a normal FRC program, "
+"similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` "
+"programming steps."
+msgstr ""
+"Romiの新しいプログラムを作成するのは、通常のFRCのプログラムを作成するのと同じで、 :doc:`Zero To Robot "
+"</docs/zero-to-robot/step-4/index>` のプログラミング手順と似ています。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:11
+msgid ""
+"WPILib comes with two templates for Romi projects, including one based on "
+"TimedRobot, and a Command-Based project template. Additionally, an example "
+"project is provided which showcases some of the built-in functionality of "
+"the Romi. This article will walk through creating a project from this "
+"example."
+msgstr ""
+"WPILibには、Romiプロジェクト用のテンプレートが2つ付属しており、TimedRobotに基づいたものとCommandBasedRobotに基づいたものがあります。さらに、Romi"
+" の組み込み機能の一部を紹介するサンプルプロジェクトも提供されています。この記事では、このサンプルをもとにプロジェクトを作成していきます。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:13
+msgid ""
+"In order to program the Romi using C++, a compatible C++ desktop compiler "
+"must be installed. See :ref:`Robot Simulation - Additional C++ Dependency "
+"<docs/software/wpilib-tools/robot-simulation/introduction:Additional C++ "
+"Dependency>`."
+msgstr ""
+"C++を使ってRomiをプログラムするには、互換性のあるC++デスクトップコンパイラをインストールする必要があります。ご覧ください： "
+":ref:`Robot Simulation - Additional C++ Dependency <docs/software/wpilib-"
+"tools/robot-simulation/introduction:Additional C++ Dependency>`"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:16
+msgid "Creating a New WPILib Romi Project"
+msgstr "新しいWPILib Romiプロジェクトの作成"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:18
+msgid ""
+"Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`, "
+"and type \"New project\" into the prompt. Select the \"Create a new "
+"project\" command:"
+msgstr ""
+":kbd:`Ctrl+Shift+P` を押して、Visual Studio Codeのコマンドパレットを開いて、「New "
+"project」を入力します。その後、「Create a new project」を選びます："
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:22
+msgid ""
+"This will bring up the \"New Project Creator Window\". From here, click on "
+"\"Select a project type (Example or Template), and pick \"Example\" from the"
+" prompt that appears:"
+msgstr ""
+"「New Project Creator」というウインドウが表示されます。「Select a project type (Example or "
+"Template)」をクリックし、表示されるプロンプトで「Example」を選択します。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:26
+msgid ""
+"Next, a list of examples will appear. Scroll through the list to find the "
+"\"RomiReference\" example:"
+msgstr "次に、例のリストが表示されます。リストをスクロールして 「RomiReference」の例を見つけてください："
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:30
+msgid ""
+"Fill out the rest of the fields in the \"New Project Creator\" and click "
+"\"Generate Project\" to create the new robot project."
+msgstr ""
+"「New Project Creator」に残りの項目を入力し、「Generate Project」をクリックして新しいプロジェクトを作成します。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:33
+msgid "Running a Romi Program"
+msgstr "Romiのプログラムを動作させる"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:35
+msgid ""
+"Once the robot project is generated, it is essentially ready to run. The "
+"project has a pre-built ``Drivetrain`` class and associated default command "
+"that lets you drive the Romi around using a joystick."
+msgstr ""
+"プロジェクトは生成されれば、基本的にすぐに実行できます。``Drivetrain`` "
+"クラスと、ジョイスティックを使ってRomiを動かすためのデフォルトコマンドがあらかじめ組み込まれています。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:37
+msgid ""
+"One aspect where a Romi project differs from a regular FRC robot project is "
+"that the code is not deployed directly to the Romi. Instead, a Romi project "
+"runs on your development computer and leverages the WPILib simulation "
+"framework to communicate with the Romi robot."
+msgstr ""
+"Romiプロジェクトが通常のFRCロボットプロジェクトと異なる点は、コードが直接Romiにデプロイされないことです。その代わりに、Romiプロジェクトは開発用コンピュータ上で実行され、WPILibシミュレーションフレームワークを利用してRomiロボットと通信します。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:39
+msgid ""
+"To run a Romi program, first, ensure that your Romi is powered on. Next, "
+"connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If "
+"you changed the Romi network settings (for example, to connect it to your "
+"own WiFi network) you may change the IP address that your program uses to "
+"connect to the Romi. To do this, open the ``build.gradle`` file and update "
+"the ``wpi.sim.envVar`` line to the appropriate IP address."
+msgstr ""
+"Romiプログラムを実行するには、まずRomiの電源が入っていることを確認します。次に、 Romiがブロードキャストする "
+"``WPILibPi-<number>`` "
+"のWiFiネットワークに接続します。Romiのネットワーク設定を変更した場合（例えば、ご自身のWiFiネットワークに接続するため）、プログラムがRomiに接続するために使用するIPアドレスを変更することができます。これを行うには、"
+" ``build.gradle`` ファイルを開き、 ``wpi.sim.envVar`` 行を適切な IP アドレスに更新します。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:48
+msgid ""
+"Now to start your Romi robot code, open the WPILib Command Palette (type "
+":kbd:`Ctrl+Shift+P`) and select \"Simulate Robot Code\", or press :kbd:`F5`."
+msgstr ""
+"Romiロボットコードを開始するには、WPILibコマンドパレットを開き ( :kbd:`Ctrl+Shift+P` を入力 ) 、「Simulate "
+"Robot Code」を選択するか、 :kbd:`F5` を押します。"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst-1
+msgid "Launching simulation via the WPILib Command Palette"
+msgstr "WPILibコマンドパレットによるシミュレーションの起動"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:53
+msgid ""
+"If all goes well, you should see a line in the console output that reads "
+"\"HALSimWS: WebSocket Connected\":"
+msgstr "すべてがうまくいけば、コンソール出力に「HALSimWS: WebSocket Connected」と表示されます："
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:57
+msgid "Your Romi code is now running!"
+msgstr "あなたのRomiのコードが実行されました！"

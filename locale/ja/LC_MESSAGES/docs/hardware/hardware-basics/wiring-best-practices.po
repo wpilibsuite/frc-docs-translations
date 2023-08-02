@@ -6,15 +6,16 @@
 # Translators:
 # 伊藤原野, 2023
 # Jacob Lubecki, 2023
+# Hirose Yuto, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2023\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-01 16:03+0000\n"
+"POT-Creation-Date: 2023-08-02 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 01:59+0000\n"
-"Last-Translator: Jacob Lubecki, 2023\n"
+"Last-Translator: Hirose Yuto, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,9 +23,40 @@ msgstr ""
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:4
+msgid "Wiring Best Practices"
+msgstr "配線のベストプラクティス"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:6
+msgid ""
+"The article :doc:`Intro to FRC Robot Wiring </docs/zero-to-"
+"robot/step-1/intro-to-frc-robot-wiring>` walks through the details of what "
+"connects where to wire up the FRC Control System and this article provides "
+"some additional \"Best Practices\" that may increase reliability and make "
+"maintenance easier. Take a look at :doc:`Preemptive Troubleshooting "
+"<preemptive-troubleshooting>` for more tips and tricks."
+msgstr ""
+":doc:`Intro to FRC Robot Wiring </docs/zero-to-robot/step-1/intro-to-frc-"
+"robot-wiring>` "
+"の記事では、FRC制御システムのどこにどの配線を接続するかについて詳しく説明し、信頼性を高め、メンテナンスを容易にするための「ベストプラクティス」をいくつか紹介します。より多くのヒントとコツについては､"
+" :doc:`Preemptive Troubleshooting <preemptive-troubleshooting>` をご覧ください。"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:9
 msgid "Vibration/Shock"
 msgstr "振動/衝撃"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:11
+msgid ""
+"An FRC\\ |reg| Robot is an incredibly rough environment when it comes to "
+"vibrations and shock loads. While many of the FRC specific electronics are "
+"extensively tested for mechanical robustness in these conditions, a few "
+"components, such as the radio, are not specifically designed for use on a "
+"mobile platform. Taking steps to reduce the shock and vibration these "
+"components are exposed to may help reduce failures. Some suggestions that "
+"may reduce mechanical failures:"
+msgstr ""
+"FRC\\ |reg| "
+"のロボットは、振動や衝撃荷重に関して、非常に過酷な環境です。FRCに特化した電子機器の多くは、このような状況下での機械的堅牢性について広範囲にテストされていますが、ルーターなど一部のコンポーネントは、移動するロボットでの使用に特化して設計されていません。これらのコンポーネントがさらされる衝撃や振動を軽減する手段を講じることは、故障を減らすのに役立つ可能性があります。機械的な故障を減らすためのいくつかの提案："
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:13
 msgid ""
@@ -36,26 +68,282 @@ msgstr ""
 "防振 - "
 "コンプレッサーなど過度の振動を発生させる部品は、必ず「防振装置」を使って隔離してください。これにより、ファスナーを緩めたり、電子部品の早期疲労故障の原因となるロボットの振動を低減することができます。"
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:15
+msgid ""
+"Bumpers - Use Bumpers to cover as much of the robot as possible for your "
+"design. While the rules require specific bumper coverage around the corners "
+"of your robot, maximizing the use of bumpers increases the likelihood that "
+"all collisions will be damped by your bumpers. Bumpers significantly reduce "
+"the g-forces experienced in a collision compared to hitting directly on a "
+"hard robot surface, reducing the shock experienced by the electronics and "
+"decreasing the chance of a shock related failure."
+msgstr ""
+"バンパー - "
+"バンパーは、あなたのデザインでロボットの可能な限り多くをカバーするために使用してください。ルールでは、ロボットのコーナーに特定のバンパーのカバーが必要ですが、バンパーを最大限に使用することで、すべての衝突がバンパーによって減衰される可能性が高くなります。バンパーは、硬いロボットの表面に直接ぶつかるよりも、衝突時に受けるGフォースを大幅に減少させ、電子機器が受ける衝撃を軽減し、衝撃に関連した故障の可能性を減少させます。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:16
+msgid ""
+"Shock Mounting - You may choose to shock mount some or all of your "
+"electronic components to further reduce the forces they see in robot "
+"collisions. This is especially helpful for the robot radio and other "
+"electronics such as co-processors, which may not be designed for use on "
+"mobile platforms. Vibration isolators, springs, foams, or mounting to "
+"flexible materials all may reduce the shock forces seen by these components."
+msgstr ""
+"ショックマウント - "
+"電子部品の一部または全部をショックマウントして、ロボットの衝突で受ける力をさらに軽減することができます。特に、ロボット無線やコプロセッサなど、移動するプラットフォームでの使用を想定していない電子部品には有効です。防振材、バネ、発泡材、柔軟な素材への取り付けなどは、これらの部品が受ける衝撃を軽減することができます。"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:19
 msgid "Redundancy"
 msgstr "冗長性"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:21
+msgid ""
+"Unfortunately there are few places in the FRC Control System where "
+"redundancy is feasible. Taking advantage of opportunities for redundancy can"
+" increase reliability. The primary example of this is wiring the barrel "
+"connector to the radio in addition to the provided PoE connection. This "
+"ensures that if one of the cables becomes damaged or dislodged, the other "
+"will maintain power to the radio. Keep an eye out for other potential areas "
+"to provide redundancy when wiring and programming your robot."
+msgstr ""
+"FRC制御システムには冗長化が可能な場所がほとんどありません。冗長化の機会を活用することで、信頼性を高めることができます。その主な例が、付属のPoE接続に加え、無線機にバレルコネクタを配線することです。これにより、ケーブルの一方が破損したり外れたりしても、もう一方が無線機への電力を維持することができます。このほかにも、ロボットの配線やプログラミングの際に、冗長性を確保できる可能性のある部分に目を向けてみてください。"
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:24
 msgid "Port Savers"
 msgstr "ポートセーバー"
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:26
+msgid ""
+"For any connections on the Robot or Driver station that may be frequently "
+"plugged and unplugged (such as DS joysticks, DS Ethernet, roboRIO USB "
+"tether, and Ethernet tether) using a \"Port Saver\" or \"pigtail\" can "
+"substantially reduce the potential for damaging the port. This type of "
+"device can serve double duty, both reducing the number of cycles that the "
+"port on the electronic device sees, as well as relocating the connection to "
+"a more convenient location. Make sure to secure the port saver (see the next"
+" item) to avoid port damage."
+msgstr ""
+"ロボットや Driver stationの接続で、頻繁に抜き差しされる可能性のあるもの（ DS joysticks, DS Ethernet, "
+"roboRIO USB "
+"tetherなど）には、「ポートセーバー」や「ピッグテール」を使用すると、ポートにダメージを与える可能性を大幅に低減できます。このタイプのデバイスは、電子デバイスのポートが見るサイクルの数を減らすだけでなく、接続をより便利な場所に移動させるという2つの役割を果たします。ポートの破損を防ぐため、ポートセーバーを必ず固定してください。（次の項目を参照）"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:29
 msgid "Wire Management and Strain Relief"
 msgstr "ワイヤーマネージメントとストレインリリーフ"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:31
+msgid ""
+"One of the most critical components to robot reliability and maintenance is "
+"good wire management and strain relief. Good wire management is comprised of"
+" a few components:"
+msgstr ""
+"ロボットの信頼性とメンテナンスに最も重要な要素の1つは、優れたワイヤーマネジメントとストレインリリーフです。優れたワイヤーマネジメントは、いくつかの要素で構成されています："
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:33
+msgid ""
+"Make sure cables are the correct length. Any excess wire length is just more"
+" to manage. If you must have extra wire due to additional length on COTS "
+"cabling, secure the extra into a small bundle using separate cable ties "
+"before securing the rest of the wire."
+msgstr ""
+"ケーブルの長さが合っているか確認してください。余分なワイヤーは、管理の手間が増えるだけです。COTSケーブルの長さが足りないため、どうしても余分なワイヤーを用意しなければならない場合は、残りのワイヤーを固定する前に、別の結束バンドを使って余分なワイヤーを小さな束に固定してください。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:34
+msgid ""
+"Ensure that cables are secured close to connection points, with enough slack"
+" to avoid putting strain on connectors. This is called strain relief, and is"
+" critical to minimizing the likelihood that a cable comes unplugged or a "
+"wire breaks off at a connection point (these are generally stress "
+"concentrators)."
+msgstr ""
+"ケーブルは、コネクタに負担がかからないよう、十分な余裕をもって接続部の近くで固定する。これはストレインリリーフと呼ばれ、ケーブルが抜けたり、接続部（一般的にこれらはストレスの集中源となります）でワイヤーが切れたりする可能性を最小限に抑えるために重要です。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:35
+msgid ""
+"Secure cables near any moving components. Make sure that all wire runs are "
+"secure and protected from moving components, even if the moving components "
+"were to bend or over-travel."
+msgstr ""
+"可動部品の近くでケーブルを固定する。万が一、可動部品が曲がったり、飛び出した場合でも、すべての配線が確実に固定され、可動部品から保護されていることを確認する。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:36
+msgid ""
+"Secure cables at additional points as necessary to keep wiring neat and "
+"clean. Take care to not over secure wires; if wires are secured in too many "
+"locations, it may actually make troubleshooting and maintenance more "
+"difficult."
+msgstr ""
+"配線をすっきりさせるために、必要に応じてケーブルを追加で固定します。配線を固定しすぎると、トラブルシューティングやメンテナンスがしにくくなることがあります。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:39
+msgid "Documentation"
+msgstr "ドキュメント作成"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:41
+msgid ""
+"A great way to make maintenance easier is to create documentation describing"
+" what is connected where on the robot. There are a number of ways of "
+"creating this type of documentation which range from complete wiring "
+"diagrams to excel charts to a quick list of what functions are attached to "
+"which channels. Many teams also integrate these lists with labeling (see the"
+" next bullet)."
+msgstr ""
+"ロボットのどこに何が接続されているかを説明するドキュメントを作成することは、メンテナンスを容易にするための大きな方法です。この種のドキュメントの作成方法は、完全な配線図からエクセルチャート、どのチャンネルにどのような機能が接続されているかの簡単なリストまで、さまざまなものがあります。また、多くのチームは、これらのリストをラベリングと統合しています。（次の箇所を参照）"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:43
+msgid ""
+"When a wire is accidentally cut, or a mechanism is malfunctioning, or a "
+"component burns out, it will be much easier to repair if you have some "
+"documentation to tell you what is connected where without having to trace "
+"the wiring all the way through (even if your wiring is neat!)"
+msgstr ""
+"配線が誤って切れたり、機構が誤作動したり、部品が焼けたりしたとき、わざわざ配線を辿らなくても、何がどこにつながっているかがわかる資料があれば、修理はずっと楽になります。（たとえ配線がきれいでも！）"
 
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:46
 msgid "Labeling"
 msgstr "ラベリング"
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:48
+msgid ""
+"Labeling is a great way to supplement the wiring documentation described "
+"above. There are many different strategies to labeling wiring and "
+"electronics, all with their own pros and cons. Labels for electronics and "
+"flags for wires can be made by hand, or using a label maker (some can also "
+"do heat-shrink labels), or you can use different colors of electrical tape "
+"or labeling flags to indicate different things. Whatever system you choose, "
+"make sure you understand how it complements your documentation and make sure"
+" everyone on your team is familiar with it."
+msgstr ""
+"ラベリングは、上記の配線ドキュメントを補完する素晴らしい方法です。配線や電子機器にラベルを貼るには、さまざまな戦略があり、それぞれに長所と短所があります。電子機器用のラベルや配線用の旗は、手作業やラベルメーカー（熱収縮ラベルも可能なものもある）を使って作ることもできますし、電気テープやラベル用旗の色を変えて、異なるものを示すことも可能です。どのようなシステムを選択するにしても、それがどのようにドキュメントを補完するのかを理解し、チームの全員がそのシステムに精通していることを確認する必要があります。"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:51
 msgid "Check all wiring and connections"
 msgstr "全ての配線と接続を確認する"
 
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:53
+msgid ""
+"After all wiring on the robot is complete, make sure to check each "
+"connection, pulling on each, to ensure that everything is secure. "
+"Additionally, ensure that no stray wire \"whiskers\" are sticking out of any"
+" connection point and that no uninsulated connections are exposed. If any "
+"connections come loose while testing, or any \"whiskers\" are discovered, "
+"re-make the connection and make sure to have a second person check it when "
+"complete."
+msgstr ""
+"ロボットへの配線が完了したら、各接続部を引っ張りながら確認し、すべてが確実に接続されていることを確認します。さらに、どの接続点からも「ヒゲ」が出ていないか、絶縁されていない接続部が露出していないかを確認します。テスト中に接続が緩んだり、「ヒゲ"
+" 」が発見された場合は、接続をやり直し、完了したら必ず2人目の人にチェックしてもらいましょう。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:55
+msgid ""
+"A common source of poor connections is screw-type or nut-and-bolt fasteners."
+" For any connections of this type on the robot (e.g. battery connections, "
+"main breaker, PDP, roboRIO), make sure the fasteners are tight. For nut-and-"
+"bolt style connections, ensure that the wire/terminal cannot be rotate by "
+"hand; if you can rotate your battery wire or main breaker connection by "
+"grasping the terminal and twisting, the connection is not tight enough."
+msgstr ""
+"接続不良の原因として、ネジ式やナット・ボルト式の固定がよく挙げられます。ロボット上のこのタイプの接続（バッテリー接続、メインブレーカー、PDP、roboRIOなど）については、ネジがしっかり締まっていることを確認してください。ナット・アンド・ボルト式の接続の場合、ワイヤーや端子が手で回せないことを確認してください。バッテリーワイヤーやメインブレーカーの接続を、端子をつかんでひねることで回せる場合は、ネジが十分に締まっていないことを示します。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:57
+msgid ""
+"Another common source of failures is the fuses at the end of the PDP. Ensure"
+" these fuses are completely seated; you may need to apply more force than "
+"you expect to seat them completely. If the fuses are seated properly they "
+"will likely be difficult or impossible to remove by hand."
+msgstr ""
+"また、PDPの末端にあるヒューズも故障の原因としてよく知られています。このヒューズが完全に装着されていることを確認してください。完全に装着するためには、予想以上の力が必要な場合があります。ヒューズが正しく装着されていれば、手で取り外しづらくなります。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:59
+msgid ""
+"Snap-in connections such as the SB-50 connector should be secured using "
+"clips or cable ties to ensure they do not pop loose during impacts."
+msgstr "SB-50コネクタのようなスナップイン接続は、衝撃で飛び出さないように、クリップや結束バンドで固定する必要があります。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:62
+msgid "Re-Check Early and Often"
+msgstr "早め早めの再確認を"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:64
+msgid ""
+"Re-check the entire electrical system as thoroughly as possible after "
+"playing the first match or two (or doing very vigorous testing). The first "
+"few impacts the robot sees may loosen fasteners or expose issues."
+msgstr ""
+"最初の1、2試合（または非常に激しいテスト）を行った後、電気システム全体を可能な限り徹底的に再チェックしてください。ロボットが最初に受けた数回の衝撃で、固定が緩んだり、問題が露呈したりすることがあります。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:66
+msgid ""
+"Create a checklist for re-checking electrical connections on a regular "
+"basis. As a very rough starting point, rotational fasteners such as battery "
+"and PDP connections should be checked every 1-3 matches. Spring type "
+"connections such as the WAGO and Weidmuller connectors likely only need to "
+"be checked once per event. Ensure that the team knows who is responsible for"
+" completing the checklist and how they will document that it has been done."
+msgstr ""
+"電気系統の接続を定期的に再確認するためのチェックリストを作成しましょう。大まかな目安としては、バッテリーやPDPの接続部などの回転式固定は、1～3試合ごとにチェックする必要があります。WAGOやWeidmullerコネクタのようなスプリングタイプの接続は、おそらくイベントごとに1回だけチェックする必要があります。チェックリストを完成させる責任者と、それが行われたことをどのように記録するかについて、チームが知っていることを確認しましょう。"
+
 #: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:69
 msgid "Battery Maintenance"
 msgstr "バッテリーメンテナンス"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:71
+msgid ""
+"Take good care of your batteries! A bad battery can easily cause a robot to "
+"functional poorly, or not at all, during a match. Label all of your "
+"batteries to help keep track of usage during the event. Many teams also "
+"include information such as the age of the battery on this label."
+msgstr ""
+"バッテリーの手入れをしっかりしましょう！バッテリーが悪いと、試合中にロボットの機能が低下したり、まったく動かなくなったりすることがあります。イベント中の使用状況を把握するために、すべてのバッテリーにラベルを貼ってください。多くのチームは、このラベルに電池の年数などの情報も記載しています。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:76
+msgid ""
+"Never lift or carry batteries by the wires! Carrying batteries by the wires "
+"has the potential to damage the internal connection between the terminals "
+"and the plates, dramatically increasing internal resistance and degrading "
+"performance."
+msgstr ""
+"バッテリーを配線で持ち上げたり、運んだりはしないでください！配線でバッテリーを持ち運ぶと、端子とプレート間の内部接続が損傷し、内部抵抗が非常に増加し、性能が低下する可能性があります。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:77
+msgid ""
+"Mark any dropped battery bad until a complete test can be conducted. In "
+"addition to the mentioned terminal connections, dropping a battery also has "
+"the potential to damage individual cells. This damage may not register on a "
+"simple voltage test, instead hiding until the battery is placed under load."
+msgstr ""
+"落下したバッテリーには、徹底的なテストが行われるまで不良マークを付けます。前述の端子接続に加え、バッテリーを落とすと個々のセルを損傷する可能性があります。この損傷は単純な電圧テストでは認識されず、バッテリーに負荷がかかるまで隠れていることがあります。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:78
+msgid ""
+"Rotate batteries evenly. This helps ensure that batteries have the most time"
+" to charge and rest and that they wear evenly (equal number of "
+"charge/discharge cycles)"
+msgstr ""
+"バッテリーのローテーションを均等に行います。これにより、バッテリーの充電・休む時間を最大限に確保し、均等に消耗することができます（充電・放電サイクルの回数が均等になります）。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:79
+msgid ""
+"Load test batteries if possible to monitor health. There are a number of "
+"commercially available products teams use to load test batteries, including "
+"at least one designed specifically for FRC. A load test can provide an "
+"indicator of battery health by measuring internal resistance. This "
+"measurement is much more meaningful when it comes to match performance than "
+"a simple no-load voltage number provided by a multimeter."
+msgstr ""
+"バッテリーの状態をチェックするために、可能であれば負荷テストを行います。チームがバッテリーの負荷テストに使用できる市販の製品は数多くあり、その中にはFRC専用に設計されたものもあります。負荷テストは、内部抵抗を測定することによってバッテリーの状態の指標を提供することができます。この測定は、マルチメーターが提供する単純な無負荷電圧の数値よりも、試合での性能に関して役立ちます。"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:82
+msgid "Check DS Logs"
+msgstr "DS Logsを確認する"
+
+#: ../../frc-docs/source/docs/hardware/hardware-basics/wiring-best-practices.rst:84
+msgid ""
+"After each match, review the DS logs to see what the battery voltage and "
+"current usage looks like. Once you have established what the normal range of"
+" these items is for your robot, you may be able to spot potential issues "
+"(bad batteries, failing motors, mechanical binding) before they become "
+"critical failures."
+msgstr ""
+"各試合の後、DS "
+"logsを見て、バッテリーの電圧と電流の使用状況を確認します。これらの項目がロボットの正常な範囲であるかを確認すれば、潜在的な問題（バッテリーの不良、モーターの故障、機械的な結合）が重大な故障になる前に発見することができるようになるかもしれません。"

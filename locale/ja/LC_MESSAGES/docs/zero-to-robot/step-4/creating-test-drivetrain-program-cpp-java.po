@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2023\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-05 16:03+0000\n"
+"POT-Creation-Date: 2023-08-06 16:04+0000\n"
 "PO-Revision-Date: 2023-04-28 04:06+0000\n"
 "Last-Translator: Jacob Lubecki, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
@@ -264,3 +264,138 @@ msgstr "CTRE"
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:212
 msgid "REV"
 msgstr "REV"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:139
+msgid ""
+"Our code needs to reference the components of WPILib that are used. In C++ "
+"this is accomplished using ``#include`` statements; in Java it is done with "
+"``import`` statements. The program references classes for ``Joystick`` (for "
+"driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling"
+" motors), ``TimedRobot`` (the base class used for the example), ``Timer`` "
+"(used for autonomous), and ``DifferentialDrive`` (for connecting the "
+"joystick control to the motors)."
+msgstr ""
+"コードはWPILibのコンポーネントを参照する必要があります。C++では、 ``#include`` 文を、Javaでは ``import`` "
+"文を利用することで行なえます。プログラムは、次のようなクラスを参照しています： ``Joystick`` (運転用), ``PWMSparkMax`` "
+"/ ``WPI_TalonFX`` / ``CANSparkMax`` (モータの制御用), ``TimedRobot`` (例のための基本クラス), "
+"``Timer`` (自動制御用), と ``DifferentialDrive`` (ジョイスティックでのドライブベースの操作用)。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:142
+msgid "Defining the variables for our sample robot"
+msgstr "サンプルロボット用の変数の定義"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:251
+msgid ""
+"The sample robot in our examples will have a joystick on USB port 0 for "
+"arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN "
+"with IDs 1 and 2). Here we create objects of type DifferentialDrive "
+"(m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the "
+"code does three things:"
+msgstr ""
+"サンプルロボットには、USBポート0番にarcade "
+"drive用のジョイスティックが、PWMポート0番と1番(CANでIDを0と1に設定します)に2つのモーターがあります。そして、DifferentialDrive型(m_robotDrive)、Joystick型(m_stick)、Timer型(m_timer)のオブジェクトを作成しています。このセクションでは、3つのことを行っています："
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:253
+msgid "Defines the variables as members of our Robot class."
+msgstr "Robotクラスのメンバとして、変数を定義します。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:254
+msgid "Initializes the variables."
+msgstr "変数を初期化します。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:256
+msgid ""
+"The variable initializations for C++ are in the ``private`` section at the "
+"bottom of the program. This means they are private to the class (``Robot``)."
+" The C++ code also sets the Motor Safety expiration to 0.1 seconds (the "
+"drive will shut off if we don't give it a command every .1 seconds) and "
+"starts the ``Timer`` used for autonomous."
+msgstr ""
+"C++の変数初期化はプログラム下部の ``private`` "
+"セクションで行われています。これは、クラス(``Robot``)でプライベートであるということです。C++コードでは、モーター安全期限を0.1秒に設定し(0.1秒以上命令がないとドライブベースは停止します)、自動制御用に"
+" ``Timer`` を開始しています。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:259
+msgid "Robot Initialization"
+msgstr "ロボットの初期化"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:273
+msgid ""
+"The ``RobotInit`` method is run when the robot program is starting up, but "
+"after the constructor. The ``RobotInit`` for our sample program doesn't do "
+"anything. If we wanted to run something here we could provide the code above"
+" to override the default)."
+msgstr ""
+"``RobotInit`` メソッドは、ロボットが起動した際に実行されますが、コンストラクタの実行後です。サンプルプログラムの "
+"``RobotInit`` は何もしません。もし何か実行したいことがあれば、コードを書くことが出来ます。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:276
+msgid "Simple Autonomous Example"
+msgstr "シンプルなAutonomousの例"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:296
+msgid ""
+"The ``AutonomousInit`` method is run once each time the robot transitions to"
+" autonomous from another mode. In this program, we restart the ``Timer`` in "
+"this method."
+msgstr ""
+"``AutonomousInit`` メソッドは別のモードからAutonomousモードに変化した瞬間に実行されます。このプログラムでは、 "
+"``Timer`` をリスタートしています。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:298
+msgid ""
+"``AutonomousPeriodic`` is run once every period while the robot is in "
+"autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
+"which defaults to 20ms. In this example, the periodic code checks if the "
+"timer is less than 2 seconds and if so, drives forward at half speed using "
+"the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than "
+"2 seconds has elapsed, the code stops the robot drive."
+msgstr ""
+"``AutonomousPeriodic`` はロボットがAutonomousモードの間、特定の間隔で何回も実行されます。 ``TimedRobot``"
+" クラスでは間隔は一定で、デフォルトで20msです。この例では、タイマーが2秒以下であるかをチェックし、もしそうなら "
+"``DifferentialDrive`` クラスの ``ArcadeDrive`` "
+"メソッドを用いて半分のスピードで前進します。2秒経過したら、ロボットの動きを止めます。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:301
+msgid "Joystick Control for Teleoperation"
+msgstr "Teleopでのジョイスティック操作"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:321
+msgid ""
+"Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
+"``TeleopPeriodic`` function. In this example we don't have anything to do in"
+" ``TeleopInit``, it is provided for illustration purposes only. In "
+"``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the "
+"Y-axis of the ``Joystick`` to forward/back motion of the drive motors and "
+"the X-axis to turning motion."
+msgstr ""
+"Autonomousの様に、Teleopモードには ``TeleopInit`` 関数と ``TeleopPeriodic`` "
+"関数があります。この例では、 ``TeleopInit`` では何もしておらず、説明のために記述されているだけです。 "
+"``TeleopPeriodic`` では、 ``Joystick`` のY軸をドライブベースの前進/後進に、X軸を回転動作に対応させるため "
+"``ArcadeDrive`` メソッドを使用しています。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:324
+msgid "Test Mode"
+msgstr "テストモード"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:344
+msgid ""
+"Test Mode is used for testing robot functionality. Similar to "
+"``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided "
+"here for illustrative purposes only."
+msgstr ""
+"Testモードはロボットの機能のテストのために使われます。 ``TeleopInit`` と同様に、 ``TestInit`` や "
+"``TestPeriodic`` は説明のために記述されています。"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:347
+msgid "Deploying the Project to a Robot"
+msgstr "ロボットへのデプロイ"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java.rst:349
+msgid ""
+"Please see the instructions :ref:`here <docs/software/vscode-"
+"overview/deploying-robot-code:Building and Deploying Robot Code>` for "
+"deploying the program onto a robot."
+msgstr ""
+"プログラムをデプロイする方法については、 :ref:`こちら <docs/software/vscode-overview/deploying-"
+"robot-code:Building and Deploying Robot Code>` を参照してください。"

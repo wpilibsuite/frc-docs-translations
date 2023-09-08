@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2023\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-04 04:04+0000\n"
+"POT-Creation-Date: 2023-09-08 16:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Marc Lalonde, 2023\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -33,9 +33,9 @@ msgid "Creating a Subsystem"
 msgstr "Créer un sous-système"
 
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:17
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:44
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:74
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:109
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:40
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:70
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:105
 msgid "Java"
 msgstr "Java"
 
@@ -43,49 +43,23 @@ msgstr "Java"
 msgid "C++"
 msgstr "C++"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:33
-msgid ""
-"This class contains a few convenience features on top of the basic "
-"``Subsystem`` interface: it automatically calls the ``register()`` method in"
-" its constructor to register the subsystem with the scheduler (this is "
-"necessary for the ``periodic()`` method to be called when the scheduler "
-"runs), and also implements the ``Sendable`` interface so that it can be sent"
-" to the dashboard to display/log relevant status information."
-msgstr ""
-"Cette classe contient quelques fonctionnalités pratiques en complément à "
-"l'interface ``Subsystem`` de base : elle appelle automatiquement la méthode "
-"``register()`` dans son constructeur pour enregistrer le sous-système auprès"
-" du ``CommandScheduler`` (cela est nécessaire pour que la méthode "
-"``periodic()`` soit exécutée par le ``CommandScheduler``), et elle "
-"implémente aussi l'interface ``Sendable`` afin que le sous-système puisse "
-"être envoyé au tableau de bord (SmartDashboard et/ou Shuffleboard) et ainsi "
-"afficher les informations pertinentes sur son état."
-
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:35
-msgid ""
-"Advanced users seeking more flexibility may simply create a class that "
-"implements the ``Subsystem`` interface."
-msgstr ""
-"Les utilisateurs avancés qui veulent plus de flexibilité peuvent simplement "
-"créer une classe qui implémente l'interface ``Subsystem``."
-
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:38
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:34
 msgid "Simple Subsystem Example"
 msgstr "Exemple de sous-système simple"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:52
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:82
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:117
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:48
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:78
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:113
 msgid "C++ (Header)"
 msgstr "C++ (Header ou en-tête)"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:60
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:90
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:125
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:56
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:86
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:121
 msgid "C++ (Source)"
 msgstr "C++ (Source)"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:68
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:64
 msgid ""
 "Notice that the subsystem hides the presence of the DoubleSolenoid from "
 "outside code (it is declared ``private``), and instead publicly exposes two "
@@ -108,19 +82,7 @@ msgstr ""
 "lieu d'un système pneumatique) sans qu'aucun code à l'extérieur du sous-"
 "système ne soit obligé d'être modifié avec lui. "
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:142
-msgid ""
-"Setting a default command for a subsystem is very easy; one simply calls "
-"``CommandScheduler.getInstance().setDefaultCommand()``, or, more simply, the"
-" ``setDefaultCommand()`` method of the ``Subsystem`` interface:"
-msgstr ""
-"Configurer la commande par défaut d'un sous-système est très facile : il "
-"faut simplement appeler la méthode "
-"``CommandScheduler.getInstance().setDefaultCommand(Subsystem, Command)`` ou,"
-" encore plus simple, appeler la méthode ``setDefaultCommand(Command)`` de "
-"l'interface ``Subsytem`` :"
-
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:164
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:160
 msgid ""
 "A command that is assigned as the default command for a subsystem must "
 "require that subsystem."

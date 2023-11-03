@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,17 +7,16 @@
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
 # 8192 DHC <hehehehehehe886@gmail.com>, 2021
 # 陈 Sherry <3361738391@qq.com>, 2021
-# Team 5308 <team5308@163.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-01 04:07+0000\n"
+"POT-Creation-Date: 2023-11-03 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Last-Translator: 陈 Sherry <3361738391@qq.com>, 2021\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -205,11 +204,11 @@ msgid ""
 msgstr ""
 "布置一条与您的机器人平行的卷尺，然后沿着卷尺将您的机器人推出约一米。沿Y轴布置一个卷尺并重新开始，将您的机器人沿X轴推一米，沿Y轴推一米，形成一个粗糙的弧度。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:104
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:105
 msgid "Verify Feedforward"
 msgstr "核查前馈"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:105
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:106
 msgid ""
 "If your feedforwards are bad then the P controllers for each side of the "
 "robot will not track as well, and your "
@@ -221,7 +220,7 @@ msgstr ""
 "differentialDriveVoltageConstraint不会精确地限制机器人的加速度。 "
 "我们主要想关闭车轮的P控制器，以便我们可以单独测试前馈。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:107
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:108
 msgid ""
 "First, we must set disable the P controller for each wheel. Set the ``P`` "
 "gain to 0 for every controller. In the ``RamseteCommand`` example, you would"
@@ -229,7 +228,7 @@ msgid ""
 msgstr ""
 "首先，必须为每个车轮设置禁用P控制器。将每个控制器的P增益设置为0。在RamseteCommand示例中，您可以将kPDriveVel设置为0："
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:157
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:154
 msgid ""
 "Finally, we need to log desired wheel velocity and actual wheel velocity "
 "(you should put actual and desired velocities on the same graph if you're "
@@ -237,18 +236,18 @@ msgid ""
 msgstr ""
 "最后，我们需要记录所需的车轮速度和实际的车轮速度（如果您使用Shuffleboard，或者您的绘图软件具有该功能，则应将实际速度和所需速度记录在同一张图表上）"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:229
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:226
 msgid ""
 "Run the robot on a variety of trajectories (curved and straight line), and "
 "check to see if the actual velocity tracks the desired velocity by looking "
 "at graphs from NetworkTables."
 msgstr "在各种轨迹（曲线和直线）上运行机器人，并通过查看NetworkTables中的图表来检查实际速度是否跟踪所需速度。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:233
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:230
 msgid "Verify P Gain"
 msgstr "核查P增益"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:234
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:231
 msgid ""
 "If you completed the previous step and the problem went away then your "
 "problem can probably be found in one of the next steps. In this step we're "
@@ -259,7 +258,7 @@ msgstr ""
 "如果您完成了上一步，并且问题消失了，那么可能会在后续步骤之一中找到您的问题。 "
 "在此步骤中，我们将核查车轮的P控制器是否已正确调整。如果您使用的是Java，那么我们要关闭Ramsete，以便我们可以自己查看PF控制器。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:236
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:233
 msgid ""
 "You must re-use all the code from the previous step that logs actual vs. "
 "desired velocity (and the code that disables Ramsete, if you're using Java),"
@@ -267,38 +266,38 @@ msgid ""
 msgstr ""
 "除了必须将P增益重新设置为之前的非零值之外，您必须重新使用记录实际速度与所需速度的上一步中的所有代码（如果使用Java，则禁用Ramsete的代码）。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:237
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:234
 msgid ""
 "Run the robot again on a variety of trajectories, and check that your actual"
 " vs. desired graphs look good."
 msgstr "在各种轨迹上再次运行机器人，并检查您的实际图形与所需图形之间是否相符。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:238
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:235
 msgid ""
 "If the graphs do not look good (i.e. the actual velocity is very different "
 "from the desired) then you should try tuning your P gain and rerunning your "
 "test trajectories."
 msgstr "如果图形看起来不好（即实际速度与期望的速度有很大不同），则应尝试调整P增益并重新运行测试轨迹。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:241
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:238
 msgid "Check Constraints"
 msgstr "核查约束"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:242
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:239
 msgid ""
 "Make sure that your P gain is nonzero for this step and that you still have "
 "the logging code added in the previous steps. If you're using Java then you "
 "should remove the code to disable Ramsete."
 msgstr "确保此步骤的P增益不为零，并且仍在前面的步骤中添加了日志记录代码。如果您使用的是Java，则应删除代码以禁用Ramsete。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:244
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:241
 msgid ""
 "If your accuracy issue persisted through all of the previous steps then you "
 "might have an issue with your constraints. Below are a list of symptoms that"
 " the different available constraints will exhibit when poorly tuned."
 msgstr "如果您的准确性问题在上述所有步骤中仍然存在，则说明您的约束可能存在问题。以下是调整不良时不同可用约束出现问题的列表。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:246
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:243
 msgid ""
 "Test one constraint at a time! Remove the other constraints, tune your one "
 "remaining constraint, and repeat that process for each constraint you want "
@@ -306,32 +305,32 @@ msgid ""
 "time."
 msgstr "一次测试一个约束！删除其他约束，调整剩下的一个约束，并对每个要使用的约束重复该过程。以下清单假定您一次仅使用一个约束。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:248
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:245
 msgid "``DifferentialDriveVoltageConstraint``:"
 msgstr "DifferentialDriveVoltageConstraint："
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:250
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:247
 msgid ""
 "If your robot accelerates very slowly then it's possible that the max "
 "voltage for this constraint is too low."
 msgstr "如果您的机器人加速非常慢，则该约束的最大电压可能太低。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:253
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:250
 msgid "``DifferentialDriveKinematicsConstraint``:"
 msgstr "DifferentialDriveKinematicsConstraint："
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:255
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:252
 msgid ""
 "If your robot ends up at the wrong heading then it's possible that the max "
 "drivetrain side speed is too low, or that it's too high. The only way to "
 "tell is to tune the max speed and to see what happens."
 msgstr "如果机器人的前进方向错误，则可能是最大动力传动系统侧向速度太低或太高。唯一方法是调整最大速度并查看会发生什么。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:257
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:254
 msgid "``CentripetalAccelerationConstraint``:"
 msgstr "CentripetalAccelerationConstraint："
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:259
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:256
 msgid ""
 "If your robot ends up at the wrong heading then this could be the culprit. "
 "If your robot doesn't seem to turn enough then you should increase the max "
@@ -340,11 +339,11 @@ msgid ""
 msgstr ""
 "如果您的机器人的航向错误，那么这可能是罪魁祸首。如果您的机器人似乎转弯不充分，则应增加最大向心加速度，但如果机器人转弯时转弯太快，则应减小最大向心加速度。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:262
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:259
 msgid "Check Trajectory Waypoints"
 msgstr "检查轨迹航路点"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:263
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/troubleshooting.rst:260
 msgid ""
 "It is possible that your trajectory itself is not very driveable. Try moving"
 " waypoints (and headings at the waypoints, if applicable) to reduce sharp "

@@ -13,12 +13,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-27 00:41+0000\n"
+"POT-Creation-Date: 2023-11-03 16:04+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Cesar Ernesto, 2022\n"
-"Language-Team: Spanish (Mexico) (https://www.transifex.com/wpilib/teams/109324/es_MX/)\n"
+"Language-Team: Spanish (Mexico) (https://app.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -323,11 +323,11 @@ msgstr ""
 " estado-espacio identificados usando :term:`system identification`. Este "
 "ejemplo muestra un modelo de volante con un kV de 0.023 y un kA de 0.001:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:93
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:96
 msgid "Modeling Using Flywheel Moment of Inertia and Gearing"
 msgstr "Modelando Usando el Volante con Momento de Inercia y Engranaje"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:95
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:98
 msgid ""
 "A flywheel can also be modeled without access to a physical robot, using "
 "information about the motors, gearing and flywheel's :term:`moment of "
@@ -341,7 +341,7 @@ msgstr ""
 "la Sección 8.2.1 de `Controles de Ingeniería en FRC "
 "<https://file.tavsys.net/control/controls-engineering-in-frc.pdf>`__."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:99
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:102
 msgid ""
 "For WPILib's state-space classes, gearing is written as output over input --"
 " that is, if the flywheel spins slower than the motors, this number should "
@@ -351,7 +351,7 @@ msgstr ""
 "salida en vez de entrada -- es esto, si el volante gira más lento que los "
 "motores, este número debe ser mayor que uno."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:101
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:104
 msgid ""
 "The C++ LinearSystem class uses :ref:`the C++ Units Library "
 "<docs/software/basic-programming/cpp-units:The C++ Units Library>` to "
@@ -361,11 +361,11 @@ msgstr ""
 "<docs/software/basic-programming/cpp-units:The C++ Units Library>` para "
 "prevenir mezla de unidades y afirmar dimensionalmente."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:128
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:133
 msgid "Kalman Filters: Observing Flywheel State"
 msgstr "Filtros Kalman: Observando el Estado del Flywheel"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:130
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:135
 msgid ""
 "Kalman filters are used to filter our velocity measurements using our state-"
 "space model to generate a state estimate :math:`\\mathbf{\\hat{x}}`. As our "
@@ -389,7 +389,7 @@ msgstr ""
 "las nuevas mediciones, mientras que las desviaciones estándar de las "
 "mediciones más grandes harán lo contrario."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:132
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:137
 msgid ""
 "In the case of a flywheel we start with a state standard deviation of 3 "
 "rad/s and a measurement standard deviation of 0.01 rad/s. These values are "
@@ -410,7 +410,7 @@ msgstr ""
 "largo del tiempo es una excelente forma visual de ajustar los filtros de "
 "Kalman."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:137
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:142
 msgid ""
 "The above graph shows two differently tuned Kalman filters, as well as a "
 ":ref:`single-pole IIR filter <docs/software/advanced-"
@@ -433,7 +433,7 @@ msgstr ""
 "confiar en el modelo lo suficiente como para rechazar el ruido y reaccionar "
 "rápidamente a las perturbaciones externas."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:139
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:144
 msgid ""
 "Because the feedback controller computes error using the :term:`x-hat` "
 "estimated by the Kalman filter, the controller will react to disturbances "
@@ -453,7 +453,7 @@ msgstr ""
 "superior de la derecha muestra un filtro que apenas se vio afectado por las "
 "caídas de velocidad."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:165
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:172
 msgid ""
 "Because Kalman filters use our state-space model in the "
 ":ref:`docs/software/advanced-controls/state-space/state-space-"
@@ -473,19 +473,19 @@ msgstr ""
 "ganancias de kV y kA (o el momento de inercia y otras constantes) pueden ser"
 " justadas hasta que el modelo se acerque a igualar los datos registrados."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:167
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:174
 msgid "Todo"
 msgstr "QuéHacer"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:167
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:174
 msgid "do we need to elaborate on this^ more?"
 msgstr "¿necesitamos hablar de esto^ más?"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:170
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:177
 msgid "Linear-Quadratic Regulators and Plant Inversion Feedforward"
 msgstr "Reguladores Lineales Cuadráticos y Feedforward de Inversión de Planta"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:172
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:179
 msgid ""
 ":ref:`docs/software/advanced-controls/state-space/state-space-intro:The "
 "Linear-Quadratic Regulator` finds a feedback controller to drive our "
@@ -512,7 +512,7 @@ msgstr ""
 ":ref:`ejemplo de aplicación de LQR  <docs/software/advanced-controls/state-"
 "space/state-space-intro:LQR: example application>`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:174
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:181
 msgid ""
 "Much like ``SimpleMotorFeedforward`` can be used to generate feedforward "
 "voltage inputs given kS, kV, and kA constants, the Plant Inversion "
@@ -530,11 +530,11 @@ msgstr ""
 "comandos de voltaje generados por la clase ``LinearSystemLoop`` son la suma "
 "de las entradas de feedfoward y de retroaliemntación."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:201
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:210
 msgid "Bringing it All Together: LinearSystemLoop"
 msgstr "Trayendo todo Junto: LinearSystemLoop"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:203
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:212
 msgid ""
 "LinearSystemLoop combines our system, controller, and observer that we "
 "created earlier. The constructor shown will also instantiate a "
@@ -544,7 +544,7 @@ msgstr ""
 "creamos antes. El constructor que se muestra también crea una instancia "
 "``PlantInversionFeedforward``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:229
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:240
 msgid ""
 "Once we have our ``LinearSystemLoop``, the only thing left to do is actually"
 " run it. To do that, we'll periodically update our Kalman filter with our "

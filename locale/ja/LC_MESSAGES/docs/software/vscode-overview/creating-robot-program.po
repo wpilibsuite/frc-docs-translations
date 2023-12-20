@@ -4,21 +4,466 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hirose Yuto, 2023
 # Eddie L Wright, 2023
 # Jacob Lubecki, 2023
+# Hirose Yuto, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-13 04:04+0000\n"
+"POT-Creation-Date: 2023-12-20 16:03+0000\n"
 "PO-Revision-Date: 2020-08-20 04:15+0000\n"
-"Last-Translator: Jacob Lubecki, 2023\n"
+"Last-Translator: Hirose Yuto, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:2
+msgid "Creating a Robot Program"
+msgstr "ロボットプログラムの作成"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:4
+msgid ""
+"Once everything is installed, we're ready to create a robot program.  WPILib"
+" comes with several templates for robot programs.  Use of these templates is"
+" highly recommended for new users; however, advanced users are free to write"
+" their own robot code from scratch."
+msgstr ""
+"すべてをインストールできたら、ロボットプログラムを作成することが出来ます。WPILibには複数のロボットプログラムテンプレートがあります。初心者にはこれらのテンプレートの利用をおすすめしますが、上級者はゼロからロボットのコードを書いても構いません。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:7
+msgid "Choosing a Base Class"
+msgstr "基本クラスの選択"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:9
+msgid ""
+"To start a project using one of the WPILib robot program templates, users "
+"must first choose a base class for their robot.  Users subclass these base "
+"classes to create their primary :code:`Robot` class, which controls the main"
+" flow of the robot program.  There are three choices available for the base "
+"class:"
+msgstr ""
+"WPILibのロボットプログラムテンプレートを使用してプロジェクトを開始するには、まずロボットの基本クラスを選択する必要があります。 "
+"ユーザーはこれらの基本クラスをサブクラス化して、ロボットプログラムのメインフローを制御する :code:`Robot` クラスを作成します。 "
+"基本クラスには3つの選択肢があります："
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:12
+msgid "TimedRobot"
+msgstr "TimedRobot"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:14
+msgid ""
+"Documentation: `Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/TimedRobot.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_timed_robot.html>`__"
+msgstr ""
+"ドキュメンテーション： `Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/TimedRobot.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_timed_robot.html>`__"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:18
+msgid ""
+"Source: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__"
+msgstr ""
+"ソース: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:22
+msgid ""
+"The :code:`TimedRobot` class is the base class recommended for most users.  "
+"It provides control of the robot program through a collection of "
+":code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are "
+"called by WPILib during specific robot states (e.g. autonomous or "
+"teleoperated). During these calls, your code typically polls each input "
+"device and acts according to the data it receives.  For instance, you would "
+"typically determine the position of the joystick and state of the joystick "
+"buttons on each call and act accordingly.  The ``TimedRobot`` class also "
+"provides an example of retrieving autonomous routines through "
+"SendableChooser (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_sendable_chooser.html>`__"
+msgstr ""
+":code:`TimedRobot` クラスはほとんどのユーザーに推奨される基底クラスです。 このクラスは :code:`init()` 、 "
+":code:`periodic()` 、 :code:`exit()` "
+"メソッドのコレクションを通してロボットプログラムの制御を提供します。これらのメソッドは特定のロボット状態（例えば自律動作や遠隔操作）の時に WPILib"
+" によって呼び出されます。これらのメソッドが呼び出される間、あなたのコードは各入力デバイスの状態を取得し、受け取ったデータに従って動作します。 "
+"例えば、ジョイスティックの位置とジョイスティックのボタンの状態を呼び出しごとに判断し、それに従って動作します。 ``TimedRobot`` "
+"クラスでは、SendableChooser (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__"
+" / `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_sendable_chooser.html>`__)"
+" を使って自律ルーチンを取得する例も提供しています。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:24
+msgid ""
+"A `TimedRobot Skeleton` template is available that removes some informative "
+"comments and the autonomous example. You can use this if you're already "
+"familiar with `TimedRobot`. The example shown below is of `TimedRobot "
+"Skeleton`."
+msgstr ""
+"`TimedRobot Skeleton` テンプレートは、いくつかの有益なコメントとautonomousの例を取り除いたものです。すでに "
+"`TimedRobot` に慣れている場合は、これを使うことができます。以下に示す例は `TimedRobot Skeleton` のものです。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:40
+msgid ""
+"Periodic methods are called every 20 ms by default. This can be changed by "
+"calling the superclass constructor with the new desired update rate."
+msgstr ""
+"「Periodic」メソッドはデフォルトで20ミリ秒ごとに呼び出されます。これは、新しい更新レートを指定してスーパークラスのコンストラクタを呼び出すことで変更できます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:42
+msgid ""
+"Changing your robot rate can cause some unintended behavior (loop overruns)."
+" Teams can also use `Notifiers "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Notifier.html>`__"
+" to schedule methods at a custom rate."
+msgstr ""
+"ロボットのレートを変更すると、意図しない動作（ループオーバーラン）が発生することがあります。チームは `Notifiers "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Notifier.html>`__"
+" を使用して、カスタムレートでメソッドをスケジュールすることもできます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:57
+msgid "RobotBase"
+msgstr "RobotBase"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:59
+msgid ""
+"Documentation: `Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/RobotBase.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_robot_base.html>`__"
+msgstr ""
+"ドキュメンテーション： `Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/RobotBase.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_robot_base.html>`__"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:63
+msgid ""
+"Source: `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cppcs/RobotBase.cpp>`__"
+msgstr ""
+"ソース： `Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/RobotBase.java>`__"
+" - `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cppcs/RobotBase.cpp>`__"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:67
+msgid ""
+"The :code:`RobotBase` class is the most minimal base-class offered, and is "
+"generally not recommended for direct use.  No robot control flow is handled "
+"for the user; everything must be written from scratch inside the "
+":code:`startCompetition()` method. The template by default showcases how to "
+"process the different operation modes (teleop, auto, etc)."
+msgstr ""
+":code:`RobotBase` "
+"クラスは最も最小限の基本クラスであり、一般的に直接使用することは推奨されません。ロボットの制御フローはユーザーのために処理されないので、 "
+":code:`startCompetition()` "
+"メソッドの中でゼロからすべてを書かなければなりません。デフォルトでは、このテンプレートは異なるオペレーションモード（teleop、autoなど）の処理方法をを紹介しています。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:69
+msgid ""
+"A ``RobotBase Skeleton`` template is available that offers a blank "
+"``startCompetition()`` method."
+msgstr ""
+"``RobotBase Skeleton`` テンプレートが用意されており、空白の ``startCompetition()`` メソッドを提供します。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:72
+msgid "Command Robot"
+msgstr "コマンド・ロボット"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:74
+msgid ""
+"The ``Command Robot`` framework adds to the basic functionality of a ``Timed"
+" Robot`` by automatically polling inputs and converting the raw input data "
+"into events.  These events are tied to user code, which is executed when the"
+" event is triggered.  For instance, when a button is pressed, code tied to "
+"the pressing of that button is automatically called and it is not necessary "
+"to poll or keep track of the state of that button directly.  The ``Command "
+"Robot`` framework makes it easier to write compact easy-to-read code with "
+"complex behavior, but requires an additional up-front time investment from a"
+" programmer in order to understand how the Command Robot framework works."
+msgstr ""
+"``Command Robot`` フレームワークは、自動的に入力を取得し、生の入力データをイベントに変換することで、 ``Timed Robot`` "
+"の基本的な機能を拡張します。 "
+"これらのイベントは、イベントがトリガーされたときに実行されるユーザーコードに関連付けられています。例えば、ボタンが押されると、そのボタンが押されたことに関連するコードが自動的に呼び出され、そのボタンの状態を直接取得したり追跡したりする必要はありません。"
+" "
+"コマンドロボットフレームワークは、複雑な動作をするコンパクトで読みやすいコードを書くことを容易にしますが、コマンドロボットフレームワークがどのように動作するかを理解するために、プログラマーに追加の先行時間投資時間が要求されます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:76
+msgid ""
+"Teams using ``Command Robot`` should see the :ref:`Command-Based Programming"
+" Tutorial <docs/software/commandbased/index:Command-Based Programming>`."
+msgstr ""
+"``Command Robot`` を使用しているチームは、 :ref:`Command-Based Programmingというチュートリアル "
+"<docs/software/commandbased/index:Command-Based Programming>` を参照してください。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:79
+msgid "Romi"
+msgstr "Romi"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:81
+msgid ""
+"Teams using a :ref:`Romi <docs/romi-robot/index:Getting Started with Romi>` "
+"should use the ``Romi - Timed`` or ``Romi - Command Bot`` template."
+msgstr ""
+":ref:`Romi <docs/romi-robot/index:Getting Started with Romi>` を使用しているチームは "
+"``Romi - Timed`` または ``Romi - Command Bot`` テンプレートを使用してください。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:84
+msgid "Romi - Timed"
+msgstr "Romi - Timed"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:86
+msgid ""
+"The ``Romi - Timed`` template provides a ``RomiDrivetrain`` class that "
+"exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` method. "
+"It's up to the user to feed this arcadeDrive function."
+msgstr ""
+"``Romi - Timed`` テンプレートは、 ``arcadeDrive(double xaxisSpeed, double "
+"zaxisRotate)`` メソッドを持つ ``RomiDrivetrain`` "
+"クラスを提供します。このarcadeDrive関数を実装するかどうかはユーザー次第です。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:88
+msgid ""
+"This class also provides functions for retrieving and resetting the Romi's "
+"onboard encoders."
+msgstr "このクラスはまた、Romi のオンボードエンコーダーを取得し、リセットするための関数も提供します。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:91
+msgid "Romi - Command Bot"
+msgstr "Romi - Command Bot"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:93
+msgid ""
+"The ``Romi - Command Bot`` template provides a ``RomiDrivetrain`` subsystem "
+"that exposes an ``arcadeDrive(double xaxisSpeed, double zaxisRotate)`` "
+"method. It's up to the user to feed this arcadeDrive function."
+msgstr ""
+"``Romi - Command Bot`` テンプレートは、 ``arcadeDrive(double xaxisSpeed, double "
+"zaxisRotate)`` メソッドを持つ ``RomiDrivetrain`` サブシステムを提供します。この arcadeDrive "
+"関数を使うかどうかはユーザー次第です。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:95
+msgid ""
+"This subsystem also provides functions for retrieving and resetting the "
+"Romi's onboard encoders."
+msgstr "このサブシステムはまた、Romiのオンボード・エンコーダーを取得したり、リセットしたりする機能も備えています。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:98
+msgid "Not Using a Base Class"
+msgstr "基本クラスを使用しない場合"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:100
+msgid ""
+"If desired, users can omit a base class entirely and simply write their "
+"program in a :code:`main()` method, as they would for any other program.  "
+"This is *highly* discouraged - users should not \"reinvent the wheel\" when "
+"writing their robot code - but it is supported for those who wish to have "
+"absolute control over their program flow."
+msgstr ""
+"必要であれば、ユーザは基本クラスを完全に省略し、他のプログラムと同じように :code:`main()` メソッドでプログラムを書くこともできます。 "
+"これは非常に推奨されませんが（ユーザーはロボットコードを書くときに「車輪の再発明」をすべきではありません）、プログラムの流れを完全にコントロールしたい人のためにサポートされています。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:102
+msgid ""
+"Users should *not* modify the :code:`main()` method of a robot program "
+"unless they are absolutely sure of what they are doing."
+msgstr ""
+"ユーザーは、自分が何をやっているのか絶対に確信が持てない限り、ロボットプログラムの :code:`main()` メソッドを変更 "
+"**すべきではありません** 。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:105
+msgid "Creating a New WPILib Project"
+msgstr "新規WPILibプロジェクトの作成"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:107
+msgid ""
+"Once we've decided on a base class, we can create our new robot project.  "
+"Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. "
+"Then, type \"WPILib\" into the prompt.  Since all WPILib commands start with"
+" \"WPILib\", this will bring up the list of WPILib-specific VS Code "
+"commands. Now, select the :guilabel:`Create a new project` command:"
+msgstr ""
+"基本クラスが決まったら、新しいロボットプロジェクトを作成することが出来ます。 :kbd:`Ctrl+Shift+P` でVisual Studio "
+"Codeのコマンドパレットを表示します。そしてプロンプトに 「WPILib」と入力します。 そうすると、WPILibのVS "
+"Codeコマンドの一覧が出ます。その中から、 :guilabel:`Create a new project` を選びます："
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst-1
+msgid "Highlights the \"WPILib: Create a new project\" command."
+msgstr "「WPILib: Create a new project」コマンドがハイライトされる。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:112
+msgid "This will bring up the \"New Project Creator Window:\""
+msgstr "すると、「New Project Creator」ウィンドウが表示されます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst-1
+msgid "The new project creator screen."
+msgstr "新しいプロジェクト作成画面。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:117
+msgid "The elements of the New Project Creator Window are explained below:"
+msgstr "New Project Creator ウィンドウのそれぞれの要素の説明は以下です。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:119
+msgid ""
+"**Project Type**: The kind of project we wish to create.  This can be an "
+"example project, or one of the project templates provided by WPILib.  "
+"Templates exist for each of the robot base classes.  Additionally, a "
+"template exists for :ref:`Command-based <docs/software/commandbased/what-is-"
+"command-based:What is \"command-based\" programming?>` projects, which are "
+"built on the :code:`TimedRobot` base class but include a number of "
+"additional features - this type of robot program is highly recommended for "
+"new teams."
+msgstr ""
+"**Project Type**: 作成したいプロジェクトの種類。 "
+"これはサンプルプロジェクト、またはWPILibが提供するプロジェクトテンプレートの1つです。 テンプレートはロボットの基本クラスごとに存在します。 "
+"さらに、 :ref:`Command-based <docs/software/commandbased/what-is-command-"
+"based:What is \"command-based\" programming?>` プロジェクト用のテンプレートも存在します。これは "
+":code:`TimedRobot` "
+"基本クラスをベースに構築されていますが、多くの追加機能を含んでいます。この種のロボットプログラムは、新しいチームに強く推奨されます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:120
+msgid ""
+"**Language**: This is the language (C++ or Java) that will be used for this "
+"project."
+msgstr "**Language**: プロジェクトで利用する言語 (C++またはJava)。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:121
+msgid ""
+"**Base Folder**: If this is a template project, this specifies the type of "
+"template that will be used."
+msgstr "**Base Folder**: テンプレートプロジェクトの場合、使用するテンプレートの種類を指定します。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:122
+msgid ""
+"**Project Location**: This determines the folder in which the robot project "
+"will be located."
+msgstr "**Project Location**: ロボットプロジェクトを配置するフォルダ。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:123
+msgid ""
+"**Project Name**: The name of the robot project.  This also specifies the "
+"name that the project folder will be given if the Create New Folder box is "
+"checked."
+msgstr ""
+"**Project Name**: プロジェクト名。「Create New "
+"Folder」と書かれたチェックボックスを選択した場合は、プロジェクトのフォルダの名前にもなります。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:124
+msgid ""
+"**Create a New Folder**: If this is checked, a new folder will be created to"
+" hold the project within the previously-specified folder.  If it is *not* "
+"checked, the project will be located directly in the previously-specified "
+"folder.  An error will be thrown if the folder is not empty and this is not "
+"checked."
+msgstr ""
+"**Create a New Folder**: "
+"これをチェックすると、以前に指定したフォルダー内にプロジェクトを保存するための新しいフォルダーが作成されます。 **チェックされていない** "
+"場合、プロジェクトは以前に指定されたフォルダに直接配置されます。 フォルダが空でなく、このオプションがチェックされていない場合は、エラーが発生します。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:125
+msgid ""
+"**Team Number**: The team number for the project, which will be used for "
+"package names within the project and to locate the robot when deploying "
+"code."
+msgstr "**Team Number**: プロジェクト用のチーム番号。プロジェクトのパッケージ名やロボットにデプロイするために利用されます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:126
+msgid ""
+"**Enable Desktop Support**: Enables unit test and simulation. While WPILib "
+"supports this, third party software libraries may not. If libraries do not "
+"support desktop, then your code may not compile or may crash. It should be "
+"left unchecked unless unit testing or simulation is needed and all libraries"
+" support it."
+msgstr ""
+"**Enable Desktop Support**: "
+"ユニットテストとシミュレーションを有効にします。WPILibはこれをサポートしていますが、サードパーティのソフトウェア・ライブラリはサポートしていない場合があります。ライブラリがデスクトップをサポートしていない場合、コードがコンパイルできなかったり、クラッシュする可能性があります。ユニットテストやシミュレーションが必要で、すべてのライブラリーがサポートしている場合を除き、このチェックは外してください。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:128
+msgid ""
+"Once all the above have been configured, click \"Generate Project\" and the "
+"robot project will be created."
+msgstr "上記項目を設定したら、「Generate Project」をクリックします。そうするとロボットのプロジェクトが作成されます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:130
+msgid ""
+"Any errors in project generation will appear in the bottom right-hand corner"
+" of the screen."
+msgstr "プロジェクト作成のエラーは、画面の右下隅に表示されます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:132
+msgid ""
+"Creating projects on OneDrive is not supported as OneDrive's caching "
+"interferes with the build system. Some Windows installations put the "
+"Documents and Desktop folders on OneDrive by default."
+msgstr ""
+"OneDriveのキャッシュがビルドシステムに干渉するため、OneDrive上でのプロジェクトの作成はサポートされていません。Windowsのインストールによっては、デフォルトでOneDriveに「ドキュメント」と「デスクトップ」フォルダが置かれています。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:134
+msgid "An example after all options are selected is shown below."
+msgstr "すべての設定を選択した後の例を以下に表示します。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst-1
+msgid "The new project creator screen filled out."
+msgstr "新規プロジェクト作成画面が完成しました。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:140
+msgid "Opening The New Project"
+msgstr "新しいプロジェクトを開く"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:142
+msgid ""
+"After successfully creating your project, VS Code will give the option of "
+"opening the project as shown below. We can choose to do that now or later by"
+" typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS)"
+" and select the folder where we saved our project."
+msgstr ""
+"プロジェクトの作成後、VS Codeは以下のようにプロジェクトを開くかどうかの選択肢を表示します。 :kbd:`Ctrl+K` を押してから "
+":kbd:`Ctrl+O` を押し(macOSでは単に :kbd:`Command+O` ) "
+"、プロジェクトを保存したフォルダを選択することで、すぐやるか後でやるかを選択することができます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst-1
+msgid "Opening Project pop-up in VS Code"
+msgstr "VS Codeでプロジェクトを開くポップアップ"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:147
+msgid ""
+"Once opened we will see the project hierarchy on the left. Double clicking "
+"on the file will open that file in the editor."
+msgstr "プロジェクトを開くと、左の方にプロジェクト階層が表示されます。ファイルをダブルクリックするとエディタにてファイルを表示できます。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst-1
+msgid "Opening a file in the VS Code editor."
+msgstr "VS Codeエディタでファイルを開く。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:153
+msgid "C++ Configurations (C++ Only)"
+msgstr "C++の設定 (C++のみ)"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:155
+msgid ""
+"For C++ projects, there is one more step to set up IntelliSense.  Whenever "
+"we open a project, we should get a pop-up in the bottom right corner asking "
+"to refresh C++ configurations.  Click \"Yes\" to set up IntelliSense."
+msgstr ""
+"C++プロジェクトでは、IntelliSenseをセットアップしなければなりません。プロジェクトを開くと、右下隅にC++の設定をリフレッシュするかを聞くポップアップが出現します。「Yes」をクリックしてIntelliSenseをセットアップします。"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst-1
+msgid "Choosing \"Yes\" when asked to refresh C++ configurations."
+msgstr "C++の設定をリフレッシュするよう求められたときに「はい」を選択する様子。"

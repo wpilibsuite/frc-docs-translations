@@ -6,18 +6,208 @@
 # Translators:
 # Eddie L Wright, 2023
 # Jacob Lubecki, 2023
+# Hirose Yuto, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-17 16:05+0000\n"
+"POT-Creation-Date: 2023-12-24 16:03+0000\n"
 "PO-Revision-Date: 2022-02-08 04:10+0000\n"
-"Last-Translator: Jacob Lubecki, 2023\n"
+"Last-Translator: Hirose Yuto, 2023\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: ja\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:2
+msgid "Setting Robot Preferences"
+msgstr "ロボットのプリファレンスを設定する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:4
+msgid ""
+"The Robot Preferences (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Preferences.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_preferences.html>`__)"
+" class is used to store values in the flash memory on the roboRIO. The "
+"values might be for remembering preferences on the robot such as calibration"
+" settings for potentiometers, PID values, setpoints, etc. that you would "
+"like to change without having to rebuild the program. The values can be "
+"viewed on SmartDashboard or Shuffleboard and read and written by the robot "
+"program."
+msgstr ""
+"ロボットの「Preferences」 (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Preferences.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_preferences.html>`__)"
+" "
+"クラスは、roboRIOのフラッシュメモリにデータを保存するために使用されます。これらのデータは、ポテンショメーターのキャリブレーション設定、PID値、セットポイントなど、プログラムを再ビルドせずに変更したいロボットの設定を記憶するために使用されます。これらのデータはSmartDashboardやShuffleboardで表示し、ロボットプログラムによって読み書きすることができます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:6
+msgid ""
+"This example shows how to utilize Preferences to change the setpoint of a "
+"PID controller and the P constant. The code examples are adapted from the "
+"Arm Simulation example (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp>`__)."
+" You can run the Arm Simulation example in the Robot Simulator to see how to"
+" use the preference class and interact with it using the dashboards without "
+"needing a robot."
+msgstr ""
+"この例では、PIDコントローラの設定値とP定数を変更するために「Preferences」を利用する方法を示します。コード例は、Arm "
+"Simulation の例 (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/armsimulation/Robot.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/ArmSimulation/cpp/Robot.cpp>`__)"
+" から引用しています。ロボットシミュレータで Arm Simulation "
+"のサンプルを実行すると、ロボットがなくても「Preferences」クラスの使い方や、ダッシュボードを使ったインタラクションを確認することができます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:10
+msgid "Initializing Preferences"
+msgstr "プリファレンスを初期化する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:0
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:0
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:0
+msgid "Python"
+msgstr "Python"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:47
+msgid ""
+"Preferences are stored using a name, the key. It's helpful to store the key "
+"in a constant, like ``kArmPositionKey`` and ``kArmPKey`` in the code above "
+"to avoid typing it multiple times and avoid typos. We also declare "
+"variables, ``kArmKp`` and ``armPositionDeg`` to hold the data retrieved from"
+" preferences."
+msgstr ""
+"プリファレンス (Preferences) は名前をキーとして保存されます。キーを複数回入力することやタイプミスを避けるために、定数である "
+"``kArmPositionKey`` と ``kArmPKey`` のようなキーを保存することが役立ちます。変数 ``kArmKp`` と "
+"``armPositionDeg`` も宣言し、設定から取得したデータを保持します。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:49
+msgid ""
+"In ``robotInit``, each key is checked to see if it already exists in the "
+"Preferences database. The ``containsKey`` method takes one parameter, the "
+"key to check if data for that key already exists in the preferences "
+"database. If it doesn't exist, a default value is written. The ``setDouble``"
+" method takes two parameters, the key to write and the data to write. There "
+"are similar methods for other data types like booleans, ints, and strings."
+msgstr ""
+"``robotInit`` 内では、各キーがPreferencesデータベースに既に存在するかどうかをチェックします。 ``containsKey`` "
+"メソッドは、そのキーのデータがPreferencesデータベースに既に存在するかどうかを確認するための1つのパラメータ、つまりキーを取ります。存在しない場合、デフォルト値が書き込まれます。"
+" ``setDouble`` "
+"メソッドは、書き込むキーとデータの2つのパラメータを取ります。ブール値、整数、文字列などの他のデータ型に対する類似のメソッドもあります。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:51
+msgid ""
+"If using the Command Framework, this type of code could be placed in the "
+"constructor of a Subsystem or Command."
+msgstr ""
+"Command Frameworkを使用する場合、このタイプのコードはSubsystemまたはCommandのコンストラクタに配置することができます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:54
+msgid "Reading Preferences"
+msgstr "プリファレンスからの読み込み"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:79
+msgid ""
+"Reading a preference is easy. The ``getDouble`` method takes two parameters,"
+" the key to read, and a default value to use in case the preference doesn't "
+"exist. There are similar methods for other data types like booleans, ints, "
+"and strings."
+msgstr ""
+"プリファレンスを読み込むことは簡単です。 ``getDouble`` "
+"メソッドは2つのパラメータを取ります。読み取るキーと、プリファレンスが存在しない場合に使用するデフォルト値です。ブール値、整数、文字列などの他のデータ型に対する類似したメソッドもあります。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:81
+msgid ""
+"Depending on the data that is stored in preferences, you can use it when you"
+" read it, such as the proportional constant above. Or you can store it in a "
+"variable and use it later, such as the setpoint, which is used in "
+"``telopPeriodic`` below."
+msgstr ""
+"データが設定されている場合、プリファレンスに保存されたデータを読み取る際に使用できます。例えば、上記の比例定数 (P値) "
+"のように使用することができます。また、変数に保存して後で使用することもできます。例えば、下記の ``telopPeriodic`` "
+"で使用されるセットポイントのように使用することができます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:116
+msgid "Using Preferences in SmartDashboard"
+msgstr "SmartDashboardでプリファレンスを使用する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:119
+msgid "Displaying Preferences in SmartDashboard"
+msgstr "SmartDashboardでプリファレンスを表示する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst-1
+msgid "Adding preferences from the Smartdashboard menu"
+msgstr "Smartdashboardメニューでプリファレンスを追加する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:124
+msgid ""
+"In the SmartDashboard, the Preferences display can be added to the display "
+"by selecting :guilabel:`View` then :guilabel:`Add...` then :guilabel:`Robot "
+"Preferences`. This reveals the contents of the preferences file stored in "
+"the roboRIO flash memory."
+msgstr ""
+"SmartDashboardでは、 :guilabel:`View` を選択し、 :guilabel:`Add...` を選択し、 "
+":guilabel:`Robot Preferences` "
+"を選択することで、Preferencesディスプレイを画面に追加することができます。これにより、roboRIOフラッシュメモリに保存されているプリファレンスファイルの内容が表示されます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:127
+msgid "Editing Preferences in SmartDashboard"
+msgstr "SmartDashboardでプリファレンスを編集する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst-1
+msgid "Editing the robot preferences via the SmartDashboard widget."
+msgstr "SmartDashboardウィジェットを介してロボットのプリファレンスを編集する。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:132
+msgid ""
+"The values are shown here with the default values from the code. If the "
+"values need to be adjusted they can be edited here and saved."
+msgstr "値はここにコードからのデフォルト値と共に表示されます。値を調整する必要がある場合は、ここで編集して保存することができます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:135
+msgid "Using Preferences in Shuffleboard"
+msgstr "Shuffleboardでプリファレンスを利用する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:138
+msgid "Displaying Preferences in Shuffleboard"
+msgstr "Shuffleboardでプリファレンスを表示する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst-1
+msgid "Adding preferences from the sources window in Shuffleboard"
+msgstr "ソースウィンドウでプリファレンスをShuffleboardに追加する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:143
+msgid ""
+"In Shuffleboard, the Preferences display can be added to the display by "
+"dragging the preferences field from the sources window. This reveals the "
+"contents of the preferences file stored in the roboRIO flash memory."
+msgstr ""
+"Shuffleboardで、Preferencesディスプレイは、ソースウィンドウからPreferencesフィールドをドラッグして画面に追加することができます。これにより、roboRIOフラッシュメモリに保存されているプリファレンスファイルの内容が表示されます。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:146
+msgid "Editing Preferences in Shuffleboard"
+msgstr "Shuffleboardでプリファレンスを編集する"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst-1
+msgid "Editing the robot preferences via the Shuffleboard widget."
+msgstr "Shuffleboardウィジェットを介してロボットのプリファレンスを編集する。"
+
+#: ../../frc-docs/source/docs/software/basic-programming/robot-preferences.rst:151
+msgid ""
+"The values are shown here with the default values from the code. If the "
+"values need to be adjusted they can be edited here."
+msgstr "値はここにコードからのデフォルト値と共に表示されます。値を調整する必要がある場合は、ここで編集することができます。"

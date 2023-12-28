@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,12 +9,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:05+0000\n"
+"POT-Creation-Date: 2023-12-28 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: 怡静 陆 <2238710874@qq.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,37 +25,17 @@ msgstr ""
 msgid "Tank Drive Tutorial"
 msgstr "坦克驾驶模式教程"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:8
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:6
 msgid ""
 "**Question:** How do I get my robot to drive with two joysticks using tank "
 "drive?"
 msgstr "**问题**：如何使用坦克驾驶模式使我的机器通过两个操纵杆驱动？"
 
 #: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:10
-msgid ""
-"**Solution:** There are four components to consider when setting up tank "
-"drive for your robot.  The first thing you will want to do is make sure the "
-"tank drive.vi is used instead of the arcade drive.vi or whichever drive VI "
-"you were utilizing previously.  The second item to consider is how you want "
-"your joysticks to map to the direction you want to drive.  In tank drive, "
-"the left joystick is used to control the left motors and the right joystick "
-"is used to control the right motors.  For example, if you want to make your "
-"robot turn right by pushing up on the left joystick and down on the right "
-"joystick you will need to set your joystick’s accordingly in LabVIEW (this "
-"is shown in more detail below).  Next, you will want to confirm the PWM "
-"lines that you are wired into, are the same ones your joysticks will be "
-"controlling.  Lastly, make sure your motor controllers match the motor "
-"controllers specified in LabVIEW.  The steps below will discuss these ideas "
-"in more detail:"
-msgstr ""
-"**答**：为机器设置坦克驾驶模式时，需要考虑四件事。您要做的第一件事就是确保使用tank drive.vi而不是arcade "
-"drive.vi或以前使用的驱动VI。要考虑的第二项是您希望操纵杆如何映射到要行驶的方向。在坦克驾驶模式中，左操纵杆用于控制左马达，右操纵杆用于控制右马达。例如，如果您想通过向上推左操纵杆并向下推向右操纵杆来使机器向右转，则需要在LabVIEW中相应地设置操纵杆的位置（下面将更详细地显示）。接下来，您将要确认连接到的PWM线与您的操纵杆将控制的PWM线相同。最后，确保您的电机控制器与LabVIEW中指定的电机控制器匹配。以下步骤将更详细地讨论这些想法："
-
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:12
 msgid "Open LabVIEW and double click ``FRC roboRIO Project``."
 msgstr "打开LabVIEW并双击“FRC roboRIO Project”"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:16
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:14
 msgid ""
 "Give your project a name, add your team number, and select ``Arcade Drive "
 "Robot roboRIO``.  You can select another option, however, this tutorial will"
@@ -64,23 +44,23 @@ msgstr ""
 "为项目命名，添加团队编号，然后选择Arcade Drive Robot "
 "roboRIO。您可以选择其他选项，但是，本教程将讨论如何为该项目设置坦克驾驶模式。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:18
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:16
 msgid "In the Project Explorer window, open up the ``Robot Main.vi``."
 msgstr "在“项目资源管理器”窗口中，打开Robot Main.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:20
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:18
 msgid ""
 "Push :kbd:`Ctrl+E` to see the block diagram.  It should look like the "
 "following image:"
 msgstr "按下Ctrl+E即可查看框图。它应如下图所示："
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:24
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:22
 msgid ""
 "Double click the \"Teleop\" vi inside of the Teleop Enabled case structure."
 "  Look at its block diagram.  You will want to make two changes here:"
 msgstr "双击启用Teleop的案例结构内部的“ Teleop” vi。查看其框图。您将要在此处进行两项更改："
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:26
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:24
 msgid ""
 "Replace Arcade Drive with the tank drive.vi.  This can be found by right "
 "clicking on the block diagram >> WPI Robotics Library >> Robot Drive >>  and"
@@ -89,7 +69,7 @@ msgstr ""
 "用tank drive.vi替换Arcade Drive。右键单击程序框图>> WPI机器库>>机器驱动器>>，然后单击Tank Drive "
 "VI，可以找到该文件。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:28
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:26
 msgid ""
 "Find the Index Array function that is after the Get Values.vi.  You will "
 "need to create two numeric constants and wire each into one of the index "
@@ -109,32 +89,32 @@ msgstr ""
 "Station中的USB "
 "Devices选项卡来确定每个索引的值。移动两个操纵杆以确定它们绑定到的数字（索引）。您可能希望对每个操纵杆使用Y轴索引。这是因为，当您希望电动机前进时，向上推操纵杆很直观；而当电动机反向时，推下操纵杆很直观。如果为每个轴选择X轴索引，则必须向左或向右移动操纵杆（X轴方向）才能使电机转动。在我的设置中，我为左电机Y轴控制选择了索引1，为右电机Y轴控制选择了索引5。你可以在LabVIEW中看到如下图所示的调整:"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:32
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:30
 msgid ""
 "Next you will want to go back to your \"Robot Main.vi\" and double click on "
 "the \"Begin.vi.\""
 msgstr "接下来，您将要返回到“ Robot Main.vi”并双击“ Begin.vi”。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:34
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:32
 msgid ""
 "The first thing to confirm in this VI is that your left and right motors are"
 " connected to the same PWM lines in LabVIEW as they are on your PDP (Power "
 "Distribution Panel)."
 msgstr "在该VI中首先要确认的是，您的左右电机连接到LabVIEW中与PDP（配电面板）上相同的PWM线。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:36
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:34
 msgid ""
 "The second thing to confirm in this VI is that the \"Open 2 Motor.vi\" has "
 "the correct motor controller selected (Talon, Jaguar, Victor, etc.)."
 msgstr "在该VI中要确认的第二件事是“ Open 2 Motor.vi”已选择了正确的电机控制器（Talon，Jaguar，Victor等）。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:38
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:36
 msgid ""
 "For example, I am using Jaguar motor controllers and my motors are wired "
 "into PWM 8 and 9.  The image below shows the changes I need to make:"
 msgstr "例如，我正在使用Jaguar电动机控制器，并且电动机已连接到PWM 8和9。下图显示了我需要进行的更改："
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:42
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/tank-drive-tutorial.rst:40
 msgid ""
 "Save all of the Vis that you have made adjustments to and you are now able "
 "to drive a robot with tank drive!"

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,12 +12,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-16 16:05+0000\n"
+"POT-Creation-Date: 2023-12-28 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Epsilon Mao <704856115@qq.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -28,11 +28,11 @@ msgstr ""
 msgid "Command and Control Tutorial"
 msgstr "指令与控制教程"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:9
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:7
 msgid "Introduction"
 msgstr "简介"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:11
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:9
 msgid ""
 "Command and Control is a new LabVIEW template added for the 2016 season "
 "which organizes robot code into commands and controllers for a collection of"
@@ -48,11 +48,11 @@ msgid ""
 msgstr ""
 "命令与控制是为2016赛季添加的新LabVIEW模板，用于将机器代码植入命令和控制器以形成机器特定子系统的集合。每个子系统都有一个独立的控制循环或状态机制，以适当的速率运行，用于更新所需操作和设置节点的方法和高级命令。这使得自动代码非常容易构建命令的同步序列。同时，TeleOp的好处在于它可以重复执行相同的命令而无需等待完成，从而可以根据驱动团队的输入轻松取消或启动新命令。每个子系统都有一个面板，显示其随时间变化的传感器和控制值以及命令跟踪，以帮助调试。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:14
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:12
 msgid "What is Command and Control?"
 msgstr "什么是指令与控制？"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:16
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:14
 msgid ""
 "Command and Control recognizes that FRC\\ |reg| robots tend to be built up "
 "of relatively independent mechanisms such as Drive, Shooter, Arm, etc. Each "
@@ -74,7 +74,7 @@ msgstr ""
 "指令与控制系统认识到FRC\\ "
 "|reg|机器倾向于由相对独立的机制组成，例如Drive，Shooter，Arm等。每一个机制都称为子系统，并且需要代码来协调子系统的各种传感器和执行器以完成要求的命令或动作，例如“合拢抓手”或“放下手臂”。该框架的主要原理之一是，每个子系统将具有一个独立的控制回路，该回路仅负责更新电机和其他执行器。子系统控制器外部的代码可以发出命令，这些命令可能会更改机器的输出，但不应直接更改任何输出。两者差异非常细微，但这意味着只能从项目中的一个位置更新输出。这通过使您能够查看发送到子系统的命令列表加快了调试行为异常的机器的速度，而不是通过在项目中搜索可能已修改输出的地方。无需在控制器外部修改代码也将添加其他传感器、更改齿轮或禁用机制变得更加容易。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:18
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:16
 msgid ""
 "Game code, primarily consisting of Autonomous and TeleOp, will typically "
 "need to update set points and react to the state of certain mechanisms. For "
@@ -90,11 +90,11 @@ msgstr ""
 "游戏代码（主要由自动程序和TeleOp组成）通常需要更新节点并对某些方法的状态做出反应。对于自动程序，常见的做法是将机器的操作定义为一系列操作-"
 "前进到这里、拾取、搬运、射出等。可以将命令与附加逻辑顺序连接，以快速构建复杂的例程。对于teleOp，相同的命令可以异步执行，从而使机器始终能够处理最新的驱动程序输入，如果实施得当，新命令将中断，从而使驱动团队可以快速响应现场条件，同时还利用自动化命令和命令序列。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:21
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:19
 msgid "Why should I use Command and Control?"
 msgstr "z为什么要使用指令和控制？"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:23
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:21
 msgid ""
 "Command and Control adds functionality to the existing LabVIEW project "
 "templates, allowing code to scale better with more sophisticated robots and "
@@ -108,7 +108,7 @@ msgid ""
 msgstr ""
 "指令与控制功能为现有的LabVIEW项目模板增加了功能，使代码可以通过更复杂的机器和机器代码更好地扩展。子系统用于抽象实现细节，游戏代码由高级指令VI组成的序列构建而成。这些指令本身是VI，可以更新节点，在工程单位和机械单位之间执行数值缩放/映射并提供同步选项。如果对机器进行了物理更改，例如更改传动比，则可以仅对几个指令Vi进行更改，以在整个代码库中反映此更改。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:25
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:23
 msgid ""
 "I/O encapsulation makes for more predictable operation and quicker debugging"
 " when resource conflicts do occur. Because each command is a VI, you are "
@@ -121,11 +121,11 @@ msgstr ""
 "当发生资源冲突时，I / "
 "O封装可实现更可预测的操作和更快的调试。由于每个指令都是VI，因此您可以单步执行命令，也可以使用内置的Trace功能查看发送给每个子系统的所有命令的列表。该框架使用异步通知和一致的数据传播，可以轻松地对序列进行编程命令或添加简单的逻辑以确定要运行的正确指令。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:28
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:26
 msgid "Part 1: Project Explorer"
 msgstr "第1部分：项目资源管理器"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:30
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:28
 msgid ""
 "The Project Explorer provides organization for all of the Vis and files you "
 "will use for your robot system.  Below is a description of the major "
@@ -133,216 +133,204 @@ msgid ""
 "  The most frequently used items have been marked in bold."
 msgstr "项目资源管理器将用于为机器系统的所有Vi和文件提供组织。以下是项目资源管理器中有助于扩展系统的主要组件的说明。最常用的项目以粗体标出。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:35
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:33
 msgid "My Computer"
 msgstr "我的电脑"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:35
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:33
 msgid ""
 "The items that define operation on the computer that the project was loaded "
 "on. For a robot project, this is used as a simulation target and is "
 "populated with simulation files."
 msgstr "定义在项目被加载到的计算机上的操作的项目。对于机器项目，将其用作模拟目标并填充模拟文件。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:38
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:36
 msgid "Sim Support Files"
 msgstr "Sim支持文件"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:38
-msgid ""
-"The folder containing 3D CAD models and description files for the simulated "
-"robot."
-msgstr "该文件夹包含3D CAD模型和模拟机器的描述文件。"
-
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:41
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:39
 msgid "Robot Simulation Readme.html"
 msgstr "机器人仿真文档.html"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:41
-msgid ""
-"Documents the PWM channels and robot info you will need in order to write "
-"robot code that matches the wiring of the simulated robot."
-msgstr "记录您需要的PWM通道和机器信息，以便编写与模拟机器的接线匹配的机器代码。"
-
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:44
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:96
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:42
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:94
 msgid "Dependencies"
 msgstr "依赖"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:44
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:42
 msgid ""
 "Shows the files used by the simulated robot’s code. This will populate when "
 "you designate the code for the simulated robot target."
 msgstr "显示模拟机器代码使用的文件。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:47
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:99
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:45
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:97
 msgid "Build Specifications"
 msgstr "构造规范"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:47
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:45
 msgid ""
 "This will contain the files that define how to build and deploy code for the"
 " simulated robot target."
 msgstr "这将包含有关定义如何为模拟机器目标构建并部署代码的文件。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:50
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:48
 msgid "Target (roboRIO-TEAM-FRC.local)"
 msgstr "目标 (roboRIO-TEAM-FRC.local)"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:50
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:48
 msgid "The items that define operation on the roboRIO located at (address)."
 msgstr "定义roboRIO上位于（地址）上的操作与项目。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:53
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:51
 msgid "Drive"
 msgstr "Drive"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:53
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:51
 msgid ""
 "The subsystem implementation and commands for the robot drive base. This "
 "serves as a custom replacement for the WPILib RobotDrive VIs."
 msgstr "机器驱动基础的子系统执行和命令。这可以自行替代WPILib RobotDrive VI。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:72
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:70
 msgid "Framework"
 msgstr "框架"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:56
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:54
 msgid ""
 "VIs used for robot code that is not part of a subsystem that are not used "
 "very often."
 msgstr "用于不属于子系统的机器代码的VI很少被使用。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:59
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:57
 msgid "Begin"
 msgstr "开始"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:59
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:57
 msgid ""
 "Called once when robot code first starts. This is useful for initialization "
 "code that doesn’t belong to a particular subsystem."
 msgstr "机器代码首次启动时调用一次。这对于不属于特定子系统的初始化代码很有用。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:62
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:60
 msgid "Disabled"
 msgstr "禁用"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:62
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:60
 msgid ""
 "Called once for each disabled packet and can be used to debug sensors when "
 "you don’t want the robot to move."
 msgstr "为每个禁用的数据包调用一次，当您不希望机器移动时，可用于调试传感器。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:65
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:63
 msgid "Finish"
 msgstr "结束"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:65
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:63
 msgid ""
 "During development, this may be called when robot code finishes. Not called "
 "on abort or when power is turned off."
 msgstr "在开发过程中，机器代码完成时可以调用此方法。在中止或电源关闭时不调用。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:68
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:66
 msgid "Periodic Tasks"
 msgstr "周期任务"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:68
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:66
 msgid "A good place for ad hoc periodic loops for debugging or monitoring"
 msgstr "临时循环进行调试或监视的好方法"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:72
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:70
 msgid "Robot Global Data"
 msgstr "机器全局数据"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:71
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:69
 msgid ""
 "Useful for sharing robot information that doesn’t belong to a subsystem."
 msgstr "用于共享不属于子系统的机器信息。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:75
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:73
 msgid "Support Code"
 msgstr "支持代码"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:75
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:73
 msgid "Debugging and code development aids."
 msgstr "调试和代码开发辅助工具。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:78
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:76
 msgid "Vision"
 msgstr "视图"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:78
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:76
 msgid "Subsystem and commands for the camera and image processing."
 msgstr "相机和图像处理的子系统和命令。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:81
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:79
 msgid "Robot Main.vi"
 msgstr "Robot Main.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:81
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:79
 msgid "Top level VI that you will run while developing code."
 msgstr "开发代码时将运行的最高级VI。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:84
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:82
 msgid "Autonomous.vi"
 msgstr "Autonomous.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:84
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:82
 msgid "VI that runs during autonomous period."
 msgstr "在自动阶段内运行的VI。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:87
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:85
 msgid "Teleop.vi"
 msgstr "Teleop.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:87
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:85
 msgid "VI that is called for each TeleOp packet."
 msgstr "被每个TeleOp数据包调用的VI。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:90
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:88
 msgid "Test.vi"
 msgstr "Test.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:90
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:88
 msgid "VI that runs when driver station is in test mode."
 msgstr "在driver station处于测试模式时运行的VI。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:93
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:91
 msgid "SubSystems.vi"
 msgstr "SubSystems.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:93
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:91
 msgid "VI that contains and starts all subsystems."
 msgstr "包含并启动所有子系统的VI。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:96
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:94
 msgid "Shows the files used by the robot code."
 msgstr "显示机器代码使用的文件。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:99
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:97
 msgid ""
 "Used to build and run the code as a startup application once code works "
 "correctly."
 msgstr "一旦代码正常运行，它将被用于将代码作为启动应用程序构建和运行。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:104
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:102
 msgid "Drive Subsystem Project Explorer"
 msgstr "驱动器子系统项目资源管理器"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:108
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:106
 msgid "Commands:"
 msgstr "命令："
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:108
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:106
 msgid ""
 "This folder contains the command VIs that request the controller carry out "
 "an operation. It also contains templates for creating additional drive "
 "commands."
 msgstr "该文件夹包含要求控制器执行操作的指令VI。它还包含用于创建其他驱动器命令的模板。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:110
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:108
 msgid ""
 "After creating a new command, you may need to edit ``Drive Setpoints.ctl`` "
 "to add or update fields that controller uses to define the new operation. "
@@ -352,72 +340,72 @@ msgstr ""
 "创建新指令后，您可能需要对 ``Drive Setpoints.ctl`` 进行编辑以添加或更新控制器以定义新操作的字段。您还需要进入Drive "
 "Controller.vi并修改案例结构以为每个值添加案例。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:113
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:111
 msgid "Implementation"
 msgstr "执行"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:115
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:113
 msgid "These are the VIs and Controls used to build the subsystem."
 msgstr "这些是用于构建子系统的VI和控件。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:120
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:118
 msgid "Infrastructure VIs"
 msgstr "基础架构VI"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:118
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:116
 msgid ""
 "Drive Check for New Command: It is called each iteration of the controller "
 "loop. It checks for new commands, updates timing data, and upon completion "
 "notifies a waiting command."
 msgstr "驱动器检查新指令：称为控制器循环的每次迭代。它检查新指令，定时更新数据，并在完成后通知等待的指令。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:119
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:117
 msgid ""
 "Drive Command Helper.vi: Commands call this VI to notify the controller that"
 " a new command has been issued."
 msgstr "驱动器指令帮助.vi：命令调用该VI以通知控制器已发出新指令。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:120
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:118
 msgid ""
 "Drive Controller Initialization.vi: It allocates the notifier and combines "
 "the timing, default command, and other information into a single data wire."
 msgstr "驱动器控制器初始化.vi：它分配通知程序，并将定时、默认指令和其他信息组合到一条数据线上。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:122
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:120
 msgid ""
 "Drive Controller.vi: This VI contains the control/state machine loop. The "
 "panel may also contain displays useful for debugging."
 msgstr "驱动器控制器.vi：该VI包含控制/状态机制循环。该面板还可能包含对调试有用的显示。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:123
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:121
 msgid ""
 "Drive Operation.ctl: This typedef defines the operational modes of the "
 "controller. Many commands can share an operation."
 msgstr "驱动器操作.ctl：此typedef定义控制器的操作模式。许多命令可以共享一个操作。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:124
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:122
 msgid ""
 "Drive Setpoint.ctl: It contains the data fields used by all operating modes "
 "of the Drive subsystem."
 msgstr "驱动器设定.ctl：它包含Drive子系统的所有操作模式所使用的数据字段。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:125
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:123
 msgid ""
 "Drive Published Globals.vi: A useful place for publishing global information"
 " about the drive subsystem."
 msgstr "驱动器发布的全局变量.vi：发布有关驱动器子系统的全局信息的有用位置。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:128
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:126
 msgid "Part 2: Initializing the Drive Subsystem"
 msgstr "第2部分：初始化驱动器子系统"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:130
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:128
 msgid ""
 "There are green comments on the controller’s block diagram that point out "
 "key areas that you will want to know how to edit."
 msgstr "控制器程序框图上有绿色注释，在关键区域指出了如何编辑的方法。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:132
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:130
 msgid ""
 "The area to the left of the control loop will execute once when the "
 "subsystem starts up. This is where you will typically allocate and "
@@ -428,20 +416,20 @@ msgstr ""
 "子系统启动时，控制循环左侧的区域将执行一次。通常在这里分配和初始化所有I / O和状态数据。您可以发布I / "
 "O引用句柄，也可以将它们注册为“测试模式”仅是为了使其私有，以便其他代码在不使用指令的情况下无法更新电动机。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:136
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:134
 msgid ""
 "Initializing the resources for each subsystem in their respective "
 "Controller.vi rather than in Begin.vi improves I/O encapsulation, reducing "
 "potential resource conflicts and simplifies debugging."
 msgstr "在各自的Controller.vi中而不是Begin.vi中初始化每个子系统的资源可以改善I / O封装，减少潜在的资源冲突并简化调试。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:140
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:138
 msgid ""
 "Part of the initialization is to select the default operation and set point "
 "values when no other operation is being processed."
 msgstr "初始化的一部分是在不处理其他任何操作时选择默认操作和节点值。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:144
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:142
 msgid ""
 "Inside the control loop is a case statement where operations are actually "
 "implemented. Set point values, iteration delay, iteration count, and sensors"
@@ -450,7 +438,7 @@ msgid ""
 msgstr ""
 "控制循环内部实际执行了操作的是一个case语句。设定节点值，迭代延迟，迭代计数和传感器都可能影响子系统的运行方式。此案例结构具有子系统的每个操作状态的值。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:148
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:146
 msgid ""
 "Each iteration of the controller loop will optionally update the Trace VI. "
 "The framework already incorporates the subsystem name, operation, and "
@@ -462,7 +450,7 @@ msgstr ""
 "控制器循环的每次迭代将可选地更新跟踪VI。该框架已经包含子系统名称，操作和描述，您可能会发现将其他设置点值格式化为跟踪信息很有用。在机器代码运行到当前设置点和发送到每个子系统的命令时，打开Trace"
 " VI，然后单击“启动”。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:150
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:148
 msgid ""
 "The primary goal of the controller is to update actuators for the subsystem."
 " This can occur within the case structure, but many times, it is beneficial "
@@ -471,25 +459,25 @@ msgid ""
 msgstr ""
 "控制器的主要目标是更新子系统的执行器。这可以在case结构内进行，但是很多时候，在结构的下游进行操作以确保始终在代码中的一个位置始终以正确的值更新值是有益的。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:155
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:153
 msgid "Part 3: Drive Subsystem Shipped Commands"
 msgstr "第3部分：驱动器子系统附带的命令"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:157
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:155
 msgid "There are 3 shipped example commands for each new subsystem:"
 msgstr "每个新子系统都有3个附带的示例命令："
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:160
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:158
 msgid "Drive For Time.vi"
 msgstr "Drive For Time.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:164
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:162
 msgid ""
 "This VI sets the motors to run for a given number of seconds. It optionally "
 "synchronizes with the completion of the command."
 msgstr "该VI将电动机设置为运行给定的秒数。它可以选择与指令的完成同步。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:166
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:164
 msgid ""
 "The Drive for Time case will operate the motors at the set point until the "
 "timer elapses or a new command is issued. If the motors have the safety "
@@ -499,17 +487,17 @@ msgid ""
 msgstr ""
 "“时间驱动”情况将在设定点操作电动机，直到计时器过去或发出新指令为止。如果电动机启用了安全超时功能，则必须每100毫秒至少更新一次电动机。这就是代码等待剩余时间和50ms中较小者的原因。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:171
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:169
 msgid "Drive Immediate.vi"
 msgstr "Drive Immediate.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:175
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:173
 msgid ""
 "Gets the desired left and right speeds for the motors and will set the "
 "motors immediately to those set points."
 msgstr "获得所需的电动机左右速度，并将电动机立即设置为这些设定点。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:177
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:175
 msgid ""
 "The Immediate case updates the motors to the set point defined by the "
 "command. The command is not considered finished since you want the motors to"
@@ -520,15 +508,15 @@ msgid ""
 msgstr ""
 "立即将电动机情况更新到指令定义的设定点。该指令未完成，因为您希望电动机在输入新指令或超时值之前保持该值。每当指令包含死区时，超时都是有用的。如果该值小于死区，则不会请求较小的值，且将导致咆哮或爬行除非指令超时。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:182
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:180
 msgid "Stop Driving.vi"
 msgstr "Stop Driving.vi"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:186
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:184
 msgid "Zero the drive motors, making the robot stationary."
 msgstr "将驱动马达调零，使机器静止。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:188
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:186
 msgid ""
 "The Reserve command turns off the motors and waits for a new command. When "
 "used with a named command sequence, reserve identifies that the drive "
@@ -538,11 +526,11 @@ msgid ""
 msgstr ""
 "预定命令关闭电动机，并等待新指令。当与命名指令序列一起使用时，即使当前未移动机械臂，预定指令也标识驱动子系统是序列的一部分。这有助于在同时运行的指令之间仲裁子系统资源。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:193
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:191
 msgid "Part 4: Creating New Commands"
 msgstr "第4部分：创建新命令"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:195
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:193
 msgid ""
 "The Command and Control framework allows users to easily create new commands"
 " for a subsystem. To Create a new command open the subsystem folder/Commands"
@@ -552,18 +540,18 @@ msgid ""
 msgstr ""
 "指令和控制框架使用户可以轻松地为子系统创建新指令。要创建新指令，请打开子系统文件夹/命令，在项目浏览器窗口中，选择一个VI模板作为新指令的起点，右键单击并选择“从模板新建”。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:197
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:195
 msgid "**Immediate**: This VI notifies the subsystem about the new setpoint."
 msgstr "**瞬时**: 该VI将新的设定值通知子系统。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:198
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:196
 msgid ""
 "**Immediate with deadband**: This VI compares the input value to the "
 "deadband and optionally notifies the subsystem about the new setpoint. This "
 "is very useful when joystick continuous values are being used."
 msgstr "**带有死区的瞬时**: 该VI将输入值与死区进行比较，并有选择地将新的设定值通知子系统。当使用操纵杆连续值时，这非常有用。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:199
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:197
 msgid ""
 "**With duration**: This VI notifies the subsystem to perform this command "
 "for the given duration, and then return to the default state. "
@@ -573,11 +561,11 @@ msgid ""
 msgstr ""
 "**持续时间**：该VI通知子系统在给定的持续时间内执行该命令，然后返回默认状态。同步决定该VI是启动该操作并立即返回，还是等待该操作完成。第一个选项通常用于TeleOp，第二个选项用于自动排序。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:201
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:199
 msgid "In this example we will add the new command \"Drive for Distance\"."
 msgstr "在此示例中，我们将添加新指令“ Drive for Distance”。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:205
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:203
 msgid ""
 "First, save the new VI with a descriptive name such as \"Drive for "
 "Distance\". Next, determine whether the new command needs a new value added "
@@ -589,7 +577,7 @@ msgstr ""
 "Distance”之类的描述性名称保存新的VI。接下来，确定新指令是否需要添加驱动器操作枚举typedef的新值。初始项目代码已经具有枚举Drive "
 "for Distance，但是下图显示了如何在需要时添加一个。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:209
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:207
 msgid ""
 "If a command needs additional information to execute, add it to the "
 "setpoints control. By default, the Drive subsystem has fields for the Left "
@@ -601,7 +589,7 @@ msgstr ""
 "如果指令需要其他信息才能执行，请将其添加到设定控件中。驱动器子系统具有“左设定点”，“右设定点”和“持续时间”字样以及要执行的操作。默认情况下， "
 "“行驶距离”指令可以将“持续时间”重新用作距离，但让我们继续向“行驶距离”设置一个数字控件，称为“距离（英尺）”。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:213
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:211
 msgid ""
 "Once that we have all of the fields needed to specify our command, we can "
 "modify the newly created Drive for Distance.vi. As shown below, select Drive"
@@ -612,7 +600,7 @@ msgstr ""
 "一旦有了指定指令所需的所有字段，便可以修改新创建的Drive for Distance.vi。如下所示，从枚举的下拉菜单中选择“Drive for "
 "Distance”，并添加VI参数以指定距离，速度等。如果单位不匹配，则指令VI是在单位之间进行映射的好方法。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:217
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:215
 msgid ""
 "Next, add code to the Drive Controller to define what happens when the Drive"
 " for Distance command executes. Right click on the Case Structure and "
@@ -622,7 +610,7 @@ msgstr ""
 "接下来，将代码添加到“驱动器控制器”中，以定义执行“Drive for "
 "Distance”指令时发生的情况。右键单击案例结构，然后为每个值复制或添加案例。这将创建一个新的“ Drive for Distance”案例。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:221
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:219
 msgid ""
 "In order to access new setpoint fields, grow the \"Access Cmd setpoints\" "
 "unbundle node. Open your encoder(s) on the outside, to the left of the loop."
@@ -636,11 +624,11 @@ msgstr ""
 "为了访问新的设置点字段，请为“Access "
 "Cmd设置点”取消捆绑。在循环左侧的外部打开编码器。在新的案例结构图中，我们添加了一个调用以在第一次循环迭代时重置编码器，否则将其读取。还有一些简单的代码可以比较编码器值并更新电动机功率。如果将新控件添加到设定点集合中，则还应考虑将它们添加到跟踪中。下图显示了必要的更改。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:226
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:224
 msgid "Part 5: Creating a Subsystem"
 msgstr "第5部分：创建子系统"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:228
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:226
 msgid ""
 "In order to create a new subsystem, right click on the roboRIO target and "
 "select New» Subsystem. In the pop up dialog box, enter the name of the "
@@ -648,7 +636,7 @@ msgid ""
 msgstr ""
 "为了创建一个新的子系统，右键单击roboRIO目标并选择New»Subsystem。在弹出的对话框中，输入子系统的名称，列出操作模式，并指定图标的颜色。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:232
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:230
 msgid ""
 "When you click OK, the subsystem folder will be generated and added to the "
 "project disk folder and tree. It will contain a base implementation of the "
@@ -661,7 +649,7 @@ msgstr ""
 "单击确定时，将生成子系统文件夹并将其添加到项目磁盘文件夹和项目树中。它将包含构成子系统的VI和控件的基本执行操作。对新控制器的调用将插入子系统VI。控制器VI将打开，准备添加I"
 " / O并实现状态机或控制代码。生成的VI图标将使用对话框中提供的颜色和名称。生成的代码将typedef用于设置点字样和操作。"
 
-#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:236
+#: ../../frc-docs/source/docs/software/labview/creating-robot-programs/command-and-control-tutorial.rst:234
 msgid ""
 "Below is the block diagram of the newly created subsystem. This code will be"
 " generated automatically when you create the subsystem."

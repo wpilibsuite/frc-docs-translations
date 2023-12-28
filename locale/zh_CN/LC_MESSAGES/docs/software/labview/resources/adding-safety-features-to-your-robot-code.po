@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,12 +10,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-06 16:23+0000\n"
+"POT-Creation-Date: 2023-12-28 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: eric sun <eric.szh@hotmail.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -26,7 +26,7 @@ msgstr ""
 msgid "Adding Safety Features to Your Robot Code"
 msgstr "在机器人代码中添加安全功能"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:6
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:4
 msgid ""
 "A common problem with complex projects is making sure that all of your code "
 "is executing when you expect it to. Problems can arise when tasks with high "
@@ -42,37 +42,33 @@ msgid ""
 msgstr ""
 "复杂项目的常见问题是确保所有代码都能按预期执行。当优先级高，执行时间长或频繁调用roboRIO的处理能力任务持续运行时，可能会出现问题。这导致由于处理器繁忙而无法执行其他任务。在大多数情况下，这只会减慢处理器对来自操纵杆和其他设备的输入的反应时间。但是，这也可能导致机器人的驱动电机在下达停止命令后仍保持运转很长时间。为了避免一切灾祸，您可以实施安全功能，以检查命令输入是否缺乏处理，并自动关闭可能有害的操作。"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:8
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:6
 msgid ""
 "There are built-in functions for the motors that allow easy implementation "
 "of safety checks. These functions are:"
 msgstr "电机具有内置功能，可轻松执行安全检查。这些功能是："
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:10
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:8
 msgid "Robot Drive Safety Configuration"
 msgstr "机器驱动器安全配置"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:11
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:9
 msgid "Motor Drive Safety Configuration"
 msgstr "电机驱动器安全配置"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:12
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:10
 msgid "Relay Safety Configuration"
 msgstr "继电器安全配置"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:13
-msgid "PWM Safety Configuration"
-msgstr "PWM安全配置"
-
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:14
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:12
 msgid "Solenoid Safety Configuration"
 msgstr "电磁阀安全配置"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:15
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:13
 msgid "Robot Drive Delay and Update Safety"
 msgstr "机器驱动延迟和更新安全"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:17
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:15
 msgid ""
 "In all of the Safety Configuration functions, you can enable and disable the"
 " safety checks while your programming is running and configure what timeout "
@@ -87,13 +83,13 @@ msgstr ""
 "在所有安全配置功能中，您可以在程序运行时启用和禁用这些安全检查，并配置您认为合适的最大时间限制。这些功能会管理一个所有启用了安全性的设备的缓存，并会检查其中是否有超过其时间限制的设备。如果有，则将禁用缓存中的所有设备，并且机器将立即停止或关闭其继电器/"
 " PWM /电磁阀输出。下面的代码演示了如何使用“驱动器安全配置”功能来设置最大时间限制，即电动机在关闭之前所能接受的最长无输入时长。"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:21
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:19
 msgid ""
 "To test the safety shut-off, try adding a Wait function to the loop that is "
 "longer than your timeout!"
 msgstr "要测试自关闭这一个安全机制，请尝试在循环中添加比您的最大时间限制更长的一个等待函数！"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:23
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:21
 msgid ""
 "The final function that relates to implementing safety checks--Robot Drive "
 "Delay and Update Safety--allows you to put the roboRIO in Autonomous Mode "
@@ -105,7 +101,7 @@ msgstr ""
 "与实施安全检查有关的最终功能-机器人驱动延迟和更新安全性-"
 "使您可以将roboRIO置于自动阶段而不会超过前文设置的时间限制。它可以保持当前的电动机输出，而无需频繁调用驱动输出功能，而还可以确保定期进行安全检查，以防止电动机突然停止运行。"
 
-#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:25
+#: ../../frc-docs/source/docs/software/labview/resources/adding-safety-features-to-your-robot-code.rst:23
 msgid ""
 "Overall, it is highly recommended that some sort of safety check is "
 "implemented in your project to make sure that your robot is not "

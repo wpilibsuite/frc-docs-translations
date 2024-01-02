@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,12 +10,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-04 16:18+0000\n"
+"POT-Creation-Date: 2024-01-02 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:03+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -48,13 +48,6 @@ msgid ""
 msgstr ""
 "``SwerveModuleState''类包含有关转向驱动单个模块的速度和角度的信息。 "
 "``SwerveModuleState''的构造函数接受两个参数，即车轮在模块上的速度和模块的角度。"
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:9
-msgid ""
-"In Java, the velocity of the wheel must be in meters per second. In C++, the"
-" units library can be used to provide the velocity using any linear velocity"
-" unit."
-msgstr "在Java中，轮子的速度必须以米/秒为单位。在C ++中，单位库可用于使用任何线速度单位提供速度。"
 
 #: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:10
 msgid "An angle of 0 corresponds to the modules facing forward."
@@ -97,24 +90,11 @@ msgid ""
 "positive y values represent moving toward the left of the robot."
 msgstr "模块的位置必须相对于机器人的中心。正的x值表示朝着机器人的前端移动，而正的y值表示朝着机器人的左侧移动。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:51
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:69
 msgid "Converting chassis speeds to module states"
 msgstr "将底盘速度转换为模块状态"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:52
-msgid ""
-"The ``toSwerveModuleStates(ChassisSpeeds speeds)`` (Java) / "
-"``ToSwerveModuleStates(ChassisSpeeds speeds)`` (C++) method should be used "
-"to convert a ``ChassisSpeeds`` object to a an array of ``SwerveModuleState``"
-" objects. This is useful in situations where you have to convert a forward "
-"velocity, sideways velocity, and an angular velocity into individual module "
-"states."
-msgstr ""
-"“toSwerveModuleStates（ChassisSpeeds speeds）”（Java）/ "
-"\"ToSwerveModuleStates（ChassisSpeeds speeds）\"（C "
-"++）方法应用于将\"ChassisSpeeds\"对象转换为\"SwerveModuleState\"对象数组。在必须将前进速度，横向速度和角速度转换为单独的模块状态的情况下，使用此方法很有效。"
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:54
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:72
 msgid ""
 "The elements in the array that is returned by this method are the same order"
 " in which the kinematics object was constructed. For example, if the "
@@ -126,11 +106,11 @@ msgid ""
 msgstr ""
 "该方法返回的数组中的元素与运动学对象的构造顺序相同。例如，如果运动学对象的构造顺序是前左模块位置、前右模块位置、后左模块位置和后右模块位置，那么数组中的元素将依次是前左模块状态、前右模块状态、后左模块状态和后右模块状态。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:93
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:123
 msgid "Module angle optimization"
 msgstr "模块角度优化"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:94
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:124
 msgid ""
 "The ``SwerveModuleState`` class contains a static ``optimize()`` (Java) / "
 "``Optimize()`` (C++) method that is used to \"optimize\" the speed and angle"
@@ -142,10 +122,9 @@ msgid ""
 "to travel."
 msgstr ""
 "``SwerveModuleState''类包含一个静态``optimize（）``（Java）/``Optimize（）``（C "
-"++）方法，用于``优化''给定``SwerveModuleState''的速度和角度设定值``以最大程度减少航向的变化。例如，如果逆运动学中某个模块的角度设定点为90度"
-"，但是您当前的角度为-89度，则此方法将自动抵消模块设定点的速度并使角度设定点为-90度以减小距离模块必须行进。"
+"++）方法，用于``优化''给定``SwerveModuleState''的速度和角度设定值``以最大程度减少航向的变化。例如，如果逆运动学中某个模块的角度设定点为90度，但是您当前的角度为-89度，则此方法将自动抵消模块设定点的速度并使角度设定点为-90度以减小距离模块必须行进。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:96
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:126
 msgid ""
 "This method takes two parameters: the desired state (usually from the "
 "``toSwerveModuleStates`` method) and the current angle. It will return the "
@@ -154,11 +133,11 @@ msgid ""
 msgstr ""
 "该方法有两个参数：所需状态（通常从toSwerveModuleStates方法）和当前角度。它将返回新的优化状态，您可以将其用作反馈控制回路中的设定值。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:110
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:149
 msgid "Field-oriented drive"
 msgstr "定向驱动"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:111
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:150
 msgid ""
 ":ref:`Recall <docs/software/kinematics-and-odometry/intro-and-chassis-"
 "speeds:Creating a ChassisSpeeds object from field-relative speeds>` that a "
@@ -169,11 +148,11 @@ msgstr ""
 ":ref:`Recall<docs/software/kinematics-and-odometry/intro-and-chassis-"
 "speeds:从现场相关速度中创建ChassisSpeeds对象>`可以从一组所需的现场导向速度中创建``ChassisSpeeds``对象。这个功能可以用来从一组所需的定向驱动速度获得模块状态。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:142
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:198
 msgid "Using custom centers of rotation"
 msgstr "使用自定义旋转中心"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:143
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:199
 msgid ""
 "Sometimes, rotating around one specific corner might be desirable for "
 "certain evasive maneuvers. This type of behavior is also supported by the "
@@ -185,7 +164,7 @@ msgstr ""
 "有时，对于某些规避操作，可能需要绕一个特定的角旋转。 "
 "WPILib也支持这种类型的行为。相同的ToSwerveSpeeds（）方法接受旋转中心的第二个参数（作为Translation2d）。就像轮子的位置一样，代表旋转中心的``Translation2d''应该相对于机器人中心。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:145
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:201
 msgid ""
 "Because all robots are a rigid frame, the provided ``vx`` and ``vy`` "
 "velocities from the ``ChassisSpeeds`` object will still apply for the "
@@ -195,7 +174,7 @@ msgstr ""
 "由于所有机器人都是一个刚性框架，因此，从 \"底盘速度 \"对象中提供的 \"vx \"和 \"vy "
 "\"速度仍然适用于整个机器人。然而，来自``底盘速度``对象的``omega``将从旋转中心测量。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:147
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:203
 msgid ""
 "For example, one can set the center of rotation on a certain module and if "
 "the provided ``ChassisSpeeds`` object has a ``vx`` and ``vy`` of zero and a "
@@ -204,18 +183,6 @@ msgid ""
 msgstr ""
 "例如，可以将旋转中心设置在某个轮子上，如果提供的``ChassisSpeeds``对象的``vx``和``vy``为零，而``omega``非零，机器人就会出现围绕该特定的转向模块旋转。"
 
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:150
+#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:206
 msgid "Converting module states to chassis speeds"
 msgstr "将模块状态转换为底盘速度"
-
-#: ../../frc-docs/source/docs/software/kinematics-and-odometry/swerve-drive-kinematics.rst:151
-msgid ""
-"One can also use the kinematics object to convert an array of "
-"``SwerveModuleState`` objects to a singular ``ChassisSpeeds`` object. The "
-"``toChassisSpeeds(SwerveModuleState... states)`` (Java) / "
-"``ToChassisSpeeds(SwerveModuleState... states)`` (C++) method can be used to"
-" achieve this."
-msgstr ""
-"人们还可以使用运动学对象将一个数组的``SwerveModuleState``对象转换为一个单一的``ChassisSpeeds``对象。使用``toChassisSpeeds(SwerveModuleState..."
-" states)``(Java)/``ToChassisSpeeds(SwerveModuleState... "
-"states)``(C++)方法可以实现这个目的。"

@@ -5,23 +5,487 @@
 # 
 # Translators:
 # Sidney Lavoie, 2023
-# Andre Theberge <atheberge2@videotron.ca>, 2023
 # Dalton Smith <daltzsmith@gmail.com>, 2023
 # Austin Shalit <austinshalit@gmail.com>, 2023
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2023
 # Marc Lalonde, 2023
+# Andre Theberge <atheberge2@videotron.ca>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 16:04+0000\n"
+"POT-Creation-Date: 2024-01-05 16:03+0000\n"
 "PO-Revision-Date: 2023-10-29 04:08+0000\n"
-"Last-Translator: Marc Lalonde, 2023\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:2
+msgid "Creating your Test Drivetrain Program (Java/C++/Python)"
+msgstr "Création de votre programme test Drivetrain (Java/C++/Python)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:4
+msgid ""
+"Once everything is installed, we're ready to create a robot program.  WPILib"
+" comes with several templates for robot programs.  Use of these templates is"
+" highly recommended for new users; however, advanced users are free to write"
+" their own robot code from scratch. This article walks through creating a "
+"project from one of the provided examples which has some code already "
+"written to drive a basic robot."
+msgstr ""
+"Une fois que tout est installé, nous sommes prêts à créer un programme de "
+"robot. WPILib est livré avec plusieurs modèles pour les programmes de "
+"robots. L’utilisation de ces modèles est fortement recommandée pour les "
+"nouveaux utilisateurs; cependant, les utilisateurs avancés sont libres "
+"d’écrire leur propre code robot à partir de zéro. Cet article explore la "
+"création d’un projet à partir de l’un des exemples fournis qui a un certain "
+"code déjà écrit pour piloter un robot de base."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:6
+msgid ""
+"This guide includes code examples that involve vendor hardware for the "
+"convenience of the user. In this document, :term:`PWM` refers to the motor "
+"controller included in the KOP. The CTRE tab references the Talon FX motor "
+"controller (Falcon 500 motor), but usage is similar for TalonSRX and "
+"VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless "
+"motor, but it's similar for brushed motor. There is an assumption that the "
+"user has already installed the required :doc:`vendordeps "
+"</docs/software/vscode-overview/3rd-party-libraries>`  and configured the "
+"device(s) (update firmware, assign CAN IDs, etc) according to the "
+"manufacturer documentation (`CTRE <https://docs.ctr-electronics.com/>`__ "
+"`REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__)."
+msgstr ""
+"Ce guide comprend des exemples de code qui impliquent le matériel du "
+"fournisseur pour la commodité de l'utilisateur. Dans ce document, "
+":term:`PWM` fait référence au contrôleur de moteur inclus dans le KOP. "
+"L'onglet CTRE fait référence au contrôleur de moteur Talon FX (moteur Falcon"
+" 500), mais l'utilisation est similaire pour TalonSRX et VictorSPX. L'onglet"
+" REV fait référence au CAN SPARK MAX contrôlant un moteur sans balais, mais "
+"il est similaire pour un moteur à balais. On suppose que l'utilisateur a "
+"déjà installé le :doc:`vendordeps ` requis et configuré le(s) "
+"périphérique(s) (mettre à jour le micrologiciel, attribuer des ID CAN, etc.)"
+" conformément à la documentation du fabricant (`CTRE <https://docs. ctr-"
+"electronics.com/>`__ `REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:9
+msgid "Creating a New WPILib Project (Java/C++)"
+msgstr "Création d’un nouveau projet WPILib (Java/C++)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:11
+msgid ""
+"Bring up the Visual Studio Code command palette with :kbd:`Ctrl+Shift+P`. "
+"Then, type \"WPILib\" into the prompt.  Since all WPILib commands start with"
+" \"WPILib\", this will bring up the list of WPILib-specific VS Code "
+"commands. Now, select the \"Create a new project\" command:"
+msgstr ""
+"Affichez la palette de commandes de Visual Studio Code avec "
+":kbd:`Ctrl+Shift+P`. Ensuite, tapez \"WPILib\" dans l'invite. Étant donné "
+"que toutes les commandes WPILib commencent par \"WPILib\", cela affichera la"
+" liste des commandes VS Code spécifiques à WPILib. Maintenant, sélectionnez "
+"la commande \"Créer un nouveau projet\":"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst-1
+msgid "Choose \"WPILib: Create a new project\"."
+msgstr "Choisissez \"WPILib: Create a new project\"."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:16
+msgid "This will bring up the \"New Project Creator Window:\""
+msgstr ""
+"Cette opération fera apparaître la fenêtre \"New Project Creator Window\":"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst-1
+msgid "The different parts of the new project creation window."
+msgstr "Les différentes parties de la fenêtre de création du nouveau projet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:21
+msgid "The elements of the New Project Creator Window are explained below:"
+msgstr ""
+"Les éléments de la fenêtre New Project Creator sont expliqués ci-dessous :"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:23
+msgid ""
+"**Project Type**: The kind of project we wish to create.  For this example, "
+"select **Example**"
+msgstr ""
+"**Project Type**: Le genre de projet que nous voulons créer. Pour cet "
+"exemple, sélectionnez **Example**"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:24
+msgid ""
+"**Language**: This is the language (C++ or Java) that will be used for this "
+"project."
+msgstr ""
+"**Language**: C’est le langage de programmation (C++ ou Java) qui sera "
+"utilisé pour ce projet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:25
+msgid ""
+"**Project Base**: This box is used to select the base class or example to "
+"generate the project from. For this example, select **Getting Started**"
+msgstr ""
+"**Project Base**: Cette zone est utilisée pour sélectionner la classe de "
+"base ou l’exemple à utiliser comme source pour générer le projet. Pour cet "
+"exemple, sélectionnez **Getting Started**"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:26
+msgid ""
+"**Base Folder**: This determines the folder in which the robot project will "
+"be located."
+msgstr ""
+"**Base Folder**: Ce paramètre détermine le dossier dans lequel le projet de "
+"robot sera situé."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:27
+msgid ""
+"**Project Name**: The name of the robot project.  This also specifies the "
+"name that the project folder will be given if the Create New Folder box is "
+"checked."
+msgstr ""
+"**Project Name**: Le nom du projet de robot. Ce paramètre spécifie également"
+" le nom du dossier de projet si la zone Create New Folder est cochée."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:28
+msgid ""
+"**Create a New Folder**: If this is checked, a new folder will be created to"
+" hold the project within the previously-specified folder.  If it is *not* "
+"checked, the project will be located directly in the previously-specified "
+"folder.  An error will be thrown if the folder is not empty and this is not "
+"checked. project folder will be given if the Create New Folder box is "
+"checked."
+msgstr ""
+"**Create a New Folder**: Si cette case est cochée, un nouveau dossier sera "
+"créé pour contenir le projet dans le dossier précédemment spécifié. Si elle "
+"n'est *pas* cochée, le projet sera situé directement dans le dossier "
+"précédemment spécifié. Une erreur sera générée si le dossier n'est pas vide "
+"et que cette case n'est pas cochée. Un dossier de projet sera créé si la "
+"case Create New Folder est cochée."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:29
+msgid ""
+"**Team Number**: The team number for the project, which will be used for "
+"package names within the project and to locate the robot when deploying "
+"code."
+msgstr ""
+"**Team Number**: Numéro d’équipe du projet, qui sera utilisé pour les noms "
+"de packages dans le projet et pour localiser le robot au moment du "
+"déploiement du code."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:30
+msgid ""
+"**Enable Desktop Support**: Enables unit test and simulation. While WPILib "
+"supports this, third party software libraries may not. If libraries do not "
+"support desktop, then your code may not compile or may crash. It should be "
+"left unchecked unless unit testing or simulation is needed and all libraries"
+" support it. For this example, do not check this box."
+msgstr ""
+"**Enable Desktop Support**: Permet de faire le test unitaire et la "
+"simulation. Bien que WPILib prenne en charge cette fonctionnalité, pour les "
+"bibliothèques de logiciels tiers cette prise en charge n'est pas garantie. "
+"Si les bibliothèques  logicielles  ne prennent pas en charge les "
+"applications de bureau, votre code peut ne pas compiler ou planter. Cette "
+"case doit être laissée non cochée à moins que des tests unitaires ou une "
+"simulation ne soient nécessaires et que toutes les bibliothèques de "
+"logiciels  le prennent en charge. Pour cet exemple, ne cochez pas cette "
+"case."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:32
+msgid ""
+"Once all the above have been configured, click \"Generate Project\" and the "
+"robot project will be created."
+msgstr ""
+"Une fois que tout ce qui précède a été configuré, cliquez sur \"Generate "
+"Project\" et le projet robot sera créé."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:34
+msgid ""
+"Any errors in project generation will appear in the bottom right-hand corner"
+" of the screen."
+msgstr ""
+"Toutes les erreurs lors de la génération de projet apparaîtront dans le coin"
+" inférieur droit de l’écran."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:36
+msgid ""
+"Creating projects on OneDrive is not supported as OneDrive's caching "
+"interferes with the build system. Some Windows installations put the "
+"Documents and Desktop folders on OneDrive by default."
+msgstr ""
+"La création de projets sur OneDrive n'est pas prise en charge car la mise en"
+" cache de OneDrive interfère avec le système de build. Certaines "
+"installations Windows placent par défaut les dossiers Documents et Bureau "
+"sur OneDrive."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:39
+msgid "Opening The New Project"
+msgstr "Ouverture du nouveau projet"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst-1
+msgid "Open Project Dialog in VS Code"
+msgstr "Ouvrir la boîte de dialogue du projet dans VS Code"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:44
+msgid ""
+"After successfully creating your project, VS Code will give the option of "
+"opening the project as shown above. We can choose to do that now or later by"
+" typing :kbd:`Ctrl+K` then :kbd:`Ctrl+O` (or just :kbd:`Command+O` on macOS)"
+" and select the folder where we saved our project."
+msgstr ""
+"Après avoir réussi à créer votre projet, VS Code vous donnera la possibilité"
+" d'ouvrir le projet comme indiqué ci-dessus. Nous pouvons choisir de le "
+"faire maintenant ou plus tard en tapant :kbd:`Ctrl+K` puis :kbd:`Ctrl+O` (ou"
+" simplement :kbd:`Command+O` sur macOS) et sélectionner le dossier où nous "
+"avons enregistré notre projet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst-1
+msgid "Trusted Workspace dialog in VS Code."
+msgstr "Boîte de dialogue Espace de travail de confiance dans VS Code."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:49
+msgid "Click :guilabel:`Yes I trust the authors`."
+msgstr ""
+"Cliquez sur :guilabel:`Yes I trust the authors`.  (Oui, je fais confiance "
+"aux auteurs.)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:51
+msgid ""
+"Once opened we will see the project hierarchy on the left. Double clicking "
+"on the file will open that file in the editor."
+msgstr ""
+"Une fois ouvert, nous pouvons voir la hiérarchie du projet à gauche. En "
+"double-cliquant sur un fichier, on ouvre ce fichier dans l’éditeur."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst-1
+msgid "The robot.java code shown after opening a new project."
+msgstr "Le code robot.java affiché après l'ouverture d'un nouveau projet."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:57
+msgid "C++ Configurations (C++ Only)"
+msgstr "Configurations C++ (C++ uniquement)"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:59
+msgid ""
+"For C++ projects, there is one more step to set up IntelliSense.  Whenever "
+"we open a project, we should get a pop-up in the bottom right corner asking "
+"to refresh C++ configurations.  Click \"Yes\" to set up IntelliSense."
+msgstr ""
+"Pour les projets C++, il y a une étape de plus pour configurer IntelliSense."
+" Chaque fois que nous ouvrons un projet, nous devrions obtenir un pop-up "
+"dans le coin inférieur droit demandant de rafraîchir les configurations C++."
+" Cliquez sur \"Yes\" pour configurer IntelliSense."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst-1
+msgid "You must choose \"Yes\" to refresh the C++ configurations."
+msgstr "Vous devez choisir \"Oui\" pour actualiser les configurations C++."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:65
+msgid "Basic Drivetrain example"
+msgstr "Exemple de transmission de base"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:67
+msgid ""
+"First, here is what a simple code can look like for a Drivetrain with PWM "
+"controlled motors (such as SparkMax)."
+msgstr ""
+"Tout d'abord, voici à quoi peut ressembler un code simple pour une "
+"transmission avec des moteurs contrôlés par PWM (tels que SparkMax)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:69
+msgid ""
+"the Python example below is from "
+"`<https://github.com/robotpy/examples/tree/main/GettingStarted>`__"
+msgstr ""
+"l'exemple Python ci-dessous provient de "
+"`<https://github.com/robotpy/examples/tree/main/GettingStarted>`__"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:85
+msgid "Now let's look at various parts of the code."
+msgstr "Examinons maintenant différentes parties du code."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:88
+msgid "Imports/Includes"
+msgstr "Imports/Includes"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
+msgid "PWM"
+msgstr "PWM"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
+msgid "Python"
+msgstr "Python"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
+msgid "CTRE"
+msgstr "CTRE"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
+msgid "REV"
+msgstr "REV"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:186
+msgid ""
+"Our code needs to reference the components of WPILib that are used. In C++ "
+"this is accomplished using ``#include`` statements; in Java it is done with "
+"``import`` statements. The program references classes for ``Joystick`` (for "
+"driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling"
+" motors), ``TimedRobot`` (the base class used for the example), ``Timer`` "
+"(used for autonomous), and ``DifferentialDrive`` (for connecting the "
+"joystick control to the motors)."
+msgstr ""
+"Notre code doit référencer les composants de WPILib qui sont utilisés. Cela "
+"se fait en utilisant les instructions ``#include`` (en C++) ou ``import`` "
+"(en Java). Le programme fait référence aux classes pour ``Joystick`` (pour "
+"le pilotage), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (pour la "
+"commande des moteurs), ``TimedRobot`` (la classe de base utilisée pour "
+"l'exemple) , ``Timer`` (utilisé pour le mode autonome) et "
+"``DifferentialDrive`` (pour connecter la commande par joystick aux moteurs)."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:189
+msgid "Defining the variables for our sample robot"
+msgstr "Définition des variables de notre prototype de robot"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:334
+msgid ""
+"The sample robot in our examples will have a joystick on USB port 0 for "
+"arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN "
+"with IDs 1 and 2). Here we create objects of type DifferentialDrive "
+"(m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the "
+"code does three things:"
+msgstr ""
+"Le robot de nos exemples a un joystick branché au port USB 0 pour le mode "
+"Arcade drive et deux moteurs branchés aux ports PWM 0 et 1 (les exemples des"
+" tierces parties utilisent CAN avec les ID 1 et 2). Ici nous créons des "
+"objets de type DifferentialDrive(m_robotDrive), Joystick(m_stick) et "
+"Timer(m_timer). Cette section du code accomplit trois choses:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:336
+msgid "Defines the variables as members of our Robot class."
+msgstr "Définit les variables en tant que membres de notre classe Robot."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:337
+msgid "Initializes the variables."
+msgstr "Initialise les variables."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:339
+msgid ""
+"The variable initializations for C++ are in the ``private`` section at the "
+"bottom of the program. This means they are private to the class (``Robot``)."
+" The C++ code also sets the Motor Safety expiration to 0.1 seconds (the "
+"drive will shut off if we don't give it a command every .1 seconds) and "
+"starts the ``Timer`` used for autonomous."
+msgstr ""
+"L'initialisation des variables en C++ se trouve dans la section ``private`` "
+"en bas du programme. Cela signifie qu’elles sont privées à la classe  "
+"``Robot``. Le code C++ configure également le paramètre ``Motor Safety "
+"expiration`` à 0,1 seconde (le déplacement s’arrêtera si nous ne lui donnons"
+" pas une commande à toutes les 0,1 secondes) et démarre le ``Timer`` utilisé"
+" pour le mode autonome."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:342
+msgid "Robot Initialization"
+msgstr "Initialisation du robot"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:359
+msgid ""
+"The ``RobotInit`` method is run when the robot program is starting up, but "
+"after the constructor. The ``RobotInit`` for our sample program doesn't do "
+"anything. If we wanted to run something here we could provide the code above"
+" to override the default)."
+msgstr ""
+"La méthode ``RobotInit`` est exécutée lorsque le programme robot démarre, "
+"mais après le constructeur. La méthode ``RobotInit``  dans notre exemple de "
+"programme ne fait rien. Si nous voulions exécuter quelque chose ici, nous "
+"pourrions fournir le code ci-dessus et surchager la méthode par défaut."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:362
+msgid "Simple Autonomous Example"
+msgstr "Exemple de mode autonome simple"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:384
+msgid ""
+"The ``AutonomousInit`` method is run once each time the robot transitions to"
+" autonomous from another mode. In this program, we restart the ``Timer`` in "
+"this method."
+msgstr ""
+"La méthode ``AutonomousInit`` est exécutée une seule fois au moment où le "
+"robot passe au mode autonomie à partir d’un autre mode. Dans le programme, "
+"nous redémarrons le ``Timer`` dans cette méthode."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:386
+msgid ""
+"``AutonomousPeriodic`` is run once every period while the robot is in "
+"autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
+"which defaults to 20ms. In this example, the periodic code checks if the "
+"timer is less than 2 seconds and if so, drives forward at half speed using "
+"the ``ArcadeDrive`` method of the ``DifferentialDrive`` class. If more than "
+"2 seconds has elapsed, the code stops the robot drive."
+msgstr ""
+"``AutonomousPeriodic`` est exécuté une fois par période lorsque que le robot"
+" est en mode autonome. Dans la classe ``TimedRobot``  la période est de "
+"durée fixe et par défaut est égale à 20ms. Dans cet exemple, le code "
+"périodique vérifie si la minuterie est inférieure à 2 secondes et, dans ce "
+"cas, fait avancer le robot à mi-vitesse à l’aide de la méthode "
+"``ArcadeDrive`` de la classe ``DifferentialDrive``. S'il s'est écoulé plus "
+"de 2 secondes, le code met fin au déplacement du robot."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:389
+msgid "Joystick Control for Teleoperation"
+msgstr "Contrôle par Joystick pendant le mode téléopéré"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:411
+msgid ""
+"Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
+"``TeleopPeriodic`` function. In this example we don't have anything to do in"
+" ``TeleopInit``, it is provided for illustration purposes only. In "
+"``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the "
+"Y-axis of the ``Joystick`` to forward/back motion of the drive motors and "
+"the X-axis to turning motion."
+msgstr ""
+"Comme dans le mode Autonomous, le mode Teleop possède les fonctions "
+"``TeleopInit`` et ``TeleopPeriodic``. Dans cet exemple, nous n’avons rien à "
+"faire dans  ``TeleopInit``, qui est fourni uniquement à des fins "
+"d’illustration. Dans ``TeleopPeriodic``, le code utilise la méthode "
+"``ArcadeDrive`` pour faire correspondre l’axe Y du ``Joystick`` au mouvement"
+" rectiligne avancer/reculer des moteurs d’entraînement et l’axe X pour le "
+"mouvement de rotation."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:414
+msgid "Test Mode"
+msgstr "Mode test"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:436
+msgid ""
+"Test Mode is used for testing robot functionality. Similar to "
+"``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided "
+"here for illustrative purposes only."
+msgstr ""
+"Le mode test est utilisé afin de tester la fonctionnalité du robot. À "
+"l’instar de ``TeleopInit``, les méthodes ``TestInit`` et ``TestPeriodic`` "
+"sont fournies ici uniquement à des fins d'illustration."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:439
+msgid "Deploying the Project to a Robot"
+msgstr "Déploiement du code projet sur un robot"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:441
+msgid ""
+"Please see the instructions :ref:`here <docs/software/vscode-"
+"overview/deploying-robot-code:Building and Deploying Robot Code>` for "
+"deploying the program onto a robot."
+msgstr ""
+"Veuillez consulter les instructions  :ref:`ici <docs/software/vscode-"
+"overview/deploying-robot-code:Building and Deploying Robot Code>` pour "
+"déployer le programme sur un robot."

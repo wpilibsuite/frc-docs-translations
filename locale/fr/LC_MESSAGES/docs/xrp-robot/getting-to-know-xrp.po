@@ -6,19 +6,434 @@
 # Translators:
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2023
 # Sidney Lavoie, 2023
-# Andre Theberge <atheberge2@videotron.ca>, 2023
+# Andre Theberge <atheberge2@videotron.ca>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-13 16:03+0000\n"
+"POT-Creation-Date: 2024-01-05 16:03+0000\n"
 "PO-Revision-Date: 2023-10-13 16:07+0000\n"
-"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2023\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:2
+msgid "Getting to know your XRP"
+msgstr "Apprendre à connaître votre XRP"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:5
+msgid "Booting up the XRP"
+msgstr "Démarrage du XRP"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:7
+msgid ""
+"Upon start up (when power is applied to the XRP either via battery or USB), "
+"the following will happen:"
+msgstr ""
+"Au démarrage (lorsque le XRP est alimenté via la batterie ou via USB), les "
+"événements suivants se produisent :"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:9
+msgid ""
+"The IMU will calibrate itself. This lasts approximately 3-5 seconds, and "
+"will be indicated by the green LED blinking rapidly. Ideally, the XRP should"
+" be placed on a flat surface prior to power up, and if necessary, users can "
+"hit the reset button to restart the firmware and IMU calibration process."
+msgstr ""
+"L'IMU se calibrera elle-même. Cela dure environ 3 à 5 secondes et sera "
+"indiqué par le clignotement rapide de la LED verte. Idéalement, le XRP doit "
+"être placé sur une surface plane avant la mise sous tension et, si "
+"nécessaire, les utilisateurs peuvent appuyer sur le bouton de "
+"réinitialisation pour redémarrer le processus d'étalonnage du micrologiciel "
+"et de l'IMU."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:11
+msgid ""
+"The network will be configured, depending on the configuration settings. See"
+" the section on :doc:`the Web UI </docs/xrp-robot/web-ui>` for more "
+"information on how to configure the network settings. By default the XRP "
+"will broadcast its own WiFi Access Point."
+msgstr ""
+"Le réseau sera configuré en fonction des paramètres de configuration. "
+"Consultez la section sur :doc:`l'interface utilisateur Web ` pour plus "
+"d'informations sur la configuration des paramètres réseau. Par défaut, le "
+"XRP diffusera son propre point d'accès WiFi."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:13
+msgid "After this, the XRP is ready for use."
+msgstr "Après cela, le XRP est prêt à être utilisé."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:16
+msgid "Hardware, Sensors and GPIO"
+msgstr "Matériel (Hardware), capteurs et GPIO"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:18
+msgid "The XRP has the following built-in hardware/peripherals:"
+msgstr "Le XRP dispose du matériel/périphériques intégrés suivants :"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:20
+msgid "2x geared drive motors with encoders"
+msgstr "2x motoréducteurs avec encodeurs"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:21
+msgid ""
+"2x additional geared motor connectors with encoder support (marked Motor3 "
+"and Motor4)"
+msgstr ""
+"2x connecteurs motoréducteur supplémentaires avec support encodeur (marqués "
+"Motor3 et Motor4)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:22
+msgid "2x Servo connectors (marked Servo1 and Servo2)"
+msgstr "2x connecteurs servo (marqués Servo1 et Servo2)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:23
+msgid "1x Inertial Measurement Unit (IMU)"
+msgstr "1x unité de mesure inertielle (IMU)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:24
+msgid "1x LED (green)"
+msgstr "1x LED (verte)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:25
+msgid "1x pushbutton (marked USER)"
+msgstr "1x bouton-poussoir (marqué USER)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:26
+msgid "1x Line following sensor (exposed as 2 Analog inputs)"
+msgstr "1x capteur de suivi de ligne (exposé comme 2 entrées analogiques)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:27
+msgid ""
+"1x Ultrasonic PING style rangefinder (uses 2 digital IO pins, exposed as an "
+"analog input)"
+msgstr ""
+"1x capteur à ultrasons de style PING (utilise 2 broches IO numériques, "
+"exposées comme une entrée analogique)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:30
+msgid "Motors, Wheels, and Encoders"
+msgstr "Moteurs, roues et encodeurs"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:32
+msgid ""
+"The motors used on the XRP have a 48.75:1 gear reduction and a no-load "
+"output speed of 90 RPM at 4.5V."
+msgstr ""
+"Les moteurs utilisés sur le XRP ont une réduction de 48,75:1 et une vitesse "
+"de sortie à vide de 90 tr/min à 4,5 V."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:34
+msgid ""
+"The wheels have a diameter of 60mm (2.3622\"). They have a trackwidth of "
+"155mm (6.1\")."
+msgstr ""
+"Les roues ont un diamètre de 60 mm (2,3622\"). Elles ont une largeur de voie"
+" de 155 mm (6,1\")."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:36
+msgid ""
+"The encoders are connected directly to the motor output shaft and have 12 "
+"Counts Per Revolution (CPR). With the provided gear ratio, this nets 585 "
+"counts per wheel revolution."
+msgstr ""
+"Les encodeurs sont connectés directement à l'arbre de sortie du moteur et "
+"disposent de 12 comptes par révolution (CPR). Avec le rapport de "
+"démultiplication fourni, cela génère 585 comptes par tour de roue."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:38
+msgid "The motor channels are listed in the table below."
+msgstr "Les canaux du moteur sont répertoriés dans le tableau ci-dessous."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:40
+msgid ""
+"We use \"motor channels\" here instead of \"PWM channels\" as the XRP "
+"requires the use of a special ``XRPMotor`` object in WPILib code to interact"
+" with the hardware."
+msgstr ""
+"Nous utilisons ici des \"canaux moteur\" au lieu de \"canaux PWM\" car le "
+"XRP nécessite l'utilisation d'un objet spécial ``XRPMotor`` dans le code "
+"WPILib pour interagir avec le matériel."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:43
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:61
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:71
+msgid "Channel"
+msgstr "Canal"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:43
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:61
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:71
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:105
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:120
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:133
+msgid "XRP Hardware Component"
+msgstr "Composant matériel XRP"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:45
+msgid "XRPMotor 0"
+msgstr "XRPMotor 0"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:45
+msgid "Left Motor"
+msgstr "Moteur gauche"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:47
+msgid "XRPMotor 1"
+msgstr "XRPMotor 1"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:47
+msgid "Right Motor"
+msgstr "Moteur droit"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:49
+msgid "XRPMotor 2"
+msgstr "XRPMotor 2"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:49
+msgid "Motor 3"
+msgstr "Moteur 3"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:51
+msgid "XRPMotor 3"
+msgstr "XRPMotor 3"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:51
+msgid "Motor 4"
+msgstr "Moteur 4"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:54
+msgid ""
+"The right motor will spin in a backward direction when positive output is "
+"applied. Thus the corresponding motor controller needs to be inverted in "
+"robot code."
+msgstr ""
+"Le moteur droit tournera vers l’arrière lorsqu’une sortie positive est "
+"appliquée. Ainsi, le contrôleur de moteur correspondant doit être inversé "
+"dans le code du robot."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:56
+msgid "The servo channels are listed in the table below."
+msgstr "Les canaux de servo sont répertoriés dans le tableau ci-dessous."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:58
+msgid ""
+"We use \"servo channels\" here instead of \"PWM channels\" as the XRP "
+"requires the use of a special ``XRPServo`` object in WPILib code to interact"
+" with the hardware."
+msgstr ""
+"Nous utilisons ici des \"canaux servo\" au lieu de \"canaux PWM\" car le XRP"
+" nécessite l'utilisation d'un objet ``XRPServo`` spécial dans le code WPILib"
+" pour interagir avec le matériel."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:63
+msgid "XRPServo 4"
+msgstr "XRPServo 4"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:63
+msgid "Servo 1"
+msgstr "Servo 1"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:65
+msgid "XRPServo 5"
+msgstr "XRPServo 5"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:65
+msgid "Servo 2"
+msgstr "Servo 2"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:68
+msgid "The encoder channels are listed in the table below."
+msgstr ""
+"Les canaux relatifs aux encodeurs sont répertoriés dans le tableau ci-"
+"dessous."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:73
+msgid "DIO 4"
+msgstr "DIO 4"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:73
+msgid "Left Encoder Quadrature Channel A"
+msgstr "Canal de quadrature encodeur gauche A"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:75
+msgid "DIO 5"
+msgstr "DIO 5"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:75
+msgid "Left Encoder Quadrature Channel B"
+msgstr "Canal de quadrature encodeur gauche B"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:77
+msgid "DIO 6"
+msgstr "DIO 6"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:77
+msgid "Right Encoder Quadrature Channel A"
+msgstr "Canal de quadrature encodeur droit A"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:79
+msgid "DIO 7"
+msgstr "DIO 7"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:79
+msgid "Right Encoder Quadrature Channel B"
+msgstr "Canal de quadrature encodeur droit B"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:81
+msgid "DIO 8"
+msgstr "DIO 8"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:81
+msgid "Motor3 Encoder Quadrature Channel A"
+msgstr "Canal A en quadrature de l'encodeur Motor3"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:83
+msgid "DIO 9"
+msgstr "DIO 9"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:83
+msgid "Motor3 Encoder Quadrature Channel B"
+msgstr "Canal B en quadrature de l'encodeur Motor3"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:85
+msgid "DIO 10"
+msgstr "DIO 10"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:85
+msgid "Motor4 Encoder Quadrature Channel A"
+msgstr "Canal A en quadrature de l'encodeur Motor4"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:87
+msgid "DIO 11"
+msgstr "DIO 11"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:87
+msgid "Motor4 Encoder Quadrature Channel B"
+msgstr "Canal B en quadrature de l'encodeur Motor4"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:90
+msgid "By default, the encoders count up when the XRP moves forward."
+msgstr "Par défaut, les encodeurs comptent lorsque le XRP avance."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:93
+msgid "Inertial Measurement Unit"
+msgstr "L'unité de mesure inertielle"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:95
+msgid ""
+"The XRP includes an STMicroelectronics LSM6DSOX Inertial Measurement Unit "
+"(IMU) which contains a 3-axis gyro and a 3-axis accelerometer."
+msgstr ""
+"Le XRP comprend une unité de mesure inertielle (IMU) STMicroelectronics "
+"LSM6DSOX qui contient un gyroscope à 3 axes et un accéléromètre à 3 axes."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:97
+msgid ""
+"The XRP will calibrate the gyro and accelerometer upon each boot (the "
+"onboard LED will quickly flash for about 3-5 seconds at startup time)."
+msgstr ""
+"Le XRP calibrera le gyroscope et l'accéléromètre à chaque démarrage (la LED "
+"intégrée clignotera rapidement pendant environ 3 à 5 secondes au démarrage)."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:100
+msgid "Onboard LED and Push Button"
+msgstr "LED et bouton poussoir intégrés"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:102
+msgid ""
+"The XRP has a push button (labeled USER) and a green LED onboard that are "
+"exposed as Digital IO (DIO) channels to robot code."
+msgstr ""
+"Le XRP dispose d'un bouton-poussoir (étiqueté USER) et d'une LED verte "
+"intégrée qui sont exposés en tant que canaux Digital IO (DIO) au code du "
+"robot."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:105
+msgid "DIO Channel"
+msgstr "Canal DIO"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:107
+msgid "DIO 0"
+msgstr "DIO 0"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:107
+msgid "USER Button"
+msgstr "Bouton USER"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:109
+msgid "DIO 1"
+msgstr "DIO 1"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:109
+msgid "Green LED"
+msgstr "LED verte"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:112
+msgid "DIO 2 and 3 are reserved for future system use."
+msgstr "Les DIO 2 et 3 sont réservées à une utilisation future du système."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:115
+msgid "Line Following (Reflectance) Sensor"
+msgstr "Capteur de suivi de ligne (réflectance)"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:117
+msgid ""
+"When assembled according to the instructions, the XRP supports a line "
+"following sensor with 2 sensing elements. Each sensing element measures "
+"reflectance exposes these as AnalogInput channels to robot code. The "
+"returned values range from 0V (pure white) to 5V (pure black)."
+msgstr ""
+"Lorsqu'il est assemblé conformément aux instructions, le XRP prend en charge"
+" un capteur de suivi de ligne avec 2 éléments de détection. Chaque élément "
+"de détection mesure la réflectance et les expose en tant que canaux d'entrée"
+" analogique au code du robot. Les valeurs renvoyées vont de 0 V (blanc pur) "
+"à 5 V (noir pur)."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:120
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:133
+msgid "AnalogInput Channel"
+msgstr "Canal d'entrée analogique"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:122
+msgid "AnalogInput 0"
+msgstr "Entrée analogique 0"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:122
+msgid "Left Reflectance Sensor"
+msgstr "Capteur de réflectance gauche"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:124
+msgid "AnalogInput 1"
+msgstr "Entrée analogique 1"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:124
+msgid "Right Reflectance Sensor"
+msgstr "Capteur de réflexion droit"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:128
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:135
+msgid "Ultrasonic Rangefinder"
+msgstr "Capteur à ultrasons"
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:130
+msgid ""
+"When assembled according to the instructions, the XRP supports an "
+"ultrasonic, PING style, rangefinder. This is exposed as an AnalogInput "
+"channel to robot code. The returned values range from 0V (20mm) to 5V "
+"(4000mm)."
+msgstr ""
+"Lorsqu’il est assemblé conformément aux instructions, le XRP prend en charge"
+" un capteur à ultrasons de style PING. Ceci est exposé en tant que canal "
+"AnalogInput au code du robot. Les valeurs renvoyées vont de 0 V (20 mm) à 5 "
+"V (4 000 mm)."
+
+#: ../../frc-docs/source/docs/xrp-robot/getting-to-know-xrp.rst:135
+msgid "AnalogInput 2"
+msgstr "Entrée analogique 2"

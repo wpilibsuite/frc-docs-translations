@@ -4,18 +4,18 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
 # Marc Lalonde, 2023
+# Andre Theberge <atheberge2@videotron.ca>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-22 04:04+0000\n"
+"POT-Creation-Date: 2024-01-05 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Marc Lalonde, 2023\n"
+"Last-Translator: Andre Theberge <atheberge2@videotron.ca>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -36,6 +36,47 @@ msgstr ""
 " branchement électrique des encodeurs, voir  "
 ":ref:`docs/hardware/sensors/encoders-hardware:Encoders - Hardware`."
 
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:8
+msgid ""
+"Encoders are devices used to measure motion (usually, the rotation of a "
+"shaft)."
+msgstr ""
+"Les encodeurs sont des composants utilisés pour mesurer le mouvement "
+"(généralement la rotation d'un arbre)."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:10
+msgid ""
+"The classes in this document are only used for encoders that are plugged "
+"directly into the roboRIO! Please reference the appropriate vendors' "
+"documentation for using encoders plugged into motor controllers."
+msgstr ""
+"Les classe dans ce document ne sont utilisées que pour les encodeurs qui "
+"sont branchés directement sur le roboRIO ! Veuillez consulter la "
+"documentation appropriée des fournisseurs pour l’utilisation d’encodeurs "
+"branchés sur des contrôleurs de moteur."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:13
+msgid "Quadrature Encoders - The :code:`Encoder` Class"
+msgstr "Encodeurs en quadrature - la classe :code:`Encoder` "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:15
+msgid ""
+"WPILib provides support for quadrature encoders through the :code:`Encoder` "
+"class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"encoders."
+msgstr ""
+"WPILib fournit la prise en charge des encodeurs en quadrature via la classe "
+":code:`Encoder` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/Encoder.html>`"
+" __, `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_encoder.html>`__)."
+" Cette classe fournit une API simple pour configurer et lire les données des"
+" encodeurs."
+
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst-1
 msgid ""
 "Quadrature Encoders determine direction by observing which pulse channel (A "
@@ -44,9 +85,98 @@ msgstr ""
 "Les encodeurs en quadrature déterminent la direction en observant quel canal"
 " d’impulsion (A ou B) reçoit une impulsion en premier."
 
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:20
+msgid ""
+"These encoders produce square-wave signals on two channels that are a "
+"quarter-period out-of-phase (hence the term, \"quadrature\").  The pulses "
+"are used to measure the rotation, and the direction of motion can be "
+"determined from which channel \"leads\" the other."
+msgstr ""
+"Ces encodeurs produisent des signaux rectangulaires sur deux canaux qui sont"
+" déphasés d'un quart de période (d'où le terme \"quadrature\"). Les "
+"impulsions sont utilisées pour mesurer la rotation, et la direction du "
+"mouvement peut être déterminée à partir de quel canal \"est en avance\" par "
+"rapport à l'autre."
+
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst-1
 msgid "A Quadrature Decoder analyzing the A, B, and Index signals."
 msgstr "Un décodeur en quadrature analysant les signaux A, B et Index."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:25
+msgid ""
+"The FPGA handles quadrature encoders either through a counter module or an "
+"encoder module, depending on the :ref:`decoding type "
+"<docs/software/hardware-apis/sensors/encoders-software:Decoding type>` - the"
+" choice is handled automatically by WPILib.  The FPGA contains 8 encoder "
+"modules."
+msgstr ""
+"Le FPGA gère les encodeurs en quadrature via un module compteur ou un module"
+" encodeur, selon le :ref:`decoding type <docs/software/hardware-"
+"apis/sensors/encoders-software:Decoding type>` - le choix est géré "
+"automatiquement par WPILib . Le FPGA contient 8 modules encodeurs."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:27
+msgid "Examples of quadrature encoders:"
+msgstr "Exemples d'encodeurs en quadrature:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:29
+msgid ""
+"`AMT103-V <https://www.cuidevices.com/product/motion/rotary-"
+"encoders/incremental/modular/amt10-v-kit/amt103-v>`__ available through "
+"FIRST Choice"
+msgstr ""
+"`AMT103-V <https://www.cuidevices.com/product/motion/rotary-"
+"encoders/incremental/modular/amt10-v-kit/amt103-v>`__ disponible via FIRST "
+"Choice"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:30
+msgid ""
+"`CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-"
+"high-resolution>`__"
+msgstr ""
+"`CIMcoder <https://www.andymark.com/products/cimcoder-encoder-cim-motor-"
+"high-resolution>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:31
+msgid ""
+"`CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_"
+msgstr ""
+"`CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`_"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:32
+msgid ""
+"`Grayhill 63r "
+"<https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__"
+msgstr ""
+"`Grayhill 63r "
+"<https://www.mouser.com/datasheet/2/626/grhls00779_1-2289364.pdf>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:33
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:251
+msgid ""
+"`REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__"
+msgstr ""
+"`REV Through Bore Encoder <https://www.revrobotics.com/rev-11-1271/>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:34
+msgid ""
+"`US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-"
+"optical-encoder-kit>`__"
+msgstr ""
+"`US Digital E4T <https://www.andymark.com/products/e4t-oem-miniature-"
+"optical-encoder-kit>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:37
+msgid "Initializing a Quadrature Encoder"
+msgstr "Initialisation d'un encodeur en quadrature"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:39
+msgid "A quadrature encoder can be instantiated as follows:"
+msgstr "Un encodeur en quadrature peut être instancié comme suit:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:56
+msgid "Decoding Type"
+msgstr "Type de décodage"
 
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:58
 msgid ""
@@ -90,6 +220,10 @@ msgstr ""
 "\"fluctuations\" (jitter) accrue dans les mesures de débit. Pour utiliser un"
 " type de décodage différent, utilisez le constructeur suivant:"
 
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:81
+msgid "Configuring Quadrature Encoder Parameters"
+msgstr "Configuration des paramètres de l'encodeur en quadrature"
+
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:83
 msgid ""
 "The :code:`Encoder` class does not make any assumptions about units of "
@@ -120,6 +254,10 @@ msgid "The :code:`Encoder` class offers a number of configuration methods:"
 msgstr ""
 "La classe :code:`Encoder` propose plusieurs méthodes de configuration:"
 
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:130
+msgid "Reading information from Quadrature Encoders"
+msgstr "Lecture des informations des encodeurs en quadrature"
+
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:132
 msgid ""
 "The :code:`Encoder` class provides a wealth of information to the user about"
@@ -131,6 +269,20 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:135
 msgid "Distance"
 msgstr "La distance"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:137
+msgid ""
+"Quadrature encoders measure *relative* distance, not absolute; the distance "
+"value returned will depend on the position of the encoder when the robot was"
+" turned on or the encoder value was last :ref:`reset "
+"<docs/software/hardware-apis/sensors/encoders-software:Resetting a "
+"quadrature encoder>`."
+msgstr ""
+"Les encodeurs en quadrature mesurent la distance *relative*, pas absolue; la"
+" valeur de distance renvoyée dépendra de la position de l'encodeur lorsque "
+"le robot a été allumé ou la dernière valeur de l'encodeur :ref:`reset "
+"<docs/software/hardware-apis/sensors/encoders-software:Resetting a "
+"quadrature encoder>`."
 
 #: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:139
 msgid ""
@@ -193,3 +345,360 @@ msgid ""
 msgstr ""
 "Les utilisateurs peuvent obtenir la période des impulsions du codeur (en "
 "secondes) avec la méthode :code:`getPeriod()`:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:224
+msgid "Resetting a Quadrature Encoder"
+msgstr "Réinitialisation d'un encodeur en quadrature"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:226
+msgid ""
+"To reset a quadrature encoder to a distance reading of zero, call the "
+":code:`reset()` method.  This is useful for ensuring that the measured "
+"distance corresponds to the actual desired physical measurement, and is "
+"often called during a :ref:`homing <docs/software/hardware-"
+"apis/sensors/encoders-software:Homing a mechanism>` routine:"
+msgstr ""
+"Pour réinitialiser un encodeur en quadrature à une lecture de distance de "
+"zéro, appelez la méthode :code:`reset()`. Ceci est utile pour s'assurer que "
+"la distance mesurée correspond à la mesure physique réelle souhaitée, et est"
+" souvent appelée lors d'une routine :ref:`de mise à zéro "
+"<docs/software/hardware-apis/sensors/encoders-software:Homing a Mechanism>` "
+":"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:241
+msgid "Duty Cycle Encoders - The :code:`DutyCycleEncoder` class"
+msgstr "Encodeurs de rapport cyclique - La classe  :code:`DutyCycleEncoder`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:243
+msgid ""
+"WPILib provides support for duty cycle (also marketed as :term:`PWM`) "
+"encoders through the :code:`DutyCycleEncoder` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_duty_cycle_encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"duty cycle encoders."
+msgstr ""
+"WPILib fournit une prise en charge des encodeurs de cycle de service "
+"(également commercialisés sous le nom de :term:`PWM`) via la classe "
+":code:`DutyCycleEncoder` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu "
+"/wpi/first/wpilibj/DutyCycleEncoder.html>`__, `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_duty_cycle_encoder.html>`__)."
+" Cette classe fournit une API simple pour configurer et lire les données des"
+" encodeurs de rapport cyclique."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:245
+msgid "The roboRIO's FPGA handles duty cycle encoders automatically."
+msgstr ""
+"Le FPGA du roboRIO gère automatiquement les encodeurs de rapport cyclique."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:247
+msgid "Examples of duty cycle encoders:"
+msgstr "Exemples d'encodeurs de rapport cyclique:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:249
+msgid ""
+"`AndyMark Mag Encoder <https://www.andymark.com/products/am-mag-encoder>`__"
+msgstr ""
+"`AndyMark Mag Encoder <https://www.andymark.com/products/am-mag-encoder>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:250
+msgid ""
+"`CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__"
+msgstr ""
+"`CTRE Mag Encoder <https://store.ctr-electronics.com/srx-mag-encoder/>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:252
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:365
+msgid ""
+"`Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-"
+"encoder>`__"
+msgstr ""
+"`Team 221 Lamprey2 <https://www.andymark.com/products/lamprey-absolute-"
+"encoder>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:253
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:367
+msgid ""
+"`US Digital MA3 "
+"<https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__"
+msgstr ""
+"`US Digital MA3 "
+"<https://www.usdigital.com/products/encoders/absolute/shaft/ma3/>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:256
+msgid "Initializing a Duty Cycle Encoder"
+msgstr "Initialisation d'un encodeur de rapport cyclique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:258
+msgid "A duty cycle encoder can be instantiated as follows:"
+msgstr ""
+"Un encodeur de rapport cyclique («duty cycle») peut être instancié comme "
+"suit:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:273
+msgid "Configuring Duty Cycle Encoder Parameters"
+msgstr "Configuration des paramètres de l'encodeur de rapport cyclique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:275
+msgid ""
+"The :code:`DutyCycleEncoder` class does not make any assumptions about units"
+" of distance; it will return values in whatever units were used to calculate"
+" the distance-per-rotation value.  Users thus have complete control over the"
+" distance units used."
+msgstr ""
+"La classe :code:`DutyCycleEncoder` ne fait aucune hypothèse sur les unités "
+"de distance; comme elle compte seulement les rotations, elle retournera les "
+"valeurs dans le système d'unités utilisées pour calculer la distance.  Les "
+"utilisateurs ont ainsi un contrôle total sur les unités de distance "
+"utilisées."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:277
+msgid ""
+"The :code:`DutyCycleEncoder` class offers a number of configuration methods:"
+msgstr ""
+"La classe :code:`DutyCycleEncoder` propose plusieurs méthodes de "
+"configuration:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:292
+msgid "Reading Distance from Duty Cycle Encoders"
+msgstr "Lire une distance avec un encodeur de rapport cyclique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:294
+msgid ""
+"Duty Cycle encoders measure absolute distance. It does not depend on the "
+"starting position of the encoder."
+msgstr ""
+"L’encodeur de rapport cyclique mesure une distance absolue. Celle-ci ne "
+"dépend pas de la position de départ de l’encodeur."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:296
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:410
+msgid ""
+"Users can obtain the distance measured by the encoder with the "
+":code:`getDistance()` method:"
+msgstr ""
+"Les utilisateurs peuvent obtenir la distance mesurée par l'encodeur avec la "
+"méthode :code:`getDistance()`:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:312
+msgid "Detecting a Duty Cycle Encoder is Connected"
+msgstr "Détecter si un encodeur de rapport cyclique est connecté "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:314
+msgid ""
+"As duty cycle encoders output a continuous set of pulses, it is possible to "
+"detect that the encoder has been unplugged."
+msgstr ""
+"Comme un encodeur de rapport cyclique génère un ensemble continu "
+"d’impulsions, il est possible de détecter qu’un encodeur a été débranché."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:330
+msgid "Resetting a Duty Cycle Encoder"
+msgstr "Réinitialisation d'un encodeur de rapport cyclique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:332
+msgid ""
+"To reset an encoder so the current distance is 0, call the :code:`reset()` "
+"method.  This is useful for ensuring that the measured distance corresponds "
+"to the actual desired physical measurement. Unlike quadrature encoders, duty"
+" cycle encoders don't need to be homed. However, after reset, the position "
+"offset can be stored to be set when the program starts so that the reset "
+"doesn't have to be performed again. The :doc:`Preferences class "
+"</docs/software/basic-programming/robot-preferences>` provides a method to "
+"save and retrieve the values on the roboRIO."
+msgstr ""
+"Pour réinitialiser un encodeur afin que la distance actuelle soit de 0, "
+"appelez la méthode :code:`reset()`. Ceci est utile pour garantir que la "
+"distance mesurée correspond à la mesure physique réelle souhaitée. "
+"Contrairement aux encodeurs en quadrature, les encodeurs de rapport cyclique"
+" n'ont pas besoin de retour au repos (homing). Cependant, après la "
+"réinitialisation, le décalage de position peut être stocké pour être défini "
+"au démarrage du programme afin d’éviter une nouvelle réinitialisation. La "
+":doc:`Preferences class 1` fournit une méthode pour enregistrer et récupérer"
+" les valeurs sur le roboRIO."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:359
+msgid "Analog Encoders - The :code:`AnalogEncoder` Class"
+msgstr "Encodeurs analogiques - la classe :code:`AnalogEncoder`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:361
+msgid ""
+"WPILib provides support for analog absolute encoders through the "
+":code:`AnalogEncoder` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_analog_encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"duty cycle encoders."
+msgstr ""
+"WPILib fournit la prise en charge des encodeurs absolus analogiques via la "
+"classe :code:`AnalogEncoder` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/beta/java/edu/wpi/first/wpilibj/AnalogEncoder.html>"
+" `__, `C++ "
+"<https://github.wpilib.org/allwpilib/docs/beta/cpp/classfrc_1_1_analog_encoder.html>`__)."
+" Cette classe fournit une API simple pour configurer et lire les données des"
+" encodeurs de rapport cyclique."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:363
+msgid "Examples of analog encoders:"
+msgstr "Exemples d'encodeurs analogiques:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:366
+msgid ""
+"`Thrifty Absolute Magnetic Encoder "
+"<https://www.thethriftybot.com/products/thrifty-absolute-magnetic-"
+"encoder>`__"
+msgstr ""
+"`Thrifty Absolute Magnetic Encoder "
+"<https://www.thethriftybot.com/products/thrifty-absolute-magnetic-"
+"encoder>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:370
+msgid "Initializing an Analog Encoder"
+msgstr "Initialisation d'un encodeur analogique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:372
+msgid "An analog encoder can be instantiated as follows:"
+msgstr "Un encodeur analogique peut être instancié comme suit:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:387
+msgid "Configuring Analog Encoder Parameters"
+msgstr "Configuration des paramètres de l'encodeur analogique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:389
+msgid ""
+"The :code:`AnalogEncoder` class does not make any assumptions about units of"
+" distance; it will return values in whatever units were used to calculate "
+"the distance-per-rotation value.  Users thus have complete control over the "
+"distance units used."
+msgstr ""
+"La classe :code:`AnalogEncoder` ne fait aucune hypothèse sur les unités de "
+"distance; comme elle compte seulement les rotations, elle retournera les "
+"valeurs dans le système d'unités utilisées pour calculer la distance.  Les "
+"utilisateurs ont ainsi un contrôle total sur les unités de distance "
+"utilisées."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:391
+msgid ""
+"The :code:`AnalogEncoder` class offers a number of configuration methods:"
+msgstr ""
+"La classe :code:`AnalogEncoder` propose plusieurs méthodes de configuration:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:406
+msgid "Reading Distance from Analog Encoders"
+msgstr "Lire une distance avec un encodeur analogique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:408
+msgid ""
+"Analog encoders measure absolute distance. It does not depend on the "
+"starting position of the encoder."
+msgstr ""
+"L’encodeur analogique mesure une distance absolue. Celle-ci ne dépend pas de"
+" la position de départ de l’encodeur."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:427
+msgid "Resetting an Analog Encoder"
+msgstr "Réinitialisation d'un encodeur analogique"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:429
+msgid ""
+"To reset an analog encoder so the current distance is 0, call the "
+":code:`reset()` method.  This is useful for ensuring that the measured "
+"distance corresponds to the actual desired physical measurement. Unlike "
+"quadrature encoders, duty cycle encoders don't need to be homed. However, "
+"after reset, the position offset can be stored to be set when the program "
+"starts so that the reset doesn't have to be performed again. The "
+":doc:`Preferences class </docs/software/basic-programming/robot-"
+"preferences>` provides a method to save and retrieve the values on the "
+"roboRIO."
+msgstr ""
+"Pour réinitialiser un encodeur analogique afin que la distance actuelle soit"
+" de 0, appelez la méthode :code:`reset()`. Ceci est utile pour garantir que "
+"la distance mesurée correspond à la mesure physique réelle souhaitée. "
+"Contrairement aux encodeurs en quadrature, les encodeurs de rapport cyclique"
+" («duty cycle») n'ont pas besoin de retour au repos (homing). Cependant, "
+"après la réinitialisation, le décalage de position peut être stocké pour "
+"être défini au démarrage du programme afin d’éviter une nouvelle "
+"réinitialisation. La :doc:`Preferences class 1` fournit une méthode pour "
+"enregistrer et récupérer les valeurs sur le roboRIO."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:456
+msgid "Using Encoders in Code"
+msgstr "Utilisation des encodeurs dans le code"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:458
+msgid ""
+"Encoders are some of the most useful sensors in FRC\\ |reg|; they are very "
+"nearly a requirement to make a robot capable of nontrivially-automated "
+"actuations and movement.  The potential applications of encoders in robot "
+"code are too numerous to summarize fully here, but an example is provided "
+"below:"
+msgstr ""
+"Les encodeurs sont parmi les capteurs les plus utiles de FRC; ils sont "
+"essentiels pour automatiser un mouvement de robot qui nécessite une certaine"
+" complexité. Les applications potentielles des encodeurs dans le code robot "
+"sont trop nombreuses pour être toutes énumérées ici, mais un exemple est "
+"fourni ci-dessous:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:461
+msgid "Driving to a Distance"
+msgstr "Parcourir une certaine distance"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:463
+msgid ""
+"Encoders can be used on a robot drive to create a simple \"drive to "
+"distance\" routine.  This is useful in autonomous mode, but has the "
+"disadvantage that the robot's momentum will cause it to overshoot the "
+"intended distance. Better methods include using a :doc:`PID Controller "
+"</docs/software/advanced-controls/introduction/introduction-to-pid>` or "
+"using :doc:`Path Planning </docs/software/pathplanning/index>`"
+msgstr ""
+"Les encodeurs peuvent être utilisés pour créer une routine simple de type "
+"« parcourir une certaine distance ». Ceci est utile en mode autonome, mais "
+"présente l'inconvénient que l'élan du robot l’amènera au-delà de la distance"
+" prévue. Les meilleures méthodes incluent l'utilisation d'un :doc:`PID "
+"Controller 1` ou l'utilisation de :doc:`Path Planning 2`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:465
+msgid ""
+"The following example uses the `Encoder` class, but is similar if other "
+"`DutyCycleEncoder` or `AnalogEncoder` is used. However, quadrature encoders "
+"are typically better suited for drivetrains since they roll over many times "
+"and don't have an absolute position."
+msgstr ""
+"L'exemple suivant utilise la classe `Encoder`, mais est similaire si un "
+"autre type (`DutyCycleEncoder` ou `AnalogEncoder`) est utilisé. Cependant, "
+"les encodeurs en quadrature sont généralement mieux adaptés aux "
+"transmissions car ils retournent à zéro (roll over) plusieurs fois et n'ont "
+"pas de position absolue."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:538
+msgid "Homing a Mechanism"
+msgstr "La mise à zéro d'un mécanisme"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:540
+msgid ""
+"Since quadrature encoders measure *relative* distance, it is often important"
+" to ensure that their \"zero-point\" is in the right place.  A typical way "
+"to do this is a \"homing routine,\" in which a mechanism is moved until it "
+"hits a known position (usually accomplished with a limit switch), or "
+"\"home,\" and then the encoder is reset.  The following code provides a "
+"basic example:"
+msgstr ""
+"Comme les encodeurs en quadrature mesurent la distance *relative*, il est "
+"souvent important de s'assurer que leur \"point zéro\" est au bon endroit. "
+"Une façon typique de le faire est une \"routine de référencement\", dans "
+"laquelle un mécanisme est déplacé jusqu'à ce qu'il atteigne une position "
+"connue (généralement accomplie avec un interrupteur de fin de course), ou "
+"\"point zéro\", puis l'encodeur est réinitialisé. Le code suivant fournit un"
+" exemple de base:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:542
+msgid ""
+"Homing is not necessary for absolute encoders like duty cycle encoders and "
+"analog encoders."
+msgstr ""
+"La mise à zéro n’est pas nécessaire pour les encodeurs absolus comme les "
+"encodeurs de rapport cyclique et les encodeurs analogiques."

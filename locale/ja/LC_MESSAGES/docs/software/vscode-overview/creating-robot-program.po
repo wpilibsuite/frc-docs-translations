@@ -5,17 +5,17 @@
 # 
 # Translators:
 # Eddie L Wright, 2023
-# Jacob Lubecki, 2023
 # Hirose Yuto, 2023
+# Jacob Lubecki, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 16:03+0000\n"
+"POT-Creation-Date: 2024-01-07 04:04+0000\n"
 "PO-Revision-Date: 2020-08-20 04:15+0000\n"
-"Last-Translator: Hirose Yuto, 2023\n"
+"Last-Translator: Jacob Lubecki, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -56,6 +56,18 @@ msgstr ""
 msgid "TimedRobot"
 msgstr "TimedRobot"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:14
+msgid ""
+"Documentation: `Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_timed_robot.html>`__"
+msgstr ""
+"ドキュメンテーション： `Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/TimedRobot.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_timed_robot.html>`__"
+
 #: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:18
 msgid ""
 "Source: `Java "
@@ -67,6 +79,33 @@ msgstr ""
 "<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibj/src/main/java/edu/wpi/first/wpilibj/TimedRobot.java>`__"
 " - `C++ "
 "<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibc/src/main/native/cpp/TimedRobot.cpp>`__"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:22
+msgid ""
+"The :code:`TimedRobot` class is the base class recommended for most users.  "
+"It provides control of the robot program through a collection of "
+":code:`init()`, :code:`periodic()`, and :code:`exit()` methods, which are "
+"called by WPILib during specific robot states (e.g. autonomous or "
+"teleoperated). During these calls, your code typically polls each input "
+"device and acts according to the data it receives.  For instance, you would "
+"typically determine the position of the joystick and state of the joystick "
+"buttons on each call and act accordingly.  The ``TimedRobot`` class also "
+"provides an example of retrieving autonomous routines through "
+"SendableChooser (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__/"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_sendable_chooser.html>`__"
+msgstr ""
+":code:`TimedRobot` クラスはほとんどのユーザーに推奨される基底クラスです。 このクラスは :code:`init()` 、 "
+":code:`periodic()` 、 :code:`exit()` "
+"メソッドのコレクションを通してロボットプログラムの制御を提供します。これらのメソッドは特定のロボット状態（例えば自律動作や遠隔操作）の時に WPILib"
+" によって呼び出されます。これらのメソッドが呼び出される間、あなたのコードは各入力デバイスの状態を取得し、受け取ったデータに従って動作します。 "
+"例えば、ジョイスティックの位置とジョイスティックのボタンの状態を呼び出しごとに判断し、それに従って動作します。 ``TimedRobot`` "
+"クラスでは、SendableChooser (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/smartdashboard/SendableChooser.html>`__"
+" / `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_sendable_chooser.html>`__)"
+" を使って自律ルーチンを取得する例も提供しています。"
 
 #: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:24
 msgid ""
@@ -85,9 +124,32 @@ msgid ""
 msgstr ""
 "「Periodic」メソッドはデフォルトで20ミリ秒ごとに呼び出されます。これは、新しい更新レートを指定してスーパークラスのコンストラクタを呼び出すことで変更できます。"
 
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:42
+msgid ""
+"Changing your robot rate can cause some unintended behavior (loop overruns)."
+" Teams can also use `Notifiers "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Notifier.html>`__"
+" to schedule methods at a custom rate."
+msgstr ""
+"ロボットのレートを変更すると、意図しない動作（ループオーバーラン）が発生することがあります。チームは `Notifiers "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Notifier.html>`__"
+" を使用して、カスタムレートでメソッドをスケジュールすることもできます。"
+
 #: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:57
 msgid "RobotBase"
 msgstr "RobotBase"
+
+#: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:59
+msgid ""
+"Documentation: `Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_robot_base.html>`__"
+msgstr ""
+"ドキュメンテーション： `Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/RobotBase.html>`__"
+" - `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_robot_base.html>`__"
 
 #: ../../frc-docs/source/docs/software/vscode-overview/creating-robot-program.rst:63
 msgid ""

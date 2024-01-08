@@ -1,52 +1,196 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Ofek Ashery, 2020
+# Ofek Ashery, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-10 04:04+0000\n"
+"POT-Creation-Date: 2024-01-08 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Ofek Ashery, 2020\n"
-"Language-Team: Hebrew (Israel) (https://www.transifex.com/wpilib/teams/109324/he_IL/)\n"
+"Last-Translator: Ofek Ashery, 2024\n"
+"Language-Team: Hebrew (Israel) (https://app.transifex.com/wpilib/teams/109324/he_IL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: he_IL\n"
 "Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: (n % 10 == 0 && n % 1 == 0 && n > 10) ? 2 : 3;\n"
 
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:2
+msgid "IP Configurations"
+msgstr "קונפיגורציות IP"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:4
+msgid ""
+"This document describes the IP configuration used at events, both on the "
+"fields and in the pits, potential issues and workaround configurations."
+msgstr ""
+"מסמך זה את מתאר התצורה של כתובת ה-IP שמשמשת באירועים, במגרש ובפיט, בעיות "
+"אפשריות והגדרות חילופיות."
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:7
+msgid "TE.AM IP Notation"
+msgstr "הסימון TE.AM עבור IP"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:9
+msgid ""
+"The notation TE.AM is used as part of IPs in numerous places in this "
+"document. This notation refers to splitting your four digit team number into"
+" two digit pairs for the IP address octets."
+msgstr ""
+"הסימול TE.AM משמש כחלק מכתובות ה-IP במקומות רבים במסמך זה. הסימול מתייחס "
+"לחלוקת מספר הקבוצה שלכם המורכב מארבע ספרות לזוגות של שתי ספרות לכל אוקטטה של"
+" כתובת ה-IP."
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:11
+msgid "Example: ``10.TE.AM.2``"
+msgstr "למשל: ``10.TE.AM.2``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:13
+msgid "Team 12 - ``10.0.12.2``"
+msgstr "קבוצה 12 - ``10.0.12.2``"
+
 #: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:15
 msgid "Team 122 - ``10.1.22.2``"
-msgstr "קבוצת 122 - ``10.1.22.2``"
+msgstr "קבוצה 122 - ``10.1.22.2``"
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:17
 msgid "Team 1212 - ``10.12.12.2``"
-msgstr "קבוצת 1212 - ``10.12.12.2``"
+msgstr "קבוצה 1212 - ``10.12.12.2``"
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:19
+msgid "Team 1202 - ``10.12.2.2``"
+msgstr "קבוצה 1202 - ``10.12.2.2``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:21
+msgid "Team 1220 - ``10.12.20.2``"
+msgstr "קבוצה 1220 - ``10.12.20.2``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:23
 msgid "Team 3456 - ``10.34.56.2``"
 msgstr "קבוצת 3456 - ``10.34.56.2``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:22
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:26
 msgid "On the Field"
 msgstr "על המגרש"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:24
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:28
 msgid ""
 "This section describes networking when connected to the Field Network for "
 "match play"
 msgstr "קטע זה מתאר את הרשת כאשר מחוברים לרשת המגרש עבור משחק מקצה."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:27
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:31
 msgid "On the Field DHCP Configuration"
-msgstr "הגדרת DHCP למגרש"
+msgstr "קונפיגורצית DHCP במגרש"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:34
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:33
+msgid ""
+"The Field Network runs a :term:`DHCP` server with pools for each team that "
+"will hand out addresses in the range of ``10.TE.AM.20`` to ``10.TE.AM.199`` "
+"with a subnet mask of ``255.255.255.0``, and a default gateway of "
+"``10.TE.AM.4``. When configured for an event, the Team Radio runs a DHCP "
+"server with a pool for devices onboard the robot that will hand out "
+"addresses in the range of 10.TE.AM.200 to 10.TE.AM.219 with a subnet mask of"
+" 255.255.255.0, and a gateway of 10.TE.AM.1."
+msgstr ""
+"רשת המגרש מפעילה שרת :term:`DHCP` עם פול כתובות עבור כל קבוצה שמחלק כתובות "
+"בטווח של ``10.TE.AM.20`` עד ``10.TE.AM.199`` עם subnet mask של "
+"``255.255.255.0`` ו-default gateway של ``10.TE.AM.4``. כאשר מוגדר עבור "
+"אירוע, ה-Radio של הקבוצה מפעיל שרת DHCP עם פול כתובת עבור המכשירים בפנים "
+"הרובוט שיחלק כתובות בטווח ``10.TE.AM.200`` עד ``10.TE.AM.219`` עם subnet "
+"mask של ``255.255.255.0`` ו-gateway של ``10.TE.AM.1``."
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:36
+msgid ""
+"OpenMesh OM5P-AN or OM5P-AC radio - Static ``10.TE.AM.1`` programmed by "
+"Kiosk"
+msgstr ""
+"OpenMesh OM5P-AN או OM5P-AC radio - כתובת ``10.TE.AM.1`` סטטית נקבעת על ידי "
+"ה-Kiosk"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:38
 msgid "roboRIO - DHCP ``10.TE.AM.2`` assigned by the Robot Radio"
 msgstr "roboRIO - משוייך על ידי ה-Robot Radio ל-``10.TE.AM.2``"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:39
+msgid ""
+"Driver Station - DHCP (\"Obtain an IP address automatically\") 10.TE.AM.X "
+"assigned by field"
+msgstr ""
+"Driver Station - DHCP (\"משיג כתובת IP באופן אוטומטי\") 10.TE.AM.X מוקצה על "
+"ידי המגרש"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:41
+msgid "IP camera (if used) - DHCP ``10.TE.AM.Y`` assigned by Robot Radio"
+msgstr "מצלמת IP (אם בשימוש) - DHCP ``10.TE.AM.Y` מוקצה על ידי ה-Robot Radio"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:42
+msgid "Other devices (if used) - DHCP ``10.TE.AM.Z`` assigned by Robot Radio"
+msgstr ""
+"מכשירים אחרים (אם בשימוש) - DHCP ``10.TE.AM.Z`` מוקצה על ידי ה-Robot Radio"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:45
+msgid "On the Field Static Configuration"
+msgstr "קונפיגורציה סטטית במגרש"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:49
+msgid "OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk"
+msgstr "OpenMesh radio - כתובת ``10.TE.AM.1`` סטטית נקבעת על ידי ה-Kiosk"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:61
+msgid "In the Pits"
+msgstr "בפיטים"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:66
+msgid "In the Pits DHCP Configuration"
+msgstr "קונפיגורצית DHCP בפיטים"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:68
+msgid "OpenMesh radio - Static ``10.TE.AM.1`` programmed by Kiosk."
+msgstr "OpenMesh radio - כתובת ``10.TE.AM.1`` סטטית נקבעת על ידי ה-Kiosk"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:69
+msgid "roboRIO - ``10.TE.AM.2``, assigned by Robot Radio"
+msgstr "roboRIO - ``10.TE.AM.2``, מוקצה על ידי ה-Robot Radio"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:70
+msgid ""
+"Driver Station - DHCP (\"Obtain an IP address automatically\"), "
+"``10.TE.AM.X``, assigned by Robot Radio"
+msgstr ""
+"Driver Station - DHCP (\"משיג כתובת IP באופן אוטומטי\"), ``10.TE.AM.X``, "
+"מוקצה על ידי ה-Robot Radio"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:72
+msgid "IP camera (if used) - DHCP, ``10.TE.AM.Y``, assigned by Robot Radio"
+msgstr ""
+"מצלמת IP (אם בשימוש) - DHCP, ``10.TE.AM.Y``, מוקצה על ידי ה-Robot Radio"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:73
+msgid ""
+"Other devices (if used) - DHCP, ``10.TE.AM.Z``, assigned by Robot Radio"
+msgstr ""
+"מכשירים אחרים (אם בשימוש) - DHCP, ``10.TE.AM.Z``, מוקצה על ידי ה-Robot Radio"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:76
+msgid "In the Pits Static Configuration"
+msgstr "קונפיגורציה סטטית בפיטים"
+
+#: ../../frc-docs/source/docs/networking/networking-introduction/ip-configurations.rst:78
+msgid ""
+"It is also possible to configure static IPs on your devices to accommodate "
+"devices or software which do not support mDNS. When doing so you want to "
+"make sure to avoid addresses that will be in use when the robot is on the "
+"field network. These addresses are ``10.TE.AM.1`` for the OpenMesh radio and"
+" ``10.TE.AM.4`` for the field router."
+msgstr ""
+"כמו כן, ניתן גם להגדיר כתובות IP סטטיות בהתאמה למכשירים שלכם כדי להתאים "
+"למכשירים או לתוכנות שאינן תומכות ב-mDNS. כאשר אתם עושים זאת, עליכם למנוע "
+"כתובות שיהיו בשימוש כאשר הרובוט נמצא ברשת השדה. כתובות אלו הן ``10.TE.AM.1``"
+" עבור ה-OpenMesh radio ו-``10.TE.AM.4`` עבור ראוטר המגרש."

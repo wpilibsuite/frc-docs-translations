@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-08 04:04+0000\n"
+"POT-Creation-Date: 2024-01-12 04:04+0000\n"
 "PO-Revision-Date: 2023-12-29 04:05+0000\n"
 "Last-Translator: Marc Lalonde, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -21,3 +21,88 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:2
+msgid "Using Compiler Arguments"
+msgstr "Utiliser des arguments de compilation"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:4
+msgid ""
+"Compiler arguments allow us to change the behavior of our compiler. This "
+"includes making warnings into errors, ignoring certain warnings and choosing"
+" optimization level. When compiling code a variety of flags are already "
+"included by default which can be found `here "
+"<https://github.com/wpilibsuite/native-"
+"utils/blob/main/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L37>__`."
+" Normally it could be proposed that the solution is to pass them in as flags"
+" when compiling our code but this doesn't work in GradleRIO. Instead modify "
+"the build.gradle."
+msgstr ""
+"Les arguments du compilateur nous permettent de modifier le comportement de "
+"notre compilateur. Cela inclut transformer des avertissements en erreurs, "
+"ignorer certains avertissements et choisir le niveau d'optimisation. Lors de"
+" la compilation du code, une variété de drapeaux sont déjà inclus par "
+"défaut, que l'on peut trouver `ici <https://github.com/wpilibsuite/native-"
+"utils/blob/main/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L37>__`."
+" Normalement, on pourrait proposer de les passer en tant qu'options (flags) "
+"lors de la compilation de notre code, mais cela ne fonctionne pas dans "
+"GradleRIO. Au lieu de cela, modifiez le build.gradle."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:6
+msgid "Modifying arguments is dangerous and can cause unexpected behavior."
+msgstr ""
+"Modifier les arguments est dangereux et peut causer un comportement "
+"inattendu."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:9
+msgid "C++"
+msgstr "C++"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:12
+msgid "Platforms"
+msgstr "Plateformes"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:14
+msgid ""
+"Different compilers and different platforms use a variety of different "
+"flags. Therefore to avoid breaking different platforms with compiler flags "
+"configure all flags per platform. The platforms that are supported are "
+"listed `here <https://github.com/wpilibsuite/native-"
+"utils/blob/main/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L96>__`"
+msgstr ""
+"Différents compilateurs et différentes plateformes utilisent une variété "
+"d'options (flags) différentes. Par conséquent, afin d'éviter de perturber "
+"différentes plateformes avec des options de compilateur, configurez toutes "
+"les options par plateforme. Les plateformes prises en charge sont "
+"répertoriées `ici <https://github.com/wpilibsuite/native-"
+"utils/blob/main/src/main/java/edu/wpi/first/nativeutils/WPINativeUtilsExtension.java#L96>__`."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:17
+msgid "Configuring for a Platform"
+msgstr "Configuration pour une plateforme"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:25
+msgid ""
+"native-utils is used to configure the platform, in this case, "
+"`windowsx86-64`. This can be replaced for any platform listed in the "
+"previous section. Then arguments, such as `/utf-8` is appended to the C++ "
+"compiler."
+msgstr ""
+"native-utils est utilisé pour configurer la plateforme, dans ce cas, "
+"`windowsx86-64`. Cela peut être remplacé par n'importe quelle plateforme "
+"répertoriée dans la section précédente. Ensuite, des arguments, tels que "
+"`/utf-8`, sont ajoutés au compilateur C++."
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:28
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/advanced-gradlerio/compiler-args.rst:30
+msgid ""
+"Arguments can also be configured for Java. This can be accomplished by "
+"editing `build.gradle` and appending arguments to the `FRCJavaArtifact`. An "
+"example of this is shown below."
+msgstr ""
+"Les arguments peuvent également être configurés pour Java. Cela peut être "
+"accompli en modifiant `build.gradle` et en ajoutant des arguments à "
+"`FRCJavaArtifact`. Un exemple est présenté ci-dessous."

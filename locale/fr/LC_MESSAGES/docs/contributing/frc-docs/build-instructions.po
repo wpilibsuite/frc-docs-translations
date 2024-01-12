@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-10 04:04+0000\n"
+"POT-Creation-Date: 2024-01-12 04:04+0000\n"
 "PO-Revision-Date: 2020-05-10 22:34+0000\n"
 "Last-Translator: Marc Lalonde, 2023\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -55,6 +55,33 @@ msgstr ""
 "bibliothèque frc-docs est dupliquée en utilisant ``git clone "
 "https://github.com/wpilibsuite/frc-docs.git``."
 
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:12
+msgid "Text Editors / IDE"
+msgstr "Éditeurs de texte / IDE"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:14
+msgid ""
+"For development, we recommend that you use VS Code along with the "
+"`reStructuredText extension "
+"<https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_."
+" However, any text editor will work."
+msgstr ""
+"Pour le développement, nous recommandons l’utilisation de VS Code avec "
+"l’extension `reStructuredText "
+"<https://marketplace.visualstudio.com/items?itemName=lextudio.restructuredtext>`_."
+" Cela dit, n’importe quel éditeur de texte peut être utilisé."
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:16
+msgid ""
+"By default, the reStructuredText extension enables linting with all doc8 "
+"features enabled. As frc-docs does not follow the line length lint, add the "
+"following to your VS Code ``settings.json`` to disable line length linting."
+msgstr ""
+"Par défaut, l'extension reStructuredText active la vérification lint avec "
+"toutes les fonctionnalités doc8 activées. Comme frc-docs ne suit pas la "
+"vérification lint de longueur de ligne, ajoutez ce qui suit à votre code VS "
+"``settings.json`` pour désactiver la vérification de la longueur de ligne."
+
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:25
 msgid "Windows"
 msgstr "Windows"
@@ -67,11 +94,27 @@ msgstr ""
 "MikTeX et ``rsvg-convert`` ne sont pas requis pour la construction HTML, ils"
 " ne sont requis que pour les constructions Windows PDF."
 
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:29
+msgid "`Python 3.9 <https://www.python.org/downloads/>`__"
+msgstr "`Python 3.9 <https://www.python.org/downloads/>`__"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:30
+msgid "`Perl <https://strawberryperl.com/>`__"
+msgstr "`Perl <https://strawberryperl.com/>`__"
+
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:31
 msgid "`MiKTeX <https://miktex.org/download>`__ (Only needed for PDF builds)"
 msgstr ""
 "`MiKTeX <https://miktex.org/download>`__ (Seulement requis pour les "
 "constructions PDF)"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:32
+msgid ""
+"`rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__ "
+"(Only needed for PDF builds)"
+msgstr ""
+"`rsvg-convert <https://community.chocolatey.org/packages/rsvg-convert>`__ "
+"(seulement requis pour la création de fichiers pdf)"
 
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:34
 msgid ""
@@ -94,6 +137,16 @@ msgstr ""
 "Une fois Python installée, ouvrez Powershell, puis localisez le répertoire "
 "frc-docs. Exécutez la commande suivante: ``pip install -r "
 "source/requirements.txt``"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:41
+msgid ""
+"Install the missing MikTex packages by navigating to the frc-docs directory,"
+" then running the following command from Powershell: ``miktex --verbose "
+"packages require --package-id-file miktex-packages.txt``"
+msgstr ""
+"Installez les modules MikTex manquants en accédant au répertoire frc-docs, "
+"puis en exécutant la commande suivante dans Powershell : ``miktex --verbose "
+"packages require --package-id-file miktex-packages.txt``"
 
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:44
 msgid "Linux (Ubuntu)"
@@ -151,6 +204,18 @@ msgstr ""
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:87
 msgid "Image Size Check"
 msgstr "Vérificateur de taille des images"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:89
+msgid ""
+"Please run ``.\\make sizecheck`` to verify that all images are below 500KB. "
+"This check **will** fail CI if it fails. Exclusions are allowed on a case by"
+" case basis and are added to the ``IMAGE_SIZE_EXCLUSIONS`` list in the "
+"configuration file."
+msgstr ""
+"Exécutez ``.\\make sizecheck`` pour vérifier que toutes les images font "
+"moins de 500ko. Les excès feront *échouer* l'intégration continue. Des "
+"exceptions seront permises au cas par cas et elles seront ajoutées à la "
+"liste ``IMAGE_SIZE_EXCLUSIONS`` du fichier de configuration."
 
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:92
 msgid "Redirect Check"
@@ -278,14 +343,46 @@ msgstr ""
 msgid "Installing Poetry"
 msgstr "Installation de Poetry"
 
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:131
+msgid ""
+"Ensure that Poetry is installed. Run the following command: ``pip install "
+"poetry``."
+msgstr ""
+"Assurez-vous que Poetry est installé. Exécutez la commande suivante: `` pip "
+"install poetry``"
+
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:134
 msgid "Adding a Dependency"
 msgstr "Ajouter une dépendance"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:136
+msgid ""
+"Add the dependency to the ``[tool.poetry.dependencies]`` section of "
+"``pyproject.toml``. Make sure to specify an exact version. Then, run the "
+"following command: ``poetry lock --no-update``."
+msgstr ""
+"Ajoutez la dépendance à la section ``[tool.poetry.dependencies]`` de "
+"``pyproject.toml``. Assurez-vous de spécifier une version exacte. Ensuite, "
+"exécutez la commande suivante: ``poetry lock --no-update``"
 
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:139
 msgid "Updating a Top-Level Dependency"
 msgstr "Mise à jour d'une dépendance de niveau supérieur"
 
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:141
+msgid ""
+"Update the dependency's version in the ``[tool.poetry.dependencies]`` "
+"section of ``pyproject.toml``. Then, run the following command: ``poetry "
+"lock --no-update``."
+msgstr ""
+"Mettez à jour la version de la dépendance dans la section "
+"``[tool.poetry.dependencies]`` de ``pyproject.toml``. Ensuite, exécutez la "
+"commande suivante: ``poetry lock --no-update``"
+
 #: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:144
 msgid "Updating Hidden Dependencies"
 msgstr "Mise à jour des dépendances masquées"
+
+#: ../../frc-docs/source/docs/contributing/frc-docs/build-instructions.rst:146
+msgid "Run the following command: ``poetry lock``."
+msgstr "Exécutez la commande suivante: ``poetry lock``"

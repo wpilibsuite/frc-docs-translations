@@ -14,7 +14,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-16 16:03+0000\n"
+"POT-Creation-Date: 2024-01-17 04:04+0000\n"
 "PO-Revision-Date: 2024-01-08 16:05+0000\n"
 "Last-Translator: Martin Rioux <martin.rioux2@gmail.com>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -28,6 +28,355 @@ msgstr ""
 msgid "Python Installation Guide"
 msgstr "Guide d'installation de Python"
 
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:4
+msgid ""
+"This guide is intended for Python teams. Java and C++ teams can skip to "
+":doc:`wpilib-setup`. LabVIEW teams can skip to :doc:`labview-setup`."
+msgstr ""
+"Ce guide est pour les équipes qui utilisent Python. Pour Java et C++ , allez"
+" vers :doc:`wpilib-setup`. Pour LabVIEW allez vers :doc:`labview-setup`."
+
 #: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:7
 msgid "Prerequisites"
 msgstr "Pré-requis"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:9
+msgid ""
+"You must install a supported version of Python on a supported operating "
+"system. We currently support Python 3.8/3.9/3.10/3.11/3.12, but only 3.12 is"
+" available for the roboRIO."
+msgstr ""
+"Vous devez installer une version de Python supportée par votre système "
+"d'exploitation. Présentement, Python 3.8/3.9/3.10/3.11/3.12 sont supportés, "
+"mais seul Python 3.12 est disponible pour le roboRIO."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:14
+msgid "Supported Operating Systems and Architectures:"
+msgstr "Système d'exploitation et Architectures supportés:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:12
+msgid "Windows 10 & 11, 64 bit only. 32 bit and Arm are not supported"
+msgstr ""
+"Windows 10 & 11, 64 bits seulement. Les versions 32 bits et Arm ne sont pas "
+"prises en charge"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:13
+msgid "macOS 12 or higher"
+msgstr "macOS 12 ou version ultérieure"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:14
+msgid ""
+"Ubuntu 22.04, 64 bit. Other Linux distributions with glibc >= 2.35 may work,"
+" but are unsupported"
+msgstr ""
+"Ubuntu 22.04, 64 bits. D'autres distributions Linux avec glibc >= 2.35 "
+"peuvent fonctionner, mais ne sont pas supportées"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:16
+msgid ""
+"On Windows and macOS, we recommend using the official Python installers "
+"distributed by python.org."
+msgstr ""
+"Sur Windows et macOS, nous vous recommandons d'utiliser les installateurs "
+"officiels de Python distribués par python.org."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:18
+msgid "`Python for Windows <https://www.python.org/downloads/windows/>`_"
+msgstr "`Python pour Windows <https://www.python.org/downloads/windows/>`_"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:19
+msgid "`Python for macOS <https://www.python.org/downloads/mac-osx/>`_"
+msgstr "`Python pour macOS <https://www.python.org/downloads/mac-osx/>`_"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:22
+msgid "Install RobotPy"
+msgstr "Installation de RobotPy"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:24
+msgid ""
+"Once you have installed Python, you can use pip to install RobotPy on your "
+"development computer."
+msgstr ""
+"Une fois que vous avez installé Python, vous pouvez utiliser pip pour "
+"installer RobotPy sur votre ordinateur de développement."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:0
+msgid "Windows"
+msgstr "Pour Windows"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:31
+msgid ""
+"If you previously installed a pre-2024 or 2024 beta version of RobotPy, you "
+"should first uninstall RobotPy via ``py -m pip uninstall robotpy`` before "
+"upgrading."
+msgstr ""
+"Si vous avez précédemment installé une version de RobotPy antérieure à 2024 "
+"ou une version bêta 2024, vous devez d'abord désinstaller RobotPy via ``py "
+"-m pip uninstall robotpy`` avant la mise à niveau."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:33
+msgid ""
+"On Windows, the `Visual Studio 2019 redistributable <https:// "
+"support.microsoft.com/en-us/help/2977003/       the-latest-supported-visual-"
+"c-downloads>`_ package is required to be installed."
+msgstr ""
+"Sur Windows, le package `Visual Studio 2019 redistributable "
+"<https://support.microsoft.com/en-us/help/2977003/the-latest-supported-"
+"visual-c-downloads>`_ doit être installé."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:35
+msgid ""
+"Run the following command from cmd or Powershell to install the core RobotPy"
+" packages:"
+msgstr ""
+"Exécutez la commande suivante depuis cmd ou Powershell pour installer les "
+"packages de base de RobotPy:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:41
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:64
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:95
+msgid "To upgrade, you can run this:"
+msgstr "Pour effectuer une mise à niveau, vous pouvez exécuter ceci:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:47
+msgid ""
+"If you don't have administrative rights on your computer, either use "
+"`virtualenv/virtualenvwrapper-win <https://docs.python-"
+"guide.org/en/latest/dev/virtualenvs/>`_, or or you can install to the user "
+"site-packages directory:"
+msgstr ""
+"Si vous n'avez pas de droits administratifs sur votre ordinateur, utilisez "
+"soit `virtualenv/virtualenvwrapper-win <https://docs.python-"
+"guide.org/en/latest/dev/virtualenvs/>`_, ou vous pouvez réaliser "
+"l'installation dans le répertoire des packages utilisateur:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:0
+msgid "macOS"
+msgstr "Pour macOS"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:56
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:79
+msgid ""
+"If you previously installed a pre-2024 or 2024 beta version of RobotPy, you "
+"should first uninstall RobotPy via ``python3 -m pip uninstall robotpy`` "
+"before upgrading."
+msgstr ""
+"Si vous avez précédemment installé une version de RobotPy antérieure à 2024 "
+"ou une version bêta 2024, vous devez d'abord désinstaller robotpy via "
+"``python3 -m pip uninstall robotpy`` avant la mise à niveau."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:58
+msgid ""
+"On a macOS system that has pip installed, just run the following command "
+"from the Terminal application (may require admin rights):"
+msgstr ""
+"Sur un système macOS avec pip installé, exécutez simplement la commande "
+"suivante depuis l'application Terminal (peut nécessiter des droits "
+"d'administrateur):"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:70
+msgid ""
+"If you don't have administrative rights on your computer, either use "
+"`virtualenv/virtualenvwrapper <http://docs.python-"
+"guide.org/en/latest/dev/virtualenvs/>`_, or you can install to the user "
+"site-packages directory:"
+msgstr ""
+"Si vous n'avez pas de droits administratifs sur votre ordinateur, utilisez "
+"soit `virtualenv/virtualenvwrapper <http://docs.python-"
+"guide.org/en/latest/dev/virtualenvs/>`_, ou vous pouvez réaliser "
+"l'installation dans le répertoire des packages utilisateur:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:0
+msgid "Linux"
+msgstr "Pour Linux"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:81
+msgid ""
+"RobotPy distributes manylinux binary wheels on PyPI. However, installing "
+"these requires a distro that has glibc 2.35 or newer, and an installer that "
+"implements :pep:`600`, such as pip 20.3 or newer. You can check your version"
+" of pip with the following command:"
+msgstr ""
+"RobotPy distribue des `wheels` binaires `manylinux` sur PyPI. Cependant, "
+"l'installation de celles-ci nécessite une distribution avec glibc 2.35 ou "
+"plus récente, et un installateur qui implémente :pep:`600`, tel que pip 20.3"
+" ou plus récent. Vous pouvez vérifier votre version de pip avec la commande "
+"suivante:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:87
+msgid ""
+"If you need to upgrade your version of pip, it is highly recommended to use "
+"a `virtual environment <https://packaging.python.org/guides/installing-"
+"using-pip-and-virtual-environments/>`_."
+msgstr ""
+"Si vous avez besoin de mettre à niveau votre version de pip, il est "
+"fortement recommandé d'utiliser un `environnement virtuel "
+"<https://packaging.python.org/guides/installing-using-pip-and-virtual-"
+"environments/>`_."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:89
+msgid "If you have a compatible version of pip, you can simply run:"
+msgstr ""
+"Si vous avez une version compatible de pip, vous pouvez simplement exécuter:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:101
+msgid ""
+"If you manage to install the packages and get the following error or "
+"something similar, your system is most likely not compatible with RobotPy::"
+msgstr ""
+"Si vous parvenez à installer les packages et obtenez l'erreur suivante ou "
+"quelque chose de similaire, votre système n'est probablement pas compatible "
+"avec RobotPy:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:0
+msgid "Linux ARM Coprocessor"
+msgstr "Linux sur coprocesseur ARM "
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:108
+msgid ""
+"We publish prebuilt wheels on artifactory, which can be downloaded by giving"
+" the ``--extra-index-url`` option to pip:"
+msgstr ""
+"Nous publions des `wheels` préconstruites sur artifactory, qui peuvent être "
+"téléchargées en donnant l'option ``--extra-index-url`` à pip:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:114
+msgid "**source install**"
+msgstr "**Installation à partir des sources**"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:116
+msgid ""
+"Alternatively, if you have a C++20 compiler installed, you may be able to "
+"use pip to install RobotPy from source."
+msgstr ""
+" Alternativement, si vous avez un compilateur C++20 installé, il est peut-"
+"être possible d'utiliser pip pour installer RobotPy à partir des sources."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:118
+msgid "It may take a very long time to install!"
+msgstr "Cela peut prendre beaucoup de temps à installer!"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:120
+msgid ""
+"Mixing our pre-built wheels with source installs may cause runtime errors. "
+"This is due to internal ABI incompatibility between compiler versions."
+msgstr ""
+"Mélanger nos `wheels` préconstruits avec des installations à partir de la "
+"source peut provoquer des erreurs d'exécution. Cela est dû à une "
+"incompatibilité interne de l'ABI entre les versions de compilateurs."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:122
+msgid "Our ARM wheels are built for Debian 11 with GCC 10."
+msgstr "Nos `wheels` ARM sont construites pour Debian 11 avec GCC 10."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:124
+msgid ""
+"If you need to build with a specific compiler version, you can specify them "
+"using the :envvar:`CC` and :envvar:`CXX` environment variables:"
+msgstr ""
+"Si vous avez besoin de compiler avec une version spécifique du compilateur, "
+"vous pouvez le spécifier en utilisant les variables d'environnement "
+":envvar:`CC` et :envvar:`CXX`:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:131
+msgid "Download RobotPy for roboRIO"
+msgstr "Télécharger RobotPy pour le roboRIO"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:133
+msgid ""
+"After installing the ``robotpy`` project on your computer, there are a "
+"variety of commands available that can be ran from the command line via the "
+"``robotpy`` module."
+msgstr ""
+"Après avoir installé le projet ``robotpy`` sur votre ordinateur, diverses "
+"commandes sont disponibles et peuvent être exécutées par invite de commande "
+"via le module ``robotpy``."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:135
+msgid ""
+":doc:`Documentation for robotpy subcommands "
+"</docs/software/python/subcommands/index>`"
+msgstr ""
+":doc:`Documentation pour les sous-commandes de robotpy "
+"</docs/software/python/subcommands/index>`"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:137
+msgid ""
+"If you already have a RobotPy robot project, you can use that to download "
+"the pieces needed to run on the roboRIO. If you don't have a project, "
+"running this command in an empty directory will initialize a new robot "
+"project:"
+msgstr ""
+"Si vous avez déjà un projet de robot utilisant RobotPy, vous pouvez utiliser"
+" celui-ci pour télécharger les éléments nécessaires à l'exécution de ce "
+"dernier sur le roboRIO. Si vous n'avez pas de projet, l'exécution de cette "
+"commande dans un répertoire vide initialisera un nouveau projet de robot:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:162
+msgid ""
+"This will create a ``robot.py`` and ``pyproject.toml`` file. The "
+"``pyproject.toml`` file should be customized and details the requirements "
+"needed to run your robot code, among other things."
+msgstr ""
+"Cela créera un fichier ``robot.py`` et ``pyproject.toml``. Le fichier "
+"``pyproject.toml`` doit être personnalisé et détaille les exigences "
+"nécessaires à l'exécution de votre code de robot, entre autres choses."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:164
+msgid ""
+"The default ``pyproject.toml`` created for you only contains the version of "
+"RobotPy installed on your computer. If you want to enable vendor packages or"
+" install other python packages from PyPI, see our :doc:`pyproject.toml "
+"documentation </docs/software/python/pyproject_toml>`"
+msgstr ""
+"Le fichier ``pyproject.toml`` créé par défaut ne contient que la version de "
+"RobotPy installée sur votre ordinateur. Si vous souhaitez activer les "
+"packages vendeurs ou installer d'autres packages Python depuis PyPI, "
+"consultez notre :doc:`documentation pyproject.toml "
+"</docs/software/python/pyproject_toml>`"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:166
+msgid "Next run the ``robotpy sync`` subcommand, which will:"
+msgstr "Ensuite, exécutez la sous-commande ``robotpy sync``, qui:"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:168
+msgid "Download Python compiled for roboRIO"
+msgstr "Télécharge Python compilé pour le roboRIO"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:169
+msgid ""
+"Download roboRIO compatible python packages as specified by your "
+"``pyproject.toml``"
+msgstr ""
+"Télécharge les packages Python compatibles au roboRIO comme spécifié dans "
+"votre fichier ``pyproject.toml``"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:170
+msgid ""
+"Install the packages specified by your ``pyproject.toml`` into your local "
+"environment"
+msgstr ""
+"Installe les packages spécifiés dans votre ``pyproject.toml`` dans votre "
+"environnement local"
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:172
+msgid ""
+"If you aren't using a virtualenv and don't have administrative privileges, "
+"the ``robotpy sync`` command accepts a ``--user`` argument to install to the"
+" user-specific site-packages directory."
+msgstr ""
+"Si vous n'utilisez pas un environnement virtuel et n'avez pas les privilèges"
+" d'administrateur, la commande ``robotpy sync`` accepte l'argument "
+"``--user`` pour installer dans le répertoire des packages utilisateur."
+
+#: ../../frc-docs/source/docs/zero-to-robot/step-2/python-setup.rst:197
+msgid ""
+"When you deploy your code to the roboRIO, :doc:`the deploy subcommand "
+"</docs/software/python/subcommands/deploy>` will automatically install "
+"Python (if needed) and your robot project requirements on the roboRIO as "
+"part of the deploy process."
+msgstr ""
+"Lorsque vous déployez votre code sur le roboRIO, la sous-commande "
+":doc:`deploy</docs/software/python/subcommands/deploy>` installera "
+"automatiquement Python (si nécessaire) et les exigences de votre projet de "
+"robot sur le roboRIO dans le cadre du processus de déploiement."

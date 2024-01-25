@@ -7,15 +7,16 @@
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Tuna Özer, 2022
 # Çağan Uslu, 2022
+# Eylul Bakkal, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-24 16:03+0000\n"
+"POT-Creation-Date: 2024-01-25 16:03+0000\n"
 "PO-Revision-Date: 2021-06-22 22:03+0000\n"
-"Last-Translator: Çağan Uslu, 2022\n"
+"Last-Translator: Eylul Bakkal, 2024\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -41,6 +42,195 @@ msgstr ""
 msgid "Creating a Romi Project"
 msgstr "Romi Projesi Oluşturmak"
 
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:11
+msgid ""
+"Creating a new program for a Romi is no different than creating a normal FRC"
+" \\|reg| program, similar to the :doc:`Zero To Robot </docs/zero-to-"
+"robot/step-4/index>` programming steps. Initially, you may wish to create a "
+"separate project for use on just the Romi as the Romi hardware may be "
+"connected to different ports than on your roboRIO robot."
+msgstr ""
+"Romi için yeni bir program oluşturmak, normal bir FRC \\|reg| programı "
+"oluşturmaktan farklı değildir, :doc:`Sıfırdan Robota</docs/zero-to-"
+"robot/step-4/index>` programlama adımlarına benzer. Başlangıçta, Romi "
+"donanımı roboRIO robotunuzdan farklı bağlantı noktalarına bağlı "
+"olabileceğinden, sadece Romi üzerinde kullanmak için ayrı bir proje "
+"oluşturmak isteyebilirsiniz."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:13
+msgid ""
+"The Romi Robot used :term:`PWM` ports 0 and 1 for left and right side "
+"respectively."
+msgstr ""
+"Romi Robot, sol ve sağ taraf için sırasıyla :term:`PWM` 0 ve 1 portlarını "
+"kullanmıştır."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:15
+msgid "Todo"
+msgstr "Yapmak"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:15
+msgid "add information on romi gyro and encoders"
+msgstr "romi gyro ve encoder'a bilgi ekle"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:18
+msgid "Installing the WebSockets VI"
+msgstr "WebSockets VI'ı indirme"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:20
+msgid ""
+"One aspect where a Romi project differs from a regular FRC \\|reg| robot "
+"project is that the code is not deployed directly to the Romi. Instead, a "
+"Romi project runs on your development computer, and leverages the WPILib "
+"simulation framework to communicate with the Romi robot. WebSockets is the "
+"protocol that LabVIEW uses to converse with the Romi."
+msgstr ""
+"Romi projesinin normal bir FRC \\|reg| robot projesinden farklı olduğu bir "
+"nokta, kodun doğrudan Romi'ye dağıtılmamasıdır. Bunun yerine, bir Romi "
+"projesi geliştirme bilgisayarınızda çalışır ve Romi robotu ile iletişim "
+"kurmak için WPILib simülasyon çerçevesinden yararlanır. WebSockets, "
+"LabVIEW'in Romi ile iletişim kurmak için kullandığı protokoldür."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:22
+msgid ""
+"Open the :guilabel:`VI Package Manager` application. Type ``websockets`` "
+"into the search box in the top right. Select the VI by :guilabel:`LabVIEW "
+"Tools Network`."
+msgstr ""
+":guilabel:`VI Package Manager` aplikasyonunu aç. Sağ üstteki arama kutusuna "
+"``websockets`` yaz. :guilabel:`LabVIEW Tools Network`ten VI'yı seç."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst-1
+msgid "Installing WebSockets via the VI Package Manager"
+msgstr "VI Package Manager kullanarak WebSocket indirmek"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:28
+msgid "Changing the Project Target"
+msgstr "Proje Hedefini Değiştirme"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:30
+msgid ""
+"The primary step needed to run your LabVIEW program on the Romi is to change"
+" the target to the Desktop. To change the project target, locate the Robot "
+"Main VI in the Project Explorer and click and drag it from the ``Target`` "
+"section to the ``My Computer`` section."
+msgstr ""
+"LabVIEW programınızı Romi üzerinde çalıştırmak için gereken birincil adım, "
+"hedefi Masaüstü olarak değiştirmektir. Proje hedefini değiştirmek için, "
+"Proje Gezgini'nde Robot Main VI'yı bulun ve tıklayıp ``Hedef`` bölümünden "
+"``Bilgisayarım`` bölümüne sürükleyin."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst-1
+msgid "An image showing moving Robot Main VI to the My Computer section"
+msgstr "Robot Main VI'yı My Computer kısmına taşımayı gösteren bir resim"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:36
+msgid "Setting the Target IP"
+msgstr "Hedeflenen IP'yi Belirlemek"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:38
+msgid ""
+"By default, your LabVIEW program will attempt to connect to a Romi with the "
+"IP address of ``10.0.0.2``. If you wish to use a different IP, you can "
+"specify it as an input to the ``Driver Station Start Communication VI`` "
+"inside ``Robot Main``. Locate the pink input terminal for ``Simulation URL``"
+" then right-click and select :guilabel:`Create Constant` to create a "
+"constant pre-filled with the default value. You can then modify the IP "
+"address portion of the text, taking care to leave the protocol section (at "
+"the beginning) and port and suffix (at the end) the same."
+msgstr ""
+"Varsayılan olarak, LabVIEW programınız ``10.0.0.2`` IP adresine sahip bir "
+"Romi'ye bağlanmaya çalışacaktır. Farklı bir IP kullanmak isterseniz, bunu "
+"``Robot Main`` içindeki ``Driver Station Start Communication VI`` için bir "
+"girdi olarak belirtebilirsiniz. ``Simulation URL`` si için pembe giriş "
+"terminalini bulun, ardından sağ tıklayın ve varsayılan değerle önceden "
+"doldurulmuş bir sabit oluşturmak için :guilabel:`Create Constant` seçeneğini"
+" seçin. Daha sonra metnin IP adresi kısmını değiştirebilir, protokol "
+"bölümünü (başlangıçta) ve port ve son eki (sonda) aynı bırakmaya dikkat "
+"edebilirsiniz."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst-1
+msgid "An image showing the constant for an alternate IP"
+msgstr "Alternatif bir IP için sabit gösteren bir resim"
+
 #: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:44
 msgid "Running a Romi Program"
 msgstr "Bir Romi Programı Çalıştırmak"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:46
+msgid ""
+"To run a Romi program, first, ensure that your Romi is powered on. Once you "
+"connect to the ``WPILibPi-<number>`` network broadcast by the Romi, press "
+"the white :guilabel:`Run` arrow to start running the Romi program on your "
+"computer."
+msgstr ""
+"Bir Romi programı çalıştırmak için ilk başta Romi'nin açık olduğuna emin "
+"olun. Romi'nin ``WPILibPi-<number>``  ağ yayınına bağlandığınızda "
+"bilgisayarınızda Romi programını çalıştırmak için beyaz :guilabel:`Çalıştır`"
+" okuna basın."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:48
+msgid ""
+"Your Romi code is now running! The program will automatically attempt to "
+"connect to either the IP you have specified, or the default if you have not "
+"specified an IP."
+msgstr ""
+"Artık Romi kodunuz çalışıyor! Program, otamatik olarak belirttiğiniz IP'ye "
+"veya bir IP belirtmediyseniz varsayılan IP'ye bağlanmayı çalışacak."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:50
+msgid ""
+"It is recommended to run the Driver Station software on the same computer as"
+" the LabVIEW code. Once your program successfully connects to the Driver "
+"Station, it will automatically notify the Driver Station that the code is "
+"running on the Desktop, allowing the Driver Station to connect without you "
+"changing any information inside the Driver Station. Next, you'll need to "
+"point the Driver Station to your Romi. This is done by setting the team "
+"number to ``127.0.0.1``. You can then use the controls in the Driver Station"
+" to set the robot mode and enable/disable as normal."
+msgstr ""
+"Driver Station yazılımının LabVIEW koduyla aynı bilgisayarda çalıştırılması "
+"önerilir. Programınız Driver Station'a başarıyla bağlandığında, Driver "
+"Station'a kodun Masaüstünde çalıştığını otomatik olarak bildirecek ve Driver"
+" Station'ın içindeki herhangi bir bilgiyi değiştirmenize gerek kalmadan "
+"Driver Station'ın bağlanmasını sağlayacaktır. Ardından, Driver Station'ı "
+"Romi'nize yönlendirmeniz gerekir. Bu, takım numarasını ``127.0.0.1`` olarak "
+"ayarlayarak yapılır. Daha sonra robot modunu ayarlamak ve normal şekilde "
+"etkinleştirmek/devre dışı bırakmak için Driver Station'daki kontrolleri "
+"kullanabilirsiniz."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:52
+msgid ""
+"If your robot code is unable to connect to the Romi, the Driver Station will"
+" also show no connectivity."
+msgstr ""
+"Robot kodunuz Romi'ye bağlanamazsa, Driver Station da bağlantı olmadığını "
+"gösterecektir."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:55
+msgid "Using the Gyro or Encoder"
+msgstr "Gyro veya Encoder'ı kullanmak"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:57
+msgid ""
+"The gyro that is available on the Romi is available using the RomiGyro "
+"functions. This is located under"
+msgstr ""
+"Romi'deki gyro, RomiGyro fonksiyonuyla kullanılabilir. Bu fonksiyon, şurada "
+"bulunabilir"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:69
+msgid ""
+"The encoders can be used using the standard encoder function. The DIO ports "
+"are:"
+msgstr ""
+"Encoder'lar standart encoder fonksiyonunuyla kullanılabilir. DIO portları da"
+" şunlardır:"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:71
+msgid "Left (4, 5)"
+msgstr "Sol(4, 5)"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi-in-labview.rst:72
+msgid "Right (6, 7)"
+msgstr "Sağ(6, 7)"

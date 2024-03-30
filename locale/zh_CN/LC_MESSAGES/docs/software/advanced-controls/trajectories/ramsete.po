@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,12 +10,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-09-21 16:04+0000\n"
+"POT-Creation-Date: 2024-03-30 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -60,11 +60,11 @@ msgid ""
 msgstr ""
 "当所有单位均以米为单位时，对b和zeta的增益分别为2.0和0.7进行了反复测试，以产生理想的结果。这样，``RamseteController''的零参数构造函数就存在，其增益默认为这些值。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:33
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:46
 msgid "Getting Adjusted Velocities"
 msgstr "调整速度"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:34
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:47
 msgid ""
 "The Ramsete controller returns \"adjusted velocities\" so that the when the "
 "robot tracks these velocities, it accurately reaches the goal point. The "
@@ -77,32 +77,17 @@ msgid ""
 msgstr ""
 "Ramsete控制器返回“已调整的速度”，以便当机器人跟踪这些速度时，它可以精确地达到目标点。应使用新目标定期更新控制器。目标包括期望的姿势，期望的线速度和期望的角速度。此外，机器人的当前位置也应定期更新。控制器使用这四个参数返回调整后的线速度和角速度。用户应命令机器人以这些线性和角速度实现最佳轨迹跟踪。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:38
-msgid ""
-"The controller can be updated using the ``Calculate`` (C++) / ``calculate`` "
-"(Java) method. There are two overloads for this method. Both of these "
-"overloads accept the current robot position as the first parameter. For the "
-"other parameters, one of these overloads takes in the goal as three separate"
-" parameters (pose, linear velocity, and angular velocity) whereas the other "
-"overload accepts a ``Trajectory.State`` object, which contains information "
-"about the goal pose. For its ease, users should use the latter method when "
-"tracking trajectories."
-msgstr ""
-"可以使用Calculate（C ++）/ "
-"calculate（Java）方法更新控制器。此方法有两个重载。这两个过载都将当前机器人位置作为第一个参数。对于其他参数，这些重载之一将目标作为三个单独的参数（姿态，线速度和角速度）接收，而另一个重载接受“"
-" Trajectory.State”对象，其中包含有关目标姿态的信息。为了简便起见，用户在跟踪轨迹时应使用后一种方法。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:53
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:71
 msgid ""
 "These calculations should be performed at every loop iteration, with an "
 "updated robot position and goal."
 msgstr "这些计算应在每次循环迭代时执行，并具有更新的机器人位置和目标"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:56
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:74
 msgid "Using the Adjusted Velocities"
 msgstr "使用调整后的速度"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:57
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:75
 msgid ""
 "The adjusted velocities are of type ``ChassisSpeeds``, which contains a "
 "``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity"
@@ -114,7 +99,7 @@ msgstr ""
 "调整后的速度为``ChassisSpeeds''类型，其中包含``vx''（向前方向的线速度），``vy''（横向方向的线速度）和``omega'' "
 "`（围绕机器人框架中心的角速度）。由于Ramsete控制器是用于非完整机器人（不能侧向移动的机器人）的控制器，因此调整后的速度对象的``vy''为零。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:59
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:77
 msgid ""
 "The returned adjusted speeds can be converted to usable speeds using the "
 "kinematics classes for your drivetrain type. For example, the adjusted "
@@ -123,6 +108,6 @@ msgid ""
 msgstr ""
 "可以使用适用于您的传动系统类型的运动学类将返回的调整速度转换为可用速度。例如，可以使用``DifferentialDriveKinematics''对象将差速器的调整速度转换为左右速度。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:79
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:104
 msgid "Ramsete in the Command-Based Framework"
 msgstr "基于命令的框架中的Ramsete"

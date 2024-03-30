@@ -6,7 +6,6 @@
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
 # Atlus Zhang <atluslan@yahoo.co.jp>, 2021
-# Yitong Zhao <lucius300er@outlook.com>, 2021
 # Team 5308 <team5308@163.com>, 2024
 # 
 #, fuzzy
@@ -14,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-26 04:04+0000\n"
+"POT-Creation-Date: 2024-03-30 04:03+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -71,27 +70,6 @@ msgid ""
 "variety of state-space systems."
 msgstr ""
 "本教程适用于没有大量编程专业知识的团队。虽然WPILib库在实现其状态空间控制功能的方式上提供了显着的灵活性，但是紧跟本教程中概述的实现方式，应该为团队提供可以在各种状态空间系统中重用的基本结构。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:16
-msgid ""
-"The full example is available in the state-space flywheel (`Java "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>`__/`C++"
-" "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__)"
-" and state-space flywheel system identification (`Java "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__/`C++"
-" "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__)"
-" example projects."
-msgstr ""
-"完整的示例在状态空间飞轮（Java "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheel/Robot.java>"
-" __ /`C ++ "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheel/cpp/Robot.cpp>`__）和状态空间飞轮系统标识（Java"
-" Java "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespaceflywheelsysid/Robot.java>`__"
-" /`C ++ "
-"<https://github.com/wpilibsuite/allwpilib/blob/main/wpilibcExamples/src/main/cpp/examples/StateSpaceFlywheelSysId/cpp/Robot.cpp>`__）中可用。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:19
 msgid "Why Use State-Space Control?"
@@ -263,18 +241,18 @@ msgstr ""
 "“线性系统”类包含容易创建使用 :term:`system identification`的状态空间系统的方法。这个例子展示了一个kV为0.023 "
 "kA为0.001的飞轮模型:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:96
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:110
 msgid "Modeling Using Flywheel Moment of Inertia and Gearing"
 msgstr "利用飞轮的惯性矩和齿轮传动进行建模"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:102
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:116
 msgid ""
 "For WPILib's state-space classes, gearing is written as output over input --"
 " that is, if the flywheel spins slower than the motors, this number should "
 "be greater than one."
 msgstr "对于WPILib的状态空间类，齿轮传动被写为输入的输出-也就是说，如果飞轮的旋转速度慢于电动机的旋转速度，则该数字应大于1。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:104
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:118
 msgid ""
 "The C++ LinearSystem class uses :ref:`the C++ Units Library "
 "<docs/software/basic-programming/cpp-units:The C++ Units Library>` to "
@@ -283,11 +261,11 @@ msgstr ""
 "线性系统类使用 :ref:`the C++ Units Library <docs/software/basic-programming/cpp-"
 "units:The C++ Units Library>`来防止单元混淆和断言维数。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:133
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:162
 msgid "Kalman Filters: Observing Flywheel State"
 msgstr "卡尔曼滤波器:观察飞轮状态"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:135
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:164
 msgid ""
 "Kalman filters are used to filter our velocity measurements using our state-"
 "space model to generate a state estimate :math:`\\mathbf{\\hat{x}}`. As our "
@@ -301,7 +279,7 @@ msgid ""
 msgstr ""
 "卡尔曼滤波器用于过滤我们的速度测量使用我们的状态空间模型，以产生一个状态估计:math:`\\mathbf{\\hat{x}}`。由于我们的飞轮模型是线性的，我们可以使用卡尔曼滤波估计飞轮的速度。WPILib的卡尔曼滤波器采用线性系统(我们在上面发现的)，以及模型和传感器测量值的标准差。我们可以通过调整这些权重来调整我们的状态估计的“平滑度”。较大的状态标准差会导致过滤器“不信任”我们的状态估计值，更倾向于新的测量值，而较大的测量标准差则相反。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:137
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:166
 msgid ""
 "In the case of a flywheel we start with a state standard deviation of 3 "
 "rad/s and a measurement standard deviation of 0.01 rad/s. These values are "
@@ -315,7 +293,7 @@ msgstr ""
 "对于飞轮，我们的状态标准偏差为3 rad/s，测量标准偏差为0.01 "
 "rad/s。这些值由用户来选择——这些权重产生了一个过滤器，它可以容忍一些噪音，但是它的状态估计可以快速地对*a*飞轮的外部干扰做出反应——应该进行调整，以创建一个适合特定飞轮的过滤器。将状态、测量值、输入、引用和输出随时间变化的图形化是调整卡尔曼滤波器的一种很好的可视化方法。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:142
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:171
 msgid ""
 "The above graph shows two differently tuned Kalman filters, as well as a "
 ":ref:`single-pole IIR filter <docs/software/advanced-"
@@ -332,7 +310,7 @@ msgstr ""
 "一个:ref:`docs/software/advanced-controls/filters/median-filter:Median "
 "Filter`。用射手在约5秒钟内收集了此数据，并且有四个球穿过射手（从四个速度下降中可以看出）。尽管没有关于选择良好状态和测量标准偏差的硬性规则，但通常应该对其进行调整以使模型具有足够的信任度，从而在对外部干扰做出快速反应的同时抑制噪声。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:144
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:173
 msgid ""
 "Because the feedback controller computes error using the :term:`x-hat` "
 "estimated by the Kalman filter, the controller will react to disturbances "
@@ -345,7 +323,7 @@ msgstr ""
 "由于反馈控制器使用卡尔曼滤波器估计的 :term:`x-hat` "
 "来计算误差，因此控制器只会对滤波器的状态估计值变化迅速做出反应。在上图中，橙色曲线（状态标准偏差为3.0，测量标准偏差为0.2）产生了一个过滤器，该过滤器对干扰快速反应，同时抑制了噪声，而品红色过滤器几乎不受速度下降的影响。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:172
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:210
 msgid ""
 "Because Kalman filters use our state-space model in the "
 ":ref:`docs/software/advanced-controls/state-space/state-space-"
@@ -360,19 +338,19 @@ msgstr ""
 "observers:Predict "
 "step`步骤中使用我们的状态空间模型，因此我们的模型尽可能准确是很重要的。验证这一点的一种方法是记录飞轮随时间变化的输入电压和速度，然后通过仅调用Kalman滤波器上的预测来重放此数据。然后，可以调节kV和kA增益（或惯性矩和其他常数），直到模型与记录的数据紧密匹配为止。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:174
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:212
 msgid "Todo"
 msgstr "要做的事"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:174
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:212
 msgid "do we need to elaborate on this^ more?"
 msgstr "我们还需要详细说明吗？"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:177
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:215
 msgid "Linear-Quadratic Regulators and Plant Inversion Feedforward"
 msgstr "线性二次调节器和设备反转前馈"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:179
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:217
 msgid ""
 ":ref:`docs/software/advanced-controls/state-space/state-space-intro:The "
 "Linear-Quadratic Regulator` finds a feedback controller to drive our "
@@ -394,7 +372,7 @@ msgstr ""
 " :ref:`LQR application example <docs/software/advanced-controls/state-"
 "space/state-space-intro:LQR: example application>`.中找到。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:181
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:219
 msgid ""
 "Much like ``SimpleMotorFeedforward`` can be used to generate feedforward "
 "voltage inputs given kS, kV, and kA constants, the Plant Inversion "
@@ -409,11 +387,11 @@ msgstr ""
 "Feedforward>` 电压输入，而在状态空间系统下，Plant "
 "Inversion前馈类可以生成前馈电压输入。由LinearSystemLoop类生成的电压命令是前馈和反馈输入的总和。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:210
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:257
 msgid "Bringing it All Together: LinearSystemLoop"
 msgstr "整合在一起：LinearSystemLoop"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:212
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:259
 msgid ""
 "LinearSystemLoop combines our system, controller, and observer that we "
 "created earlier. The constructor shown will also instantiate a "
@@ -421,7 +399,7 @@ msgid ""
 msgstr ""
 "LinearSystemLoop结合了我们先前创建的系统，控制器和观察器。所示的构造函数还将实例化``PlantInversionFeedforward''。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:240
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-flywheel-walkthrough.rst:296
 msgid ""
 "Once we have our ``LinearSystemLoop``, the only thing left to do is actually"
 " run it. To do that, we'll periodically update our Kalman filter with our "

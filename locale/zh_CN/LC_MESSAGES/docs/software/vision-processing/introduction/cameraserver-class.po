@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,12 +10,12 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-18 04:03+0000\n"
+"POT-Creation-Date: 2024-05-18 04:03+0000\n"
 "PO-Revision-Date: 2020-04-25 02:05+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/wpilib/teams/109324/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -30,19 +30,6 @@ msgstr "读取和处理视频：CameraServer类"
 msgid "Concepts"
 msgstr "概念"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:9
-msgid ""
-"The cameras typically used in FRC\\ |reg| (commodity USB and Ethernet "
-"cameras such as the Axis camera) offer relatively limited modes of "
-"operation. In general, they provide only a single image output (typically in"
-" an RGB compressed format such as JPG) at a single resolution and frame "
-"rate. USB cameras are particularly limited as only one application may "
-"access the camera at a time."
-msgstr ""
-"FRC \\ | reg "
-"|中通常使用的摄像机（商品USB和以太网摄像机，例如Axis摄像机）提供相对有限的操作模式。通常，它们仅以单个分辨率和帧速率提供单个图像输出（通常以RGB压缩格式，例如JPG）输出。"
-" USB相机受到特别限制，因为一次只能有一个应用程序可以访问相机。"
-
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:11
 msgid ""
 "CameraServer supports multiple cameras. It handles details such as "
@@ -55,19 +42,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:14
 msgid "Camera Names"
 msgstr "相机名称"
-
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:16
-msgid ""
-"Each camera in CameraServer must be uniquely named. This is also the name "
-"that appears for the camera in the Dashboard. Some variants of the "
-"CameraServer ``startAutomaticCapture()`` and ``addAxisCamera()`` functions "
-"will automatically name the camera (e.g. \"USB Camera 0\" or \"Axis "
-"Camera\"), or you can give the camera a more descriptive name (e.g. \"Intake"
-" Cam\"). The only requirement is that each camera have a unique name."
-msgstr ""
-"CameraServer中的每个摄像机都必须唯一命名。这也是在仪表板中为相机显示的名称。 CameraServer的“ "
-"startAutomaticCapture（）”和“ addAxisCamera（）”函数的某些变体会自动命名相机（例如“ USB Camera "
-"0”或“ Axis Camera”），或者您可以为相机指定一个更具描述性的名称（例如“进气凸轮”）。唯一的要求是每个摄像机都有一个唯一的名称。"
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:19
 msgid "USB Camera Notes"
@@ -152,70 +126,54 @@ msgstr ""
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:46
 msgid ""
-"``addAxisCamera()``: Add an Axis camera. Even if you aren't processing "
-"images from the Axis camera in your robot code, you may want to use this "
-"function so that the Axis camera appears in the Dashboard's drop down list "
-"of cameras. It also starts a server so the Axis stream can still be viewed "
-"when your driver station is connected to the roboRIO via USB (useful at "
-"competition if you have both the Axis camera and roboRIO connected to the "
-"two robot radio Ethernet ports)."
-msgstr ""
-"``addAxisCamera（）``：添加一个Axis相机。即使您没有在机器人代码中处理Axis相机的图像，也可能要使用此功能，以便Axis相机出现在“仪表板”的相机下拉列表中。它还会启动服务器，以便当驱动程序站通过USB连接到roboRIO时仍可以查看Axis流（如果将Axis摄像机和roboRIO都连接到两个机器人无线电以太网端口，则在竞争中很有用）。"
-
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:47
-msgid ""
 "``getVideo()``: Get OpenCV access to a camera. This allows you to get images"
 " from the camera for image processing on the roboRIO (in your robot code)."
 msgstr ""
 "``getVideo（）``：获取对摄像机的OpenCV访问。这使您可以从相机获取图像以在roboRIO上进行图像处理（在您的机器人代码中）。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:48
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:47
 msgid ""
 "``putVideo()``: Start a server that you can feed OpenCV images to. This "
 "allows you to pass custom processed and/or annotated images to the "
 "dashboard."
 msgstr "``putVideo（）``：启动一个服务器，您可以向其中提供OpenCV图像。这使您可以将自定义处理和/或带注释的图像传递到仪表板。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:51
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:50
 msgid "cscore Library"
 msgstr "cscore库"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:53
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:52
 msgid "The cscore library provides the lower level implementation to:"
 msgstr "cscore库提供了较低级别的实现："
 
 #: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:55
-msgid "Get images from USB and HTTP (e.g. Axis) cameras"
-msgstr "从USB和HTTP（例如Axis）相机获取图像"
-
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:56
 msgid "Change camera settings (e.g. contrast and brightness)"
 msgstr "更改相机设置（例如对比度和亮度）"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:57
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:56
 msgid "Change camera video modes (pixel format, resolution and frame rate)"
 msgstr "更改相机视频模式（像素格式，分辨率和帧频）"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:58
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:57
 msgid "Act as a web server and serve images as a standard MJPEG stream"
 msgstr "充当Web服务器并将图像作为标准MJPEG流提供"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:59
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:58
 msgid "Convert images to/from OpenCV ``Mat`` objects for image processing"
 msgstr "将图像与OpenCV``Mat''对象之间来回转换以进行图像处理"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:62
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:61
 msgid "Sources and Sinks"
 msgstr "来源和接收"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:64
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:63
 msgid ""
 "The basic architecture of the cscore library is similar to that of "
 "MJPGStreamer, with functionality split between sources and sinks. There can "
 "be multiple sources and multiple sinks created and operating simultaneously."
 msgstr "cscore库的基本体系结构与MJPGStreamer相似，功能在源和接收器之间分配。可以创建多个源并同时创建多个接收器。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:66
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:65
 msgid ""
 "An object that generates images is a source and an object that "
 "accepts/consumes images is a sink. The generate/consume is from the "
@@ -230,7 +188,7 @@ msgstr ""
 "生成图像的对象是源，接受/使用图像的对象是接收器。生成/使用是从库的角度进行的。因此，相机是来源（它们生成图像）。 MJPEG "
 "Web服务器是一个接收器，因为它接受程序中的图像（即使它可能会将这些图像转发到Web浏览器或仪表板上）。源可以连接到多个接收器，但是接收器可以连接到一个且仅一个源。当接收器连接到源时，cscore库会负责将每个映像从源传递到接收器。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:68
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:67
 msgid ""
 "**Sources** obtain individual frames (such as provided by a USB camera) and "
 "fire an event when a new frame is available. If no sinks are listening to a "
@@ -242,7 +200,7 @@ msgstr ""
 "**来源**获取单独的帧（例如USB摄像头提供的帧），并在有新帧可用时触发事件。如果没有接收器正在监听特定的源，则该库可能会暂停或与源断开连接，以节省处理器和I"
 " / O资源。该库可通过简单地暂停和恢复事件的触发来自动处理摄像机的断开/重新连接（例如，断开连接不会导致出现新的帧，不会出现错误）。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:69
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:68
 msgid ""
 "**Sinks** listen to a particular source's event, grab the latest image, and "
 "forward it to its destination in the appropriate format. Similarly to "
@@ -252,7 +210,7 @@ msgid ""
 msgstr ""
 "接收者监听特定来源的事件，获取最新图像，并以适当的格式将其转发到目的地。与源相似，如果特定接收器处于非活动状态（例如，没有客户端通过HTTP服务器连接到已配置的MJPEG），则该库可能会禁用其部分处理以节省处理器资源。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:71
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:70
 msgid ""
 "User code (such as that used in a FRC robot program) can act as either a "
 "source (providing processed frames as if it were a camera) or as a sink "
@@ -262,7 +220,7 @@ msgid ""
 msgstr ""
 "用户代码（例如FRC机器人程序中使用的代码）可以通过OpenCV源对象和接收器对象充当源（提供处理过的帧，就好像它是照相机一样），也可以充当接收器（接收要处理的帧）。因此，从相机获取图像并将处理后的图像输出的图像处理线程如下图所示："
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:76
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:75
 msgid ""
 "Because sources can have multiple sinks connected, the pipeline may branch. "
 "For example, the original camera image can also be served by connecting the "
@@ -271,17 +229,17 @@ msgid ""
 msgstr ""
 "因为源可以连接多个接收器，所以线程可以分支。例如，还可以通过将UsbCamera源连接到CvSink之外的第二个MjpegServer接收器来提供原始摄像机图像，如下图所示："
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:81
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:80
 msgid ""
 "When a new image is captured by the camera, both the CvSink and the "
 "MjpegServer [1] receive it."
 msgstr "当摄像机捕获到新图像时，CvSink和MjpegServer [1]都会接收到它。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:83
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:82
 msgid "The above graph is what the following CameraServer snippet creates:"
 msgstr "上图是以下CameraServer片段创建的："
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:115
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:114
 msgid ""
 "The CameraServer implementation effectively does the following at the cscore"
 " level (for explanation purposes). CameraServer takes care of many of the "
@@ -294,11 +252,11 @@ msgstr ""
 "CameraServer处理许多细节，例如为所有cscore对象创建唯一名称以及自动选择端口号。 "
 "CameraServer还会保留已创建对象的单例注册表，因此如果它们超出范围，它们不会被破坏。"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:159
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:158
 msgid "Reference Counting"
 msgstr "参考计数"
 
-#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:161
+#: ../../frc-docs/source/docs/software/vision-processing/introduction/cameraserver-class.rst:160
 msgid ""
 "All cscore objects are internally reference counted. Connecting a sink to a "
 "source increments the source's reference count, so it's only strictly "

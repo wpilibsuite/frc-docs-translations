@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-06 16:03+0000\n"
+"POT-Creation-Date: 2024-07-29 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Román Hernandez sosa, 2023\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/wpilib/teams/109324/es_MX/)\n"
@@ -70,7 +70,7 @@ msgstr ""
 "Para usar las funcionalidades de control PID de WPILib, los usuarios deben "
 "primero construir un objeto ``PIDController`` con las ganancias deseadas:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:32
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:39
 msgid ""
 "An optional fourth parameter can be provided to the constructor, specifying "
 "the period at which the controller will be run.  The ``PIDController`` "
@@ -82,11 +82,11 @@ msgstr ""
 "``PIDController`` está echo principalmente para uso sincrónico desde el loop"
 " principal del robot, y este valor está puesto por default a 20ms."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:35
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:42
 msgid "Using the Feedback Loop Output"
 msgstr "Usando la salida del loop de retroalimentación."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:37
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:44
 msgid ""
 "The ``PIDController`` assumes that the ``calculate()`` method is being "
 "called regularly at an interval consistent with the configured period.  "
@@ -97,7 +97,7 @@ msgstr ""
 "falla en esto resultará un resultado no deseado en el comportamiento del "
 "loop."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:39
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:46
 msgid ""
 "Using the constructed ``PIDController`` is simple: simply call the "
 "``calculate()`` method from the robot's main loop (e.g. the robot's "
@@ -107,11 +107,11 @@ msgstr ""
 "``calculate()`` desde el loop principal del robot (ejemplo: El método "
 "``autonomousPeriodic()`` del robot)"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:56
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
 msgid "Checking Errors"
 msgstr "Checando errores"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:58
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:71
 msgid ""
 "``getPositionError()`` and ``getVelocityError()`` are named assuming that "
 "the loop is controlling a position - for a loop that is controlling a "
@@ -123,7 +123,7 @@ msgstr ""
 "velocidad, estos regresan el error de velocidad y el error de la "
 "aceleración, respectivamente."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:60
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:73
 msgid ""
 "The current error of the measured process variable is returned by the "
 "``getPositionError()`` function, while its derivative is returned by the "
@@ -133,11 +133,11 @@ msgstr ""
 "``getPositionError()``, mientras que su derivada regresa por medio de la "
 "función ``getVelocityError()``:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:63
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:76
 msgid "Specifying and Checking Tolerances"
 msgstr "Especificando y checando tolerancias"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:65
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:78
 msgid ""
 "If only a position tolerance is specified, the velocity tolerance defaults "
 "to infinity."
@@ -145,7 +145,7 @@ msgstr ""
 "Si solo una tolerancia de posición es especificada, la tolerancia de "
 "velocidad se pone como default a infinito."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:67
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:80
 msgid ""
 "As above, \"position\" refers to the process variable measurement, and "
 "\"velocity\" to its derivative - thus, for a velocity loop, these are "
@@ -155,15 +155,15 @@ msgstr ""
 "\"velocity\" a su derivada - de esta forma, para un loop de velocidad, estos"
 " son, de hecho, velocidad y aceleración respectivamente."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:82
 msgid "Todo"
 msgstr "Todo"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:82
 msgid "link to article on motion profiles"
 msgstr "Enlace al articulo sobre perfiles de movimiento"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:71
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:84
 msgid ""
 "Occasionally, it is useful to know if a controller has tracked the setpoint "
 "to within a given tolerance - for example, to determine if a command should "
@@ -175,7 +175,7 @@ msgstr ""
 " finalizado, o (mientras siguiendo un perfil de movimiento) si el movimiento"
 " está siendo impedido y necesita ser planeado otra vez."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:73
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:86
 msgid ""
 "To do this, we first must specify the tolerances with the ``setTolerance()``"
 " method; then, we can check it with the ``atSetpoint()`` method."
@@ -184,11 +184,11 @@ msgstr ""
 "método ``setTolerance()``; entonces, podemos checarlo con el método "
 "``atSetpoint()``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:96
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:118
 msgid "Resetting the Controller"
 msgstr "Reiniciando el controlador"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:98
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:120
 msgid ""
 "It is sometimes desirable to clear the internal state (most importantly, the"
 " integral accumulator) of a ``PIDController``, as it may be no longer valid "
@@ -201,11 +201,11 @@ msgstr ""
 "desactivado y luego reactivado). Esto puede lograrse llamando el método "
 "``reset()``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:101
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:123
 msgid "Setting a Max Integrator Value"
 msgstr "Ajustando un valor integrador máximo."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:103
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:125
 msgid ""
 "Integrators introduce instability and hysteresis into feedback loop systems."
 "  It is strongly recommended that teams avoid using integral gain unless "
@@ -222,11 +222,11 @@ msgstr ""
 "controls/controllers/feedforward:Feedforward Control in WPILib>` más "
 "preciso."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:155
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:192
 msgid "Setting Continuous Input"
 msgstr "Ajustando entradas continuas"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:157
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:194
 msgid ""
 "If your mechanism is not capable of fully continuous rotational motion (e.g."
 " a turret without a slip ring, whose wires twist as it rotates), *do not* "
@@ -239,17 +239,7 @@ msgstr ""
 "característica de seguridad adicional para prevenir que el mecanismo se "
 "mueva más allá de sus limites."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:159
-msgid ""
-"The continuous input function does *not* automatically wrap your input "
-"values - be sure that your input values, when using this feature, are never "
-"outside of the specified range!"
-msgstr ""
-"La función de entrada continua *no* envuelve automáticamente sus valores de "
-"entrada - asegúrese que sus valores de entrada, mientras use esta función, "
-"nunca estén fuera del rango establecido."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:163
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:198
 msgid ""
 "To configure a ``PIDController`` to automatically do this, use the "
 "``enableContinuousInput()`` method:"
@@ -257,6 +247,6 @@ msgstr ""
 "Para configurar un ``PIDController`` para automáticamente hacer esto, use el"
 " método ``enableContinuousInput()``:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:178
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:218
 msgid "Clamping Controller Output"
 msgstr "Salida del controlador de sujeción"

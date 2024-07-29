@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -9,9 +9,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-21 04:03+0000\n"
+"POT-Creation-Date: 2024-07-29 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -66,7 +66,7 @@ msgstr ""
 "WPILib'in PID kontrol fonksiyonelliğini kullanmak için, kullanıcılar önce "
 "istenen kazançlarla bir ``PIDController`` nesnesi oluşturmalıdır:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:32
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:39
 msgid ""
 "An optional fourth parameter can be provided to the constructor, specifying "
 "the period at which the controller will be run.  The ``PIDController`` "
@@ -78,11 +78,11 @@ msgstr ""
 " ana robot döngüsünden senkronize kullanım için tasarlanmıştır ve bu nedenle"
 " değeri varsayılan olarak 20ms'dir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:35
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:42
 msgid "Using the Feedback Loop Output"
 msgstr "Geri Besleme Döngüsü Çıkışını Kullanma"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:37
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:44
 msgid ""
 "The ``PIDController`` assumes that the ``calculate()`` method is being "
 "called regularly at an interval consistent with the configured period.  "
@@ -92,7 +92,7 @@ msgstr ""
 "tutarlı bir aralıkta düzenli olarak çağrıldığını varsayar. Bunun "
 "yapılmaması, istenmeyen döngü davranışına neden olacaktır."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:39
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:46
 msgid ""
 "Using the constructed ``PIDController`` is simple: simply call the "
 "``calculate()`` method from the robot's main loop (e.g. the robot's "
@@ -102,11 +102,11 @@ msgstr ""
 "döngüsünden ``calculate()`` yöntemini çağırın (örneğin, robotun "
 "``autonomousPeriodic()`` yöntemi):"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:56
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
 msgid "Checking Errors"
 msgstr "Hataları Kontrol Etmek"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:58
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:71
 msgid ""
 "``getPositionError()`` and ``getVelocityError()`` are named assuming that "
 "the loop is controlling a position - for a loop that is controlling a "
@@ -117,7 +117,7 @@ msgstr ""
 "kontrol ettiği varsayılarak adlandırılır - bir hızı kontrol eden bir döngü "
 "için bunlar sırasıyla hız hatasını ve hızlanma hatasını döndürür."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:60
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:73
 msgid ""
 "The current error of the measured process variable is returned by the "
 "``getPositionError()`` function, while its derivative is returned by the "
@@ -127,11 +127,11 @@ msgstr ""
 "tarafından döndürülür, türevi ise ``getVelocityError()`` işlevi tarafından "
 "döndürülür:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:63
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:76
 msgid "Specifying and Checking Tolerances"
 msgstr "Toleransları Belirleme ve Kontrol Etme"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:65
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:78
 msgid ""
 "If only a position tolerance is specified, the velocity tolerance defaults "
 "to infinity."
@@ -139,7 +139,7 @@ msgstr ""
 "Yalnızca bir konum toleransı belirtilirse, hız toleransı varsayılan olarak "
 "sonsuzdur."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:67
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:80
 msgid ""
 "As above, \"position\" refers to the process variable measurement, and "
 "\"velocity\" to its derivative - thus, for a velocity loop, these are "
@@ -149,15 +149,15 @@ msgstr ""
 "türevini ifade eder - dolayısıyla, bir hız döngüsü için bunlar aslında "
 "sırasıyla hız ve ivmedir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:82
 msgid "Todo"
 msgstr "Yapılacaklar"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:69
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:82
 msgid "link to article on motion profiles"
 msgstr "hareket profilleri hakkındaki makaleye bağlantı"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:71
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:84
 msgid ""
 "Occasionally, it is useful to know if a controller has tracked the setpoint "
 "to within a given tolerance - for example, to determine if a command should "
@@ -170,7 +170,7 @@ msgstr ""
 "ederken) hareketin engellenip engellenmediğini belirlemek yada tekrar "
 "planlamak için."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:73
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:86
 msgid ""
 "To do this, we first must specify the tolerances with the ``setTolerance()``"
 " method; then, we can check it with the ``atSetpoint()`` method."
@@ -178,11 +178,11 @@ msgstr ""
 "Bunu yapmak için önce toleransları ``setTolerance()`` yöntemi ile "
 "belirlemeliyiz; daha sonra ``atSetpoint()`` metodu ile kontrol edebiliriz."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:96
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:118
 msgid "Resetting the Controller"
 msgstr "Denetleyiciyi Sıfırlama"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:98
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:120
 msgid ""
 "It is sometimes desirable to clear the internal state (most importantly, the"
 " integral accumulator) of a ``PIDController``, as it may be no longer valid "
@@ -195,11 +195,11 @@ msgstr ""
 "temizlemek istenebilir. . Bu, ``reset()`` yöntemi çağrılarak "
 "gerçekleştirilebilir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:101
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:123
 msgid "Setting a Max Integrator Value"
 msgstr "Max Integrator Değeri Ayarlama"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:103
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:125
 msgid ""
 "Integrators introduce instability and hysteresis into feedback loop systems."
 "  It is strongly recommended that teams avoid using integral gain unless "
@@ -215,11 +215,11 @@ msgstr ""
 "<docs/software/advanced-controls/controllers/feedforward:Feedforward Control"
 " in WPILib>` kullanılarak daha iyi çözülebilir."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:155
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:192
 msgid "Setting Continuous Input"
 msgstr "Sürekli Girişi - Continuous Input Ayarlama"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:157
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:194
 msgid ""
 "If your mechanism is not capable of fully continuous rotational motion (e.g."
 " a turret without a slip ring, whose wires twist as it rotates), *do not* "
@@ -231,17 +231,7 @@ msgstr ""
 "limitlerini geçmesini önlemek için ek bir güvenlik özelliği uygulamadıysanız"
 " sürekli girişi *etkinleştirmeyin* !"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:159
-msgid ""
-"The continuous input function does *not* automatically wrap your input "
-"values - be sure that your input values, when using this feature, are never "
-"outside of the specified range!"
-msgstr ""
-"Sürekli giriş işlevi, giriş değerlerinizi otomatik olarak *kaydırmaz* - bu "
-"özelliği kullanırken, giriş değerlerinin asla belirtilen aralığın dışında "
-"olmadığından emin olun!"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:163
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:198
 msgid ""
 "To configure a ``PIDController`` to automatically do this, use the "
 "``enableContinuousInput()`` method:"
@@ -249,6 +239,6 @@ msgstr ""
 "Bunu otomatik olarak yapacak bir ``PIDController`` yapılandırmak için, "
 "``enableContinuousInput()`` yöntemini kullanın:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:178
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/pidcontroller.rst:218
 msgid "Clamping Controller Output"
 msgstr "Kontrol Çıkışını Bağlama"

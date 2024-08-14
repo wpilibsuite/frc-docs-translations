@@ -16,7 +16,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 04:04+0000\n"
+"POT-Creation-Date: 2024-08-14 04:04+0000\n"
 "PO-Revision-Date: 2023-10-29 04:08+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -54,32 +54,6 @@ msgstr ":ref:`create_java_cpp_project`"
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:7
 msgid ":ref:`create_python_project`"
 msgstr ":ref:`create_python_project`"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:9
-msgid ""
-"This guide includes code examples that involve vendor hardware for the "
-"convenience of the user. In this document, :term:`PWM` refers to the motor "
-"controller included in the KOP. The CTRE tab references the Talon FX motor "
-"controller (Falcon 500 motor), but usage is similar for TalonSRX and "
-"VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless "
-"motor, but it's similar for brushed motor. There is an assumption that the "
-"user has already installed the required :doc:`vendordeps "
-"</docs/software/vscode-overview/3rd-party-libraries>`  and configured the "
-"device(s) (update firmware, assign CAN IDs, etc) according to the "
-"manufacturer documentation (`CTRE <https://docs.ctr-electronics.com/>`__ "
-"`REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__)."
-msgstr ""
-"Ce guide comprend des exemples de code qui impliquent le matériel du "
-"fournisseur pour la commodité de l'utilisateur. Dans ce document, "
-":term:`PWM` fait référence au contrôleur de moteur inclus dans le KOP. "
-"L'onglet CTRE fait référence au contrôleur de moteur Talon FX (moteur Falcon"
-" 500), mais l'utilisation est similaire pour TalonSRX et VictorSPX. L'onglet"
-" REV fait référence au CAN SPARK MAX contrôlant un moteur sans balais, mais "
-"il est similaire pour un moteur à balais. On suppose que l'utilisateur a "
-"déjà installé le :doc:`vendordeps ` requis et configuré le(s) "
-"périphérique(s) (mettre à jour le micrologiciel, attribuer des ID CAN, etc.)"
-" conformément à la documentation du fabricant (`CTRE <https://docs. ctr-"
-"electronics.com/>`__ `REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__)."
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:14
 msgid "Creating a New WPILib Project (Java/C++)"
@@ -387,58 +361,22 @@ msgid "Python"
 msgstr "Python"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
-msgid "CTRE"
-msgstr "CTRE"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
 msgid "REV"
 msgstr "REV"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:228
-msgid ""
-"Our code needs to reference the components of WPILib that are used. In C++ "
-"this is accomplished using ``#include`` statements; in Java it is done with "
-"``import`` statements. The program references classes for ``Joystick`` (for "
-"driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling"
-" motors), ``TimedRobot`` (the base class used for the example), ``Timer`` "
-"(used for autonomous), and ``DifferentialDrive`` (for connecting the "
-"joystick control to the motors)."
-msgstr ""
-"Notre code doit référencer les composants de WPILib qui sont utilisés. Cela "
-"se fait en utilisant les instructions ``#include`` (en C++) ou ``import`` "
-"(en Java). Le programme fait référence aux classes pour ``Joystick`` (pour "
-"le pilotage), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (pour la "
-"commande des moteurs), ``TimedRobot`` (la classe de base utilisée pour "
-"l'exemple) , ``Timer`` (utilisé pour le mode autonome) et "
-"``DifferentialDrive`` (pour connecter la commande par joystick aux moteurs)."
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:231
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:262
 msgid "Defining the variables for our sample robot"
 msgstr "Définition des variables de notre prototype de robot"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:383
-msgid ""
-"The sample robot in our examples will have a joystick on USB port 0 for "
-"arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN "
-"with IDs 1 and 2). Here we create objects of type DifferentialDrive "
-"(m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the "
-"code does three things:"
-msgstr ""
-"Le robot de nos exemples a un joystick branché au port USB 0 pour le mode "
-"Arcade drive et deux moteurs branchés aux ports PWM 0 et 1 (les exemples des"
-" tierces parties utilisent CAN avec les ID 1 et 2). Ici nous créons des "
-"objets de type DifferentialDrive(m_robotDrive), Joystick(m_stick) et "
-"Timer(m_timer). Cette section du code accomplit trois choses:"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:385
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:491
 msgid "Defines the variables as members of our Robot class."
 msgstr "Définit les variables en tant que membres de notre classe Robot."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:386
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:492
 msgid "Initializes the variables."
 msgstr "Initialise les variables."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:388
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:494
 msgid ""
 "The variable initializations for C++ are in the ``private`` section at the "
 "bottom of the program. This means they are private to the class (``Robot``)."
@@ -453,11 +391,11 @@ msgstr ""
 " pas une commande à toutes les 0,1 secondes) et démarre le ``Timer`` utilisé"
 " pour le mode autonome."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:391
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:497
 msgid "Robot Initialization"
 msgstr "Initialisation du robot"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:418
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:524
 msgid ""
 "The ``RobotInit`` method is run when the robot program is starting up, but "
 "after the constructor. The ``RobotInit`` for our sample program inverts the "
@@ -469,18 +407,18 @@ msgstr ""
 "inverse le côté droit du groupe motopropulseur. Selon votre configuration de"
 " conduite, vous devrez peut-être inverser le côté gauche à la place."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:420
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:526
 msgid ""
 "In C++, the drive inversion is handled in the ``Robot()`` constructor above."
 msgstr ""
 "En C++, l'inversion du moteur est gérée dans le constructeur ``Robot()`` ci-"
 "dessus."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:423
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:529
 msgid "Simple Autonomous Example"
 msgstr "Exemple de mode autonome simple"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:445
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:551
 msgid ""
 "The ``AutonomousInit`` method is run once each time the robot transitions to"
 " autonomous from another mode. In this program, we restart the ``Timer`` in "
@@ -490,7 +428,7 @@ msgstr ""
 "robot passe au mode autonomie à partir d’un autre mode. Dans le programme, "
 "nous redémarrons le ``Timer`` dans cette méthode."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:447
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:553
 msgid ""
 "``AutonomousPeriodic`` is run once every period while the robot is in "
 "autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
@@ -507,32 +445,15 @@ msgstr ""
 "``ArcadeDrive`` de la classe ``DifferentialDrive``. S'il s'est écoulé plus "
 "de 2 secondes, le code met fin au déplacement du robot."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:450
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:556
 msgid "Joystick Control for Teleoperation"
 msgstr "Contrôle par Joystick pendant le mode téléopéré"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:472
-msgid ""
-"Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
-"``TeleopPeriodic`` function. In this example we don't have anything to do in"
-" ``TeleopInit``, it is provided for illustration purposes only. In "
-"``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the "
-"Y-axis of the ``Joystick`` to forward/back motion of the drive motors and "
-"the X-axis to turning motion."
-msgstr ""
-"Comme dans le mode Autonomous, le mode Teleop possède les fonctions "
-"``TeleopInit`` et ``TeleopPeriodic``. Dans cet exemple, nous n’avons rien à "
-"faire dans  ``TeleopInit``, qui est fourni uniquement à des fins "
-"d’illustration. Dans ``TeleopPeriodic``, le code utilise la méthode "
-"``ArcadeDrive`` pour faire correspondre l’axe Y du ``Joystick`` au mouvement"
-" rectiligne avancer/reculer des moteurs d’entraînement et l’axe X pour le "
-"mouvement de rotation."
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:475
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:581
 msgid "Test Mode"
 msgstr "Mode test"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:497
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:603
 msgid ""
 "Test Mode is used for testing robot functionality. Similar to "
 "``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided "
@@ -542,11 +463,11 @@ msgstr ""
 "l’instar de ``TeleopInit``, les méthodes ``TestInit`` et ``TestPeriodic`` "
 "sont fournies ici uniquement à des fins d'illustration."
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:500
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:606
 msgid "Deploying the Project to a Robot"
 msgstr "Déploiement du code projet sur un robot"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:502
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:608
 msgid ""
 ":ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-"
 "code:Building and Deploying Robot Code>`"
@@ -555,7 +476,7 @@ msgstr ""
 "<docs/software/vscode-overview/deploying-robot-code:Building and Deploying "
 "Robot Code>`"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:503
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:609
 msgid ":doc:`Deploy Python code </docs/software/python/subcommands/deploy>`"
 msgstr ""
 ":doc:`Déploiement du code Python  "

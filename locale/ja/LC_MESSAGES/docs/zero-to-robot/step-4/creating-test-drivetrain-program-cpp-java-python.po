@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-09 16:03+0000\n"
+"POT-Creation-Date: 2024-08-14 04:04+0000\n"
 "PO-Revision-Date: 2023-10-29 04:08+0000\n"
 "Last-Translator: Jacob Lubecki, 2024\n"
 "Language-Team: Japanese (https://app.transifex.com/wpilib/teams/109324/ja/)\n"
@@ -44,29 +44,6 @@ msgstr ":ref:`create_java_cpp_project`"
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:7
 msgid ":ref:`create_python_project`"
 msgstr ":ref:`create_python_project`"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:9
-msgid ""
-"This guide includes code examples that involve vendor hardware for the "
-"convenience of the user. In this document, :term:`PWM` refers to the motor "
-"controller included in the KOP. The CTRE tab references the Talon FX motor "
-"controller (Falcon 500 motor), but usage is similar for TalonSRX and "
-"VictorSPX. The REV tab references the CAN SPARK MAX controlling a brushless "
-"motor, but it's similar for brushed motor. There is an assumption that the "
-"user has already installed the required :doc:`vendordeps "
-"</docs/software/vscode-overview/3rd-party-libraries>`  and configured the "
-"device(s) (update firmware, assign CAN IDs, etc) according to the "
-"manufacturer documentation (`CTRE <https://docs.ctr-electronics.com/>`__ "
-"`REV <https://docs.revrobotics.com/sparkmax/gs-sm>`__)."
-msgstr ""
-"このガイドは、わかりやすさのためベンダのハードウェアを利用するコードを紹介します。このドキュメントでは、 :term:`PWM` はKOP(Kit Of"
-" Parts)に入っているモーターコントローラーを指します。CTREはTalon FX (Falcon 500 "
-"motor)を指しますが、利用方法はTalonSRXやVictorSPXと似ています。REVはブラシレスモーターをコントロールする、CAN SPARK "
-"MAXを指しますが、利用方法はブラシ付きモーターと似ています。以下では、 :doc:`vendordeps "
-"</docs/software/vscode-overview/3rd-party-libraries>` "
-"を既にインストールしており、製造元のドキュメント（ `CTRE <https://docs.ctr-electronics.com/>`__ `REV "
-"<https://docs.revrobotics.com/sparkmax/gs-sm>`__ "
-"）を参考にデバイスの設定(ファームウェアのアップデートやCAN IDの振り分けなど)が行われていることを前提としています。"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:14
 msgid "Creating a New WPILib Project (Java/C++)"
@@ -327,52 +304,22 @@ msgid "Python"
 msgstr "Python"
 
 #: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
-msgid "CTRE"
-msgstr "CTRE"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:0
 msgid "REV"
 msgstr "REV"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:228
-msgid ""
-"Our code needs to reference the components of WPILib that are used. In C++ "
-"this is accomplished using ``#include`` statements; in Java it is done with "
-"``import`` statements. The program references classes for ``Joystick`` (for "
-"driving), ``PWMSparkMax`` / ``WPI_TalonFX`` / ``CANSparkMax (for controlling"
-" motors), ``TimedRobot`` (the base class used for the example), ``Timer`` "
-"(used for autonomous), and ``DifferentialDrive`` (for connecting the "
-"joystick control to the motors)."
-msgstr ""
-"コードはWPILibのコンポーネントを参照する必要があります。C++では、 ``#include`` 文を、Javaでは ``import`` "
-"文を利用することで行なえます。プログラムは、次のようなクラスを参照しています： ``Joystick`` (運転用), ``PWMSparkMax`` "
-"/ ``WPI_TalonFX`` / ``CANSparkMax`` (モータの制御用), ``TimedRobot`` (例のための基本クラス), "
-"``Timer`` (自動制御用), と ``DifferentialDrive`` (ジョイスティックでのドライブベースの操作用)。"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:231
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:262
 msgid "Defining the variables for our sample robot"
 msgstr "サンプルロボット用の変数の定義"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:383
-msgid ""
-"The sample robot in our examples will have a joystick on USB port 0 for "
-"arcade drive and two motors on PWM ports 0 and 1 (Vendor examples use CAN "
-"with IDs 1 and 2). Here we create objects of type DifferentialDrive "
-"(m_robotDrive), Joystick (m_stick) and Timer (m_timer). This section of the "
-"code does three things:"
-msgstr ""
-"サンプルロボットには、USBポート0番にarcade "
-"drive用のジョイスティックが、PWMポート0番と1番(CANでIDを0と1に設定します)に2つのモーターがあります。そして、DifferentialDrive型(m_robotDrive)、Joystick型(m_stick)、Timer型(m_timer)のオブジェクトを作成しています。このセクションでは、3つのことを行っています："
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:385
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:491
 msgid "Defines the variables as members of our Robot class."
 msgstr "Robotクラスのメンバとして、変数を定義します。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:386
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:492
 msgid "Initializes the variables."
 msgstr "変数を初期化します。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:388
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:494
 msgid ""
 "The variable initializations for C++ are in the ``private`` section at the "
 "bottom of the program. This means they are private to the class (``Robot``)."
@@ -384,11 +331,11 @@ msgstr ""
 "セクションで行われています。これは、クラス(``Robot``)でプライベートであるということです。C++コードでは、モーター安全期限を0.1秒に設定し(0.1秒以上命令がないとドライブベースは停止します)、自動制御用に"
 " ``Timer`` を開始しています。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:391
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:497
 msgid "Robot Initialization"
 msgstr "ロボットの初期化"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:418
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:524
 msgid ""
 "The ``RobotInit`` method is run when the robot program is starting up, but "
 "after the constructor. The ``RobotInit`` for our sample program inverts the "
@@ -398,16 +345,16 @@ msgstr ""
 "``RobotInit`` メソッドは、ロボットが起動した際に実行されますが、コンストラクタの実行後です。サンプルプログラムの "
 "``RobotInit`` はドライブトレインの右側を逆転させます。ドライブのセットアップによっては、代わりに左側を逆転させる必要があるかもしれません。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:420
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:526
 msgid ""
 "In C++, the drive inversion is handled in the ``Robot()`` constructor above."
 msgstr "C++で、ドライブの逆転は上記の ``Robot()`` コンストラクタで扱われます。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:423
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:529
 msgid "Simple Autonomous Example"
 msgstr "シンプルなAutonomousの例"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:445
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:551
 msgid ""
 "The ``AutonomousInit`` method is run once each time the robot transitions to"
 " autonomous from another mode. In this program, we restart the ``Timer`` in "
@@ -416,7 +363,7 @@ msgstr ""
 "``AutonomousInit`` メソッドは別のモードからAutonomousモードに変化した瞬間に実行されます。このプログラムでは、 "
 "``Timer`` をリスタートしています。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:447
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:553
 msgid ""
 "``AutonomousPeriodic`` is run once every period while the robot is in "
 "autonomous mode. In the ``TimedRobot`` class the period is a fixed time, "
@@ -430,29 +377,15 @@ msgstr ""
 "``DifferentialDrive`` クラスの ``ArcadeDrive`` "
 "メソッドを用いて半分のスピードで前進します。2秒経過したら、ロボットの動きを止めます。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:450
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:556
 msgid "Joystick Control for Teleoperation"
 msgstr "Teleopでのジョイスティック操作"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:472
-msgid ""
-"Like in Autonomous, the Teleop mode has a ``TeleopInit`` and "
-"``TeleopPeriodic`` function. In this example we don't have anything to do in"
-" ``TeleopInit``, it is provided for illustration purposes only. In "
-"``TeleopPeriodic``, the code uses the ``ArcadeDrive`` method to map the "
-"Y-axis of the ``Joystick`` to forward/back motion of the drive motors and "
-"the X-axis to turning motion."
-msgstr ""
-"Autonomousの様に、Teleopモードには ``TeleopInit`` 関数と ``TeleopPeriodic`` "
-"関数があります。この例では、 ``TeleopInit`` では何もしておらず、説明のために記述されているだけです。 "
-"``TeleopPeriodic`` では、 ``Joystick`` のY軸をドライブベースの前進/後進に、X軸を回転動作に対応させるため "
-"``ArcadeDrive`` メソッドを使用しています。"
-
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:475
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:581
 msgid "Test Mode"
 msgstr "テストモード"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:497
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:603
 msgid ""
 "Test Mode is used for testing robot functionality. Similar to "
 "``TeleopInit``, the ``TestInit`` and ``TestPeriodic`` methods are provided "
@@ -461,11 +394,11 @@ msgstr ""
 "Testモードはロボットの機能のテストのために使われます。 ``TeleopInit`` と同様に、 ``TestInit`` や "
 "``TestPeriodic`` は説明のために記述されています。"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:500
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:606
 msgid "Deploying the Project to a Robot"
 msgstr "ロボットへのデプロイ"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:502
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:608
 msgid ""
 ":ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-"
 "code:Building and Deploying Robot Code>`"
@@ -473,6 +406,6 @@ msgstr ""
 ":ref:`Deploy Java/C++ code <docs/software/vscode-overview/deploying-robot-"
 "code:Building and Deploying Robot Code>`"
 
-#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:503
+#: ../../frc-docs/source/docs/zero-to-robot/step-4/creating-test-drivetrain-program-cpp-java-python.rst:609
 msgid ":doc:`Deploy Python code </docs/software/python/subcommands/deploy>`"
 msgstr ":doc:`Pythonコードをデプロイする </docs/software/python/subcommands/deploy>`"

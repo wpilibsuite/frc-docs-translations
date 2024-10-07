@@ -4,7 +4,6 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andre Theberge <atheberge2@videotron.ca>, 2020
 # Austin Shalit <austinshalit@gmail.com>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024
 # 
@@ -13,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2024-10-07 04:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -22,10 +21,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:4
-msgid "PID Control through PIDSubsystems and PIDCommands"
-msgstr "Contrôle PID via PIDSubsystems et PIDCommands"
 
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:6
 msgid ""
@@ -37,27 +32,6 @@ msgstr ""
 "par ces wrappers basés sur des commandes, voir :ref:`docs/software/advanced-"
 "controls/controllers/pidcontroller:PID Control in WPILib`."
 
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:11
-msgid "PIDSubsystems"
-msgstr "Sous-systèmes PIDS"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:16
-msgid "Creating a PIDSubsystem"
-msgstr "Création d'un sous-système PIDS"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:20
-msgid ""
-"When subclassing ``PIDSubsystem``, users must override two abstract methods "
-"to provide functionality that the class will use in its ordinary operation:"
-msgstr ""
-"Lors de la sous-classification de ``PIDSubsystem``, les utilisateurs doivent"
-" remplacer deux méthodes abstraites pour fournir des fonctionnalités que la "
-"classe utilisera dans son fonctionnement ordinaire:"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:23
-msgid "getMeasurement()"
-msgstr "getMeasurement()"
-
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:0
 msgid "Java"
 msgstr "Java"
@@ -65,238 +39,3 @@ msgstr "Java"
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:0
 msgid "C++"
 msgstr "C++"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:41
-msgid ""
-"The ``getMeasurement`` method returns the current measurement of the process"
-" variable.  The ``PIDSubsystem`` will automatically call this method from "
-"its ``periodic()`` block, and pass its value to the control loop."
-msgstr ""
-"La méthode  ``getMeasurement`` renvoie la mesure actuelle de la variable de "
-"processus. Le ``PIDSubsystem`` appellera automatiquement cette méthode "
-"depuis son bloc ``periodic()``, et passera sa valeur à la boucle de "
-"contrôle."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:43
-msgid ""
-"Users should override this method to return whatever sensor reading they "
-"wish to use as their process variable measurement."
-msgstr ""
-"Les utilisateurs doivent remplacer cette méthode pour renvoyer plutôt la "
-"lecture du capteur qu'ils souhaitent utiliser comme mesure de variable de "
-"processus."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:46
-msgid "useOutput()"
-msgstr "useOutput()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:65
-msgid ""
-"The ``useOutput()`` method consumes the output of the PID controller, and "
-"the current setpoint (which is often useful for computing a feedforward).  "
-"The ``PIDSubsystem`` will automatically call this method from its "
-"``periodic()`` block, and pass it the computed output of the control loop."
-msgstr ""
-"La méthode ``useOutput()``  utilise la sortie du contrôleur PID et le point "
-"de consigne actuel (qui est souvent utile pour calculer un feedforward). "
-"``PIDSubsystem`` appellera automatiquement cette méthode depuis son segment "
-"``periodic()``, et lui passera la sortie calculée de la boucle de contrôle."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:67
-msgid ""
-"Users should override this method to pass the final computed control output "
-"to their subsystem's motors."
-msgstr ""
-"Les utilisateurs doivent remplacer cette méthode pour transmettre plutôt la "
-"sortie de contrôle calculée et finale aux moteurs de leur sous-système."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:70
-msgid "Passing In the Controller"
-msgstr "La transmission d'un contrôleur"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:72
-msgid ""
-"Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base "
-"class through the superclass constructor call of their subclass.  This "
-"serves to specify the PID gains, as well as the period (if the user is using"
-" a non-standard main robot loop period)."
-msgstr ""
-"Les utilisateurs doivent également transmettre un ``PIDController`` à la "
-"classe de base ``PIDSubsystem`` via l'appel de constructeur de superclasse "
-"de leur sous-classe. Cela permet de spécifier les gains PID, ainsi que la "
-"période (si l'utilisateur utilise une période de boucle différente de celle "
-"utilisée dans le code du robot standard)."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:74
-msgid ""
-"Additional modifications (e.g. enabling continuous input) can be made to the"
-" controller in the constructor body by calling ``getController()``."
-msgstr ""
-"Des modifications supplémentaires (par exemple l'activation d'une entrée "
-"continue) peuvent être apportées au contrôleur dans le corps du constructeur"
-" en appelant ``getController()``."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:77
-msgid "Using a PIDSubsystem"
-msgstr "Utilisation d'un sous-système PIDS"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:79
-msgid ""
-"Once an instance of a ``PIDSubsystem`` subclass has been created, it can be "
-"used by commands through the following methods:"
-msgstr ""
-"Une fois qu'une instance d'une sous-classe ``PIDSubsystem`` a été créée, "
-"elle peut être utilisée par des commandes via les méthodes suivantes:"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:82
-msgid "setSetpoint()"
-msgstr "setSetpoint()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:84
-msgid ""
-"The ``setSetpoint()`` method can be used to set the setpoint of the "
-"``PIDSubsystem``.  The subsystem will automatically track to the setpoint "
-"using the defined output:"
-msgstr ""
-"La méthode ``setSetpoint()`` peut être utilisée pour définir le point de "
-"consigne du ``PIDSubsystem``. Le sous-système suivra automatiquement le "
-"point de consigne en utilisant la sortie définie:"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:99
-msgid "enable() and disable()"
-msgstr "enable() and disable()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:101
-msgid ""
-"The ``enable()`` and ``disable()`` methods enable and disable the PID "
-"control of the ``PIDSubsystem``.  When the subsystem is enabled, it will "
-"automatically run the control loop and track the setpoint.  When it is "
-"disabled, no control is performed."
-msgstr ""
-"Les méthodes  ``enable()`` et ``disable()``  activent et désactivent "
-"respectivement le contrôle PID du ``PIDSubsystem``. Lorsque le sous-système "
-"est activé, il exécute automatiquement la boucle de contrôle et suit le "
-"point de consigne. Lorsqu'il est désactivé, aucun contrôle n'est effectué."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:103
-msgid ""
-"Additionally, the ``enable()`` method resets the internal ``PIDController``,"
-" and the ``disable()`` method calls the user-defined `useOutput()`_ method "
-"with both output and setpoint set to ``0``."
-msgstr ""
-"De plus, la méthode ``enable()`` réinitialise le ``PIDController`` interne, "
-"et la méthode ``disable()`` appelle la méthode définie par l'utilisateur "
-"`useOutput ()`_ avec à la fois la sortie et le point de consigne définis sur"
-" la valeur ``0``."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:106
-msgid "Full PIDSubsystem Example"
-msgstr "Exemple complet avec PIDSubsystem"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:139
-msgid "Using a ``PIDSubsystem`` with commands can be very simple:"
-msgstr ""
-"L'utilisation d'un ``PIDSubsystem`` avec des commandes peut être très "
-"simple:"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:169
-msgid "PIDCommand"
-msgstr "La classe PIDCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:174
-msgid "Creating a PIDCommand"
-msgstr "Création d'une commande PID"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:180
-msgid ""
-"In either case, a ``PIDCommand`` is created by passing the necessary "
-"parameters to its constructor (if defining a subclass, this can be done with"
-" a `super()` call):"
-msgstr ""
-"Dans les deux cas, un ``PIDCommand`` est créé en passant les paramètres "
-"nécessaires à son constructeur (lors de la définition d'une sous-classe, "
-"cela peut être fait avec un appel `super()` ):"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:203
-msgid "controller"
-msgstr "manette"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:205
-msgid ""
-"The ``controller`` parameter is the ``PIDController`` object that will be "
-"used by the command.  By passing this in, users can specify the PID gains "
-"and the period for the controller (if the user is using a nonstandard main "
-"robot loop period)."
-msgstr ""
-"Le paramètre ``controller`` est l'objet ``PIDController`` qui sera utilisé "
-"par la commande. En transmettant cela, les utilisateurs peuvent spécifier "
-"les gains PID et la période pour le contrôleur (dans ce dernier cas, si "
-"l'utilisateur utilise une période de boucle de robot principal non "
-"standard)."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:207
-msgid ""
-"When subclassing ``PIDCommand``, additional modifications (e.g. enabling "
-"continuous input) can be made to the controller in the constructor body by "
-"calling ``getController()``."
-msgstr ""
-"Lors de la sous-classification de ``PIDCommand``, des modifications "
-"supplémentaires (par exemple, l'activation d'une entrée continue) peuvent "
-"être apportées au contrôleur dans le corps du constructeur en appelant "
-"``getController()``."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:210
-msgid "measurementSource"
-msgstr "Le paramètre measurementSource"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:214
-msgid ""
-"When subclassing ``PIDCommand``, advanced users may further modify the "
-"measurement supplier by modifying the class's ``m_measurement`` field."
-msgstr ""
-"Lors de la sous-classification de ``PIDCommand``, les utilisateurs plus "
-"expérimentés peuvent modifier le système qui fournit les mesures en "
-"modifiant le champ ``m_measurement`` de la classe."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:217
-msgid "setpointSource"
-msgstr "Le paramètre setpointSource"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:221
-msgid ""
-"When subclassing ``PIDCommand``, advanced users may further modify the "
-"setpoint supplier by modifying the class's ``m_setpoint`` field."
-msgstr ""
-"Lors de la sous-classification de ``PIDCommand``, les utilisateurs plus "
-"expérimentés peuvent modifier le système qui fournit les mesures en "
-"modifiant le champ ``m_measurement`` de la classe."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:224
-msgid "useOutput"
-msgstr "Le paramètre useOutput"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:228
-msgid ""
-"When subclassing ``PIDCommand``, advanced users may further modify the "
-"output consumer by modifying the class's ``m_useOutput`` field."
-msgstr ""
-"Lors de la sous-classification de ``PIDCommand``, les utilisateurs plus "
-"expérimentés peuvent modifier le système qui fournit les mesures en "
-"modifiant le champ ``m_measurement`` de la classe."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:231
-msgid "requirements"
-msgstr "exigences"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:233
-msgid ""
-"Like all inlineable commands, ``PIDCommand`` allows the user to specify its "
-"subsystem requirements as a constructor parameter."
-msgstr ""
-"Comme toutes les commandes en ligne, ``PIDCommand`` permet à l'utilisateur "
-"de spécifier des exigences de sous-système via ses paramètres de "
-"constructeur."
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:236
-msgid "Full PIDCommand Example"
-msgstr "Exemple complet de PIDCommand"

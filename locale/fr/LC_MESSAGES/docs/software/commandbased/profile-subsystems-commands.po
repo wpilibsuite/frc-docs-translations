@@ -5,7 +5,6 @@
 # 
 # Translators:
 # Austin Shalit <austinshalit@gmail.com>, 2021
-# Andre Theberge <atheberge2@videotron.ca>, 2022
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024
 # 
 #, fuzzy
@@ -13,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2024-10-07 04:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -22,14 +21,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:2
-msgid ""
-"Motion Profiling through TrapezoidProfileSubsystems and "
-"TrapezoidProfileCommands"
-msgstr ""
-"Profilage de mouvement via TrapezoidProfileSubsystems et "
-"TrapezoidProfileCommands"
 
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:4
 msgid ""
@@ -43,243 +34,6 @@ msgstr ""
 ":ref:`docs/software/advanced-controls/controllers/trapezoidal-"
 "profiles:Trapezoidal Motion Profiles in WPILib`."
 
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:6
-msgid ""
-"The ``TrapezoidProfile`` command wrappers are generally intended for "
-"composition with custom or external controllers.  For combining trapezoidal "
-"motion profiling with WPILib's ``PIDController``, see :doc:`profilepid-"
-"subsystems-commands`."
-msgstr ""
-"Les wrappers de commande ``TrapezoidProfile`` sont généralement destinés "
-"pour usage avec des contrôleurs personnalisés ou externes. Pour combiner le "
-"profilage de mouvement trapézoïdal avec le ``PIDController`` de WPILib, voir"
-" :doc:`profilepid-subsystems-commands`."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:10
-msgid ""
-"To further help teams integrate motion profiling into their command-based "
-"robot projects, WPILib includes two convenience wrappers for the "
-"``TrapezoidProfile`` class: ``TrapezoidProfileSubsystem``, which "
-"automatically generates and executes motion profiles in its ``periodic()`` "
-"method, and the ``TrapezoidProfileCommand``, which executes a single user-"
-"provided ``TrapezoidProfile``."
-msgstr ""
-"Pour aider davantage les équipes à intégrer le profilage de mouvement dans "
-"leurs projets de robot basés sur des commandes, WPILib comprend deux "
-"wrappers pratiques pour la classe ``TrapezoidProfile``: "
-"``TrapezoidProfileSubsystem``, qui génère et exécute automatiquement des "
-"profils de mouvement dans la méthode ``periodic()``, et "
-"``TrapezoidProfileCommand``, qui exécute un seul ``TrapezoidProfile`` fourni"
-" par l'utilisateur."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:13
-msgid "TrapezoidProfileSubsystem"
-msgstr "TrapezoidProfileSubsystem"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:15
-msgid ""
-"In C++, the ``TrapezoidProfileSubsystem`` class is templated on the unit "
-"type used for distance measurements, which may be angular or linear.  The "
-"passed-in values *must* have units consistent with the distance units, or a "
-"compile-time error will be thrown.  For more information on C++ units, see "
-":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
-msgstr ""
-"En C ++, la classe  ``TrapezoidProfileSubsystem`` est basée sur le type "
-"d'unité utilisé pour les mesures de distance, qui peut être angulaire ou "
-"linéaire. Les valeurs transmises *doivent* avoir des unités cohérentes avec "
-"les unités de distance, sinon une erreur de compilation sera indiquée. Pour "
-"plus d'informations sur les unités C ++, voir :ref:`docs/software/basic-"
-"programming/cpp-units:The C++ Units Library`."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:20
-msgid "Creating a TrapezoidProfileSubsystem"
-msgstr "Création d'un sous-système TrapezoidProfile"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:24
-msgid ""
-"When subclassing ``TrapezoidProfileSubsystem``, users must override a single"
-" abstract method to provide functionality that the class will use in its "
-"ordinary operation:"
-msgstr ""
-"Lors de la sous-classification de ``TrapezoidProfileSubsystem``, les "
-"utilisateurs doivent remplacer une seule méthode abstraite pour fournir des "
-"fonctionnalités que la classe utilisera dans son fonctionnement ordinaire:"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:27
-msgid "useState()"
-msgstr "useState()"
-
 #: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:0
 msgid "Java"
 msgstr "Java"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:0
-msgid "C++"
-msgstr "C++"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:45
-msgid ""
-"The ``useState()`` method consumes the current state of the motion profile."
-"  The ``TrapezoidProfileSubsystem`` will automatically call this method from"
-" its ``periodic()`` block, and pass it the motion profile state "
-"corresponding to the subsystem's current progress through the motion "
-"profile."
-msgstr ""
-"La méthode ``useState()`` utilise l'état actuel du profil de mouvement pour "
-"les calculs. Le ``TrapezoidProfileSubsystem`` appellera automatiquement "
-"cette méthode à partir de son segment ``periodic()``, et lui passera l'état "
-"du profil de mouvement correspondant à la progression actuelle du sous-"
-"système à travers le profil de mouvement."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:47
-msgid ""
-"Users may do whatever they want with this state; a typical use case (as "
-"shown in the `Full TrapezoidProfileSubsystem Example`_) is to use the state "
-"to obtain a setpoint and a feedforward for an external \"smart\" motor "
-"controller."
-msgstr ""
-"Les utilisateurs peuvent faire ce qu'ils veulent avec cet état; un cas "
-"d'utilisation typique (comme indiqué dans `Full TrapezoidProfileSubsystem "
-"Example`_) consiste à utiliser l'état pour obtenir un point de consigne et "
-"une action directe pour un contrôleur de moteur externe \"intelligent\"."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:50
-msgid "Constructor Parameters"
-msgstr "Paramètres du constructeur"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:52
-msgid ""
-"Users must pass in a set of ``TrapezoidProfile.Constraints`` to the "
-"``TrapezoidProfileSubsystem`` base class through the superclass constructor "
-"call of their subclass.  This serves to constrain the automatically-"
-"generated profiles to a given maximum velocity and acceleration."
-msgstr ""
-"Les utilisateurs doivent transmettre un ensemble de valeurs-contraintes, "
-"soit ``TrapezoidProfile.Constraints`` à la classe de base "
-"``TrapezoidProfileSubsystem`` via l'appel de constructeur de superclasse de "
-"leur sous-classe. Cela permet de contraindre les profils générés "
-"automatiquement à une vitesse et une accélération maximales données."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:54
-msgid "Users must also pass in an initial position for the mechanism."
-msgstr ""
-"Les utilisateurs doivent également définir et transmettre une position "
-"initiale pour le mécanisme."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:56
-msgid ""
-"Advanced users may pass in an alternate value for the loop period, if a non-"
-"standard main loop period is being used."
-msgstr ""
-"Les utilisateurs avancés peuvent transmettre une autre valeur pour la "
-"période de boucle, si la période de boucle principale est différente de la "
-"valeur standard."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:59
-msgid "Using a TrapezoidProfileSubsystem"
-msgstr "Utilisation d'un sous-système TrapezoidProfile"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:61
-msgid ""
-"Once an instance of a ``TrapezoidProfileSubsystem`` subclass has been "
-"created, it can be used by commands through the following methods:"
-msgstr ""
-"Une fois qu'une instance d'une sous-classe ``TrapezoidProfileSubsystem`` a "
-"été créée, elle peut être utilisée par les commandes via les méthodes "
-"suivantes:"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:64
-msgid "setGoal()"
-msgstr "setGoal()"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:66
-msgid ""
-"If you wish to set the goal to a simple distance with an implicit target "
-"velocity of zero, an overload of ``setGoal()`` exists that takes a single "
-"distance value, rather than a full motion profile state."
-msgstr ""
-"Si vous souhaitez définir l'objectif à atteindre comme étant une distance "
-"fixe, avec une vitesse de zéro, il existe une version simplifiée de "
-"``setGoal()`` qui prend une seule valeur de distance, plutôt qu'un état de "
-"profil de mouvement complet."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:68
-msgid ""
-"The ``setGoal()`` method can be used to set the goal state of the "
-"``TrapezoidProfileSubsystem``.  The subsystem will automatically execute a "
-"profile to the goal, passing the current state at each iteration to the "
-"provided `useState()`_ method."
-msgstr ""
-"La méthode ``setGoal()`` peut être utilisée pour définir l'état de "
-"l'objectif du ``TrapezoidProfileSubsystem``. Le sous-système exécutera "
-"automatiquement un profil vers l'objectif, en passant l'état actuel à chaque"
-" itération à la méthode `useState()`_ fournie."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:88
-msgid "Full TrapezoidProfileSubsystem Example"
-msgstr "Un exemple complet de sous-système TrapezoidProfile"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:121
-msgid ""
-"Using a ``TrapezoidProfileSubsystem`` with commands can be quite simple:"
-msgstr ""
-"L'utilisation d'un ``TrapezoidProfileSubsystem`` avec des commandes peut "
-"être assez simple:"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:144
-msgid "TrapezoidProfileCommand"
-msgstr "TrapezoidProfileCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:146
-msgid ""
-"In C++, the ``TrapezoidProfileCommand`` class is templated on the unit type "
-"used for distance measurements, which may be angular or linear.  The passed-"
-"in values *must* have units consistent with the distance units, or a "
-"compile-time error will be thrown.  For more information on C++ units, see "
-":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
-msgstr ""
-"En C ++, la classe ``TrapezoidProfileCommand`` est basée sur le type d'unité"
-" utilisé pour les mesures de distance, qui peut être angulaire ou linéaire. "
-"Les valeurs transmises *doivent* avoir des unités cohérentes avec les unités"
-" de distance, sinon une erreur de compilation sera indiquée. Pour plus "
-"d'informations sur les unités C++, voir  :ref:`docs/software/basic-"
-"programming/cpp-units:The C++ Units Library`."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:151
-msgid "Creating a TrapezoidProfileCommand"
-msgstr "Création d'un TrapezoidProfileCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:157
-msgid ""
-"In either case, a ``TrapezoidProfileCommand`` is created by passing the "
-"necessary parameters to its constructor (if defining a subclass, this can be"
-" done with a `super()` call):"
-msgstr ""
-"Dans les deux cas, un ``TrapezoidProfileCommand`` est créé en passant les "
-"paramètres nécessaires à son constructeur (si vous définissez une sous-"
-"classe, cela peut être fait avec un appel `super()` ):"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:180
-msgid "profile"
-msgstr "Le paramètre Profile (Profil)"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:185
-msgid "output"
-msgstr "Le paramètre Output (Sortie)"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:200
-msgid "requirements"
-msgstr "Les exigences"
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:202
-msgid ""
-"Like all inlineable commands, ``TrapezoidProfileCommand`` allows the user to"
-" specify its subsystem requirements as a constructor parameter."
-msgstr ""
-"Comme toutes les commandes en ligne, ``TrapezoidProfileCommand`` permet à "
-"l'utilisateur de spécifier ses exigences de sous-système en tant que "
-"paramètre constructeur."
-
-#: ../../frc-docs/source/docs/software/commandbased/profile-subsystems-commands.rst:205
-msgid "Full TrapezoidProfileCommand Example"
-msgstr "Exemple de commande TrapezoidProfileCommand complète"

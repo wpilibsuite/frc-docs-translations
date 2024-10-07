@@ -6,26 +6,21 @@
 # Translators:
 # Jiangshan Gong <jiangshan_gong@163.com>, 2020
 # Team 5308 <team5308@163.com>, 2024
-# Yitong Zhao <lucius300er@outlook.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2024-10-07 04:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2024\n"
+"Last-Translator: Team 5308 <team5308@163.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:4
-msgid "PID Control through PIDSubsystems and PIDCommands"
-msgstr "通过PID子系统和PID指令进行PID控制"
 
 #: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:6
 msgid ""
@@ -35,205 +30,3 @@ msgid ""
 msgstr ""
 "有关这些基于指令的程序包使用的WPILib PID控制功能的描述，请参阅WPILib中的:ref:`docs/software/advanced-"
 "controls/controllers/pidcontroller:PID Control in WPILib`。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:11
-msgid "PIDSubsystems"
-msgstr "PID子系统"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:16
-msgid "Creating a PIDSubsystem"
-msgstr "创建一个PID子系统"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:20
-msgid ""
-"When subclassing ``PIDSubsystem``, users must override two abstract methods "
-"to provide functionality that the class will use in its ordinary operation:"
-msgstr "创建“PIDSubsystem”的子类时，用户必须覆盖其父类的以下两个抽象方法以提供该类将在其常规运算中使用的功能："
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:23
-msgid "getMeasurement()"
-msgstr "getMeasurement()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:41
-msgid ""
-"The ``getMeasurement`` method returns the current measurement of the process"
-" variable.  The ``PIDSubsystem`` will automatically call this method from "
-"its ``periodic()`` block, and pass its value to the control loop."
-msgstr ""
-"“getMeasurement”方法返回过程变量的当前测量值。 "
-"PIDSubsystem将自动从其“periodic()”块中调用此方法，并将它的值传递给控制循环。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:43
-msgid ""
-"Users should override this method to return whatever sensor reading they "
-"wish to use as their process variable measurement."
-msgstr "用户应覆盖此方法，以返回他们希望的用作过程变量测量的任何传感器读数。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:46
-msgid "useOutput()"
-msgstr "useOutput()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:65
-msgid ""
-"The ``useOutput()`` method consumes the output of the PID controller, and "
-"the current setpoint (which is often useful for computing a feedforward).  "
-"The ``PIDSubsystem`` will automatically call this method from its "
-"``periodic()`` block, and pass it the computed output of the control loop."
-msgstr ""
-"useOutput()方法使用PID控制器的输出和当前设定值（这通常对于计算前馈很有用）。“PIDSubsystem”将自动从其“periodic()”块中调用此方法，并将控制环的计算输出传递给该方法。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:67
-msgid ""
-"Users should override this method to pass the final computed control output "
-"to their subsystem's motors."
-msgstr "用户应覆盖此方法，以将最终计算出的控制输出传递给其子系统的电机。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:70
-msgid "Passing In the Controller"
-msgstr "控制器中的传递"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:72
-msgid ""
-"Users must also pass in a ``PIDController`` to the ``PIDSubsystem`` base "
-"class through the superclass constructor call of their subclass.  This "
-"serves to specify the PID gains, as well as the period (if the user is using"
-" a non-standard main robot loop period)."
-msgstr ""
-"用户还必须通过“PIDController”和“PIDSubsystem”的子类的超类构造函数调用将“PIDController”传递给“PIDSubsystem”基类。这一步骤用于指定PID增益以及周期（如果用户使用的是非标准主机器人循环周期）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:74
-msgid ""
-"Additional modifications (e.g. enabling continuous input) can be made to the"
-" controller in the constructor body by calling ``getController()``."
-msgstr "用户还可以通过调用“getController()”在构造函数主体中对控制器进行其他修改（例如启用连续输入）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:77
-msgid "Using a PIDSubsystem"
-msgstr "使用PID子系统"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:79
-msgid ""
-"Once an instance of a ``PIDSubsystem`` subclass has been created, it can be "
-"used by commands through the following methods:"
-msgstr "一旦创建了“PIDSubsystem”子类的实例，就可以在指令中通过以下方法使用它："
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:82
-msgid "setSetpoint()"
-msgstr "setSetpoint()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:84
-msgid ""
-"The ``setSetpoint()`` method can be used to set the setpoint of the "
-"``PIDSubsystem``.  The subsystem will automatically track to the setpoint "
-"using the defined output:"
-msgstr "“setSetpoint()”方法可用于设置“PIDSubsystem”的设定值。子系统将使用已经定义的输出自动跟踪到设定点："
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:99
-msgid "enable() and disable()"
-msgstr "enable()和disable()"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:101
-msgid ""
-"The ``enable()`` and ``disable()`` methods enable and disable the PID "
-"control of the ``PIDSubsystem``.  When the subsystem is enabled, it will "
-"automatically run the control loop and track the setpoint.  When it is "
-"disabled, no control is performed."
-msgstr ""
-"“enable()”和“disable()”方法能够启用和禁用“PIDSubsystem”的PID控制。启用子系统后，它将自动运行控制回路并跟踪设定值。禁用时，子系统不执行任何控制。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:103
-msgid ""
-"Additionally, the ``enable()`` method resets the internal ``PIDController``,"
-" and the ``disable()`` method calls the user-defined `useOutput()`_ method "
-"with both output and setpoint set to ``0``."
-msgstr ""
-"此外，“enable()”方法能够重置内部的“PIDController”，并且“disable()”方法能够调用用户定义的‘useOutput()’_方法，并将输出值和设定值都设置为“0”。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:106
-msgid "Full PIDSubsystem Example"
-msgstr "完整的PID子系统示例"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:139
-msgid "Using a ``PIDSubsystem`` with commands can be very simple:"
-msgstr "通过命令使用“PIDSubsystem”非常简单："
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:169
-msgid "PIDCommand"
-msgstr "PID指令"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:174
-msgid "Creating a PIDCommand"
-msgstr "创建一个PID指令"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:180
-msgid ""
-"In either case, a ``PIDCommand`` is created by passing the necessary "
-"parameters to its constructor (if defining a subclass, this can be done with"
-" a `super()` call):"
-msgstr ""
-"无论哪种情况，都会通过将必要的参数传递给“PIDCommand”的构造函数来创建“PIDCommand”（如果定义了子类，则可以通过“ "
-"super()”调用来完成）："
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:203
-msgid "controller"
-msgstr "controller"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:205
-msgid ""
-"The ``controller`` parameter is the ``PIDController`` object that will be "
-"used by the command.  By passing this in, users can specify the PID gains "
-"and the period for the controller (if the user is using a nonstandard main "
-"robot loop period)."
-msgstr ""
-"“controller”参数是在指令中将使用的“PIDController”对象。通过传递此参数，用户可以详细指定PID增益和控制器的周期（如果用户使用的是非标准主机器人循环周期）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:207
-msgid ""
-"When subclassing ``PIDCommand``, additional modifications (e.g. enabling "
-"continuous input) can be made to the controller in the constructor body by "
-"calling ``getController()``."
-msgstr "当子类化“PIDCommand”时，可以通过调用getController()对构造函数主体中的控制器进行额外的修改（例如启用连续输入）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:210
-msgid "measurementSource"
-msgstr "measurementSource"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:214
-msgid ""
-"When subclassing ``PIDCommand``, advanced users may further modify the "
-"measurement supplier by modifying the class's ``m_measurement`` field."
-msgstr "当子类化“PIDCommand”时，高级用户可以通过修改类的“m_measurement”字段来进一步修改度量值提供器。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:217
-msgid "setpointSource"
-msgstr "setpointSource"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:221
-msgid ""
-"When subclassing ``PIDCommand``, advanced users may further modify the "
-"setpoint supplier by modifying the class's ``m_setpoint`` field."
-msgstr "当子类化“PIDCommand”时，高级用户可以通过修改类的“m_setpoint”字段来进一步修改设定值提供器。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:224
-msgid "useOutput"
-msgstr "useOutput"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:228
-msgid ""
-"When subclassing ``PIDCommand``, advanced users may further modify the "
-"output consumer by modifying the class's ``m_useOutput`` field."
-msgstr "当子类化“PIDCommand”时，高级用户可以通过修改类的“m_useOutput”字段来进一步修改输出值使用器。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:231
-msgid "requirements"
-msgstr "要求"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:233
-msgid ""
-"Like all inlineable commands, ``PIDCommand`` allows the user to specify its "
-"subsystem requirements as a constructor parameter."
-msgstr "像所有内联命令一样，“PIDCommand”允许用户将其子系统要求指定为构造函数参数。"
-
-#: ../../frc-docs/source/docs/software/commandbased/pid-subsystems-commands.rst:236
-msgid "Full PIDCommand Example"
-msgstr "完整的PID指令示例"

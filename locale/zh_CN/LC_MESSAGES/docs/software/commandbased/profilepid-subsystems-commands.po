@@ -6,16 +6,15 @@
 # Translators:
 # Jiangshan Gong <jiangshan_gong@163.com>, 2020
 # Team 5308 <team5308@163.com>, 2024
-# Yitong Zhao <lucius300er@outlook.com>, 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 04:05+0000\n"
+"POT-Creation-Date: 2024-11-06 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2024\n"
+"Last-Translator: Team 5308 <team5308@163.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,105 +34,3 @@ msgid ""
 msgstr ""
 "有关这些基于指令的包装程序使用的WPILib PID控制功能的描述，请参阅:ref:`docs/software/advanced-"
 "controls/controllers/pidcontroller:PID Control in WPILib`。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:11
-msgid "ProfiledPIDCommand"
-msgstr "ProfiledPIDCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:13
-msgid ""
-"In C++, the ``ProfiledPIDCommand`` class is templated on the unit type used "
-"for distance measurements, which may be angular or linear.  The passed-in "
-"values *must* have units consistent with the distance units, or a compile-"
-"time error will be thrown.  For more information on C++ units, see "
-":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
-msgstr ""
-"在C "
-"++中，“ProfiledPIDCommand”类以用于距离测量的单位类型为模板，该单位类型可以是角度或线性的。传入的值*必须*具有与距离单位一致的单位，否则将引发编译时错误。有关C"
-" ++单元的更多信息，请参阅:ref:`docs/software/basic-programming/cpp-units:The C++ Units "
-"Library`。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:18
-msgid "Creating a PIDCommand"
-msgstr "创建一个PIDCommand"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:24
-msgid ""
-"In either case, a ``ProfiledPIDCommand`` is created by passing the necessary"
-" parameters to its constructor (if defining a subclass, this can be done "
-"with a `super()` call):"
-msgstr ""
-"无论哪种情况，都通过向构造函数传递必要的参数来创建“ProfileDPIDCommand”（如果定义了子类，则可以通过调用“super()”来完成）："
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:47
-msgid "controller"
-msgstr "controller"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:49
-msgid ""
-"The ``controller`` parameter is the ``ProfiledPIDController`` object that "
-"will be used by the command.  By passing this in, users can specify the PID "
-"gains, the motion profile constraints, and the period for the controller (if"
-" the user is using a nonstandard main robot loop period)."
-msgstr ""
-"“controller”参数是在指令中将使用的“ProfiledPIDController”对象。通过传递此参数，用户可以指定PID增益，运动曲线约束和控制器的周期（如果用户使用的是非标准的主机器人循环周期）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:51
-msgid ""
-"When subclassing ``ProfiledPIDCommand``, additional modifications (e.g. "
-"enabling continuous input) can be made to the controller in the constructor "
-"body by calling ``getController()``."
-msgstr ""
-"当将“ProfiledPIDCommand”子类化时，可以通过调用“getController()”对构造函数主体中的控制器进行其他修改（例如，启用连续输入）。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:54
-msgid "measurementSource"
-msgstr "measurementSource"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:58
-msgid ""
-"When subclassing ``ProfiledPIDCommand``, advanced users may further modify "
-"the measurement supplier by modifying the class's ``m_measurement`` field."
-msgstr "在子类化“ProfiledPIDCommand”时，高级用户可以通过修改类的“m_measurement”字段来进一步修改度量提供者。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:61
-msgid "goalSource"
-msgstr "goalSource"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:65
-msgid ""
-"When subclassing ``ProfiledPIDCommand``, advanced users may further modify "
-"the setpoint supplier by modifying the class's ``m_goal`` field."
-msgstr "当子类化“ProfiledPIDCommand”时，高级用户可以通过修改类的“m_goal”字段来进一步修改设定值供应商。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:68
-msgid "useOutput"
-msgstr "useOutput"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:72
-msgid ""
-"When subclassing ``ProfiledPIDCommand``, advanced users may further modify "
-"the output consumer by modifying the class's ``m_useOutput`` field."
-msgstr "在子类化“ProfiledPIDCommand”时，高级用户可以通过修改类的“m_useOutput”字段来进一步修改输出使用者。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:75
-msgid "requirements"
-msgstr "requirements"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:77
-msgid ""
-"Like all inlineable commands, ``ProfiledPIDCommand`` allows the user to "
-"specify its subsystem requirements as a constructor parameter."
-msgstr "像所有内联命令一样，“ProfiledPIDCommand”允许用户将其子系统要求指定为构造函数参数。"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:80
-msgid "Full ProfiledPIDCommand Example"
-msgstr "完整ProfiledPIDCommand示例"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:113
-msgid "Todo"
-msgstr "Todo"
-
-#: ../../frc-docs/source/docs/software/commandbased/profilepid-subsystems-commands.rst:113
-msgid "inlined example?"
-msgstr "内联示例？"

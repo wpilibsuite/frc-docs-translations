@@ -7,15 +7,16 @@
 # Andre Theberge <atheberge2@videotron.ca>, 2021
 # Austin Shalit <austinshalit@gmail.com>, 2021
 # Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021
+# Sami G.-D., 2024
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2024-12-26 16:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
+"Last-Translator: Sami G.-D., 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -70,104 +71,14 @@ msgstr "Java"
 msgid "C++"
 msgstr "C++"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:48
-msgid "Setting the Entire Strip to One Color"
-msgstr "Définition de la bande entière sur une seule couleur"
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:50
-msgid ""
-"Color can be set to an individual led on the strip using two methods. "
-"``setRGB()`` which takes RGB values as an input and ``setHSV()`` which takes"
-" HSV values as an input."
-msgstr ""
-"La couleur peut être définie sur chaque DEL spécifique sur la bande en "
-"utilisant deux méthodes. ``setRGB()``  qui prend les valeurs RGB comme "
-"entrée et ``setHSV()``  qui prend les valeurs HSV comme entrée."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:53
-msgid "Using RGB Values"
-msgstr "Utilisation des valeurs RGB"
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:55
-msgid ""
-"RGB stands for Red, Green, and Blue. This is a fairly common color model as "
-"it's quite easy to understand. LEDs can be set with the ``setRGB`` method "
-"that takes 4 arguments: index of the LED, amount of red, amount of green, "
-"amount of blue. The amount of Red, Green, and Blue are integer values "
-"between 0-255."
-msgstr ""
-"RGB signifie rouge, vert et bleu. Il s'agit d'un modèle de couleur assez "
-"courant car il est assez facile à comprendre. Les LED peuvent être réglées "
-"avec la méthode ``setRGB`` qui prend 4 arguments: index (ou position de la "
-"LED sur la bande), valeur pour le rouge, valeur pour le vert, valeur pour le"
-" bleu. Les valeurs de rouge, vert et bleu sont des entiers compris entre 0 "
-"et 255."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:83
-msgid "Using HSV Values"
-msgstr "Utilisation des valeurs HSV"
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst-1
-msgid "HSV models picture"
-msgstr "Image des modèles HSV"
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:90
-msgid ""
-"LEDs can be set with the ``setHSV`` method that takes 4 arguments: index of "
-"the LED, hue, saturation, and value. An example is shown below for setting "
-"the color of an LED strip to red (hue of 0)."
-msgstr ""
-"Les LED peuvent être réglées avec la méthode ``setHSV`` qui prend 4 "
-"arguments: index de la LED, Hue, Saturation et Value. Un exemple est "
-"illustré ci-dessous pour définir la couleur d'une bande LED sur rouge "
-"(teinte de 0)."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:118
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:129
 msgid "Creating a Rainbow Effect"
 msgstr "Création d'un effet arc-en-ciel"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:120
-msgid ""
-"The below method does a couple of important things. Inside of the *for* "
-"loop, it equally distributes the hue over the entire length of the strand "
-"and stores the individual LED hue to a variable called ``hue``. Then the for"
-" loop sets the HSV value of that specified pixel using the ``hue`` value."
-msgstr ""
-"La méthode ci-dessous fait plusieurs opérations. À l'intérieur de la boucle "
-"*for*, la teinte (ou Hue) est distribuée de façon uniforme sur la bande de "
-"LED et stocke la teinte individuelle des LED dans une variable appelée "
-"``hue``. Ensuite, la boucle *for* définit la valeur HSV de ce pixel spécifié"
-" en utilisant la valeur ``hue``."
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:1080
+msgid "Using HSV Values"
+msgstr "Utilisation des valeurs HSV"
 
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:122
-msgid ""
-"Moving outside of the for loop, the ``m_rainbowFirstPixelHue`` then iterates"
-" the pixel that contains the \"initial\" hue creating the rainbow effect. "
-"``m_rainbowFirstPixelHue`` then checks to make sure that the hue is inside "
-"the hue boundaries of 180. This is because HSV hue is a value from 0-180."
-msgstr ""
-"À l'extérieur de la boucle *for*, le ``m_rainbowFirstPixelHue`` itère "
-"ensuite le pixel qui contient la teinte \"initiale\" créant l'effet arc-en-"
-"ciel. ``m_rainbowFirstPixelHue`` vérifie ensuite pour s'assurer que la "
-"teinte est à l'intérieur des limites de teinte de 180. En effet, la teinte "
-"HSV est une valeur de 0 à 180."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:124
-msgid ""
-"It's good robot practice to keep the ``robotPeriodic()`` method as clean as "
-"possible, so we'll create a method for handling setting our LED data. We'll "
-"call this method ``rainbow()`` and call it from ``robotPeriodic()``."
-msgstr ""
-"C'est une bonne pratique de programmation de garder la méthode "
-"``robotPeriodic()`` aussi claire et concise que possible, nous allons donc "
-"créer une méthode pour gérer la configuration de nos données LED. Nous "
-"appellerons cette méthode ``rainbow()`` et l'appellerons de "
-"``robotPeriodic()``."
-
-#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:146
-msgid ""
-"Now that we have our ``rainbow`` method created, we have to actually call "
-"the method and set the data of the LED."
-msgstr ""
-"Maintenant que nous avons créé notre méthode rainbow(), nous devons "
-"l'appeler et définir les données qui iront à la bande de LED."
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:1082
+msgid "HSV models picture"
+msgstr "Image des modèles HSV"

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -13,7 +13,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2024\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 16:04+0000\n"
+"POT-Creation-Date: 2025-01-01 16:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -35,7 +35,7 @@ msgstr "Journaux d’événements"
 msgid "Log Viewer UI"
 msgstr "Interface du visionneur"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:23
 msgid "Overview of the home Log Viewer screen."
 msgstr "Vue d’ensemble de l’écran d’accueil de la visionneuse du journal. "
 
@@ -177,7 +177,7 @@ msgstr ""
 msgid "Using the Graph Display"
 msgstr "Comment utiliser l'affichage graphique"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:45
 msgid "The different parts of the graph screen and some of the basic signals."
 msgstr ""
 "Les différentes parties de l’écran graphique et certains des signaux de "
@@ -253,7 +253,7 @@ msgstr ""
 msgid "Event List"
 msgstr "Liste des événements"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:63
 msgid "Event List that is gotten to by the tab at the top center."
 msgstr "Liste des événements qui est obtenue par l’onglet en haut au centre."
 
@@ -310,7 +310,7 @@ msgstr ""
 msgid "Identifying Logs from Matches"
 msgstr "Identification des journaux des matches"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:80
 msgid ""
 "To identify a log from a match look for the \"FMS Connected\" message then "
 "the match number."
@@ -352,7 +352,7 @@ msgstr ""
 msgid "\"Normal\" Log"
 msgstr "Journal \"Normal\""
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:97
 msgid "A normal graph and a couple of harmless events."
 msgstr "Un graphique normal et quelques événements mineurs."
 
@@ -377,7 +377,7 @@ msgstr ""
 msgid "Disconnected from FMS"
 msgstr "Déconnecté du FMS"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:105
 msgid ""
 "A disconnect can cause the log to be split into two pieces but will at least"
 " haved events showing the disconnect."
@@ -408,7 +408,7 @@ msgstr ""
 msgid "roboRIO Reboot"
 msgstr "Redémarrage du roboRIO"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:113
 msgid "A roboRIO reboot is most evident by a \"Time since robot boot\" message."
 msgstr ""
 "Un redémarrage du roboRIO est d'avantage mis en évidence par un message "
@@ -447,7 +447,7 @@ msgstr ""
 msgid "Ethernet cable issue on robot"
 msgstr "Problème de câble Ethernet sur le robot"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:121
 msgid ""
 "This issue is evident because the driverstation could connect to the radio "
 "but not the roboRIO yet the roboRIO hadn't rebooted."
@@ -492,37 +492,6 @@ msgstr ""
 msgid "Radio reboot"
 msgstr "Redémarrage de la radio"
 
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst-1
+#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:129
 msgid "The ping here shows the roboRIO and the radio as BAD."
 msgstr "Le ping ici montre le roboRIO et la radio comme MAUVAIS."
-
-#: ../../frc-docs/source/docs/software/driverstation/driver-station-log-viewer.rst:132
-msgid ""
-"A reboot of the robot radio is typically characterized by a loss of "
-"connection to the radio for ~40-45 seconds. In this example, the radio "
-"briefly lost power at 3:22:44, causing it to start rebooting. The event at "
-"3:22:45 indicates that the ping to the radio failed. At 3:23:11, the DS "
-"regains communication with the roboRIO and the roboRIO indicates it has been"
-" up for 1272.775 seconds, ruling out a roboRIO reboot. Note that the network"
-" switch on the radio comes back up very quickly so a momentary power loss "
-"may not result in a \"radio lost\"/\"radio seen\" event pair. A longer "
-"disturbance may result in radio events being logged by the DS. In that case,"
-" the distinguishing factor which points towards a radio reboot is the ping "
-"status of the radio from the DS. If the radio resets, the radio will be "
-"unreachable. If the issue is a cabling or connection issue on the robot, the"
-" radio ping should remain \"GOOD\"."
-msgstr ""
-"Un redémarrage de la radio du robot est généralement caractérisé par une "
-"perte de connexion avec la radio pendant environ 40-45 secondes. Dans cet "
-"exemple, la radio a brièvement perdu de la puissance à 3:22:44, ce qui l’a "
-"conduit à redémarrer. L’événement survenu à 3:22:45 indique que le ping à la"
-" radio a échoué. À 3:23:11, DS retrouve la communication avec le roboRIO et "
-"le roboRIO indique qu’il a été actif pendant 1272.775 secondes, excluant un "
-"redémarrage roboRIO. Notez que l’interrupteur réseau de la radio se rétablit"
-" très rapidement de sorte qu’une perte de puissance momentanée peut ne pas "
-"entraîner une séquence d’événements \"radio lost\"/\"radio seen\". Une "
-"perturbation plus longue peut entraîner l’enregistrement d’événements radio "
-"par DS. Dans ce cas, le facteur distinctif qui pointe vers un redémarrage "
-"radio est l’état ping de la radio dans DS. Si la radio se réinitialise, la "
-"radio sera inaccessible. Si le problème est un problème de câblage ou de "
-"connexion sur le robot, le ping radio doit demeure \"GOOD\"."

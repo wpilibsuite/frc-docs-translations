@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,15 +12,16 @@
 # Diego Lozano Rangel, 2022
 # Alexis Moreno, 2023
 # Diana Ramos <dianaracasas@gmail.com>, 2024
+# Martha Magallanes, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2025-01-04 04:04+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
-"Last-Translator: Diana Ramos <dianaracasas@gmail.com>, 2024\n"
+"Last-Translator: Martha Magallanes, 2025\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -565,11 +566,11 @@ msgstr ""
 "Por ejemplo, podríamos usar el siguiente Q y R para un sistema de elevador "
 "con estados de posición y velocidad. "
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:222
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:221
 msgid "LQR: example application"
 msgstr "LQR: ejemplo de aplicación"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:229
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:228
 msgid ""
 "We arbitrarily choose a desired state excursion (maximum error) of :math:`q "
 "= [0.1\\ \\text{rad/sec}]`, and an :math:`\\mathbf{r}` of :math:`[12\\ "
@@ -584,7 +585,7 @@ msgstr ""
 ":term:`ganancia` K actúa como el componente proporcional del bucle PID en la"
 " velocidad del volante. "
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:233
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:232
 msgid ""
 "The following graph shows the flywheel's angular velocity and applied "
 "voltage over time with two different :term:`gain`\\s. We can see how a "
@@ -600,11 +601,11 @@ msgstr ""
 "saturado a 12V por más tiempo. Es igual a incrementar la ganancia P de un "
 "controlador PID por un factor de ~8x."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:239
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:238
 msgid "LQR and Measurement Latency Compensation"
 msgstr "LQR y Medición de Compensación de Latencia"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:241
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:240
 msgid ""
 "Oftentimes, our sensors have a delay associated with their measurements. For"
 " example the SPARK MAX motor controller over CAN can have up to 30ms of "
@@ -614,7 +615,7 @@ msgstr ""
 "medidas. Por ejemplo el controlador de motor SPARK MAX sobre CAN puede tener"
 " 30ms de retraso asociado con las mediciones de velocidad."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:243
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:242
 msgid ""
 "This lag means that our feedback controller will be generating voltage "
 "commands based on state estimates from the past. This often has the effect "
@@ -626,7 +627,7 @@ msgstr ""
 "pasado. Regularmente tiene el efecto de introducir inestabilidad y "
 "oscilaciones en el sistema, como se muestra en la gráfica de abajo."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:247
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:246
 msgid ""
 "\\mathbf{K_{compensated}} = \\mathbf{K} \\cdot \\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}\n"
 "\n"
@@ -634,7 +635,7 @@ msgstr ""
 "\\mathbf{K_{compensated}} = \\mathbf{K} \\cdot \\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:250
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:249
 msgid ""
 "Multiplying :math:`\\mathbf{K}` by :math:`\\mathbf{A} - \\mathbf{BK}` "
 "essentially advances the gains by one timestep. In this case, we multiply by"
@@ -647,7 +648,7 @@ msgstr ""
 "\\mathbf{BK}\\right)^{\\text{delay} / dt}` para avanzar las ganancias por el"
 " retraso de las mediciones."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:255
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:254
 msgid ""
 "This can have the effect of reducing :math:`\\mathbf{K}` to zero, "
 "effectively disabling feedback control."
@@ -655,7 +656,7 @@ msgstr ""
 "Esto puede tener efecto de reducir :math:`\\mathbf{K}` a cero, de manera "
 "efectiva inhabilitando el control de retroalimentación."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:257
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:256
 msgid ""
 "The SPARK MAX motor controller uses a 40-tap FIR filter with a delay of "
 "19.5ms, and status frames are by default sent every 20ms."
@@ -663,7 +664,7 @@ msgstr ""
 "El controlador de motor SPARK MAX utiliza un filtro FIR de 40 tomas con un "
 "retraso de 19,5 ms, y los marcos de estado se envían por defecto cada 20 ms."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:259
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:258
 msgid ""
 "The code below shows how to adjust the LQR controller's K gain for sensor "
 "input delays:"
@@ -671,11 +672,11 @@ msgstr ""
 "El siguiente código muestra cómo ajustar la ganancia K del controlador LQR "
 "para los retardos de entrada del sensor:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:284
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:286
 msgid "Linearization"
 msgstr "Linealización"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:286
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:288
 msgid ""
 "Linearization is a tool used to approximate nonlinear functions and state-"
 "space systems using linear ones. In two-dimensional space, linear functions "
@@ -704,7 +705,7 @@ msgstr ""
 "diferencia entre la aproximación y el valor real de :math:`\\sin{x}` en "
 ":math:`x`."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:291
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:293
 msgid ""
 "We can also linearize state-space systems with nonlinear :term:`dynamics`. "
 "We do this by picking a point :math:`\\mathbf{x}` in state-space and using "

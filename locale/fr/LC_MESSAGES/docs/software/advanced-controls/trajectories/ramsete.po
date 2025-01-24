@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-30 04:03+0000\n"
+"POT-Creation-Date: 2025-01-24 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -26,21 +26,11 @@ msgstr ""
 msgid "Ramsete Controller"
 msgstr "Contrôleur Ramsete"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:3
-msgid ""
-"The Ramsete Controller is a trajectory tracker that is built in to WPILib. "
-"This tracker can be used to accurately track trajectories with correction "
-"for minor disturbances."
-msgstr ""
-"Le contrôleur Ramsete est un tracker de trajectoire intégré à WPILib. Ce "
-"tracker peut être utilisé pour suivre avec précision les trajectoires avec "
-"correction des perturbations mineures."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:6
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:9
 msgid "Constructing the Ramsete Controller Object"
 msgstr "Construire l'objet contrôleur Ramsete"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:7
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:10
 msgid ""
 "The Ramsete controller should be initialized with two gains, namely ``b`` "
 "and ``zeta``. Larger values of ``b`` make convergence more aggressive like a"
@@ -59,7 +49,7 @@ msgstr ""
 "robot. Cela signifie que ces gains de contrôleur sont généralement "
 "indépendants du robot."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:12
 msgid ""
 "Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested "
 "repeatedly to produce desirable results when all units were in meters. As "
@@ -72,44 +62,15 @@ msgstr ""
 "aucun argument à ``RamseteController`` aura ses gains réglés par défaut à "
 "ces valeurs."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:46
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:47
 msgid "Getting Adjusted Velocities"
 msgstr "Obtention de vitesses ajustées"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:47
-msgid ""
-"The Ramsete controller returns \"adjusted velocities\" so that the when the "
-"robot tracks these velocities, it accurately reaches the goal point. The "
-"controller should be updated periodically with the new goal. The goal "
-"comprises of a desired pose, desired linear velocity, and desired angular "
-"velocity. Furthermore, the current position of the robot should also be "
-"updated periodically. The controller uses these four arguments to return the"
-" adjusted linear and angular velocity. Users should command their robot to "
-"these linear and angular velocities to achieve optimal trajectory tracking."
-msgstr ""
-"Le contrôleur Ramsete renvoie des «vitesses ajustées» de sorte que lorsque "
-"le robot respecte ces vitesses, il atteint avec précision le point cible. Le"
-" contrôleur doit être mis à jour périodiquement avec le nouvel objectif. Le "
-"point cible comprend une pose souhaitée, une vitesse linéaire souhaitée et "
-"une vitesse angulaire souhaitée. De plus, la position actuelle du robot doit"
-" également être mise à jour périodiquement. Le contrôleur utilise ces quatre"
-" arguments pour renvoyer la vitesse linéaire et angulaire ajustée. Les "
-"utilisateurs doivent commander leur robot à ces vitesses linéaires et "
-"angulaires pour obtenir un suivi de trajectoire optimal."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:71
-msgid ""
-"These calculations should be performed at every loop iteration, with an "
-"updated robot position and goal."
-msgstr ""
-"Ces calculs doivent être effectués à chaque itération de boucle, avec une "
-"position et un objectif du robot mis à jour."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:74
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:77
 msgid "Using the Adjusted Velocities"
 msgstr "Utilisation des vitesses ajustées"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:75
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:78
 msgid ""
 "The adjusted velocities are of type ``ChassisSpeeds``, which contains a "
 "``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity"
@@ -125,7 +86,7 @@ msgstr ""
 "contrôleur pour les robots non holonomiques (robots qui ne peuvent pas se "
 "déplacer latéralement), l'objet à vitesses ajustées a un ``vy`` de zéro."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:77
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:80
 msgid ""
 "The returned adjusted speeds can be converted to usable speeds using the "
 "kinematics classes for your drivetrain type. For example, the adjusted "
@@ -138,13 +99,13 @@ msgstr ""
 "vitesses gauche et droite pour un entraînement différentiel à l'aide d'un "
 "objet ``DifferentialDriveKinematics``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:104
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:110
 msgid "Ramsete in the Command-Based Framework"
 msgstr ""
 "Ramsete dans un environnement basé sur les commandes (Command -based "
 "Framework)"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:105
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:111
 msgid ""
 "For the sake of ease for users, a ``RamseteCommand`` class is built in to "
 "WPILib. For a full tutorial on implementing a path-following autonomous "

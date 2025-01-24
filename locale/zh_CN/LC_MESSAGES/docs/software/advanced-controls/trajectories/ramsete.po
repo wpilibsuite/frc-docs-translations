@@ -1,20 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-30 04:03+0000\n"
+"POT-Creation-Date: 2025-01-24 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"Last-Translator: 楚涵 张 <zhangchuhan1210@126.com>, 2020\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,18 +25,11 @@ msgstr ""
 msgid "Ramsete Controller"
 msgstr "斜坡控制器"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:3
-msgid ""
-"The Ramsete Controller is a trajectory tracker that is built in to WPILib. "
-"This tracker can be used to accurately track trajectories with correction "
-"for minor disturbances."
-msgstr "Ramsete控制器是WPILib内置的轨迹跟踪器。该跟踪器可用于通过对较小干扰的校正来准确跟踪轨迹。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:6
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:9
 msgid "Constructing the Ramsete Controller Object"
 msgstr "构造Ramsete控制器对象"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:7
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:10
 msgid ""
 "The Ramsete controller should be initialized with two gains, namely ``b`` "
 "and ``zeta``. Larger values of ``b`` make convergence more aggressive like a"
@@ -51,7 +43,7 @@ msgstr ""
 "'使收敛更猛烈，就像一个比例项，而较大的值' ' zeta ' "
 "'在响应中提供更多的阻尼。这些控制器增益只决定控制器将如何输出调整的速度。它不影响机器人的实际速度跟踪。这意味着这些控制器增益通常与机器人无关。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:12
 msgid ""
 "Gains of ``2.0`` and ``0.7`` for ``b`` and ``zeta`` have been tested "
 "repeatedly to produce desirable results when all units were in meters. As "
@@ -60,34 +52,15 @@ msgid ""
 msgstr ""
 "当所有单位均以米为单位时，对b和zeta的增益分别为2.0和0.7进行了反复测试，以产生理想的结果。这样，``RamseteController''的零参数构造函数就存在，其增益默认为这些值。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:46
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:47
 msgid "Getting Adjusted Velocities"
 msgstr "调整速度"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:47
-msgid ""
-"The Ramsete controller returns \"adjusted velocities\" so that the when the "
-"robot tracks these velocities, it accurately reaches the goal point. The "
-"controller should be updated periodically with the new goal. The goal "
-"comprises of a desired pose, desired linear velocity, and desired angular "
-"velocity. Furthermore, the current position of the robot should also be "
-"updated periodically. The controller uses these four arguments to return the"
-" adjusted linear and angular velocity. Users should command their robot to "
-"these linear and angular velocities to achieve optimal trajectory tracking."
-msgstr ""
-"Ramsete控制器返回“已调整的速度”，以便当机器人跟踪这些速度时，它可以精确地达到目标点。应使用新目标定期更新控制器。目标包括期望的姿势，期望的线速度和期望的角速度。此外，机器人的当前位置也应定期更新。控制器使用这四个参数返回调整后的线速度和角速度。用户应命令机器人以这些线性和角速度实现最佳轨迹跟踪。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:71
-msgid ""
-"These calculations should be performed at every loop iteration, with an "
-"updated robot position and goal."
-msgstr "这些计算应在每次循环迭代时执行，并具有更新的机器人位置和目标"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:74
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:77
 msgid "Using the Adjusted Velocities"
 msgstr "使用调整后的速度"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:75
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:78
 msgid ""
 "The adjusted velocities are of type ``ChassisSpeeds``, which contains a "
 "``vx`` (linear velocity in the forward direction), a ``vy`` (linear velocity"
@@ -99,7 +72,7 @@ msgstr ""
 "调整后的速度为``ChassisSpeeds''类型，其中包含``vx''（向前方向的线速度），``vy''（横向方向的线速度）和``omega'' "
 "`（围绕机器人框架中心的角速度）。由于Ramsete控制器是用于非完整机器人（不能侧向移动的机器人）的控制器，因此调整后的速度对象的``vy''为零。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:77
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:80
 msgid ""
 "The returned adjusted speeds can be converted to usable speeds using the "
 "kinematics classes for your drivetrain type. For example, the adjusted "
@@ -108,6 +81,6 @@ msgid ""
 msgstr ""
 "可以使用适用于您的传动系统类型的运动学类将返回的调整速度转换为可用速度。例如，可以使用``DifferentialDriveKinematics''对象将差速器的调整速度转换为左右速度。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:104
+#: ../../frc-docs/source/docs/software/advanced-controls/trajectories/ramsete.rst:110
 msgid "Ramsete in the Command-Based Framework"
 msgstr "基于命令的框架中的Ramsete"

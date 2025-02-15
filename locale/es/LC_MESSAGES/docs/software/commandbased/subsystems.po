@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -10,16 +10,16 @@
 # Mariano, 2023
 # Austin Shalit <austinshalit@gmail.com>, 2024
 # Fernando Soltero <fersg806@gmail.com>, 2024
-# Román Hernandez sosa, 2024
+# Román Hernandez sosa, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-06-02 04:03+0000\n"
+"POT-Creation-Date: 2025-02-15 04:04+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
-"Last-Translator: Román Hernandez sosa, 2024\n"
+"Last-Translator: Román Hernandez sosa, 2025\n"
 "Language-Team: Spanish (Mexico) (https://app.transifex.com/wpilib/teams/109324/es_MX/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -31,15 +31,80 @@ msgstr ""
 msgid "Subsystems"
 msgstr "Subsistemas"
 
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:8
+msgid ""
+"Subsystems can be associated with \"default commands\" that will be "
+"automatically scheduled when no other command is currently using the "
+"subsystem. This is useful for \"background\" actions such as controlling the"
+" robot drive, keeping an arm held at a setpoint, or stopping motors when the"
+" subsystem isn't used. Similar functionality can be achieved in the "
+"subsystem’s ``periodic()`` method, which is run once per run of the "
+"scheduler; teams should try to be consistent within their codebase about "
+"which functionality is achieved through either of these methods. Subsystems "
+"are represented in the command-based library by the ``Subsystem`` interface "
+"(`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html>`__,"
+" :external:py:class:`Python <commands2.Subsystem>`)."
+msgstr ""
+"Los subsistemas pueden estar asociados con \"comandos predeterminados\" que "
+"se programarán automáticamente cuando ningún otro comando esté utilizando "
+"actualmente el subsistema. Esto es útil para acciones \"en segundo plano\" "
+"como controlar la conducción del robot, mantener un brazo en un punto "
+"establecido o detener los motores cuando el subsistema no se utiliza. "
+"Funcionalidades similares se pueden lograr en el método ``periodic()`` del "
+"subsistema, que se ejecuta una vez por cada ejecución del planificador; los "
+"equipos deben intentar ser consistentes dentro de su código base sobre qué "
+"funcionalidad se logra a través de cualquiera de estos métodos. Los "
+"subsistemas están representados en la biblioteca basada en comandos por la "
+"interfaz ``Subsystem`` interface (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html>`__,"
+" :external:py:class:`Python <commands2.Subsystem>`)."
+
 #: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:11
 msgid "Creating a Subsystem"
 msgstr "Creando un subsistema"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:85
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:13
+msgid ""
+"The recommended method to create a subsystem for most users is to subclass "
+"the abstract ``SubsystemBase`` class in (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem_base.html>`__),"
+" as seen in the command-based template (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__)."
+" In Python, because Python does not have interfaces, the ``Subsystem`` class"
+" is a concrete class that can be subclassed directly "
+"(:external:py:class:`Python <commands2.Subsystem>`). The following example "
+"demonstrates how to create a simple subsystem in each of the supported "
+"languages:"
+msgstr ""
+"El método recomendado para crear un subsistema para la mayoría de usuarios "
+"es la subclase abstracta ``SubsystemBase`` en (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/SubsystemBase.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem_base.html>`__),"
+" como se ve en la plantilla basada en comandos (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/commandbased/subsystems/ExampleSubsystem.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/3eb372c25ad6079d6edfbdb4bb099a7bc00e4350/wpilibcExamples/src/main/cpp/templates/commandbased/include/subsystems/ExampleSubsystem.h>`__)."
+"  En Python, porque Python no tiene interfaces, la clase ``Subsystem`` es "
+"una clase concreta que puede ser subclaseada directamente  "
+"(:external:py:class:`Python <commands2.Subsystem>`).. Los siguientes "
+"ejemplos demuestran como crear un subsystema simple en cada uno de los "
+"lenguajes compatibles:"
+
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:72
 msgid "Simple Subsystem Example"
 msgstr "Ejemplo de un subsistema simple"
 
-#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:127
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:110
 msgid ""
 "Notice that the subsystem hides the presence of the DoubleSolenoid from "
 "outside code (it is declared ``private``), and instead publicly exposes two "
@@ -61,3 +126,24 @@ msgstr ""
 "cambiar la implementación (por ejemplo, se podría utilizar un motor en lugar"
 " de un neumático) sin que el código fuera del subsistema tenga que cambiar "
 "con él."
+
+#: ../../frc-docs/source/docs/software/commandbased/subsystems.rst:149
+msgid ""
+"Note the qualification of the ``RunOnce`` factory used here: this isn't the "
+"static factory in ``Commands``! Subsystems have similar instance factories "
+"that return commands requiring ``this`` (Java/C++) or ``self`` (Python) "
+"subsystem. Here, the ``Subsystem.runOnce(Runnable)`` factory (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__,"
+" :external:py:meth:`Python <commands2.Subsystem.runOnce>`) is used."
+msgstr ""
+"Note la calificación de la fábrica ``RunOnce`` utilizada aquí: ¡Esto no es "
+"la fábrica estática en ``Commands``! Los subsistemas tienen fábricas de "
+"instancia similares que devuelven comandos que requieren ``this`` (Java/C++)"
+" o ``self`` (Python) subsistema. Aquí se utiliza la fábrica "
+"``Subsystem.runOnce(Runnable)`` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj2/command/Subsystem.html#runOnce(java.lang.Runnable)>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc2_1_1_subsystem.html#a6b8b3b7dab6f54fb8635e335dad448fe>`__,"
+" :external:py:meth:`Python <commands2.Subsystem.runOnce>`) es usado."

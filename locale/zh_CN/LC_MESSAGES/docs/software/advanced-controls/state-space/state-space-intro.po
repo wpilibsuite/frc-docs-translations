@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -13,9 +13,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2025-06-21 04:06+0000\n"
 "PO-Revision-Date: 2020-10-04 04:16+0000\n"
 "Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2024\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -32,16 +32,6 @@ msgstr "空间状态控制简介"
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:7
 msgid "From PID to Model-Based Control"
 msgstr "从PID到基于模型的控制"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:9
-msgid ""
-"When tuning PID controllers, we focus on fiddling with controller parameters"
-" relating to the current, past, and future :term:`error` (P, I and D terms) "
-"rather than the underlying system states. While this approach works in a lot"
-" of situations, it is an incomplete view of the world."
-msgstr ""
-"当调优PID控制器时，我们关注于摆弄与当前、过去和未来 :term:`error` "
-"(P、I和D项)相关的控制器参数，而不是底层系统状态。虽然这种方法在很多情况下都有效，但它是一种不完整的世界观。"
 
 #: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:11
 msgid ""
@@ -456,11 +446,11 @@ msgid ""
 "position and velocity states."
 msgstr "例如，对于具有位置和速度状态的抬升系统，我们可以使用以下Q和R。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:222
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:221
 msgid "LQR: example application"
 msgstr "LQR：示例应用"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:229
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:228
 msgid ""
 "We arbitrarily choose a desired state excursion (maximum error) of :math:`q "
 "= [0.1\\ \\text{rad/sec}]`, and an :math:`\\mathbf{r}` of :math:`[12\\ "
@@ -472,7 +462,7 @@ msgstr ""
 "\\text{volts}]`的 :math:`\\mathbf{r}` 。在20ms的时间步长下离散化后，我们得到的:term:`gain`为   "
 ":math:`\\mathbf{K} = ~81`。这个:term:`gain` K作为PID回路对飞轮速度的比例分量。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:233
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:232
 msgid ""
 "The following graph shows the flywheel's angular velocity and applied "
 "voltage over time with two different :term:`gain`\\s. We can see how a "
@@ -485,18 +475,18 @@ msgstr ""
 ":term:`gain`将如何使系统更快地到达参考点（t = "
 "0.8秒时），同时使我们的电机在12V时保持更长时间的饱和状态。这与将PID控制器的P增益增加约8倍完全相同。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:239
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:238
 msgid "LQR and Measurement Latency Compensation"
 msgstr "LQR和测量延迟补偿"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:241
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:240
 msgid ""
 "Oftentimes, our sensors have a delay associated with their measurements. For"
 " example the SPARK MAX motor controller over CAN can have up to 30ms of "
 "delay associated with velocity measurements."
 msgstr "通常，我们的传感器会因测量而延迟。例如，通过CAN的SPARK MAX电动机控制器可能具有与速度测量相关的长达30ms的延迟。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:243
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:242
 msgid ""
 "This lag means that our feedback controller will be generating voltage "
 "commands based on state estimates from the past. This often has the effect "
@@ -504,7 +494,7 @@ msgid ""
 " graph below."
 msgstr "这种滞后现象意味着我们的反馈控制器将基于过去的状态估计来生成电压命令。如下图所示，这通常会给我们的系统带来不稳定性和振荡。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:247
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:246
 msgid ""
 "\\mathbf{K_{compensated}} = \\mathbf{K} \\cdot \\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}\n"
 "\n"
@@ -512,7 +502,7 @@ msgstr ""
 "\\mathbf{K_{compensated}} = \\mathbf{K} \\cdot \\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay} / dt}\n"
 "\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:250
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:249
 msgid ""
 "Multiplying :math:`\\mathbf{K}` by :math:`\\mathbf{A} - \\mathbf{BK}` "
 "essentially advances the gains by one timestep. In this case, we multiply by"
@@ -523,29 +513,29 @@ msgstr ""
 "在这种情况下，我们将乘以 :math:`\\left(\\mathbf{A} - \\mathbf{BK}\\right)^{\\text{delay}"
 " / dt}`来提高测量延时的增益。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:255
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:254
 msgid ""
 "This can have the effect of reducing :math:`\\mathbf{K}` to zero, "
 "effectively disabling feedback control."
 msgstr "这样可以将:math:`\\mathbf{K}`减小为零，从而有效地禁用反馈控制。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:257
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:256
 msgid ""
 "The SPARK MAX motor controller uses a 40-tap FIR filter with a delay of "
 "19.5ms, and status frames are by default sent every 20ms."
 msgstr "SPARK Max电机控制器使用40抽头FIR滤波器，其延迟为19.5ms，默认情况下每20ms发送一次状态帧。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:259
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:258
 msgid ""
 "The code below shows how to adjust the LQR controller's K gain for sensor "
 "input delays:"
 msgstr "以下代码显示了如何针对传感器输入延迟来调整LQR控制器的K增益："
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:284
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:286
 msgid "Linearization"
 msgstr "线性化"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:286
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:288
 msgid ""
 "Linearization is a tool used to approximate nonlinear functions and state-"
 "space systems using linear ones. In two-dimensional space, linear functions "
@@ -566,7 +556,7 @@ msgstr ""
 ":math:`\\sin{x} \\approx x`精确到0.02以内，但是很快就失去了精度。在下面的图中，我们看到:math:`y "
 "=\\sin{x}`, :math:`y=x`以及 :math:`x`处 :math:`\\sin{x}`的近似值和真实值之间的差值。"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:291
+#: ../../frc-docs/source/docs/software/advanced-controls/state-space/state-space-intro.rst:293
 msgid ""
 "We can also linearize state-space systems with nonlinear :term:`dynamics`. "
 "We do this by picking a point :math:`\\mathbf{x}` in state-space and using "

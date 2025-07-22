@@ -1,20 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-08 16:03+0000\n"
+"POT-Creation-Date: 2025-07-22 16:05+0000\n"
 "PO-Revision-Date: 2021-01-02 04:30+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -33,12 +34,47 @@ msgid ""
 "Station, SmartDashboard, etc) can be used with the Romi."
 msgstr ""
 "Romi için bir program yazmak, normal bir FRC robotu için bir program yazmaya"
-" çok benzer. Aslında, tüm aynı araçlar (Visual Studio Code, Driver Station, "
-"SmartDashboard, vb.) Romi ile kullanılabilir."
+" çok benzemektedir. Aslına bakılırsa, proglama için kullanılan araçların her"
+" biri (Visual Studio Code, Driver Station, SmartDashboard, vb.) Romi ile de "
+"kullanılabilmektedir."
 
 #: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:7
 msgid "Creating a Romi Program"
-msgstr "Bir Romi Programı Oluşturmak"
+msgstr "Romi Programının Oluşturulması"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:9
+msgid ""
+"Creating a new program for a Romi is like creating a normal FRC program, "
+"similar to the :doc:`Zero To Robot </docs/zero-to-robot/step-4/index>` "
+"programming steps."
+msgstr ""
+"Romi için yeni bir program oluşturmak, :doc:`Sıfırdan Robota </docs/zero-to-"
+"robot/step-4/index>` programlama adımlarındakine benzer bir şekilde, normal "
+"bir FRC programı oluşturmak gibidir."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:11
+msgid ""
+"WPILib comes with two templates for Romi projects, including one based on "
+"TimedRobot, and a Command-Based project template. Additionally, an example "
+"project is provided which showcases some of the built-in functionality of "
+"the Romi. This article will walk through creating a project from this "
+"example."
+msgstr ""
+"TimedRobot temelli bir şablon ve Komut temelli proje şablonu dahil olmak "
+"üzere, WPILib Romi projeleri için iki şablona sahiptir. Buna ek olarak, "
+"WPILib'de Romi'nin dahili işlevselliğini ortaya koyan bir proje örneği de "
+"sağlanmaktadır. Bu yazı, bu örnekten yola çıkarak adım adım bir projenin "
+"oluşumunu gösterecektir."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:13
+msgid ""
+"In order to program the Romi using C++, a compatible C++ desktop compiler "
+"must be installed. See :ref:`Robot Simulation - Additional C++ Dependency "
+"<cpp_sim_additional_dependency>`."
+msgstr ""
+"C++ kullanarak Romi'yi programlama için, C++ ile uyumlu bir masaüstü "
+"derleyicinin yüklenmiş olması gerekmektedir. Bkz. ref:`Robot Simülasyonu - "
+"Ek C++ Destek Dosyaları <cpp_sim_additional_dependency>`."
 
 #: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:16
 msgid "Creating a New WPILib Romi Project"
@@ -50,9 +86,9 @@ msgid ""
 "and type \"New project\" into the prompt. Select the \"Create a new "
 "project\" command:"
 msgstr ""
-"Visual Studio Code komut paletini şu şekilde getirin :kbd:`Ctrl+Shift+P` ve "
-"komut istemine \" New project-Yeni proje\" yazın. \"Create a new project-"
-"Yeni proje oluştur\" komutunu seçin:"
+"Visual Studio Code komut paletini şu şekilde getirip :kbd:`Ctrl+Shift+P` "
+"komut istemine \" New project-Yeni proje\" yazınız. \"Create a new project-"
+"Yeni proje oluştur\" komutunu seçiniz:"
 
 #: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:22
 msgid ""
@@ -60,12 +96,16 @@ msgid ""
 "\"Select a project type (Example or Template), and pick \"Example\" from the"
 " prompt that appears:"
 msgstr ""
-"Bu, \"New Project Creator Window-Yeni Proje Oluşturucu Penceresini\" "
-"getirecektir. Buradan, \"Select a project type-Bir proje türü seçin (Örnek "
-"veya Şablon) seçeneğini tıklayın ve beliren istemden \"Example-Örnek \"i "
-"seçin:"
+"Bu, \"New Project Creator Window-Yeni Proje Oluşturucu Penceresini\" ekrana "
+"getirecektir. Buradan, \"Select a project type-Bir proje türü seçip (Örnek "
+"veya Şablon) seçeneğini tıklayınız ve beliren istemden \"Example-Örnek\"i "
+"seçiniz:"
 
 #: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:26
+msgid "Select the programming language you want to use:"
+msgstr "Kullanmak istediğiniz programlama dilini seçiniz:"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:30
 msgid ""
 "Next, a list of examples will appear. Scroll through the list to find the "
 "\"RomiReference\" example:"
@@ -73,7 +113,7 @@ msgstr ""
 "Ardından, bir örnek listesi görünecektir. \"RomiReference\" örneğini bulmak "
 "için listede ilerleyin:"
 
-#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:30
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:34
 msgid ""
 "Fill out the rest of the fields in the \"New Project Creator\" and click "
 "\"Generate Project\" to create the new robot project."
@@ -82,11 +122,63 @@ msgstr ""
 "ve yeni robot projesini oluşturmak için \"Generate Project-Proje Oluştur\" u"
 " tıklayın."
 
-#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:33
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:37
 msgid "Running a Romi Program"
 msgstr "Bir Romi Programı Çalıştırmak"
 
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:39
+msgid ""
+"Once the robot project is generated, it is essentially ready to run. The "
+"project has a pre-built ``Drivetrain`` class and associated default command "
+"that lets you drive the Romi around using a joystick."
+msgstr ""
+"Robot projesi oluşturulduktan sonra, proje temelde çalıştırılmaya hazır "
+"olacaktır. Proje önceden oluşturulmuş bir ``Drivetrain`` sınıfına ve bir "
+"oyun kolu kullanarak Romi'yi sürmenize olanak tanıyan ilişkili bir "
+"varsayılan komuta sahiptir."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:41
+msgid ""
+"One aspect where a Romi project differs from a regular FRC robot project is "
+"that the code is not deployed directly to the Romi. Instead, a Romi project "
+"runs on your development computer and leverages the WPILib simulation "
+"framework to communicate with the Romi robot."
+msgstr ""
+"Bir Romi projesinin FRC robotu projesinden ayrıştığı nokta kodun doğrudan "
+"Romi'ye yüklenmemesidir. Bunun yerine, Romi projesi geliştirici "
+"bilgisayarınızda çalışmaktadır ve Romi robotuya iletişim kurmak için WPILib "
+"simülasyon ağı çerçevesini kullanmaktadır."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:43
+msgid ""
+"To run a Romi program, first, ensure that your Romi is powered on. Next, "
+"connect to the ``WPILibPi-<number>`` WiFi network broadcast by the Romi. If "
+"you changed the Romi network settings (for example, to connect it to your "
+"own WiFi network) you may change the IP address that your program uses to "
+"connect to the Romi. To do this, open the ``build.gradle`` file and update "
+"the ``wpi.sim.envVar`` line to the appropriate IP address."
+msgstr ""
+"Bir Romi projesi çalıştırmak için öncelikle Romi'nizin açık olduğundan emin "
+"olunuz. Sonrasında, Romi tarafından yayınlanan ``WPILibPi-<number>`` WiFi "
+"ağına bağlanınız. (Örneğin robotu kendi WiFi ağınıza bağlamak için) Romi ağ "
+"ayarlarını değiştirdiyseniz, programınızın Romi'ye bağlanmak için kullandığı"
+" IP adresini değiştirebilirsiniz. Bunun için ``build.gradle`` dosyasını açıp"
+" ``wpi.sim.envVar`` satırını uygun IP adresi ile güncelleyiniz."
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:51
+msgid ""
+"Now to start your Romi robot code, open the WPILib Command Palette (type "
+":kbd:`Ctrl+Shift+P`) and select \"Simulate Robot Code\", or press :kbd:`F5`."
+msgstr ""
+"Romi robot kodunuzu başlatmak için (:kbd:`Ctrl+Shift+P` tuşlarına basarak) "
+"WPILib Komut Paletini açınız ve \"Simulate Robot Code - Robot Kodunu Simüle "
+"Et\" seçeneğini seçiniz ya da :kbd:`F5` tuşuna basınız."
+
 #: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:53
+msgid "Launching simulation via the WPILib Command Palette"
+msgstr "WPILib Komut Paneliyle simülasyonun başlatılması"
+
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:56
 msgid ""
 "If all goes well, you should see a line in the console output that reads "
 "\"HALSimWS: WebSocket Connected\":"
@@ -94,6 +186,6 @@ msgstr ""
 "Her şey yolunda giderse, konsol çıktısında \"HALSimWS:WebSocket Connected\" "
 "yazan bir satır görmelisiniz:"
 
-#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:57
+#: ../../frc-docs/source/docs/romi-robot/programming-romi.rst:60
 msgid "Your Romi code is now running!"
 msgstr "Romi kodunuz şimdi çalışıyor!"

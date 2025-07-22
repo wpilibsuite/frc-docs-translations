@@ -1,23 +1,92 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Çağan Uslu, 2022
-# Ela Zeynep Baysal, 2022
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-12-06 16:04+0000\n"
+"POT-Creation-Date: 2025-07-22 16:05+0000\n"
 "PO-Revision-Date: 2022-01-10 04:09+0000\n"
-"Last-Translator: Ela Zeynep Baysal, 2022\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:2
+msgid "Bang-Bang Control with BangBangController"
+msgstr "BangBangController'la Bang-Bang Kontrol"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:4
+msgid ""
+"The :term:`bang-bang control` algorithm is a control strategy that employs "
+"only two states: on (when the measurement is below the setpoint) and off "
+"(otherwise).  This is roughly equivalent to a proportional loop with "
+"infinite gain."
+msgstr ""
+":term:`Bang-bang kontrol` algoritması yalnızca iki durum kullanan bir "
+"kontrol stratejisidir: açık (ölçüm ayar noktasının altında olduğunda) ve "
+"kapalı (aksi takdirde). Bu durumlar kabaca sonsuz kazançlı orantılı bir "
+"döngüye eşdeğerdir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:6
+msgid ""
+"This may initially seem like a poor control strategy, as PID loops are known"
+" to become unstable as the gains become large - and indeed, it is a *very "
+"bad idea to use a bang-bang controller on anything other than velocity "
+"control of a high-inertia mechanism*."
+msgstr ""
+"Kazançlar büyüdükçe PID döngülerinin dengesizleştiği bilindiğinden, bu başta"
+" kötü bir kontrol stratejisi olarak gözükmektedir ve doğrusu *bang-bang "
+"kontrolörünü yüksek eylemsizlik düzeneklerinin hız kontrolü dışında bir şey "
+"için kullanmak kötü bir fikirdir*."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:13
+msgid "Constructing a BangBangController"
+msgstr "BangBangController'ın İnşaası"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:15
+msgid ""
+"Since a bang-bang controller does not have any gains, it does not need any "
+"constructor arguments (one can optionally specify the controller tolerance "
+"used by ``atSetpoint``, but it is not required)."
+msgstr ""
+"Bang-bang kontrolör herhangi bir kazanca sahip olmadığı için hiçbir "
+"constructor değişkenine ihtiyaç duymamaktadır (isteğe bağlı olarak kontrolör"
+" toleransını ``atSetpoint``le ayarlayabilmektedir, ancak bu ayarı yapmak "
+"şart değildir)."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:39
+msgid "Using a BangBangController"
+msgstr "BangBangController Kullanımı"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:41
+msgid ""
+"Bang-bang control is an extremely aggressive algorithm that relies on "
+"response asymmetry to remain stable.  Be *absolutely certain* that your "
+"motor controllers have been set to \"coast mode\" before attempting to "
+"control them with a bang-bang controller, or else the braking action will "
+"fight the controller and cause potentially destructive oscillation."
+msgstr ""
+"Bang-bang kontrolü, sabit kalmak için cevap asimetrisine dayanan son derece "
+"şiddetli bir algoritmadır. Motor kontrolörlerlerinizi bang-bang "
+"kontrolörüyle yönetmeden önce kontrolörlerinizin \"boşta\" olduğundan "
+"*kesinlikle emin* olunuz, aksi takdirde frenleme işlemi kontrolörle tepki "
+"verecek ve tehlike teşkil edebilecek dalgalanmalara sebep olabilecektir."
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:43
+msgid "Using a bang-bang controller is easy:"
+msgstr "Bang-bang kontrolörünün kullanımı kolaydır:"
+
+#: ../../frc-docs/source/docs/software/advanced-controls/controllers/bang-bang.rst:66
+msgid "Combining Bang Bang Control with Feedforward"
+msgstr "Bang Bang Kontrolünün Feedforward ile Birleştirilmesi"

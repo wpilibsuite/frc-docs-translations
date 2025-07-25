@@ -1,23 +1,281 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-11-08 16:04+0000\n"
+"POT-Creation-Date: 2025-07-25 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:2
+msgid "The Field2d Widget"
+msgstr "Field2d Widget - Aracı"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:4
+msgid ""
+"Glass supports displaying your robot's position on the field using the "
+":guilabel:`Field2d` widget. An instance of the ``Field2d`` class should be "
+"created, sent over NetworkTables, and updated periodically with the latest "
+"robot pose in your robot code."
+msgstr ""
+"Cam, robotunuzun sahadaki konumunu :guilabel:`Field2d`  aracını kullanarak "
+"görüntülemeyi desteklemektedir. ``Field2d`` sınıfının bir örneği "
+"oluşturulmalı, NetworkTables üzerinden gönderilmeli ve robot kodunuzdaki en "
+"son robot pozuyla periyodik olarak güncellenmelidir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:7
+msgid "Sending Robot Pose from User Code"
+msgstr "Kullanıcı Kodundan Robot Pozunu Gönderme"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:9
+msgid ""
+"To send your robot's position (usually obtained by :ref:`odometry "
+"<docs/software/kinematics-and-odometry/intro-and-chassis-speeds:What is "
+"odometry?>` or a pose estimator), a ``Field2d`` instance must be created in "
+"robot code and sent over NetworkTables. The instance must then be updated "
+"periodically with the latest robot pose."
+msgstr ""
+"Robotunuzun (genellikle :ref:`odometry <docs/software/kinematics-and-"
+"odometry/intro-and-chassis-speeds:What is odometry?>` veya bir poz "
+"tahmincisi tarafından elde edilen) konumunu göndermek için, robot kodunda "
+"bir ``Field2d`` örneği oluşturulmalı ve örnek NetworkTables üzerinden "
+"gönderilmelidir. Örnek daha sonra en son robot pozuyla periyodik olarak "
+"güncellenmelidir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:42
+msgid ""
+"The ``Field2d`` instance can also be sent using a lower-level NetworkTables "
+"API or using the :ref:`Shuffleboard API "
+"<docs/software/dashboards/shuffleboard/getting-started/shuffleboard-"
+"displaying-data:Displaying data from your robot>`. In this case, the "
+"``SmartDashboard`` API was used, meaning that the :guilabel:`Field2d` widget"
+" will appear under the ``SmartDashboard`` table name."
+msgstr ""
+"``Field2d`` örneği daha alt seviyedeki NetworkTables API veya "
+":ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-"
+"started/shuffleboard-displaying-data:Displaying data from your robot>` "
+"kullanılarak da iletilebilmektedir. Bu örnekte ``SmartDashboard`` API "
+"kullanılmıştır, diğer bir değişle :guilabel:`Field2d` aracı,  "
+"``SmartDashboard`` tablo adı altında görüntülenebilecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:45
+msgid "Sending Trajectories to Field2d"
+msgstr "Field2d'ye Yörüngelerin Gönderilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:47
+msgid ""
+"Visualizing your trajectory is a great debugging step for verifying that "
+"your trajectories are created as intended. Trajectories can be easily "
+"visualized in :ref:`Field2d "
+"<docs/software/dashboards/glass/field2d-widget:The Field2d Widget>` using "
+"the ``setTrajectory()``/``SetTrajectory()`` functions."
+msgstr ""
+"Yörüngenizi görüntülemek, yörüngelerin istediğiniz şekilde oluşturulduğunu "
+"doğrulamak için çok iyi bir hata ayıklama - debugging adımıdır. Yörüngeler "
+":ref:`Field2d <docs/software/dashboards/glass/field2d-widget:The Field2d "
+"Widget>`'de  ``setTrajectory()``/``SetTrajectory()`` işlevlerini kullanarak "
+"kolayca görselleştirilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:66
+msgid "Viewing Trajectories with Glass"
+msgstr "Glass ile Yörüngelerin Görüntülenmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:68
+msgid ""
+"The sent trajectory can be viewed with :ref:`Glass "
+"<docs/software/dashboards/glass/index:Glass>` through the dropdown "
+":guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> "
+":guilabel:`Field2d`."
+msgstr ""
+"İletilen yörünge  :ref:`Glass <docs/software/dashboards/glass/index:Glass>` "
+"ile :guilabel:`NetworkTables` -> :guilabel:`SmartDashboard` -> "
+":guilabel:`Field2d` açılır menülerini takip ederek görüntülenebilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:70
+msgid "Picture containing Field2d and the generated trajectory"
+msgstr "Oluşturulan yörünge be Field2d'yi içeren bir resim"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:73
+msgid ""
+"The above example which uses the RamseteController (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__"
+" / `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__"
+" / `Python "
+"<https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController>`__) "
+"will not show the sent trajectory until autonomous is enabled at least once."
+msgstr ""
+"RamseteController (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecontroller/Robot.java>`__"
+" / `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/a610379965680a8f9214d5f0db3a8e1bc20d4712/wpilibcExamples/src/main/cpp/examples/RamseteController/cpp/Robot.cpp>`__"
+" / `Python "
+"<https://github.com/robotpy/examples/tree/2024.0.0b4/RamseteController>`__) "
+"kullanılan yukarıdaki örnekte iletilen yörünge otonom en az bir defa "
+"etkinleştirilmeden görünmeyecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:76
+msgid "Viewing the Robot Pose in Glass"
+msgstr "Robot Pozunun Glass'da Görüntülenmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:78
+msgid ""
+"After sending the ``Field2d`` instance over NetworkTables, the "
+":guilabel:`Field2d` widget can be added to Glass by selecting "
+":guilabel:`NetworkTables` in the menu bar, choosing the table name that the "
+"instance was sent over, and then clicking on the :guilabel:`Field` button."
+msgstr ""
+"``Field2d`` örneğini NetworkTables üzerinden gönderdikten sonra, menü "
+"çubuğunda: guilabel: `NetworkTables` seçilerek, örneğin gönderildiği tablo "
+"adı seçilerek : guilabel:` Field2d` widget'ı Glass'a eklenebilir ve ardından"
+" :guilabel:`Field`  düğmesine tıklayın."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:82
+msgid ""
+"Once the widget appears, you can resize and place it on the Glass workspace "
+"as you desire. Right-clicking the top of the widget will allow you to "
+"customize the name of the widget, select a custom field image, select a "
+"custom robot image, and choose the dimensions of the field and robot."
+msgstr ""
+"Widget göründüğünde, onu yeniden boyutlandırabilir ve istediğiniz gibi Glass"
+" çalışma alanına yerleştirebilirsiniz. Widget'ın üst kısmına sağ tıklamak, "
+"widget'ın adını özelleştirmenize, özel bir alan görüntüsü seçmenize, özel "
+"bir robot görüntüsü seçmenize ve alan ile robotun boyutlarını seçmenize "
+"olanak tanır."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:85
+msgid "Selecting Field Image"
+msgstr "Saha Görüntüsünün Seçilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:87
+msgid ""
+"You can choose from an existing field layout using the :guilabel:`Image` "
+"drop-down. Or you can select a custom file by setting the :guilabel:`Image` "
+"to ``Custom`` and selecting :guilabel:`Choose JSON/image...`. You can choose"
+" to either select an image file or a PathWeaver JSON file as long as the "
+"image file is in the same directory.  Choosing the JSON file will "
+"automatically import the correct location of the field in the image and the "
+"correct size of the field."
+msgstr ""
+":guilabel:`Image` açılır listesi üzerinden var olan bir saha düzeni "
+"seçebilirsiniz ya da  :guilabel:`Image`'ı ``Custom`` olarak ayarlayıp  "
+":guilabel:`Choose JSON/image...` seçeneğini işaretleyerek özel bir dosya "
+"seçebilirsiniz. Görüntü dosyası aynı dizinde olduğu sürece bir görüntü "
+"dosyası ya da bir PathWeaver JSON dosyasından birini kullanmayı "
+"seçebilirsiniz. JSON dosyasının seçilmesi görüntünün sahadaki doğru konumu "
+"ve sahanın doğru boyutunu kendi kendiliğinden içe aktaracaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:89
+msgid ""
+"You can retrieve the latest field image and JSON files from `here "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/fieldImages/src/main/native/resources/edu/wpi/first/fields>`__."
+" This is the same image and JSON that are used when generating paths using "
+":ref:`PathWeaver "
+"<docs/software/pathplanning/pathweaver/introduction:Introduction to "
+"PathWeaver>`."
+msgstr ""
+"En güncel saha görüntüsü ve JSON dosyalarına `buradan "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/fieldImages/src/main/native/resources/edu/wpi/first/fields>`__."
+" This is the same image and JSON that are used when generating paths using "
+":ref:`PathWeaver "
+"<docs/software/pathplanning/pathweaver/introduction:Introduction to "
+"PathWeaver>` erişebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:94
+msgid "Modifying Pose Style"
+msgstr "Poz Stilinin Değiştirilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:96
+msgid ""
+"Poses can be customized in a plethora of ways by right clicking on the "
+"Field2d menu bar. Examples of customization are: line width, line weight, "
+"style, arrow width, arrow weight, color, etc."
+msgstr ""
+"Pozlalr Field2d menü çubuğuna sağ tıklanarak birçok farklı yöntemle "
+"özelleştirilebilmektedir. Özelleştirme örnekleri olarak çizgi genişliği, "
+"çizgi kalınlığı, stil, ok genişliği, ok kalınlığı, renk vb. "
+"verilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:98
+msgid "Showcases the right click menu of field2d customization options"
+msgstr "Field2d özelleştirme ayarlarının sağ tık menüsünün bir görüntüsü"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:101
+msgid ""
+"One usage of customizing the pose style is converting the previously shown "
+"``traj`` pose object to a line, rather than a list of poses. Click on the "
+":guilabel:`Style` dropdown box and select :guilabel:`Line`. You should "
+"notice an immediate change in how the trajectory looks."
+msgstr ""
+"Poz stilini değiştirmenin bir kullanımı önceden gösterilmiş ``traj`` poz "
+"nesnesini, bir poz listesi yerine, bir çizgiye dönüştürmektir. "
+":guilabel:`Style` açılır listesine tıklayıp select :guilabel:`Line` "
+"seçeneğini seçiniz. Anında yörüngenin görünümünde bir değişiklik fark "
+"edeceksinizdir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:103
+msgid "Selecting the \"style\" dropdown and then selecting \"line\"."
+msgstr "\"Style\" açılır listesinden \"line\" seçeneğinin işaretlenmesi."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:106
+msgid ""
+"Now, uncheck the :guilabel:`Arrows` checkbox. This will cause our trajectory"
+" to look like a nice and fluid line!"
+msgstr ""
+"Şimdi :guilabel:`Arrows` kutucuğuna tıklayarak işaretini kaldırınız. Bu "
+"yörüngemizin güzel ve akıcı bir görünüm kazanmasını sağlayacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:108
+msgid "Unchecked arrows checkbox to showcase fluid line."
+msgstr "Akıcı çizgiyi göstermek için işareti kaldırılmış bir arrows kutucuğu."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:112
+msgid "Viewing Pose Data with AdvantageScope"
+msgstr "AdvantageScope ile Poz Verilerinin Görüntülenmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:114
+msgid ""
+":ref:`AdvantageScope "
+"<docs/software/dashboards/advantagescope:AdvantageScope>` is an alternative "
+"option for viewing pose data from a ``Field2d`` object, including data "
+"recorded to a log file using :ref:`WPILib data logs "
+"<docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data "
+"Logs>`. Both 2D and 3D visualizations are supported. See the documentation "
+"for the `odometry <https://docs.advantagescope.org/tab-"
+"reference/odometry>`__ and `3D field <https://docs.advantagescope.org/tab-"
+"reference/3d-field>`__ tabs for more details."
+msgstr ""
+":ref:`AdvantageScope "
+"<docs/software/dashboards/advantagescope:AdvantageScope>` ``Field2d`` "
+"nesnesinden gelen, :ref:`WPILib data logs "
+"<docs/software/telemetry/datalog:On-Robot Telemetry Recording Into Data "
+"Logs>` kullanılarak bir günlük dosyasına kaydedilmiş veriler de dahil olmak "
+"üzere, poz verilerini görüntülemek için kullanılabilecek başka bir "
+"seçenektir. Hem 2 hem de 3 boyutlu görselleştrime desteği bulunmaktadır. "
+"Daha fazla bilgi için bkz. `odometry <https://docs.advantagescope.org/tab-"
+"reference/odometry>`__ ve `3D field <https://docs.advantagescope.org/tab-"
+"reference/3d-field>`__  sekmeleri."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/field2d-widget.rst:116
+msgid ""
+"Screenshot of an AdvantageScope window displaying a robot and trajectory on "
+"a 3D field."
+msgstr ""
+"3 boyutlu bir sahada robot yörüngesini görüntüleyen bir AdvantageScope "
+"penceresinin ekran görüntüsü."

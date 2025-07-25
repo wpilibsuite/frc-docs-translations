@@ -1,23 +1,154 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
-# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2023
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-10-04 04:04+0000\n"
+"POT-Creation-Date: 2025-07-25 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2023\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:2
+msgid "Widgets for the Command-Based Framework"
+msgstr "Komut Tabanlı Çerçeve için Araçlar"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:4
+msgid ""
+"Glass also has several widgets that are specific to the :ref:`command-based "
+"framework <docs/software/commandbased/index:Command-Based Programming>`. "
+"These include widgets to schedule commands, view actively running commands "
+"on a specific subsystem, or view the state of the :ref:`command scheduler "
+"<docs/software/commandbased/command-scheduler:The Command Scheduler>`."
+msgstr ""
+"Glass'da ayrıca :ref:`komut temelli çerçeveye "
+"<docs/software/commandbased/index:Command-Based Programming>` özgü birkaç "
+"widget - araç bulunmaktadır. Bu araçlar, komutları zamanlamak, belirli bir "
+"alt sistemde aktif olarak çalışan komutları görüntülemek veya :ref:`komut "
+"zamanlayıcının <docs/software/commandbased/command-scheduler:The Command "
+"Scheduler>` durumunu görüntülemeyi sağlayan araçlar içermektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:7
+msgid "Command Selector Widget"
+msgstr "Command Selector Widget - Komut Seçici Araç"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:9
+msgid ""
+"The :guilabel:`Command Selector`  widget allows you to start and cancel a "
+"specific instance of a command (sent over NetworkTables) from Glass. For "
+"example, you can create an instance of ``MyCommand`` and send it to "
+"SmartDashboard:"
+msgstr ""
+":guilabel:`Komut Seçici` aracı, Glass'tan belirli bir komut örneğini (Ağ "
+"Tabloları üzerinden gönderilen) başlatmanıza ve iptal etmenize olanak "
+"tanımaktadır. Örneğin, bir``MyCommand`` oluşumu yaratabilir ve "
+"SmartDashboard'a gönderebilirsiniz:"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:33
+msgid ""
+"The ``MyCommand`` instance can also be sent using a lower-level "
+"NetworkTables API or using the :ref:`Shuffleboard API "
+"<docs/software/dashboards/shuffleboard/getting-started/shuffleboard-"
+"displaying-data:Displaying data from your robot>`. In this case, the "
+"``SmartDashboard`` API was used, meaning that the :guilabel:`Command "
+"Selector` widget will appear under the ``SmartDashboard`` table name."
+msgstr ""
+"``MyCommand`` oluşumu daha alt seviyedeki NetworkTables API veya "
+":ref:`Shuffleboard API <docs/software/dashboards/shuffleboard/getting-"
+"started/shuffleboard-displaying-data:Displaying data from your robot>` "
+"kullanılarak da iletilebilmektedir. Bu örnekte ``SmartDashboard`` API "
+"kullanılmıştır, diğer bir değişle :guilabel:`Komut Seçici` aracı,  "
+"``SmartDashboard`` tablo adı altında görüntülenebilecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:35
+msgid ""
+"Command Selector widget showing that \"MyCommand\" is running with the "
+"option to cancel"
+msgstr ""
+"\"MyCommand\"in iptal et seçeneği ile çalıştığını gösteren Komut Seçici araç"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:38
+msgid ""
+"The widget has two states. When the command is not running, a "
+":guilabel:`Run` button will appear -- clicking it will schedule the command."
+" When the command is running, a :guilabel:`Cancel` button, accompanied by "
+":guilabel:`Running...` text, will appear (as shown above). This will cancel "
+"the command."
+msgstr ""
+"Araç iki duruma sahiptir. Komut çalışmadığında, bir :guilabel:`Run` düğmesi "
+"görünecektir - düğmeye tıklamak komutu zamanlayacaktır. Komut çalışırken, "
+"bir :guilabel:`Cancel` düğmesi ile birlikte :guilabel:`Running...` metni "
+"görünecektir (yukarıda gösterildiği gibi). Bu düğme, komutu iptal edecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:41
+msgid "Subsystem Widget"
+msgstr "Subsystem Widget - Alt Sistem Aracı"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:43
+msgid ""
+"The :guilabel:`Subsystem` widget can be used to see the default command and "
+"the currently scheduled command on a specific subsystem. If you are using "
+"the ``SubsystemBase`` base class, your subsystem will be automatically sent "
+"to NetworkTables over LiveWindow. To view this widget, look under the "
+":guilabel:`LiveWindow` main table name in the :guilabel:`NetworkTables` "
+"menu."
+msgstr ""
+" :guilabel:`Alt sistem` aracı, varsayılan komutu ve belirli bir alt sistemde"
+" o anda zamanlanmış komutu görmek için kullanılabilmektedir. "
+"``SubsystemBase``  temel sınıfını kullanıyorsanız, alt sisteminiz LiveWindow"
+" üzerinden NetworkTables'a otomatik olarak gönderilecektir. Bu aracı "
+"görüntülemek için :guilabel:`NetworkTables`  menüsünde "
+":guilabel:`LiveWindow`ana tablo adının altına doğru bakınız."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:45
+msgid ""
+"Subsystem widget showing the state of \"DriveSubsystem\". Default Command: "
+"\"DefaultDrive\". Current Command: \"DriveDistance\""
+msgstr ""
+"\"DriveSubsystem\" durumunu gösteren alt sistem aracı. Varsayılan Komut: "
+"\"DefaultDrive\". Anlık Komut: \"DriveDistance\"."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:49
+msgid "Command Scheduler Widget"
+msgstr "Command Scheduler Widget - Komut Zamanlayıcı Widget'ı"
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:51
+msgid ""
+"The :guilabel:`Command Scheduler` widget allows you to see all currently "
+"scheduled commands. In addition, any of these commands can be canceled from "
+"the GUI."
+msgstr ""
+" :guilabel:`Komut Zamanlayıcı` araç , anlık zamanlanmış tüm komutları "
+"görmenizi olanak tanımaktadır. Buna ek olarak, bu komutlardan herhangi biri "
+"kullanıcı arayüzü üzerinden iptal edilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:53
+msgid ""
+"Scheduler widget. Scheduled commands are \"DriveDistance\" and "
+"\"MyCommand\". Both have the option to cancel."
+msgstr ""
+"Zamanlayıcı araç. Zamanlanan komutlar  \"DriveDistance\" ve \"MyCommand\". "
+"Komutların ikisi de iptal eçme seçeneğine sahip."
+
+#: ../../frc-docs/source/docs/software/dashboards/glass/command-based-widgets.rst:56
+msgid ""
+"The ``CommandScheduler`` instance is automatically sent to NetworkTables "
+"over LiveWindow. To view this widget, look under the :guilabel:`LiveWindow` "
+"main table name in the :guilabel:`NetworkTables` menu."
+msgstr ""
+" ``CommandScheduler`` oluşumu, LiveWindow üzerinden NetworkTables'a otomatik"
+" olarak gönderilmektedir. Bu parçacığı görüntülemek için "
+":guilabel:`NetworkTables`  menüsünde :guilabel:`LiveWindow` ana tablo adının"
+" altına bakınız."

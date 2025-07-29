@@ -1,24 +1,255 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
-# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-01-27 00:41+0000\n"
+"POT-Creation-Date: 2025-07-29 04:22+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2021\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:2
+msgid "Testing and Tuning PID Loops"
+msgstr "PID Döngülerinin Test Edilmesi ve Ayarlanması"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:4
+msgid ""
+"One challenge in using sensors to control mechanisms is to have a good "
+"algorithm to drive the motors to the proper position or speed. The most "
+"commonly used control algorithm is called PID control.  There is a `good set"
+" of videos <https://wp.wpi.edu/wpilib/robotics-videos/>`__ (look for the "
+"robot controls playlist) that explain the control algorithms described here."
+" The PID algorithm converts sensor values into motor speeds by:"
+msgstr ""
+"Düzenekleri kontrol etmek için sensörlerin kullanımı ile ilgili zorluklardan"
+" biri motorları uygun konuma veya uygun hızla sürecek iyi bir algoritmaya "
+"sahip olmaktır. En yaygın kullanıma sahip kontrol algoritması PID "
+"kontroldür. Burada, bu yazıda açıklanacak kontrol algoritmalarını açıklayan "
+"`iyi birkaç video <https://wp.wpi.edu/wpilib/robotics-videos/>`__  (\"robot "
+"controls\" çalma listesini araştırınız) bulunmaktadır. PID algoritması, "
+"sensör değerlerini aşağıdaki işlemler aracılığıyla motor hızına "
+"dönüştürmektedir:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:6
+msgid ""
+"Reading sensor values to determine how far the robot or mechanism from the "
+"desired setpoint. The setpoint is the sensor value that corresponds to the "
+"expected goal. For example, a robot arm with a wrist joint should be able to"
+" move to a specified angle very quickly and stop at that angle as indicated "
+"by a sensor. A potentiometer is a sensor that can measure. rotational angle."
+" By connecting it to an analog input, the program can get a voltage "
+"measurement that is directly proportional to the angle."
+msgstr ""
+"Robotun veya mekanizmanın istenen ayar noktasından ne kadar uzakta olduğunu "
+"belirlemek için sensör değerlerininin okunması. Ayar noktası, beklenen "
+"hedefe karşılık gelen sensör değeridir. Örneğin, bilek eklemli bir robot "
+"kol, belirlenmiş bir açıya çok hızlı bir şekilde hareket edebilmeli ve bir "
+"sensörle gösterildiği gibi bu açıda durabilmelidir. Potansiyometre, dönme "
+"açısı ölçümü yapabilen bir sensördür. Analog bir girişe bağlanmasıyla "
+"birlikte program açı ile doğru orantılı bir voltaj ölçümü alabilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:7
+msgid ""
+"Compute an error (the difference between the sensor value and the desired "
+"value). The sign of the error value indicates which side of the setpoint the"
+" wrist is on. For example negative values might indicate that the measured "
+"wrist angle is larger than the desired wrist angle. The magnitude of the "
+"error is how far the measured wrist angle is from the actual wrist angle. If"
+" the error is zero, then the measured angle exactly matches the desired "
+"angle. The error can be used as an input to the PID algorithm to compute a "
+"motor speed."
+msgstr ""
+"Hatanın (sensör değeri ile istenen değer arasındaki fark) hesaplanması. Hata"
+" değerinin işareti, bileğin ayar noktasının hangi tarafında olduğunu "
+"göstermektedir. Örneğin negatif değerler, ölçülen bilek açısının istenen "
+"bilek açısından daha büyük olduğunu ortaya koyabilmektedir. Hatanın "
+"büyüklüğü, ölçülen bilek açısının gerçek bilek açısından ne kadar uzakta "
+"olduğudur. Hata sıfır ise, ölçülen açı istenen açı ile tam olarak eşleşir. "
+"Hata, bir motorun hızını hesaplamak için PID algoritmasında bir giriş olarak"
+" kullanılabilir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:8
+msgid ""
+"The resultant motor speed is then used to drive the motor in the correct "
+"direction and a speed that hopefully will reach the setpoint as quickly as "
+"possible without overshooting (moving past the setpoint)."
+msgstr ""
+"Elde edilen motor hızı, bu hesabı takiben, umuyoruz ki ayar noktasını "
+"aşmadan (noktanın ötesinde geçmeden), ayar noktasına olabildiğince hızlı bir"
+" şekilde ulaşması için motoru doğru yönde ve hızda sürmek için "
+"kullanılacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:10
+msgid ""
+"WPILib has a PIDController class that implements the PID algorithm and "
+"accepts constants that correspond to the Kp, Ki, and Kd values. The PID "
+"algorithm has three components that contribute to computing the motor speed "
+"from the error."
+msgstr ""
+"WPILib, PID algoritmasını uygulayan ve Kp, Ki ve Kd değerlerine karşılık "
+"gelen sabitleri kabul eden bir PIDController sınıfına sahiptir. PID "
+"algoritmasının, hatadan yola çıkarak motor hızının hesaplanmasına katkıda "
+"bulunan üç bileşeni vardır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:12
+msgid ""
+"P (proportional) - this is a term that when multiplied by a constant (Kp) "
+"will generate a motor speed that will help move the motor in the correct "
+"direction and speed."
+msgstr ""
+"P (proportional - orantılı) - bu, bir sabit (Kp) ile çarpıldığında, motoru "
+"doğru yönde ve hızda hareket ettirmeye yardımcı olacak, motor hızı oluşturan"
+" bir terimdir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:13
+msgid ""
+"I (integral) - this term is the sum of successive errors. The longer the "
+"error exists the larger the integral contribution will be. It is simply a "
+"sum of all the errors over time. If the wrist isn't quite getting to the "
+"setpoint because of a large load it is trying to move, the integral term "
+"will continue to increase (sum of the errors) until it contributes enough to"
+" the motor speed to get it to move to the setpoint. The sum of the errors is"
+" multiplied by a constant (Ki) to scale the integral term for the system."
+msgstr ""
+"I (integral) - bu terim ardışık hataların toplamıdır. Hatanın varlığı ne "
+"kadar uzun süreliğine devam ediyorsa, integral katkısı o kadar büyük "
+"olacaktır. Bu bileşen en temelinde zaman içindeki tüm hataların toplamıdır. "
+"Bilek hareket ettirmeye çalıştığı büyük bir yük nedeniyle ayar noktasına tam"
+" olarak ulaşamıyorsa, integral terimi, motor hızına ayar noktasına varması "
+"için yeterli katkıda bulunana kadar (hataların toplamı) artmaya devam "
+"edecektir. İntegral terimini sistem için ölçeklendirmek için hataların "
+"toplamı bir sabit (Ki) ile çarpılmaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:14
+msgid ""
+"D (differential) - this value is the rate of change of the errors. It is "
+"used to slow down the motor speed if it's moving too fast. It's computed by "
+"taking the difference between the current error value and the previous error"
+" value. It is also multiplied by a constant (kd) to scale it to match the "
+"rest of the system."
+msgstr ""
+"D (diferansiyel) - bu değer, hataların değişim oranıdır. Motor çok hızlı "
+"hareket ediyorsa motor hızını yavaşlatmak için kullanılmaktadır. Bu bileşen "
+"anlık hata değeri ile önceki hata değeri arasındaki farkın alınmasıyla "
+"hesaplanmaktadır. Sistemin geri kalanıyla eşleşecek şekilde ölçeklendirmesi "
+"içinse bir sabit (kd) ile çarpılmaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:17
+msgid "Tuning the PID Controller"
+msgstr "PID Kontrolörünün Ayarlanması"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:19
+msgid ""
+"Tuning the PID controller consists of adjusting constants for accurate "
+"results. Shuffleboard helps this process by displaying the details of a PID "
+"subsystem with a user interface for setting constant values and testing how "
+"well it operates. This is displayed while the robot is operating in test "
+"mode (done by setting \"Test\" in the driver station)."
+msgstr ""
+"PID kontrolörünün ayarlanması, daha isabetli sonuçlar için sabitlerin "
+"ayarlanmasından oluşmaktadır. Shuffleboard bu sürece sabit değerlerin "
+"belirlenmesini ve belirlenen değerlerin ne kadar iyi çalıştığının test "
+"edilmesini sağlayan bir kullanıcı arayüzü ile PID alt sistemlerine dair "
+"detayları görüntüleyerek yardımcı olmaktadır. Bütün bunlar robot (driver "
+"station - sürücü istasyonunda \"Test\" seçeneğinin seçilmesiyle) test "
+"modunda çalışırken görüntülenmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:21
+msgid "Covers each section of the PIDController Subsystem widget."
+msgstr "PIDController Subsystem aracının her bir kısmını içermektedir. "
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:24
+msgid ""
+"This is the test mode picture of a wrist subsystem that has a potentiometer "
+"as the sensor (pot) and a motor controller connected to the motor. It has a "
+"number of areas that correspond to the PIDSubsystem."
+msgstr ""
+"Yukarıdaki, sensör (pot) olarak bir potansiyometre ve motora bağlı bir motor"
+" kontrol cihazı içeren bir bilek alt sisteminin test modu resmidir. "
+"PIDSystem'a karşılık gelen bir dizi alana sahiptir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:26
+msgid ""
+"The analog input voltage value from the potentiometer. This is the sensor "
+"input value."
+msgstr ""
+"Potansiyometrenin analog girdi voltajı değeri. Bu, sensör girdi değeridir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:27
+msgid ""
+"A slider that moves the wrist motor in either direction with 0 as stopped. "
+"The positive and negative values correspond to moving up or down."
+msgstr ""
+"0 değeri durduğunu gösterecek şekilde wrist-bilek motorunu her iki yönde "
+"hareket ettiren bir kaydırıcı. Pozitif ve negatif değerler yukarı veya aşağı"
+" harekete denk düşmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:28
+msgid ""
+"The PID constants as described above (F is a feedforward value that is used "
+"for speed PID loops)"
+msgstr ""
+"Yukarıda belirtildiği üzere PID sabitleri (F, hız PID döngüleri için "
+"kullanılan ileri besleme değeridir)"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:29
+msgid ""
+"The setpoint value that corresponds the to the pot value when the wrist has "
+"reached the desired value"
+msgstr ""
+"Bilek istenen değere ulaştığında pot değerine karşılık gelen ayar noktası "
+"değeri"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:30
+msgid "Enables the PID controller - No longer working, see below."
+msgstr ""
+"PID denetleyicisini etkinleştirmektedir - Artık çalışmamakta, daha fazla "
+"bilgi için aşağıya bakınız."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:32
+msgid ""
+"Try various PID gains to get the desired motor performance. You can look at "
+"the video linked to at the beginning of this article or other sources on the"
+" internet to get the desired performance."
+msgstr ""
+"İstenen motor performansını elde etmek için çeşitli PID kazançlarını "
+"deneyin. İstenilen performansı elde etmek için bu makalenin başında verilen "
+"bağlantılı videoya veya internetteki diğer kaynaklara başvurabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:34
+msgid ""
+"The enable option does not affect the `PIDController "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__"
+" introduced in 2020, as the controller is updated every robot loop. See the "
+"example below on how to retain this functionality."
+msgstr ""
+"Kontrolör, her robot döngüsünde güncellendiği için; ekinleştirme seçeneği, "
+"2020 yılında tanıtılan  `PIDController "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/math/controller/PIDController.html>`__'ı"
+" etkilemeyecektir. Bu özelliği nasıl koruyacağınıza dair aşağıdaki örneği "
+"inceleyebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:37
+msgid "Enable Functionality in the New PIDController"
+msgstr "Yeni PIDController'de İşlevselliğin Etkinleştirilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/advanced-usage/shuffleboard-tuning-pid.rst:39
+msgid ""
+"The following example demonstrates how to create a button on your dashboard "
+"that will enable/disable the PIDController."
+msgstr ""
+"Aşağıdaki örnek, gösterge panelinizde PIDController'ı etkinleştirecek/devre "
+"dışı bırakacak düğmenin nasıl oluşturulacağını göstermektedir."

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,18 +7,124 @@
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # ceren oktemer <ceren.oktemer@gmail.com>, 2024
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2025-07-29 04:22+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2024\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:4
+msgid "Creating a Plugin"
+msgstr "Bir Eklenti Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:7
+msgid "Overview"
+msgstr "Genel Bakış"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:8
+msgid ""
+"Plugins provide the ability to create custom widgets, layouts, data "
+"sources/types, and custom themes. Shuffleboard provides the following "
+":ref:`built-in plugins <docs/software/dashboards/shuffleboard/custom-"
+"widgets/builtin-plugins:Built-in Plugins>`."
+msgstr ""
+"Eklentiler, kişisel araçların, düzenlerin, veri kaynakları/türlerinin ve "
+"kişiselleştirilmiş temaların oluşturulmasına imkan tanımaktadır. "
+"Shuffleboard, aşağıdaki :ref:`gömülü eklentileri "
+"<docs/software/dashboards/shuffleboard/custom-widgets/builtin-plugins:Built-"
+"in Plugins>` sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:18
+msgid ""
+"In order to define a plugin, the plugin class must be a subclass of "
+"`edu.wpi.first.shuffleboard.api.Plugin "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`__"
+" or one of its subclasses. An example of a plugin class would be as "
+"following."
+msgstr ""
+"Bir eklenti tanımlamak için eklenti sınıfı  "
+"`edu.wpi.first.shuffleboard.api.Plugin "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/plugin/Plugin.java>`__"
+" altı sınıfı veya alt sınıfın bir alt sınıfı olmalıdır. Bir eklenti sınıfı "
+"örneği aşağıdaki gibi olacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:31
+msgid ""
+"Additional explanations on how these attributes are used, including version "
+"numbers can be found `here <https://semver.org/>`__."
+msgstr ""
+"Sürüm numaraları da dahil olmak üzere, bu özniteliklerin nasıl "
+"kullanıldığına dair daha fazla açıklamaya `buradan <https://semver.org/>`__ "
+"ulaşabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:39
+msgid ""
+"The easiest way to build plugins is to utilize the `example-plugins` folder "
+"in the shufflebloard source tree. Clone Shuffleboard with ``git clone "
+"https://github.com/wpilibsuite/shuffleboard.git``, and checkout the version "
+"that corresponds to the WPILib version you have installed (e.g. 2023.2.1). "
+"``git checkout v2023.2.1``"
+msgstr ""
+"Bir eklenti oluşturmanın en kolay yolu shufflebloard kaynak ağıcındaki* "
+"`example-plugins` klasörünü kullanmaktır. ``Git clone "
+"https://github.com/wpilibsuite/shuffleboard.git`` kullanrak Shuffleboard'u "
+"kopyalayınız ve cihazınızda yüklü olan WPILib sürümü ile eşleşen sürümü "
+"kitaplıktan seçiniz (örn. 2023.2.1). ``git checkout v2023.2.1``"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:41
+msgid ""
+"Put your plugin in the ``example-plugins\\PLUGIN-NAME`` directory. Copy the "
+"``custom-data-and-widget.gradle`` from ``example-plugins\\custom-data-and-"
+"widget`` and rename to match your plugin name. Edit ``settings.gradle`` in "
+"the shuffleboard root directory to add ``include \"example-plugins:PLUGIN-"
+"NAME\"``"
+msgstr ""
+"Eklentinizi ``example-plugins\\PLUGIN-NAME`` veri havuzuna ekleyiniz. "
+"``example-plugins\\custom-data-and-widget`` üzerinden ``custom-data-and-"
+"widget.gradle``'ı koyalayınız ve eklentinizin adıyla eşleşecek şekilde "
+"kopyaladığınız dosyayı yeniden adlandırınız. Shuffleboard kök dizinindeki "
+"``settings.gradle``'ı, ``include \"example-plugins:PLUGIN-NAME\"``'i "
+"ekleyecek şekilde düzenleyiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:61
+msgid ""
+"In order to load a plugin in Shuffleboard, you will need to generate a jar "
+"file of the plugin and put it in the ``~/Shuffleboard/plugins`` folder. This"
+" can be done automatically by running from the shuffleboard root ``gradlew "
+":example-plugins:PLUGIN-NAME:installPlugin``"
+msgstr ""
+"Shuffleboard'a eklenti aktarmak için eklentinin bir jar dosyaysı halini "
+"oluşturmanız ve oluşturduğunuz dosyayı ``~/Shuffleboard/plugins`` klasörüne "
+"eklemeniz gerekecektir. Bu işlem Shuffleboard kökünden ``gradlew :example-"
+"plugins:PLUGIN-NAME:installPlugin``'in çalıştırılmasıyla kendi kendiliğine "
+"gerçekleştirilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:68
+msgid ""
+"The other way to add a plugin to Shuffleboard is to compile it to a jar file"
+" and add it from Shuffleboard. The jar file is located in ``example-"
+"plugins\\PLUGIN-NAME\\build\\libs`` after running ``gradlew build`` in the "
+"shuffleboard root Open Shuffleboard, click on the file tab in the top left, "
+"and choose Plugins from the drop down menu."
+msgstr ""
+"Shuffleboard'a eklenti eklemenin bir diğer yoluysa eklentiyi jar dosyası "
+"olarak derlemek ve Shuffleboard üzerinden eklemektir. Jar dosyası "
+"shuffleboard kökü Open Shuffleboard'da ``gradlew build``'ın çalıştırılmasını"
+" takiben ``example-plugins\\PLUGIN-NAME\\build\\libs`` bulunmaktadır, sol "
+"üstteki dosya sekmesine tıklayıp açılır listedeki Plugins - Eklentiler "
+"seçeneğini seçiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-plugins.rst:71
+msgid "Manually adding custom plugins"
+msgstr "Kişiselleştirilmiş eklentilerin elle eklenmesi"

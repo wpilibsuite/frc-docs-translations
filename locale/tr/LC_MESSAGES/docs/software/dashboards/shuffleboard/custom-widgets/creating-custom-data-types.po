@@ -1,23 +1,184 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2025-07-29 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:2
+msgid "Creating Custom Data Types"
+msgstr "Özel Veri Türlerinin Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:3
+msgid ""
+"Widgets allow us to control and visualize different types of data. This data"
+" could be integers and doubles or even Java Objects. In order to display "
+"these types of data using widgets, it is helpful to create a container class"
+" for them. It is not necessary to create your own Data Class if the widget "
+"will handle single fielded data types such as doubles, arrays, or strings."
+msgstr ""
+"Widget - Araçlar, farklı veri türlerini kontrol etmemizi ve "
+"görselleştirmemize olanak tanımaktadır. Bu veriler tamsayılar ve çiftler "
+"hatta Java Nesneleri olabilir. Bu tür verileri araç kullanarak görüntülemek "
+"için, verilere özel bir kapsayıcı sınıf oluşturmak faydalı olacaktır. Araç "
+"doubles, arrays veya string gibi tek alanlı veri türlerini işleyecekse kendi"
+" Data Class - Veri Sınıfınızı oluşturmanız gerekmemektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:6
+msgid "Creating The Data Class"
+msgstr "Veri Sınıfının Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:7
+msgid ""
+"In this example, we will create a custom data type for a 2D Point and its x "
+"and y coordinates. In order to create a custom data type class, it must "
+"extend the abstract class `ComplexData "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`__."
+" Your custom data class must also implement the ``asMap()`` method that "
+"returns the represented data as a simple map as noted below with the "
+"``@Override`` annotation:"
+msgstr ""
+"Bu örnekte 2D Point - 2 boyutta bir nokta ile bu noktanın x ve y "
+"koordinatları için kişisel bir veri türü oluşturacağız. Bu sınıfı oluşturmak"
+" için, veri türü sınıfı `ComplexData "
+"<https://github.com/wpilibsuite/shuffleboard/blob/main/api/src/main/java/edu/wpi/first/shuffleboard/api/data/ComplexData.java>`__"
+" soyut sınıfını genişletmelidir. Ayrıca kişisel veri sınıfınız, aşağıdaki "
+"``@Override`` ek açıklamasında da belirtildiği üzere, temsil edilen veriyi "
+"basit bir haritaya döndüren ``asMap()`` metodunu gerçekleştirmeniz "
+"gerekmektedir:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:28
+msgid ""
+"It is also good practice to override the default ``equals`` and ``hashcode``"
+" methods to ensure that different objects are considered equivalent when "
+"their fields are the same. The ``asMap()`` method should return the data "
+"represented in a simple Map object as it will be mapped to the NetworkTables"
+" entry it corresponds to. In this case, we can represent the point as its X "
+"and Y coordinates and return a ``Map`` containing them."
+msgstr ""
+"Alanları eşleştiğinde farklı nesnelerin eşit sayılmasını sağlamak için "
+"varsayılan ``equals`` ve ``hashcode`` metodlarını geçersiz kılmak iyi bir "
+"uygulama olacaktır. ``asMap()`` metodu, ilgili oldukları NetworkTables "
+"girişine eşlenecekleri için temsil edilen verileri basit birer Map object - "
+"Harita nesnesine döndürmelidir. Bu durumda noktayı X ve Y koordinatları "
+"şeklinde temsil edebilir ve bu koordinatları içeren bir ``Map`` "
+"döndürebiliriz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:49
+msgid ""
+"Other methods can be added to retrieve or edit fields and instance "
+"variables, however, it is good practice to make these classes immutable to "
+"prevent changing the source data objects. Instead, you can make a new copy "
+"object instead of manipulating the existing object. For example, if we "
+"wanted to change the y coordinate of our point, we can define the following "
+"method:"
+msgstr ""
+"Alanları ve örnek değişkenlerine erişim sağlamak veya değişkenleri "
+"düzenlemek için başka yöntemler eklenebilmekte, ancak kaynak veri "
+"nesnelerinin değiştirilmesini önlemek için bu sınıfları değişmez yapmak iyi "
+"bir uygulama olacaktır. Bunun yerine, mevcut nesneyi değiştirmek yerine yeni"
+" bir kopya nesnesi oluşturabilirsiniz. Örneğin, noktamızın y koordinatını "
+"değiştirmek istersek, aşağıdaki yöntemi tanımlayabiliriz:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:57
+msgid ""
+"This creates a new ``MyPoint2D`` object and returns it with the new "
+"y-coordinate. Same can be done for changing the x coordinate."
+msgstr ""
+"Bu, yeni bir ``MyPoint2D`` nesnesi oluşturmakta ve onu yeni y koordinatı ile"
+" döndürmektedir. Aynı işlem x koordinatını değiştirmek için de "
+"yapılabilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:60
+msgid "Creating a Data Type"
+msgstr "Veri Türü Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:61
+msgid ""
+"There are two different data types that can be made: Simple data types that "
+"have only one field (ie. a single number or string), and Complex data types "
+"that have multiple data fields (ie. multiple strings, multiple numbers)."
+msgstr ""
+"Oluşturulabilecek iki farklı veri türü vardır: yalnızca bir alana (yani, tek"
+" bir sayı veya dizgeye) sahip basit veri türleri ve birden fazla veri "
+"alanına (yani, birden çok dizgi, birden çok sayıya) sahip karmaşık veri "
+"türleri."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:63
+msgid ""
+"In order to define a simple data type, the class must extend the "
+"``SimpleDataType<DataType>`` class with the data type needed and implement "
+"the ``getDefaultValue()`` method. In this example, we will use a double as "
+"our simple data type."
+msgstr ""
+"Basit bir veri türü tanımlamak için, sınıfın gerekli veri türü ile "
+"``SimpleDataType <DataType>`` sınıfını genişletmesi ve ``getDefaultValue()``"
+" metodunu uygulaması gerekmektedir. Bu örnekte, basit veri tipimiz olarak "
+"bir double kullanacağız."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:78
+msgid ""
+"The class constructor is set to private to ensure that only a single "
+"instance of the data type will exist."
+msgstr ""
+"Sınıf constructor, yalnızca tek bir veri türü örneğinin var olmasını "
+"sağlamak için \"özel\" ayarına alınmaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:80
+msgid ""
+"In order to define a complex data type, the class must extend the "
+"``ComplexDataType`` class and override the ``fromMap()`` and "
+"``getDefaultValue()`` methods. We will use our MyPoint2D class as an example"
+" to see what a complex data type class would look like."
+msgstr ""
+"Karmaşık bir veri türü tanımlamak için, sınıfın ``ComplexDataType``  "
+"sınıfını genişletmesi ve ``fromMap()`` ve ``getDefaultValue()`` metodlarını "
+"geçersiz kılması gerekmektedir. Karmaşık bir veri türü sınıfının nasıl "
+"gözükeceğini önceden görmek için MyPoint2D sınıfımızı örnek olarak "
+"kullanacağız."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:104
+msgid "The following code above works as noted:"
+msgstr "Yukarıdaki kod, aşağıda belirtilen şekilde çalışmaktadır:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:106
+msgid ""
+"The ``fromMap()`` method creates a new MyPoint2D using the values in the "
+"NetworkTables entry it is bound to. The ``getOrDefault`` method will return "
+"0.0 if it cannot get the entry values. The ``getDefaultValue`` will return a"
+" new ``MyPoint2D`` object if no source is present."
+msgstr ""
+"``fromMap()`` metodu, bağlandığı NetworkTables girişindeki değerleri "
+"kullanarak yeni bir MyPoint2D oluşturmaktadır. ``getOrDefault` metodu, giriş"
+" değelerine erişemezse 0.0 olarak dönecektir. ``getDefaultValue`` herhangi "
+"bir kaynak yoksa yeni bir ``MyPoint2D`` nesnesi döndürecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:110
+msgid "Exporting Data Type To Plugin"
+msgstr "Veri Türünü Eklentiye Aktarma"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-custom-data-types.rst:111
+msgid ""
+"In order to have the data type be recognized by Shuffleboard, the plugin "
+"must export them by overriding the ``getDataTypes`` method. For example,"
+msgstr ""
+"Veri türünün Shuffleboard tarafından tanınması için, eklentinin "
+"``getDataTypes`` metodunu geçersiz kılarak veri türlerini dışa aktarması "
+"gerekmektedir. Örneğin,"

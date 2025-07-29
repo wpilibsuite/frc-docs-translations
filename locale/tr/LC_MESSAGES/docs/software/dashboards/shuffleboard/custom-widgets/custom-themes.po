@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,18 +7,119 @@
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 04:04+0000\n"
+"POT-Creation-Date: 2025-07-29 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:2
+msgid "Custom Themes"
+msgstr "Kişisel Temalar"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:4
+msgid ""
+"Since shuffleboard is a JavaFX application, it has support for custom themes"
+" via Cascading Stylesheets (**CSS** for short). These are commonly used on "
+"webpages for making HTML look nice, but JavaFX also has support, albeit for "
+"a different language subset (see `here "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/doc-"
+"files/cssref.html>`__ for documentation on how to use it)."
+msgstr ""
+"Shuffleboard bir JavaFX uygulaması olduğundan, uygulama Cascading "
+"Stylesheets (kısaca **CSS**) desteğine sahiptir. CSS genellikle web "
+"sayfalarında HTML'in daha güzel görünmesini sağlamak için kullanılmaktadır, "
+"ancak JavaFX, farklı bir dil alt kümesi (bu dili nasıl kullanacağınıza dair "
+"belglere `buradan "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/doc-"
+"files/cssref.html>`__ ulaşabilirsiniz) için olsa da, CSS desteğine sahiptir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:6
+msgid ""
+"Shuffleboard comes with three themes by default: Material Light, Material "
+"Dark, and Midnight. These are color variations on the same material design "
+"stylesheet. In addition, they inherit from a ``base.css`` stylesheet that "
+"defines styles for the custom components ,defined in shuffleboard or "
+"libraries that it uses; the base material design stylesheet only applies to "
+"the UI components built into JavaFX."
+msgstr ""
+"Shuffleboard varsayılan olarak üç temayla içermektedir: Material Light, "
+"Material Dark ve Midnight. Bunlar, aynı malzeme tasarım stylesheet - stil "
+"sayfasındaki renk çeşitleridir. Ayrıca, shuffleboard veya kullandıkları "
+"kitaplıklarda tanımlanan özel bileşenler için stilleri tanımlayan bir "
+"``base.css`` stylesheet'in mirasçılarıdır; temel malzeme tasarım stylesheet "
+"yalnızca JavaFX'te gömülü olan arayüz bileşenleri için geçerlidir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:8
+msgid ""
+"There are two ways to define a custom theme: place the stylesheets in a "
+"directory with the name of the theme in ``~/Shuffleboard/themes``; for "
+"example, a theoretical \"Yellow\" theme could be placed in"
+msgstr ""
+"Kişisel bir tema belirlemenin iki yolu vardır: stylesheet'lerin "
+"``~/Shuffleboard/themes`` içerisinde temanın ismine sahip bir dizine "
+"aktarılması; örneğin, teorik bir \"Sarı\" tema aşağıdaki dizine "
+"aktarılabilir:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:14
+msgid ""
+"All the stylesheets in the directory will be treated as part of the theme."
+msgstr ""
+"Dizindeki tüm stylesheet'ler temanın bir parçası olarak ele alınacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:18
+msgid "Loading Themes via Plugins"
+msgstr "Eklentiler Aracılığıyla Temaların Yüklenmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:20
+msgid ""
+"Custom themes can also be defined by plugins. This makes them easier to "
+"share and bundle with custom widgets, but are slightly more difficult to "
+"define. The theme object will need a reference to a class defined in the "
+"plugin so that the plugin loader can determine where the stylesheets are "
+"located. If a class is passed that is *not* present in the JAR that the "
+"plugin is in, the theme will not be able to be used."
+msgstr ""
+"Kişisel temalar, eklentiler tarafından da tanımlanabilmektedir. Bu, "
+"temaların kişisel araçlarla gönderimi ve paketlemeyi kolaylaştırmakta, ancak"
+" tanımlanmayı biraz zorlaştırmaktadır. Eklenti yükleyicinin stylesheet'lerin"
+" nerede bulunduğunu belirleyebilmesi için tema nesnesinin, eklentide "
+"tanımlanan bir sınıfa referans olması gerekmektedir. Eklentinin içinde "
+"bulunduğu JAR'da *bulunmayan* bir sınıf iletilirse, tema "
+"kullanılamayacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:37
+msgid "Modifying or Extending Shuffleboard’s Default Themes"
+msgstr ""
+"Shuffleboard’un Varsayılan Temalarının Değiştirilmesi veya Genişletilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:39
+msgid ""
+"Shuffleboard’s Material Light and Material Dark themes provide a lot of the "
+"framework for light and dark themes, respectively, as well as many styles "
+"specific to shuffleboard, ControlsFX, and Medusa UI components to fit with "
+"the material-style design."
+msgstr ""
+"Shuffleboard’un Material Light ve Material Dark temaları, sırasıyla açık ve "
+"koyu temalar için çok sayıda çerçeve ve malzeme tarzı tasarıma uyacak "
+"şekilde disk iteleme panosu, ControlsFX ve Medusa UI bileşenlerine özgü "
+"birçok stil sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/custom-themes.rst:41
+msgid ""
+"Themes that want to modify these themes need to add ``import`` statements "
+"for these stylesheets:"
+msgstr ""
+"Bu temaları değiştirmek isteyen temaların, aşağıdaki stil sayfaları için "
+"``import`` - içe aktarma ifadelerini eklemesi gerekmektedir:"

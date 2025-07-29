@@ -1,23 +1,332 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-18 04:04+0000\n"
+"POT-Creation-Date: 2025-07-29 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:05+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:2
+msgid "Creating A Widget"
+msgstr "Araç Oluşturma"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:3
+msgid ""
+"Widgets allow us to view, change, and interact with data published through "
+"different data sources. The CameraServer, NetworkTables, and Base plugins "
+"provide the widgets to control basic data types (including FRC-specific data"
+" types). However, custom widgets allow us to control our custom data types "
+"we made in the previous sections or Java Objects."
+msgstr ""
+"Widget - Araçlar, farklı veri kaynakları aracılığıyla yayınlanan verileri "
+"görüntülememize, değiştirmemize ve verilerle etkileşim kurmamıza olanak "
+"tanımaktadır. CameraServer, NetworkTables ve Base eklentileri, (FRC'ye özgü "
+"veri türleri dahil olmak üzere) temel veri türlerini kontrol etmek için "
+"pencere öğeleri sağlamaktadır. Bununla birlikte, kişisel araçlar, önceki "
+"bölümlerde veya Java Nesnelerinde oluşturduğumuz özel veri türlerimizi "
+"kontrol etmemize izin verir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:5
+msgid ""
+"The basic ``Widget`` interface inherits from the ``Component`` and "
+"``Sourced`` interfaces. ``Component`` is the most basic building block of "
+"components that be displayed in Shuffleboard. ``Sourced`` is an interface "
+"for things that can handle and interface with data sources to display or "
+"modify data. Widgets that don't support data bindings but simply have child "
+"nodes would not use the ``Sourced`` interface but simply the ``Component`` "
+"interface. Both are basic building blocks towards making widgets and allows "
+"us to modify and display data."
+msgstr ""
+"Temel ``Widget`` arayüzü, ``Component`` - Bileşen ve ``Sourced`` - Kaynaklı "
+"arayüzlerinin mirasçısıdır. ``Component``, Shuffleboard'da "
+"görüntülenebilecek bileşenlerin en temel yapı taşıdır. ``Sourced``, verileri"
+" görüntülemek veya değiştirmek için veri kaynaklarını işleyebilen ve "
+"bunlarla arayüz oluşturabilen şeyler için bir arayüzdür. Veri bağlamalarını "
+"desteklemeyen ancak sadece alt düğümlere sahip olan araçlar ``Sourced`` "
+"arayüzü değil, sadece ``Component`` arayüzünü kullanmaktadır. Her ikisi de "
+"widget oluşturmaya yönelik temel yapı taşlarıdır ve verileri değiştirip "
+"görüntülememizi sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:7
+msgid ""
+"A good widget allows the end-user to customize the widget to suit their "
+"needs. An example could be to allow the user to control the range of the "
+"number slider, that is, its maximum and minimum or the orientation of the "
+"slider itself. The view of the widget or how it looks is defined using FXML."
+" ``FXML`` is an XML based language that is useful for defining the static "
+"layout of the widget (Panes, Labels and Controls)."
+msgstr ""
+"İyi bir araç, son kullanıcının aracı ihtiyaçlarına göre kişiselleştirmesine "
+"olanak tanımaktadır. Bu duruma bir örnek olarak, kullanıcının sayı "
+"kaydırıcısının aralığını, diğer bir deyişle maksimum ve minimum aralığını "
+"veya kaydırıcının yönünü kontrol etmesine olanak tanıması "
+"gösterilebilmektedir. Widget'ın görünümü veya nasıl görüntülendiği FXML "
+"kullanılarak tanımlanmaktadır. ``FXML``, aracın statik düzenini (Bölmeler, "
+"Etiketler ve Kontroller) tanımlamak için yararlı olan XML tabanlı bir "
+"dildir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:9
+msgid ""
+"More about FXML can be found `here "
+"<https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-"
+"files/introduction_to_fxml.html>`__."
+msgstr ""
+"FXML'e dair daha fazla biliye `buradan "
+"<https://openjfx.io/javadoc/11/javafx.fxml/javafx/fxml/doc-"
+"files/introduction_to_fxml.html>`__ ulaşabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:12
+msgid "Defining a Widget's FXML"
+msgstr "Bir Aracın FXML'inin Tanımlanması"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:13
+msgid ""
+"In this example, we will create two sliders to help us control the X and Y "
+"coordinates of our Point2D data type we created in previous sections. It is "
+"helpful to place the FXML file in the same package as the Java class."
+msgstr ""
+"Bu örnekte, önceki bölümlerde oluşturduğumuz Point2D veri türümüzün X ve Y "
+"koordinatlarını kontrol etmemize yardımcı olması için iki kaydırıcı "
+"oluşturacağız. FXML dosyasınını Java sınıfıyla aynı pakete yerleştirmeniz "
+"faydalı olacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:15
+msgid ""
+"In order to create an empty, blank window for our widget, we need to create "
+"a ``Pane``. A Pane is a parent node that contains other child nodes, in this"
+" case, 2 sliders. There are many different types of Pane, they are as noted:"
+msgstr ""
+"Aracımız için boş, üzerinde işlem yapılmamış bir pencere oluşturmak için bir"
+" ``Pane`` - Bölme oluşturmamız gerekmektedir. Bölme, diğer alt düğümleri, bu"
+" durumda 2 kaydırıcıyı içeren bir ana düğümdür. Aşağıda belirtildiği üzere "
+"birçok farklı Pane türü vardır:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:18
+msgid "Stack Pane"
+msgstr "Stack Pane - Yığın Bölmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:19
+msgid ""
+"Stack Panes allow elements to be overlaid. Also, StackPanes by default "
+"center child nodes."
+msgstr ""
+"Stack Pane, öğelerin üst üste bindirilmesine izin vermektedir. Ayrıca, "
+"StackPanes varsayılan olarak alt düğümleri ortalamaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:21
+msgid "Grid Pane"
+msgstr "Grid Pane - Izgara Bölmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:24
+msgid "Flow Pane"
+msgstr "Flow Pane - Akış Bölmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:25
+msgid ""
+"Flow Panes wrap all child nodes at a boundary set. Child nodes can flow "
+"vertically (wrapped at the height boundary for the pane) or horizontally "
+"(wrapped at the width boundary of the pane)."
+msgstr ""
+"Flow Pane, tüm alt düğümleri bir sınır kümesinde sarmaktadır. Alt düğümler "
+"(pane'in yükseklik sınırına sarılmış) dikey veya (pane'in genişlik sınırına "
+"sarılmış) yatay olarak akabilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:27
+msgid "Anchor Pane"
+msgstr "Anchor Pane - Bağlantı Bölmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:28
+msgid ""
+"Anchor Panes allow child elements to be placed in the top, bottom, left "
+"side, right side, or center of the pane."
+msgstr ""
+"Anchor Pane, alt öğelerin pane'in üstüne, altına, sol tarafına, sağ tarafına"
+" veya ortasına yerleştirilmesine izin vermektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:30
+msgid ""
+"Layout panes are also extremely useful for placing child nodes in one "
+"horizontal row using a `HBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`__"
+" or one vertical column using a `VBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`__."
+msgstr ""
+"Layout pane - Düzen bölmeleri, alt düğümleri HBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/HBox.html>`__"
+" kullanılarak tek bir yatay satıra veya `VBox "
+"<https://openjfx.io/javadoc/11/javafx.graphics/javafx/scene/layout/VBox.html>`__"
+" kullanarak tek bir dikey sütuna yerleştirmek için faydalıdır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:32
+msgid ""
+"The basic syntax for defining a Pane using FXML would be as the following:"
+msgstr ""
+"FXML kullanarak bir Pane'i tanımlayan temel sözdizimi aşağıdaki şekildedir:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:41
+msgid ""
+"The ``fx:controller`` attribute contains the name of the widget class. An "
+"instance of this class is created when the FXML file is loaded. For this to "
+"work, the controller class must have a no-argument constructor."
+msgstr ""
+"``fx: controller`` özniteliği, widget sınıfının adını içermektedir. FXML "
+"dosyası yüklendiğinde bu sınıfın bir örneği oluşturulmaktadır. Sınıfın "
+"çalışması için, kontrolör sınıfının bağımsız değişken olmayan bir "
+"\"constructor\"a sahip olması gerekmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:44
+msgid "Creating A Widget Class"
+msgstr "Widget Sınıfı Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:46
+msgid ""
+"Now that we have a Pane, we can now add child elements to that pane. In this"
+" example, we can add two slider objects. Remember to add an ``fx:id`` to "
+"each element so they can be referenced in our Java class we will make later "
+"on. We will use a ``VBox`` to position our slider on top of each other."
+msgstr ""
+"Artık elimizde bir Pane olduğuna göre, şimdi bu pane içerisine alt öğeler "
+"ekleyebiliriz. Bu örnekte, iki kaydırıcı nesnesi ekleyebilmekteyiz. Her "
+"öğeye bir ``fx:id`` eklemeyi unutmayınız, bu eklenti sayesinde öğeler daha "
+"sonra oluşturacağımız Java sınıfımızda referans alınabilirler. "
+"Kaydırıcılarımızı üst üste konumlandırmak için bir ``VBox`` kullanacağız."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:58
+msgid ""
+"Now that we have finished creating our FXML file, we can now create a widget"
+" class. The widget class should include a ``@Description`` annotation that "
+"states the supported data types of the widget and the name of the widget. If"
+" a ``@Description`` annotation is not present, the plugin class must "
+"implement the ``get()`` method to return its widgets."
+msgstr ""
+"FXML dosyamızı oluşturduğumuza göre, artık bir araç sınıfı oluşturabiliriz. "
+"Araç sınıfı, aracın desteklediği veri türlerini ve adını belirten bir "
+"``@Description`` ek açıklaması içermelidir. Bir ``@Description`` ek "
+"açıklaması yoksa, eklenti sınıfı, araçlarını döndürmek için ``get ()`` "
+"metodu uygulamalıdır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:60
+msgid ""
+"It also must include a ``@ParametrizedController`` annotation that points to"
+" the FXML file containing the layout of the widget. If the class that only "
+"supports one data source it must extend the ``SimpleAnnotatedWidget`` class."
+" If the class supports multiple data sources, it must extend the "
+"``ComplexAnnotatedWidget`` class. For more information, see :doc:`widget-"
+"types`."
+msgstr ""
+"Eklenti sınıfı pencere aracının düzenini içeren FXML dosyasına işaret eden "
+"bir ``@ParametrizedController`` ek açıklaması da içermelidir. Sınıf yalnızca"
+" bir veri kaynağını destekliyorsa, ``SimpleAnnotatedWidget`` sınıfını "
+"genişletmelidir. Sınıf birden çok veri kaynağını destekliyorsa, "
+"``ComplexAnnotatedWidget``sınıfını genişletmelidir. Daha fazla bilgi için "
+"bkz. : :doc:`widget-types`."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:77
+msgid ""
+"If you are not using a custom data type, you can reference any Java data "
+"type (ie. ``Double.class``), or if the widget does not need data binding you"
+" can pass ``NoneType.class``."
+msgstr ""
+"Özel bir veri türü kullanmıyorsanız, herhangi bir Java veri türüne (yani "
+"``Double.class``) başvurabilirsiniz veya araç veri bağlamaya ihtiyaç "
+"duymuyorsa, ``NoneType.class`` öğesini iletebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:79
+msgid ""
+"Now that we have created our class we can create fields for the widgets we "
+"declared in our FXML file using the ``@FXML`` annotation. For our two "
+"sliders, an example would be:"
+msgstr ""
+"Artık sınıfımızı oluşturduğumuza göre, ``@ FXML`` ek açıklamasını kullanarak"
+" FXML dosyamıza eklediğimiz araçlar için alanlar oluşturabiliriz. İki "
+"kaydırıcımız özelinde bir örnek aşağıdaki şekildedir:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:98
+msgid ""
+"In order to display our pane on our custom widget we need to override the "
+"``getView()`` method and return our ``StackPane``."
+msgstr ""
+"Bölmemizi kişisel aracımızda görüntülemek için ``getView()`` metodunu "
+"geçersiz kılmamız ve ``StackPane``'i geri almamız gerekmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:122
+msgid "Binding Elements and Adding Listeners"
+msgstr "Dinleyicilerin Eklenmesi ve Bağlama Öğeleri "
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:123
+msgid ""
+"Binding is a mechanism that allows JavaFX widgets to express direct "
+"relationships with the data source. For example, changing a widget will "
+"change its related NetworkTableEntry and vice versa."
+msgstr ""
+"Bağlama, JavaFX araçlarının veri kaynağı ile doğrudan bir ilişki ifade "
+"etmesine izin veren bir düzenektir. Örneğin aracın değiştirilmesiyle aracın "
+"ilgili olduğu NetworkTableEntry'nin değişmesi veya bu ilişkinin tam tersini "
+"mümkün kılmaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:125
+msgid ""
+"An example, in this case, would be changing the X and Y coordinate of our 2D"
+" point by changing the values of xSlider and ySlider respectively."
+msgstr ""
+"Bu duruma bir örnek, sırasıyla xSlider ve ySlider değerlerini değiştirerek "
+"2B noktamızın X ve Y koordinatlarını değiştirmek olabilir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:127
+msgid ""
+"A good practice is to set bindings in the ``initialize()`` method tagged "
+"with the ``@FXML`` annotation which is required to call the method from FXML"
+" if the method is not ``public``."
+msgstr ""
+"Metod ``public`` değilse, metodu FXML'den çağırmak için gerekli olan "
+"``@FXML`` ek açıklaması ile etiketlenmiş ``initialize()`` metoduna "
+"bağlamaları ayarlamak doğru bir uygulama olacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:155
+msgid ""
+"The above ``initialize`` method binds the slider's value property to the "
+"``MyPoint2D`` data class' corresponding X and Y value. Meaning, changing the"
+" slider will change the coordinate and vice versa. The "
+"``dataOrDefault.map()`` method will get the data source's value, or, if no "
+"source is present, will return the default value."
+msgstr ""
+"Yukarıdaki ``initialize`` metodu kaydırıcının değer özelliğini ``MyPoint2D``"
+" veri sınıfının ilgili X ve Y değerlerine bağlamaktadır. Diğer bir deyişle "
+"kaydırıcının değiştirilmesi koordinatları değiştirecek veya bunun tam tersi "
+"bir ilişkiyi mümkün kılacaktır. ``dataOrDefault.map()`` metodu veri "
+"kaynağının değerini elde edecektir veya hiçbir kaynak mevcut değilse değeri "
+"varsayılana döndürecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:158
+msgid ""
+"Using a listener is another way to change values when the slider or data "
+"source has changed. For example a listener for our slider would be:"
+msgstr ""
+"Dinleyici kullanımı, kaydırıcı veya veri kaynağı değiştiğinde değerleri "
+"değiştirmenin başka bir yoludur. Örneğin kaydırıcımız için bir dinleyici "
+"aşağıdaki gibi olacaktır:"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:167
+msgid "Exploring Custom Components"
+msgstr "Özel Bileşenlerin Keşfedilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/shuffleboard/custom-widgets/creating-a-new-widget.rst:178
+msgid "Set Default Widget For Data type"
+msgstr "Veri Türü için Varsayılan Aracı Ayarlamak"

@@ -1,25 +1,245 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
-# Melis Aldeniz <aldenizmelis@gmail.com>, 2021
-# Arhan Ünay <arhanyo@gmail.com>, 2021
 # ceren oktemer <ceren.oktemer@gmail.com>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-07 04:04+0000\n"
+"POT-Creation-Date: 2025-07-30 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: ceren oktemer <ceren.oktemer@gmail.com>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:4
+msgid "Hardware APIs"
+msgstr "Donanım API'ları"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:6
+msgid ""
+"This section discusses the control of motors and pneumatics through motor "
+"controllers, solenoids, and pneumatics, and their interface with Java and "
+"C++ WPILib."
+msgstr ""
+"Bu bölüm motorlar ve pnömatiklerin; motor kontrolörleri, solenoidler ve "
+"pnömatikler ile Java ve C++ WPILib'in arayüzü üzerinden yönetimini "
+"tartışacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:17
+msgid "Motor Controllers"
+msgstr "Motor Kontrolörleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:19
+msgid ""
+"A motor controller is responsible on your robot for making motors move. For "
+"brushed DC motors such as the :term:`CIM` or 775, the motor controller "
+"regulates the voltage that the motor receives, much like a light bulb. For "
+"brushless motor controllers such as the Spark MAX, the controller regulates "
+"the power delivered to each \"phase\" of the motor."
+msgstr ""
+"Motor kontrolörü robotunuzda motorların hareketinden sorumludur. Fırçalı DC "
+"motorlarında, :term:`CIM` veya 775 gibi, motor kontrolörü, tıpkı bir ampülde"
+" olduğu gibi, motorun aldığı voltajı düzenlemektedir. Spark MAX gibi "
+"fırçasız motor kontrolörleri içinse kontrolör motorun her bir \"aşamasına\" "
+"aktarılan gücü düzenlemektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:21
+msgid "Another name for a motor controller is a speed controller."
+msgstr "Bir motor kontrolörünün diğer bir adı da hız kontrolörüdür."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:23
+msgid ""
+"One can make a quick, non-competition-legal motor controller by removing the"
+" motor from a cordless BRUSHED drill and attaching PowerPoles or equivalents"
+" to the motor's leads. Make sure that the voltage supplied by the drill will"
+" not damage the motor, but note that the 775 is fine at up to 24 volts."
+msgstr ""
+"Motoru kablosuz FIRÇALI bir matkaptan çıkarıp motorun uçlarına PowerPoles "
+"veya eşdeğerlerini takarak çabuk, kullanıma uygun müsabaka dışı bir motor "
+"kontrolörü yapılabilmektedir. Matkap tarafından sağlanan voltajın motora "
+"zarar vermeyeceğinden emin olunuz, ancak 775'in 24 volta kadar sorun "
+"çıkarmayacağını unutmayınız."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:25
+msgid ""
+"Connecting a BRUSHLESS motor controller straight to power, such as to a "
+"conventional brushed motor controller, will destroy the motor!"
+msgstr ""
+"Geleneksel fırçalı bir motor kontrolörü gibi FIRÇASIZ bir motor kontrolörünü"
+" doğrudan güç kaynağına bağlamak, motoru mahvedecektir!"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:28
+msgid "FRC Legal Motor Controllers"
+msgstr "FRC'de Kullanıma Uygun Motor Sürücüleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:30
+msgid ""
+"Motor controllers come in lots of shapes, sizes, and feature sets. This is "
+"the full list of FRC\\ |reg| Legal motor controllers as of 2025:"
+msgstr ""
+"Motor kontrolörleri birçok farklı şekle, boyuta ve özellik setine sahiptir. "
+"FRC\\ |reg|'de Kullanıma Uygun motor kontrolörlerinin 2025 yılı itibariyle "
+"tam listesi aşağıdaki şekildedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:32
+msgid "DMC 60/DMC 60c Motor Controller (P/N: 410-334-1, 410-334-2)"
+msgstr "DMC 60/DMC 60c Motor Sürücü (P/N: 410-334-1, 410-334-2)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:33
+msgid ""
+"Jaguar Motor Controller (P/N: MDL-BDC, MDL-BDC24, and 217-3367) connected to"
+" :term:`PWM` only"
+msgstr ""
+"Sadece :term:`PWM`'ye bağlı Jaguar Motor Controller (P/N: MDL-BDC, MDL-"
+"BDC24, and 217-3367)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:34
+msgid "Koors40 Motor Controller (P/N am-5600)"
+msgstr "Koors40 Motor Kontrolörlü (P/N am-5600)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:35
+msgid ""
+"Nidec Dynamo BLDC Motor with Controller to control integral actuator only "
+"(P/N 840205-000, am-3740)"
+msgstr ""
+"Yalnızca gömülü aktüatörü kontrol eden Kontrolörlü Nidec Dynamo BLDC Motor "
+"(P/N 840205-000, am-3740)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:36
+msgid ""
+"SD540 Motor Controller (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, SD540Bx2, "
+"SD540Bx4, SD540C)"
+msgstr ""
+"SD540 Motor Kontrolörü (P/N: SD540x1, SD540x2, SD540x4, SD540Bx1, SD540Bx2, "
+"SD540Bx4, SD540C)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:37
+msgid "Spark Flex Motor Controller (P/N REV-11-2159, am-5276)"
+msgstr "Spark Flex Motor Kontrolörü (P/N REV-11-2159, am-5276)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:38
+msgid "Spark Motor Controller (P/N: REV-11-1200, am-4260)"
+msgstr "Spark Motor Kontrolörü (P/N: REV-11-1200, am-4260)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:39
+msgid "Spark MAX Motor Controller (P/N: REV-11-2158, am-4261)"
+msgstr "Spark MAX Motor Kontrolörü (P/N: REV-11-2158, am-4261)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:40
+msgid ""
+"Talon FX Motor Controller (P/N 217-6515, 19-708850, am-6515, am-6515_Short, "
+"WCP-0940) for controlling integral Falcon 500 or Kraken X60 only,"
+msgstr ""
+"Sadece gömülü Falcon 500 veya Kraken X60 yönetimi için Talon FX Motor "
+"KOntrolörü (P/N 217-6515, 19-708850, am-6515, am-6515_Short, WCP-0940)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:41
+msgid "Talon FXS Motor Controller (P/N 24-708883, WCP-1692)"
+msgstr "Talon FXS Motor Kontrolörü (P/N 24-708883, WCP-1692)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:42
+msgid "Talon Motor Controller (P/N: CTRE_Talon, CTRE_Talon_SR, and am-2195)"
+msgstr "Talon Motor Kontrolörü (P/N: CTRE_Talon, CTRE_Talon_SR, and am-2195)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:43
+msgid "Talon SRX Motor Controller (P/N: 217-8080, am-2854, 14-838288)"
+msgstr "Talon SRX Motor Kontrolörü (P/N: 217-8080, am-2854, 14-838288)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:44
+msgid "Thrifty Nova (P/N TTB-0100)"
+msgstr "Thrifty Nova (P/N TTB-0100)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:45
+msgid ""
+"Venom Motor with Controller (P/N BDC-10001) for controlling integral motor "
+"only​"
+msgstr ""
+"Sadece gömülü motorunu kontrol eden Kontrolörlü Venom Motoru (P / N "
+"BDC-10001)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:46
+msgid "Victor 884 Motor Controller (P/N: VICTOR-884-12/12)"
+msgstr "Victor 884 Motor Kontrolörü (P/N: VICTOR-884-12/12)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:47
+msgid "Victor 888 Motor Controller (P/N: 217-2769)"
+msgstr "Victor 888 Motor Kontrolörü (P/N: 217-2769)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:48
+msgid "Victor SP Motor Controller (P/N: 217-9090, am-2855, 14-868380)"
+msgstr "Victor SP Motor Kontrolörü (P/N: 217-9090, am-2855, 14-868380)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:49
+msgid "Victor SPX Motor Controller (P/N: 217-9191, 17-868388, am-3748)"
+msgstr "Victor SPX Motor Kontrolörü (P/N: 217-9191, 17-868388, am-3748)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:53
+msgid "Pneumatics"
+msgstr "Pnömatikler"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:55
+msgid ""
+"Pneumatics are a quick and easy way to make something that's in one state or"
+" another using compressed air. For information on operating pneumatics, see "
+":doc:`pneumatics/index`."
+msgstr ""
+"Pnömatikler sıkıştırılmış hava kullanarak bulunduğu durumlar arasında geçiş "
+"yapan bir bileşen yapmanın çabuk ve kolay bir yoludur. Pnömatiklerin "
+"yönetimine dair daha fazla bilgi için bkz. :doc:`pneumatics/index`."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:58
+msgid "FRC Legal Pneumatics controllers"
+msgstr "FRC'de Kullanıma Uygun Pnömatik kontrolörleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:60
+msgid "Pneumatics Control Module (P/N: am-2858, 217-4243)"
+msgstr "Pneumatics Kontrol Modülü (P/N: am-2858, 217-4243)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:61
+msgid "Pneumatic Hub (P/N REV-11-1852)"
+msgstr "Pnömatik Hub (P/N REV-11-1852)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:64
+msgid "Relays"
+msgstr "Röleler"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:66
+msgid ""
+"A relay controls power to a motor or custom electronics in an On/Off "
+"fashion."
+msgstr ""
+"Röle, bir motora veya kişisel elektroniğe giden gücü Açık / Kapalı şeklinde "
+"kontrol etmektedir.."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:69
+msgid "FRC Legal Relay Modules"
+msgstr "FRC'de Kullanıma Uygun Röle Modülleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:70
+msgid "Spike H-Bridge Relay (P/N: 217-0220 and SPIKE-RELAY-H)"
+msgstr "Spike H-Bridge Röle (P/N: 217-0220 and SPIKE-RELAY-H)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:71
+msgid ""
+"Automation Direct Relay (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-"
+"SSR6M40-DC200D)"
+msgstr ""
+"Automation Direct Röle (P/N: AD-SSR6M12-DC200D, AD-SSR6M25-DC200D, AD-"
+"SSR6M40-DC200D)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/index.rst:72
+msgid "Power Distribution Hub (PDH) switched channel (P/N REV-11-1850)"
+msgstr ""
+"Değişen kanallara sahip Power Distribution Hub (PDH) (P/N REV-11-1850)"

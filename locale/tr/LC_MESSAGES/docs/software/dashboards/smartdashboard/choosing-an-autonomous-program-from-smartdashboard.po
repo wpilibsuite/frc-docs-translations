@@ -15,7 +15,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-29 16:05+0000\n"
+"POT-Creation-Date: 2025-07-30 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:06+0000\n"
 "Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -62,3 +62,231 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:9
 msgid "TimedRobot"
 msgstr "TimedRobot"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:11
+msgid ""
+"The code snippets shown below are part of the TimedRobot template (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/templates/timed>`__):"
+msgstr ""
+"Aşağıda kod parçacıkları TimedRobot şablonunun (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/templates/timed>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/templates/timed>`__)"
+" bir parçasıdır:"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:14
+msgid "Creating SendableChooser Object"
+msgstr "SendableChooser Nesnesi Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:16
+msgid ""
+"In ``Robot.java`` / ``Robot.h``, create a variable to hold a reference to a "
+"``SendableChooser`` object. Two or more auto modes can be added by creating "
+"strings to send to the chooser. Using the ``SendableChooser``, one can "
+"choose between them. In this example, ``Default`` and ``My Auto`` are shown "
+"as options. You will also need a variable to store which auto has been "
+"chosen, ``m_autoSelected``."
+msgstr ""
+"``Robot.java`` / ``Robot.h``'de ``SendableChooser`` nesnesine referans "
+"verebilecek bir değişken oluşturunuz. İki veya daha fazla otonom mod chooser"
+" - seçiciye gönderilecek string'lerin oluşturulmasıyla eklenebilmektedir. "
+"``SendableChooser`` ile bu modlardan herhangi biri seçilebilmektedir. Bu "
+"örnekte seçenek olarak  ``Default`` ve ``My Auto`` gösterilmektedir. "
+"Bunların yanı sıra hangi modun seçildiğini depolayacak bir değişkene, "
+"``m_autoSelected``, de ihtiyacınız olacaktır"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:0
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:0
+msgid "C++"
+msgstr "C ++"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:0
+msgid "Python"
+msgstr "Python"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:46
+msgid "Setting Up Options"
+msgstr "Seçeneklerin Kurulumu"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:48
+msgid ""
+"The chooser allows you to pick from a list of defined elements, in this case"
+" the strings we defined above. In the ``Robot`` constructor, add your "
+"options created as strings above using ``setDefaultOption`` or "
+"``addOption``. ``setDefaultOption`` will be the one selected by default when"
+" the dashboard starts. The ``putData`` function will push it to the "
+"dashboard on your driver station computer."
+msgstr ""
+"Chooser; tanımlı bir öğeler listesinden seçim yapmanıza olanak tanımaktadır,"
+" bu durumda öğeler yukarıda tanımladığımız string'lerdir. ``Robot`` "
+"constructor'ında ``setDefaultOption`` veya ``addOption`` kullanarak yukarıda"
+" string olarak oluşturulmuş seçeneklerinizi ekleyiniz. Gösterge paneli "
+"başlatıldığında ``setDefaultOption`` varsayılan olarak seçilecektir. "
+"``putData`` fonksiyonu seçeneğinizi driver station - sürücü istasyonu "
+"bilgisayaranızdaki gösterge paneline yollayacaktır."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:78
+msgid "Running Autonomous Code"
+msgstr "Otonom Kodun Çalıştırılması"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:80
+msgid ""
+"Now, in ``autonomousInit`` and ``autonomousPeriodic``, you can use the "
+"``m_autoSelected`` variable to read which option was chosen, and change what"
+" happens during the autonomous period."
+msgstr ""
+"Şimdi, ``autonomousInit`` ve ``autonomousPeriodic``'de hangi seçeneğin "
+"seçildiğini görmek ve otonom zaman aralığı içerisinde neler olacağını "
+"belirlemek için ``m_autoSelected`` değişkenini kullanabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:115
+msgid "Command-Based"
+msgstr "Komut Temelli"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:117
+msgid ""
+"The code snippets shown below are part of the HatchbotTraditional example "
+"project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__,"
+" `Python "
+"<https://github.com/robotpy/examples/tree/main/HatchbotTraditional>`__):"
+msgstr ""
+"Aşağıda kod parçacıkları HatchbotTraditional örnek projesinin(`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/hatchbottraditional>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/main/wpilibcExamples/src/main/cpp/examples/HatchbotTraditional>`__,"
+" `Python "
+"<https://github.com/robotpy/examples/tree/main/HatchbotTraditional>`__) bir "
+"parçasıdır:"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:120
+msgid "Creating the SendableChooser Object"
+msgstr "SendableChooser Nesnesinin Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:122
+msgid ""
+"In ``RobotContainer``, create a variable to hold a reference to a "
+"``SendableChooser`` object. Two or more commands can be created and stored "
+"in new variables. Using the ``SendableChooser``, one can choose between "
+"them. In this example, ``SimpleAuto`` and ``ComplexAuto`` are shown as "
+"options."
+msgstr ""
+"``RobotContainer``'da ``SendableChooser`` nesnesine referans verebilecek bir"
+" değişken oluşturunuz. . İki veya daha fazla komut yeni değişkenlerde "
+"oluşturulup depolanabilmektedir. ``SendableChooser`` ile bu modlardan "
+"herhangi biri seçilebilmektedir. Bu örnekte seçenek olarak ``SimpleAuto`` ve"
+" ``SimpleAuto`` gösterilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:0
+msgid "C++ (using raw pointers)"
+msgstr "(Ham işaretçiler kullanılan) C++"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:0
+msgid "C++ (using ``CommandPtr``)"
+msgstr "(``CommandPtr`` kullanılan) C++"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:155
+msgid "Setting up SendableChooser"
+msgstr "SendableChooser'ın Kurulumu"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:157
+msgid ""
+"Imagine that you have two autonomous programs to choose between and they are"
+" encapsulated in commands ``SimpleAuto`` and ``ComplexAuto``. To choose "
+"between them:"
+msgstr ""
+"Aralarından seçim yapabileceğiniz iki otonom programınız olduğunu ve  "
+"``SimpleAuto`` ile ``ComplexAuto`` komutlarının bu programları kapsandığını "
+"varsayın. Programlardan birini seçmek için:"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:159
+msgid ""
+"In ``RobotContainer``, create a ``SendableChooser`` object and add instances"
+" of the two commands to it. There can be any number of commands, and the one"
+" added as a default (``setDefaultOption``), becomes the one that is "
+"initially selected. Notice that each command is included in an "
+"``setDefaultOption()`` or ``addOption()`` method call on the "
+"``SendableChooser`` instance."
+msgstr ""
+"``RobotContainer``'da bir ``SendableChooser`` nesnesi oluşturup iki komutun "
+"örneklerini bu nesneye ekleyiniz. Komutlar herhangi bir miktarda olabilir ve"
+" varsayılan olarak eklenen komut (``setDefaultOption``), başlangıçta seçilen"
+" komut haline gelmektedir. Gördüğünüz üzere her komut ``SendableChooser`` "
+"örneğinde bir ``setDefaultOption()`` veya ``addOption()`` metod çağrısına "
+"dahil edilmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:191
+msgid "Then, publish the chooser to the dashboard:"
+msgstr "Ardından chooser'ı gösterge paneline yayınlayınız:"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:224
+msgid "Starting an Autonomous Command"
+msgstr "Otonom Komutun Başlatılması"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:226
+msgid ""
+"In ``Robot.java``, when the autonomous period starts, the "
+"``SendableChooser`` object is polled to get the selected command and that "
+"command must be scheduled."
+msgstr ""
+" ``Robot.java``'da otonom dönem başladığında, ``SendableChooser`` nesnesi "
+"seçili komutu almak için sorgulanır ve bu komutun zamanlanması "
+"gerekmektedir."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:0
+msgid "C++ (Source)"
+msgstr "C ++ (Kaynak)"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:264
+msgid "Running the Scheduler during Autonomous"
+msgstr "Otonom sırasında Zamanlayıcının Çalıştırılması"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:266
+msgid ""
+"In ``Robot.java``, this will run the scheduler every driver station update "
+"period (about every 20ms) and cause the selected autonomous command to run."
+"  In Python the scheduler runs automatically when ``TimedCommandRobot`` is "
+"used."
+msgstr ""
+"``Robot.java`` için bu komut her driver station güncelleme aralığında "
+"(yaklaşık her 20ms'de bir) zamanlayıcıyı çalıştıracak ve seçilen otonom "
+"komutun başlatılmasını sağlayacaktır. Python'da zamanlayıcı "
+"``TimedCommandRobot`` her kullanıldığında kendiliğinden çalışmaktadır."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:268
+msgid ""
+"Running the scheduler can occur in the ``autonomousPeriodic()`` function or "
+"``robotPeriodic()``, both will function similarly in autonomous mode."
+msgstr ""
+"Zamanlayıcının çalıştırılması ``autonomousPeriodic()`` veya "
+"``robotPeriodic()`` fonksiyonunda gerçekleşebilmektedir, her ikisi de otonom"
+" modda benzer işlevler görecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:290
+msgid "Canceling the Autonomous Command"
+msgstr "Otonom Komutun İptal Edilmesi"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:292
+msgid ""
+"In ``Robot.java``, when the teleop period begins, the autonomous command "
+"will be canceled."
+msgstr ""
+"``Robot.java``'da teleop dönemi başladığında otonom komut iptal edilecektir."
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:321
+msgid "SmartDashboard Display"
+msgstr "SmartDashboard Ekranı"
+
+#: ../../frc-docs/source/docs/software/dashboards/smartdashboard/choosing-an-autonomous-program-from-smartdashboard.rst:323
+msgid ""
+"SendableChooser shows two selectable autos: Simple Auto and Complex Auto."
+msgstr ""
+"SendableChooser seçilebilecek iki otonom mod göstermektedir: Simple Auto - "
+"Basit Otonom ve Complex Auto - Karmaşık Otonom"

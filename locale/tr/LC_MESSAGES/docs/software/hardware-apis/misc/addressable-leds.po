@@ -1,23 +1,297 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # nesrin serra köşkeroğlu <nsk-2004@hotmail.com>, 2021
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2024
+# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-12-26 16:04+0000\n"
+"POT-Creation-Date: 2025-07-31 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2024\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:2
+msgid "Addressable LEDs"
+msgstr "Adreslenebilir LED'ler"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:4
+msgid ""
+"LED strips have been commonly used by teams for several years for a variety "
+"of reasons. They allow teams to debug robot functionality from the audience,"
+" provide a visual marker for their robot, and can simply add some visual "
+"appeal. WPILib has an API for controlling WS2812, WS2812B, and WS2815 LEDs "
+"with their data pin connected via :term:`PWM`."
+msgstr ""
+"Takımlar yıllar boyunca çeşitli sebeplerden ötürü LED şeritler kullanmıştır."
+" Şertiler, takımların seyirci tribünlerinden hata düzeltmesine, robotlarına "
+"görsel bir işaret ve çekicilik kazandırmaya olanak tanımaktadır. WPILib; "
+"WS2812, WS2812B ve WS2815 LED'lerini kontrol etmeye olanak tanıyan, veri "
+"pinleri :term:`PWM` aracılığıyla bağlantılı API'a sahiptir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:6
+msgid "LEDs can be controlled through this API while the robot is disabled."
+msgstr "Robot etkisiz haldeyken LED'ler bu API üzerinden yönetilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:9
+msgid "Instantiating the AddressableLED Object"
+msgstr "AddressableLED Nesnesinin Örneklenmesi"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:11
+msgid ""
+"You first create an ``AddressableLED`` object that takes the PWM port as an "
+"argument. It *must* be a PWM header on the roboRIO. Then you set the number "
+"of LEDs located on your LED strip, which can be done with the "
+"``setLength()`` function."
+msgstr ""
+"Öncelikle PWM girişini bağımsız değişken olarak alan bir ``AddressableLED`` "
+"nesnesi oluşturunuz. Bunun roboRIO'da PWM üstbilgisinde bulunması *şarttır*."
+" Sonrasında LED şeridinizde bulunan LED sayısını belirleyiniz, bu işlemi "
+"``setLength()`` fonksiyonuyla gerçekleştirebilirsiniz."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:13
+msgid ""
+"It is important to note that setting the length of the LED header is an "
+"expensive task and it's **not** recommended to run this periodically."
+msgstr ""
+"LED üstbilgisi uzunluğunun ayarlanmasının pahalı bir iş olduğunu ve bunun "
+"düzenli aralıklarla yapılmasının tavsiye **edilmediğini** unutmamak "
+"önemlidir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:15
+msgid ""
+"After the length of the strip has been set, you'll have to create an "
+"``AddressableLEDBuffer`` object that takes the number of LEDs as an input. "
+"You'll then call ``myAddressableLed.setData(myAddressableLEDBuffer)`` to set"
+" the led output data. Finally, you can call ``myAddressableLed.start()`` to "
+"write the output continuously. Below is a full example of the initialization"
+" process."
+msgstr ""
+"Şeridin uzunluğu belirlendikten sonra, LED'lerin sayısını girdi olarak alan "
+"bir ``AddressableLEDBuffer`` nesnesi oluşturmanız gerekecektir. Bunu takiben"
+" led çıkış verilerini ayarlamak için "
+"``myAddressableLed.setData(myAddressableLEDBuffer)`` çağrısı yapacaksınız. "
+"Son olarak, çıktıyı sürekli yazması için ``myAddressableLed.start()`` "
+"çağrısı yapabilirsiniz. Aşağıda, başlatma sürecinin tam bir örneği "
+"bulunmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:17
+msgid "C++ does not have an AddressableLEDBuffer, and instead uses an Array."
+msgstr ""
+"C++ 'da AddressableLEDBuffer bulunmamaktadır ve bunun yerine bir Array - "
+"Dizi kullanılmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:0
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:0
+msgid "C++"
+msgstr "C ++"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:44
+msgid "Controlling Sections of an LED Strip"
+msgstr "LED Şeridinin Belirli Kısımılarının Yönetimi"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:92
+msgid "LED Patterns"
+msgstr "LED Desenleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:94
+msgid ""
+"The ``LEDPattern`` API simplifies setting LED data. Rather than needing to "
+"manually loop over every LED index, you can apply a pattern object to the "
+"data buffer directly. LED patterns are stateless, and can safely be applied "
+"to multiple buffers or views."
+msgstr ""
+"``LEDPattern`` API, LED verilerinin belirlenmesini basitleştirmektedir. Bu "
+"sayede her bir LED indeksini döngülemek yerine doğrudan veri arabellekine "
+"bir desen uygulayabilirsiniz. LED desenleri durumsuz ve birçok arabelleke "
+"veya görünüme uygulanabilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:129
+msgid "Creating a Rainbow Effect"
+msgstr "Gökkuşağı Etkisinin Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:133
+msgid ""
+"Animating effects like scrolling use the :ref:`Java units library "
+"<docs/software/basic-programming/java-units:The Java Units Library>` and the"
+" :ref:`C++ units library <docs/software/basic-programming/cpp-units:The C++ "
+"Units Library>` for speeds and durations."
+msgstr ""
+"Kaydırma gibi efektler, hız ve süre ayarları için  :ref:`Java birimler "
+"kütüphanesi <docs/software/basic-programming/java-units:The Java Units "
+"Library>` ile :ref:`C++ birimler kütüphanesini <docs/software/basic-"
+"programming/cpp-units:The C++ Units Library>` kullanmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:135
+msgid "The base rainbow pattern will look like this:"
+msgstr "Temel gökkuşağı deseni aşağıdaki gibidir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:137
+msgid "A full-brightness rainbow pattern"
+msgstr "Tam parlaklıkta bir gökkuşağı deseni"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:159
+msgid "Now that the rainbow pattern is defined, we only need to apply it."
+msgstr ""
+"Gökkuşağı deseni tanımlandığına göre geriye sadece deseni uygulamamız kaldı"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:195
+msgid "Controlling when patterns are applied"
+msgstr "Desenlerin ne zaman uyguladığının yönetilmesi"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:197
+msgid ""
+"Use commands. The command framework is specifically built for managing when "
+"actions run and stop, and prevents multiple actions from running "
+"simultaneously."
+msgstr ""
+"Komutları kullanınız. Komut çerçevesi, eylemlerin ne zaman başladığı ve ne "
+"zaman durduğunu yönetmek için özel olarak tasarlanmıştır ve çerçeve aynı "
+"anda birden fazla eylemin çalıştırılmasını engellemektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:290
+msgid "Basic effects"
+msgstr "Temel efektler"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:292
+msgid ""
+"The basic effects can all be created from the factory methods declared in "
+"the ``LEDPattern`` class"
+msgstr ""
+"Temel efektlerin tamamı ``LEDPattern`` sınıfına dahil edilen fabrika "
+"metodları üzerinden oluşturulabilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:295
+msgid "Solid color"
+msgstr "Düz renk"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:297
+msgid "A solid red LED pattern"
+msgstr "Düze renkte bir LED deseni"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:582
+msgid "Reverse"
+msgstr "Tersine çevir"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:584
+msgid ""
+"A discontinuous gradient running from blue-to-red instead of red-to-blue"
+msgstr ""
+"kırmızıdan mavi yerine maviden kırmızıya geçişe sahip devamsız bir gradyan"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:588
+msgid ""
+"Patterns and animations can be reversed to flip the direction that patterns "
+"are applied in; instead of starting from the lowest-indexed pixel in a "
+"buffer or view, a reversed pattern will start from the highest-indexed pixel"
+" and move toward the lowest-index pixel. A reversed :ref:`scrolling pattern "
+"<docs/software/hardware-apis/misc/addressable-leds:Scroll>` will scroll in "
+"reverse, as if its velocity's sign was flipped."
+msgstr ""
+"Desenlerin uygulandığı yönünü değiştirmek için desenler ve animasyonlar "
+"tersine çevirilebilmektedir. Ara bellek veya görünümdeki en düşük indekse "
+"sahip pikselden başlamak yerine tersine çevrilmiş bir desen en yüksek "
+"indekse sahip pikselden başlayıp en düşük indekseli piksele doğru hareket "
+"edecektir. Tersine çevrilmiş bir :ref:`kaydırma deseni "
+"<docs/software/hardware-apis/misc/addressable-leds:Scroll>`, sanki hız "
+"değeri tersine çevrilmiş gibi kaydırmayı ters yönden gerçekleştirecektir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:696
+msgid "Breathe"
+msgstr "Nefes"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:713
+msgid ""
+"A breathing modifier will make the base pattern brighten and dim in a "
+"sinusoidal pattern over the given period of time. Brightness is relative to "
+"the original brightness of the base pattern - breathing will only make it "
+"dimmer, never brighter than the original."
+msgstr ""
+"Nefes değiştiricisi temel desen parlaklığının belirlenen zaman aralığı "
+"içerisinde sinüzoidal bir şekilde artıp azalmasını sağlayacaktır. Desenin "
+"parlaklığı temel desenin ilk parlaklığı ile ilişkilidir; nefes sadece "
+"parlaklığı azaltabilecek, ancak hiçbir zaman orijinalinden daha parlak hale "
+"getirmeyecektir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:751
+msgid "Blink"
+msgstr "Yanıp sönme"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:779
+msgid "Blinking can be done in one of three ways:"
+msgstr "Yanıp sönme aşağıdaki üç şekilde gerçekleştirilebilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:781
+msgid ""
+"Symmetrically, where an equal amount of time is spent in the \"on\" and "
+"\"off\" states per cycle"
+msgstr ""
+"Her döngüde \"açık\" ve \"kapalı\" durumlarının eşit sürede olmasıyla "
+"simetrik bir şekilde"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:782
+msgid ""
+"Asymetrically, where the time spent \"on\" can be configured independently "
+"from the time spent \"off\""
+msgstr ""
+"\"Açık\" durumda harcanan sürenin \"kapalı\" durumdan bağımsız olarak "
+"ayarlanabildiği asimetrik bir şekilde"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:783
+msgid ""
+"Synchronously, where the time spent on and off is synchronized with an "
+"external source (for example, the state of the RSL)"
+msgstr ""
+"Açık ve kapalı durumlarda harcanan sürelerinin (örneğin, RSL'in durumu gibi)"
+" dış bir kaynakla eşleştirildiği senkronize bir şekilde"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:837
+msgid "Brightness"
+msgstr "Parlaklık"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:839
+msgid "A discontinuous gradient at half brightness"
+msgstr "Yarım parlaklıkta devamsız bir gradyan"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:883
+msgid "Combinatory effects"
+msgstr "Birleştirilebilir efektler"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:0
+msgid "Java (RGB)"
+msgstr "Java (RGB)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:0
+msgid "C++ (RGB)"
+msgstr "C++ (RGB)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:0
+msgid "Java (HSV)"
+msgstr "Java (HSV)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:0
+msgid "C++ (HSV)"
+msgstr "C++ (HSV)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:1080
+msgid "Using HSV Values"
+msgstr "HSV Değerlerinin Kullanımı"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/misc/addressable-leds.rst:1082
+msgid "HSV models picture"
+msgstr "HSV modellerinin resmi"

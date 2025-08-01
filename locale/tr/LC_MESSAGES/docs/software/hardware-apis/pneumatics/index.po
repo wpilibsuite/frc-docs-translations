@@ -1,23 +1,107 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Çağan Uslu, 2023
-# Duru Ünlü <aodunlu@gmail.com>, 2023
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-08-27 04:03+0000\n"
+"POT-Creation-Date: 2025-08-01 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Duru Ünlü <aodunlu@gmail.com>, 2023\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:2
+msgid "Pneumatics APIs"
+msgstr "Pnömatik API'ları"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:11
+msgid "Using the FRC Control System to Control Pneumatics"
+msgstr "Pnömatiğin Yönetimi için FRC Kontrol Sisteminin Kullanılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:13
+msgid ""
+"There are two options for operating solenoids to control pneumatic "
+"cylinders, the CTRE Pneumatics Control Module and the REV Robotics "
+"Pneumatics Hub."
+msgstr ""
+"Pnömatik silindirleri yönetmek için solenoidleri kullanmak için iki seçenek "
+"vardır, CTRE Pnömatik Control Modülü ve  REV Robotics Pnömatik Merkezi"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:15
+msgid "The Pneumatics Control Module (PCM)"
+msgstr "The Pneumatics Control Module - Pnömatik Kontrol Modülü (PCM)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:19
+msgid ""
+"The CTRE Pneumatics Control Module (PCM) is a CAN-based device that provides"
+" control over the compressor and up to 8 solenoids per module."
+msgstr ""
+"CTRE Pnömatik Kontrol Modülü (PCM), kompresör ve modül başı 8 adede kadar "
+"solenoidin yönetilmesini sağlayan CAN temelli bir cihazdır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:21
+msgid "The Pneumatic Hub (PH)"
+msgstr "Pneumatic Hub - Pnömatik Merkezi (PH)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:25
+msgid ""
+"The REV Pneumatic Hub (PH) is a CAN-based device that provides control over "
+"the compressor and up to 16 solenoids per module."
+msgstr ""
+"REV Robotics Pnömatik Merkezi (PH), kompresör ve modül başı 16 adede kadar "
+"solenoidin yönetilmesini sağlayan CAN temelli bir cihazdır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:27
+msgid ""
+"These devices are integrated into WPILib through a series of classes that "
+"make them simple to use. The closed loop control of the Compressor and "
+"Pressure switch is handled by the PCM hardware and the Solenoids are handled"
+" by the ``Solenoid`` class that controls the solenoid channels."
+msgstr ""
+"Bu cihazlar, kullanımlarını kolaylaştıran bir dizi sınıflar aracılığıyla, "
+"WPILib'e entegre edilmiştir. Kompresör ve Basınç şalterlerinin kapalı döngü "
+"kontrolü PCM donanımı tarafından idare edilirken Solenoidler, solenoid "
+"kanallarını yöneten ``Solenoid`` sınıfı tarafından idare edilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:29
+msgid ""
+"These modules are responsible for regulating the robot's pressure using a "
+"pressure switch and a compressor and switching solenoids on and off. They "
+"communicate with the roboRIO over CAN. For more information, see "
+":doc:`/docs/controls-overviews/control-system-hardware`."
+msgstr ""
+"Bu modüller; bir basınç şalteri ve kompresör aracılığıyla robot basıncının "
+"düzenlenmesinin yanı sıra solenoidlerin açılıp kapatılmasından sorumludur. "
+"Modüller CAN üzerinden roboRIO ile iletişi kurmaktadır. Daha fazla bilgi "
+"için bkz. :doc:`/docs/controls-overviews/control-system-hardware`."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:32
+msgid "Module Numbers"
+msgstr "Modül Numaraları"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/pneumatics/index.rst:34
+msgid ""
+"CAN Devices are identified by their CAN ID. The default CAN ID for PCMs is "
+"0. The default CAN ID for PHs is 1. If using a single module on the bus it "
+"is recommended to leave it at the default CAN ID. Additional modules can be "
+"used where the modules corresponding solenoids are differentiated by the "
+"module number in the constructors of the ``Solenoid``, ``DoubleSolenoid`` "
+"and ``Compressor`` classes."
+msgstr ""
+"CAN Cihazları CAN ID aracılığıyla tanımlanmaktadır. PCM'ler için varsayılan "
+"CAN ID 0, PH'lar için varsayılan ise 1'dir. Veri yolunda tek bir modül "
+"kullanılıyorsa, modülü varsayılan CAN ID'de bırakmak tavsiye edilmektedir. "
+"Ek modüller,  solenoidlere denk düşen modüllerin ``Solenoid``, "
+"``DoubleSolenoid`` ve ``Compressor`` sınıflarının constructor'larındaki "
+"modül numarasındaki farklarla ayrıştığı durumlarda, kullanılabilmektedir."

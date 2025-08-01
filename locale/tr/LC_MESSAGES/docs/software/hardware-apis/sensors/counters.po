@@ -1,23 +1,137 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-07-17 04:14+0000\n"
+"POT-Creation-Date: 2025-08-01 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:2
+msgid "Counters"
+msgstr "Sayaçlar"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:4
+msgid "IO Diagram showing the up/down pulses the counter is counting."
+msgstr "Sayacın saydığı aşağı/yukarı darbelerini gösteren bir IO Şeması."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:7
+msgid ""
+"The :code:`Counter` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_counter.html>`__)"
+" is a versatile class that allows the counting of pulse edges on a digital "
+"input.  :code:`Counter` is used as a component in several more-complicated "
+"WPILib classes (such as :ref:`Encoder <docs/software/hardware-"
+"apis/sensors/encoders-software:Encoders - Software>` and :ref:`Ultrasonic "
+"<docs/software/hardware-apis/sensors/ultrasonics-software:Ultrasonics - "
+"Software>`), but is also quite useful on its own."
+msgstr ""
+":code:`Counter` sınıfı (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Counter.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_counter.html>`__),"
+" dijital girişlerde darbe ayrıtlarının sayılmasına olanak tanıyan kullanışlı"
+" bir sınıftır. :code:`Counter` - Sayaç (:ref:`Encoder "
+"<docs/software/hardware-apis/sensors/encoders-software:Encoders - Software>`"
+" ve :ref:`Ultrasonic <docs/software/hardware-apis/sensors/ultrasonics-"
+"software:Ultrasonics - Software>` gibi) daha karmaşık birçok WPILib "
+"sınıfında bir bileşen olarak kullanılıyor olsa da kendi başına da gayet "
+"kullanışlıdır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:26
+msgid ""
+"In all modes except semi-period mode, the counter can be configured to "
+"increment either once per edge (2X decoding), or once per pulse (1X "
+"decoding).  By default, counters are set to two-pulse mode, though if only "
+"one channel is specified the counter will only count up."
+msgstr ""
+"Semi-period hariç diğer tüm modlarda sayaç, ayrıt başı bir defa (2X kod "
+"çözümü) veya darbe başı bir defa (1X kod çözümü) artacak şekilde "
+"yapılandırılabilmektedir. Varsayılan olarak sayaçlar two-pulse modundadır, "
+"ancak sadece tek bir kanal belirtilmişse sayaç sadece normal şekilde sayım "
+"yapacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:148
+msgid ""
+"In external direction mode, the counter counts either up or down depending "
+"on the level on the second channel. If the direction source is low, the "
+"counter will increase; if the direction source is high, the counter will "
+"decrease (to reverse this, see the next section). A counter can be "
+"initialized in this mode as follows:"
+msgstr ""
+"Dış yön modundayken sayaç, ikinci kanaldaki seviyeye bağlı olarak yalnızca "
+"normal veya geriye sayım yapmaktadır. Yön kaynağı düşükse, sayaçtaki sayı "
+"artacak; yön kaynağı yüksekse, sayaçtaki sayı azalacaktır (bunu tersine "
+"çevirmek için, bkz. bir sonraki bölüm). Bir sayaç bu modda aşağıdaki şekilde"
+" başlatılmaktadır:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:248
+msgid ""
+"Counters measure *relative* distance, not absolute; the distance value "
+"returned will depend on the position of the encoder when the robot was "
+"turned on or the encoder value was last :ref:`reset <docs/software/hardware-"
+"apis/sensors/counters:Resetting a Counter>`."
+msgstr ""
+"Sayaçlar mutlak değil, *göreceli* mesafeyi ölçmektedir; geri döndürülen "
+"mesafe değeri, robot başlatıldığı veya kodlayıcı değeri en son ne zaman "
+"ref:`yeniden başlatıldığı <docs/software/hardware-"
+"apis/sensors/counters:Resetting a Counter>` anda kodlayıcının konumuna bağlı"
+" olacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:250
+msgid ""
+"If the :ref:`distance per pulse <docs/software/hardware-"
+"apis/sensors/counters:Configuring counter parameters>` has been configured, "
+"users can obtain the total distance traveled by the counted sensor with the "
+":code:`getDistance()` method:"
+msgstr ""
+":ref:`Darbe başı mesafe <docs/software/hardware-"
+"apis/sensors/counters:Configuring counter parameters>` yapılandırılmışsa, "
+"kullanıcılar :code:`getDistance()` metodu ile sayılı sensör tarafından "
+"katedilen toplam mesafeyi elde edebilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:328
+msgid ""
+"In :ref:`semi-period mode <docs/software/hardware-"
+"apis/sensors/counters:Semi-period mode>`, this method returns the duration "
+"of the pulse, not of the period."
+msgstr ""
+":ref:`semi-period modunda <docs/software/hardware-"
+"apis/sensors/counters:Semi-period mode>` bu metod darbenin aralığını değil, "
+"süresini geri döndürmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/counters.rst:368
+msgid ""
+"Counters are useful for a wide variety of robot applications - but since the"
+" :code:`Counter` class is so varied, it is difficult to provide a good "
+"summary of them here.  Many of these applications overlap with the "
+":code:`Encoder` class - a simple counter is often a cheaper alternative to a"
+" quadrature encoder.  For a summary of potential uses for encoders in code, "
+"see :ref:`docs/software/hardware-apis/sensors/encoders-software:Encoders - "
+"Software`."
+msgstr ""
+"Sayaçlar çeşitli birçok robot uygulamalarında kullanışlıdır, ancak "
+":code:`Counter` sınıfı çok çeşitli olduğundan burada bu uygulamların iyi bir"
+" özetini vermek zordur. Bu uygulamaların çoğu :code:`Encoder` sınıfı ile "
+"örtüşmektedir; basit bir sayaç, genellikle dördün bir kodlayıcıya göre daha "
+"ucuz bir seçenektir. Kodlayıcıların kodlardaki olası kullanımlarının bir "
+"özeti için bkz . :ref:`docs/software/sensors/encoders-software:Encoders - "
+"Software`."

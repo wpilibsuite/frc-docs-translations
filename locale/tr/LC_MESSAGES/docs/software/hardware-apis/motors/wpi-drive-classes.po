@@ -8,18 +8,319 @@
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
 # ceren oktemer <ceren.oktemer@gmail.com>, 2021
 # Lal Serdaroğlu, 2022
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-21 04:06+0000\n"
+"POT-Creation-Date: 2025-08-01 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Lal Serdaroğlu, 2022\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:4
+msgid "Using the WPILib Classes to Drive your Robot"
+msgstr "Robotunuzu Sürmek için WPILib Sınıflarının Kullanımı"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:6
+msgid ""
+"WPILib includes many classes to help make your robot get driving faster."
+msgstr ""
+"WPILib, robotunuzun daha kısa sürede işlevsel hale getirmeye yardımcı birçok"
+" sınıf içermektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:9
+msgid "Standard drivetrains"
+msgstr "Standart aktarma sistemleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:13
+msgid "The wiring of a simple differential drive robot."
+msgstr "Basit bir diferansiyel sürüş robotunun kablolaması."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:17
+msgid ""
+"These drive bases typically have two or more in-line traction or omni  "
+"wheels per side (e.g., 6WD or 8WD) and may also be known as  \"skid-steer\","
+" \"tank drive\", or \"West Coast Drive\". The Kit of Parts  drivetrain is an"
+" example of a differential drive. These drivetrains are capable of driving "
+"forward/backward and can turn by driving the two sides in opposite "
+"directions causing the wheels to skid sideways. These drivetrains are not "
+"capable of sideways translational movement."
+msgstr ""
+"Bu sürüş tabanları tipik olarak her tarafta iki veya daha fazla sıralı çekiş"
+" veya çok yönlü tekerleklere (ör., 6WD veya 8WD) sahiptir ve diğer adlarıyla"
+" \"skid-steer\", \"tank drive\" veya \"West Coast Drive\" olarak da "
+"bilinmektedir. Parça kiti aktarma sistemi, diferansiyel sürücüye bir "
+"örnektir. Bu aktarma sistemleri ileri/geri hareket kabiliyetine sahip ve her"
+" iki tarafı zıt yönlerde hareket ettirip, tekerleklerin yana doğru kaymasına"
+" sebep olarak dönüş yapabilmektedir. Bu aktarma sistemleri, yanlamasına "
+"öteleme hareketine olanak tanımamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:20
+msgid "Mecanum Drive"
+msgstr "Mecanum Sürüşü"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:21
+msgid "A four wheel Mecanum robot using the KOP chassis."
+msgstr "KOP şasesini kullanan dört tekerlekli bir Mecanum robotu."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:72
+msgid ""
+"By default, the Differential Drive class applies an input deadband of 0.02. "
+"This means that input values with a magnitude below 0.02 (after any squaring"
+" as described above) will be set to 0. In most cases these small inputs "
+"result from imperfect joystick centering and are not sufficient to cause "
+"drivetrain movement, the deadband helps reduce unnecessary motor heating "
+"that may result from applying these small values to the drivetrain. To "
+"change the deadband, use the `setDeadband()` method."
+msgstr ""
+"Varsayılan olarak Diferansiyel Drive 0,02'lik bir ölü bant uygulamaktadır. "
+"Diğer bir deyişle (yukarıda açıklandığı üzere herhangi bir kareleme "
+"işleminden sonra) 0,02'den aşağı bir değere sahip giriş değerleri 0 olarak "
+"ayarlanacaktır. Çoğu durumda bu küçük girdiler eksik bir kumanda kolu "
+"merkezlemesinden kaynaklanmakta olup kendi başlarına aktarım sisteminin "
+"hareketine sebep olmak için yeterli değillerdir, ölü bant bu düşük "
+"değerlerin aktarma sistemine uygulanmasıyla ortaya çıkabilecek gereksiz "
+"motor ısınmasının önüne geçmektedir. Ölü bantı değiştirmek için "
+"`setDeadband()` metodunu kullanınız."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:77
+msgid ""
+"Sometimes drivers feel that their drivetrain is driving too fast and want to"
+" limit the output.  This can be accomplished with the `setMaxOutput()` "
+"method.  This maximum output is multiplied by result of the previous drive "
+"functions like deadband and squared inputs."
+msgstr ""
+"Bazen aktarma sistemi robotu çok hızlı sürdüğü için sürücüler sistemin "
+"çıktısını sınırlamak isteyebilmektedir. Bu işlem `setMaxOutput()` metodu ile"
+" kolayca gerçekleştirilebilmektedir. Bu maksimum çıktı, ölü pant ve "
+"karelenmiş girdiler gibi önceki sürüş fonksiyonlarının sonuçlarıyla "
+"çarpılmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:84
+msgid ""
+"The purpose of the Motor Safety mechanism is the same as the purpose of a "
+"watchdog timer, to disable mechanisms which may cause harm to themselves, "
+"people, or property if the code locks up and does not properly update the "
+"actuator output. Motor Safety breaks this concept out on a per actuator "
+"basis so that you can appropriately determine where it is necessary and "
+"where it is not. Examples of mechanisms that should have motor safety "
+"enabled are systems like drive trains and arms. If these systems get latched"
+" on a particular value they could cause damage to their environment or "
+"themselves. An example of a mechanism that may not need motor safety is a "
+"spinning flywheel for a shooter. If this mechanism gets latched on a "
+"particular value it will simply continue spinning until the robot is "
+"disabled. By default Motor Safety is enabled for DifferentialDrive and "
+"MecanumDrive objects and disabled for all other motor controllers and "
+"servos."
+msgstr ""
+"Motor Güvenliği düzeneğinin amacı, bir güvenlik zamanlayıcısınınkiyle "
+"aynıdır: Kodun kilitlendiği ve aktüatör çıktısının doğru bir şekilde "
+"güncellenmediği durumlarda kendilerine, başkalarına veya çevreye zarar "
+"verebilecek düzenekleri etkisiz hale getirmek. Nerede gerekli olup nerede "
+"olmadığını uygun bir şekilde belirleyebilmeniz için Motor Güvenliği bu "
+"kavramı aktüatör başı bir şekilde gerçekleştirmektedir. Aktarma sistemleri "
+"ve kollar motor güvenliğinin etkinleştirilmesi gereken düzeneklere örnek "
+"olarak gösterilebilmektedir. Bu sistemler belirli bir değerde takılı "
+"kalırsa, çevrelerine veya kendilerine zarar verebilmektedir. Bir atıcının "
+"döner volanı motor güvenliğine ihtiyaç duymayabilen bir düzeneğe örnek "
+"olarak gösterilebilmektedir. Bu düzenek belrili bir değerde takılı kalırsa, "
+"sadece robot etkisiz hale gelinceye kadar dönmeye devam edecektir. "
+"Varsayılan olarak Motor Güvenliği DifferentialDrive ve MecanumDrive "
+"nesnelerinde etkin, diğer tüm motor kontrolörleri ve servolar içinse devre "
+"dışıdır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:116
+msgid ""
+"By default all Drive objects enable Motor Safety. Depending on the mechanism"
+" and the structure of your program, you may wish to configure the timeout "
+"length of the motor safety (in seconds). The timeout length is configured on"
+" a per actuator basis and is not a global setting. The default (and minimum "
+"useful) value is 100ms."
+msgstr ""
+"Varsayılan olarak tüm Drive nesneleri, Motor Güvenliğini "
+"etkinleştirmektedir. Düzenek ve programın yapısına bağlı olarak, (saniye "
+"biriminde) motor güvenliği zaman aşımını yapılandırmak isteyebilirsiniz. "
+"Zaman aşımı süresi aktüatör başına gerçekleştirilen bir yapılandırmadır, "
+"genel bir ayar değildir. Varsayılan (ve faydalı en düşük) değer 100ms'dir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:119
+msgid "Axis Conventions"
+msgstr "Eksen Düzenleri"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:121
+msgid ""
+"The drive classes use the NWU axes convention (North-West-Up as external "
+"reference in the world frame). The positive X axis points ahead, the "
+"positive Y axis points left, and the positive Z axis points up. We use NWU "
+"here because the rest of the library, and math in general, use NWU axes "
+"convention."
+msgstr ""
+"Sürüş sınırları (dünya çerçevesinde dış bir referans olarak Kuzey-Batı-"
+"Yukarı) NWU eksen yönlerini kullanmaktadır. Pozitif X ekseni ileri, pozitif "
+"Y ekseni sola, pozitif Z ekseiyse yukarı bakmaktadır. Bu durum için NWU "
+"kullanmamızın sebebi kütüphanenin geri kalanının, ve genel olarak "
+"matematiğin, NWU eksen düzeni kullanıyor olmasıdır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:123
+msgid ""
+"Joysticks follow NED (North-East-Down) convention, where the positive X axis"
+" points ahead, the positive Y axis points right, and the positive Z axis "
+"points down. However, it's important to note that axes values are rotations "
+"around the respective axes, not translations. When viewed with each axis "
+"pointing toward you, CCW is a positive value and CW is a negative value. "
+"Pushing forward on the joystick is a CW rotation around the Y axis, so you "
+"get a negative value. Pushing to the right is a CCW rotation around the X "
+"axis, so you get a positive value."
+msgstr ""
+"Kumanda kolları; pozitif X ekseni ileri, pozitif Y ekseni sağa, pozitif Z "
+"ekseniyse aşağıya bakan NED (Kuzey-Doğu-Aşağı) yönünü izlemektedir. Fakat "
+"eksen değerlerinin öteleme değil, ilgili eksenler etrafında dönme olduğu "
+"unutlmamalıdır. Tüm eksenler size bakacak şekilde görüntülendiğinde CCW "
+"pozitif bir değerken CW negatif bir değerdir. Kumanda kolunun sağa doğru "
+"oynatmak Y ekseni etrafında gerçekleşen bir CW dönmesidir, yani elde edilen "
+"değer negatif olacaktır. Kolunun ileri doğru oynatmak X ekseni etrafında "
+"gerçekleşen bir CCW dönmesidir, yani elde edilen değer pozitif olacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:125
+msgid ""
+"See the :doc:`/docs/software/basic-programming/coordinate-system` section "
+"for more detail about the axis conventions and coordinate systems."
+msgstr ""
+"Eksen düzenleri ve koordinat düzlemlerine dair daha fazla bilgi için bkz. "
+":doc:`/docs/software/basic-programming/coordinate-system` bölümü."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:128
+msgid "Using the DifferentialDrive class to control Differential Drive robots"
+msgstr ""
+"Diferansiyel Sürüşe sahip robotların yönetimi için DifferentialDrive "
+"sınıfını kullanmak"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:130
+msgid ""
+"WPILib provides separate Robot Drive classes for the most common drive train"
+" configurations (differential and mecanum).  The DifferentialDrive class "
+"handles the differential drivetrain configuration. These drive bases "
+"typically have two or more in-line traction or omni wheels per side (e.g., "
+"6WD or 8WD) and may also be known as \"skid-steer\", \"tank drive\", or "
+"\"West Coast Drive\" (WCD). The Kit of Parts drivetrain is an example of a "
+"differential drive. There are methods to control the drive with 3 different "
+"styles (\"Tank\", \"Arcade\", or \"Curvature\"), explained in the article "
+"below."
+msgstr ""
+"WPILib, en yaygın aktarma sistemi yapılandırmalı (diferansiyel ve mecanum) "
+"için ayrı Robot Drive sınıfları sağlamaktadır. DifferentialDrive sınıfı "
+"diferansiyel aktarma sistemi yapılandırmasını yönetmektedir. BU sürüş "
+"tabanları yaygın bir şekilde taraf başına iki veya daha fazla sıralı çekiş "
+"veya çok yönlü teker (6W veya 8W) içermekte ve \"skid-steer\", \"tank "
+"drive\" veya \"West Coast Drive\" (WCD) gibi isimlerle de anılabilmektedir. "
+"Parça Kiti aktarma sistemi diferansiyel sürüş için bir örnek olarak "
+"gösterilebilmektedir. Aşağıdaki yazıda açıklandığı üzere, sürüşü yönetmek "
+"için kullanılabilen 3 farklı tarz   (\"Tank\", \"Arcade\" veya "
+"\"Curvature\") bulunmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:0
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:0
+msgid "C++ (Header)"
+msgstr "C ++ (Header-Üstbilgi)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:0
+msgid "C++ (Source)  :sync: C++ (Source)"
+msgstr "C++ (Kaynak) C++ (Kaynak) "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:0
+msgid "Python"
+msgstr "Python"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:166
+msgid "Multi-Motor DifferentialDrive"
+msgstr "Çok Motorlu DifferentialDrive"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:168
+msgid ""
+"Many FRC\\ |reg| drivetrains have more than 1 motor on each side. Classes "
+"derived from ``PWMMotorController`` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html>`__"
+" / `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_w_m_motor_controller.html>`__"
+" / :external:py:class:`Python <wpilib.PWMMotorController>`) have an "
+"``addFollower`` method so that multiple follower motor controllers can be "
+"updated when the leader motor controller is commanded. CAN motor controllers"
+" have similar features, review the vendor's documentation to see how to use "
+"them. The examples below show a 4 motor (2 per side) drivetrain. To extend "
+"to more motors, simply create the additional controllers and use additional "
+"``addFollower`` calls."
+msgstr ""
+"Birçok FRC\\ |reg| aktarma sistemi taraf başına 1'den fazla motora sahiptir."
+" ``PWMMotorController`` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/motorcontrol/PWMMotorController.html>`__"
+" / `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_p_w_m_motor_controller.html>`__"
+" / :external:py:class:`Python <wpilib.PWMMotorController>`)'dan türetilen "
+"sınıflar, baş motor kontrolörüne komut verildiğinde birden fazla takipçi "
+"motor kontrolörünün güncellenebilmesi için ``addFollower`` metoduna "
+"sahiptir. CAN motor kontrolörleri benzer özelliklere sahiptir, bunların "
+"nasıl kullanıldığını görmek için satıcının sunduğu belgeleri gözden "
+"geçiriniz. Aşağıdaki örnekler (taraf başı 2 tane olmak üzere) 4 motorlu bir "
+"aktarma sistemini göstermektedir. Daha fazla motor eklemek için, ek "
+"kontrolörlerin oluşturulması ve ek ``addFollower`` çağrılarının kullanılması"
+" yeterli olacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:175
+msgid "Class variables (e.g. in Robot.java or Subsystem):"
+msgstr ""
+"Sınıf değişkenleri (örn. Robot.java veya Alt sistem) aşağıdaki şekildedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:181
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:197
+msgid "In Robot or Subsystem constructor:"
+msgstr "Robot veya Alt sistem constructor'ında aşağıdaki şekildedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:0
+msgid "C++ (Source)"
+msgstr "C ++ (Kaynak)"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:339
+msgid ""
+"A 4th parameter can be supplied to the ``driveCartesian(double ySpeed, "
+"double xSpeed, double zRotation, double gyroAngle)`` method, the angle "
+"returned from a Gyro sensor. This will adjust the rotation value supplied. "
+"This is particularly useful with mecanum drive since, for the purposes of "
+"steering, the robot really has no front, back, or sides. It can go in any "
+"direction. Adding the angle in degrees from a gyro object will cause the "
+"robot to move away from the drivers when the joystick is pushed forwards, "
+"and towards the drivers when it is pulled towards them, regardless of what "
+"direction the robot is facing."
+msgstr ""
+"Jiroskop değerinden döndürülen açı değeri şeklinde ``driveCartesian(double "
+"ySpeed, double xSpeed, double zRotation, double gyroAngle)`` metoduna 4. bir"
+" parametre eklenebilmektedir. Bu parametre sağlanan dönüş değerini "
+"ayarlayacaktır. Yönlendirme sebebinden ötürü robotun önü, arkası ya da "
+"yanları olmadığı için bu ayar özellikle mecanum sürüşü için faydalıdır. "
+"Robot herhangi bir yönde hareket edebilmektedir. Bir jiroskop nesnesinden "
+"derece olarak açının eklenmesi durumunda, robotun baktığı yön fark "
+"etmeksizin, kumanda kolu ileri oynatıldığında robotun sürücüden "
+"uzaklaşmasına, kol sürücülere doğru çekildiğindeyse robotun sürücülere doğru"
+" hareket etmesine sebep olacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/motors/wpi-drive-classes.rst:345
+msgid ""
+"Many teams also like to ramp the joysticks inputs over time to promote a "
+"smooth acceleration and reduce jerk.  This can be accomplished with a "
+":ref:`Slew Rate Limiter <docs/software/advanced-controls/filters/slew-rate-"
+"limiter:Slew Rate Limiter>`."
+msgstr ""
+"Birçok takım zaman, pürüzsüz bir ivme ile sarsılmayı azaltmak için kumanda "
+"kolu gridilerini arttırmaktadır. Bu işlem bir :ref:`Slew Rate Limiter "
+"<docs/software/advanced-controls/filters/slew-rate-limiter:Slew Rate "
+"Limiter>` ile gerçekleştirilebilmektedir."

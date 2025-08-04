@@ -1,23 +1,147 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-08-30 16:04+0000\n"
+"POT-Creation-Date: 2025-08-04 16:06+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:2
+msgid "Sensor Overview - Software"
+msgstr "Sensörlere Genel Bakış - Yazılım"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:4
+msgid ""
+"This section covers using sensors in software.  For a guide to sensor "
+"hardware, see :ref:`docs/hardware/sensors/sensor-overview-hardware:Sensor "
+"Overview - Hardware`."
+msgstr ""
+"Bu bölüm, yazılımda sensörlerin kullanımını kapsamaktadır. Sensör "
+"donanımıyla ilgili bir kılavuz için bkz. :ref:`docs/hardware/sensors/sensor-"
+"overview-hardware:Sensor Overview - Hardware`."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:6
+msgid ""
+"While cameras may definitely be considered \"sensors\", vision processing is"
+" a sufficiently-complicated subject that it is covered in :ref:`its own "
+"section <docs/software/vision-processing/introduction/strategies-for-vision-"
+"programming:Strategies for Vision Programming>`, rather than here."
+msgstr ""
+"Kameralar kesinlikle \"sensör\" sayılsalar da görüntü işleme buradan çok "
+":ref:`kendisine özel bir bölümde <docs/software/vision-"
+"processing/introduction/strategies-for-vision-programming:Strategies for "
+"Vision Programming>` incelenmiş yeterince karmaşık bir konudur."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:8
+msgid ""
+"In order to be effective, it is often vital for robots to be able to gather "
+"information about their surroundings.  Devices that provide feedback to the "
+"robot on the state of its environment are called \"sensors.\"  WPILib "
+"innately supports a large variety of sensors through classes included in the"
+" library.  This section will provide a guide to both using common sensor "
+"types through WPILib, as well as writing code for sensors without official "
+"support."
+msgstr ""
+"Etkili olabilmeleri için robotların çevreleri hakkında bilgi "
+"toplayabilmeleri sık sık büyük önem taşımaktadır. Robota ortamının durumu "
+"hakkında geri bildirim sağlayan cihazlara \"sensör\" denmektedir. WPILib, "
+"kütüphanesinde bulunan sınıflar aracılığıyla çok çeşitli sensörleri ek bir "
+"işlem gerekmeden desteklemektedir. Bu bölüm, hem WPILib aracılığıyla yaygın "
+"sensör türlerini kullanma hem de resmi destek olmadan sensörler için kod "
+"yazma konusunda bir kılavuz görevi görecektir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:11
+msgid "What sensors does WPILIB support?"
+msgstr "WPILIB hangi sensörleri desteklemektedir?"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:13
+msgid ""
+"The roboRIO includes an :term:`FPGA` which allows accurate real-time "
+"measuring of a variety of sensor input.  WPILib, in turn, provides a number "
+"of classes for accessing this functionality."
+msgstr ""
+"roboRIO; çeşitli sensörlerin isabetli, gerçek zamanlı ölçümler yapmasına "
+"olanak tanıyan bir :term:`FPGA` içermektedir. WPILib buna karşılık bu "
+"işlevselliğe erişimi mümkün kılan birçok sınıf sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:15
+msgid "WPILib provides native support for:"
+msgstr ""
+"WPILib, aşağıdakiler için ek bir işlem gerekmesizin destek sağlamaktadır:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:17
+msgid ""
+":ref:`Accelerometers <docs/software/hardware-apis/sensors/accelerometers-"
+"software:Accelerometers - Software>`"
+msgstr ""
+":ref:`İvmeölçerler <docs/software/hardware-apis/sensors/accelerometers-"
+"software:Accelerometers - Software>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:18
+msgid ""
+":ref:`Gyroscopes <docs/software/hardware-apis/sensors/gyros-"
+"software:Gyroscopes - Software>`"
+msgstr ""
+":ref:`Jiroskoplar <docs/software/hardware-apis/sensors/gyros-"
+"software:Gyroscopes - Software>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:19
+msgid ""
+":ref:`Ultrasonic rangefinders <docs/software/hardware-"
+"apis/sensors/ultrasonics-software:Ultrasonics - Software>`"
+msgstr ""
+" :ref:`Ultrasonik telemetreler <docs/software/hardware-"
+"apis/sensors/ultrasonics-software:Ultrasonics - Software>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:20
+msgid ""
+":ref:`Potentiometers <docs/software/hardware-apis/sensors/analog-"
+"potentiometers-software:Analog Potentiometers - Software>`"
+msgstr ""
+":ref:`Potansiyometreler <docs/software/hardware-apis/sensors/analog-"
+"potentiometers-software:Analog Potentiometers - Software>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:21
+msgid ""
+":ref:`Counters <docs/software/hardware-apis/sensors/counters:Counters>`"
+msgstr ""
+":ref:`Sayaçlar <docs/software/hardware-apis/sensors/counters:Counters>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:22
+msgid ""
+":ref:`Quadrature encoders <docs/software/hardware-apis/sensors/encoders-"
+"software:Encoders - Software>`"
+msgstr ""
+" ref:`Dördün kodlayıcılar <docs/software/hardware-apis/sensors/encoders-"
+"software:Encoders - Software>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:23
+msgid ""
+":ref:`Limit switches <docs/software/hardware-apis/sensors/digital-inputs-"
+"software:Digital Inputs - Software>`"
+msgstr ""
+":ref:`Limit anahtarları <docs/software/hardware-apis/sensors/digital-inputs-"
+"software:Digital Inputs - Software>`"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/sensor-overview-software.rst:25
+msgid ""
+"Additionally, WPILib includes lower-level classes for interfacing directly "
+"with the FPGA's digital and analog inputs and outputs."
+msgstr ""
+"Bunlara ek olarak, WPILib, FPGA'nın dijital ve analog giriş ve çıkışlarını "
+"doğrudan arayüzlemek için daha düşük seviyeli sınıflar içermektedir."

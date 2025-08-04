@@ -1,23 +1,384 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-02-15 16:04+0000\n"
+"POT-Creation-Date: 2025-08-04 16:06+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:4
+msgid "Encoders - Software"
+msgstr "Kodlayıcılar - Yazılım"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:8
+msgid ""
+"Encoders are devices used to measure motion (usually, the rotation of a "
+"shaft)."
+msgstr ""
+"Kodlayıcılar hareket (genellikle bir milin rotasyon) ölçümünde kullanılan "
+"cihazlardır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:10
+msgid ""
+"The classes in this document are only used for encoders that are plugged "
+"directly into the roboRIO! Please reference the appropriate vendors' "
+"documentation for using encoders plugged into motor controllers."
+msgstr ""
+"Bu belgedeki sınıflar yalnızca roboRIO'ya doğrudan bağlanan kodlayıcılar "
+"için geçerlidir! Motor kontrolörlere bağlanan kodlayıcılar için lütfen "
+"ilgili satıcıların belgelerine danışınız."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:13
+msgid "Quadrature Encoders - The :code:`Encoder` Class"
+msgstr "Dördün Kodlayıcılar  - :code:`Encoder` Sınıfı "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:15
+msgid ""
+"WPILib provides support for quadrature encoders through the :code:`Encoder` "
+"class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"encoders."
+msgstr ""
+"WPILib, :code:`Encoder` sınııfı (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/Encoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_encoder.html>`__)"
+" aracılığıyla dördün kodlayıcılar için destek sağlamaktadır. Bu sınıf, "
+"kodlayıcılar üzerinden verilerin yapılandırılması ve okunması için basit bir"
+" API sunmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:17
+msgid ""
+"Quadrature Encoders determine direction by observing which pulse channel (A "
+"or B) receives a pulse first."
+msgstr ""
+"Dördün Kodlayıcılar, bir darbenin (A veya B) darbe kanallarından ilk "
+"hangisine ulaştığını gözlemleyerek yön belirlemektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:20
+msgid ""
+"These encoders produce square-wave signals on two channels that are a "
+"quarter-period out-of-phase (hence the term, \"quadrature\").  The pulses "
+"are used to measure the rotation, and the direction of motion can be "
+"determined from which channel \"leads\" the other."
+msgstr ""
+"Bu kodlayıcılar; iki kanal üzerinden, (adı üzerinde dördün) çeyrek aralıkla "
+"birbirleriyle örtüşmeyen kare dalga sinyalleri oluşturmaktadır. Darbeler, "
+"rotasyonun ölçümünde kullanılmakta ve ölçülen hareketin yönü hangi kanalın "
+"diğerinden \"önce geldiğine\" göre belirlenebilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:22
+msgid "A Quadrature Decoder analyzing the A, B, and Index signals."
+msgstr "A, B ve indeks sinyallerini çözümleyen bir Dördün Kodlayıcı."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:25
+msgid ""
+"The FPGA handles quadrature encoders either through a counter module or an "
+"encoder module, depending on the :ref:`decoding type "
+"<docs/software/hardware-apis/sensors/encoders-software:Decoding type>` - the"
+" choice is handled automatically by WPILib.  The FPGA contains 8 encoder "
+"modules."
+msgstr ""
+"FPGA dördün kodlayıcıları :ref:`kod çözme türüne <docs/software/hardware-"
+"apis/sensors/encoders-software:Decoding type>` göre ya bir sayaç modülü ya "
+"da bir kodlayıcı modülü üzerinden yönetmektedir. Bu seçim WPILib'de "
+"kendiliğinden yapılmaktadır. FPGA 8 adet kodlayıcı modülüne sahiptir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:27
+msgid "Examples of quadrature encoders:"
+msgstr "Dördün kodlayıcı örnekleri:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:37
+msgid "Initializing a Quadrature Encoder"
+msgstr "Dördün Bir Kodlayıcının Başlatılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:39
+msgid "A quadrature encoder can be instantiated as follows:"
+msgstr "Dördün bir kodlayıcı aşağıdaki şekilde örneklendirilebilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:52
+msgid "Decoding Type"
+msgstr "Kod Çözme Türü"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:54
+msgid ""
+"The WPILib :code:`Encoder` class can decode encoder signals in three "
+"different modes:"
+msgstr ""
+"WPILib :code:`Encoder` sınıfı, kodlayıcı sinyallerinin kodunu üç farklı "
+"modda çözebilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:73
+msgid "Configuring Quadrature Encoder Parameters"
+msgstr "Dördün Kodlayıcı Parametrelerinin Yapılandırılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:77
+msgid ""
+"The number of pulses used in the distance-per-pulse calculation does *not* "
+"depend on the :ref:`decoding type <docs/software/hardware-"
+"apis/sensors/encoders-software:Decoding type>` - each \"pulse\" should "
+"always be considered to be a full cycle (four edges)."
+msgstr ""
+"Mesafe başı darbe hesaplamasındaki darbe sayısı :ref:`kod çözme türüne "
+"<docs/software/hardware-apis/sensors/encoders-software:Decoding type>` bağlı"
+" *değildir*, her bir \"darbe\" tam bir döngü (dört kenarlı) sayılmalıdır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:92
+msgid "Reading information from Quadrature Encoders"
+msgstr "Dördün Kodlayıcılar Üzerinden Bilgi Okumak"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:94
+msgid ""
+"The :code:`Encoder` class provides a wealth of information to the user about"
+" the motion of the encoder."
+msgstr ""
+":code:`Encoder` sınıfı, kullanıcıya kodlayıcının hareketi hakkında bir sürü "
+"bilgi sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:97
+msgid "Distance"
+msgstr "Mesafe"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:99
+msgid ""
+"Quadrature encoders measure *relative* distance, not absolute; the distance "
+"value returned will depend on the position of the encoder when the robot was"
+" turned on or the encoder value was last :ref:`reset "
+"<docs/software/hardware-apis/sensors/encoders-software:Resetting a "
+"quadrature encoder>`."
+msgstr ""
+"Dördün kodlayıcılar mutlak değil, *göreceli* mesafeyi ölçmektedir; geri "
+"döndürülen mesafe değeri, kodlayıcının robotun başlatıldığı veya kodlayıcı "
+"değerinin en son :ref:`yeniden başlatıldığı <docs/software/hardware-"
+"apis/sensors/encoders-software:Resetting a quadrature encoder>` andaki "
+"konumuna bağlı olacaktır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:176
+msgid "Resetting a Quadrature Encoder"
+msgstr "Dördün Bir Kodlayıcının Yeniden Başlatılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:178
+msgid ""
+"To reset a quadrature encoder to a distance reading of zero, call the "
+":code:`reset()` method.  This is useful for ensuring that the measured "
+"distance corresponds to the actual desired physical measurement, and is "
+"often called during a :ref:`homing <docs/software/hardware-"
+"apis/sensors/encoders-software:Homing a mechanism>` routine:"
+msgstr ""
+"Dördün kodlayıcıyı mesafe okuması sıfır olacak bir şekilde yeniden başlatmak"
+" istiyorsanız, :code:`reset()` metodunu çağırınız. Yeniden başlatma ölçülen "
+"mesafenin istenen fiziksel mesafe ile örtüşmesini sağlamak için faydalı ve "
+"genellikle :ref:`özgüdümleme <docs/software/hardware-apis/sensors/encoders-"
+"software:Homing a mechanism>` rutininde çağrılmaktadır:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:193
+msgid ""
+"WPILib provides support for duty cycle (also marketed as :term:`PWM`) "
+"encoders through the :code:`DutyCycleEncoder` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"duty cycle encoders."
+msgstr ""
+"WPILib, :code:`DutyCycleEncoder` sınııfı (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DutyCycleEncoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_duty_cycle_encoder.html>`__)"
+" aracılığıyla görev döngüsü kodlayıcıları (ya da diğer adıyla  :term:`PWM`) "
+"için destek sağlamaktadır. Bu sınıf, kodlayıcılar üzerinden verilerin "
+"yapılandırılması ve okunması için basit bir API sunmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:195
+msgid "The roboRIO's FPGA handles duty cycle encoders automatically."
+msgstr ""
+"roboRIO'nın FPGA'sı görev döngüsü kodlayıcılarını kendiliğinden "
+"yönetmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:199
+msgid "Examples of duty cycle encoders:"
+msgstr "Görev döngüsü kodlayıcıları örnekleri:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:208
+msgid "Initializing a Duty Cycle Encoder"
+msgstr "Bir Görev Döngüsü Kodlayıcısının Başlatılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:227
+msgid ""
+"The :code:`DutyCycleEncoder` class provides an alternate constructor that "
+"allows control over the full range and the zero position of the encoder."
+msgstr ""
+":code:`DutyCycleEncoder` sınıfı, kullanıcılara kodlayıcının tam hareket "
+"alanı ve sıfır konumu üzerinde eksiksiz kontrol olanağı tanıyan başka "
+"constructor seçenekleri sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:229
+msgid ""
+"The zero position is useful for ensuring that the measured rotation "
+"corresponds to the desired physical measurement. Unlike quadrature encoders,"
+" duty cycle encoders don't need to be homed. The desired rotation can be "
+"read and stored to be set when the program starts. The :doc:`Preferences "
+"class </docs/software/basic-programming/robot-preferences>` provides methods"
+" to save and retrieve these values on the roboRIO."
+msgstr ""
+"Sıfır konumu ölçülen rotasyonun istenen fiziksel rotasyonla örtüştüğünden "
+"emin olmak adına faydalıdır. Dördün kodlayıcıların aksine görev döngüsü "
+"kodlayıcılarının özgüdümlenmesi şart değildir. İstenilen rotasyon, program "
+"başlatıldığı zaman okunup depolanacak şekilde ayarlanabilmektedir. "
+":doc:`Tercihler sınıfı </docs/software/basic-programming/robot-preferences>`"
+" bu değerleri roboRIO'ya kaydetmek ve değerlere roboRIO'dan erişmek için "
+"metodlar sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:242
+msgid "Reading Rotation from Duty Cycle Encoders"
+msgstr "Görev Döngüsü Kodlayıcıları Üzerinden Rotasyonun Okunması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:244
+msgid ""
+"Duty Cycle encoders measure absolute rotation. It does not depend on the "
+"starting position of the encoder."
+msgstr ""
+"Görev Döngüsü kodlayıcıları mutlak rotasyon ölçümü yaptıkları için ölçüm "
+"kodlayıcının başlangıç konumuna bağlı değildir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:246
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:323
+msgid ""
+"Users can obtain the rotation measured by the encoder with the :code:`get()`"
+" method:"
+msgstr ""
+"Kullanıcılar, kodlayıcı tarafından ölçülmüş rotasyona :code:`get()` metodu "
+"ile erişebilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:259
+msgid "Detecting a Duty Cycle Encoder is Connected"
+msgstr "Görev Döngüsü Kodlayıcısının Bağlandığını Tespit Etmek"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:261
+msgid ""
+"As duty cycle encoders output a continuous set of pulses, it is possible to "
+"detect that the encoder has been unplugged."
+msgstr ""
+"Görev döngüsü kodlayıcıları sürekli bir darbe dizisi ürettikleri için "
+"kodlayıcının bağlanıp bağlanmadığını belirlemek mümkündür."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:274
+msgid "Analog Encoders - The :code:`AnalogEncoder` Class"
+msgstr "Analog Kodlayıcılar - :code:`AnalogEncoder` Sınıfı"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:276
+msgid ""
+"WPILib provides support for analog absolute encoders through the "
+":code:`AnalogEncoder` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html>`__)."
+"  This class provides a simple API for configuring and reading data from "
+"analog encoders."
+msgstr ""
+"WPILib, :code:`AnalogEncoder` sınıfı (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogEncoder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_encoder.html>`__)"
+" aracılığıyla analog mutlak kodlayıcılar için destek sağlamaktadır. Bu "
+"sınıf, analog kodlayıcılar üzerinden verilerin yapılandırılması ve okunması "
+"için basit bir API sunmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:278
+msgid "Examples of analog encoders:"
+msgstr "Analog kodlayıcı örnekleri:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:281
+msgid ""
+"`Thrifty Absolute Magnetic Encoder "
+"<https://www.thethriftybot.com/products/thrifty-absolute-magnetic-"
+"encoder>`__"
+msgstr ""
+"`Thrifty Absolute Magnetic Encoder "
+"<https://www.thethriftybot.com/products/thrifty-absolute-magnetic-"
+"encoder>`__"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:285
+msgid "Initializing an Analog Encoder"
+msgstr "Analog Bir Kodlayıcının Başlatılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:287
+msgid "An analog encoder can be instantiated as follows:"
+msgstr "Analog bir kodlayıcı aşağıdaki şekilde örneklendirilebilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:300
+msgid "Configuring Analog Encoder Range and Zero"
+msgstr "Analog Kodlayıcının Etki Alanı ve Sıfırının Yapılandırılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:302
+msgid ""
+"The :code:`AnalogEncoder` class makes no assumptions about rotation units, "
+"returning values in the same units used to calculate the full range. This "
+"gives users complete control over the choice of rotation units."
+msgstr ""
+":code:`AnalogEncoder` sınıfı, belirli rotasyon birimleri varsaymamaktadır. "
+"Sınıf değerleri bütün bir rotasyon açıklığının hesaplanmasında kullanılan "
+"birimlerin aynılarıyla döndürerek kullanıcılara rotasyon birimleri üzerinde "
+"eksiksiz bir kontrol olanağı tanımaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:304
+msgid ""
+"The :code:`AnalogEncoder` class offers an alternate constructor that offers "
+"control over the full range of rotation and zero position of the encoder."
+msgstr ""
+":code:`AnalogEncoder` sınıfı, kullanıcılara kodlayıcının tam hareket alanı "
+"ve sıfır konumu üzerinde eksiksiz kontrol olanağı tanıyan başka constructor "
+"seçenekleri sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:306
+msgid ""
+"The zero position is useful for ensuring that the measured rotation "
+"corresponds to the desired physical measurement. Unlike quadrature encoders,"
+" analog encoders don't need to be homed. The desired rotation can be read "
+"and stored to be set when the program starts. The :doc:`Preferences class "
+"</docs/software/basic-programming/robot-preferences>` provides methods to "
+"save and retrieve these values on the roboRIO."
+msgstr ""
+"Sıfır konumu ölçülen rotasyonun istenen fiziksel rotasyonla örtüştüğünden "
+"emin olmak adına faydalıdır. Dördün kodlayıcıların aksine analog "
+"kodlayıcıların özgüdümlenmesi şart değildir. İstenilen rotasyon, program "
+"başlatıldığı zaman okunup depolanacak şekilde ayarlanabilmektedir. "
+":doc:`Tercihler sınıfı </docs/software/basic-programming/robot-preferences>`"
+" bu değerleri roboRIO'ya kaydetmek ve değerlere roboRIO'dan erişmek için "
+"metodlar sağlamaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:319
+msgid "Reading Rotation from Analog Encoders"
+msgstr "Analog Kodlayıcılar Üzerinden Rotasyonun Okunması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:321
+msgid ""
+"Analog encoders measure absolute rotation. It does not depend on the "
+"starting position of the encoder."
+msgstr ""
+"Analog kodlayıcılar mutlak rotasyon ölçümü yaptıkları için ölçüm "
+"kodlayıcının başlangıç konumuna bağlı değildir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/encoders-software.rst:336
+msgid "Using Encoders in Code"
+msgstr "Kodlayıcıların Kod içerisinde Kullanımı"

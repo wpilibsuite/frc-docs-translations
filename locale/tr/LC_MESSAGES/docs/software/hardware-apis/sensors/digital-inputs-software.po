@@ -6,18 +6,151 @@
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-05 04:06+0000\n"
+"POT-Creation-Date: 2025-08-04 16:06+0000\n"
 "PO-Revision-Date: 2021-06-22 22:07+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:4
+msgid "Digital Inputs - Software"
+msgstr "Dijital Girişler - Yazılım"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:6
+msgid ""
+"This section covers digital inputs in software.  For a hardware guide to "
+"digital inputs, see :ref:`docs/hardware/sensors/digital-inputs-"
+"hardware:Digital Inputs - Hardware`."
+msgstr ""
+"Bu bölüm yazılımdaki dijital girişler hakkındadır. Dijital girişlere yönelik"
+" bir donanım kılavuzu için bkz. :ref:`docs/hardware/sensors/digital-inputs-"
+"hardware:Digital Inputs - Hardware`."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:8
+msgid ""
+"The roboRIO's FPGA supports up to 26 digital inputs.  10 of these are made "
+"available through the built-in DIO ports on the RIO itself, while the other "
+"16 are available through the :term:`MXP` breakout port."
+msgstr ""
+"roboRIO'nun FPGA'sı 26 adede kadar dijital giriş desteklemektedir. Bu "
+"girişlerin 10 tanesi RIO'nun üzerindeki gömülü DIO bağlantı noktaları "
+"tarafından, geri kalan 16 tanesi ise :term:`MXP` ara bağlantı noktaları "
+"tarafından sağlanmaktadır."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:10
+msgid ""
+"Digital inputs read one of two states - \"high\" or \"low.\"  By default, "
+"the built-in ports on the RIO will read \"high\" due to internal pull-up "
+"resistors (for more information, see :ref:`docs/hardware/sensors/digital-"
+"inputs-hardware:Digital Inputs - Hardware`).  Accordingly, digital inputs "
+"are most-commonly used with switches of some sort.  Support for this usage "
+"is provided through the :code:`DigitalInput` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DigitalInput.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_digital_input.html>`__)."
+msgstr ""
+"Gijital girişeler iki durumdan birini okumaktadır: \"yüksek\" ve \"alçak\". "
+"Varsayılan olarak RIO üzerindeki gömülü bağlantı noktaları, dahili kaldırma "
+"dirençleri sebebiyle \"yüksek\" okuma gerçekleştirecektir (daha fazla bilgi "
+"için bkz. :ref:`docs/hardware/sensors/digital-inputs-hardware:Digital Inputs"
+" - Hardware`). Dolayısıyla dijital girişler sıklıkla bir çeşit anahtarla "
+"beraber kullanılmaktadır. Bu kullanıma yönelik destek  :code:`DigitalInput` "
+"sınıfı (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/DigitalInput.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_digital_input.html>`__)"
+" tarafından sağlanmaktadır"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:13
+msgid "The DigitalInput class"
+msgstr "DigitalInput sınıfı"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:15
+msgid "A :code:`DigitalInput` can be initialized as follows:"
+msgstr "Bir :code:`DigitalInput` aşağıdaki gibi başlatılabilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:28
+msgid "Reading the value of the DigitalInput"
+msgstr "DigitalInput değerinin okunması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:30
+msgid ""
+"The state of the :code:`DigitalInput` can be polled with the :code:`get` "
+"method:"
+msgstr ""
+":code:`DigitalInput` durumu, :code:`get` metoduyla sorgulanabilmektedir:"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:43
+msgid "Creating a DigitalInput from an AnalogInput"
+msgstr "AnalogInput'dan DigitalInput Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:47
+msgid ""
+"Sometimes, it is desirable to use an analog input as a digital input.  This "
+"can be easily achieved using the :code:`AnalogTrigger` class (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogTrigger.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_trigger.html>`__)."
+msgstr ""
+"Bazen analog bir girişin dijital bir giriş olarak kullanımı tercih "
+"edilmektedir. Bu kullanım :code:`AnalogTrigger` sınıfı (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/wpilibj/AnalogTrigger.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classfrc_1_1_analog_trigger.html>`__)"
+" ile kolayca gerçekleştirilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:79
+msgid "Using DigitalInputs in code"
+msgstr "Kod içerisinde DigitalInputs'un kullanımı"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:81
+msgid ""
+"As almost all switches on the robot will be used through a "
+":code:`DigitalInput`. This class is extremely important for effective robot "
+"control."
+msgstr ""
+"Robot üzerindeki neredeyse tüm anahtarlar bir :code:`DigitalInput` "
+"aracılığıyla kullanılacağı için, bu sınıf etkili robot kontrolü söz konusu "
+"olduğunda son derece önemlidir."
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:84
+msgid "Limiting the motion of a mechanism"
+msgstr "Bir düzenekteki hareketin sınırlandırılması"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:86
+msgid ""
+"Nearly all motorized mechanisms (such as arms and elevators) in FRC\\ |reg| "
+"should be given some form of \"limit switch\" to prevent them from damaging "
+"themselves at the end of their range of motions. For an example of this, see"
+" :doc:`/docs/software/hardware-apis/sensors/limit-switch`."
+msgstr ""
+"FRC\\ |reg|'deki neredeyse tüm (kollar ve asansörler gibi) motorlu "
+"düzeneklere, hareket aralıklarının sonunda kendilerine zarar vermemeleri "
+"için, bir çeşit \"limit anahtarı\" verilmelidir. Bu anahtarların bir örneği "
+"için bkz.  :doc:`/docs/software/hardware-apis/sensors/limit-switch`. "
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:89
+msgid "Homing a mechanism"
+msgstr "Bir düzeneğin özgüdümlenmesi"
+
+#: ../../frc-docs/source/docs/software/hardware-apis/sensors/digital-inputs-software.rst:91
+msgid ""
+"Limit switches are very important for being able to \"home\" a mechanism "
+"with an encoder.  For an example of this, see :ref:`docs/software/hardware-"
+"apis/sensors/encoders-software:Homing a mechanism`."
+msgstr ""
+"Limit anahtarları bir düzeneğin, bir kodlayıcı aracılığıyla, öz güdümlenmesi"
+" için çok önemlidir. Bu duruma bir örnek için bkz. "
+":ref:`docs/software/hardware-apis/sensors/encoders-software:Homing a "
+"mechanism`."

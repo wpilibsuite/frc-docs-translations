@@ -1,23 +1,104 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
-# Melis Aldeniz <aldenizmelis@gmail.com>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2021\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-23 04:03+0000\n"
+"POT-Creation-Date: 2025-08-05 16:04+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
-"Last-Translator: Melis Aldeniz <aldenizmelis@gmail.com>, 2021\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:2
+msgid "Importing a PathWeaver JSON"
+msgstr "PathWeaver JSON İçe Aktarımı"
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:4
+msgid ""
+"The ``TrajectoryUtil`` class can be used to import a PathWeaver JSON into "
+"robot code to follow it. This article will go over importing the trajectory."
+" Please visit the :ref:`end-to-end trajectory tutorial "
+"<docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` "
+"for more information on following the trajectory."
+msgstr ""
+"``TrajectoryUtil`` sınıfı, robot kodunun takip etmesi adına PathWeaver "
+"JSON'ı kodunun içine aktarmak için kullanılabilmektedir. Bu yazı yörüngenin "
+"içe aktarımının üzerinden geçecektir. Lütfen yörüngenin takibine dair daha "
+"fazla bilgi için :ref:`uçtan uca yörünge rehberini "
+"<docs/software/pathplanning/trajectory-tutorial/index:Trajectory Tutorial>` "
+"inceleyiniz."
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:6
+msgid ""
+"The ``fromPathweaverJson`` (Java) / ``FromPathweaverJson`` (C++) static "
+"methods in ``TrajectoryUtil`` can be used to create a trajectory from a JSON"
+" file stored on the roboRIO file system."
+msgstr ""
+"``TrajectoryUtil`` içerisindeki ``fromPathweaverJson`` (Java) / "
+"``FromPathweaverJson`` (C++) statik metodları, roboRIO dosya sisteminde "
+"depolanan bir JSON dosyasından bir yörünge oluşturmak için "
+"kulanılabilmektedir."
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:8
+msgid ""
+"To be compatible with the ``Field2d`` view in the simulator GUI, the "
+"coordinates for the exported JSON have changed. Previously (before 2021), "
+"the range of the y-coordinate was from -27 feet to 0 feet whereas now, the "
+"range of the y-coordinate is from 0 feet to 27 feet (with 0 being at the "
+"bottom of the screen and 27 feet being at the top). This should not affect "
+"teams who are correctly :ref:`resetting their odometry to the starting pose "
+"of the trajectory <docs/software/pathplanning/trajectory-tutorial/creating-"
+"following-trajectory:Creating the RamseteCommand>` before path following."
+msgstr ""
+"Simulatör kullancı arayüzündeki ``Field2d`` görünümü ile uyumlu olabilmesi "
+"için dışa aktarılan JSON'ın koordinatları değiştirilmiştir. Önceden (2021 "
+"yılı öncesinde), y koordinatınon aralığı -27 fit, yaklaşık -8,2 metre, ile 0"
+" fit, 0 metre arasındayken artık y koordinatının aralığı (0, ekranın en "
+"altı; 27 fit, 8,2 metre ise ekranın en yukarısı olacak şekilde) 0 fit, 0 "
+"metre, ile 27 fit, yaklaşık 8,2 metre, arasındadır. Bu değişiklik, doğru bir"
+" şekilde yol takibi öncesi :ref:`odometrilerini yörüngenin başlangıç pozuna "
+"sıfırlayan <docs/software/pathplanning/trajectory-tutorial/creating-"
+"following-trajectory:Creating the RamseteCommand>` takımları "
+"etkilememelidir."
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:10
+msgid ""
+"PathWeaver places JSON files in ``src/main/deploy/paths`` which will "
+"automatically be placed on the roboRIO file system in "
+"``/home/lvuser/deploy/paths`` and can be accessed using getDeployDirectory "
+"as shown below."
+msgstr ""
+"PathWeaver, JSON dosyalarını ``/home/lvuser/deploy/paths`` içindeki roboRIO "
+"dosya sistemine kendiliğinden olarak yerleştirilecek "
+"``src/main/deploy/paths`` konumuna yerleştirmekte ve aşağıda gösterildiği "
+"gibi bu konuma getDeployDirectory kullanılarak erişilebilmektedir."
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:42
+msgid ""
+"In the examples above, ``YourPath`` should be replaced with the name of your"
+" path."
+msgstr ""
+"Yukarıdaki örneklerdeki ``YourPath`` kısmı yolunuzun adıyla "
+"değiştirilmelidir."
+
+#: ../../frc-docs/source/docs/software/pathplanning/pathweaver/integrating-robot-program.rst:44
+msgid ""
+"Loading a PathWeaver JSON from file in Java can take more than one loop "
+"iteration so it is highly recommended that the robot load these paths on "
+"startup."
+msgstr ""
+"Java'da bir dosya üzerinden PathWeaver JSON yüklemek birden fazla yürütme "
+"dönüsü gerektirebilmektedir, bu yüzden robotun bu yolları başlatıldığı zaman"
+" yüklemesi önerilmektedir."

@@ -1,18 +1,99 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+# Translators:
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-03-01 16:03+0000\n"
+"POT-Creation-Date: 2025-08-06 16:06+0000\n"
 "PO-Revision-Date: 2022-02-28 04:13+0000\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:2
+msgid "On-Robot Telemetry Recording Into Data Logs"
+msgstr "Telemetrinin Robot İçerisindeki Veri Günlüklerinde Saklanması"
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:4
+msgid ""
+"By default, no telemetry data is recorded (saved) on the robot. The "
+"``DataLogManager`` class provides a convenient wrapper around the lower-"
+"level ``DataLog`` class for on-robot recording of telemetry data into data "
+"logs.  The WPILib data logs are binary for size and speed reasons.  In "
+"general, the data log facilities provided by WPILib have minimal overhead to"
+" robot code, as all file I/O is performed on a separate thread--the log "
+"operation consists of mainly a mutex acquisition and copying the data."
+msgstr ""
+"Varsayılan olarak hiçbir telemetri verisi robot içerisinde "
+"kaydedilmemektedir. ``DataLogManager`` sınıfı, alt seviyedeki telemetri "
+"verilerinin robot içerisindeki veri günlüğünde saklanması adına ``DataLog`` "
+"sınıfı için elverişli bir sarıcı sağlamaktadır. WPILib veri günlükleri boyut"
+" ve hız sebeplerinden ötürü binom şeklindedir. Genellikle WPILib tarafından "
+"sağlanan veri günlüğü kolaylıkları robot kodu üzerine az miktarda ek yük "
+"bindirmektedir. Bunun sebebi tüm dosya Giridi-Çıktıları ayrı bir iş "
+"parçacığında gerçekleştirilmesi yüzünden kayıt işleminin birçok mutex - "
+"karşılıklı dışlama edinimi ve veri kopyalamasından oluşmasıdır"
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:7
+msgid "Structure of Data Logs"
+msgstr "Veri Günlüklerinin Yapısı"
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:9
+msgid ""
+"Similar to NetworkTables, data logs have the concept of entries with string "
+"identifiers (keys) with a specified data type.  Unlike NetworkTables, the "
+"data type cannot be changed after the entry is created, and entries also "
+"have metadata--an arbitrary (but typically JSON) string that can be used to "
+"convey additional information about the entry such as the data source or "
+"data schema.  Also unlike NetworkTables, data log operation is "
+"unidirectional--the ``DataLog`` class can only write data logs (it does not "
+"support read-back of written values) and the ``DataLogReader`` class can "
+"only read data logs (it does not support changing values in the data log)."
+msgstr ""
+"NetworkTables'a benzer bir şekilde veri günlükleri de özel bir veri türüne "
+"sahip dizgi tanıtıcılara (anahtarlara) sahip girişler kavramına sahiptir. "
+"NetworkTables'ın aksine veri türünün girişi gerçekleştirildikten sonra veri "
+"türü değiştirilmez ve girişler üstverilere de sahiptir. Rastgele (ancak "
+"genelde JSON) bir dizi girişiyle ilgili veri kaynağı veya veri şeması gibi "
+"ek bilgilerin görüntülenebilmektedir. Ayrıca NetworkTables'ın aksine veri "
+"kayıt işlemi tek yönlüdür: ``DataLog`` sınıfı yalnızca veri günlükleri "
+"yazabilir (yazılan değerlerin yeniden okunmasını desteklememektedir), "
+"``DataLogReader`` sınıfı yalnızca veri günlüklerini okuyabilir (veri "
+"günlüğündeki verilerin değiştirilmesini desteklememektedir)."
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:13
+msgid ""
+"For more information on the details of the data log file format, see the "
+"`WPILib Data Log File Format Specification "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__."
+msgstr ""
+"Veri günlüğü dosya biçimine dair daha ayrıntılı bilgi için bkz. `WPILib Veri"
+" Günlüğü Dosya Biçimi Özellikleri "
+"<https://github.com/wpilibsuite/allwpilib/blob/main/wpiutil/doc/datalog.adoc>`__."
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:16
+msgid "Standard Data Logging using DataLogManager"
+msgstr "DataLogManager ile Standart Veri Kaydı"
+
+#: ../../frc-docs/source/docs/software/telemetry/datalog.rst:24
+msgid ""
+"On startup, all existing log files where a DS has not been connected will be"
+" deleted.  If there is less than 50 MB of free space on the target storage, "
+"``FRC_`` log files are deleted (oldest to newest) until there is 50 MB free "
+"OR there are 10 files remaining."
+msgstr ""
+"Başlatılma sırasında bir DS'in bağlanmadığı varolan tüm kayıt dosyaları "
+"silinecektir. Hedef depolama alanında 50 MB'dan az boş alan bulunuyorsa, "
+"``FRC_`` kayıt dosyaları (eskiden yeniye olacak şekilde) 50 MB boş alan VEYA"
+" 10 tane dosya geriye kalana kadar silinecektir."

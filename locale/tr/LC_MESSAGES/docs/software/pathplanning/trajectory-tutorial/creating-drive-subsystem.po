@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -7,18 +7,221 @@
 # ceren oktemer <ceren.oktemer@gmail.com>, 2024
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2024
 # Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2024
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-11 04:03+0000\n"
+"POT-Creation-Date: 2025-08-06 16:06+0000\n"
 "PO-Revision-Date: 2021-06-22 22:08+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2024\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:2
+msgid "Step 3: Creating a Drive Subsystem"
+msgstr "3. Adım: Sürücü Alt Sistemi Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:6
+msgid ""
+"The full drive class from the RamseteCommand Example Project (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" can be seen below.  The rest of the article will describe the steps "
+"involved in writing this class."
+msgstr ""
+"Aşağıda, RamseteCommand Örnek Projesi'ndeki drive sınıfının tamamını (`Java "
+"<https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/ramsetecommand>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/tree/v2024.3.2/wpilibcExamples/src/main/cpp/examples/RamseteCommand>`__)"
+" görüntüleyebilirsiniz. Yazının geri kalanı bu sınıfın yazılımı ile ilişkili"
+" adımları açıklayacaktır."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:0
+msgid "Java"
+msgstr "Java"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:0
+msgid "C++ (Header)"
+msgstr "C ++ (Header-Üstbilgi)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:0
+msgid "C++ (Source)"
+msgstr "C ++ (Kaynak)"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:35
+msgid "Configuring the Drive Encoders"
+msgstr "Drive-Sürüş Kodlayıcılarının Yapılandırılması"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:37
+msgid ""
+"The drive encoders measure the rotation of the wheels on each side of the "
+"drive.  To properly configure the encoders, we need to specify two things: "
+"the ports the encoders are plugged into, and the distance per encoder pulse."
+"  Then, we need to write methods allowing access to the encoder values from "
+"code that uses the subsystem."
+msgstr ""
+"Sürücü kodlayıcıları, sürücünün her iki yanındaki tekerleklerin dönüşünü "
+"ölçmektedir. Kodlayıcıları doğru bir şekilde yapılandırmak için iki şeyin "
+"tanımlanması gerekmektedir: kodlayıcıların takılı olduğu bağlantı noktaları "
+"ve kodlayıcı darbesi başına katedilen mesafe. Bunun ardından, alt sistemi "
+"kullanan koddan kodlayıcı değerlerine erişime izin veren metodlar yazmamız "
+"gerekmektedir."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:40
+msgid "Encoder Ports"
+msgstr "Kodlayıcı Bağlantı Noktaları"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:42
+msgid "The encoder ports are specified in the encoder's constructor, like so:"
+msgstr ""
+"Kodlayıcı bağlantı noktaları, kodlayıcının constructor'ında aşağıdaki "
+"şekilde belirtilmektedir:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:63
+msgid "Encoder Distance per Pulse"
+msgstr "Darbe Başına Katedilen Kodlayıcı Mesafesi"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:65
+msgid ""
+"The distance per pulse is specified by calling the encoder's "
+"``setDistancePerPulse`` method.  Note that for the WPILib Encoder class, "
+"\"pulse\" refers to a full encoder cycle (i.e. four edges), and thus will be"
+" 1/4 the value that was specified in the SysId config.  Remember, as well, "
+"that the distance should be measured in meters!"
+msgstr ""
+"Darbe başına mesafe, kodlayıcının ``setDistancePerPulse`` metodunun "
+"çağırılmasıyla tanımlanmaktadır. WPILib Kodlayıcı sınıfı için \"darbe\"nin "
+"bütün bir kodlayıcı döngüsüne (diğer bir deyişle dört kenara) denk geldiğini"
+" ve bu sebeple SysId yapılandırılmasında tanımlanan değerin 1/4'ü olacağını "
+"unutmayınız. Ayrıca mesafenin metre cinsinde ölçülmesi gerektiğini de "
+"unutmayınız!"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:86
+msgid "Encoder Accessor Method"
+msgstr "Kodlayıcı Accessor-Erişimci Metodu"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:88
+msgid ""
+"To access the values measured by the encoders, we include the following "
+"method:"
+msgstr ""
+"Kodlayıcılar tarafından ölçülen değerlere erişmek için aşağıdaki metodu "
+"dahil etmekteyiz:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:113
+msgid "Configuring the Gyroscope"
+msgstr "Jiroskopun Yapılandırılması"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:115
+msgid ""
+"The gyroscope measures the rate of change of the robot's heading (which can "
+"then be integrated to provide a measurement of the robot's heading relative "
+"to when it first turned on).  In our example, we use the `Analog Devices "
+"ADXRS450 FRC Gyro Board <https://www.analog.com/en/landing-"
+"pages/001/first.html>`__, which was included in the kit of parts for several"
+" years:"
+msgstr ""
+"(Entegre edilmesiyle robotun ilk çalıştırıldığı konumuna göreceli bir "
+"şekilde robot yönüne dair ölçümler sağlayan) jiroskop robotun yönündeki "
+"değişim oranını ölçmektedir. Verdiğimiz örnekte parça kitinde uzun yıllar "
+"bulunmuş `Analog Devices ADXRS450 FRC Gyro Board "
+"<https://www.analog.com/en/landing-pages/001/first.html>`__'u "
+"kullanmaktayız."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:136
+msgid "Gyroscope Accessor Method"
+msgstr "Jiroskop Erişimci Metodu"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:138
+msgid ""
+"To access the current heading measured by the gyroscope, we include the "
+"following method:"
+msgstr ""
+"Jiroskop tarafından ölçülen anlık yöne erişmek için aşağıdaki metodu dahil "
+"etmekteyiz:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:159
+msgid "Configuring the Odometry"
+msgstr "Odometrinin Yapılandırılması"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:183
+msgid "Then we initialize the ``DifferentialDriveOdometry``."
+msgstr "Ardından ``DifferentialDriveOdometry``'i başlatıyoruz."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:204
+msgid "Updating the Odometry"
+msgstr "Odometrinin Güncellenmesi"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:249
+msgid ""
+"Before running a ``RamseteCommand``, teams are strongly encouraged to deploy"
+" and test the odometry code alone, with values sent to the SmartDashboard or"
+" Shuffleboard during the ``DriveSubsystem``'s ``periodic()``.  This odometry"
+" must be correct for a RamseteCommand to successfully work, as sign or unit "
+"errors can cause a robot to move at high speeds in unpredictable directions."
+msgstr ""
+"``RamseteCommand`` komutunu çalıştırmadan önce takımların, "
+"``DriveSubsystem``'in ``periodic()`` sırasında SmartDashboard veya "
+"Shuffleboard'a gönderilendeğerlerle, kendi başına odometri kodunu çalıştırıp"
+" test etmesi şiddetle tavsiye edilmektedir. Bir RamseteCommand komutunun "
+"başarılı bir şekilde çalışması için odometrinin doğru olması şarttır, işaret"
+" veya birim hataları robotun öngörülemez yönlerde yüksek hızlarda hareket "
+"etmesine sebep olabilmektedir. "
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:252
+msgid "Voltage-Based Drive Method"
+msgstr "Voltaj Tabanlı Sürüş Methodu"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:254
+msgid ""
+"Finally, we must include one additional method - a method that allows us to "
+"set the voltage to each side of the drive using the ``setVoltage()`` method "
+"of the ``MotorController`` interface.  The default WPILib drive class does "
+"not include this functionality, so we must write it ourselves:"
+msgstr ""
+"Son olarak, ``MotorController`` arayüzünün ``setVoltage()`` metodunu "
+"kullanarak sürüşün her iki tarafınddaki voltajı ayarlamamızı sağlayan ek bir"
+" metodu bu yazıya dahil etmeliyiz. Varsayılan WPILib sürüş sınıfı bu "
+"işlevselliği içermediği için metodu kendimiz yazmalıyız:"
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:274
+msgid ""
+"It is very important to use the ``setVoltage()`` method rather than the "
+"ordinary ``set()`` method, as this will automatically compensate for battery"
+" \"voltage sag\" during operation.  Since our feedforward voltages are "
+"physically-meaningful (as they are based on measured identification data), "
+"this is essential to ensuring their accuracy."
+msgstr ""
+"Normal ``set()`` metodu yerine ``setVoltage()`` metodunun kullanılması, bu "
+"metodun kendiliğinden işlem sırasındaki \"gerilim sarkması\"nı telafi "
+"etmesinden ötürü önemlidir. İleri besleme voltajımız fiziksel olarak anlamlı"
+" olduğundan (değerler ölçülmüş tespit verilerine dayandığından), metodun "
+"kullanımı voltaj doğrulunun sağlanması için son derece önemlidir."
+
+#: ../../frc-docs/source/docs/software/pathplanning/trajectory-tutorial/creating-drive-subsystem.rst:276
+msgid ""
+"``RamseteCommand`` itself does not internally enforce any speed or "
+"acceleration limits before providing motor voltage parameters to this "
+"method.  During initial code development, teams are strongly encouraged to "
+"apply both maximum and minimum bounds on the input variables before passing "
+"these values to ``setVoltage()`` while ensuring the trajectory velocity and "
+"acceleration are achievable. For example, generate a trajectory with a "
+"little less than half of the Robot's maximum velocity and limit voltage to 6"
+" volts."
+msgstr ""
+"``RamseteCommand`` komutu, bu metoda motor voltaj parametrelerine ilişkin "
+"kendi başına dahili bir şekilde herhangi bir hız veya ivme limiti "
+"sağlamamaktadır. Kod geliştirmesinin ilk aşamalarında takımların, yörünge "
+"hızı ve ivmesinin ulaşılabilir değerlere sahip olduğundan emin olurken, "
+"değerleri ``setVoltage()`` metoduna aktarmadan önce girdi değişkenleri için "
+"en yüksek ve en düşük sınırlar tanımlaması şiddetle tavsiye edilmektedir. "
+"Örneğin, Robotun maksimum hızının yarısından biraz az olacak bir hız "
+"değeriyle voltajı 6'ya sınırlanmış bir yörünge oluşturunuz."

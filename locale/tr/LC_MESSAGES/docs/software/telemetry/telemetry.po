@@ -1,22 +1,184 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2022, FIRST and other WPILib Contributors
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Çağan Uslu, 2022
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-28 04:04+0000\n"
+"POT-Creation-Date: 2025-08-07 16:05+0000\n"
 "PO-Revision-Date: 2022-01-10 04:14+0000\n"
-"Last-Translator: Çağan Uslu, 2022\n"
-"Language-Team: Turkish (Turkey) (https://www.transifex.com/wpilib/teams/109324/tr_TR/)\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
+"Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:2
+msgid "Telemetry: Recording and Sending Real-Time Data"
+msgstr "Telemetri: Gerçek Zamanlı Veri Kaydı ve Gönderimi"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:4
+msgid ""
+"Recording and viewing :term:`telemetry` data is a crucial part of the "
+"engineering process - accurate telemetry data helps you tune your robot to "
+"perform optimally, and is indispensable for debugging your robot when it "
+"fails to perform as expected."
+msgstr ""
+":term:`Telemetry` - telemetri verilerinin kaydı ve görüntülenmesi "
+"mühendislik sürecinin önemli bir kısmıdır; doğru telemetri verileri "
+"robotunuzun en iyi şekilde çalışması için robotunuzu ayarlamanıza yardımcı "
+"olmakta ve beklenilen şekilde çalışmadığında robotunuzdaki hatalarını "
+"ayıklanması için vazgeçilmezdir."
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:6
+msgid ""
+"By default, no telemetry data is recorded (saved) on the robot.  However, "
+"recording data on the robot can provide benefits over recording on a "
+"dashboard, namely that more data can be recorded (there are no bandwidth "
+"limitations), and all the recorded data can be very accurately timestamped."
+"  WPILib has integrated support for on-robot recording of telemetry data via"
+" the ``DataLogManager`` and ``DataLog`` classes and provides a tool for "
+"downloading data log files and converting them to CSV. The Java library also"
+" provides a convenient :doc:`annotation <robot-telemetry-with-annotations>` "
+"to autogenerate telemetry logging code based on your project."
+msgstr ""
+" Varsayılan olarak hiçbir telemetri verisi robot içerisinde "
+"kaydedilmemektedir. Ancak, verilerin robotun içerisine kaydedilmesi bir "
+"gösterge paneline kaydedilmesine kıyasla, daha fazla verinin kaydedilmesi "
+"(robot içerisinde herhangi bir bant genişliği sınırlaması yoktur) ve "
+"kaydedilen tüm verilerin isabetli zaman bilgilerine sahip olması gibi, bazı "
+"faydalar sağlayabilmektedir. WPILib, ``DataLogManager`` ve ``DataLog`` "
+"sınıfları aracılığıyla robot içerisine telemetri verilerinin kaydedilmesi "
+"için entegre desteğe sahip olmasının yanı sıra veri günlüklerinin "
+"indirilmesi ve CSV dosyasına dönüştürülmesi için de bir araç sağlamaktadır. "
+"Ayrıca Java kütüphanesi projenize göre kendiliğinden telemetri veri kaydı "
+"kodu oluşturmak için kullanışlı bir :doc:`annotation <robot-telemetry-with-"
+"annotations>` - bilgi notuna sahiptir."
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:8
+msgid ""
+"In addition to on-robot recording of telemetry data, teams can record their "
+"telemetry data on their driver station computer with :ref:`Shuffleboard "
+"recordings <docs/software/dashboards/shuffleboard/getting-"
+"started/shuffleboard-recording:Recording and Playback>`."
+msgstr ""
+"Robot içerisine telemetri verilerinin kaydedilmesinin yanı sır takımlar "
+"telemetri verilerini ref:`Shuffleboard recordings "
+"<docs/software/dashboards/shuffleboard/getting-started/shuffleboard-"
+"recording:Recording and Playback>` aracılığıyla driver station - sürücü "
+"istasyonu bilgisayarlarına kaydedebilmektedir."
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:11
+msgid "Adding Telemetry to Robot Code"
+msgstr "Robot Koduna Telemetri Eklenmesi"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:13
+msgid ""
+"WPILib supports several different ways to record and send telemetry data "
+"from robot code."
+msgstr ""
+"WPILib robot kodundan telemetri verisinin kaydedilmesi ve gönderilmesi için "
+"birçok farklı yöntemi desteklemektedir."
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:15
+msgid ""
+"At the most basic level, the :ref:`Riolog <docs/software/vscode-"
+"overview/viewing-console-output:Viewing Console Output>` provides support "
+"for viewing print statements from robot code.  This is useful for on-the-fly"
+" debugging of problematic code, but does not scale as console interfaces are"
+" not suitable for rich data streams."
+msgstr ""
+"En temel düzeyde :ref:`Riolog <docs/software/vscode-overview/viewing-"
+"console-output:Viewing Console Output>` robot kodundan gelen çıktı "
+"bildirilerinin görüntülenmesi için destek sağlamaktadır. Bu yöntem, sorunlu "
+"bir koddaki hataların anlık hızlıca ayıklanması için faydalıdır, ancak "
+"kumanda arayüzleri zengin veri akışlarına elverişli olmadığı için daha büyük"
+" ölçekli bir kullanıma olanak tanımamaktadır."
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:17
+msgid ""
+"WPILib supports several :ref:`dashboards "
+"<docs/software/dashboards/index:Dashboards>` that allow users to more easily"
+" send rich telemetry data to the driver-station computer.  All WPILib "
+"dashboards communicate with the :ref:`NetworkTables "
+"<docs/software/networktables/networktables-intro:What is NetworkTables>` "
+"protocol, and so they are *to some degree* interoperable (telemetry logged "
+"with one dashboard will be visible on the others, but the specific "
+"widgets/formatting will generally not be compatible).  NetworkTables (and "
+"thus WPILib all dashboards) currently support the following data types:"
+msgstr ""
+"WPILib, kullanıcıların zengin telemetri verilerini kolayca sürücü istasyonu "
+"bilgisayarına göndermelerine olanak tanıyan birçok :ref:`gösterge panelini "
+"<docs/software/dashboards/index:Dashboards>` desteklemektedir. Tüm WPILib "
+"gösterge panelleri :ref:`NetworkTables "
+"<docs/software/networktables/networktables-intro:What is NetworkTables>` ile"
+" iletişim halindedir ve bu sebeple tüm paneller birbirleriyle uyumludur (bir"
+" gösterge paneline kaydedilen telemetri başka panellerde de "
+"görüntülenebilmekte, ancak belirli araçlar/biçimlendirmeler genellikle "
+"paneller arası uyuma sahip değildir). NetworkTables (ve sonuç olarak tüm "
+"WPILib gösterge panelleri) şu anlık aşağıdaki veri türlerini "
+"desteklemektedir."
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:19
+msgid "``boolean``"
+msgstr "``boolean``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:20
+msgid "``boolean[]``"
+msgstr "``boolean[]``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:21
+msgid "``double``"
+msgstr "``double``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:22
+msgid "``double[]``"
+msgstr "``double[]``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:23
+msgid "``string``"
+msgstr "``string``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:24
+msgid "``string[]``"
+msgstr "``string[]``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:25
+msgid "``byte[]``"
+msgstr "``byte[]``"
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:27
+msgid ""
+"Telemetry data can be sent to a WPILib dashboard using an associated WPILib "
+"method (for more details, see the documentation for the individual dashboard"
+" in question), or by :ref:`directly publishing to NetworkTables "
+"<docs/software/networktables/networktables-intro:what is networktables>`."
+msgstr ""
+"Telemetri verileri ilgili bir WPILib metodu kullanılarak (daha fazla bilgi "
+"için söz konusu panelin şartnamesini inceleyiniz) veya verilerin "
+":ref:`doğrudan NetworkTables'a yayınlanmasıyla "
+"<docs/software/networktables/networktables-intro:what is networktables>` bir"
+" WPILib gösterge paneline gönderilebilmektedir. "
+
+#: ../../frc-docs/source/docs/software/telemetry/telemetry.rst:29
+msgid ""
+"While NetworkTables does not yet support serialization of complex data types"
+" (this is tentatively scheduled for 2024), *mutable* types from user code "
+"can be easily extended to interface directly with WPILib dashboards via the "
+"``Sendable`` interface, whose usage is described in the next article."
+msgstr ""
+"NetworkTables henüz karmaşık veri türlerinin dizileştirilmesini destekliyor "
+"olmasa da (kesin olmasa da bu desteğin 2024 yılında eklenmesi "
+"planlanmaktadır) kullanıcı kodundaki *değişken* türler ``Sendable`` "
+"arayüzüyle kolayca WPILib gösterge panelleriyle arayüzlencek şekilde "
+"genişletilebilmektedir. ``Sendable`` arayüzünün kullanımı bir sonraki yazıda"
+" ele alınmaktadır."

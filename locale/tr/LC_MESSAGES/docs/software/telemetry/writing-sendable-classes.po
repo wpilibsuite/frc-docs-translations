@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-08-07 16:05+0000\n"
+"POT-Creation-Date: 2025-08-08 16:04+0000\n"
 "PO-Revision-Date: 2022-01-10 04:14+0000\n"
 "Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
@@ -21,6 +21,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:2
+msgid "Writing Your Own Sendable Classes"
+msgstr "Kendi Sendable Sınıflarınızı Yazmak"
 
 #: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:4
 msgid ""
@@ -38,3 +42,100 @@ msgstr ""
 " değerlere bağlanmış (görüntüleme isimleri gösterge panelinde mevcut) setter"
 " ve getter metodları bulunan, devre dışı bırakılabilir bir ``initSendable`` "
 "metodu gerçekleştiriniz."
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:6
+msgid ""
+"For example, here is the implementation of ``initSendable`` from WPILib's "
+"``BangBangController``:"
+msgstr ""
+"Örneğin, WPILib'in ``BangBangController``'ında ``initSendable``'ın "
+"uygulanması aşağıdaki gibidir:"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:20
+msgid ""
+"To enable the automatic updating of values by WPILib \"in the background\", "
+"``Sendable`` data names are bound to getter and setter functions rather than"
+" specific data values.  If a field that you wish to log has no defined "
+"setters and getters, they can be defined inline with a lambda expression."
+msgstr ""
+"WPILib tarafından \"arka planda\" değerlerin kendiliğinden güncellenmesini "
+"etkinleştirmek için ``Sendable`` veri isimlerli belirli veri değerleri "
+"yerine getter ve setter işlevlerine bağlanmaktadır. Kaydetmek istediğiniz "
+"bir alanın tanımlı setter ve getter metodları yoksa, alan bir lambda "
+"ifadesiyle \"inline\" olarak tanımlanabilmektedir"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:23
+msgid "The SendableBuilder Class"
+msgstr "SendableBuilder Sınıfı"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:25
+msgid ""
+"As seen above, the ``initSendable`` method takes a single parameter, "
+"``builder``, of type ``SendableBuilder`` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/SendableBuilder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable_builder.html>`__,"
+" :external:py:class:`Python <wpiutil.SendableBuilder>`).  This builder "
+"exposes methods that allow binding of getters and setters to dashboard "
+"names, as well as methods for safely ensuring that values consumed *from* "
+"the dashboard do not cause unsafe robot behavior."
+msgstr ""
+"Yukarıda görüldüğü üzere``initSendable`` metodu, ``SendableBuilder`` (`Java "
+"<https://github.wpilib.org/allwpilib/docs/release/java/edu/wpi/first/util/sendable/SendableBuilder.html>`__,"
+" `C++ "
+"<https://github.wpilib.org/allwpilib/docs/release/cpp/classwpi_1_1_sendable_builder.html>`__,"
+" :external:py:class:`Python <wpiutil.SendableBuilder>`) türünde tek bir "
+"``builder`` parametresi kabul etmektedir. Bu builder getter ve setter "
+"işlevlerinin gösterge paneli ismlerine bağlanmasının yanı sıra *göstergeden*"
+" tüketilen değerlerin tehlikeli robot davranışlarına sebep olmasını "
+"engelleyen metodları görünür hale getirmektedir."
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:28
+msgid "Databinding with addProperty Methods"
+msgstr "addProperty Metodları ile Veri Bağlama"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:30
+msgid ""
+"Like all WPILib dashboard code, ``Sendable`` fields are ultimately "
+"transmitted over :ref:`NetworkTables "
+"<docs/software/networktables/networktables-intro:What is NetworkTables>`, "
+"and thus the databinding methods provided by ``SendableBuilder`` match the "
+"supported NetworkTables data types:"
+msgstr ""
+"Tüm WPILib gösterge paneli kodunda olduğu gibi ``Sendable`` alanları da "
+":ref:`NetworkTables <docs/software/networktables/networktables-intro:What is"
+" NetworkTables>` üzerinden iletilmekte ve bu sebeple ``SendableBuilder`` "
+"tarafından sağlanan veri bağlama metodları, desteklenen NetworkTables veri "
+"türleri ile uyumludur:"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:32
+msgid "``boolean``: ``addBooleanProperty``"
+msgstr "``boolean``: ``addBooleanProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:33
+msgid "``boolean[]``: ``addBooleanArrayProperty``"
+msgstr "``boolean[]``: ``addBooleanArrayProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:34
+msgid "``double``: ``addDoubleProperty``"
+msgstr "``double``: ``addDoubleProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:35
+msgid "``double[]``: ``addDoubleArrayProperty``"
+msgstr "``double[]``: ``addDoubleArrayProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:36
+msgid "``string``:  ``addStringProperty``"
+msgstr "``string``: ``addStringProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:37
+msgid "``string[]``: ``addStringArrayProperty``"
+msgstr "``string[]``: ``addStringArrayProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:38
+msgid "``byte[]``: ``addRawProperty``"
+msgstr "``byte[]``: ``addRawProperty``"
+
+#: ../../frc-docs/source/docs/software/telemetry/writing-sendable-classes.rst:41
+msgid "Ensuring Safety with setSafeState and setActuator"
+msgstr "setSafeState ve setActuator ile Güvenliğin Sağlanması"

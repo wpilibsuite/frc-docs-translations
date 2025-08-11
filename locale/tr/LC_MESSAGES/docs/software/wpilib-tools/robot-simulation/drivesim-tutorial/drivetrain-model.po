@@ -1,23 +1,285 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
-# Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 16:04+0000\n"
+"POT-Creation-Date: 2025-08-11 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:10+0000\n"
-"Last-Translator: Müfit ALKAYA <mufit.alkaya@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:2
+msgid "Step 2: Creating a Drivetrain Model"
+msgstr "2. Adım: Aktarma Sistemi Modeli Oluşturmak"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:4
+msgid ""
+"In order to accurately determine how your physical drivetrain will respond "
+"to given motor voltage inputs, an accurate model of your drivetrain must be "
+"created. This model is usually created by measuring various physical "
+"parameters of your real robot. In WPILib, this drivetrain simulation model "
+"is represented by the ``DifferentialDrivetrainSim`` class."
+msgstr ""
+"Fiziksel aktarma sisteminizin belirli motor voltaj girdilerine nasıl tepki "
+"vereceğini doğru bir şekilde belirlemek için aktarma sisteminizin doğru bir "
+"modeli oluşturulmalıdır. Bu model genellikle gerçek robotunuzun çeşitli "
+"fiziksel parametreleri ölçülerek oluşturulmaktadır. WPILib'de, bu aktarma "
+"sistemi simülasyon modeli ``DifferentialDrivetrainSim`` sınıfı ile temsil "
+"edilmektedir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:7
+msgid "Creating a ``DifferentialDrivetrainSim`` from Physical Measurements"
+msgstr ""
+"Fiziksel Ölçümler Üzerinden ``DifferentialDrivetrainSim`` Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:9
+msgid ""
+"One way to creating a ``DifferentialDrivetrainSim`` instance is by using "
+"physical measurements of the drivetrain and robot -- either obtained through"
+" :term:`CAD` software or real-world measurements (the latter will usually "
+"yield better results as it will more closely match reality). This "
+"constructor takes the following parameters:"
+msgstr ""
+"``DifferentialDrivetrainSim`` örneği oluşturmanın bir yolu, ya :term:`CAD` "
+"yazılımı ya da gerçek dünya ölçümleri ile elde edilmiş aktarma sistemi ile "
+"robotun fiziksel ölçümlerini kullanmaktadır (gerçek dünya ölçümleri gerçeğe "
+"daha yakın olacağı için daha iyi sonuçlar verecektir). Bu constructor "
+"aşağıdaki parametreleri kabul etmektedir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:11
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:75
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:151
+msgid "The type and number of motors on one side of the drivetrain."
+msgstr "Aktarma sisteminin bir tarafındaki motorların türü ve sayısı."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:12
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:76
+msgid ""
+"The gear ratio between the motors and the wheels as output  :term:`torque` "
+"over input  :term:`torque` (this number is usually greater than 1 for "
+"drivetrains)."
+msgstr ""
+"Çıktı :term:`torque`'u bölü girdi :term:`torque`'u olarak motor ve "
+"tekerlekler arasındaki dişli oranı (aktarma sistemleri için bu sayı "
+"genellikle 1'den büyüktür)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:13
+msgid ""
+"The moment of inertia of the drivetrain (this can be obtained from a "
+":term:`CAD` model of your drivetrain. Usually, this is between 3 and 8 "
+":math:`kg m^2`)."
+msgstr ""
+"Aktarma sisteminin eylemsizlik momenti (bu değer aktarma sisteminizin "
+":term:`CAD` modeli üzerinden elde edilebilmektedir. Genellikle değer 3 ila 8"
+" :math:`kg m^2`'dir)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:14
+msgid ""
+"The mass of the drivetrain (it is recommended to use the mass of the entire "
+"robot itself, as it will more accurately model the acceleration "
+"characteristics of your robot for trajectory tracking)."
+msgstr ""
+"Aktarma sisteminin kütlesi (yörünge izleme için robotunuzun hızlanma "
+"özelliklerini daha doğru bir şekilde modelleyeceği için tüm robotun "
+"kütlesinin kullanılması tavsiye edilmektedir)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:15
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:77
+msgid "The radius of the drive wheels."
+msgstr "Sürüş tekerleklerinin yarıçapı."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:16
+msgid "The track width (distance between left and right wheels)."
+msgstr "İz genişliği (sol ve sağ tekerlekler arasındaki mesafe)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:17
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:78
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:155
+msgid ""
+"Standard deviations of measurement noise: this represents how much "
+"measurement noise you expect from your real sensors. The measurement noise "
+"is an array with 7 elements, with each element representing the standard "
+"deviation of measurement noise in x, y, heading, left velocity, right "
+"velocity, left position, and right position respectively. This option can be"
+" omitted in C++ or set to ``null`` in Java if measurement noise is not "
+"desirable."
+msgstr ""
+"Ölçüm gürültüsünün standart sapmaları: Bu, gerçek sensörlerinizden ne kadar "
+"ölçüm gürültüsü beklediğinizi göstermektedir. Ölçüm gürültüsü sırasıyla x, "
+"y, yön, sol hız, sağ hız, sol konum ve sağ konumdaki ölçüm gürültüsünün "
+"standart sapmasını temsil eden 7 öğeli bir dizidir. Bu seçenek, C++'da "
+"tamamen çıkarılabilmekte veya Java'da ölçüm gürültüsü istenmiyorsa ``null`` "
+"olarak ayarlanabilmektedir"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:19
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:80
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:157
+msgid ""
+"You can calculate the measurement noise of your sensors by taking multiple "
+"data points of the state you are trying to measure and calculating the "
+"standard deviation using a tool like Python. For example, to calculate the "
+"standard deviation in your encoders' velocity estimate, you can move your "
+"robot at a constant velocity, take multiple measurements, and calculate "
+"their standard deviation from the known mean. If this process is too "
+"tedious, the values used in the example below should be a good "
+"representation of average noise from encoders."
+msgstr ""
+"Ölçmeye çalıştığınız durumun birden fazla veri noktasını ele alıp Python "
+"gibi bir araç ile standart sapmayı hesaplayarak sensörünüzün ölçüm "
+"gürültüsünü hesaplayabilirsiniz. Örneğin, kodlayıcılarınızın hız "
+"tahminindeki standart sapmayı hesaplamak için, robotunuzu sabit bir hızda "
+"hareket ettirip, birden fazla ölçüm alıp bilinen aritmetik ortalamasından "
+"yola çıkarak tahminin standart sapmasını hesaplayabilirsiniz. Bu işlem çok "
+"zahmetliyse, aşağıdaki örnekte kullanılan değerler kodlayıcılardan gelen "
+"ortalama gürültünün iyi bir temsili olacaktır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:21
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:82
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:159
+msgid ""
+"The standard deviation of the noise for a measurement has the same units as "
+"that measurement. For example, the standard deviation of the velocity noise "
+"has units of m/s."
+msgstr ""
+"Bir ölçüm için gürültünün standart sapması, ölçümle aynı birimlere sahiptir."
+" Örneğin, hız gürültüsünün standart sapması m/s biriminde hesaplanmaktadır."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:23
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:84
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:161
+msgid ""
+"It is very important to use SI units (i.e. meters and radians) when passing "
+"parameters in Java. In C++, the :ref:`units library <docs/software/basic-"
+"programming/cpp-units:The C++ Units Library>` can be used to specify any "
+"unit type."
+msgstr ""
+"Java'da parametreleri iletimi sırasında SI birimlerinin (yani metre ve "
+"radyanın) kullanımı çok önemlidir. C++ 'da, :ref:`birimler kütüphanesi "
+"<docs/software/basic-programming/cpp-units:The C++ Units Library>` herhangi "
+"bir birim türünü belirtmek için kullanılabilmektedir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:65
+msgid "Creating a ``DifferentialDrivetrainSim`` from SysId Gains"
+msgstr ""
+"SysId Kazançları Üzerinden ``DifferentialDrivetrainSim`` Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:67
+msgid ""
+"You can also use the gains produced by :ref:`System Identification "
+"<docs/software/advanced-controls/system-"
+"identification/introduction:Introduction to System Identification>`, which "
+"you may have performed as part of setting up the trajectory tracking "
+"workflow outlined :ref:`here <docs/software/pathplanning/trajectory-"
+"tutorial/index:Trajectory Tutorial>` to create a simulation model of your "
+"drivetrain and often yield results closer to real-world behavior than the "
+"method above."
+msgstr ""
+" Bunlara ek olarak aktarma sisteminizin bir simülasyon modelini oluşturmak "
+"için :ref:`burada <docs/software/pathplanning/trajectory-"
+"tutorial/index:Trajectory Tutorial> belirtilen yörünge takibi iş akışı "
+"ayarının bir parçası olarak çoktan gerçekleştirmiş olabileceğiniz "
+":ref:`Sistem Tespiti <docs/software/advanced-controls/system-"
+"identification/introduction:Introduction to System Identification>` "
+"tarafından oluşturulmuş kazançları da kullanabilirsiniz. Bu yöntem sıklıkla "
+"yukarıdakine kıyasla gerçek dünya davranışlarına daha yakın sonuçlar "
+"vermektedir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:69
+msgid ""
+"You must need two sets of ``Kv`` and ``Ka`` gains from the identification "
+"tool -- one from straight-line motion and the other from rotating in place. "
+"We will refer to these two sets of gains as linear and angular gains "
+"respectively."
+msgstr ""
+"Tespit aracından, bir tanesi düz bir doğrunun hareketinden diğeriyse durduğu"
+" yerde dönüşten elde edilmiş, iki çift ``Kv`` ve ``Ka`` kazancı elde edilmiş"
+" olmalıdır. Bu iki kazanç çiftini sırasıyla doğrusal ve açısal olarak "
+"adlandıracağız."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:71
+msgid "This constructor takes the following parameters:"
+msgstr "Bu constructor aşağıdaki parametreleri kabul etmektedir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:73
+msgid ""
+"A linear system representing the drivetrain -- this can be created using the"
+" identification gains."
+msgstr ""
+"Aktarma sistemini temsil eden doğrusal bir sistem. Bu sistem tespit "
+"kazançları kullanılarak oluşturulabilmektedir. "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:74
+msgid "The track width (distance between the left and right wheels)."
+msgstr "İz genişliği (sol ve sağ tekerlekler arasındaki mesafe)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:147
+msgid "Creating a ``DifferentialDrivetrainSim`` of the KoP Chassis"
+msgstr "KoP Şasisi için ``DifferentialDrivetrainSim`` Oluşturulması."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:149
+msgid ""
+"The ``DifferentialDrivetrainSim`` class also has a static "
+"``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) method that can "
+"create an instance of the ``DifferentialDrivetrainSim`` using the standard "
+"Kit of Parts Chassis parameters. This method takes 5 arguments, two of which"
+" are optional:"
+msgstr ""
+"``DifferentialDrivetrainSim`` sınıfı, standart Parça Kiti Şasi parametreleri"
+" kullanılarak ``DifferentialDrivetrainSim`` örneğini oluşturabilen statik "
+"bir ``createKitbotSim()`` (Java) / ``CreateKitbotSim()`` (C++) metoduna da "
+"sahiptir. Bu metod, ikisi isteğe bağlı, 5 bağımsız değişken kabul "
+"etmektedir:"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:152
+msgid ""
+"The gear ratio between the motors and the wheels as output  :term:`torque` "
+"over input :term:`torque` (this number is usually greater than 1 for "
+"drivetrains)."
+msgstr ""
+"Çıktı :term:`torque`'u bölü girdi :term:`torque`'u olarak motor ve "
+"tekerlekler arasındaki dişli oranı (aktarma sistemleri için bu sayı "
+"genellikle 1'den büyüktür)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:153
+msgid "The diameter of the wheels installed on the drivetrain."
+msgstr "Aktarma sistemlerine takılı tekerleklerin çapı."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:154
+msgid "The moment of inertia of the drive base (optional)."
+msgstr "Sürüş tabanının eylemsizlik momenti (isteğe bağlı)."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:186
+msgid ""
+"You can use the ``KitbotMotor``, ``KitbotGearing``, and ``KitbotWheelSize`` "
+"enum (Java) / struct (C++) to get commonly used configurations of the Kit of"
+" Parts Chassis."
+msgstr ""
+"Parça Kiti Şasisinin yaygın olarak kullanılan yapılandırmalarını elde etmek "
+"için ``KitbotMotor``, ``KitbotGearing`` ve ``KitbotWheelSize`` enum (Java) /"
+" struct (C++) kullanabilirsiniz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/drivetrain-model.rst:188
+msgid ""
+"Constructing your ``DifferentialDrivetrainSim`` instance in this way is just"
+" an approximation and is intended to get teams quickly up and running with "
+"simulation. Using empirical values measured from your physical robot will "
+"always yield more accurate results."
+msgstr ""
+"``DifferentialDrivetrainSim`` örneğinizi bu şekilde oluşturmak yaklaşık bir "
+"öneriden ibarettir ve takımların hızlı bir şekilde simülasyon kullanmaya "
+"başlamasını sağlamayı amaçlamaktadır. Fiziksel robotunuzdan ölçülen deneysel"
+" değerleri kullanmak her zaman daha doğru sonuçlar verecektir."

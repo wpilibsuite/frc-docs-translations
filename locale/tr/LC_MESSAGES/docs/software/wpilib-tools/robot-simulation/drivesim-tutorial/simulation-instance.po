@@ -1,23 +1,122 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Hasan Bilgin <hasanbilgin@fikretyukselfoundation.org>, 2021
-# Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2021
+# Deniz Şentürk, 2025
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-12-28 16:04+0000\n"
+"POT-Creation-Date: 2025-08-12 16:05+0000\n"
 "PO-Revision-Date: 2021-06-22 22:10+0000\n"
-"Last-Translator: Esra ÖZEMRE <esra.ozemre@tfo.k12.tr>, 2021\n"
+"Last-Translator: Deniz Şentürk, 2025\n"
 "Language-Team: Turkish (Turkey) (https://app.transifex.com/wpilib/teams/109324/tr_TR/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: tr_TR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:2
+msgid "Step 1: Creating Simulated Instances of Hardware"
+msgstr "1. Adım: Simüle Edilmiş Donanım Örneklerinin Oluşturulması"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:3
+msgid ""
+"The WPILib simulation framework contains several ``XXXSim`` classes, where "
+"``XXX`` represents physical hardware such as encoders or gyroscopes. These "
+"simulation classes can be used to set positions and velocities (for "
+"encoders) and angles (for gyroscopes) from a model of your drivetrain. See "
+":ref:`the Device Simulation article<docs/software/wpilib-tools/robot-"
+"simulation/device-sim:Device Simulation>` for more info about these "
+"simulation hardware classes and simulation of vendor devices."
+msgstr ""
+"WPILib simülasyon çerçevesi, ``XXX``'in kodlayıcılar veya jiroskoplar gibi "
+"fiziksel donanımları temsil ettiği, birçok ``XXXSim`` sınıfı içermektedir. "
+"Bu simülasyon sınıfları, aktarma sisteminizin bir model üzerinden "
+"konumların, (kodlayıcılar için) hızların ve (jiroskoplar için) açıların "
+"belirlenmesi için kullanılabilmektedir. Bu simülasyon donanım sınıfları ve "
+"simülasyon satıcı sınıflarına dair daha fazla bilgi için bkz. :ref:`Cihaz "
+"Simülasyonu yazısı<docs/software/wpilib-tools/robot-simulation/device-"
+"sim:Device Simulation>`."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:5
+msgid ""
+"Simulation objects associated with a particular subsystem should live in "
+"that subsystem. An example of this is in the ``StateSpaceDriveSimulation`` "
+"(`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp>`__)"
+" example."
+msgstr ""
+"Belirli bir alt sistemle ilişkili simülasyon nesneleri, o alt sistem "
+"içerisinde bulunmalıdır. Bu durumun bir örneği ``StateSpaceDriveSimulation``"
+" (`Java "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibjExamples/src/main/java/edu/wpi/first/wpilibj/examples/statespacedifferentialdrivesimulation/subsystems/DriveSubsystem.java>`__,"
+" `C++ "
+"<https://github.com/wpilibsuite/allwpilib/blob/v2024.3.2/wpilibcExamples/src/main/cpp/examples/StateSpaceDifferentialDriveSimulation/cpp/subsystems/DriveSubsystem.cpp>`__)"
+" örneğinde görülmektedir. "
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:8
+msgid "Simulating Encoders"
+msgstr "Kodlayıcıların Simüle Edilmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:9
+msgid ""
+"The ``EncoderSim`` class allows users to set encoder positions and "
+"velocities on a given ``Encoder`` object. When running on real hardware, the"
+" ``Encoder`` class interacts with real sensors to count revolutions (and "
+"convert them to distance units automatically if configured to do so); "
+"however, in simulation there are no such measurements to make. The "
+"``EncoderSim`` class can accept these simulated readings from a model of "
+"your drivetrain."
+msgstr ""
+"``EncoderSim`` sınıfı, kullanıcıların belirli bir ``Encoder`` nesnesinde "
+"kodlayıcı konumlarını ve hızlarını ayarlamasına olanak tanımaktadır. Gerçek "
+"bir donanım üzerinde çalışırken, ``Encoder`` sınıfı, devirleri saymak için "
+"gerçek sensörlerle etkileşime girmekte (ve bunu yapacak şekilde "
+"yapılandırılmışsa bunları otomatik olarak mesafe birimlerine dönüştürmekte),"
+" ancak simülasyonda yapılacak böyle bir ölçüm bulunmamaktadır. "
+"``EncoderSim`` sınıfı, aktarma sisteminizin bir modelinden simüle edilmiş bu"
+" okumaları kabul edebilmektedir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:11
+msgid ""
+"It is not possible to simulate encoders that are directly connected to CAN "
+"motor controllers using WPILib classes. For more information about your "
+"specific motor controller, please read your vendor's documentation."
+msgstr ""
+"WPILib sınıflarını kullanarak doğrudan CAN motor kontrolörlerine bağlı "
+"kodlayıcıların simüle edilmesi mümkün değildir. Özel motor kontrolörleri "
+"hakkında daha fazla bilgi için lütfen satıcı belgelerine başvurunuz."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:44
+msgid "Simulating Gyroscopes"
+msgstr "Jiroskopların Simüle Edilmesi"
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:45
+msgid ""
+"Similar to the ``EncoderSim`` class, simulated gyroscope classes also exist "
+"for commonly used WPILib gyros -- ``AnalogGyroSim`` and "
+"``ADXRS450_GyroSim``. These are also constructed in the same manner."
+msgstr ""
+"``EncoderSim`` sınıfına benzer şekilde, simüle jiroskop sınıfları da yaygın "
+"kullanıma sahip WPILib jiroskopları için mevcuttur -- ``AnalogGyroSim`` ve "
+"``ADXRS450_GyroSim``. Bu sınıflar da ``EncoderSim`` sınıfıyla aynı şekilde "
+"inşa edilmiştir."
+
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/drivesim-tutorial/simulation-instance.rst:47
+msgid ""
+"It is not possible to simulate certain vendor gyros (i.e. Pigeon :term:`IMU`"
+" and NavX) using WPILib classes. Please read the respective vendors' "
+"documentation for information on their simulation support."
+msgstr ""
+"Belirli satıcı jiroskoplarının (diğer bir deyişle Pigeon :term:`IMU` ve "
+"NavX'in) WPILib sınıfları kullanılarak simüle edilmesi imkansızdır. Bu "
+"jiroskopların simülasyon desteklerine dair bilgi için ilgili satıcıların "
+"belgelerine başvurunuz."

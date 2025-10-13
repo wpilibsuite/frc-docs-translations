@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2023, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2025, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -11,9 +11,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2023\n"
+"Project-Id-Version: FIRST Robotics Competition 2025\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-09-08 16:03+0000\n"
+"POT-Creation-Date: 2025-10-13 04:05+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Team 5308 <team5308@163.com>, 2021\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
@@ -86,20 +86,11 @@ msgid ""
 "commands-to-triggers`"
 msgstr "有关触发器绑定如何工作的更多信息，请参阅:doc:`binding-commands-to-triggers`"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:90
-msgid ""
-"Secondly, the scheduler polls the state of all registered triggers to see if"
-" any new commands that have been bound to those triggers should be "
-"scheduled.  If the conditions for scheduling a bound command are met, the "
-"command is scheduled and its ``Initialize()`` method is run."
-msgstr ""
-"其次，调度程序轮询所有已注册触发器的状态，以查看是否应调度已绑定到这些触发器的任何新命令。如果满足调度绑定命令的条件，则对命令进行调度并运行其“Initialize()”方法。"
-
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:111
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:113
 msgid "Step 3: Run/Finish Scheduled Commands"
 msgstr "步骤3：运行/完成计划的命令"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:113
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:115
 msgid ""
 "Thirdly, the scheduler calls the ``execute()`` method of each currently-"
 "scheduled command, and then checks whether the command has finished by "
@@ -109,7 +100,7 @@ msgid ""
 msgstr ""
 "第三，调度程序调用每个当前调度的命令的“execute()”方法，然后通过调用“isFinished()”方法检查命令是否完成。如果命令已完成，则还将调用“end()”方法，并对该命令进行调度，并释放其所需的子系统。"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:115
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:117
 msgid ""
 "Note that this sequence of calls is done in order for each command - thus, "
 "one command may have its ``end()`` method called before another has its "
@@ -118,22 +109,22 @@ msgid ""
 msgstr ""
 "请注意，此调用顺序是针对每个命令按顺序进行的——因此，一个命令可能会先调用其“end()”方法，而另一命令可能会调用其“execute()”方法。命令按计划的顺序处理。"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:138
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:140
 msgid "Step 4: Schedule Default Commands"
 msgstr "步骤4：调度默认命令"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:140
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:142
 msgid ""
 "Finally, any registered ``Subsystem`` has its default command scheduled (if "
 "it has one).  Note that the ``initialize()`` method of the default command "
 "will be called at this time."
 msgstr "最后，任何已注册的“子系统”都有其默认命令（如果有的话）。注意，此时将调用默认命令的“initialize()”方法。"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:161
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:163
 msgid "Disabling the Scheduler"
 msgstr "禁用调度程序"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:163
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:165
 msgid ""
 "The scheduler can be disabled by calling "
 "``CommandScheduler.getInstance().disable()``.  When disabled, the "
@@ -141,12 +132,12 @@ msgid ""
 msgstr ""
 "可以通过调用“CommandScheduler.getInstance().disable()”来禁用调度程序。禁用时，调度程序的“schedule()”和“run()”命令将不执行任何操作。"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:165
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:167
 msgid ""
 "The scheduler may be re-enabled by calling "
 "``CommandScheduler.getInstance().enable()``."
 msgstr "可以通过调用“CommandScheduler.getInstance.()enable()”来重新启用调度程序。"
 
-#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:168
+#: ../../frc-docs/source/docs/software/commandbased/command-scheduler.rst:170
 msgid "Command Event Methods"
 msgstr "命令事件方法"

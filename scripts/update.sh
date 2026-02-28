@@ -12,13 +12,13 @@ ORGANIZATION=wpilib
 cd `dirname $0`/..
 
 # Create POT Files
-sphinx-build -T -b gettext $MAINPROJECT/source locale/pot
+uv run --project frc-docs sphinx-build -T -b gettext $MAINPROJECT/source locale/pot
 
 # Update .tx/config
 rm .tx/config
-sphinx-intl create-txconfig
+uvx sphinx-intl create-txconfig
 echo "lang_map = ${LANG_MAP}" >> .tx/config
-sphinx-intl update-txconfig-resources -p locale/pot -d locale --transifex-project-name $MAINPROJECT --transifex-organization-name $ORGANIZATION
+uvx sphinx-intl update-txconfig-resources -p locale/pot -d locale --transifex-project-name $MAINPROJECT --transifex-organization-name $ORGANIZATION
 
 # Push and pull from Transifex. It is important to push then pull!
 # If you pull then push, the PO files will contain out of date strings.

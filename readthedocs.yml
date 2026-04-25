@@ -6,19 +6,24 @@ sphinx:
   fail_on_warning: false
 
 build:
-  os: ubuntu-20.04
+  os: ubuntu-24.04
   tools:
-    python: "3.10"
+    python: "3.13"
   apt_packages:
     - librsvg2-bin
- 
+  jobs:
+    pre_create_environment:
+      - asdf plugin add uv
+      - asdf install uv latest
+      - asdf global uv latest
+    create_environment:
+      - uv venv "${READTHEDOCS_VIRTUALENV_PATH}"
+    install:
+      - UV_PROJECT_ENVIRONMENT="${READTHEDOCS_VIRTUALENV_PATH}" uv sync --frozen --project frc-docs
+
 formats:
   - htmlzip
   - pdf
 
-python:
-  install:
-  - requirements: requirements.txt
-  
 submodules:
   include: all

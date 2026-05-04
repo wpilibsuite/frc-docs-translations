@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# Copyright (C) 2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
 # This file is distributed under the same license as the FIRST Robotics Competition package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -12,9 +12,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: FIRST Robotics Competition 2026\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-14 16:04+0000\n"
+"POT-Creation-Date: 2026-05-04 16:35+0000\n"
 "PO-Revision-Date: 2020-04-25 02:02+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -77,7 +77,7 @@ msgstr ""
 msgid "Robot"
 msgstr "Robot"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:32
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:31
 msgid ""
 "In C++, this is not needed as RobotContainer is a value member and will be "
 "constructed during the construction of ``Robot``."
@@ -85,7 +85,7 @@ msgstr ""
 "En C++, ce n'est pas nécessaire, car RobotContainer est un membre valeur et "
 "va être construit durant la construction de ``Robot``."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:54
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:51
 msgid ""
 "The inclusion of the ``CommandScheduler.getInstance().run()`` call in the "
 "``robotPeriodic()`` method is essential; without this call, the scheduler "
@@ -102,7 +102,7 @@ msgstr ""
 "s'exécuteront. Il n'est pas recommandé pour les utilisateurs novices "
 "d'appeler cette méthode ailleurs dans leur code."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:76
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:71
 msgid ""
 "The ``autonomousInit()`` method schedules an autonomous command returned by "
 "the ``RobotContainer`` instance. The logic for selecting which autonomous "
@@ -113,7 +113,7 @@ msgstr ""
 "commande autonome sera exécutée peut être gérée à l'intérieur de "
 "``RobotContainer``."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:98
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:91
 msgid ""
 "The ``teleopInit()`` method cancels any still-running autonomous commands. "
 "This is generally good practice."
@@ -121,7 +121,7 @@ msgstr ""
 "La méthode ``teleopInit()`` annulera toutes les commandes du mode autonome "
 "qui sont en train d'être exécutées. C'est généralement une bonne pratique."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:100
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:93
 msgid ""
 "Advanced users are free to add additional code to the various init and "
 "periodic methods as they see fit; however, it should be noted that including"
@@ -136,11 +136,11 @@ msgstr ""
 "du paradigme orienté commande, et peut entraîner un code structuré de "
 "manière confuse/désorganisée."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:103
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:96
 msgid "RobotContainer"
 msgstr "RobotContainer"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:127
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:118
 msgid ""
 "Notice that subsystems are declared as private fields in ``RobotContainer``."
 " This is in stark contrast to the previous incarnation of the command-based "
@@ -171,7 +171,7 @@ msgstr ""
 " car la facilité d'accès rend facile pour un utilisateur de faire un appel à"
 " une méthode de sous-systèmes hors des commandes  gérées par les ressources."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:149
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:138
 msgid ""
 "Since subsystems are declared as private members, they must be explicitly "
 "passed to commands (a pattern called \"dependency injection\") in order for "
@@ -184,7 +184,7 @@ msgstr ""
 "méthodes. Cela est fait ici avec ``ExampleCommand``, qui se fait passer un "
 "pointeur vers un ``ExampleSubsystem``."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:193
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:178
 msgid ""
 "Finally, the ``getAutonomousCommand()`` method provides a convenient way for"
 " users to send their selected autonomous command to the main ``Robot`` class"
@@ -195,11 +195,11 @@ msgstr ""
 "``Robot`` principale (qui a besoin d'y accèder pour la planifier au début de"
 " la période autonome)."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:196
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:181
 msgid "Constants"
 msgstr "Constants"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:200
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:185
 msgid ""
 "In Java, all constants should be declared ``public static final`` so that "
 "they are globally accessible and cannot be changed.  In C++, all constants "
@@ -209,7 +209,7 @@ msgstr ""
 "final`` pour qu'elles soient accessibles globalement et ne puissent pas être"
 " changées. En C++, toutes les constantes devraient être ``constexpr``."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:202
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:187
 msgid ""
 "For more illustrative examples of what a ``constants`` class should look "
 "like in practice, see those of the various command-based example projects:"
@@ -218,7 +218,7 @@ msgstr ""
 "classe ``Constants`` en pratique, voir les classes des projets exemples "
 "orientés commande :"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:207
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:192
 msgid ""
 "In Java, it is recommended that the constants be used from other classes by "
 "statically importing the necessary inner class. An ``import static`` "
@@ -235,21 +235,21 @@ msgstr ""
 "elles étaient définies dans cette classe. En C++, la même chose peut être "
 "faite avec ``using namespace``:"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:222
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:207
 msgid "Subsystems"
 msgstr "Subsystems"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:224
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:209
 msgid "User-defined subsystems should go in this package/directory."
 msgstr ""
 "Les sous-systèmes définis par l'utilisateur devraient entrer dans ce "
 "package/répertoire."
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:227
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:212
 msgid "Commands"
 msgstr "Commands"
 
-#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:229
+#: ../../frc-docs/source/docs/software/commandbased/structuring-command-based-project.rst:214
 msgid "User-defined commands should go in this package/directory."
 msgstr ""
 "Les commandes définies par l’utilisateur devraient entrer dans cet "

@@ -27,6 +27,9 @@ jobs:
         uses: actions/setup-python@v6
         with:
           python-version: '3.14'
+      - name: Setup Python dependencies for scripts
+        run: |
+          pip install requests
       - name: Install tkinter
         run: |
           sudo apt-get update

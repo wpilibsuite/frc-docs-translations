@@ -1,20 +1,21 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
-# This file is distributed under the same license as the FIRST Robotics Competition package.
+# Copyright (C) 2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the WPILib Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Yuhao Li <yuhao_li@hotmail.com>, 2024
+# Yuhao Li <yuhao_li@hotmail.com>, 2020
 # Nathan zhou, 2024
+# Team 5308 <team5308@163.com>, 2026
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: WPILib Documentation 2027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-17 04:04+0000\n"
+"POT-Creation-Date: 2026-08-20 04:12+0000\n"
 "PO-Revision-Date: 2020-04-25 01:59+0000\n"
-"Last-Translator: Nathan zhou, 2024\n"
+"Last-Translator: Team 5308 <team5308@163.com>, 2026\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -26,38 +27,6 @@ msgstr ""
 msgid "Analog Inputs - Hardware"
 msgstr "模拟输入 - 硬件"
 
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:8
-msgid ""
-"In practice, there is no way to measure a \"true\" analog signal with a "
-"digital device such as a computer (like the roboRIO).  Accordingly, the "
-"analog inputs are actually measured as a 12-bit digital signal - however, "
-"this is quite a high resolution [1]_."
-msgstr ""
-"实际上，无法使用数字设备比如计算机（roboRIO）来测量模拟信号是否为“真”。因此，模拟输入实际上被当作12位数字信号来测量。这么高的测量分辨率已经足够了"
-" [1]_。"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:10
-msgid ""
-"Analog inputs are typically (but not always!) used for sensors whose "
-"measurements vary continuously over a range, such as :doc:`ultrasonic "
-"rangefinders <ultrasonics-hardware>` and :doc:`potentiometers <analog-"
-"potentiometers-hardware>`, as they can communicate by outputting a voltage "
-"proportional to their measurements."
-msgstr ""
-"模拟输入通常（但不总是）用于其测量值在一定范围内连续变化的传感器，例如超声波测距仪<ultrasonics-hardware>和电位计<analog-"
-"potentiometers-hardware>，因为它们可以通过输出与测量值成比例的电压进行通信。"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:13
-msgid "Connecting to roboRIO analog input ports"
-msgstr "连接到roboRIO的模拟输入端口"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:15
-msgid ""
-"An additional four analog inputs are available via the \"MXP\" expansion "
-"port.  To use these, a breakout board of some sort that connects to the MXP "
-"is needed."
-msgstr "通过“ MXP”扩展端口还可以使用另外四个模拟输入。要使用它们，需要和MXP连接的分线板上的端口相连。"
-
 #: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:17
 msgid ""
 "Always consult the technical specifications of the sensor you are using "
@@ -65,26 +34,6 @@ msgid ""
 "connected to each pin.  Failure to do so can result in damage to the sensor "
 "or the RIO."
 msgstr "在对传感器进行接线之前，请务必先阅读正在使用的传感器的技术文档，以确保将正确的导线连接到每个引脚。否则可能会损坏传感器或roboRIO。"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:19
-msgid ""
-"**Never** directly connect the power pin to the ground pin on any port on "
-"the roboRIO!  This will trigger protection features on the roboRIO and may "
-"result in unexpected behavior."
-msgstr "**切勿**将传感器的电源引脚直接连接到roboRIO任意端口上的接地引脚！这将触发roboRIO上的保护功能，并可能导致意外行为。"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:24
-msgid ""
-"The roboRIO has 4 built-in analog input ports (numbered 0-3), as seen in the"
-" image above.  Each port has three pins - signal (\"S\"), power (\"V\"), and"
-" ground (\"|ground|\").  The \"power\" and \"ground\" pins are used to power"
-" the peripheral sensors that connect to the analog input ports - there is a "
-"constant 5V potential difference between the \"power\" and the \"ground\" "
-"pins [2]_.  The signal pin is the pin on which the signal is actually "
-"measured."
-msgstr ""
-"如上图所示，roboRIO内置4路模拟输入端口（0-3号）。每一个端口有三根引脚——信号引脚（S），电源引脚（V）和地线引脚（|ground|）。电源引脚和地线引脚"
-" [2]_用于给传感器外设供电，电压是5V。信号引脚则是实际测量信号的引脚。"
 
 #: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:27
 msgid "Connecting a sensor to a single analog input port"
@@ -96,32 +45,15 @@ msgid ""
 "hardware>`) may have interchangeable power and ground connections."
 msgstr "有的传感器（如电位器<analog-potentiometers-hardware>)可能会共享电源和地线引脚。"
 
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:31
-msgid ""
-"Most sensors that connect to analog input ports will have three wires - "
-"signal, power, and ground - corresponding precisely to the three pins of the"
-" analog input ports. They should be connected accordingly."
-msgstr "连接到模拟输入端口的大多数传感器将具有三根线——信号，电源和地线——精确地对应于模拟输入端口的三个引脚。它们应进行相应连接。"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:37
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:39
 msgid "Connecting a sensor to multiple analog input ports"
 msgstr "将传感器连接到多个模拟输入端口"
 
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:47
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:49
 msgid "Footnotes"
 msgstr "脚注"
 
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:49
-msgid ""
-"A 12-bit resolution yields :math:`2^{12}`, or 4096 different values.  For a "
-"5V range, that's an effective resolution of approximately 1.2 mV, or .0012V."
-"  The actual accuracy specification is plus-or-minus 50mV, so the "
-"discretization is not the limiting factor in the measurement accuracy."
-msgstr ""
-"一个12位分辨率的信号可以产生 :math:`2^{12}` 即4096个不同的值。对于5V范围内的信号，这是大约1.2 "
-"mV或0.0012V的有效分辨率。实际测量精度为正负50mV，因此这些离散的信号值并不会限制测量精度。"
-
-#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:50
+#: ../../frc-docs/source/docs/hardware/sensors/analog-inputs-hardware.rst:52
 msgid ""
 "All power pins are actually connected to a single rail, as are all ground "
 "pins - there is no need to use the power/ground pins corresponding to a "

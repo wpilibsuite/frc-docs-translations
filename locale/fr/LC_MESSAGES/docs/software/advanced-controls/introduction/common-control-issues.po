@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
-# This file is distributed under the same license as the FIRST Robotics Competition package.
+# Copyright (C) 2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the WPILib Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -10,9 +10,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: WPILib Documentation 2027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-01-12 04:04+0000\n"
+"POT-Creation-Date: 2026-08-20 04:12+0000\n"
 "PO-Revision-Date: 2022-08-20 04:15+0000\n"
 "Last-Translator: Marc Lalonde, 2023\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -22,11 +22,11 @@ msgstr ""
 "Language: fr_CA\n"
 "Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:2
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:4
 msgid "Common Control Loop Tuning Issues"
 msgstr "Problèmes de réglage de boucles de contrôle communs"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:4
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:6
 msgid ""
 "There are a number of common issues which can arise while tuning feedforward"
 " and feedback controllers."
@@ -34,11 +34,11 @@ msgstr ""
 "Plusieurs problèmes courants peuvent survenir lors du réglage de contrôleurs"
 " prédictifs et à rétroaction"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:7
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:9
 msgid "Integral Term Windup"
 msgstr "Emballement du terme Intégral"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:9
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:11
 msgid ""
 "Beware that if :math:`K_i` is too large, integral windup can occur. "
 "Following a large change in :term:`setpoint`, the integral term can "
@@ -52,15 +52,15 @@ msgstr ""
 "contrôlée` maximale. Par conséquent, le système dépasse les bornes et "
 "continue d'augmenter jusqu'à ce que cette erreur accumulée soit supprimée."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:11
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:13
 msgid "There are a few ways to mitigate this:"
 msgstr "Il y a quelques manières de limiter cela:"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:13
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:15
 msgid "Decrease the value of :math:`K_i`, down to zero if possible."
 msgstr "Diminuer la valeur de :math:`K_i`, à zéro, si possible"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:14
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:16
 msgid ""
 "Add logic to reset the integrator term to zero if the :term:`output` is too "
 "far from the :term:`setpoint`. Some smart motor controllers and WPILib's "
@@ -71,7 +71,7 @@ msgstr ""
 " de moteurs intelligents et la classe PIDController de WPILib implémentent "
 "ceci avec une méthode ``setIZone()``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:15
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:17
 msgid ""
 "Cap the integrator at some maximum value. WPILib's ``PIDController`` "
 "implements this with the ``setIntegratorRange()`` method."
@@ -79,21 +79,11 @@ msgstr ""
 "Limiter l'intégrateur à une valeur maximale. Le ``PIDController`` de la "
 "WPILib implémente ceci avec la méthode ``setIntegratorRange()``."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:17
-msgid ""
-"Most mechanisms in FRC do not require any integral control, and systems that"
-" seem to require integral control to respond well probably have an "
-"inaccurate feedforward model."
-msgstr ""
-"La plupart des mécanismes en FRC ne nécessitent aucun contrôle intégral et "
-"les systèmes qui semblent nécessiter un contrôle intégral pour répondre de "
-"manière adéquate utilisent probablement un modèle prédictif imprécis."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:20
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:22
 msgid "Voltage Sag"
 msgstr "Affaissement du voltage"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:22
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:24
 msgid ""
 "When we operate mechanisms on our robot, we draw current from its battery.  "
 "This causes the available \"bus voltage\" that all the robot mechanisms "
@@ -107,7 +97,7 @@ msgstr ""
 "nos mécanismes va varier selon la charge et l'action du robot - cela n'est "
 "pas idéal."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:24
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:26
 msgid ""
 "To fix this, most voltage controllers offer a \"voltage compensation\" "
 "setting for their internal control loops that keep the output voltage of the"
@@ -124,7 +114,7 @@ msgstr ""
 "contrôle sont exécutées sur le RIO (supposant que vous l'appelez à chaque "
 "itération de la boucle robot)."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:26
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:28
 msgid ""
 "Keep in mind that voltage compensation cannot increase the voltage applied "
 "to the motor beyond what is available on the bus - if your actuator is "
@@ -135,11 +125,11 @@ msgstr ""
 " si votre actuateur est en saturation (décrit ci-bas), vous devrez prendre "
 "cela en compte séparément."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:29
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:31
 msgid "Actuator Saturation"
 msgstr "Saturation de l'actuateur"
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:31
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:33
 msgid ""
 "A controller calculates its output based on the error between the "
 ":term:`setpoint` and the current :term:`state`. :term:`Plant <plant>` in the"
@@ -153,7 +143,7 @@ msgstr ""
 " contrôleur. Lorsque les limites de l'actionneur sont atteintes, le "
 "contrôleur agit comme si le gain avait été temporairement réduit."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:33
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:35
 msgid ""
 "If our control gains are too aggressive, our control algorithm might try to "
 "move the mechanism faster than it is capable of actually going.  In this "
@@ -168,7 +158,7 @@ msgstr ""
 "négativement impacter la réponse adverse de contrôle (ex: résulter en des "
 "erreurs et une instabilité)."
 
-#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:35
+#: ../../frc-docs/source/docs/software/advanced-controls/introduction/common-control-issues.rst:37
 msgid ""
 "If you are encountering problems with actuator saturation, consider "
 "modifying your mechanism gearing or powering it with a bigger motor."

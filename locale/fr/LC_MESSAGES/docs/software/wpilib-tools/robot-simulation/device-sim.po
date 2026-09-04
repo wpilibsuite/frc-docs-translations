@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2021, FIRST and other WPILib Contributors
-# This file is distributed under the same license as the FIRST Robotics Competition package.
+# Copyright (C) 2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the WPILib Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -9,17 +9,17 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2022\n"
+"Project-Id-Version: WPILib Documentation 2027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-12-31 16:03+0000\n"
+"POT-Creation-Date: 2026-08-20 04:12+0000\n"
 "PO-Revision-Date: 2021-03-19 04:25+0000\n"
 "Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2021\n"
-"Language-Team: French (Canada) (https://www.transifex.com/wpilib/teams/109324/fr_CA/)\n"
+"Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr_CA\n"
-"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"Plural-Forms: nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:2
 msgid "Device Simulation"
@@ -36,32 +36,6 @@ msgstr ""
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:7
 msgid "Simulating Core WPILib Device Classes"
 msgstr "Simulation des classes fondamentales de l'infrastructure WPILib "
-
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:9
-msgid ""
-"Core WPILib device classes (i.e ``Encoder``, ``Ultrasonic``, etc.) have "
-"simulation classes named ``EncoderSim``, ``UltrasonicSim``, and so on. These"
-" classes allow interactions with the device data that wouldn't be possible "
-"or valid outside of simulation. Constructing them outside of simulation "
-"likely won't interfere with your code, but calling their functions and the "
-"like is undefined behavior - in the best case they will do nothing, worse "
-"cases might crash your code! Place functional simulation code in simulation-"
-"only functions (such as ``simulationPeriodic()``) or wrap them with "
-"``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (which are "
-"``constexpr`` in C++)."
-msgstr ""
-"Les classes fondamentales de l'infrastructure WPILib (c.-à-d. ``Encoder``, "
-"``Ultrasonic``, etc.) ont des classes de simulation nommées ``EncoderSim``, "
-"``UltrasonicSim``,  etc. Ces classes permettent des interactions avec les "
-"données du simulateur qui ne seraient pas possibles ou valides en dehors de "
-"la simulation. Les construire en dehors de la simulation n’interférera "
-"probablement pas avec votre code, mais appeler leurs fonctions et autres est"
-" un comportement non défini - dans le meilleur des cas, ils ne feront rien, "
-"les cas pires quant à eux pourraient planter votre code! Placez le code de "
-"simulation fonctionnelle dans des fonctions de simulation uniquement (telles"
-" que ``simulationPeriodic()``) ou enveloppez-les avec "
-"``RobotBase.isReal()``/ ``RobotBase::IsReal()`` checks (qui sont "
-"``constexpr`` en C++)."
 
 #: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:11
 msgid ""
@@ -97,11 +71,11 @@ msgstr ""
 " a été utilisé pour construire l’objet matériel régulier. Ceci est "
 "particulièrement utile pour :doc:`unit testing <unit-testing>`."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:37
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:39
 msgid "Reading and Writing Device Data"
 msgstr "Lecture et écriture des données de simulation"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:39
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:41
 msgid ""
 "Each simulation class has getter (``getXxx()``/``GetXxx()``) and setter "
 "(``setXxx(value)``/``SetXxx(value)``) functions for each field ``Xxx``. The "
@@ -113,11 +87,11 @@ msgstr ""
 "pour chaque champ ``Xxx``. Les fonctions getter retourneront la même chose "
 "que le getter de la classe régulière pour le robot réel."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:55
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:59
 msgid "Registering Callbacks"
 msgstr "Enregistrement des Callbacks"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:57
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:61
 msgid ""
 "In addition to the getters and setters, each field also has a "
 "``registerXxxCallback()`` function that registers a callback to be run "
@@ -140,7 +114,7 @@ msgstr ""
 "``HALValue.kEnum``/``HAL_ENUM``, ``HALValue.kInt``/``HAL_INT``, "
 "``HALValue.kLong``/``HAL_LONG``."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:59
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:63
 msgid ""
 "In Java, call ``close()`` on the ``CallbackStore`` object to cancel the "
 "callback. Keep a reference to the object so it doesn't get garbage-collected"
@@ -153,7 +127,7 @@ msgstr ""
 "des données arbitraires au callback, capturez-les dans le lambda ou utilisez"
 " une référence de méthode."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:61
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:65
 msgid ""
 "In C++, save the ``CallbackStore`` object in the right scope - the callback "
 "will be canceled when the object goes out of scope and is destroyed. "
@@ -164,7 +138,7 @@ msgstr ""
 "données arbitraires peuvent être transmises aux callbacks via le paramètre "
 "``param``."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:63
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:67
 msgid ""
 "Attempting to retrieve a value of a type from a ``HALValue`` containing a "
 "different type is undefined behavior."
@@ -172,11 +146,11 @@ msgstr ""
 "Tenter de récupérer une valeur d’un type à partir d’une ``HALValue`` "
 "contenant un type différent est un comportement non défini. "
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:88
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:93
 msgid "Simulating Other Devices - The SimDeviceSim Class"
 msgstr "Simulation d’autres dispositifs - La classe SimDevicesim"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:90
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:95
 msgid ""
 "Vendors might implement their connection to the SimDevice API slightly "
 "different than described here. They might also provide a simulation class "
@@ -189,7 +163,7 @@ msgstr ""
 "composants. Consultez la documentation de votre fournisseur pour plus "
 "d’informations sur ce qu’il prend en charge et la manière de le faire."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:92
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:97
 msgid ""
 "The ``SimDeviceSim`` (**not** ``SimDevice``!) class is a general device "
 "simulation object for devices that aren't core WPILib devices and therefore "
@@ -206,7 +180,7 @@ msgstr ""
 ":ref:`SimGUI<docs/software/wpilib-tools/robot-simulation/simulation-"
 "gui:Modifying ADXRS450 Inputs>`."
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:94
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:99
 msgid ""
 "The ``SimDeviceSim`` object is created using a string key identical to the "
 "key the vendor used to construct the underlying ``SimDevice`` in their "
@@ -230,7 +204,7 @@ msgstr ""
 "dans la clé transmise à ``SimDeviceSim`` ne se reférera pas au bon "
 "composant!"
 
-#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:105
+#: ../../frc-docs/source/docs/software/wpilib-tools/robot-simulation/device-sim.rst:112
 msgid ""
 "Once we have the ``SimDeviceSim``, we can get ``SimValue`` objects "
 "representing the device's fields. Type-specific ``SimDouble``, ``SimInt``, "

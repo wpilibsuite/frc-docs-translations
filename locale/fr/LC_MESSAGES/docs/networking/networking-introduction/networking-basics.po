@@ -1,22 +1,22 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
-# This file is distributed under the same license as the FIRST Robotics Competition package.
+# Copyright (C) 2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the WPILib Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
 # Andre Theberge <atheberge2@videotron.ca>, 2021
 # Sidney Lavoie, 2023
 # Marc Lalonde, 2023
-# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024
+# Regis Bekale <rbekale@robotiquefirstquebec.org>, 2026
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: WPILib Documentation 2027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-01 16:04+0000\n"
+"POT-Creation-Date: 2026-08-20 04:12+0000\n"
 "PO-Revision-Date: 2020-04-25 02:00+0000\n"
-"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2024\n"
+"Last-Translator: Regis Bekale <rbekale@robotiquefirstquebec.org>, 2026\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -198,15 +198,15 @@ msgstr ""
 "Les périphériques sur le réseau privé envoient leur trafic via le "
 "périphérique NAT pour communiquer avec le réseau externe et vice versa."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:48
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:47
 msgid "How are these addresses assigned?"
 msgstr "Comment ces adresses sont-elles attribuées ?"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:53
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:52
 msgid "Dynamically"
 msgstr "Dynamiquement"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:55
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:54
 msgid ""
 "Dynamically assigning IP addresses means that we are letting a device on the"
 " network manage the IP address assignments. This is done through the Dynamic"
@@ -229,11 +229,11 @@ msgstr ""
 " l’appareil communique. Cela peut signifier qu’il y a des moments où nous ne"
 " connaissons pas l’adresse IP exacte de chaque appareil."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:58
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:57
 msgid "What is a DHCP server?"
 msgstr "Qu’est-ce qu’un serveur DHCP ?"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:62
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:61
 msgid ""
 "This means that if you ever run into a situation where you need to have a "
 "DHCP server assigning IP addresses to your network devices, it’s as simple "
@@ -244,11 +244,11 @@ msgstr ""
 "réseau, il est aussi simple que de trouver le routeur domestique le plus "
 "proche, et de le brancher."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:65
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:64
 msgid "Statically"
 msgstr "Statiquement"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:67
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:66
 msgid ""
 "Statically assigning IP addresses means that we are manually telling each "
 "device on the network which IP address we want it to have. This "
@@ -274,60 +274,15 @@ msgstr ""
 "correctement les autres paramètres du réseau (tels que le masque de sous-"
 "réseau et la passerelle par défaut) sur chaque appareil."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:70
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:69
 msgid "What is link-local?"
 msgstr "Qu’est-ce qu'un lien-local?"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:72
-msgid ""
-"If a device does not have an IP address, then it cannot communicate on a "
-"network. This can become an issue if we have a device that is set to "
-"dynamically acquire its address from a DHCP server, but there is no DHCP "
-"server on the network. An example of this would be when you have a laptop "
-"directly connected to a roboRIO and both are set to dynamically acquire an "
-"IP address. Neither device is a DHCP server, and since they are the only two"
-" devices on the network, they will not be assigned IP addresses "
-"automatically."
-msgstr ""
-"Si un périphérique n’a pas d’adresse IP, il ne peut pas communiquer sur un "
-"réseau. Cela peut devenir un problème si nous avons un périphérique qui est "
-"configuré pour acquérir dynamiquement son adresse à partir d’un serveur "
-"DHCP, mais qu'il n’y a pas de serveur DHCP sur le réseau. Par exemple,  "
-"lorsque vous avez un ordinateur portable directement connecté à un roboRIO "
-"et les deux sont configurés pour acquérir dynamiquement une adresse IP. "
-"Aucun des deux appareils n’est un serveur DHCP, et comme ils sont les deux "
-"seuls appareils sur le réseau, des adresses IP ne leur seront donc pas "
-"attribuées automatiquement."
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:74
-msgid ""
-"Link-local addresses give us a standard set of addresses that we can \"fall-"
-"back\" to if a device set to acquire dynamically is not able to acquire an "
-"address. If this happens, the device will assign itself an IP address in the"
-" ``169.254.xx.yy`` address range; this is a link-local address. In our "
-"roboRIO and computer example above, both devices will realize they haven’t "
-"been assigned an IP address and assign themselves a link-local address. Once"
-" they are both assigned addresses in the ``169.254.xx.yy`` range, they will "
-"be in the same network and will be able to communicate, even though they "
-"were set to dynamic and a DHCP server did not assign addresses."
-msgstr ""
-"Les adresses de type lien-local nous donnent un ensemble standard d’adresses"
-" auxquelles nous pouvons \"nous replier\" si un périphérique configuré pour "
-"acquérir dynamiquement n’est pas en mesure d’acquérir une adresse. Si cela "
-"se produit, l’appareil s’attribuera une adresse IP dans la plage d’adresses "
-"``169.254.xx.yy``; il s’agit d’une adresse lien-local. Dans notre roboRIO et"
-" l’exemple d’ordinateur ci-dessus, les deux appareils se rendront compte "
-"qu’il ne leur a pas été affecté d'adresse IP et s’assigneront eux-mêmes une "
-"adresse lien-local. Une fois que leur auront été attribuées deux adresses "
-"dans la plage ``169.254.xx.yy``, ils seront dans le même réseau et seront en"
-" mesure de communiquer, même s'ils ont été réglés sur dynamique et qu'un "
-"serveur DHCP n’a pas attribué d’adresses."
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:77
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:76
 msgid "IP Addressing for FRC"
 msgstr "Adressage IP pour FRC"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:79
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:78
 msgid ""
 "See the :doc:`IP Networking Article <ip-configurations>` for more "
 "information."
@@ -335,11 +290,11 @@ msgstr ""
 "Voir  :doc:`IP Networking Article <ip-configurations>` pour plus "
 "d'informations."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:82
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:81
 msgid "Mixing Dynamic and Static Configurations"
 msgstr "Mélange de configurations dynamique et statique"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:84
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:83
 msgid ""
 "While on the field, the team should not notice any issues with having "
 "devices set statically in the ``10.TE.AM.xx`` range, and having the field "
@@ -351,43 +306,21 @@ msgstr ""
 "et de voir le terrain assigner des adresses DHCP tant qu’il n’y a pas de "
 "conflits d’adresses IP comme mentionné dans la section ci-dessus."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:86
-msgid ""
-"In the pits, a team may encounter issues with mixing Static and DHCP devices"
-" for the following reason. As mentioned above, DHCP devices will fall back "
-"to a link-local address (``169.254.xx.yy``) if a server isn’t present. For "
-"static devices, the IP address will always be the same. If the DHCP server "
-"is not present and the roboRIO, driver station, and laptop fall back to "
-"link-local addresses, the statically set devices in the 10.TE.AM.xx range "
-"will be in a different network and not visible to those with link-local "
-"addresses. A visual description of this is provided below:"
-msgstr ""
-"Dans les puits, une équipe peut rencontrer des problèmes avec le mélange des"
-" appareils Statique et DHCP pour la raison suivante. Comme mentionné ci-"
-"dessus, les périphériques DHCP se rabattront sur une adresse lien-local "
-"(``169.254.xx.yy``) si un serveur n’est pas présent. Pour les périphériques "
-"statiques, l’adresse IP sera toujours la même. Si le serveur DHCP n’est pas "
-"présent et que le roboRIO, la station de pilotage et l’ordinateur portable "
-"se rabattent sur des adresses de type lien-local, les périphériques réglés "
-"statiquement dans la plage 10.TE.AM.xx seront dans un réseau différent et "
-"non visibles pour ceux qui ont des adresses de type lien-local. Une "
-"description visuelle de ceci est fournie ci-dessous :"
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:88
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:89
 msgid "How you can't mix link-local and static IP configurations."
 msgstr ""
 "Comment vous ne pouvez pas mélanger les configurations IP lien-local et "
 "statiques."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:94
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:95
 msgid "Available Network Ports"
 msgstr "Ports réseau disponibles"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:99
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:100
 msgid "mDNS"
 msgstr "mDNS"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:101
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:102
 msgid ""
 "mDNS, or multicast Domain Name System is a protocol that allows us to "
 "benefit from the features of DNS, without having a DNS server on the "
@@ -399,11 +332,11 @@ msgstr ""
 "réseau. Pour que cela soit plus clair, prenons un peu de recul et parlons de"
 " ce qu’est le DNS."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:104
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:105
 msgid "What is DNS?"
 msgstr "DNS: qu'est-ce que c'est ?"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:112
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:113
 msgid ""
 "Example 2: On your home network, you have a server named ``MYCOMPUTER`` that"
 " you want to connect to from your laptop. Your network uses DHCP so you "
@@ -425,32 +358,11 @@ msgstr ""
 "l’enregistrement DNS est mis à jour et vous êtes toujours en mesure de vous "
 "connecter."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:117
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:118
 msgid "DNS for FRC"
 msgstr "DNS pour FRC"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:121
-msgid ""
-"mDNS provides us the same benefits as traditional DNS, but is just "
-"implemented in a way that does not require a server. Whenever a user asks to"
-" connect to a device using a friendly name, mDNS sends out a message asking "
-"the device with that name to identify itself. The device with the name then "
-"sends a return message including its IP address so all devices on the "
-"network can update their information. mDNS is what allows us to refer to our"
-" roboRIO as ``roboRIO-TEAM-FRC.local`` and have it connect on a DHCP "
-"network."
-msgstr ""
-"Le mDNS nous offre les mêmes avantages que le DNS traditionnel, mais est "
-"juste implémenté d’une manière qui ne nécessite pas un serveur. Chaque fois "
-"qu’un utilisateur demande à se connecter à un appareil à l’aide d’un nom "
-"convivial, le mDNS envoie un message demandant à l’appareil portant ce nom "
-"de s’identifier. L’appareil portant ce nom envoie alors un message de "
-"retour, y compris son adresse IP afin que tous les appareils du réseau "
-"puissent mettre à jour leurs informations. Le mDNS est ce qui nous permet de"
-" nous référer à notre roboRIO comme ``roboRIO-TEAM-FRC.local`` et de le "
-"faire connecter sur un réseau DHCP."
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:124
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:125
 msgid ""
 "If a device used for FRC does not support mDNS, then it will be assigned an "
 "IP Address in the 10.TE.AM.20 - 10.TE.AM.255 range, but we won’t know the "
@@ -464,15 +376,15 @@ msgstr ""
 "auparavant. Dans ce cas, ce périphérique devrait disposer d’une adresse IP "
 "statique."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:127
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:128
 msgid "mDNS - Principles"
 msgstr "mDNS - Principes"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:132
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:133
 msgid "mDNS - Providers"
 msgstr "mDNS - Fournisseurs"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:134
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:135
 msgid ""
 "To use mDNS, an mDNS implementation is required to be installed on your PC. "
 "Here are some common mDNS implementations for each major platform:"
@@ -481,31 +393,27 @@ msgstr ""
 "PC. Voici quelques implémentations mDNS courantes pour chaque importante "
 "plate-forme:"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:136
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:137
 msgid "Windows:"
 msgstr "Windows:"
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:138
-msgid "**NI mDNS Responder:** Installed with the NI FRC Game Tools"
-msgstr "**NI mDNS Responder:** Installé avec NI FRC Game Tools"
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:139
 msgid "**Apple Bonjour:** Installed with iTunes"
 msgstr "**Apple Bonjour:** Installé avec iTunes"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:141
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:142
 msgid "OSX:"
 msgstr "OSX:"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:143
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:144
 msgid "**Apple Bonjour:** Installed by default"
 msgstr "**Apple Bonjour:** Installé par défaut"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:145
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:146
 msgid "Linux:"
 msgstr "Linux:"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:147
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:148
 msgid ""
 "**nss-mDNS/Avahi/Zeroconf:** Installed and enabled by default on some Linux "
 "variants (such as Ubuntu or Mint). May need to be installed or enabled on "
@@ -515,11 +423,11 @@ msgstr ""
 "variantes Linux (comme Ubuntu ou Mint). Peut avoir besoin d’être installé ou"
 " activé sur d’autres (comme Arch)"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:150
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:151
 msgid "mDNS - Firewalls"
 msgstr "mDNS - Pare-feu"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:152
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:153
 msgid ""
 "Depending on your PC configuration, no changes may be required, this section"
 " is provided to assist with troubleshooting."
@@ -528,97 +436,43 @@ msgstr ""
 "nécessaire, cette section est fournie pour vous aider dans la résolution des"
 " problèmes."
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:154
-msgid ""
-"To work properly mDNS must be allowed to pass through your firewall. Because"
-" the network traffic comes from the mDNS implementation and not directly "
-"from the Driver Station or IDE, allowing those applications through may not "
-"be sufficient. There are two main ways to resolve mDNS firewall issues:"
-msgstr ""
-"Pour fonctionner correctement, mDNS doit être autorisé à passer à travers "
-"votre pare-feu. Étant donné que le trafic réseau provient de "
-"l’implémentation mDNS et non directement de la Drive Station ou de l’IDE, "
-"l'autorisation de ces seules applications à passer à travers votre pare-feu "
-"pourrait ne pas suffire. Il existe deux façons principales de résoudre les "
-"problèmes de pare-feu mDNS :"
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:156
-msgid ""
-"Add an application/service exception for the mDNS implementation (NI mDNS "
-"Responder is ``C:\\Program Files\\National Instruments\\Shared\\mDNS "
-"Responder\\nimdnsResponder.exe``)"
-msgstr ""
-"Ajouter une exception d’application/service pour l’implémentation du mDNS "
-"(NI mDNS Responder est ``C:\\Program Files\\National "
-"Instruments\\Shared\\mDNS Responder\\nimdnsResponder.exe``)"
-
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:157
-msgid "Add a port exception for traffic to/from UDP 5353. IP Ranges:"
-msgstr ""
-"Ajoutez une exception de port pour le trafic vers/à partir de UDP 5353. "
-"Plages IP :"
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:159
 msgid "``10.0.0.0 - 10.255.255.255``"
 msgstr "``10.0.0.0 - 10.255.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:160
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:158
 msgid "``172.16.0.0 - 172.31.255.255``"
 msgstr "``172.16.0.0 - 172.31.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:161
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:159
 msgid "``192.168.0.0 - 192.168.255.255``"
 msgstr "``192.168.0.0 - 192.168.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:162
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:160
 msgid "``169.254.0.0 - 169.254.255.255``"
 msgstr "``169.254.0.0 - 169.254.255.255``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:163
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:161
 msgid "``224.0.0.251``"
 msgstr "``224.0.0.251``"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:166
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:164
 msgid "mDNS - Browser support"
 msgstr "mDNS - Prise en charge des navigateurs"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:168
-msgid ""
-"Most web-browsers should be able to utilize the mDNS address to access the "
-"roboRIO web server as long as an mDNS provider is installed. These browsers "
-"include Microsoft Edge, Firefox, and Google Chrome."
-msgstr ""
-"La plupart des navigateurs Web devraient être en mesure d’utiliser l’adresse"
-" mDNS pour accéder au serveur web du roboRIO tant qu’un fournisseur mDNS est"
-" installé. Ces navigateurs incluent Microsoft Edge, Firefox et Google "
-"Chrome."
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:171
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:169
 msgid "USB"
 msgstr "USB"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:176
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:174
 msgid "Ethernet/Wireless"
 msgstr "Ethernet/Sans fil"
 
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:181
+#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:179
 msgid "Summary"
 msgstr "Résumé"
 
 #: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:185
-msgid ""
-"If all devices on the network support mDNS, then all devices can be set to "
-"DHCP and referred to using their friendly names (ex. ``roboRIO-TEAM-"
-"FRC.local``). If some devices do not support mDNS, they will need to be set "
-"to use static addresses."
-msgstr ""
-"Si tous les appareils du réseau prennent en charge le mDNS, tous les "
-"appareils peuvent être configurés sur DHCP et invoqués à l’aide de leurs "
-"appellations conviviales (ex. ``roboRIO-TEAM-FRC.local``). Si certains "
-"périphériques ne prennent pas en charge le mDNS, ils devront être configurés"
-" pour utiliser des adresses IP statiques."
-
-#: ../../frc-docs/source/docs/networking/networking-introduction/networking-basics.rst:187
 msgid ""
 "If all devices are set to use DHCP or Static IP assignments (with correct "
 "static settings), the communication should work in both the pit and on the "

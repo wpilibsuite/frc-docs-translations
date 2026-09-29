@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WPILib Documentation 2027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-08-20 04:12+0000\n"
+"POT-Creation-Date: 2026-09-29 04:01+0000\n"
 "PO-Revision-Date: 2023-01-27 00:44+0000\n"
 "Last-Translator: Marc Lalonde, 2024\n"
 "Language-Team: French (Canada) (https://app.transifex.com/wpilib/teams/109324/fr_CA/)\n"
@@ -176,50 +176,11 @@ msgstr ""
 msgid "Treating Functions as Data in Java"
 msgstr "Traiter les fonctions comme des données en Java"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:28
-msgid ""
-"This might sound complicated, but in the context of WPILib we don't really "
-"need to worry much about using the functional interfaces themselves - the "
-"code that does that is internal to WPILib.  Instead, all we need to know is "
-"how to pass a function that we've written to a method that takes a "
-"functional interface as a parameter.  For a simple example, consider the "
-"signature of ``Commands.runOnce`` (which creates an ``InstantCommand`` that,"
-" when scheduled, runs the given function once and then terminates):"
-msgstr ""
-"Cela peut sembler compliqué, mais dans le contexte de WPILib, nous n'avons "
-"pas vraiment besoin de nous soucier de l'utilisation des interfaces "
-"fonctionnelles elles-mêmes : le code qui fait cela est interne à WPILib. Au "
-"lieu de cela, tout ce que nous devons savoir, c'est comment transmettre une "
-"fonction que nous avons écrite à une méthode qui prend une interface "
-"fonctionnelle comme paramètre. Pour un exemple simple, considérons la "
-"signature de ``Commands.runOnce`` (qui crée une ``InstantCommand`` qui, "
-"lorsqu'elle est planifiée, exécute la fonction donnée une seule fois puis se"
-" termine) :"
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:35
-msgid ""
-"``runOnce`` expects us to give it a ``Runnable`` parameter (named "
-"``action``).  A ``Runnable`` is the Java term for a function that takes no "
-"parameters and returns no value.  When we call ``runOnce``, we need to give "
-"it a function with no parameters and no return value.  There are two ways to"
-" do this: we can refer to some existing function using a \"method "
-"reference\", or we can define the function we want inline using a \"lambda "
-"expression\"."
-msgstr ""
-"``runOnce`` attend que nous lui donnions un paramètre ``Runnable`` (nommé "
-"``action``). Un ``Runnable`` est le terme Java désignant une fonction qui ne"
-" prend aucun paramètre et ne renvoie aucune valeur. Lorsque nous appelons "
-"``runOnce``, nous devons lui donner une fonction sans paramètres ni valeur "
-"de retour. Il existe deux manières de procéder : nous pouvons faire "
-"référence à une fonction existante en utilisant une \"référence de "
-"méthode\", ou nous pouvons définir la fonction souhaitée en ligne à l'aide "
-"d'une \"expression lambda\"."
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:38
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:110
 msgid "Method References"
 msgstr "Références de méthodes"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:40
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:112
 msgid ""
 "A method reference lets us pass an already-existing function as our "
 "``Runnable``:"
@@ -227,7 +188,7 @@ msgstr ""
 "Une référence de méthode nous permet de passer une fonction déjà existante "
 "comme notre ``Runnable`` :"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:47
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:119
 msgid ""
 "The expression ``drivetrain::resetEncoders`` is a reference to the "
 "``resetEncoders`` method of the ``drivetrain`` object.  It is not a method "
@@ -241,96 +202,16 @@ msgstr ""
 "de la transmission. Au lieu de cela, elle renvoie une ``Command``qui le fera"
 " *quand cela est planifié.*"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:49
-msgid ""
-"Remember that in order for this to work, ``resetEncoders`` must be a "
-"``Runnable`` - that is, it must take no parameters and return no value.  So,"
-" its signature must look like this:"
-msgstr ""
-"Rappelez-vous que pour que cela fonctionne, ``resetEncoders`` doit être un "
-"``Runnable`` - c'est-à-dire qu'il ne doit prendre aucun paramètre et ne "
-"renvoyer aucune valeur. Ainsi, sa signature doit ressembler à ceci :"
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:56
-msgid ""
-"If the function signature does not match this, Java will not be able to "
-"interpret the method reference as a ``Runnable`` and the code will not "
-"compile.  Note that all we need to do is make sure that the signature "
-"matches the signature of the single method in the ``Runnable`` functional "
-"interface - we don't need to *explicitly* name it as a ``Runnable``."
-msgstr ""
-"Si la signature de la fonction ne correspond pas à ceci, Java ne pourra pas "
-"interpréter la référence de méthode comme un ``Runnable`` et le code ne sera"
-" pas compilé. Notez que tout ce que nous devons faire est de nous assurer "
-"que la signature correspond à la signature de la méthode unique dans "
-"l'interface fonctionnelle ``Runnable`` - nous n'avons pas besoin de la "
-"nommer *explicitement* comme ``Runnable``."
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:59
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:131
 msgid "Lambda Expressions in Java"
 msgstr "Expressions Lambda en Java"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:61
-msgid ""
-"If we do not already have a named function that does what we want, we can "
-"define a function \"inline\" - that means, right inside of the call to "
-"``runOnce``!  We do this by writing our function with a special syntax that "
-"uses an \"arrow\" symbol to link the argument list to the function body:"
-msgstr ""
-"Si nous n'avons pas déjà une fonction nommée qui fait ce que nous voulons, "
-"nous pouvons définir une fonction \"inline\" - c'est-à-dire juste à "
-"l'intérieur de l'appel à ``runOnce`` ! Nous faisons cela en écrivant notre "
-"fonction avec une syntaxe spéciale qui utilise un symbole \"flèche\" pour "
-"lier la liste d'arguments au corps de la fonction :"
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:68
-msgid ""
-"Java calls ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` a \"lambda "
-"expression\"; it may be less-confusingly called an \"arrow function\", "
-"\"inline function\", or \"anonymous function\" (because it has no name).  "
-"While this may look a bit funky, it is just another way of writing a "
-"function - the parentheses before the arrow are the function's argument "
-"list, and the code contained in the brackets is the function body.  The "
-"\"lambda expression\" here represents a function that calls "
-"``drivetrain.arcadeDrive`` with a specific set of parameters - note again "
-"that this does not *call* the function, but merely defines it and passes it "
-"to the ``Command`` to be run later when the ``Command`` is scheduled."
-msgstr ""
-"Java appelle ``() -> { drivetrain.arcadeDrive(0.5, 0.0); }`` une "
-"\"expression lambda\" ; elle peut être appelée de manière moins déroutante «"
-" fonction flèche », « fonction inline » ou « fonction anonyme » (car elle "
-"n'a pas de nom). Bien que cela puisse paraître un peu étrange, il s'agit "
-"simplement d'une autre façon d'écrire une fonction : les parenthèses avant "
-"la flèche sont la liste des arguments de la fonction, et le code contenu "
-"entre parenthèses est le corps de la fonction. L'expression \"lambda\" "
-"représente ici une fonction qui appelle ``drivetrain.arcadeDrive`` avec un "
-"ensemble spécifique de paramètres - notez encore que cela n'*appelle pas* la"
-" fonction, mais la définit simplement et la transmet à la ``Command`` pour "
-"être exécuté plus tard lorsque la ``Command`` est planifiée."
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:70
-msgid ""
-"As with method references, we do not need to *explicitly* name the lambda "
-"expression as a ``Runnable`` - Java can infer that our lambda expression is "
-"a ``Runnable`` so long as its signature matches that of the single method in"
-" the ``Runnable`` interface.  Accordingly, our lambda takes no arguments and"
-" has no return statement - if it did not match the ``Runnable`` contract, "
-"our code would fail to compile."
-msgstr ""
-"Comme pour les références de méthode, nous n'avons pas besoin de nommer "
-"*explicitement* l'expression lambda comme ``Runnable`` - Java peut déduire "
-"que notre expression lambda est un ``Runnable`` tant que sa signature "
-"correspond à celle de la méthode unique. dans l'interface ``Runnable``. En "
-"conséquence, notre lambda ne prend aucun argument et n'a pas d'instruction "
-"return - s'il ne correspondait pas au contrat ``Runnable``, notre code ne "
-"pourrait pas être compilé."
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:73
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:152
 msgid "Capturing State in Java Lambda Expressions"
 msgstr "Capture de l'état dans les expressions lambda en Java"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:75
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:144
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:154
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:244
 msgid ""
 "In the above example, our function body references an object that lives "
 "outside of the function itself (namely, the ``drivetrain`` object).  This is"
@@ -349,7 +230,7 @@ msgstr ""
 "l'expression lambda est définie, soit des champs d'une définition de classe "
 "englobante dans laquelle cette méthode est définie."
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:77
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:156
 msgid ""
 "In Java capturing state is a fairly safe thing to do in general, with one "
 "major caveat: we can only capture state that is \"effectively final\".  That"
@@ -370,7 +251,7 @@ msgstr ""
 "après la capture - mais la référence elle-même ne peut pas pointer vers un "
 "autre objet."
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:79
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:158
 msgid ""
 "This means we can only capture primitive types (like ``int``, ``double``, "
 "and ``boolean``) if they're constants.  If we want to capture a state "
@@ -381,59 +262,23 @@ msgstr ""
 "voulons capturer une variable d'état qui peut changer, elle *doit être "
 "enveloppée dans un objet mutable*."
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:82
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:161
 msgid "Syntactic Sugar for Java Lambda Expressions"
 msgstr "Sucre syntaxique pour les expressions lambda en Java"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:84
-msgid ""
-"The full lambda expression syntax can be needlessly verbose in some cases.  "
-"To help with this, Java lets us take some shortcuts (called \"syntactic "
-"sugar\") in cases where some of the notation is redundant."
-msgstr ""
-"La syntaxe complète de l'expression lambda peut être inutilement verbeuse "
-"dans certains cas. Pour nous aider, Java nous permet de prendre quelques "
-"raccourcis (appelés « sucre syntaxique ») dans les cas où une partie de la "
-"notation est redondante."
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:87
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:166
 msgid "Omitting Function Body Brackets for One-Line Lambdas"
 msgstr "Omission des crochets de fonction pour les lambdas à une ligne"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:89
-msgid ""
-"If the function body of our lambda expression is only one line, Java lets us"
-" omit the brackets around the function body.  When omitting function "
-"brackets, we also omit trailing semicolons And the `return` keyword."
-msgstr ""
-"Si le corps de la fonction de notre expression lambda ne comporte qu'une "
-"seule ligne, Java nous permet d'omettre les crochets autour du corps de la "
-"fonction. Lorsque nous omettons les parenthèses de fonction, nous omettons "
-"également les points-virgules de fin de ligne et le mot-clé `return`."
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:91
-msgid "So, our ``Runnable`` lambda above could instead be written:"
-msgstr ""
-"Ainsi, notre lambda ``Runnable`` ci-dessus pourrait à la place être écrit :"
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:99
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:189
 msgid "Omitting Parentheses around Single Lambda Parameters"
 msgstr "Omission des parenthèses autour des paramètres lambda uniques"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:101
-msgid ""
-"If the lambda expression is for a functional interface that takes only a "
-"single argument, we can omit the parenthesis around the parameter list:"
-msgstr ""
-"Si l'expression lambda est destinée à une interface fonctionnelle qui ne "
-"prend qu'un seul argument, nous pouvons omettre la parenthèse autour de la "
-"liste des paramètres:"
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:109
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:209
 msgid "Treating Functions as Data in C++"
 msgstr "Traiter les fonctions comme des données en C++"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:111
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:211
 msgid ""
 "C++ has a number of ways to treat functions as data.  For the sake of this "
 "article, we'll only talk about the parts that are relevant to using WPILibC."
@@ -442,7 +287,7 @@ msgstr ""
 "Dans le cadre de cet article, nous ne parlerons que des parties pertinentes "
 "pour l'utilisation de WPILibC."
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:115
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:215
 msgid ""
 "This sounds a lot more complicated than it is to use in practice.  Let's "
 "look at the call signature of ``cmd::RunOnce`` (which creates an "
@@ -454,7 +299,7 @@ msgstr ""
 "``InstantCommand`` qui, lorsqu'elle est planifiée, exécute la fonction "
 "donnée une seule fois puis se termine) :"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:125
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:225
 msgid ""
 "``runOnce`` expects us to give it a ``std::function<void()>`` parameter "
 "(named ``action``).  A ``std::function<void()>`` is the C++ type for a "
@@ -477,11 +322,11 @@ msgstr ""
 "convertie en ``std::function``, donc la manière typique de le faire est de "
 "définir une nouvelle fonction en ligne avec une \"expression lambda\". "
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:128
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:228
 msgid "Lambda Expressions in C++"
 msgstr "Expressions lambda en C++"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:130
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:230
 msgid ""
 "To pass a function to ``runOnce``, we need to write a short inline function "
 "expression using a special syntax that resembles ordinary C++ function "
@@ -492,7 +337,7 @@ msgstr ""
 "ressemble aux déclarations de fonctions C++ ordinaires, mais qui varie de "
 "plusieurs manières importantes:"
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:137
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:237
 msgid ""
 "C++ calls ``[captures] (params) { body; }`` a \"lambda expression\".  It has"
 " three parts: a *capture list* (square brackets), an optional *parameter "
@@ -508,7 +353,7 @@ msgstr ""
 "différence entre une expression lambda et une fonction ordinaire (mis à part"
 " l'absence de nom de fonction) est l'ajout de la liste de capture."
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:139
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:239
 msgid ""
 "Since ``RunOnce`` wants a function with no parameters and no return value, "
 "our lambda expression has no parameter list and no return statement.  The "
@@ -526,25 +371,6 @@ msgstr ""
 "simplement et la transmet à la `` Command`` à exécuter plus tard lorsque la "
 "``Command`` est planifiée."
 
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:142
+#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:242
 msgid "Capturing State in C++ Lambda Expressions"
 msgstr "Capture de l'état dans les expressions lambda en C++"
-
-#: ../../frc-docs/source/docs/software/basic-programming/functions-as-data.rst:146
-msgid ""
-"C++ has somewhat more-powerful semantics than Java.  One cost of this is "
-"that we generally need to give the C++ compiler some help to figure out *how"
-" exactly* we want it to capture state from the enclosing scope.  This is the"
-" purpose of the *capture list*.  For the purposes of using the WPILibC "
-"Command-based framework, it is usually sufficient to use a capture list of "
-"``[this]``, which gives access to members of the enclosing class by "
-"capturing the enclosing class's ``this`` pointer by value."
-msgstr ""
-"C++ a une sémantique un peu plus puissante que Java. L'un des coûts de cela "
-"est que nous devons généralement aider le compilateur C++ pour déterminer "
-"*comment exactement* nous voulons qu'il capture l'état de la portée "
-"englobante. C'est le but de la *liste de capture*. Pour utiliser le "
-"framework basé sur les commandes WPILibC, il suffit généralement d'utiliser "
-"une liste de capture de ``[this]``, qui donne accès aux membres de la classe"
-" englobante en capturant le pointeur ``this`` de la classe englobante par "
-"valeur."

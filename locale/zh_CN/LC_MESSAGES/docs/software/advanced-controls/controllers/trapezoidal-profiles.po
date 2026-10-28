@@ -1,128 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) 2024, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
-# This file is distributed under the same license as the FIRST Robotics Competition package.
+# Copyright (C) 2026, FIRST and other WPILib Contributors. This work is licensed under a Creative Commons Attribution 4.0 International License
+# This file is distributed under the same license as the WPILib Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
-# Translators:
-# 楚涵 张 <zhangchuhan1210@126.com>, 2020
-# Yitong Zhao <lucius300er@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: FIRST Robotics Competition 2024\n"
+"Project-Id-Version: WPILib Documentation 2027\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-10-07 04:05+0000\n"
-"PO-Revision-Date: 2020-04-25 02:01+0000\n"
-"Last-Translator: Yitong Zhao <lucius300er@outlook.com>, 2021\n"
+"POT-Creation-Date: 2026-10-28 16:01+0000\n"
+"PO-Revision-Date: 2026-10-28 16:03+0000\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/wpilib/teams/109324/zh_CN/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:2
-msgid "Trapezoidal Motion Profiles in WPILib"
-msgstr "WPILib中的梯形运动轮廓"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:4
-msgid "Todo"
-msgstr "待办事项"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:4
-msgid "link to conceptual motion profiling article"
-msgstr "链接到概念性运动分析文章"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:6
-msgid ""
-"This article covers the in-code generation of trapezoidal motion profiles.  "
-"Documentation describing the involved concepts in more detail is "
-"forthcoming."
-msgstr "本文介绍了梯形运动剖面的代码生成。文档将更详细地描述所涉及的概念。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:10
-msgid ""
-"The ``TrapezoidProfile`` class, used on its own, is most useful when "
-"composed with a custom controller (such as a \"smart\" motor controller with"
-" a built-in PID functionality).  To integrate it with a WPILib "
-"``PIDController``, see :doc:`profiled-pidcontroller`."
-msgstr ""
-"单独使用的“ "
-"TrapezoidProfile”类在与自定义控制器（例如具有内置PID功能的“智能”电机控制器）组合使用时最有用。要将其与WPILib的PIDController集成，请参阅"
-" :doc:`profiled-pidcontroller`."
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:12
-msgid ""
-"While feedforward and feedback control offer convenient ways to achieve a "
-"given setpoint, we are often still faced with the problem of generating "
-"setpoints for our mechanisms.  While the naive approach of immediately "
-"commanding a mechanism to its desired state may work, it is often "
-"suboptimal.  To improve the handling of our mechanisms, we often wish to "
-"command mechanisms to a *sequence* of setpoints that smoothly interpolate "
-"between its current state, and its desired goal state."
-msgstr ""
-"尽管前馈和反馈控制提供了实现给定设定值的便捷方法，但我们仍然经常面临为我们的机构生成设定值的问题。尽管天真地立即将某种机制控制到所需状态的方法可能会起作用，但它通常不是最佳的。为了改善对机制的处理，我们通常希望命令机制达到一定的“设定值”序列，以便在其当前状态和所需目标状态之间平滑地内插。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:17
-msgid "Creating a TrapezoidProfile"
-msgstr "创建梯形轮廓"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:19
-msgid ""
-"In C++, the ``TrapezoidProfile`` class is templated on the unit type used "
-"for distance measurements, which may be angular or linear.  The passed-in "
-"values *must* have units consistent with the distance units, or a compile-"
-"time error will be thrown.  For more information on C++ units, see "
-":ref:`docs/software/basic-programming/cpp-units:The C++ Units Library`."
-msgstr ""
-"在C ++中，“ "
-"TrapezoidProfile”类在用于距离测量的单位类型（可能是角度的或线性的）上模板化。传入的值*必须*具有与距离单位一致的单位，否则将引发编译时错误。有关C"
-" ++单元的更多信息，请参阅：docs / software / basic-programming / cpp-units：C ++单元库。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:22
-msgid "Constraints"
-msgstr "约束条件"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:24
-msgid ""
-"The various :ref:`feedforward helper classes <docs/software/advanced-"
-"controls/controllers/feedforward:Feedforward Control in WPILib>` provide "
-"methods for calculating the maximum simultaneously-achievable velocity and "
-"acceleration of a mechanism.  These can be very useful for calculating "
-"appropriate motion constraints for your ``TrapezoidProfile``."
-msgstr ""
-"各种前馈帮助类 :ref:`feedforward helper classes <docs/software/advanced-"
-"controls/controllers/feedforward:Feedforward Control in WPILib>` "
-"提供了用于计算最大同时可达到的速度和机构加速度的方法。这些对于为您的``TrapezoidProfile''计算适当的运动约束非常有用。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:56
-msgid "Start and End States"
-msgstr "起始和结束状态"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:85
-msgid "Putting It All Together"
-msgstr "汇总"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:87
-msgid ""
-"C++ is often able to infer the type of the inner classes, and thus a simple "
-"initializer list (without the class name) can be sent as a parameter.  The "
-"full class names are included in the example below for clarity."
-msgstr "C ++通常能够推断内部类的类型，因此可以将简单的初始化列表（没有类名）作为参数发送。为了清楚起见，完整的类名包含在下面的示例中。"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:120
-msgid "Using a ``TrapezoidProfile``"
-msgstr "使用``TrapezoidProfile``"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:123
-msgid "Sampling the Profile"
-msgstr "采样配置文件"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:156
-msgid "Using the State"
-msgstr "使用状态"
-
-#: ../../frc-docs/source/docs/software/advanced-controls/controllers/trapezoidal-profiles.rst:181
-msgid "Complete Usage Example"
-msgstr "完整用法示例"
